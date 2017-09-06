@@ -1,0 +1,659 @@
+castle = {
+	ca_sunwell = {
+		desc = ca_sunwell_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			NOR = {
+				has_global_flag = wow_bookmark
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 1
+		monthly_character_prestige = 1
+		liege_piety = 1
+		monthly_character_piety = 1
+	}
+	ca_sunwell_destroyed = {
+		desc = ca_sunwell_destroyed_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			OR = {
+				has_global_flag = wow_bookmark
+				has_global_flag = sunwell_destroyed
+			}
+			NOR = {
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ca_sunwell_corrupted_fel = {
+		desc = ca_sunwell_corrupted_fel_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_fel
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ca_sunwell_corrupted_void = {
+		desc = ca_sunwell_corrupted_void_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_void
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ca_sunwell_corrupted_necro = {
+		desc = ca_sunwell_corrupted_necro_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_necro
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_fel
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ca_runestones = {
+		desc = ca_runestones_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_the_scorched_grove }
+			NOT = { has_global_flag = qt_runestones_destroyed }
+			NOT = { has_global_flag = thirdwar_bookmark }
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ca_elfgate = {
+		desc = ca_elfgate_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				OR = {
+					title = b_goldenmist
+					title = b_stillwhisper_pond
+				}
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		ai_creation_factor = 100
+		garrison_size = 0.7
+		fort_level = 1
+		siege_defence = 1.5
+	}
+}
+
+city = {
+	ct_sunwell = {
+		desc = ca_sunwell_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			NOR = {
+				has_global_flag = wow_bookmark
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 1
+		monthly_character_prestige = 1
+		liege_piety = 1
+		monthly_character_piety = 1
+	}
+	ct_sunwell_destroyed = {
+		desc = ca_sunwell_destroyed_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			OR = {
+				has_global_flag = wow_bookmark
+				has_global_flag = sunwell_destroyed
+			}
+			NOR = {
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ct_sunwell_corrupted_fel = {
+		desc = ca_sunwell_corrupted_fel_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_fel
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ct_sunwell_corrupted_void = {
+		desc = ca_sunwell_corrupted_void_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_void
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ct_sunwell_corrupted_necro = {
+		desc = ca_sunwell_corrupted_necro_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_necro
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_fel
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ct_runestones = {
+		desc = ca_runestones_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_the_scorched_grove }
+			NOT = { has_global_flag = qt_runestones_destroyed }
+			NOT = { has_global_flag = thirdwar_bookmark }
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	ct_elfgate = {
+		desc = ca_elfgate_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				OR = {
+					title = b_goldenmist
+					title = b_thalassian_pass
+				}
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		ai_creation_factor = 100
+		garrison_size = 0.7
+		fort_level = 1
+		siege_defence = 1.5
+	}
+}
+
+temple = {
+	tp_sunwell = {
+		desc = ca_sunwell_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			NOR = {
+				has_global_flag = wow_bookmark
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 1
+		monthly_character_prestige = 1
+		liege_piety = 1
+		monthly_character_piety = 1
+	}
+	tp_sunwell_destroyed = {
+		desc = ca_sunwell_destroyed_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			OR = {
+				has_global_flag = wow_bookmark
+				has_global_flag = sunwell_destroyed
+			}
+			NOR = {
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	tp_sunwell_corrupted_fel = {
+		desc = ca_sunwell_corrupted_fel
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_fel
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	tp_sunwell_corrupted_void = {
+		desc = ca_sunwell_corrupted_void_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_void
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	tp_sunwell_corrupted_necro = {
+		desc = ca_sunwell_corrupted_necro_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_necro
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_fel
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	tp_runestones = {
+		desc = ca_runestones_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_the_scorched_grove }
+			NOT = { has_global_flag = qt_runestones_destroyed }
+			NOT = { has_global_flag = thirdwar_bookmark }
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	tp_elfgate = {
+		desc = ca_elfgate_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				OR = {
+					title = b_goldenmist
+					title = b_thalassian_pass
+				}
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		ai_creation_factor = 100
+		garrison_size = 0.7
+		fort_level = 1
+		siege_defence = 1.5
+	}
+}
+
+tribal = {
+	tb_sunwell = {
+		desc = ca_sunwell_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			NOR = {
+				has_global_flag = wow_bookmark
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 1
+		monthly_character_prestige = 1
+		liege_piety = 1
+		monthly_character_piety = 1
+		convert_to_city = ct_sunwell
+		convert_to_castle = ca_sunwell
+		convert_to_temple = tp_sunwell
+	}
+	tb_sunwell_destroyed = {
+		desc = ca_sunwell_destroyed_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			OR = {
+				has_global_flag = wow_bookmark
+				has_global_flag = sunwell_destroyed
+			}
+			NOR = {
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+		convert_to_city = ct_sunwell_destroyed
+		convert_to_castle = ca_sunwell_destroyed
+		convert_to_temple = tp_sunwell_destroyed
+	}
+	tb_sunwell_corrupted_fel = {
+		desc = ca_sunwell_corrupted_fel
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_fel
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+		convert_to_city = ct_sunwell_corrupted_fel
+		convert_to_castle = ca_sunwell_corrupted_fel
+		convert_to_temple = tp_sunwell_corrupted_fel
+	}
+	tb_sunwell_corrupted_void = {
+		desc = ca_sunwell_corrupted_void_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_void
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_necro
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+		convert_to_city = ct_sunwell_corrupted_void
+		convert_to_castle = ca_sunwell_corrupted_void
+		convert_to_temple = tp_sunwell_corrupted_void
+	}
+	tb_sunwell_corrupted_necro = {
+		desc = ca_sunwell_corrupted_necro_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_sunwell_plateau }
+			has_global_flag = sunwell_corrupted_necro
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_fel
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_prestige = 0.2
+		monthly_character_prestige = 0.2
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+		convert_to_city = ct_sunwell_corrupted_necro
+		convert_to_castle = ca_sunwell_corrupted_necro
+		convert_to_temple = tp_sunwell_corrupted_necro
+	}
+	tb_runestones = {
+		desc = ca_runestones_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = { title = b_the_scorched_grove }
+			NOT = { has_global_flag = qt_runestones_destroyed }
+			NOT = { has_global_flag = thirdwar_bookmark }
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 0
+		build_time = 1
+		ai_creation_factor = 100
+		liege_piety = 0.2
+		monthly_character_piety = 0.2
+	}
+	tb_elfgate = {
+		desc = ca_elfgate_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				OR = {
+					title = b_goldenmist
+					title = b_thalassian_pass
+				}
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+				}
+			}
+		}
+		trigger = {
+			has_game_started = yes
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		ai_creation_factor = 100
+		garrison_size = 0.7
+		fort_level = 1
+		siege_defence = 1.5
+	}
+}

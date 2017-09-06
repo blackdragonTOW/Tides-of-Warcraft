@@ -1,0 +1,315 @@
+castle = {
+	ca_human_stable_1 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+				}
+			}
+		}
+		trigger = {
+			TECH_human_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = human	
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		heavy_infantry = 15
+		knights = 5
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 0.4
+	}
+	ca_human_stable_2 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = human
+			}
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = ca_human_stable_1
+		gold_cost = 120
+		build_time = 547
+		heavy_infantry = 30
+		knights = 10
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 0.8
+	}
+	ca_human_stable_3 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture_group = human
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		upgrades_from = ca_human_stable_2
+		gold_cost = 200
+		build_time = 730
+		heavy_infantry = 40
+		knights = 15
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 0.2
+	}
+	ca_human_stable_4 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+					
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture_group = human
+				
+			}
+		}
+		upgrades_from = ca_human_stable_3
+		gold_cost = 300
+		build_time = 1095
+		heavy_infantry = 40
+		knights = 20
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.2
+	}
+	ca_human_stable_5 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+					
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			FROM = {
+				culture_group = human
+			}
+		}
+		upgrades_from = ca_human_stable_4
+		gold_cost = 400
+		build_time = 2190
+		heavy_infantry = 45
+		knights = 25
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+	ca_human_stable_6 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 8
+			FROM = {
+				culture_group = human
+			}
+		}
+		upgrades_from = ca_human_stable_5
+		gold_cost = 500
+		build_time = 2190
+		heavy_infantry = 55
+		knights = 24
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+	ca_jousting_lists_1 = {
+		desc = ca_jousting_lists_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture_group = human
+			}
+		}
+		prerequisites = { ca_human_stables_3 }
+		gold_cost = 100
+		build_time = 730
+		knights_morale = 0.01 # Will need balancing
+		local_revolt_risk = -0.01
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 0.2
+	}
+	ca_jousting_lists_2 = {
+		desc = ca_jousting_lists_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture_group = human
+			}
+		}
+		prerequisites = { ca_human_stables_3 }
+		upgrades_from = ca_jousting_lists_1
+		gold_cost = 200
+		build_time = 1095
+		knights_morale = 0.05 # Will need balancing
+		local_revolt_risk = -0.03
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+}
+
+temple = {
+	tp_battlemage_barracks_1 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+					FROM = { government = kirin_tor_government }
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 1
+			FROM = {
+				culture_group = human
+				government = kirin_tor_government
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		mages = 10
+		ai_creation_factor = 105
+		
+		extra_tech_building_start = 1.0
+	}
+	tp_battlemage_barracks_2 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+					FROM = { government = kirin_tor_government }
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 1
+			FROM = {
+				culture_group = human
+				government = kirin_tor_government
+			}
+		}
+		prerequisites = { tp_wall_1 }
+		upgrades_from = tp_battlemage_barracks_1
+		gold_cost = 120
+		build_time = 547
+		mages = 20
+		ai_creation_factor = 104
+		
+		extra_tech_building_start = 1.8
+	}
+	tp_battlemage_barracks_3 = {
+		desc = ca_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+					FROM = { government = kirin_tor_government }
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 3
+			FROM = {
+				culture_group = human
+				government = kirin_tor_government
+			}
+		}
+		prerequisites = { tp_wall_2 }
+		upgrades_from = tp_battlemage_barracks_2
+		gold_cost = 200
+		build_time = 730
+		mages = 30
+		ai_creation_factor = 103
+
+		extra_tech_building_start = 3.0
+	}
+	tp_battlemage_barracks_4 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = human
+					FROM = { government = kirin_tor_government }
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 3
+			FROM = {
+				culture_group = human
+				government = kirin_tor_government
+			}
+		}
+		upgrades_from = tp_battlemage_barracks_3
+		gold_cost = 300
+		build_time = 1095
+		mages = 50
+		ai_creation_factor = 102
+
+		extra_tech_building_start = 3.0
+	}
+}

@@ -1,0 +1,130 @@
+prov_corruption_arcane = {
+	if = {
+		limit = {
+			location = {
+				NOT = { check_variable = { which = prov_corruption value = 1 } }
+			}
+		}
+		location = {
+			set_variable = { which = prov_corruption value = 0 }
+		}
+	}
+	if = {
+		limit = {
+			location = {
+				NOT = { check_variable = { which = prov_corruption value = 30 }}
+			}
+		}
+		random = {
+			chance = 33
+			location = {
+				change_variable = { which = prov_corruption value = 1 }
+			}
+		}
+	}
+}
+
+prov_corruption_fel = {
+	if = {
+		limit = {
+			location = {
+				NOT = { check_variable = { which = prov_corruption value = 1 } }
+			}
+		}
+		location = {
+			set_variable = { which = prov_corruption value = 0 }
+		}
+	}
+	if = {
+		limit = {
+			location = {
+				NOT = { check_variable = { which = prov_corruption value = 30 }}
+			}
+		}
+		location = {
+			change_variable = { which = prov_corruption value = 1 }
+		}
+		random = {
+			chance = 50
+			location = {
+				change_variable = { which = prov_corruption value = 1 }
+			}
+		}
+	}
+}
+
+prov_corruption_nochar = { # To skip the character and apply it directly to the province.
+	if = {
+		limit = {
+			NOT = { check_variable = { which = prov_corruption value = 1 } }
+		}
+		set_variable = { which = prov_corruption value = 0 }
+	}
+	if = {
+		limit = {
+			NOT = { check_variable = { which = prov_corruption value = 30 } }
+		}
+		random = {
+			chance = 33
+			change_variable = { which = prov_corruption value = 1 }
+		}
+	}
+}
+
+prov_corruption_nochar_guaranteed = {
+	if = {
+		limit = {
+			NOT = { check_variable = { which = prov_corruption value = 1 } }
+		}
+		set_variable = { which = prov_corruption value = 0 }
+	}
+	if = {
+		limit = {
+			NOT = { check_variable = { which = prov_corruption value = 30 } }
+		}
+		change_variable = { which = prov_corruption value = 1 }
+	}
+}
+
+increase_corruption = {
+	if = {
+		limit = {
+			NOT = { check_variable = { which = char_corruption value = 1 } }
+		}
+		set_variable = { which = char_corruption value = 0 }
+	}
+	random = {
+		chance = 50
+		change_variable = { which = char_corruption value = 1 }
+	}
+}
+
+increase_corruption_guranteed = {
+	if = {
+		limit = {
+			NOT = { check_variable = { which = char_corruption value = 1 } }
+		}
+		set_variable = { which = char_corruption value = 0 }
+	}
+	change_variable = { which = char_corruption value = 1 }
+}
+
+increase_doom = {
+	if = {
+		limit = {
+			NOT = { check_variable = { which = gobal_doom value = 40 } }
+		}
+		change_variable = { which = global_doom value = 1 }
+	}
+}
+
+decrease_prov_corruption_nochar = {
+	random = {
+		chance = 60
+		change_variable = { which = prov_corruption value = -1 }
+	}
+}
+
+decrease_prov_corruption_nochar_guaranteed = {
+	change_variable = { which = prov_corruption value = -1 }
+}

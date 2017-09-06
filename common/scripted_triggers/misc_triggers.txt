@@ -1,0 +1,210 @@
+quel_thalas_antimagic = {
+	OR = {
+		NOT = {
+			any_province = {
+				OR = {
+					region = world_eversong_woods
+					region = world_ghostlands
+				}
+				has_building = quel_thalas_runestone
+			}
+		}
+		NOT = {
+			OR = {
+				region = world_eversong_woods
+				region = world_ghostlands
+			}
+		}
+		AND = {
+			any_province = {
+				OR = {
+					region = world_eversong_woods
+					region = world_ghostlands
+				}
+				has_building = quel_thalas_runestone
+			}
+			OR = {
+				region = world_eversong_woods
+				region = world_ghostlands
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+	}
+}
+
+same_region_as = {
+	OR = {
+		AND = {
+			event_target:region_compare = {
+				region = world_eversong_woods
+			}
+			region = world_eversong_woods
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_ghostlands
+			}
+			region = world_ghostlands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_western_plaguelands
+			}
+			region = world_western_plaguelands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_eastern_plaguelands
+			}
+			region = world_eastern_plaguelands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_sunwell_isle
+			}
+			region = world_sunwell_isle
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_tirisfal_glades
+			}
+			region = world_tirisfal_glades
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_hinterlands
+			}
+			region = world_hinterlands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_arathi_highlands
+			}
+			region = world_arathi_highlands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_alterac_mountains
+			}
+			region = world_alterac_mountains
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_hillsbrad
+			}
+			region = world_hillsbrad
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_gilneas
+			}
+			region = world_gilneas
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_silverpine_forest
+			}
+			region = world_silverpine_forest
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_kul_tiras
+			}
+			region = world_kul_tiras
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_wetlands
+			}
+			region = world_wetlands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_twilight_highlands
+			}
+			region = world_twilight_highlands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_loch_modan
+			}
+			region = world_loch_modan
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_dun_morogh
+			}
+			region = world_dun_morogh
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_badlands
+			}
+			region = world_badlands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_burning_steppes
+			}
+			region = world_burning_steppes
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_searing_gorge
+			}
+			region = world_searing_gorge
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_elwynn_forest
+			}
+			region = world_elwynn_forest
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_redridge_mountains
+			}
+			region = world_redridge_mountains
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_swamp_of_sorrows
+			}
+			region = world_swamp_of_sorrows
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_blasted_lands
+			}
+			region = world_blasted_lands
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_westfall
+			}
+			region = world_westfall
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_duskwood
+			}
+			region = world_duskwood
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_stranglethorn_vale
+			}
+			region = world_stranglethorn_vale
+		}
+		AND = {
+			event_target:region_compare = {
+				region = world_deadwind
+			}
+			region = world_deadwind
+		}
+	}
+}

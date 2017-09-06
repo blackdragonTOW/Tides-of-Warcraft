@@ -1,0 +1,952 @@
+namespace = akimpreg
+
+#For regular impregnation.
+character_event = {
+	id = akimpreg.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					trait = undead_forsaken
+					trait = undead_scourge
+					trait = undead_generic
+					trait = hakkar_trait
+					trait = faceless
+					trait = eredar
+					trait = succubus
+					trait = dreadlord
+					trait = pit_lord
+					trait = fel_lord
+					trait = doomlord
+					trait = shivarra
+					trait = voidwalker
+					event_target:akimpreg_father = {
+						trait = undead_forsaken
+						trait = undead_scourge
+						trait = undead_generic
+						trait = hakkar_trait
+						trait = faceless
+						trait = eredar
+						trait = succubus
+						trait = dreadlord
+						trait = pit_lord
+						trait = fel_lord
+						trait = doomlord
+						trait = shivarra
+						trait = voidwalker
+					}
+				}
+				has_game_rule = {
+					name = interbreeding
+					value = off
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							trait = goblin
+							event_target:akimpreg_father = {
+								trait = goblin
+							}
+						}
+						AND = {
+							trait = gnome
+							event_target:akimpreg_father = {
+								trait = gnome
+							}
+						}
+						AND = {
+							trait = AK_trait_dwarf
+							event_target:akimpreg_father = {
+								trait = AK_trait_dwarf
+							}
+						}
+						AND = {
+							trait = murloc
+							event_target:akimpreg_father = {
+								trait = murloc
+							}
+						}
+						AND = {
+							trait = gnoll
+							event_target:akimpreg_father = {
+								trait = gnoll
+							}
+						}
+						AND = {
+							trait = kobold
+							event_target:akimpreg_father = {
+								trait = kobold
+							}
+						}
+						AND = {
+							trait = trogg
+							event_target:akimpreg_father = {
+								trait = trogg
+							}
+						}
+						AND = {
+							trait = naga
+							event_target:akimpreg_father = {
+								trait = naga
+							}
+						}
+						AND = {
+							OR = {
+								trait = high_elf
+								trait = blood_elf
+								trait = wretched
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = high_elf
+									trait = blood_elf
+									trait = wretched
+								}
+							}
+						}
+						AND = {
+							OR = {
+								trait = dragon_red
+								trait = dragon_blue
+								trait = dragon_green
+								trait = dragon_bronze
+								trait = dragon_black
+								trait = dragon_infinite
+								trait = dragon_nightmare
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = dragon_red
+									trait = dragon_blue
+									trait = dragon_green
+									trait = dragon_bronze
+									trait = dragon_black
+									trait = dragon_infinite
+									trait = dragon_nightmare
+								}
+							}
+						}
+						AND = {
+							OR = {
+								trait = troll_forest
+								trait = troll_ice
+								trait = troll_jungle
+								trait = troll_sand
+								trait = troll_dark
+								trait = troll_zandalari
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = troll_forest
+									trait = troll_ice
+									trait = troll_jungle
+									trait = troll_sand
+									trait = troll_dark
+									trait = troll_zandalari
+								}
+							}
+						}
+						AND = {
+							trait = human
+							event_target:akimpreg_father = {
+								trait = human
+							}
+						}
+						AND = {
+							OR = {
+								trait = orc
+								trait = ogre
+								trait = pale_orc
+								#trait = mok_nathal
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = orc
+									trait = ogre
+									trait = pale_orc
+									#trait = mok_nathal
+								}
+							}
+						}
+					}
+				}
+				impregnate = event_target:akimpreg_father
+			}
+			clear_event_target = event_target:akimpreg_father
+			break = yes
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = undead_forsaken
+					trait = undead_scourge
+					trait = undead_generic
+					trait = hakkar_trait
+					trait = faceless
+					event_target:akimpreg_father = {
+						trait = undead_forsaken
+						trait = undead_scourge
+						trait = undead_generic
+						trait = hakkar_trait
+						trait = faceless
+						trait = eredar
+						trait = succubus
+						trait = dreadlord
+						trait = pit_lord
+						trait = fel_lord
+						trait = doomlord
+						trait = shivarra
+					}
+				}
+				has_game_rule = {
+					name = interbreeding
+					value = unrestricted
+				}
+			}
+			impregnate = event_target:akimpreg_father
+			clear_event_target = event_target:akimpreg_father
+			break = yes
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = undead_forsaken
+					trait = undead_scourge
+					trait = undead_generic
+					trait = hakkar_trait
+					event_target:akimpreg_father = {
+						trait = undead_forsaken
+						trait = undead_scourge
+						trait = undead_generic
+						trait = hakkar_trait
+					}
+				}
+				has_game_rule = {
+					name = interbreeding
+					value = default
+				}
+			}
+			#This will be big
+			if = {
+				limit = {
+					OR = {
+						#first everyone who can't interbreed.
+						AND = {
+							trait = goblin
+							event_target:akimpreg_father = {
+								trait = goblin
+							}
+						}
+						AND = {
+							trait = gnome
+							event_target:akimpreg_father = {
+								trait = gnome
+							}
+						}
+						AND = {
+							trait = AK_trait_dwarf
+							event_target:akimpreg_father = {
+								trait = AK_trait_dwarf
+							}
+						}
+						AND = {
+							trait = murloc
+							event_target:akimpreg_father = {
+								trait = murloc
+							}
+						}
+						AND = {
+							trait = gnoll
+							event_target:akimpreg_father = {
+								trait = gnoll
+							}
+						}
+						AND = {
+							trait = kobold
+							event_target:akimpreg_father = {
+								trait = kobold
+							}
+						}
+						AND = {
+							trait = trogg
+							event_target:akimpreg_father = {
+								trait = trogg
+							}
+						}
+						AND = {
+							trait = naga
+							event_target:akimpreg_father = {
+								trait = naga
+							}
+						}
+						#Now for dragons
+						AND = {
+							OR = {
+								trait = dragon_red
+								trait = dragon_blue
+								trait = dragon_green
+								trait = dragon_bronze
+								trait = dragon_black
+								trait = dragon_infinite
+								trait = dragon_nightmare
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = dragon_red
+									trait = dragon_blue
+									trait = dragon_green
+									trait = dragon_bronze
+									trait = dragon_black
+									trait = dragon_infinite
+									trait = dragon_nightmare
+								}
+							}
+						}
+						#Trolls
+						AND = {
+							OR = {
+								trait = troll_forest
+								trait = troll_ice
+								trait = troll_jungle
+								trait = troll_sand
+								trait = troll_dark
+								trait = troll_zandalari
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = troll_forest
+									trait = troll_ice
+									trait = troll_jungle
+									trait = troll_sand
+									trait = troll_dark
+									trait = troll_zandalari
+								}
+							}
+						}
+						#Elves and Humans
+						AND = {
+							OR = {
+								trait = high_elf
+								trait = blood_elf
+								#trait = night_elf
+								#trait = nightborne
+								trait = wretched
+								trait = human
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = high_elf
+									trait = blood_elf
+									#trait = night_elf
+									#trait = nightborne
+									trait = wretched
+									trait = human
+								}
+							}
+						}
+						#Orcs and Ogres/Draenei. Now it gets complicated.
+						AND = {
+							OR = {
+								AND = {
+									trait = orc
+									event_target:akimpreg_father = {
+										OR = {
+											trait = orc
+											#trait = draenei
+											#trait = broken
+											trait = ogre
+											#trait = mok_nathal
+											trait = pale_orc
+										}
+									}
+								}
+								#AND = {
+								#	OR = {
+								#		trait = draenei
+								#		trait = broken
+								#		trait = eredar
+								#	}
+								#	event_target:akimpreg_father = {
+								#		OR = {
+								#			trait = orc
+								#			trait = draenei
+								#			trait = broken
+								#			trait = eredar
+								#		}
+								#	}
+								#}
+								AND = {
+									OR = {
+										trait = ogre
+										#trait = mok_nathal
+									}
+									event_target:akimpreg_father = {
+										OR = {
+											trait = orc
+											trait = ogre
+											#trait = mok_nathal
+											trait = pale_orc
+										}
+									}
+								}
+								AND = {
+									trait = pale_orc
+									event_target:akimpreg_father = {
+										OR = {
+											trait = orc
+											#trait = draenei
+											#trait = broken
+											trait = ogre
+											#trait = mok_nathal
+											trait = pale_orc
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				impregnate = event_target:akimpreg_father
+				clear_event_target = event_target:akimpreg_father
+				break = yes
+			}
+		}
+	}
+}
+
+#For "cuckoo" impregnation.
+character_event = {
+	id = akimpreg.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				NOR = {
+					trait = undead_forsaken
+					trait = undead_scourge
+					trait = undead_generic
+					trait = hakkar_trait
+					trait = faceless
+					event_target:akimpreg_father = {
+						trait = undead_forsaken
+						trait = undead_scourge
+						trait = undead_generic
+						trait = hakkar_trait
+						trait = faceless
+						trait = eredar
+						trait = succubus
+						trait = dreadlord
+						trait = pit_lord
+						trait = fel_lord
+						trait = doomlord
+						trait = shivarra
+					}
+				}
+				has_game_rule = {
+					name = interbreeding
+					value = off
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							trait = goblin
+							event_target:akimpreg_father = {
+								trait = goblin
+							}
+						}
+						AND = {
+							trait = gnome
+							event_target:akimpreg_father = {
+								trait = gnome
+							}
+						}
+						AND = {
+							trait = AK_trait_dwarf
+							event_target:akimpreg_father = {
+								trait = AK_trait_dwarf
+							}
+						}
+						AND = {
+							trait = murloc
+							event_target:akimpreg_father = {
+								trait = murloc
+							}
+						}
+						AND = {
+							trait = gnoll
+							event_target:akimpreg_father = {
+								trait = gnoll
+							}
+						}
+						AND = {
+							trait = kobold
+							event_target:akimpreg_father = {
+								trait = kobold
+							}
+						}
+						AND = {
+							trait = trogg
+							event_target:akimpreg_father = {
+								trait = trogg
+							}
+						}
+						AND = {
+							trait = naga
+							event_target:akimpreg_father = {
+								trait = naga
+							}
+						}
+						AND = {
+							OR = {
+								trait = high_elf
+								trait = blood_elf
+								trait = wretched
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = high_elf
+									trait = blood_elf
+									trait = wretched
+								}
+							}
+						}
+						AND = {
+							OR = {
+								trait = dragon_red
+								trait = dragon_blue
+								trait = dragon_green
+								trait = dragon_bronze
+								trait = dragon_black
+								trait = dragon_infinite
+								trait = dragon_nightmare
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = dragon_red
+									trait = dragon_blue
+									trait = dragon_green
+									trait = dragon_bronze
+									trait = dragon_black
+									trait = dragon_infinite
+									trait = dragon_nightmare
+								}
+							}
+						}
+						AND = {
+							OR = {
+								trait = troll_forest
+								trait = troll_ice
+								trait = troll_jungle
+								trait = troll_sand
+								trait = troll_dark
+								trait = troll_zandalari
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = troll_forest
+									trait = troll_ice
+									trait = troll_jungle
+									trait = troll_sand
+									trait = troll_dark
+									trait = troll_zandalari
+								}
+							}
+						}
+						AND = {
+							trait = human
+							event_target:akimpreg_father = {
+								trait = human
+							}
+						}
+						AND = {
+							OR = {
+								trait = orc
+								trait = ogre
+								#trait = mok_nathal
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = orc
+									trait = ogre
+									#trait = mok_nathal
+								}
+							}
+						}
+					}
+				}
+				impregnate_cuckoo = event_target:akimpreg_father
+			}
+			clear_event_target = event_target:akimpreg_father
+			break = yes
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = undead_forsaken
+					trait = undead_scourge
+					trait = undead_generic
+					trait = hakkar_trait
+					trait = faceless
+					event_target:akimpreg_father = {
+						trait = undead_forsaken
+						trait = undead_scourge
+						trait = undead_generic
+						trait = hakkar_trait
+						trait = faceless
+					}
+				}
+				has_game_rule = {
+					name = interbreeding
+					value = unrestricted
+				}
+			}
+			impregnate_cuckoo = event_target:akimpreg_father
+			clear_event_target = event_target:akimpreg_father
+			break = yes
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = undead_forsaken
+					trait = undead_scourge
+					trait = undead_generic
+					trait = hakkar_trait
+					event_target:akimpreg_father = {
+						trait = undead_forsaken
+						trait = undead_scourge
+						trait = undead_generic
+						trait = hakkar_trait
+					}
+				}
+				has_game_rule = {
+					name = interbreeding
+					value = default
+				}
+			}
+			#This will be big
+			if = {
+				limit = {
+					OR = {
+						#first everyone who can't interbreed.
+						AND = {
+							trait = wretched
+							event_target:akimpreg_father = {
+								trait = wretched
+							}
+						}
+						AND = {
+							trait = goblin
+							event_target:akimpreg_father = {
+								trait = goblin
+							}
+						}
+						AND = {
+							trait = gnome
+							event_target:akimpreg_father = {
+								trait = gnome
+							}
+						}
+						AND = {
+							trait = AK_trait_dwarf
+							event_target:akimpreg_father = {
+								trait = AK_trait_dwarf
+							}
+						}
+						AND = {
+							trait = murloc
+							event_target:akimpreg_father = {
+								trait = murloc
+							}
+						}
+						AND = {
+							trait = gnoll
+							event_target:akimpreg_father = {
+								trait = gnoll
+							}
+						}
+						AND = {
+							trait = kobold
+							event_target:akimpreg_father = {
+								trait = kobold
+							}
+						}
+						AND = {
+							trait = trogg
+							event_target:akimpreg_father = {
+								trait = trogg
+							}
+						}
+						AND = {
+							trait = naga
+							event_target:akimpreg_father = {
+								trait = naga
+							}
+						}
+						#Now for dragons
+						AND = {
+							OR = {
+								trait = dragon_red
+								trait = dragon_blue
+								trait = dragon_green
+								trait = dragon_bronze
+								trait = dragon_black
+								trait = dragon_infinite
+								trait = dragon_nightmare
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = dragon_red
+									trait = dragon_blue
+									trait = dragon_green
+									trait = dragon_bronze
+									trait = dragon_black
+									trait = dragon_infinite
+									trait = dragon_nightmare
+								}
+							}
+						}
+						#Trolls
+						AND = {
+							OR = {
+								trait = troll_forest
+								trait = troll_ice
+								trait = troll_jungle
+								trait = troll_sand
+								trait = troll_dark
+								trait = troll_zandalari
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = troll_forest
+									trait = troll_ice
+									trait = troll_jungle
+									trait = troll_sand
+									trait = troll_dark
+									trait = troll_zandalari
+								}
+							}
+						}
+						#Elves and Humans
+						AND = {
+							OR = {
+								trait = high_elf
+								trait = blood_elf
+								#trait = night_elf
+								#trait = nightborne
+								trait = human
+							}
+							event_target:akimpreg_father = {
+								OR = {
+									trait = high_elf
+									trait = blood_elf
+									#trait = night_elf
+									#trait = nightborne
+									trait = human
+								}
+							}
+						}
+						#Orcs and Ogres/Draenei. Now it gets complicated.
+						OR = {
+							AND = {
+								trait = orc
+								event_target:akimpreg_father = {
+									OR = {
+										trait = orc
+										#trait = draenei
+										#trait = broken
+										trait = ogre
+										#trait = mok_nathal
+									}
+								}
+							}
+							#AND = {
+							#	OR = {
+							#		trait = draenei
+							#		trait = broken
+							#	}
+							#	event_target:akimpreg_father = {
+							#		OR = {
+							#			trait = orc
+							#			trait = draenei
+							#			trait = broken
+							#			trait = eredar
+							#		}
+							#	}
+							#}
+							AND = {
+								OR = {
+									trait = ogre
+									#trait = mok_nathal
+								}
+								event_target:akimpreg_father = {
+									OR = {
+										trait = orc
+										trait = ogre
+										#trait = mok_nathal
+									}
+								}
+							}
+						}
+					}
+				}
+				impregnate_cuckoo = event_target:akimpreg_father
+				clear_event_target = event_target:akimpreg_father
+				break = yes
+			}
+		}
+	}
+}
+
+#Menopause
+character_event = {
+	id = akimpreg.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			trait = AK_trait_dwarf
+			trait = high_elf
+			trait = blood_elf
+			trait = wretched
+			trait = gnome
+			trait = dragon_red
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_chromatic
+			trait = dragon_twilight
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = troll_zandalari
+			trait = naga
+			trait = trogg
+			trait = draenei
+			trait = broken
+			trait = lost_one
+			trait = murloc
+		}
+		age = 45
+		is_female = yes
+		NOT = { has_character_flag = menopause }
+	}
+	
+	immediate = {
+		set_character_flag = menopause
+		fertility = 0
+	}
+}
+
+#Reduce fertility with births
+character_event = {
+	id = akimpreg.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			mother = {
+				OR = {
+					trait = AK_trait_dwarf
+					trait = high_elf
+					trait = blood_elf
+					trait = wretched
+					trait = gnome
+					trait = naga
+					trait = trogg
+					trait = draenei
+					trait = broken
+					trait = lost_one
+				}
+			}
+			father = {
+				OR = {
+					trait = AK_trait_dwarf
+					trait = high_elf
+					trait = blood_elf
+					trait = wretched
+					trait = gnome
+					trait = naga
+					trait = trogg
+					trait = draenei
+					trait = broken
+					trait = lost_one
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				mother = {
+					OR = {
+						trait = AK_trait_dwarf
+						trait = high_elf
+						trait = blood_elf
+						trait = wretched
+						trait = gnome
+						trait = naga
+						trait = trogg
+						trait = draenei
+						trait = broken
+						trait = lost_one
+					}
+				}
+			}
+			mother = {
+				fertility = -0.3
+				random = {
+					chance = 40
+					fertility = -0.3
+				}
+				random = {
+					chance = 10
+					fertility = -0.5
+				}
+			}
+		}
+		if = {
+			limit = {
+				father = {
+					OR = {
+						trait = AK_trait_dwarf
+						trait = high_elf
+						trait = blood_elf
+						trait = wretched
+						trait = gnome
+						trait = naga
+						trait = trogg
+						trait = draenei
+						trait = broken
+						trait = lost_one
+					}
+				}
+			}
+			father = {
+				fertility = -0.3
+				random = {
+					chance = 40
+					fertility = -0.3
+				}
+				random = {
+					chance = 10
+					fertility = -0.5
+				}
+			}
+		}
+	}
+}

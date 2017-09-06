@@ -1,0 +1,1315 @@
+namespace = tyr
+
+#The Guard emerges.
+character_event = {
+	id = tyr.1
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	trigger = {
+		NOT = { has_global_flag = tyrs_guard_start }
+		has_global_flag = trollwars_bookmark
+		NOT = {
+			has_game_rule = {
+				name = troll_wars_events
+				value = off
+			}
+		}
+		c_northern_tirisfal_mountains = { # Check if the name ever gets changed on the file level.
+			holder_scope = {
+				OR = {
+					trait = human
+					any_liege = {
+						trait = human
+						NOT = { religion = old_gods }
+						NOT = { religion = twilights_hammer }
+						NOT = { religion = cult_of_the_infinite }
+						NOT = { religion = cult_of_the_destroyer }
+						NOT = { religion = emerald_nightmare }
+						NOT = { religion = azshara }
+					}
+				}
+			}
+		}
+		c_southern_tirisfal_mountains = { # Check if the name ever gets changed on the file level.
+			holder_scope = {
+				OR = {
+					trait = human
+					any_liege = {
+						trait = human
+						NOT = { religion = old_gods }
+						NOT = { religion = twilights_hammer }
+						NOT = { religion = cult_of_the_infinite }
+						NOT = { religion = cult_of_the_destroyer }
+						NOT = { religion = emerald_nightmare }
+						NOT = { religion = azshara }
+					}
+				}
+			}
+			location = {
+				has_empty_holding = yes
+			}
+		}
+	}
+	
+	immediate = {
+		set_global_flag = tyrs_guard_start
+		activate_title = { title = d_tyrs_guard status = yes }
+		create_character = {
+			attributes = {
+				martial = 14
+				learning = 10
+			}
+			trait = just
+			trait = brave
+			trait = zealous
+			trait = warrior
+			trait = human
+			flag = race_assigned
+			culture = arathi
+			religion = old_ways
+		}
+		new_character = {
+			d_tyrs_guard = {
+				grant_title = PREV
+			}
+			c_southern_tirisfal_mountains = {
+				location = {
+					build_holding = { title = b_southern_tirisfal_mountains_3 type = temple holder = PREVPREV }
+				}
+			}
+			set_government_type = templar_order_government
+		}
+		any_playable_ruler = {
+			limit = {
+				ai = no
+				location = {
+					region = world_EK_All
+				}
+			}
+			narrative_event = { id = tyr.2 }
+		}
+	}
+}
+
+#Players are told about it.
+narrative_event = {
+	id = tyr.2
+	title = EVTTITLETYR.2 # Tyr's Guard
+	desc = EVTDESCTYR.2 # In the far western reaches of Tirisfal a secretive order has arisen. Dedicated to guarding an ancient tomb, they call themselves Tyr's Guard. Though wary of outsiders, they seem willing to fight alongside those humans who stay true to the Old Ways.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Thoradin thinks about going to Tyr's tomb.
+narrative_event = {
+	id = tyr.3
+	title = EVTTITLETYR.3 # The Origins of Humanity
+	desc = EVTDESCTYR.3 # You have often wondered about the origins of your people. The trolls and elves have records stretching back millennia, and yet none of those records mention humanity until quite recently. During your investigations you have heard rumours of an ancient tomb at the very west of Tirisfal Glades. Perhaps the answer is there.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	trigger = {
+		has_global_flag = trollwar_humanelf_victory
+		NOT = { has_global_flag = thoradins_doom }
+		NOT = { has_global_flag = thoradins_doom_cancel }
+		is_title_active = e_arathor
+		e_arathor = {
+			holder_scope = {
+				trait = human
+				NOT = { religion = old_gods }
+				NOT = { religion = twilights_hammer }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	option = {
+		name = EVTOPTTYR.3a # Then I must go.
+		set_global_flag = thoradins_doom
+		narrative_event = { id = tyr.4 days = 20 }
+	}
+	
+	option = {
+		name = EVTOPTTYR.3b # I don't have time to chase myths.
+		set_global_flag = thoradins_doom_cancel
+	}
+}
+
+#Thoradin actually goes there.
+narrative_event = {
+	id = tyr.4
+	title = EVTTITLETYR.4 # Tyr's Tomb
+	desc = EVTDESCTYR.4 # You have arrived at the rumoured location, greeted by the sight of a gigantic silver hand standing above ancient ruins. As you near the entrance, a group steps out of the trees and stands in your way. They are humans, much like yourself, and yet seem to know much about this tomb. They call themselves Tyr's Guard and explain that they are sworn to protect Tyr's Tomb, these ruins. Their leader urges you to leave, to turn around and forget everything.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.4a # Nothing shall keep me from the truth!
+		narrative_event = { id = tyr.6 days = 5 }
+		if = {
+			limit = {
+				is_title_active = d_tyrs_guard
+			}
+			d_tyrs_guard = {
+				holder_scope = {
+					narrative_event = { id = tyr.7 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTTYR.4b # I guess I should listen to them.
+		prestige = -5
+		if = {
+			limit = {
+				religion = old_ways
+			}
+			piety = 15
+		}
+		if = {
+			limit = {
+				is_title_active = d_tyrs_guard
+			}
+			d_tyrs_guard = {
+				holder_scope = {
+					narrative_event = { id = tyr.5 }
+				}
+			}
+		}
+	}
+}
+
+#Guard is notified Thoradin heeded their warning.
+narrative_event = {
+	id = tyr.5
+	title = EVTTITLETYR.5 # A Royal Explorer
+	desc = EVTDESCTYR.5 # For a very long time, your order has stood vigilant at Tyr's tomb so that none may disturb the fallen Keeper... or the monster who fell him. Now, at long last, that peace is at risk, for the ruler of Arathor stands at the tomb's gates. Fortunately, you manage to save [From.GetHerHim] from [From.GetHerselfHimself] and convince [From.GetHerHim] to leave.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Goes in.
+narrative_event = {
+	id = tyr.6
+	title = EVTTITLETYR.4 # Tyr's Tomb
+	desc = EVTDESCTYR.6 # Undeterred by the Guard's warnings, you make your way to the tomb's entrance. Though it is sealed, you waste no time in ordering your magi to breach the seals and allow you passage. Soon, they are done and the tomb's door falls open. Without any time to lose, you stride in, followed by the rest of your party, deep into Tyr's Tomb.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.6 # What secrets await?
+		narrative_event = { id = tyr.8 days = 5 }
+	}
+}
+
+#Guard is notified.
+narrative_event = {
+	id = tyr.7
+	title = EVTTITLETYR.5 # A Royal Explorer
+	desc = EVTDESCTYR.7 # For a very long time, your order has stood vigilant at Tyr's tomb so that none may disturb the fallen Keeper... or the monster who fell him. Now, at long last, that peace is at risk, for the ruler of Arathor stands at the tomb's gates. And yet, the foolish monarch has forced [From.GetHerHis] way into the tomb, intent on desecrating Tyr's resting place. You stand at the ready to seal the tomb once more should the fool awaken what lies sleeping beneath.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.7 # This won't end well.
+	}
+}
+
+#Meets the C'Thraxxi
+narrative_event = {
+	id = tyr.8
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.8 # Your exploration of the tomb takes you to a deep room. There, amongst a pile of rubble you spot a hammer unlike any you have ever seen. As you draw nearer, however, you realise that what you saw is not a pile of rubble, but... something else. It rises lethargically, a colossal crustacean horror. Its very visage assaults your senses, and you start hearing disturbing whispers, whispers saying things no one but you knows. The horror finally reaches its true height. As it approaches you, you somehow know its name. Zakajz, the Corruptor.
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.8 # What have I unleashed?!
+		custom_tooltip = { text = EVTTOOLTIPTYR.8 } # Battle the monster for your life.
+		hidden_tooltip = {
+			random_list = {
+				90 = { # Zakajz defeats Throadin but remains trapped.
+					modifier = {
+						factor = 0.7
+						has_game_rule = {
+							name = troll_wars_events
+							value = alternate
+						}
+					}
+					narrative_event = { id = tyr.9 days = 2 }
+					if = {
+						limit = {
+							is_title_active = d_tyrs_guard
+						}
+						d_tyrs_guard = {
+							holder_scope = {
+								narrative_event = { id = tyr.10 days = 2 }
+							}
+						}
+					}
+				}
+				5 = { # Thoradin wins.
+					modifier = {
+						factor = 2
+						has_game_rule = {
+							name = troll_wars_events
+							value = alternate
+						}
+					}
+					modifier = {
+						factor = 2
+						combat_rating = 6 # Test how likely this is. Supposed to be unlikely.
+					}
+					set_global_flag = zakajz_dead
+					random = {
+						chance = 50
+						add_trait_wounded_effect = yes
+					}
+					random = {
+						chance = 15
+						add_maimed_trait_effect = yes
+					}
+					narrative_event = { id = tyr.11 days = 2 }
+				}
+				5 = { # Zakajz wins and breaks free.
+					modifier = {
+						factor = 2
+						has_game_rule = {
+							name = troll_wars_events
+							value = alternate
+						}
+					}
+					set_global_flag = zakajz_awake
+					narrative_event = { id = tyr.14 days = 2 }
+					if = {
+						limit = {
+							is_title_active = d_tyrs_guard
+						}
+						d_tyrs_guard = {
+							holder_scope = {
+								narrative_event = { id = tyr.15 days = 2 }
+							}
+						}
+					}
+					if = {
+						limit = {
+							c_southern_tirisfal_mountains = {
+								holder_scope = {
+									NOT = { has_landed_title = d_tyrs_guard }
+									NOT = { true_religion = old_gods }
+									NOT = { true_religion = twilights_hammer }
+									NOT = { true_religion = cult_of_the_infinite }
+									NOT = { true_religion = cult_of_the_destroyer }
+									NOT = { true_religion = emerald_nightmare }
+									NOT = { true_religion = azshara }
+								}
+							}
+						}
+						c_southern_tirisfal_mountains = {
+							holder_scope = {
+								narrative_event = { id = tyr.16 days = 2 }
+							}
+						}
+					}
+					if = {
+						limit = {
+							c_southern_tirisfal_mountains = {
+								holder_scope = {
+									NOT = { has_landed_title = d_tyrs_guard }
+									OR = {
+										true_religion = old_gods
+										true_religion = twilights_hammer
+										true_religion = cult_of_the_infinite
+										true_religion = cult_of_the_destroyer
+										true_religion = emerald_nightmare
+										true_religion = azshara
+									}
+								}
+							}
+						}
+						c_southern_tirisfal_mountains = {
+							holder_scope = {
+								narrative_event = { id = tyr.17 days = 2 }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Dies to the monster.
+narrative_event = {
+	id = tyr.9
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.9 # Though you fight harder than ever before in your life, the monster easily shrugs aside your attacks and cleaves through the rest of your party. In desperation, you make a risky move, plunging your weapon deep into the aberration's body, though at the cost of several grievous blows to yourself. As everything starts to fade to black, you see the monster staggering and starting to collapse. You hold no illusions that it is dead, but it at least seems to be subdued for the time being.
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.9 # Agh...
+		death = { death_reason = death_tyrs_tomb }
+	}
+}
+
+#Guard is notified.
+narrative_event = {
+	id = tyr.10
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.10 # Your worst fears have been realised: [From.GetTitledName] has awoken the foul monster that killed Keeper Tyr. Horrific sounds of slaughter come from the tomb, and the very land seems to recoil in aversion to what lies beneath. After a few moments, however, the sounds cease altogether, but you decide to take no chances.
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.10 # Seal the tomb! Now!
+	}
+}
+
+#Actually triumphs.
+narrative_event = {
+	id = tyr.11
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.11 # You fight valiantly, and though the monster kills all your companions, you triumph over it. Whatever it was, it is now dead. The hammer you saw earlier, and the rest of the tomb, beckon.
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.11 # Is this a prison or a tomb?
+		narrative_event = { id = tyr.12 days = 2 }
+		set_global_flag = tirisfal_whispers_end
+	}
+}
+
+#Explores the tomb, finds loot and truth.
+narrative_event = {
+	id = tyr.12
+	title = EVTTITLETYR.3 # The Origins of Humanity
+	desc = EVTDESCTYR.12 # After taking up the hammer, a weapon that practically hums with power, you take the time to examine the tomb itself. The walls are filled with engravings that tell a story. It tells of great cosmic beings ordering Azeroth. Of ancient terrors trapped deep below ground. Of how humans are descended from titanforged called "Vrykul". And of how Tyr was betrayed and hunted down.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				is_title_active = d_tyrs_guard
+			}
+			d_tyrs_guard = {
+				holder_scope = {
+					narrative_event = { id = tyr.13 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOT = {
+				AND = {
+					NOT = { religion = old_ways }
+					trait = zealous
+				}
+			}
+		}
+		name = EVTOPTTYR.12a # So this is the truth, after all.
+		if = {
+			limit = {
+				religion = old_ways
+				NOT = { trait = zealous }
+			}
+			add_trait = zealous
+		}
+		if = {
+			limit = {
+				religion = old_ways
+			}
+			piety = 500
+		}
+		if = {
+			limit = {
+				NOT = { religion = old_ways }
+			}
+			religion = old_ways
+		}
+		add_artifact = the_silver_hand
+	}
+	
+	option = {
+		trigger = {
+			NOT = {
+				AND = {
+					NOT = { religion = old_ways }
+					trait = zealous
+				}
+			}
+		}
+		name = EVTOPTTYR.12b # Few will believe this.
+		if = {
+			limit = {
+				religion = old_ways
+				NOT = { trait = zealous }
+			}
+			add_trait = zealous
+		}
+		if = {
+			limit = {
+				religion = old_ways
+			}
+			piety = 400
+		}
+		if = {
+			limit = {
+				NOT = { religion = old_ways }
+			}
+			set_secret_religion = old_ways
+		}
+		add_artifact = the_silver_hand
+	}
+	
+	option = {
+		trigger = {
+			NOT = {
+				OR = {
+					religion = old_ways
+					trait = zealous
+				}
+			}
+		}
+		name = EVTOPTTYR.12c # Interesting.
+		prestige = 150
+		add_artifact = the_silver_hand
+	}
+}
+
+#Guard is notified.
+narrative_event = {
+	id = tyr.13
+	title = EVTTITLETYR.5 # A Royal Explorer
+	desc = EVTDESCTYR.13 # Your worst fears have been realised: [From.GetTitledName] has awoken the foul monster that killed Keeper Tyr. Horrific sounds of slaughter come from the tomb, and the very land seems to recoil in aversion to what lies beneath. After a few moments, however, the sounds cease altogether. While your first instinct is to seal the tomb, you opt to lead a small scouting group below first. What you see is unbelievable: the C'Thrax is dead, and [From.GetTitledName] has claimed Tyr's hammer. You don't have the heart to contest [From.GetHerHim].
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.13 # At least the monster is dead.
+	}
+}
+
+#Very rare case in which Zakajz manages to escape the tomb.
+narrative_event = {
+	id = tyr.14
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.14 # Though you fight harder than ever before in your life, the monster easily shrugs aside your attacks and cleaves through the rest of your party. It effortlessly crushes you in its massive claws and tosses you aside. As you lay dying, you can see it make its way towards the entrance and the world above.
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = zakajz_unleashed
+		any_playable_ruler = {
+			limit = {
+				ai = no
+				NOT = {
+					has_landed_title = d_tyrs_guard
+					has_landed_title = c_southern_tirisfal_mountains
+				}
+				location = {
+					region = world_EK_All
+				}
+			}
+			narrative_event = { id = tyr.18 }
+		}
+		create_character = {
+			age = 7200
+			name = "Zakajz"
+			attributes = { # Seem low, but the c'thrax trait will give some massive boosts.
+				martial = 15
+				diplomacy = 10
+				stewardship = 10
+				intrigue = 15
+				learning = 15
+			}
+			employer = THIS
+			trait = cruel
+			trait = wroth
+			trait = faceless
+			trait = cthrax
+			trait = brilliant_strategist
+			trait = strong
+			trait = genius
+			trait = proud
+			trait = diligent
+			trait = brave
+			trait = zealous
+			female = no
+			religion = old_gods
+			culture = nraqi
+			dynasty = 101012
+			flag = zakajz
+			flag = race_assigned
+			historical = yes
+		}
+		new_character = {
+			give_nickname = nick_the_corruptor
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				name = FACELESS_SWARM
+				culture = nraqi
+				holder = THIS
+			}
+			wealth = 500
+			spawn_unit = {
+				province = 110 # Southern Tirisfal Mountains/Tyr's Fall
+				leader = THIS
+				owner = THIS
+				troops = {
+					light_infantry = { 3000 3000 }
+					heavy_infantry = { 2500 2500 }
+					archers = { 1000 1000 }
+					mages = { 500 500 }
+				}
+				attrition = 0
+				reinforces = no
+			}
+			if = {
+				limit = {
+					c_southern_tirisfal_mountains = {
+						holder_scope = {
+							NOT = {
+								religion = old_gods
+								religion = twilights_hammer
+								religion = cult_of_the_infinite
+								religion = cult_of_the_destroyer
+								religion = emerald_nightmare
+								religion = azshara
+							}
+						}
+					}
+				}
+				c_southern_tirisfal_mountains = {
+					holder_scope = {
+						top_liege = {
+							reverse_war = {
+								target = PREVPREVPREV
+								casus_belli = invasion
+								thirdparty = PREVPREV
+								infamy = 0
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					c_southern_tirisfal_mountains = {
+						holder_scope = {
+							OR = {
+								religion = old_gods
+								religion = twilights_hammer
+								religion = cult_of_the_infinite
+								religion = cult_of_the_destroyer
+								religion = emerald_nightmare
+								religion = azshara
+							}
+						}
+					}
+				}
+				c_southern_tirisfal_mountains = {
+					holder_scope = {
+						add_alliance = { who = PREVPREV years = 99999 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					c_southern_tirisfal_mountains = {
+						holder_scope = {
+							NOT = {
+								has_landed_title = d_tyrs_guard
+								any_liege = {
+									has_landed_title = d_tyrs_guard
+								}
+								any_realm_character = {
+									has_landed_title = d_tyrs_guard
+								}
+							}
+						}
+					}
+				}
+				d_tyrs_guard = {
+					holder_scope = {
+						reverse_war = {
+							target = PREVPREV
+							casus_belli = invasion
+							thirdparty = ROOT
+							infamy = 0
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTTYR.14 # No...
+		death = { death_reason = death_tyrs_tomb }
+	}
+}
+
+#Guard notified.
+narrative_event = {
+	id = tyr.15
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.15 # Your worst fears have been realised: [From.GetTitledName] has awoken the foul monster that killed Keeper Tyr. Horrific sounds of slaughter come from the tomb, and the very land seems to recoil in aversion to what lies beneath. After a few moments, however, the sounds cease altogether, but as you are about to give the order to seal the tomb, the dreaded C'Thrax bursts forth and starts its rampage. As you run away to muster your order, you can already see it summoning forth its lesser kin.
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.15 # No, no, no, no!
+	}
+}
+
+#The owner of the province, if not the guard, is notified.
+narrative_event = {
+	id = tyr.16
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.16 # Panicked scouts are reporting a massive build up of horrifying faceless monsters, lead by a giant aberration, at a group of ruins that were, until now, lost to the world. These creatures ravage the land and kill all they encounter. They must be stopped before they destroy you!
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.16 # [Root.Religion.GetHighGodName] preserve us!
+	}
+}
+
+#If the holder of Tyr's Fall is Old Gods/aligned to them.
+narrative_event = {
+	id = tyr.17
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.17 # A general of the Old Gods has awoken from his slumber! Zakajz the Corruptor has arisen to carry out the will of the Old Gods and bring the world one step closer to the Hour of Twilight!
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.17 # Iä! Iä!
+	}
+}
+
+#Everyone else informed.
+narrative_event = {
+	id = tyr.18
+	title = EVTTITLETYR.8 # Tyr's Bane
+	desc = EVTDESCTYR.18 # An ancient horror has awaken in western Tirifal, summoning other, lesser, servants of the Old Gods in preparation for a rampage across the region!
+	picture = GFX_evt_cthrax
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = {
+				true_religion = old_gods
+				true_religion = twilights_hammer
+				true_religion = cult_of_the_infinite
+				true_religion = cult_of_the_destroyer
+				true_religion = emerald_nightmare
+				true_religion = azshara
+			}
+		}
+		name = EVTOPTTYR.18a # Worrying.
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				true_religion = old_gods
+				true_religion = twilights_hammer
+				true_religion = cult_of_the_infinite
+				true_religion = cult_of_the_destroyer
+				true_religion = emerald_nightmare
+				true_religion = azshara
+			}
+		}
+		name = EVTOPTTYR.18b # Great!
+	}
+}
+
+#Tyr's Guard is defeated and go into hiding, spawn a society!
+character_event = {
+	id = tyr.19
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			has_global_flag = tyrs_guard_start
+			has_global_flag = tyrs_guard_reformed
+		}
+		NOT = { has_global_flag = tyrs_guard_defeated }
+		d_tyrs_guard = {
+			holder_scope = {
+				NOT = { realm_size = 1 }
+			}
+		}
+	}
+	
+	immediate = {
+		activate_title = { title = d_tyrs_guard status = no }
+		clr_global_flag = tyrs_guard_reformed
+		set_global_flag = tyrs_guard_defeated
+		any_playable_ruler = {
+			limit = {
+				ai = no
+				location = {
+					region = world_EK_All
+				}
+			}
+			narrative_event = { id = tyr.20 }
+		}
+	}
+}
+
+#Players informed.
+narrative_event = {
+	id = tyr.20
+	title = EVTTITLETYR.20 # Tyr's Guard Falls
+	desc = EVTDESCTYR.20 # The ancient and secretive order sworn to guarding titanic ruins, and the tomb of the titanic Watcher Tyr in particular, has fallen. Though the tomb remains sealed, its wardens are now gone.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Ask same-dynasty liege to join guard.
+letter_event = {
+	id = tyr.21
+	desc = EVTDESCTYR.21 # [GetFromRelation],\n\nIt is my wish to join the holy warriors of Tyr's Guard, and I would like your permission to do so.\n\nSigned,\n[From.GetBestName]
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTYR.21a # Very well, go.
+		d_tyrs_guard = {
+			holder_scope = {
+				FROM = {
+					move_character = PREV
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTTYR.21b # No, you may not.
+		FROM = {
+			set_character_flag = denied_tyrs_guard
+			opinion = {
+				modifier = opinion_disappointed
+				who = ROOT
+				years = 2
+			}
+		}
+	}
+}
+
+#If recruit was a councillor, inform previous employer.
+letter_event = {
+	id = tyr.22
+	desc = EVTDESCTYR.22 # To the [GetFromRootCompliment] [Root.GetTitledName],\n\nI am resigning from my position as your [From.GetJobTitle] to join the holy warriors of Tyr's Guard.\n\nSigned,\n[From.GetBestName]
+	border = GFX_event_letter_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Guard is reformed.
+narrative_event = {
+	id = tyr.23
+	title = EVTTITLETYR.2 # Tyr's Guard
+	desc = EVTDESCTYR.23 # You have restored the venerable order of Tyr's Guard to its old glory and duty. No longer will you hide in the shadows, but stand tall against the darkness.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Players informed.
+narrative_event = {
+	id = tyr.24
+	title = EVTTITLETYR.2 # Tyr's Guard
+	desc = EVTDESCTYR.24 # In the far western reaches of Tirisfal a secretive order has arisen once again. Dedicated to guarding an ancient tomb, they call themselves Tyr's Guard. Though wary of outsiders, they seem willing to fight alongside those humans who stay true to the Old Ways.
+	picture = GFX_evt_tyr
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Whispers in Tirisfal.
+character_event = {
+	id = tyr.25
+	desc = EVTDESCTYR.25 # As of late, you have been hearing strange whispers that you can just barely understand. No one else appears to hear them, and you can't tell where they come from. Day and night they haunt you, whispering of secret things no one should know. 
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_intrigue
+	
+	mean_time_to_happen = {
+		years = 300
+		modifier = {
+			factor = 0.8
+			trait = lunatic
+		}
+		modifier = {
+			factor = 0.2
+			has_global_flag = zakajz_awake
+		}
+	}
+	
+	trigger = {
+		NOT = { has_global_flag = zakajz_dead }
+		NOT = {
+			religion_group = void_group
+			NOT = { religion = forgotten_shadow }
+			culture_group = demonic
+			culture_group = void
+			trait = felsworn
+		}
+		OR = {
+			location = {
+				region = world_tirisfal_glades
+			}
+			AND = {
+				has_global_flag = zakajz_awake
+				location = {
+					any_neighbor_province = {
+						holder_scope = {
+							OR = {
+								has_character_flag = zakajz
+								top_liege = {
+									OR = {
+										has_character_flag = zakajz
+										any_realm_character = {
+											has_character_flag = zakajz
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTTYR.25 # They laugh behind your back.
+		hidden_tooltip = {
+			random_list = {
+				90 = {
+					modifier = {
+						factor = 0.5
+						has_global_flag = zakajz_awake
+					}
+				}
+				40 = {
+					modifier = {
+						factor = 0
+						trait = lunatic
+					}
+					add_trait = lunatic
+				}
+				10 = {
+					set_secret_religion = old_gods
+				}
+				40 = {
+					modifier = {
+						factor = 0
+						trait = stressed
+					}
+					add_trait = stressed
+				}
+				70 = {
+					random_list = {
+						1 = {
+							modifier = {
+								factor = 0
+								trait = lustful
+							}
+							remove_trait = chaste
+							add_trait = lustful
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = gluttonous
+							}
+							remove_trait = temperate
+							add_trait = gluttonous
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = greedy
+							}
+							remove_trait = charitable
+							add_trait = greedy
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = slothful
+							}
+							remove_trait = diligent
+							add_trait = slothful
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = wroth
+							}
+							remove_trait = patient
+							add_trait = wroth
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = envious
+							}
+							remove_trait = kind
+							add_trait = envious
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = proud
+							}
+							remove_trait = humble
+							add_trait = proud
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = cruel
+							}
+							remove_trait = kind
+							add_trait = cruel
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = deceitful
+							}
+							remove_trait = honest
+							add_trait = deceitful
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = craven
+							}
+							remove_trait = brave
+							add_trait = craven
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = ambitious
+							}
+							remove_trait = content
+							add_trait = ambitious
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = arbitrary
+							}
+							remove_trait = just
+							add_trait = arbitrary
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = paranoid
+							}
+							remove_trait = trusting
+							add_trait = paranoid
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Awakened Zakajz dies.
+character_event = {
+	id = tyr.26
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_flag = zakajz
+	}
+	
+	immediate = {
+		clr_global_flag = zakajz_awake
+		set_global_flag = zakajz_dead
+	}
+}
+
+#Any member is openly of another religion, is expelled.
+character_event = {
+	id = tyr.27
+	desc = EVTDESCTYR.27 # Due to your religious choice, you have been asked to leave the order.
+	picture = GFX_evt_tyr
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			has_landed_title = d_tyrs_guard
+			any_liege = {
+				has_landed_title = d_tyrs_guard
+			}
+		}
+		NOT = {
+			religion = old_ways
+			AND = {
+				religion_group = void_group
+				NOT = { religion = forgotten_shadow }
+			}
+			AND = {
+				religion_group = fel_group
+				NOT = { religion = demonology }
+			}
+			religion = cult_of_the_destroyer
+			religion = cult_of_the_infinite
+			religion = emerald_nightmare
+		}
+	}
+	
+	option = {
+		name = AKDAMN
+		abdicate = yes
+		banish = yes
+		prestige = -100
+	}
+}
+
+#Any member is openly of a old god or legion religion, is arrested (chance to flee).
+character_event = {
+	id = tyr.28
+	desc = EVTDESCTYR.28 # Due to worshipping sworn enemies of the order, you are now being hunted by your former comrades.
+	picture = GFX_evt_tyr
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			has_landed_title = d_tyrs_guard
+			any_liege = {
+				has_landed_title = d_tyrs_guard
+			}
+		}
+		OR = {
+			AND = {
+				religion_group = void_group
+				NOT = { religion = forgotten_shadow }
+			}
+			AND = {
+				religion_group = fel_group
+				NOT = { religion = demonology }
+			}
+			religion = cult_of_the_destroyer
+			religion = cult_of_the_infinite
+			religion = emerald_nightmare
+		}
+	}
+	
+	option = {
+		name = AKDAMN
+		random_list = {
+			1 = {
+				modifier = {
+					factor = 2
+					intrigue = 10
+					NOT = { intrigue = 15 }
+				}
+				modifier = {
+					factor = 4
+					intrigue = 15
+				}
+				abdicate = yes
+				banish = yes
+				prestige = -100
+			}
+			1 = {
+				modifier = {
+					factor = 2
+					NOT = { intrigue = 5 }
+				}
+				abdicate = yes
+				d_tyrs_guard = {
+					holder_scope = {
+						ROOT = {
+							imprison = PREV
+						}
+					}
+				}
+				prestige = -100
+			}
+		}
+	}
+}
+
+#Attain discipline
+character_event = {
+	id = tyr.29
+	desc = EVTDESCTYR.29 # The Guard highly values bravery and a sense of justice, disapproving of any who lack those two attributes or, worse, are cowardly and arbitrary. To better serve the guard, you can strive to develop those valued characteristics, or get rid of those you are expected to reject.
+	picture = GFX_evt_tyr
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			trait = craven
+		}
+		name = EVTOPTTYR.29a # Fear is the mind killer!
+		remove_trait = craven
+	}
+	
+	option = {
+		trigger = {
+			trait = arbitrary
+		}
+		name = EVTOPTTYR.29b # I need to be less partial.
+		remove_trait = arbitrary
+	}
+	
+	option = {
+		trigger = {
+			NOT = { trait = craven }
+			NOT = { trait = brave }
+		}
+		name = EVTOPTTYR.29c # I need to face danger head-on!
+		add_trait = brave
+	}
+	
+	option = {
+		trigger = {
+			NOT = { trait = arbitrary }
+			NOT = { trait = just }
+		}
+		name = EVTOPTTYR.29d # I need to be righteous in judgement.
+		add_trait = just
+	}
+}
+
+#Quest assignment event
+character_event = {
+	id = tyr.30
+	hide_window = yes
+	
+	is_triggered_only = yes
+	is_in_society = yes
+
+	trigger = {
+		has_any_quest = no
+		society_member_of = tyrs_guard_society
+		NOT = { has_character_modifier = quest_cooldown_timer }
+		NOT = { is_society_grandmaster = yes }
+		NOT = { is_inaccessible_trigger = yes }
+	}
+	
+	immediate = {
+		random_society_member = {
+			limit = {
+				is_society_grandmaster = yes
+				same_society_as = ROOT
+			}
+			save_event_target_as = grandmaster
+		}
+		random_list = {
+			20 = {
+				
+			}
+			20 = {
+				
+			}
+			20 = {
+				
+			}
+			20 = { }
+		}
+	}
+}

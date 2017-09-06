@@ -1,0 +1,109 @@
+tribal_governments = {
+
+	tribal_government = {
+		preferred_holdings = { TRIBAL }
+		allowed_holdings = {
+			TRIBAL
+			FORT
+		}
+		accepts_liege_governments_culture = { # Tribals have no opinion penalty towards their liege if of the same culture
+			feudal_government
+			republic_government
+			merchant_republic_government
+			theocracy_government
+			kirin_tor_government
+			guardian_government
+			templar_order_government
+			militant_order_government
+			technocracy_government
+			naga_government
+			troll_tribe_government
+			troll_empire_government
+			orc_government
+			ogre_tribe_government
+			ogre_empire_government
+			scourge_government
+			forsaken_government
+			helf_government
+		}
+		accepts_liege_governments_religion = {
+			dragonflight_government
+			demon_government
+			faceless_government
+			scourge_government
+		}
+		vassal_call_to_arms = {
+			tribal_government
+			feudal_government
+			republic_government
+			merchant_republic_government
+			theocracy_government
+			kirin_tor_government
+			guardian_government
+			templar_order_government
+			militant_order_government
+			technocracy_government
+			naga_government
+			troll_tribe_government
+			troll_empire_government
+			orc_government
+			ogre_tribe_government
+			ogre_empire_government
+			scourge_government
+			forsaken_government
+			helf_government
+			dragonflight_government
+			demon_government
+			faceless_government
+		}
+		no_vassal_tax = {
+			tribal_government
+		}
+		builds_with_prestige = {
+			TRIBAL
+		}
+		frame_suffix = "_tribal"
+		title_prefix = "tribal_"
+		potential = {
+			NOT = { is_government_potential = dragonflight_government }
+			NOT = { is_government_potential = kirin_tor_government }
+			NOT = { is_government_potential = guardian_government }
+			NOT = { is_government_potential = technocracy_government }
+			NOT = { is_government_potential = templar_order_government }
+			NOT = { is_government_potential = militant_order_government }
+			NOT = { is_government_potential = demon_government }
+			NOT = { is_government_potential = faceless_government }
+			NOT = { is_government_potential = naga_government }
+			NOT = { is_government_potential = troll_bcd_government }
+			NOT = { is_government_potential = troll_ke_government }
+			NOT = { is_government_potential = orc_government }
+			NOT = { is_government_potential = ogre_tribe_government }
+			NOT = { is_government_potential = ogre_empire_government }
+			NOT = { is_government_potential = scourge_government }
+			NOT = { is_government_potential = forsaken_government }
+			NOT = { is_government_potential = helf_government }
+			NOT = { is_government_potential = feral_worgen_government }
+			is_patrician = no
+			mercenary = no
+			holy_order = no
+		}
+		
+		color = { 92 31 23 }
+		
+		uses_decadence = yes
+		
+		allow_looting = yes
+		max_consorts = 3
+		ignores_de_jure_laws = yes
+		can_build_castle = no
+		can_build_city = no
+		can_build_temple = yes
+		can_build_tribal = yes
+		can_build_hospitals = no
+		can_change_to_nomad_on_start = yes
+		
+		demesne_size = 2
+		vassal_limit = -10
+	}
+	
+}

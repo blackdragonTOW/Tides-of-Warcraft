@@ -1,0 +1,39 @@
+max_provinces = 1466
+## max_provinces = 1467 <--- This magical line somehow is letting the game launch, paradox plz.
+definitions = "definition.csv"
+provinces = "provinces.bmp"
+positions = "positions.txt"
+terrain = "terrain.bmp"
+rivers = "rivers.bmp"
+terrain_definition = "terrain.txt"
+heightmap = "topology.bmp"
+tree_definition = "trees.bmp"
+continent = "continent.txt"
+adjacencies = "adjacencies.csv"
+climate = "climate.txt"
+region = "island_region.txt"
+geographical_region = "geographical_region.txt"
+static = "statics"
+seasons = "seasons.txt"
+
+sea_zones = { 382 397 }
+sea_zones = { 399 541 }
+
+ocean_region = {	# Inland_ocean
+	sea_zones = { 1 }
+}
+
+ocean_region = {	# OCEAN
+	sea_zones = { 2 }
+}
+
+# Define which indices in trees.bmp palette which should count as trees for automatic terrain assignment
+tree = { 3 4 7 10 }
+
+major_rivers = 
+{
+	# Inland_ocean
+	
+	# OCEAN
+	
+}

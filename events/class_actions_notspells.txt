@@ -1,0 +1,883 @@
+namespace = classacts
+
+#Ordered by when the first event for that class was made.
+
+#Ranger
+#Hunt Threat
+character_event = {
+	id = classacts.1
+	desc = EVTDESCCLASSACTS.1 # [hunt_threat_loc.GetName] is beset by dangers, and you've decided to clear hunt them down.
+	picture = GFX_evt_hunt
+	border = GFX_event_normal_frame_war 
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { NOT = { trait = ranger } }
+			add_character_modifier = { name = recent_expedition duration = 360 }
+		}
+		if = {
+			limit = { trait = ranger }
+			add_character_modifier = { name = recent_expedition duration = 90 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTCLASSACTS.1a # This land will be safe once more!
+		hidden_tooltip = {
+			add_trait = away_from_court_hidden
+			event_target:hunt_threat_loc = {
+				location = {
+					random_list = {
+						8 = {
+							modifier = {
+								factor = 0 
+								NOT = { has_province_modifier = mutated_animals }
+							}
+							modifier = {
+								factor = 0
+								true_religion = burning_legion
+							}
+							ROOT = { set_character_flag = hunt_threat_mutant_animals }
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								NOT = { has_province_modifier = demonic_activity }
+							}
+							modifier = {
+								factor = 0
+								true_religion = burning_legion
+							}
+							ROOT = { set_character_flag = hunt_threat_demonic_activity }
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								NOT = { has_province_modifier = fel_cults }
+							}
+							modifier = {
+								factor = 0
+								true_religion = burning_legion
+							}
+							ROOT = { set_character_flag = hunt_threat_fel_cults }
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								NOT = { has_province_modifier = restless_elements }
+							}
+							ROOT = { set_character_flag = hunt_threat_restless_elements }
+						}
+						2 = {
+							modifier = {
+								factor = 0
+								NOT = { has_province_modifier = fel_portal }
+							}
+							modifier = {
+								factor = 0
+								true_religion = burning_legion
+							}
+							ROOT = { set_character_flag = hunt_threat_fel_portal }
+						}
+						8 = {
+							modifier = {
+								factor = 0
+								NOT = { has_province_modifier = thieves_guild }
+							}
+							ROOT = { set_character_flag = hunt_threat_thieves_guild }
+						}
+						8 = {
+							modifier = {
+								factor = 0
+								NOT = { has_province_modifier = smugglers_ring }
+							}
+							ROOT = { set_character_flag = hunt_threat_smugglers_ring }
+						}
+						8 = {
+							modifier = {
+								factor = 0
+								NOT = { has_province_modifier = highway_robber_band }
+							}
+							ROOT = { set_character_flag = hunt_threat_robber_band }
+						}
+						8 = {
+							modifier = {
+								factor = 0
+								NOT = { has_province_modifier = thugs_rampant }
+							}
+							ROOT = { set_character_flag = hunt_threat_thugs_rampant }
+						}
+						1 = {
+							modifier = {
+								factor = 2
+								NOT = { trait = ranger }
+							}
+							modifier = {
+								factor = 0.5
+								ROOT = { intrigue = 12 }
+								NOT = { ROOT = { intrigue = 15 } }
+							}
+							modifier = {
+								factor = 0.2
+								ROOT = { intrigue = 15 }
+								NOT = { ROOT = { intrigue = 20 } }
+							}
+							modifier = {
+								factor = 0
+								ROOT = { intrigue = 20 }
+							}
+							set_character_flag = hunt_threat_fail_nofind
+							character_event = { id = classacts.3 days = 3 random = 5 }
+							break = yes
+						}
+					}
+				}
+			}
+			character_event = { id = classacts.2 days = 3 random = 5 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTCLASSACTS.1b # Actually, I should do this later.
+		prestige = -15
+		clear_event_target = hunt_threat_loc
+	}
+}
+
+character_event = {
+	id = classacts.2
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_mutant_animals
+		}
+		text = EVTDESCCLASSACTS.2a # [hunt_threat_loc.GetName] is plagued by mutated wildlife, driven mad and monstrous by fel magic. While they remain, the populace shall remain at risk.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_demonic_activity
+		}
+		text = EVTDESCCLASSACTS.2b # Demons openly roam [hunt_threat_loc.GetName] leaving nothing but death and destruction in their way! They need to be stopped at once!
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fel_cults
+		}
+		text = EVTDESCCLASSACTS.2c # [hunt_threat_loc.GetName] has been suffering under the attentions of demonic cultists lately, who are poised to advance the agenda of the Burning Legion.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_restless_elements
+		}
+		text = EVTDESCCLASSACTS.2d # The elements [hunt_threat_loc.GetName] are in disarray. Heat waves are quickly followed by blizzards as elementals battle each other across the countryside.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fel_portal
+		}
+		text = EVTDESCCLASSACTS.2e # A portal to the Twisting Nether is open on [hunt_threat_loc.GetName], and demons pour out constantly! The beings keeping the portal open must die to stem the tide!
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_thieves_guild
+		}
+		text = EVTDESCCLASSACTS.2f # [hunt_threat_loc.GetName] is currently home to a guild of thieves who have turned the usual rabble into a dangerous force. If the leaders are killed, they will surely disperse.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_smugglers_ring
+		}
+		text = EVTDESCCLASSACTS.2g # [hunt_threat_loc.GetName] is currently home to a ring of smugglers. While a minor threat, they are flooding the black market with all manner of dangerous and illegal goods.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_thugs_rampant
+		}
+		text = EVTDESCCLASSACTS.2h # Thugs brazenly roam the settlements of [hunt_threat_loc.GetName], extorting merchants and bullying the populace. They must be stopped.
+	}
+	picture = GFX_evt_hunt
+	border = GFX_event_normal_frame_war 
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTCLASSACTS.2a # I shall hunt them down!
+		random_list = {
+			10 = {
+				modifier = {
+					factor = 0.5
+					NOT = { trait = ranger }
+					OR = {
+						has_character_flag = hunt_threat_demonic_activity
+						has_character_flag = fel_cults
+						has_character_flag = restless_elements
+						has_character_flag = hunt_threat_fel_portal
+					}
+				}
+				modifier = {
+					factor = 0.5
+					NOR = {
+						trait = ranger
+						trait = paladin
+						trait = warrior
+					}
+				}
+				modifier = {
+					factor = 0.5
+					NOT = { combat_rating = 1 }
+				}
+				modifier = {
+					factor = 1.5
+					combat_rating = 2
+					NOT = { combat_rating = 4 }
+				}
+				modifier = {
+					factor = 2
+					combat_rating = 4
+				}
+				modifier = {
+					factor = 1.2
+					ROOT = { intrigue = 12 }
+					NOT = { ROOT = { intrigue = 15 } }
+				}
+				modifier = {
+					factor = 1.5
+					ROOT = { intrigue = 15 }
+					NOT = { ROOT = { intrigue = 20 } }
+				}
+				modifier = {
+					factor = 2
+					ROOT = { intrigue = 20 }
+				}
+				set_character_flag = hunt_threat_success
+			}
+			7 = {
+				modifier = {
+					factor = 1.2
+					NOR = {
+						trait = ranger
+						trait = paladin
+						trait = warrior
+					}
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { combat_rating = 1 }
+				}
+				modifier = {
+					factor = 0.5
+					combat_rating = 2
+					NOT = { combat_rating = 4 }
+				}
+				modifier = {
+					factor = 0.2
+					combat_rating = 4
+				}
+				modifier = {
+					factor = 0.7
+					ROOT = { intrigue = 12 }
+					NOT = { ROOT = { intrigue = 15 } }
+				}
+				modifier = {
+					factor = 0.5
+					ROOT = { intrigue = 15 }
+					NOT = { ROOT = { intrigue = 20 } }
+				}
+				modifier = {
+					factor = 0.2
+					ROOT = { intrigue = 20 }
+				}
+				set_character_flag = hunt_threat_success_wound
+			}
+			5 = {
+				modifier = {
+					factor = 1.2
+					NOR = {
+						trait = ranger
+						trait = paladin
+						trait = warrior
+					}
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { combat_rating = 1 }
+				}
+				modifier = {
+					factor = 0.5
+					combat_rating = 2
+					NOT = { combat_rating = 4 }
+				}
+				modifier = {
+					factor = 0.2
+					combat_rating = 4
+				}
+				modifier = {
+					factor = 0.7
+					ROOT = { intrigue = 12 }
+					NOT = { ROOT = { intrigue = 15 } }
+				}
+				modifier = {
+					factor = 0.5
+					ROOT = { intrigue = 15 }
+					NOT = { ROOT = { intrigue = 20 } }
+				}
+				modifier = {
+					factor = 0.2
+					ROOT = { intrigue = 20 }
+				}
+				set_character_flag = hunt_threat_fail_wound
+			}
+			7 = {
+				modifier = {
+					factor = 1.2
+					NOR = {
+						trait = ranger
+						trait = paladin
+						trait = warrior
+					}
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { combat_rating = 1 }
+				}
+				modifier = {
+					factor = 0.5
+					combat_rating = 2
+					NOT = { combat_rating = 4 }
+				}
+				modifier = {
+					factor = 0.2
+					combat_rating = 4
+				}
+				modifier = {
+					factor = 0.7
+					ROOT = { intrigue = 12 }
+					NOT = { ROOT = { intrigue = 15 } }
+				}
+				modifier = {
+					factor = 0.5
+					ROOT = { intrigue = 15 }
+					NOT = { ROOT = { intrigue = 20 } }
+				}
+				modifier = {
+					factor = 0.2
+					ROOT = { intrigue = 20 }
+				}
+				set_character_flag = hunt_threat_success_wound
+			}
+			3 = {
+				modifier = {
+					factor = 1.2
+					NOR = {
+						trait = ranger
+						trait = paladin
+						trait = warrior
+					}
+				}
+				modifier = {
+					factor = 1.5
+					NOT = { combat_rating = 1 }
+				}
+				modifier = {
+					factor = 0.5
+					combat_rating = 2
+					NOT = { combat_rating = 4 }
+				}
+				modifier = {
+					factor = 0.2
+					combat_rating = 4
+				}
+				modifier = {
+					factor = 0.7
+					ROOT = { intrigue = 12 }
+					NOT = { ROOT = { intrigue = 15 } }
+				}
+				modifier = {
+					factor = 0.5
+					ROOT = { intrigue = 15 }
+					NOT = { ROOT = { intrigue = 20 } }
+				}
+				modifier = {
+					factor = 0.2
+					ROOT = { intrigue = 20 }
+				}
+				set_character_flag = hunt_threat_fail_death
+			}
+			1 = {
+				modifier = {
+					factor = 2
+					NOT = { trait = ranger }
+				}
+				modifier = {
+					factor = 0.5
+					ROOT = { intrigue = 12 }
+					NOT = { ROOT = { intrigue = 15 } }
+				}
+				modifier = {
+					factor = 0.2
+					ROOT = { intrigue = 15 }
+					NOT = { ROOT = { intrigue = 20 } }
+				}
+				modifier = {
+					factor = 0
+					ROOT = { intrigue = 20 }
+				}
+				set_character_flag = hunt_threat_fail_nofind
+			}
+		}
+		character_event = { id = classacts.3 days = 3 random = 5 }
+	}
+	
+	option = {
+		name = EVTOPTCLASSACTS.1b # Actually, I should do this later.
+		prestige = -15
+		remove_trait = away_from_court_hidden
+		clear_event_target = hunt_threat_loc
+	}
+}
+
+character_event = {
+	id = classacts.3
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success
+			has_character_flag = hunt_threat_mutant_animals
+		}
+		text = EVTDESCCLASSACTS.3a # It takes some time, but you manage to track down the creatures. Covered in spikes and driven mad by hatred, they relentessly attack anything besides themselves. Still, you manage to bring them down without much issue.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success_wound
+			has_character_flag = hunt_threat_mutant_animals
+		}
+		text = EVTDESCCLASSACTS.3b # It takes some time, but you manage to track down the creatures. Covered in spikes and driven mad by hatred, they relentessly attack anything besides themselves. Though you manage to bring them down, one of them succeeds in wounding you in the process.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_wound
+			has_character_flag = hunt_threat_mutant_animals
+		}
+		text = EVTDESCCLASSACTS.3c # It takes some time, but you manage to track down the creatures. Covered in spikes and driven mad by hatred, they relentessly attack anything besides themselves. Unfortunately they prove too much for you, managing to inflict some damage before you can escape.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_death
+			has_character_flag = hunt_threat_mutant_animals
+		}
+		text = EVTDESCCLASSACTS.3d # It takes some time, but you manage to track down the creatures. Covered in spikes and driven mad by hatred, they relentessly attack anything besides themselves. Unfortunately they prove too much for you, turning you into yet another of their victims.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_nofind
+		}
+		text = EVTDESCCLASSACTS.3e # Search as you might, you simply cannot find your quarry. This time, unfortunately, you won't be able to deal with the problem.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success
+			has_character_flag = hunt_threat_demonic_activity
+		}
+		text = EVTDESCCLASSACTS.3f # It takes some time, but you manage to track down the demons. Busy burning down some local's hovel, they do not spot you until it is too late.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success_wound
+			has_character_flag = hunt_threat_demonic_activity
+		}
+		text = EVTDESCCLASSACTS.3g # It takes some time, but you manage to track down the demons. You find them burning down some local's hovel, though they spot you and a fight takes place. You manage to kill them, but not without taking some wounds of your own.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_wound
+			has_character_flag = hunt_threat_demonic_activity
+		}
+		text = EVTDESCCLASSACTS.3h # It takes some time, but you manage to track down the demons. You find them burning down some local's hovel, though they spot you and a fight takes place. The demons manage to force you to retreat after inflicting several wounds.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_death
+			has_character_flag = hunt_threat_demonic_activity
+		}
+		text = EVTDESCCLASSACTS.3i # It takes some time, but you manage to track down the demons. You find them burning down some local's hovel, though they spot you and a fight takes place. It ends with you dying in the muck with their mocking laughter filling your ears.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success
+			has_character_flag = hunt_threat_fel_cults
+		}
+		text = EVTDESCCLASSACTS.3j # It takes some time, but you manage to track down the cultists. You catch them by surprise as they no doubt plot their next move, and kill them before they can muster any resistance.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success_wound
+			has_character_flag = hunt_threat_fel_cults
+		}
+		text = EVTDESCCLASSACTS.3j # It takes some time, but you manage to track down the cultists. You engage them in battle and defeat them, though they manage to hurt you in the process.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_wound
+			has_character_flag = hunt_threat_fel_cults
+		}
+		text = EVTDESCCLASSACTS.3k # It takes some time, but you manage to track down the cultists. You engage them in battle, but are forced to pull back in face of their numbers and magic.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_death
+			has_character_flag = hunt_threat_fel_cults
+		}
+		text = EVTDESCCLASSACTS.3l # It takes some time, but you manage to track down the cultists. You engage them in battle, but are soon overwhelmed by their numbers and magic.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success
+			has_character_flag = hunt_threat_restless_elements
+		}
+		text = EVTDESCCLASSACTS.3m # Though you can't adress the source of the elemental unrest, you can certainly keep them from doing much damage. You deem their numbers satisfactorily thinned enough after dealing with several groups of lesser elementals.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success_wound
+			has_character_flag = hunt_threat_restless_elements
+		}
+		text = EVTDESCCLASSACTS.3n # Though you can't adress the source of the elemental unrest, you can certainly keep them from doing much damage. You deem their numbers satisfactorily thinned enough after dealing with several groups of lesser elementals, but you don't walk away unscathed.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_wound
+			has_character_flag = hunt_threat_restless_elements
+		}
+		text = EVTDESCCLASSACTS.3o # Though you can't adress the source of the elemental unrest, you can certainly keep them from doing much damage. Unfortunately, you underestimated their strength and fury, and had to flee to survive.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_death
+			has_character_flag = hunt_threat_restless_elements
+		}
+		text = EVTDESCCLASSACTS.3p # Though you can't adress the source of the elemental unrest, you can certainly keep them from doing much damage. Unfortunately, you underestimated their strength and fury, and was crushed by enraged elementals.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success
+			has_character_flag = hunt_threat_fel_portal
+		}
+		text = EVTDESCCLASSACTS.3q # The horrid gateway to one of the Legion's many realms is maintained by a pair of warlocks. Creeping through their camp, you manage to take them down and slip out before someone notices you.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success_wound
+			has_character_flag = hunt_threat_fel_portal
+		}
+		text = EVTDESCCLASSACTS.3r # The horrid gateway to one of the Legion's many realms is maintained by a pair of warlocks. Creeping through their camp, you manage to get close enough to kill them before alarm is sounded and you have to fight your way out.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_wound
+			has_character_flag = hunt_threat_fel_portal
+		}
+		text = EVTDESCCLASSACTS.3s # The horrid gateway to one of the Legion's many realms is maintained by a pair of warlocks. Creeping through their camp, you are unfortunately spotted and forced to retreat before you are overhwelmed.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_death
+			has_character_flag = hunt_threat_fel_portal
+		}
+		text = EVTDESCCLASSACTS.3t # The horrid gateway to one of the Legion's many realms is maintained by a pair of warlocks. Creeping through their camp, you are unfortunately spotted and overhwelmed by the defenders.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success
+			OR = {
+				has_character_flag = hunt_threat_thieves_guild
+				has_character_flag = hunt_threat_smugglers_ring
+				has_character_flag = hunt_threat_thugs_rampant
+			}
+		}
+		text = EVTDESCCLASSACTS.3u # You make your way to the hideout of the scoundrels and take their leaders on before they have a chance to react. With them dead, their underlings will have little chance against the local garrison.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_success_wound
+			OR = {
+				has_character_flag = hunt_threat_thieves_guild
+				has_character_flag = hunt_threat_smugglers_ring
+				has_character_flag = hunt_threat_thugs_rampant
+			}
+		}
+		text = EVTDESCCLASSACTS.3v # You make your way to the hideout of the scoundrels and take their leaders on. Though they put up some resistance, you still prevail. With them dead, their underlings will have little chance against the local garrison.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_wound
+			OR = {
+				has_character_flag = hunt_threat_thieves_guild
+				has_character_flag = hunt_threat_smugglers_ring
+				has_character_flag = hunt_threat_thugs_rampant
+			}
+		}
+		text = EVTDESCCLASSACTS.3w # You make your way to the hideout of the scoundrels and take their leaders on. They, unfortunately, thougher than you expected and you flee under the scorn of their insults and jeers.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_death
+			OR = {
+				has_character_flag = hunt_threat_thieves_guild
+				has_character_flag = hunt_threat_smugglers_ring
+				has_character_flag = hunt_threat_thugs_rampant
+			}
+		}
+		text = EVTDESCCLASSACTS.3w # You make your way to the hideout of the scoundrels and take their leaders on. They, unfortunately, thougher than you expected and you are cut down by the rogues.
+	}
+	picture = GFX_evt_hunt
+	border = GFX_event_normal_frame_war 
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			has_character_flag = hunt_threat_success
+		}
+		name = AKGREAT
+		prestige = 25
+		if = {
+			limit = { has_character_flag = hunt_threat_mutant_animals }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = mutated_animals
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_demonic_activity }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = demonic_activity
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_fel_cults }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = fel_cults
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_restless_elements }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = restless_elements
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_fel_portal }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = fel_portal
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_thieves_guild }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = thieves_guild
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_smugglers_ring }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = smugglers_ring
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_thugs_rampant }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = thugs_rampant
+				}
+			}
+		}
+		clear_event_target = hunt_threat_loc
+		clr_character_flag = hunt_threat_success
+		clr_character_flag = hunt_threat_mutant_animals
+		clr_character_flag = hunt_threat_demonic_activity
+		clr_character_flag = hunt_threat_fel_cults
+		clr_character_flag = hunt_threat_restless_elements
+		clr_character_flag = hunt_threat_fel_portal
+		clr_character_flag = hunt_threat_thieves_guild
+		clr_character_flag = hunt_threat_smugglers_ring
+		clr_character_flag = hunt_threat_thugs_rampant
+		remove_trait = away_from_court_hidden
+	}
+	
+	option = {
+		trigger = {
+			has_character_flag = hunt_threat_success_wound
+		}
+		name = AKDAMN
+		prestige = 25
+		if = {
+			limit = {
+				trait = wounded
+			}
+			remove_trait = wounded
+			add_maimed_trait_effect = yes
+		}
+		if = {
+			limit = { NOT = { trait = wounded } }
+			add_trait_wounded_effect = yes
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_mutant_animals }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = mutated_animals
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_demonic_activity }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = demonic_activity
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_fel_cults }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = fel_cults
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_restless_elements }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = restless_elements
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_fel_portal }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = fel_portal
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_thieves_guild }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = thieves_guild
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_smugglers_ring }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = smugglers_ring
+				}
+			}
+		}
+		if = {
+			limit = { has_character_flag = hunt_threat_thugs_rampant }
+			event_target:hunt_threat_loc = {
+				location = {
+					remove_province_modifier = thugs_rampant
+				}
+			}
+		}
+		clear_event_target = hunt_threat_loc
+		clr_character_flag = hunt_threat_success_wound
+		clr_character_flag = hunt_threat_mutant_animals
+		clr_character_flag = hunt_threat_demonic_activity
+		clr_character_flag = hunt_threat_fel_cults
+		clr_character_flag = hunt_threat_restless_elements
+		clr_character_flag = hunt_threat_fel_portal
+		clr_character_flag = hunt_threat_thieves_guild
+		clr_character_flag = hunt_threat_smugglers_ring
+		clr_character_flag = hunt_threat_thugs_rampant
+		remove_trait = away_from_court_hidden
+	}
+	
+	option = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_wound
+		}
+		name = AKDAMN
+		prestige = -5
+		if = {
+			limit = {
+				trait = wounded
+			}
+			remove_trait = wounded
+			add_maimed_trait_effect = yes
+		}
+		if = {
+			limit = { NOT = { trait = wounded } }
+			add_trait_wounded_effect = yes
+		}
+		clear_event_target = hunt_threat_loc
+		clr_character_flag = hunt_threat_fail_wound
+		clr_character_flag = hunt_threat_mutant_animals
+		clr_character_flag = hunt_threat_demonic_activity
+		clr_character_flag = hunt_threat_fel_cults
+		clr_character_flag = hunt_threat_restless_elements
+		clr_character_flag = hunt_threat_fel_portal
+		clr_character_flag = hunt_threat_thieves_guild
+		clr_character_flag = hunt_threat_smugglers_ring
+		clr_character_flag = hunt_threat_thugs_rampant
+		remove_trait = away_from_court_hidden
+	}
+	
+	option = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_death
+		}
+		name = AKDAMN
+		prestige = -5
+		#NEED TO ADD CHECKS FOR STUFF LIKE DEMONS AND LICHES HERE WHEN IT IS TIME
+		death = { death_reason = death_battle }
+		clear_event_target = hunt_threat_loc
+		clr_character_flag = hunt_threat_fail_death
+		clr_character_flag = hunt_threat_mutant_animals
+		clr_character_flag = hunt_threat_demonic_activity
+		clr_character_flag = hunt_threat_fel_cults
+		clr_character_flag = hunt_threat_restless_elements
+		clr_character_flag = hunt_threat_fel_portal
+		clr_character_flag = hunt_threat_thieves_guild
+		clr_character_flag = hunt_threat_smugglers_ring
+		clr_character_flag = hunt_threat_thugs_rampant
+		remove_trait = away_from_court_hidden
+	}
+	
+	option = {
+		trigger = {
+			has_character_flag = hunt_threat_fail_nofind
+		}
+		name = AKDAMN
+		prestige = -15
+		clear_event_target = hunt_threat_loc
+		clr_character_flag = hunt_threat_fail_nofind
+		clr_character_flag = hunt_threat_mutant_animals
+		clr_character_flag = hunt_threat_demonic_activity
+		clr_character_flag = hunt_threat_fel_cults
+		clr_character_flag = hunt_threat_restless_elements
+		clr_character_flag = hunt_threat_fel_portal
+		clr_character_flag = hunt_threat_thieves_guild
+		clr_character_flag = hunt_threat_smugglers_ring
+		clr_character_flag = hunt_threat_thugs_rampant
+		remove_trait = away_from_court_hidden
+	}
+}

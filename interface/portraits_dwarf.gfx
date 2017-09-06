@@ -1,0 +1,1152 @@
+# hair, mouth, chin, nose, eyes, cheek, ear, neck
+spriteTypes = {
+	
+	### bronzebeard MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# bronzebeard Male
+	portraitType = {
+		name = "PORTRAIT_bronzebeardgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_male_base:p2"
+			"GFX_bronzebeard_male_forehead:d1"
+			"GFX_bronzebeard_male_eyes:d6"
+			"GFX_bronzebeard_male_eyes2:d6:e"
+			"GFX_bronzebeard_male_ear:d7"
+			"GFX_bronzebeard_male_nose:d3"
+			"GFX_bronzebeard_male_undead:p15"
+			"GFX_bronzebeard_male_undead_eyes:p16"
+		   	"GFX_bronzebeard_male_clothes:p14"
+		   	"GFX_bronzebeard_male_hair:p1:h:y"
+			"GFX_bronzebeard_male_headgear:p5"
+			"GFX_bronzebeard_male_beard:d1:h"
+			"GFX_bronzebeard_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_bronzebeard_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_bronzebeardgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_male_base:p2"
+			"GFX_bronzebeard_male_forehead:d1"
+			"GFX_bronzebeard_male_eyes:d6"
+			"GFX_bronzebeard_male_eyes2:d6:e"
+			"GFX_bronzebeard_male_ear:d7"
+			"GFX_bronzebeard_male_nose:d3"
+			"GFX_bronzebeard_male_undead:p15"
+			"GFX_bronzebeard_male_undead_eyes:p16"
+		   	"GFX_bronzebeard_male_clothes:p14"
+		   	"GFX_bronzebeard_male_hair:p1:h:y"
+			"GFX_bronzebeard_male_headgear:p5"
+			"GFX_bronzebeard_male_beard:d1:h"
+			"GFX_bronzebeard_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_bronzebeard_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_bronzebeardgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_male_base:p2"
+			"GFX_bronzebeard_male_forehead:d1"
+			"GFX_bronzebeard_male_eyes:d6"
+			"GFX_bronzebeard_male_eyes2:d6:e"
+			"GFX_bronzebeard_male_ear:d7"
+			"GFX_bronzebeard_male_nose:d3"
+			"GFX_bronzebeard_male_undead:p15"
+			"GFX_bronzebeard_male_undead_eyes:p16"
+		   	"GFX_bronzebeard_male_clothes:p14"
+		   	"GFX_bronzebeard_male_hair:p1:h:y"
+			"GFX_bronzebeard_male_headgear:p5"
+			"GFX_bronzebeard_male_beard:d1:h"
+			"GFX_bronzebeard_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_bronzebeard_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### bronzebeard FEMALE ####
+
+
+	# bronzebeard Female
+
+	# bronzebeard female
+	portraitType = {
+		name = "PORTRAIT_bronzebeardgfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_bronzebeard_female_base:p2"
+			"GFX_bronzebeard_female_nose:d3"
+			"GFX_bronzebeard_female_eyes:d6"
+			"GFX_bronzebeard_female_eyes2:d6:e"
+			"GFX_bronzebeard_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_bronzebeard_female_ear:d7"
+			"GFX_bronzebeard_female_clothes:p14"
+			"GFX_bronzebeard_female_chin:d1"
+			"GFX_bronzebeard_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_bronzebeard_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
+		}
+		
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# bronzebeard female midage
+	portraitType = {
+		name = "PORTRAIT_bronzebeardgfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_bronzebeard_female_base:p2"
+			"GFX_bronzebeard_female_nose:d3"
+			"GFX_bronzebeard_female_eyes:d6"
+			"GFX_bronzebeard_female_eyes2:d6:e"
+			"GFX_bronzebeard_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_bronzebeard_female_ear:d7"
+			"GFX_bronzebeard_female_clothes:p14"
+			"GFX_bronzebeard_female_chin:d1"
+			"GFX_bronzebeard_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_bronzebeard_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# bronzebeard female oldage
+	portraitType = {
+		name = "PORTRAIT_bronzebeardgfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_bronzebeard_female_base:p2"
+			"GFX_bronzebeard_female_nose:d3"
+			"GFX_bronzebeard_female_eyes:d6"
+			"GFX_bronzebeard_female_eyes2:d6:e"
+			"GFX_bronzebeard_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_bronzebeard_female_ear:d7"
+			"GFX_bronzebeard_female_clothes:p14"
+			"GFX_bronzebeard_female_chin:d1"
+			"GFX_bronzebeard_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_bronzebeard_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+}
+
+# hair, mouth, chin, nose, eyes, cheek, ear, neck
+spriteTypes = {
+	
+	### blackdwarf MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# blackdwarf Male
+	portraitType = {
+		name = "PORTRAIT_blackdwarfgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_blackdwarf_male_base:p2"
+			"GFX_blackdwarf_male_forehead:d1"
+			"GFX_blackdwarf_male_eyes:d6"
+			"GFX_blackdwarf_male_ear:d7"
+			"GFX_blackdwarf_male_nose:d3"
+			"GFX_dwarf_male_undead:p15"
+			"GFX_dwarf_male_undead_eyes:p16"
+		   	"GFX_blackdwarf_male_clothes:p14"
+		   	"GFX_blackdwarf_male_hair:p1:h:y"
+			"GFX_blackdwarf_male_headgear:p5"
+			"GFX_blackdwarf_male_beard:d1:h"
+			"GFX_blackdwarf_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_blackdwarf_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_blackdwarfgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_blackdwarf_male_base:p2"
+			"GFX_blackdwarf_male_forehead:d1"
+			"GFX_blackdwarf_male_eyes:d6"
+			"GFX_blackdwarf_male_ear:d7"
+			"GFX_blackdwarf_male_nose:d3"
+			"GFX_dwarf_male_undead:p15"
+			"GFX_dwarf_male_undead_eyes:p16"
+		   	"GFX_blackdwarf_male_clothes:p14"
+		   	"GFX_blackdwarf_male_hair:p1:h:y"
+			"GFX_blackdwarf_male_headgear:p5"
+			"GFX_blackdwarf_male_beard:d1:h"
+			"GFX_blackdwarf_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_blackdwarf_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_blackdwarfgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_blackdwarf_male_base:p2"
+			"GFX_blackdwarf_male_forehead:d1"
+			"GFX_blackdwarf_male_eyes:d6"
+			"GFX_blackdwarf_male_ear:d7"
+			"GFX_blackdwarf_male_nose:d3"
+			"GFX_dwarf_male_undead:p15"
+			"GFX_dwarf_male_undead_eyes:p16"
+		   	"GFX_blackdwarf_male_clothes:p14"
+		   	"GFX_blackdwarf_male_hair:p1:h:y"
+			"GFX_blackdwarf_male_headgear:p5"
+			"GFX_blackdwarf_male_beard:d1:h"
+			"GFX_blackdwarf_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_blackdwarf_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### blackdwarf FEMALE ####
+
+
+	# blackdwarf Female
+
+	# blackdwarf female
+	portraitType = {
+		name = "PORTRAIT_blackdwarfgfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_blackdwarf_female_base:p2"
+			"GFX_blackdwarf_female_nose:d3"
+			"GFX_blackdwarf_female_eyes:d6"
+			"GFX_blackdwarf_female_eyes2:d6"
+			"GFX_blackdwarf_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_blackdwarf_female_ear:d7"
+			"GFX_blackdwarf_female_clothes:p14"
+			"GFX_blackdwarf_female_chin:d1"
+			"GFX_blackdwarf_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_blackdwarf_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 4 4 8 } { 45 45 80 } { 255 255 255 }
+			{ 7 7 7 } { 140 140 140 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 45 45 50 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 76 45 }
+			{ 255 74 46 }
+			{ 255 104 46 }
+			{ 255 60 0 }
+			{ 255 78 78 }
+		}
+		
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# blackdwarf female midage
+	portraitType = {
+		name = "PORTRAIT_blackdwarfgfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_blackdwarf_female_base:p2"
+			"GFX_blackdwarf_female_nose:d3"
+			"GFX_blackdwarf_female_eyes:d6"
+			"GFX_blackdwarf_female_eyes2:d6"
+			"GFX_blackdwarf_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_blackdwarf_female_ear:d7"
+			"GFX_blackdwarf_female_clothes:p14"
+			"GFX_blackdwarf_female_chin:d1"
+			"GFX_blackdwarf_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_blackdwarf_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 4 4 8 } { 45 45 80 } { 255 255 255 }
+			{ 7 7 7 } { 140 140 140 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 45 45 50 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 76 45 }
+			{ 255 74 46 }
+			{ 255 104 46 }
+			{ 255 60 0 }
+			{ 255 78 78 }
+		}
+		
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# blackdwarf female oldage
+	portraitType = {
+		name = "PORTRAIT_blackdwarfgfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_blackdwarf_female_base:p2"
+			"GFX_blackdwarf_female_nose:d3"
+			"GFX_blackdwarf_female_eyes:d6"
+			"GFX_blackdwarf_female_eyes2:d6"
+			"GFX_blackdwarf_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_blackdwarf_female_ear:d7"
+			"GFX_blackdwarf_female_clothes:p14"
+			"GFX_blackdwarf_female_chin:d1"
+			"GFX_blackdwarf_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_blackdwarf_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 4 4 8 } { 45 45 80 } { 255 255 255 }
+			{ 7 7 7 } { 140 140 140 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 45 45 50 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 76 45 }
+			{ 255 74 46 }
+			{ 255 104 46 }
+			{ 255 60 0 }
+			{ 255 78 78 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+}
+
+# hair, mouth, chin, nose, eyes, cheek, ear, neck
+spriteTypes = {
+	
+	### wilddwarf MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# wilddwarf Male
+	portraitType = {
+		name = "PORTRAIT_wilddwarfgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_wilddwarf_male_base:p2"
+			"GFX_wilddwarf_male_forehead:d1"
+			"GFX_wilddwarf_male_eyes:d6"
+			"GFX_wilddwarf_male_eyes2:d6:e"
+			"GFX_wilddwarf_male_ear:d7"
+			"GFX_wilddwarf_male_nose:d3"
+			"GFX_wilddwarf_male_undead:p15"
+			"GFX_wilddwarf_male_undead_eyes:p16"
+		   	"GFX_wilddwarf_male_clothes:p14"
+		   	"GFX_wilddwarf_male_hair:p1:h:y"
+			"GFX_wilddwarf_male_headgear:p5"
+			"GFX_wilddwarf_male_beard:d1:h"
+			"GFX_wilddwarf_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_wilddwarf_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_wilddwarfgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_wilddwarf_male_base:p2"
+			"GFX_wilddwarf_male_forehead:d1"
+			"GFX_wilddwarf_male_eyes:d6"
+			"GFX_wilddwarf_male_eyes2:d6:e"
+			"GFX_wilddwarf_male_ear:d7"
+			"GFX_wilddwarf_male_nose:d3"
+			"GFX_wilddwarf_male_undead:p15"
+			"GFX_wilddwarf_male_undead_eyes:p16"
+		   	"GFX_wilddwarf_male_clothes:p14"
+		   	"GFX_wilddwarf_male_hair:p1:h:y"
+			"GFX_wilddwarf_male_headgear:p5"
+			"GFX_wilddwarf_male_beard:d1:h"
+			"GFX_wilddwarf_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_wilddwarf_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_wilddwarfgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_wilddwarf_male_base:p2"
+			"GFX_wilddwarf_male_forehead:d1"
+			"GFX_wilddwarf_male_eyes:d6"
+			"GFX_wilddwarf_male_eyes2:d6:e"
+			"GFX_wilddwarf_male_ear:d7"
+			"GFX_wilddwarf_male_nose:d3"
+			"GFX_wilddwarf_male_undead:p15"
+			"GFX_wilddwarf_male_undead_eyes:p16"
+		   	"GFX_wilddwarf_male_clothes:p14"
+		   	"GFX_wilddwarf_male_hair:p1:h:y"
+			"GFX_wilddwarf_male_headgear:p5"
+			"GFX_wilddwarf_male_beard:d1:h"
+			"GFX_wilddwarf_male_beard_over:d1"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_wilddwarf_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### wilddwarf FEMALE ####
+
+
+	# wilddwarf Female
+
+	# wilddwarf female
+	portraitType = {
+		name = "PORTRAIT_wilddwarfgfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_wilddwarf_female_base:p2"
+			"GFX_wilddwarf_female_nose:d3"
+			"GFX_wilddwarf_female_eyes:d6"
+			"GFX_wilddwarf_female_eyes2:d6:e"
+			"GFX_wilddwarf_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_wilddwarf_female_ear:d7"
+			"GFX_wilddwarf_female_clothes:p14"
+			"GFX_wilddwarf_female_chin:d1"
+			"GFX_wilddwarf_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_wilddwarf_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
+		}
+		
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# wilddwarf female midage
+	portraitType = {
+		name = "PORTRAIT_wilddwarfgfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_wilddwarf_female_base:p2"
+			"GFX_wilddwarf_female_nose:d3"
+			"GFX_wilddwarf_female_eyes:d6"
+			"GFX_wilddwarf_female_eyes2:d6:e"
+			"GFX_wilddwarf_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_wilddwarf_female_ear:d7"
+			"GFX_wilddwarf_female_clothes:p14"
+			"GFX_wilddwarf_female_chin:d1"
+			"GFX_wilddwarf_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_wilddwarf_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
+		}
+		
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# wilddwarf female oldage
+	portraitType = {
+		name = "PORTRAIT_wilddwarfgfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_hair_behind:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_wilddwarf_female_base:p2"
+			"GFX_wilddwarf_female_nose:d3"
+			"GFX_wilddwarf_female_eyes:d6"
+			"GFX_wilddwarf_female_eyes2:d6:e"
+			"GFX_wilddwarf_female_cheeks:d4"
+			"GFX_bronzebeard_female_hair:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_wilddwarf_female_ear:d7"
+			"GFX_wilddwarf_female_clothes:p14"
+			"GFX_wilddwarf_female_chin:d1"
+			"GFX_wilddwarf_female_mouth:d2"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_wilddwarf_female_clothes_infront:p14"
+			"GFX_bronzebeard_female_hair_front:p1:h:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
+		}
+		
+		
+		headgear_that_hides_hair = { }
+	}
+}

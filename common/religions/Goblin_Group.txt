@@ -1,0 +1,46 @@
+goblin_group = {
+	has_coa_on_barony_only = yes
+	graphical_culture = persiangfx
+	playable = yes
+	ai_fabricate_claims = yes
+	
+	mercantilism = {
+		graphical_culture = persiangfx
+		
+		icon = 11
+		color = { 0.32 0.54 0.13 }
+		
+		scripture_name = MERCANTILISM_101
+		high_god_name = GOD_THE_FREE_MARKET
+		god_names = { GOD_THE_FREE_MARKET GOD_THE_INVISIBLE_HAND GOD_SUPPLY_AND_DEMAND }
+		evil_god_names = { GOD_COMMUNAL_PROPERTY }
+		
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		ai_peaceful = yes
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_BANKER
+		priests_can_inherit = yes
+		feminist = yes
+		aggression = 0.5
+		
+		intermarry = holy_light
+		intermarry = argent
+		intermarry = sunwell
+		intermarry = arcane
+		intermarry = loa
+		intermarry = shamanism
+		intermarry = geomancy
+		intermarry = aeromancy
+		intermarry = hydromancy
+		intermarry = pyromancy
+		intermarry = forgotten_shadow
+		intermarry = demonology
+		intermarry = old_ways
+		intermarry = druidism
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+}

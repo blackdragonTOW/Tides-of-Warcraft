@@ -1,0 +1,1562 @@
+decisions = {
+	
+	elfking_support_traditionalist = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOT = { trait = undead_scourge }
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_traditionalist title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_traditionalist power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_traditionalists
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_traditionalist
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_support_demonology = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOR = {
+				trait = undead_forsaken
+				trait = undead_generic
+				trait = undead_scourge
+			}
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_demonologist title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_demonologist power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_demonologist
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_demonologist
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_support_purity = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOR = {
+				trait = undead_forsaken
+				trait = undead_generic
+				trait = undead_scourge
+				trait = felsworn
+			}
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_purity title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_purity power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_purity
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_purity
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_support_imperialist = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOT = { trait = undead_scourge }
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_imperialist title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_imperialist power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_imperialists
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_imperialist
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_support_horde = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOT = { trait = undead_scourge }
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_horde title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_horde power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_horde
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_horde
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_support_alliance = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOT = { trait = undead_scourge }
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_alliance title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_alliance power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_alliance
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_alliance
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_support_royalist = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOT = { trait = undead_scourge }
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_royalist title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_royalist power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_royalists
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_royalist
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_support_isolationist = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOT = { trait = undead_scourge }
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_isolationist title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_isolationist power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_isolationists
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_isolationist
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_support_interventionist = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOT = { trait = undead_scourge }
+			has_regent = no
+			NOR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			k_silvermoon = {
+				ROOT = {
+					faction_exists = { faction = faction_interventionist title = PREV }
+				}
+			}
+		}
+		allow = {
+			faction_power = { faction = faction_interventionist power = 0.5 }
+		}
+		effect = {
+			set_character_flag = supports_interventionists
+			any_faction_backer = {
+				limit = {
+					in_faction = faction_interventionist
+				}
+				opinion = { who = ROOT modifier = supports_faction years = 9999 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	elfking_retract_support = {
+		potential = {
+			has_landed_title = k_silvermoon
+			NOT = { trait = undead_scourge }
+			has_regent = no
+			OR = { 
+				has_character_flag = supports_traditionalists
+				has_character_flag = supports_demonology
+				has_character_flag = supports_purity
+				has_character_flag = supports_imperialists
+				has_character_flag = supports_horde
+				has_character_flag = supports_alliance
+				has_character_flag = supports_royalists
+				has_character_flag = supports_isolationists
+				has_character_flag = supports_interventionists
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		allow = {
+			prestige = 50
+		}
+		effect = {
+			prestige = -50
+			clr_character_flag = supports_traditionalists
+			clr_character_flag = supports_demonology
+			clr_character_flag = supports_purity
+			clr_character_flag = supports_imperialists
+			clr_character_flag = supports_horde
+			clr_character_flag = supports_alliance
+			clr_character_flag = supports_royalists
+			clr_character_flag = supports_isolationists
+			clr_character_flag = supports_interventionists
+			any_faction_backer = {
+				limit = {
+					OR = {
+						in_faction = faction_traditionalist
+						in_faction = faction_demonologist
+						in_faction = faction_purity
+						in_faction = faction_imperialist
+						in_faction = faction_alliance
+						in_faction = faction_horde
+						in_faction = faction_royalist
+						in_faction = faction_isolationist
+						in_faction = faction_interventionist
+					}
+					has_any_opinion_modifier = supports_faction
+				}
+				remove_opinion = { who = ROOT modifier = supports_faction }
+				opinion = { who = ROOT modifier = opinion_disappointed years = 1 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	traditionalist_demand_vote_law = {
+		potential = {
+			leads_faction = faction_traditionalist
+			k_silvermoon = {
+				has_law = law_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.7 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.1 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_vote_war = {
+		potential = {
+			leads_faction = faction_traditionalist
+			k_silvermoon = {
+				has_law = law_voting_power_1
+				has_law = war_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.6 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.2 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_vote_revoke = {
+		potential = {
+			leads_faction = faction_traditionalist
+			k_silvermoon = {
+				has_law = law_voting_power_1
+				has_law = war_voting_power_1
+				has_law = revoke_title_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.3 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_vote_prison = {
+		potential = {
+			leads_faction = faction_traditionalist
+			k_silvermoon = {
+				has_law = law_voting_power_1
+				has_law = war_voting_power_1
+				has_law = imprison_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.4 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_vote_grant = {
+		potential = {
+			leads_faction = faction_traditionalist
+			k_silvermoon = {
+				has_law = law_voting_power_1
+				has_law = war_voting_power_1
+				has_law = grant_title_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.5 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_vote_banish = {
+		potential = {
+			leads_faction = faction_traditionalist
+			k_silvermoon = {
+				has_law = law_voting_power_1
+				has_law = war_voting_power_1
+				has_law = banish_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.6 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_vote_execution = {
+		potential = {
+			leads_faction = faction_traditionalist
+			k_silvermoon = {
+				has_law = law_voting_power_1
+				has_law = war_voting_power_1
+				has_law = execution_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.7 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_magister_on_council = {
+		potential = {
+			leads_faction = faction_traditionalist
+			NOT = {
+				k_silvermoon = {
+					holder_scope = {
+						job_spiritual = {
+							society_rank >= 4
+							society_member_of = magisters
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.6 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.8 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_farstrider_on_council = {
+		potential = {
+			leads_faction = faction_traditionalist
+			NOT = {
+				k_silvermoon = {
+					holder_scope = {
+						job_spymaster = {
+							society_rank >= 4
+							society_member_of = farstriders
+						}
+					}
+				}
+			}
+			OR = {
+				NOT = { has_global_flag = trollwars_bookmark }
+				has_global_flag = farstriders_active
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.6 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.9 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_reliquary_on_council = {
+		potential = {
+			leads_faction = faction_traditionalist
+			NOT = {
+				k_silvermoon = {
+					holder_scope = {
+						job_treasurer = {
+							society_rank >= 4
+							society_member_of = reliquary
+						}
+					}
+				}
+			}
+			OR = {
+				NOT = { has_global_flag = wow_bookmark }
+				has_global_flag = reliquary_active
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.6 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.10 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_blood_knight_on_council = {
+		potential = {
+			leads_faction = faction_traditionalist
+			NOT = {
+				k_silvermoon = {
+					holder_scope = {
+						job_marshal = {
+							society_rank >= 4
+							society_member_of = blood_knights
+						}
+					}
+				}
+			}
+			OR = {
+				NOT = { has_global_flag = wow_bookmark }
+				has_global_flag = blood_knights_active
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.6 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.11 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	traditionalist_demand_sunreaver_on_council = {
+		potential = {
+			leads_faction = faction_traditionalist
+			NOT = {
+				k_silvermoon = {
+					holder_scope = {
+						job_chancellor = {
+							society_rank >= 4
+							society_member_of = sunreavers
+						}
+					}
+				}
+			}
+			OR = {
+				NOT = { has_global_flag = wow_bookmark }
+				has_global_flag = sunreavers_active
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_traditionalist power = 0.6 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_traditionalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.12 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	royalist_demand_ruler_law = {
+		potential = {
+			leads_faction = faction_royalist
+			k_silvermoon = {
+				has_law = law_voting_power_1
+				has_law = war_voting_power_0
+				has_law = banish_voting_power_0
+				has_law = revoke_title_voting_power_0
+				has_law = grant_title_voting_power_0
+				has_law = imprison_voting_power_0
+				has_law = execution_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_royalist power = 0.7 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_royalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.14 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	royalist_demand_ruler_war = {
+		potential = {
+			leads_faction = faction_royalist
+			k_silvermoon = {
+				has_law = war_voting_power_1
+				has_law = banish_voting_power_0
+				has_law = revoke_title_voting_power_0
+				has_law = grant_title_voting_power_0
+				has_law = imprison_voting_power_0
+				has_law = execution_voting_power_0
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_royalist power = 0.6 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_royalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.15 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	royalist_demand_ruler_revoke = {
+		potential = {
+			leads_faction = faction_royalist
+			k_silvermoon = {
+				has_law = revoke_title_voting_power_1
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_royalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_royalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.16 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	royalist_demand_ruler_prison = {
+		potential = {
+			leads_faction = faction_royalist
+			k_silvermoon = {
+				has_law = imprison_voting_power_1
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_royalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_royalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.17 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	royalist_demand_ruler_grant = {
+		potential = {
+			leads_faction = faction_royalist
+			k_silvermoon = {
+				has_law = grant_title_voting_power_1
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_royalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_royalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.18 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	royalist_demand_ruler_banish = {
+		potential = {
+			leads_faction = faction_royalist
+			k_silvermoon = {
+				has_law = banish_voting_power_1
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_royalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_royalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.19 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	royalist_demand_vote_execution = {
+		potential = {
+			leads_faction = faction_royalist
+			k_silvermoon = {
+				has_law = execution_voting_power_1
+			}
+			has_dlc = "Zeus"
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_royalist power = 0.5 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_royalists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.28 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	interventionist_demand_join_friendnap_war = {
+		potential = {
+			leads_faction = faction_interventionist
+			k_silvermoon = {
+				holder_scope = {
+					war = no
+					OR = {
+						any_friend = {
+							war = yes
+							OR = {
+								is_primary_war_attacker = yes
+								is_primary_war_defender = yes
+							}
+						}
+						any_non_aggression_pact_character = {
+							war = yes
+							OR = {
+								is_primary_war_attacker = yes
+								is_primary_war_defender = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_interventionist power = 0.6 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_interventionists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					if = {
+						limit = {
+							any_friend = {
+								war = yes
+								OR = {
+									is_primary_war_attacker = yes
+									is_primary_war_defender = yes
+								}
+							}
+						}
+						random_friend = {
+							limit = {
+								war = yes
+								OR = {
+									is_primary_war_attacker = yes
+									is_primary_war_defender = yes
+								}
+							}
+							save_event_target_as = waraidtarg
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								any_friend = {
+									war = yes
+									OR = {
+										is_primary_war_attacker = yes
+										is_primary_war_defender = yes
+									}
+								}
+							}
+							random_non_aggression_pact_character = {
+								war = yes
+								OR = {
+									is_primary_war_attacker = yes
+									is_primary_war_defender = yes
+								}
+							}
+						}
+						random_non_aggression_pact_character = {
+							limit = {
+								war = yes
+								OR = {
+									is_primary_war_attacker = yes
+									is_primary_war_defender = yes
+								}
+							}
+							save_event_target_as = waraidtarg
+						}
+					}
+					letter_event = { id = elfpol.20 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	isolationist_demand_abandon_nonqt_provs = {
+		potential = {
+			leads_faction = faction_isolationist
+			k_silvermoon = {
+				any_realm_province = {
+					NOR = {
+						region = world_eversong_woods
+						region = world_ghostlands
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_isolationist power = 0.9 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_isolationists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.22 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	isolationist_demand_break_alliance = {
+		potential = {
+			leads_faction = faction_isolationist
+			k_silvermoon = {
+				holder_scope = {
+					any_allied_character = {
+						OR = {
+							NOR = {
+								trait = blood_elf
+								trait = high_elf
+								trait = wretched
+							}
+							trait = undead_scourge
+						}
+						count = 1
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_isolationist power = 0.7 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_isolationists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					random_allied_character = {
+						limit = {
+							OR = {
+								NOR = {
+									trait = blood_elf
+									trait = high_elf
+									trait = wretched
+								}
+								trait = undead_scourge
+							}
+						}
+						save_event_target_as = allybreaktarg
+					}
+					letter_event = { id = elfpol.24 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	imperialist_demand_break_nap = {
+		potential = {
+			leads_faction = faction_imperialist
+			k_silvermoon = {
+				holder_scope = {
+					any_non_aggression_pact_character = {
+						OR = {
+							NOR = {
+								trait = blood_elf
+								trait = high_elf
+								trait = wretched
+							}
+							trait = undead_scourge
+						}
+						count = 1
+					}
+				}
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_imperialist power = 0.7 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_imperialists
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					random_non_aggression_pact_character = {
+						limit = {
+							OR = {
+								NOR = {
+									trait = blood_elf
+									trait = high_elf
+									trait = wretched
+								}
+								trait = undead_scourge
+							}
+						}
+						save_event_target_as = napbreaktarg
+					}
+					letter_event = { id = elfpol.25 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	allyfac_petition_join_alliance = {
+		potential = {
+			leads_faction = faction_alliance
+			k_silvermoon = {
+				holder_scope = {
+					independent = yes
+				}
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_alliance power = 0.7 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_alliance
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.26 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	hordefac_petition_join_horde = {
+		potential = {
+			leads_faction = faction_horde
+			k_silvermoon = {
+				holder_scope = {
+					independent = yes
+				}
+			}
+		}
+		allow = {
+			OR = {
+				faction_power = { faction = faction_horde power = 0.7 }
+				k_silvermoon = {
+					holder_scope = {
+						has_character_flag = supports_horde
+					}
+				}
+			}
+			NOT = { has_character_modifier = made_faction_demand }
+		}
+		effect = {
+			add_character_modifier = { name = made_faction_demand duration = 60 }
+			k_silvermoon = {
+				holder_scope = {
+					letter_event = { id = elfpol.27 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

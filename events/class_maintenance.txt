@@ -1,0 +1,589 @@
+namespace = classmain
+
+character_event = {
+	id = classmain.1
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			trait = necrolyte
+			AND = {
+				trait = warlock
+				OR = {
+					NOR = {
+						trait = arcanist_fake
+						trait = healer_fake
+						trait = mage_fake
+						trait = priest_fake
+						trait = shaman_fake
+						trait = druid_fake
+						trait = witch_doctor_fake
+						trait = techmage_fake
+					}
+					NOT = { has_character_flag = warlock_discovered }
+				}
+			}
+			AND = {
+				trait = necromancer
+				OR = {
+					NOR = {
+						trait = arcanist_fake
+						trait = healer_fake
+						trait = mage_fake
+						trait = priest_fake
+						trait = shaman_fake
+						trait = druid_fake
+						trait = witch_doctor_fake
+						trait = techmage_fake
+					}
+					NOT = { has_character_flag = warlock_necromancer }
+				}
+			}
+			AND = {
+				trait = assassin
+				OR = {
+					NOT = { trait = scout_fake }
+					NOT = { has_character_flag = assassin_discovered }
+				}
+			}
+			AND = {
+				trait = rogue
+				OR = {
+					NOT = { trait = scout_fake }
+					NOT = { has_character_flag = rogue_discovered }
+				}
+			}
+			AND = {
+				has_character_modifier = blood_magic
+				OR = {
+					NOT = { has_character_modifier = evocation_fake }
+					NOT = { has_character_flag = blood_magic_discovered }
+				}
+			}
+			AND = {
+				has_character_modifier = shadow_priest
+				OR = {
+					NOR = {
+						has_character_modifier = holy_priest_fake
+						has_character_modifier = sun_priest_fake
+						has_character_modifier = moon_priest_fake
+					}
+					NOT = { has_character_flag = shadow_priest_discovered }
+				}
+			}
+			AND = {
+				has_character_modifier = dark_shaman
+				OR = {
+					NOT = { has_character_modifier = elementalist_fake }
+					NOT = { has_character_flag = dark_shaman_discovered }
+				}
+			}
+			AND = {
+				has_character_modifier = nightmare_druid
+				OR = {
+					NOT = { has_character_modifier = mender_fake }
+					NOT = { has_character_flag = nightmare_druid_discovered }
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		trigger_switch = {
+			on_trigger = trait
+			necrolyte = {
+				if = {
+					limit = {
+						NOT = { accepts_warlock = yes }
+						NOT = { accepts_necromancer = yes }
+						liege = {
+							NOT = { accepts_warlock = yes }
+							NOT = { accepts_necromancer = yes }
+						}
+					}
+					if = {
+						limit = {
+							NOR = {
+								trait = orc
+								trait = gnoll
+								AND = {
+									trait = human
+									OR = {
+										has_global_flag = trollwars_bookmark
+										NOT = { has_global_flag = trollwar_humans_join }
+									}
+								}
+							}
+						}
+						add_trait = arcanist_fake
+					}
+					if = {
+						limit = {
+							OR = {
+								trait = orc
+								trait = gnoll
+								AND = {
+									trait = human
+									OR = {
+										has_global_flag = trollwars_bookmark
+										NOT = { has_global_flag = trollwar_humans_join }
+									}
+								}
+							}
+						}
+						add_trait = healer_fake
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_warlock = yes
+							accepts_necromancer = yes
+							liege = {
+								OR = {
+									accepts_warlock = yes
+									accepts_necromancer = yes
+								}
+							}
+						}
+					}
+					set_character_flag = necrolyte_discovered
+				}
+			}
+			warlock = {
+				if = {
+					limit = {
+						NOT = { accepts_warlock = yes }
+						liege = {
+							NOT = { accepts_warlock = yes }
+						}
+					}
+					if = {
+						limit = {
+							NOR = {
+								trait = orc
+								AND = {
+									trait = human
+									OR = {
+										has_global_flag = trollwars_bookmark
+										NOT = { has_global_flag = trollwar_humans_join }
+									}
+								}
+							}
+						}
+						add_trait = mage_fake
+						add_character_modifier = { name = evocation_fake }
+					}
+					if = {
+						limit = {
+							OR = {
+								trait = orc
+								AND = {
+									trait = human
+									OR = {
+										has_global_flag = trollwars_bookmark
+										NOT = { has_global_flag = trollwar_humans_join }
+									}
+									has_global_flag = human_shamanism
+								}
+							}
+						}
+						add_trait = shaman_fake
+					}
+					if = {
+						limit = {
+							trait = human
+							OR = {
+								has_global_flag = trollwars_bookmark
+								NOT = { has_global_flag = trollwar_humans_join }
+							}
+							has_global_flag = holy_light_founded
+						}
+						add_trait = priest_fake
+					}
+					if = {
+						limit = {
+							trait = human
+							OR = {
+								has_global_flag = trollwars_bookmark
+								NOT = { has_global_flag = trollwar_humans_join }
+							}
+							NOT = { has_global_flag = holy_light_founded }
+							NOT = { has_global_flag = human_shamanism }
+						}
+						add_trait = healer_fake
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_warlock = yes
+							liege = {
+								accepts_warlock = yes
+							}
+						}
+					}
+					set_character_flag = warlock_discovered
+				}
+			}
+			necromancer = {
+				if = {
+					limit = {
+						NOT = { accepts_necromancer = yes }
+						liege = {
+							NOT = { accepts_necromancer = yes }
+						}
+					}
+					if = {
+						limit = {
+							NOR = {
+								trait = orc
+								AND = {
+									trait = human
+									OR = {
+										has_global_flag = trollwars_bookmark
+										NOT = { has_global_flag = trollwar_humans_join }
+									}
+								}
+							}
+						}
+						add_trait = mage_fake
+						add_character_modifier = { name = evocation_fake }
+					}
+					if = {
+						limit = {
+							OR = {
+								trait = orc
+								AND = {
+									trait = human
+									OR = {
+										has_global_flag = trollwars_bookmark
+										NOT = { has_global_flag = trollwar_humans_join }
+									}
+									has_global_flag = human_shamanism
+								}
+							}
+						}
+						add_trait = shaman_fake
+					}
+					if = {
+						limit = {
+							trait = human
+							OR = {
+								has_global_flag = trollwars_bookmark
+								NOT = { has_global_flag = trollwar_humans_join }
+							}
+							has_global_flag = holy_light_founded
+						}
+						add_trait = priest_fake
+					}
+					if = {
+						limit = {
+							trait = human
+							OR = {
+								has_global_flag = trollwars_bookmark
+								NOT = { has_global_flag = trollwar_humans_join }
+							}
+							NOT = { has_global_flag = holy_light_founded }
+							NOT = { has_global_flag = human_shamanism }
+						}
+						add_trait = healer_fake
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_necromancer = yes
+							liege = {
+								accepts_necromancer = yes
+							}
+						}
+					}
+					set_character_flag = necromancer_discovered
+				}
+			}
+			assassin = {
+				if = {
+					limit = {
+						NOT = { accepts_assassin = yes }
+						liege = {
+							NOT = { accepts_assassin = yes }
+						}
+					}
+					add_trait = scout_fake
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_assassin = yes
+							liege = {
+								accepts_assassin = yes
+							}
+						}
+					}
+					set_character_flag = assassin_discovered
+				}
+			}
+			rogue = {
+				if = {
+					limit = {
+						NOT = { accepts_rogue = yes }
+						liege = {
+							NOT = { accepts_rogue = yes }
+						}
+					}
+					add_trait = scout_fake
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_rogue = yes
+							liege = {
+								accepts_rogue = yes
+							}
+						}
+					}
+					set_character_flag = rogue_discovered
+				}
+			}
+		}
+		trigger_switch = {
+			on_trigger = has_character_modifier
+			blood_magic = {
+				if = {
+					limit = {
+						NOT = { accepts_blood_magic = yes }
+						liege = {
+							NOT = { accepts_blood_magic = yes }
+						}
+					}
+					add_character_modifier = { name = evocation_fake }
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_blood_magic = yes
+							liege = {
+								accepts_blood_magic = yes
+							}
+						}
+					}
+					set_character_flag = blood_magic_discovered
+				}
+			}
+			shadow_priest = {
+				if = {
+					limit = {
+						NOT = { accepts_shadow_priest = yes }
+						liege = {
+							NOT = { accepts_shadow_priest = yes }
+						}
+					}
+					if = {
+						limit = {
+							NOT = { religion = sunwell }
+							#not elune
+						}
+						add_character_modifier = { modifier = holy_priest_fake duration = -1 }
+					}
+					if = {
+						limit = {
+							religion = sunwell
+						}
+						add_character_modifier = { modifier = sun_priest_fake duration = -1 }
+					}
+					if = {
+						limit = {
+							always = no #elune
+						}
+						add_character_modifier = { modifier = moon_priest_fake duration = -1 }
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_shadow_priest = yes
+							liege = {
+								accepts_shadow_priest = yes
+							}
+						}
+					}
+					set_character_flag = shadow_priest_discovered
+				}
+			}
+			dark_shaman = {
+				if = {
+					limit = {
+						NOT = { accepts_dark_shaman = yes }
+						liege = {
+							NOT = { accepts_dark_shaman = yes }
+						}
+					}
+					add_character_modifier = { name = elementalist_fake duration = -1 }
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_dark_shaman = yes
+							liege = {
+								accepts_dark_shaman = yes
+							}
+						}
+					}
+					set_character_flag = dark_shaman_discovered
+				}
+			}
+			nightmare_druid = {
+				if = {
+					limit = {
+						NOT = { accepts_nightmare_druid = yes }
+						liege = {
+							NOT = { accepts_nightmare_druid = yes }
+						}
+					}
+					add_character_modifier = { name = mender_fake duration = -1 }
+				}
+				if = {
+					limit = {
+						OR = {
+							accepts_nightmare_druid = yes
+							liege = {
+								accepts_nightmare_druid = yes
+							}
+						}
+					}
+					set_character_flag = nightmare_druid_discovered
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = classmain.2
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = has_adv_class }
+		OR = {
+			trait = mage
+			trait = warlock
+			trait = necromancer
+			trait = runemaster
+			trait = priest
+			trait = shaman
+			trait = druid
+			trait = witch_doctor
+			trait = alchemist
+			trait = assassin
+			trait = rogue
+			trait = beastmaster
+			trait = explorer
+			trait = ranger
+			trait = engineer
+			trait = mechanist
+			trait = warrior
+			trait = paladin
+			trait = monk
+			trait = death_knight
+			trait = demon_hunter
+		}
+	}
+	
+	immediate = {
+		set_character_flag = has_adv_class
+	}
+}
+
+character_event = {
+	id = classmain.3
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		has_character_flag = has_adv_class
+		NOR = {
+			trait = mage
+			trait = warlock
+			trait = necromancer
+			trait = runemaster
+			trait = priest
+			trait = shaman
+			trait = druid
+			trait = witch_doctor
+			trait = alchemist
+			trait = assassin
+			trait = rogue
+			trait = beastmaster
+			trait = explorer
+			trait = ranger
+			trait = engineer
+			trait = mechanist
+			trait = warrior
+			trait = paladin
+			trait = monk
+			trait = death_knight
+			trait = demon_hunter
+		}
+	}
+	
+	immediate = {
+		clr_character_flag = has_adv_class
+	}
+}
+
+character_event = {
+	id = classmain.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_character_flag = has_class_mod }
+		OR = {
+			has_character_modifier = abjuration
+			has_character_modifier = enchantment
+			has_character_modifier = illusion
+			has_character_modifier = divination
+			has_character_modifier = transmutation
+			has_character_modifier = conjuration
+			has_character_modifier = evocation
+			has_character_modifier = blood_magic
+			has_character_modifier = hexes
+			has_character_modifier = brews
+			has_character_modifier = shadow_hunter
+			has_character_modifier = holy_priest
+			has_character_modifier = sun_priest
+			has_character_modifier = moon_priest
+			has_character_modifier = shadow_priest
+			has_character_modifier = sea_witch
+			has_character_modifier = moon_druid
+			has_character_modifier = sun_druid
+			has_character_modifier = mender
+			has_character_modifier = feral_druid
+			has_character_modifier = flame_druid
+			has_character_modifier = wave_druid
+			has_character_modifier = wind_druid
+			has_character_modifier = stone_druid
+			has_character_modifier = nightmare_druid
+			has_character_modifier = elementalist
+			has_character_modifier = spiritualist
+			has_character_modifier = dark_shaman
+		}
+	}
+	
+	immediate = {
+		set_character_flag = has_class_mod
+	}
+}

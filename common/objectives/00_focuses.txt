@@ -1,0 +1,1080 @@
+# Supported types: character
+#
+# Note: if 'chance' evaluates to 0, an AI character will also abandon the focus
+#
+
+
+###############
+# FOCUSES
+###############
+
+focus_rulership = {
+	type = character
+	
+	modifier_name = "RULERSHIP_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		prisoner = no
+		NOR = {
+			trait = eredar
+			trait = succubus
+			trait = dreadlord
+			trait = fel_lord
+			trait = pit_lord
+			trait = doomlord
+			trait = shivarra
+			trait = faceless
+			trait = voidwalker
+			trait = gnoll
+			trait = murloc
+			trait = kobold
+			trait = trogg
+			trait = lost_one
+		}
+	}
+	
+	# AI Pick chance - based on personality, not needs!
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0
+			trait = stressed
+		}
+		modifier = {
+			factor = 0.25
+			trait = depressed
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				is_republic = yes
+				is_patrician = yes
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 0.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 2.0
+			trait = diligent
+		}
+		modifier = {
+			factor = 3.0
+			trait = just
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			prisoner = yes
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	stewardship = 3
+}
+
+focus_business = {
+	type = character
+	
+	modifier_name = "BUSINESS_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		prisoner = no
+		NOR = {
+			trait = eredar
+			trait = succubus
+			trait = dreadlord
+			trait = fel_lord
+			trait = pit_lord
+			trait = doomlord
+			trait = shivarra
+			trait = faceless
+			trait = voidwalker
+			trait = gnoll
+			trait = murloc
+			trait = kobold
+			trait = trogg
+			trait = lost_one
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_chromatic
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = dragon_red
+			trait = dragon_twilight
+			trait = undead_scourge
+		}
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0.2
+			trait = stressed
+		}
+		modifier = {
+			factor = 0.5
+			trait = depressed
+		}
+		modifier = {
+			factor = 0.5
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.5
+			trait = charitable
+		}
+		modifier = {
+			factor = 2.0
+			trait = diligent
+		}
+		modifier = {
+			factor = 3.0
+			trait = greedy
+		}
+		modifier = {
+			factor = 2.0
+			OR = {
+				is_republic = yes
+				is_patrician = yes
+			}
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			prisoner = yes
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	stewardship = 2
+	town_opinion = 20
+}
+
+focus_seduction = {
+	type = character
+	
+	modifier_name = "SEDUCTION_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		NOT = { trait = celibate }
+		NOT = { is_ascetic_trigger = yes }
+		NOT = { trait = eunuch }
+		NOR = {
+			trait = dreadlord
+			trait = fel_lord
+			trait = pit_lord
+			trait = doomlord
+			trait = faceless
+			trait = voidwalker
+			trait = dragon_red
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_chromatic
+			trait = dragon_twilight
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 50
+		
+		modifier = {
+			factor = 0
+			trait = chaste
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = ai_seduction
+				value = off
+			}
+		}
+		
+		modifier = {
+			factor = 0.01 # Faithful spouse/consort
+			OR = {
+				AND = {
+					is_married = yes
+					any_spouse = {
+						is_lover = ROOT
+					}
+				}
+				AND = {
+					is_consort = yes
+					consort = {
+						is_lover = ROOT
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.25
+			trait = shy
+		}
+		modifier = {
+			factor = 0.5
+			trait = content
+		}
+		modifier = {
+			factor = 0.5
+			trait = ugly
+		}
+		modifier = {
+			factor = 0.75
+			trait = honest
+		}
+		modifier = {
+			factor = 1.5
+			trait = gregarious
+		}
+		modifier = {
+			factor = 1.5
+			trait = cruel
+		}
+		modifier = {
+			factor = 1.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.5
+			trait = deceitful
+		}
+		modifier = {
+			factor = 2.0
+			trait = hedonist
+		}
+		modifier = {
+			factor = 2.0
+			trait = fair
+		}
+		modifier = {
+			factor = 5.0
+			trait = lustful
+		}
+		modifier = {
+			factor = 4.0
+			OR = {
+				AND = {
+					OR = {
+						is_female = yes
+						AND = {
+							has_polygamy = no
+							has_concubinage = no
+						}
+					}
+					any_spouse = {
+						trait = homosexual
+					}
+				}
+				AND = {
+					OR = {
+						is_married = yes
+						is_consort = yes
+					}
+					trait = homosexual
+				}
+			}
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			trait = incapable
+			is_playable = no
+			trait = eunuch
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	intrigue = 2
+	fertility = 0.25
+	sex_appeal_opinion = 10
+}
+
+focus_intrigue = {
+	type = character
+	
+	modifier_name = "INTRIGUE_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		prisoner = no
+		NOR = {
+			trait = fel_lord
+			trait = pit_lord
+			trait = doomlord
+			trait = trogg
+			trait = voidwalker
+		}
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 100
+		
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				name = ai_intrigue
+				value = off
+			}
+		}
+		modifier = {
+			factor = 0
+			trait = honest
+		}
+		modifier = {
+			factor = 0.25
+			NOR = {
+				trait = amateurish_plotter
+				trait = flamboyant_schemer
+				trait = intricate_webweaver
+				trait = elusive_shadow
+			}
+		}
+		modifier = {
+			factor = 0.25
+			trait = kind
+		}
+		modifier = {
+			factor = 0.5
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.5
+			trait = content
+		}
+		modifier = {
+			factor = 0.5
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.5
+			trait = envious
+		}
+		modifier = {
+			factor = 1.5
+			trait = patient
+		}
+		modifier = {
+			factor = 1.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2.0
+			trait = cruel
+		}
+		modifier = {
+			factor = 5.0
+			trait = paranoid
+		}
+		modifier = {
+			factor = 4.0
+			trait = deceitful
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			prisoner = yes
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	intrigue = 3
+}
+
+focus_hunting = {
+	type = character
+	
+	modifier_name = "HUNTING_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		NOT = { religion = jain }
+		prisoner = no
+		NOR = {
+			trait = druid
+			NOR = {
+				has_character_modifier = flame_druid
+				has_character_modifier = wave_druid
+				has_character_modifier = wind_druid
+				has_character_modifier = stone_druid
+				has_character_modifier = nightmare_druid
+			}
+		}
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 100
+		
+		modifier = {
+			factor = 0
+			trait = infirm
+		}
+		modifier = {
+			factor = 0.2
+			is_female = yes
+		}
+		modifier = {
+			factor = 0.5
+			trait = craven
+		}
+		modifier = {
+			factor = 1.5
+			trait = brave
+		}
+		modifier = {
+			factor = 2.0
+			trait = hunter
+		}
+		modifier = {
+			factor = 2.0
+			trait = falconer
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			prisoner = yes
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	martial = 2
+	health = 1
+}
+
+focus_war = {
+	type = character
+	
+	modifier_name = "WAR_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		prisoner = no
+		is_adult = yes
+		NOT = { trait = incapable }
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 100
+		
+		modifier = {
+			factor = 0.1
+			is_female = yes
+		}
+		
+		modifier = {
+			factor = 0.2
+			trait = craven
+		}
+		
+		modifier = {
+			factor = 0.25
+			NOT = {
+				OR = {
+					trait = misguided_warrior
+					trait = tough_soldier
+					trait = skilled_tactician
+					trait = brilliant_strategist
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			trait = kind
+		}
+		modifier = {
+			factor = 1.5
+			trait = brave
+		}
+		modifier = {
+			factor = 1.5
+			is_feudal = yes
+		}
+		modifier = {
+			factor = 2.0
+			is_tribal = yes
+		}
+		modifier = {
+			factor = 2.0
+			is_nomadic = yes
+		}
+		modifier = {
+			factor = 2.0
+			trait = wroth
+		}
+		modifier = {
+			factor = 2.0
+			trait = duelist
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			prisoner = yes
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	martial = 3
+}
+
+focus_carousing = {
+	type = character
+	
+	modifier_name = "CAROUSING_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		prisoner = no
+		NOR = {
+			trait = eredar
+			trait = succubus
+			trait = dreadlord
+			trait = fel_lord
+			trait = pit_lord
+			trait = doomlord
+			trait = shivarra
+			trait = faceless
+			trait = voidwalker
+			trait = gnoll
+			trait = murloc
+			trait = kobold
+			trait = trogg
+			trait = lost_one
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_chromatic
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = dragon_red
+			trait = dragon_twilight
+		}
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0.25
+			trait = shy
+		}
+		modifier = {
+			factor = 0.25
+			trait = temperate
+		}
+		modifier = {
+			factor = 0.5
+			trait = diligent
+		}
+		modifier = {
+			factor = 2.0
+			trait = slothful
+		}
+		modifier = {
+			factor = 2.0
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 3.0
+			trait = hedonist
+		}
+		modifier = {
+			factor = 3.0
+			trait = drunkard
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			prisoner = yes
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	diplomacy = 3
+}
+
+focus_family = {
+	type = character
+	
+	modifier_name = "FAMILY_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		prisoner = no
+		NOR = {
+			trait = eredar
+			trait = succubus
+			trait = dreadlord
+			trait = fel_lord
+			trait = pit_lord
+			trait = doomlord
+			trait = shivarra
+			trait = faceless
+			trait = voidwalker
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_chromatic
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = dragon_red
+			trait = dragon_twilight
+			trait = undead_scourge
+		}
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0.01
+			NOT = {
+				any_sibling = {
+					always = yes
+				}
+			}
+			NOT = {
+				any_child = {
+					always = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { age = 25 }
+		}
+		modifier = {
+			factor = 0.75
+			is_female = no
+		}
+		modifier = {
+			factor = 0.75
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.75
+			trait = proud
+		}
+		modifier = {
+			factor = 1.25
+			trait = humble
+		}
+		modifier = {
+			factor = 1.5
+			trait = gardener
+		}
+		modifier = {
+			factor = 1.5
+			trait = craven
+		}
+		modifier = {
+			factor = 1.5
+			trait = shy
+		}
+		modifier = {
+			factor = 2.0
+			trait = content
+		}
+		modifier = {
+			factor = 2.0
+			trait = infirm
+		}
+		modifier = {
+			factor = 2.0
+			trait = kind
+		}
+		modifier = {
+			factor = 3.0
+			is_female = yes
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			prisoner = yes
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	diplomacy = 2
+	health = 1
+	fertility = 0.25
+}
+
+focus_scholarship = {
+	type = character
+	
+	modifier_name = "SCHOLARSHIP_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		NOR = {
+			trait = succubus
+			trait = fel_lord
+			trait = pit_lord
+			trait = doomlord
+			trait = faceless
+			trait = voidwalker
+			trait = gnoll
+			trait = murloc
+			trait = kobold
+			trait = trogg
+			trait = lost_one
+		}
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0
+			trait = imbecile
+		}
+		modifier = {
+			factor = 0
+			trait = inbred
+		}
+		modifier = {
+			factor = 0.25
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.5
+			trait = brave
+		}
+		modifier = {
+			factor = 1.5
+			trait = craven
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+		modifier = {
+			factor = 2.0
+			trait = patient
+		}
+		modifier = {
+			factor = 2.0
+			trait = cynical
+			OR = {
+				trait = detached_priest
+				trait = martial_cleric
+				trait = scholarly_theologian
+				trait = mastermind_theologian
+			}
+		}
+		modifier = {
+			factor = 3.0
+			trait = scholar
+		}
+		modifier = {
+			factor = 3.0
+			is_theocracy = yes
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	
+	abort = {
+		OR = {
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	learning = 3
+}
+
+focus_theology = {
+	type = character
+	
+	modifier_name = "THEOLOGY_FOCUS"
+	
+	potential = {
+		is_playable = yes
+	}
+	
+	allow = {
+		is_adult = yes
+		NOT = { trait = incapable }
+		NOR = {
+			trait = succubus
+			trait = dreadlord
+			trait = fel_lord
+			trait = pit_lord
+			trait = doomlord
+			trait = faceless
+			trait = voidwalker
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_chromatic
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = dragon_red
+			trait = dragon_twilight
+			religion_group = arcane_group
+			religion = demonology
+			religion = mercantilism
+		}
+	}
+	
+	# AI Pick chance
+	chance = {
+		factor = 100
+		
+		modifier = {
+			factor = 0
+			trait = imbecile
+		}
+		modifier = {
+			factor = 0
+			trait = inbred
+		}
+		modifier = {
+			factor = 0
+			trait = cynical
+		}
+		modifier = {
+			factor = 0.25
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.25
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.25
+			trait = brave
+		}
+		modifier = {
+			factor = 1.5
+			trait = craven
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+		modifier = {
+			factor = 2.0
+			trait = patient
+		}
+		modifier = {
+			factor = 2.0
+			OR = {
+				trait = detached_priest
+				trait = martial_cleric
+				trait = scholarly_theologian
+				trait = mastermind_theologian
+			}
+		}
+		modifier = {
+			factor = 3.0
+			trait = mystic
+		}
+		modifier = {
+			factor = 3.0
+			trait = zealous
+		}
+		modifier = {
+			factor = 3.0
+			is_theocracy = yes
+		}
+	}
+	
+	# Focuses have no success conditions
+	success = {
+		always = no
+	}
+	creation_effect = {
+		if = {
+			limit = { has_quest = quest_monastic_order_theology_focus }
+			character_event = { id = MNM.4016 }
+		}
+	}
+	
+	abort = {
+		OR = {
+			trait = incapable
+			is_playable = no
+		}
+	}
+	
+	abort_effect = {
+	}
+	
+	# MODIFIERS
+	learning = 2
+	church_opinion = 20
+	health = 1.0
+}

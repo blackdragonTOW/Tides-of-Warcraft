@@ -1,0 +1,47 @@
+fel_traces = {
+	random = no
+	is_visible = {
+		character = FROM
+		has_character_flag = knows_fel_trace
+	}
+	customizer = no
+}
+
+fel_touched = {
+	random = no
+	health = -1
+	is_visible = {
+		OR = {
+			character = FROM
+			has_character_flag = public_fel_touched
+		}
+	}
+	customizer = no
+}
+
+fel_tainted = {
+	random = no
+	health = -1
+	diplomacy = -1
+	customizer = no
+}
+
+fel_corrupted = {
+	random = no
+	health = -2
+	diplomacy = -1
+	combat_rating = 1
+	customizer = no
+}
+
+felsworn = {
+	immortal = yes
+	random = no
+	general_opinion = -10
+	same_opinion = 15
+	demonic_opinion = 15
+	burning_legion_opinion = 15
+	demonology_opinion = 10
+	lich_king_opinion = 10
+	customizer = no
+}

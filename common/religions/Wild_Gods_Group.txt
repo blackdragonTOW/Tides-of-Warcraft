@@ -1,0 +1,114 @@
+wild_gods_group = {
+	has_coa_on_barony_only = yes
+	graphical_culture = mesoamericangfx
+	playable = yes
+	hostile_within_group = yes
+	
+	loa = {
+		graphical_culture = mesoamericangfx
+		icon = 8
+		heresy_icon = 9
+		
+		color = { 0.24 0.58 0.69 }
+		
+		scripture_name = WORDS_OF_THE_LOA
+		high_god_name = GOD_THE_LOA
+		god_names = { GOD_THE_LOA }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_CTHUN GOD_YSHAARJ GOD_YOGG_SARON GOD_NZOTH }
+		
+		ai_fabricate_claims = no
+		ai_convert_same_group = 1
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		female_temple_holders = yes
+		can_hold_temples = yes
+		priest_title = PRIESTNAME_WITCH_DOCTOR
+		priests_can_inherit = yes
+		aggression = 1.5
+		peace_prestige_loss = yes
+		allow_looting = yes
+		can_grant_invasion_cb = yes
+		max_wives = 4
+		
+		intermarry = shamanism
+		intermarry = geomancy
+		intermarry = aeromancy
+		intermarry = hydromancy
+		intermarry = pyromancy
+		intermarry = mercantilism
+		intermarry = forgotten_shadow
+		intermarry = demonology
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	hakkar = {
+		graphical_culture = mesoamericangfx
+		
+		color = { 0.95 0.07 0.07 }
+		
+		scripture_name = WORDS_OF_HAKKAR
+		high_god_name = GOD_HAKKAR
+		god_names = { GOD_HAKKAR GOD_SOULFLAYER GOD_LOA_OF_BLOOD }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_CTHUN GOD_YSHAARJ GOD_YOGG_SARON GOD_NZOTH }
+		
+		parent = loa
+		
+		ai_fabricate_claims = no
+		ai_convert_same_group = 2
+		ai_convert_other_group = 1
+		priests_can_marry = yes
+		female_temple_holders = yes
+		can_hold_temples = yes
+		priest_title = PRIESTNAME_WITCH_DOCTOR
+		priests_can_inherit = yes
+		aggression = 5
+		peace_prestige_loss = yes
+		allow_looting = yes
+		can_grant_invasion_cb = yes
+		max_wives = 4
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	druidism = {
+		graphical_culture = muslimgfx
+		
+		icon = 27
+		color = { 0.45 0.83 0.55 }
+		
+		scripture_name = NATURES_CALL
+		high_god_name = { GOD_NATURE }
+		god_names = { GOD_SPIRITS GOD_ANCIENTS GOD_WORLD_SOUL GOD_CENARIUS }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_ALAKIR GOD_RAGNAROS GOD_NEPTULON GOD_THERAZANE }
+		
+		
+		ai_convert_same_group = 1
+		ai_convert_other_group = 1
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_TENDER
+		priests_can_inherit = yes
+		feminist = yes
+		can_hold_temples = yes
+		defensive_attrition = yes
+		ignores_defensive_attrition = yes
+		allow_looting = no
+		
+		intermarry = geomancy
+		intermarry = aeromancy
+		intermarry = hydromancy
+		intermarry = pyromancy
+		intermarry = mercantilism
+		intermarry = holy_light
+		intermarry = argent
+		intermarry = old_ways
+		intermarry = cult_of_the_dreamer
+		intermarry = sunwell
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+}

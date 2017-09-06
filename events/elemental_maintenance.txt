@@ -1,0 +1,68 @@
+namespace = elemain
+
+#Set elemental educations
+character_event = {
+	id = elemain.1
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			trait = elemental_air
+			trait = elemental_earth
+			trait = elemental_fire
+			trait = elemental_water
+		}
+		OR = {
+			AND = {
+				NOT = { trait = elemental_elemental }
+				NOR = {
+					has_landed_title = e_skywall
+					has_landed_title = e_deepholme
+					has_landed_title = e_firelands
+					has_landed_title = e_abyssal_maw
+				}
+			}
+			AND = {
+				NOT = { trait = elemental_lord }
+				OR = {
+					has_landed_title = e_skywall
+					has_landed_title = e_deepholme
+					has_landed_title = e_firelands
+					has_landed_title = e_abyssal_maw
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		remove_educations = yes
+		remove_trait = elemental_elemental
+		remove_trait = elemental_elemental_lord
+		if = {
+			limit = {
+				NOR = {
+					has_landed_title = e_skywall
+					has_landed_title = e_deepholme
+					has_landed_title = e_firelands
+					has_landed_title = e_abyssal_maw
+				}
+			}
+			add_trait = elemental_elemental
+		}
+		if = {
+			limit = {
+				OR = {
+					has_landed_title = e_skywall
+					has_landed_title = e_deepholme
+					has_landed_title = e_firelands
+					has_landed_title = e_abyssal_maw
+				}
+			}
+			add_trait = elemental_lord
+		}
+	}
+}

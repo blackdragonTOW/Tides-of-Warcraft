@@ -1,0 +1,1326 @@
+########################################################
+# MINOR TITLES
+# Characters can have any number of these
+########################################################
+#	grant_limit: Max number of holders.
+#	realm_in_name: Append the name of the country after the title (Queen [of Sweden])
+#	allowed_to_hold: conditions for the character to hold the title
+#	allowed_to_grant: conditions for a ruler to grant the title
+#	regent: This is the title for regents (not really "minor")
+#	gain_effect: fires when the title is granted
+#	lose_effect: fires when a title is lost if dismissal_trigger evaluates to false
+#	message: should fire a message to the its owner when set
+#	The other fields are all character modifiers.
+
+#######################################
+# HARD: AUTO-GRANTED - DO NOT REMOVE!
+#######################################
+
+title_regent = {
+	realm_in_name = yes
+	dignity = 0.9
+	revoke_allowed = no
+	is_voter = yes
+	
+	monthly_salary = 0.1
+	monthly_prestige = 1.50
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_appointed_regent = {
+	is_high_prio = yes
+	realm_in_name = yes
+	dignity = 0.9
+	grant_limit = 1
+	opinion_effect = 10
+	revoke_allowed = yes
+
+	monthly_salary = 0.05
+	monthly_prestige = 0.75
+
+	allowed_to_hold = {
+		is_adult = yes
+		prisoner = no
+		NOT = { trait = incapable }
+		has_regent = no
+	}
+	
+	allowed_to_grant = {
+		has_regent = no
+		NOT = {
+			has_game_rule = {
+				name = regencies
+				value = off
+			}
+		}
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+}
+
+title_ruler_consort = {
+	dignity = 0.88
+	show_as_title = yes
+	realm_in_name = yes
+	spouse_context = yes # Title name as if the other gender version of the spouse's ruler title
+	revoke_allowed = no
+	
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+	
+	gain_effect = {
+	}
+	
+	lose_effect = {
+	}
+
+	message = no
+}
+
+title_tanist = {
+	dignity = 0.86
+	show_as_title = yes
+	realm_in_name = yes
+	revoke_allowed = no
+	
+	monthly_salary = 0.07
+	monthly_prestige = 0.75
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = no
+}
+
+title_queen_mother = {
+	dignity = 0.85
+	show_as_title = yes
+	realm_in_name = yes
+	revoke_allowed = no
+	
+	monthly_salary = 0.05
+	monthly_prestige = 1.00
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = no
+}
+
+title_prince = {
+	dignity = 0.8
+	show_as_title = yes
+	realm_in_name = yes
+	revoke_allowed = no
+	
+	monthly_salary = 0.05
+	monthly_prestige = 0.25
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = no
+}
+
+# Pagan consort
+title_courtesan = {
+	dignity = 0.05
+#	realm_in_name = yes
+	revoke_allowed = no
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.10
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = no
+}
+
+# Commander, granted via its own interaction, so very special
+title_commander = {
+	is_high_prio = yes
+	
+	attribute = martial
+	dignity = 0.05
+	opinion_effect = 5
+	realm_in_name = yes
+	
+	monthly_salary = 0.05
+	monthly_prestige = 0.50
+	
+	revoke_allowed = no # Handled by diplomatic interaction
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		liege = { character = FROM }
+		OR = {
+			AND = {
+				OR = {
+					NOT = { trait = ogre }
+					AND = {
+						trait = ogre
+						is_female = no
+					}
+				}
+				is_adult = yes
+			}
+			has_character_flag = special_marshal
+		}
+		
+		prisoner = no
+		NOT = { trait = incapable }
+		NOT = { is_inaccessible_trigger = yes }
+		NOT = { has_character_flag = guru }
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+	
+	message = yes
+}
+
+#######################################
+# SOFT: GRANTABLE - FULLY MODDABLE
+#######################################
+
+title_court_jester = {
+	dignity = 0.01
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = -5
+	
+	monthly_salary = 0.02
+	monthly_prestige = -0.25
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { has_character_flag = guru }
+	}
+	
+	allowed_to_grant = {
+		trait = human
+		trait = goblin
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		primary_title = {
+			OR = {
+				tier = king
+				tier = emperor
+			}
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+# Keeper of the King's Swans
+title_keeper_of_swans = {
+	dignity = 0.05
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.01
+	monthly_prestige = 0.50
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_forsaken
+			trait = undead_scourge
+			trait = undead_generic
+		}
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		primary_title = {
+			OR = {
+				tier = king
+				tier = emperor
+			}
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_master_of_the_horse = {
+	dignity = 0.06
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.40
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		trait = human
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_master_of_the_hunt = {
+	dignity = 0.05
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.40
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		OR = {
+			NOT = { trait = ogre }
+			AND = {
+				trait = ogre
+				is_female = no
+			}
+		}
+		NOT = { has_character_flag = guru }
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_high_almoner = {
+	dignity = 0.03
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.40
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		OR = {
+			religion_group = light_group
+			religion = forgotten_shadow
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_cupbearer = {
+	dignity = 0.1
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.05
+	monthly_prestige = 0.60
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { has_character_flag = guru }
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		trait = human
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_seneschal = {
+	dignity = 0.15
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.05
+	monthly_prestige = 0.60
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { has_character_flag = guru }
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		primary_title = {
+			OR = {
+				tier = king
+				tier = emperor
+			}
+		}
+		OR = {
+			trait = human
+			trait = undead_forsaken
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_paramount_knight = {
+	is_high_prio = yes
+	show_as_title = yes
+	realm_in_name = yes
+	is_voter = yes
+	dignity = 1
+	grant_limit = 0 
+	opinion_effect = 0
+	revoke_allowed = no
+
+	monthly_prestige = 1.50
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+		OR = {
+			has_minor_title = title_knight_male
+			has_minor_title = title_knight_female
+		}
+		independent = no
+	}
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+		}
+		primary_title = {
+			OR = {
+				tier = king
+				tier = emperor
+			}
+		}
+		trait = human
+		NOR = {
+			trait = undead_forsaken
+			trait = undead_generic
+			trait = undead_scourge
+		}
+	}
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_court_calligrapher = {
+	dignity = 0.05
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.01
+	monthly_prestige = 0.20
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		primary_title = {
+			OR = {
+				tier = king
+				tier = emperor
+			}
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_court_musician = {
+	dignity = 0.06
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.40
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_court_poet = {
+	dignity = 0.05
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.40
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_chief_architect = {
+	dignity = 0.03
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.40
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+# MERCHANT REPUBLIC TITLES
+
+# State Inquisitor
+title_state_inquisitor = {
+	dignity = 0.06
+	realm_in_name = yes
+	grant_limit = 3
+	opinion_effect = 6
+	
+	monthly_salary = 0.02
+	monthly_prestige = 0.40
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+
+	allowed_to_grant = {
+		is_merchant_republic = yes
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_high_admiral = {
+	dignity = 0.1
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.05
+	monthly_prestige = 0.60
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		is_merchant_republic = yes
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_high_judge = {
+	dignity = 0.15
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.05
+	monthly_prestige = 0.60
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { trait = incapable } 
+	}
+
+	allowed_to_grant = {
+		is_merchant_republic = yes
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+# Special - This title determines the heir of a Patrician
+title_patrician_heir = {
+	is_high_prio = yes
+	
+	dignity = 0.05
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 25
+	
+	patrician_heir = yes
+	
+	monthly_salary = 0.01
+	monthly_prestige = 0.20
+	
+	allowed_to_hold = {
+		is_female = no
+		is_landed = no
+		OR = {
+			dynasty = FROM
+			same_realm = FROM
+		}
+		trait = goblin
+		NOR = {
+			trait = undead_forsaken
+			trait = undead_generic
+			trait = undead_scourge
+		}
+		NOT = { trait = incapable }
+		NOT = { trait = bastard }
+		NOT = { is_ascetic_trigger = yes }
+		NOT = { trait = eunuch }
+		NOT = { trait = celibate }
+	}
+
+	allowed_to_grant = {
+		is_patrician = yes
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_lawspeaker = {
+	dignity = 0.2
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.1
+	monthly_prestige = 0.75
+	
+	is_unique = yes
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		is_nomadic = yes
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		is_nomadic = yes
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+# GENERIC PAGAN TITLES
+
+title_champion = {
+	dignity = 0.2
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.1
+	monthly_prestige = 0.75
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		OR = { 
+			AND = {
+				is_female = no
+				trait = ogre
+			}
+			NOT = { trait = ogre }
+		}
+		NOT = { trait = incapable } 
+	}
+
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+			is_nomadic = yes
+		}
+		OR = {
+			trait = ogre
+			trait = orc
+			trait = troll_dark
+			trait = troll_sand
+			trait = troll_zandalari
+			trait = troll_jungle
+			trait = troll_forest
+			trait = troll_ice
+			trait = gnoll
+			trait = murloc
+			trait = lost_one
+			trait = broken
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_master_of_the_blade = {
+	dignity = 0.15
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.075
+	monthly_prestige = 0.75
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		trait = orc
+		NOT = { has_minor_title = title_master_of_the_bow }
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		trait = orc
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_master_of_the_bow = {
+	dignity = 0.15
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	
+	monthly_salary = 0.075
+	monthly_prestige = 0.75
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		is_adult = yes
+		NOT = { has_minor_title = title_master_of_the_blade }
+		NOT = { trait = incapable } 
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_venerable_elder = {
+	dignity = 0.15
+	realm_in_name = yes
+	grant_limit = 4
+	opinion_effect = 10
+	
+	monthly_salary = 0.075
+	monthly_prestige = 0.75
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		OR = {
+			AND = {
+				NOT = { trait = trogg }
+				age = 50
+			}
+			AND = {
+				trait = trogg
+				age = 180
+			}
+		}
+	}
+
+	allowed_to_grant = {
+		is_nomadic = yes
+		NOT = { trait = lost_one }
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_guru = {
+	dignity = 0.050
+	grant_limit = 1
+	opinion_effect = 10
+	monthly_salary = 0.02
+	monthly_prestige = 0.75
+
+	revoke_allowed = no
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		OR = {
+			has_character_flag = guru
+			has_character_flag = fake_guru
+		}
+		is_adult = yes
+		always = no
+	}
+	
+	allowed_to_grant = { 
+		always = no
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+
+	message = yes
+}
+
+title_councilmember_king = {
+	is_high_prio = yes
+	dignity = 0.050
+	grant_limit = 1
+	opinion_effect = 10
+	monthly_salary = 0.00
+	monthly_prestige = 0.75
+	is_voter = yes
+	
+	allowed_to_grant = {
+		higher_tier_than = DUKE
+		has_dlc = "Zeus"
+		primary_title = { has_law = law_voting_power_1 }
+	}
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		can_be_councilmember_king_trigger = yes
+	}
+	revoke_trigger = {
+		FROM = {
+			primary_title = {
+				NOT = { 
+					AND = {
+						has_law = succession_voting_power_1
+						ROOT = { is_powerful_vassal = yes }
+					}
+				}
+			}
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+		opinion = { who = FROM modifier = opinion_fired_from_council }
+		opinion = { who = FROM modifier = opinion_recently_fired }
+	}
+	retire_effect = {
+	}
+
+	message = yes
+}
+
+title_councilmember_emperor = {
+	is_high_prio = yes
+	dignity = 0.060
+	grant_limit = 1
+	opinion_effect = 10
+	monthly_salary = 0.00
+	monthly_prestige = 1.00
+	is_voter = yes
+	
+	allowed_to_grant = {
+		higher_tier_than = KING
+		has_dlc = "Zeus"
+		primary_title = { has_law = law_voting_power_1 }
+	}
+	
+	allowed_to_hold = {
+		NOT = { 
+			primary_title = { temporary = yes } 
+		}
+		can_be_councilmember_emperor_trigger = yes
+	}
+
+	revoke_trigger = {
+		FROM = {
+			primary_title = {
+				NOT = { 
+					AND = {
+						has_law = succession_voting_power_1
+						ROOT = { is_powerful_vassal = yes }
+					}
+				}
+			}
+		}
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+		opinion = { who = FROM modifier = opinion_fired_from_council }
+		opinion = { who = FROM modifier = opinion_recently_fired }
+	}
+	retire_effect = {
+	}
+
+	message = yes
+}
+
+
+## Court Physician
+title_court_physician = {
+	is_high_prio = yes
+	attribute = learning
+    dignity = 5
+    realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 10
+	monthly_salary = 0.2
+	monthly_prestige = 0.5
+	
+	allowed_to_grant = {
+		NOR = {
+			trait = faceless
+			trait = eredar
+			trait = succubus
+			trait = dreadlord
+			trait = pit_lord
+			trait = doomlord
+			trait = fel_lord
+			trait = shivarra
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_chromatic
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = dragon_red
+			trait = dragon_twilight
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+		}
+		OR = {
+			higher_tier_than = BARON
+			is_patrician = yes
+		}
+		has_dlc = "Reapers"
+	}
+	
+	allowed_to_hold = {
+		custom_tooltip = {
+			text = court_physician_tooltip_1
+			NOT = {
+				primary_title = { temporary = yes } 
+			}
+		}
+		custom_tooltip = {
+			text = court_physician_tooltip_2
+		}
+		OR = {
+			learning = 15
+			AND = {
+				learning = 10
+				OR = {
+					trait = physician
+					trait = scholar
+					trait = healer
+					trait = priest
+					trait = shaman
+					trait = druid
+					trait = alchemist
+					trait = witch_doctor
+					trait = paladin
+				}
+			}
+			custom_tooltip = { 
+				text = educated_court_physician
+				hidden_tooltip = {
+					has_character_flag = is_court_physician
+				}
+			}
+		}
+		is_adult = yes
+
+		prisoner = no
+		NOT = { trait = in_hiding }
+		NOT = { trait = incapable }
+	}
+
+	revoke_trigger = {
+	}
+	
+	gain_effect = {
+	}
+	lose_effect = {
+	}
+	retire_effect = {
+	}
+
+	message = yes
+}

@@ -1,0 +1,1897 @@
+namespace = doom
+
+#Passive increase in corruption on provinces mages and warlocks are in.
+character_event = {
+	id = doom.1
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 50
+		modifier = {
+			factor = 2
+			has_game_rule = {
+				name = corruption
+				value = slower
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_game_rule = {
+				name = corruption
+				value = faster
+			}
+		}
+		modifier = {
+			factor = 1.2
+			location = {
+				OR = {
+					culture = red_dragonflight
+					culture = blue_dragonflight
+					culture = bronze_dragonflight
+					culture = black_dragonflight
+					culture = green_dragonflight
+					culture = infinite_dragonflight
+					culture = nightmare_dragonflight
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5
+			NOR = {
+				trait = arcanist
+				trait = mage
+				trait = warlock
+				trait = necrolyte
+				trait = necromancer
+			}
+		}
+		modifier = {
+			factor = 1.1
+			trait = arcanist
+		}
+		modifier = {
+			factor = 0.7
+			trait = warlock
+		}
+		modifier = {
+			factor = 0.9
+			trait = necrolyte
+		}
+		modifier = {
+			factor = 0.8
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 30 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = global_doom value = 30 }
+			NOT = { check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = global_doom value = 40 }
+		}
+		modifier = {
+			factor = 0.8
+			location = {
+				check_variable = { which = prov_corruption value = 10 }
+				NOT = { check_variable = { which = prov_corruption value = 15 } }
+			}
+		}
+		modifier = {
+			factor = 0.6
+			location = {
+				check_variable = { which = prov_corruption value = 15 }
+				NOT = { check_variable = { which = prov_corruption value = 20 } }
+			}
+		}
+		modifier = {
+			factor = 0.4
+			location = {
+				check_variable = { which = prov_corruption value = 20 }
+				NOT = { check_variable = { which = prov_corruption value = 25 } }
+			}
+		}
+		modifier = {
+			factor = 0.2
+			location = {
+				check_variable = { which = prov_corruption value = 25 }
+			}
+		}
+		modifier = {
+			factor = 0.7
+			location = {
+				has_province_modifier = demonic_activity
+			}
+		}
+		modifier = {
+			factor = 0.8
+			location = {
+				has_province_modifier = fel_cults
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_global_flag = sunwell_embraced_fel
+			OR = {
+				AND = {
+					OR = {
+						trait = high_elf
+						trait = blood_elf
+						trait = wretched
+					}
+					OR = {
+						religion = demonology
+						religion = burning_legion
+					}
+				}
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+					}
+					OR = {
+						religion = demonology
+						religion = burning_legion
+					}
+				}
+			}
+		}
+	}
+	
+	trigger = {
+		location = {
+			NOT = { check_variable = { which =  prov_corruption value = 30 } }
+		}
+		OR = {
+			AND = {
+				NOT = {
+					location = {
+						OR = {
+							region = world_eversong_woods
+							region = world_ghostlands
+						}
+					}
+				}
+				NOT = {
+					any_province = {
+						location = {
+							OR = {
+								region = world_eversong_woods
+								region = world_ghostlands
+							}
+						}
+						any_province_holding = {
+							OR = {
+								has_building = ca_runestones
+								has_building = ct_runestones
+								has_building = tp_runestones
+								has_building = tb_runestones
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				has_global_flag = sunwell_embraced_fel
+				OR = {
+					religion = demonology
+					religion = burning_legion
+				}
+			}
+		}
+		OR = {
+			true_religion = burning_legion
+			location = {
+				religion = burning_legion
+			}
+			location = {
+				check_variable = { which = prov_corruption value = 5 }
+			}
+			AND = {
+				OR = {
+					trait = eredar
+					trait = dreadlord
+					trait = succubus
+					trait = pit_lord
+					trait = felsworn
+					trait = arcanist
+					trait = mage
+					trait = warlock
+					trait = necrolyte
+					trait = necromancer
+				}
+				prisoner = no
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					trait = necrolyte
+					trait = warlock
+					trait = eredar
+					trait = dreadlord
+					trait = succubus
+					trait = pit_lord
+					true_religion = burning_legion
+				}
+			}
+			prov_corruption_fel = yes
+			break = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					trait = arcanist
+					trait = mage
+					trait = necromancer
+				}
+			}
+			prov_corruption_arcane = yes
+			break = yes
+		}
+		prov_corruption_arcane = yes
+	}
+}
+
+#Passive increase in character corruption.
+character_event = {
+	id = doom.2
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 20
+		modifier = {
+			factor = 3
+			OR = {
+				trait = dragon_whelp
+				trait = dragon_drake
+				trait = dragon_dragon
+				trait = dragon_wyrm
+			}
+		}
+		modifier = {
+			factor = 2
+			has_game_rule = {
+				name = corruption
+				value = slower
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_game_rule = {
+				name = corruption
+				value = faster
+			}
+		}
+		modifier = {
+			factor = 0.8
+			location = {
+				check_variable = { which = prov_corruption value = 10 }
+				NOT = { check_variable = { which = prov_corruption value = 15 } }
+			}
+		}
+		modifier = {
+			factor = 0.6
+			location = {
+				check_variable = { which = prov_corruption value = 15 }
+				NOT = { check_variable = { which = prov_corruption value = 20 } }
+			}
+		}
+		modifier = {
+			factor = 0.4
+			location = {
+				check_variable = { which = prov_corruption value = 20 }
+				NOT = { check_variable = { which = prov_corruption value = 25 } }
+			}
+		}
+		modifier = {
+			factor = 0.2
+			location = {
+				check_variable = { which = prov_corruption value = 25 }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.7
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = global_doom value = 30 }
+			NOT = { check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 0.5
+			check_variable = { which = global_doom value = 40 }
+		}
+		modifier = {
+			factor = 0.5
+			has_global_flag = sunwell_embraced_fel
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+	}
+	
+	trigger = {
+		NOR = {
+			trait = demon_hunter
+			trait = eredar
+			trait = dreadlord
+			trait = succubus
+			trait = pit_lord
+			trait = faceless
+			trait = undead_scourge
+			trait = undead_generic
+			trait = undead_forsaken
+		}
+		OR = {
+			trait = warlock
+			trait = necrolyte
+			location = {
+				check_variable = { which = prov_corruption value = 5 }
+			}
+			AND = {
+				has_global_flag = sunwell_embraced_fel
+				OR = {
+					religion = demonology
+					religion = burning_legion
+				}
+				OR = {
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		increase_corruption = yes
+	}
+}
+
+#Province corruption osmosis.
+province_event = {
+	id = doom.3
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 30
+		modifier = {
+			factor = 1.2
+			OR = {
+				culture = red_dragonflight
+				culture = blue_dragonflight
+				culture = bronze_dragonflight
+				culture = black_dragonflight
+				culture = green_dragonflight
+				culture = infinite_dragonflight
+				culture = nightmare_dragonflight
+			}
+		}
+		modifier = {
+			factor = 2
+			has_game_rule = {
+				name = corruption
+				value = slower
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_game_rule = {
+				name = corruption
+				value = faster
+			}
+		}
+		modifier = {
+			factor = 0.8
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 30 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = global_doom value = 30 }
+			NOT = { check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 0.2
+			any_neighbor_province = {
+				check_variable = { which = global_doom value = 40 }
+			}
+		}
+		modifier = {
+			factor = 0.8
+			any_neighbor_province = {
+				check_variable = { which = prov_corruption value = 10 }
+				NOT = { check_variable = { which = prov_corruption value = 15 } }
+			}
+		}
+		modifier = {
+			factor = 0.6
+			any_neighbor_province = {
+				check_variable = { which = prov_corruption value = 15 }
+				NOT = { check_variable = { which = prov_corruption value = 20 } }
+			}
+		}
+		modifier = {
+			factor = 0.4
+			any_neighbor_province = {
+				check_variable = { which = prov_corruption value = 20 }
+				NOT = { check_variable = { which = prov_corruption value = 25 } }
+			}
+		}
+		modifier = {
+			factor = 0.2
+			any_neighbor_province = {
+				check_variable = { which = prov_corruption value = 25 }
+			}
+		}
+	}
+	
+	trigger = {
+		NOT = { check_variable = { which = prov_corruption value = 30 } }
+		any_neighbor_province = {
+			check_variable = { which = prov_corruption value = 5 }
+		}
+	}
+	
+	immediate = {
+		prov_corruption_nochar = yes
+	}
+}
+
+#Passive Doom
+character_event = {
+	id = doom.4
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 200
+	}
+	
+	trigger = {
+		ai = no # To reduce the likelyhood of it happening. 
+	}
+	
+	immediate = {
+		random = {
+			chance = 10
+			increase_doom = yes
+		}
+	}
+}
+
+#Add corruption traits.
+character_event = {
+	id = doom.5
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOR = {
+			trait = demon_hunter
+			trait = eredar
+			trait = dreadlord
+			trait = succubus
+			trait = pit_lord
+			trait = faceless
+			trait = undead_scourge
+			trait = undead_generic
+			trait = undead_forsaken
+		}
+		OR = {
+			AND = {
+				check_variable = { which = char_corruption value = 5 }
+				NOR = {
+					trait = fel_traces
+					trait = fel_touched
+					trait = fel_tainted
+					trait = fel_corrupted
+					trait = felsworn
+				}
+			}
+			AND = {
+				check_variable = { which = char_corruption value = 10 }
+				trait = fel_traces
+				NOR = {
+					trait = fel_touched
+					trait = fel_tainted
+					trait = fel_corrupted
+					trait = felsworn
+				}
+			}
+			AND = {
+				check_variable = { which = char_corruption value = 15 }
+				trait = fel_touched
+				NOR = {
+					trait = fel_tainted
+					trait = fel_corrupted
+					trait = felsworn
+				}
+			}
+			AND = {
+				check_variable = { which = char_corruption value = 20 }
+				trait = fel_tainted
+				NOR = {
+					trait = fel_corrupted
+					trait = felsworn
+				}
+			}
+			AND = {
+				check_variable = { which = char_corruption value = 40 }
+				trait = fel_corrupted
+				OR = {
+					religion = burning_legion
+					religion = demonology
+				}
+				NOT = { trait = felsworn }
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				check_variable = { which = char_corruption value = 5 }
+				NOR = {
+					trait = fel_traces
+					trait = fel_touched
+					trait = fel_tainted
+					trait = fel_corrupted
+					trait = felsworn
+				}
+			}
+			add_trait = fel_traces
+			random = {
+				chance = 30
+				modifier = {
+					factor = 2
+					learning = 20
+					NOT = { learning = 25 }
+				}
+				modifier = {
+					factor = 2.5
+					learning = 25
+				}
+				set_character_flag = knows_fel_trace
+				character_event = { id = doom.7 }
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				check_variable = { which = char_corruption value = 10 }
+				trait = fel_traces
+				NOR = {
+					trait = fel_touched
+					trait = fel_tainted
+					trait = fel_corrupted
+					trait = felsworn
+				}
+			}
+			remove_trait = fel_traces
+			add_trait = fel_touched
+			clr_character_flag = knows_fel_taint
+			random = {
+				chance = 50
+				modifier = {
+					factor = 0.8
+					intrigue = 10
+					NOT = { intrigue = 15 }
+				}
+				modifier = {
+					factor = 0.65
+					intrigue = 15
+					NOT = { intrigue = 20 }
+				}
+				modifier = {
+					factor = 0.4
+					intrigue = 20
+					NOT = { intrigue = 15 }
+				}
+				modifier = {
+					factor = 0.2
+					intrigue = 25
+				}
+				set_character_flag = public_fel_touched
+			}
+			set_character_flag = corruption_desc_flag_1
+			character_event = { id = doom.7 }
+			break = yes
+		}
+		if = {
+			limit = {
+				check_variable = { which = char_corruption value = 15 }
+				trait = fel_touched
+				NOR = {
+					trait = fel_tainted
+					trait = fel_corrupted
+					trait = felsworn
+				}
+			}
+			remove_trait = fel_touched
+			add_trait = fel_tainted
+			set_character_flag = corruption_desc_flag_2
+			clr_character_flag = public_fel_taint
+			character_event = { id = doom.7 }
+			break = yes
+		}
+		if = {
+			limit = {
+				check_variable = { which = char_corruption value = 20 }
+				trait = fel_tainted
+				NOR = {
+					trait = fel_corrupted
+					trait = felsworn
+				}
+			}
+			remove_trait = fel_tainted
+			add_trait = fel_corrupted
+			set_character_flag = corruption_desc_flag_3
+			character_event = { id = doom.7 }
+			break = yes
+		}
+		if = {
+			limit = {
+				check_variable = { which = char_corruption value = 40 }
+				trait = fel_corrupted
+				NOT = { trait = felsworn }
+				OR = {
+					religion = burning_legion
+					religion = demonology
+				}
+			}
+			remove_trait = fel_corrupted
+			add_trait = felsworn
+			set_character_flag = corruption_desc_flag_4
+			character_event = { id = doom.7 }
+			break = yes
+		}
+	}
+}
+
+#Add corruption province modifiers.
+province_event = {
+	id = doom.6
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				check_variable = { which = prov_corruption value = 15 }
+				NOR = {
+					has_province_modifier = tainted
+					has_province_modifier = corrupted
+					has_province_modifier = fel_wasteland
+				}
+			}
+			AND = {
+				check_variable = { which = prov_corruption value = 20 }
+				has_province_modifier = tainted
+				NOR = {
+					has_province_modifier = corrupted
+					has_province_modifier = fel_wasteland
+				}
+			}
+			AND = {
+				check_variable = { which = prov_corruption value = 30 }
+				has_province_modifier = corrupted
+				NOT = { has_province_modifier = fel_wasteland }
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				check_variable = { which = prov_corruption value = 15 }
+				NOR = {
+					has_province_modifier = tainted
+					has_province_modifier = corrupted
+					has_province_modifier = fel_wasteland
+				}
+			}
+			add_province_modifier = { name = tainted duration = -1 }
+			holder_scope = {
+				character_event = { id = doom.8 }
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				check_variable = { which = prov_corruption value = 20 }
+				has_province_modifier = tainted
+				NOR = {
+					has_province_modifier = corrupted
+					has_province_modifier = fel_wasteland
+				}
+			}
+			remove_province_modifier = tainted
+			add_province_modifier = { name = corrupted duration = -1 }
+			holder_scope = {
+				character_event = { id = doom.8 }
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				check_variable = { which = prov_corruption value = 35 }
+				has_province_modifier = corrupted
+				NOT = { has_province_modifier = fel_wasteland }
+			}
+			remove_province_modifier = corrupted
+			add_province_modifier = { name = fel_wasteland duration = -1 }
+			holder_scope = {
+				character_event = { id = doom.8 }
+			}
+			break = yes
+		}
+	}
+}
+
+#Informed of character corruption
+character_event = {
+	id = doom.7
+	desc = {
+		trigger = {
+			has_character_flag = knows_fel_trace
+		}
+		text = EVTDESCDOOM.7a # You feel strange. Foul. Tainted. And ever so slightly stronger, too.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = corruption_desc_flag_1
+		}
+		text = EVTDESCDOOM.7b # The fel power within your grows, sapping your health. And yet, you can feel the promise of greater power, if only you allow it to continue.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = corruption_desc_flag_2
+		}
+		text = EVTDESCDOOM.7c # Though the fel courses through your body threatens to consume you, it also grants you power.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = corruption_desc_flag_3
+		}
+		text = EVTDESCDOOM.7d # Ever more corrupt, you near the limits of what your body can withstands. But the power it grants you is great, and continues to increase.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = corruption_desc_flag_4
+		}
+		text = EVTDESCDOOM.7e # You straddle the line between mortal and demon. Age no longer is a factor, nor is disease. Fel no longer harms you, but instead fuels you. You might even say you've ascended.
+	}
+	picture = GFX_evt_corruption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		if = {
+			limit = {
+				has_character_flag = knows_fel_trace
+			}
+			add_trait = fel_traces
+		}
+		if = {
+			limit = {
+				has_character_flag = corruption_desc_flag_1
+			}
+			add_trait = fel_touched
+		}
+		if = {
+			limit = {
+				has_character_flag = corruption_desc_flag_2
+			}
+			add_trait = fel_tainted
+		}
+		if = {
+			limit = {
+				has_character_flag = corruption_desc_flag_3
+			}
+			add_trait = fel_corrupted
+		}
+		if = {
+			limit = {
+				has_character_flag = corruption_desc_flag_4
+			}
+			add_trait = felsworn
+		}
+		clr_character_flag = corruption_desc_flag_1
+		clr_character_flag = corruption_desc_flag_2
+		clr_character_flag = corruption_desc_flag_3
+		clr_character_flag = corruption_desc_flag_4
+	}
+}
+
+#informed of province corruption
+character_event = {
+	id = doom.8
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = tainted
+			}
+		}
+		text = EVTDESCDOOM.8a # The landscape of [From.GetName] has become twisted as fel energy seeps into the land.
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = corrupted
+			}
+		}
+		text = EVTDESCDOOM.8b # The landscape of [From.GetName] is extremely corrupted, supporting only mutants and demons.
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = fel_wasteland
+			}
+		}
+		text = EVTDESCDOOM.8c # [From.GetName] is now nothing but a fel-consumed wasteland, beyond saving.
+	}
+	picture = GFX_evt_corruption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = tainted
+				}
+			}
+			FROM = {
+				add_province_modifier = { name = tainted duration = -1 }
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = corrupted
+				}
+			}
+			FROM = {
+				remove_province_modifier = tainted
+				add_province_modifier = { name = corrupted duration = -1 }
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = fel_wasteland
+				}
+			}
+			FROM = {
+				remove_province_modifier = corrupted
+				add_province_modifier = { name = fel_wasteland duration = -1 }
+			}
+		}
+	}
+}
+
+#Passive province corruption reduction
+province_event = {
+	id = doom.9
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 40
+		modifier = {
+			factor = 0.8
+			OR = {
+				culture = red_dragonflight
+				culture = blue_dragonflight
+				culture = bronze_dragonflight
+				culture = black_dragonflight
+				culture = green_dragonflight
+				culture = infinite_dragonflight
+				culture = nightmare_dragonflight
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_game_rule = {
+				name = corruption
+				value = slower
+			}
+		}
+		modifier = { # This is to make things harder, but here just in case
+			factor = 2
+			has_game_rule = {
+				name = corruption
+				value = faster
+			}
+		}
+		modifier = {
+			factor = 1.3
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 1.5
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 30 } }
+		}
+		modifier = {
+			factor = 1.7
+			check_variable = { which = global_doom value = 30 }
+			NOT = { check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 2
+			any_neighbor_province = {
+				check_variable = { which = global_doom value = 40 }
+			}
+		}
+		modifier = {
+			factor = 1.3
+			any_neighbor_province = {
+				check_variable = { which = prov_corruption value = 10 }
+			}
+		}
+		modifier = {
+			factor = 1.5
+			any_neighbor_province = {
+				check_variable = { which = prov_corruption value = 15 }
+			}
+		}
+		modifier = {
+			factor = 1.7
+			any_neighbor_province = {
+				check_variable = { which = prov_corruption value = 20 }
+			}
+		}
+		modifier = {
+			factor = 2
+			any_neighbor_province = {
+				check_variable = { which = prov_corruption value = 25 }
+			}
+		}
+		modifier = {
+			factor = 0.05
+			holder_scope = {
+				any_realm_character = {
+					event_target:guardian = {
+						character = PREV
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			holder_scope = {
+				OR = {
+					AND = {
+						trait = priest
+						OR = {
+							has_character_modifier = holy_priest
+							has_character_modifier = sun_priest
+							has_character_modifier = moon_priest
+						}
+					}
+					AND = {
+						trait = druid
+						OR = {
+							has_character_modifier = mender
+							has_character_modifier = sun_druid
+							has_character_modifier = moon_druid
+						}
+					}
+					AND = {
+						trait = shaman
+						has_character_modifier = spiritualist
+					}
+				}
+				learning = 18
+			}
+		}
+		modifier = {
+			factor = 3
+			has_province_modifier = fel_wasteland
+			has_game_rule = {
+				name = fel_wasteland_restore
+				value = slow
+			}
+		}
+		modifier = {
+			factor = 2
+			has_province_modifier = fel_wasteland
+			has_game_rule = {
+				name = fel_wasteland_restore
+				value = faster
+			}
+		}
+	}
+	
+	trigger = {
+		OR = {
+			NOT = { check_variable = { which = prov_corruption value = 35 } }
+			NOT = {
+				has_game_rule = {
+					name = fel_wasteland_restore
+					value = off
+				}
+			}
+		}
+		check_variable = { which = prov_corruption value = 1 }
+	}
+	
+	immediate = {
+		decrease_prov_corruption_nochar = yes
+	}
+}
+
+#Province corruption reduction effects
+province_event = {
+	id = doom.10
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			AND = {
+				NOT = { check_variable = { which = prov_corruption value = 15 } }
+				has_province_modifier = tainted
+			}
+			AND = {
+				NOT = { check_variable = { which = prov_corruption value = 20 } }
+				has_province_modifier = corrupted
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { which = prov_corruption value = 15 } }
+				has_province_modifier = tainted
+			}
+			remove_province_modifier = tainted
+			holder_scope = {
+				set_character_flag = remove_corruption_province_1
+				character_event = { id = doom.11 }
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = { check_variable = { which = prov_corruption value = 20 } }
+				has_province_modifier = corrupted
+			}
+			remove_province_modifier = corrupted
+			add_province_modifier = { name = tainted duration = -1 }
+			holder_scope = {
+				set_character_flag = remove_corruption_province_2
+				character_event = { id = doom.11 }
+			}
+			break = yes
+		}
+	}
+}
+
+#Informed of province corruption fading
+character_event = {
+	id = doom.11
+	desc = {
+		trigger = {
+			has_character_flag = remove_corruption_province_1
+		}
+		text = EVTDESCDOOM.11a # The landscape of [From.GetName] has mostly recovered from the effects fel magic had caused upon it.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = remove_corruption_province_2
+		}
+		text = EVTDESCDOOM.11b # The landscape of [From.GetName] has begun to heal from the corruption it has been subjected to.
+	}
+	picture = GFX_evt_corruption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		if = {
+			limit = {
+				has_character_flag = remove_corruption_province_1
+			}
+			FROM = {
+				remove_province_modifier = tainted
+			}
+		}
+		if = {
+			limit = {
+				has_character_flag = remove_corruption_province_2
+			}
+			FROM = {
+				remove_province_modifier = corrupted
+				add_province_modifier = { name = tainted duration = -1 }
+			}
+		}
+		clr_character_flag = remove_corruption_province_1
+		clr_character_flag = remove_corruption_province_2
+	}
+}
+
+#Random bad modifier on corrupted province
+province_event = {
+	id = doom.12
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 30
+		modifier = {
+			factor = 0.8
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 30 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = global_doom value = 30 }
+			NOT = {check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = global_doom value = 40 }
+		}
+		modifier = {
+			factor = 0.8
+			check_variable = { which = prov_corruption value = 10 }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = prov_corruption value = 15 }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = prov_corruption value = 20 }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = prov_corruption value = 25 }
+		}
+	}
+	
+	trigger = {
+		check_variable = { which = prov_corruption value = 5 }
+		NOR = {
+			has_province_modifier = mutated_animals
+			has_province_modifier = strange_activity
+			has_province_modifier = demonic_activity
+			has_province_modifier = fel_cults
+			has_province_modifier = restless_elements
+			has_province_modifier = fel_portal
+		}
+	}
+	
+	immediate = {
+		random_list = {
+			10 = { }
+			5 = {
+				modifier = {
+					factor = 0
+					OR = {
+						check_variable = { which = prov_corruption value = 20 }
+						holder_scope = {
+							religion = burning_legion
+						}
+					}
+				}
+				add_province_modifier = { name = strange_activity duration = -1 }
+			}
+			10 = {
+				add_province_modifier = { name = mutated_animals duration = 150 }
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					check_variable = { which = prov_corruption value = 30 }
+				}
+				add_province_modifier = { name = restless_elements duration = 240 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = { check_variable = { which = prov_corruption value = 20 } }
+						holder_scope = {
+							OR = {
+								true_religion = burning_legion
+								true_religion = demonology
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					check_variable = { which = prov_corruption value = 20 }
+				}
+				add_province_modifier = { name = demonic_activity duration = -1 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = { check_variable = { which = prov_corruption value = 20 } }
+						holder_scope = {
+							true_religion = burning_legion
+						}
+					}
+				}
+				modifier = {
+					factor = 5
+					check_variable = { which = prov_corruption value = 20 }
+				}
+				add_province_modifier = { name = fel_cults duration = -1 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = { check_variable = { which = prov_corruption value = 20 } }
+						holder_scope = {
+							true_religion = burning_legion
+						}
+					}
+				}
+				add_province_modifier = { name = fel_portal duration = -1 }
+			}
+		}
+	}
+}
+
+#Notified
+character_event = {
+	id = doom.13
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = strange_activity
+			}
+		}
+		text = EVTDESCDOOM.13a # Strange figures have been seen moving through the night in [From.GetName], causing fear and restlessness in the populace.
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = mutated_animals
+			}
+		}
+		text = EVTDESCDOOM.13b # Animals in [From.GetName] have become mutated, sprouting spikes and horns where they didn't have any and becoming increasingly agressive.
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = restless_elements
+			}
+		}
+		text = EVTDESCDOOM.13c # Elementals in [From.GetName] are appearing in greater numbers and are consistently hostile, attacking both the wildlife and the local population.
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = fel_cults
+			}
+		}
+		text = EVTDESCDOOM.13d # Stange hooded figures have been seen in [From.GetName] lately. Rumour has it that they're some sort of demon cultists.
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = demonic_activity
+			}
+		}
+		text = EVTDESCDOOM.13e # Demons have begun to openly appear in [From.GetName], slaughtering anything they come across and corrupting all they touch.
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				has_province_modifier = fel_portal
+			}
+		}
+		text = EVTDESCDOOM.13f # A portal bristiling with fel energy has been opened in [From.GetName], and demons are pouring through!
+	}
+	picture = GFX_evt_corruption
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = strange_activity
+				}
+			}
+			FROM = {
+				add_province_modifier = { name = strange_activity duration = -1 }
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = mutated_animals
+				}
+			}
+			FROM = {
+				add_province_modifier = { name = mutated_animals duration = 150 }
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = restless_elements
+				}
+			}
+			FROM = {
+				add_province_modifier = { name = restless_elements duration = 240 }
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = demonic_activity
+				}
+			}
+			FROM = {
+				add_province_modifier = { name = demonic_activity duration = -1 }
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = fel_cults
+				}
+			}
+			FROM = {
+				add_province_modifier = { name = fel_cults duration = -1 }
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_province_modifier = fel_portal
+				}
+			}
+			FROM = {
+				add_province_modifier = { name = fel_portal duration = -1 }
+			}
+		}
+	}
+}
+
+#Strange activity to demonic activity or fel cults
+province_event = {
+	id = doom.14
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	trigger = {
+		has_province_modifier = strange_activity
+	}
+	
+	immediate = {
+		remove_province_modifier = strange_activity
+		random_list = {
+			1 = {
+				add_province_modifier = { name = demonic_activity duration = -1 }
+				holder_scope = {
+					character_event = { id = doom.13 }
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					holder_scope = {
+						true_religion = burning_legion
+					}
+				}
+				add_province_modifier = { name = fel_cults duration = -1 }
+				holder_scope = {
+					character_event = { id = doom.13 }
+				}
+			}
+		}
+	}
+}
+
+#Call of the Legion
+character_event = {
+	id = doom.15
+	desc = EVTDESCDOOM.15 # You cannot deny the power that slowly, but surely, twists the very land around you. What can cause this is powerful. Perhaps too powerful to resist. It might be that the only way to survive is to accept it, and its masters in the Nether.
+	picture = GFX_evt_corruption
+	border = GFX_event_normal_frame_intrigue
+	
+	mean_time_to_happen = {
+		months = 30
+		modifier = {
+			factor = 0.8
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 30 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = global_doom value = 30 }
+			NOT = { check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = global_doom value = 40 }
+		}
+		modifier = {
+			factor = 0.8
+			location = {
+				check_variable = { which = prov_corruption value = 10 }
+				NOT = { check_variable = { which = prov_corruption value = 15 } }
+			}
+		}
+		modifier = {
+			factor = 0.6
+			location = {
+				check_variable = { which = prov_corruption value = 15 }
+				NOT = { check_variable = { which = prov_corruption value = 20 } }
+			}
+		}
+		modifier = {
+			factor = 0.4
+			location = {
+				check_variable = { which = prov_corruption value = 20 }
+				NOT = { check_variable = { which = prov_corruption value = 25 } }
+			}
+		}
+		modifier = {
+			factor = 0.2
+			location = {
+				check_variable = { which = prov_corruption value = 25 }
+			}
+		}
+		modifier = {
+			factor = 2
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.5
+			trait = cynical
+		}
+	}
+	
+	trigger = {
+		location = {
+			check_variable = { which = prov_corruption value = 10 }
+		}
+		NOR = {
+			true_religion = burning_legion
+			true_religion = demonology
+			true_religion = lich_king
+		}
+		NOT = {
+			trait = faceless
+			trait = eredar
+			trait = dreadlord
+			trait = pit_lord
+			trait = succubus
+			trait = felsworn
+			trait = undead_scourge
+		}
+		NOT = { has_character_flag = rejected_legion }
+	}
+	
+	option = {
+		name = EVTOPTDOOM.15a # Let Azeroth burn!
+		if = {
+			limit = {
+				OR = {
+					independent = yes
+					top_liege = {
+						religion = burning_legion
+					}
+				}
+			}
+			religion = burning_legion
+		}
+		if = {
+			limit = {
+				independent = no
+				NOT = {
+					top_liege = {
+						religion = burning_legion
+					}
+				}
+			}
+			set_secret_religion = burning_legion
+		}
+		if = {
+			limit = {
+				trait = cynical
+			}
+			random = {
+				chance = 30
+				remove_trait = cynical
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			trait = ambitious
+		}
+		name = EVTOPTDOOM.15b # This power will be mine, and only mine.
+		if = {
+			limit = {
+				OR = {
+					independent = yes
+					top_liege = {
+						religion = demonology
+					}
+				}
+			}
+			religion = demonology
+		}
+		if = {
+			limit = {
+				independent = no
+				NOT = {
+					top_liege = {
+						religion = demonology
+					}
+				}
+			}
+			set_secret_religion = demonology
+		}
+		if = {
+			limit = {
+				NOT = { trait = cynical }
+			}
+			random_list = {
+				10 = { }
+				3 = {
+					modifier = {
+						factor = 0
+						trait = cynical
+					}
+					remove_trait = zealous
+				}
+				3 = {
+					remove_trait = zealous
+					add_trait = cynical
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTDOOM.15c # I will not give in to this foul force!
+		piety = 50
+		if = {
+			limit = {
+				NOT = { trait = zealous }
+			}
+			random_list = {
+				10 = { }
+				3 = {
+					modifier = {
+						factor = 0
+						trait = zealous
+					}
+					remove_trait = cynical
+				}
+				3 = {
+					remove_trait = cynical
+					add_trait = zealous
+				}
+			}
+		}
+		set_character_flag = rejected_legion
+	}
+}
+
+#Demon raid
+province_event = {
+	id = doom.16
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 100
+		modifier = {
+			factor = 0.8
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 30 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = global_doom value = 30 }
+			NOT = { check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = global_doom value = 40 }
+		}
+		modifier = {
+			factor = 0.8
+			check_variable = { which = prov_corruption value = 10 }
+			NOT = { check_variable = { which = prov_corruption value = 15 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = prov_corruption value = 15 }
+			NOT = { check_variable = { which = prov_corruption value = 20 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = prov_corruption value = 20 }
+			NOT = { check_variable = { which = prov_corruption value = 25 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = prov_corruption value = 25 }
+		}
+		modifier = {
+			factor = 0.02
+			has_province_modifier = fel_portal
+		}
+	}
+	
+	trigger = {
+		has_province_modifier = demonic_activity
+	}
+	
+	immediate = {
+		random_list = {
+			1 = { # Eredar
+				modifier = {
+					factor = 0
+					NOT = { check_variable = { which = global_doom value = 30 } }
+				}
+				create_character = {
+					age = 4321
+					culture = eredar
+					religion = burning_legion
+					dynasty = random
+					trait = eredar
+					flag = race_assigned
+					random_traits = yes
+				}
+				new_character = {
+					create_title = {
+						tier = DUKE
+						landless = yes
+						temporary = yes
+						culture = eredar
+						name = DEMONIC_HOST
+						holder = THIS
+						ruler = GENERAL
+						ruler_female = GENERAL
+					}
+				}
+			}
+			5 = { # Doomlord
+				create_character = {
+					age = 666
+					culture = ered_ruin
+					religion = burning_legion
+					dynasty = random
+					female = no
+					trait = doomlord
+					flag = race_assigned
+					random_traits = yes
+				}
+				new_character = {
+					create_title = {
+						tier = DUKE
+						landless = yes
+						temporary = yes
+						culture = ered_ruin
+						name = DEMONIC_HOST
+						holder = THIS
+						ruler = GENERAL
+						ruler_female = GENERAL
+					}
+				}
+			}
+			10 = { # Fel Lord
+				create_character = {
+					age = 666
+					culture = mo_arg
+					religion = burning_legion
+					dynasty = random
+					female = no
+					trait = fel_lord
+					flag = race_assigned
+					random_traits = yes
+				}
+				new_character = {
+					create_title = {
+						tier = DUKE
+						landless = yes
+						temporary = yes
+						culture = mo_arg
+						name = DEMONIC_HOST
+						holder = THIS
+						ruler = GENERAL
+						ruler_female = GENERAL
+					}
+				}
+			}
+			5 = { # Pit Lord
+				create_character = {
+					age = 6969
+					culture = annihilan
+					religion = burning_legion
+					dynasty = random
+					female = no
+					trait = pit_lord
+					flag = race_assigned
+					random_traits = yes
+				}
+				new_character = {
+					create_title = {
+						tier = DUKE
+						landless = yes
+						temporary = yes
+						culture = annihilan
+						name = DEMONIC_HOST
+						holder = THIS
+						ruler = GENERAL
+						ruler_female = GENERAL
+					}
+				}
+			}
+			5 = { # Shivarra
+				create_character = {
+					age = 420
+					culture = shivarra
+					religion = burning_legion
+					dynasty = random
+					female = yes
+					trait = shivarra
+					flag = race_assigned
+					random_traits = yes
+				}
+				new_character = {
+					create_title = {
+						tier = DUKE
+						landless = yes
+						temporary = yes
+						culture = shivarra
+						name = DEMONIC_HOST
+						holder = THIS
+						ruler = GENERAL
+						ruler_female = GENERAL
+					}
+				}
+			}
+			10 = { # Dreadlord
+				create_character = {
+					age = 666
+					culture = nathrezim
+					religion = burning_legion
+					dynasty = random
+					female = no
+					trait = dreadlord
+					flag = race_assigned
+					random_traits = yes
+				}
+				new_character = {
+					create_title = {
+						tier = DUKE
+						landless = yes
+						temporary = yes
+						culture = nathrezim
+						name = DEMONIC_HOST
+						holder = THIS
+						ruler = GENERAL
+						ruler_female = GENERAL
+					}
+				}
+			}
+		}
+		holder_scope = {
+			top_liege = {
+				primary_title = {
+					new_character = {
+						set_character_flag = legion_invader
+						remove_trait = kind
+						remove_trait = humble
+						remove_trait = chaste
+						remove_trait = charitable
+						remove_trait = trusting
+						set_government_type = demon_government
+						spawn_unit = {
+							owner = THIS
+							province = ROOT
+							home = ROOT
+							leader = THIS
+							troops = {
+								light_infantry = { 50 50 }
+								heavy_infantry = { 30 30 }
+								archers = { 30 30 }
+								war_beasts = { 20 20 }
+								constructs = { 1 1 }
+							}
+							maintenance_multiplier = 0.5
+							is_looter = no
+							can_toggle_looting = no
+							reinforces = no
+							match_character = PREV
+							match_mult = 0.8
+							match_min = 500
+						}
+						war = {
+							target = PREVPREV
+							casus_belli = invasion
+							thirdparty_title = PREV
+						}
+					}
+				}
+			}
+			character_event = { id = doom.17 }
+		}
+	}
+}
+
+#Notified
+character_event = {
+	id = doom.17
+	desc = EVTDESCDOOM.17 # An army of demons has begun its invasion of your lands, starting at [From.GetName]!
+	picture = GFX_evt_corruption
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+	}
+}

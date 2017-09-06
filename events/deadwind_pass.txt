@@ -1,0 +1,234 @@
+namespace = deadwind
+
+#Deadwind is depopulated
+character_event = {
+	id = deadwind.1
+	hide_window = yes
+	
+	trigger = {
+		year = 7700
+		has_global_flag = trollwars_bookmark
+		NOT = { has_global_flag = deadwind_start }
+		NOT = {
+			has_game_rule = {
+				name = troll_wars_events
+				value = off
+			}
+		}
+		any_demesne_province = {
+			region = world_deadwind_pass
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 300
+		modifier = {
+			factor = 0.4
+			year = 7800
+		}
+		modifier = {
+			factor = 0.01
+			year = 8000
+		}
+	}
+	
+	immediate = {
+		set_global_flag = deadwind_start
+		c_kharazhan = {
+			location = {
+				create_character = {
+					age = 3000
+					name = Sataiel
+					dynasty = 101014
+					culture = eredar
+					religion = burning_legion
+					female = yes
+					attributes = {
+						diplomacy = 5
+						stewardship = 5
+						learning = 20
+						intrigue = 13
+						martial = 10
+					}
+					historical = yes
+					trait = warlock
+					trait = necromancer
+					trait = eredar
+					trait = mastermind_theologian
+					trait = quick
+					trait = envious
+					trait = proud
+					trait = wroth
+					trait = ambitious
+					trait = arbitrary
+					trait = cruel
+					flag = race_assigned
+					flag = has_adv_class
+				}
+				new_character = {
+					create_title = {
+						tier = DUKE
+						landless = yes
+						temporary = yes
+						culture = eredar
+						name = "LEGION_INVADERS"
+						holder = THIS
+					}
+					give_nickname = nick_deadwind_harvester
+					set_character_flag = legion_invader
+					set_defacto_liege = THIS
+					add_artifact = ulthalesh
+					save_event_target_as = sataiel
+					set_government_type = demon_government
+					wealth = 1000
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						leader = THIS
+						troops = {
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 1000 1000 }
+							archers = { 700 700 }
+							war_beasts = { 500 500 }
+							constructs = { 15 15 }
+						}
+						attrition = 0
+						maintenance_multiplier = 0.2
+						can_toggle_looting = no
+						reinforces = no
+					}
+				}
+			}
+		}
+		any_province = {
+			limit = {
+				region = world_deadwind
+			}
+			remove_province_modifier = deadwind_borderlands
+			if = {
+				limit = {
+					NOT = { check_variable = { which = prov_corruption value = 15 } }
+				}
+				set_variable = { which = prov_corruption value = 15 }
+				add_province_modifier = { name = tainted duration = -1 }
+			}
+			owner = {
+				any_realm_character = {
+					limit = {
+						NOT = { character = PREV }
+					}
+					random = {
+						chance = 50
+						death = { death_reason = death_life_drained }
+					}
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					random = {
+						chance = 50
+						death = { death_reason = death_life_drained }
+						if = {
+							limit = {
+								current_heir = {
+									NOT = { dynasty = PREV }
+								}
+							}
+							PREV = {
+								any_province_holding = {
+									event_target:sataiel = {
+										usurp_title_plus_barony_if_unlanded_and_vassals = PREVPREVPREV
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		c_kharazhan = {
+			holder_scope = {
+				top_liege = {
+					event_target:sataiel = {
+						war = {
+							target = PREV
+							casus_belli = invasion
+							thirdparty_title = PREVPREVPREV
+						}
+					}
+				}
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				ai = no
+			}
+			narrative_event = { id = deadwind.2 }
+		}
+	}
+}
+
+#Story event
+narrative_event = {
+	id = deadwind.2
+	title = EVTTITLEDEADWIND.2 # Deadwind Pass
+	desc = EVTDESCDEADWIND.2 # The region formerly known as the Borderlands, on the western border of the Black Morass, has suffered an unprecedented calamity. The few survivors say that a demon warlock wielding a scythe first drained the life from the region's population, and then from the land itself! Now it lays barren, grey, and even the sun shines meekly upon it.
+	picture = GFX_evt_deadwind
+	border = GFX_event_narrative_frame_intrigue
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Sataiel goes rogue.
+character_event = {
+	id = deadwind.3
+	desc = EVTDESCDEADWIND.3 # It wasn't too long ago that you harvested all the lifeforce of this region, now called by the natives "Deadwind Pass", and reached ever greater levels of power through the use of Ulthalesh. But the scythe whispers. You are likely the most powerful warlock that has ever existed. Why should you submit to Sargeras' decrees? Why should you limit yourself?
+	picture = GFX_evt_corruption
+	border = GFX_event_normal_frame_intrigue
+	
+	mean_time_to_happen = {
+		years = 1
+	}
+	
+	trigger = {
+		has_global_flag = deadwind_start
+		NOT = { has_global_flag = deadwind_end }
+		event_target:sataiel = {
+			character = ROOT
+		}
+	}
+	
+	immediate = {
+		set_global_flag = deadwind_end
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = EVTOPTDEADWIND.3a # Yes, the Legion should be under MY command!
+		religion = demonology
+		set_defacto_liege = THIS
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				has_game_rule = {
+					name = troll_wars_events
+					value = alternate
+				}
+			}
+		}
+		name = EVTOPTDEADWIND.3b # No, I don't dare defy the Dark Titan.
+		prestige = -500
+	}
+}

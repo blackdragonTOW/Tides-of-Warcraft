@@ -1,0 +1,141 @@
+d_brotherhood_of_the_horse = {
+	color={ 33 124 229 }
+	color2={ 220 220 0 }
+	capital = 292 # Stormwind
+	culture = azerothian
+	short_name = yes
+	title = "KNIGHT_COMMANDER"
+	foa = "KNIGHT_COMMANDER_FOA"
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+}
+
+d_ravenguard = {
+	color={ 243 165 49 }
+	color2={ 220 220 0 }
+	capital = 69 # Alterac
+	culture = alteraci
+	short_name = yes
+	title = "KNIGHT_COMMANDER"
+	foa = "KNIGHT_COMMANDER_FOA"
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+}
+
+d_order_of_the_firstborn = {
+	color={ 255 68 68 }
+	color2={ 220 220 0 }
+	capital = 30 # Stromgarde
+	culture = stromic
+	short_name = yes
+	title = "KNIGHT_COMMANDER"
+	foa = "KNIGHT_COMMANDER_FOA"
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+}
+
+d_knights_of_the_north = {
+	color={ 142 179 220 }
+	color2={ 220 220 0 }
+	capital = 149 # Capital City
+	culture = lordaeronian
+	short_name = yes
+	title = "KNIGHT_COMMANDER"
+	foa = "KNIGHT_COMMANDER_FOA"
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+}
+
+d_wolfpack = {
+	color={ 35 54 80 }
+	color2={ 220 220 0 }
+	capital = 143 # Gilneas
+	culture = stromic
+	short_name = yes
+	title = "KNIGHT_COMMANDER"
+	foa = "KNIGHT_COMMANDER_FOA"
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+}
+
+d_tyrs_guard = {
+	color={ 57 139 10 }
+	color2={ 220 220 0 }
+	graphical_culture = holygfx
+	capital = 110 # Southern Tirisfal Mountains/Tyr's Fall
+	title = "COMMANDER"
+	foa = "COMMANDER_FOA"
+	short_name = yes
+	# Always exists
+	landless = yes
+	holy_order = yes
+	mercenary_type = tyrs_guard_composition
+	# Parent Religion 
+	religion = old_ways
+	culture = arathi
+	# Cannot be held as a secondary title
+	primary = yes
+	strength_growth_per_century = 0.10
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+}
+
+e_zul = {
+	color={ 93 213 79 }
+	color2={ 220 220 0 }
+	allow = { always = no }
+	capital = 0
+	short_name = yes
+	primary = yes
+	dynasty_title_names = no
+}
+
+d_sunfury = {
+	color={ 68 0 2 }
+	color2={ 220 220 0 }
+	capital = 139
+	title = "GENERAL"
+	foa = "GENERAL_FOA"
+	short_name = yes
+	# Always exists
+	landless = yes
+	mercenary = yes
+	mercenary_type = sunfury_composition
+	# Cannot be held as a secondary title
+	primary = yes
+	strength_growth_per_century = 0.10
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+}
+
+d_blood_knights = {
+	color={ 226 59 65 }
+	color2={ 220 220 0 }
+	capital = 139
+	graphical_culture = holygfx
+	title = "KNIGHT_COMMANDER"
+	foa = "KNIGHT_COMMANDER_FOA"
+	short_name = yes
+	# Always exists
+	landless = yes
+	holy_order = yes
+	mercenary_type = blood_knights_composition
+	strength_growth_per_century = 0.10
+	# Parent Religion 
+	religion = sunwell
+	culture = blood_elven
+	# Cannot be held as a secondary title
+	primary = yes
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+}

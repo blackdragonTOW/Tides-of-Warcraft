@@ -1,0 +1,2285 @@
+namespace = trollwars
+
+#Zandalari Emissary
+narrative_event = {
+	id = trollwars.1
+	title = EVTTITLETROLLWAR.1 # An envoy from Zandalar
+	desc = EVTDESCTROLLWAR.1 # Millennia ago, the High Elves came from the west and brought ruin to the Amani with their strange magics. Now, the revered Zandalari have sent an emissary to rally the Amani. In their infinite wisdom, the Zandalari have chosen you to lead the renewed Amani Empire. The trolls march to war, and the Loa with them.
+	picture = "GFX_evt_zandalari_meeting"
+	border = "GFX_event_narrative_frame_war"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	trigger = {
+		NOT = { year = 7201 }
+		has_landed_title = e_amani
+		has_global_flag = trollwars_bookmark
+		NOT = {	has_global_flag = trollwar_start }
+		NOT = {
+			has_game_rule = {
+				name = troll_wars_events
+				value = off
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.1 # We'll take back what's ours!
+		create_character = {
+			random_traits = yes
+			culture = zandalari
+			religion = loa
+			age = 47
+			trait = troll_zandalari
+			trait = zealous
+			trait = diligent
+			trait = scholar
+			trait = proud
+			trait = content
+			flag = race_assigned
+		}
+		spawn_unit = {
+			province = 147 # Zul'Aman
+			owner = ROOT
+			troops = {
+				mages = { 50 50 }
+				war_beasts = { 200 200 }
+			}
+			attrition = 0
+			can_toggle_looting = yes
+			reinforces = no
+		}
+		set_character_flag = zandalar_endorsed
+		set_global_flag = trollwar_start
+		k_silvermoon = {
+			holder_scope = {
+				reverse_war = {
+					target = ROOT
+					casus_belli = troll_invasion
+					thirdparty_title = PREV
+					infamy = 0
+				}
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = k_silvermoon
+			}
+			narrative_event = { id = trollwars.3 }
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_arathor
+			}
+			narrative_event = { id = trollwars.4 }
+		}
+	}
+}
+
+#Elf start of war
+narrative_event = {
+	id = trollwars.3
+	title = EVTTITLETROLLWAR.3 # A Troll War
+	desc = EVTDESCTROLLWAR.3 # For the last few days, the number of minor skirmishes with the trolls increased. Nothing was thought of it since the savages are prone to doing so every so often. In truth, those were merely scouts tasked with probing your defences. A huge troll army marches out of the lands to the south, intent on taking Quel'Thalas! This cannot be allowed!
+	picture = "GFX_evt_zuljin"
+	border = "GFX_event_narrative_frame_war"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = trollwar_start
+		has_landed_title = k_silvermoon
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.3 # To arms! To arms!
+	}
+}
+
+#Humans are informed of war
+narrative_event = {
+	id = trollwars.4
+	title = EVTTITLETROLLWAR.3 # A Troll War
+	desc = EVTDESCTROLLWAR.4 # Your scouts report that in the northern reaches of the continent a war unlike anything you've yet seen has begun. The forest trolls have united under a single banner, that of the Amani, and now assault the lands of the ever-isolationist elves. There is some concern for though the elves arrogant and condescending, after their defeat the trolls might turn south.
+	picture = "GFX_evt_zuljin"
+	border = "GFX_event_narrative_frame_war"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = trollwar_start
+		has_landed_title = e_arathor
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.4 # Concerning.
+	}
+}
+
+#Elves get a chance to call in humans.
+character_event = {
+	id = trollwars.5
+	desc = EVTDESCTROLLWAR.5 # Never have you seen such numbers. Especially not from the fractured savages that are the trolls. Yet, here they are. Endless hordes press upon elven lands, and the defenders are slaughtered by dark magics and blood-crazed warriors. The primitive humans, recently unified, on the other side of the Amani lands could prove a necessary ally, even if only to keep the trolls busy fighting on two fronts.
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	prisoner = no
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		NOR = {	
+			has_global_flag = trollwar_end
+			has_global_flag = trollwar_call_for_aid
+		}
+		has_global_flag = trollwar_start
+		has_landed_title = k_silvermoon
+		any_playable_ruler = { 
+			has_landed_title = e_amani
+			war_with = ROOT
+		}
+		any_war = {
+			using_cb = invasion
+			war_score = 33
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = EVTOPTTROLLWAR.5.a # Perhaps we have no choice.
+		set_global_flag = trollwar_call_for_aid
+		prestige = -300
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_arathor
+			}
+			character_event = { 
+				id = trollwars.6
+				days = 10
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				has_game_rule = {
+					name = troll_wars_events
+					value = alternate
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.5.b # No. We need the aid of no primitive.
+		set_global_flag = trollwar_call_for_aid
+		prestige = 300
+	}
+}
+
+#Humans receive call of help. Demand magic.
+character_event = {
+	id = trollwars.6
+	desc = EVTDESCTROLLWAR.6 # In a surprising turn of events, the elves have sent a call for help agains the trolls... to you. You are aware it is in your best interests to consider this, lest the trolls crush you afterwards. Not only that, but you could use this as an opportunity to wrestle the secrets of their magics from them.
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_arathor
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = EVTOPTTROLLWAR.6.a # Send an answer with your demands for assisting them.
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = k_silvermoon
+			}
+			character_event = { 
+				id = trollwars.8
+				days = 10
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				has_game_rule = {
+					name = troll_wars_events
+					value = alternate
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.6.b # When have elves ever done anything for us?
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = k_silvermoon
+			}
+			character_event = { 
+				id = trollwars.7 
+				days = 10
+			}
+		}
+	}
+}
+
+#Humans refuse call for aid
+character_event = {
+	id = trollwars.7
+	desc = EVTDESCTROLLWAR.7 # Why you expected any different is a mystery. The humans have abandoned you to your fate. May their hubris lead to their destruction!
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {	has_global_flag = trollwar_end }
+		has_global_flag = trollwar_start
+		has_landed_title = k_silvermoon
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.7 # Unfortunate, but not unexpected.
+		opinion = {
+			modifier = refused_troll_wars
+			who = FROM
+			years = 100
+		}
+	}
+}
+
+#Elves receive demand
+character_event = {
+	id = trollwars.8
+	desc = EVTDESCTROLLWAR.8 # The humans agree to come to your aid, but have the gall to demand to be taught magic as a requirement for it. The very concept of a human mage is laughable, but can you really afford to not at least try?
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {	has_global_flag = trollwar_end }
+		has_global_flag = trollwar_start
+		has_landed_title = k_silvermoon
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = EVTOPTTROLLWAR.8.a # ... very well.
+		prestige = -100
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_arathor
+			}
+			character_event = { 
+				id = trollwars.9 
+				days = 10
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				has_game_rule = {
+					name = troll_wars_events
+					value = alternate
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.8.b # This is an outrage! We refuse!
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_arathor
+			}
+			character_event = { 
+				id = trollwars.13 
+				days = 10
+			}
+		}
+	}
+}
+
+#Elves accept demand
+character_event = {
+	id = trollwars.9
+	desc = EVTDESCTROLLWAR.9 # Your gambit has paid off. The elves have sent some of their magisters to teach some magic to those capable of it. Now, time to uphold your end of the deal. To war.
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_arathor
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.9 # To war.
+		join_defender_wars = FROM
+		add_alliance = { 
+			who = FROM	
+			years = 100 
+		}
+		set_global_flag = trollwar_humans_join
+		spawn_unit = {
+			province = 30 # Stromgarde
+			owner = ROOT
+			leader = none
+			troops = {
+				mages = { 100 100 }
+			}
+			can_toggle_looting = no
+			reinforces = no
+		}
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_amani
+			}
+			character_event = { id = trollwars.10 }
+		}
+		any_realm_character = {
+			limit = {
+				learning = 14
+				NOR = {
+					trait = imbecile
+					trait = slow
+				}
+				trait = human
+			}
+			character_event = { id = trollwars.11 }
+		}
+	}
+}
+
+#Human-Elf Alliance (Troll perspective)
+character_event = {
+	id = trollwars.10
+	desc = EVTDESCTROLLWAR.10 # It seems the southern humans have come to the aid of the elves despite being treated little better than ourselves at their hands. What madness has overtaken them you cannot even imagine, but let them come anyway. They are soft and weak, and unlike elves have no magic.
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_war"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_amani
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.10 # This will not stop us!
+	}
+}
+
+#Mage training (alliance deal)
+character_event = {
+	id = trollwars.11
+	desc = EVTDESCTROLLWAR.11 # You were one of the humans selected by the elves as a potential candidate for mage training. The training will be rigorous, and some will hate you for what you will become. Do you accept?
+	picture = "GFX_evt_belf_mage"
+	border = "GFX_event_normal_frame_religion"
+	
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {	has_global_flag = trollwar_end } 
+		has_global_flag = trollwar_start
+		has_global_flag = trollwar_humans_join
+		NOT = { trait = distrusts_magic }
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.11.a # I do.
+		ai_chance = { factor = 15 }
+		prestige = 100
+		piety = -100
+		character_event = {
+			id = trollwars.12
+			days = 30
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.11.b # Absolutely not.
+		ai_chance = { factor = 1 }
+		prestige = -100
+		piety = 100
+	}
+}
+
+#Mage training complete (alliance deal)
+character_event = {
+	id = trollwars.12
+	desc = EVTDESCTROLLWAR.12 # The training was harsher than you expected, and the elven magisters merciless in their demands. But you've persevered and now can rightfully call yourself a mage. Though not as powerful or wise as an elven magister, you may yet turn the tide of this war.
+	picture = "GFX_evt_belf_mage"
+	border = "GFX_event_normal_frame_religion"
+	
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {	has_global_flag = trollwar_end }
+		has_global_flag = trollwar_start
+		has_global_flag = trollwar_humans_join
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.12 # At last!
+		prestige = 100
+		add_trait = arcanist
+		religion = arcane
+	}
+}
+
+#Elves refuse demand
+character_event = {
+	id = trollwars.13
+	desc = EVTDESCTROLLWAR.13 # Even in the face of their own destruction the elves jealously guard their secrets. May their pride be their doom.
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_arathor
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.13 # We should see to our own defenses.
+	}
+}
+
+#First victory ping event
+character_event = {
+	id = trollwars.20
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			has_landed_title = e_amani
+			NOT = {	has_global_flag = trollwar_end }
+			has_global_flag = trollwar_start
+			trait = troll_forest
+		}
+		any_war = { using_cb = invasion }
+		has_landed_title = k_silvermoon
+		NOT = {	has_global_flag = trollwar_end }
+		has_global_flag = trollwar_start
+		trait = high_elf
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = trollwar_humans_join
+			}
+			character_event = { id = trollwars.24 }
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = trollwar_humans_join }
+			}
+			character_event = { id = trollwars.25 }
+		}
+	}
+}
+
+#Second victory ping event
+character_event = {
+	id = trollwars.21
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			has_landed_title = e_amani
+			NOT = {	has_global_flag = trollwar_end }
+			has_global_flag = trollwar_start
+			trait = troll_forest
+		}
+		any_war = { using_cb = invasion }
+		has_landed_title = k_silvermoon
+		NOT = {	has_global_flag = trollwar_end }
+		has_global_flag = trollwar_start
+		trait = high_elf
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = trollwar_humans_join
+			}
+			character_event = { id = trollwars.22 }
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = trollwar_humans_join }
+			}
+			character_event = { id = trollwars.27 }
+		}
+	}
+}
+
+#Human-Elf victory (Elf version)
+character_event = {
+	id = trollwars.22
+	desc = EVTDESCTROLLWAR.22 # It's been a long, bloody war, yet, somehow, you now stand victorious. It cannot be denied that much credit goes to the humans and their mages. Perhaps they are not without hope of being civilized one day.
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_war"
+
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTROLLWAR.22 # Silvermoon prevails. As expected.
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_arathor
+			}
+			character_event = { id = trollwars.23 }
+		}
+		e_amani = { destroy_landed_title = e_amani }
+		hidden_tooltip = { character_event = { id = trollwars.48 } }
+	}
+}
+
+#Human-Elf victory (Human version)
+character_event = {
+	id = trollwars.23
+	desc = EVTDESCTROLLWAR.23 # It's been a long, bloody war, yet, thanks to your mages, you now stand victorious. Your alliance with the elves has changed much, even as they retreat back to their enchanted woods and cut ties with you. Your vassals, however, seem to have had their lust for expansion kindled by this victory...
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_war"
+
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTROLLWAR.23 # A new age dawns for Arathor.
+		set_global_flag = trollwar_end
+		set_global_flag = trollwar_humanelf_victory
+		break_alliance = FROM
+		opinion = {
+			modifier = troll_wars_victory
+			who = FROM
+			years = 100
+		}
+	}
+}
+
+#Troll victory
+character_event = {
+	id = trollwars.24
+	desc = EVTDESCTROLLWAR.24 # Despite their alliance with the humans, the elves have fallen. The Amani are triumphant just as Zandalar foresaw. Now is the time to pick the finest spoils.
+	picture = "GFX_evt_zuljin"
+	border = "GFX_event_normal_frame_war"
+
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTROLLWAR.24 # None can stop us!
+		set_global_flag = trollwar_end
+		set_global_flag = trollwar_humanelf_defeat
+		e_arathor = { destroy_landed_title = e_arathor }
+		hidden_tooltip = { character_event = { id = trollwars.48 } }
+	}
+}
+
+#Troll victory over unallied elves (Troll version)
+character_event = {
+	id = trollwars.25
+	desc = EVTDESCTROLLWAR.25 # The elves, in their pride, stood alone. And so they fell alone. As Zandalar foresaw, you were triumphant. Perhaps it is now time to look south, to Arathor...
+	picture = "GFX_evt_zuljin"
+	border = "GFX_event_normal_frame_war"
+
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTROLLWAR.24 # None can stop us!
+		set_global_flag = trollwar_end
+		set_global_flag = trollwar_elf_defeat
+		add_pressed_claim = e_arathor
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_arathor
+			}
+			character_event = { id = trollwars.26 }
+		}
+		hidden_tooltip = { character_event = { id = trollwars.48 } }
+	}
+}
+
+#Troll victory over unallied elves (Human version)
+character_event = {
+	id = trollwars.26
+	desc = EVTDESCTROLLWAR.26 # The elves are no more, trampled under the trolls' fury. Now, they ransack the elegant elven cities and divide the spoils amongst themselves. Pray that they do not seek to destroy you next.
+	picture = "GFX_evt_zuljin"
+	border = "GFX_event_normal_frame_war"
+
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {	
+			has_global_flag = trollwar_humans_join
+		}
+		has_global_flag = trollwar_start
+		has_global_flag = trollwar_end
+		has_global_flag = trollwar_elf_defeat
+		trait = human
+		has_landed_title = e_arathor
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.26 # Worrying.
+	}
+}
+
+#Unallied Elf victory (Elf version)
+character_event = {
+	id = trollwars.27
+	desc = EVTDESCTROLLWAR.27 # It's been a long, bloody war, yet, somehow, you now stand victorious. And without any aid from the primitive humans either, despite what the less patriotic said about your chances.
+	picture = "GFX_evt_lrothemar"
+	border = "GFX_event_normal_frame_war"
+
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {	
+			has_global_flag = trollwar_end 
+			has_global_flag = trollwar_humans_join
+		}
+		has_global_flag = trollwar_start
+		trait = high_elf
+		has_landed_title = k_silvermoon
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.22 # Silvermoon prevails. As expected.
+		set_global_flag = trollwar_end
+		set_global_flag = trollwar_elf_victory
+		any_playable_ruler = {
+			limit = {
+				has_landed_title = e_arathor
+			}
+			character_event = { id = trollwars.28 }
+		}
+		e_amani = { destroy_landed_title = e_amani }
+		hidden_tooltip = { character_event = { id = trollwars.48 } }
+	}
+}
+
+#Unallied Elf victory (Human version)
+character_event = {
+	id = trollwars.28
+	desc = EVTDESCTROLLWAR.28 # The war is over and the elves, though they stood alone, are victorious. Their magic is strong indeed, shame you were unable to acquire it.
+	picture = "GFX_evt_lorthemar"
+	border = "GFX_event_normal_frame_war"
+
+	only_playable = yes
+	only_independent = yes
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {	
+			has_global_flag = trollwar_end 
+			has_global_flag = trollwar_humans_join
+		}
+		has_global_flag = trollwar_start
+		trait = human
+		has_landed_title = e_arathor
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.28 # Damn elves.
+	}
+}
+
+#If non-human holds the arathor empire, destroy arathor.
+character_event = {
+	id = trollwars.29
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		has_global_flag = trollwars_bookmark
+		NOT = { trait = human }
+		has_landed_title = e_arathor
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = trollwars_bookmark
+			}
+			any_playable_ruler = {
+				limit = {
+					ai = no
+				}
+				narrative_event = { id = trollwars.52 }
+			}
+		}
+		e_arathor = { destroy_landed_title = e_arathor }
+	}
+}
+
+#If non-troll holds the amani empire, destroy amani empire
+character_event = {
+	id = trollwars.30
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		has_global_flag = trollwars_bookmark
+		NOR = {
+			trait = troll_forest
+			trait = troll_jungle
+			trait = troll_sand
+			trait = troll_dark
+			trait = troll_ice
+			trait = troll_zandalari
+		}
+		has_landed_title = e_amani
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = trollwars_bookmark
+			}
+			any_playable_ruler = {
+				limit = {
+					ai = no
+				}
+				narrative_event = { id = trollwars.53 }
+			}
+		}
+		e_amani = { destroy_landed_title = e_amani }
+	}
+}
+
+#Events to add strong claims if the kingdom does not exist.
+
+##Dalaran
+character_event = {
+	id = trollwars.32
+	desc = EVTDESCTROLLWAR.32 # With the end of the war, there are new lands to claim for humanity. The lakeside region of Dalaran is one of them.
+	picture = "GFX_evt_throne_room"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+	
+	mean_time_to_happen = {
+		months = 20
+		modifier = {
+			factor = 0.5
+			independent = no
+			any_liege = {
+				has_landed_title = e_arathor
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+		modifier = {
+			factor = 0.2
+			OR = {
+				trait = arcanist
+				trait = mage
+			}
+		}
+	}
+	
+	trigger = {
+		real_tier = DUKE
+		has_global_flag = trollwar_end
+		trait = human
+		NOR = {
+			is_title_active = k_dalaran
+			has_claim = k_alterac
+			has_claim = k_dalaran
+			has_claim = k_lordaeron
+			has_claim = k_stormwind
+			has_claim = k_gilneas
+			has_claim = k_kul_tiras
+			has_global_flag = trollwar_humanelf_victory
+			has_character_flag = refused_trollwar_claim
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31a # I should take the initiative.
+		ai_chance = { factor = 1 }
+		random = {
+			chance = 20
+			add_trait = ambitious
+		}
+		add_pressed_claim = k_dalaran
+		add_character_modifier = { 
+			name = warlord
+			duration = 365
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31b # I am happy with what I have.
+		ai_chance = { factor = 0 }
+		random = {
+			chance = 20
+			add_trait = content
+		}
+		set_character_flag = refused_trollwar_claim
+	}
+}
+
+##Gilneas
+character_event = {
+	id = trollwars.33
+	desc = EVTDESCTROLLWAR.33 # With the end of the war, there are new lands to claim for humanity. The peninsular region of Gilneas is one of them.
+	picture = "GFX_evt_throne_room"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+	
+	mean_time_to_happen = {
+		months = 20
+		modifier = {
+			factor = 0.5
+			independent = no
+			any_liege = {
+				has_landed_title = e_arathor
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+	}
+	
+	trigger = {
+		real_tier = DUKE
+		has_global_flag = trollwar_end
+		trait = human
+		NOR = {
+			is_title_active = k_gilneas
+			has_claim = k_alterac
+			has_claim = k_dalaran
+			has_claim = k_lordaeron
+			has_claim = k_stormwind
+			has_claim = k_gilneas
+			has_claim = k_kul_tiras
+			has_global_flag = trollwar_humanelf_victory
+			has_character_flag = refused_trollwar_claim
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31a # I should take the initiative.
+		ai_chance = { factor = 1 }
+		random = {
+			chance = 20
+			add_trait = ambitious
+		}
+		add_pressed_claim = k_gilneas
+		add_character_modifier = { 
+			name = warlord
+			duration = 365
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31b # I am happy with what I have.
+		ai_chance = { factor = 0 }
+		random = {
+			chance = 20
+			add_trait = content
+		}
+		set_character_flag = refused_trollwar_claim
+	}
+}
+
+##Kul Tiras
+character_event = {
+	id = trollwars.34
+	desc = EVTDESCTROLLWAR.34 # With the end of the war, there are new lands to claim for humanity. The insular region of Kul Tiras is one of them.
+	picture = "GFX_evt_throne_room"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+	
+	mean_time_to_happen = {
+		months = 20
+		modifier = {
+			factor = 0.5
+			independent = no
+			any_liege = {
+				has_landed_title = e_arathor
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+	}
+	
+	trigger = {
+		real_tier = DUKE
+		has_global_flag = trollwar_end
+		trait = human
+		NOR = {
+			is_title_active = k_kul_tiras
+			has_claim = k_alterac
+			has_claim = k_dalaran
+			has_claim = k_lordaeron
+			has_claim = k_stormwind
+			has_claim = k_gilneas
+			has_claim = k_kul_tiras
+			has_global_flag = trollwar_humanelf_victory
+			has_character_flag = refused_trollwar_claim
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31a # I should take the initiative.
+		ai_chance = { factor = 1 }
+		random = {
+			chance = 20
+			add_trait = ambitious
+		}
+		add_pressed_claim = k_kul_tiras
+		add_character_modifier = { 
+			name = warlord
+			duration = 365
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31b # I am happy with what I have.
+		ai_chance = { factor = 0 }
+		random = {
+			chance = 20
+			add_trait = content
+		}
+		set_character_flag = refused_trollwar_claim
+	}
+}
+
+##Lordaeron
+character_event = {
+	id = trollwars.35
+	desc = EVTDESCTROLLWAR.35 # With the end of the war, there are new lands to claim for humanity. The vast region of Lordaeron is one of them.
+	picture = "GFX_evt_throne_room"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+	
+	mean_time_to_happen = {
+		months = 20
+		modifier = {
+			factor = 0.5
+			independent = no
+			any_liege = {
+				has_landed_title = e_arathor
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+	}
+	
+	trigger = {
+		real_tier = DUKE
+		has_global_flag = trollwar_end
+		trait = human
+		NOR = {
+			is_title_active = k_lordaeron
+			has_claim = k_alterac
+			has_claim = k_dalaran
+			has_claim = k_lordaeron
+			has_claim = k_stormwind
+			has_claim = k_gilneas
+			has_claim = k_kul_tiras
+			has_global_flag = trollwar_humanelf_victory
+			has_character_flag = refused_trollwar_claim
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31a # I should take the initiative.
+		ai_chance = { factor = 1 }
+		random = {
+			chance = 20
+			add_trait = ambitious
+		}
+		add_pressed_claim = k_lordaeron
+		add_character_modifier = { 
+			name = warlord
+			duration = 365
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31b # I am happy with what I have.
+		ai_chance = { factor = 0 }
+		random = {
+			chance = 20
+			add_trait = content
+		}
+		set_character_flag = refused_trollwar_claim
+	}
+}
+
+#trollwars.36 was removed
+
+#trollwars.37 was removed
+
+##Stormwind
+character_event = {
+	id = trollwars.38
+	desc = EVTDESCTROLLWAR.38 # With the end of the war, there are new lands to claim for humanity. The distant region of Stormwind is one of them.
+	picture = "GFX_evt_throne_room"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+	
+	mean_time_to_happen = {
+		months = 20
+		modifier = {
+			factor = 0.5
+			independent = no
+			any_liege = {
+				has_landed_title = e_arathor
+			}
+		}
+		modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.5
+			trait = content
+		}
+	}
+	
+	trigger = {
+		real_tier = DUKE
+		has_global_flag = trollwar_end
+		trait = human
+		NOR = {
+			is_title_active = k_stormwind
+			has_claim = k_alterac
+			has_claim = k_dalaran
+			has_claim = k_lordaeron
+			has_claim = k_stormwind
+			has_claim = k_gilneas
+			has_claim = k_kul_tiras
+			has_global_flag = trollwar_humanelf_victory
+			has_character_flag = refused_trollwar_claim
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31a # I should take the initiative.
+		ai_chance = { factor = 1 }
+		random = {
+			chance = 20
+			add_trait = ambitious
+		}
+		add_pressed_claim = k_stormwind
+		add_character_modifier = { 
+			name = warlord
+			duration = 365
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.31b # I am happy with what I have.
+		ai_chance = { factor = 0 }
+		random = {
+			chance = 20
+			add_trait = content
+		}
+		set_character_flag = refused_trollwar_claim
+	}
+}
+
+#trollwars.39 was removed
+
+#trollwars.40 was removed
+
+#trollwars.41 was removed
+
+#Fragmenting of Arathor
+character_event = {
+	id = trollwars.42
+	desc = EVTDESCTROLLWAR.42 # Arathor is merely a shadow of its former self. Most territories outside the Arathi Highlands have been lost, and now few even recognize it as an empire. In fact, some have started to call this realm "Stromgarde".
+	picture = "GFX_evt_rival_rulers"
+	border = "GFX_event_normal_frame_diplomacy"
+	
+	min_age = 16
+	prisoner = no
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		has_landed_title = e_arathor
+		trait = human
+		has_global_flag = trollwar_end
+		NOR = {
+			any_realm_province = {
+				OR = {
+					de_jure_liege = k_lordaeron
+					de_jure_liege = k_stormwind
+					de_jure_liege = k_alterac
+					de_jure_liege = k_dalaran
+					de_jure_liege = k_gilneas
+					de_jure_liege = k_kul_tiras
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.42 # This is not over.
+		set_global_flag = arathor_fragmented
+		k_stromgarde = { grant_title = ROOT }
+		e_arathor = { destroy_landed_title = e_arathor }
+		prestige = -500
+		culture = stromic
+		any_realm_character = {
+			culture = stromic
+		}
+		any_realm_province = {
+			culture = stromic
+		}
+		any_playable_ruler = {
+			limit = {
+				ai = no
+				character = PREV
+			}
+			narrative_event = { id = trollwars.52 }
+		}
+	}
+}
+	
+#trollwars.43 was removed
+
+#trollwars.44 was removed
+
+#Infinite interference
+character_event = {
+	id = trollwars.45
+	desc = EVTDESCTROLLWAR.45 # Strange grey dragons have started appearing out of nowhere, and now attack your enemies! While they do not attempt to contact you, or respond to your attempts at communication, they mostly ignore your own warriors and seem to be on your side of the war.
+	picture = "GFX_evt_infinite_dragon"
+	border = "GFX_event_normal_frame_war"
+	
+	mean_time_to_happen = {
+		years = 1000 # Need to test for how unlikely it is.
+		modifier = {
+			factor = 0.5
+			has_game_rule = {
+				name = troll_wars_events
+				value = alternate
+			}
+		}
+		modifier =	{
+			factor = 0.1
+			has_game_rule = {
+				name = infinite_dragons
+				value = more
+			}
+		}
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = trollwar_end
+			has_global_flag = trollwar_infinites
+		}
+		has_global_flag = trollwar_start
+		has_landed_title = e_amani
+		any_war = {
+			using_cb = invasion
+			war_score = -100
+			NOT = { war_score = -49 }
+		}
+		NOT = {
+			has_game_rule = {
+				name = infinite_dragons
+				value = off
+			}
+		}
+	}
+	
+	immediate = {
+		set_global_flag = trollwar_infinites
+		create_character = {
+			age = 440
+			religion = cult_of_the_infinite
+			culture = infinite_dragonflight
+			dynasty = 101010
+			attributes = {
+				martial = 21
+			}
+			random_traits = yes
+			trait = dragon_infinite
+			trait = dragon_dragon
+			flag = race_assigned
+		}
+		new_character = {
+			save_event_target_as = trollwars_infinite_leader
+			create_title = {
+				tier = DUKE
+				temporary = yes
+				culture = infinite_dragonflight
+				name = INFINITE_INTERVENTION
+				holder = THIS
+			}
+			ROOT = {
+				location = {
+					save_event_target_as = infinite_spawn
+				}
+				spawn_unit = {
+					province = event_target:infinite_spawn
+					owner = PREV
+					leader = PREV
+					disband_on_peace = yes
+					troops = {
+						dragon_troop = { 20 20 }
+						heavy_infantry = { 900 900 }
+						light_cavalry = { 550 550 }
+					}
+					attrition = 0
+					maintenance = no
+					reinforces = yes
+				}
+			}
+			add_alliance = { 
+				who = ROOT	
+				years = 100 
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTTROLLWAR.45 # Unexpected. But not unwelcome.
+		hidden_tooltip = {
+			any_playable_ruler = {
+				limit = {
+					ai = no
+					OR = {
+						has_landed_title = e_arathor
+						has_landed_title = k_silvermoon
+						top_liege = {
+							has_landed_title = e_arathor
+						}
+						top_liege = {
+							has_landed_title = k_silvermoon
+						}
+					}
+				}
+				character_event = { id = trollwars.46 }
+			}
+			any_playable_ruler = {
+				limit = {
+					ai = no
+					top_liege = {
+						has_landed_title = e_amani
+					}
+				}
+				character_event = { id = trollwars.47 }
+			}
+		}
+	}
+}
+
+#Elves and Humans (if they are in the war) are informed.
+character_event = {
+	id = trollwars.46
+	desc = EVTDESCTROLLWAR.46 # A strange new development has arisen in this war. Mysterious grey dragons, unlike any ever seen, appear to have allied themselves with the Amani and could turn the war and give the trolls their victory.
+	picture = "GFX_evt_infinite_dragon"
+	border = "GFX_event_normal_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTROLLWAR.46 # What do they gain from this?
+	}
+}
+
+#A troll vassal player is informed.
+character_event = {
+	id = trollwars.47
+	desc = EVTDESCTROLLWAR.47 # Seemingly from out of nowhere, grey dragons have been seen aiding Amani forces in various battles. Though they refuse to communicate, many have taken this as a sign from the Loa that defeat is unacceptable.
+	picture = "GFX_evt_infinite_dragon"
+	border = "GFX_event_normal_frame_war"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTROLLWAR.45 # Unexpected. But not unwelcome.
+	}
+}
+
+#Remove Infinites upon end of war.
+character_event = {
+	id = trollwars.48
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:trollwars_infinite_leader = {
+			death = { death_reason = death_missing }
+		}
+	}
+}
+
+#When there is a succession in troll wars Arathor, a vassal king can secede.
+#ping
+character_event = {
+	id = trollwars.49
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_landed_title = e_arathor
+		has_global_flag = trollwars_bookmark
+	}
+	
+	immediate = {
+		any_realm_lord = {
+			limit = {
+				real_tier = KING
+				trait = human
+				NOT = { opinion = { who = ROOT value = 0 } }
+			}
+			character_event = { id = trollwars.50 }
+		}
+	}
+}
+
+character_event = {
+	id = trollwars.50
+	desc = EVTDESCTROLLWAR.50 # With the recent succession in the empire, an opportunity has presented itself: you could secede from Arathor and determine your own destiny.
+	picture = GFX_evt_rival_rulers
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+			modifier = {
+				factor = 5
+				NOT = { opinion = { who = FROM value = -49 } }
+			}
+		}
+		name = EVTOPTTROLLWAR.50a # I'll seize this opportunity!
+		reverse_opinion = { who = FROM modifier = opinion_traitor }
+		primary_title = {
+			set_defacto_liege = THIS
+		}
+		FROM = { character_event = { id = trollwars.51 } }
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 5
+				has_game_rule = {
+					name = troll_wars_events
+					value = alternate
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.50b # I see no benefit in this.
+	}
+}
+
+character_event = {
+	id = trollwars.51
+	desc = EVTDESCTROLLWAR.51 # The traitorous [From.GetTitledName] has declared that [From.GetHerHis] realm of [From.Realm.GetFullName] is now independent of Arathor!
+	picture = GFX_evt_rival_rulers
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTTROLLWAR.51 # An outrage!
+		prestige = -100
+	}
+}
+
+narrative_event = {
+	id = trollwars.52
+	title = EVTTITLETROLLWAR.52 # Fall of Arathor
+	desc = EVTDESCTROLLWAR.52 # The human empire of Arathor has fallen, destroying the dreams of a realm that unites all humans. Perhaps it will rise again in the future, but, for now, things look bleak.
+	picture = GFX_evt_throne_room
+	border = GFX_event_narrative_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+narrative_event = {
+	id = trollwars.53
+	title = EVTTITLETROLLWAR.53 # Fall of the Amani
+	desc = EVTDESCTROLLWAR.53 # The ancient Amani empire of forest trolls has finally fallen. While there are those who would look to see it reborn, most of its former citizens squabble over tribal rivalries or against the other inhabitants of the Northlands.
+	picture = GFX_evt_throne_room
+	border = GFX_event_narrative_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#this is needed for other stuff to work right
+character_event = {
+	id = trollwars.54
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_global_flag = trollwars_bookmark
+		OR = {
+			AND = {
+				FROM = { title = k_lordaeron }
+				NOT = { has_global_flag = trollwars_lordaeron }
+			}
+			AND = {
+				FROM = { title = k_gilneas }
+				NOT = { has_global_flag = trollwars_gilneas }
+			}
+			AND = {
+				FROM = { title = k_stormwind }
+				NOT = { has_global_flag = trollwars_stormwind }
+			}
+		}
+	}
+	
+	immediate = {
+		trigger_switch = {
+			on_trigger = has_landed_title
+			k_lordaeron = {
+				set_global_flag = trollwars_lordaeron
+				add_artifact = crown_of_lordaeron
+			}
+			k_alterac = {
+				set_global_flag = trollwars_alterac
+				add_artifact = crown_of_alterac
+			}
+			k_gilneas = {
+				set_global_flag = trollwars_gilneas
+				add_artifact = crown_of_gilneas
+			}
+			k_lordaeron = {
+				set_global_flag = trollwars_stormwind
+				add_artifact = crown_of_stormwind
+			}
+		}
+	}
+}
+
+#Culture conversion events. Tried to make them into a single event, but couldn't figure out the conditions properly.
+#Lordaeron
+province_event = {
+	id = trollwars.55
+	desc = EVTDESCTROLLWAR.55 # Lately, the people of [Root.GetName] have started to no longer consider themselves arathi, instead adopting new customs and considering themselves lordaeronian.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_diplomacy
+	
+	trigger = {
+		culture = arathi
+		has_global_flag = troll_wars_bookmark
+		holder_scope = {
+			trait = human
+		}
+		county = {
+			de_jure_liege = k_lordaeron
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.2
+			OR = {
+				NOT = { is_title_active = e_arathor }
+				NOT = {
+					holder_scope = {
+						any_liege = {
+							has_landed_title = e_arathor
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			holder_scope = {
+				any_realm_province = {
+					culture = lordaeronian
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		culture = lordaeronian
+	}
+	
+	option = {
+		trigger = {
+			holder_scope = {
+				culture = arathi
+				NOT = { has_landed_title = e_arathor }
+				trait = human
+				capital_holding = {
+					de_jure_liege = k_lordaeron
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.55 # Actually, I am lordaeronian too!
+		culture = lordaeronian
+		holder_scope = {
+			any_courtier = {
+				limit = {
+					is_ruler = no
+					trait = human
+					culture = arathi
+				}
+				culture = lordaeronian
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				holder_scope = {
+					culture = arathi
+					NOT = { has_landed_title = e_arathor }
+					trait = human
+					capital_holding = {
+						de_jure_liege = k_lordaeron
+					}
+				}
+			}
+		}
+		name = OK
+	}
+}
+
+#Stormwind
+province_event = {
+	id = trollwars.56
+	desc = EVTDESCTROLLWAR.56 # Lately, the people of [Root.GetName] have started to no longer consider themselves arathi, instead adopting new customs and considering themselves azerothian.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_diplomacy
+	
+	trigger = {
+		culture = arathi
+		has_global_flag = troll_wars_bookmark
+		holder_scope = {
+			trait = human
+		}
+		county = {
+			de_jure_liege = k_stormwind
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.2
+			OR = {
+				NOT = { is_title_active = e_arathor }
+				NOT = {
+					holder_scope = {
+						any_liege = {
+							has_landed_title = e_arathor
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			holder_scope = {
+				any_realm_province = {
+					culture = azerothian
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		culture = azerothian
+	}
+	
+	option = {
+		trigger = {
+			holder_scope = {
+				culture = arathi
+				NOT = { has_landed_title = e_arathor }
+				trait = human
+				capital_holding = {
+					de_jure_liege = k_stormwind
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.56 # Actually, I am azerothian too!
+		culture = azerothian
+		holder_scope = {
+			any_courtier = {
+				limit = {
+					is_ruler = no
+					trait = human
+					culture = arathi
+				}
+				culture = azerothian
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				holder_scope = {
+					culture = arathi
+					NOT = { has_landed_title = e_arathor }
+					trait = human
+					capital_holding = {
+						de_jure_liege = k_stormwind
+					}
+				}
+			}
+		}
+		name = OK
+	}
+}
+
+#Dalaran
+province_event = {
+	id = trollwars.57
+	desc = EVTDESCTROLLWAR.57 # Lately, the people of [Root.GetName] have started to no longer consider themselves arathi, instead adopting new customs and considering themselves dalaranian.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_diplomacy
+	
+	trigger = {
+		culture = arathi
+		has_global_flag = troll_wars_bookmark
+		holder_scope = {
+			trait = human
+		}
+		county = {
+			de_jure_liege = k_dalaran
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.2
+			OR = {
+				NOT = { is_title_active = e_arathor }
+				NOT = {
+					holder_scope = {
+						any_liege = {
+							has_landed_title = e_arathor
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			holder_scope = {
+				any_realm_province = {
+					culture = dalaranian
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		culture = dalaranian
+	}
+	
+	option = {
+		trigger = {
+			holder_scope = {
+				culture = arathi
+				NOT = { has_landed_title = e_arathor }
+				trait = human
+				capital_holding = {
+					de_jure_liege = k_dalaran
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.57 # Actually, I am dalaranian too!
+		culture = dalaranian
+		holder_scope = {
+			any_courtier = {
+				limit = {
+					is_ruler = no
+					trait = human
+					culture = arathi
+				}
+				culture = dalaranian
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				holder_scope = {
+					culture = arathi
+					NOT = { has_landed_title = e_arathor }
+					trait = human
+					capital_holding = {
+						de_jure_liege = k_dalaran
+					}
+				}
+			}
+		}
+		name = OK
+	}
+}
+
+#Gilneas
+province_event = {
+	id = trollwars.58
+	desc = EVTDESCTROLLWAR.58 # Lately, the people of [Root.GetName] have started to no longer consider themselves arathi, instead adopting new customs and considering themselves gilnean.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_diplomacy
+	
+	trigger = {
+		culture = arathi
+		has_global_flag = troll_wars_bookmark
+		holder_scope = {
+			trait = human
+		}
+		county = {
+			de_jure_liege = k_gilneas
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.2
+			OR = {
+				NOT = { is_title_active = e_arathor }
+				NOT = {
+					holder_scope = {
+						any_liege = {
+							has_landed_title = e_arathor
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			holder_scope = {
+				any_realm_province = {
+					culture = gilnean
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		culture = gilnean
+	}
+	
+	option = {
+		trigger = {
+			holder_scope = {
+				culture = arathi
+				NOT = { has_landed_title = e_arathor }
+				trait = human
+				capital_holding = {
+					de_jure_liege = k_lordaeron
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.58 # Actually, I am gilnean too!
+		culture = gilnean
+		holder_scope = {
+			any_courtier = {
+				limit = {
+					is_ruler = no
+					trait = human
+					culture = arathi
+				}
+				culture = gilnean
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				holder_scope = {
+					culture = gilnean
+					NOT = { has_landed_title = e_arathor }
+					trait = human
+					capital_holding = {
+						de_jure_liege = k_gilneas
+					}
+				}
+			}
+		}
+		name = OK
+	}
+}
+
+#Kul Tiras
+province_event = {
+	id = trollwars.59
+	desc = EVTDESCTROLLWAR.59 # Lately, the people of [Root.GetName] have started to no longer consider themselves arathi, instead adopting new customs and considering themselves tirasian.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_diplomacy
+	
+	trigger = {
+		culture = arathi
+		has_global_flag = troll_wars_bookmark
+		holder_scope = {
+			trait = human
+		}
+		county = {
+			de_jure_liege = k_kul_tiras
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.2
+			OR = {
+				NOT = { is_title_active = e_arathor }
+				NOT = {
+					holder_scope = {
+						any_liege = {
+							has_landed_title = e_arathor
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			holder_scope = {
+				any_realm_province = {
+					culture = tirasian
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		culture = tirasian
+	}
+	
+	option = {
+		trigger = {
+			holder_scope = {
+				culture = arathi
+				NOT = { has_landed_title = e_arathor }
+				trait = human
+				capital_holding = {
+					de_jure_liege = k_kul_tiras
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.59 # Actually, I am tirasian too!
+		culture = tirasian
+		holder_scope = {
+			any_courtier = {
+				limit = {
+					is_ruler = no
+					trait = human
+					culture = arathi
+				}
+				culture = tirasian
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				holder_scope = {
+					culture = arathi
+					NOT = { has_landed_title = e_arathor }
+					trait = human
+					capital_holding = {
+						de_jure_liege = k_kul_tiras
+					}
+				}
+			}
+		}
+		name = OK
+	}
+}
+
+#Alterac
+province_event = {
+	id = trollwars.60
+	desc = EVTDESCTROLLWAR.60 # Lately, the people of [Root.GetName] have started to no longer consider themselves arathi, instead adopting new customs and considering themselves alteraci.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_diplomacy
+	
+	trigger = {
+		culture = arathi
+		has_global_flag = troll_wars_bookmark
+		holder_scope = {
+			trait = human
+		}
+		county = {
+			de_jure_liege = k_alterac
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 100
+		modifier = {
+			factor = 0.2
+			OR = {
+				NOT = { is_title_active = e_arathor }
+				NOT = {
+					holder_scope = {
+						any_liege = {
+							has_landed_title = e_arathor
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			holder_scope = {
+				any_realm_province = {
+					culture = alteraci
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		culture = alteraci
+	}
+	
+	option = {
+		trigger = {
+			holder_scope = {
+				culture = arathi
+				NOT = { has_landed_title = e_arathor }
+				trait = human
+				capital_holding = {
+					de_jure_liege = k_alterac
+				}
+			}
+		}
+		name = EVTOPTTROLLWAR.60 # Actually, I am alteraci too!
+		culture = alteraci
+		holder_scope = {
+			any_courtier = {
+				limit = {
+					is_ruler = no
+					trait = human
+					culture = arathi
+				}
+				culture = alteraci
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				holder_scope = {
+					culture = arathi
+					NOT = { has_landed_title = e_arathor }
+					trait = human
+					capital_holding = {
+						de_jure_liege = k_alterac
+					}
+				}
+			}
+		}
+		name = OK
+	}
+}
+
+#Farstriders
+character_event = {
+	id = trollwars.61
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.1
+			trait = ranger
+		}
+		modifier = {
+			factor = 0.5
+			stewardship = 15
+		}
+	}
+	
+	trigger = {
+		OR = {
+			trait = blood_elf
+			trait = high_elf
+		}
+		NOT = { has_global_flag = refused_farstriders }
+		NOT = { has_global_flag = farstriders_active }
+		has_global_flag = trollwars_bookmark
+		OR = {
+			has_global_flag = trollwar_humanelf_victory
+			has_global_flag = trollwar_elf_victory
+		}
+		any_liege = {
+			has_landed_title = k_silvermoon
+			OR = {
+				trait = blood_elf
+				trait = high_elf
+			}
+		}
+		stewardship = 10
+		OR = {
+			NOT = { has_character_flag = has_adv_class }
+			trait = scout
+			trait = ranger
+		}
+		is_ruler = no
+		is_in_society = no
+	}
+	
+	immediate = {
+		k_silvermoon = {
+			holder_scope = {
+				character_event = { id = trollwars.62 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = trollwars.62
+	desc = EVTDESCTROLLWAR.62 # [From.GetFullName] approaches you with an interesting offer. [From.GetSheHe] proposes the creation of a dedicated force of rangers to patrol the wilderness of Quel'Thalas and strike at enemies both inside it and beyond. [From.GetSheHe] has already gathered the support of several veterans of the conflict now known as the Troll Wars for this endeavour.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = { # Might as well reuse the locs
+		name = EVTOPTSUNWELL.21a # An intriguing idea...
+		custom_tooltip = { text = EVTTOOLTIPTROLLWAR.62 } # The Farstriders are formed
+		hidden_tooltip = {
+			set_global_flag = farstriders_active
+			FROM = {
+				prestige = 50
+				join_society = farstriders
+				set_society_grandmaster = yes
+			}
+		}
+		any_realm_character = {
+			limit = {
+				ai = no
+			}
+			narrative_event = { id = trollwars.63 }
+		}
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = EVTOPTSUNWELL.21b # Seems like a waste of time.
+		set_global_flag = refused_farstriders
+		prestige = -150
+	}
+}
+
+narrative_event = {
+	id = trollwars.63
+	title = EVTTITLETROLLWAR.63 # The Farstriders
+	desc = EVTDESCTROLLWAR.63 # By royal decree, a dedicated force of rangers and other veterans from the Troll Wars has been established to patrol the wilderness of Quel'Thalas, and beyond, in search of any threats that might pose a danger to the kingdom. [FromFrom.GetFullName] has been named its first Ranger-General.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_narrative_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}

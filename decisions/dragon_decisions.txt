@@ -1,0 +1,147 @@
+decisions = {
+
+}
+
+targetted_decisions = {
+	
+	take_consort = {
+		filter = court
+		ai_target_filter = court
+		from_potential = {
+			OR = {
+				trait = dragon_black
+				trait = dragon_blue
+				trait = dragon_bronze
+				trait = dragon_green
+				trait = dragon_red
+				trait = dragon_infinite
+				trait = dragon_nightmare
+			}
+			OR = {
+				has_character_flag = dragon_aspect # change this later to the trait or whatever it ends up being.
+				NOT = { has_lover = yes }
+			}
+			prisoner = no
+			NOT = { trait = dragon_infiltrated }
+			NOT = { trait = emerald_dream }
+			NOR = {
+				has_opinion_modifier = { modifier = drg_consort_refused_me who = ROOT }
+				has_opinion_modifier = { modifier = drg_consort_unwanted_advances who = ROOT }
+			}
+		}
+		potential = {
+			NOT = { character = FROM }
+			OR = {
+				trait = dragon_black
+				trait = dragon_blue
+				trait = dragon_bronze
+				trait = dragon_green
+				trait = dragon_red
+				trait = dragon_infinite
+				trait = dragon_nightmare
+			}
+			NOT = { has_lover = yes }
+			NOT = { has_character_flag = dragon_aspect } # aspect takes consorts, not the other way around.
+			prisoner = no
+			NOT = { trait = dragon_infiltrated }
+			NOT = { trait = emerald_dream }
+			NOR = {
+				has_opinion_modifier = { modifier = drg_consort_refused_me who = ROOT }
+				has_opinion_modifier = { modifier = drg_consort_unwanted_advances who = ROOT }
+			}
+			OR = {
+				AND = {
+					is_female = no
+					FROM = { is_female = yes }
+				}
+				AND = {
+					is_female = yes
+					FROM = { is_female = no }
+				}
+				AND = {
+					is_female = no
+					trait = homosexual
+					FROM = {
+						is_female = no
+						trait = homosexual
+					}
+				}
+				AND = {
+					is_female = yes
+					trait = homosexual
+					FROM = {
+						is_female = yes
+						trait = homosexual
+					}
+				}
+			}
+		}
+		allow = {
+			ROOT = { opinion = { who = FROM value = 0 } }
+		}
+		effect = {
+			ROOT = {
+				save_event_target_as = dragon_consort_ping
+			}
+			FROM = {
+				character_event = { id = dragonfluff.1 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.7
+			modifier = {
+				factor = 0.5
+				has_character_flag = dragon_aspect
+				num_of_lovers = 3
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					trait = chaste
+					trait = content
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_ruler = no
+			}
+		}
+	}
+	
+	infiltrate_court = {
+		filter = all
+		ai_target_filter = all
+		from_potential = {
+			OR = {
+				trait = dragon_black
+				trait = dragon_blue
+				trait = dragon_bronze
+				trait = dragon_green
+				trait = dragon_red
+				trait = dragon_infinite
+				trait = dragon_nightmare
+			}
+			prisoner = no
+			NOT = { trait = dragon_infiltrated }
+			NOT = { trait = emerald_dream }
+		}
+		potential = {
+			NOT = { same_realm = FROM }
+			NOR = {
+				trait = dragon_black
+				trait = dragon_blue
+				trait = dragon_bronze
+				trait = dragon_green
+				trait = dragon_red
+				trait = dragon_infinite
+				trait = dragon_nightmare
+			}
+			is_ruler = yes
+			higher_real_tier_than = COUNT
+		}
+	}
+	
+}

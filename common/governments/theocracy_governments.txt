@@ -1,0 +1,96 @@
+theocracy_governments = {
+
+	theocracy_government = {
+		preferred_holdings = { TEMPLE }
+		allowed_holdings = {
+			TEMPLE
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		accepts_liege_governments = {
+			feudal_government
+			republic_government
+			merchant_republic_government
+		}
+		frame_suffix = "_theocracy"
+		title_prefix = "temple_"
+		potential = {
+			is_patrician = no
+			NOT = { is_government_potential = dragonflight_government }
+			NOT = { is_government_potential = kirin_tor_government }
+			NOT = { is_government_potential = guardian_government }
+			NOT = { is_government_potential = technocracy_government }
+			NOT = { is_government_potential = templar_order_government }
+			NOT = { is_government_potential = militant_order_government }
+			NOT = { is_government_potential = demon_government }
+			NOT = { is_government_potential = faceless_government }
+			NOT = { is_government_potential = naga_government }
+			NOT = { is_government_potential = troll_bcd_government }
+			NOT = { is_government_potential = troll_ke_government }
+			NOT = { is_government_potential = orc_government }
+			NOT = { is_government_potential = ogre_tribe_government }
+			NOT = { is_government_potential = ogre_empire_government }
+			NOT = { is_government_potential = scourge_government }
+			NOT = { is_government_potential = forsaken_government }
+			NOT = { is_government_potential = helf_government }
+			NOT = { is_government_potential = feral_worgen_government }
+		}
+		
+		color = { 220 220 220 }
+		
+		can_create_kingdoms = no
+		have_gender_laws = no
+		can_be_granted_kingdoms_and_empires_by_other_government = no
+
+		can_build_tribal = no
+	}
+	
+	guardian_government = {
+		preferred_holdings = { TEMPLE }
+		allowed_holdings = {
+			CASTLE
+			CITY
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		frame_suffix = "_dalaranian"
+		#accepts_liege_governments = {
+		#	alliance_government
+		#}
+		free_revoke_on_governments_religion = {
+			nomadic_government
+			tribal_government
+		}
+		color = { 159 46 225 }
+		potential = {
+			ai = yes
+			OR = {
+				event_target:guardian = {
+					character = ROOT
+				}
+				event_target:last_guardian = {
+					character = ROOT
+				}
+			}
+		}
+		ignore_in_vassal_limit_calculation = {
+			kirin_tor_government
+		}
+		allow_looting = no
+		allows_matrilineal_marriage = yes
+		can_revoke_without_reason = no
+		can_imprison_without_reason = no
+		can_build_tribal = no
+		barons_need_dynasty = yes
+		free_retract_vassalage = no
+	}
+	
+}

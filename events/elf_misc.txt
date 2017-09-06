@@ -1,0 +1,332 @@
+namespace = elfmisc
+
+#Clean up invaders
+character_event = {
+	id = elfmisc.1
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			has_character_flag = sunwell_invader
+			has_character_flag = legion_invader
+		}
+		war = no
+		is_landed = no
+	}
+	
+	immediate = {
+		death = { death_reason = death_missing }
+	}
+}
+
+#Destroy the runestones, non-story version. Remove later?
+narrative_event = {
+	id = elfmisc.2
+	title = EVTTITLEELFMISC.2 # Runestones Destroyed
+	desc = EVTDESCELFMISC.2 # The ancient and magical runestone that warded Quel'Thalas from hostile magics have been destroyed by the forces led by [From.GetTitledName].
+	picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+	}
+}
+
+#Force elves into founding or joining factions
+character_event = {
+	id = elfmisc.3
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	trigger = {
+		liege = {
+			has_landed_title = k_silvermoon
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			NOT = {	trait = undead_scourge }
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+			trait = wretched
+		}
+		NOR = {
+			trait = undead_scourge
+		}
+		is_ruler = yes
+		prisoner = no
+		is_adult = yes
+		has_regent = no
+		higher_tier_than = BARON
+		NOR = {
+			in_faction = faction_traditionalist
+			in_faction = faction_demonologist
+			in_faction = faction_purity
+			in_faction = faction_imperialist
+			in_faction = faction_alliance
+			in_faction = faction_horde
+			in_faction = faction_royalist
+			in_faction = faction_interventionist
+			in_faction = faction_isolationist
+		}
+		NOR = {
+			in_revolt = yes
+			trait = incapable
+			liege = { reverse_has_opinion_modifier = { who = ROOT modifier = opinion_coerced_into_leaving_faction } }
+			liege = { reverse_has_opinion_modifier = { who = ROOT modifier = opinion_subjugated } }
+			liege = { reverse_has_opinion_modifier = { who = ROOT modifier = opinion_subjugated_other_rel } }
+		}
+	}
+	
+	immediate = {
+		random_list = {
+			1 = {
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_traditionalist
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						has_global_flag = sunwell_destroyed
+						has_global_flag = sunwell_corrupted_void
+						has_global_flag = sunwell_corrupted_fel
+						has_global_flag = sunwell_corrupted_necro
+					}
+				}
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_demonologist
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					NOR = {
+						has_global_flag = sunwell_destroyed
+						has_global_flag = sunwell_corrupted_void
+						has_global_flag = sunwell_corrupted_fel
+						has_global_flag = sunwell_corrupted_necro
+						trait = felsworn
+						trait = wretched
+					}
+				}
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_purity
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+			1 = {
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_imperialist
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					always = no
+				}
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_alliance
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					always = no
+				}
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_horde
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+			1 = {
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_royalist
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+			1 = {
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_isolationist
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+			1 = {
+				k_silvermoon = {
+					ROOT = {
+						start_faction = {
+							faction = faction_interventionist
+							title = PREV
+							can_join_exisiting = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = elfmisc.5
+	desc = EVTDESCELFMISC.5 # You now have control over the mystics runestones of Quel'Thalas. Do you wish to do anything with them?
+	picture = GFX_evt_battle
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			NOR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+			trait = undead_scourge
+			religion = burning_legion
+			religion = old_gods
+			religion = twilights_hammer
+			religion = emerald_nightmare
+			religion = cult_of_the_destroyer
+			religion = cult_of_the_infinite
+			religion = lich_king
+		}
+		FROM = {
+			title = c_the_scorched_grove
+			any_province_holding = {
+				OR = {
+					has_building = ca_runestones
+					has_building = ct_runestones
+					has_building = tp_runestones
+					has_building = tb_runestones
+				}
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 10
+				OR = {
+					culture_group = troll
+					culture_group = orc
+					culture_group = ogre
+				}
+			}
+		}
+		name = EVTOPTELFMISC.5a # Destroy them.
+		b_the_scorched_grove = {
+			remove_building = ca_runestones
+			remove_building = ct_runestones
+			remove_building = tp_runestones
+			remove_building = tb_runestones
+		}
+		set_global_flag = qt_runestones_destroyed
+		any_playable_ruler = {
+			limit = {
+				OR = {
+					trait = high_elf
+					trait = blood_elf
+					trait = wretched
+				}
+				NOR = {
+					trait = undead_scourge
+					religion = burning_legion
+					religion = old_gods
+					religion = twilights_hammer
+					religion = emerald_nightmare
+					religion = cult_of_the_destroyer
+					religion = cult_of_the_infinite
+					religion = lich_king
+				}
+				ai = no
+			}
+			narrative_event = { id = elfmisc.2 }
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					religion = burning_legion
+					religion = old_gods
+					religion = twilights_hammer
+					religion = emerald_nightmare
+					religion = cult_of_the_destroyer
+					religion = cult_of_the_infinite
+					religion = lich_king
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					culture_group = troll
+					culture_group = orc
+					culture_group = ogre
+				}
+			}
+		}
+		name = EVTOPTELFMISC.5b # Leave them be.
+	}
+}

@@ -1,0 +1,111 @@
+light_group = {
+	has_coa_on_barony_only = yes
+	graphical_culture = westerngfx
+	playable = yes
+	ai_fabricate_claims = yes
+	
+	holy_light = {
+		graphical_culture = westerngfx
+		
+		icon = 1
+		heresy_icon = 2
+		color = { 0.89 0.9 0.68 }
+		
+		scripture_name = BOOK_OF_LIGHT
+		high_god_name = GOD_HOLY_LIGHT
+		god_names = { GOD_HOLY_LIGHT }
+		evil_god_names = { GOD_SARGERAS GOD_VOID_LORDS GOD_BURNING_LEGION GOD_FORGOTTEN_SHADOW }
+		
+		ai_convert_same_group = 1
+		ai_convert_other_group = 1
+		ai_peaceful = yes
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_CLERIC
+		can_retire_to_monastery = yes
+		priests_can_inherit = yes
+		feminist = yes
+		aggression = 0.5
+		autocephaly = yes
+		peace_piety_gain = 1 # Need to be balanced
+		attacking_same_religion_piety_loss = yes
+		can_grant_divorce = yes
+		
+		intermarry = scarlet
+		intermarry = argent
+		intermarry = arcane
+		intermarry = sunwell
+		intermarry = mercantilism
+		intermarry = old_ways
+		intermarry = druidism
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	scarlet = {
+		graphical_culture = westerngfx
+		
+		parent = holy_light
+		
+		color = { 0.83 0.32 0.32 }
+		
+		scripture_name = BOOK_OF_LIGHT
+		high_god_name = GOD_HOLY_LIGHT
+		god_names = { GOD_HOLY_LIGHT }
+		evil_gods_names = { GOD_SARGERAS GOD_VOID_LORDS GOD_BURNING_LEGION GOD_LICH_KING GOD_FORGOTTEN_SHADOW }
+		
+		ai_convert_same_group = 2
+		ai_convert_other_group = 2
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_INTERROGATOR
+		priests_can_inherit = yes
+		feminist = yes
+		peace_prestige_loss = yes
+		aggression = 3
+		ignores_defensive_attrition = yes
+		can_grant_divorce = yes
+		can_excommunicate = yes
+		investiture = yes
+		
+		intermarry = holy_light
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	argent = {
+		graphical_culture = westerngfx
+		
+		parent = holy_light
+		
+		color = { 0.94 0.94 0.92 }
+		
+		scripture_name = BOOK_OF_LIGHT
+		high_god_name = GOD_HOLY_LIGHT
+		god_names = { GOD_HOLY_LIGHT }
+		evil_gods_names = { GOD_SARGERAS GOD_VOID_LORDS GOD_BURNING_LEGION GOD_LICH_KING GOD_FORGOTTEN_SHADOW }
+		
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_CLERIC
+		priests_can_inherit = yes
+		feminist = yes
+		attacking_same_religion_piety_loss = yes
+		can_grant_divorce = yes
+		ignores_defensive_attrition = yes
+		
+		intermarry = holy_light
+		intermarry = arcane
+		intermarry = sunwell
+		intermarry = mercantilism
+		intermarry = old_ways
+		intermarry = druidism
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+}

@@ -1,0 +1,320 @@
+namespace = dragmain
+
+#Set dragon educations
+character_event = {
+	id = dragmain.1
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = dragon_red
+		}
+		OR = {
+			AND = {
+				NOT = { age = 20 }
+				NOT = { trait = dragon_whelp }
+			}
+			AND = {
+				age = 20
+				NOT = { age = 200 }
+				NOT = { trait = dragon_drake }
+			}
+			AND = {
+				age = 200
+				NOT = { age = 1000 }
+				NOT = { trait = dragon_dragon }
+			}
+			AND = {
+				age = 1000
+				NOT = { trait = dragon_wyrm }
+			}
+		}
+	}
+	
+	immediate = {
+		remove_educations = yes
+		remove_trait = dragon_whelp
+		remove_trait = dragon_drake
+		remove_trait = dragon_dragon
+		remove_trait = dragon_wyrm
+		if = {
+			limit = {
+				NOT = { age = 20 }
+				NOT = { trait = dragon_whelp }
+			}
+			add_trait = dragon_whelp
+		}
+		if = {
+			limit = {
+				age = 20
+				NOT = { age = 200 }
+				NOT = { trait = dragon_drake }
+			}
+			add_trait = dragon_drake
+		}
+		if = {
+			limit = {
+				age = 200
+				NOT = { age = 1000 }
+				NOT = { trait = dragon_dragon }
+			}
+			add_trait = dragon_dragon
+		}
+		if = {
+			limit = {
+				age = 1000
+				NOT = { trait = dragon_wyrm }
+			}
+			add_trait = dragon_wyrm
+		}
+	}
+}
+
+character_event = {
+	id = dragmain.2
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			AND = {
+				trait = dragon_green
+				NOT = { dynasty = 101005 }
+			}
+			AND = {
+				trait = dragon_black
+				NOT = { dynasty = 101006 }
+			}
+			AND = {
+				trait = dragon_bronze
+				NOT = { dynasty = 101007 }
+			}
+			AND = {
+				trait = dragon_blue
+				NOT = { dynasty = 101008 }
+			}
+			AND = {
+				trait = dragon_red
+				NOT = { dynasty = 101009 }
+			}
+			AND = {
+				trait = dragon_infinite
+				NOT = { dynasty = 101010 }
+			}
+			AND = {
+				trait = dragon_nightmare
+				NOT = { dynasty = 101011 }
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				trait = dragon_green
+				NOT = { dynasty = 101005 }
+			}
+			dynasty = 101005
+			recalc_succession = yes
+		}
+		if = {
+			limit = {
+				trait = dragon_black
+				NOT = { dynasty = 101006 }
+			}
+			dynasty = 101006
+			recalc_succession = yes
+		}
+		if = {
+			limit = {
+				trait = dragon_bronze
+				NOT = { dynasty = 101007 }
+			}
+			dynasty = 101007
+			recalc_succession = yes
+		}
+		if = {
+			limit = {
+				trait = dragon_blue
+				NOT = { dynasty = 101008 }
+			}
+			dynasty = 101008
+			recalc_succession = yes
+		}
+		if = {
+			limit = {
+				trait = dragon_red
+				NOT = { dynasty = 101009 }
+			}
+			dynasty = 101009
+			recalc_succession = yes
+		}
+		if = {
+			limit = {
+				trait = dragon_infinite
+				NOT = { dynasty = 101010 }
+			}
+			dynasty = 101010
+			recalc_succession = yes
+		}
+		if = {
+			limit = {
+				trait = dragon_nightmare
+				NOT = { dynasty = 101011 }
+			}
+			dynasty = 101011
+			recalc_succession = yes
+		}
+	}
+}
+
+character_event = {
+	id = dragmain.3
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			trait = dragon_whelp
+			trait = dragon_drake
+			trait = dragon_dragon
+			trait = dragon_wyrm
+		}
+		NOR = {
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_red
+			trait = dragon_infinite
+			trait = dragon_nightmare
+		}
+	}
+	
+	immediate = {
+		remove_trait = dragon_whelp
+		remove_trait = dragon_drake
+		remove_trait = dragon_dragon
+		remove_trait = dragon_wyrm
+		random_list = {
+			15 = {
+				random_list = {
+					 1 = {
+						add_trait = amateurish_plotter
+					 }
+					 1 = {
+						add_trait = naive_appeaser
+					 }
+					 1 = {
+						add_trait = indulgent_wastrel
+					 }
+					 1 = {
+						add_trait = misguided_warrior
+					 }
+					 1 = {
+						add_trait = detached_priest
+					 }
+				}
+			}
+			10 = {
+				random_list = {
+					 1 = {
+						add_trait = flamboyant_schemer
+					 }
+					 1 = {
+						add_trait = underhanded_rogue
+					 }
+					 1 = {
+						add_trait = thrifty_clerk
+					 }
+					 1 = {
+						add_trait = tough_soldier
+					 }
+					 1 = {
+						add_trait = martial_cleric
+					 }
+				}
+			}
+			5 = {
+				random_list = {
+					 1 = {
+						add_trait = intricate_webweaver
+					 }
+					 1 = {
+						add_trait = charismatic_negotiator
+					 }
+					 1 = {
+						add_trait = fortune_builder
+					 }
+					 1 = {
+						add_trait = skilled_tactician
+					 }
+					 1 = {
+						add_trait = scholarly_theologian
+					 }
+				}
+			}
+			1 = {
+				random_list = {
+					 1 = {
+						add_trait = elusive_shadow
+					 }
+					 1 = {
+						add_trait = grey_eminence
+					 }
+					 1 = {
+						add_trait = midas_touched
+					 }
+					 1 = {
+						add_trait = brilliant_strategist
+					 }
+					 1 = {
+						add_trait = mastermind_theologian
+					 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = dragmain.4
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_red
+			trait = dragon_infinite
+			trait = dragon_nightmare
+		}
+		NOT = { government = dragonflight_government }
+	}
+	
+	immediate = {
+		set_government_type  = dragonflight_government
+	}
+}

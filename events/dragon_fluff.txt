@@ -1,0 +1,123 @@
+namespace = dragonfluff
+
+character_event = {
+	id = dragonfluff.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:dragon_consort_ping = { letter_event = { id = dragonfluff.2 } }
+		clear_event_target = dragon_consort_ping
+	}
+}
+
+letter_event = {
+	id = dragonfluff.2
+	desc = EVTDESCDRGFLF.2 # To the [GetFromRootCompliment] [Root.GetFirstName],\n\nI find your grace and beauty to be beyond compare and would be overjoyed if you were to become my consort.\n\nSigned, [From.GetFirstName]
+	border = "GFX_event_letter_frame_diplomacy"
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			FROM = { has_character_flag = dragon_aspect }
+		}
+		name = EVTOPTDRGFLF.2a # I cannot refuse my flight's Aspect!
+		add_lover = FROM
+	}
+	
+	option = {
+		trigger = {
+			NOT = { FROM = { has_character_flag = dragon_aspect } }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				opinion = { who = FROM value = 50 }
+				NOT = { opinion = { who = FROM value = 100 } }
+			}
+			modifier = {
+				factor = 5
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.1
+				trait = homosexual
+				OR = {
+					AND = {
+						is_female = no
+						FROM = { is_female = yes }
+					}
+					AND = {
+						is_female = yes
+						FROM = { is_female = no }
+					}
+				}
+			}
+		}
+		name = EVTOPTDRGFLF.2b # Of course!
+		add_lover = FROM
+		FROM = {
+			letter_event = { id = dragonfluff.3 }
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOT = { FROM = { has_character_flag = dragon_aspect } }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { opinion = { who = FROM value = 25 } }
+			}
+			modifier = {
+				factor = 10
+				trait = homosexual
+				OR = {
+					AND = {
+						is_female = no
+						FROM = { is_female = yes }
+					}
+					AND = {
+						is_female = yes
+						FROM = { is_female = no }
+					}
+				}
+			}
+		}
+		name = EVTOPTDRGFLF.2c # Sorry, but no.
+		FROM = {
+			opinion = { modifier = drg_consort_refused_me who = ROOT years = 5 }
+			letter_event = { id = dragonfluff.4 }
+		}
+		opinion = { modifier = drg_consort_unwanted_advances who = FROM years = 5 }
+	}
+}
+
+letter_event = {
+	id = dragonfluff.3
+	desc = EVTDESCDRGFLF.3 # Dear [Root.GetFirstName],\n\nI would be delighted if we were to be consorts!\n\nSigned,[From.GetFirstName]
+	border = "GFX_event_letter_frame_diplomacy"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTDRGFLF.3 # Great!
+	}
+}
+
+letter_event = {
+	id = dragonfluff.4
+	desc = EVTDESCDRGFLF.4 # To [Root.GetBestName],\n\nI am afraid I must refuse your offer.\n\nSigned, [From.GetBestName]
+	border = "GFX_event_letter_frame_diplomacy"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTDRGFLF.4 # ... very well
+	}
+}

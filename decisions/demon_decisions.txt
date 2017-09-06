@@ -1,0 +1,87 @@
+decisions = {
+	
+	secret_succubus_reveal = {
+		potential = {
+			has_character_flag = secret_succubus
+			liege = {
+				religion = burning_legion
+			}
+		}
+		allow = {
+			has_character_flag = secret_succubus
+			liege = {
+				religion = burning_legion
+			}
+		}
+		effect = {
+			create_character = {
+				age = 30 # Doesn't matter.
+				dynasty = random
+				female = yes
+				culture = sayaad
+				religion = burning_legion
+				trait = fair
+				trait = lustful
+				trait = envious
+				trait = gregarious
+				trait = succubus
+				random_traits = yes
+				fertility = -1000
+				flag = race_assined
+			}
+			new_character = {
+				remove_trait = kind
+				remove_trait = humble
+				remove_trait = chaste
+				remove_trait = charitable
+				remove_trait = ugly
+				remove_trait = clubfooted
+				remove_trait = harelip
+				remove_trait = hunchback
+				remove_trait = lisp
+				remove_trait = dwarf
+				remove_trait = slow
+				remove_trait = imbecile
+				remove_trait = inbred
+				remove_trait = weak
+				remove_trait = dull
+				remove_trait = celibate
+				remove_trait = shy
+				if = {
+					limit = {
+						ROOT = {
+							is_married = yes
+						}
+					}
+					ROOT = {
+						spouse = {
+							remove_spouse = PREV
+							add_spouse = PREVPREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_lover = yes
+						}
+					}
+					ROOT = {
+						any_lover = {
+							remove_lover = PREV
+							if = {
+								limit = {
+									religion = burning_legion
+								}
+								add_lover = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			clear_event_target = event_target:secret_succubus
+			death = { death_reason = death_vanished }
+		}
+	}
+	
+}

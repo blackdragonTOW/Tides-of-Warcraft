@@ -1,0 +1,5357 @@
+namespace = sunwell
+
+#Sunwell conquered
+character_event = {
+	id = sunwell.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		ROOT = {
+			NOR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		FROM = {
+			title = c_sunwell_plateau
+		}
+		FROMFROM = {
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		NOT = { has_global_flag = sunwell_conquered }
+	}
+	
+	immediate = {
+		set_global_flag = sunwell_conquered
+		any_playable_ruler = {
+			limit = {
+				ai = no
+				NOT = { character = ROOT }
+			}
+			narrative_event = { id = sunwell.2 }
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.2
+	title = EVTTITLESUNWELL.2 # The Sunwell, Conquered
+	desc = EVTDESCSUNWELL.2 # Today is a grim day for the elves of Quel'Thalas as their source of magical power, the Sunwell, has been captured by a foreign power.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		name = AKDAMN
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		name = OK
+	}
+}
+
+#Sunwell corrupted (Fel)
+narrative_event = {
+	id = sunwell.3
+	title = EVTTITLESUNWELL.3 # The Sunwell, Corrupted
+	desc = EVTDESCSUNWELL.3 # As if its conquest wasn't enough, now the Sunwell has been corrupted by agents of the Burning Legion, turning it into a massive portal to the Twisting Nether, through with pour both demons and fel energy.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = { religion = burning_legion }
+		}
+		name = AKDAMN
+	}
+	
+	option = {
+		trigger = {
+			religion = burning_legion
+		}
+		name = OK
+	}
+}
+
+#Sunwell corrupted (Necro)
+narrative_event = {
+	id = sunwell.4
+	title = EVTTITLESUNWELL.3 # The Sunwell, Corrupted
+	desc = EVTDESCSUNWELL.4 # As if its conquest wasn't enough, now the Sunwell has been corrupted by agents of the Scourge, causing it to radiate blight and raise as undead any that die close enough to it.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = { religion = lich_king }
+		}
+		name = AKDAMN
+	}
+	
+	option = {
+		trigger = {
+			religion = lich_king
+		}
+		name = OK
+	}
+}
+
+#Sunwell corrupted (Void)
+narrative_event = {
+	id = sunwell.5
+	title = EVTTITLESUNWELL.3 # The Sunwell, Corrupted
+	desc = EVTDESCSUNWELL.5 # As if its conquest wasn't enough, now the Sunwell has been corrupted by agents of powers best left unnamed, causing it to become a rift to a place that should not exist. Cannot exist. Through it, creatures of the Void claw their way through to Azeroth.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOR = {
+				religion = old_gods
+				religion = twilights_hammer
+				religion = emerald_nightmare
+				religion = cult_of_the_infinite
+				religion = cult_of_the_destroyer
+				religion = azshara
+			}
+		}
+		name = AKDAMN
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				religion = old_gods
+				religion = twilights_hammer
+				religion = emerald_nightmare
+				religion = cult_of_the_infinite
+				religion = cult_of_the_destroyer
+				religion = azshara
+			}
+		}
+		name = OK
+	}
+}
+
+#Blood elves
+narrative_event = {
+	id = sunwell.6
+	title = EVTTITLESUNWELL.6 # The Sin'dorei
+	desc = EVTDESCSUNWELL.6 # [From.GetTitledName] has declared that, in honour of those that died defending Quel'Thalas and the Sunwell, the quel'dorei, or high elves, shall rename themselves. From this moment on, they are the sin'dorei, or blood elves.
+	picture = GFX_evt_belf_mage
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = { trait = high_elf }
+		}
+		name = OK
+	}
+	
+	option = {
+		trigger = {
+			trait = high_elf
+		}
+		ai_chance = {
+			factor = 0.6
+			modifier = {
+				factor = 2
+				in_faction = faction_royalist
+			}
+			modifier = {
+				factor = 0.5
+				in_faction = faction_purity
+			}
+			modifier = {
+				factor = 10
+				is_ruler = no
+				liege = {
+					trait = blood_elf
+				}
+			}
+			modifier = {
+				factor = 0
+				any_liege = {
+					tier = KING
+					NOT = { has_landed_title = k_silvermoon }
+				}
+			}
+		}
+		name = EVTOPTSUNWELL.6a # For Quel'Thalas!
+		culture = blood_elven
+		set_graphical_culture = blood_elven
+		remove_trait = high_elf
+		add_trait = blood_elf
+		if = {
+			limit = {
+				is_landed = yes
+			}
+			any_demesne_province = {
+				limit = {
+					culture = high_elven
+				}
+				culture = blood_elven
+			}
+		}
+		if = {
+			limit = {
+				is_ruler = yes
+			}
+			any_character = {
+				limit = {
+					NOT = { character = ROOT }
+					trait = high_elf
+					liege = { character = PREV }
+				}
+				repeat_event = { id = sunwell.6 }
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			trait = high_elf
+		}
+		ai_chance = {
+			factor = 0.2
+			modifier = {
+				factor = 4
+				FROM = {
+					NOT = { reverse_opinion = { who = ROOT value = 0 } }
+				}
+			}
+			modifier = {
+				factor = 4
+				in_faction = faction_purity
+			}
+			modifier = {
+				factor = 0.5
+				in_faction = faction_royalist
+			}
+			modifier = {
+				factor = 10
+				is_ruler = no
+				liege = {
+					trait = high_elf
+				}
+			}
+		}
+		name = EVTOPTSUNWELL.6b # I will take no part in this farce!
+		if = {
+			limit = {
+				any_liege = {
+					character = FROM
+				}
+				is_landed = yes
+				NOR = {
+					region = world_eversong_woods
+					region = world_ghostlands
+				}
+			}
+			set_defacto_liege = THIS
+		}
+	}
+}
+
+#Sunwell recaptured
+character_event = {
+	id = sunwell.7
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		ROOT = {
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		FROM = {
+			title = c_sunwell_plateau
+		}
+		FROMFROM = {
+			NOR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		has_global_flag = sunwell_conquered
+	}
+	
+	immediate = {
+		set_global_flag = sunwell_conquered
+		any_playable_ruler = {
+			limit = {
+				ai = no
+				NOT = { character = ROOT }
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = sunwell_destroyed
+						has_global_flag = sunwell_corrupted_fel
+						has_global_flag = sunwell_corrupted_necro
+						has_global_flag = sunwell_corrupted_void
+					}
+				}
+				narrative_event = { id = sunwell.8 }
+			}
+			if = {
+				limit = {
+					has_global_flag = sunwell_destroyed
+					NOR = {
+						has_global_flag = sunwell_corrupted_fel
+						has_global_flag = sunwell_corrupted_necro
+						has_global_flag = sunwell_corrupted_void
+					}
+				}
+				narrative_event = { id = sunwell.9 }
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = sunwell_destroyed }
+					OR = {
+						has_global_flag = sunwell_corrupted_fel
+						has_global_flag = sunwell_corrupted_necro
+						has_global_flag = sunwell_corrupted_void
+					}
+				}
+				narrative_event = { id = sunwell.10 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.8
+	title = EVTTITLESUNWELL.8 # The Sunwell, Recaptured
+	desc = EVTDESCSUNWELL.8 # The elves of Quel'Thalas have finally recaptured their ancient source of power, the Sunwell, thus securing themselves again a source of magical power.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		name = AKGREAT
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		name = OK
+	}
+}
+
+#Destroyed Sunwell recaptured
+narrative_event = {
+	id = sunwell.9
+	title = EVTTITLESUNWELL.8 # The Sunwell, Recaptured
+	desc = EVTDESCSUNWELL.9 # The elves of Quel'Thalas have finally recaptured their ruined ancient source of power, the Sunwell. Though it can no longer provide them with magic in this state, it still holds cultural significance.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		name = AKGREAT
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		name = OK
+	}
+}
+
+#Corrupted Sunwell recaptured
+narrative_event = {
+	id = sunwell.10
+	title = EVTTITLESUNWELL.8 # The Sunwell, Recaptured
+	desc = EVTDESCSUNWELL.10 # The elves of Quel'Thalas have finally recaptured their ancient source of power, the Sunwell. It is, however, still corrupted, and poses a great threat to the world.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		name = AKGREAT
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				trait = high_elf
+				trait = blood_elf
+				trait = wretched
+			}
+		}
+		name = OK
+	}
+}
+
+#Corrupted Sunwell destroyed
+narrative_event = {
+	id = sunwell.11
+	title = EVTTITLESUNWELL.11 # The Sunwell, Destroyed
+	desc = EVTDESCSUNWELL.11 # The corrupted Sunwell was destroyed on the orders [From.GetTitledName], preventing it from spreading its foul corruption throught the land. A regrettable decision, but a necessary one.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Corrupted Sunwell taints the land
+#Fel
+province_event = {
+	id = sunwell.12
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 10
+		modifier = {
+			factor = 2
+			has_game_rule = {
+				name = corruption
+				value = slower
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_game_rule = {
+				name = corruption
+				value = faster
+			}
+		}
+		modifier = {
+			factor = 0.8
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 30 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = global_doom value = 30 }
+			NOT = { check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = global_doom value = 40 }
+		}
+		modifier = {
+			factor = 0.8
+			check_variable = { which = prov_corruption value = 10 }
+			NOT = { check_variable = { which = prov_corruption value = 15 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = prov_corruption value = 15 }
+			NOT = { check_variable = { which = prov_corruption value = 20 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = prov_corruption value = 20 }
+			NOT = { check_variable = { which = prov_corruption value = 25 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = prov_corruption value = 25 }
+		}
+	}
+	
+	trigger = {
+		OR = {
+			region = world_eversong_woods
+			region = world_ghostlands
+		}
+		has_global_flag = sunwell_corrupted_fel
+	}
+	
+	immediate = {
+		county = { prov_corruption_fel = yes }
+		random = {
+			chance = 10
+			increase_doom = yes
+		}
+	}
+}
+
+#Also fel
+character_event = {
+	id = sunwell.13
+	desc = EVTDESCSUNWELL.13 # With the sunwell corrupted by the servants of the Burning Legion, you wonder if you should join the Legion. That is, after all, the best way to avoid their wrath.
+	picture = GFX_evt_legion
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 3
+		modifier = {
+			factor = 0.8
+			check_variable = { which = global_doom value = 10 }
+			NOT = { check_variable = { which = global_doom value = 20 } }
+		}
+		modifier = {
+			factor = 0.6
+			check_variable = { which = global_doom value = 20 }
+			NOT = { check_variable = { which = global_doom value = 30 } }
+		}
+		modifier = {
+			factor = 0.4
+			check_variable = { which = global_doom value = 30 }
+			NOT = { check_variable = { which = global_doom value = 40 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = global_doom value = 40 }
+		}
+		modifier = {
+			factor = 0.8
+			location = {
+				check_variable = { which = prov_corruption value = 10 }
+				NOT = { check_variable = { which = prov_corruption value = 15 } }
+			}
+		}
+		modifier = {
+			factor = 0.6
+			location = {
+				check_variable = { which = prov_corruption value = 15 }
+				NOT = { check_variable = { which = prov_corruption value = 20 } }
+			}
+		}
+		modifier = {
+			factor = 0.4
+			location = {
+				check_variable = { which = prov_corruption value = 20 }
+				NOT = { check_variable = { which = prov_corruption value = 25 } }
+			}
+		}
+		modifier = {
+			factor = 0.2
+			location = {
+				check_variable = { which = prov_corruption value = 25 }
+			}
+		}
+		modifier = {
+			factor = 5
+			trait = high_elf
+		}
+		modifier = {
+			factor = 0.4
+			trait = wretched
+		}
+		modifier = {
+			factor = 0.7
+			in_faction = faction_demonologist
+		}
+	}
+	
+	trigger = {
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+			trait = wretched
+		}
+		has_secret_religion = no
+		NOT = { true_religion = burning_legion }
+		NOT = { in_faction = faction_purity }
+		NOT = { has_character_flag = refused_sunwell_legion }
+		has_global_flag = sunwell_corrupted_fel
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0.2
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					trait = necrolyte
+					trait = warlock
+				}
+				factor = 3
+			}
+			modifier = {
+				trait = cynical
+				factor = 2
+			}
+			modifier = {
+				trait = zealous
+				factor = 0.2
+			}
+		}
+		name = EVTOPTSUNWELL.13a # For the Legion!
+		religion = burning_legion
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					trait = necrolyte
+					trait = warlock
+				}
+				factor = 3
+			}
+			modifier = {
+				trait = cynical
+				factor = 2
+			}
+			modifier = {
+				trait = zealous
+				factor = 0.2
+			}
+		}
+		name = EVTOPTSUNWELL.13b # Others won't understand. I better lay low.
+		set_secret_religion = burning_legion
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 3
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 0.8
+			}
+			modifier = {
+				OR = {
+					trait = necrolyte
+					trait = warlock
+				}
+				factor = 0.5
+			}
+			modifier = {
+				trait = cynical
+				factor = 0.8
+			}
+			modifier = {
+				trait = zealous
+				factor = 2
+			}
+		}
+		name = EVTOPTSUNWELL.13c # Never!
+		set_character_flag = refused_sunwell_legion
+		piety = 50
+	}
+}
+
+#Void
+character_event = {
+	id = sunwell.14
+	desc = EVTDESCSUNWELL.14 # Lately, you have been hearing whispers just at the edge of hearing. No one else seems to be hearing them, and you can't find a source. They say... disturbing things. Things that can't be true, yet you know to be.
+	picture = GFX_evt_black_empire
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 4
+		modifier = {
+			factor = 2
+			trait = paranoid
+		}
+	}
+	
+	trigger = {
+		location = {
+			region = world_eversong_woods
+			region = world_ghostlands
+		}
+		NOT = { true_religion = old_gods }
+		NOT = { true_religion = twilights_hammer }
+		NOT = { true_religion = azshara }
+		NOT = { true_religion = cult_of_the_infinite }
+		NOT = { true_religion = cult_of_the_destroyer }
+		NOT = { true_religion = emerald_nightmare }
+		has_global_flag = sunwell_corrupted_void
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.14 # The fish know all the secrets. They know the cold. They know the dark.
+		hidden_tooltip = {
+			random_list = {
+				90 = {
+				}
+				40 = {
+					modifier = {
+						factor = 0
+						trait = lunatic
+					}
+					add_trait = lunatic
+				}
+				10 = {
+					set_secret_religion = old_gods
+				}
+				40 = {
+					modifier = {
+						factor = 0
+						trait = stressed
+					}
+					add_trait = stressed
+				}
+				70 = {
+					random_list = {
+						1 = {
+							modifier = {
+								factor = 0
+								trait = lustful
+							}
+							remove_trait = chaste
+							add_trait = lustful
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = gluttonous
+							}
+							remove_trait = temperate
+							add_trait = gluttonous
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = greedy
+							}
+							remove_trait = charitable
+							add_trait = greedy
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = slothful
+							}
+							remove_trait = diligent
+							add_trait = slothful
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = wroth
+							}
+							remove_trait = patient
+							add_trait = wroth
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = envious
+							}
+							remove_trait = kind
+							add_trait = envious
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = proud
+							}
+							remove_trait = humble
+							add_trait = proud
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = cruel
+							}
+							remove_trait = kind
+							add_trait = cruel
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = deceitful
+							}
+							remove_trait = honest
+							add_trait = deceitful
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = craven
+							}
+							remove_trait = brave
+							add_trait = craven
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = ambitious
+							}
+							remove_trait = content
+							add_trait = ambitious
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = arbitrary
+							}
+							remove_trait = just
+							add_trait = arbitrary
+						}
+						1 = {
+							modifier = {
+								factor = 0
+								trait = paranoid
+							}
+							remove_trait = trusting
+							add_trait = paranoid
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Also void
+character_event = {
+	id = sunwell.15
+	desc = EVTDESCSUNWELL.15 # With the sunwell corrupted by the Void, you wonder if you should turn to its powers. That is, after all, the best way to avoid their wrath.
+	picture = GFX_evt_black_empire
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 2
+		modifier = {
+			factor = 5
+			trait = high_elf
+		}
+		modifier = {
+			factor = 0.4
+			trait = wretched
+		}
+	}
+	
+	trigger = {
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+			trait = wretched
+		}
+		has_secret_religion = no
+		NOT = { true_religion = old_gods }
+		NOT = { true_religion = twilights_hammer }
+		NOT = { true_religion = azshara }
+		NOT = { true_religion = cult_of_the_infinite }
+		NOT = { true_religion = cult_of_the_destroyer }
+		NOT = { true_religion = emerald_nightmare }
+		NOT = { has_character_flag = refused_sunwell_void }
+		has_global_flag = sunwell_corrupted_void
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0.2
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					has_character_modifier = shadow_priest
+					has_character_modifier = nightmare_druid
+					has_character_modifier = dark_shaman
+				}
+				factor = 3
+			}
+			modifier = {
+				trait = cynical
+				factor = 2
+			}
+			modifier = {
+				trait = zealous
+				factor = 0.2
+			}
+		}
+		name = EVTOPTSUNWELL.15a # I can hear their voices...
+		religion = old_gods
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					has_character_modifier = shadow_priest
+					has_character_modifier = nightmare_druid
+					has_character_modifier = dark_shaman
+				}
+				factor = 3
+			}
+			modifier = {
+				trait = cynical
+				factor = 2
+			}
+			modifier = {
+				trait = zealous
+				factor = 0.2
+			}
+		}
+		name = EVTOPTSUNWELL.13b # Others won't understand. I better lay low.
+		set_secret_religion = old_gods
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 3
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 0.8
+			}
+			modifier = {
+				OR = {
+					has_character_modifier = shadow_priest
+					has_character_modifier = nightmare_druid
+					has_character_modifier = dark_shaman
+				}
+				factor = 0.5
+			}
+			modifier = {
+				trait = cynical
+				factor = 0.8
+			}
+			modifier = {
+				trait = zealous
+				factor = 2
+			}
+		}
+		name = EVTOPTSUNWELL.13c # Never!
+		set_character_flag = refused_sunwell_void
+		piety = 50
+	}
+}
+
+#Necro
+province_event = {
+	id = sunwell.16
+	desc = EVTDESCSUNWELL.16 # The dead on [Root.GetName] have begun to rise and assault the living! They are quickly getting organized, this is clearly the work of the Scourge!
+	picture = GFX_evt_lich_king
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	trigger = {
+		OR = {
+			region = world_eversong_woods
+			region = world_ghostlands
+		}
+		NOR = {
+			holder_scope = { true_religion = lich_king }
+			ROOT = {
+				is_occupied = yes
+				any_war = {
+					any_attacker = {
+						religion = lich_king
+					}
+					any_defender = {
+						religion = lich_king
+					}
+				}
+			}
+		}
+		has_global_flag = sunwell_corrupted_necro
+	}
+	
+	option = {
+		name = AKDAMN
+		hidden_tooltip = {
+			create_character = {
+				age = 100
+				random_traits = yes
+				attributes = {
+					martial = 10
+				}
+				culture = high_elven
+				religion = lich_king
+				trait = high_elf
+				trait = undead_scourge
+				flag = race_assigned
+				flag = sunwell_undead_revolt
+			}
+			new_character = {
+				set_character_flag = sunwell_invader
+				culture = scourge
+				random_list = {
+					75 = {
+					
+					}
+					15 = {
+						add_trait = necromancer
+						set_character_flag = has_adv_class
+					}
+					15 = {
+						add_trait = warrior
+						set_character_flag = has_adv_class
+					}
+					5 = {
+						add_trait = death_knight
+						set_character_flag = has_adv_class
+					}
+				}
+				create_title = {
+					tier = DUKE
+					landless = yes
+					temporary = yes
+					culture = scourge
+					name = UNDEAD_SWARM
+					holder = THIS
+				}
+				remove_trait = kind
+				remove_trait = humble
+				remove_trait = chaste
+				remove_trait = charitable
+				set_government_type = scourge_government
+				spawn_unit = {
+					owner = THIS
+					province = PREVPREV
+					home = PREVPREV
+					leader = THIS
+					troops = {
+						light_infantry = { 50 50 }
+						heavy_infantry = { 30 30 }
+						archers = { 30 30 }
+						mages = { 2 2 }
+						constructs = { 1 1 }
+					}
+					maintenance_multiplier = 0.5
+					is_looter = no
+					can_toggle_looting = no
+					reinforces = no
+					match_character = PREV
+					match_mult = 0.8
+					match_min = 500
+				}
+				ROOT = {
+					holder_scope = {
+						reverse_war = {
+							target = PREVPREV
+							infamy = 0
+							casus_belli = muslim_county_conquest
+							thirdparty = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.17
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		has_character_flag = sunwell_undead_revolt
+		is_landed = yes
+		is_title_active = e_scourge
+		NOT = { has_global_flag = jailor_of_the_damned } # Need to remember to change this if I name it anything else
+	}
+	
+	immediate = {
+		clr_character_flag = sunwell_undead_revolt
+		e_scourge = {
+			holder_scope = {
+				ROOT = {
+					set_defacto_liege = PREV
+				}
+			}
+		}
+	}
+}
+
+#Also necro
+character_event = {
+	id = sunwell.18
+	desc = EVTDESCSUNWELL.18 # With the Sunwell corrupted by the Scourge, you wonder if you should turn to its powers. That is, after all, the best way to avoid their wrath.
+	picture = GFX_evt_lich_king
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 2
+		modifier = {
+			factor = 5
+			trait = high_elf
+		}
+		modifier = {
+			factor = 0.4
+			trait = wretched
+		}
+	}
+	
+	trigger = {
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+			trait = wretched
+		}
+		has_secret_religion = no
+		NOT = { true_religion = lich_king }
+		NOT = { has_character_flag = refused_sunwell_lk }
+		has_global_flag = sunwell_corrupted_necro
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0.2
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					trait = necrolyte
+					trait = necromancer
+				}
+				factor = 3
+			}
+			modifier = {
+				trait = cynical
+				factor = 2
+			}
+			modifier = {
+				trait = zealous
+				factor = 0.2
+			}
+		}
+		name = EVTOPTSUNWELL.18a # For the scourge!
+		religion = lich_king
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					trait = necrolyte
+					trait = necromancer
+				}
+				factor = 3
+			}
+			modifier = {
+				trait = cynical
+				factor = 2
+			}
+			modifier = {
+				trait = zealous
+				factor = 0.2
+			}
+		}
+		name = EVTOPTSUNWELL.13b # Others won't understand. I better lay low.
+		set_secret_religion = lich_king
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 3
+			modifier = {
+				OR = {
+					trait = cruel
+					trait = impaler
+				}
+				factor = 0.8
+			}
+			modifier = {
+				OR = {
+					trait = necrolyte
+					trait = necromancer
+				}
+				factor = 0.5
+			}
+			modifier = {
+				trait = cynical
+				factor = 0.8
+			}
+			modifier = {
+				trait = zealous
+				factor = 2
+			}
+		}
+		name = EVTOPTSUNWELL.13c # Never!
+		set_character_flag = refused_sunwell_lk
+		piety = 50
+	}
+}
+
+#Reliquary
+character_event = {
+	id = sunwell.20
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.1
+			trait = explorer
+		}
+		modifier = {
+			factor = 0.5
+			stewardship = 15
+		}
+	}
+	
+	trigger = {
+		OR = {
+			trait = blood_elf
+			trait = high_elf
+		}
+		NOT = { has_global_flag = refused_reliquary }
+		NOT = { has_global_flag = reliquary_active }
+		NOT = { has_global_flag = wow_bookmark }
+		OR = {
+			has_global_flag = sunwell_conquered
+			has_global_flag = sunwell_destroyed
+			has_global_flag = sunwell_corrupted_fel
+			has_global_flag = sunwell_corrupted_necro
+			has_global_flag = sunwell_corrupted_void
+			#Is a part of the horde
+		}
+		NOT = { in_faction = faction_alliance }
+		any_liege = {
+			has_landed_title = k_silvermoon
+			OR = {
+				trait = blood_elf
+				trait = high_elf
+			}
+			NOT = { has_character_flag = supports_alliance }
+		}
+		stewardship = 10
+		OR = {
+			NOT = { has_character_flag = has_adv_class }
+			trait = scout
+			trait = explorer
+		}
+		is_ruler = no
+		is_in_society = no
+	}
+	
+	immediate = {
+		k_silvermoon = {
+			holder_scope = {
+				if = {
+					limit = {
+						has_global_flag = sunwell_conquered
+						has_global_flag = sunwell_destroyed
+						has_global_flag = sunwell_corrupted_fel
+						has_global_flag = sunwell_corrupted_necro
+						has_global_flag = sunwell_corrupted_void
+					}
+					set_character_flag = reliquary1
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_global_flag = sunwell_conquered
+							has_global_flag = sunwell_destroyed
+							has_global_flag = sunwell_corrupted_fel
+							has_global_flag = sunwell_corrupted_necro
+							has_global_flag = sunwell_corrupted_void
+						}
+						always = no
+					}
+					set_character_flag = reliquary2
+				}
+				character_event = { id = sunwell.21 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.21
+	desc = {
+		trigger = {
+			has_character_flag = reliquary1
+		}
+		text = EVTDESCSUNWELL.21a # [From.GetFullName] approaches you with an interesting offer. [From.GetSheHe] proposes the creation of a society, named "Reliquary", whose purpose is to seek out artifacts of power to find a cure for the magical addiction plaguing your people, as well as use them to secure the hegemony of Quel'Thalas.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = reliquary2
+		}
+		text = EVTDESCSUNWELL.21b # [From.GetFullName] approaches you with an interesting offer. [From.GetSheHe] proposes the creation of a society, named "Reliquary", whose purpose is to seek out artifacts of power to secure the hegemony of Quel'Thalas.
+	}
+	picture = GFX_evt_lorthemar
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_character_flag = reliquary1
+		clr_character_flag = reliquary2
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.21a # An intriguing idea...
+		custom_tooltip = { text = EVTTOOLTIPSUNWELL.21 } # The Reliquary is created
+		hidden_tooltip = {
+			set_global_flag = reliquary_active
+			FROM = {
+				prestige = 50
+				join_society = reliquary
+				set_society_grandmaster = yes
+			}
+		}
+		any_realm_character = {
+			limit = {
+				ai = no
+			}
+			narrative_event = { id = sunwell.22 }
+		}
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = EVTOPTSUNWELL.21b # Seems like a waste of time.
+		set_global_flag = refused_reliquary
+		prestige = -150
+	}
+}
+
+narrative_event = {
+	id = sunwell.22
+	title = EVTTITLESUNWELL.22 # The Reliquary
+	desc = EVTDESCSUNWELL.22 # By royal decree, a society for the advancement of Silvermoon's prestige and technology has been formed: the Reliquary. Its mission to seek out artifacts of power to secure the political and physical integrity of the kingdom. [FromFrom.GetFullName] has been named its first High Examiner.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_narrative_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Craving magic
+character_event = {
+	id = sunwell.23
+	desc = EVTDESCSUNWELL.23 # Lately the cravings have been getting worse. The need to consume mana, regardless of the source, is overwhelming. What harm a little mana could do, after all?
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		months = 8
+		modifier = {
+			factor = 6
+			location = {
+				has_province_modifier = burning_crystal
+			}
+		}
+		modifier = {
+			factor = 2
+			in_faction = faction_purity
+		}
+		modifier = {
+			factor = 1.5
+			trait = temperate
+		}
+		modifier = {
+			factor = 0.5
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 0.5
+			check_variable = { which = craving_magic value = 5 }
+			NOT = { check_variable = { which = craving_magic value = 7 } }
+		}
+		modifier = {
+			factor = 0.2
+			check_variable = { which = craving_magic value = 7 }
+			NOT = { check_variable = { which = craving_magic value = 10 } }
+		}
+		modifier = {
+			factor = 0.05
+			check_variable = { which = craving_magic value = 10 }
+		}
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = sunwell_embraced_fel
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_nature
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_void
+			OR = {
+				religion = old_gods
+				religion = twilights_hammer
+			}
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+			trait = felsworn
+		}
+		has_global_flag = sunwell_destroyed
+		has_global_flag = sunwell_corrupted_fel
+		has_global_flag = sunwell_corrupted_necro
+		has_global_flag = sunwell_corrupted_void
+		check_variable = { which = craving_magic value = 3 }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { check_variable = { which = craving_magic value = 1 } }
+			}
+			set_variable = { which = craving_magic value = 1 }
+		}
+		if = {
+			limit = {
+				NOT = { check_variable = { which = wretched value = 1 } }
+			}
+			set_variable = { which = wretched value = 1 }
+		}
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = gluttonous
+				NOT = { trait = temperate }
+				NOT = { in_faction = faction_purity }
+				check_variable = { which = craving_magic value = 8 }
+			}
+		}
+		name = EVTOPTSUNWELL.23a # Yes, a little won't hurt.
+		hidden_tooltip = {
+			random = {
+				chance = 85
+				modifier = {
+					factor = 0
+					check_variable = { which = wretched value = 10 }
+				}
+				change_variable = { which = wretched value = 1 }
+			}
+			random = {
+				chance = 20
+				modifier = {
+					factor = 0
+					check_variable = { which = wretched value = 10 }
+				}
+				change_variable = { which = wretched value = 1 }
+			}
+			subtract_variable = { which = craving_magic value = 2 }
+			if = {
+				limit = {
+					check_variable = { which = wretched value = 5 }
+				}
+				random = {
+					chance = 5
+					modifier = {
+						factor = 2
+						check_variable = { which = wretched value = 6 }
+						NOT = { check_variable = { which = wretched value = 7 } }
+					}
+					modifier = {
+						factor = 5
+						check_variable = { which = wretched value = 7 }
+						NOT = { check_variable = { which = wretched value = 8 } }
+					}
+					modifier = {
+						factor = 8
+						check_variable = { which = wretched value = 8 }
+						NOT = { check_variable = { which = wretched value = 9 } }
+					}
+					modifier = {
+						factor = 10
+						check_variable = { which = wretched value = 9 }
+						NOT = { check_variable = { which = wretched value = 10 } }
+					}
+					modifier = {
+						factor = 20
+						check_variable = { which = wretched value = 10 }
+					}
+					remove_trait = high_elf
+					remove_trait = blood_elf
+					add_trait = wretched
+					set_variable = { which = wretched value = 0 }
+					set_variable = { which = craving_magic value = 0 }
+					character_event = { id = sunwell.28 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = temperate
+				NOT = { trait = gluttonous }
+				in_faction = faction_purity
+			}
+		}
+		name = EVTOPTSUNWELL.23b # No, I must stay strong!
+		hidden_tooltip = {
+			random = {
+				chance = 40
+				modifier = {
+					factor = 0
+					check_variable = { which = craving_magic value = 10 }
+				}
+				change_variable = { which = craving_magic value = 1 }
+			}
+		}
+	}
+}
+
+#Craving goes up naturally
+character_event = {
+	id = sunwell.24
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 6
+			location = {
+				has_province_modifier = burning_crystal
+			}
+		}
+		modifier = {
+			factor = 2
+			in_faction = faction_purity
+		}
+		modifier = {
+			factor = 1.5
+			trait = temperate
+		}
+		modifier = {
+			factor = 0.5
+			trait = gluttonous
+		}
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = sunwell_embraced_fel
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_nature
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_void
+			OR = {
+				religion = old_gods
+				religion = twilights_hammer
+			}
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+			trait = felsworn
+		}
+		has_global_flag = sunwell_destroyed
+		has_global_flag = sunwell_corrupted_fel
+		has_global_flag = sunwell_corrupted_necro
+		has_global_flag = sunwell_corrupted_void
+	}
+	
+	immediate = {
+		change_variable = { which = craving_magic value = 1 }
+	}
+}
+
+#Side-effects of too high craving
+character_event = {
+	id = sunwell.25
+	desc = EVTDESCSUNWELL.25 # The unfulfilled craving for magic is making you exhibit some side-effects.
+	notification = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = sunwell_embraced_fel
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_nature
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_void
+			OR = {
+				religion = old_gods
+				religion = twilights_hammer
+			}
+		}
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		NOR = {
+			trait = undead_generic
+			trait = undead_scourge
+			trait = undead_forsaken
+			trait = felsworn
+		}
+		has_global_flag = sunwell_destroyed
+		has_global_flag = sunwell_corrupted_fel
+		has_global_flag = sunwell_corrupted_necro
+		has_global_flag = sunwell_corrupted_void
+		check_variable = { which = magic_craving value = 7 }
+	}
+	
+	immediate = {
+		add_character_modifier = { name = craving_magic duration = -1 }
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+#Lose the side-effects
+character_event = {
+	id = sunwell.26
+	desc = EVTDESCSUNWELL.26 # The side-effects of your magical craving are gone, for now.
+	notification = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	trigger = {
+		NOT = { check_variable = { which = magic_craving value = 7 } }
+		has_character_modifier = craving_magic
+	}
+	
+	immediate = {
+		remove_character_modifier = craving_magic
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+#Set the variables to 0 if the sunwell is operating again
+character_event = {
+	id = sunwell.27
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_global_flag = sunwell_embraced_fel
+				OR = {
+					religion = demonology
+					religion = burning_legion
+				}
+			}
+			AND = {
+				has_global_flag = sunwell_embraced_nature
+				OR = {
+					religion = demonology
+					religion = burning_legion
+				}
+			}
+			AND = {
+				has_global_flag = sunwell_embraced_void
+				OR = {
+					religion = old_gods
+					religion = twilights_hammer
+				}
+			}
+			NOR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted_void
+			}
+		}
+		OR = {
+			check_variable = { which = craving_magic value = 1 }
+			check_variable = { which = wretched value = 1 }
+		}
+	}
+	
+	immediate = {
+		set_variable = { which = wretched value = 0 }
+		set_variable = { which = craving_magic value = 0 }
+	}
+}
+
+#Wretched!
+character_event = {
+	id = sunwell.28
+	desc = EVTDESCSUNWELL.28 # Pain wracks both your body and mind. Your mana addiction is no longer a craving, but an overriding urge. You can feel it changing you. You start stooping over. Growths along your back. A hollowness inside. And the hunger. Oh, the hunger.
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.28 # Where is the mana?! Give it to me!
+		hidden_tooltip = {
+			remove_trait = high_elf
+			remove_trait = blood_elf
+			add_trait = wretched
+			set_graphical_culture = wretched
+			if = {
+				limit = {
+					independent = no
+					liege = {
+						OR = {
+							trait = high_elf
+							trait = blood_elf
+						}
+						NOR = {
+							trait = undead_generic
+							trait = undead_forsaken
+							trait = undead_scourge
+						}
+					}
+				}
+				character_event = { id = sunwell.29 }
+			}
+			if = {
+				limit = {
+					is_ruler = yes
+					higher_tier_than = COUNT
+				}
+				any_vassal = {
+					limit = {
+						OR = {
+							trait = high_elf
+							trait = blood_elf
+						}
+						NOR = {
+							trait = undead_generic
+							trait = undead_forsaken
+							trait = undead_scourge
+						}
+					}
+					character_event = { id = sunwell.30 }
+				}
+			}
+		}
+	}
+}
+
+#Wretched courtier/vassal
+character_event = {
+	id = sunwell.29
+	desc = EVTDESCSUNWELL.29 # [From.GetBestName] has failed to control [From.GetHerHis] urges and overindulged, becoming wretched.
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_intrigue
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.29 # Disgusting.
+		opinion = { who = from modifier = wretched_scum years = 2 }
+	}
+}
+
+#Wretched liege
+character_event = {
+	id = sunwell.30
+	desc = EVTDESCSUNWELL.30 # Your liege, [From.GetBestName] has failed to control [From.GetHerHis] urges and overindulged, becoming wretched.
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_intrigue
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.29 # Disgusting.
+		opinion = { who = from modifier = wretched_scum years = 2 }
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.30 # I shall not obey such a... creature.
+		opinion = { who = from modifier = wretched_scum years = 2 }
+		if = {
+			limit = {
+				FROM = {
+					independent = no
+				}
+			}
+			FROM = {
+				liege = {
+					ROOT = {
+						set_defacto_liege = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					independent = yes
+				}
+			}
+			set_defacto_liege = THIS
+		}
+	}
+}
+
+#Population craving magic
+province_event = {
+	id = sunwell.31
+	desc = EVTDESCSUNWELL.31 # The population on [Root.GetName] has been suffering under their magical addiction and is clamoring for mana to consume. If not satisfied, they are bound to get restless.
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_economy
+	
+	mean_time_to_happen = {
+		months = 18
+		modifier = {
+			factor = 1.5
+			has_province_modifier = mana_crystal
+		}
+		modifier = {
+			factor = 2
+			has_province_modifier = burning_crystal
+		}
+	}
+	
+	trigger = {
+		NOR = {
+			has_global_flag = sunwell_embraced_fel
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_nature
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_void
+			OR = {
+				religion = old_gods
+				religion = twilights_hammer
+			}
+		}
+		OR ={
+			has_global_flag = sunwell_destroyed
+			has_global_flag = sunwell_corrupted_fel
+			has_global_flag = sunwell_corrupted_necro
+			has_global_flag = sunwell_corrupted_void
+		}
+		NOT = { has_province_modifier = addicted_populace }
+		OR = {
+			culture = blood_elven
+			culture = high_elven
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.31a # Allow them to feed on mana.
+		holder_scope = { scaled_wealth = -0.1 }
+		random = {
+			chance = 15
+			add_province_modifier = { name = wretched_mob duration = 300 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.31b # Forbid them from doing so.
+		add_province_modifier = { name = addicted_populace duration = 300 }
+	}
+}
+
+#Wretched mob rebellion
+province_event = {
+	id = sunwell.32
+	desc = EVTDESCSUNWELL.32 # A ravenous mob of wretched has banded together and now rampages across [Root.GetName], in perpetual search for sources of magic.
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = sunwell_embraced_fel
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_nature
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_void
+			OR = {
+				religion = old_gods
+				religion = twilights_hammer
+			}
+		}
+		any_province_holding = {
+			NOT = { holding_type = nomad }
+		}
+		OR = {
+			owner = {
+				NOR = {
+					trait = undead_scourge
+					trait = undead_forsaken
+					AND = {
+						trait = undead_generic
+						culture = ROOT
+					}
+					trait = wretched
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_list = {
+			1 = {
+				create_character = {
+					random_traits = yes
+					dynasty = none
+					religion = ROOT
+					culture = ROOT
+					female = no
+					age = 70
+					trait = wretched
+					flag = race_assigned
+				}
+			}
+			1 = {
+				create_character = {
+					random_traits = yes
+					dynasty = none
+					religion = ROOT
+					culture = ROOT
+					female = yes
+					age = 70
+					trait = wretched
+					flag = race_assigned
+				}
+			}
+		}		
+		new_character = {
+			set_character_flag = wretched_revolter
+			set_graphical_culture = wretched
+			set_character_flag = sunwell_invader
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				rebel = yes
+				culture = ROOT
+				name = "WRETCHED_MOB"
+				holder = THIS
+			}
+			
+			wealth = 100
+			
+			spawn_wretched_army_effect = yes
+			
+			if = {
+				limit = {
+					has_game_rule = {
+						name = provincial_revolt_strength
+						value = powerful
+					}
+				}
+				spawn_wretched_army_effect = yes
+				wealth = 150
+			}
+			
+			if = {
+				limit = {
+					has_game_rule = {
+						name = provincial_revolt_strength
+						value = very_powerful
+					}
+				}
+				spawn_wretched_army_effect = yes
+				spawn_wretched_army_effect = yes
+				spawn_wretched_army_effect = yes
+				wealth = 250
+			}
+			
+			if = {
+				limit = {
+					has_game_rule = {
+						name = provincial_revolt_strength
+						value = extremely_powerful
+					}
+				}
+				spawn_wretched_army_effect = yes
+				spawn_wretched_army_effect = yes
+				spawn_wretched_army_effect = yes
+				spawn_wretched_army_effect = yes
+				spawn_wretched_army_effect = yes
+				wealth = 350
+			}
+			
+			# DoW on the province top liege
+			ROOT = {
+				owner = {
+					top_liege = {
+						reverse_war = {
+							target = PREVPREVPREV
+							casus_belli = wretched_revolt
+						}
+						reverse_opinion = {
+							who = PREVPREVPREV
+							modifier = opinion_evil_tyrant
+						}
+					}
+				}
+			}
+		}
+		
+		owner = {
+			any_liege = { # Inform the lieges
+				character_event = {
+					id = sunwell.33
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = AKDAMN
+	}
+}
+
+character_event = {
+	id = sunwell.33
+	desc = EVTDESCSUNWELL.33 # A ravenous mob of wretched has banded together and now rampages across [From.GetName], in perpetual search for sources of magic.
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+	}
+}
+
+character_event = {
+	id = sunwell.34
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		any_war = { using_cb = wretched_revolt } 
+		rebel = yes
+		FROM = { 
+			is_capital = yes # The capital holding
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			location = {
+				if = {
+					limit = {
+						NOT = { has_province_modifier = wretched_mob }
+					}
+					add_province_modifier = {
+						name = wretched_mob
+						duration = 730
+					}
+				}
+			}
+		}
+	}
+}
+
+province_event = {
+	id = sunwell.35
+	desc = EVTDESCSUNWELL.35 # More wretched have come out of hiding or outright manifested at [Root.GetName] in response to the ongoing rampage from their kind!
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = sunwell_embraced_fel
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_nature
+			OR = {
+				religion = demonology
+				religion = burning_legion
+			}
+		}
+		NOR = {
+			has_global_flag = sunwell_embraced_void
+			OR = {
+				religion = old_gods
+				religion = twilights_hammer
+			}
+		}
+		any_province_holding = {
+			NOT = { holding_type = nomad }
+		}
+		OR = {
+			owner = {
+				NOR = {
+					trait = undead_scourge
+					trait = undead_forsaken
+					AND = {
+						trait = undead_generic
+						culture = ROOT
+					}
+					trait = wretched
+				}
+			}
+		}
+		owner = {
+			top_liege = {
+				war = yes
+				any_war = {
+					defender = { character = PREV }
+					using_cb = wretched_revolt
+				}
+			}
+		}
+	}
+	
+	immediate = {
+	
+		add_province_modifier = {
+			name = recent_county_uprising
+			duration = 1825 # Five years of -100% revolt risk in this county
+		}
+	
+		owner = {
+			top_liege = {
+				any_war = {
+					limit = {
+						defender = { character = PREV }
+						using_cb = wretched_revolt
+					}
+					attacker = {
+						spawn_wretched_reinforcements_effect = yes
+						
+						if = {
+							limit = {
+								has_game_rule = {
+									name = provincial_revolt_strength
+									value = powerful
+								}
+							}
+							spawn_wretched_reinforcements_effect = yes
+						}
+						
+						if = {
+							limit = {
+								has_game_rule = {
+									name = provincial_revolt_strength
+									value = very_powerful
+								}
+							}
+							spawn_wretched_reinforcements_effect = yes
+							spawn_wretched_reinforcements_effect = yes
+							spawn_wretched_reinforcements_effect = yes
+						}
+						
+						if = {
+							limit = {
+								has_game_rule = {
+									name = provincial_revolt_strength
+									value = extremely_powerful
+								}
+							}
+							spawn_wretched_reinforcements_effect = yes
+							spawn_wretched_reinforcements_effect = yes
+							spawn_wretched_reinforcements_effect = yes
+							spawn_wretched_reinforcements_effect = yes
+							spawn_wretched_reinforcements_effect = yes
+						}
+					}
+				}
+			}
+		}
+		
+		owner = {
+			any_liege = { # Inform the lieges
+				character_event = {
+					id = sunwell.36
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = AKDAMN
+	}
+}
+
+character_event = {
+	id = sunwell.36
+	desc = EVTDESCSUNWELL.36 # More wretched have come out of hiding or outright manifested at [Root.GetName] in response to the ongoing rampage from their kind!
+	picture = GFX_evt_wretched
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+	}
+}
+
+#Sunwell purification chain (and alternatives)
+character_event = {
+	id = sunwell.37
+	desc = EVTDESCSUNWELL.37 # With the Sunwell lost, your people suffer under the weight of their magical addiction. There must be a way out.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	trigger = {
+		NOR = {
+			has_character_flag = sunwell_purification_rejected
+			has_global_flag = sunwell_purification_started
+			has_global_flag = sunwell_embraced_fel
+			has_global_flag = sunwell_embraced_void
+			has_global_flag = sunwell_embraced_nature
+		}
+		has_global_flag = sunwell_destroyed
+		has_landed_title = k_silvermoon
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		OR = {
+			has_landed_title = c_sunwell_plateau
+			any_realm_character = {
+				has_landed_title = c_sunwell_plateau
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.37a # I will find a way!
+		set_global_flag = sunwell_purification_started
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = EVTOPTSUNWELL.37b # We will just need to learn to cope.
+		set_character_flag = sunwell_purification_rejected
+	}
+}
+
+#Select a solution
+character_event = {
+	id = sunwell.38
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 10
+	}
+	
+	trigger = {
+		NOR = {
+			has_character_flag = sunwell_purification_rejected
+			has_global_flag = sunwell_embraced_fel
+			has_global_flag = sunwell_embraced_void
+			has_global_flag = sunwell_embraced_nature
+			has_global_flag = sunwell_trying_solution
+		}
+		has_global_flag = sunwell_purification_started
+		has_global_flag = sunwell_destroyed
+		has_landed_title = k_silvermoon
+		OR = {
+			trait = high_elf
+			trait = blood_elf
+		}
+		OR = {
+			has_landed_title = c_sunwell_plateau
+			any_realm_character = {
+				has_landed_title = c_sunwell_plateau
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = sunwell_tried_naaru
+				has_global_flag = sunwell_tried_titan
+				has_global_flag = sunwell_tried_oldgods
+				has_global_flag = sunwell_tried_magic
+				has_global_flag = sunwell_tried_druid
+				has_global_flag = sunwell_tried_fel
+				has_global_flag = sunwell_tried_loa
+				has_global_flag = sunwell_tried_blue
+				OR = {
+					has_global_flag = sunwell_tried_infinites
+					has_game_rule = {
+						name = infinite_dragons
+						value = off
+					}
+				}
+				has_global_flag = sunwell_tried_naga
+			}
+			clr_global_flag = sunwell_tried_magic
+			set_global_flag = sunwell_last_ditch
+		}
+		set_global_flag = sunwell_trying_solution
+		random_list = { # Need to set weights
+			5 = { # Find a Naaru
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_naaru
+				}
+				set_global_flag = sunwell_tried_naaru
+				character_event = { id = sunwell.39 }
+			}
+			5 = { # Find titanic ruins
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_titan
+				}
+				set_global_flag = sunwell_tried_titan
+				character_event = { id = sunwell.54 }
+			}
+			5 = { # The Void calls
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_oldgods
+				}
+				set_global_flag = sunwell_tried_oldgods
+				character_event = { id = sunwell.60 }
+			}
+			10 = { # Try to just pour a ton of magic into the Sunwell
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_magic
+				}
+				set_global_flag = sunwell_tried_magic
+				character_event = { id = sunwell.64 }
+			}
+			3 = { # Recall night elf drudism
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_druid
+				}
+				set_global_flag = sunwell_tried_druid
+				character_event = { id = sunwell.67 }
+			}
+			5 = { # Feed on fel magic, forget the sunwell
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_fel
+				}
+				set_global_flag = sunwell_tried_fel
+				character_event = { id = sunwell.71 }
+			}
+			5 = { # Kidnap a loa
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_loa
+				}
+				set_global_flag = sunwell_tried_loa
+				character_event = { id = sunwell.75 }
+			}
+			3 = { # Sacrifice blue dragons
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_blues
+					NOT = { true_religion = cult_of_the_spell_weaver }
+				}
+				set_global_flag = sunwell_tried_blues
+				character_event = { id = sunwell.80 }
+			}
+			3 = { # Rewrite the timeline
+				modifier = {
+					factor = 0
+					OR = {
+						has_global_flag = sunwell_tried_infinites
+						true_religion = cult_of_the_infinite
+						true_religion = cult_of_the_timeless
+						has_game_rule = {
+							name = infinite_dragons
+							value = off
+						}
+					}
+				}
+				set_global_flag = sunwell_tried_infinites
+				character_event = { id = sunwell.86 }
+			}
+			3 = { # Naga offer help
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_naga
+					NOT = { true_religion = azshara }
+				}
+				set_global_flag = sunwell_tried_naga
+				character_event = { id = sunwell.91 }
+			}
+			1 = { # Turn everyone into undead, no one addicted anymore! (lunatic/necrolyte/necromancer only)
+				modifier = {
+					factor = 0
+					OR = {
+						has_global_flag = sunwell_tried_undead
+						NOR = {
+							trait = necrolyte
+							trait = necromancer
+							trait = lunatic
+						}
+					}
+				}
+				set_global_flag = sunwell_tried_undead
+				character_event = { id = sunwell.94 }
+			}
+			1 = { # (lunatic exclusive) HERO OF THE STORM
+				modifier = {
+					factor = 0
+					has_global_flag = sunwell_tried_storm
+					NOT = { trait = lunatic }
+				}
+				set_global_flag = sunwell_tried_storm
+				character_event = { id = sunwell.97 }
+			}
+		}
+	}
+}
+
+#Naaru
+character_event = {
+	id = sunwell.39
+	desc = EVTDESCSUNWELL.39 # One of the many groups of Silvermoon's finest you have sent out to find a solution to the plight of your people report that they have found something... strange. You personally venture out, through a portal conjured by a magister, to its location and you see what they meant by strange. What looks like a conglomerate of geometric shards floats in the air awash in light... and in magic.
+	picture = GFX_evt_naaru
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_character_flag = supports_purity
+			}
+			modifier = {
+				factor = 0.5
+				has_character_flag = supports_demonology
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					true_religion = demonology
+					true_religion = burning_legion
+					true_religion = lich_king
+					true_religion = old_gods
+					true_religion = twilights_hammer
+					true_religion = azshara
+					true_religion = cult_of_the_infinite
+					true_religion = cult_of_the_destroyer
+					true_religion = emerald_nightmare
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = kind
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}
+		}
+		name = EVTOPTSUNWELL.39a # Approach it, ask for help.
+		hidden_tooltip = {
+			character_event = { id = sunwell.40 }
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				has_character_flag = supports_purity
+			}
+			modifier = {
+				factor = 2
+				has_character_flag = supports_demonology
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					true_religion = demonology
+					true_religion = burning_legion
+					true_religion = lich_king
+					true_religion = old_gods
+					true_religion = twilights_hammer
+					true_religion = azshara
+					true_religion = cult_of_the_infinite
+					true_religion = cult_of_the_destroyer
+					true_religion = emerald_nightmare
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = cruel
+			}
+			modifier = {
+				factor = 2
+				trait = greedy
+			}
+		}
+		name = EVTOPTSUNWELL.39b # Capture it!
+		add_trait = cruel
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.46 }
+				}
+				10 = {
+					character_event = { id = sunwell.49 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.40
+	desc = EVTDESCSUNWELL.40 # You approach the being and plead your case. You explain how the Sunwell, that fed and sustained your people, is now gone. It merely floats there passively while you explain. Once you are done, a moment of silent falls and as you are about to leave, it speaks into your mind, with a voice not unlike chimes. It will try to help.
+	picture = GFX_evt_naaru
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.40 # You depart back to the Sunwell.
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.41 }
+				}
+				10 = {
+					character_event = { id = sunwell.45 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.41
+	desc = EVTDECSUNWELL.41 # Arriving at the Sunwell, the beign, that identifies itself as a "Naaru", proclaims, after a brief inspection, that it can indeed restore it. It warns however, that it may go "dark" as a result. It tells you to ready yourself.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.41 # Let's do this.
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.42 }
+				}
+				10 = {
+					character_event = { id = sunwell.44 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.42
+	desc = EVTDESCSUNWELL.42 # The Naaru starts glowing brighter and brighter until you are forced to close your eyes lest you go blind. When you open your eyes the Sunwell is alight again! There seems to be some changes within it, however. The Naaru, shining a little less than before, explains that this new Sunwell burns not only with arcane magic, but with the power of the Light as well.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.42 # A glorious day for Quel'Thalas!
+		prestige = 500
+		piety = 500
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			set_global_flag = sunwell_purified_naaru
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.43
+	title = EVTTITLESUNWELL.43 # The Sunwell, Restored
+	desc = EVTDESCSUNWELL.43 # Through the valiant efforts of [From.GetTitledName], the Sunwell, heart of Quel'Thalas and source of sustenance for its people, has been restored! May its glory shine forever more!
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+	}
+}
+
+character_event = {
+	id = sunwell.44
+	desc = EVTDESCSUNWELL.44 # The Naaru starts glowing brighter and brighter until you are forced to close your eyes lest you go blind. When you open your eyes the Sunwell is alight again! Yet the Naaru who has aided you seems... wrong. It is dark and no longer shining with light. More worryingly, shadowy beings are starting to manifest all around it!
+	picture = GFX_evt_entropius
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.44 # To arms! Defend the Sunwell!
+		prestige = 100
+		piety = 100
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			set_global_flag = sunwell_purified_naaru
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+			create_character = {
+				age = 200
+				random_traits = yes
+				attributes = {
+					martial = 10
+				}
+				culture = voidwalker
+				female = no
+				religion = old_gods #Should there be a Void religion?
+				trait = voidwalker
+				flag = race_assigned
+			}
+			new_character = {
+				set_character_flag = sunwell_invader
+				create_title = {
+					tier = DUKE
+					landless = yes
+					temporary = yes
+					culture = voidwalker
+					name = "VOID_BEINGS"
+					holder = THIS
+				}
+				spawn_unit = {
+					province = 146
+					owner = THIS
+					leader = THIS
+					troops = {
+						light_infantry = { 3000 3000 }
+						mages = { 150 150 }
+						monsters = { 100 100 }
+					}
+					attrition = 0
+					maintenance = no
+					can_toggle_looting = no
+					reinforces = no
+				}
+				c_sunwell_plateau = {
+					ROOT = {
+						PREVPREV = {
+							war = {
+								target = PREV
+								casus_belli = invasion
+								thirdparty_title = PREVPREV
+							}	
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.45
+	desc = EVTDECSUNWELL.45 # Arriving at the Sunwell, the beign, that identifies itself as a "Naaru", proclaims, after a brief inspection, that it cannot restore the Sunwell. It apologizes and offers to at least teach those who are interested to call upon the light to aid them as you continue to search for a solution.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.45 # Oh well.
+		piety = 50
+		set_global_flag = sunwell_naaru_blessed
+		clr_global_flag = sunwell_trying_solution
+	}
+}
+
+character_event = {
+	id = sunwell.46
+	desc = EVTDESCSUNWELL.46 # The creature tries to resist, but your forces eventually manage to subdue it and transport it back to Quel'Thalas. Your magisters quickly set out to examining it. This will take some time.
+	picture = GFX_evt_naaru
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.47 days = 5 random = 10 }
+				}
+				10 = {
+					character_event = { id = sunwell.48 days = 5 random = 10 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.47
+	desc = EVTDESCSUNWELL.47 # After thorough and exhaustive examination, the magisters determine that this creature can indeed be harnessed restore the Sunwell. You give the order and the magisters start to transfer its energy to the Sunwell. Little by little, the creature grows darker and the Sunwell brighter. Finally, the Sunwell is restored! Unfortunately, there seems to have been some side-effects: namely, a host of shadowy monsters are manfesting around the fallen creature.
+	picture = GFX_evt_entropius
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.44 # To arms! Defend the Sunwell!
+		prestige = 100
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			set_global_flag = sunwell_purified_naaru
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+			create_character = {
+				age = 200
+				random_traits = yes
+				attributes = {
+					martial = 10
+				}
+				culture = voidwalker
+				female = no
+				religion = old_gods #Should there be a Void religion?
+				trait = voidwalker
+				flag = race_assigned
+			}
+			new_character = {
+				set_character_flag = sunwell_invader
+				create_title = {
+					tier = DUKE
+					landless = yes
+					temporary = yes
+					culture = voidwalker
+					name = "VOID_BEINGS"
+					holder = THIS
+				}
+				spawn_unit = {
+					province = 146
+					owner = THIS
+					leader = THIS
+					troops = {
+						light_infantry = { 3000 3000 }
+						mages = { 150 150 }
+						monsters = { 100 100 }
+					}
+					attrition = 0
+					maintenance = no
+					can_toggle_looting = no
+					reinforces = no
+				}
+				c_sunwell_plateau = {
+					ROOT = {
+						PREVPREV = {
+							war = {
+								target = PREV
+								casus_belli = invasion
+								thirdparty_title = PREVPREV
+							}	
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.48
+	desc = EVTDECSUNWELL.48 # After thorough and exhaustive examination, the magisters determine that this creature cannot be used to restore the sunwell. However, it can be used as a living battery from which some of your people could draw power from. Particularly, light-based magic.
+	picture = GFX_evt_naaru
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.45 # Oh well.
+		prestige = 50
+		set_global_flag = sunwell_naaru_captive
+		clr_global_flag = sunwell_trying_solution
+	}
+}
+
+character_event = {
+	id = sunwell.49
+	desc = EVTDESCSUNWELL.49 # Your attempts are capturing the creature fail and it escapes. It seems you'll need to find another way to do this.
+	picture = GFX_evt_naaru
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		prestige = -150
+		clr_global_flag = sunwell_trying_solution
+	}
+}
+
+character_event = {
+	id = sunwell.50
+	desc = EVTDESCSUNWELL.50 # Disaster! It seems that the strain caused by draining the captive crystalline creature, the so-called Naaru, has caused it to transform into some unspeakable horror. It and the monsters it has spawned now rampage across Silvermoon itself!
+	picture = GFX_evt_entropius
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 20
+	}
+	
+	trigger = {
+		has_landed_title = k_silvermoon
+		OR = {
+			trait = blood_elf
+			trait = high_elf
+			trait = wretched
+		}
+		has_global_flag = sunwell_naaru_captive
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.50 # To arms! To arms!
+		create_character = {
+			age = 200
+			random_traits = yes
+			attributes = {
+				martial = 10
+			}
+			culture = voidwalker
+			female = no
+			religion = old_gods #Should there be a Void religion?
+			trait = voidwalker
+			flag = race_assigned
+		}
+		new_character = {
+			set_character_flag = sunwell_invader
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				culture = voidwalker
+				name = "VOID_BEINGS"
+				holder = THIS
+			}
+			spawn_unit = {
+				province = 139
+				owner = THIS
+				leader = THIS
+				troops = {
+					light_infantry = { 3000 3000 }
+					mages = { 150 150 }
+					monsters = { 100 100 }
+				}
+				attrition = 0
+				maintenance = no
+				can_toggle_looting = no
+				reinforces = no
+			}
+			c_silvermoon = {
+				ROOT = {
+					PREVPREV = {
+						war = {
+							target = PREV
+							casus_belli = invasion
+							thirdparty_title = PREVPREV
+						}	
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.51
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.1
+			trait = fighter
+		}
+		modifier = {
+			factor = 0.5
+			martial = 15
+		}
+	}
+	
+	trigger = {
+		OR = {
+			trait = blood_elf
+			trait = high_elf
+		}
+		NOT = { has_global_flag = refused_blood_knights }
+		NOT = { has_global_flag = blood_knights_active }
+		NOT = { has_global_flag = wow_bookmark }
+		OR = {
+			has_global_flag = sunwell_restored_naaru
+			has_global_flag = sunwell_naaru_blessed
+			has_global_flag = sunwell_naaru_captive
+		}
+		NOT = { in_faction = faction_alliance }
+		any_liege = {
+			has_landed_title = k_silvermoon
+			OR = {
+				trait = blood_elf
+				trait = high_elf
+			}
+		}
+		martial = 10
+		OR = {
+			NOT = { has_character_flag = has_adv_class }
+			trait = fighter
+		}
+		is_ruler = no
+		is_in_society = no
+	}
+	
+	immediate = {
+		k_silvermoon = {
+			holder_scope = {
+				character_event = { id = sunwell.52 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.52
+	desc =  EVTDESCSUNWELL.52 # [From.GetFullName] approaches you with an interesting offer. Given that your people now have access to the powers of the Light, [From.GetSheHe] proposes the creation of an order of light-wielding warrior, paladins if you will, to aid in the defense of Quel'Thalas.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.21a # An intriguing idea...
+		custom_tooltip = { text = EVTTOOLTIPSUNWELL.52 } # The Blood Knights are formed
+		hidden_tooltip = {
+			set_global_flag = blood_knights_active
+			FROM = {
+				prestige = 50
+				join_society = blood_knights
+				set_society_grandmaster = yes
+			}
+		}
+		if = {
+			limit = {
+				c_silvermoon = {
+					location = {
+						has_empty_holding = yes
+					}
+				}
+			}
+			c_silvermoon = {
+				location = {
+					random_province_holding = {
+						limit = {
+							location = {
+								has_empty_holding = yes
+							}
+						}
+						location = { build_holding = { title = THIS type = castle holder = FROM } }
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				c_silvermoon = {
+					location = {
+						has_empty_holding = no
+					}
+				}
+			}
+			random_realm_province = {
+				limit = {
+					has_empty_holding = yes
+				}
+				random_province_holding = {
+					limit = {
+						location = { has_empty_holding = yes }
+					}
+					location = { build_holding = { title = THIS type = castle holder = FROM } }
+				}
+			}
+		}
+		FROM = {
+			set_government_type = templar_order_government
+			set_defacto_liege = ROOT
+		}
+		any_realm_character = {
+			limit = {
+				ai = no
+			}
+			narrative_event = { id = sunwell.53 }
+		}
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = EVTOPTSUNWELL.21b # Seems like a waste of time.
+		set_global_flag = refused_blood_knights
+		prestige = -150
+	}
+}
+
+narrative_event = {
+	id = sunwell.53
+	title = EVTTITLESUNWELL.53 # The Blood Knights
+	desc = EVTDESCSUNWELL.53 # By royal decree, an order of light-wielding warriors has been formed for the protection of the realm. They have been named "Blood Knights" and are being to be led by [FromFrom.GetTitledName].
+	picture = GFX_evt_lorthemar
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Titan ruins solution
+character_event = {
+	id = sunwell.54
+	desc = EVTDESCSUNWLL.54 # Scouts report that they have found a group of extremly old ruins, predating even the War of the Ancients. Perhaps within it lies a solution for your people's plight.
+	picture = GFX_evt_titan_ruins
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.54a # I shall go there personally!
+		wealth = -25
+		hidden_tooltip = {
+			character_event = { id = sunwell.55 days = 10 random = 5 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.54b # Send an expedition at once!
+		wealth = -150
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.58 days = 20 random = 10 }
+				}
+				10 = {
+					character_event = { id = sunwell.59 days = 20 random = 10 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.55
+	desc = EVTDESCSUNWELL.55 # You arrive at the ruins. They truly are old, and seem like they were old even during the reign of Queen Azshara. Still you brace yourself and head inside. You and your party make your way through dust-covered corridors and deactivated constructs until you finally reach a gilded door, sealed shut.
+	picture = GFX_evt_titan_ruins
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.55 # This won't stop us. Open the door!
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.56 }
+				}
+				10 = {
+					character_event = { id = sunwell.57 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.56
+	desc = EVTDESCSUNWELL.56 # It takes some time, but your party manages to force the door open. On the other side you see many screens of pure light displaying... information? Taking a closer look you see reports on something called the "Curse of Flesh", the development of trolls, weather patterns across the world and... could it be? A detailed report on the Well of Eternity! With this information, it should be possible to restore the Sunwell!
+	picture = GFX_evt_titan_ruins
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		prestige = 500
+		piety = 500
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.57
+	desc = EVTDESCSUNWELL.57 # It takes some time, but your party manages to force the door open. On the other side you see many screens of pure light displaying... information? Taking a closer look you see reports on something called the "Curse of Flesh", the development of trolls, weather patterns across the world. Nothing, however, that will help you.
+	picture = GFX_evt_titan_ruins
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.57 # At least we can use some of this information.
+		prestige = 50
+		economy_techpoints = 300
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.58
+	desc = EVTDESCSUNWELL.58 # The group you sent to investigate the ancient ruins finally returns, triumphant. They report that in that location they saw many strange and wondrous things, but the real prize was a detailed report on the Well of Eternity! With this, the magisters can surely restore the Sunwell!
+	picture = GFX_evt_titan_ruins
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		prestige = 500
+		piety = 500
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.59
+	desc = EVTDESCSUNWELL.59 # The group you sent to investigate the ancient ruins finally returns. They report that in that location they saw many strange and wondrous things, including a lot of diverse information. Sadly, none of that includes a solution.
+	picture = GFX_evt_titan_ruins
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.57 # At least we can use some of this information.
+		prestige = 50
+		economy_techpoints = 200
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+#Embrace the Void
+character_event = {
+	id = sunwell.60
+	desc = EVTDESCSUNWELL.60 # The search of a way to restore the Sunwell continues to bear no results. Could it be futile? Could there be no solution? And if so, are there any alternatives?
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.60a # I cannot give in to despair.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.60b # There must be another way.
+		hidden_tooltip = {
+			character_event = { id = sunwell.61 days = 25 random = 15 }
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.61
+	desc = EVTDESCSUNWELL.61 # Tentacles writhing in darkness. Stone turning to flesh. Whispers. An empire, black and ominous, of tendrils and chitin, laboring under a mountain of flesh, eyes, mouths. Unfathomable. Unknowable. And yet, nostalgic. You wake up from the strange dream, shaking.
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.61 # Could that have been real?
+		random = {
+			chance = 15
+			add_trait = lunatic
+		}
+		hidden_tooltip = {
+			character_event = { id = sunwell.62 days = 25 random = 15 }
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.62
+	desc = EVTDESCSUNWELL.62 # The whispers follow you even while you're awake now. They tell you things. About those around you. About the world. About how your people need not suffer under their need for the Arcane. Flesh is a gift from the true gods of this world, the whispers say. Those gods can deliver you from your plight. Serve them in return.
+		picture = GFX_evt_black_empire
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 5
+		}
+		name = EVTOPTSUNWELL.62a # I will do anything to save my people.
+		religion = old_gods
+		piety = 50
+		hidden_tooltip = {
+			set_global_flag = sunwell_embraced_void
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.63 }
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_character_flag = supports_purity
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+		}
+		name = EVTOPTSUNWELL.62b # N-never!
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.63
+	title = EVTTITLESUNWELL.63 # The Call of the Void
+	desc = EVTDESCSUNWELL.63 # [From.GetTitleName] is proposing a radical, perhaps outrageous, solution to the maddical addiction of your people. There are powers in this world, [From.GetSheHe] claims, that can sustain you, empower you. All they demand is that you join them. Old Gods, [From.GetSheHe] calls them. The true gods of this world. Their Black Empire toppled eons ago by the Titans. They can save you, or so [From.GetTitledName] says. [From.GetSheHe] seems to believe so.
+	picture = GFX_evt_black_empire
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				trait = craven
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 2.5
+				trait = lunatic
+			}
+			modifier = {
+				factor = 1.5
+				trait = cruel
+			}
+			modifier = {
+				factor = 1.5
+				trait = impaler
+			}
+		}
+		name = EVTOPTSUNWELL.63a # Whatever gets me rid of the thirst for magic!
+		religion = old_gods
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				true_religion = old_gods
+				true_religion = twilights_hammer
+				true_religion = azshara
+				true_religion = emerald_nightmare
+				true_religion = cult_of_the_destroyer
+				true_religion = cult_of_the_infinite
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				in_faction = faction_purity
+			}
+		}
+		name = EVTOPTSUNWELL.63b # [From.GetSheHe]'s gone mad!
+		if = {
+			limit = {
+				any_liege = {
+					character = FROM
+				}
+				is_landed = yes
+			}
+			set_defacto_liege = THIS
+		}
+	}
+}
+
+#MORE MAGIC!
+character_event = {
+	id = sunwell.64
+	desc = EVTDESCSUNWELL.64 # It occurs to you: the Sunwell was fountain of magical power. Perhaps it can be ignited once more by pouring great quantities of magic into it? Some of the magisters you ask dismiss the idea, but others suggest it might work. Maybe.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.64a # Let's give it a try.
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.65 }
+				}
+				50 = {
+					modifier = {
+						factor = 0
+						has_global_flag = sunwell_last_ditch
+					}
+					character_event = { id = sunwell.66 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			wealth = 100
+		}
+		name = EVTOPTSUNWELL.64b # It may require some resources. They'll have it.
+		wealth = -100
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.65 }
+				}
+				15 = {
+					modifier = {
+						factor = 0
+						has_global_flag = sunwell_last_ditch
+					}
+					character_event = { id = sunwell.66 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			wealth = 250
+		}
+		name = EVTOPTSUNWELL.64c # Spare no expense in getting the best for this!
+		wealth = -250
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.65 }
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						has_global_flag = sunwell_last_ditch
+					}
+					character_event = { id = sunwell.66 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.65
+	desc = EVTDESCSUNWELL.65 # It worked! The assembled magisters performed a ritual that injected truly titanic quanities of arcane forces into the Sunwell. And to think the solution was within your grasp all this time! Elven ingenuity is proved once more!
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		prestige = 500
+		piety = 500
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.66
+	desc = EVTDESCSUNWELL.66 # Despite the titanic quantity of arcane energy spent in this endeavour, the magisters failed to restore the Sunwell.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		prestige = -50
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+#We hippies now
+character_event = {
+	id = sunwell.67
+	desc = EVTDESCSUNWELL.67 # The search of a way to restore the Sunwell continues to bear no results. In desperation, you've taken through pouring through the ancient records of the founding of the kingdom. Though you were the same people once, the kaldorei never suffered from the thirst magic thanks to their drudic connection to nature. Maybe there's something to that?
+	picture = GFX_evt_boomkin
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.67a # I need to look into this.
+		prestige = -50
+		piety = -50
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.68 days = 20 random = 20 }
+				}
+				10 = {
+					character_event = { id = sunwell.70 days = 20 random = 20 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.67b # Bah! The ways of peasants don't interest me.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.68
+	desc = EVTDESCSUNWELL.68 # It takes a lot of research through all of the realm's archives, and you even had rangers "persuade" troll druids to part with their knowledge. But you think you have it. If revived, drudism could be the way for your people to adapt to this new reality.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.68 # It is the only way.
+		religion = druidism
+		piety = 100
+		if = {
+			limit = {
+				NOT = { has_character_flag = has_adv_class }
+			}
+			if = {
+				limit = {
+					trait = healer
+				}
+				remove_trait = healer
+			}
+			add_trait = druid
+			set_character_flag = has_adv_class
+		}
+		hidden_tooltip = {
+			set_global_flag = sunwell_embraced_nature
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.69 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.69
+	title = EVTTITLESUNWELL.69 # Drudism Reborn
+	desc = EVTDESCSUNWELL.69 # [From.GetTitleName] seems to have found a solution to the crisis griping the realm: the revival of the druidic traditions followed by your long-distant kaldorei kin. It is unusual to be sure, but [From.GetSheHe] no longer seems to thirst for magic like you do. Perhaps there is something to it?
+	picture = GFX_evt_boomkin
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = gardener
+			}
+			modifier = {
+				factor = 2
+				trait = ranger
+			}
+		}
+		name = EVTOPTSUNWELL.69a # If it works...
+		religion = druidism
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 2
+				in_faction = faction_traditionalist
+			}
+			modifier = {
+				factor = 2
+				in_faction = faction_demonologist
+			}
+		}
+		name = EVTOPTSUNWELL.69b # What is this nonsense?
+		piety = 100
+	}
+}
+
+character_event = {
+	id = sunwell.70
+	desc = EVTDESCSUNWELL.70 # Despite your efforts, it seems that your idea will bear no fruit. Druidism is not the future of Quel'Thalas.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		prestige = -10
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+#No, Kael, you are the demons
+character_event = {
+	id = sunwell.71
+	desc = EVTDESCSUNWELL.71 # The search of a way to restore the Sunwell continues to bear no results. But there could be alternatives. Fel magic is potent and readily available. And the price is so small...
+	picture = GFX_evt_corruption
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_character_flag = supports_demonology
+			}
+		}
+		name = EVTOPTSUNWELL.71a # I am not so desperate as to try this.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_character_flag = supports_purity
+			}
+		}
+		name = EVTOPTSUNWELL.71b # I must see if it works!
+		hidden_tooltip = {
+			character_event = { id = sunwell.72 days = 25 random = 15 }
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.72
+	desc = EVTDESCSUNWELL.72 # It works! It works! Sure, there are some side effects, but they are truly minor if compared to what your people are currently going through. 
+	picture = GFX_evt_corruption
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		increase_corruption = yes
+	}
+	
+	option = {
+		trigger = {
+			NOT = { true_religion = burning_legion }
+		}
+		ai_chance = {
+			factor = 40
+		}
+		name = EVTOPTSUNWELL.62a # They need to know.
+		religion = demonology
+		piety = 50
+		hidden_tooltip = {
+			set_global_flag = sunwell_embraced_fel
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.73 }
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+		}
+		name = EVTOPTSUNWELL.72b # The Legion offers further power still...
+		religion = burning_legion
+		piety = 50
+		hidden_tooltip = {
+			set_global_flag = sunwell_embraced_fel
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.74 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.73
+	title = EVTTITLESUNWELL.73 # The Fel Solution
+	desc = EVTDESCSUNWELL.73 # [From.GetTitleName] claims to have found a solution to the undending thirst for magic that plagues the people of Quel'Thalas: to feed of Fel magic instead. It is, [From.GetSheHe] claims, readily available, unlike arcane magic, and offers great opportunity.
+	picture = GFX_evt_corruption
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				trait = craven
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 2.5
+				trait = lunatic
+			}
+			modifier = {
+				factor = 1.5
+				trait = cruel
+			}
+			modifier = {
+				factor = 1.5
+				trait = impaler
+			}
+			modifier = {
+				factor = 3
+				OR = {
+					trait = necrolyte
+					trait = warlock
+				}
+			}
+			modifier = {
+				factor = 3
+				in_faction = faction_demonologist
+			}
+		}
+		name = EVTOPTSUNWELL.63a # Whatever gets me rid of the thirst for magic!
+		religion = demonology
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				in_faction = faction_purity
+			}
+		}
+		name = EVTOPTSUNWELL.63b # [From.GetSheHe]'s gone mad!
+		if = {
+			limit = {
+				any_liege = {
+					character = FROM
+				}
+				is_landed = yes
+			}
+			set_defacto_liege = THIS
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.74
+	title = EVTTITLESUNWELL.73 # The Fel Solution
+	desc = EVTDESCSUNWELL.74 # [From.GetTitleName] claims to have found a solution to the undending thirst for magic that plagues the people of Quel'Thalas: to feed of Fel magic instead. It is, [From.GetSheHe] claims, readily available, unlike arcane magic, and offers great opportunity. And if you were to submit to the Burning Legion, they'd surely reward Quel'Thalas and its people with infinite power.
+	picture = GFX_evt_legion
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				trait = craven
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 2.5
+				trait = lunatic
+			}
+			modifier = {
+				factor = 1.5
+				trait = cruel
+			}
+			modifier = {
+				factor = 1.5
+				trait = impaler
+			}
+			modifier = {
+				factor = 3
+				OR = {
+					trait = necrolyte
+					trait = warlock
+				}
+			}
+			modifier = {
+				factor = 3
+				in_faction = faction_demonologist
+			}
+		}
+		name = EVTOPTSUNWELL.63a # Whatever gets me rid of the thirst for magic!
+		religion = burning_legion
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				in_faction = faction_purity
+			}
+		}
+		name = EVTOPTSUNWELL.63b # [From.GetSheHe]'s gone mad!
+		if = {
+			limit = {
+				any_liege = {
+					character = FROM
+				}
+				is_landed = yes
+			}
+			set_defacto_liege = THIS
+		}
+	}
+}
+
+#Grand Theft Loa
+character_event = {
+	id = sunwell.75
+	desc = EVTDESCSUNWELL.75 # In search for a way to restore the Sunwell, you decide to look to other races as for how they get their magic. Humans have nothing of interest to you, but the troll seem to get a lot of magic from their "gods", the Loa. Maybe you should send some rangers to... acquire one.
+	picture = GFX_evt_dire_troll
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.75a # Send the rangers.
+		wealth = -100
+		random = {
+			chance = 10
+			remove_trait = kind
+			add_trait = cruel
+		}
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.76 days = 35 random = 5}
+				}
+				15 = {
+					character_event = { id = sunwell.79 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.75b # As if the trolls had anything we could ever want.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.76
+	desc = EVTDESCSUNWELL.76 # After a long while, the rangers finally return with the captured Loa in a magical cage. The troll "god" constantly tests the cage, trying to break free. 
+	picture = GFX_evt_dire_troll
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.76 # Take it to the Sunwell before it manages to get loose.
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.77 }
+				}
+				10 = {
+					character_event = { id = sunwell.78 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.77
+	desc = EVTDESCSUNWELL.77 # As if sensing what is about the happen, the Loa tries harder to break free. Unfortunately for it, it fails in this endeavour. Your magisters, however, achieve a great success in binding the Loa's energies to the Sunwell, sacrificing the beign in the process. The Sunwell is, once more, whole.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		prestige = 500
+		piety = 500
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.78
+	desc = EVTDESCSUNWELL.78 # As if sensing what is about the happen, the Loa tries harder to break free. It eventually manages to overpower the cage and has to be put down before it can cause too much damage. Another solution will be required.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		prestige = -20
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.79
+	desc = EVTDESCSUNWELL.79 # After a long while without contact, some of the rangers you sent out return, battered and bloody. The Loa and its troll servants overpowered the rangers, killing many of their number and sending the rest into a rout. The few survivors were hunted almost all the way back to the capital.
+	picture = GFX_evt_dire_troll
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		prestige = -20
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+#Dragonflight Blues
+character_event = {
+	id = sunwell.80
+	desc = EVTDESCSUNWELL.80 # A daring solution to restoring the Sunwell occurs to you: Blue Dragons are not only inherently magical creatures, like other dragons, but are particularly attuned to arcane magic. If you were to capture and "persuade" one of them, you could restore the Sunwell!
+	picture = GFX_evt_sindragosa
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+		}
+		name = EVTOPTSUNWELL.80a # It just might work...
+		custom_tooltip = { text = EVTTOOLTIPSUNWELL.80 } # Rangers are sent out.
+		wealth = -150
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.81 days = 35 random = 10 }
+				}
+				15 = {
+					character_event = { id = sunwell.85 days = 35 random = 10 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 5
+		}
+		name = EVTOPTSUNWELL.80b # No, this is a stupid idea.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.81
+	desc = EVTDESCSUNWELL.81 # The rangers of Quel'Thalas have surely surpassed themselves on this day. They have captured a living adult dragon of the Blue Dragonflight! The dragon constantly spouts threats of retribution if it is not released, but the rangers assure you there is no risk.
+	picture = GFX_evt_sindragosa
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.81 # To work, then!
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					character_event = { id = sunwell.82 }
+				}
+				10 = {
+					character_event = { id = sunwell.83 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.82
+	desc = EVTDESCSUNWELL.82 # The process is complete, and the Sunwell restored! Clearly this was the correct course of action. May Quel'Thalas prosper once more! The dragon has, of course, expired.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		prestige = 500
+		piety = 500
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+			random_list = {
+				1 = { }
+				10 = {
+					character_event = { id = sunwell.84 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.83
+	desc = EVTDESCSUNWELL.83 # It seems your guess was wrong and the procedure failed. The Sunwell continues extinct and the dragon has expired, preventing another attempt at it.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		prestige = -20
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+			random_list = {
+				1 = { }
+				10 = {
+					character_event = { id = sunwell.84 days = 10 random = 20 }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.84
+	desc = EVTDESCSUNWELL.84 # It seems the captive dragon's threats were very much real. A force of blue dragons and their dragonspawn servitors has landed in the northwestern coast of Quel'Thalas and marches on the kingdom, bent on vengeance!
+	picture = GFX_evt_sindragosa
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		random_list = {
+			1 = {
+				create_character = {
+					age = 534
+					random_traits = yes
+					culture = blue_dragonflight
+					female = no
+					religion = cult_of_the_spell_weaver
+					trait = dragon_blue
+					flag = race_assigned
+					trait = dragon_dragon
+				}
+			}
+			1 = {
+				create_character = {
+					age = 534
+					random_traits = yes
+					culture = blue_dragonflight
+					female = yes
+					religion = cult_of_the_spell_weaver
+					trait = dragon_blue
+					flag = race_assigned
+					trait = dragon_dragon
+				}
+			}
+		}
+		new_character = {
+			set_character_flag = sunwell_invader
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				culture = blue_dragonflight
+				name = "AZURE_HOST"
+				holder = THIS
+			}
+			spawn_unit = {
+				province = 146
+				owner = THIS
+				leader = THIS
+				troops = {
+					heavy_infantry = { 1000 1000 }
+					light_cavalry = { 700 700 }
+					dragon_troop = { 25 25 }
+				}
+				attrition = 0
+				maintenance = no
+				can_toggle_looting = no
+				reinforces = no
+			}
+			k_silvermoon = {
+				ROOT = {
+					PREVPREV = {
+						war = {
+							target = PREV
+							casus_belli = invasion
+							thirdparty_title = PREVPREV
+						}	
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.85
+	desc = EVTDESCSUNWELL.85 # After a long while without contact, some of the rangers you sent out return, battered and bloody. The dragon proved to much for them and slaughtered most of the force.
+	picture = GFX_evt_sindragosa
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		prestige = -20
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+#Back to the Future
+character_event = {
+	id = sunwell.86
+	desc = EVTDESCSUNWELL.86 # The problem of restoring the Sunwell defies resolution. New ideas are proposed and readily discarded as impractical or outlandish. Sometimes, you wish you could just go back in time and prevent this disaster from happening in the first place. Alas, that is the domain of the Bronze Dragonflight alone, and they aren't keen on altering past events.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.86 # There must be a way...
+		hidden_tooltip = {
+			character_event = { id = sunwell.87 days = 5 random = 3 }
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.87
+	desc = EVTDESCSUNWELL.87 # While resting in your quarters, you are suprised by a light, possibly intentional, cough. You turn to find a hooded figure, dressed in grey, standing not far from you. How they evaded you guards is unknown, but before you can sound the alarm, the figure asks that you listen to what they has to say. A way to make things just like they were, they say.
+	picture = GFX_evt_shadow
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.87a # Guards! Guards!
+		hidden_tooltip = {
+			character_event = { id = sunwell.88 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.87b # I'm listening...
+		piety = -50
+		hidden_tooltip = {
+			character_event = { id = sunwell.89 }
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.88
+	desc = EVTDESCSUNWELL.88 # Whomever it may be, whatever they can do, you are not interested. You yell for your guards, who rush in, weapons drawn. The figure batters them aside with magic and dashes out of the room. No one sees it leaving the building, just like none have seen it come in. Strange indeed.
+	picture = GFX_evt_shadow
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.89
+	desc = EVTDESCSUNWELL.89 # The intruder explains that they represent a group who is more than capable of correcting the past, righting wrongs like the destruction of the Sunwell. Of course, which such a service comes a price. This one, they assure you, is quite simple. You have to swear yourself to their cause. A trifling thing, really, and none need know.
+	picture = GFX_evt_infinite_dragon
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.89a # Whatever saves my people.
+		set_secret_religion = cult_of_the_infinite
+		piety = -300
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+				}
+				narrative_event = { id = sunwell.90 }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.89b # No. Find some other pawn for your schemes.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.90
+	title = EVTTITLESUNWELL.90 # The Sunwell, Restored?
+	desc = EVTDESCSUNWELL.90 # You are... quite confused. You remember the Sunwell being corrupted, and later destroyed. You remember the grip of the addiction for magic, turning your people into ravenous monsters. The desperate search for a solution. And yet... you don't? It's almost as if it never happened at all. An exceptionally strange affair.
+	picture = GFX_evt_sunwell
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.90 # What just happened?
+	}
+}
+
+#Don't tread on snek
+character_event = {
+	id = sunwell.91
+	desc = EVTDESCSUNWELL.91 # A very strange envoy arrives at your court. Naga. The emissary, a female, explains that they were highborne much like your people were, the favoured subjects of Queen Azshara. Unlike your people, however, they did not escape the Sundering, being changed by the event into what you see now. Queen Azshara, the envoy explains, would be more than willing to help your people if you were to swear fealty to her, like your forebears before you.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.91a # Azshara tried to sell this world to the Legion. No.
+		hidden_tooltip = {
+			character_event = { id = sunwell.92 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.91b # ... very well, I shall bend the knee.
+		prestige = -500
+		religion = azshara
+		create_character = {
+			age = 620
+			random_traits = yes
+			culture = naga
+			dynasty = random
+			female = yes
+			attributes = {
+				diplomacy = 10
+			}
+			religion = azshara
+			trait = fair
+			trait = grey_eminence
+			trait = naga
+			flag = race_assigned
+		}
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+				}
+				narrative_event = { id = sunwell.93 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.92
+	desc = EVTDESCSUNWELL.92 # The emissary takes your without betraying any emotion, though her guards certainly seem to take offense. Still, she comments on how that is a pity and wishes you good luck in your efforts before taking her leave.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.92 # Good riddance.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.93
+	title = EVTTITLESUNWELL.93 # For Nazjatar!
+	desc = EVTDESCSUNWELL.93 # [From.GetTitleName], perhaps driven by desperation, had sworn fealty to Queen Azshara, who many though dead, and her naga empire of Nazjatar. In return, the naga promised to help restore the Sunwell. In fact, it does seem like they stayed true to their word, for within days elven magisters assisted by naga sea witches have managed to rekindle the Sunwell thanks to ancient knowledge the naga hold. Still, it is a troubling endeavour.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				trait = craven
+			}
+			modifier = {
+				factor = 1.5
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 2.5
+				trait = lunatic
+			}
+		}
+		name = EVTOPTSUNWELL.63a # Whatever gets me rid of the thirst for magic!
+		religion = azshara
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				true_religion = old_gods
+				true_religion = twilights_hammer
+				true_religion = azshara
+				true_religion = emerald_nightmare
+				true_religion = cult_of_the_destroyer
+				true_religion = cult_of_the_infinite
+			}
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				in_faction = faction_purity
+			}
+		}
+		name = EVTOPTSUNWELL.63b # [From.GetSheHe]'s gone mad!
+		if = {
+			limit = {
+				any_liege = {
+					character = FROM
+				}
+				is_landed = yes
+			}
+			set_defacto_liege = THIS
+		}
+	}
+}
+
+#No living = no addiction
+character_event = {
+	id = sunwell.94
+	desc = EVTDESCSUNWELL.94 # The thought suddenly occurs to you that the undead surely have no problem being addicted to magic. Of course, other won't understand. Not right away at any rate. 
+	picture = GFX_evt_lich_king
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.94a # I need to figure out a way first!
+		hidden_tooltip = {
+			character_event = { id = sunwell.95 days = 50 random = 50 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.94b # No, that's a silly idea.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.95
+	desc = EVTDESCSUNWELL.95 # The hour of your ascension is at hand! Soon, you will be free from this mortal coil!
+	picture = GFX_evt_lich_king
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.95 # At last!
+		add_trait = undead_generic
+		if = {
+			limit = {
+				trait = necrolyte
+			}
+			remove_trait = necrolyte
+			add_trait = necromancer
+		}
+		if = {
+			limit = {
+				NOT = { true_religion = lich_king }
+			}
+			religion = forgotten_shadow
+		}
+		any_character = {
+			limit = {
+				ai = no
+				trait = blood_elf
+				trait = high_elf
+				trait = wretched
+			}
+			narrative_event = { id = sunwell.96 }
+		}
+	}
+}
+
+narrative_event = {
+	id = sunwell.96
+	title = EVTTITLESUNWELL.96 # Madness!
+	desc = EVTDESCSUNWELL.96 # [From.GetTitleName], perhaps driven by mad by [From.GetHerHis] addiction, has turned [From.GetHerselfHimself] into an undead monstrosity, and now seeks to do the same for everyone else as well!
+	picture = GFX_evt_lich_king
+	border = GFX_event_narrative_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.63b # [From.GetSheHe]'s gone mad!
+		if = {
+			limit = {
+				any_liege = {
+					character = FROM
+				}
+				is_landed = yes
+			}
+			set_defacto_liege = THIS
+		}
+	}
+}
+
+#HERO OF THE STORM!
+character_event = {
+	id = sunwell.97
+	desc = EVTDESCSUNWELL.97 # While wandering the grounds you come across a peculiar sight. A portal framed by three swirling semicircles.  It's almost as if it is... calling you?
+	picture = GFX_evt_hots
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.97a # Go in.
+		hidden_tooltip = {
+			character_event = { id = sunwell.98 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTSUNWELL.97b # That seems like a bad idea.
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.98
+	desc = EVTDESCSUNWELL.98 # You step through the swirling vortex and arrive on... an idyllic farmland? A man with a strange, bulky armour and a blocky gun watches you from a small distance. He steps up and greets you "Hey there pal, name's Raynor. Welcome to the Nexus. I'm sure you got a lot of questions, but there ain't no time for that. Battle's about to start."
+	picture = GFX_evt_hots
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.98 # Battle? Nexus? What?
+		give_nickname = nick_the_hero_of_the_storm
+		hidden_tooltip = {
+			hidden_tooltip = {
+				random_list = {
+					1 = {
+						character_event = { id = sunwell.99 }
+					}
+					5 = {
+						character_event = { id = sunwell.102 }
+					}
+					10 = {
+						character_event = { id = sunwell.103 }
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.99
+	desc = EVTDESCSUNWELL.99 # "No time" he says, and he's off. You follow him. In the next short while you fight against generic soldiers, familiar foes, and some truly outlandish ones. Still, you triumph in the end and destroy the big self-defending structure at the enemy base, the "Core". Amongst the loot is a very interesting object.
+	picture = GFX_evt_hots
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.99 # Hurrah!
+		hidden_tooltip = {
+			character_event = { id = sunwell.101 }
+		}
+	}
+}
+
+#100 was redundant
+
+character_event = {
+	id = sunwell.101
+	desc = EVTDESCSUNWELL.101 # You make your way out of the Nexus and you're right back where you were. And the prize you got was just what was needed to restore the Sunwell! You truly are a Hero of the Storm.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		prestige = 500
+		piety = 500
+		hidden_tooltip = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_destroyed
+				remove_building = ct_sunwell_destroyed
+				remove_building = tp_sunwell_destroyed
+				remove_building = tb_sunwell_destroyed
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell
+				}
+			}
+			clr_global_flag = sunwell_trying_solution
+			clr_global_flag = sunwell_destroyed
+			clr_global_flag = sunwell_tried_naaru
+			clr_global_flag = sunwell_tried_titan
+			clr_global_flag = sunwell_tried_oldgods
+			clr_global_flag = sunwell_tried_magic
+			clr_global_flag = sunwell_tried_druid
+			clr_global_flag = sunwell_tried_fel
+			clr_global_flag = sunwell_tried_loa
+			clr_global_flag = sunwell_tried_blue
+			clr_global_flag = sunwell_tried_infinites
+			clr_global_flag = sunwell_tried_naga
+			clr_global_flag = sunwell_tried_undead
+			clr_global_flag = sunwell_tried_storm
+			clr_global_flag = sunwell_last_ditch
+			any_character = {
+				limit = {
+					ai = no
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+					NOT = { character = root }
+				}
+				narrative_event = { id = sunwell.43 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.102
+	desc = EVTDESCSUNWELL.102 # "No time" he says, and he's off. You follow him. In the next short while you fight against generic soldiers, familiar foes, and some truly outlandish ones. Still, you triumph in the end and destroy the big self-defending structure at the enemy base, the "Core". While this was a fun romp, you find nothing that could help you before you leave.
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.102 # I should do this again sometime.
+		prestige = 50
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}
+
+character_event = {
+	id = sunwell.103
+	desc = EVTDESCSUNWELL.103 # "No time" he says, and he's off. You follow him. In the next short while you fight against generic soldiers, familiar foes, and some truly outlandish ones. Still, you triumph in the end and destroy the big self-defending structure at the enemy base, the "Core". But... how do you leave this place?
+	picture = GFX_evt_sunwell
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTSUNWELL.103 # This is awkward.
+		death = { death_reason = death_missing }
+		hidden_tooltip = {
+			clr_global_flag = sunwell_trying_solution
+		}
+	}
+}

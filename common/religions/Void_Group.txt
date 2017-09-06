@@ -1,0 +1,122 @@
+void_group = {
+	has_coa_on_barony_only = yes
+	graphical_culture = westerngfx
+	playable = yes
+	hostile_within_group = yes
+	
+	forgotten_shadow = {
+		graphical_culture = westerngfx
+		
+		icon = 3
+		color = { 0.55 0 0.91 }
+		
+		scripture_name = SECRETS_OF_THE_VOID
+		high_god_name = GOD_FORGOTTEN_SHADOW
+		god_names = { GOD_FORGOTTEN_SHADOW }
+		evil_god_names = { GOD_SARGERAS GOD_HOLY_LIGHT GOD_BURNING_LEGION GOD_NAARU }
+		
+		ai_convert_same_group = 1
+		ai_convert_other_group = 1
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_CLERIC
+		can_retire_to_monastery = yes
+		priests_can_inherit = yes
+		feminist = yes
+		
+		intermarry = loa
+		intermarry = demonology
+		intermarry = mercantilism
+		intermarry = sunwell
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	old_gods = {
+		graphical_culture = mongolgfx
+		
+		icon = 19
+		color = { 0.34 0.05 0.51 }
+		
+		scripture_name = SECRETS_OF_THE_VOID
+		high_god_name = GOD_OLD_GODS
+		god_names = { GOD_OLD_GODS GOD_CTHUN GOD_YSHAARJ GOD_YOGG_SARON GOD_NZOTH GOD_VOID_LORDS }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_HOLY_LIGHT GOD_NAARU GOD_TITANS GOD_AMANTHUL GOD_EONAR GOD_NORGANNON GOD_KHAZGOROTH GOD_AGGRAMAR GOD_GOLGANNETH }
+		
+		ai_fabricate_claims = no
+		ai_convert_same_group = 0
+		ai_convert_other_group = 2
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_CORRUPTOR
+		priests_can_inherit = yes
+		aggression = 3
+		peace_prestige_loss = yes
+		allow_looting = yes
+		
+		intermarry = twilights_hammer
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	twilights_hammer = {
+		graphical_culture = mongolgfx
+		
+		icon = 10
+		color = { 0.42 0.22 0.51 }
+		
+		scripture_name = TWILIGHT_CANTILE
+		high_god_name = GOD_VOID_LORDS
+		god_names = { GOD_VOID_LORDS GOD_OLD_GODS GOD_CTHUN GOD_YSHAARJ GOD_YOGG_SARON GOD_NZOTH }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_HOLY_LIGHT GOD_NAARU GOD_TITANS GOD_AMANTHUL GOD_EONAR GOD_NORGANNON GOD_KHAZGOROTH GOD_AGGRAMAR GOD_GOLGANNETH }
+		
+		ai_fabricate_claims = no
+		ai_convert_same_group = 1
+		ai_convert_other_group = 2
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_TWILIGHT_CLERIC
+		priests_can_inherit = yes
+		aggression = 3
+		peace_prestige_loss = yes
+		allow_looting = yes
+		
+		intermarry = old_gods
+		intermarry = geomancy
+		intermarry = aeromancy
+		intermarry = hydromancy
+		intermarry = pyromancy
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+
+	azshara = {
+		graphical_culture = mongolgfx
+		
+		icon = 20
+		color = { 0.26 0.25 0.77 }
+		
+		scripture_name = SECRETS_OF_THE_VOID
+		high_god_name = GOD_AZSHARA
+		god_names = { GOD_AZSHARA GOD_OLD_GODS GOD_NZOTH GOD_VOID_LORDS }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_HOLY_LIGHT GOD_NAARU GOD_TITANS GOD_AMANTHUL GOD_EONAR GOD_NORGANNON GOD_KHAZGOROTH GOD_AGGRAMAR GOD_GOLGANNETH GOD_ELUNE GOD_NEPTULON }
+		
+		ai_fabricate_claims = no
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_SIREN
+		priests_can_inherit = yes
+		aggression = 2
+		allow_looting = yes
+		seafarer = yes
+		allow_rivermovement = yes
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+}

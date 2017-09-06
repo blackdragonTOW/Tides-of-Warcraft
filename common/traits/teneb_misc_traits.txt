@@ -1,0 +1,164 @@
+dire_troll = {
+	random = yes
+	potential = {
+		OR = {
+			culture_group = troll
+			trait = troll_ice
+			trait = troll_forest
+			trait = troll_jungle
+			trait = troll_zandalari
+			trait = troll_dark
+			trait = troll_sand
+		}
+	}
+	combat_rating = 1
+	health = 1
+}
+
+ogre_magi = {
+	random = yes
+	potential = {
+		OR = {
+			culture_group = ogre
+			trait = ogre
+		}
+		NOR = {
+			trait = dull
+			trait = slow
+			trait = imbecile
+		}
+		learning = 10
+	}
+	immortal = yes
+	learning = 3 # Nullify the ogre malus + 1
+	diplomacy = 1 # Just nullifying
+	opposites = {
+		dull
+		slow
+		imbecile
+	}
+}
+
+emerald_dream = {
+	fertility = -10
+	monthly_character_piety = 1
+	incapacitating = yes
+	customizer = no
+}
+
+secretly_dragon = {
+	fertility = -10
+	immortal = yes
+	is_visible = {
+		OR = {
+			character = FROM
+		}
+	}
+	customizer = no
+}
+
+cthrax = {
+	random = yes
+	potential = {
+		OR = {
+			culture_group = void
+			trait = faceless
+		}
+		martial = 13
+	}
+	combat_rating = 4
+	martial = 5
+	learning = 5
+}
+
+distrusts_magic = {
+	random = yes
+	potential = {
+		NOR = {
+			religion_group = arcane_group
+			religion_group = fel_group
+		}
+	}
+	opposites = {
+		arcanist
+		arcanist_fake
+		mage
+		mage_fake
+		warlock
+		necromancer
+		necrolyte
+		runemaster
+		witch_doctor
+		witch_doctor_fake
+		techmage
+		techmage_fake
+		death_knight
+	}
+	opposite_opinion = -10
+}
+
+sterile_secret = {
+	fertility = -1000
+	hidden = yes
+	customizer = no
+}
+
+guardian_of_tirisfal = {
+	random = no
+	immortal = yes
+	learning = 10
+	intrigue = 10
+	martial = 10
+	stewardship = 10
+	diplomacy = 10
+	combat_rating = 5
+	fertility = -1000 #Guardian kid will be handled via event
+	is_visible = {
+		OR = {
+			character = FROM
+			society_member_of = council_of_tirisfal
+			society_member_of = tirisgarde
+		}
+	}
+	customizer = no
+}
+
+away_from_court_hidden = {
+	random = no
+	pilgrimage = yes
+	is_visible = {
+		always = no
+	}
+}
+
+tow_adventurer = {
+	potential = {
+		NOR = {
+			trait = voidwalker
+			trait = faceless
+			trait = succubus
+			trait = shivarra
+			trait = eredar
+			trait = pit_lord
+			trait = fel_lord
+			trait = doomlord
+			trait = dragon_red
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_black
+			trait = dragon_nightmare
+			trait = dragon_twilight
+			trait = dragon_chromatic
+			trait = dragon_infinite
+			trait = undead_scourge # Need to think how I'll handle the Knights of the Ebon Blade
+			trait = elemental_air
+			trait = elemental_earth
+			trait = elemental_fire
+			trait = elemental_water
+		}
+	}
+	random = yes
+	general_opinion = -5
+	same_opinion = 15
+}

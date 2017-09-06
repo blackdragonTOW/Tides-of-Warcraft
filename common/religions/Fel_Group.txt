@@ -1,0 +1,87 @@
+fel_group = {
+	has_coa_on_barony_only = yes
+	graphical_culture = mongolgfx
+	playable = yes
+	hostile_within_group = yes
+	ai_fabricate_claims = no
+	
+	burning_legion = {
+		graphical_culture = mongolgfx
+		
+		icon = 5
+		color = { 0.43 0.85 0.33 }
+		
+		scripture_name = SARGERAS_COMMAND
+		high_god_name = GOD_SARGERAS
+		god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_FEL }
+		evil_god_names = { GOD_OLD_GODS GOD_FORGOTTEN_SHADOW GOD_VOID_LORDS GOD_HOLY_LIGHT GOD_NAARU GOD_TITANS GOD_AMANTHUL GOD_EONAR GOD_NORGANNON GOD_KHAZGOROTH GOD_AGGRAMAR GOD_GOLGANNETH GOD_WORLD_SOUL GOD_ELUNE }
+		
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_CULTIST
+		priests_can_inherit = yes
+		feminist = yes
+		aggression = 5
+		allow_looting = yes
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	demonology = {
+		graphical_culture = mongolgfx
+		
+		icon = 4
+		color = { 0.23 0.05 0.38 }
+		
+		scripture_name = BOOK_OF_FEL
+		high_god_name = GOD_FEL
+		god_names = { GOD_FEL }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_HOLY_LIGHT GOD_FORGOTTEN_SHADOW GOD_NAARU }
+		
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_NETHERMANCER
+		priests_can_inherit = yes
+		can_hold_temples = yes
+		feminist = yes
+		allow_looting = yes
+		
+		intermarry = forgotten_shadow
+		intermarry = loa
+		intermarry = sunwell
+		intermarry = mercantilism
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	lich_king = {
+		graphical_culture = mongolgfx
+		
+		icon = 18
+		color = { 0.2 0.12 0.6 }
+		
+		scripture_name = PATH_OF_THE_DAMNED
+		high_god_name = GOD_LICH_KING
+		god_names = { GOD_LICH_KING }
+		evil_god_names = { GOD_HOLY_LIGHT GOD_NAARU }
+		
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_ACOLYTE
+		priests_can_inherit = yes
+		can_hold_temples = yes
+		feminist = yes
+		allow_looting = yes
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+}

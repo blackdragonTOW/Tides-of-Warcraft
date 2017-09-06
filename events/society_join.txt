@@ -1,0 +1,77 @@
+namespace = socjoin
+
+character_event = {
+    id = socjoin.1
+	hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+    	FROM = {
+			leader = {
+				OR = {
+					society_member_of = magisters
+					society_member_of = farstriders
+					society_member_of = reliquary
+					society_member_of = blood_knight
+					society_member_of = sunreavers
+				}
+			}
+		}
+    }
+    immediate = {
+    	FROM = { leader = { character_event = { id = socjoin.2 } } }
+    }
+}
+
+character_event = {
+    id = socjoin.2
+	hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+    	FROM = { letter_event = { id = socjoin.3 } }
+    }
+}
+
+letter_event = {
+    id = socjoin.3
+    desc = EVTDESCSOCJOIN.3 #[Root.GetTitledFirstName]\n\nWe are delighted by your decision to join our ranks, [Root.GetTitle]. Together we shall strive for the betterment of ourselves and Quel'Thalas.\n\nSigned, [From.GetSocietyRank] [From.GetFirstName]
+    border = GFX_event_letter_frame_religion
+
+    is_triggered_only = yes
+	
+	immediate = { set_character_flag = society_join_block }
+	
+    option = { 
+        name = AKGREAT
+		if = {
+			limit = {
+				FROM = { society_member_of = magisters }
+			}
+			join_society = magisters
+		}
+		if = {
+			limit = {
+				FROM = { society_member_of = farstriders }
+			}
+			join_society = farstriders
+		}
+		if = {
+			limit = {
+				FROM = { society_member_of = reliquary }
+			}
+			join_society = reliquary
+		}
+		if = {
+			limit = {
+				FROM = { society_member_of = blood_knights }
+			}
+			join_society = blood_knights
+		}
+		if = {
+			limit = {
+				FROM = { society_member_of = sunreavers }
+			}
+			join_society = sunreavers
+		}
+		clr_character_flag = society_join_block
+    }
+}

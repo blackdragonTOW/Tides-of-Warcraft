@@ -1,0 +1,351 @@
+namespace = lifespans
+
+#Kill most "immortal" characters with 0 health
+character_event = {
+	id = lifespans.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			trait = AK_trait_dwarf
+			trait = high_elf
+			trait = blood_elf
+			trait = wretched
+			trait = gnome
+			trait = dragon_red
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_chromatic
+			trait = dragon_twilight
+			trait = dragon_infinite
+			trait = dragon_nightmare
+			trait = troll_zandalari
+			trait = ogre_magi
+			trait = naga
+			trait = trogg
+			trait = draenei
+			trait = broken
+			trait = lost_one
+		}
+		NOT = { trait = felsworn }
+		#Not dragon aspect
+		NOT = { trait = undead_generic }
+		NOT = { trait = undead_forsaken }
+		NOT = { trait = undead_scourge }
+		health = 0
+		NOT = { health = 1 }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				is_ill = yes
+			}
+			death = { death_reason = death_trait }
+			break = yes
+		}
+		death = { death_reason = death_poor_health }
+	}
+}
+
+#Rolls to die of old age
+character_event = {
+	id = lifespans.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				OR = {
+					trait = troll_zandalari
+					trait = ogre_magi
+					trait = gnome
+				}
+				age = 100
+			}
+			AND = {
+				OR = {
+					trait = AK_trait_dwarf
+					trait = trogg
+				}
+				age = 200
+			}
+			AND = {
+				OR = {
+					trait = high_elf
+					trait = blood_elf
+					trait = wretched
+					trait = naga
+				}
+				age = 800
+			}
+			AND = {
+				OR = {
+					trait = gnoll
+					trait = murloc
+				}
+				age = 50
+			}
+		}
+		NOT = { trait = felsworn }
+		#Not dragon aspect
+		NOT = { trait = undead_generic }
+		NOT = { trait = undead_forsaken }
+		NOT = { trait = undead_scourge }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					trait = troll_zandalari
+					trait = ogre_magi
+					trait = gnome
+				}
+				age = 100
+			}
+			random = {
+				chance = 20
+				modifier = {
+					factor = 0.8
+					health = 6
+					NOT = { health = 8 }
+				}
+				modifier = {
+					factor = 0.7
+					health = 8
+					NOT = { health = 10 }
+				}
+				modifier = {
+					factor = 0.5
+					health = 10
+				}
+				modifier = {
+					factor = 1.2
+					health = 3
+					NOT = { health = 4 }
+				}
+				modifier = {
+					factor = 1.3
+					health = 1
+					NOT = { health = 3 }
+				}
+				modifier = {
+					factor = 2.3
+					age = 120
+					NOT = { age = 130 }
+				}
+				modifier = {
+					factor = 2.4
+					age = 130
+					NOT = { age = 150 }
+				}
+				modifier = {
+					factor = 2.5
+					age = 150
+					NOT = { age = 160 }
+				}
+				modifier = {
+					factor = 3
+					age = 160
+					NOT = { age = 170 }
+				}
+				modifier = {
+					factor = 3.5
+					age = 170
+				}
+				death = { death_reason = death_natural }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trait = AK_trait_dwarf
+					trait = trogg
+				}
+				age = 200
+			}
+			random = {
+				chance = 20
+				modifier = {
+					factor = 0.8
+					health = 6
+					NOT = { health = 8 }
+				}
+				modifier = {
+					factor = 0.7
+					health = 8
+					NOT = { health = 10 }
+				}
+				modifier = {
+					factor = 0.5
+					health = 10
+				}
+				modifier = {
+					factor = 1.2
+					health = 3
+					NOT = { health = 4 }
+				}
+				modifier = {
+					factor = 1.3
+					health = 1
+					NOT = { health = 3 }
+				}
+				modifier = {
+					factor = 2.3
+					age = 220
+					NOT = { age = 230 }
+				}
+				modifier = {
+					factor = 2.4
+					age = 230
+					NOT = { age = 250 }
+				}
+				modifier = {
+					factor = 2.5
+					age = 250
+					NOT = { age = 260 }
+				}
+				modifier = {
+					factor = 3
+					age = 260
+					NOT = { age = 270 }
+				}
+				modifier = {
+					factor = 3.5
+					age = 270
+				}
+				death = { death_reason = death_natural }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trait = high_elf
+					trait = blood_elf
+					trait = wretched
+					trait = naga
+				}
+				age = 800
+			}
+			random = {
+				chance = 20
+				modifier = {
+					factor = 0.8
+					health = 6
+					NOT = { health = 8 }
+				}
+				modifier = {
+					factor = 0.7
+					health = 8
+					NOT = { health = 10 }
+				}
+				modifier = {
+					factor = 0.5
+					health = 10
+				}
+				modifier = {
+					factor = 1.2
+					health = 3
+					NOT = { health = 4 }
+				}
+				modifier = {
+					factor = 1.3
+					health = 1
+					NOT = { health = 3 }
+				}
+				modifier = {
+					factor = 2.3
+					age = 1000
+					NOT = { age = 1200 }
+				}
+				modifier = {
+					factor = 2.4
+					age = 1200
+					NOT = { age = 1500 }
+				}
+				modifier = {
+					factor = 2.5
+					age = 1500
+					NOT = { age = 1600 }
+				}
+				modifier = {
+					factor = 3
+					age = 1600
+					NOT = { age = 1700 }
+				}
+				modifier = {
+					factor = 3.5
+					age = 1700
+				}
+				death = { death_reason = death_natural }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trait = gnoll
+					trait = murloc
+				}
+				age = 50
+			}
+			random = {
+				chance = 20
+				modifier = {
+					factor = 0.8
+					health = 6
+					NOT = { health = 8 }
+				}
+				modifier = {
+					factor = 0.7
+					health = 8
+					NOT = { health = 10 }
+				}
+				modifier = {
+					factor = 0.5
+					health = 10
+				}
+				modifier = {
+					factor = 1.2
+					health = 3
+					NOT = { health = 4 }
+				}
+				modifier = {
+					factor = 1.3
+					health = 1
+					NOT = { health = 3 }
+				}
+				modifier = {
+					factor = 2.3
+					age = 55
+					NOT = { age = 60 }
+				}
+				modifier = {
+					factor = 2.4
+					age = 60
+					NOT = { age = 70 }
+				}
+				modifier = {
+					factor = 2.5
+					age = 70
+					NOT = { age = 75 }
+				}
+				modifier = {
+					factor = 3
+					age = 75
+					NOT = { age = 80 }
+				}
+				modifier = {
+					factor = 3.5
+					age = 80
+				}
+				death = { death_reason = death_natural }
+			}
+		}
+	}
+}

@@ -1,0 +1,867 @@
+kill_relative_opinions = {
+	event_target:killed = {
+		death = { death_reason = death_murder killer = event_target:killer }
+		any_liege = {
+			if = {
+				limit = {
+					is_close_relative = event_target:killed
+					NOT = { character = event_target:killer }
+					NOT = { is_close_relative = event_target:killer }
+				}
+				opinion = {
+					who = event_target:killer
+					modifier = opinion_regicide_traitor
+					}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { dynasty = event_target:killer }
+			}
+			any_dynasty_member = {
+				opinion = {
+					who = event_target:killer
+					modifier = opinion_dishonorable
+					months = 60
+				}
+				if = {
+					limit = {
+						event_target:killer = {
+							any_spouse = {
+								character = event_target:killed
+							}
+						}
+					}
+					opinion = {
+						who = event_target:killer
+						modifier = opinion_spouse_slayer
+						months = 60
+					}
+				}
+			}
+		}
+		top_liege = {
+			opinion = {
+				who = event_target:killer
+				modifier = opinion_dishonorable
+				months = 60
+			}
+			any_realm_lord = {
+				opinion = {
+					who = event_target:killer
+					modifier = opinion_dishonorable
+					months = 60
+				}
+			}
+		}
+		religion_head = {
+			opinion = {
+				who = event_target:killer
+				modifier = opinion_dishonorable
+				months = 60
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					NOT = { character = event_target:killer }
+					NOT = { is_mother = event_target:killer }
+				}
+			}
+			mother = {
+				opinion = {
+					who = event_target:killer
+					modifier = opinion_killed_close_kin
+					months = 1200
+				}
+				add_rival = event_target:killer
+			}
+		}
+		if = {
+			limit = {
+				father = {
+					NOT = { character = event_target:killer }
+					NOT = { is_father = event_target:killer }
+				}
+			}
+			father = {
+				opinion = {
+					who = event_target:killer
+					modifier = opinion_killed_close_kin
+					months = 1200
+				}
+				add_rival = event_target:killer
+			}
+		}
+		any_child = {
+			limit = {
+				NOT = { character = event_target:killer }
+				NOT = { is_child_of = event_target:killer }
+			}
+			opinion = {
+				who = event_target:killer
+				modifier = opinion_killed_close_kin
+				months = 1200
+			}
+			add_rival = event_target:killer
+		}
+		any_sibling = {
+			limit = {
+				NOT = { character = event_target:killer }
+				NOT = { sibling = PREVPREV }
+			}
+			opinion = {
+				who = event_target:killer
+				modifier = opinion_killed_close_kin
+				months = 1200
+			}
+		}
+	}
+	event_target:killer = {
+		add_character_modifier = { name = known_murderer years = 50 }
+		if = {
+			limit = {
+				NOT = { trait = kinslayer }
+				event_target:killed = {
+					dynasty = PREV
+				}
+			}
+			add_trait = kinslayer
+		}
+	}
+}
+
+remove_educations = {
+	remove_trait = amateurish_plotter
+	remove_trait = flamboyant_schemer
+	remove_trait = intricate_webweaver
+	remove_trait = elusive_shadow
+	remove_trait = naive_appeaser
+	remove_trait = underhanded_rogue
+	remove_trait = charismatic_negotiator
+	remove_trait = grey_eminence
+	remove_trait = indulgent_wastrel
+	remove_trait = thrifty_clerk
+	remove_trait = fortune_builder
+	remove_trait = midas_touched
+	remove_trait = misguided_warrior
+	remove_trait = tough_soldier
+	remove_trait = skilled_tactician
+	remove_trait = brilliant_strategist
+	remove_trait = detached_priest
+	remove_trait = martial_cleric
+	remove_trait = scholarly_theologian
+	remove_trait = mastermind_theologian
+}
+
+spawn_wretched_army_effect = {
+	random_list = {
+		34 = {
+			spawn_unit = {
+				province = ROOT
+				home = ROOT
+				owner = THIS
+				#leader = THIS
+				scaled_by_biggest_garrison = 1.0
+				troops = {
+					archers = { 12 12 }
+					light_infantry = { 20 20 }
+					mages = { 1 1 }
+				}
+				attrition = 1.0
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+		}
+		33 = {
+			spawn_unit = {
+				province = ROOT
+				home = ROOT
+				owner = THIS
+				#leader = THIS
+				scaled_by_biggest_garrison = 1.0
+				troops = {
+					archers = { 12 12 }
+					light_infantry = { 20 20 }
+					mages = { 1 1 }
+				}
+				attrition = 1.0
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+		}
+		33 = {
+			spawn_unit = {
+				province = ROOT
+				home = ROOT
+				owner = THIS
+				#leader = THIS
+				scaled_by_biggest_garrison = 1.0
+				troops = {
+					archers = { 6 6 }
+					light_infantry = { 14 14 }
+				}
+				attrition = 1.0
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 6 6 }
+						light_infantry = { 14 14 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 6 6 }
+						light_infantry = { 14 14 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+		}
+	}
+}
+
+spawn_wretched_reinforcements_effect = {
+	random_list = {
+		34 = {
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+		}
+		33 = {
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+		}
+		33 = {
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 6 6 }
+						light_infantry = { 14 14 }
+					}
+					attrition = 1.0
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 6 6 }
+						light_infantry = { 14 14 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 6 6 }
+						light_infantry = { 14 14 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1712 @@
+namespace = loah
+
+#Ascend to loa on death
+character_event = {
+	id = loah.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		piety = 1000
+		OR = {
+			religion = loa
+			religion = hakkar
+		}
+		NOT = { trait = hakkar_trait }
+		OR = {
+			trait = troll_dark
+			trait = troll_zandalari
+			trait = troll_sand
+			trait = troll_forest
+			trait = troll_ice
+			trait = troll_jungle
+		}
+	}
+	
+	immediate = {
+		set_character_flag = ascended_loa
+		current_heir = {
+			if = {
+				limit = {
+					dynasty = ROOT
+				}
+				character_event = { id = loah.2 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = loah.2
+	desc = EVTDESCLOAH.2 # In a dream, you see your [GetFromRelation], [From.GetFirstName]. [From.GetSheHe] walks through pristine wilderness towards you. You talk about various things and [From.GetSheHe] imparts some wisdom to you before you wake up. [From.GetFirstName] is with the Loa now.
+	picture = GFX_evt_death
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.2 # Tazdingo!
+		prestige = 50
+		piety = 50
+	}
+}
+
+#Pick personal loa
+character_event = {
+	id = loah.3
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = troll_jungle
+				trait = troll_zandalari
+			}
+		}
+		name = EVTOPTLOAH.3a # Jungle troll Loa
+		character_event = { id = loah.5 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = troll_forest
+				trait = troll_zandalari
+			}
+		}
+		name = EVTOPTLOAH.3b # Forest troll Loa
+		character_event = { id = loah.10 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				trait = troll_ice
+				trait = troll_zandalari
+			}
+		}
+		name = EVTOPTLOAH.3c # Ice troll Loa
+		character_event = { id = loah.13 }
+	}
+	
+	option = {
+		trigger = {
+			trait = troll_zandalari
+		}
+		name = OPTIONS_MORE
+		character_event = { id = loah.4 }
+	}
+	
+	option = {
+		trigger = {
+			trait = troll_sand
+		}
+		name = EVTOPTLOAH.3d # Sand troll Loa
+		character_event = { id = loah.18 }
+	}
+	
+	option = {
+		trigger = {
+			trait = troll_dark
+		}
+		name = EVTOPTLOAH.3e # Dark troll Loa
+		character_event = { id = loah.200 }
+	}
+}
+
+character_event = {
+	id = loah.4
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.3d # Sand troll Loa
+		character_event = { id = loah.18 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.4a # Zandalari Loa
+		character_event = { id = loah.23 }
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+#Jungle
+character_event = {
+	id = loah.5
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				OR = {
+					trait = lunatic
+					trait = impaler
+					trait = wroth
+					trait = cruel
+					trait = berserker
+				}
+			}
+			modifier = {
+				factor = 50
+				secret_religion = hakkar
+			}
+		}
+		name = EVTOPTLOAH.5a # Hakkar, the Soulflayer
+		add_character_modifier = { name = loa_hakkar duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.5b # Zanza, the Restless
+		add_character_modifier = { name = loa_zanza duration = -1 }
+	}	
+	
+	option = {
+		trigger = {
+			culture = bloodscalp
+		}
+		name = EVTOPTLOAH.5c # Mahamba, the Water Spirit
+		add_character_modifier = { name = loa_mahamba duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = bloodscalp }
+		}
+		name = EVTOPTLOAH.5d # Shirvallah, the Tiger
+		add_character_modifier = { name = loa_shirvallah duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.6 }
+	}
+}
+
+character_event = {
+	id = loah.6
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = { culture = bloodscalp }
+		}
+		name = EVTOPTLOAH.6a # Hir'eek, the Bat
+		add_character_modifier = { name = loa_hireek duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = bloodscalp }
+		}
+		name = EVTOPTLOAH.6b # Elortha no Shadra, the Spider
+		add_character_modifier = { name = loa_shadra duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			culture = darkspear
+		}
+		name = EVTOPTLOAH.6c # Bwonsamdi, the Guardian of the Dead
+		add_character_modifier = { name = loa_bwonsamdi duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = darkspear }
+			NOT = { culture = bloodscalp }
+		}
+		name = EVTOPTLOAH.6d # Bethekk, the Panther
+		add_character_modifier = { name = loa_bethekk duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			culture = bloodscalp
+		}
+		name = EVTOPTLOAH.6e # Tsul'Kalu, the Earth Spirit
+		add_character_modifier = { name = loa_tsulkalu duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			culture = bloodscalp
+		}
+		name = EVTOPTLOAH.6f # Pogeyan, the Fire Spirit
+		add_character_modifier = { name = loa_pogeyan duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				any_dynasty_member_even_if_dead = {
+					has_character_flag = ascended_loa
+				}
+				NOT = { culture = bloodscalp }
+			}
+		}
+		name = OPTIONS_MORE
+		character_event = { id = loah.7 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = {
+				any_dynasty_member_even_if_dead = {
+					has_character_flag = ascended_loa
+				}
+			}
+			culture = bloodscalp
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+character_event = {
+	id = loah.7
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				culture = darkspear
+				culture = zandalari
+			}
+		}
+		name = EVTOPTLOAH.7a # Samedi, Loa of the Grave
+		add_character_modifier = { name = loa_samedi duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				culture = darkspear
+				culture = zandalari
+			}
+		}
+		name = EVTOPTLOAH.7b # Shango, Loa of Storms
+		add_character_modifier = { name = loa_shango duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = bloodscalp }
+		}
+		name = EVTOPTLOAH.7c # Hethiss, the Snake
+		add_character_modifier = { name = loa_hethiss duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = zandalari }
+			any_dynasty_member_even_if_dead = {
+				has_character_flag = ascended_loa
+			}
+		}
+		name = EVTOPTLOAH.7d # The ancestors
+		add_character_modifier = { name = loa_ancestors duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			culture = zandalari
+		}
+		name = OPTIONS_MORE
+		character_event = { id = loah.8 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = zandalari  }
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+
+character_event = {
+	id = loah.8
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.6c # Bwonsamdi, the Guardian of the Dead
+		add_character_modifier = { name = loa_bwonsamdi duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.5c # Mahamba, the Water Spirit
+		add_character_modifier = { name = loa_mahamba duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.6e # Tsul'Kalu, the Earth Spirit
+		add_character_modifier = { name = loa_tsulkalu duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.9 }
+	}
+}
+
+character_event = {
+	id = loah.9
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.6f # Pogeyan, the Fire Spirit
+		add_character_modifier = { name = loa_pogeyan duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+#Forest
+character_event = {
+	id = loah.10
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				OR = {
+					trait = lunatic
+					trait = impaler
+					trait = wroth
+					trait = cruel
+					trait = berserker
+				}
+			}
+			modifier = {
+				factor = 50
+				secret_religion = hakkar
+			}
+		}
+		name = EVTOPTLOAH.5a # Hakkar, the Soulflayer
+		add_character_modifier = { name = loa_hakkar duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.5b # Zanza, the Restless
+		add_character_modifier = { name = loa_zanza duration = -1 }
+	}	
+	
+	option = {
+		trigger = {
+			NOT = { culture = vilebranch }
+		}
+		name = EVTOPTLOAH.10c # Akil'zon, the Eagle
+		add_character_modifier = { name = loa_akilzon duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			culture = vilebranch
+		}
+		name = EVTOPTLOAH.10d # Akil'darah, the Eagle
+		add_character_modifier = { name = loa_akildarah duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.11 }
+	}
+}
+
+character_event = {
+	id = loah.11
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.11a # Nalorakk, the Bear
+		add_character_modifier = { name = loa_nalorakk duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.11b # Jan'alai, the Dragonhawk
+		add_character_modifier = { name = loa_janalai duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.11c # Halazzi, the Lynx
+		add_character_modifier = { name = loa_halazzi duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				any_dynasty_member_even_if_dead = {
+					has_character_flag = ascended_loa
+				}
+				culture = zandalari
+				culture = witherbark
+			}
+		}
+		name = OPTIONS_MORE
+		character_event = { id = loah.12 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = zandalari }
+			NOT = { culture = witherbark }
+			NOT = {
+				any_dynasty_member_even_if_dead = {
+					has_character_flag = ascended_loa
+				}
+			}
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+character_event = {
+	id = loah.12
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				culture = witherbark
+				culture = zandalari
+			}
+		}
+		name = EVTOPTLOAH.6b # Elortha no Shadra, the Spider
+		add_character_modifier = { name = loa_shadra duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			culture = zandalari
+		}
+		name = EVTOPTLOAH.10d # Akil'darah, the Eagle
+		add_character_modifier = { name = loa_akildarah duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = zandalari }
+			any_dynasty_member_even_if_dead = {
+				has_character_flag = ascended_loa
+			}
+		}
+		name = EVTOPTLOAH.7d # The ancestors
+		add_character_modifier = { name = loa_ancestors duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+#Ice
+character_event = {
+	id = loah.13
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				OR = {
+					trait = lunatic
+					trait = impaler
+					trait = wroth
+					trait = cruel
+					trait = berserker
+				}
+			}
+			modifier = {
+				factor = 50
+				secret_religion = hakkar
+			}
+		}
+		name = EVTOPTLOAH.5a # Hakkar, the Soulflayer
+		add_character_modifier = { name = loa_hakkar duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.5b # Zanza, the Restless
+		add_character_modifier = { name = loa_zanza duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.13c # Akali, the Rhino
+		add_character_modifier = { name = loa_akali duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.14 }
+	}
+}
+
+character_event = {
+	id = loah.14
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.14a # Har'koa, the Snow Leopard
+		add_character_modifier = { name = loa_harkoa duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.14b # Mam'toth, the Mammoth
+		add_character_modifier = { name = loa_mamtoth duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.14c # Quetz'lun, the Wind Serpent
+		add_character_modifier = { name = loa_quetzlun duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.15 }
+	}
+}
+
+character_event = {
+	id = loah.15
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.15a # Rhunok, the Arctic Bear
+		add_character_modifier = { name = loa_rhunok duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.15b # Sseratus, the Serpent
+		add_character_modifier = { name = loa_sseratus duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.15c # Tharon'ja, the Skeletal Wind Serpent
+		add_character_modifier = { name = loa_tharonja duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				any_dynasty_member_even_if_dead = {
+					has_character_flag = ascended_loa
+				}
+				culture = zandalari
+				culture = drakkari
+			}
+		}
+		name = OPTIONS_MORE
+		character_event = { id = loah.16 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = {
+				any_dynasty_member_even_if_dead = {
+					has_character_flag = ascended_loa
+				}
+			}
+			NOT = { culture = drakkari }
+			NOT = { culture = zandalari }
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+character_event = {
+	id = loah.16
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = { culture = zandalari }
+			NOT = { culture = drakkari }
+			any_dynasty_member_even_if_dead = {
+				has_character_flag = ascended_loa
+			}
+		}
+		name = EVTOPTLOAH.7d # The ancestors
+		add_character_modifier = { name = loa_ancestors duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				culture = drakkari
+				culture = zandalari
+			}
+		}
+		name = EVTOPTLOAH.16a # Dubra'jin, the Protector
+		add_character_modifier = { name = loa_dubrajin duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				culture = drakkari
+				culture = zandalari
+			}
+		}
+		name = EVTOPTLOAH.16b # Zim'Abwa, the Lost
+		add_character_modifier = { name = loa_zimabwa duration = -1 }
+	}	
+	
+	option = {
+		trigger = {
+			OR = {
+				culture = drakkari
+				culture = zandalari
+			}
+		}
+		name = EVTOPTLOAH.16c # Zim'Rhuk, the Wise
+		add_character_modifier = { name = loa_zimrhuk duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				culture = drakkari
+				culture = zandalari
+			}
+		}
+		name = OPTIONS_MORE
+		character_event = { id = loah.17 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = drakkari }
+			NOT = { culture = zandalari }
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+character_event = {
+	id = loah.17
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.17a # Zim'Torga, the Mother of Prosperity
+		add_character_modifier = { name = loa_zimtorga duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = zandalari }
+			any_dynasty_member_even_if_dead = {
+				has_character_flag = ascended_loa
+			}
+		}
+		name = EVTOPTLOAH.7d # The ancestors
+		add_character_modifier = { name = loa_ancestors duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+#Sand
+character_event = {
+	id = loah.18
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				OR = {
+					trait = lunatic
+					trait = impaler
+					trait = wroth
+					trait = cruel
+					trait = berserker
+				}
+			}
+			modifier = {
+				factor = 50
+				secret_religion = hakkar
+			}
+		}
+		name = EVTOPTLOAH.5a # Hakkar, the Soulflayer
+		add_character_modifier = { name = loa_hakkar duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.5b # Zanza, the Restless
+		add_character_modifier = { name = loa_zanza duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.18c # Eraka no Kimbul, the Tiger
+		add_character_modifier = { name = loa_kimbul duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.19 }
+	}
+}
+
+character_event = {
+	id = loah.19
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.19a # Ueetay no Mueh'zala, Loa of Death
+		add_character_modifier = { name = loa_muehzala duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.6b # Elortha no Shadra, the Spider
+		add_character_modifier = { name = loa_shadra duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.19c # Gahz'rilla, the Kai'ju
+		add_character_modifier = { name = loa_gahzrilla duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { culture = zandalari }
+			any_dynasty_member_even_if_dead = {
+				has_character_flag = ascended_loa
+			}
+		}
+		name = OPTIONS_MORE
+		character_event = { id = loah.20 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = {
+				any_dynasty_member_even_if_dead = {
+					has_character_flag = ascended_loa
+				}
+			}
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+character_event = {
+	id = loah.20
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = { culture = zandalari }
+			any_dynasty_member_even_if_dead = {
+				has_character_flag = ascended_loa
+			}
+		}
+		name = EVTOPTLOAH.7d # The ancestors
+		add_character_modifier = { name = loa_ancestors duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+#Dark
+character_event = {
+	id = loah.200
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				OR = {
+					trait = lunatic
+					trait = impaler
+					trait = wroth
+					trait = cruel
+					trait = berserker
+				}
+			}
+			modifier = {
+				factor = 50
+				secret_religion = hakkar
+			}
+		}
+		name = EVTOPTLOAH.5a # Hakkar, the Soulflayer
+		add_character_modifier = { name = loa_hakkar duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.5b # Zanza, the Restless
+		add_character_modifier = { name = loa_zanza duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.20c # Aessina, the Mother Wisp
+		add_character_modifier = { name = loa_aessina duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.21 }
+	}
+}
+
+character_event = {
+	id = loah.21
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.21a # Aviana, Mistress of Birds
+		add_character_modifier = { name = loa_aviana duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.21b # Cenarius, Lord of the Forest
+		add_character_modifier = { name = loa_cenarius duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.21c # Goldrinn, the Great Wolf
+		add_character_modifier = { name = loa_goldrinn duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.22 }
+	}
+}
+
+character_event = {
+	id = loah.22
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.22a # Malorne, the Waywatcher
+		add_character_modifier = { name = loa_malorne duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.22b # Tortolla, the Wise
+		add_character_modifier = { name = loa_tortolla duration = -1 }
+	}	
+	
+	option = {
+		trigger = {
+			any_dynasty_member_even_if_dead = {
+				has_character_flag = ascended_loa
+			}
+		}
+		name = EVTOPTLOAH.7d # The ancestors
+		add_character_modifier = { name = loa_ancestors duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+#Zandalari
+character_event = {
+	id = loah.23
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				OR = {
+					trait = lunatic
+					trait = impaler
+					trait = wroth
+					trait = cruel
+					trait = berserker
+				}
+			}
+			modifier = {
+				factor = 50
+				secret_religion = hakkar
+			}
+		}
+		name = EVTOPTLOAH.5a # Hakkar, the Soulflayer
+		add_character_modifier = { name = loa_hakkar duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.5b # Zanza, the Restless
+		add_character_modifier = { name = loa_zanza duration = -1 }
+	}	
+	
+	option = {
+		name = EVTOPTLOAH.23c # Gonk, the Great Hunter
+		add_character_modifier = { name = loa_gonk duration = -1 }
+	}
+	
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = loah.24 }
+	}
+}
+
+character_event = {
+	id = loah.24
+	desc = EVTDESCLOAH.3 # Many trolls dedicate themselves exclusively to a single Loa, who, in turn, pay special attention to these trolls.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.24a # Grimath, the Old
+		add_character_modifier = { name = loa_grimath duration = -1 }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.24b # G'nathus, the Eel
+		add_character_modifier = { name = loa_gnathus duration = -1 }
+	}	
+	
+	option = {
+		trigger = {
+			any_dynasty_member_even_if_dead = {
+				has_character_flag = ascended_loa
+			}
+		}
+		name = EVTOPTLOAH.7d # The ancestors
+		add_character_modifier = { name = loa_ancestors duration = -1 }
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = OPTIONS_BACK
+		character_event = { id = loah.3 }
+	}
+}
+
+#maintenance
+character_event = {
+	id = loah.25
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		NOT = { religion = loa }
+		has_character_flag = picked_loa
+	}
+	
+	immediate = {
+		clr_character_flag = picked_loa
+		remove_character_modifier = loa_hakkar
+		remove_character_modifier = loa_zanza
+		remove_character_modifier = loa_nalorakk
+		remove_character_modifier = loa_akilzon
+		remove_character_modifier = loa_janalai
+		remove_character_modifier = loa_halazzi
+		remove_character_modifier = loa_mahamba
+		remove_character_modifier = loa_tsulkalu
+		remove_character_modifier = loa_pogeyan
+		remove_character_modifier = loa_bwonsamdi
+		remove_character_modifier = loa_samedi
+		remove_character_modifier = loa_shango
+		remove_character_modifier = loa_shirvallah
+		remove_character_modifier = loa_hireek
+		remove_character_modifier = loa_shadra
+		remove_character_modifier = loa_akali
+		remove_character_modifier = loa_harkoa
+		remove_character_modifier = loa_mamtoth
+		remove_character_modifier = loa_quetzlun
+		remove_character_modifier = loa_rhunok
+		remove_character_modifier = loa_sseratus
+		remove_character_modifier = loa_tharonja
+		remove_character_modifier = loa_dubrajin
+		remove_character_modifier = loa_zimabwa
+		remove_character_modifier = loa_zimrhuk
+		remove_character_modifier = loa_zimtorga
+		remove_character_modifier = loa_bethekk
+		remove_character_modifier = loa_hethiss
+		remove_character_modifier = loa_kimbul
+		remove_character_modifier = loa_muehzala
+		remove_character_modifier = loa_akildarah
+		remove_character_modifier = loa_gonk
+		remove_character_modifier = loa_grimath
+		remove_character_modifier = loa_gnathus
+		remove_character_modifier = loa_ancestors
+		remove_character_modifier = loa_aessina
+		remove_character_modifier = loa_aviana
+		remove_character_modifier = loa_cenarius
+		remove_character_modifier = loa_goldrinn
+		remove_character_modifier = loa_malorne
+		remove_character_modifier = loa_tortolla
+	}
+}
+
+#Sacrfice
+character_event = {
+	id = loah.26
+	desc = {
+		trigger = {
+			religion = loa
+			NOT = { has_character_modifier = loa_hakkar }
+		}
+		text = EVTDESCLOAH.26a # [From.GetBestName] is dragged out of the dungeon, kicking and trying to break free. The guards have to subdue [From.GetHerHim] multiple times before [From.GetSheHe] is finally bound to the altar. The witchdoctor draws his sacrificial knife and plunges it deep into [From.GetBestName]'s heart. [From.GetHerHis] blood belongs to the Loa now.
+	}
+	desc = {
+		trigger = {
+			OR = {
+				religion = hakkar
+				has_character_modifier = loa_hakkar
+			}
+		}
+		text = EVTDESCLOAH.26b # [From.GetBestName] is dragged out of the dungeon, kicking and trying to break free. The guards have to subdue [From.GetHerHim] multiple times before [From.GetSheHe] is finally bound to the altar. The witchdoctor draws his sacrificial knife and plunges it deep into [From.GetBestName]'s heart. [From.GetHerHis] blood belongs to Hakkar now.
+	}
+	picture = GFX_evt_bishop_aztec
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			religion = loa
+			NOT = { has_character_modifier = loa_hakkar }
+		}
+		name = EVTOPTLOAH.2 # Tazdingo!
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						tier = BARON
+						has_landed_title = no
+					}
+				}
+			}
+			piety = 10
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = COUNT
+				}
+			}
+			piety = 50
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = DUKE
+				}
+			}
+			piety = 100
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = KING
+				}
+			}
+			piety = 200
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = EMPEROR
+				}
+			}
+			piety = 400
+		}
+		add_character_modifier = { name = sacrificed_recently duration = 60 }
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				religion = hakkar
+				has_character_modifier = loa_hakkar
+			}
+		}
+		name = EVTOPTLOAH.26b # Blood for the blood god!
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						tier = BARON
+						has_landed_title = no
+					}
+				}
+			}
+			piety = 10
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = COUNT
+				}
+			}
+			piety = 50
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = DUKE
+				}
+			}
+			piety = 100
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = KING
+				}
+			}
+			piety = 200
+		}
+		if = {
+			limit = {
+				FROM = {
+					tier = EMPEROR
+				}
+			}
+			piety = 400
+		}
+		add_character_modifier = { name = sacrificed_recently duration = 60 }
+		if = {
+			limit = {
+				has_secret_religion = no
+			}
+			random = {
+				chance = 10
+				set_secret_religion = hakkar
+			}
+		}
+	}
+}
+
+character_event = {
+	id = loah.27
+	desc = EVTDESCLOAH.27 # You are dragged out of the dungeon cell you were held in by [From.GetBestName]. Overhearing one of the guards talk about a sacrifice, you struggle to escape, but to no avail. Your captors bind you to a bloodstained altar, and a witch doctor pulls out a sacrificial dagger, plunging it into your chest.
+	picture = GFX_evt_bishop_aztec
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.27 # No! Please, no!
+		death = { death_reason = death_sacrificed }
+	}
+}
+
+#Sacrifice limb to Hakkar
+character_event = {
+	id = loah.28
+	desc = EVTDESCLOAH.28 # Hakkar is the Blood God, and befitting his name he demands a single thing from all his followers: blood. While you can spill the blood of others to please him, he is also equally pleased by the blood of his own followers. And so it is that you cut off one of your own limbs in his name.
+	picture = GFX_evt_bishop_aztec
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTLOAH.26b # Blood for the blood god!
+		piety = 150
+		add_maimed_trait_effect = yes
+	}
+}
+
+#Zandalar sends priest
+character_event = {
+	id = loah.29
+	desc = EVTDESCLOAH.29 # Far Zandalar, feeling that you are in need of some spiritual help, has sent a witch doctor to your court to aid you in communing with the Loa.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 500
+		modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.5
+			trait = cynical
+		}
+		modifier = {
+			factor = 1.2
+			has_secret_religion = yes
+		}
+		modifier = {
+			factor = 0.5
+			piety = 500
+		}
+		modifier = {
+			factor = 2
+			NOT = { piety = 0 }
+		}
+		modifier = {
+			factor = 0.5
+			real_tier = KING
+		}
+		modifier = {
+			factor = 0.2
+			real_tier = EMPEROR
+		}
+	}
+	
+	trigger = {
+		NOT = { is_title_active = e_zul }
+		NOT = { has_landed_title = e_zandalar }
+		NOT = {
+			any_liege = {
+				has_landed_title = e_zandalar
+			}
+		}
+		religion_authority = 0.2
+		religion = loa
+		OR = {
+			trait = troll_sand
+			trait = troll_dark
+			trait = troll_zandalari
+			trait = troll_ice
+			trait = troll_forest
+			trait = troll_jungle
+		}
+		culture_group = troll
+		NOT = {
+			any_courtier = {
+				has_character_flag = zandalar_priest
+			}
+		}
+		NOT = {
+			any_vassal = {
+				has_character_flag = zandalar_priest
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTLOAH.2
+		prestige = 10
+		create_character = {
+			dynasty = random
+			attributes = {
+				learning = 16
+			}
+			trait = troll_zandalari
+			trait = witch_doctor
+			religion = loa
+			culture = zandalari
+			random_traits = yes
+			flag = race_assigned
+			flag = has_adv_class
+			flag = zandalar_priest
+		}
+	}
+}
+
+#Endorsed by Zandalar
+narrative_event = {
+	id = loah.30
+	title = EVTTITLELOAH.30 # An Envoy from Zandalar
+	desc = EVTDESCLOAH.30 # A messenger from the far-off island of Zandalar has arrived in your court. The holy priests of the island kingdom have determined that you are particularly favoured by the Loa and destined for great things. You have their full backing for the rest of your life.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_narrative_frame_religion
+	
+	mean_time_to_happen = {
+		years = 3000
+		modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+		modifier = {
+			factor = 1.5
+			trait = cynical
+		}
+		modifier = {
+			factor = 1.2
+			has_secret_religion = yes
+		}
+		modifier = {
+			factor = 0.5
+			piety = 500
+		}
+		modifier = {
+			factor = 2
+			NOT = { piety = 0 }
+		}
+		modifier = {
+			factor = 0.5
+			prestige = 500
+		}
+		modifier = {
+			factor = 2
+			NOT = { prestige = 0 }
+		}
+		modifier = {
+			factor = 0.5
+			real_tier = EMPEROR
+		}
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = zandalar_endorsed }
+		NOT = { is_title_active = e_zul }
+		NOT = { has_landed_title = e_zandalar }
+		NOT = {
+			any_liege = {
+				has_landed_title = e_zandalar
+			}
+		}
+		religion_authority = 0.2
+		religion = loa
+		culture_group = troll
+		OR = {
+			trait = troll_sand
+			trait = troll_dark
+			trait = troll_zandalari
+			trait = troll_ice
+			trait = troll_forest
+			trait = troll_jungle
+		}
+	}
+	
+	option = {
+		name = EVTOPTLOAH.30 # I am chosen!
+		random = {
+			chance = 35
+			remove_trait = cynical
+		}
+		random = {
+			chance = 20
+			remove_trait = cynical
+			add_trait = zealous
+		}
+		prestige = 200
+		set_character_flag = zandalar_endorsed
+		custom_tooltip = { text = EVTTOOLTIPLOAH.30 } # This will permit new casus belli to be used.
+	}
+}
+
+#Lose endorsement
+character_event = {
+	id = loah.31
+	desc = EVTDESCLOAH.31 # By forsaking the Loa, you have relinquished the divine mandate Zandalar has invested in you.
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		has_character_flag = zandalar_endorsed
+	}
+	
+	option = {
+		name = OK
+		clr_character_flag = zandalar_endorsed
+	}
+}
+
+#Zandalari Warhost
+character_event = {
+	id = loah.32
+	desc = EVTDESCLOAH.32 # The prophets have spoken! You have fallen out of favour with the Loa, and now Zandalar has sent a warhost to oust you!
+	picture = GFX_evt_zandalari_meeting
+	border = GFX_event_normal_frame_war
+	
+	mean_time_to_happen = {
+		years = 400
+	}
+	
+	trigger = {
+		OR = {
+			trait = troll_sand
+			trait = troll_dark
+			trait = troll_zandalari
+			trait = troll_ice
+			trait = troll_forest
+			trait = troll_jungle
+		}
+		culture_group = troll
+		NOT = { has_character_flag = zandalar_endorsed }
+		is_title_active = e_zandalar
+		independent = yes
+		NOT = { has_landed_title = e_zandalar }
+		NOT = { is_title_active = e_zul }
+		religion = loa
+		NOT = { religion_authority = 0.2 } # Need to balance
+	}
+	
+	option = {
+		name = AKDAMN
+		e_zandalar = {
+			holder_scope = {
+				wealth = 500
+				create_character = {
+					name = random
+					dynasty = random
+					employer = THIS
+					attributes = {
+						martial = 15
+					}
+					trait = troll_zandalari
+					religion = loa
+					culture = zandalari
+					random_traits = yes
+					flag = race_assigned
+				}
+				new_character = {
+					ROOT = {
+						random_realm_province = {
+							PREVPREV = {
+								spawn_unit = {
+									province = PREV
+									owner = PREVPREVPREVPREV
+									leader = THIS
+									troops = {
+										light_infantry = { 10 10 }
+										heavy_infantry = { 2 2 }
+										archers = { 6 6 }
+										mages = { 1 1 }
+									}
+									match_character = PREVPREV
+									match_mult = 1.2
+									match_min = 300
+									maintenance = no
+									reinforces = no
+									can_toggle_looting = no
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		ROOT = {
+			primary_title = {
+				e_zandalar = {
+					holder_scope = {
+						war = { target = ROOT casus_belli = troll_invasion thirdparty_title = PREVPREV infamy = 0 }
+					}
+				}
+			}
+		}
+	}
+}
+
+#Call of Hakkar
+character_event = {
+	id = loah.33
+	desc = EVTDESCLOAH.33 # Though you already pay homage to mighty Hakkar, you could always take a step further and dedicate yourself fully. For the world is full of weaklings, ready to have their blood spilled, and he always thirsts for more.
+	picture = GFX_evt_hakkar1
+	border = GFX_event_normal_frame_religion
+	
+	mean_time_to_happen = {
+		years = 10
+		modifier = {
+			factor = 5
+			trait = kind
+		}
+		modifier = {
+			factor = 0.5
+			trait = cruel
+		}
+		modifier = {
+			factor = 0.5
+			trait = impaler
+		}
+	}
+	
+	trigger = {
+		has_character_modifier = loa_hakkar
+		NOT = { has_secret_religion = yes }
+		NOT = { has_character_flag = rejected_hakkar }
+	}
+	
+	option = {
+		name = EVTOPTLOAH.26b # Blood for the blood god!
+		if = {
+			limit = {
+				culture = gurubashi
+			}
+			culture = hakkari
+		}
+		religion = hakkar
+		piety = 10
+	}
+	
+	option = {
+		name = EVTOPTLOAH.33a # But not openly. Not yet.
+		set_secret_religion = hakkar
+	}
+	
+	option = {
+		name = EVTOPTLOAH.33c # No. Other Loa deserve respect as well.
+		set_character_flag = rejected_hakkar
+	}
+}
+
+#Hakkar maintenance
+character_event = {
+	id = loah.34
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		trait = hakkar_trait
+		OR = {
+			NOT = { religion = hakkar }
+			NOT = { culture = hakkari }
+			has_secret_religion = yes
+		}
+	}
+	
+	immediate = {
+		religion = hakkar
+		culture = hakkari
+		clear_secret_religion = yes
+	}
+}

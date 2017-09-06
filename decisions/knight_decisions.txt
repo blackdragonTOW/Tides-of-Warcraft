@@ -1,0 +1,327 @@
+decisions = {
+	
+	#Found the knightly orders
+	brotherhood_of_the_horse = {
+		is_high_prio = yes
+		potential = {
+			trait = human
+			NOT = {
+				trait = undead_scourge
+				trait = undead_forsaken
+				trait = undead_generic
+			}
+			prisoner = no
+			NOT = { trait = incapable }
+			has_regent = no
+			has_landed_title = k_stormwind
+			NOT = { is_title_active = d_brotherhood_of_the_horse }
+		}
+		allow = {
+			prestige = 250
+		}
+		effect = {
+			activate_title = { title = d_brotherhood_of_the_horse status = yes }
+			create_character = {
+				random_traits = yes
+				age = 56
+				dynasty = random
+				religion = ROOT
+				culture = azerothian
+				attributes = {
+					martial = 13
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				d_brotherhood_of_the_horse = {
+					grant_title = PREV
+				}
+				prestige = 100
+				save_event_target_as = horse_commander
+			}
+			d_brotherhood_of_the_horse = {
+				de_jure_liege = ROOT
+			}
+			character_event = { id = knights.7 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ravenguard = {
+		is_high_prio = yes
+		potential = {
+			trait = human
+			NOT = {
+				trait = undead_scourge
+				trait = undead_forsaken
+				trait = undead_generic
+			}
+			prisoner = no
+			NOT = { trait = incapable }
+			has_regent = no
+			has_landed_title = k_alterac
+			NOT = { is_title_active = d_ravenguard }
+		}
+		allow = {
+			prestige = 250
+		}
+		effect = {
+			activate_title = { title = d_ravenguard status = yes }
+			create_character = {
+				random_traits = yes
+				age = 56
+				dynasty = random
+				religion = ROOT
+				culture = alteraci
+				attributes = {
+					martial = 13
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				d_ravenguard = {
+					grant_title = PREV
+				}
+				prestige = 100
+				save_event_target_as = raven_commander
+			}
+			d_ravenguard = {
+				de_jure_liege = ROOT
+			}
+			character_event = { id = knights.10 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	order_of_the_firstborn = {
+		is_high_prio = yes
+		potential = {
+			trait = human
+			NOT = {
+				trait = undead_scourge
+				trait = undead_forsaken
+				trait = undead_generic
+			}
+			prisoner = no
+			NOT = { trait = incapable }
+			has_regent = no
+			OR = {
+				has_landed_title = k_stromgarde
+				has_landed_title = e_arathor
+			}
+			NOT = { is_title_active = d_order_of_the_firstborn }
+		}
+		allow = {
+			prestige = 250
+		}
+		effect = {
+			activate_title = { title = d_order_of_the_firstborn status = yes }
+			create_character = {
+				random_traits = yes
+				age = 56
+				dynasty = random
+				religion = ROOT
+				culture = stromic
+				attributes = {
+					martial = 13
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				if = {
+					limit = {
+						ROOT = {
+							culture = arathi
+						}
+					}
+					culture = arathi
+				}
+				d_order_of_the_firstborn = {
+					grant_title = PREV
+				}
+				prestige = 100
+				save_event_target_as = firstborn_commander
+			}
+			d_order_of_the_firstborn = {
+				de_jure_liege = ROOT
+			}
+			character_event = { id = knights.13 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	knights_of_the_north = {
+		is_high_prio = yes
+		potential = {
+			trait = human
+			NOT = {
+				trait = undead_scourge
+				trait = undead_forsaken
+				trait = undead_generic
+			}
+			prisoner = no
+			NOT = { trait = incapable }
+			has_regent = no
+			has_landed_title = k_lordaeron
+			NOT = { is_title_active = d_knights_of_the_north }
+		}
+		allow = {
+			prestige = 250
+		}
+		effect = {
+			activate_title = { title = d_knights_of_the_north status = yes }
+			create_character = {
+				random_traits = yes
+				age = 56
+				dynasty = random
+				religion = ROOT
+				culture = lordaeronian
+				attributes = {
+					martial = 13
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				d_knights_of_the_north = {
+					grant_title = PREV
+				}
+				prestige = 100
+				save_event_target_as = north_commander
+			}
+			d_knights_of_the_north = {
+				de_jure_liege = ROOT
+			}
+			character_event = { id = knights.16 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	wolfpack = {
+		is_high_prio = yes
+		potential = {
+			trait = human
+			NOT = {
+				trait = undead_scourge
+				trait = undead_forsaken
+				trait = undead_generic
+			}
+			prisoner = no
+			NOT = { trait = incapable }
+			has_regent = no
+			has_landed_title = k_gilneas
+			NOT = { is_title_active = d_wolfpack }
+		}
+		allow = {
+			prestige = 250
+		}
+		effect = {
+			activate_title = { title = d_wolfpack status = yes }
+			create_character = {
+				random_traits = yes
+				age = 56
+				dynasty = random
+				religion = ROOT
+				culture = gilnean
+				attributes = {
+					martial = 13
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				d_wolfpack = {
+					grant_title = PREV
+				}
+				prestige = 100
+				save_event_target_as = wolf_commander
+			}
+			d_wolfpack = {
+				de_jure_liege = ROOT
+			}
+			character_event = { id = knights.19 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}
+
+targetted_decisions = {
+		
+	#Knight a warrior
+	human_knight = {
+		filter = realm
+		ai_target_filter = realm
+		from_potential = {
+			trait = human
+			NOT = {
+				trait = undead_scourge
+				trait = undead_forsaken
+				trait = undead_generic
+			}
+			prisoner = no
+			NOT = { trait = incapable }
+			has_regent = no
+			OR = {
+				has_landed_title = k_lordaeron
+				has_landed_title = k_alterac
+				has_landed_title = k_stromgarde
+				has_landed_title = k_gilneas
+				has_landed_title = k_stormwind
+				has_landed_title = e_arathor
+			}
+		}
+		potential = {
+			combat_rating = 1
+			trait = human
+			is_adult = yes
+			prisoner = no
+			is_priest = no
+			NOR = {
+				trait = incapable
+				has_minor_title = title_knight_male
+				has_minor_title = title_knight_female
+			}
+		}
+		allow = {
+			NOR = {
+				has_minor_title = title_knight_male
+				has_minor_title = title_knight_female
+				has_character_flag = refused_knighthood
+			}
+		}
+		effect = {
+			letter_event = { id = knights.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.7
+		}
+	}
+	
+}

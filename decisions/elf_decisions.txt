@@ -1,0 +1,1569 @@
+decisions = {
+
+	elf_move_to_dalaran = { # AI only, so nevermind locs
+		potential = {
+			is_landed = no
+			is_ruler = no
+			prisoner = no
+			NOR = {
+				trait = infirm
+				trait = incapable
+			}
+			OR = {
+				trait = arcanist
+				trait = mage
+			}
+			OR = {
+				trait = high_elf
+				trait = blood_elf
+			}
+			NOR = {
+				trait = undead_generic
+				trait = undead_scourge
+				trait = undead_forsaken
+				trait = distrusts_magic
+				any_liege = {
+					dynasty = ROOT
+					ai = no
+				}
+			}
+			OR = {
+				k_dalaran = {
+					holder_scope = {
+						government = kirin_tor_government
+					}
+				}
+				d_dalaran = {
+					holder_scope = {
+						government = kirin_tor_government
+					}
+				}
+				c_dalaran = {
+					holder_scope = {
+						government = kirin_tor_government
+					}
+				}
+			}
+			# Not part of the horde
+		}
+		allow = {
+			liege = {
+				OR = {
+					k_dalaran = {
+						holder_scope = {
+							is_title_active = k_dalaran
+							government = kirin_tor_government
+							ROOT = {
+								likes_better_than = {
+									who = PREV
+									than = PREVPREVPREV
+								}
+							}
+						}
+					}
+					d_dalaran = {
+						holder_scope = {
+							OR = {
+								NOT = { is_title_active = k_dalaran }
+								k_dalaran = {
+									holder_scope = {
+										NOT = { government = kirin_tor_government }
+									}
+								}
+							}
+							is_title_active = d_dalaran
+							government = kirin_tor_government
+							ROOT = {
+								likes_better_than = {
+									who = PREV
+									than = PREVPREVPREV
+								}
+							}
+						}
+					}
+					c_dalaran = {
+						holder_scope = {
+							OR = {
+								NOT = { is_title_active = k_dalaran }
+								NOT = { is_title_active = d_dalaran }
+								k_dalaran = {
+									holder_scope = {
+										NOT = { government = kirin_tor_government }
+									}
+								}
+								d_dalaran = {
+									holder_scope = {
+										NOT = { government = kirin_tor_government }
+									}
+								}
+							}
+							is_title_active = c_dalaran
+							government = kirin_tor_government
+							ROOT = {
+								likes_better_than = {
+									who = PREV
+									than = PREVPREVPREV
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					is_title_active = k_dalaran
+					k_dalaran = {
+						holder_scope = {
+							government = kirin_tor_government
+						}
+					}
+				}
+				k_dalaran = {
+					holder_scope = {
+						ROOT = {
+							move_character = PREV
+						}
+						character_event = { id = dalaran.11 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { is_title_active = k_dalaran }
+						k_dalaran = {
+							holder_scope = {
+								NOT = { government = kirin_tor_government }
+							}
+						}
+					}
+					is_title_active = d_dalaran
+					d_dalaran = {
+						holder_scope = {
+							government = kirin_tor_government
+						}
+					}
+				}
+				d_dalaran = {
+					holder_scope = {
+						ROOT = {
+							move_character = PREV
+						}
+						character_event = { id = dalaran.11 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { is_title_active = k_dalaran }
+						NOT = { is_title_active = d_dalaran }
+						k_dalaran = {
+							holder_scope = {
+								NOT = { government = kirin_tor_government }
+							}
+						}
+						d_dalaran = {
+							holder_scope = {
+								NOT = { government = kirin_tor_government }
+							}
+						}
+					}
+					is_title_active = c_dalaran
+					c_dalaran = {
+						holder_scope = {
+							government = kirin_tor_government
+						}
+					}
+				}
+				c_dalaran = {
+					holder_scope = {
+						ROOT = {
+							move_character = PREV
+						}
+						character_event = { id = dalaran.11 }
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.05
+			modifier = {
+				factor = 5
+				trait = mage
+			}
+			modifier = {
+				factor = 5
+				religion = arcane
+			}
+		}
+	}
+	
+	#Ok, ok, the following ones are for corrupting the Sunwell and not elf-exclusive. But whatever.
+	
+	corrupt_sunwell_fel = {
+		is_high_prio = yes
+		potential = {
+			prisoner = no
+			OR = {
+				has_landed_title = c_sunwell_plateau
+				any_realm_character = {
+					has_landed_title = c_sunwell_plateau
+				}
+			}
+			NOR = {
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_destroyed
+				AND = {
+					has_global_flag = wow_bookmark
+					NOT = { has_global_flag = sunwell_purified }
+				}
+			}
+			true_religion = burning_legion
+		}
+		allow = {
+			piety = 1000
+			religion_authority = 0.7
+		}
+		effect = {
+			clr_global_flag = sunwell_restored_naaru
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell
+				remove_building = ct_sunwell
+				remove_building = tp_sunwell
+				remove_building = tb_sunwell
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell_corrupted_fel
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell_corrupted_fel
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell_corrupted_fel
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell_corrupted_fel
+				}
+			}
+			set_global_flag = sunwell_corrupted_fel
+			any_playable_ruler = {
+				limit = {
+					ai = no
+				}
+				narrative_event = { id = sunwell.3 }
+			}
+			change_variable = { which = global_doom value = 10 }
+			c_sunwell_plateau = {
+				location = {
+					if = {
+						limit = {
+							NOT = { check_variable = { which = prov_corruption value = 1 } }
+						}
+						set_variable = { which = prov_corruption value = 0 }
+					}
+					change_variable = { which = prov_corruption value = 10 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { religion = burning_legion }
+				secret_religion = burning_legion
+			}
+		}
+	}
+	
+	corrupt_sunwell_necro = {
+		is_high_prio = yes
+		potential = {
+			prisoner = no
+			OR = {
+				has_landed_title = c_sunwell_plateau
+				any_realm_character = {
+					has_landed_title = c_sunwell_plateau
+				}
+			}
+			NOR = {
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_destroyed
+				AND = {
+					has_global_flag = wow_bookmark
+					NOT = { has_global_flag = sunwell_purified }
+				}
+			}
+			true_religion = lich_king
+		}
+		allow = {
+			piety = 1000
+			religion_authority = 0.7
+		}
+		effect = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell
+				remove_building = ct_sunwell
+				remove_building = tp_sunwell
+				remove_building = tb_sunwell
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell_corrupted_necro
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell_corrupted_necro
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell_corrupted_necro
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell_corrupted_necro
+				}
+			}
+			set_global_flag = sunwell_corrupted_necro
+			any_playable_ruler = {
+				limit = {
+					ai = no
+				}
+				narrative_event = { id = sunwell.4 }
+			}
+			#NOTE FOR LATER: MAKE IT SO THAT IT AUTO-BLIGHTS THE PROVINCE
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOT = { religion = lich_king }
+				secret_religion = lich_king
+			}
+		}
+	}
+	
+	corrupt_sunwell_void = {
+		is_high_prio = yes
+		potential = {
+			prisoner = no
+			OR = {
+				has_landed_title = c_sunwell_plateau
+				any_realm_character = {
+					has_landed_title = c_sunwell_plateau
+				}
+			}
+			NOR = {
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_destroyed
+				AND = {
+					has_global_flag = wow_bookmark
+					NOT = { has_global_flag = sunwell_purified }
+				}
+			}
+			OR = {
+				true_religion = old_gods
+				true_religion = twilights_hammer
+				true_religion = emerald_nightmare
+				true_religion = cult_of_the_infinite
+				true_religion = cult_of_the_destroyer
+				true_religion = azshara
+			}
+		}
+		allow = {
+			piety = 1000
+			religion_authority = 0.7
+		}
+		effect = {
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell
+				remove_building = ct_sunwell
+				remove_building = tp_sunwell
+				remove_building = tb_sunwell
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell_corrupted_void
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell_corrupted_void
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell_corrupted_void
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell_corrupted_void
+				}
+			}
+			set_global_flag = sunwell_corrupted_void
+			any_playable_ruler = {
+				limit = {
+					ai = no
+				}
+				narrative_event = { id = sunwell.5 }
+			}
+			create_character = {
+				age = 200
+				random_traits = yes
+				attributes = {
+					martial = 10
+				}
+				culture = voidwalker
+				female = no
+				religion = old_gods #Should there be a Void religion?
+				trait = voidwalker
+				flag = race_assigned
+			}
+			new_character = {
+				spawn_unit = {
+					province = 146
+					owner = ROOT
+					leader = THIS
+					troops = {
+						light_infantry = { 3000 3000 }
+						mages = { 150 150 }
+						monsters = { 100 100 }
+					}
+					attrition = 0
+					maintenance_multiplier = 0.2
+					can_toggle_looting = no
+					reinforces = no
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOR = {
+					religion = old_gods
+					religion = twilights_hammer
+					religion = emerald_nightmare
+					religion = cult_of_the_infinite
+					religion = cult_of_the_destroyer
+					religion = azshara
+				}
+				OR = {
+					secret_religion = old_gods
+					secret_religion = twilights_hammer
+					secret_religion = emerald_nightmare
+					secret_religion = cult_of_the_infinite
+					secret_religion = cult_of_the_destroyer
+					secret_religion = azshara
+				}
+			}
+		}
+	}
+	
+	sindorei = {
+		is_high_prio = yes
+		potential = {
+			prisoner = no
+			trait = high_elf
+			NOT = { has_global_flag = sindorei }
+			NOT = { has_global_flag = wow_bookmark }
+			OR = {
+				has_global_flag = sunwell_conquered
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_fel
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+			}
+			OR = {
+				has_landed_title = k_silvermoon
+				AND = {
+					higher_tier_than = DUKE
+					OR = {
+						NOT = { is_title_active = k_silvermoon }
+						k_silvermoon = {
+							holder_scope = {
+								NOT = {
+									trait = high_elf
+									trait = blood_elf
+									trait = wretched
+								}
+							}
+						}
+					}
+					independent = yes
+				}
+			}
+		}
+		allow = {
+			NOT = { has_global_flag = sindorei }
+		}
+		effect = {
+			set_global_flag = sindorei
+			culture = blood_elven
+			set_graphical_culture = blood_elven
+			remove_trait = high_elf
+			add_trait = blood_elf
+			any_character = {
+				limit = {
+					NOT = { character = ROOT }
+					trait = high_elf
+					OR = {
+						any_liege = {
+							NOT = { character = ROOT }
+						}
+						liege = {
+							character = ROOT
+						}
+					}
+				}
+				narrative_event = { id = sunwell.6 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	
+	destroy_corrupted_sunwell = {
+		is_high_prio = yes
+		potential = {
+			prisoner = no
+			has_landed_title = c_sunwell_plateau
+			any_realm_character = {
+				has_landed_title = c_sunwell_plateau
+			}
+			OR = {
+				AND = {
+					has_global_flag = sunwell_corrupted_fel
+					NOT = { true_religion = burning_legion }
+				}
+				AND = {
+					has_global_flag = sunwell_corrupted_necro
+					NOT = { true_religion = lich_king }
+				}
+				AND = {
+					has_global_flag = sunwell_corrupted_void
+					NOT = {
+						true_religion = cult_of_the_infinite
+						true_religion = cult_of_the_destroyer
+						true_religion = emerald_nightmare
+						true_religion = old_gods
+						true_religion = twilights_hammer
+						true_religion = azshara
+					}
+				}
+			}
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			clr_global_flag = sunwell_corrupted_fel
+			clr_global_flag = sunwell_corrupted_void
+			clr_global_flag = sunwell_corrupted_necro
+			set_global_flag = sunwell_destroyed
+			b_sunwell_plateau = {
+				remove_building = ca_sunwell_corrupted_fel
+				remove_building = ca_sunwell_corrupted_necro
+				remove_building = ca_sunwell_corrupted_void
+				remove_building = ct_sunwell_corrupted_fel
+				remove_building = ct_sunwell_corrupted_necro
+				remove_building = ct_sunwell_corrupted_void
+				remove_building = tp_sunwell_corrupted_fel
+				remove_building = tp_sunwell_corrupted_necro
+				remove_building = tp_sunwell_corrupted_void
+				remove_building = tb_sunwell_corrupted_fel
+				remove_building = tb_sunwell_corrupted_necro
+				remove_building = tb_sunwell_corrupted_void
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ca_sunwell_destroyed
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = ct_sunwell_destroyed
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tp_sunwell_destroyed
+				}
+				if = {
+					limit = {
+						holding_type = castle
+					}
+					add_building = tb_sunwell_destroyed
+				}
+				any_playable_ruler = {
+					limit = {
+						ai = no
+					}
+					narrative_event = { id = sunwell.11 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	archeology = {
+		potential = {
+			prisoner = no
+			society_rank >= 2
+			society_member_of = reliquary
+			NOR = {
+				trait = infirm
+				trait = incapable
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				text = ISATCOURT # Must be in the court.
+				hidden_tooltip = {
+					NOT = { trait = away_from_court_hidden }
+				}
+			}
+			NOT = { has_character_modifier = recent_expedition }
+			has_society_currency_minor_trigger = yes
+		}
+		effect = {
+			detract_society_currency_minor_effect = yes
+			add_character_modifier = { name = recent_expedition duration = 120 }
+			character_event = { id = helfsoc.14 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				trait = explorer
+			}
+			modifier = {
+				factor = 2
+				trait = brave
+			}
+			modifier = {
+				factor = 0.2
+				trait = craven
+			}
+		}
+	}
+	
+}
+
+title_decisions = {
+	
+	deploy_mana_crystal = {
+		filter = owned
+		ai_target_filter = owned
+		from_potential = {
+			prisoner = no
+			is_landed = yes
+			society_rank >= 2
+			society_member_of = magisters
+		}
+		potential = {
+			tier = COUNT
+			OR = {
+				culture = high_elven
+				culture = blood_elven
+			}
+		}
+		allow = {
+			NOT = {
+				location = {
+					OR = {
+						has_province_modifier = mana_crystal
+						has_province_modifier = burning_crystal
+					}
+				}
+			}
+			FROM = {
+				has_society_currency_major_trigger = yes
+			}
+		}
+		effect = {
+			location = {
+				add_province_modifier = { name = mana_crystal duration = 1800 }
+			}
+			FROM = {
+				detract_society_currency_major_effect = yes
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.2
+				FROM = { in_faction = faction_demonologist }
+			}
+			modifier = {
+				factor = 2
+				FROM = { in_faction = faction_purity }
+			}
+		}
+	}
+	
+	deploy_burning_crystal = {
+		filter = owned
+		ai_target_filter = owned
+		from_potential = {
+			prisoner = no
+			is_landed = yes
+			society_rank >= 3
+			society_member_of = magisters
+			OR = {
+				has_global_flag = sunwell_destroyed
+				has_global_flag = sunwell_corrupted_void
+				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted_fel
+			}
+		}
+		potential = {
+			tier = COUNT
+			OR = {
+				culture = high_elven
+				culture = blood_elven
+			}
+		}
+		allow = {
+			NOT = {
+				location = {
+					OR = {
+						has_province_modifier = mana_crystal
+						has_province_modifier = burning_crystal
+					}
+				}
+			}
+			FROM = {
+				has_society_currency_major_trigger = yes
+			}
+		}
+		effect = {
+			location = {
+				add_province_modifier = { name = burning_crystal duration = 1800 }
+			}
+			FROM = {
+				detract_society_currency_major_effect = yes
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				FROM = { in_faction = faction_demonologist }
+			}
+			modifier = {
+				factor = 0
+				FROM = { in_faction = faction_purity }
+			}
+		}
+	}
+
+	fight_back_corruption = {
+		filter = owned
+		ai_target_filter = sub_realm_owned
+		from_potential = {
+			prisoner = no
+			NOR = {
+				trait = infirm
+				trait = incapable
+			}
+			OR = {
+				AND = {
+					society_rank >= 2
+					society_member_of = farstriders
+				}
+				AND = {
+					society_rank >= 3
+					society_member_of = blood_knights
+				}
+			}
+		}
+		potential = {
+			tier = COUNT
+			location = {
+				check_variable = { which = prov_corruption value = 5 }
+			}
+		}
+		allow = {
+			FROM = {
+				has_society_currency_major_trigger = yes
+			}
+		}
+		effect = {
+			FROM = {
+				detract_society_currency_major_effect = yes
+			}
+			location = {
+				random_list = {
+					5 = {
+						modifier = {
+							factor = 0.5
+							NOT = {
+								FROM = { stewardship = 15 }
+							}
+						}
+						decrease_prov_corruption_nochar = yes
+					}
+					1 = {
+						modifier = {
+							factor = 2
+							NOT = {
+								FROM = { stewardship = 15 }
+							}
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				FROM = {is_landed = no
+					NOT = {
+						liege = {
+							reverse_opinion = {
+								who = FROM
+								value = 0
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	establish_lodge = {
+		filter = all # At least only one character can do this.
+		ai_target_filter = all
+		from_potential = {
+			prisoner = no
+			society_rank >= 4
+			society_member_of = farstriders
+		}
+		potential = {
+			tier = COUNT
+			hidden_tooltip = {
+				OR = {
+					FROM = { ai = no }
+					holder_scope = {
+						reverse_opinion = {
+							who = FROM
+							value = 50
+						}
+					}
+				}
+			}
+			location = {
+				has_empty_holding = yes
+			}
+		}
+		allow = {
+			FROM = {
+				has_society_currency_major_trigger = yes
+			}
+			holder_scope = {
+				NOT = { is_rival = FROM }
+				NOT = { war_with = FROM }
+				NOT = { government = nomadic_government }
+				NOT = { government = tribal_government }
+				OR = {
+					AND = {
+						religion = burning_legion
+						FROM = { religion = burning_legion }
+					}
+					AND = {
+						religion = lich_king
+						FROM = { religion = lich_king }
+					}
+					AND = {
+						OR = {
+							religion = cult_of_the_destroyer
+							religion = cult_of_the_infinite
+							religion = azshara
+							religion = old_gods
+							religion = twilights_hammer
+							religion = emerald_nightmare
+						}
+						FROM = {
+							OR = {
+								religion = cult_of_the_destroyer
+								religion = cult_of_the_infinite
+								religion = azshara
+								religion = old_gods
+								religion = twilights_hammer
+								religion = emerald_nightmare
+							}
+						}
+					}
+					AND = {
+						NOR = {
+							religion = cult_of_the_destroyer
+							religion = cult_of_the_infinite
+							religion = azshara
+							religion = old_gods
+							religion = twilights_hammer
+							religion = emerald_nightmare
+							religion = burning_legion
+							religion = lich_king
+						}
+						FROM = {
+							NOR = {
+								religion = cult_of_the_destroyer
+								religion = cult_of_the_infinite
+								religion = azshara
+								religion = old_gods
+								religion = twilights_hammer
+								religion = emerald_nightmare
+								religion = burning_legion
+								religion = lich_king
+							}
+						}
+					}
+				}
+				NOT = { has_character_modifier = asked_for_lodge }
+			}
+		}
+		effect = {
+			FROM = {
+				detract_society_currency_major_effect = yes
+			}
+			save_event_target_as = lodge_location
+			holder_scope = {
+				letter_event = { id = helfsoc.8 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				FROM = { in_faction = faction_isolationist }
+			}
+			modifier = {
+				factor = 2
+				FROM = { in_faction = faction_interventionist }
+			}
+		}
+	}
+	
+	reclaim_site = {
+		is_high_prio = yes
+		filter = all # No choice
+		ai_target_filter = all
+		from_potential = {
+			prisoner = no
+			society_rank >= 4
+			society_member_of = blood_knights
+		}
+		potential = {
+			is_holy_site = FROM
+			holder_scope = {
+				NOT = { same_realm = FROM }
+			}
+		}
+		allow = {
+			FROM = {
+				has_society_currency_major_trigger = yes
+				NOT = { has_character_modifier = recent_holy_claim }
+			}
+		}
+		effect = {
+			save_event_target_as = reclaim_loc
+			FROM = {
+				save_event_target_as = bk_leader
+				detract_society_currency_major_effect = yes
+				add_character_modifier = { name = recent_holy_claim duration = 220 }
+				add_pressed_claim = PREV
+				k_silvermoon = {
+					holder_scope = {
+						letter_event = { id = helfsoc.24 }
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	
+}
+
+targetted_decisions = {
+	
+	mind_control = {
+		filter = sub_realm
+		ai_target_filter = sub_realm
+		from_potential = {
+			prisoner = no
+			NOT = { trait = incapable }
+			society_rank >= 3
+			society_member_of = magisters
+		}
+		potential = {
+			ai = yes
+		}
+		allow = {
+			FROM = {
+				has_society_currency_major_trigger = yes
+			}
+			NOR = {
+				liege = {
+					has_opinion_modifier = {
+						who = FROM
+						modifier = mind_control
+					}
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = mind_control_fail
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				detract_society_currency_major_effect = yes
+			}
+			random_list = {
+				5 = {
+					modifier = {
+						factor = 0.5
+						learning = 15
+					}
+					character_event = { id = helfsoc.2 }
+				}
+				1 = {
+					modifier = {
+						factor = 2
+						FROM = {
+							NOT = { learning = 15 }
+						}
+					}
+					character_event = { id = helfsoc.4 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_landed = no
+				NOT = {
+					liege = {
+						reverse_opinion = {
+							who = FROM
+							value = 0
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0.2
+				is_landed = no
+				NOT = {
+					liege = {
+						reverse_opinion = {
+							who = FROM
+							value = 50
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	order_research = {
+		filter = realm
+		ai_target_filter = realm
+		from_potential = {
+			prisoner = no
+			society_rank >= 4
+			OR = {
+				society_member_of = magisters
+				society_member_of = reliquary
+			}
+		}
+		potential = {
+			prisoner = no
+			NOR = {
+				trait = infirm
+				trait = incapable
+			}
+			OR = {
+				AND = {
+					society_member_of = magisters
+					FROM = { society_member_of = magisters }
+				}
+				AND = {
+					society_member_of = reliquary
+					FROM = { society_member_of = reliquary }
+				}
+			}
+			is_landed = no
+		}
+		allow = {
+			FROM = {
+				has_society_currency_minor_trigger = yes
+			}
+			NOT = { has_character_modifier = researched_recently }
+		}
+		effect = {
+			FROM = {
+				detract_society_currency_minor_effect = yes
+			}
+			random_list = {
+				5 = {
+					modifier = {
+						factor = 0.7
+						NOT = { learning = 15 }
+					}
+					prestige = 20
+					k_silvermoon = {
+						holder_scope = {
+							random_list = {
+								1 = {
+									culture_techpoints = 50
+								}
+								1 = {
+									economy_techpoints = 50
+								}
+								1 = {
+									military_techpoints = 50
+								}
+							}
+						}
+					}
+					FROM = { character_event = { id = helfsoc.6 } }
+				}
+				1 = {
+					modifier = {
+						factor = 2
+						NOT = { learning = 15 }
+					}
+					FROM = { character_event = { id = helfsoc.7 } }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_landed = no
+				NOT = {
+					k_silvermoon = {
+						holder_scope = {
+							reverse_opinion = {
+								who = FROM
+								value = 0
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	persuade_to_join_faction = {
+		filter = realm
+		ai_target_filter = sub_realm
+		from_potential = {
+			prisoner = no
+			society_rank >= 2
+			society_member_of = sunreavers
+			in_faction = yes
+		}
+		potential = {
+			in_faction = no
+			is_ruler = yes
+			OR = {
+				trait = blood_elf
+				trait = high_elf
+				AND = {
+					trait = wretched
+					FROM = { NOT = { in_faction = faction_purity } }
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				has_society_currency_minor_trigger = yes
+			}
+			NOT = { has_character_modifier = persuasion_attempt }
+		}
+		effect = {
+			FROM = {
+				detract_society_currency_minor_effect = yes
+			}
+			letter_event = { id = helfsoc.25 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				FROM = { trait = gregarious }
+			}
+			modifier = {
+				factor = 0
+				FROM = { trait = shy }
+			}
+		}
+	}
+	
+	send_diplomat_domestic = {
+		filter = realm
+		ai_target_filter = sub_realm
+		from_potential = {
+			prisoner = no
+			society_rank >= 3
+			society_member_of = sunreavers
+		}
+		potential = {
+			is_ruler = yes
+			same_realm = FROM
+		}
+		allow = {
+			FROM = {
+				has_society_currency_minor_trigger = yes
+			}
+			NOT = { has_character_modifier = diplo_mission_domestic }
+		}
+		effect = {
+			FROM = {
+				detract_society_currency_minor_effect = yes
+			}
+			k_silvermoon = {
+				holder_scope = {
+					save_event_target_as = qt_king
+				}
+			}
+			add_character_modifier = { name = diplo_mission_domestic duration = 120 }
+			character_event = { id = helfsoc.28 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				FROM = { trait = gregarious }
+			}
+			modifier = {
+				factor = 0
+				FROM = { trait = shy }
+			}
+			modifier = {
+				factor = 2
+				k_silvermoon = {
+					holder_scope = {
+						NOT = { reverse_opinion = { who = ROOT value = 50 } }
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				k_silvermoon = {
+					holder_scope = {
+						reverse_opinion = { who = ROOT value = 50 }
+					}
+				}
+			}
+		}
+	}
+	
+	persuade_to_leave_isolation_faction = {
+		filter = realm
+		ai_target_filter = sub_realm
+		from_potential = {
+			prisoner = no
+			society_rank >= 3
+			society_member_of = sunreavers
+		}
+		potential = {
+			is_ruler = yes
+			same_realm = FROM
+			in_faction = faction_isolationist
+		}
+		allow = {
+			FROM = {
+				has_society_currency_minor_trigger = yes
+			}
+			NOT = { has_character_modifier = persuasion_attempt }
+		}
+		effect = {
+			FROM = {
+				detract_society_currency_minor_effect = yes
+			}
+			add_character_modifier = { name = persuasion_attempt duration = 120 }
+			letter_event = { id = helfsoc.29 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				FROM = { trait = gregarious }
+			}
+			modifier = {
+				factor = 0
+				FROM = { trait = shy }
+			}
+		}
+	}
+	
+	send_diplomat_foreign = {
+		filter = all
+		ai_target_filter = all
+		from_potential = {
+			prisoner = no
+			society_rank >= 4
+			society_member_of = sunreavers
+		}
+		potential = {
+			is_ruler = yes
+			prisoner = no
+			has_regent = no
+			NOT = { same_realm = FROM }
+			k_silvermoon = {
+				holder_scope = {
+					NOT = { war_with = ROOT }
+					NOT = { has_non_aggression_pact_with = ROOT }
+					NOT = { is_allied_with = ROOT }
+					NOT = { is_rival = ROOT }
+					OR = {
+						AND = {
+							religion = burning_legion
+							ROOT = { religion = burning_legion }
+						}
+						AND = {
+							religion = lich_king
+							ROOT = { religion = lich_king }
+						}
+						AND = {
+							OR = {
+								religion = cult_of_the_destroyer
+								religion = cult_of_the_infinite
+								religion = azshara
+								religion = old_gods
+								religion = twilights_hammer
+								religion = emerald_nightmare
+							}
+							ROOT = {
+								OR = {
+									religion = cult_of_the_destroyer
+									religion = cult_of_the_infinite
+									religion = azshara
+									religion = old_gods
+									religion = twilights_hammer
+									religion = emerald_nightmare
+								}
+							}
+						}
+						AND = {
+							NOR = {
+								religion = cult_of_the_destroyer
+								religion = cult_of_the_infinite
+								religion = azshara
+								religion = old_gods
+								religion = twilights_hammer
+								religion = emerald_nightmare
+								religion = burning_legion
+								religion = lich_king
+							}
+							ROOT = {
+								NOR = {
+									religion = cult_of_the_destroyer
+									religion = cult_of_the_infinite
+									religion = azshara
+									religion = old_gods
+									religion = twilights_hammer
+									religion = emerald_nightmare
+									religion = burning_legion
+									religion = lich_king
+								}
+							}
+						}
+					}
+				}
+			}
+			NOT = { government = nomadic_government }
+			NOT = { government = tribal_government }
+		}
+		allow = {
+			FROM = {
+				has_society_currency_major_trigger = yes
+			}
+			k_silvermoon = {
+				holder_scope = {
+					has_character_flag = supports_isolationists
+				}
+			}
+			NOT = { has_character_modifier = persuasion_attempt }
+		}
+		effect = {
+			add_character_modifier = { name = persuasion_attempt duration = 120 }
+			k_silvermoon = {
+				holder_scope = {
+					save_event_target_as = qt_king
+				}
+			}
+			FROM = {
+				detract_society_currency_major_effect = yes
+				save_event_target_as = sr_leader
+			}
+			save_event_target_as = diplo_target
+			add_character_modifier = { name = persuasion_attempt duration = 365 }
+			FROM = {
+				k_silvermoon = {
+					holder_scope = {
+						letter_event = { id = helfsoc.33 }
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				FROM = { trait = gregarious }
+			}
+			modifier = {
+				factor = 0
+				FROM = { trait = shy }
+			}
+		}
+	}
+	
+	elfking_intervene_war = {
+		filter = all
+		ai_target_filter = all
+		from_potential = {
+			war = no
+			has_landed_title = k_silvermoon
+		}
+		potential = {
+			independent = yes
+			war = yes
+			OR = {
+				is_primary_war_attacker = yes
+				is_primary_war_defender = yes
+			}
+			OR = {
+				is_friend = FROM
+				FROM = {
+					any_non_aggression_pact_character = {
+						character = ROOT
+					}
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				prestige = 50
+			}
+		}
+		effect = {
+			FROM = {
+				prestige = -50
+				ROOT = {
+					letter_event = { id = elfpol.21 }
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

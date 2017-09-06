@@ -1,0 +1,147 @@
+dragon_whelp = {
+	potential = {
+		NOT = { age = 20 }
+		OR = {
+			trait = dragon_red
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+		}
+	}
+	education = yes
+	fertility = -10
+	
+	diplomacy = 1
+	martial = 1
+	stewardship = 1
+	intrigue = 1
+	learning = 1
+}
+
+dragon_drake = {
+	potential = {
+		age = 20
+		NOT = { age = 200 }
+		OR = {
+			trait = dragon_red
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+		}
+	}
+	education = yes
+	fertility = -0.3
+	
+	diplomacy = 5
+	martial = 5
+	stewardship = 5
+	intrigue = 5
+	learning = 5
+	combat_rating = 2
+}
+
+dragon_dragon = {
+	potential = {
+		age = 200
+		NOT = { age = 500 }
+		OR = {
+			trait = dragon_red
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+		}
+	}
+	education = yes
+	
+	diplomacy = 10
+	martial = 10
+	stewardship = 10
+	intrigue = 10
+	learning = 10
+	combat_rating = 4
+}
+
+dragon_wyrm = {
+	potential = {
+		age = 200
+		NOT = { age = 1000 }
+		OR = {
+			trait = dragon_red
+			trait = dragon_black
+			trait = dragon_blue
+			trait = dragon_bronze
+			trait = dragon_green
+			trait = dragon_infinite
+			trait = dragon_nightmare
+		}
+	}
+	education = yes
+	
+	diplomacy = 20
+	martial = 20
+	stewardship = 20
+	intrigue = 20
+	learning = 20
+	combat_rating = 8
+}
+
+elemental_elemental = {
+	potential = {
+		OR = {
+			trait = elemental_air
+			trait = elemental_earth
+			trait = elemental_fire
+			trait = elemental_water
+		}
+		NOR = {
+			has_landed_title = e_skywall
+			has_landed_title = e_deepholm
+			has_landed_title = e_fireland
+			has_landed_title = e_abyssal_maw
+		}
+	}
+	education = yes
+	
+	diplomacy = 2
+	martial = 2
+	stewardship = 2
+	intrigue = 2
+	learning = 2
+	
+	combat_rating = 2
+}
+
+elemental_lord = {
+	potential = {
+		OR = {
+			trait = elemental_air
+			trait = elemental_earth
+			trait = elemental_fire
+			trait = elemental_water
+		}
+		OR = {
+			has_landed_title = e_skywall
+			has_landed_title = e_deepholm
+			has_landed_title = e_fireland
+			has_landed_title = e_abyssal_maw
+		}
+	}
+	education = yes
+	
+	diplomacy = 10
+	martial = 10
+	stewardship = 10
+	intrigue = 10
+	learning = 10
+	
+	combat_rating = 5
+}

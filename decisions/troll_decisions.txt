@@ -1,0 +1,265 @@
+decisions = {
+	
+	pick_loa = {
+		potential = {
+			OR = {
+				trait = troll_sand
+				trait = troll_dark
+				trait = troll_zandalari
+				trait = troll_ice
+				trait = troll_forest
+				trait = troll_jungle
+			}
+			culture_group = troll
+			religion = loa
+			NOT = { has_character_flag = picked_loa }
+		}
+		allow = {
+			piety = 50
+		}
+		effect = {
+			piety = -50
+			character_event = { id = loah.3 }
+			set_character_flag = picked_loa
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.7
+			modifier = {
+				factor = 0.1
+				OR = {
+					trait = cynical
+					has_secret_religion = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+		}
+	}
+	
+	sacrifice_limb = {
+		potential = {
+			religion = hakkar
+			NOT = { trait = hakkar_trait }
+			NOT = { has_character_modifier = sacrificed_hakkar }
+		}
+		allow = {
+			OR = {
+				AND = {
+					NOT = { has_dlc = "Reapers"}
+					NOT = { trait = maimed }
+				}
+				AND = {
+					trait = one_eyed
+					trait = one_legged
+					trait = one_handed
+					trait = disfigured
+					trait = mangled
+				}
+			}
+		}
+		effect = {
+			character_event = { id = loah.28 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.1
+				OR = {
+					trait = cynical
+					has_secret_religion = yes
+				}
+			}
+			modifier = {
+				factor = 1.3
+				trait = zealous
+			}
+		}
+	}
+	
+	reform_zul = {
+		potential = {
+			OR = {
+				trait = troll_sand
+				trait = troll_dark
+				trait = troll_zandalari
+				trait = troll_ice
+				trait = troll_forest
+				trait = troll_jungle
+				trait = hakkar_trait
+			}
+			culture_group = troll
+			NOT = { is_title_active = e_zul }
+		}
+		allow = {
+			prestige = 1000
+			independent = yes
+			has_landed_title = e_gurubashi
+			has_landed_title = e_amani
+		}
+		effect = {
+			character_event = { id = trollevt.7 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 01
+		}
+	}
+	
+}
+
+targeted_decisions = {
+	
+	offer_vassalization = {
+		filter = home_court
+		ai_target_filter = home_court
+		
+		from_potential = {
+			OR = {
+				trait = troll_sand
+				trait = troll_dark
+				trait = troll_zandalari
+				trait = troll_ice
+				trait = troll_forest
+				trait = troll_jungle
+				trait = hakkar_trait
+			}
+			culture_group = troll
+			independent = yes
+			higher_real_tier_than = ROOT
+		}
+		
+		potential = {
+			OR = {
+				trait = troll_sand
+				trait = troll_dark
+				trait = troll_zandalari
+				trait = troll_ice
+				trait = troll_forest
+				trait = troll_jungle
+			}
+			culture_group = troll
+			prisoner = yes
+			is_landed = yes
+			NOT = { same_realm = FROM }
+			NOT = { is_liege_or_above = FROM }
+		}
+		
+		allow = {
+			NOT = { is_rival = FROM }
+			NOT = {
+				liege = {
+					is_friend = ROOT
+				}
+			}
+			NOT = { has_character_modifier = asked_to_bend_knee }
+			OR = {
+				independent = yes
+				AND = {
+					NOT = {
+						any_liege = {
+							dynasty = ROOT
+						}
+					}
+					any_demesne_province = {
+						any_neighbor_province = {
+							owner = {
+								OR = {
+									character = FROM
+									top_liege = {
+										character = FROM
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {  # To make sure the event's FROM is right
+				ROOT = {
+					character_event = { id = trollevt.5 }
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	
+	perform_sacrifice = {
+		filter = home_court
+		ai_target_filter = home_court
+		
+		from_potential = {
+			OR = {
+				trait = troll_sand
+				trait = troll_dark
+				trait = troll_zandalari
+				trait = troll_ice
+				trait = troll_forest
+				trait = troll_jungle
+				trait = hakkar_trait
+			}
+			culture_group = troll
+			OR = {
+				religion = loa
+				religion = hakkar
+			}
+		}
+		
+		potential = {
+			prisoner = yes
+		}
+		
+		allow = {
+			FROM = {
+				NOT = {
+					has_character_modifier = sacrificed_recently
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {  # To make sure the event's FROM is right
+				character_event = { id = loah.26 }
+				ROOT = {
+					character_event = { id = loah.27 }
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+	
+}

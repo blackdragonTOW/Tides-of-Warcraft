@@ -1,0 +1,1549 @@
+namespace = helfsoc
+
+#Burning crystal causing corruption
+province_event = {
+	id = helfsoc.1
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 1
+		modifier = {
+			factor = 5
+			always = no
+			#runestones up
+		}
+	}
+	
+	trigger = {
+		has_province_modifier = burning_crystal
+	}
+	
+	immediate = {
+		county = {
+			prov_corruption_fel = yes
+		}
+	}
+}
+
+#Mind control succeeds
+character_event = {
+	id = helfsoc.2
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		liege = {
+			ROOT = {
+				opinion = { modifier = mind_control who = PREV years = 3 }
+			}
+		}
+		FROM = {
+			character_event = { id = helfsoc.3 }
+		}
+	}
+}
+
+character_event = {
+	id = helfsoc.3
+	desc = EVTDESCHELFSOC.3 # The mind control spell on [From.GetBestName] has worked and [From.GetSheHe] is now loyal to [From.GetHerHis] liege, as it should be.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Mind control fails
+character_event = {
+	id = helfsoc.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		opinion = { modifier = mind_control_fail who = FROM years = 3 }
+		FROM = {
+			character_event = { id = helfsoc.5 }
+		}
+	}
+}
+
+character_event = {
+	id = helfsoc.5
+	desc = EVTDESCHELFSOC.5 # The mind control spell on [From.GetBestName] has failed and [From.GetSheHe] is now more than a bit angry towards you.
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+	}
+}
+
+#Research succesful
+character_event = {
+	id = helfsoc.6
+	notification = yes
+	desc = EVTDESCHELFSOC.6 # The research performed by [From.GetBestName] has borne fruit and the results have already been sent to Silvermoon so they can be applied.
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Research fails
+character_event = {
+	id = helfsoc.7
+	notification = yes
+	desc = EVTDESCHELFSOC.7 # [From.GetBestName] has failed to come up with anything useful as part of the research you ordered.
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Ask for lodge rights
+letter_event = {
+	id = helfsoc.8
+	desc = EVTDESCHELFSOC.8 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nI hereby request your permission to establish a hunting lodge for my Farstriders in [lodge_location.GetName]./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_character_modifier = { name = asked_for_lodge duration = 1080 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { trait = greedy }
+		}
+		name = EVTDESCHELFSOC.8a # Very well, you may build your lodge.
+		FROM = { letter_event = { id = helfsoc.9 } }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { trait = charitable }
+		}
+		name = EVTDESCHELFSOC.8b # Perhaps I'll allow it... for a price.
+		FROM = { letter_event = { id = helfsoc.10 } }
+	}
+	
+	option = {
+		name = EVTDESCHELFSOC.8c # You may not.
+		FROM = { letter_event = { id =  helfsoc.13 } }
+	}
+}
+
+letter_event = {
+	id = helfsoc.9
+	desc = EVTDESCHELFSOC.9 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nI will allow you to build a farstrider lodge at [lodge_location.GetName]./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		event_target:lodge_location = {
+			random_province_holding = {
+				build_holding = { title = THIS type = castle holder = ROOT }
+			}
+		}
+		clear_event_target = lodge_location
+		FROM = { set_truce = { who = ROOT years = 10 } }
+	}
+}
+
+letter_event = {
+	id = helfsoc.10
+	desc = EVTDESCHELFSOC.10 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nI will allow you to build a farstrider lodge at [lodge_location.GetName], but only in return for monetary compensation./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			wealth = 50
+		}
+		name = EVTOPTHELFSOC.10a # Very well.
+		transfer_scaled_wealth = { from = ROOT to = FROM value = 0.2 min = 50 }
+		FROM = { letter_event = { id = helfsoc.11 } }
+	}
+	
+	option = {
+		name = EVTOPTHELFSOC.10b # Not worth it.
+		clear_event_target = lodge_location
+		FROM = { letter_event = { id = helfsoc.12 } }
+	}
+}
+
+letter_event = {
+	id = helfsoc.11
+	desc = EVTDESCHELFSOC.11 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nI agree to your terms. The compensation you demand is included in this message./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		event_target:lodge_location = {
+			random_province_holding = {
+				build_holding = { title = THIS type = castle holder = FROM }
+			}
+		}
+		clear_event_target = lodge_location
+		set_truce = { who = FROM years = 10 }
+	}
+}
+
+letter_event = {
+	id = helfsoc.12
+	desc = EVTDESCHELFSOC.12 # To the [GetFromRootInsult] [Root.GetTitledName],/n/nI shall not let you turn my generous offer into an opportunity for extortion./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+letter_event = {
+	id = helfsoc.13
+	desc = EVTDESCHELFSOC.13 # To the [GetFromRootInsult] [Root.GetTitledName],/n/n[lodge_location.GetName] belongs to me, and me alone. You may not build your little summer retreat there../n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+#Archeology
+character_event = {
+	id = helfsoc.14
+	desc = EVTDESCHELFSOC.14 # Hearing of a promising archeological site, you quickly pack your tools and hire the necessary help before setting off. After some days of travel you finally arrive at the digsite. What wonders will you find here, you wonder?
+	picture = GFX_evt_experiment
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTHELFSOC.14a # Let's find out!
+		custom_tooltip = { text = EVTTOOLTIPHELFSOC.14a } # This will take some time.
+		hidden_tooltip = {
+			add_trait = away_from_court_hidden
+			random_list = {
+				8 = {
+					set_character_flag = archeology_gold_minor
+				}
+				5 = {
+					set_character_flag = archeology_gold_medium
+				}
+				5 = {
+					set_character_flag = archeology_tech_minor
+				}
+				5 = {
+					set_character_flag = archeology_nothing
+				}
+				1 = {
+					set_character_flag = archeology_gold_major
+				}
+				1 = {
+					set_character_flag = archeology_tech_major
+				}
+			}
+			character_event = { id = helfsoc.15 days = 20 random = 20 }
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = EVTOPTHELFSOC.14b # I think I made a mistake coming here.
+		prestige = -10
+	}
+}
+
+character_event = {
+	id = helfsoc.15
+	desc = {
+		trigger = {
+			has_character_flag = archeology_gold_minor
+		}
+		text = EVTDESCHELFSOC.15a # After many days of excavation you finally find something worthwhile, a small chest filled with valuables.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = archeology_gold_medium
+		}
+		text = EVTDESCHELFSOC.15b # After many days of excavation you finally find something worthwhile, a stash of various treasures!
+	}
+	desc = {
+		trigger = {
+			has_character_flag = archeology_gold_major
+		}
+		text = EVTDESCHELFSOC.15c # After many days of excavation you finally find something worthwhile, a large treasure trove!
+	}
+	desc = {
+		trigger = {
+			has_character_flag = archeology_tech_minor
+		}
+		text = EVTDESCHELFSOC.15d # After many days of excavation you finally find something worthwhile, a small collection of scrolls detailing forgotten technologies.
+	}
+	desc = {
+		trigger = {
+			has_character_flag = archeology_tech_major
+		}
+		text = EVTDESCHELFSOC.15e # After many days of excavation you finally find something worthwhile, a veritable library of scrolls detailing forgotten technologies!
+	}
+	desc = {
+		trigger = {
+			has_character_flag = archeology_nothing
+		}
+		text = EVTDESCHELFSOC.15f # After many days of excavation without any reward you finally accept that there likely is nothing in this site for you to find.
+	}
+	picture = GFX_evt_experiment
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			OR = {
+				has_character_flag = archeology_gold_minor
+				has_character_flag = archeology_gold_medium
+				has_character_flag = archeology_tech_minor
+			}
+		}
+		name = OK
+		if = {
+			limit = {
+				has_character_flag = archeology_gold_minor
+			}
+			wealth = 50
+		}
+		if = {
+			limit = {
+				has_character_flag = archeology_gold_medium
+			}
+			wealth = 100
+		}
+		if = {
+			limit = {
+				has_character_flag = archeology_tech_minor
+			}
+			if = {
+				limit = {
+					is_landed = no
+				}
+				liege = {
+					primary_title = {
+						holder_scope = {
+							random_list = {
+								1 = {
+									culture_techpoints = 50
+								}
+								1 = {
+									economy_techpoints = 50
+								}
+								1 = {
+									military_techpoints = 50
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_landed = yes
+				}
+				primary_title = {
+					holder_scope = {
+						random_list = {
+							1 = {
+								culture_techpoints = 50
+							}
+							1 = {
+								economy_techpoints = 50
+							}
+							1 = {
+								military_techpoints = 50
+							}
+						}
+					}
+				}
+			}
+		}
+		clr_character_flag = archeology_gold_minor
+		clr_character_flag = archeology_gold_medium
+		clr_character_flag = archeology_tech_minor
+		remove_trait = away_from_court_hidden
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				has_character_flag = archeology_gold_major
+				has_character_flag = archeology_tech_major
+			}
+		}
+		if = {
+			limit = {
+				has_character_flag = archeology_gold_major
+			}
+			wealth = 200
+		}
+		if = {
+			limit = {
+				has_character_flag = archeology_tech_major
+			}
+			if = {
+				limit = {
+					is_landed = no
+				}
+				liege = {
+					primary_title = {
+						holder_scope = {
+							random_list = {
+								1 = {
+									culture_techpoints = 150
+								}
+								1 = {
+									economy_techpoints = 150
+								}
+								1 = {
+									military_techpoints = 150
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_landed = yes
+				}
+				primary_title = {
+					holder_scope = {
+						random_list = {
+							1 = {
+								culture_techpoints = 150
+							}
+							1 = {
+								economy_techpoints = 150
+							}
+							1 = {
+								military_techpoints = 150
+							}
+						}
+					}
+				}
+			}
+		}
+		name = AKGREAT
+		clr_character_flag = archeology_gold_major
+		clr_character_flag = archeology_tech_major
+		remove_trait = away_from_court_hidden
+	}
+	
+	option = {
+		trigger = {
+			has_character_flag = archeology_nothing
+		}
+		name = AKDAMN
+		clr_character_flag = archeology_nothing
+		remove_trait = away_from_court_hidden
+	}
+}
+
+#tactics training
+character_event = { # As a note, I'll be using the WoL localisations so I don't have to pretty much repeat them in our own files.
+	id = helfsoc.16
+	desc = EVTDESCHELFSOC.16 # In which of these areas would you like to specialize?
+	picture = GFX_evt_war_planning
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+			NOT = { trait = light_foot_leader }
+			NOT = { trait = heavy_infantry_leader }
+			NOT = { trait = cavalry_leader }
+		}
+		name = EVTOPTHELFSOC.16a # In a specific type of troops.
+		character_event = { id = helfsoc.19 }
+	}
+	
+	option = {
+		trigger = {
+			NOT = { trait = flat_terrain_leader }
+			NOT = { trait = rough_terrain_leader }
+			NOT = { trait = mountain_terrain_leader }
+			NOT = { trait = desert_terrain_leader }
+			NOT = { trait = winter_soldier }
+		}
+		name = EVTOPTHELFSOC.16b # In a specific type of terrain.
+		character_event = { id = helfsoc.17 }
+	}
+	
+	option = {
+		name = EVTOPTHELFSOC.16c # In another area of strategy.
+		character_event = { id = helfsoc.20 }
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = EVTOPTHELFSOC.16d # I'll choose later.
+	}
+}
+
+character_event = {
+	id = helfsoc.17
+	desc = EVTDESCHELFSOC.16 # In which of these areas would you like to specialize?
+	picture = GFX_evt_war_planning
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_WOL_11302 # Flat Terrain
+		trigger = {
+			NOT = { trait = flat_terrain_leader }
+		}
+		add_trait = flat_terrain_leader
+	}
+	option = {
+		name = EVTOPTB_WOL_11302 # Rough Terrain
+		trigger = {
+			NOT = { trait = rough_terrain_leader }
+		}
+		add_trait = rough_terrain_leader
+	}
+	option = {
+		name = EVTOPTC_WOL_11302 # Mountain Terrain
+		trigger = {
+			NOT = { trait = mountain_terrain_leader }
+		}
+		add_trait = mountain_terrain_leader
+	}
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = helfsoc.18 }
+	}
+}
+
+character_event = {
+	id = helfsoc.18
+	desc = EVTDESCHELFSOC.16 # In which of these areas would you like to specialize?
+	picture = GFX_evt_war_planning
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTD_WOL_11302 # Desert Terrain
+		trigger = {
+			NOT = { trait = desert_terrain_leader }
+		}
+		add_trait = desert_terrain_leader
+	}
+	option = {
+		name = EVTOPTE_WOL_11302 # Winter Soldier
+		trigger = {
+			NOT = { trait = winter_soldier }
+		}
+		add_trait = winter_soldier
+	}
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = OPTIONS_BACK
+		character_event = { id = helfsoc.16 }
+	}
+}
+
+character_event = {
+	id = helfsoc.19
+	desc = EVTDESCHELFSOC.16 # In which of these areas would you like to specialize?
+	picture = GFX_evt_war_planning
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_WOL_11301 # Light Infantry
+		trigger = {
+			NOT = { trait = light_foot_leader }
+		}
+		add_trait = light_foot_leader
+	}
+	option = {
+		name = EVTOPTB_WOL_11301 # Heavy Infantry
+		trigger = {
+			NOT = { trait = heavy_infantry_leader }
+		}
+		add_trait = heavy_infantry_leader
+	}
+	option = {
+		name = EVTOPTC_WOL_11301 # Cavalry
+		trigger = {
+			NOT = { trait = cavalry_leader }
+		}
+		add_trait = cavalry_leader
+	}
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = OPTIONS_BACK
+		character_event = { id = helfsoc.16 }
+	}
+}
+
+character_event = {
+	id = helfsoc.20
+	desc = EVTDESCHELFSOC.16 # In which of these areas would you like to specialize?
+	picture = GFX_evt_war_planning
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_WOL_11303 # Centre
+		trigger = {
+			NOT = { trait = experimenter }
+		}
+		add_trait = experimenter
+	}
+	option = {
+		name = EVTOPTB_WOL_11303 # Flanks
+		trigger = {
+			NOT = { trait = flanker }
+		}
+		add_trait = flanker
+	}
+	option = {
+		name = EVTOPTC_WOL_11303 # Narrow Flanks
+		trigger = {
+			NOT = { trait = narrow_flank_leader }
+		}
+		add_trait = narrow_flank_leader
+	}
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = helfsoc.21 }
+	}
+}
+
+character_event = {
+	id = helfsoc.21
+	desc = EVTDESCHELFSOC.16 # In which of these areas would you like to specialize?
+	picture = GFX_evt_war_planning
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTD_WOL_11303 # Trickster
+		trigger = {
+			NOT = { trait = trickster }
+		}
+		add_trait = trickster
+	}
+	option = {
+		name = EVTOPTA_WOL_11304 # Inpiring Leader
+		trigger = {
+			NOT = { trait = inspiring_leader }
+		}
+		add_trait = inspiring_leader
+	}
+	option = {
+		name = EVTOPTB_WOL_11304 # Sieges
+		trigger = {
+			NOT = { trait = siege_leader }
+		}
+		add_trait = siege_leader
+	}
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = helfsoc.22 }
+	}
+}
+
+character_event = {
+	id = helfsoc.22
+	desc = EVTDESCHELFSOC.16 # In which of these areas would you like to specialize?
+	picture = GFX_evt_war_planning
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTC_WOL_11304 # Organizer
+		trigger = {
+			NOT = { trait = organizer }
+		}
+		add_trait = organizer
+	}
+	option = {
+		name = EVTOPTA_WOL_11305 # Offense
+		trigger = {
+			NOT = { trait = aggressive_leader }
+		}
+		add_trait = aggressive_leader
+	}
+	option = {
+		name = EVTOPTB_WOL_11305 # Defense
+		trigger = {
+			NOT = { trait = defensive_leader }
+		}
+		add_trait = defensive_leader
+	}
+	option = {
+		name = OPTIONS_MORE
+		character_event = { id = helfsoc.23 }
+	}
+}
+
+character_event = {
+	id = helfsoc.23
+	desc = EVTDESCHELFSOC.16 # In which of these areas would you like to specialize?
+	picture = GFX_evt_war_planning
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTC_WOL_11305 # Unyielding
+		trigger = {
+			NOT = { trait = unyielding_leader }
+		}
+		add_trait = unyielding_leader
+	}
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = OPTIONS_BACK
+		character_event = { id = helfsoc.16 }
+	}
+}
+
+#Reclaim site
+letter_event = {
+	id = helfsoc.24
+	desc = EVTDESCHELFSOC.24 # My liege,/n/nIt is imperative that we reclaim [event_target:reclaim_loc.GetName], as it is an area of vital interest to the kingdom. As such, I am giving you my full support for this action./n/nSigned, [bk_leader.GetTitledName].
+	border = GFX_event_letter_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		event_target:reclaim_loc = {
+			add_pressed_claim = ROOT
+		}
+		clear_event_target = reclaim_loc
+		clear_event_target = bk_leader
+	}
+}
+
+letter_event = {
+	id = helfsoc.25
+	desc = EVTDESCHELFSOC.25 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nIt has come to my attention that you have no stance at all in the realm's politics! As such, I find myself compelled to help you understand your patriotic duty. Would you join my political faction so we may strive together for a better Quel'Thalas?/n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_character_modifier = { name = persuasion_attempt duration = 120 }
+	}
+	
+	option = {
+		ai_chance = {
+			modifier = {
+				factor = 2
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = FROM value = -50 }
+				NOT = { opinion = { who = FROM value = -25 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = -25 }
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.6
+				opinion = { who = FROM value = 0 }
+				NOT = { opinion = { who = FROM value = 25 } }
+			}
+			modifier = {
+				factor = 0.4
+				opinion = { who = FROM value = 50 }
+				NOT = { opinion = { who = FROM value = 75 } }
+			}
+			modifier = {
+				factor = 0
+				opinion = { who = FROM value = 75 }
+			}
+		}
+		name = EVTOPTHELFSOC.25a # You make a good point...
+		if = {
+			limit = {
+				FROM = { in_faction = faction_traditionalist }
+			}
+			any_faction_backer = {
+				limit = {
+					leads_faction = faction_traditionalist
+				}
+				ROOT = {
+					join_faction = {
+						faction = faction_traditionalist
+						faction_leader = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { in_faction = faction_demonologist }
+			}
+			any_faction_backer = {
+				limit = {
+					leads_faction = faction_demonologist
+				}
+				ROOT = {
+					join_faction = {
+						faction = faction_demonologist
+						faction_leader = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { in_faction = faction_purity }
+			}
+			any_faction_backer = {
+				limit = {
+					leads_faction = faction_purity
+				}
+				ROOT = {
+					join_faction = {
+						faction = faction_purity
+						faction_leader = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { in_faction = faction_imperialist }
+			}
+			any_faction_backer = {
+				limit = {
+					leads_faction = faction_imperialist
+				}
+				ROOT = {
+					join_faction = {
+						faction = faction_imperialist
+						faction_leader = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { in_faction = faction_alliance }
+			}
+			any_faction_backer = {
+				limit = {
+					leads_faction = faction_alliance
+				}
+				ROOT = {
+					join_faction = {
+						faction = faction_alliance
+						faction_leader = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { in_faction = faction_horde }
+			}
+			any_faction_backer = {
+				limit = {
+					leads_faction = faction_horde
+				}
+				ROOT = {
+					join_faction = {
+						faction = faction_horde
+						faction_leader = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { in_faction = faction_royalist }
+			}
+			any_faction_backer = {
+				limit = {
+					leads_faction = faction_royalist
+				}
+				ROOT = {
+					join_faction = {
+						faction = faction_royalist
+						faction_leader = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { in_faction = faction_interventionist }
+			}
+			any_faction_backer = {
+				limit = {
+					leads_faction = faction_interventionist
+				}
+				ROOT = {
+					join_faction = {
+						faction = faction_interventionist
+						faction_leader = PREV
+					}
+				}
+			}
+		}
+		FROM = { letter_event = { id = helfsoc.26 } }
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.4
+				opinion = { who = FROM value = -50 }
+				NOT = { opinion = { who = FROM value = -25 } }
+			}
+			modifier = {
+				factor = 0.6
+				opinion = { who = FROM value = -25 }
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 0 }
+				NOT = { opinion = { who = FROM value = 25 } }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = FROM value = 50 }
+				NOT = { opinion = { who = FROM value = 75 } }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = FROM value = 75 }
+			}
+		}
+		name = EVTOPTHELFSOC.25b # I don't care!
+		FROM = { letter_event = { id = helfsoc.27 } }
+	}
+}
+
+letter_event = {
+	id = helfsoc.26
+	desc = EVTDESCHELFSOC.26 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nYou make a good point. I shall follow your advice and take part in the realm's politics./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+	}
+}
+
+letter_event = {
+	id = helfsoc.27
+	desc = EVTDESCHELFSOC.27 # To the [GetFromRootInsult] [Root.GetTitledName],/n/nI care not for your politicking and would thank you if you would leave me alone./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		opinion = {
+			who = FROM
+			modifier = opinion_disappointed
+			years = 1
+		}
+	}
+}
+
+#Diplo-mission (domestic)
+character_event = {
+	id = helfsoc.28
+	desc = EVTDESCHELFSOC.28 # [From.GetTitledName] has sent a diplomatic envoy to your court in order to convince you of the benevolence and wise leadership of [qt_king.GetTitledName], your mutual liege.
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		clear_event_target = qt_king
+	}
+}
+
+#Leave isolationists
+letter_event = {
+	id = helfsoc.29
+	desc = EVTDESCHELFSOC.29 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nIt has come to my attention that you seem to believe that Quel'Thalas must isolate itself from the world. Apathy is death, my friend. Please, abandon this position for the good of the realm!/n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_character_modifier = { name = persuasion_attempt duration = 120 }
+	}
+	
+	option = {
+		ai_chance = {
+			modifier = {
+				factor = 2
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = FROM value = -50 }
+				NOT = { opinion = { who = FROM value = -25 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = -25 }
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.6
+				opinion = { who = FROM value = 0 }
+				NOT = { opinion = { who = FROM value = 25 } }
+			}
+			modifier = {
+				factor = 0.4
+				opinion = { who = FROM value = 50 }
+				NOT = { opinion = { who = FROM value = 75 } }
+			}
+			modifier = {
+				factor = 0
+				opinion = { who = FROM value = 75 }
+			}
+		}
+		name = EVTOPTHELFSOC.25a # You make a good point...
+		leave_faction = faction_isolationist
+		FROM = { letter_event = { id = helfsoc.30 } }
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.4
+				opinion = { who = FROM value = -50 }
+				NOT = { opinion = { who = FROM value = -25 } }
+			}
+			modifier = {
+				factor = 0.6
+				opinion = { who = FROM value = -25 }
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 0 }
+				NOT = { opinion = { who = FROM value = 25 } }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = FROM value = 50 }
+				NOT = { opinion = { who = FROM value = 75 } }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = FROM value = 75 }
+			}
+		}
+		name = EVTOPTHELFSOC.25b # I don't care!
+		FROM = { letter_event = { id = helfsoc.31 } }
+	}
+}
+
+letter_event = {
+	id = helfsoc.30
+	desc = EVTDESCHELFSOC.30 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nYou make a good point. I shall follow your advice and change my stance./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+	}
+}
+
+letter_event = {
+	id = helfsoc.31
+	desc = EVTDESCHELFSOC.27 # To the [GetFromRootInsult] [Root.GetTitledName],/n/nI care not for your politicking and would thank you if you would leave me alone./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		opinion = {
+			who = FROM
+			modifier = opinion_disappointed
+			years = 1
+		}
+	}
+}
+
+#Give blood knights title to blood knights leader
+character_event = {
+	id = helfsoc.32
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		is_title_active = d_blood_knights
+		society_rank >= 4
+		society_member_of = blood_knights
+		NOT = { has_landed_title = d_blood_knights }
+	}
+	
+	immediate = {
+		d_blood_knights = {
+			holder_scope = {
+				abdicate_to = ROOT
+			}
+		}
+	}
+}
+
+letter_event = {
+	id = helfsoc.33
+	desc = EVTDESCHELFSOC.33 # My liege,/n/nWe would have much to gain by initiating diplomatic relations with [diplo_target.GetTitledName]. I ask for your leave to intercede on your behalf./n/nSigned, [sr_leader.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			modifier = {
+				factor = 2
+				NOT = { opinion = { who = event_target:diplo_target value = -50 } }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = event_target:diplo_target value = -50 }
+				NOT = { opinion = { who = event_target:diplo_target value = -25 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = event_target:diplo_target value = -25 }
+				NOT = { opinion = { who = event_target:diplo_target value = 0 } }
+			}
+			modifier = {
+				factor = 0.6
+				opinion = { who = event_target:diplo_target value = 0 }
+				NOT = { opinion = { who = event_target:diplo_target value = 25 } }
+			}
+			modifier = {
+				factor = 0.4
+				opinion = { who = event_target:diplo_target value = 50 }
+				NOT = { opinion = { who = event_target:diplo_target value = 75 } }
+			}
+			modifier = {
+				factor = 0
+				opinion = { who = event_target:diplo_target value = 75 }
+			}
+		}
+		name = EVTOPTHELFSOC.33a # You have my permission.
+		event_target:sr_leader = { letter_event = { id = helfsoc.34 } }
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { opinion = { who = event_target:diplo_target value = -50 } }
+			}
+			modifier = {
+				factor = 0.4
+				opinion = { who = event_target:diplo_target value = -50 }
+				NOT = { opinion = { who = event_target:diplo_target value = -25 } }
+			}
+			modifier = {
+				factor = 0.6
+				opinion = { who = event_target:diplo_target value = -25 }
+				NOT = { opinion = { who = event_target:diplo_target value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = event_target:diplo_target value = 0 }
+				NOT = { opinion = { who = event_target:diplo_target value = 25 } }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = event_target:diplo_target value = 50 }
+				NOT = { opinion = { who = event_target:diplo_target value = 75 } }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:diplo_target value = 75 }
+			}
+		}
+		name = EVTOPTHELFSOC.33b # Denied.
+		event_target:sr_leader = { letter_event = { id = helfsoc.35 } }
+	}
+}
+
+letter_event = {
+	id = helfsoc.34
+	desc = EVTDESCHELFSOC.34 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nThat seems like a sensible idea, you may proceed./n/nSigned, [qt_king.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		event_target:diplo_target = { letter_event = { id helfsoc.36 } }
+	}
+}
+
+letter_event = {
+	id = helfsoc.35
+	desc = EVTDESCHELFSOC.35 # To [Root.GetTitledName],/n/nWhile your intentions may be noble, I feel your effort is misguided. I shall not condone your plan./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		opinion = {
+			who = FROM
+			modifier = opinion_disappointed
+			years = 1
+		}
+		clear_event_target = qt_king
+		clear_event_target = sr_leader
+		clear_event_target = diplo_target
+	}
+}
+
+letter_event = {
+	id = helfsoc.36
+	desc = EVTDESCHELFSOC.36 # To the [GetFromRootCompliment] [Root.GetTitledName]/nI write you on behalf of my gracious liege [qt_king.GetTitledName]. I have been authorized to extend to you a proposal for a non-aggression pact on [qt_king.GetHerHis] behalf./n/nSigned, [sr_leader.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			modifier = {
+				factor = 2
+				NOT = { opinion = { who = event_target:qt_king value = -50 } }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = event_target:qt_king value = -50 }
+				NOT = { opinion = { who = event_target:qt_king value = -25 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = event_target:qt_king value = -25 }
+				NOT = { opinion = { who = event_target:qt_king value = 0 } }
+			}
+			modifier = {
+				factor = 0.6
+				opinion = { who = event_target:qt_king value = 0 }
+				NOT = { opinion = { who = event_target:qt_king value = 25 } }
+			}
+			modifier = {
+				factor = 0.4
+				opinion = { who = event_target:qt_king value = 50 }
+				NOT = { opinion = { who = event_target:qt_king value = 75 } }
+			}
+			modifier = {
+				factor = 0
+				opinion = { who = event_target:qt_king value = 75 }
+			}
+		}
+		name = EVTOPTHELFSOC.36a # Interesting. I accept!
+		opinion = {
+			modifier = in_non_aggression_pact
+			years = 3
+			who = event_target:qt_king
+			origin_description = EVTTITLE_ZE_8001
+		}
+		event_target:sr_leader = { letter_event = { id = helfsoc.37 } }
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { opinion = { who = event_target:qt_king value = -50 } }
+			}
+			modifier = {
+				factor = 0.4
+				opinion = { who = event_target:qt_king value = -50 }
+				NOT = { opinion = { who = event_target:qt_king value = -25 } }
+			}
+			modifier = {
+				factor = 0.6
+				opinion = { who = event_target:qt_king value = -25 }
+				NOT = { opinion = { who = event_target:qt_king value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = event_target:qt_king value = 0 }
+				NOT = { opinion = { who = event_target:qt_king value = 25 } }
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = event_target:qt_king value = 50 }
+				NOT = { opinion = { who = event_target:qt_king value = 75 } }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:qt_king value = 75 }
+			}
+		}
+		name = EVTOPTHELFSOC.36b # Interesting, but no.
+		event_target:sr_leader = { letter_event = { id = helfsoc.38 } }
+	}
+}
+
+letter_event = {
+	id = helfsoc.37
+	desc = EVTDESCHELFSOC.37 # To the [GetFromRootCompliment] [Root.GetTitledName],/n/nYou make for a convincing case. I accept your proposal for a non-aggression pact./n/nSigned, [qt_king.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		clear_event_target = qt_king
+		clear_event_target = sr_leader
+		clear_event_target = diplo_target
+	}
+}
+
+letter_event = {
+	id = helfsoc.38
+	desc = EVTDESCHELFSOC.38 # To [Root.GetTitledName],/n/nI simply cannot do what you ask of me. Consider this my denial./n/nSigned, [From.GetTitledName]
+	border = GFX_event_letter_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKDAMN
+		opinion = {
+			who = FROM
+			modifier = opinion_disappointed
+			years = 1
+		}
+		clear_event_target = qt_king
+		clear_event_target = sr_leader
+		clear_event_target = diplo_target
+	}
+}
+
+#Sunreavers formed
+character_event = {
+	id = helfsoc.39
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		years = 15
+		modifier = {
+			factor = 0.1
+			trait = mage
+		}
+		modifier = {
+			factor = 0.5
+			diplomacy = 15
+		}
+	}
+	
+	trigger = {
+		OR = {
+			trait = blood_elf
+			trait = high_elf
+		}
+		NOT = { has_global_flag = refused_sunreavers }
+		NOT = { has_global_flag = sunreavers_active }
+		NOT = { has_global_flag = wow_bookmark }
+		OR = {
+			AND = {
+				is_title_active = k_dalaran
+				k_dalaran = {
+					holder_scope = {
+						independent = yes
+						government = kirin_tor_government
+					}
+				}
+			}
+			AND = {
+				OR = {
+					NOT = { is_title_active = k_dalaran }
+					k_dalaran = {
+						holder_scope = {
+							NOT = { government = kirin_tor_government }
+						}
+					}
+				}
+				is_title_active = d_dalaran
+				d_dalaran = {
+					holder_scope = {
+						independent = yes
+						government = kirin_tor_government
+					}
+				}
+			}
+			AND = {
+				OR = {
+					NOT = { is_title_active = k_dalaran }
+					k_dalaran = {
+						holder_scope = {
+							NOT = { government = kirin_tor_government }
+						}
+					}
+				}
+				OR = {
+					NOT = { is_title_active = d_dalaran }
+					d_dalaran = {
+						holder_scope = {
+							NOT = { government = kirin_tor_government }
+						}
+					}
+				}
+				is_title_active = c_dalaran
+				c_dalaran = {
+					holder_scope = {
+						independent = yes
+						government = kirin_tor_government
+					}
+				}
+			}
+			#Is a part of the horde or alliance
+		}
+		NOT = { in_faction = faction_isolationist }
+		any_liege = {
+			has_landed_title = k_silvermoon
+			OR = {
+				trait = blood_elf
+				trait = high_elf
+			}
+			NOT = { has_character_flag = supports_isolationists }
+		}
+		diplomacy = 10
+		OR = {
+			NOT = { has_character_flag = has_adv_class }
+			trait = arcanist
+			trait = mage
+		}
+		is_ruler = no
+		is_in_society = no
+	}
+	
+	immediate = {
+		k_silvermoon = {
+			holder_scope = {
+				character_event = { id = helfsoc.40 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = helfsoc.40
+	desc = EVTDESCHELFSOC.40 # [From.GetFullName] approaches you with an interesting offer. [From.GetSheHe] proposes the creation of a group named "Sunreavers" to act as a diplomatic force of mages both within and outside Quel'Thalas, thus guaranteeing that the realm is never without friends abroad.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_normal_frame_economy
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTSUNWELL.21a # An intriguing idea...
+		custom_tooltip = { text = EVTTOOLTIPHELFSOC.40 } # The Sunreavers are formed.
+		hidden_tooltip = {
+			set_global_flag = sunreavers_active
+			FROM = {
+				prestige = 50
+				join_society = sunreavers
+				set_society_grandmaster = yes
+			}
+		}
+		any_realm_character = {
+			limit = {
+				ai = no
+			}
+			narrative_event = { id = helfsoc.41 }
+		}
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = EVTOPTSUNWELL.21b # Seems like a waste of time.
+		set_global_flag = refused_sunreavers
+		prestige = -150
+	}
+}
+
+narrative_event = {
+	id = helfsoc.41
+	title = EVTTITLEHELFSOC.41 # The Sunreavers
+	desc = EVTDESCHELFSOC.41 # By royal decree, a diplomatic corps of mages and other spellcasters of Quel'Thalas has been established to ensure diplomatic relations with the neighbors of the realm. [FromFrom.GetFullName] has been named its first Ranger-General.
+	picture = GFX_evt_lorthemar
+	border = GFX_event_narrative_frame_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}

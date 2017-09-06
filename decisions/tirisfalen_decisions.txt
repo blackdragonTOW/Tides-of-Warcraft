@@ -1,0 +1,331 @@
+targeted_decisions = {
+	
+	tirisfalen_investigate_character = {
+		is_in_society = yes
+		filter = all
+		ai_target_filter = realm
+		from_potential = {
+			prisoner = no
+			has_regent = no
+			NOT = { trait = incapable }
+			society_rank >= 2
+			OR = {
+				society_member_of = council_of_tirisfal
+				society_member_of = tirisgarde
+			}
+		}
+		potential = {
+			NOT = { society_member_of = council_of_tirisfal }
+			NOT = { society_member_of = tirisgarde }
+			OR = {
+				AND = {
+					independent = yes
+					trait = human
+				}
+				top_liege = {
+					# OR alliance gov
+					trait = human
+				}
+			}
+			NOT = { has_character_modifier = tirisfalen_investigate_target_cd }
+		}
+		allow = {
+			FROM = {
+				NOT = { has_character_modifier = tirisfalen_investigate_cd }
+				has_society_currency_minor_trigger = yes
+			}
+		}
+		effect = {
+			FROM = {
+				increase_visibility_effect = yes
+				detract_society_currency_minor_effect = yes
+				add_character_modifier = { name = tirisfalen_investigate_cd months = 5 }
+				character_event = { id = tirisfalen.30 }
+			}
+			add_character_modifier = { name = tirisfalen_investigate_target_cd years = 1 }
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				trait = trusting
+				factor = 0.5
+			}
+			modifier = {
+				trait = paranoid
+				factor = 2
+			}
+		}
+	}
+	
+	slander_ruler = {
+		is_in_society = yes
+		filter = all
+		ai_target_filter = realm
+		from_potential = {
+			prisoner = no
+			has_regent = no
+			NOT = { trait = incapable }
+			society_rank >= 3
+			society_member_of = council_of_tirisfal
+		}
+		potential = {
+			NOT = { society_member_of = council_of_tirisfal }
+			NOT = { society_member_of = tirisgarde }
+			is_ruler = yes
+			OR = {
+				AND = {
+					independent = yes
+					trait = human
+				}
+				top_liege = {
+					# OR alliance gov
+					trait = human
+				}
+			}
+			NOT = { has_character_modifier = tirisfalen_slander_target_cd }
+		}
+		allow = {
+			FROM = {
+				NOT = { has_character_modifier = tirisfalen_slander_cd }
+				has_society_currency_major_trigger = yes
+				NOT = { holds_favor_on = ROOT }
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = { name = tirisfalen_slander_cd months = 4 }
+				increase_visibility_effect = yes
+				detract_society_currency_major_effect = yes
+			}
+			add_character_modifier = { name = tirisfalen_slander_target_cd years = 1 }
+			character_event = { id = tirisfalen.32 }
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				trait = kind
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = cruel
+					trait = envious
+				}
+			}
+		}
+	}
+	
+	blackmail_ruler = {
+		is_in_society = yes
+		filter = all
+		ai_target_filter = realm
+		from_potential = {
+			prisoner = no
+			has_regent = no
+			NOT = { trait = incapable }
+			society_rank = 4
+			society_member_of = council_of_tirisfal
+		}
+		potential = {
+			NOT = { society_member_of = council_of_tirisfal }
+			NOT = { society_member_of = tirisgarde }
+			is_ruler = yes
+			OR = {
+				AND = {
+					independent = yes
+					trait = human
+				}
+				top_liege = {
+					# OR alliance gov
+					trait = human
+				}
+			}
+			NOT = { has_character_modifier = tirisfalen_blackmail_target_cd }
+		}
+		allow = {
+			FROM = {
+				NOT = { has_character_modifier = tirisfalen_blackmail_cd }
+				has_society_currency_major_trigger = yes
+				NOT = { holds_favor_on = ROOT }
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = { name = tirisfalen_blackmail_cd months = 4 }
+				increase_visibility_effect = yes
+				detract_society_currency_major_effect = yes
+			}
+			add_character_modifier = { name = tirisfalen_blackmail_target_cd years = 1 }
+			FROM = {
+				ROOT = { character_event = { id = tirisfalen.33 } }
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0.5
+				trait = kind
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = cruel
+					trait = greedy
+				}
+			}
+		}
+	}
+	
+}
+
+title_decisions = {
+
+	tirisfalen_purge_evil = {
+		is_in_society = yes
+		filter = all
+		ai_target_filter = realm_owned
+		from_potential = {
+			prisoner = no
+			has_regent = no
+			NOT = { trait = incapable }
+			society_rank >= 3
+			society_member_of = tirisgarde
+		}
+		potential = {
+			location = {
+				OR = {
+					has_province_modifier = mutated_animals
+					has_province_modifier = strange_activity
+					has_province_modifier = demonic_activity
+					has_province_modifier = fel_cults
+					has_province_modifier = restless_elements
+					has_province_modifier = fel_portal
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				NOT = { has_character_modifier = purge_evil_cd }
+				has_society_currency_major_trigger = yes
+			}
+		}
+		effect = {
+			FROM = {
+				increase_visibility_effect = yes
+				detract_society_currency_major_effect = yes
+				add_character_modifier = { name = purge_evil_cd years = 1 }
+			}
+			location = {
+				random_list = {
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = mutated_animals }
+						}
+						remove_province_modifier = mutated_animals
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = strange_activity }
+						}
+						remove_province_modifier = strange_activity
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = demonic_activity }
+						}
+						remove_province_modifier = demonic_activity
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = fel_cults }
+						}
+						remove_province_modifier = fel_cults
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = restless_elements }
+						}
+						remove_province_modifier = restless_elements
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = fel_portal }
+						}
+						remove_province_modifier = fel_portal
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	
+	tirisfalen_purge_corruption = {
+		is_in_society = yes
+		filter = all
+		ai_target_filter = realm_owned
+		from_potential = {
+			prisoner = no
+			has_regent = no
+			NOT = { trait = incapable }
+			society_rank = 4
+			society_member_of = tirisgarde
+		}
+		potential = {
+			location = {
+				OR = {
+					has_province_modifier = tainted
+					has_province_modifier = corrupted
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				NOT = { has_character_modifier = purge_corruption_cd }
+				has_society_currency_major_trigger = yes
+			}
+		}
+		effect = {
+			FROM = {
+				increase_visibility_effect = yes
+				detract_society_currency_major_effect = yes
+				add_character_modifier = { name = purge_corruption_cd years = 1 }
+			}
+			location = {
+				change_variable = { which = prov_corruption value = -1 }
+				random = {
+					chance = 75
+					change_variable = { which = prov_corruption value = -1 }
+				}
+				random = {
+					chance = 50
+					change_variable = { which = prov_corruption value = -1 }
+				}
+				random = {
+					chance = 25
+					change_variable = { which = prov_corruption value = -1 }
+				}
+				random = {
+					chance = 10
+					change_variable = { which = prov_corruption value = -1 }
+				}
+				random = {
+					chance = 1
+					change_variable = { which = prov_corruption value = -1 }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	
+}

@@ -1,0 +1,338 @@
+###########################################
+#                                         #
+# Way of Life scholarship events          #
+#                                         #
+# ID WoL.6000-WoL.6999                    #
+#                                         #
+###########################################
+
+# Written by Tobias Bodlund
+
+namespace = WoL
+
+###########################################
+# Building observatory                    #
+# ID WoL.6000-WoL.6099                    #
+###########################################
+
+# Confirm building
+character_event = {
+	id = WoL.6000
+	desc = EVTDESC_WoL_6000
+	picture = GFX_evt_construction_site
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WoL_6000
+		hidden_tooltip = { character_event = { id = WoL.6010 days = 180 } }
+	}
+}
+
+# Observatory is ready
+character_event = {
+	id = WoL.6010
+	desc = EVTDESC_WoL_6010
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_WoL_6010
+		hidden_tooltip = { character_event = { id = WoL.6020 days = 180 } }
+		clr_character_flag = building_observatory
+		set_character_flag = built_observatory
+		if = {
+			limit = {
+				ai = no
+			}
+			set_character_flag = achievement_stargazer
+		}
+		add_character_modifier = {
+			name = studying_the_stars
+			duration = -1
+		}
+	}
+}
+
+# Split event - heliocentrism or weird?
+character_event = {
+	id = WoL.6020
+	desc = EVTDESC_WoL_6020
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_scholarship
+		prisoner = no
+		NOT = { trait = incapable }
+	}
+
+	option = {
+		name = EVTOPTA_WoL_6020
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 2
+				trait = cynical
+			}
+		}
+		prestige = 10
+		hidden_tooltip = { character_event = { id = WoL.6100 days = 180 } } # Heliocentrism - how do the celestial bodies move?
+	}
+}
+
+###########################################
+# Heliocentric studies                    #
+# ID WoL.6100-WoL.6299                    #
+###########################################
+
+# Starts believing in heliocentrist theory
+character_event = {
+	id = WoL.6100
+	desc = EVTDESC_WoL_6100
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_focus = focus_scholarship
+		prisoner = no
+		NOT = { trait = incapable }
+	}
+
+	option = {
+		name = EVTOPTA_WoL_6100
+		military_techpoints = 30
+		if = {
+			limit = { NOT = { trait = diligent } }
+			random = {
+				chance = 20
+				add_trait = diligent
+				hidden_tooltip = {
+					character_event = { id = 38256 } # Notification
+				}
+			}
+		}
+		hidden_tooltip = { character_event = { id = WoL.6110 days = 180 } }
+	}
+}
+
+# Research more expensive than expected, need new equipment
+character_event = {
+	id = WoL.6110
+	desc = EVTDESC_WoL_6110
+	picture = GFX_evt_scientist
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_focus = focus_scholarship
+		prisoner = no
+		NOT = { trait = incapable }
+	}
+
+	option = {
+		name = EVTOPTA_WoL_6110 # Buy what's needed and continue research
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { wealth = 30 }
+			}
+		}
+		if = {
+			limit = { has_character_flag = owns_observatory_equipment }
+			custom_tooltip = {
+				text = CUSTOM_TOOLTIP_OWNS_OBSERVATORY_EQUIPMENT
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_flag = owns_observatory_equipment } }
+			set_character_flag = owns_observatory_equipment
+			wealth = -30
+		}
+		hidden_tooltip = { character_event = { id = WoL.6120 days = 180 } }
+	}
+	option = {
+		name = EVTOPTB_WoL_6110  # Abandon research
+		ai_chance = {
+			factor = 1
+		}
+		remove_character_modifier = studying_the_stars
+	}
+}
+
+# Work is great stimulus to knowledge about how world works
+character_event = {
+	id = WoL.6130
+	desc = EVTDESC_WoL_6130
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_focus = focus_scholarship
+		prisoner = no
+		NOT = { trait = incapable }
+	}
+
+	option = {
+		name = EVTOPTA_WoL_6130
+		military_techpoints = 100
+		hidden_tooltip = { character_event = { id = WoL.6140 days = 180 } }
+	}
+}
+
+# Technical problems with observations - persist or give up?
+character_event = {
+	id = WoL.6140
+	desc = EVTDESC_WoL_6140
+	picture = GFX_evt_scientist
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_focus = focus_scholarship
+		prisoner = no
+		NOT = { trait = incapable }
+	}
+
+	option = {
+		name = EVTOPTA_WoL_6140 # Persist!
+		if = {
+			limit = { NOT = { trait = diligent } }
+			random = {
+				chance = 30
+				add_trait = diligent
+				hidden_tooltip = {
+					character_event = {
+						id = 38256 #Notify Diligent
+					}
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { trait = stressed } }
+			random = {
+				chance = 10
+				add_trait = stressed
+				hidden_tooltip = {
+					character_event = {
+						id = 38282 #Notify Stressed
+					}
+				}
+			}
+		}
+		hidden_tooltip = { character_event = { id = WoL.6150 days = 180 } }
+	}
+	option = {
+		name = EVTOPTB_WoL_6140 # Give up on this silly pursuit
+		if = {
+			limit = {
+				NOT = { trait = slothful }
+				NOT = { trait = diligent }
+			}
+			add_trait = slothful
+		}
+		if = {
+			limit = {
+				NOT = { trait = slothful }
+				trait = diligent
+			}
+			remove_trait = diligent
+		}
+		remove_character_modifier = studying_the_stars
+	}
+}
+
+# Work Gives even more amazing knowledge
+character_event = {
+	id = WoL.6160
+	desc = EVTDESC_WoL_6160
+	picture = GFX_evt_comet
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_focus = focus_scholarship
+		prisoner = no
+		NOT = { trait = incapable }
+	}
+
+	option = {
+		name = EVTOPTA_WoL_6160
+		change_learning = 1
+		military_techpoints = 100
+		hidden_tooltip = { character_event = { id = WoL.6170 days = 180 } }
+	}
+}
+
+# Breakthrough - you have proven that the earth is round and revolves around the sun!
+character_event = {
+	id = WoL.6170
+	desc = EVTDESC_WoL_6170
+	picture = GFX_evt_scientist
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_focus = focus_scholarship
+		prisoner = no
+		NOT = { trait = incapable }
+	}
+
+	option = {
+		name = EVTOPTA_WoL_6170 # Publish findings
+		prestige = 300
+		if = {
+			limit = { NOT = { lifestyle_traits = 2 } }
+			remove_character_modifier = studying_the_stars
+			add_trait = scholar
+		}
+		if = {
+			limit = { has_nickname = no }
+			random_list = {
+				10 = {
+					give_nickname = nick_the_wise
+				}
+				10 = {
+					give_nickname = nick_the_able
+				}
+				10 = {
+					give_nickname = nick_the_scholar
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_WoL_6170 # Keep it secret but continue dedicating myself to knowledge
+		if = {
+			limit = { NOT = { lifestyle_traits = 2 } }
+			remove_character_modifier = studying_the_stars
+			add_trait = scholar
+		}
+	}
+	option = {
+		name = EVTOPTC_WoL_6170 # Very interesting but I'm done with this
+		remove_character_modifier = studying_the_stars
+		add_character_modifier = {
+			name = heliocentrist_scholar
+			duration = -1
+		}
+	}
+}

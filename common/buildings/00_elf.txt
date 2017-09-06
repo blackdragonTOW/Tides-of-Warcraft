@@ -1,0 +1,1047 @@
+castle = {
+	ca_elf_stable_1 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		light_cavalry = 35
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 0.4
+	}
+	ca_elf_stable_2 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = ca_elf_stable_1
+		gold_cost = 120
+		build_time = 547
+		light_cavalry = 45
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 0.8
+	}
+	ca_elf_stable_3 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		upgrades_from = ca_elf_stable_2
+		gold_cost = 200
+		build_time = 730
+		light_cavalry = 55
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 0.2
+	}
+	ca_elf_stable_4 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		upgrades_from = ca_elf_stable_3
+		gold_cost = 300
+		build_time = 1095
+		light_cavalry = 70
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.2
+	}
+	ca_elf_stable_5 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		upgrades_from = ca_elf_stable_4
+		gold_cost = 400
+		build_time = 2190
+		light_cavalry = 90
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+	ca_elf_stable_6 = {
+		desc = ca_stable_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 8
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		upgrades_from = ca_elf_stable_5
+		gold_cost = 500
+		build_time = 2190
+		light_cavalry = 105
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+	ca_ranger_lodge_1 = {
+		desc = ca_ranger_lodge_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		archers = 30
+		retinuesize = 20
+		ai_creation_factor = 105
+		
+		extra_tech_building_start = 1.0
+	}
+	ca_ranger_lodge_2 = {
+		desc = ca_ranger_lodge_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 5
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = ca_ranger_lodge_1
+		gold_cost = 120
+		build_time = 547
+		archers = 50
+		retinuesize = 50
+		supply_limit = 0.05
+		ai_creation_factor = 104
+		
+		extra_tech_building_start = 1.8
+	}
+	ca_dragonhawk_roost_1 = {
+		desc = ca_dragonhawk_roost_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 120
+		build_time = 400
+		flying_cavalry = 15
+		ai_creation_factor = 89
+	}
+	ca_dragonhawk_roost_2 = {
+		desc = ca_dragonhawk_roost_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		upgrades_from = ca_dragonhawk_roost_1
+		gold_cost = 200
+		build_time = 730
+		flying_cavalry = 50
+		ai_creation_factor = 89
+	}
+	ca_battlemage_barracks_1 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						AND = {
+							culture_group = human
+							OR = {
+								NOT = { has_global_flag = trollwars_bookmark }
+								has_global_flag = trollwar_humans_join
+							}
+						}
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				OR = {
+					AND = {
+						culture_group = human
+						OR = {
+							NOT = { has_global_flag = trollwars_bookmark }
+							has_global_flag = trollwar_humans_join
+						}
+					}
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		mages = 10
+		ai_creation_factor = 105
+		
+		extra_tech_building_start = 1.0
+	}
+	ca_battlemage_barracks_2 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						AND = {
+							culture_group = human
+							OR = {
+								NOT = { has_global_flag = trollwars_bookmark }
+								has_global_flag = trollwar_humans_join
+							}
+						}
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				OR = {
+					AND = {
+						culture_group = human
+						OR = {
+							NOT = { has_global_flag = trollwars_bookmark }
+							has_global_flag = trollwar_humans_join
+						}
+					}
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = ca_battlemage_barracks_1
+		gold_cost = 120
+		build_time = 547
+		mages = 20
+		ai_creation_factor = 104
+		
+		extra_tech_building_start = 1.8
+	}
+	ca_battlemage_barracks_3 = {
+		desc = ca_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						AND = {
+							culture_group = human
+							OR = {
+								NOT = { has_global_flag = trollwars_bookmark }
+								has_global_flag = trollwar_humans_join
+							}
+						}
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			FROM = {
+				OR = {
+					AND = {
+						culture_group = human
+						OR = {
+							NOT = { has_global_flag = trollwars_bookmark }
+							has_global_flag = trollwar_humans_join
+						}
+					}
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		upgrades_from = ca_battlemage_barracks_2
+		gold_cost = 200
+		build_time = 730
+		mages = 30
+		ai_creation_factor = 103
+
+		extra_tech_building_start = 3.0
+	}
+	ca_battlemage_barracks_4 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						AND = {
+							culture_group = human
+							OR = {
+								NOT = { has_global_flag = trollwars_bookmark }
+								has_global_flag = trollwar_humans_join
+							}
+						}
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			FROM = {
+				OR = {
+					AND = {
+						culture_group = human
+						OR = {
+							NOT = { has_global_flag = trollwars_bookmark }
+							has_global_flag = trollwar_humans_join
+						}
+					}
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		upgrades_from = ca_battlemage_barracks_3
+		gold_cost = 300
+		build_time = 1095
+		mages = 50
+		ai_creation_factor = 102
+
+		extra_tech_building_start = 3.0
+	}
+}
+
+city = {
+	ct_battlemage_barracks_1 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						AND = {
+							culture_group = human
+							FROM = { government = kirin_tor_government }
+						}
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 1
+			FROM = {
+				OR = {
+					AND = {
+						culture_group = human
+						FROM = { government = kirin_tor_government }
+					}
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		mages = 10
+		ai_creation_factor = 105
+		
+		extra_tech_building_start = 1.0
+	}
+	ct_battlemage_barracks_2 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						AND = {
+							culture_group = human
+							FROM = { government = kirin_tor_government }
+						}
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 1
+			FROM = {
+				OR = {
+					AND = {
+						culture_group = human
+						FROM = { government = kirin_tor_government }
+					}
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ct_wall_1 }
+		upgrades_from = ct_battlemage_barracks_1
+		gold_cost = 120
+		build_time = 547
+		mages = 20
+		ai_creation_factor = 104
+		
+		extra_tech_building_start = 1.8
+	}
+	ct_battlemage_barracks_3 = {
+		desc = ca_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						AND = {
+							culture_group = human
+							FROM = { government = kirin_tor_government }
+						}
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = {
+				OR = {
+					AND = {
+						culture_group = human
+						FROM = { government = kirin_tor_government }
+					}
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ct_wall_2 }
+		upgrades_from = ct_battlemage_barracks_2
+		gold_cost = 200
+		build_time = 730
+		mages = 30
+		ai_creation_factor = 103
+
+		extra_tech_building_start = 3.0
+	}
+	ct_battlemage_barracks_4 = {
+		desc = ca_battlemage_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						AND = {
+							culture_group = human
+							FROM = { government = kirin_tor_government }
+						}
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = {
+				OR = {
+					AND = {
+						culture_group = human
+						FROM = { government = kirin_tor_government }
+					}
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		upgrades_from = ct_battlemage_barracks_3
+		gold_cost = 300
+		build_time = 1095
+		mages = 50
+		ai_creation_factor = 102
+
+		extra_tech_building_start = 3.0
+	}
+	ct_construct_market_1 = {
+		desc = ct_construct_market_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ct_marketplace_2 }
+		gold_cost = 150
+		build_time = 400
+		constructs = 15
+		ai_creation_factor = 90
+		
+		extra_tech_building_start = 1.5
+	}
+	ct_construct_market_2 = {
+		desc = ct_construct_market_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		prerequisites = { ct_marketplace_2 }
+		upgrades_from = ct_construct_market_1
+		gold_cost = 250
+		build_time = 300
+		constructs = 30
+		ai_creation_factor = 90
+		
+		extra_tech_building_start = 2.5
+	}
+	ct_noble_retinues_1 = {
+		desc = ct_noble_retinues_1
+		potential = {
+			has_dlc = "Legacy of Rome"
+			has_game_started = yes
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		trigger = {
+			has_dlc = "Legacy of Rome"
+			TECH_CITY_CONSTRUCTION = 0
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 100
+		build_time = 360
+		retinuesize = 30
+	}
+	ct_noble_retinues_2 = {
+		desc = ct_noble_retinues_1
+		potential = {
+			has_game_started = yes
+			has_dlc = "Legacy of Rome"
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			has_dlc = "Legacy of Rome"
+			TECH_CITY_CONSTRUCTION = 0
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		upgrades_from = ct_noble_retinues_1
+		gold_cost = 150
+		build_time = 360
+		retinuesize = 60
+	}
+	ct_noble_retinues_3 = {
+		desc = ct_noble_retinues_1
+		potential = {
+			has_game_started = yes
+			has_dlc = "Legacy of Rome"
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			has_dlc = "Legacy of Rome"
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		upgrades_from = ct_noble_retinues_2
+		gold_cost = 250
+		build_time = 360
+		retinuesize = 150
+	}
+}
+
+temple = {
+	tp_magister_school_1 = {
+		desc = tp_magister_school_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 0
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+		}
+		gold_cost = 150
+		build_time = 547
+		levy_size = 0.05
+		garrison_size = 0.05
+		ai_creation_factor = 96
+		add_number_to_name = no
+		liege_piety = 0.05
+		mages = 10
+
+		extra_tech_building_start = 0.2
+	}
+	tp_magister_school_2 = {
+		desc = tp_magister_school_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+			TECH_TEMPLE_CONSTRUCTION = 0
+		}
+		prerequisites = { tp_wall_1 }
+		upgrades_from = tp_magister_school_1
+		gold_cost = 200
+		build_time = 730
+		levy_size = 0.075
+		garrison_size = 0.1
+		ai_creation_factor = 95
+		add_number_to_name = no
+		liege_piety = 0.05
+		mages = 25
+		
+		extra_tech_building_start = 0.2
+	} 
+	tp_magister_school_3 = {
+		desc = tp_magister_school_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+			TECH_TEMPLE_CONSTRUCTION = 2
+		}
+		upgrades_from = tp_magister_school_2
+		gold_cost = 300
+		build_time = 1095
+		levy_size = 0.1
+		garrison_size = 0.15
+		ai_creation_factor = 94
+		add_number_to_name = no
+		liege_piety = 0.05
+		mages = 45
+
+		extra_tech_building_start = 0.2
+	} 
+	tp_magister_school_4 = {
+		desc = tp_magister_school_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+			TECH_TEMPLE_CONSTRUCTION = 4
+		}
+		upgrades_from = tp_magister_school_3
+		gold_cost = 400
+		build_time = 1460
+		levy_size = 0.125
+		garrison_size = 0.2
+		ai_creation_factor = 93
+		add_number_to_name = no
+		liege_piety = 0.05
+		mages = 70
+		constructs = 5
+
+		extra_tech_building_start = 0.2
+	} 
+	tp_magister_school_5 = {
+		desc = tp_magister_school_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+			TECH_TEMPLE_CONSTRUCTION = 6
+		}
+		upgrades_from = tp_magister_school_4
+		gold_cost = 500
+		build_time = 2190
+		levy_size = 0.15
+		garrison_size = 0.25
+		ai_creation_factor = 92
+		add_number_to_name = no
+		liege_piety = 0.05
+		mages = 90
+		constructs = 10
+
+		extra_tech_building_start = 0.2
+	}
+	tp_magister_school_6 = {
+		desc = tp_magister_school_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					OR = {
+						culture = high_elven
+						culture = blood_elven
+						culture = wretched
+					}
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				OR = {
+					culture = high_elven
+					culture = blood_elven
+					culture = wretched
+				}
+			}
+			TECH_TEMPLE_CONSTRUCTION = 8
+		}
+		upgrades_from = tp_magister_school_5
+		gold_cost = 500
+		build_time = 2190
+		levy_size = 0.15
+		garrison_size = 0.25
+		ai_creation_factor = 91
+		add_number_to_name = no
+		liege_piety = 0.05
+		mages = 120
+		constructs = 15
+
+		extra_tech_building_start = 0.2
+	}
+}

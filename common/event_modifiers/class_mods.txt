@@ -1,0 +1,187 @@
+abjuration = {
+	icon = 79
+}
+
+enchantment = {
+	icon = 79
+}
+
+illusion = {
+	icon = 79
+}
+
+divination = {
+	icon = 79
+}
+
+transmutation = {
+	icon = 79
+}
+
+conjuration = {
+	icon = 79
+}
+
+evocation = {
+	icon = 79
+}
+
+evocation_fake = {
+	icon = 79
+}
+
+blood_magic = {
+	icon = 79
+	is_visible = {
+		OR = {
+			FROM = { has_character_flag = blood_magic_discovered }
+			AND = {
+				OR = {
+					is_close_relative = FROM
+					is_friend = FROM
+					is_lover = FROM
+				}
+				has_character_modifier = blood_magic
+			}
+		}
+	}
+}
+
+hexes = {
+	icon = 79
+}
+
+brews = {
+	icon = 79
+}
+
+shadow_hunter = {
+	icon = 79
+}
+
+holy_priest = {
+	icon = 79
+}
+
+holy_priest_fake = {
+	icon = 79
+}
+
+shadow_priest = {
+	icon = 79
+	is_visible = {
+		OR = {
+			FROM = { has_character_flag = shadow_priest_discovered }
+			AND = {
+				OR = {
+					is_close_relative = FROM
+					is_friend = FROM
+					is_lover = FROM
+				}
+				has_character_modifier = shadow_priest
+			}
+		}
+	}
+}
+
+sun_priest = {
+	icon = 79
+}
+
+sun_priest_fake = {
+	icon = 79
+}
+
+moon_priest = {
+	icon = 79
+}
+
+moon_priest_fake = {
+	icon = 79
+}
+
+sea_witch = {
+	icon = 79
+}
+
+moon_druid = {
+	icon = 79
+}
+
+sun_druid = {
+	icon = 79
+}
+
+mender = {
+	icon = 79
+}
+
+mender_fake = {
+	icon = 79
+}
+
+feral_druid = {
+	icon = 79
+}
+
+flame_druid = {
+	icon = 79
+}
+
+wave_druid = {
+	icon = 79
+}
+
+wind_druid = {
+	icon = 79
+}
+
+stone_druid = {
+	icon = 79
+}
+
+nightmare_druid = {
+	icon = 79
+	is_visible = {
+		OR = {
+			FROM = { has_character_flag = nightmare_druid_discovered }
+			AND = {
+				OR = {
+					is_close_relative = FROM
+					is_friend = FROM
+					is_lover = FROM
+				}
+				has_character_modifier = nightmare_druid
+			}
+		}
+	}
+}
+
+elementalist = {
+	icon = 79
+}
+
+elementalist_fake = {
+	icon = 79
+}
+
+spiritualist = {
+	icon = 79
+}
+
+dark_shaman = {
+	icon = 79
+	is_visible = {
+		OR = {
+			FROM = { has_character_flag = dark_shaman_discovered }
+			AND = {
+				OR = {
+					is_close_relative = FROM
+					is_friend = FROM
+					is_lover = FROM
+				}
+				has_character_modifier = dark_shaman
+			}
+		}
+	}
+}

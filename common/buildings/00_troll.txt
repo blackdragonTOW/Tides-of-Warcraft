@@ -1,0 +1,1139 @@
+#Castle
+castle = {
+	ca_headhunter_barracks_1 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		light_infantry = 20
+		archers = 70
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 1.0
+	}
+	ca_headhunter_barracks_2 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = ca_headhunter_barracks_1
+		gold_cost = 120
+		build_time = 547
+		light_infantry = 30
+		archers = 50
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 2.0
+	}
+	ca_headhunter_barracks_3 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = ca_headhunter_barracks_2
+		gold_cost = 200
+		build_time = 1095
+		light_infantry = 60
+		archers = 40
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	ca_headhunter_barracks_4 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = ca_headhunter_barracks_3
+		gold_cost = 300
+		build_time = 1095
+		light_infantry = 50
+		archers = 50
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	ca_berserkers_1 = {
+		desc = ca_berserkers_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { ca_headhunter_barracks_1 }
+		local_revolt_risk = -0.01
+		gold_cost = 100
+		build_time = 365
+		heavy_infantry = 45
+		ai_creation_factor = 105
+		
+		extra_tech_building_start = 1.0
+	}
+	ca_berserkers_2 = {
+		desc = ca_berserkers_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = {
+			ca_wall_1
+			ca_headhunter_barracks_2
+		}
+		upgrades_from = ca_berserkers_1
+		local_revolt_risk = -0.03
+		gold_cost = 120
+		build_time = 547
+		heavy_infantry = 55
+		ai_creation_factor = 104
+		
+		extra_tech_building_start = 1.8
+	}
+	ca_berserkers_3 = {
+		desc = ca_berserkers_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = {
+			ca_wall_2
+			ca_headhunter_barracks_2
+		}
+		upgrades_from = ca_berserkers_2
+		local_revolt_risk = -0.05
+		gold_cost = 200
+		build_time = 730
+		heavy_infantry = 65
+		ai_creation_factor = 103
+
+		extra_tech_building_start = 3.0
+	}
+	ca_dinopen_1 = {
+		desc = ca_dinopen_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		light_cavalry = 30
+		war_beasts = 10
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 0.4
+	}
+	ca_dinopen_2 = {
+		desc = ca_dinopen_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = ca_dinopen_1
+		gold_cost = 120
+		build_time = 547
+		light_cavalry = 40
+		war_beasts = 15
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 0.8
+	}
+	ca_dinopen_3 = {
+		desc = ca_dinopen_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		upgrades_from = ca_dinopen_2
+		gold_cost = 200
+		build_time = 730
+		light_cavalry = 45
+		war_beasts = 25
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 0.2
+	}
+	ca_dinopen_4 = {
+		desc = ca_dinopen_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = ca_dinopen_3
+		gold_cost = 300
+		build_time = 1095
+		light_cavalry = 50
+		war_beasts = 25
+		knights = 5
+		monsters = 5
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0.2
+	}
+	ca_dinopen_5 = {
+		desc = ca_dinopen_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = ca_dinopen_4
+		gold_cost = 400
+		build_time = 2190
+		light_cavalry = 60
+		war_beasts = 30
+		knights = 10
+		monsters = 5
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+	ca_dinopen_6 = {
+		desc = ca_dinopen_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 8
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = ca_dinopen_5
+		gold_cost = 500
+		build_time = 2190
+		light_cavalry = 60
+		war_beasts = 35
+		knights = 20
+		monsters = 10
+		ai_creation_factor = 85
+
+		extra_tech_building_start = 0.2
+	}
+	ca_bat_roost_1 = {
+		desc = ca_bat_roost_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 120
+		build_time = 400
+		flying_cavalry = 10
+		war_beasts = 5
+		ai_creation_factor = 89
+	}
+	ca_bat_roost_2 = {
+		desc = ca_bat_roost_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = ca_bat_roost_1
+		gold_cost = 200
+		build_time = 730
+		flying_cavalry = 40
+		war_beasts = 15
+		ai_creation_factor = 89
+	}
+}
+
+#City
+city = {
+	ct_headhunter_barracks_1 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		light_infantry = 20
+		archers = 70
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 1.0
+	}
+	ct_headhunter_barracks_2 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 1
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { ct_wall_1 }
+		upgrades_from = tp_headhunter_barracks_1
+		gold_cost = 120
+		build_time = 547
+		light_infantry = 30
+		archers = 50
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 2.0
+	}
+	ct_headhunter_barracks_3 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 3
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tp_headhunter_barracks_2
+		gold_cost = 200
+		build_time = 1095
+		light_infantry = 60
+		archers = 40
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	ct_headhunter_barracks_4 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tp_headhunter_barracks_3
+		gold_cost = 300
+		build_time = 1095
+		light_infantry = 50
+		archers = 50
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	ct_proving_grounds_1 = {
+		desc = ct_proving_grounds_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		light_infantry = 40
+		heavy_infantry = 5
+		ai_creation_factor = 96
+		
+		extra_tech_building_start = 1.0
+	}
+	ct_proving_grounds_2 = {
+		desc = ct_proving_grounds_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 2
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { ct_wall_1 }
+		upgrades_from = ct_proving_grounds_1
+		gold_cost = 120
+		build_time = 547
+		light_infantry = 60
+		heavy_infantry = 10
+		ai_creation_factor = 95
+
+		extra_tech_building_start = 0.2
+	}
+	ct_proving_grounds_3 = {
+		desc = ct_proving_grounds_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 4
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { ct_wall_2 }
+		upgrades_from = ct_proving_grounds_2
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 60
+		heavy_infantry = 15
+		ai_creation_factor = 94
+		
+		extra_tech_building_start = 0.2
+	}
+	ct_proving_grounds_4 = {
+		desc = ct_proving_grounds_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 6
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { ct_wall_2 }
+		upgrades_from = ct_proving_grounds_3
+		gold_cost = 300
+		build_time = 1095
+		light_infantry = 70
+		heavy_infantry = 20
+		ai_creation_factor = 93
+		
+		extra_tech_building_start = 0.2
+	}
+	ct_loa_shrine_1 = {
+		desc = ct_loa_shrine_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 50
+		build_time = 365
+		local_revolt_risk = -0.03
+		monthly_character_piety = 0.25
+		ai_creation_factor = 96
+		
+		extra_tech_building_start = 1.0
+	}
+	ct_loa_shrine_2 = {
+		desc = ct_loa_shrine_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_CITY_CONSTRUCTION = 5
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = ct_loa_shrine_1
+		gold_cost = 250
+		build_time = 547
+		local_revolt_risk = -0.07
+		monthly_character_piety = 0.8
+		ai_creation_factor = 96
+		
+		extra_tech_building_start = 1.0
+	}
+}
+
+#Temple
+temple = {
+	tp_headhunter_barracks_1 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		light_infantry = 20
+		archers = 70
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 1.0
+	}
+	tp_headhunter_barracks_2 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 1
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { tp_wall_1 }
+		upgrades_from = tp_headhunter_barracks_1
+		gold_cost = 120
+		build_time = 547
+		light_infantry = 30
+		archers = 50
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 2.0
+	}
+	tp_headhunter_barracks_3 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 3
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tp_headhunter_barracks_2
+		gold_cost = 200
+		build_time = 1095
+		light_infantry = 60
+		archers = 40
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	tp_headhunter_barracks_4 = {
+		desc = ca_headhunter_barracks_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 4
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tp_headhunter_barracks_3
+		gold_cost = 300
+		build_time = 1095
+		light_infantry = 50
+		archers = 50
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	tp_pyramid_1 = {
+		desc = tp_pyramid_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 150
+		build_time = 547
+		levy_size = 0.05
+		garrison_size = 0.05
+		ai_creation_factor = 96
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+
+		extra_tech_building_start = 0.2
+	}
+	tp_pyramid_2 = {
+		desc = tp_pyramid_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { tp_wall_1 }
+		upgrades_from = tp_pyramid_1
+		gold_cost = 200
+		build_time = 730
+		levy_size = 0.075
+		garrison_size = 0.1
+		ai_creation_factor = 95
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+		mages = 5
+		
+		extra_tech_building_start = 0.2
+	} 
+	tp_pyramid_3 = {
+		desc = tp_pyramid_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 2
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tp_pyramid_2
+		gold_cost = 300
+		build_time = 1095
+		levy_size = 0.1
+		garrison_size = 0.15
+		ai_creation_factor = 94
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+		mages = 10
+
+		extra_tech_building_start = 0.2
+	} 
+	tp_pyramid_4 = {
+		desc = tp_pyramid_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 4
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tp_pyramid_3
+		gold_cost = 400
+		build_time = 1460
+		levy_size = 0.125
+		garrison_size = 0.2
+		ai_creation_factor = 93
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+		mages = 20
+
+		extra_tech_building_start = 0.2
+	} 
+	tp_pyramid_5 = {
+		desc = tp_pyramid_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 6
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tp_pyramid_4
+		gold_cost = 500
+		build_time = 2190
+		levy_size = 0.15
+		garrison_size = 0.25
+		ai_creation_factor = 92
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+		mages = 25
+
+		extra_tech_building_start = 0.2
+	}
+	tp_pyramid_6 = {
+		desc = tp_pyramid_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 8
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tp_pyramid_5
+		gold_cost = 500
+		build_time = 2190
+		levy_size = 0.15
+		garrison_size = 0.25
+		ai_creation_factor = 91
+		add_number_to_name = no
+		monthly_character_piety = 0.05
+		mages = 40
+
+		extra_tech_building_start = 0.2
+	}
+	tp_sac_altar_1 = {
+		desc = tp_sac_altar_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+					OR = {
+						religion = loa
+						religion = hakkar
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 1
+			FROM = {
+				culture_group = troll
+				OR = {
+					religion = loa
+					religion = hakkar
+				}
+			}
+		}
+		prerequisites = { tp_wall_1 }
+		gold_cost = 40
+		build_time = 547
+		
+		local_revolt_risk = -0.04		
+		ai_creation_factor = 93
+		add_number_to_name = no
+		monthly_character_piety = 0.5
+
+		extra_tech_building_start = 0.2
+	}
+	tp_sac_altar_2 = {
+		desc = tp_sac_altar_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+					OR = {
+						religion = loa
+						religion = hakkar
+					}
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 3
+			FROM = {
+				culture_group = troll
+				OR = {
+					religion = loa
+					religion = hakkar
+				}
+			}
+		}
+		prerequisites = { tp_wall_2 }
+		upgrades_from = tp_sac_altar_1
+		gold_cost = 120
+		build_time = 547
+		
+		local_revolt_risk = -0.09
+		ai_creation_factor = 92
+		add_number_to_name = no
+		monthly_character_piety = 1
+		
+		extra_tech_building_start = 0.2
+	}
+	tp_funeral_grounds_1 = {
+		desc = tp_funeral_grounds_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 1
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { tp_wall_1 }
+		gold_cost = 60
+		build_time = 547
+		
+		disease_defence = 0.04		
+		ai_creation_factor = 93
+		add_number_to_name = no
+		monthly_character_prestige = 0.5
+
+		extra_tech_building_start = 0.2
+	}
+	tp_funeral_grounds_2 = {
+		desc = tp_funeral_grounds_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 4
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { tp_wall_2 }
+		upgrades_from = tp_funeral_grounds_1
+		gold_cost = 150
+		build_time = 547
+		
+		disease_defence = 0.1
+		ai_creation_factor = 92
+		add_number_to_name = no
+		monthly_character_prestige = 1
+		
+		extra_tech_building_start = 0.2
+	}
+	tp_voodoo_lodge_1 = {
+		desc = tp_voodoo_lodge_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 0
+			FROM = {
+				culture_group = troll
+			}
+		}
+		gold_cost = 100
+		build_time = 365
+		mages = 50
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 1.0
+	}
+	tp_voodoo_lodge_2 = {
+		desc = tp_voodoo_lodge_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 1
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prerequisites = { tp_wall_1 }
+		upgrades_from = tp_voodoo_lodge_1
+		gold_cost = 250
+		build_time = 547
+		mages = 100
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 2.0
+	}
+}
+
+tribal = {
+	tb_dinopen_1 = {
+		desc = ca_dinopen_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				culture_group = troll
+			}
+		}
+		prestige_cost = 300
+		build_time = 365
+		light_cavalry = 20
+		war_beasts = 5
+		ai_creation_factor = 89
+		convert_to_castle = ca_dinopen_1
+		extra_tech_building_start = 0.4
+	}
+	tb_dinopen_2 = {
+		desc = ca_dinopen_1_desc
+		potential = {
+			has_game_started = yes
+			FROMFROM = {
+				location = {
+					culture_group = troll
+				}
+			}
+		}
+		trigger = {
+			FROM = {
+				culture_group = troll
+			}
+		}
+		upgrades_from = tb_dinopen_1
+		prestige_cost = 400
+		build_time = 547
+		light_cavalry = 30
+		war_beasts = 10
+		monsters = 5
+		ai_creation_factor = 88
+		convert_to_castle = ca_dinopen_2
+		extra_tech_building_start = 0.8
+	}
+}
