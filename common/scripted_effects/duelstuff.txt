@@ -1,0 +1,671 @@
+initiative = {
+	#start with vanilla traits and stats
+	set_variable = { which = counter value = 0 }
+	set_variable = { which = cap value = 0 }
+	export_to_variable = { which = cap value = intrigue }
+	while = {
+		limit = {
+			NOT = { check_variable = { which = counter which = cap } }
+		}
+		change_variable = { which = initiative value = 1 }
+		change_variable = { which = counter value = 5 }
+	}
+	if = {
+		limit = {
+			trait = stressed
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = depressed
+		}
+		change_variable = { which = initiative value = -2 }
+	}
+	if = {
+		limit = {
+			has_injury_trigger = yes
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			is_maimed_trigger = yes
+		}
+		change_variable = { which = initiative value = -2 }
+	}
+	if = {
+		limit = {
+			trait = drunkard
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			is_ill = yes
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = pregnant
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = quick
+				trait = shrewd
+			}
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+	if = {
+		limit = {
+			trait = genius
+		}
+		change_variable = { which = initiative value = 2 }
+	}
+	if = {
+		limit = {
+			trait = clubfooted
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = hunchback
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = dwarf
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = slow
+				trait = dull
+			}
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = imbecile
+		}
+		change_variable = { which = initiative value = -3 }
+	}
+	if = {
+		limit = {
+			trait = inbred
+		}
+		change_variable = { which = initiative value = -2 }
+	}
+	if = {
+		limit = {
+			trait = duelist
+		}
+		change_variable = { which = initiative value = 3 }
+	}
+	if = {
+		limit = {
+			trait = hunter
+		}
+		change_variable = { which = initiative value = 2 }
+	}
+	if = {
+		limit = {
+			trait = strategist
+		}
+		change_variable = { which = initiative value = 2 }
+	}
+	if = {
+		limit = {
+			trait = gamer
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+	if = {
+		limit = {
+			trait = slothful
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = wroth
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+	if = {
+		limit = {
+			trait = diligent
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+	if = {
+		limit = {
+			trait = patient
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = craven
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = brave
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+	if = {
+		limit = {
+			trait = paranoid
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+	if = {
+		limit = {
+			trait = trusting
+		}
+		change_variable = { which = initiative value = -1 }
+	}
+	if = {
+		limit = {
+			trait = blinded
+		}
+		change_variable = { which = initiative value = -3 }
+	}
+	if = {
+		limit = {
+			trait = shy
+		}
+		change_variable = { which = initiative = value = -1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = human
+				trait = gnome
+				#trait = night_elf
+				#trait = worgen
+				trait = troll_sand
+				trait = troll_dark
+				trait = troll_forest
+				trait = troll_ice
+				trait = troll_jungle
+				trait = troll_zandalari
+				trait = goblin
+				trait = murloc
+				trait = succubus
+				trait = air_elemental
+			}
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+	if = {
+		limit = {
+			trait = scout
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = ranger
+				trait = demon_hunter
+			}
+		}
+		change_variable = { which = initiative value = 2 }
+	}
+	if = {
+		limit = {
+			trait = monk
+		}
+		change_variable = { which = initiative value = 1 }
+	}
+}
+
+attack = {
+	set_variable = { which = counter value = 0 }
+	set_variable = { which = cap value = 0 }
+	if = {
+		limit = {
+			has_character_flag = charge
+			FROM = { has_character_flag = skirmish }
+		}
+		change_variable = { which = attack value = 2 }
+	}
+	if = {
+		limit = {
+			has_character_flag = skirmish
+			FROM = { has_character_flag = maneuvre }
+		}
+		change_variable = { which = attack value = 2 }
+	}
+	if = {
+		limit = {
+			has_character_flag = maneuvre
+			FROM = { has_character_flag = charge }
+		}
+		change_variable = { which = attack value = 2 }
+	}
+	if = {
+		limit = {
+			trait = wroth
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = strong
+				trait = robust
+			}
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			trait = duelist
+		}
+		change_variable = { which = attack value = 2 }
+	}
+	export_to_variable = { which = cap value = martial }
+	while = {
+		limit = {
+			NOT = { check_variable = { which = counter which = cap } }
+		}
+		change_variable = { which = attack value = 1 }
+		change_variable = { which = counter value = 3 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = arcanist
+				trait = necrolyte
+				trait = mage
+				trait = warlock
+				trait = necromancer
+				trait = priest
+				trait = shaman
+				AND = {
+					trait = druid
+					NOT = { has_character_modifier = mender }
+				}
+				AND = {
+					trait = witch_doctor
+					NOT = { has_character_modifier = brews }
+				}
+				trait = techmage
+				trait = paladin
+			}
+		}
+		set_variable = { which = counter value = 0 }
+		export_to_variable = { which = cap value = learning }
+		while = {
+		limit = {
+			NOT = { check_variable = { which = counter which = cap } }
+		}
+		change_variable = { which = attack value = 1 }
+		change_variable = { which = counter value = 3 }
+	}
+	if = {
+		limit = {
+			has_character_flag = charge
+			trait = fighter
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			has_character_flag = charge
+			OR = {
+				trait = warrior
+				trait = paladin
+				trait = monk
+				trait = demon_hunter
+				trait = death_knight
+				AND = {
+					trait = druid
+					has_character_modifier = feral_druid
+				}
+			}
+		}
+		change_variable = { which = attack value = 3 }
+	}
+	if = {
+		limit = {
+			has_character_flag = maneuvre
+			trait = scout
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			has_character_flag = maneuvre
+			OR = {
+				trait = shaman
+				trait = assassin
+				trait = beastmaster
+				AND = {
+					trait = witch_doctor
+					has_character_modifier = shadow_hunter
+				}
+			}
+		}
+		change_variable = { which = attack value = 3 }
+	}
+	if = {
+		limit = {
+			has_character_flag = skirmish
+			OR = {
+				trait = scout
+				trait = arcanist
+				trait = necrolyte
+			}
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			has_character_flag = skirmish
+			OR = {
+				trait = mage
+				trait = warlock
+				trait = necromancer
+				trait = shaman
+				AND = {
+					trait = witch_doctor
+					NOT = { has_character_modifier = brews }
+				}
+				trait = priest
+				AND = {
+					trait = druid
+					NOT = { has_character_modifier = feral_druid }
+					NOT = { has_character_modifier = mender }
+				}
+				trait = ranger
+				trait = beastmaster
+			}
+		}
+		change_variable = { which = attack value = 3 }
+	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					trait = priest
+					has_character_modifier = light_priest
+				}
+				trait = paladin
+			}
+			FROM = {
+				OR = {
+					trait = felsworn
+					trait = voidwalker
+					trait = undead_generic
+					trait = undead_forsaken
+					trait = undead_scourge
+					trait = eredar
+					trait = succubus
+					trait = shivarra
+					trait = fel_lord
+					trait = doomlord
+					trait = pit_lord
+				}
+			}
+		}
+		change_variable = { which = attack value = 3 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = demon_hunter
+				trait = guardian_of_tirisfal
+			}
+			FROM = {
+				OR = {
+					trait = felsworn
+					trait = eredar
+					trait = succubus
+					trait = shivarra
+					trait = fel_lord
+					trait = doomlord
+					trait = pit_lord
+				}
+			}
+		}
+		change_variable = { which = attack value = 4 }
+	}
+}
+
+defence = {
+	set_variable = { which = counter value = 0 }
+	set_variable = { which = cap value = 0 }
+	if = {
+		limit = {
+			has_character_flag = charge
+			FROM = { has_character_flag = skirmish }
+		}
+		change_variable = { which = attack value = 2 }
+	}
+	if = {
+		limit = {
+			has_character_flag = skirmish
+			FROM = { has_character_flag = maneuvre }
+		}
+		change_variable = { which = attack value = 2 }
+	}
+	if = {
+		limit = {
+			has_character_flag = maneuvre
+			FROM = { has_character_flag = charge }
+		}
+		change_variable = { which = attack value = 2 }
+	}
+	if = {
+		limit = {
+			trait = wroth
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = strong
+				trait = robust
+			}
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			trait = duelist
+		}
+		change_variable = { which = attack value = 2 }
+	}
+	export_to_variable = { which = cap value = martial }
+	while = {
+		limit = {
+			NOT = { check_variable = { which = counter which = cap } }
+		}
+		change_variable = { which = attack value = 1 }
+		change_variable = { which = counter value = 3 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = arcanist
+				trait = necrolyte
+				trait = mage
+				trait = warlock
+				trait = necromancer
+				trait = priest
+				trait = shaman
+				AND = {
+					trait = druid
+					NOT = { has_character_modifier = mender }
+				}
+				AND = {
+					trait = witch_doctor
+					NOT = { has_character_modifier = brews }
+				}
+				trait = techmage
+				trait = paladin
+			}
+		}
+		set_variable = { which = counter value = 0 }
+		export_to_variable = { which = cap value = learning }
+		while = {
+		limit = {
+			NOT = { check_variable = { which = counter which = cap } }
+		}
+		change_variable = { which = attack value = 1 }
+		change_variable = { which = counter value = 3 }
+	}
+	if = {
+		limit = {
+			has_character_flag = charge
+			trait = fighter
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			has_character_flag = charge
+			OR = {
+				trait = warrior
+				trait = paladin
+				trait = monk
+				trait = demon_hunter
+				trait = death_knight
+				AND = {
+					trait = druid
+					has_character_modifier = feral_druid
+				}
+			}
+		}
+		change_variable = { which = attack value = 3 }
+	}
+	if = {
+		limit = {
+			has_character_flag = maneuvre
+			trait = scout
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			has_character_flag = maneuvre
+			OR = {
+				trait = shaman
+				trait = assassin
+				trait = beastmaster
+				AND = {
+					trait = witch_doctor
+					has_character_modifier = shadow_hunter
+				}
+			}
+		}
+		change_variable = { which = attack value = 3 }
+	}
+	if = {
+		limit = {
+			has_character_flag = skirmish
+			OR = {
+				trait = scout
+				trait = arcanist
+				trait = necrolyte
+			}
+		}
+		change_variable = { which = attack value = 1 }
+	}
+	if = {
+		limit = {
+			has_character_flag = skirmish
+			OR = {
+				trait = mage
+				trait = warlock
+				trait = necromancer
+				trait = shaman
+				AND = {
+					trait = witch_doctor
+					NOT = { has_character_modifier = brews }
+				}
+				trait = priest
+				AND = {
+					trait = druid
+					NOT = { has_character_modifier = feral_druid }
+					NOT = { has_character_modifier = mender }
+				}
+				trait = ranger
+				trait = beastmaster
+			}
+		}
+		change_variable = { which = attack value = 3 }
+	}
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					trait = priest
+					has_character_modifier = light_priest
+				}
+				trait = paladin
+			}
+			FROM = {
+				OR = {
+					trait = felsworn
+					trait = voidwalker
+					trait = undead_generic
+					trait = undead_forsaken
+					trait = undead_scourge
+					trait = eredar
+					trait = succubus
+					trait = shivarra
+					trait = fel_lord
+					trait = doomlord
+					trait = pit_lord
+				}
+			}
+		}
+		change_variable = { which = attack value = 3 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = demon_hunter
+				trait = guardian_of_tirisfal
+			}
+			FROM = {
+				OR = {
+					trait = felsworn
+					trait = eredar
+					trait = succubus
+					trait = shivarra
+					trait = fel_lord
+					trait = doomlord
+					trait = pit_lord
+				}
+			}
+		}
+		change_variable = { which = attack value = 4 }
+	}
+}
+
+damage = {
+
+}
+
+duel_cleanup = {
+
+}

@@ -1,0 +1,403 @@
+namespace = duel
+
+#Set up
+#From is the challenger
+#Root is the challenged
+character_event = {
+	id = duel.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		#Set up initiative variable
+		FROM = {
+			set_character_flag = in_duel
+			set_variable = { which = initiative value = 0 }
+			set_variable = { which = attack value = 0 }
+			export_to_variable = { which = attack which = combat_rating }
+			set_variable = { which = defence value = 0 }
+			export_to_variable = { which = defence which = combat_rating }
+			intiative = yes
+			attack = yes
+			defence = yes
+		}
+		set_character_flag = in_duel
+		set_variable = { which = initiative value = 0 }
+		set_variable = { which = attack value = 0 }
+		export_to_variable = { which = attack which = combat_rating }
+		set_variable = { which = defence value = 0 }
+		export_to_variable = { which = defence which = combat_rating }
+		initiative = yes
+		attack = yes
+		defence = yes
+		FROM = {
+			set_variable = { which = global_initiative which = initiative }
+		}
+		if = {
+			limit = {
+				check_variable = { which = global_initiative which = initiative } # Challenger gets a slight advantage
+			}
+			FROM = {
+				character_event = { id = duel.2 }
+				character_event = { id = duel. }
+			}
+			character_event = { id = duel. }
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = { check_variable = { which = global_initiative which = initiative } }
+			}
+			FROM = {
+				ROOT = { # So it sets up the scope chain right
+					character_event = { id = duel.2 }
+					character_event = { id = duel. }
+				}
+				character_event = { id = duel. }
+			}
+			break = yes
+		}
+	}
+}
+
+character_event = {
+	id = duel.2
+	desc = EVTDESCDUEL.2 # You and [From.GetBestName] face off against each other. What will you do?
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_character_flag = charge
+		clr_character_flag = maneuvre
+		clr_character_flag = skirmish
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = worgen
+					trait = orc
+					trait = tauren
+					trait = wretched
+					trait = dragon_red
+					trait = dragon_blue
+					trait = dragon_green
+					trait = dragon_bronze
+					trait = dragon_black
+					trait = dragon_chromatic
+					trait = dragon_infinite
+					trait = dragon_twilight
+					trait = dragon_nightmare
+					trait = ogre
+					trait = gnoll
+					trait = hakkar_trait
+					trait = trogg
+					trait = pit_lord
+					trait = doomlord
+					trait = fel_lord
+					trait = voidwalker
+					trait = earth_elemental
+					trait = fire_elemental
+					trait = dire_troll
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = brave
+					trait = wroth
+					trait = zealous
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = strong
+					trait = robust
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = fighter
+					trait = warrior
+					trait = paladin
+					trait = death_knight
+					trait = demon_hunter
+					trait = monk
+					AND = {
+						trait = druid
+						has_character_modifier = feral_druid
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = berserker
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = dull
+					trait = slow
+					trait = imbecile
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = peasant_leader
+					trait = heresiarch
+				}
+			}
+		}
+		name = EVTOPTDUEL.2a # Charge
+		set_character_flag = charge
+		attack = yes
+		defence = yes
+		FROM = {
+			character_event = { duel. }
+			damage = yes
+			if = {
+				limit = {
+					is_alive = yes
+					trait = capable
+					prisoner = no
+				}
+				character_event = { duel.2 }
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = human
+					trait = gnome
+					trait = goblin
+					trait = water_elemental
+					trait = air_elemental
+					trait = succubus
+					trait = shivarra
+					trait = dreadlord
+					trait = ogre_magi
+					trait = broken
+					trait = lost_one
+					trait = pale_orc
+					trait = high_elf
+					trait = blood_elf
+					trait = night_elf
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = genius
+					trait = quick
+					trait = shrewd
+				}
+			}
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = strategist
+					trait = gamer
+				}
+			}
+			modifier = {
+				factor = 1.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 1.5
+				trait = scout
+			}
+			modifier = {
+				factor = 1.5
+				martial = 10
+			}
+			modifier = {
+				factor = 1.5
+				intrigue = 10
+			}
+			modifier = {
+				factor = 2
+				trait = paranoid
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = shaman
+					trait = rogue
+					trait = assassin
+					trait = beastmaster
+					trait = mechanist
+					AND = {
+						trait = witch_doctor
+						has_character_modifier = shadow_hunter
+					}
+				}
+			}
+		}
+		name = EVTOPTDUEL.2b # Maneuvre
+		set_character_flag = maneuvre
+		attack = yes
+		defence = yes
+		FROM = {
+			character_event = { duel. }
+			damage = yes
+			if = {
+				limit = {
+					is_alive = yes
+					trait = capable
+					prisoner = no
+				}
+				character_event = { duel.2 }
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = night_elf
+					trait = troll_ice
+					trait = troll_dark
+					trait = troll_forest
+					trait = troll_jungle
+					trait = troll_sand
+					trait = troll_zandalari
+					trait = high_elf
+					trait = blood_elf
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = weak
+					trait = feeble
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = hunter
+					trait = falconer
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = craven
+					trait = shy
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = paranoid
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = arcanist
+					trait = necrolyte
+					trait = scout
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = mage
+					trait = warlock
+					trait = necromancer
+					trait = shaman
+					trait = witch_doctor
+					trait = priest
+					trait = druid
+					trait = ranger
+					trait = beastmaster
+				}
+			}
+		}
+		name = EVTOPTDUEL.2c # Skirmish
+		set_character_flag = skirmish
+		attack = yes
+		defence = yes
+		FROM = {
+			character_event = { duel. }
+			damage = yes
+			if = {
+				limit = {
+					is_alive = yes
+					trait = capable
+					prisoner = no
+				}
+				character_event = { duel.2 }
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			always = no # just a placeholder
+		}
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 2
+				trait = craven
+			}
+			modifier = {
+				factor = 5
+				trait = depressed
+			}
+			modifier = {
+				factor = 3
+				has_injury_trigger = yes
+			}
+			modifier = {
+				factor = 6
+				has_maimed_trigger = yes
+			}
+		}
+		name = EVTOPTDUEL.2d # Surrender
+	}
+	
+	option = {
+		trigger = {
+			always = no # just a placeholder
+		}
+		ai_chance = {
+			factor = 0.1
+			modifier = {
+				factor = 2
+				trait = craven
+			}
+			modifier = {
+				factor = 3
+				has_injury_trigger = yes
+			}
+			modifier = {
+				factor = 6
+				has_maimed_trigger = yes
+			}
+		}
+		name = EVTOPTDUEL.2f # Flee
+	}
+}
