@@ -10,7 +10,16 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = necrolyte
+			AND = {
+				trait = necrolyte
+				OR = {
+					NOR = {
+						trait = arcanist_fake
+						trait = healer_fake
+					}
+					NOT = { has_character_flag = necrolyte_discovered }
+				}
+			}
 			AND = {
 				trait = warlock
 				OR = {
@@ -40,7 +49,7 @@ character_event = {
 						trait = witch_doctor_fake
 						trait = techmage_fake
 					}
-					NOT = { has_character_flag = warlock_necromancer }
+					NOT = { has_character_flag = necromancer_discovered }
 				}
 			}
 			AND = {

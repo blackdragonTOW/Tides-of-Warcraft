@@ -111,37 +111,8 @@ targetted_decisions = {
 		}
 	}
 	
-	infiltrate_court = {
-		filter = all
-		ai_target_filter = all
-		from_potential = {
-			OR = {
-				trait = dragon_black
-				trait = dragon_blue
-				trait = dragon_bronze
-				trait = dragon_green
-				trait = dragon_red
-				trait = dragon_infinite
-				trait = dragon_nightmare
-			}
-			prisoner = no
-			NOT = { trait = dragon_infiltrated }
-			NOT = { trait = emerald_dream }
-		}
-		potential = {
-			NOT = { same_realm = FROM }
-			NOR = {
-				trait = dragon_black
-				trait = dragon_blue
-				trait = dragon_bronze
-				trait = dragon_green
-				trait = dragon_red
-				trait = dragon_infinite
-				trait = dragon_nightmare
-			}
-			is_ruler = yes
-			higher_real_tier_than = COUNT
-		}
-	}
+	#infiltrate_court = {
+	#
+	#}
 	
 }

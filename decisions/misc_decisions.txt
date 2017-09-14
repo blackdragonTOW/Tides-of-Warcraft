@@ -273,15 +273,16 @@ decisions = {
 	
 	reveal_yourself = {
 		potential = {
-			OR = {
-				has_character_flag = secret_necrolyte
-				has_character_flag = secret_warlock
-				has_character_flag = secret_necromancer
-				has_character_flag = secret_assassin
-				has_character_flag = secret_rogue
-				has_character_flag = secret_blood_magic
-				has_character_flag = secret_shadow_priest
-				has_character_flag = secret_dark_shaman
+			NOR = {
+				has_character_flag = necrolyte_discovered
+				has_character_flag = warlock_discovered
+				has_character_flag = necromancer_discovered
+				has_character_flag = assassin_discovered
+				has_character_flag = rogue_discovered
+				has_character_flag = blood_magic_discovered
+				has_character_flag = shadow_priest_discovered
+				has_character_flag = dark_shaman_discovered
+				has_character_flag = nightmare_druid_discovered
 			}
 		}
 		allow = {
@@ -300,7 +301,6 @@ decisions = {
 					limit = {
 						trait = warlock
 					}
-					clr_character_flag = secret_warlock
 					remove_trait = arcanist_fake
 					remove_trait = healer_fake
 					remove_trait = mage_fake
@@ -394,7 +394,6 @@ decisions = {
 					limit = {
 						trait = necrolyte
 					}
-					clr_character_flag = secret_necrolyte
 					remove_trait = healer_fake
 					remove_trait = arcanist_fake
 				}
@@ -451,7 +450,6 @@ decisions = {
 					limit = {
 						trait = necromancer
 					}
-					clr_character_flag = secret_necromancer
 					remove_trait = arcanist_fake
 					remove_trait = healer_fake
 					remove_trait = mage_fake
@@ -530,7 +528,6 @@ decisions = {
 				limit = {
 					has_character_modifier = blood_magic
 				}
-				clr_character_flag = secret_blood_magic
 				remove_character_modifier = evocation_fake
 				set_character_flag = blood_magic_discovered
 			}
@@ -538,7 +535,6 @@ decisions = {
 				limit = {
 					has_character_modifier = shadow_priest
 				}
-				clr_character_flag = secret_shadow_priest
 				remove_character_modifier = holy_priest_fake
 				remove_character_modifier = sun_priest_fake
 				remove_character_modifier = moon_priest_fake
@@ -585,7 +581,6 @@ decisions = {
 				limit = {
 					has_character_modifier = dark_shaman
 				}
-				clr_character_flag = secret_dark_shaman
 				remove_character_modifier = elementalist_fake
 				set_character_flag = dark_shaman_discovered
 				if = {
@@ -596,6 +591,37 @@ decisions = {
 						}
 					}
 					religion = old_gods
+				}
+				if = {
+					limit = {
+						OR = {						
+							secret_religion = cult_of_the_infinite
+							secret_religion = cult_of_the_destroyer
+							secret_religion = emerald_nightmare
+							secret_religion = old_gods
+							secret_religion = twilights_hammer
+						}
+					}
+					flip_to_secret_religion_effect = yes
+				}
+			}
+			if = {
+				limit = {
+					has_character_modifier = nightmare_druid
+				}
+				remove_character_modifier = mender_fake
+				set_character_flag = nightmare_druid_discovered
+				if = {
+					limit = {
+						NOR = {
+							true_religion = cult_of_the_infinite
+							true_religion = cult_of_the_destroyer
+							true_religion = emerald_nightmare
+							true_religion = old_gods
+							true_religion = twilights_hammer
+						}
+					}
+					religion = emerald_nightmare
 				}
 				if = {
 					limit = {

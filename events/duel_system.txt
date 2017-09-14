@@ -18,9 +18,13 @@ character_event = {
 			export_to_variable = { which = attack which = combat_rating }
 			set_variable = { which = defence value = 0 }
 			export_to_variable = { which = defence which = combat_rating }
+			set_variable = { which = damage value = 0 }
+			set_variable = { which = hp value = 0 }
+			export_to_variable = { which = hp which = health }
 			intiative = yes
 			attack = yes
 			defence = yes
+			hp = yes
 		}
 		set_character_flag = in_duel
 		set_variable = { which = initiative value = 0 }
@@ -28,9 +32,13 @@ character_event = {
 		export_to_variable = { which = attack which = combat_rating }
 		set_variable = { which = defence value = 0 }
 		export_to_variable = { which = defence which = combat_rating }
+		set_variable = { which = damage value = 0 }
+		set_variable = { which = hp value = 0 }
+		export_to_variable = { which = hp which = health }
 		initiative = yes
 		attack = yes
 		defence = yes
+		hp = yes
 		FROM = {
 			set_variable = { which = global_initiative which = initiative }
 		}
@@ -40,9 +48,9 @@ character_event = {
 			}
 			FROM = {
 				character_event = { id = duel.2 }
-				character_event = { id = duel. }
+				character_event = { id = duel.10 }
 			}
-			character_event = { id = duel. }
+			character_event = { id = duel.11 }
 			break = yes
 		}
 		if = {
@@ -52,9 +60,9 @@ character_event = {
 			FROM = {
 				ROOT = { # So it sets up the scope chain right
 					character_event = { id = duel.2 }
-					character_event = { id = duel. }
+					character_event = { id = duel.10 }
 				}
-				character_event = { id = duel. }
+				character_event = { id = duel.11 }
 			}
 			break = yes
 		}
@@ -158,19 +166,21 @@ character_event = {
 			}
 		}
 		name = EVTOPTDUEL.2a # Charge
-		set_character_flag = charge
-		attack = yes
-		defence = yes
-		FROM = {
-			character_event = { duel. }
-			damage = yes
-			if = {
-				limit = {
-					is_alive = yes
-					trait = capable
-					prisoner = no
+		hidden_tooltip = {
+			set_character_flag = charge
+			attack = yes
+			defence = yes
+			FROM = {
+				character_event = { duel.12 }
+				damage = yes
+				if = {
+					limit = {
+						is_alive = yes
+						trait = capable
+						prisoner = no
+					}
+					character_event = { duel.2 }
 				}
-				character_event = { duel.2 }
 			}
 		}
 	}
@@ -253,19 +263,21 @@ character_event = {
 			}
 		}
 		name = EVTOPTDUEL.2b # Maneuvre
-		set_character_flag = maneuvre
-		attack = yes
-		defence = yes
-		FROM = {
-			character_event = { duel. }
-			damage = yes
-			if = {
-				limit = {
-					is_alive = yes
-					trait = capable
-					prisoner = no
+		hidden_tooltip = {
+			set_character_flag = maneuvre
+			attack = yes
+			defence = yes
+			FROM = {
+				character_event = { duel.13 }
+				damage = yes
+				if = {
+					limit = {
+						is_alive = yes
+						trait = capable
+						prisoner = no
+					}
+					character_event = { duel.2 }
 				}
-				character_event = { duel.2 }
 			}
 		}
 	}
@@ -336,26 +348,29 @@ character_event = {
 			}
 		}
 		name = EVTOPTDUEL.2c # Skirmish
-		set_character_flag = skirmish
-		attack = yes
-		defence = yes
-		FROM = {
-			character_event = { duel. }
-			damage = yes
-			if = {
-				limit = {
-					is_alive = yes
-					trait = capable
-					prisoner = no
+		hidden_tooltip = {
+			set_character_flag = skirmish
+			attack = yes
+			defence = yes
+			FROM = {
+				character_event = { duel.14 }
+				damage = yes
+				if = {
+					limit = {
+						is_alive = yes
+						trait = capable
+						prisoner = no
+					}
+					character_event = { duel.2 }
 				}
-				character_event = { duel.2 }
 			}
 		}
 	}
 	
 	option = {
 		trigger = {
-			always = no # just a placeholder
+			NOT = { has_character_flag = duel_cannot_surrender }
+			NOT = { trait = hakkar_trait }
 		}
 		ai_chance = {
 			factor = 0.1
@@ -377,11 +392,25 @@ character_event = {
 			}
 		}
 		name = EVTOPTDUEL.2d # Surrender
+		prestige = -25
+		hidden_tooltip = {
+			if = {
+				limit = {
+					OR = {
+						has_character_flag = duel_lover_accuser
+						has_character_flag = duel_lover_accused
+					}
+				}
+				set_character_flag = enemy_yields
+			}
+			FROM = { character_event = { id = duel.4 } }
+		}
 	}
 	
 	option = {
 		trigger = {
-			always = no # just a placeholder
+			NOT = { has_character_flag = duel_cannot_flee }
+			NOT = { trait = hakkar_trait }
 		}
 		ai_chance = {
 			factor = 0.1
@@ -399,5 +428,436 @@ character_event = {
 			}
 		}
 		name = EVTOPTDUEL.2f # Flee
+		prestige = -50
+		hidden_tooltip = {
+			random_list = {
+				4 = { }
+				2 = { remove_trait = brave }
+				1 = {
+					remove_trait = brave
+					add_trait = craven
+				}
+			}
+			random_list = {
+				3 = {
+					modifier = {
+						factor = 1.5
+						OR = {
+							trait = gnome
+							trait = goblin
+							trait = kobold
+						}
+					}
+					character_event = { id = duel.8 }
+					FROM = { character_event = { id = duel.9 } }
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						FROM = {
+							NOT = { has_character_flag = charge }
+							NOT = { has_character_flag = skirmish }
+						}
+					}
+					modifier = {
+						factor = 2
+						FROM = { has_character_flag = skirmish }
+					}
+					character_event = { id = duel.15 }
+					FROM = { character_event = { id = duel.16 } }
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = duel.3
+	desc = EVTDESCDUEL.3 # You have slain [From.GetBestName] in battle!
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AKGREAT
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_character_flag = duel_hakkar
+					usurp_title = { target = FROM type = hakkar_blood_war }
+				}
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_wol
+				}
+				long_character_event = { id = WoL.11011 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_lover_accuser
+				}
+				character_event = { id = WoL.1037 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_lover_accused
+				}
+				character_event = { id = WoL.1040 }
+			}
+			duel_cleanup = yes
+			add_character_modifier = {
+				modifier = recent_duel_victory
+				months = 12
+			}
+		}
+		prestige = 25
+	}
+}
+
+character_event = {
+	id = duel.4
+	desc = EVTDESCDUEL.4 # [From.GetBestName] has surrendered and is at your mercy. What will you do?
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_character_modifier = {
+			modifier = recent_duel_victory
+			months = 12
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOT = { has_character_flag = duel_wol }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				OR = {
+					rival = FROM
+					trait = cruel
+					trait = wroth
+					trait = impaler
+				}
+			}
+		}
+		name = EVTOPTDUEL.4a # Finish [From.GetHerHim] off.
+		prestige = 25
+		FROM = {
+			hidden_tooltip = {
+				character_event = { id = duel.5 }
+				duel_cleanup = yes
+			}
+			death = { reason = death_duel killer = PREV }
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_character_flag = duel_lover_accuser
+				}
+				character_event = { id = WoL.1037 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_lover_accused
+				}
+				character_event = { id = WoL.1040 }
+			}
+			random_list = {
+				4 = { }
+				2 = { remove_trait = kind }
+				1 = {
+					remove_trait = kind
+					add_trait = cruel
+				}
+			}
+			duel_cleanup = yes
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOT = { has_character_flag = duel_wol }
+			NOT = { has_character_flag = duel_guardian }
+			NOT = { has_character_flag = duel_lover_accuser }
+			NOT = { has_character_flag = duel_lover_accused }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = greedy
+			}
+		}
+		name = EVTOPTDUEL.4b # Capture [From.GetHerHim].
+		prestige = 25
+		hidden_tooltip = {
+			duel_cleanup = yes
+		}
+		FROM = {
+			imprison = PREV
+			hidden_tooltip = {
+				character_event = { id = duel.6 }
+				duel_cleanup = yes
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOT = { has_character_flag = duel_guardian }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = kind
+			}
+		}
+		name = EVTOPTDUEL.4c # [From.GetSheHe] fought well, let [From.GetHerHim] go.
+		prestige = 25
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_character_flag = duel_lover_accuser
+				}
+				character_event = { id = WoL.1037 }
+				FROM = { character_event = { id = WoL.1038 } }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_lover_accused
+				}
+				character_event = { id = WoL.1040 }
+				FROM = { character_event = { id = WoL.1041 } }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_wol
+				}
+				long_character_event = { id = WoL.11006  }
+			}
+			random_list = {
+				4 = { }
+				2 = { remove_trait = cruel }
+				2 = { remove_trait = impaler }
+				2 = { remove_trait = wroth }
+				1 = {
+					remove_trait = cruel
+					remove_trait = impaler
+					remove_trait = wroth
+					add_trait = kind
+				}
+			}
+			duel_cleanup = yes
+		}
+		FROM = {
+			hidden_tooltip = {
+				character_event = { id = duel.7 }
+				duel_cleanup = yes
+			}
+		}
+	}
+}
+
+character_event = {
+	id = duel.5
+	desc = EVTDESCDUEL.5 # Despite your surrender, [From.GetBestName] decides to kill you anyway.
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTDUEL.5 # But I surrendered!
+	}
+}
+
+character_event = {
+	id = duel.6
+	desc = EVTDESCDUEL.6 # Accepting your surrender, [From.GetBestName] decides to capture and imprison you.
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTDUEL.6 # At least I am alive.
+	}
+}
+
+character_event = {
+	id = duel.7
+	desc = EVTDESCDUEL.7 # Saying you fought well, [From.GetBestName] tells you that you are free to go.
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTDUEL.7 # Thank you.
+	}
+}
+
+character_event = {
+	id = duel.8
+	desc = EVTDESCDUEL.8 # You flee the site of battle, leaving your opponent behind.
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTDUEL.8 # Live to fight another day!
+		hidden_tooltip = {
+			duel_cleanup = yes
+		}
+	}
+}
+
+character_event = {
+	id = duel.9
+	desc = EVTDESCDUEL.9 # [From.GetBestName] has fled from battle like a true coward!
+	picture = GFX_evt_melee
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTDUEL.9 # Disgusting.
+		prestige = 25
+		hidden_tooltip = {
+			duel_cleanup = yes
+			add_character_modifier = {
+				modifier = recent_duel_victory
+				months = 12
+			}
+		}
+	}
+}
+
+character_event = {
+	id = duel.10
+	desc = EVTDESCDUEL.10 # You have gained the upper hand and have the first blow!
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.11
+	desc = EVTDESCDUEL.11 # [From.GetBestName] has gained the upper hand and has the first blow!
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.12
+	desc = EVTDESCDUEL.12 # [From.GetBestName] has charged you!
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.13
+	desc = EVTDESCDUEL.13 # [From.GetBestName] is maneuvring for agile, precise attacks.
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.14
+	desc = EVTDESCDUEL.14 # [From.GetBestName] attacks from afar!
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.15
+	desc = EVTDESCDUEL.15 # You tried to flee, but [From.GetBestName] managed to prevent that.
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.16
+	desc = EVTDESCDUEL.16 # [From.GetBestName] tried and failed to flee.
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.17
+	desc = EVTDESCDUEL.17 # You've wounded [From.GetBestName]!
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.18
+	desc = EVTDESCDUEL.18 # You've severely injured [From.GetBestName]!
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = duel.19
+	desc = EVTDESCDUEL.19 # You've maimed [From.GetBestName]!
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
 	}
 }

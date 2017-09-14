@@ -915,6 +915,12 @@ targetted_decisions = {
 				}
 			}
 			hidden_tooltip = {
+				set_character_flag = duel_cannot_flee
+				set_character_flag = duel_wol
+				FROM = {
+					set_character_flag = duel_cannot_flee
+					set_character_flag = duel_wol
+				}
 				character_event = { id = WoL.11000 }
 			}
 		}

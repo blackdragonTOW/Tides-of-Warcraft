@@ -312,11 +312,12 @@ attack = {
 		set_variable = { which = counter value = 0 }
 		export_to_variable = { which = cap value = learning }
 		while = {
-		limit = {
-			NOT = { check_variable = { which = counter which = cap } }
+			limit = {
+				NOT = { check_variable = { which = counter which = cap } }
+			}
+			change_variable = { which = attack value = 1 }
+			change_variable = { which = counter value = 3 }
 		}
-		change_variable = { which = attack value = 1 }
-		change_variable = { which = counter value = 3 }
 	}
 	if = {
 		limit = {
@@ -454,29 +455,29 @@ defence = {
 	if = {
 		limit = {
 			has_character_flag = charge
-			FROM = { has_character_flag = skirmish }
+			NOT = { FROM = { has_character_flag = charge } }
 		}
-		change_variable = { which = attack value = 2 }
+		change_variable = { which = defence value = -1 }
 	}
 	if = {
 		limit = {
 			has_character_flag = skirmish
-			FROM = { has_character_flag = maneuvre }
+			NOT = { FROM = { has_character_flag = charge } }
 		}
-		change_variable = { which = attack value = 2 }
+		change_variable = { which = defence value = 2 }
 	}
 	if = {
 		limit = {
 			has_character_flag = maneuvre
-			FROM = { has_character_flag = charge }
+			NOT = { FROM = { has_character_flag = skirmish } }
 		}
-		change_variable = { which = attack value = 2 }
+		change_variable = { which = defence value = 1 }
 	}
 	if = {
 		limit = {
-			trait = wroth
+			trait = patient
 		}
-		change_variable = { which = attack value = 1 }
+		change_variable = { which = defence value = 1 }
 	}
 	if = {
 		limit = {
@@ -485,20 +486,20 @@ defence = {
 				trait = robust
 			}
 		}
-		change_variable = { which = attack value = 1 }
+		change_variable = { which = defence value = 2 }
 	}
 	if = {
 		limit = {
 			trait = duelist
 		}
-		change_variable = { which = attack value = 2 }
+		change_variable = { which = defence value = 2 }
 	}
 	export_to_variable = { which = cap value = martial }
 	while = {
 		limit = {
 			NOT = { check_variable = { which = counter which = cap } }
 		}
-		change_variable = { which = attack value = 1 }
+		change_variable = { which = defence value = 1 }
 		change_variable = { which = counter value = 3 }
 	}
 	if = {
@@ -526,27 +527,24 @@ defence = {
 		set_variable = { which = counter value = 0 }
 		export_to_variable = { which = cap value = learning }
 		while = {
-		limit = {
-			NOT = { check_variable = { which = counter which = cap } }
+			limit = {
+				NOT = { check_variable = { which = counter which = cap } }
+			}
+			change_variable = { which = defence value = 1 }
+			change_variable = { which = counter value = 3 }
 		}
-		change_variable = { which = attack value = 1 }
-		change_variable = { which = counter value = 3 }
 	}
 	if = {
 		limit = {
-			has_character_flag = charge
 			trait = fighter
 		}
-		change_variable = { which = attack value = 1 }
+		change_variable = { which = defence value = 1 }
 	}
 	if = {
 		limit = {
-			has_character_flag = charge
 			OR = {
-				trait = warrior
+				trait = fighter
 				trait = paladin
-				trait = monk
-				trait = demon_hunter
 				trait = death_knight
 				AND = {
 					trait = druid
@@ -554,118 +552,359 @@ defence = {
 				}
 			}
 		}
-		change_variable = { which = attack value = 3 }
+		change_variable = { which = defence value = 2 }
 	}
 	if = {
 		limit = {
-			has_character_flag = maneuvre
-			trait = scout
+			trait = AK_trait_dwarf
 		}
-		change_variable = { which = attack value = 1 }
+		change_variable = { which = defence value = 1 }
 	}
 	if = {
 		limit = {
-			has_character_flag = maneuvre
 			OR = {
-				trait = shaman
-				trait = assassin
-				trait = beastmaster
+				trait = ogre
+				trait = earth_elemental
 				AND = {
-					trait = witch_doctor
-					has_character_modifier = shadow_hunter
+					trait = faceless
+					NOT = { trait = cthrax }
+				}
+				trait = dreadlord
+				trait = shivarra
+				trait = voidwalker
+			}
+		}
+		change_variable = { which = defence value = 2 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = pit_lord
+				trait = fel_lord
+				trait = doomlord
+				trait = dragon_black
+				trait = dragon_blue
+				trait = dragon_bronze
+				trait = dragon_green
+				trait = dragon_red
+				trait = dragon_chromatic
+				trait = dragon_infinite
+				trait = dragon_nightmare
+				trait = dragon_twilight
+				trait = hakkar_trait
+				AND = {
+					trait = faceless
+					trait = cthrax
 				}
 			}
 		}
-		change_variable = { which = attack value = 3 }
+		change_variable = { which = defence value = 3 }
 	}
 	if = {
 		limit = {
-			has_character_flag = skirmish
 			OR = {
-				trait = scout
-				trait = arcanist
-				trait = necrolyte
+				trait = undead_scourge
+				trait = undead_forsaken
+				trait = undead_generic
 			}
 		}
-		change_variable = { which = attack value = 1 }
+		change_variable = { which = defence value = 1 }
 	}
+}
+
+hp = {
 	if = {
 		limit = {
-			has_character_flag = skirmish
 			OR = {
-				trait = mage
-				trait = warlock
-				trait = necromancer
-				trait = shaman
+				trait = AK_trait_dwarf
 				AND = {
-					trait = witch_doctor
-					NOT = { has_character_modifier = brews }
+					trait = faceless
+					NOT = { trait = cthrax }
 				}
-				trait = priest
-				AND = {
-					trait = druid
-					NOT = { has_character_modifier = feral_druid }
-					NOT = { has_character_modifier = mender }
-				}
-				trait = ranger
-				trait = beastmaster
+				trait = voidwalker
+				trait = dreadlord
+				trait = shivarra
+				trait = earth_elemental
+				trait = ogre
+				trait = felsworn
+				trait = undead_generic
+				trait = undead_forsaken
+				trait = undead_scourge
 			}
 		}
-		change_variable = { which = attack value = 3 }
+		change_variable = { which = hp value = 1 }
 	}
 	if = {
 		limit = {
 			OR = {
+				trait = dragon_black
+				trait = dragon_blue
+				trait = dragon_bronze
+				trait = dragon_green
+				trait = dragon_red
+				trait = dragon_chromatic
+				trait = dragon_infinite
+				trait = dragon_nightmare
+				trait = dragon_twilight
+				trait = pit_lord
+				trait = fel_lord
+				trait = doomlord
+				trait = hakkar_trait
 				AND = {
-					trait = priest
-					has_character_modifier = light_priest
+					trait = faceless
+					trait = cthrax
 				}
+			}
+		}
+		change_variable = { which = hp value = 3 }
+	}
+	if = {
+		limit = {
+			trait = fighter
+		}
+		change_variable = { which = hp value = 1 }
+	}
+	if = {
+		limit = {
+			OR = {
+				trait = warrior
 				trait = paladin
-			}
-			FROM = {
-				OR = {
-					trait = felsworn
-					trait = voidwalker
-					trait = undead_generic
-					trait = undead_forsaken
-					trait = undead_scourge
-					trait = eredar
-					trait = succubus
-					trait = shivarra
-					trait = fel_lord
-					trait = doomlord
-					trait = pit_lord
-				}
+				trait = death_knight
 			}
 		}
-		change_variable = { which = attack value = 3 }
-	}
-	if = {
-		limit = {
-			OR = {
-				trait = demon_hunter
-				trait = guardian_of_tirisfal
-			}
-			FROM = {
-				OR = {
-					trait = felsworn
-					trait = eredar
-					trait = succubus
-					trait = shivarra
-					trait = fel_lord
-					trait = doomlord
-					trait = pit_lord
-				}
-			}
-		}
-		change_variable = { which = attack value = 4 }
+		change_variable = { which = hp value = 2 }
 	}
 }
 
 damage = {
-
+	FROM = {
+		set_variable = { which = global_attack which = attack }
+	}
+	if = {
+		limit = {
+			check_variable = { which = global_attack which = defence }
+		}
+		if = {
+			limit = {
+				NOT = { is_variable_equal = { which = global_attack which = defence } }
+			}
+			set_variable = { which = counter value = 0 }
+			export_to_variable = { which = counter which = defence }
+			set_variable = { which = counter2 value = 0 }
+			set_variable = { which = cap value = 0 }
+			export_to_variable = { which = cap which = global_attack }
+			while = {
+				limit = {
+					NOT = { check_variable = { which = counter which = cap } }
+				}
+				change_variable = { which = counter value = 1 }
+				change_variable = { which = counter2 value = 1 }
+			}
+		}
+		random_list = {
+			10 = {
+				change_variable = { which = damage value = 1 }
+			}
+			4 = {
+				modifier = {
+					factor = 0
+					is_variable_equal = { which = global_attack which = defence }
+				}
+				modifier = {
+					factor = 2
+					check_variable = { which = counter2 value = 2 }
+					NOT = { check_variable = { which = counter2 value = 6 } }
+				}
+				change_variable = { which = damage value = 2 }
+			}
+			2 = {
+				modifier = {
+					factor = 0
+					is_variable_equal = { which = global_attack which = defence }
+				}
+				modifier = {
+					factor = 3
+					check_variable = { which = counter2 value = 6 }
+					NOT = { check_variable = { which = counter2 value = 11 } }
+				}
+				change_variable = { which = damage value = 4 }
+			}
+			1 = {
+				modifier = {
+					factor = 0
+					is_variable_equal = { which = global_attack which = defence }
+				}
+				modifier = {
+					factor = 3
+					check_variable = { which = counter2 value = 11 }
+				}
+				change_variable = { which = damage value = 6 }
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { which = damage which = hp }
+			}
+			set_variable = { which = counter value = 0 }
+			export_to_variable = { which = counter which = hp }
+			set_variable = { which = counter2 value = 0 }
+			set_variable = { which = cap value = 0 }
+			export_to_variable = { which = cap which = damage }
+			while = {
+				limit = {
+					NOT = { check_variable = { which = counter which = cap } }
+				}
+				change_variable = { which = counter value = 1 }
+				change_variable = { which = counter2 value = 1 }
+			}
+			random_list = {
+				15 = {
+					modifier = {
+						factor = 0
+						has_injury_trigger = yes
+					}
+					add_trait_wounded_effect = yes
+					FROM = { character_event = { id = duel.17 } }
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							NOT = { has_dlc = Reapers }
+							trait = severely_injured
+						}
+						modifier = {
+							factor = 0
+							is_variable_equal = { which = damage which = hp }
+							NOT = { trait = wounded }
+						}
+					}
+					remove_trait = wounded
+					add_trait_severely_injured_effect = yes
+					FROM = { character_event = { id = duel.18 } }
+				}
+				5 = {
+					modifier = {
+						factor = 0
+						OR = {
+							AND = {
+								NOT = { has_dlc = Reapers }
+								trait = maimed
+							}
+							AND = {
+								has_dlc = Reapers
+								trait = one_eyed
+								trait = one_handed 
+								trait = one_legged 
+								trait = disfigured 
+								trait = mangled
+							}
+						}
+					}
+					modifier = {
+						factor = 0
+						is_variable_equal = { which = damage which = hp }
+						OR = {
+							AND = {
+								has_dlc = Reapers
+								NOT = { trait = severely_injured }
+							}
+							AND = {
+								NOT = { has_dlc = Reapers }
+								NOT = { trait = wounded }
+							}
+						}
+					}
+					add_maimed_trait_effect = yes
+					FROM = { character_event = { id = duel.19 } }
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						is_variable_equal = { which = damage which = hp }
+						NOT = {
+							OR = {
+								AND = {
+									NOT = { has_dlc = Reapers }
+									trait = maimed
+								}
+								AND = {
+									has_dlc = Reapers
+									trait = one_eyed
+									trait = one_handed 
+									trait = one_legged 
+									trait = disfigured 
+									trait = mangled
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								has_character_flag = duel_lover_accuser
+								has_character_flag = duel_lover_accused
+							}
+						}
+						set_character_flag = enemy_killed
+					}
+					death = { reason = death_duel killer = FROM }
+					FROM = { character_event = { id = duel.3 } }
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_alive = yes
+				health = 0
+			}
+			if = {
+				limit = {
+					OR = {
+						has_character_flag = duel_lover_accuser
+						has_character_flag = duel_lover_accused
+					}
+				}
+				set_character_flag = enemy_killed
+			}
+			death = { reason = death_duel killer = FROM }
+			FROM = { character_event = { id = duel.3 } }
+		}
+		if = {
+			limit = {
+				is_alive = no
+			}
+			if = {
+				limit = {
+					OR = {
+						has_character_flag = duel_lover_accuser
+						has_character_flag = duel_lover_accused
+					}
+				}
+				set_character_flag = enemy_killed
+			}
+			FROM = { character_event = { id = duel.3 } }
+		}
+		break = yes
+	}
 }
 
 duel_cleanup = {
-
+	clr_character_flag = in_duel
+	clr_character_flag = duel_cannot_flee
+	clr_character_flag = duel_cannot_surrender
+	clr_character_flag = duel_wol
+	clr_character_flag = duel_guardian
+	clr_character_flag = duel_hakkar
+	clr_character_flag = duel_lover_accuser
+	clr_character_flag = duel_lover_accused
+	if = {
+		limit = {
+			NOT = { lifestyle_traits = 2 }
+		}
+		random = {
+			chance = 20
+			add_trait = duelist
+		}
+	}
 }
