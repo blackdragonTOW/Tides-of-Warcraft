@@ -2638,52 +2638,12 @@ character_event = {
 
 	option = {
 		name = "EVTOPTA72031" #Accept
-		random_list = {
-			35 = {
-				add_trait = wounded
-				hidden_tooltip = {
-					FROM = {
-						set_character_flag = wounded_opponent
-						character_event = {
-							id = 72032
-						}
-					}
-				}
-			}
-			35 = {
-				add_maimed_trait_effect = yes
-				hidden_tooltip = {
-					FROM = {
-						set_character_flag = maimed_opponent
-						character_event = {
-							id = 72032
-						}
-					}
-				}
-			}
-			10 = {
-				death = { death_reason = death_duel }
-				hidden_tooltip = {
-					FROM = {
-						set_character_flag = killed_opponent
-						character_event = {
-							id = 72033
-						}
-					}
-				}
-			}
-			20 = {
-				any_liege = {
-					limit = {
-						has_character_flag = host_feast_started
-						has_character_modifier = holding_large_feast
-					}
-					character_event = {
-						id = 72034
-						tooltip = "EVTTOOLTIP72034"
-					}
-				}
-			}
+		set_character_flag = duel_cannot_flee
+		set_character_flag = duel_wol # doesn't matter
+		FROM = {
+			set_character_flag = duel_cannot_flee
+			set_character_flag = duel_wol
+			character_event = { id = duel.1 }
 		}
 	}
 	option = {

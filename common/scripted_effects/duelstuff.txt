@@ -779,6 +779,11 @@ damage = {
 							NOT = { trait = wounded }
 						}
 					}
+					modifier = {
+						factor = 1.5
+						check_variable = { which = counter2 value = 3 }
+						NOT = { check_variable = { which = counter2 value = 6 } }
+					}
 					remove_trait = wounded
 					add_trait_severely_injured_effect = yes
 					FROM = { character_event = { id = duel.18 } }
@@ -815,6 +820,11 @@ damage = {
 							}
 						}
 					}
+					modifier = {
+						factor = 1.5
+						check_variable = { which = counter2 value = 6 }
+						NOT = { check_variable = { which = counter2 value = 10 } }
+					}
 					add_maimed_trait_effect = yes
 					FROM = { character_event = { id = duel.19 } }
 				}
@@ -848,10 +858,15 @@ damage = {
 						}
 						set_character_flag = enemy_killed
 					}
+					modifier = {
+						factor = 1.5
+						check_variable = { which = counter2 value = 10 }
+					}
 					death = { reason = death_duel killer = FROM }
 					FROM = { character_event = { id = duel.3 } }
 				}
 			}
+			subtract_variable = { which = damage which = hp }
 		}
 		if = {
 			limit = {
@@ -898,6 +913,12 @@ duel_cleanup = {
 	clr_character_flag = duel_hakkar
 	clr_character_flag = duel_lover_accuser
 	clr_character_flag = duel_lover_accused
+	clr_character_flag = duel_suicide
+	clr_character_flag = duel_suicide_opp
+	clr_character_flag = duel_regency_courtier
+	clr_character_flag = duel_regency_regent
+	clr_character_flag = duel_holmgang
+	clr_character_flag = duel_merc
 	if = {
 		limit = {
 			NOT = { lifestyle_traits = 2 }

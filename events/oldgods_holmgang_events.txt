@@ -504,8 +504,12 @@ character_event = {
 				has_focus = focus_war
 			}
 		}
+		set_character_flag = duel_cannot_flee
+		set_character_flag = duel_holmgang
 		FROM = {
-			character_event = { id = TOG.5002 days = 2 tooltip = EVTTOOLTIP_TOG_5002 }
+			set_character_flag = duel_cannot_flee
+			set_character_flag = duel_holmgang
+			character_event = { id = duel.1 }
 		}
 	}
 	option = {

@@ -9695,7 +9695,14 @@ letter_event = {
 	option = {
 		name = EVTOPTA_RIP_30203
 
-		hidden_tooltip = { 
+		hidden_tooltip = {
+			set_character_flag = duel_suicide
+			set_character_flag = duel_cannot_flee
+			FROM = {
+				set_character_flag = duel_suicide_opp
+				set_character_flag = duel_cannot_flee
+				character_event = { id = duel.1 }
+			}
 			random_list = {
 				50 = {
 					modifier = {
@@ -9804,11 +9811,6 @@ character_event = {
 
 		prestige = -100
 
-		death = {
-			death_reason = death_duel
-			killer = event_target:suicide_duel_target
-		}
-
 		event_target:suicide_duel_target = {
 			tooltip = { prestige = 100 }
 			hidden_tooltip = { character_event = { id = RIP.30206 } }
@@ -9817,11 +9819,10 @@ character_event = {
 
 	#Rival didn't kill you
 	option = {
-		trigger = { has_character_flag = won_suicide_duel }
+		trigger = { has_character_flag = survived_suicide_duel }
 		name = EVTOPTB_RIP_30205
 		custom_tooltip = { text = EVTOPTA_RIP_30204_TOOLTIP }
 
-		add_trait_wounded_effect = yes
 		hidden_tooltip = { event_target:suicide_duel_target = { character_event = { id = RIP.30206 } } }
 	}
 
@@ -9836,8 +9837,6 @@ character_event = {
 
 		prestige = 100
 
-		add_trait_wounded_effect = yes
-
 		random = {
 			chance = 50
 			add_trait_wroth_effect = yes
@@ -9845,11 +9844,6 @@ character_event = {
 
 		event_target:suicide_duel_target = { 
 			prestige = -100
-			
-			death = {
-				death_reason = death_duel
-				killer = ROOT
-			}
 		}
 	}
 
@@ -9886,7 +9880,12 @@ character_event = {
 		text = EVTDESC_RIP_30206_WON
 	}
 	desc = {
-		trigger = { FROM = { has_character_flag = won_suicide_duel } }
+		trigger = {
+			OR = {
+				FROM = { has_character_flag = won_suicide_duel }
+				FROM = { has_character_flag = survived_suicide_duel }
+			}
+		}
 		text = EVTDESC_RIP_30206_LOST
 	}
 	
@@ -9897,16 +9896,6 @@ character_event = {
 		name = EVTOPTA_RIP_30206
 
 		prestige = 100
-
-		FROM = {
-			tooltip = {
-				prestige = -100
-				death = {
-					death_reason = death_duel
-					killer = ROOT
-				}
-			}
-		}
 	}
 
 	option = {
@@ -9924,7 +9913,12 @@ character_event = {
 	}
 
 	option = {
-		trigger = { FROM = { has_character_flag = won_suicide_duel } }
+		trigger = {
+			OR = {
+				FROM = { has_character_flag = won_suicide_duel }
+				FROM = { has_character_flag = survived_suicide_duel }
+			}
+		}
 		name = EVTOPTC_RIP_30206
 	}
 }

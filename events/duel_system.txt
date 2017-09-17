@@ -171,7 +171,7 @@ character_event = {
 			attack = yes
 			defence = yes
 			FROM = {
-				character_event = { duel.12 }
+				character_event = { id = duel.12 }
 				damage = yes
 				if = {
 					limit = {
@@ -179,7 +179,7 @@ character_event = {
 						trait = capable
 						prisoner = no
 					}
-					character_event = { duel.2 }
+					character_event = { id = duel.2 }
 				}
 			}
 		}
@@ -268,7 +268,7 @@ character_event = {
 			attack = yes
 			defence = yes
 			FROM = {
-				character_event = { duel.13 }
+				character_event = { id = duel.13 }
 				damage = yes
 				if = {
 					limit = {
@@ -276,7 +276,7 @@ character_event = {
 						trait = capable
 						prisoner = no
 					}
-					character_event = { duel.2 }
+					character_event = { id = duel.2 }
 				}
 			}
 		}
@@ -353,7 +353,7 @@ character_event = {
 			attack = yes
 			defence = yes
 			FROM = {
-				character_event = { duel.14 }
+				character_event = { id = duel.14 }
 				damage = yes
 				if = {
 					limit = {
@@ -361,7 +361,7 @@ character_event = {
 						trait = capable
 						prisoner = no
 					}
-					character_event = { duel.2 }
+					character_event = { id = duel.2 }
 				}
 			}
 		}
@@ -506,6 +506,32 @@ character_event = {
 				}
 				character_event = { id = WoL.1040 }
 			}
+			if = {
+				limit = {
+					has_character_flag = duel_suicide
+				}
+				set_character_flag = won_suicide_duel
+				character_event = { id = RIP.30205 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_suicide_opp
+				}
+				FROM = { set_character_flag = lost_suicide_duel }
+				FROM = { character_event = { id = RIP.30205 } }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_regency_regent
+				}
+				character_event = {	id = 61225 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_regency_courtier
+				}
+				character_event = {	id = 61228 }
+			}
 			duel_cleanup = yes
 			add_character_modifier = {
 				modifier = recent_duel_victory
@@ -569,6 +595,32 @@ character_event = {
 				}
 				character_event = { id = WoL.1040 }
 			}
+			if = {
+				limit = {
+					has_character_flag = duel_suicide
+				}
+				set_character_flag = won_suicide_duel
+				character_event = { id = RIP.30205 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_suicide_opp
+				}
+				FROM = { set_character_flag = lost_suicide_duel }
+				FROM = { character_event = { id = RIP.30205 } }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_regency_regent
+				}
+				character_event = {	id = 61225 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_regency_courtier
+				}
+				character_event = {	id = 61228 }
+			}
 			random_list = {
 				4 = { }
 				2 = { remove_trait = kind }
@@ -587,6 +639,10 @@ character_event = {
 			NOT = { has_character_flag = duel_guardian }
 			NOT = { has_character_flag = duel_lover_accuser }
 			NOT = { has_character_flag = duel_lover_accused }
+			NOT = { has_character_flag = duel_regency_courtier }
+			NOT = { has_character_flag = duel_regency_regent }
+			NOT = { has_character_flag = duel_holmgang }
+			NOT = { has_character_flag = duel_merc }
 		}
 		ai_chance = {
 			factor = 1
@@ -642,6 +698,32 @@ character_event = {
 					has_character_flag = duel_wol
 				}
 				long_character_event = { id = WoL.11006  }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_suicide
+				}
+				set_character_flag = survived_suicide_duel
+				character_event = { id = RIP.30205 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_suicide_opp
+				}
+				FROM = { set_character_flag = survived_suicide_duel }
+				FROM = { character_event = { id = RIP.30205 } }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_regency_regent
+				}
+				character_event = {	id = 61225 }
+			}
+			if = {
+				limit = {
+					has_character_flag = duel_regency_courtier
+				}
+				character_event = {	id = 61228 }
 			}
 			random_list = {
 				4 = { }

@@ -1212,58 +1212,12 @@ character_event = {
 						}
 
 						save_event_target_as = challenger
-
+						set_character_flag = duel_cannot_surrender
+						set_character_flag = duel_merc
 						ROOT = {
-							random_list = {
-								40 = { # Nothing Happens
-									modifier = {
-										NOT = { combat_rating_diff = { who = PREV value = 0 } }
-										factor = 2
-									}
-									character_event = { id = HL.10511 }
-								}
-								75 = { # Wounded
-									modifier = {
-										combat_rating_diff = { who = PREV value = 3 }
-										factor = 2
-									}
-									modifier = {
-										OR = {
-											trait = maimed
-											trait = wounded
-											trait = severely_injured
-										}
-										factor = 0
-									}
-									character_event = { id = HL.10512 }
-								}
-								25 = { # Maimed
-									modifier = {
-										combat_rating_diff = { who = PREV value = 3 }
-										factor = 2
-									}
-									modifier = {
-										combat_rating_diff = { who = PREV value = 4 }
-										factor = 2
-									}
-									character_event = { id = HL.10513 }
-								}
-								10 = { # Dies
-									modifier = {
-										combat_rating_diff = { who = PREV value = 3 }
-										factor = 2
-									}
-									modifier = {
-										combat_rating_diff = { who = PREV value = 4 }
-										factor = 2
-									}
-									modifier = {
-										combat_rating_diff = { who = PREV value = 5 }
-										factor = 2
-									}
-									character_event = { id = HL.10514 }
-								}
-							}
+							set_character_flag = duel_cannot_surrender
+							set_character_flag = duel_merc
+							character_event = { id = duel.1 }
 						}
 						break = yes
 					}
