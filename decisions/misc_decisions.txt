@@ -1339,30 +1339,26 @@ decisions = {
 
 targetted_decisions = {
 
-	duel_test = { #DISABLE THIS
-		from_potential = {
-			ai = no
-		}
-		potential = {
-			always = yes
-		}
-		allow = {
-			always = yes
-		}
-		effect = {
-			FROM = {
-				ROOT = {
-					character_event = { id = duel.1 }
-				}
-			}
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
+	#duel_test = { #For testing only
+	#	from_potential = {
+	#		ai = no
+	#	}
+	#	potential = {
+	#		always = yes
+	#	}
+	#	allow = {
+	#		always = yes
+	#	}
+	#	effect = {
+	#		FROM = { character_event = { id = duel.1 } }
+	#	}
+	#	revoke_allowed = {
+	#		always = no
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
 	
 	send_kid_to_dalaran = {
 		is_high_prio = yes

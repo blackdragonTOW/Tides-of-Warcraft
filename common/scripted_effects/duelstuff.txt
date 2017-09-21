@@ -235,6 +235,8 @@ initiative = {
 }
 
 attack = {
+	set_variable = { which = attack value = 0 }
+	export_to_variable = { which = attack which = combat_rating }
 	set_variable = { which = counter value = 0 }
 	set_variable = { which = cap value = 0 }
 	if = {
@@ -405,7 +407,7 @@ attack = {
 			OR = {
 				AND = {
 					trait = priest
-					has_character_modifier = light_priest
+					has_character_modifier = holy_priest
 				}
 				trait = paladin
 			}
@@ -450,6 +452,8 @@ attack = {
 }
 
 defence = {
+	set_variable = { which = defence value = 0 }
+	export_to_variable = { which = defence which = combat_rating }
 	set_variable = { which = counter value = 0 }
 	set_variable = { which = cap value = 0 }
 	if = {
@@ -862,7 +866,7 @@ damage = {
 						factor = 1.5
 						check_variable = { which = counter2 value = 10 }
 					}
-					death = { reason = death_duel killer = FROM }
+					death = { death_reason = death_duel killer = FROM }
 					FROM = { character_event = { id = duel.3 } }
 				}
 			}
@@ -872,6 +876,7 @@ damage = {
 			limit = {
 				is_alive = yes
 				health = 0
+				NOT = { health = 1 }
 			}
 			if = {
 				limit = {
@@ -882,7 +887,7 @@ damage = {
 				}
 				set_character_flag = enemy_killed
 			}
-			death = { reason = death_duel killer = FROM }
+			death = { death_reason = death_duel killer = FROM }
 			FROM = { character_event = { id = duel.3 } }
 		}
 		if = {
@@ -900,7 +905,7 @@ damage = {
 			}
 			FROM = { character_event = { id = duel.3 } }
 		}
-		break = yes
+		#break = yes
 	}
 }
 
