@@ -1,0 +1,358 @@
+# Plot tags need to start with 'plot_'
+
+# Supported types:
+# character, spouse, rivals, friends, liege_titles, vassal_titles, realm_titles, realm_characters, realm_characters_plus, independent_rulers
+
+###############
+# PLOTS
+###############
+
+# Foment a rebellion
+plot_TOW_foment_rebellion = {
+	type = realm_characters_plus # All characters in the same realm, plus rivals and relatives of self, parents, children and spouse
+	vassal_intrigue_plot = yes
+	intrigue_plot = yes
+	
+	# Plotter scope
+	potential = {
+		age = 16
+		NOT = { trait = incapable }
+		prisoner = no
+		is_nomadic = no
+		is_tribal = no
+		is_playable = yes
+		OR = {
+			ai = no
+			trait = deceitful
+			NOR = {
+				trait = honest
+				trait = kind
+				trait = just
+				NOT = { has_character_modifier = TOW_has_recently_fomented_a_rebellion }
+			}
+		}
+	}
+	
+	# Target allow trigger for when players target a specific character in the GUI
+	
+	player_allow = {
+		is_within_diplo_range = FROM
+		custom_tooltip = {
+			text = TOW_TOOLTIP_Has_not_recently_fomented_a_rebellion
+			FROM = { NOT = { has_character_modifier = TOW_has_recently_fomented_a_rebellion } }
+
+			OR = {
+				# Increased risk cooldown
+				NOT = { has_character_flag = plot_TOW_foment_rebellion_increased_risk_cooldown_@ROOT }
+				had_character_flag = { flag = plot_TOW_foment_rebellion_increased_risk_cooldown_@ROOT days = 1825 }
+				# Helped revolt cooldown
+				NOT = { has_character_flag = plot_TOW_foment_rebellion_helped_revolt_cooldown_@ROOT }
+				had_character_flag = { flag = plot_TOW_foment_rebellion_helped_revolt_cooldown_@ROOT days = 1825 }
+			}
+		}
+	}
+	
+	# FROM is target, ROOT is plotter
+	target_potential = {
+		is_ruler = yes
+		higher_real_tier_than = baron
+		demesne_size = 1
+
+		# can't create a revolt in my realm
+		NOT = { is_liege_or_above = FROM }
+
+		OR = {
+			FROM = { ai = no }
+
+			NOT = { has_non_aggression_pact_with = FROM }
+		}
+
+		OR = {
+			FROM = { ai = no }
+
+			# At war with an opponent almost my size
+			AND = {
+				war_with = FROM
+				OR = {
+					relative_power_including_allies_defender = { who = FROM power = 0.8 }
+					relative_power_including_allies_attacker = { who = FROM power = 0.8 }
+				}
+			}
+
+			# A claim i could get or a courtier i like
+			any_realm_title = {
+				OR = {
+					claimed_by = FROM
+					FROM = {
+						any_realm_character = {
+							has_claim = PREVPREV
+							OR = {
+								reverse_opinion = { who = FROM value = 50 }
+								AND = {
+									is_friend = FROM
+									reverse_opinion = { who = FROM value = 25 }
+								}
+								AND = {
+									is_consort = FROM
+									reverse_opinion = { who = FROM value = 20 }
+								}
+								AND = {
+									is_child_of = FROM
+									reverse_opinion = { who = FROM value = -10 }
+								}
+								AND = {
+									dynasty = FROM
+									reverse_opinion = { who = FROM value = 10 }
+								}
+							}
+						}
+					}
+				}
+			}
+
+			FROM = {
+				OR = {
+					# I don't think they should rule
+					NOT = { opinion = { who = ROOT value = -75 } }
+
+					# Is my foe
+					is_foe = ROOT
+
+					#heretic or infidel which isn't tolerated
+					TOW_root_dislikes_religion = yes
+
+					#If I could inherit
+					any_heir_title = {
+						holder = ROOT
+					}
+
+					#If my children could inherit
+					any_child = {
+						reverse_opinion = { who = FROM value = 0 }
+						any_heir_title = {
+							holder = ROOT
+						}
+					}
+
+					#If my dynasty could inherit
+					any_dynasty_member = {
+						reverse_opinion = { who = FROM value = 10 }
+						any_heir_title = {
+							holder = ROOT
+						}
+					}
+
+					#If my friend could inherit
+					any_friend = {
+						reverse_opinion = { who = FROM value = 30 }
+						any_heir_title = {
+							holder = ROOT
+						}
+					}
+
+					#If my consort I like could inherit
+					any_consort = {
+						reverse_opinion = { who = FROM value = 15 }
+						any_heir_title = {
+							holder = ROOT
+						}
+					}
+
+				}
+			}
+		}
+	}
+	
+	# Target character scope
+	allow = {
+		OR = {
+			NOT = { character = FROM }  # Not against myself! (unself I am bonkers)
+			trait = lunatic
+		}
+		
+		is_within_diplo_range = FROM
+		
+		NOT = { is_friend = FROM }
+	}
+	
+	chance = {
+		factor = 100
+		
+		modifier = {
+			factor = 0.01
+			FROM = {
+				trait = content
+				NOT = { trait = lunatic } 
+				NOT = { trait = possessed }
+			}
+		}
+
+		modifier = {
+			factor = 5.0
+			any_realm_title = {
+				claimed_by = FROM
+			}
+		}
+
+		modifier = {
+			factor = 2.0
+			any_realm_title = {
+				FROM = {
+					any_realm_character = {
+						has_claim = PREVPREV
+						OR = {
+							reverse_opinion = { who = FROM value = 50 }
+							AND = {
+								is_friend = FROM
+								reverse_opinion = { who = FROM value = 25 }
+							}
+							AND = {
+								is_consort = FROM
+								reverse_opinion = { who = FROM value = 20 }
+							}
+							AND = {
+								is_child_of = FROM
+								reverse_opinion = { who = FROM value = -10 }
+							}
+							AND = {
+								dynasty = FROM
+								reverse_opinion = { who = FROM value = 10 }
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.2
+			FROM = { pacifist = yes }
+		}
+		
+		modifier = {
+			factor = 2.0
+			FROM = {
+				trait = envious
+				OR = {
+					any_pretender_title = {
+						current_heir = { character = ROOT }
+					}
+					any_heir_title = {
+						holder = ROOT
+					}
+					ROOT = {
+						any_realm_title = {
+							claimed_by = FROM
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 3.0
+			FROM = { is_foe = ROOT }
+		}
+		modifier = {
+			factor = 3.0
+			is_heresy_of = FROM
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion_group = FROM }
+		}
+		modifier = {
+			factor = 1.5
+			FROM = { trait = arbitrary }
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { trait = cruel }
+		}
+		modifier = {
+			factor = 2.0
+			FROM = { trait = deceitful }
+		}
+		modifier = {
+			factor = 3.0
+			FROM = { trait = ambitious }
+		}
+		modifier = {
+			factor = 3.0
+			FROM = { trait = peasant_leader }
+		}
+		modifier = {
+			factor = 3.0
+			FROM = { trait = heresiarch }
+		}
+		modifier = {
+			factor = 0
+			their_opinion = { who = FROM value = 50 }
+		}
+		modifier = {
+			factor = 0
+			their_opinion = { who = FROM value = 25 }
+			NOT = {
+				OR = {
+					FROM = { trait = envious }
+					FROM = { trait = deceitful }
+					FROM = { trait = ambitious }
+				}
+			}		
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { their_opinion = { who = FROM value = -25 } }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { their_opinion = { who = FROM value = -50 } }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { their_opinion = { who = FROM value = -75 } }
+		}
+	}
+	
+	success = {
+		hidden_tooltip = {
+			FROM = { has_character_flag = plot_TOW_foment_rebellion_success }
+		}
+	}
+	abort = {
+		OR = {
+			is_alive = no
+			is_ruler = no
+			NOT = { higher_real_tier_than = baron }
+			is_nomadic = yes
+			is_tribal = yes
+		}
+	}
+	abort_effect = {
+		FROM = {
+			clr_character_flag = plot_TOW_foment_rebellion_in_motion
+			clr_character_flag = plot_TOW_foment_rebellion_success
+		}
+	}
+	effect = {
+		FROM = {
+			any_plot_backer = {
+				reverse_opinion = {
+					modifier = opinion_grateful
+					who = FROM
+					years = 5
+				}
+			}
+			# Global plot cooldown
+			add_character_modifier = {
+				name = TOW_has_recently_fomented_a_rebellion
+				days = 365
+				hidden = yes
+			}
+			# Clear flags
+			hidden_tooltip = {
+				clr_character_flag = plot_TOW_foment_rebellion_in_motion
+				clr_character_flag = plot_TOW_foment_rebellion_success
+			}
+		}
+	}
+}
