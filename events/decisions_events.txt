@@ -1,0 +1,350 @@
+namespace = TOW_Decisions
+
+#reserved: TOW_Decisions.1 to TOW_Decisions.7
+
+#Written by Keitaro_Ura
+
+#######################################
+# DECISIONS EVENTS
+#######################################
+
+### Asked for money in exchange of a favor
+character_event = {
+	id = TOW_Decisions.1
+	desc = EVTDESC_TOW_Decisions_1
+	picture = "GFX_evt_emissary"
+
+	border = GFX_event_normal_frame_economy
+
+	is_friendly = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA_TOW_Decisions_1"  # Accept
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { wealth = 0 }
+			}
+			modifier = {
+				factor = 0.05
+				is_foe = FROMFROM
+			}
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 10 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 20 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 30 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 40 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 50 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 60 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 70 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 80 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 90 } }
+			modifier = { factor = 1.5 opinion = { who = FROMFROM value = 100 } }
+		}
+		if = {
+			limit = {
+				is_landed = yes
+			}
+			hidden_tooltip = {
+				export_to_variable = { which = TOW_money_count value = treasury }
+				set_variable = { which = TOW_money_count_spent which = TOW_money_count }
+			}
+			transfer_scaled_wealth = { to = FROMFROM value = 0.8 min = 10 }
+			hidden_tooltip = {
+				export_to_variable = { which = TOW_money_count value = treasury }
+				subtract_variable = { which = TOW_money_count_spent which = TOW_money_count }
+			}
+		}
+		if = {
+			limit = {
+				is_landed = no
+			}
+			wealth = -10
+			FROMFROM = { wealth = 10 }
+			set_variable = { which = TOW_money_count_spent value = 10 }
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				character_event = { id = TOW_Decisions.2 days = 2 random = 3 }
+			}
+		}
+		reverse_remove_favor = FROMFROM
+	}
+	option = {
+		name = "EVTOPTB_TOW_Decisions_1"  # Decline
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.05
+				is_friend = FROMFROM
+			}
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -9 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -19 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -29 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -39 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -49 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -59 } } }
+			modifier = { factor = 1.2 NOT = { opinion = { who = FROMFROM value = -69 } } }
+			modifier = { factor = 1.2 NOT = { opinion = { who = FROMFROM value = -79 } } }
+			modifier = { factor = 1.2 NOT = { opinion = { who = FROMFROM value = -89 } } }
+			modifier = { factor = 1.5 NOT = { opinion = { who = FROMFROM value = -99 } } }
+		}
+		custom_tooltip = {
+			text = EVTTOOLTIP_TOW_Decisions_1_OPTB
+			hidden_tooltip = {
+				FROMFROM = {
+					character_event = { id = TOW_Decisions.3 days = 2 random = 3 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				trait = charitable
+			}
+			random = {
+				chance = 70
+				remove_trait = charitable
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = charitable }
+			}
+			random = {
+				chance = 10
+				add_trait = greedy
+			}
+		}
+		
+	}
+	option = {
+		name = "EVTOPTC_TOW_Decisions_1"  # Give more
+		ai_chance = {
+			factor = 200
+			modifier = {
+				factor = 0.01
+				is_foe = FROMFROM
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { wealth = 0 }
+			}
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 10 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 20 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 30 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 40 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 50 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 60 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 70 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 80 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 90 } }
+			modifier = { factor = 1.5 opinion = { who = FROMFROM value = 100 } }
+		}
+		trigger = { trait = charitable }
+		if = {
+			limit = {
+				is_landed = yes
+			}
+			hidden_tooltip = {
+				export_to_variable = { which = TOW_money_count value = treasury }
+				set_variable = { which = TOW_money_count_spent which = TOW_money_count }
+			}
+			transfer_scaled_wealth = { to = FROMFROM value = 1.0 min = 12.5 }
+			hidden_tooltip = {
+				export_to_variable = { which = TOW_money_count value = treasury }
+				subtract_variable = { which = TOW_money_count_spent which = TOW_money_count }
+			}
+		}
+		if = {
+			limit = {
+				is_landed = no
+			}
+			wealth = -12.5
+			FROMFROM = { wealth = 12.5 }
+			set_variable = { which = TOW_money_count_spent value = 12.5 }
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				character_event = { id = TOW_Decisions.4 days = 2 random = 3 }
+			}
+		}
+		reverse_remove_favor = FROMFROM
+		tooltip_info = charitable
+	}
+	option = {
+		name = "EVTOPTD_TOW_Decisions_1"  # Give less
+		ai_chance = {
+			factor = 250
+			modifier = {
+				factor = 0.6
+				is_friend = FROMFROM
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 0 }
+			}
+		}
+		trigger = { trait = greedy }
+		if = {
+			limit = {
+				is_landed = yes
+			}
+			hidden_tooltip = {
+				export_to_variable = { which = TOW_money_count value = treasury }
+				set_variable = { which = TOW_money_count_spent which = TOW_money_count }
+			}
+			transfer_scaled_wealth = { to = FROMFROM value = 0.6 min = 7.5 }
+			hidden_tooltip = {
+				export_to_variable = { which = TOW_money_count value = treasury }
+				subtract_variable = { which = TOW_money_count_spent which = TOW_money_count }
+			}
+		}
+		if = {
+			limit = {
+				is_landed = no
+			}
+			wealth = -7.5
+			FROMFROM = { wealth = 7.5 }
+			set_variable = { which = TOW_money_count_spent value = 7.5 }
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				character_event = { id = TOW_Decisions.5 days = 2 random = 3 }
+			}
+		}
+		reverse_remove_favor = FROMFROM
+		tooltip_info = greedy
+	}
+	option = {
+		name = "EVTOPTE_TOW_Decisions_1"  # Decline diplomatically
+		trigger = { diplomacy = 14 }
+		ai_chance = {
+			factor = 400
+
+			modifier = {
+				factor = 0.5
+				is_friend = FROMFROM
+			}
+			modifier = {
+				factor = 2
+				trait = greedy
+			}
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -9 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -19 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -29 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -39 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -49 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -59 } } }
+			modifier = { factor = 1.2 NOT = { opinion = { who = FROMFROM value = -69 } } }
+			modifier = { factor = 1.2 NOT = { opinion = { who = FROMFROM value = -79 } } }
+			modifier = { factor = 1.2 NOT = { opinion = { who = FROMFROM value = -89 } } }
+			modifier = { factor = 1.5 NOT = { opinion = { who = FROMFROM value = -99 } } }
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				character_event = { id = TOW_Decisions.6 days = 2 random = 3 }
+			}
+		}
+		tooltip_info = diplomacy
+	}
+
+}
+
+### Accepted
+character_event = {
+	id = TOW_Decisions.2
+	desc = EVTDESC_TOW_Decisions_2
+	border = GFX_event_normal_frame_economy
+	picture = "GFX_evt_emissary"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT_TOW_Decisions_2"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}
+
+
+### Declined
+character_event = {
+	id = TOW_Decisions.3
+	desc = EVTDESC_TOW_Decisions_3
+	border = GFX_event_normal_frame_economy
+	picture = "GFX_evt_emissary"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT_TOW_Decisions_3"  # Ok
+		ai_chance = { factor = 1 }	
+		opinion = {
+			modifier = TOW_opinion_declined_favor_money
+			who = FROMFROM
+			months = 30
+		}
+	}
+}
+
+### Gave More
+character_event = {
+	id = TOW_Decisions.4
+	desc = EVTDESC_TOW_Decisions_4
+	border = GFX_event_normal_frame_economy
+	picture = "GFX_evt_emissary"
+
+	is_triggered_only = yes
+
+	immediate = {
+		opinion = {
+			modifier = TOW_opinion_charitable_gave_more_favor_money
+			who = FROM
+			months = 18
+		}
+	}
+	
+	option = {
+		name = "EVTOPT_TOW_Decisions_4"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}
+
+### Gave Less
+character_event = {
+	id = TOW_Decisions.5
+	desc = EVTDESC_TOW_Decisions_5
+	border = GFX_event_normal_frame_economy
+	picture = "GFX_evt_emissary"
+
+	is_triggered_only = yes
+
+	immediate = {
+		opinion = {
+			modifier = TOW_opinion_greedy_gave_less_favor_money
+			who = FROM
+			months = 18
+		}
+	}
+	
+
+	option = {
+		name = "EVTOPT_TOW_Decisions_5"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}
+
+### Declined diplomatically
+character_event = {
+	id = TOW_Decisions.6
+	desc = EVTDESC_TOW_Decisions_6
+	border = GFX_event_normal_frame_economy
+	picture = "GFX_evt_emissary"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT_TOW_Decisions_6"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}
