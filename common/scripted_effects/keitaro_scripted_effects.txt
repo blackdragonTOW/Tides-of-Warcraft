@@ -69,3 +69,185 @@ TOW_create_random_courtier_gender_equality = {
 		
 	}
 }
+
+## Pillage
+
+TOW_pillage_holding = {
+	hidden_tooltip = {
+		location = { save_event_target_as = nickname_target }
+		event_target:pillager = { save_event_target_as = nickname_receiver }
+		if = {
+			limit = {
+				event_target:pillager = { 
+					has_nickname = no
+					is_adult = yes
+					NOT = { trait = incapable }
+				}
+			}
+			random_list = {
+				5 = {
+					event_target:pillager = { give_nickname = nick_the_destroyer }
+				}
+				5 = {
+					event_target:pillager = { give_nickname = nick_the_scourge_of_god }
+					modifier = {
+						factor = 0
+						event_target:nickname_target = { religion = event_target:pillager }
+					}
+				}
+				5 = {
+					event_target:pillager = { give_nickname = nick_the_slayer_of_culture }
+					modifier = {
+						factor = 0
+						event_target:nickname_target = { culture = event_target:pillager }
+					}
+				}
+				5 = {
+					event_target:pillager = { give_nickname = nick_the_terror_of_provincename }
+				}
+				5 = {
+					event_target:pillager = { give_nickname = nick_the_culture_marauder }
+					modifier = {
+						factor = 0
+						event_target:nickname_target = { culture = event_target:pillager }
+					}
+				}
+				75 = {}
+			}
+		}
+	}
+	
+	if = {
+		limit = { NOT = { holding_type = tribal } }
+		event_target:pillager = {
+			wealth = 40
+		}
+		custom_tooltip = {
+			text = gain_tech_custom_tooltip
+			hidden_tooltip = {
+				event_target:pillager = {
+					random_list = {
+						10 = { military_techpoints = 5 }
+						10 = { economy_techpoints = 5 }
+						10 = { culture_techpoints = 5 }
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { holding_type = tribal }
+		event_target:pillager = { 
+			wealth = 15
+			population = 150
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = { owner = { character = event_target:pillager } }
+			has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+			location = { owner = { character = event_target:pillager } }
+			owner = { liege = { character = event_target:pillager } }
+		}
+		owner = {
+			opinion = {
+				modifier = TOW_opinion_pillaged_my_lands
+				who = event_target:pillager
+				years = 100
+			}
+		}
+
+		## TODO : baron resents : revolt or seek protection elsewhere
+	}
+	
+	custom_tooltip = {
+		text = "PILLAGE_DESTROY_BUILDINGS"
+		hidden_tooltip = {
+			random_list = {
+				25 = {
+					destroy_random_building = THIS
+				}
+				60 = {
+					destroy_random_building = THIS
+					destroy_random_building = THIS
+				}
+				15 = {
+					destroy_random_building = THIS
+					destroy_random_building = THIS
+					destroy_random_building = THIS
+				}
+			}
+			add_holding_modifier = {
+				modifier = recently_burnt_the_land
+				months = 7
+			}
+		}
+	}
+	
+	hidden_tooltip = {
+	
+		location = {
+			add_province_modifier = {
+				modifier = rampaging_nomads
+				years = 10
+			}
+		}
+
+		location = {
+			add_province_modifier = {
+				modifier = burnt_the_land
+				years = 10
+			}
+		}
+	
+		if = {
+			limit = {
+				OR = {
+					event_target:pillager = { 
+						NOT = { has_character_modifier = pillage_cooldown } 
+					}
+					event_target:pillager = {
+						NOT = {
+							any_realm_province = {
+								any_province_holding = {
+									OR = {
+										owner = { character = event_target:pillager }
+										AND = {
+											location = { owner = { character = event_target:pillager } }
+											owner = { liege = { character = event_target:pillager } }
+										}
+									}
+									has_holding_modifier = recently_burnt_the_land
+									NOT = { has_holding_modifier = stop_burning_land }
+								}
+							}
+						}
+					}
+				}
+			}
+			event_target:pillager = { character_event = { id = HL.4800 days = 180 } }
+			event_target:pillager = {
+				add_character_modifier = {
+					modifier = pillage_cooldown
+					hidden = yes
+					months = 6
+				}
+			}
+		}
+	}
+	
+	if = {
+		limit = {
+			NOT = { has_any_building = yes }
+		}
+		hidden_tooltip = {
+			location = {
+				province_event = { id = HL.4810 days = 1 }
+				save_event_target_as = target_location
+				ROOT = { character_event = { id = HL.4814 days = 2 random = 2 } }
+			}
+		}
+		destroy_settlement = THIS
+	}
+}
