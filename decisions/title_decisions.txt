@@ -374,4 +374,101 @@ title_decisions = {
 			factor = 0
 		}
 	}
+	
+	## Grant title to smallest clan
+	TOW_title_grant_title_to_smallest_clan = {
+		only_rulers = yes
+		ai_target_filter = owned
+		filter = owned
+		
+		from_potential = {
+			is_playable = yes
+			is_nomadic = yes
+			tier = emperor
+		}
+
+		potential = {
+			tier = COUNT
+			owner = { character = FROM }
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = province_not_capital_tooltip
+				hidden_tooltip = {
+					FROM = {
+						capital_scope = {
+							county = {
+					    		NOT = { title = ROOT }
+					    	}
+					  	}
+					}
+				}
+			}
+			FROM = {
+				any_vassal = {
+					is_nomadic = yes
+					tier = king
+					clan_title = { always = yes }
+				}
+			}
+		}
+
+		effect = {
+			hidden_tooltip = {
+				FROM = {
+					set_variable = { which = global_TOW_smallest_clan_land_count value = -1 }
+					set_variable = { which = global_TOW_smallest_clan_std_land_count value = -1 }
+					any_vassal = {
+						limit = {
+							is_nomadic = yes
+							tier = king
+							clan_title = { always = yes }
+						}
+						set_variable = { which = TOW_clan_standard_land_count value = 0 }
+						set_variable = { which = TOW_clan_nomadic_land_count value = 0 }
+						any_demesne_title = {
+							limit = {
+								tier = count
+								location = { TOW_is_county_nomadic = yes }
+							}
+							PREV = { change_variable = { which = TOW_clan_nomadic_land_count value = 1 } }
+						}
+						any_demesne_title = {
+							limit = {
+								tier = count
+								location = { NOT = { TOW_is_county_nomadic = yes } }
+							}
+							PREV = { change_variable = { which = TOW_clan_standard_land_count value = 1 } }
+						}
+
+						
+						if = {
+							limit = {
+								OR = {
+									is_variable_equal = { which = global_TOW_smallest_clan_land_count value = -1 }
+									NOT = { check_variable = { which = TOW_clan_nomadic_land_count which = global_TOW_smallest_clan_land_count } }
+									AND = {
+										is_variable_equal = { which = TOW_clan_nomadic_land_count which = global_TOW_smallest_clan_land_count }
+										NOT = { check_variable = { which = TOW_clan_standard_land_count which = global_TOW_smallest_clan_std_land_count } }
+									}
+								}
+							}
+							set_variable = { which = global_TOW_smallest_clan_land_count which = TOW_clan_nomadic_land_count }
+							set_variable = { which = global_TOW_smallest_clan_std_land_count which = TOW_clan_standard_land_count }
+							save_event_target_as = smallest_clan_holder
+						}
+						
+					}
+				}
+			}
+			event_target:smallest_clan_holder = {
+				grant_title = ROOT
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }
