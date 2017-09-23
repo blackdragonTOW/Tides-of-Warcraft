@@ -10,23 +10,23 @@ TOW_remove_bad_traits = {
 	remove_trait = stressed
 }
 
-TOW_employed_remove_unwanted_traits_with_root_employer = {
+TOW_employed_remove_unwanted_traits_with_ET_employer = {
 	if = {
-		limit = { ROOT = { accepts_warlock = no } }
+		limit = { event_target:employer = { accepts_warlock = no } }
 		remove_trait = warlock
 		remove_trait = necrolyte
 	}
 	if = {
-		limit = { ROOT = { accepts_necromancer = no } }
+		limit = { event_target:employer = { accepts_necromancer = no } }
 		remove_trait = necromancer
 		remove_trait = necrolyte
 	}
 	if = {
-		limit = { ROOT = { accepts_assassin = no } }
+		limit = { event_target:employer = { accepts_assassin = no } }
 		remove_trait = assassin
 	}
 	if = {
-		limit = { ROOT = { accepts_rogue = no } }
+		limit = { event_target:employer = { accepts_rogue = no } }
 		remove_trait = rogue
 	}
 	remove_trait = demon_hunter

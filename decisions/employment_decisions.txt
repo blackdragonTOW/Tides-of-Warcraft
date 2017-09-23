@@ -35,7 +35,7 @@ decisions = {
 
 					new_character = {
 						TOW_remove_bad_traits = yes
-						TOW_employed_remove_unwanted_traits_with_root_employer = yes
+						TOW_employed_remove_unwanted_traits_with_ET_employer = yes
 						remove_education_effect = yes
 
 						random_list = {
@@ -119,7 +119,7 @@ decisions = {
 					
 					new_character = {
 						TOW_remove_bad_traits = yes
-						TOW_employed_remove_unwanted_traits_with_root_employer = yes
+						TOW_employed_remove_unwanted_traits_with_ET_employer = yes
 						remove_education_effect = yes
 
 						random_list = {
@@ -233,7 +233,7 @@ decisions = {
 
 					new_character = {
 						TOW_remove_bad_traits = yes
-						TOW_employed_remove_unwanted_traits_with_root_employer = yes
+						TOW_employed_remove_unwanted_traits_with_ET_employer = yes
 						remove_education_effect = yes
 
 						random_list = {
@@ -316,7 +316,7 @@ decisions = {
 						
 					new_character = {
 						TOW_remove_bad_traits = yes
-						TOW_employed_remove_unwanted_traits_with_root_employer = yes
+						TOW_employed_remove_unwanted_traits_with_ET_employer = yes
 						remove_education_effect = yes
 
 						random_list = {
@@ -402,7 +402,7 @@ decisions = {
 					
 					new_character = {
 						TOW_remove_bad_traits = yes
-						TOW_employed_remove_unwanted_traits_with_root_employer = yes
+						TOW_employed_remove_unwanted_traits_with_ET_employer = yes
 						remove_education_effect = yes
 						
 						random_list = {
@@ -464,6 +464,7 @@ decisions = {
 		}
 		effect = {
 			wealth = -4
+			save_event_target_as = employer
 			custom_tooltip = {
 				text = TOOLTIP_TOW_present_debutante
 				hidden_tooltip = {
@@ -478,7 +479,7 @@ decisions = {
 					}
 					new_character = {
 						TOW_remove_bad_traits = yes
-						TOW_employed_remove_unwanted_traits_with_root_employer = yes
+						TOW_employed_remove_unwanted_traits_with_ET_employer = yes
 
 						# Bonus stats
 						random_list = {

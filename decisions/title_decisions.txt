@@ -304,4 +304,74 @@ title_decisions = {
 			factor = 1
 		}
 	}
+
+	## Create new Vassal
+	TOW_title_create_new_vassal = {
+		only_rulers = yes
+		ai_target_filter = owned
+		filter = owned
+		
+		from_potential = {
+			is_playable = yes
+			higher_real_tier_than = COUNT
+		}
+
+		potential = {
+			tier = COUNT
+			owner = { character = FROM }
+		}
+
+		allow = {
+			location = {
+				capital_holding = {
+					OR = {
+						holding_type = castle
+						holding_type = city
+						holding_type = temple
+						holding_type = tribal
+					}
+				}
+			}
+			custom_tooltip = {
+				text = TOOLTIP_TOW_province_not_capital
+				hidden_tooltip = {
+					FROM = {
+						capital_scope = {
+					    	county = {
+					    		NOT = { title = ROOT }
+					    	}
+					  	}
+					}
+				}
+			}
+			#is_occupied = no
+			#NOT = {
+			#	any_province_holding = {
+			#		has_siege = yes
+			#	}
+			#}
+		}
+
+		effect = {
+			FROM = {
+				save_event_target_as = employer
+				hidden_tooltip = {
+					primary_title = {
+						FROM = {
+							TOW_create_random_courtier_gender_equality = yes
+							TOW_employed_remove_unwanted_traits_with_ET_employer = yes
+							new_character = {
+								TOW_remove_bad_traits = yes
+								grant_title = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
 }
