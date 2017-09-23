@@ -4357,39 +4357,41 @@ character_event = {
 		}
 		name = EVTOPTCLASSGAIN.30b # Actually, I changed my mind. I'd rather not do this.
 		prestige = -10
-		trigger_switch = {
-			on_trigger = has_character_flag
-			ct_arcanist_start = { set_character_flag = refused_arcanist }
-			ct_necrolyte_start = { set_character_flag = refused_necrolyte }
-			ct_necrolyte_drift = { set_character_flag = refused_necrolyte }
-			ct_healer_start = { set_character_flag = refused_healer }
-			ct_scout_start = { set_character_flag = refused_scout }
-			ct_tinker_start = { set_character_flag = refused_tinker }
-			ct_fighter_start = { set_character_flag = refused_fighter }
-			ct_mage_start = { set_character_flag = refused_mage }
-			ct_warlock_start = { set_character_flag = refused_warlock }
-			ct_warlock_drift = { set_character_flag = refused_warlock }
-			ct_necromancer_start = { set_character_flag = refused_necromancer }
-			ct_necromancer_drift = { set_character_flag = refused_necromancer }
-			ct_runemaster_start = { set_character_flag = refused_runemaster }
-			ct_priest_start = { set_character_flag = refused_priest }
-			ct_shaman_start = { set_character_flag = refused_shaman }
-			ct_druid_start = { set_character_flag = refused_druid }
-			ct_witch_doctor_start = { set_character_flag = refused_witch_doctor }
-			ct_alchemist_start = { set_character_flag = refused_alchemist }
-			ct_assassin_start = { set_character_flag = refused_assassin }
-			ct_rogue_start = { set_character_flag = refused_rogue }
-			ct_beastmaster_start = { set_character_flag = refused_beastmaster }
-			ct_explorer_start = { set_character_flag = refused_explorer }
-			ct_ranger_start = { set_character_flag = refused_ranger }
-			ct_engineer_start = { set_character_flag = refused_engineer }
-			ct_mechanist_start = { set_character_flag = refused_mechanist }
-			ct_techmage_start = { set_character_flag = refused_techmage }
-			ct_warrior_start = { set_character_flag = refused_warrior }
-			ct_paladin_start = { set_character_flag = refused_paladin }
-			ct_monk_start = { set_character_flag = refused_monk }
+		hidden_tooltip = {
+			trigger_switch = {
+				on_trigger = has_character_flag
+				ct_arcanist_start = { set_character_flag = refused_arcanist }
+				ct_necrolyte_start = { set_character_flag = refused_necrolyte }
+				ct_necrolyte_drift = { set_character_flag = refused_necrolyte }
+				ct_healer_start = { set_character_flag = refused_healer }
+				ct_scout_start = { set_character_flag = refused_scout }
+				ct_tinker_start = { set_character_flag = refused_tinker }
+				ct_fighter_start = { set_character_flag = refused_fighter }
+				ct_mage_start = { set_character_flag = refused_mage }
+				ct_warlock_start = { set_character_flag = refused_warlock }
+				ct_warlock_drift = { set_character_flag = refused_warlock }
+				ct_necromancer_start = { set_character_flag = refused_necromancer }
+				ct_necromancer_drift = { set_character_flag = refused_necromancer }
+				ct_runemaster_start = { set_character_flag = refused_runemaster }
+				ct_priest_start = { set_character_flag = refused_priest }
+				ct_shaman_start = { set_character_flag = refused_shaman }
+				ct_druid_start = { set_character_flag = refused_druid }
+				ct_witch_doctor_start = { set_character_flag = refused_witch_doctor }
+				ct_alchemist_start = { set_character_flag = refused_alchemist }
+				ct_assassin_start = { set_character_flag = refused_assassin }
+				ct_rogue_start = { set_character_flag = refused_rogue }
+				ct_beastmaster_start = { set_character_flag = refused_beastmaster }
+				ct_explorer_start = { set_character_flag = refused_explorer }
+				ct_ranger_start = { set_character_flag = refused_ranger }
+				ct_engineer_start = { set_character_flag = refused_engineer }
+				ct_mechanist_start = { set_character_flag = refused_mechanist }
+				ct_techmage_start = { set_character_flag = refused_techmage }
+				ct_warrior_start = { set_character_flag = refused_warrior }
+				ct_paladin_start = { set_character_flag = refused_paladin }
+				ct_monk_start = { set_character_flag = refused_monk }
+			}
+			clear_flags_with_prefix = ct_
 		}
-		clear_flags_with_prefix = ct_
 	}
 }
 
@@ -4449,446 +4451,393 @@ character_event = {
 	
 	option = {
 		name = AKSUCCESS # Success!
-		trigger_switch = {
-			on_trigger = has_character_flag
-			ct_arcanist_start = { add_trait = arcanist }
-			ct_necrolyte_start = {
-				add_trait = necrolyte
-				set_character_flag = necrolyte_discovered
-			}
-			ct_necrolyte_drift = {
-				remove_trait = arcanist
-				remove_trait = healer
-				add_trait = necrolyte
-				set_character_flag = necrolyte_discovered
-			}
-			ct_healer_start = { add_trait = healer }
-			ct_scout_start = { add_trait = scout }
-			ct_tinker_start = { add_trait = tinker }
-			ct_fighter_start = { add_trait = fighter }
-			ct_mage_start = {
-				remove_trait = arcanist
-				add_trait = mage
-				set_character_flag = has_adv_class
-			}
-			ct_warlock_start = {
-				remove_trait = arcanist
-				remove_trait = necrolyte
-				add_trait = warlock
-				set_character_flag = has_adv_class
-				set_character_flag = warlock_discovered
-			}
-			ct_warlock_drift = {
-				remove_trait = mage
-				remove_trait = priest
-				remove_trait = shaman
-				remove_trait = druid
-				remove_trait = witch_doctor
-				remove_trait = techmage
-				remove_character_modifier = abjuration
-				remove_character_modifier = enchantment
-				remove_character_modifier = illusion
-				remove_character_modifier = divination
-				remove_character_modifier = transmutation
-				remove_character_modifier = conjuration
-				remove_character_modifier = evocation
-				remove_character_modifier = evocation_fake
-				remove_character_modifier = blood_magic
-				remove_character_modifier = hexes
-				remove_character_modifier = brews
-				remove_character_modifier = shadow_hunter
-				remove_character_modifier = holy_priest
-				remove_character_modifier = holy_priest_fake
-				remove_character_modifier = sun_priest
-				remove_character_modifier = sun_priest_fake
-				remove_character_modifier = moon_priest
-				remove_character_modifier = moon_priest_fake
-				remove_character_modifier = shadow_priest
-				remove_character_modifier = sea_witch
-				remove_character_modifier = moon_druid
-				remove_character_modifier = sun_druid
-				remove_character_modifier = mender
-				remove_character_modifier = mender_fake
-				remove_character_modifier = feral_druid
-				remove_character_modifier = flame_druid
-				remove_character_modifier = wave_druid
-				remove_character_modifier = wind_druid
-				remove_character_modifier = stone_druid
-				remove_character_modifier = nightmare_druid
-				remove_character_modifier = elementalist
-				remove_character_modifier = elementalist_fake
-				remove_character_modifier = spiritualist
-				remove_character_modifier = dark_shaman
-				add_trait = warlock
-				set_character_flag = warlock_discovered
-			}
-			ct_necromancer_start = {
-				remove_trait = arcanist
-				remove_trait = necrolyte
-				add_trait = necromancer
-				set_character_flag = has_adv_class
-				set_character_flag = necromancer_discovered
-			}
-			ct_necromancer_drift = {
-				remove_trait = mage
-				remove_trait = priest
-				remove_trait = shaman
-				remove_trait = druid
-				remove_trait = witch_doctor
-				remove_trait = techmage
-				remove_character_modifier = abjuration
-				remove_character_modifier = enchantment
-				remove_character_modifier = illusion
-				remove_character_modifier = divination
-				remove_character_modifier = transmutation
-				remove_character_modifier = conjuration
-				remove_character_modifier = evocation
-				remove_character_modifier = evocation_fake
-				remove_character_modifier = blood_magic
-				remove_character_modifier = hexes
-				remove_character_modifier = brews
-				remove_character_modifier = shadow_hunter
-				remove_character_modifier = holy_priest
-				remove_character_modifier = holy_priest_fake
-				remove_character_modifier = sun_priest
-				remove_character_modifier = sun_priest_fake
-				remove_character_modifier = moon_priest
-				remove_character_modifier = moon_priest_fake
-				remove_character_modifier = shadow_priest
-				remove_character_modifier = sea_witch
-				remove_character_modifier = moon_druid
-				remove_character_modifier = sun_druid
-				remove_character_modifier = mender_fake
-				remove_character_modifier = feral_druid
-				remove_character_modifier = flame_druid
-				remove_character_modifier = wave_druid
-				remove_character_modifier = wind_druid
-				remove_character_modifier = stone_druid
-				remove_character_modifier = nightmare_druid
-				remove_character_modifier = elementalist
-				remove_character_modifier = elementalist_fake
-				remove_character_modifier = spiritualist
-				remove_character_modifier = dark_shaman
-				add_trait = necromancer
-				set_character_flag = necromancer_discovered
-			}
-			ct_runemaster_start = {
-				if = {
-					limit = {
-						trait = ogre_magi
-					}
+		hidden_tooltip = {
+			trigger_switch = {
+				on_trigger = has_character_flag
+				ct_arcanist_start = { add_trait = arcanist }
+				ct_necrolyte_start = {
+					add_trait = necrolyte
+					set_character_flag = necrolyte_discovered
+				}
+				ct_necrolyte_drift = {
 					remove_trait = arcanist
-				}
-				if = {
-					limit = {
-						NOT = { always = yes }
-					}
 					remove_trait = healer
+					add_trait = necrolyte
+					set_character_flag = necrolyte_discovered
 				}
-				add_trait = runemaster
-				set_character_flag = has_adv_class
-			}
-			ct_priest_start = {
-				remove_trait = healer
-				add_trait = priest
-				set_character_flag = has_adv_class
-			}
-			ct_shaman_start = {
-				remove_trait = healer
-				add_trait = shaman
-				set_character_flag = has_adv_class
-			}
-			ct_druid_start = {
-				remove_trait = healer
-				add_trait = druid
-				set_character_flag = has_adv_class
-			}
-			ct_witch_doctor_start = {
-				remove_trait = healer
-				add_trait = witch_doctor
-				set_character_flag = has_adv_class
-			}
-			ct_alchemist_start = {
-				remove_trait = healer
-				add_trait = alchemist
-				set_character_flag = has_adv_class
-			}
-			ct_assassin_start = {
-				remove_trait = scout
-				add_trait = assassin
-				set_character_flag = has_adv_class
-				set_character_flag = assassin_discovered
-			}
-			ct_rogue_start = {
-				remove_trait = scout
-				add_trait = rogue
-				set_character_flag = has_adv_class
-				set_character_flag = rogue_discovered
-			}
-			ct_beastmaster_start = {
-				remove_trait = scout
-				add_trait = beastmaster
-				set_character_flag = has_adv_class
-			}
-			ct_explorer_start = {
-				remove_trait = scout
-				add_trait = explorer
-				set_character_flag = has_adv_class
-			}
-			ct_ranger_start = {
-				remove_trait = scout
-				add_trait = ranger
-				set_character_flag = has_adv_class
-			}
-			ct_engineer_start = {
-				remove_trait = tinker
-				add_trait = engineer
-				set_character_flag = has_adv_class
-			}
-			ct_mechanist_start = {
-				remove_trait = tinker
-				add_trait = mechanist
-				set_character_flag = has_adv_class
-			}
-			ct_techmage_start = {
-				remove_trait = tinker
-				add_trait = techmage
-				set_character_flag = has_adv_class
-			}
-			ct_warrior_start = {
-				remove_trait = fighter
-				add_trait = warrior
-				set_character_flag = has_adv_class
-			}
-			ct_paladin_start = {
-				remove_trait = fighter
-				add_trait = paladin
-				set_character_flag = has_adv_class
-			}
-			ct_monk_start = {
-				remove_trait = fighter
-				add_trait = monk
-				set_character_flag = has_adv_class
-			}
-		}
-		if = {
-			limit = {
-				has_game_rule = {
-					name = religion_restrictions
-					value = on
+				ct_healer_start = { add_trait = healer }
+				ct_scout_start = { add_trait = scout }
+				ct_tinker_start = { add_trait = tinker }
+				ct_fighter_start = { add_trait = fighter }
+				ct_mage_start = {
+					remove_trait = arcanist
+					add_trait = mage
+					set_character_flag = has_adv_class
+				}
+				ct_warlock_start = {
+					remove_trait = arcanist
+					remove_trait = necrolyte
+					add_trait = warlock
+					set_character_flag = has_adv_class
+					set_character_flag = warlock_discovered
+				}
+				ct_warlock_drift = {
+					remove_trait = mage
+					remove_trait = priest
+					remove_trait = shaman
+					remove_trait = druid
+					remove_trait = witch_doctor
+					remove_trait = techmage
+					remove_character_modifier = abjuration
+					remove_character_modifier = enchantment
+					remove_character_modifier = illusion
+					remove_character_modifier = divination
+					remove_character_modifier = transmutation
+					remove_character_modifier = conjuration
+					remove_character_modifier = evocation
+					remove_character_modifier = evocation_fake
+					remove_character_modifier = blood_magic
+					remove_character_modifier = hexes
+					remove_character_modifier = brews
+					remove_character_modifier = shadow_hunter
+					remove_character_modifier = holy_priest
+					remove_character_modifier = holy_priest_fake
+					remove_character_modifier = sun_priest
+					remove_character_modifier = sun_priest_fake
+					remove_character_modifier = moon_priest
+					remove_character_modifier = moon_priest_fake
+					remove_character_modifier = shadow_priest
+					remove_character_modifier = sea_witch
+					remove_character_modifier = moon_druid
+					remove_character_modifier = sun_druid
+					remove_character_modifier = mender
+					remove_character_modifier = mender_fake
+					remove_character_modifier = feral_druid
+					remove_character_modifier = flame_druid
+					remove_character_modifier = wave_druid
+					remove_character_modifier = wind_druid
+					remove_character_modifier = stone_druid
+					remove_character_modifier = nightmare_druid
+					remove_character_modifier = elementalist
+					remove_character_modifier = elementalist_fake
+					remove_character_modifier = spiritualist
+					remove_character_modifier = dark_shaman
+					add_trait = warlock
+					set_character_flag = warlock_discovered
+				}
+				ct_necromancer_start = {
+					remove_trait = arcanist
+					remove_trait = necrolyte
+					add_trait = necromancer
+					set_character_flag = has_adv_class
+					set_character_flag = necromancer_discovered
+				}
+				ct_necromancer_drift = {
+					remove_trait = mage
+					remove_trait = priest
+					remove_trait = shaman
+					remove_trait = druid
+					remove_trait = witch_doctor
+					remove_trait = techmage
+					remove_character_modifier = abjuration
+					remove_character_modifier = enchantment
+					remove_character_modifier = illusion
+					remove_character_modifier = divination
+					remove_character_modifier = transmutation
+					remove_character_modifier = conjuration
+					remove_character_modifier = evocation
+					remove_character_modifier = evocation_fake
+					remove_character_modifier = blood_magic
+					remove_character_modifier = hexes
+					remove_character_modifier = brews
+					remove_character_modifier = shadow_hunter
+					remove_character_modifier = holy_priest
+					remove_character_modifier = holy_priest_fake
+					remove_character_modifier = sun_priest
+					remove_character_modifier = sun_priest_fake
+					remove_character_modifier = moon_priest
+					remove_character_modifier = moon_priest_fake
+					remove_character_modifier = shadow_priest
+					remove_character_modifier = sea_witch
+					remove_character_modifier = moon_druid
+					remove_character_modifier = sun_druid
+					remove_character_modifier = mender_fake
+					remove_character_modifier = feral_druid
+					remove_character_modifier = flame_druid
+					remove_character_modifier = wave_druid
+					remove_character_modifier = wind_druid
+					remove_character_modifier = stone_druid
+					remove_character_modifier = nightmare_druid
+					remove_character_modifier = elementalist
+					remove_character_modifier = elementalist_fake
+					remove_character_modifier = spiritualist
+					remove_character_modifier = dark_shaman
+					add_trait = necromancer
+					set_character_flag = necromancer_discovered
+				}
+				ct_runemaster_start = {
+					if = {
+						limit = {
+							trait = ogre_magi
+						}
+						remove_trait = arcanist
+					}
+					if = {
+						limit = {
+							NOT = { always = yes }
+						}
+						remove_trait = healer
+					}
+					add_trait = runemaster
+					set_character_flag = has_adv_class
+				}
+				ct_priest_start = {
+					remove_trait = healer
+					add_trait = priest
+					set_character_flag = has_adv_class
+				}
+				ct_shaman_start = {
+					remove_trait = healer
+					add_trait = shaman
+					set_character_flag = has_adv_class
+				}
+				ct_druid_start = {
+					remove_trait = healer
+					add_trait = druid
+					set_character_flag = has_adv_class
+				}
+				ct_witch_doctor_start = {
+					remove_trait = healer
+					add_trait = witch_doctor
+					set_character_flag = has_adv_class
+				}
+				ct_alchemist_start = {
+					remove_trait = healer
+					add_trait = alchemist
+					set_character_flag = has_adv_class
+				}
+				ct_assassin_start = {
+					remove_trait = scout
+					add_trait = assassin
+					set_character_flag = has_adv_class
+					set_character_flag = assassin_discovered
+				}
+				ct_rogue_start = {
+					remove_trait = scout
+					add_trait = rogue
+					set_character_flag = has_adv_class
+					set_character_flag = rogue_discovered
+				}
+				ct_beastmaster_start = {
+					remove_trait = scout
+					add_trait = beastmaster
+					set_character_flag = has_adv_class
+				}
+				ct_explorer_start = {
+					remove_trait = scout
+					add_trait = explorer
+					set_character_flag = has_adv_class
+				}
+				ct_ranger_start = {
+					remove_trait = scout
+					add_trait = ranger
+					set_character_flag = has_adv_class
+				}
+				ct_engineer_start = {
+					remove_trait = tinker
+					add_trait = engineer
+					set_character_flag = has_adv_class
+				}
+				ct_mechanist_start = {
+					remove_trait = tinker
+					add_trait = mechanist
+					set_character_flag = has_adv_class
+				}
+				ct_techmage_start = {
+					remove_trait = tinker
+					add_trait = techmage
+					set_character_flag = has_adv_class
+				}
+				ct_warrior_start = {
+					remove_trait = fighter
+					add_trait = warrior
+					set_character_flag = has_adv_class
+				}
+				ct_paladin_start = {
+					remove_trait = fighter
+					add_trait = paladin
+					set_character_flag = has_adv_class
+				}
+				ct_monk_start = {
+					remove_trait = fighter
+					add_trait = monk
+					set_character_flag = has_adv_class
 				}
 			}
 			if = {
 				limit = {
-					OR = {
-						has_character_flag = ct_warlock_start
-						has_character_flag = ct_warlock_drift
+					has_game_rule = {
+						name = religion_restrictions
+						value = on
 					}
 				}
 				if = {
 					limit = {
-						NOT = { accepts_warlock = yes }
+						OR = {
+							has_character_flag = ct_warlock_start
+							has_character_flag = ct_warlock_drift
+						}
 					}
 					if = {
 						limit = {
-							NOT = { has_secret_religion_trait_trigger = yes }
-							NOT = {
-								religion = cult_of_the_infinite
-								religion = cult_of_the_destroyer
-								religion = emerald_nightmare
-								religion = forgotten_shadow
-								religion = old_gods
-								religion = twilights_hammer
-								religion = azshara
-								religion = burning_legion
-								religion = mercantilism
-								religion = demonology
-								religion = loa
-							}
+							NOT = { accepts_warlock = yes }
 						}
-						religion = demonology
-					}
-					if = {
-						limit = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = loa
+						if = {
+							limit = {
+								NOT = { has_secret_religion_trait_trigger = yes }
+								NOT = {
+									religion = cult_of_the_infinite
+									religion = cult_of_the_destroyer
+									religion = emerald_nightmare
+									religion = forgotten_shadow
+									religion = old_gods
+									religion = twilights_hammer
+									religion = azshara
+									religion = burning_legion
+									religion = mercantilism
+									religion = demonology
+									religion = loa
+								}
 							}
-						}
-						convert_to_secret_religion = yes
-					}
-				}
-				if = {
-					limit = {
-						accepts_warlock = yes
-					}
-					if = {
-						limit = {
-							NOT = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = loa
-							}
-						}
-						clear_secret_religion = yes
-						religion = demonology
-					}
-					if = {
-						limit = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = loa
-							}
-						}
-						convert_to_secret_religion = yes
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_character_flag = ct_necromancer_start
-					has_character_flag = ct_necromancer_drift
-				}
-			}
-			if = {
-				limit = {
-					NOT = { accepts_necromancer = yes }
-				}
-				if = {
-					limit = {
-						NOT = { has_secret_religion_trait_trigger = yes }
-						NOT = {
-							religion = hakkar
-							religion = burning_legion
-							religion = forgotten_shadow
-							religion = lich_king
-							religion = cult_of_the_infinite
-							religion = cult_of_the_destroyer
-							religion = old_gods
-							religion = emerald_nightmare
-							religion = azshara
 							religion = demonology
 						}
-					}
-					religion = forgotten_shadow
-				}
-				if = {
-					limit = {
-						OR = {						
-							secret_religion = hakkar
-							secret_religion = burning_legion
-							secret_religion = forgotten_shadow
-							secret_religion = lich_king
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = loa
+								}
+							}
+							convert_to_secret_religion = yes
 						}
 					}
-					convert_to_secret_religion = yes
-				}
-			}
-			if = {
-				limit = {
-					accepts_necromancer = yes
-				}
-				if = {
-					limit = {
-						NOT = {						
-							secret_religion = hakkar
-							secret_religion = burning_legion
-							secret_religion = forgotten_shadow
-							secret_religion = lich_king
+					if = {
+						limit = {
+							accepts_warlock = yes
+						}
+						if = {
+							limit = {
+								NOT = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = loa
+								}
+							}
+							clear_secret_religion = yes
+							religion = demonology
+						}
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = loa
+								}
+							}
+							convert_to_secret_religion = yes
 						}
 					}
-					clear_secret_religion = yes
-					religion = forgotten_shadow
-				}
-				if = {
-					limit = {
-						OR = {						
-							secret_religion = hakkar
-							secret_religion = burning_legion
-							secret_religion = forgotten_shadow
-							secret_religion = lich_king
-						}
-					}
-					convert_to_secret_religion = yes
 				}
 			}
 			if = {
 				limit = {
 					OR = {
-						has_character_flag = ct_necrolyte_start
-						has_character_flag = ct_necrolyte_drift
+						has_character_flag = ct_necromancer_start
+						has_character_flag = ct_necromancer_drift
 					}
 				}
 				if = {
 					limit = {
-						NOT = { accepts_warlock = yes }
 						NOT = { accepts_necromancer = yes }
 					}
 					if = {
 						limit = {
 							NOT = { has_secret_religion_trait_trigger = yes }
 							NOT = {
+								religion = hakkar
+								religion = burning_legion
+								religion = forgotten_shadow
+								religion = lich_king
 								religion = cult_of_the_infinite
 								religion = cult_of_the_destroyer
-								religion = emerald_nightmare
-								religion = forgotten_shadow
 								religion = old_gods
-								religion = twilights_hammer
+								religion = emerald_nightmare
 								religion = azshara
-								religion = burning_legion
-								religion = mercantilism
 								religion = demonology
-								religion = lich_king
-								religion = hakkar
-								religion = loa
 							}
 						}
-						religion = demonology
+						religion = forgotten_shadow
 					}
 					if = {
 						limit = {
 							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = lich_king
 								secret_religion = hakkar
-								secret_religion = loa
+								secret_religion = burning_legion
+								secret_religion = forgotten_shadow
+								secret_religion = lich_king
+							}
+						}
+						convert_to_secret_religion = yes
+					}
+				}
+				if = {
+					limit = {
+						accepts_necromancer = yes
+					}
+					if = {
+						limit = {
+							NOT = {						
+								secret_religion = hakkar
+								secret_religion = burning_legion
+								secret_religion = forgotten_shadow
+								secret_religion = lich_king
+							}
+						}
+						clear_secret_religion = yes
+						religion = forgotten_shadow
+					}
+					if = {
+						limit = {
+							OR = {						
+								secret_religion = hakkar
+								secret_religion = burning_legion
+								secret_religion = forgotten_shadow
+								secret_religion = lich_king
 							}
 						}
 						convert_to_secret_religion = yes
@@ -4897,50 +4846,105 @@ character_event = {
 				if = {
 					limit = {
 						OR = {
-							accepts_warlock = yes
-							accepts_necromancer = yes
+							has_character_flag = ct_necrolyte_start
+							has_character_flag = ct_necrolyte_drift
 						}
 					}
 					if = {
 						limit = {
-							NOT = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = lich_king
-								secret_religion = hakkar
-								secret_religion = loa
-							}
+							NOT = { accepts_warlock = yes }
+							NOT = { accepts_necromancer = yes }
 						}
-						clear_secret_religion = yes
-						religion = demonology
+						if = {
+							limit = {
+								NOT = { has_secret_religion_trait_trigger = yes }
+								NOT = {
+									religion = cult_of_the_infinite
+									religion = cult_of_the_destroyer
+									religion = emerald_nightmare
+									religion = forgotten_shadow
+									religion = old_gods
+									religion = twilights_hammer
+									religion = azshara
+									religion = burning_legion
+									religion = mercantilism
+									religion = demonology
+									religion = lich_king
+									religion = hakkar
+									religion = loa
+								}
+							}
+							religion = demonology
+						}
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = lich_king
+									secret_religion = hakkar
+									secret_religion = loa
+								}
+							}
+							convert_to_secret_religion = yes
+						}
 					}
 					if = {
 						limit = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = lich_king
-								secret_religion = hakkar
-								secret_religion = loa
+							OR = {
+								accepts_warlock = yes
+								accepts_necromancer = yes
 							}
 						}
-						convert_to_secret_religion = yes
+						if = {
+							limit = {
+								NOT = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = lich_king
+									secret_religion = hakkar
+									secret_religion = loa
+								}
+							}
+							clear_secret_religion = yes
+							religion = demonology
+						}
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = lich_king
+									secret_religion = hakkar
+									secret_religion = loa
+								}
+							}
+							convert_to_secret_religion = yes
+						}
 					}
 				}
 			}
@@ -5014,257 +5018,259 @@ character_event = {
 			}
 		}
 		name = EVTOPTCLASSGAIN.31b # I should keep this to myself.
-		if = { # Probably could've condensed these, but best to keep it this way
-			limit = {
-				OR = {
-					has_character_flag = ct_warlock_start
-					has_character_flag = ct_warlock_drift
-				}
-			}
-			add_trait = warlock
-			if = {
+		hidden_tooltip = {
+			if = { # Probably could've condensed these, but best to keep it this way
 				limit = {
-					trait = arcanist
-				}
-				remove_trait = arcanist
-				add_trait = arcanist_fake
-			}
-			if = {
-				limit = {
-					trait = necrolyte
-				}
-				remove_trait = necrolyte
-			}
-			if = {
-				limit = {
-					trait = mage
-				}
-				remove_trait = mage
-				add_character_modifier = { modifier = evocation_fake days = -1 }
-				add_trait = mage_fake
-			}
-			if = {
-				limit = {
-					trait = healer
-				}
-				remove_trait = healer
-				add_trait = healer_fake
-			}
-			if = {
-				limit = {
-					trait = witch_doctor
-				}
-				remove_trait = witch_doctor
-				add_trait = witch_doctor_fake
-			}
-			if = {
-				limit = {
-					trait = druid
-				}
-				remove_trait = druid
-				add_trait = druid_fake
-			}
-			if = {
-				limit = {
-					trait = priest
-				}
-				remove_trait = priest
-				add_trait = priest_fake
-			}
-			if = {
-				limit = {
-					trait = techmage
-				}
-				remove_trait = techmage
-				add_trait = techmage_fake
-			}
-			if = {
-				limit = {
-					has_game_rule = {
-						name = religion_restrictions
-						value = on
+					OR = {
+						has_character_flag = ct_warlock_start
+						has_character_flag = ct_warlock_drift
 					}
+				}
+				add_trait = warlock
+				if = {
+					limit = {
+						trait = arcanist
+					}
+					remove_trait = arcanist
+					add_trait = arcanist_fake
 				}
 				if = {
 					limit = {
-						NOT = { accepts_warlock = yes }
-						NOT = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = loa
-							}
-						}
+						trait = necrolyte
 					}
-					set_secret_religion = demonology
-				}
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_character_flag = ct_necromancer_start
-					has_character_flag = ct_necromancer_drift
-				}
-			}
-			add_trait = necromancer
-			if = {
-				limit = {
-					trait = arcanist
-				}
-				remove_trait = arcanist
-				add_trait = arcanist_fake
-			}
-			if = {
-				limit = {
-					trait = necrolyte
-				}
-				remove_trait = necrolyte
-			}
-			if = {
-				limit = {
-					trait = mage
-				}
-				remove_trait = mage
-				add_character_modifier = { modifier = evocation_fake days = -1 }
-				add_trait = mage_fake
-			}
-			if = {
-				limit = {
-					trait = healer
-				}
-				remove_trait = healer
-				add_trait = healer_fake
-			}
-			if = {
-				limit = {
-					trait = witch_doctor
-				}
-				remove_trait = witch_doctor
-				add_trait = witch_doctor_fake
-			}
-			if = {
-				limit = {
-					trait = druid
-				}
-				remove_trait = druid
-				add_trait = druid_fake
-			}
-			if = {
-				limit = {
-					trait = priest
-				}
-				remove_trait = priest
-				add_trait = priest_fake
-			}
-			if = {
-				limit = {
-					trait = techmage
-				}
-				remove_trait = techmage
-				add_trait = techmage_fake
-			}
-			if = {
-				limit = {
-					has_game_rule = {
-						name = religion_restrictions
-						value = on
-					}
+					remove_trait = necrolyte
 				}
 				if = {
 					limit = {
-						NOT = { accepts_necromancer = yes }
-						NOT = {
-							OR = {						
-								secret_religion = hakkar
-								secret_religion = burning_legion
-								secret_religion = forgotten_shadow
-								secret_religion = lich_king
-							}
-						}
+						trait = mage
 					}
-					set_secret_religion = forgotten_shadow
-				}
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_character_flag = ct_necrolyte_start
-					has_character_flag = ct_necrolyte_drift
-				}
-			}
-			add_trait = necrolyte
-			if = {
-				limit = {
-					trait = arcanist
-				}
-				remove_trait = arcanist
-				add_trait = arcanist_fake
-			}
-			if = {
-				limit = {
-					trait = healer
-				}
-				remove_trait = healer
-				add_trait = healer_fake
-			}
-			if = {
-				limit = {
-					has_game_rule = {
-						name = religion_restrictions
-						value = on
-					}
+					remove_trait = mage
+					add_character_modifier = { modifier = evocation_fake days = -1 }
+					add_trait = mage_fake
 				}
 				if = {
 					limit = {
-						NOT = { accepts_warlock = yes }
-						NOT = { accepts_necromancer = yes }
-						NOT = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = lich_king
-								secret_religion = hakkar
-								secret_religion = loa
-							}
+						trait = healer
+					}
+					remove_trait = healer
+					add_trait = healer_fake
+				}
+				if = {
+					limit = {
+						trait = witch_doctor
+					}
+					remove_trait = witch_doctor
+					add_trait = witch_doctor_fake
+				}
+				if = {
+					limit = {
+						trait = druid
+					}
+					remove_trait = druid
+					add_trait = druid_fake
+				}
+				if = {
+					limit = {
+						trait = priest
+					}
+					remove_trait = priest
+					add_trait = priest_fake
+				}
+				if = {
+					limit = {
+						trait = techmage
+					}
+					remove_trait = techmage
+					add_trait = techmage_fake
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = religion_restrictions
+							value = on
 						}
 					}
-					set_secret_religion = demonology
+					if = {
+						limit = {
+							NOT = { accepts_warlock = yes }
+							NOT = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = loa
+								}
+							}
+						}
+						set_secret_religion = demonology
+					}
 				}
 			}
-		}
-		if = {
-			limit = {
-				has_character_flag = ct_assassin_start
+			if = {
+				limit = {
+					OR = {
+						has_character_flag = ct_necromancer_start
+						has_character_flag = ct_necromancer_drift
+					}
+				}
+				add_trait = necromancer
+				if = {
+					limit = {
+						trait = arcanist
+					}
+					remove_trait = arcanist
+					add_trait = arcanist_fake
+				}
+				if = {
+					limit = {
+						trait = necrolyte
+					}
+					remove_trait = necrolyte
+				}
+				if = {
+					limit = {
+						trait = mage
+					}
+					remove_trait = mage
+					add_character_modifier = { modifier = evocation_fake days = -1 }
+					add_trait = mage_fake
+				}
+				if = {
+					limit = {
+						trait = healer
+					}
+					remove_trait = healer
+					add_trait = healer_fake
+				}
+				if = {
+					limit = {
+						trait = witch_doctor
+					}
+					remove_trait = witch_doctor
+					add_trait = witch_doctor_fake
+				}
+				if = {
+					limit = {
+						trait = druid
+					}
+					remove_trait = druid
+					add_trait = druid_fake
+				}
+				if = {
+					limit = {
+						trait = priest
+					}
+					remove_trait = priest
+					add_trait = priest_fake
+				}
+				if = {
+					limit = {
+						trait = techmage
+					}
+					remove_trait = techmage
+					add_trait = techmage_fake
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = religion_restrictions
+							value = on
+						}
+					}
+					if = {
+						limit = {
+							NOT = { accepts_necromancer = yes }
+							NOT = {
+								OR = {						
+									secret_religion = hakkar
+									secret_religion = burning_legion
+									secret_religion = forgotten_shadow
+									secret_religion = lich_king
+								}
+							}
+						}
+						set_secret_religion = forgotten_shadow
+					}
+				}
 			}
-			remove_trait = scout
-			add_trait = scout_fake
-			add_trait = assassin
-		}
-		if = {
-			limit = {
-				has_character_flag = ct_rogue_start
+			if = {
+				limit = {
+					OR = {
+						has_character_flag = ct_necrolyte_start
+						has_character_flag = ct_necrolyte_drift
+					}
+				}
+				add_trait = necrolyte
+				if = {
+					limit = {
+						trait = arcanist
+					}
+					remove_trait = arcanist
+					add_trait = arcanist_fake
+				}
+				if = {
+					limit = {
+						trait = healer
+					}
+					remove_trait = healer
+					add_trait = healer_fake
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = religion_restrictions
+							value = on
+						}
+					}
+					if = {
+						limit = {
+							NOT = { accepts_warlock = yes }
+							NOT = { accepts_necromancer = yes }
+							NOT = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = lich_king
+									secret_religion = hakkar
+									secret_religion = loa
+								}
+							}
+						}
+						set_secret_religion = demonology
+					}
+				}
 			}
-			remove_trait = scout
-			add_trait = scout_fake
-			add_trait = rogue
+			if = {
+				limit = {
+					has_character_flag = ct_assassin_start
+				}
+				remove_trait = scout
+				add_trait = scout_fake
+				add_trait = assassin
+			}
+			if = {
+				limit = {
+					has_character_flag = ct_rogue_start
+				}
+				remove_trait = scout
+				add_trait = scout_fake
+				add_trait = rogue
+			}
 		}
 		clear_flags_with_prefix = ct_
 	}
@@ -5322,79 +5328,81 @@ character_event = {
 		name = EVTOPTCLASSGAIN.32a # I have no choice, I must buy them.
 		scaled_wealth = { value = -0.05 min = 15 }
 		set_character_flag = ct_books
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						OR = {
-							has_character_flag = ct_warlock_start
-							has_character_flag = ct_warlock_drift
-						}
-						NOT = { accepts_warlock = yes }
-					}
-					AND = {
-						OR = {
-							has_character_flag = ct_necromancer_start
-							has_character_flag = ct_necromancer_drift
-						}
-						NOT = { accepts_necromancer = yes }
-					}
-					AND = {
-						OR = {
-							has_character_flag = ct_necrolyte_start
-							has_character_flag = ct_necrolyte_drift
-						}
-						OR = {
-							NOT = { accepts_warlock = yes }
-							NOT = { accepts_necromancer = yes }
-						}
-					}
-					AND = {
-						has_character_flag = ct_assassin_start
-						NOT = { accepts_assassin = yes }
-					}
-					AND = {
-						has_character_flag = ct_rogue_start
-						NOT = { accepts_rogue = yes }
-					}
-				}
-			}
+		hidden_tooltip = {
 			if = {
 				limit = {
 					OR = {
-						has_character_flag = ct_necrolyte_start
-						has_character_flag = ct_necrolyte_drift
-						has_character_flag = ct_warlock_start
-						has_character_flag = ct_warlock_drift
-						has_character_flag = ct_necromancer_start
-						has_character_flag = ct_necromancer_drift
-						has_character_flag = ct_assassin_start
-						has_character_flag = ct_rogue_start
+						AND = {
+							OR = {
+								has_character_flag = ct_warlock_start
+								has_character_flag = ct_warlock_drift
+							}
+							NOT = { accepts_warlock = yes }
+						}
+						AND = {
+							OR = {
+								has_character_flag = ct_necromancer_start
+								has_character_flag = ct_necromancer_drift
+							}
+							NOT = { accepts_necromancer = yes }
+						}
+						AND = {
+							OR = {
+								has_character_flag = ct_necrolyte_start
+								has_character_flag = ct_necrolyte_drift
+							}
+							OR = {
+								NOT = { accepts_warlock = yes }
+								NOT = { accepts_necromancer = yes }
+							}
+						}
+						AND = {
+							has_character_flag = ct_assassin_start
+							NOT = { accepts_assassin = yes }
+						}
+						AND = {
+							has_character_flag = ct_rogue_start
+							NOT = { accepts_rogue = yes }
+						}
 					}
 				}
-				random = {
-					chance = 40
-					modifier = {
-						factor = 0.5
-						intrigue = 10
-						NOT = { intrigue = 15 }
+				if = {
+					limit = {
+						OR = {
+							has_character_flag = ct_necrolyte_start
+							has_character_flag = ct_necrolyte_drift
+							has_character_flag = ct_warlock_start
+							has_character_flag = ct_warlock_drift
+							has_character_flag = ct_necromancer_start
+							has_character_flag = ct_necromancer_drift
+							has_character_flag = ct_assassin_start
+							has_character_flag = ct_rogue_start
+						}
 					}
-					modifier = {
-						factor = 0.3
-						intrigue = 15
-						NOT =  { intrigue = 20 }
-					}
-					modifier = {
-						factor = 0.1
-						intrigue = 20
-					}
-					custom_tooltip = { text = EVTTOOLTIP.32 } # You may be discovered.
-					hidden_tooltip = {
-						any_courtier_or_vassal = {
-							limit = {
-								prisoner = no
+					random = {
+						chance = 40
+						modifier = {
+							factor = 0.5
+							intrigue = 10
+							NOT = { intrigue = 15 }
+						}
+						modifier = {
+							factor = 0.3
+							intrigue = 15
+							NOT =  { intrigue = 20 }
+						}
+						modifier = {
+							factor = 0.1
+							intrigue = 20
+						}
+						custom_tooltip = { text = EVTTOOLTIP.32 } # You may be discovered.
+						hidden_tooltip = {
+							any_courtier_or_vassal = {
+								limit = {
+									prisoner = no
+								}
+								character_event = { id = classgain.68 }
 							}
-							character_event = { id = classgain.68 }
 						}
 					}
 				}
@@ -7315,7 +7323,7 @@ character_event = {
 	prisoner = no
 	
 	mean_time_to_happen = {
-		months = 50
+		months = 120
 		modifier = {
 			factor = 0.7
 			intrigue = 5
@@ -7652,525 +7660,527 @@ character_event = {
 			}
 		}
 		name = EVTOPTCLASSGAIN.69b # I must bring this to light!
-		FROM = {
-			if = {
-				limit = {
-					independent = no
-					OR = {
-						AND = {
-							OR = {
-								has_character_flag = warlock_start
-								has_character_flag = warlock_drift
-								trait = warlock
-							}
-							liege = {
-								NOT = { accepts_warlock = yes }
-							}
-						}
-						AND = {
-							OR = {
-								has_character_flag = necromancer_start
-								has_character_flag = necromancer_drift
-								trait = necromancer
-							}
-							liege = {
-								NOT = { accepts_necromancer = yes }
-							}
-						}
-						AND = {
-							NOT = {
-								has_character_flag = warlock_start
-								has_character_flag = warlock_drift
-								has_character_flag = necromancer_start
-								has_character_flag = necromancer_drift
-							}
-							OR = {
-								has_character_flag = necrolyte_start
-								has_character_flag = necrolyte_drift
-								trait = necrolyte
-							}
-							liege = {
+		hidden_tooltip = {
+			FROM = {
+				if = {
+					limit = {
+						independent = no
+						OR = {
+							AND = {
 								OR = {
+									has_character_flag = warlock_start
+									has_character_flag = warlock_drift
+									trait = warlock
+								}
+								liege = {
 									NOT = { accepts_warlock = yes }
+								}
+							}
+							AND = {
+								OR = {
+									has_character_flag = necromancer_start
+									has_character_flag = necromancer_drift
+									trait = necromancer
+								}
+								liege = {
 									NOT = { accepts_necromancer = yes }
 								}
 							}
-						}
-						AND = {
-							has_character_modifier = blood_magic
-							liege = {
-								NOT = { accepts_blood_magic = yes }
+							AND = {
+								NOT = {
+									has_character_flag = warlock_start
+									has_character_flag = warlock_drift
+									has_character_flag = necromancer_start
+									has_character_flag = necromancer_drift
+								}
+								OR = {
+									has_character_flag = necrolyte_start
+									has_character_flag = necrolyte_drift
+									trait = necrolyte
+								}
+								liege = {
+									OR = {
+										NOT = { accepts_warlock = yes }
+										NOT = { accepts_necromancer = yes }
+									}
+								}
 							}
-						}
-						AND = {
-							has_character_modifier = shadow_priest
-							liege = {
-								NOT = { accepts_shadow_priest = yes }
+							AND = {
+								has_character_modifier = blood_magic
+								liege = {
+									NOT = { accepts_blood_magic = yes }
+								}
 							}
-						}
-						AND = {
-							has_character_modifier = dark_shaman
-							liege = {
-								NOT = { accepts_dark_shaman = yes }
+							AND = {
+								has_character_modifier = shadow_priest
+								liege = {
+									NOT = { accepts_shadow_priest = yes }
+								}
 							}
-						}
-						AND = {
-							has_character_modifier = nightmare_druid
-							liege = {
-								NOT = { accepts_nightmare_druid = yes }
+							AND = {
+								has_character_modifier = dark_shaman
+								liege = {
+									NOT = { accepts_dark_shaman = yes }
+								}
 							}
-						}
-					}
-				}
-				liege = {
-					opinion = {
-						modifier = opinion_witch
-						years = 100000
-						who = PREV
-					}
-				}
-			}
-			if = {
-				limit = {
-					independent = no
-					OR = {
-						AND = {
-							OR = {
-								has_character_flag = assassin_start
-								trait = assassin
-							}
-							liege = {
-								NOT = { accepts_assassin = yes }
-							}
-						}
-						AND = {
-							OR = {
-								has_character_flag = rogue_start
-								trait = rogue
-							}
-							liege = {
-								NOT = { accepts_rogue = yes }
+							AND = {
+								has_character_modifier = nightmare_druid
+								liege = {
+									NOT = { accepts_nightmare_druid = yes }
+								}
 							}
 						}
 					}
-				}
-				liege = {
-					opinion = {
-						modifier = opinion_criminal
-						years = 100000
-						who = PREV
-					}
-				}
-			}
-			prestige = -50
-			if = {
-				limit = {
-					OR = {
-						has_character_flag = warlock_start
-						has_character_flag = warlock_drift
-						trait = warlock
+					liege = {
+						opinion = {
+							modifier = opinion_witch
+							years = 100000
+							who = PREV
+						}
 					}
 				}
 				if = {
 					limit = {
-						trait = warlock
+						independent = no
+						OR = {
+							AND = {
+								OR = {
+									has_character_flag = assassin_start
+									trait = assassin
+								}
+								liege = {
+									NOT = { accepts_assassin = yes }
+								}
+							}
+							AND = {
+								OR = {
+									has_character_flag = rogue_start
+									trait = rogue
+								}
+								liege = {
+									NOT = { accepts_rogue = yes }
+								}
+							}
+						}
 					}
-					remove_trait = arcanist_fake
-					remove_trait = healer_fake
-					remove_trait = mage_fake
-					remove_trait = priest_fake
-					remove_trait = shaman_fake
-					remove_trait = druid_fake
-					remove_trait = witch_doctor_fake
-					remove_trait = techmage_fake
-					remove_character_modifier = abjuration
-					remove_character_modifier = enchantment
-					remove_character_modifier = illusion
-					remove_character_modifier = divination
-					remove_character_modifier = transmutation
-					remove_character_modifier = conjuration
-					remove_character_modifier = evocation
+					liege = {
+						opinion = {
+							modifier = opinion_criminal
+							years = 100000
+							who = PREV
+						}
+					}
+				}
+				prestige = -50
+				if = {
+					limit = {
+						OR = {
+							has_character_flag = warlock_start
+							has_character_flag = warlock_drift
+							trait = warlock
+						}
+					}
+					if = {
+						limit = {
+							trait = warlock
+						}
+						remove_trait = arcanist_fake
+						remove_trait = healer_fake
+						remove_trait = mage_fake
+						remove_trait = priest_fake
+						remove_trait = shaman_fake
+						remove_trait = druid_fake
+						remove_trait = witch_doctor_fake
+						remove_trait = techmage_fake
+						remove_character_modifier = abjuration
+						remove_character_modifier = enchantment
+						remove_character_modifier = illusion
+						remove_character_modifier = divination
+						remove_character_modifier = transmutation
+						remove_character_modifier = conjuration
+						remove_character_modifier = evocation
+						remove_character_modifier = evocation_fake
+						remove_character_modifier = blood_magic
+						remove_character_modifier = hexes
+						remove_character_modifier = brews
+						remove_character_modifier = shadow_hunter
+						remove_character_modifier = holy_priest
+						remove_character_modifier = holy_priest_fake
+						remove_character_modifier = sun_priest
+						remove_character_modifier = sun_priest_fake
+						remove_character_modifier = moon_priest
+						remove_character_modifier = moon_priest_fake
+						remove_character_modifier = shadow_priest
+						remove_character_modifier = sea_witch
+						remove_character_modifier = moon_druid
+						remove_character_modifier = sun_druid
+						remove_character_modifier = mender
+						remove_character_modifier = mender_fake
+						remove_character_modifier = feral_druid
+						remove_character_modifier = flame_druid
+						remove_character_modifier = wave_druid
+						remove_character_modifier = wind_druid
+						remove_character_modifier = stone_druid
+						remove_character_modifier = nightmare_druid
+						remove_character_modifier = elementalist
+						remove_character_modifier = elementalist_fake
+						remove_character_modifier = spiritualist
+						remove_character_modifier = dark_shaman
+					}
+					set_character_flag = warlock_discovered
+					if = {
+						limit = {
+							has_game_rule = {
+								name = religion_restrictions
+								value = on
+							}
+						}
+						if = {
+							limit = {
+								NOT = { has_secret_religion_trait_trigger = yes }
+								NOT = {
+									religion = cult_of_the_infinite
+									religion = cult_of_the_destroyer
+									religion = emerald_nightmare
+									religion = forgotten_shadow
+									religion = old_gods
+									religion = twilights_hammer
+									religion = azshara
+									religion = burning_legion
+									religion = mercantilism
+									religion = demonology
+									religion = loa
+								}
+							}
+							religion = demonology
+						}
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+								}
+							}
+							convert_to_secret_religion = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_character_flag = warlock_start
+							has_character_flag = warlock_drift
+							has_character_flag = necromancer_start
+							has_character_flag = necromancer_drift
+						}
+						OR = {
+							has_character_flag = necrolyte_start
+							has_character_flag = necrolyte_drift
+							trait = necrolyte
+						}
+					}
+					if = {
+						limit = {
+							trait = necrolyte
+						}
+						remove_trait = healer_fake
+						remove_trait = arcanist_fake
+					}
+					set_character_flag = necrolyte_discovered
+					if = {
+						limit = {
+							has_game_rule = {
+								name = religion_restrictions
+								value = on
+							}
+						}
+						if = {
+							limit = {
+								NOT = { has_secret_religion_trait_trigger = yes }
+								NOT = {
+									religion = cult_of_the_infinite
+									religion = cult_of_the_destroyer
+									religion = emerald_nightmare
+									religion = forgotten_shadow
+									religion = old_gods
+									religion = twilights_hammer
+									religion = azshara
+									religion = burning_legion
+									religion = mercantilism
+									religion = demonology
+									religion = lich_king
+									religion = hakkar
+									religion = loa
+								}
+							}
+							religion = demonology
+						}
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = lich_king
+								}
+							}
+							convert_to_secret_religion = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_character_flag = necromancer_start
+							has_character_flag = necromancer_drift
+							trait = necromancer
+						}
+					}
+					if = {
+						limit = {
+							trait = necromancer
+						}
+						remove_trait = arcanist_fake
+						remove_trait = healer_fake
+						remove_trait = mage_fake
+						remove_trait = priest_fake
+						remove_trait = shaman_fake
+						remove_trait = druid_fake
+						remove_trait = witch_doctor_fake
+						remove_trait = techmage_fake
+						remove_character_modifier = abjuration
+						remove_character_modifier = enchantment
+						remove_character_modifier = illusion
+						remove_character_modifier = divination
+						remove_character_modifier = transmutation
+						remove_character_modifier = conjuration
+						remove_character_modifier = evocation
+						remove_character_modifier = evocation_fake
+						remove_character_modifier = blood_magic
+						remove_character_modifier = hexes
+						remove_character_modifier = brews
+						remove_character_modifier = shadow_hunter
+						remove_character_modifier = holy_priest
+						remove_character_modifier = holy_priest_fake
+						remove_character_modifier = sun_priest
+						remove_character_modifier = sun_priest_fake
+						remove_character_modifier = moon_priest
+						remove_character_modifier = moon_priest_fake
+						remove_character_modifier = shadow_priest
+						remove_character_modifier = sea_witch
+						remove_character_modifier = moon_druid
+						remove_character_modifier = sun_druid
+						remove_character_modifier = mender_fake
+						remove_character_modifier = feral_druid
+						remove_character_modifier = flame_druid
+						remove_character_modifier = wave_druid
+						remove_character_modifier = wind_druid
+						remove_character_modifier = stone_druid
+						remove_character_modifier = nightmare_druid
+						remove_character_modifier = elementalist
+						remove_character_modifier = elementalist_fake
+						remove_character_modifier = spiritualist
+						remove_character_modifier = dark_shaman
+					}
+					set_character_flag = necromancer_discovered
+					if = {
+						limit = {
+							has_game_rule = {
+								name = religion_restrictions
+								value = on
+							}
+						}
+						if = {
+							limit = {
+								NOT = { has_secret_religion_trait_trigger = yes }
+								NOT = {
+									religion = hakkar
+									religion = burning_legion
+									religion = forgotten_shadow
+									religion = lich_king
+									religion = cult_of_the_infinite
+									religion = cult_of_the_destroyer
+									religion = old_gods
+									religion = emerald_nightmare
+									religion = azshara
+									religion = demonology
+								}
+							}
+							religion = forgotten_shadow
+						}
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = demonology
+									secret_religion = lich_king
+								}
+							}
+							convert_to_secret_religion = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_character_modifier = blood_magic
+					}
 					remove_character_modifier = evocation_fake
-					remove_character_modifier = blood_magic
-					remove_character_modifier = hexes
-					remove_character_modifier = brews
-					remove_character_modifier = shadow_hunter
-					remove_character_modifier = holy_priest
+					set_character_flag = blood_magic_discovered
+				}
+				if = {
+					limit = {
+						has_character_modifier = shadow_priest
+					}
 					remove_character_modifier = holy_priest_fake
-					remove_character_modifier = sun_priest
 					remove_character_modifier = sun_priest_fake
-					remove_character_modifier = moon_priest
 					remove_character_modifier = moon_priest_fake
-					remove_character_modifier = shadow_priest
-					remove_character_modifier = sea_witch
-					remove_character_modifier = moon_druid
-					remove_character_modifier = sun_druid
-					remove_character_modifier = mender
-					remove_character_modifier = mender_fake
-					remove_character_modifier = feral_druid
-					remove_character_modifier = flame_druid
-					remove_character_modifier = wave_druid
-					remove_character_modifier = wind_druid
-					remove_character_modifier = stone_druid
-					remove_character_modifier = nightmare_druid
-					remove_character_modifier = elementalist
+					set_character_flag = shadow_priest_discovered
+					if = {
+						limit = {
+							has_game_rule = {
+								name = religion_restrictions
+								value = on
+							}
+						}
+						if = {
+							limit = {
+								NOT = { has_secret_religion_trait_trigger = yes }
+								NOT = {
+									religion = cult_of_the_infinite
+									religion = cult_of_the_destroyer
+									religion = emerald_nightmare
+									religion = forgotten_shadow
+									religion = old_gods
+									religion = twilights_hammer
+									religion = azshara
+									religion = burning_legion
+									religion = mercantilism
+									religion = demonology
+									religion = lich_king
+								}
+							}
+							religion = forgotten_shadow
+						}
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = forgotten_shadow
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+									secret_religion = azshara
+									secret_religion = burning_legion
+									secret_religion = mercantilism
+									secret_religion = demonology
+									secret_religion = lich_king
+								}
+							}
+							convert_to_secret_religion = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_character_modifier = dark_shaman
+					}
 					remove_character_modifier = elementalist_fake
-					remove_character_modifier = spiritualist
-					remove_character_modifier = dark_shaman
-				}
-				set_character_flag = warlock_discovered
-				if = {
-					limit = {
-						has_game_rule = {
-							name = religion_restrictions
-							value = on
-						}
-					}
+					set_character_flag = dark_shaman_discovered
 					if = {
 						limit = {
-							NOT = { has_secret_religion_trait_trigger = yes }
-							NOT = {
-								religion = cult_of_the_infinite
-								religion = cult_of_the_destroyer
-								religion = emerald_nightmare
-								religion = forgotten_shadow
-								religion = old_gods
-								religion = twilights_hammer
-								religion = azshara
-								religion = burning_legion
-								religion = mercantilism
-								religion = demonology
-								religion = loa
+							has_game_rule = {
+								name = religion_restrictions
+								value = on
 							}
 						}
-						religion = demonology
-					}
-					if = {
-						limit = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
+						if = {
+							limit = {
+								OR = {
+									religion = shamanism
+									religion = old_ways
+								}
 							}
+							religion = old_gods
 						}
-						convert_to_secret_religion = yes
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_character_flag = warlock_start
-						has_character_flag = warlock_drift
-						has_character_flag = necromancer_start
-						has_character_flag = necromancer_drift
-					}
-					OR = {
-						has_character_flag = necrolyte_start
-						has_character_flag = necrolyte_drift
-						trait = necrolyte
+						if = {
+							limit = {
+								OR = {						
+									secret_religion = cult_of_the_infinite
+									secret_religion = cult_of_the_destroyer
+									secret_religion = emerald_nightmare
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+								}
+							}
+							convert_to_secret_religion = yes
+						}
 					}
 				}
 				if = {
 					limit = {
-						trait = necrolyte
+						has_character_modifier = nightmare_druid
 					}
-					remove_trait = healer_fake
-					remove_trait = arcanist_fake
-				}
-				set_character_flag = necrolyte_discovered
-				if = {
-					limit = {
-						has_game_rule = {
-							name = religion_restrictions
-							value = on
-						}
-					}
-					if = {
-						limit = {
-							NOT = { has_secret_religion_trait_trigger = yes }
-							NOT = {
-								religion = cult_of_the_infinite
-								religion = cult_of_the_destroyer
-								religion = emerald_nightmare
-								religion = forgotten_shadow
-								religion = old_gods
-								religion = twilights_hammer
-								religion = azshara
-								religion = burning_legion
-								religion = mercantilism
-								religion = demonology
-								religion = lich_king
-								religion = hakkar
-								religion = loa
-							}
-						}
-						religion = demonology
-					}
-					if = {
-						limit = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = lich_king
-							}
-						}
-						convert_to_secret_religion = yes
-					}
-				}
-			}
-			if = {
-				limit = {
-					OR = {
-						has_character_flag = necromancer_start
-						has_character_flag = necromancer_drift
-						trait = necromancer
-					}
-				}
-				if = {
-					limit = {
-						trait = necromancer
-					}
-					remove_trait = arcanist_fake
-					remove_trait = healer_fake
-					remove_trait = mage_fake
-					remove_trait = priest_fake
-					remove_trait = shaman_fake
-					remove_trait = druid_fake
-					remove_trait = witch_doctor_fake
-					remove_trait = techmage_fake
-					remove_character_modifier = abjuration
-					remove_character_modifier = enchantment
-					remove_character_modifier = illusion
-					remove_character_modifier = divination
-					remove_character_modifier = transmutation
-					remove_character_modifier = conjuration
-					remove_character_modifier = evocation
-					remove_character_modifier = evocation_fake
-					remove_character_modifier = blood_magic
-					remove_character_modifier = hexes
-					remove_character_modifier = brews
-					remove_character_modifier = shadow_hunter
-					remove_character_modifier = holy_priest
-					remove_character_modifier = holy_priest_fake
-					remove_character_modifier = sun_priest
-					remove_character_modifier = sun_priest_fake
-					remove_character_modifier = moon_priest
-					remove_character_modifier = moon_priest_fake
-					remove_character_modifier = shadow_priest
-					remove_character_modifier = sea_witch
-					remove_character_modifier = moon_druid
-					remove_character_modifier = sun_druid
 					remove_character_modifier = mender_fake
-					remove_character_modifier = feral_druid
-					remove_character_modifier = flame_druid
-					remove_character_modifier = wave_druid
-					remove_character_modifier = wind_druid
-					remove_character_modifier = stone_druid
-					remove_character_modifier = nightmare_druid
-					remove_character_modifier = elementalist
-					remove_character_modifier = elementalist_fake
-					remove_character_modifier = spiritualist
-					remove_character_modifier = dark_shaman
-				}
-				set_character_flag = necromancer_discovered
-				if = {
-					limit = {
-						has_game_rule = {
-							name = religion_restrictions
-							value = on
-						}
-					}
+					set_character_flag = nightmare_druid_discovered
 					if = {
 						limit = {
-							NOT = { has_secret_religion_trait_trigger = yes }
-							NOT = {
-								religion = hakkar
-								religion = burning_legion
-								religion = forgotten_shadow
-								religion = lich_king
-								religion = cult_of_the_infinite
-								religion = cult_of_the_destroyer
-								religion = old_gods
-								religion = emerald_nightmare
-								religion = azshara
-								religion = demonology
+							has_game_rule = {
+								name = religion_restrictions
+								value = on
 							}
 						}
-						religion = forgotten_shadow
-					}
-					if = {
-						limit = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = demonology
-								secret_religion = lich_king
+						if = {
+							limit = {
+								NOR = {
+									religion = emerald_nightmare
+									religion = old_gods
+									religion = twilights_hammer
+								}
 							}
+							religion = emerald_nightmare
 						}
-						convert_to_secret_religion = yes
+						if = {
+							limit = {
+								OR = {
+									secret_religion = emerald_nightmare
+									secret_religion = old_gods
+									secret_religion = twilights_hammer
+								}
+							}
+							convert_to_secret_religion = yes
+						}
 					}
 				}
+				opinion = {
+					modifier = opinion_hate
+					years = 100000
+					who = ROOT
+				}
+				character_event = { id = classgain.71 }
 			}
-			if = {
-				limit = {
-					has_character_modifier = blood_magic
-				}
-				remove_character_modifier = evocation_fake
-				set_character_flag = blood_magic_discovered
-			}
-			if = {
-				limit = {
-					has_character_modifier = shadow_priest
-				}
-				remove_character_modifier = holy_priest_fake
-				remove_character_modifier = sun_priest_fake
-				remove_character_modifier = moon_priest_fake
-				set_character_flag = shadow_priest_discovered
-				if = {
-					limit = {
-						has_game_rule = {
-							name = religion_restrictions
-							value = on
-						}
-					}
-					if = {
-						limit = {
-							NOT = { has_secret_religion_trait_trigger = yes }
-							NOT = {
-								religion = cult_of_the_infinite
-								religion = cult_of_the_destroyer
-								religion = emerald_nightmare
-								religion = forgotten_shadow
-								religion = old_gods
-								religion = twilights_hammer
-								religion = azshara
-								religion = burning_legion
-								religion = mercantilism
-								religion = demonology
-								religion = lich_king
-							}
-						}
-						religion = forgotten_shadow
-					}
-					if = {
-						limit = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = forgotten_shadow
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-								secret_religion = azshara
-								secret_religion = burning_legion
-								secret_religion = mercantilism
-								secret_religion = demonology
-								secret_religion = lich_king
-							}
-						}
-						convert_to_secret_religion = yes
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_character_modifier = dark_shaman
-				}
-				remove_character_modifier = elementalist_fake
-				set_character_flag = dark_shaman_discovered
-				if = {
-					limit = {
-						has_game_rule = {
-							name = religion_restrictions
-							value = on
-						}
-					}
-					if = {
-						limit = {
-							OR = {
-								religion = shamanism
-								religion = old_ways
-							}
-						}
-						religion = old_gods
-					}
-					if = {
-						limit = {
-							OR = {						
-								secret_religion = cult_of_the_infinite
-								secret_religion = cult_of_the_destroyer
-								secret_religion = emerald_nightmare
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-							}
-						}
-						convert_to_secret_religion = yes
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_character_modifier = nightmare_druid
-				}
-				remove_character_modifier = mender_fake
-				set_character_flag = nightmare_druid_discovered
-				if = {
-					limit = {
-						has_game_rule = {
-							name = religion_restrictions
-							value = on
-						}
-					}
-					if = {
-						limit = {
-							NOR = {
-								religion = emerald_nightmare
-								religion = old_gods
-								religion = twilights_hammer
-							}
-						}
-						religion = emerald_nightmare
-					}
-					if = {
-						limit = {
-							OR = {
-								secret_religion = emerald_nightmare
-								secret_religion = old_gods
-								secret_religion = twilights_hammer
-							}
-						}
-						convert_to_secret_religion = yes
-					}
-				}
-			}
-			opinion = {
-				modifier = opinion_hate
-				years = 100000
-				who = ROOT
-			}
-			character_event = { id = classgain.71 }
 		}
 	}
 }
@@ -8290,36 +8300,38 @@ character_event = {
 			remove_trait = brave
 			add_trait = craven
 		}
-		random_list = {
-			1 = {
-				modifier = {
-					factor = 2
-					intrigue = 10
-					NOT = { intrigue = 15 }
+		hidden_tooltip = {
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 2
+						intrigue = 10
+						NOT = { intrigue = 15 }
+					}
+					modifier = {
+						factor = 3
+						intrigue = 15
+						NOT = { intrigue = 20 }
+					}
+					modifier = {
+						factor = 4
+						intrigue = 20
+					}
+					banish = yes
 				}
-				modifier = {
-					factor = 3
-					intrigue = 15
-					NOT = { intrigue = 20 }
-				}
-				modifier = {
-					factor = 4
-					intrigue = 20
-				}
-				banish = yes
-			}
-			1 = {
-				modifier = {
-					factor = 2
-					intrigue = 5
-					NOT = { intrigue = 10 }
-				}
-				modifier = {
-					factor = 4
-					NOT = { intrigue = 5 }
-				}
-				liege = {
-					reverse_imprison = PREV
+				1 = {
+					modifier = {
+						factor = 2
+						intrigue = 5
+						NOT = { intrigue = 10 }
+					}
+					modifier = {
+						factor = 4
+						NOT = { intrigue = 5 }
+					}
+					liege = {
+						reverse_imprison = PREV
+					}
 				}
 			}
 		}
