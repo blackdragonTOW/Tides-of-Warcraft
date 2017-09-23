@@ -251,3 +251,263 @@ TOW_pillage_holding = {
 		destroy_settlement = THIS
 	}
 }
+
+
+TOW_adventurers_manpower_factors = {
+	if = { limit = { martial = 10 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 12 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 14 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 16 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 18 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 20 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 22 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
+
+	if = { # what's happening ?
+		limit = { has_character_flag = demon_child_non_pagan }
+
+		random_list = {
+			2 = { multiply_variable = { which = "TOW_adventure_manpower" value = 1.25 } }
+			2 = { multiply_variable = { which = "TOW_adventure_manpower" value = 1.5 } }
+			1 = { multiply_variable = { which = "TOW_adventure_manpower" value = 2 } }
+		}
+		
+	}
+}
+
+TOW_adventurers_spawn_unit_with_manpower = { 
+	set_variable = { which = TOW_TMP which = TOW_adventure_manpower }
+	while = {
+		limit = {
+			check_variable = {
+				which = TOW_TMP
+				value = 5
+			}
+		}
+	
+		random_list = { # 1/2 chance of disappearing after peace
+			5 = {
+				spawn_unit = {
+					province = PREVPREV
+					home = PREVPREV
+					owner = THIS
+					match_character = PREV
+					match_mult = 0.05
+					match_min = 125
+					attrition = 0.25
+					disband_on_peace = yes
+					earmark = claimant_adventure
+					merge = yes
+				}
+			}
+			5 = {
+				spawn_unit = {
+					province = PREVPREV
+					home = PREVPREV
+					owner = THIS
+					match_character = PREV
+					match_mult = 0.05
+					match_min = 125
+					attrition = 0.25
+					earmark = claimant_adventure
+					merge = yes
+				}
+			}
+		}
+		subtract_variable = { which = TOW_TMP value = 5 }
+	}
+	while = {
+		limit = {
+			check_variable = {
+				which = TOW_TMP
+				value = 1
+			}
+		}
+		spawn_unit = {
+			province = PREVPREV
+			home = PREVPREV
+			owner = THIS
+			match_character = PREV
+			match_mult = 0.01
+			match_min = 25
+			attrition = 0.25
+			disband_on_peace = yes
+			earmark = claimant_adventure
+			merge = yes
+		}
+		subtract_variable = { which = TOW_TMP value = 1 }
+	}
+	while = {
+		limit = {
+			check_variable = {
+				which = TOW_TMP
+				value = 0.1
+			}
+		}
+		spawn_unit = {
+			province = PREVPREV
+			home = PREVPREV
+			owner = THIS
+			match_character = PREV
+			match_mult = 0.001
+			match_min = 2
+			attrition = 0.25
+			disband_on_peace = yes
+			earmark = claimant_adventure
+			merge = yes
+		}
+		subtract_variable = { which = TOW_TMP value = 0.1 }
+	}
+}
+
+TOW_adventurers_spawn_fleet_with_manpower = { 
+	export_to_variable = { which = TOW_TMP2 value = realm_levies who = event_target:adventure_target }
+	multiply_variable = { which = TOW_TMP2 which = TOW_adventure_manpower }
+	divide_variable = { which = TOW_TMP2 value = 10000 } # percentage + 100 soldier per fleet
+	change_variable = { which = TOW_TMP2 value = 10 } # base fleet count
+
+	set_variable = { which = TOW_TMP which = TOW_TMP2 }
+	while = {
+		limit = {
+			check_variable = {
+				which = TOW_TMP
+				value = 50
+			}
+		}
+	
+		spawn_fleet = {
+			province = closest # closest sea zone
+			owner = ROOT
+			disband_on_peace = yes
+			troops =
+			{
+				galleys = { 100 100 }
+			}
+			earmark = claimant_adventure
+		}
+		subtract_variable = { which = TOW_TMP value = 50 }
+	}
+	while = {
+		limit = {
+			check_variable = {
+				which = TOW_TMP
+				value = 10
+			}
+		}
+	
+		spawn_fleet = {
+			province = closest # closest sea zone
+			owner = ROOT
+			disband_on_peace = yes
+			troops =
+			{
+				galleys = { 10 10 }
+			}
+			earmark = claimant_adventure
+		}
+		subtract_variable = { which = TOW_TMP value = 10 }
+	}
+	while = {
+		limit = {
+			check_variable = {
+				which = TOW_TMP
+				value = 1
+			}
+		}
+	
+		spawn_fleet = {
+			province = closest # closest sea zone
+			owner = ROOT
+			disband_on_peace = yes
+			troops =
+			{
+				galleys = { 1 1 }
+			}
+			earmark = claimant_adventure
+		}
+		subtract_variable = { which = TOW_TMP value = 1 }
+	}
+}
+
+
+TOW_clear_landless_claimant_adventure = {
+	hidden_tooltip = {
+		clr_character_flag = TOW_preparing_adventure
+		clear_flags_with_prefix = TOW_adventure_asked_
+		set_variable = { which = "TOW_adventure_manpower" value = 0 }
+		set_variable = { which = "TOW_adventure_realm_asked" value = 0 }
+		remove_character_modifier = TOW_adventurer_puny_army
+		remove_character_modifier = TOW_adventurer_weak_army
+		remove_character_modifier = TOW_adventurer_medium_army
+		remove_character_modifier = TOW_adventurer_powerful_army
+		remove_character_modifier = TOW_adventurer_very_powerful_army
+	}
+}
+
+TOW_landless_claimant_adventurer_update_modifier = {
+	hidden_tooltip = {
+		if = {
+			limit = {
+				check_variable = { which = "TOW_adventure_manpower" value = 15 }
+				NOT = { check_variable = { which = "TOW_adventure_manpower" value = 40 } }
+				NOT = { has_character_modifier = TOW_adventurer_puny_army }
+			}
+			add_character_modifier = {
+				name = TOW_adventurer_puny_army
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { which = "TOW_adventure_manpower" value = 40 }
+				NOT = { check_variable = { which = "TOW_adventure_manpower" value = 65 } }
+				NOT = { has_character_modifier = TOW_adventurer_weak_army }
+			}
+			remove_character_modifier = TOW_adventurer_puny_army
+			add_character_modifier = {
+				name = TOW_adventurer_weak_army
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { which = "TOW_adventure_manpower" value = 65 }
+				NOT = { check_variable = { which = "TOW_adventure_manpower" value = 90 } }
+				NOT = { has_character_modifier = TOW_adventurer_medium_army }
+			}
+			remove_character_modifier = TOW_adventurer_puny_army
+			remove_character_modifier = TOW_adventurer_weak_army
+			add_character_modifier = {
+				name = TOW_adventurer_medium_army
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { which = "TOW_adventure_manpower" value = 90 }
+				NOT = { check_variable = { which = "TOW_adventure_manpower" value = 115 } }
+				NOT = { has_character_modifier = TOW_adventurer_powerful_army }
+			}
+			remove_character_modifier = TOW_adventurer_puny_army
+			remove_character_modifier = TOW_adventurer_weak_army
+			remove_character_modifier = TOW_adventurer_medium_army
+			add_character_modifier = {
+				name = TOW_adventurer_powerful_army
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = { which = "TOW_adventure_manpower" value = 115 }
+				NOT = { has_character_modifier = TOW_adventurer_very_powerful_army }
+			}
+			remove_character_modifier = TOW_adventurer_puny_army
+			remove_character_modifier = TOW_adventurer_weak_army
+			remove_character_modifier = TOW_adventurer_medium_army
+			remove_character_modifier = TOW_adventurer_powerful_army
+			add_character_modifier = {
+				name = TOW_adventurer_very_powerful_army
+				duration = -1
+			}
+		}
+	}
+}

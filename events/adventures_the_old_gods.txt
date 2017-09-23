@@ -31,92 +31,32 @@ character_event = {
 			}
 		}
 
-		NOR = {
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_red
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = gnoll
-			trait = murloc
-			trait = trogg
-			trait = kobold
-			trait = lost_one
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = pit_lord
-			trait = fel_lord
-			trait = doomlord
-			trait = shivarra
+		OR = {
+			is_female = no
+			liege = { has_law = status_of_women_4 }
+			liege = { has_law = true_cognatic_succession }
+			liege = { religion = cathar }
+			liege = { religion = messalian }
+			has_game_rule = {
+				name = gender
+				value = all
+			}
 			AND = {
-				is_female = yes
-				trait = ogre
-			}
-			trait = undead_scourge
-			#liege = e_scourge
-			liege = {
-				has_landed_title = e_burning_legion
+				trait = ambitious
+				has_education_martial_trigger = yes
+				OR = {
+					trait = genius
+					diplomacy = 16
+					AND = {
+						diplomacy = 12
+						martial = 16
+					}
+				}
 			}
 		}
 		
-		is_ruler = no
+		TOW_is_landless_claimant_adventurer_valid = yes
 
-		NOT = { any_spouse = { is_ruler = yes } }
-		
-#		year = 867
-		
-		any_claim = {
-			has_holder = yes
-			holder_scope = {
-				independent = yes # Only do this vs independent rulers
-				NAND = {
-					government = nomadic_government
-					OR = {
-						clan_title = {
-							title = PREVPREV
-						}
-						primary_title = {
-							title = PREVPREV
-						}
-					}
-				}
-				OR = {
-					# Don't target my liege unless I am ambitious
-					NOT = { is_vassal_or_below = ROOT }
-					ROOT = { trait = ambitious }
-				}
-				OR = {
-					is_merchant_republic = no
-					NOT = {
-						capital_holding = {
-							de_jure_liege_or_above = PREVPREV
-						}
-					}
-				}
-				ROOT = {
-					NOR = {
-						obedient = PREV
-						non_interference = PREV
-					}
-				}
-			}
-			OR = {
-				tier = KING
-				holder_scope = { tier = PREV }
-			}
-		}
-		
-		NOT = { # Somewhat clunky way of checking that the character does not stand to inherit any titles
-			any_heir_title = {
-				always = yes
-			}
-		}
-		
 		diplomacy = 7
 		
 		health = 4
@@ -124,6 +64,7 @@ character_event = {
 		NOT = { trait = craven }
 		
 		NOT = { has_character_modifier = planning_claimant_adventure }
+		NOT = { has_character_flag = TOW_preparing_adventure }
 	}
 	
 	mean_time_to_happen = {
@@ -135,6 +76,10 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			trait = ambitious
+		}
+		modifier = {
+			factor = 0.2
+			has_character_flag = demon_child_non_pagan
 		}
 		modifier = {
 			factor = 0.5
@@ -149,8 +94,16 @@ character_event = {
 			trait = brave
 		}
 		modifier = {
+			factor = 0.75
+			trait = born_in_the_purple
+		}
+		modifier = {
 			factor = 0.85
 			trait = proud
+		}
+		modifier = {
+			factor = 0.85
+			trait = sayyid
 		}
 		modifier = {
 			factor = 1.5
@@ -163,6 +116,34 @@ character_event = {
 		modifier = {
 			factor = 2.0
 			trait = kind
+		}
+		modifier = {
+			factor = 0.9
+			is_smart_trigger = yes
+		}
+		modifier = {
+			factor = 0.8
+			trait = genius
+		}
+		modifier = {
+			factor = 0.95
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 1.2
+			is_dumb_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			is_weak_trigger = yes
+		}
+		modifier = {
+			factor = 1.5
+			character_disease_trigger = yes
+		}
+		modifier = {
+			factor = 0.02
+			check_variable = { which = "TOW_adventure_manpower" value = 60 } # I already started a good adventure that didn't end !
 		}
 		modifier = {
 			factor = 50
@@ -211,6 +192,7 @@ character_event = {
 			}
 			
 			holder_scope = {
+				save_event_target_as = adventure_target
 				reverse_opinion = {
 					who = ROOT
 					years = 3
@@ -245,15 +227,16 @@ character_event = {
 		end_inaccessibility_effect = yes #removes in hiding or in_seclusion
 		
 		set_character_flag = do_not_disturb
-		
+		set_character_flag = TOW_preparing_adventure
+		set_character_flag = TOW_prepared_adventure
+		set_variable = { which = "TOW_adventure_manpower" value = 0 }
+		set_variable = { which = "TOW_adventure_realm_asked" value = 0 }
+		log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] starts adventure"
 		character_event = { id = TOG.1215 days = 730 }
-	}
-	
-	option = {
-		name = OK
 	}
 }
 
+## Target warned of the adventurer
 character_event = {
 	id = TOG.1201
 	desc = EVTDESC_TOG_1201
@@ -287,71 +270,86 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		is_ruler = no
-		NOT = { any_spouse = { is_ruler = yes } }
-		
-		any_claim = {
-			has_holder = yes
-			holder_scope = {
-				NOT = {
-					defending_against_claimant = {
-						character = ROOT
-						title = PREV
-					}
-				}
-				independent = yes # Only do this vs independent rulers
-				NAND = {
-					government = nomadic_government
+		TOW_is_landless_claimant_adventurer_valid = yes
+
+		event_target:adventure_target = {
+			is_alive = yes
+			is_ruler = yes
+
+			NOT = {
+				any_demesne_title = {
+					claimed_by = ROOT
 					OR = {
-						clan_title = {
-							title = PREVPREV
-						}
-						primary_title = {
-							title = PREVPREV
+						tier = KING
+						holder_scope = { tier = PREV }
+					}
+					holder_scope = {
+						defending_against_claimant = {
+							character = ROOT
+							title = PREV
 						}
 					}
 				}
-				reverse_has_opinion_modifier = {
-					who = ROOT
-					modifier = opinion_claimant_adventure_target
-				}
+			}
+
+			independent = yes # Only do this vs independent rulers
+			NAND = {
+				government = nomadic_government
 				OR = {
-					# Don't target my liege unless I am ambitious
-					NOT = { is_vassal_or_below = ROOT }
-					ROOT = { trait = ambitious }
-				}
-				OR = {
-					is_merchant_republic = no
-					NOT = {
-						capital_holding = {
-							de_jure_liege_or_above = PREVPREV
-						}
+					clan_title = {
+						title = PREVPREV
+					}
+					primary_title = {
+						title = PREVPREV
 					}
 				}
-				ROOT = {
-					NOR = {
-						obedient = PREV
-						non_interference = PREV
-					}
-				}
+			}
+			reverse_has_opinion_modifier = {
+				who = ROOT
+				modifier = opinion_claimant_adventure_target
 			}
 			OR = {
-				tier = KING
-				holder_scope = { tier = PREV }
+				is_merchant_republic = no
+				NOT = {
+					capital_holding = {
+						de_jure_liege_or_above = PREVPREV
+					}
+				}
 			}
-		}
-		
-		NOT = { # Somewhat clunky way of checking that the character does not stand to inherit any titles
-			any_heir_title = {
-				always = yes
+			ROOT = {
+				NOR = {
+					obedient = PREV
+					non_interference = PREV
+				}
+			}
+			any_demesne_title = {
+				claimed_by = ROOT
+				OR = {
+					tier = KING
+					holder_scope = { tier = PREV }
+				}
 			}
 		}
 	}
 	
 	immediate = {
-		
-		wealth = 500
 		clr_character_flag = do_not_disturb
+
+		TOW_adventurers_manpower_factors = yes
+
+		## Didn't gather enough people, just abandon
+		if = {
+			limit = {
+				NOT = { check_variable = { which = TOW_adventure_manpower value = 40 } }
+			}
+			log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] gave up, he had only [Root.TOW_adventure_manpower.GetValue]% of the target's manpower."
+
+			break = yes
+		}
+
+		prestige = 100
+		wealth = 500
+        add_trait = adventurer
 		
 		liege = {
 			character_event = {
@@ -362,271 +360,40 @@ character_event = {
 		
 		liege = {
 			capital_scope = {
+				save_event_target_as = starting_province
+			}
+		}
+
+		set_defacto_liege = ROOT
+		create_title = {
+			tier = DUKE
+			landless = yes
+			temporary = yes
+			adventurer = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+			holder = ROOT
+		}
+		
+		event_target:starting_province = {
+			event_target:adventure_target = {
 				ROOT = {
-					set_defacto_liege = ROOT
-					create_title = {
-						tier = DUKE
-						landless = yes
-						temporary = yes
-						adventurer = yes
-						culture = ROOT
-						name = "CLAIMANT_ADVENTURE"
-						holder = ROOT
-					}
-					
-					random_claim = {
-						limit = {
-							has_holder = yes
-							holder_scope = {
-								independent = yes # Only do this vs independent rulers
-								reverse_has_opinion_modifier = {
-									who = ROOT
-									modifier = opinion_claimant_adventure_target
-								}
-								OR = {
-									# Don't target my liege unless I am ambitious
-									NOT = { is_vassal_or_below = ROOT }
-									ROOT = { trait = ambitious }
-								}
-								OR = {
-									is_merchant_republic = no
-									NOT = {
-										capital_holding = {
-											de_jure_liege_or_above = PREVPREV
-										}
-									}
-								}
-							}
-							OR = {
-								tier = KING
-								holder_scope = { tier = PREV }
-							}
-						}
-						holder_scope = {
-							ROOT = {
-								set_character_flag = claimant_adventurer
-								random_list = {
-									34 = {
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											#leader = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-									}
-									33 = {
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											#leader = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-									}
-									33 = {
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											#leader = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-									}
-								}
-							}
-						}
-					}
+					TOW_adventurers_spawn_unit_with_manpower = yes
 				}
 			}
 		}
-		
-		# I no longer have a valid claim on the target
-		if = {
-			limit = {
-				NOT = { has_character_flag = claimant_adventurer }
+
+		event_target:adventure_target = {
+			random_demesne_title = {
+				limit = {
+					claimed_by = ROOT
+					OR = {
+						tier = KING
+						holder_scope = { tier = PREV }
+					}
+				}
+				save_event_target_as = adventure_target_title
 			}
-			break = yes
 		}
 		
 		# Create some decent commander characters
@@ -652,7 +419,6 @@ character_event = {
 			religion = ROOT
 			culture = ROOT
 			female = no
-			age = 33
 		}
 		create_random_soldier = {
 			random_traits = yes
@@ -660,79 +426,30 @@ character_event = {
 			religion = ROOT
 			culture = ROOT
 			female = no
-			age = 29
 		}
 		
 		# Create a fleet, just to be sure
-		spawn_fleet = {
-			province = closest # closest sea zone
-			owner = ROOT
-			disband_on_peace = yes
-			troops =
-			{
-				galleys = { 150 150 }
-			}
-			earmark = claimant_adventure
-		}
+		TOW_adventurers_spawn_fleet_with_manpower = yes
+
+		log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] declares war on [adventure_target.GetTitledName] for the [adventure_target_title.GetFullName] from the province [starting_province.GetName], he has [Root.TOW_adventure_manpower.GetValue]% of the target's manpower, he asked help from [Root.TOW_adventure_realm_asked.GetValue] realms."
+
+		set_character_flag = claimant_adventurer
 		
-		random_claim = {
-			limit = {
-				has_holder = yes
-				holder_scope = {
-					independent = yes # Only do this vs independent rulers
-					NAND = {
-						government = nomadic_government
-						OR = {
-							clan_title = {
-								title = PREVPREV
-							}
-							primary_title = {
-								title = PREVPREV
-							}
-						}
-					}
-					reverse_has_opinion_modifier = {
-						who = ROOT
-						modifier = opinion_claimant_adventure_target
-					}
-					OR = {
-						# Don't target my liege unless I am ambitious
-						NOT = { is_vassal_or_below = ROOT }
-						ROOT = { trait = ambitious }
-					}
-					OR = {
-						is_merchant_republic = no
-						NOT = {
-							capital_holding = {
-								de_jure_liege_or_above = PREVPREV
-							}
-						}
-					}
-				}
-				OR = {
-					tier = KING
-					holder_scope = { tier = PREV }
-				}
+		event_target:adventure_target = {
+			reverse_war = {
+				target = ROOT
+				casus_belli = claim
+				thirdparty_title = event_target:adventure_target_title
 			}
-			
-#			log = "TOG.1202: [Root.GetBestName] starts claim adventure for [This.GetName]"
-			
-			holder_scope = {
-				reverse_war = {
-					target = ROOT
-					casus_belli = claim
-					thirdparty_title = PREV
-				}
-				reverse_remove_opinion = {
-					who = ROOT
-					modifier = opinion_claimant_adventure_target
-				}
+			reverse_remove_opinion = {
+				who = ROOT
+				modifier = opinion_claimant_adventure_target
 			}
 		}
 	}
-	
-	option = {
-		name = OK
+
+	after = {
+		TOW_clear_landless_claimant_adventure = yes
 	}
 }
 
@@ -749,9 +466,6 @@ character_event = {
 	}
 	
 	immediate = {
-		FROM = {
-			add_trait = adventurer
-		}
 		any_liege = {
 			character_event = {
 				id = TOG.1204
@@ -799,49 +513,57 @@ character_event = {
 				value = none
 			}
 		}
-		NOR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = kobold
-			trait = trogg
-			trait = gnoll
-			trait = murloc
-			trait = lost_one
-			trait = undead_scourge
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			AND = {
-				is_female = yes
-				trait = ogre
-			}
-			#liege = e_scourge
-			liege = {
-				has_landed_title = e_burning_legion
-			}
-		}
+		
 		is_ruler = no
 		NOT = { any_spouse = { is_ruler = yes } }
+
+		OR = {
+			is_female = no
+			liege = { has_law = status_of_women_4 }
+			liege = { has_law = true_cognatic_succession }
+			liege = { religion = cathar }
+			liege = { religion = messalian }
+			has_game_rule = {
+				name = gender
+				value = all
+			}
+			AND = {
+				trait = ambitious
+				has_education_martial_trigger = yes
+				OR = {
+					trait = genius
+					diplomacy = 14
+					AND = {
+						diplomacy = 10
+						martial = 16
+					}
+				}
+			}
+		}
 		
 #		year = 867
 		
 		diplomacy = 7
 		martial = 9
-		NOT = { health_traits = 2 }
+		health = 4
 		
 		NOT = { trait = content }
 		NOT = { trait = craven }
+		
+		OR = { # Only these for now
+			culture_group = north_germanic
+			culture_group = west_germanic
+			culture_group = altaic
+			culture = norman
+			culture = frankish
+			culture = breton
+			culture = catalan
+			AND = {
+				culture = hungarian
+				NOT = { year = 1066 }
+			}
+			has_character_flag = demon_child_non_pagan
+		}
 		
 		NOT = { # Somewhat clunky way of checking that the character does not stand to inherit any titles
 			any_heir_title = {
@@ -916,8 +638,25 @@ character_event = {
 			trait = ambitious
 		}
 		modifier = {
+			factor = 0.5
+			OR = {
+				AND = {
+					culture = norman
+					NOT = { year = 1250 }
+				}
+				AND = {
+					culture_group = north_germanic
+					NOT = { year = 1066 }
+				}
+			}
+		}
+		modifier = {
 			factor = 0.2
 			has_character_flag = flag_denied_title
+		}
+		modifier = {
+			factor = 0.2
+			has_character_flag = demon_child_non_pagan
 		}
 		modifier = {
 			factor = 0.75
@@ -960,6 +699,30 @@ character_event = {
 			}
 		}
 		modifier = {
+			factor = 0.9
+			is_smart_trigger = yes
+		}
+		modifier = {
+			factor = 0.8
+			trait = genius
+		}
+		modifier = {
+			factor = 0.95
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 1.2
+			is_dumb_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			is_weak_trigger = yes
+		}
+		modifier = {
+			factor = 1.5
+			character_disease_trigger = yes
+		}
+		modifier = {
 			factor = 50
 			has_game_rule = {
 				name = adventurers
@@ -979,6 +742,10 @@ character_event = {
 					OR = {
 						AND = {
 							port = yes
+							ROOT = {
+								NOT = { culture_group = altaic }
+								NOT = { culture = hungarian }
+							}
 							NOT = {
 								distance = {
 									who = ROOT
@@ -990,6 +757,14 @@ character_event = {
 							owner = {
 								same_realm = ROOT
 							}
+						}
+					}
+					NOT = {
+						region = world_europe_north
+					}
+					NOT = {
+						duchy = {
+							title = d_bjarmia
 						}
 					}
 				}
@@ -1006,6 +781,10 @@ character_event = {
 					OR = {
 						AND = {
 							port = yes
+							ROOT = {
+								NOT = { culture_group = altaic }
+								NOT = { culture = hungarian }
+							}
 							NOT = {
 								distance = {
 									who = ROOT
@@ -1017,6 +796,14 @@ character_event = {
 							owner = {
 								same_realm = ROOT
 							}
+						}
+					}
+					NOT = {
+						region = world_europe_north
+					}
+					NOT = {
+						duchy = {
+							title = d_bjarmia
 						}
 					}
 				}
@@ -1046,12 +833,7 @@ character_event = {
 		}
 		end_inaccessibility_effect = yes #removes in hiding or in_seclusion
 		
-		set_character_flag = do_not_disturb
 		character_event = { id = TOG.1215 days = 730 }
-	}
-	
-	option = {
-		name = OK
 	}
 }
 
@@ -1107,11 +889,25 @@ character_event = {
 			NOT = { is_vassal_or_below = ROOT }
 			any_realm_province = {
 				OR = {
-					port = yes
+					AND = {
+						port = yes
+						ROOT = {
+							NOT = { culture_group = altaic }
+							NOT = { culture = hungarian }
+						}
+					}
 					any_neighbor_province = {
 						owner = {
 							same_realm = ROOT
 						}
+					}
+				}
+				NOT = {
+					region = world_europe_north
+				}
+				NOT = {
+					duchy = {
+						title = d_bjarmia
 					}
 				}
 			}
@@ -1149,11 +945,25 @@ character_event = {
 						NOT = { is_vassal_or_below = ROOT }
 						any_realm_province = {
 							OR = {
-								port = yes
+								AND = {
+									port = yes
+									ROOT = {
+										NOT = { culture_group = altaic }
+										NOT = { culture = hungarian }
+									}
+								}
 								any_neighbor_province = {
 									owner = {
 										same_realm = ROOT
 									}
+								}
+							}
+							NOT = {
+								region = world_europe_north
+							}
+							NOT = {
+								duchy = {
+									title = d_bjarmia
 								}
 							}
 						}
@@ -1171,11 +981,25 @@ character_event = {
 					random_realm_province = {
 						limit = {
 							OR = {
-								port = yes
+								AND = {
+									port = yes
+									ROOT = {
+										NOT = { culture_group = altaic }
+										NOT = { culture = hungarian }
+									}
+								}
 								any_neighbor_province = {
 									owner = {
 										same_realm = ROOT
 									}
+								}
+							}
+							NOT = {
+								region = world_europe_north
+							}
+							NOT = {
+								duchy = {
+									title = d_bjarmia
 								}
 							}
 						}
@@ -1259,18 +1083,23 @@ character_event = {
 			age = 25
 		}
 		
-		spawn_fleet = {
-			province = closest # closest sea zone
-			owner = ROOT
-			disband_on_peace = yes
-			troops = {
-				galleys = { 200 200 }
+		if  = {
+			limit = {
+				NOT = { culture_group = altaic }
+				NOT = { culture = hungarian }
+			}
+			
+			# Create a fleet, just to be sure
+			spawn_fleet = {
+				province = closest # closest sea zone
+				owner = ROOT
+				disband_on_peace = yes
+				troops =
+				{
+					galleys = { 200 200 }
+				}
 			}
 		}
-	}
-	
-	option = {
-		name = OK
 	}
 }
 
@@ -1327,5 +1156,518 @@ character_event = {
 	
 	immediate = {
 		clr_character_flag = do_not_disturb
+	}
+}
+
+############################
+### TOW ADDED EVENTS ###
+############################
+
+### Adding troops randomly
+character_event = {
+	id = TOG.1216
+
+	hide_window = yes
+
+	has_character_flag = TOW_preparing_adventure
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		
+		NOT = {
+			has_game_rule = {
+				name = adventurers
+				value = none
+			}
+		}
+		has_character_flag = TOW_preparing_adventure
+	}
+	
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			factor = 1.1
+			check_variable = { which = "TOW_adventure_manpower" value = 50 }
+		}
+		modifier = {
+			factor = 1.2
+			check_variable = { which = "TOW_adventure_manpower" value = 75 }
+		}
+		modifier = {
+			factor = 1.6
+			check_variable = { which = "TOW_adventure_manpower" value = 100 }
+		}
+		modifier = {
+			factor = 2
+			check_variable = { which = "TOW_adventure_manpower" value = 150 }
+		}
+		modifier = {
+			factor = 0.95
+			has_character_flag = flag_denied_title
+		}
+		modifier = {
+			factor = 0.9
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.85
+			trait = brave
+		}
+		modifier = {
+			factor = 1.75
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.9
+			trait = kind
+		}
+		modifier = {
+			factor = 0.9
+			is_smart_trigger = yes
+		}
+		modifier = {
+			factor = 0.9
+			trait = genius
+		}
+		modifier = {
+			factor = 0.9
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 1.3
+			is_dumb_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			is_weak_trigger = yes
+		}
+		modifier = {
+			factor = 1.25
+			character_disease_trigger = yes
+		}
+		modifier = {
+			factor = 1.25
+			trait = gregarious
+		}
+		modifier = {
+			factor = 1.1
+			trait = socializer
+		}
+	}
+	
+	immediate = {
+		## Check validity
+		if = {
+			limit = {
+				TOW_is_landless_claimant_adventurer_valid = no
+			}
+
+			TOW_clear_landless_claimant_adventure = yes
+			break = yes
+		}
+
+		set_variable = { which = "TOW_TMP" value = 1 } # base value
+		if = {
+			limit = { diplomacy = 9 }
+			export_to_variable = { which = "TOW_TMP" value = diplomacy }
+			subtract_variable = { which = "TOW_TMP" value = 8 }
+			divide_variable = { which = "TOW_TMP" value = 12 }
+			change_variable = { which = "TOW_TMP" value = 1 } # base value
+		}
+
+		if = {
+			limit = { martial = 9 }
+			export_to_variable = { which = "TOW_TMP2" value = martial }
+			subtract_variable = { which = "TOW_TMP2" value = 8 }
+			divide_variable = { which = "TOW_TMP2" value = 18 }
+
+			change_variable = { which = "TOW_TMP" which = "TOW_TMP2" }
+		}
+
+		random_list = {
+			3 = { multiply_variable = { which = "TOW_TMP" value = 4 } }
+			6 = { multiply_variable = { which = "TOW_TMP" value = 5 } }
+			3 = { multiply_variable = { which = "TOW_TMP" value = 6 } }
+		}
+		
+		change_variable = { which = "TOW_adventure_manpower" which = "TOW_TMP" }
+		TOW_landless_claimant_adventurer_update_modifier = yes
+	}
+}
+
+
+### Asking for support from a ruler - selecting event
+character_event = {
+	id = TOG.1217
+
+	hide_window = yes
+
+	has_character_flag = TOW_preparing_adventure
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		
+		NOT = {
+			has_game_rule = {
+				name = adventurers
+				value = none
+			}
+		}
+
+		has_character_flag = TOW_preparing_adventure
+		NOT = { has_character_flag = TOW_adventure_asking_realm }
+	}
+	
+	mean_time_to_happen = {
+		months = 10
+		modifier = {
+			factor = 0.9
+			has_character_flag = flag_denied_title
+		}
+		modifier = {
+			factor = 0.9
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.9
+			trait = brave
+		}
+		modifier = {
+			factor = 2
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.95
+			is_smart_trigger = yes
+		}
+		modifier = {
+			factor = 0.9
+			trait = genius
+		}
+		modifier = {
+			factor = 1.5
+			is_dumb_trigger = yes
+		}
+		modifier = {
+			factor = 1.5
+			character_disease_trigger = yes
+		}
+		modifier = {
+			factor = 1.2
+			check_variable = { which = "TOW_adventure_manpower" value = 100 }
+		}
+		modifier = { factor = 0.75 NOT = { check_variable = { which = "TOW_adventure_realm_asked" value = 1 } } }
+		modifier = { factor = 0.9 NOT = { check_variable = { which = "TOW_adventure_realm_asked" value = 3 } } }
+		modifier = { factor = 0.9 NOT = { check_variable = { which = "TOW_adventure_realm_asked" value = 5 } } }
+		modifier = { factor = 0.95 NOT = { check_variable = { which = "TOW_adventure_realm_asked" value = 10 } } }
+	}
+	
+	immediate = {
+		## Check validity
+		if = {
+			limit = {
+				TOW_is_landless_claimant_adventurer_valid = no
+			}
+
+			TOW_clear_landless_claimant_adventure = yes
+			break = yes
+		}
+
+		# Ask support where i am first (if the ruler doesn't hold any of my claimed titles)
+		location = {
+			county = {
+				holder_scope = {
+					top_liege = {
+						if = {
+							limit = {
+								is_nomadic = no
+								NOT = { is_foe = ROOT }
+								ROOT = {
+									NOT = { has_character_flag = TOW_adventure_asked_@PREV }
+									NOT = {
+										any_claim = {
+											holder = PREVPREV
+										}
+									}
+								}
+							}
+							character_event = {
+								id = TOG.1218 # Ask the target
+							}
+							break = yes
+						}
+					}
+				}
+			}
+		}
+		# Ask support from a nearby realm
+		random_independent_ruler = {
+			limit = {
+				is_inaccessible_trigger = no
+				is_within_diplo_range = ROOT
+				is_nomadic = no
+				NOT = { is_foe = ROOT }
+				ROOT = {
+					NOT = { has_character_flag = TOW_adventure_asked_@PREV }
+					NOT = { any_claim = { holder = PREVPREV } }
+				}
+				any_realm_province = {
+					NOT = {
+						ROOT = {
+							location = {
+								distance = { where = PREVPREV value = 400 }
+							}
+						}
+					}
+				}
+			}
+			character_event = {
+				id = TOG.1218 # Ask the target
+			}
+		}
+	}
+}
+
+## Independent ruler is asked for help
+character_event = {
+	id = TOG.1218
+
+	desc = {
+		text = EVTDESC_TOG_1218
+		trigger = {
+			NOR = {
+				dynasty = FROM
+				is_friend = FROM
+				is_lover = FROM
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_TOG_1218_CLOSE
+		trigger = {
+			OR = {
+				dynasty = FROM
+				is_friend = FROM
+				is_lover = FROM
+			}
+		}
+	}
+	picture = GFX_evt_emissary
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			set_character_flag = TOW_adventure_asking_realm ## Prevents asking multiple realms at once in multiplayer
+			set_character_flag = TOW_adventure_asked_@ROOT
+			change_variable = { which = "TOW_adventure_realm_asked" value = 1 }
+		}
+	}
+	
+	option = { ## Send money
+		name = "EVTOPTA_TOG_1218"
+
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0.1
+				NOT = { wealth = 1 }
+				NOT = { trait = charitable }
+			}
+			modifier = { factor = 1.1 opinion = { who = FROM value = 10 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 20 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 30 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 40 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 50 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 60 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 70 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 80 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 90 } }
+			modifier = { factor = 0 trait = envious }
+			modifier = { factor = 2 trait = trusting }
+			modifier = { factor = 1.1 FROM = { diplomacy = 9 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 10 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 11 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 12 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 13 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 14 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 15 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 16 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 17 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 18 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 19 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 20 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 21 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 22 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 23 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 24 } }
+			modifier = { factor = 2 is_lover = FROM }
+			modifier = { factor = 2 dynasty = FROM }
+			modifier = { factor = 1.5 is_close_relative = FROM }
+		}
+
+		wealth = -75
+
+		custom_tooltip = {
+			text = TOW_TOG_1218_support_custom_tooltip
+			hidden_tooltip = {
+				FROM = {
+					random_list = {
+						3 = { change_variable = { which = "TOW_adventure_manpower" value = 6 } modifier = { factor = 0.5 stewardship = 12 } }
+						4 = { change_variable = { which = "TOW_adventure_manpower" value = 7 } modifier = { factor = 0.5 stewardship = 15 } }
+						5 = { change_variable = { which = "TOW_adventure_manpower" value = 8 } modifier = { factor = 0.5 stewardship = 18 } }
+						4 = { change_variable = { which = "TOW_adventure_manpower" value = 9 } modifier = { factor = 0.5 stewardship = 21 } }
+						2 = { change_variable = { which = "TOW_adventure_manpower" value = 10 } }
+					}
+					TOW_landless_claimant_adventurer_update_modifier = yes
+					move_character = ROOT
+				}
+			}
+		}
+
+		reverse_opinion = { modifier = opinion_very_grateful who = FROM years = 10 }
+	}
+
+	option = { ## Send troops
+		name = "EVTOPTB_TOG_1218"
+
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0.5
+				war = yes
+			}
+			modifier = { factor = 1.1 opinion = { who = FROM value = 10 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 20 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 30 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 40 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 50 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 60 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 70 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 80 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 90 } }
+			modifier = { factor = 0 trait = envious }
+			modifier = { factor = 2 trait = trusting }
+			modifier = { factor = 1.1 FROM = { diplomacy = 9 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 10 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 11 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 12 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 13 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 14 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 15 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 16 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 17 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 18 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 19 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 20 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 21 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 22 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 23 } }
+			modifier = { factor = 1.1 FROM = { diplomacy = 24 } }
+			modifier = { factor = 2 is_lover = FROM }
+			modifier = { factor = 2 dynasty = FROM }
+			modifier = { factor = 1.5 is_close_relative = FROM }
+		}
+
+		add_character_modifier = {
+			modifier = TOW_sent_troops_to_adventurer
+			duration = 180
+		}
+
+		custom_tooltip = {
+			text = TOW_TOG_1218_support_custom_tooltip
+			hidden_tooltip = {
+				FROM = {
+					random_list = {
+						3 = { change_variable = { which = "TOW_adventure_manpower" value = 6 } modifier = { factor = 0.5 martial = 12 } }
+						4 = { change_variable = { which = "TOW_adventure_manpower" value = 7 } modifier = { factor = 0.5 martial = 15 } }
+						5 = { change_variable = { which = "TOW_adventure_manpower" value = 8 } modifier = { factor = 0.5 martial = 18 } }
+						4 = { change_variable = { which = "TOW_adventure_manpower" value = 9 } modifier = { factor = 0.5 martial = 21 } }
+						2 = { change_variable = { which = "TOW_adventure_manpower" value = 10 } }
+					}
+					TOW_landless_claimant_adventurer_update_modifier = yes
+					move_character = ROOT
+				}
+			}
+		}
+
+		reverse_opinion = { modifier = opinion_very_grateful who = FROM years = 10 }
+	}
+
+	option = { ## Don't care
+		name = "EVTOPTC_TOG_1218"
+
+		ai_chance = {
+			factor = 20
+			modifier = { factor = 1.5 trait = arbitrary }
+			modifier = { factor = 1.5 FROM = { trait = ugly } }
+			modifier = { factor = 0.75 FROM = { trait = fair } }
+			modifier = { factor = 2 trait = slothful }
+			modifier = { factor = 2 trait = paranoid }
+			modifier = { factor = 20 trait = depressed }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -9 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -19 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -29 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -39 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -49 } } }
+			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -59 } } }
+			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -69 } } }
+			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -79 } } }
+			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -89 } } }
+			modifier = { factor = 2.5 NOT = { opinion = { who = FROM value = -99 } } }
+			modifier = { factor = 0.5 trait = kind }
+			modifier = { factor = 0.5 trait = charitable }
+		}
+
+		reverse_opinion = { modifier = opinion_disappointed who = FROM years = 5 }
+	}
+
+	option = { ## Seize him !
+		name = "EVTOPTD_TOG_1218"
+
+		ai_chance = {
+			factor = 10
+			modifier = { factor = 3 trait = arbitrary }
+
+			modifier = { factor = 10 trait = cruel }
+			modifier = { factor = 2 trait = deceitful }
+			modifier = { factor = 2 trait = impaler }
+			modifier = { factor = 2 trait = wroth }
+			modifier = { factor = 3 trait = lunatic }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -9 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -19 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -29 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -39 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROM value = -49 } } }
+			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -59 } } }
+			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -69 } } }
+			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -79 } } }
+			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -89 } } }
+			modifier = { factor = 1.5 NOT = { opinion = { who = FROM value = -99 } } }
+			modifier = { factor = 0 opinion = { who = FROM value = 0 } }
+			modifier = { factor = 0 trait = kind }
+			modifier = { factor = 0 trait = charitable }
+			modifier = {
+				factor = 4
+				trait = zealous
+				FROM = { TOW_prev_dislikes_religion = yes }
+			}
+		}
+
+		FROM = { imprison = ROOT }
+		reverse_opinion = { modifier = TOW_opinion_prevented_me_from_adventuring who = FROM years = 25 }
+	}
+
+	after = {
+		FROM = { clr_character_flag = TOW_adventure_asking_realm }
 	}
 }

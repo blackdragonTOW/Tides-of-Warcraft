@@ -33,24 +33,6 @@ claim = {
 
 	infamy_modifier = 0.85
 	
-	can_use = {
-		OR = {
-			NOR = {
-				trait = troll_jungle
-				trait = troll_zandalari
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_dark
-				trait = troll_sand
-			}
-			trait = undead_forsaken
-		}
-		is_nomadic = no
-		FROM = {
-			is_nomadic = no
-		}
-	}
-	
 	can_use_title = {
 		OR = {
 			FROM = {
@@ -61,13 +43,33 @@ claim = {
 			}
 		}
 		ROOT = {
+			AND = {
+				OR = {
+					has_character_flag = claimant_adventurer
+					NOR = {
+						trait = troll_jungle
+						trait = troll_zandalari
+						trait = troll_forest
+						trait = troll_ice
+						trait = troll_dark
+						trait = troll_sand
+					}
+					trait = undead_forsaken
+				}
+			}
 			OR = {
 				is_ruler = no
-				primary_title = {
-					OR = {
-						is_primary_type_title = no # Static Mercs, the Pope, Holy Orders, etc
-						higher_tier_than = PREVPREV
-						tier = PREVPREV
+				AND = {
+					is_nomadic = no
+					FROM = {
+						is_nomadic = no
+					}
+					primary_title = {
+						OR = {
+							is_primary_type_title = no # Static Mercs, the Pope, Holy Orders, etc
+							higher_tier_than = PREVPREV
+							tier = PREVPREV
+						}
 					}
 				}
 			}
@@ -92,6 +94,7 @@ claim = {
 	
 	can_use_gui = {
 		OR = {
+			has_character_flag = claimant_adventurer
 			NOT = { trait = gnome }
 			AND = {
 				trait = gnome
@@ -8471,7 +8474,7 @@ nomad_expansion = {
 	}
 
 	on_success_title = {
-		any_realm_title = {
+		any_de_jure_vassal_title = {
 			if = {
 				limit = {
 					lower_tier_than = DUKE
