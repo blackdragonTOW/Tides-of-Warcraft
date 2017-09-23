@@ -1,0 +1,51 @@
+TOW_is_landless_claimant_adventurer_valid = {
+	# Somewhat clunky way of checking that the character stands to inherit any titles
+	NOT = {
+		any_heir_title = {
+			always = yes
+		}
+		any_spouse = { is_ruler = yes }
+	}
+	is_ruler = no
+
+	any_claim = {
+		has_holder = yes
+		holder_scope = {
+			independent = yes # Only do this vs independent rulers
+			NAND = {
+				government = nomadic_government
+				OR = {
+					clan_title = {
+						title = PREVPREV
+					}
+					primary_title = {
+						title = PREVPREV
+					}
+				}
+			}
+			OR = {
+				# Don't target my liege unless I am ambitious
+				NOT = { is_vassal_or_below = ROOT }
+				ROOT = { trait = ambitious }
+			}
+			OR = {
+				is_merchant_republic = no
+				NOT = {
+					capital_holding = {
+						de_jure_liege_or_above = PREVPREV
+					}
+				}
+			}
+			ROOT = {
+				NOR = {
+					obedient = PREV
+					non_interference = PREV
+				}
+			}
+		}
+		OR = {
+			tier = KING
+			holder_scope = { tier = PREV }
+		}
+	}	
+}

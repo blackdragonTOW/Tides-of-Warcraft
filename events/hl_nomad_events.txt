@@ -13,7 +13,15 @@ character_event = { # Pillaging Repeating Event
 	trigger = {
 		any_realm_province = {
 			any_province_holding = {
-				owner = { character = ROOT }
+				OR = {
+					owner = { character = ROOT }
+					AND = {
+						ROOT = { is_nomadic = yes }
+						has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+						location = { owner = { character = ROOT } }
+						owner = { liege = { character = ROOT } }
+					}
+				}
 				has_holding_modifier = recently_burnt_the_land
 				NOT = { has_holding_modifier = stop_burning_land }
 			}
@@ -30,7 +38,15 @@ character_event = { # Pillaging Repeating Event
 		any_realm_province = {
 			any_province_holding = {
 				limit = {
-					owner = { character = ROOT }
+					OR = {
+						owner = { character = ROOT }
+						AND = {
+							ROOT = { is_nomadic = yes }
+							has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+							location = { owner = { character = ROOT } }
+							owner = { liege = { character = ROOT } }
+						}
+					}
 					has_holding_modifier = recently_burnt_the_land
 					NOT = { has_holding_modifier = stop_burning_land }
 				}
@@ -41,70 +57,22 @@ character_event = { # Pillaging Repeating Event
 			}
 			any_province_holding = {
 				limit = {
-					owner = { character = ROOT }
+					OR = {
+						owner = { character = ROOT }
+						AND = {
+							ROOT = { is_nomadic = yes }
+							has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+							location = { owner = { character = ROOT } }
+							owner = { liege = { character = ROOT } }
+						}
+					}
 					has_holding_modifier = recently_burnt_the_land
 					NOT = { has_holding_modifier = stop_burning_land }
 					has_siege = no
 				}
 				
-				if = {
-					limit = { NOT = { holding_type = tribal } }
-					ROOT = {
-						wealth = 50
-					}
-					custom_tooltip = {
-						text = gain_tech_custom_tooltip
-						hidden_tooltip = {
-							ROOT = {
-								random_list = {
-									10 = { military_techpoints = 5 }
-									10 = { economy_techpoints = 5 }
-									10 = { culture_techpoints = 5 }
-								}
-							}
-						}
-					}
-				}
-				
-				if = {
-					limit = { holding_type = tribal }
-					ROOT = { 
-						wealth = 25 
-						population = 150 
-					}
-				}
-				
-				destroy_random_building = THIS
-				destroy_random_building = THIS
-				
-				location = {
-					add_province_modifier = {
-						modifier = rampaging_nomads
-						years = 10
-					}
-				}
-
-				location = {
-					add_province_modifier = {
-						modifier = burnt_the_land
-						years = 10
-					}
-				}
-				
-				if = {
-					limit = {
-						NOT = { has_any_building = yes }
-						owner = {
-							character = ROOT
-						}
-					}
-					location = {
-						province_event = { id = HL.4810 days = 1 }
-						save_event_target_as = target_location
-						ROOT = { character_event = { id = HL.4814 days = 2 random = 2 } }
-					}
-					destroy_settlement = THIS	
-				}
+				ROOT = { save_event_target_as = pillager }
+				TOW_pillage_holding = yes
 			}
 		}
 	}
