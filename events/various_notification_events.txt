@@ -93,10 +93,18 @@ character_event = {
 	option = {
 		name = EVTOPTB_NE_1
 		
-		hidden_tooltip = {
-			event_target:invited_character = { 
-				death = {
-					death_reason = death_missing
+		limit = {
+			if = {
+				event_target:invited_character = {
+					is_ruler = no
+					is_married = no
+				}
+			}
+			hidden_tooltip = {
+				event_target:invited_character = { 
+					death = {
+						death_reason = death_missing
+					}
 				}
 			}
 		}

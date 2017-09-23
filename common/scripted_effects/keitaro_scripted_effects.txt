@@ -1,0 +1,71 @@
+# Used when creating a new character
+TOW_remove_bad_traits = {
+	remove_trait = weak
+	remove_trait = ugly
+	remove_trait = slow
+	remove_trait = imbecile
+	remove_trait = inbred
+	remove_trait = dull
+	remove_trait = depressed
+	remove_trait = stressed
+}
+
+TOW_employed_remove_unwanted_traits_with_root_employer = {
+	if = {
+		limit = { ROOT = { accepts_warlock = no } }
+		remove_trait = warlock
+		remove_trait = necrolyte
+	}
+	if = {
+		limit = { ROOT = { accepts_necromancer = no } }
+		remove_trait = necromancer
+		remove_trait = necrolyte
+	}
+	if = {
+		limit = { ROOT = { accepts_assassin = no } }
+		remove_trait = assassin
+	}
+	if = {
+		limit = { ROOT = { accepts_rogue = no } }
+		remove_trait = rogue
+	}
+	remove_trait = demon_hunter
+	remove_trait = death_knight
+}
+
+# Create a courtier, can generate a female if allowed
+# save primary title of employer as employer
+# save employer as employer_character
+TOW_create_random_courtier_gender_equality = {
+	if = {
+		limit = { gender_equality_trigger = no }
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			employer = event_target:employer
+		}
+	}
+	if = {
+		limit = { gender_equality_trigger = yes }
+		random_list = {
+			1 = {
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					female = yes
+					employer = event_target:employer
+				}
+			}
+			1 = {
+				create_character = {
+					random_traits = yes
+					dynasty = random
+					female = no
+					employer = event_target:employer
+				}
+			}
+		}
+		
+	}
+}

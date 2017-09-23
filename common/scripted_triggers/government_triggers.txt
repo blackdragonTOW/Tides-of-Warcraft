@@ -1,0 +1,14 @@
+TOW_is_poor_government = {
+	custom_tooltip = {
+		text = TOOLTIP_TOW_is_poor_government
+		hidden_tooltip = {
+			OR = {
+				is_nomadic = yes
+				is_tribal = yes
+				government = troll_bcd_government
+				government = ogre_tribe_government
+				government = troll_bcd_government
+			}
+		}
+	}
+}
