@@ -137,7 +137,7 @@ narrative_event = {
 	title = EVTTITLE3HAMMER.3 # Death of a [From.GetTitle]
 	desc = EVTDESC3HAMMER.3 # The late [From.GetTitledName] was not a particularly notable monarch, having done little in service of Khaz Modan. Perhaps it is time for a stronger ruler to step up and sieze the throne, to best steer the fate of the dwarves towards glory. Someone like you.
 	picture = GFX_evt_death
-	picture = GFX_event_narrative_frame_diplomacy
+	border = GFX_event_narrative_frame_diplomacy
 	
 	is_triggered_only = yes
 	
@@ -328,7 +328,7 @@ narrative_event = {
 		text = EVTDESC3HAMMER.5g # The late [From.GetTitledName] was not a particularly notable monarch, having done little in service of Khaz Modan. What is worrying, however, is that [event_target:3h_bronzebeard.GetFullName], [event_target:3h_wildhammer.GetFullName] and [event_target:3h_darkiron.GetFullName] have risen up and now fight for the throne. Will you defend your claim, or accept the fall of your clan?
 	}
 	picture = GFX_evt_death
-	picture = GFX_event_narrative_frame_diplomacy
+	border = GFX_event_narrative_frame_diplomacy
 	
 	is_triggered_only = yes
 	
@@ -893,7 +893,9 @@ character_event = {
 	trigger = {
 		NOT = { has_global_flag = 3h_grim_batol }
 		any_war = { using_cb = 3hammer_war }
-		FROM = b_grim_batol
+		location = {
+			province = 279
+		}
 		OR = {
 			character = event_target:3h_darkiron
 			any_liege = {
@@ -1392,19 +1394,6 @@ character_event = {
 				character_event = { id = threehammers.24 }
 			}
 		}
-	}
-}
-
-character_event = {
-	id = threehammers.25
-	desc = EVTDESC3HAMMER.25 # A strange new development has arisen in this war. Mysterious grey dragons, unlike any ever seen, appear to have allied themselves with the Dark Iron and could turn the war in their favour.
-	picture = "GFX_evt_infinite_dragon"
-	border = "GFX_event_normal_frame_war"
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = AKDAMN
 	}
 }
 

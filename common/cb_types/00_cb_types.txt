@@ -8477,7 +8477,9 @@ nomad_expansion = {
 					lower_tier_than = DUKE
 				}
 				usurp_title = { target = ROOT type = invasion }
-				add_province_modifier = { name = settler_holdouts duration = -1 }
+				location = {
+					add_province_modifier = { name = settler_holdouts duration = -1 }
+				}
 			}
 			if = {
 				limit = {
@@ -8489,7 +8491,7 @@ nomad_expansion = {
 	}
 
 	on_fail = {
-		ROOT = { 
+		ROOT = {
 			prestige = -200
 		}
 	}
