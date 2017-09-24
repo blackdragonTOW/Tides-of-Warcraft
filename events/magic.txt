@@ -28,10 +28,10 @@ character_event = {
     }
 
     immediate = {
-        set_variable = { which = mana value = 0 }
-        character_event = { id = magic.2 } # To calculate the cap, should run every now and then. yearly pulse?
-        change_variable = { which = mana which = mana_cap }
-        add_character_modifier = { modifier = magic_counter duration = -1 }
+		set_variable = { which = mana value = 0 }
+		character_event = { id = magic.2 } # To calculate the cap, should run every now and then. yearly pulse?
+		change_variable = { which = mana which = mana_cap }
+		add_character_modifier = { modifier = magic_counter duration = -1 }
     }
 }
 
@@ -147,7 +147,7 @@ character_event = {
     }
 }
 
-character_event = {
+character_event = { # Very simplistic, but it works. Will likely improve it later.
 	id = magic.3
 	hide_window = yes
 	
@@ -190,22 +190,22 @@ character_event = {
 	
 	immediate = {
 		random_list = {
-			10 = {
+			18 = {
 				change_variable = { which = mana value = 2 }
 			}
-			8 = {
+			9 = {
 				change_variable = { which = mana value = 4 }
 			}
-			7 = {
+			8 = {
 				change_variable = { which = mana value = 5 }
 			}
 			4 = {
 				change_variable = { which = mana value = 10 }
 			}
-			2 = {
+			3 = {
 				change_variable = { which = mana value = 15 }
 			}
-			1 = {
+			2 = {
 				change_variable = { which = mana value = 20 }
 			}
 		}

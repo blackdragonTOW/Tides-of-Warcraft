@@ -1,0 +1,182 @@
+decisions = {
+	
+	corrupt_sunwell = {
+		is_high_prio = yes
+		potential = {
+			OR = {
+				NOR = {
+					trait = blood_elf
+					trait = high_elf
+					trait = wretched
+				}
+				trait = undead_scourge
+				trait = undead_forsaken
+				religion = burning_legion
+				religion = old_gods
+				religion = twilights_hammer
+				religion = cult_of_the_infinite
+				religion = cult_of_the_destroyer
+				religion = emerald_nightmare
+				religion = lich_king
+			}
+			OR = {
+				has_landed_title = b_sunwell_plateau
+				any_vassal = {
+					has_landed_title = b_sunwell_plateau
+				}
+			}
+		}
+		allow = {
+			piety = 300
+		}
+		effect = {
+			piety = -300
+			set_global_flag = sunwell_corrupted
+			hidden_tooltip = {
+				b_sunwell_plateau = {
+					remove_building = ca_sunwell
+					remove_building = ct_sunwell
+					remove_building = tp_sunwell
+					remove_building = tb_sunwell
+					trigger_switch = {
+						on_trigger = holding_type
+						castle = { add_building = ca_sunwell_corrupted }
+						city = { add_building = ct_sunwell_corrupted }
+						temple = { add_building = tp_sunwell_corrupted }
+						tribal = { add_building = tb_sunwell_corrupted }
+					}
+				}
+			}
+			any_playable_ruler = {
+				limit = {
+					ai = no
+					OR = {
+						trait = high_elf
+						trait = blood_elf
+						trait = wretched
+						location = {
+							region = world_EK_north
+						}
+					}
+					NOR = {
+						trait = undead_scourge
+						trait = undead_forsaken
+						religion = burning_legion
+						religion = old_gods
+						religion = twilights_hammer
+						religion = cult_of_the_infinite
+						religion = cult_of_the_destroyer
+						religion = emerald_nightmare
+						religion = lich_king
+					}
+				}
+				narrative_event = { id = helfm.4 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	destroy_sunwell = {
+		is_high_prio = yes
+		potential = {
+			OR = {
+				trait = blood_elf
+				trait = high_elf
+				trait = wretched
+			}
+			NOR = {
+				trait = undead_scourge
+				trait = undead_forsaken
+				religion = burning_legion
+				religion = old_gods
+				religion = twilights_hammer
+				religion = cult_of_the_infinite
+				religion = cult_of_the_destroyer
+				religion = emerald_nightmare
+				religion = lich_king
+			}
+			OR = {
+				has_landed_title = b_sunwell_plateau
+				any_vassal = {
+					has_landed_title = b_sunwell_plateau
+				}
+			}
+			has_global_flag = sunwell_corrupted
+		}
+		allow = {
+			prestige = 300
+		}
+		effect = {
+			prestige = -300
+			clr_global_flag = sunwell_corrupted
+			set_global_flag = sunwell_destroyed
+			hidden_tooltip = {
+				b_sunwell_plateau = {
+					remove_building = ca_sunwell_corrupted
+					remove_building = ct_sunwell_corrupted
+					remove_building = tp_sunwell_corrupted
+					remove_building = tb_sunwell_corrupted
+					trigger_switch = {
+						on_trigger = holding_type
+						castle = { add_building = ca_sunwell_destroyed }
+						city = { add_building = ct_sunwell_destroyed }
+						temple = { add_building = tp_sunwell_destroyed }
+						tribal = { add_building = tb_sunwell_destroyed }
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	blood_elves = {
+		is_high_prio = yes
+		potential = {
+			OR = {
+				has_global_flag = sunwell_corrupted
+				has_global_flag = sunwell_destroyed
+			}
+			NOT = { has_global_flag = sindorei }
+			has_landed_title = k_silvermoon
+			OR = {
+				trait = blood_elf
+				trait = high_elf
+				trait = wretched
+			}
+			NOR = {
+				trait = undead_scourge
+				trait = undead_forsaken
+				religion = burning_legion
+				religion = old_gods
+				religion = twilights_hammer
+				religion = cult_of_the_infinite
+				religion = cult_of_the_destroyer
+				religion = emerald_nightmare
+				religion = lich_king
+			}
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			
+		}
+		revoke_allowed = {
+			always = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	
+}

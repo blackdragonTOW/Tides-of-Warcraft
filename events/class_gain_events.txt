@@ -7344,7 +7344,12 @@ character_event = {
 		}
 		OR = {
 			AND = {
-				NOT = { accepts_warlock = yes }
+				OR = {
+					NOT = { accepts_warlock = yes }
+					liege = {
+						NOT = { accepts_warlock = yes }
+					}
+				}
 				OR = {
 					has_character_flag = warlock_start
 					has_character_flag = warlock_drift
@@ -7353,8 +7358,16 @@ character_event = {
 				NOT = { has_character_flag = warlock_discovered }
 			}
 			AND = {
-				NOT = { accepts_warlock = yes }
-				NOT = { accepts_necromancer = yes }
+				OR = {
+					NOT = { accepts_warlock = yes }
+					NOT = { accepts_necromancer = yes }
+					liege = {
+						OR = {
+							NOT = { accepts_warlock = yes }
+							NOT = { accepts_necromancer = yes }
+						}
+					}
+				}
 				OR = {
 					has_character_flag = necrolyte_start
 					has_character_flag = necrolyte_drift
@@ -7363,7 +7376,12 @@ character_event = {
 				NOT = { has_character_flag = necrolyte_discovered }
 			}
 			AND = {
-				NOT = { accepts_necromancer = yes }
+				OR = {
+					NOT = { accepts_necromancer = yes }
+					liege = {
+						NOT = { accepts_necromancer = yes }
+					}
+				}
 				OR = {
 					has_character_flag = necromancer_start
 					has_character_flag = necromancer_drift
@@ -7374,6 +7392,11 @@ character_event = {
 			AND = {
 				OR = {
 					NOT = { accepts_assassin = yes }
+					liege = {
+						NOT = { accepts_assassin = yes }
+					}
+				}
+				OR = {
 					has_character_flag = assassin_start
 					trait = assassin
 				}
@@ -7382,6 +7405,11 @@ character_event = {
 			AND = {
 				OR = {
 					NOT = { accepts_rogue = yes }
+					liege = {
+						NOT = { accepts_rogue = yes }
+					}
+				}
+				OR = {
 					has_character_flag = rogue_start
 					trait = rogue
 				}
@@ -7390,38 +7418,52 @@ character_event = {
 			AND = {
 				OR = {
 					NOT = { accepts_blood_magic = yes }
-					has_character_modifier = blood_magic
+					liege = {
+						NOT = { accepts_blood_magic = yes }
+					}
 				}
+				has_character_modifier = blood_magic
 				NOT = { has_character_flag = blood_magic_discovered }
 			}
 			AND = {
 				OR = {
 					NOT = { accepts_shadow_priest = yes }
-					has_character_modifier = shadow_priest
+					liege = {
+						NOT = { accepts_shadow_priest = yes }
+					}
 				}
+				has_character_modifier = shadow_priest
 				NOT = { has_character_flag = shadow_priest_discovered }
 			}
 			AND = {
 				OR = {
 					NOT = { accepts_dark_shaman = yes }
-					has_character_modifier = dark_shaman
+					liege = {
+						NOT = { accepts_dark_shaman = yes }
+					}
 				}
+				has_character_modifier = dark_shaman
 				NOT = { has_character_flag = dark_shaman_discovered }
 			}
 			AND = {
 				OR = {
 					NOT = { accepts_nightmare_druid = yes }
-					has_character_modifier = nightmare_druid
+					liege = {
+						NOT = { accepts_nightmare_druid = yes }
+					}
 				}
+				has_character_modifier = nightmare_druid
 				NOT = { has_character_flag = nightmare_druid_discovered }
 			}
 		}
 	}
 	
 	immediate = {
-		any_courtier_or_vassal = {
+		random_province_character = {
 			limit = {
 				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = away_from_court_hidden }
 			}
 			character_event = { id = classgain.69 }
 		}

@@ -7,9 +7,7 @@ castle = {
 			NOR = {
 				has_global_flag = wow_bookmark
 				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted
 			}
 		}
 		gold_cost = 0
@@ -29,11 +27,7 @@ castle = {
 				has_global_flag = wow_bookmark
 				has_global_flag = sunwell_destroyed
 			}
-			NOR = {
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
-			}
+			NOT = { has_global_flag = sunwell_corrupted }
 		}
 		gold_cost = 0
 		build_time = 1
@@ -43,57 +37,13 @@ castle = {
 		liege_piety = 0.2
 		monthly_character_piety = 0.2
 	}
-	ca_sunwell_corrupted_fel = {
-		desc = ca_sunwell_corrupted_fel_desc
+	ca_sunwell_corrupted = {
+		desc = ca_sunwell_corrupted_desc
 		potential = {
 			has_game_started = yes
 			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_fel
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
-			}
-		}
-		gold_cost = 0
-		build_time = 1
-		ai_creation_factor = 100
-		liege_prestige = 0.2
-		monthly_character_prestige = 0.2
-		liege_piety = 0.2
-		monthly_character_piety = 0.2
-	}
-	ca_sunwell_corrupted_void = {
-		desc = ca_sunwell_corrupted_void_desc
-		potential = {
-			has_game_started = yes
-			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_void
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_necro
-			}
-		}
-		gold_cost = 0
-		build_time = 1
-		ai_creation_factor = 100
-		liege_prestige = 0.2
-		monthly_character_prestige = 0.2
-		liege_piety = 0.2
-		monthly_character_piety = 0.2
-	}
-	ca_sunwell_corrupted_necro = {
-		desc = ca_sunwell_corrupted_necro_desc
-		potential = {
-			has_game_started = yes
-			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_necro
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_fel
-			}
+			has_global_flag = sunwell_corrupted
+			NOT = { has_global_flag = sunwell_destroyed }
 		}
 		gold_cost = 0
 		build_time = 1
@@ -168,9 +118,7 @@ city = {
 			NOR = {
 				has_global_flag = wow_bookmark
 				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted
 			}
 		}
 		gold_cost = 0
@@ -190,11 +138,7 @@ city = {
 				has_global_flag = wow_bookmark
 				has_global_flag = sunwell_destroyed
 			}
-			NOR = {
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
-			}
+			NOR = { has_global_flag = sunwell_corrupted }
 		}
 		gold_cost = 0
 		build_time = 1
@@ -204,57 +148,13 @@ city = {
 		liege_piety = 0.2
 		monthly_character_piety = 0.2
 	}
-	ct_sunwell_corrupted_fel = {
-		desc = ca_sunwell_corrupted_fel_desc
+	ct_sunwell_corrupted = {
+		desc = ca_sunwell_corrupted_desc
 		potential = {
 			has_game_started = yes
 			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_fel
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
-			}
-		}
-		gold_cost = 0
-		build_time = 1
-		ai_creation_factor = 100
-		liege_prestige = 0.2
-		monthly_character_prestige = 0.2
-		liege_piety = 0.2
-		monthly_character_piety = 0.2
-	}
-	ct_sunwell_corrupted_void = {
-		desc = ca_sunwell_corrupted_void_desc
-		potential = {
-			has_game_started = yes
-			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_void
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_necro
-			}
-		}
-		gold_cost = 0
-		build_time = 1
-		ai_creation_factor = 100
-		liege_prestige = 0.2
-		monthly_character_prestige = 0.2
-		liege_piety = 0.2
-		monthly_character_piety = 0.2
-	}
-	ct_sunwell_corrupted_necro = {
-		desc = ca_sunwell_corrupted_necro_desc
-		potential = {
-			has_game_started = yes
-			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_necro
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_fel
-			}
+			has_global_flag = sunwell_corrupted
+			NOT = { has_global_flag = sunwell_destroyed }
 		}
 		gold_cost = 0
 		build_time = 1
@@ -329,9 +229,7 @@ temple = {
 			NOR = {
 				has_global_flag = wow_bookmark
 				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted
 			}
 		}
 		gold_cost = 0
@@ -351,11 +249,7 @@ temple = {
 				has_global_flag = wow_bookmark
 				has_global_flag = sunwell_destroyed
 			}
-			NOR = {
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
-			}
+			NOT = { has_global_flag = sunwell_corrupted }
 		}
 		gold_cost = 0
 		build_time = 1
@@ -365,57 +259,13 @@ temple = {
 		liege_piety = 0.2
 		monthly_character_piety = 0.2
 	}
-	tp_sunwell_corrupted_fel = {
-		desc = ca_sunwell_corrupted_fel
+	tp_sunwell_corrupted = {
+		desc = ca_sunwell_corrupted
 		potential = {
 			has_game_started = yes
 			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_fel
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
-			}
-		}
-		gold_cost = 0
-		build_time = 1
-		ai_creation_factor = 100
-		liege_prestige = 0.2
-		monthly_character_prestige = 0.2
-		liege_piety = 0.2
-		monthly_character_piety = 0.2
-	}
-	tp_sunwell_corrupted_void = {
-		desc = ca_sunwell_corrupted_void_desc
-		potential = {
-			has_game_started = yes
-			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_void
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_necro
-			}
-		}
-		gold_cost = 0
-		build_time = 1
-		ai_creation_factor = 100
-		liege_prestige = 0.2
-		monthly_character_prestige = 0.2
-		liege_piety = 0.2
-		monthly_character_piety = 0.2
-	}
-	tp_sunwell_corrupted_necro = {
-		desc = ca_sunwell_corrupted_necro_desc
-		potential = {
-			has_game_started = yes
-			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_necro
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_fel
-			}
+			has_global_flag = sunwell_corrupted
+			NOT = { has_global_flag = sunwell_destroyed }
 		}
 		gold_cost = 0
 		build_time = 1
@@ -490,9 +340,7 @@ tribal = {
 			NOR = {
 				has_global_flag = wow_bookmark
 				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
+				has_global_flag = sunwell_corrupted
 			}
 		}
 		gold_cost = 0
@@ -515,11 +363,7 @@ tribal = {
 				has_global_flag = wow_bookmark
 				has_global_flag = sunwell_destroyed
 			}
-			NOR = {
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
-			}
+			NOT = { has_global_flag = sunwell_corrupted }
 		}
 		gold_cost = 0
 		build_time = 1
@@ -532,17 +376,13 @@ tribal = {
 		convert_to_castle = ca_sunwell_destroyed
 		convert_to_temple = tp_sunwell_destroyed
 	}
-	tb_sunwell_corrupted_fel = {
-		desc = ca_sunwell_corrupted_fel
+	tb_sunwell_corrupted = {
+		desc = ca_sunwell_corrupted
 		potential = {
 			has_game_started = yes
 			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_fel
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_necro
-			}
+			has_global_flag = sunwell_corrupted
+			NOT = { has_global_flag = sunwell_destroyed }
 		}
 		gold_cost = 0
 		build_time = 1
@@ -551,55 +391,9 @@ tribal = {
 		monthly_character_prestige = 0.2
 		liege_piety = 0.2
 		monthly_character_piety = 0.2
-		convert_to_city = ct_sunwell_corrupted_fel
-		convert_to_castle = ca_sunwell_corrupted_fel
-		convert_to_temple = tp_sunwell_corrupted_fel
-	}
-	tb_sunwell_corrupted_void = {
-		desc = ca_sunwell_corrupted_void_desc
-		potential = {
-			has_game_started = yes
-			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_void
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_fel
-				has_global_flag = sunwell_corrupted_necro
-			}
-		}
-		gold_cost = 0
-		build_time = 1
-		ai_creation_factor = 100
-		liege_prestige = 0.2
-		monthly_character_prestige = 0.2
-		liege_piety = 0.2
-		monthly_character_piety = 0.2
-		convert_to_city = ct_sunwell_corrupted_void
-		convert_to_castle = ca_sunwell_corrupted_void
-		convert_to_temple = tp_sunwell_corrupted_void
-	}
-	tb_sunwell_corrupted_necro = {
-		desc = ca_sunwell_corrupted_necro_desc
-		potential = {
-			has_game_started = yes
-			FROMFROM = { title = b_sunwell_plateau }
-			has_global_flag = sunwell_corrupted_necro
-			NOR = {
-				has_global_flag = sunwell_destroyed
-				has_global_flag = sunwell_corrupted_void
-				has_global_flag = sunwell_corrupted_fel
-			}
-		}
-		gold_cost = 0
-		build_time = 1
-		ai_creation_factor = 100
-		liege_prestige = 0.2
-		monthly_character_prestige = 0.2
-		liege_piety = 0.2
-		monthly_character_piety = 0.2
-		convert_to_city = ct_sunwell_corrupted_necro
-		convert_to_castle = ca_sunwell_corrupted_necro
-		convert_to_temple = tp_sunwell_corrupted_necro
+		convert_to_city = ct_sunwell_corrupted
+		convert_to_castle = ca_sunwell_corrupted
+		convert_to_temple = tp_sunwell_corrupted
 	}
 	tb_runestones = {
 		desc = ca_runestones_desc
