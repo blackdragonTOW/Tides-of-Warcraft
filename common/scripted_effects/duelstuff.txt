@@ -236,7 +236,7 @@ initiative = {
 
 attack = {
 	set_variable = { which = attack value = 0 }
-	export_to_variable = { which = attack which = combat_rating }
+	export_to_variable = { which = attack value = combat_rating }
 	set_variable = { which = counter value = 0 }
 	set_variable = { which = cap value = 0 }
 	if = {
@@ -453,7 +453,7 @@ attack = {
 
 defence = {
 	set_variable = { which = defence value = 0 }
-	export_to_variable = { which = defence which = combat_rating }
+	export_to_variable = { which = defence value = combat_rating }
 	set_variable = { which = counter value = 0 }
 	set_variable = { which = cap value = 0 }
 	if = {
@@ -693,10 +693,10 @@ damage = {
 				NOT = { is_variable_equal = { which = global_attack which = defence } }
 			}
 			set_variable = { which = counter value = 0 }
-			export_to_variable = { which = counter which = defence }
+			set_variable = { which = counter which = defence }
 			set_variable = { which = counter2 value = 0 }
 			set_variable = { which = cap value = 0 }
-			export_to_variable = { which = cap which = global_attack }
+			set_variable = { which = cap which = global_attack }
 			while = {
 				limit = {
 					NOT = { check_variable = { which = counter which = cap } }
@@ -749,11 +749,9 @@ damage = {
 			limit = {
 				check_variable = { which = damage which = hp }
 			}
-			set_variable = { which = counter value = 0 }
-			export_to_variable = { which = counter which = hp }
+			set_variable = { which = counter which = hp }
 			set_variable = { which = counter2 value = 0 }
-			set_variable = { which = cap value = 0 }
-			export_to_variable = { which = cap which = damage }
+			set_variable = { which = cap which = damage }
 			while = {
 				limit = {
 					NOT = { check_variable = { which = counter which = cap } }
