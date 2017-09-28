@@ -362,7 +362,7 @@ TOW_adventurers_spawn_unit_with_manpower = {
 TOW_adventurers_spawn_fleet_with_manpower = { 
 	export_to_variable = { which = TOW_TMP2 value = realm_levies who = event_target:adventure_target }
 	multiply_variable = { which = TOW_TMP2 which = TOW_adventure_manpower }
-	divide_variable = { which = TOW_TMP2 value = 10000 } # percentage + 100 soldier per fleet
+	divide_variable = { which = TOW_TMP2 value = 10000 } # percentage * 100 soldier per fleet
 	change_variable = { which = TOW_TMP2 value = 10 } # base fleet count
 
 	set_variable = { which = TOW_TMP which = TOW_TMP2 }

@@ -58,37 +58,8 @@
 # Adventure modifiers
 ##########################
 
-TOW_sent_troops_to_adventurer = {
+TOW_looted_province = {
 	icon = 31
-
-	is_visible = { 
-		character = FROM
-	}
-	global_levy_size = -0.1
-	levy_reinforce_rate = -0.1
-}
-
-TOW_adventurer_puny_army = {
-	icon = 13
-	monthly_character_prestige = 0.1
-}
-
-TOW_adventurer_weak_army = {
-	icon = 13
-	monthly_character_prestige = 0.25
-}
-
-TOW_adventurer_medium_army = {
-	icon = 13
-	monthly_character_prestige = 0.5
-}
-
-TOW_adventurer_powerful_army = {
-	icon = 13
-	monthly_character_prestige = 1
-}
-
-TOW_adventurer_very_powerful_army = {
-	icon = 13
-	monthly_character_prestige = 2
+	levy_size = -0.05
+	local_tax_modifier = -0.15
 }

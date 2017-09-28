@@ -348,7 +348,6 @@ character_event = {
 		}
 
 		prestige = 100
-		wealth = 500
         add_trait = adventurer
 		
 		liege = {
@@ -427,11 +426,13 @@ character_event = {
 			culture = ROOT
 			female = no
 		}
-		
+
+
 		# Create a fleet, just to be sure
 		TOW_adventurers_spawn_fleet_with_manpower = yes
 
-		log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] declares war on [adventure_target.GetTitledName] for the [adventure_target_title.GetFullName] from the province [starting_province.GetName], he has [Root.TOW_adventure_manpower.GetValue]% of the target's manpower, he asked help from [Root.TOW_adventure_realm_asked.GetValue] realms."
+		export_to_variable = { which = "TOW_TMP" value = treasury }
+		log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] declares war on [adventure_target.GetTitledName] for the [adventure_target_title.GetFullName] from the province [starting_province.GetName], [Root.GetSheHe] has [Root.TOW_adventure_manpower.GetValue]% of the target's manpower, [Root.GetSheHe] asked help from [Root.TOW_adventure_realm_asked.GetValue] realms and [Root.GetSheHe] has [Root.TOW_TMP.GetValue] money."
 
 		set_character_flag = claimant_adventurer
 		
@@ -1294,6 +1295,19 @@ character_event = {
 		
 		change_variable = { which = "TOW_adventure_manpower" which = "TOW_TMP" }
 		TOW_landless_claimant_adventurer_update_modifier = yes
+
+		export_to_variable = { which = "TOW_TMP" value = stewardship }
+		random_list = {
+			1 = { change_variable = { which = "TOW_TMP" value = 1 } }
+			1 = { change_variable = { which = "TOW_TMP" value = 2 } }
+			1 = { change_variable = { which = "TOW_TMP" value = 3 } }
+		}
+		while = {
+			limit = { check_variable = { which = "TOW_TMP" value = 1 } }
+			wealth = 1
+			subtract_variable = { which = "TOW_TMP" value = 1 }
+		}
+
 	}
 }
 
@@ -1530,11 +1544,13 @@ character_event = {
 					}
 					TOW_landless_claimant_adventurer_update_modifier = yes
 					move_character = ROOT
+					wealth = 15 # Don't worry, the rest is put to good use
+					set_character_flag = TOW_adventure_helped_by_@ROOT
 				}
 			}
 		}
 
-		reverse_opinion = { modifier = opinion_very_grateful who = FROM years = 10 }
+		reverse_opinion = { modifier = TOW_opinion_helped_my_adventure who = FROM years = 10 }
 	}
 
 	option = { ## Send troops
@@ -1543,7 +1559,7 @@ character_event = {
 		ai_chance = {
 			factor = 30
 			modifier = {
-				factor = 0.5
+				factor = 0.25
 				war = yes
 			}
 			modifier = { factor = 1.1 opinion = { who = FROM value = 10 } }
@@ -1596,11 +1612,12 @@ character_event = {
 					}
 					TOW_landless_claimant_adventurer_update_modifier = yes
 					move_character = ROOT
+					set_character_flag = TOW_adventure_helped_by_@ROOT
 				}
 			}
 		}
 
-		reverse_opinion = { modifier = opinion_very_grateful who = FROM years = 10 }
+		reverse_opinion = { modifier = TOW_opinion_helped_my_adventure who = FROM years = 10 }
 	}
 
 	option = { ## Don't care
@@ -1652,7 +1669,7 @@ character_event = {
 			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -69 } } }
 			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -79 } } }
 			modifier = { factor = 1.15 NOT = { opinion = { who = FROM value = -89 } } }
-			modifier = { factor = 1.5 NOT = { opinion = { who = FROM value = -99 } } }
+			modifier = { factor = 3 NOT = { opinion = { who = FROM value = -99 } } }
 			modifier = { factor = 0 opinion = { who = FROM value = 0 } }
 			modifier = { factor = 0 trait = kind }
 			modifier = { factor = 0 trait = charitable }
@@ -1669,5 +1686,344 @@ character_event = {
 
 	after = {
 		FROM = { clr_character_flag = TOW_adventure_asking_realm }
+	}
+}
+
+### Adventurer and his band repels off bad modifiers
+character_event = {
+	id = TOG.1219
+
+	hide_window = yes
+
+	has_character_flag = TOW_preparing_adventure
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		
+		NOT = {
+			has_game_rule = {
+				name = adventurers
+				value = none
+			}
+		}
+
+		has_character_flag = TOW_preparing_adventure
+		NOT = { has_character_flag = TOW_adventure_asking_realm }
+
+		top_liege = {
+			ROOT = { has_character_flag = TOW_adventure_helped_by_@PREV }
+			any_realm_province = {
+				OR = {
+					has_province_modifier = thieves_guild
+					has_province_modifier = smugglers_ring
+					has_province_modifier = highway_robber_band
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 40
+		modifier = { factor = 0.3 trait = just }
+		modifier = { factor = 2 trait = arbitrary }
+		modifier = { factor = 1.25 trait = craven }
+		modifier = { factor = 0.9 trait = brave }
+		modifier = { factor = 4 trait = slothful }
+		modifier = { factor = 0.95 is_smart_trigger = yes }
+		modifier = { factor = 0.9 trait = genius }
+		modifier = { factor = 1.5 is_dumb_trigger = yes }
+		modifier = { factor = 1.5 character_disease_trigger = yes }
+
+		modifier = { factor = 0.95 check_variable = { which = "TOW_adventure_manpower" value = 40 } }
+		modifier = { factor = 0.95 check_variable = { which = "TOW_adventure_manpower" value = 60 } }
+		modifier = { factor = 0.95 check_variable = { which = "TOW_adventure_manpower" value = 80 } }
+		modifier = { factor = 0.95 check_variable = { which = "TOW_adventure_manpower" value = 100 } }
+		modifier = { factor = 0.95 check_variable = { which = "TOW_adventure_manpower" value = 120 } }
+
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 10 } } }
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 20 } } }
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 30 } } }
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 40 } } }
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 50 } } }
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 60 } } }
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 70 } } }
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 80 } } }
+		modifier = { factor = 0.95 top_liege = { reverse_opinion = { who = ROOT value = 90 } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -9 } } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -19 } } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -29 } } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -39 } } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -49 } } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -59 } } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -69 } } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -79 } } } }
+		modifier = { factor = 1.05 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -89 } } } }
+	}
+	
+	immediate = {
+		random_list = {
+			20 = {}
+			5 = { change_diplomacy = 1 }
+			5 = { change_martial = 1 }
+			5 = { change_martial = 2 }
+			5 = { modifier = { factor = 0 NOT = { trait = craven } } remove_trait = craven }
+		}
+		top_liege = {
+			random_realm_province = {
+				limit = {
+					OR = {
+						has_province_modifier = thieves_guild
+						has_province_modifier = smugglers_ring
+						has_province_modifier = highway_robber_band
+					}
+				}
+				random_list = {
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = thieves_guild }
+						}
+						remove_province_modifier = thieves_guild
+						PREV = { add_character_flag = TOW_removed_thieves_guild }
+						log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] repelled thieves_guild from the [This.County.GetFullName] for [Root.TopLiege.GetBestName]."
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = smugglers_ring }
+						}
+						remove_province_modifier = smugglers_ring
+						PREV = { add_character_flag = TOW_removed_smugglers_ring }
+						log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] repelled smugglers_ring from the [This.County.GetFullName] for [Root.TopLiege.GetBestName]."
+					}
+					1 = {
+						modifier = {
+							factor = 0
+							NOT = { has_province_modifier = highway_robber_band }
+						}
+						remove_province_modifier = highway_robber_band
+						PREV = { add_character_flag = TOW_removed_highway_robber_band }
+						log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] repelled highway_robber_band from the [This.County.GetFullName] for [Root.TopLiege.GetBestName]."
+					}
+				}
+				county = { save_event_target_as = cleared_province }
+			}
+			character_event = {
+				id = TOG.1220 # Notify the owner
+			}
+		}
+	}
+}
+
+## Independent ruler notified that an adventurer repelled off bad men
+character_event = {
+	id = TOG.1220
+
+	desc = {
+		text = EVTDESC_TOG_1220_1
+		trigger = { has_character_flag = TOW_removed_thieves_guild }
+	}
+	desc = {
+		text = EVTDESC_TOG_1220_2
+		trigger = { has_character_flag = TOW_removed_smugglers_ring }
+	}
+	desc = {
+		text = EVTDESC_TOG_1220_3
+		trigger = { has_character_flag = TOW_removed_highway_robber_band }
+	}
+
+	picture = GFX_evt_bandits
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+
+	immediate = {
+		clr_character_flag = TOW_removed_thieves_guild
+		clr_character_flag = TOW_removed_smugglers_ring
+		clr_character_flag = TOW_removed_highway_robber_band
+	}
+	
+	option = { ## Great
+		name = "EVTOPTA_TOG_1220"
+		opinion = { modifier = opinion_grateful who = FROM }
+	}
+
+	option = { ## Reward the adventurer
+		name = "EVTOPTB_TOG_1220"
+		opinion = { modifier = opinion_grateful who = FROM }
+		reverse_opinion = { modifier = TOW_opinion_was_rewarded who = FROM }
+		transfer_scaled_wealth = { to = FROM value = 0.05 min = 5 max = 15 }
+		hidden_tooltip = {
+			FROM = {
+				random_list = {
+					3 = { change_variable = { which = "TOW_adventure_manpower" value = 2 } }
+					4 = { change_variable = { which = "TOW_adventure_manpower" value = 3 } }
+					3 = { change_variable = { which = "TOW_adventure_manpower" value = 4 } }
+				}
+			}
+		}
+		if = {
+			limit = { trait = arbitrary }
+			random = { chance = 60 remove_trait = arbitrary }
+		}
+		if = {
+			limit = { NOT = { trait = just } NOT = { trait = arbitrary } }
+			random = { chance = 20 add_trait = just }
+		}
+	}
+}
+
+### Adventurer's band plunders a province
+character_event = {
+	id = TOG.1221
+
+	hide_window = yes
+
+	has_character_flag = TOW_preparing_adventure
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		
+		NOT = {
+			has_game_rule = {
+				name = adventurers
+				value = none
+			}
+		}
+
+		has_character_flag = TOW_preparing_adventure
+		NOT = { has_character_flag = TOW_adventure_asking_realm }
+		check_variable = { which = "TOW_adventure_manpower" value = 30 }
+		top_liege = {
+			ROOT = { has_character_flag = TOW_adventure_helped_by_@PREV }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 50
+		modifier = { factor = 2 trait = just }
+		modifier = { factor = 0.5 trait = arbitrary }
+		modifier = { factor = 0.4 trait = cruel }
+		modifier = { factor = 0.9 trait = greedy }
+		modifier = { factor = 0.9 trait = craven }
+		modifier = { factor = 0.75 trait = wroth }
+		modifier = { factor = 0.9 trait = deceitful }
+		modifier = { factor = 0.9 trait = impaler }
+		modifier = { factor = 1.5 trait = gregarious }
+		modifier = { factor = 1.5 trait = kind }
+
+		modifier = { factor = 0.95 check_variable = { which = "TOW_adventure_manpower" value = 80 } }
+
+		modifier = { factor = 0.9 NOT = { diplomacy = 8 } }
+		modifier = { factor = 0.9 NOT = { diplomacy = 7 } }
+		modifier = { factor = 0.9 NOT = { diplomacy = 6 } }
+		modifier = { factor = 0.9 NOT = { diplomacy = 5 } }
+		modifier = { factor = 0.9 NOT = { diplomacy = 4 } }
+		modifier = { factor = 0.9 NOT = { diplomacy = 3 } }
+		modifier = { factor = 0.9 NOT = { diplomacy = 2 } }
+		modifier = { factor = 0.9 NOT = { diplomacy = 1 } }
+
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 10 } } }
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 20 } } }
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 30 } } }
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 40 } } }
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 50 } } }
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 60 } } }
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 70 } } }
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 80 } } }
+		modifier = { factor = 1.05 top_liege = { reverse_opinion = { who = ROOT value = 90 } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -9 } } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -19 } } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -29 } } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -39 } } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -49 } } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -59 } } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -69 } } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -79 } } } }
+		modifier = { factor = 0.95 top_liege = { NOT = { reverse_opinion = { who = ROOT value = -89 } } } }
+	}
+	
+	immediate = {
+
+		random_list = {
+			2 = { wealth = 10 }
+			4 = { wealth = 15 }
+			5 = { wealth = 20 }
+			4 = { wealth = 25 }
+			2 = { wealth = 30 }
+		}
+		random_list = {
+			3 = { change_variable = { which = "TOW_adventure_manpower" value = 1 } }
+			3 = { change_variable = { which = "TOW_adventure_manpower" value = 2 } }
+			3 = { change_variable = { which = "TOW_adventure_manpower" value = 3 } }
+		}
+		top_liege = {
+			random_realm_province = {
+				log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] looted the [This.County.GetFullName] owned by [This.Holder.GetBestName] (Top Liege : [Root.TopLiege.GetBestName])."
+				add_province_modifier = {
+					name = TOW_looted_province
+					years = 4
+				}
+				county = { save_event_target_as = looted_province }
+				owner = {
+					if = {
+						limit = {
+							NOT = { character = PREVPREV }
+						}
+						set_character_flag = TOW_adventurer_loot_victim
+						character_event = {
+							id = TOG.1222 # Notify the owner
+						}
+					}
+				}
+			}
+			set_character_flag = TOW_adventurer_loot_liege
+			character_event = {
+				id = TOG.1222 # Notify the top liege
+			}
+		}
+	}
+}
+
+
+## Independent ruler notified that an adventurer looted his lands
+character_event = {
+	id = TOG.1222
+
+	desc = EVTDESC_TOG_1222
+
+	picture = GFX_evt_burning_house
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = { ## What ?!
+		trigger = {
+			has_character_flag = TOW_adventurer_loot_victim
+		}
+		name = "EVTOPTA_TOG_1222"
+		opinion = { modifier = opinion_furious who = FROM }
+	}
+
+	option = { ## Get them out ! NOW !
+		trigger = {
+			has_character_flag = TOW_adventurer_loot_liege
+		}
+		name = "EVTOPTB_TOG_1222"
+		opinion = { modifier = opinion_furious who = FROM }
+		if = {
+			limit = { is_vassal_or_below = FROM }
+			FROM = { banish = yes }
+		}
+	}
+
+
+	after = {
+		clr_character_flag = TOW_adventurer_loot_victim
+		clr_character_flag = TOW_adventurer_loot_liege
 	}
 }
