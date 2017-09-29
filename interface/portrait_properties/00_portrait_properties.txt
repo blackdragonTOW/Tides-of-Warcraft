@@ -297,7 +297,7 @@
 		factor = 100
 		modifier = {
 			factor = 0
-			15 = { # Silvermoon
+			15 = { # Dalaran
 				ROOT = { 
 					location = {
 						NOT = { province = PREVPREV }
@@ -1000,7 +1000,6 @@
 					NOR = {
 						is_tribal = yes
 						is_nomadic = yes
-						religion_group = pagan_group
 					}
 				}
 				has_character_modifier = golden_mask
@@ -1033,7 +1032,6 @@
 				}
 				is_tribal = yes
 				is_nomadic = yes
-				religion_group = pagan_group
 				has_character_modifier = golden_mask
 			}
 		}
@@ -1067,7 +1065,6 @@
 				}
 				is_tribal = yes
 				is_nomadic = yes
-				religion_group = pagan_group
 				has_character_modifier = golden_mask
 			}
 		}
@@ -1088,7 +1085,6 @@
 					NOR = {
 						is_tribal = yes
 						is_nomadic = yes
-						religion_group = pagan_group
 					}
 				}
 				has_character_modifier = golden_mask
@@ -1111,7 +1107,6 @@
 					NOR = {
 						is_tribal = yes
 						is_nomadic = yes
-						religion_group = pagan_group
 					}
 				}
 				has_character_modifier = golden_mask
@@ -1146,15 +1141,6 @@
 				is_nomadic = yes
 			}
 		}
-		modifier = {
-			factor = 0
-			NOR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-				culture = manden
-				culture_group = east_african
-			}
-		}
 	}
 	
 	7 = { # mask 7 bone - black stripes
@@ -1184,15 +1170,6 @@
 				is_nomadic = yes
 			}
 		}
-		modifier = {
-			factor = 0
-			NOR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-				culture = manden
-				culture_group = east_african
-			}
-		}
 	}
 	
 	8 = { # mask 8 bone - red stripes/eyes
@@ -1210,7 +1187,6 @@
 					NOR = {
 						is_tribal = yes
 						is_nomadic = yes
-						religion_group = pagan_group
 					}
 				}
 				has_character_modifier = golden_mask
@@ -1233,7 +1209,6 @@
 					NOR = {
 						is_tribal = yes
 						is_nomadic = yes
-						religion_group = pagan_group
 					}
 				}
 				has_character_modifier = golden_mask
@@ -1266,15 +1241,7 @@
 				}
 				is_tribal = yes
 				is_nomadic = yes
-				religion_group = pagan_group
 				has_character_modifier = golden_mask
-			}
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				culture = manden
-				culture = maghreb_arabic
 			}
 		}
 	}
@@ -1304,7 +1271,6 @@
 				}
 				is_tribal = yes
 				is_nomadic = yes
-				religion_group = pagan_group
 			}
 			NOT = { has_character_modifier = golden_mask }
 		}
@@ -1315,14 +1281,8 @@
 				trait = proud
 				trait = ambitious
 				trait = envious
-				culture = manden
-				culture = maghreb_arabic
 			}
 			NOT = { has_character_modifier = golden_mask }
-		}
-		modifier = {
-			factor = 5
-			has_landed_title = k_papal_state
 		}
 		modifier = {
 			factor = 1000
@@ -1353,7 +1313,6 @@
 					is_married = yes
 					spouse = { NOT = { higher_tier_than = DUKE } }
 				}
-				religion_group = pagan_group
 				has_character_modifier = golden_mask
 			}
 		}
@@ -1382,7 +1341,6 @@
 					is_married = yes
 					spouse = { NOT = { higher_tier_than = DUKE } }
 				}
-				religion_group = pagan_group
 				has_character_modifier = golden_mask
 			}
 		}
@@ -1468,10 +1426,7 @@
 		}
 		modifier = {
 			factor = 3
-			AND = {
-				religion = catholic
-				is_theocracy = yes
-			}
+			is_theocracy = yes
 		}
 	}
 	
@@ -1484,13 +1439,6 @@
 				has_character_modifier = glass_eye
 			}
 		}
-		modifier = {
-			factor = 2
-			OR = {
-				religion = tengri_pagan
-				religion = tengri_pagan_reformed
-			}
-		}
 	}
 	
 	7 = { # eyepatch 7 - green rag
@@ -1501,10 +1449,6 @@
 				NOT = { trait = one_eyed }
 				has_character_modifier = glass_eye
 			}
-		}
-		modifier = {
-			factor = 2
-			religion_group = muslim
 		}
 	}
 	
@@ -1607,7 +1551,7 @@
 # p14 clothes
 14 = {
 	0 = { # Royal clothes 1
-		factor = 1
+		factor = 25
 		modifier = {
 			factor = 0
 			OR = {
@@ -1617,16 +1561,18 @@
 		}
 		modifier = {
 			factor = 0
-			NOT = { real_tier = king }
-			NOT = { real_tier = emperor }
-			NOT = { spouse = { real_tier = king } }
-			NOT = { spouse = { real_tier = emperor } }
-			NOT = { has_minor_title = title_prince }
+			NOR = {
+				real_tier = king
+				real_tier = emperor
+				spouse = { real_tier = king }
+				spouse = { real_tier = emperor }
+				has_minor_title = title_prince
+			}
 		}
 	}
 	
 	1 = { # Royal clothes 2
-		factor = 1
+		factor = 25
 		modifier = {
 			factor = 0
 			OR = {
@@ -1636,16 +1582,18 @@
 		}
 		modifier = {
 			factor = 0
-			NOT = { real_tier = king }
-			NOT = { real_tier = emperor }
-			NOT = { spouse = { real_tier = king } }
-			NOT = { spouse = { real_tier = emperor } }
-			NOT = { has_minor_title = title_prince }
+			NOR = {
+				real_tier = king
+				real_tier = emperor
+				spouse = { real_tier = king }
+				spouse = { real_tier = emperor }
+				has_minor_title = title_prince
+			}
 		}
 	}
 	
 	2 = { # Royal clothes 3
-		factor = 1
+		factor = 25
 		modifier = {
 			factor = 0
 			OR = {
@@ -1655,16 +1603,18 @@
 		}
 		modifier = {
 			factor = 0
-			NOT = { real_tier = king }
-			NOT = { real_tier = emperor }
-			NOT = { spouse = { real_tier = king } }
-			NOT = { spouse = { real_tier = emperor } }
-			NOT = { has_minor_title = title_prince }
+			NOR = {
+				real_tier = king
+				real_tier = emperor
+				spouse = { real_tier = king }
+				spouse = { real_tier = emperor }
+				has_minor_title = title_prince
+			}
 		}
 	}
 	
 	3 = { # Noble clothes 1
-		factor = 1
+		factor = 5
 		modifier = {
 			factor = 0
 			OR = {
@@ -1674,18 +1624,20 @@
 		}
 		modifier = {
 			factor = 0
-			NOT = { real_tier = duke }
-			NOT = { real_tier = count }
-			NOT = { real_tier = baron }
-			NOT = { spouse = { real_tier = duke } }
-			NOT = { spouse = { real_tier = count } }
-			NOT = { spouse = { real_tier = baron } }
-			NOT = { has_minor_title = title_prince }
+			NOR = {
+				real_tier = duke
+				real_tier = count
+				real_tier = baron
+				spouse = { real_tier = duke }
+				spouse = { real_tier = count }
+				spouse = { real_tier = baron }
+				has_minor_title = title_prince
+			}
 		}
 	}
 	
 	4 = { # Noble clothes 2
-		factor = 1
+		factor = 5
 		modifier = {
 			factor = 0
 			OR = {
@@ -1695,18 +1647,20 @@
 		}
 		modifier = {
 			factor = 0
-			NOT = { real_tier = duke }
-			NOT = { real_tier = count }
-			NOT = { real_tier = baron }
-			NOT = { spouse = { real_tier = duke } }
-			NOT = { spouse = { real_tier = count } }
-			NOT = { spouse = { real_tier = baron } }
-			NOT = { has_minor_title = title_prince }
+			NOR = {
+				real_tier = duke
+				real_tier = count
+				real_tier = baron
+				spouse = { real_tier = duke }
+				spouse = { real_tier = count }
+				spouse = { real_tier = baron }
+				has_minor_title = title_prince
+			}
 		}
 	}
 	
 	5 = { # Noble clothes 3
-		factor = 1
+		factor = 5
 		modifier = {
 			factor = 0
 			OR = {
@@ -1716,18 +1670,20 @@
 		}
 		modifier = {
 			factor = 0
-			NOT = { real_tier = duke }
-			NOT = { real_tier = count }
-			NOT = { real_tier = baron }
-			NOT = { spouse = { real_tier = duke } }
-			NOT = { spouse = { real_tier = count } }
-			NOT = { spouse = { real_tier = baron } }
-			NOT = { has_minor_title = title_prince }
+			NOR = {
+				real_tier = duke
+				real_tier = count
+				real_tier = baron
+				spouse = { real_tier = duke }
+				spouse = { real_tier = count }
+				spouse = { real_tier = baron }
+				has_minor_title = title_prince
+			}
 		}
 	}
 	
 	6 = { # Modest clothes 1
-		factor = 1
+		factor = 2
 		modifier = {
 			factor = 0
 			NOT = { trait = peasant_leader }
@@ -1740,15 +1696,10 @@
 				spouse = { real_tier = duke }
 			}
 		}
-		modifier = {
-			factor = 10
-			is_ruler = yes
-			is_theocracy = yes
-			religion_group = pagan_group
-		}
 	}
+
 	7 = { # Modest clothes 2
-		factor = 1
+		factor = 2
 		modifier = {
 			factor = 0
 			NOT = { trait = peasant_leader }
@@ -1764,7 +1715,7 @@
 	}
 	
 	8 = { # Modest clothes 3
-		factor = 1
+		factor = 2
 		modifier = {
 			factor = 0
 			NOT = { trait = peasant_leader }
@@ -1778,90 +1729,260 @@
 			}
 		}
 	}
-	
-	9 = {
-		factor = 1
+
+	9 = { # Shady clothes (Rogue)
+		factor = 3
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+				AND = {
+					has_job_title = job_spymaster
+					OR = {
+						spouse = { real_tier = king }
+						spouse = { real_tier = emperor }
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_job_title = job_spymaster
+				trait = rogue
+				trait = assassin
+			}
+		}
 	}
 	
+	# Martial
 	10 = {
-		factor = 1
+		factor = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				has_job_title = job_marshal
+				primary_title = {
+					OR = {
+						title = d_sunfury
+						# Add military orders here
+					}
+				}
+				has_minor_title = title_commander
+				trait = fighter
+				trait = warrior
+				trait = paladin
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
+		modifier = { # reduce chance to have classes clothes if there are any
+			factor = 0.2
+			OR = {
+				has_job_title = job_marshal
+				primary_title = {
+					OR = {
+						title = d_sunfury
+						# Add military orders here
+					}
+				}
+				has_minor_title = title_commander
+			}
+		}
 	}
 	
+	# Mage
 	11 = {
-		factor = 1
+		factor = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = arcanist
+				trait = mage
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
+
+	# Evil mage
 	12 = {
-		factor = 1
+		factor = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				# TODO : Discovered cases
+				trait = necrolyte
+				trait = warlock
+				trait = necromancer
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 	
+	# Shaman/druid
 	13 = {
-		factor = 1
+		factor = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = shaman
+				trait = druid
+				trait = witch_doctor
+				trait = runemaster
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 	
+	# Priest
 	14 = {
-		factor = 1
+		factor = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = healer
+				trait = priest
+				trait = monk
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 	
+	# Leather
 	15 = {
-		factor = 1
+		factor = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = beastmaster
+				trait = explorer
+				trait = ranger
+				trait = scout
+				trait = demon_hunter
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 
+	# Engineer
 	16 = {
-		factor = 1
+		factor = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = alchemist
+				trait = engineer
+				trait = mechanist
+				trait = techmage
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 
+	# Poor clothes
 	17 = {
-		factor = 1
+		factor = 100
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = peasant_leader
+				trait = heresiarch
+				is_lowborn = no #Actually means "is lowborn"
+				prisoner = no
+			}
+		}
+		modifier = {
+			factor = 0
+			is_landed = yes
+			NOT = { has_character_modifier = the_oubliette }
+		}
 	}
 
+	# Noble clothes
 	18 = {
 		factor = 1
 	}
 
+	# Noble clothes
 	19 = {
 		factor = 1
 	}
 
+	# Noble clothes
 	20 = {
 		factor = 1
 	}
 
+	# Noble clothes
 	21 = {
 		factor = 1
 	}
 
+	# Noble clothes
 	22 = {
 		factor = 1
 	}
 
+	# Noble clothes
 	23 = {
 		factor = 1
 	}
 
+	# Noble clothes
 	24 = {
 		factor = 1
 	}
 
+	# Noble clothes
 	25 = {
 		factor = 1
-		modifier = { # Human female stormwind armor
-			factor = 0
-			graphical_culture = humangfx
-			is_female = yes
-			NOR = {
-				martial = 16
-				has_job_title = job_marshal
-				has_minor_title = title_commander
-			}
-			top_liege = {
-				has_landed_title = k_stormwind
-			}
-		}
 	}
 }
 
 # p15 - Undead
-14 = {
+15 = {
 	0 = {
 		factor = 1
 		modifier = {
@@ -1887,7 +2008,7 @@
 }
 
 # p16 - Undead Type (eyes)
-15 = {
+16 = {
 	0 = {
 		factor = 100
 		modifier = {
