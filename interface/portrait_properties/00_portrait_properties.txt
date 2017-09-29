@@ -311,9 +311,8 @@
 		factor = 20
 		modifier = {
 			factor = 0
-			NOT = { 
-				trait = night_elf
-			}
+			always = yes
+			#NOT = { trait = night_elf }
 		}
 	}
 
@@ -899,24 +898,10 @@
 
 	0 = { # blank
 		factor = 100
-		modifier = {
-			factor = 0
-			OR = {
-				trait = has_bubonic_plague
-			}
-		}
  	}
 
 	1 = { # boils
-		factor = 100
-		modifier = {
-			factor = 0
-			OR = {
-				NOT = {
-					trait = has_bubonic_plague
-				}
-			}
-		}
+		factor = 0
  	}
  	
 }
@@ -1033,13 +1018,6 @@
 				is_tribal = yes
 				is_nomadic = yes
 				has_character_modifier = golden_mask
-			}
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				culture = manden
-				culture = maghreb_arabic
 			}
 		}
 	}
@@ -1498,10 +1476,7 @@
 		modifier = {
 			factor = 0
 			OR = {
-				NAND = {
-					trait = one_eyed
-					culture_group = celtic
-				}
+				NOT = { trait = one_eyed }
 				has_character_modifier = glass_eye
 			}
 		}
