@@ -49,6 +49,7 @@ title_appointed_regent = {
 		prisoner = no
 		NOT = { trait = incapable }
 		has_regent = no
+		TOW_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -192,6 +193,7 @@ title_commander = {
 		NOT = { trait = incapable }
 		NOT = { is_inaccessible_trigger = yes }
 		NOT = { has_character_flag = guru }
+		TOW_can_have_a_job = yes
 	}
 	
 	gain_effect = {
@@ -1150,6 +1152,7 @@ title_councilmember_king = {
 		higher_tier_than = DUKE
 		has_dlc = "Zeus"
 		primary_title = { has_law = law_voting_power_1 }
+		TOW_is_not_using_council_of_six = yes
 	}
 	
 	allowed_to_hold = {
@@ -1157,6 +1160,7 @@ title_councilmember_king = {
 			primary_title = { temporary = yes } 
 		}
 		can_be_councilmember_king_trigger = yes
+		TOW_can_have_a_job = yes
 	}
 	revoke_trigger = {
 		FROM = {
@@ -1196,6 +1200,7 @@ title_councilmember_emperor = {
 		higher_tier_than = KING
 		has_dlc = "Zeus"
 		primary_title = { has_law = law_voting_power_1 }
+		TOW_is_not_using_council_of_six = yes
 	}
 	
 	allowed_to_hold = {
@@ -1203,6 +1208,7 @@ title_councilmember_emperor = {
 			primary_title = { temporary = yes } 
 		}
 		can_be_councilmember_emperor_trigger = yes
+		TOW_can_have_a_job = yes
 	}
 
 	revoke_trigger = {
@@ -1310,6 +1316,7 @@ title_court_physician = {
 		prisoner = no
 		NOT = { trait = in_hiding }
 		NOT = { trait = incapable }
+		TOW_can_have_a_job = yes
 	}
 
 	revoke_trigger = {

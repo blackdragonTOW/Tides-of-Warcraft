@@ -1,0 +1,28 @@
+namespace = TOW_Interactions
+
+#reserved: TOW_Interactions.1
+
+#######################################
+# INTERACTIONS EVENTS
+#######################################
+
+# REQUEST_SUPPORT_ACCEPT_EVENT =
+diploresponse_event = {
+	id = TOW_Interactions.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	major = no
+
+	trigger = {
+	}
+
+	immediate = {
+		# Prevents firing the councillor for a time
+		opinion = {
+			modifier = TOW_opinion_asked_council_support
+			who = FROM
+			months = 18
+		}
+	}
+}

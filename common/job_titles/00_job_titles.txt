@@ -21,6 +21,7 @@ job_chancellor = {
 	
 	allow = {
 		can_be_chancellor_trigger = yes
+		TOW_can_have_a_job = yes
 	}
 	dismiss_trigger = {
 		FROM = {
@@ -30,6 +31,8 @@ job_chancellor = {
 					ROOT = { is_powerful_vassal = yes }
 				}
 			}
+			NOT = { has_opinion_modifier = { who = ROOT modifier = TOW_opinion_asked_council_support } }
+			TOW_is_not_using_council_of_six = yes
 		}
 	}
 	gain_effect = {
@@ -62,6 +65,7 @@ job_marshal = {
 	
 	allow = {
 		can_be_marshal_trigger = yes
+		TOW_can_have_a_job = yes
 	}
 	dismiss_trigger = {
 		FROM = {
@@ -71,6 +75,8 @@ job_marshal = {
 					ROOT = { is_powerful_vassal = yes }
 				}
 			}
+			NOT = { has_opinion_modifier = { who = ROOT modifier = TOW_opinion_asked_council_support } }
+			TOW_is_not_using_council_of_six = yes
 		}
 	}
 	gain_effect = {
@@ -104,6 +110,7 @@ job_treasurer = {
 	
 	allow = {
 		can_be_treasurer_trigger = yes
+		TOW_can_have_a_job = yes
 	}
 	dismiss_trigger = {
 		FROM = {
@@ -113,6 +120,8 @@ job_treasurer = {
 					ROOT = { is_powerful_vassal = yes }
 				}
 			}
+			NOT = { has_opinion_modifier = { who = ROOT modifier = TOW_opinion_asked_council_support } }
+			TOW_is_not_using_council_of_six = yes
 		}
 	}
 	gain_effect = {
@@ -146,6 +155,7 @@ job_spymaster = {
 	
 	allow = {
 		can_be_spymaster_trigger = yes
+		TOW_can_have_a_job = yes
 	}
 	dismiss_trigger = {
 		FROM = {
@@ -155,6 +165,8 @@ job_spymaster = {
 					ROOT = { is_powerful_vassal = yes }
 				}
 			}
+			NOT = { has_opinion_modifier = { who = ROOT modifier = TOW_opinion_asked_council_support } }
+			TOW_is_not_using_council_of_six = yes
 		}
 	}
 	gain_effect = {
@@ -188,6 +200,7 @@ job_spiritual = {
 	
 	allow = {
 		can_be_spiritual_trigger = yes
+		TOW_can_have_a_job = yes
 	}
 	gain_effect = {
 	}
@@ -205,6 +218,8 @@ job_spiritual = {
 					ROOT = { is_powerful_vassal = yes }
 				}
 			}
+			NOT = { has_opinion_modifier = { who = ROOT modifier = TOW_opinion_asked_council_support } }
+			TOW_is_not_using_council_of_six = yes
 		}
 	}
 	

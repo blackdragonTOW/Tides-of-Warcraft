@@ -14,9 +14,9 @@ character_event = {
 			set_character_flag = in_duel
 			set_variable = { which = initiative value = 0 }
 			set_variable = { which = attack value = 0 }
-			export_to_variable = { which = attack which = combat_rating }
+			export_to_variable = { which = attack value = combat_rating }
 			set_variable = { which = defence value = 0 }
-			export_to_variable = { which = defence which = combat_rating }
+			export_to_variable = { which = defence value = combat_rating }
 			set_variable = { which = damage value = 0 }
 			set_variable = { which = hp value = 5 }
 			intiative = yes
@@ -27,12 +27,12 @@ character_event = {
 		set_character_flag = in_duel
 		set_variable = { which = initiative value = 0 }
 		set_variable = { which = attack value = 0 }
-		export_to_variable = { which = attack which = combat_rating }
+		export_to_variable = { which = attack value = combat_rating }
 		set_variable = { which = defence value = 0 }
-		export_to_variable = { which = defence which = combat_rating }
+		export_to_variable = { which = defence value = combat_rating }
 		set_variable = { which = damage value = 0 }
 		set_variable = { which = hp value = 5 }
-		export_to_variable = { which = hp which = health }
+		set_variable = { which = hp which = health }
 		initiative = yes
 		attack = yes
 		defence = yes

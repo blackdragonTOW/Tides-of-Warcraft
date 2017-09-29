@@ -46,7 +46,7 @@ character_event = {
         set_variable = { which = mana_cap value = 0 }
         set_variable = { which = counter value = 0 }
         set_variable = { which = cap value = 0 }
-        export_to_variable = { which = cap which = learning }
+        export_to_variable = { which = cap value = learning }
         while = {
             limit = {
                 NOT = { check_variable = { which = counter which = cap } }

@@ -94,3 +94,37 @@ TOW_holding_can_stop_pillage_by_from_allow = {
 		FROM = { is_tribal = no }
 	}
 }
+
+TOW_can_have_a_job = {
+	custom_tooltip = {
+		text = TOOLTIP_TOW_can_have_a_job
+		hidden_tooltip = {
+			NOT = { has_character_flag = TOW_preparing_adventure }
+		}
+	}
+}
+
+TOW_hasnt_asked_root_for_council_support = {
+	custom_tooltip = {
+		text = TOOLTIP_TOW_hasnt_asked_for_council_support
+		hidden_tooltip = {
+			NOT = { has_opinion_modifier = { who = ROOT modifier = TOW_opinion_asked_council_support } }
+		}
+	}
+}
+
+TOW_is_not_using_council_of_six = {
+	custom_tooltip = {
+		text = TOOLTIP_TOW_is_not_using_council_of_six
+		hidden_tooltip = {
+			NAND = {
+				OR = {
+					has_landed_title = c_dalaran
+					has_landed_title = d_dalaran
+					has_landed_title = k_dalaran
+				}
+				government = kirin_tor_government
+			}
+		}
+	}
+}
