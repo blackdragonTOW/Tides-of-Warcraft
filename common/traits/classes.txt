@@ -1,52 +1,4 @@
 arcanist = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = arcanist
-			trait = necrolyte
-			trait = death_knight
-			trait = demon_hunter
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = techmage
-		}
-		NOT = {	lifestyle_traits = 2 }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_arcanist }
-		learning = 10
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			AND = {
-				culture_group = human
-				OR = {
-					NOT = { has_global_flag = trollwars_bookmark }
-					has_global_flag = trollwar_humans_join
-				}
-			}
-			culture = eredar
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture = dark_iron
-			culture = forsaken
-			culture = scourge
-			trait = ogre_magi
-			culture = draenei
-			culture = broken
-			AND = {
-				is_female = yes
-				culture = naga
-			}
-		}
-	}
 	opposite_opinion = -10
 	opposites = {
 		distrusts_magic
@@ -70,67 +22,6 @@ mage = {
 	arcane_opinion = 10
 	sunwell_opinion = 10
 	shamanism_opinion = -10
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = arcanist
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_mage }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			AND = {
-				culture_group = human
-				OR = {
-					NOT = { has_global_flag = trollwars_bookmark }
-					has_global_flag = trollwar_humans_join
-				}
-			}
-			culture = eredar
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture = dark_iron
-			culture = forsaken
-			culture = scourge
-			trait = ogre_magi
-			culture = draenei
-			culture = broken
-			AND = {
-				is_female = yes
-				culture = naga
-			}
-		}
-	}
 	opposite_opinion = -10
 	opposites = {
 		distrusts_magic
@@ -154,66 +45,6 @@ mage_fake = {
 }
 
 warlock = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = arcanist
-			trait = necrolyte
-			trait = mage
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_warlock }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = dreadlord
-			culture = eredar
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			trait = ogre_magi
-			culture_group = orcish
-			culture = draenei
-			culture = broken
-			culture = lost_one
-			culture = shivarra
-			AND = {
-				is_female = yes
-				culture = naga
-			}
-		}
-	}
 	opposite_opinion = -10
 	opposites = {
 		distrusts_magic
@@ -241,65 +72,6 @@ warlock = {
 }
 
 necromancer = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = arcanist
-			trait = necrolyte
-			trait = mage
-			trait = warlock
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_necromancer }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = eredar
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture = gnoll
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			trait = ogre_magi
-			culture_group = orcish
-			culture = draenei
-			culture = broken
-			culture = lost_one
-			AND = {
-				is_female = yes
-				culture = naga
-			}
-		}
-	}
 	opposite_opinion = -10
 	opposites = {
 		distrusts_magic
@@ -327,45 +99,6 @@ necromancer = {
 }
 
 runemaster = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = {
-			trait = arcanist
-			trait = healer
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_runemaster }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			trait = ogre_magi
-		}
-	}
 	opposite_opinion = -10
 	opposites = {
 		distrusts_magic
@@ -376,58 +109,6 @@ runemaster = {
 }
 
 necrolyte = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = necrolyte
-			trait = death_knight
-			trait = demon_hunter
-			trait = paladin
-			trait = warlock
-			trait = necromancer
-			trait = arcanist
-			trait = healer
-		}
-		NOT = {	lifestyle_traits = 2 }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_necrolyte }
-		learning = 10
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			AND = {
-				culture_group = human
-				OR = {
-					NOT = { has_global_flag = trollwars_bookmark }
-					has_global_flag = trollwar_humans_join
-				}
-			}
-			culture = dreadlord
-			culture = eredar
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture = dark_iron
-			culture = forsaken
-			culture = scourge
-			trait = ogre_magi
-			culture_group = orcish
-			culture = gnoll
-			culture = draenei
-			culture = broken
-			culture = lost_one
-			culture = shivarra
-			AND = {
-				is_female = yes
-				culture = naga
-			}
-		}
-	}
 	opposite_opinion = -10
 	opposites = {
 		distrusts_magic
@@ -461,55 +142,6 @@ necrolyte = {
 }
 
 healer = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = {
-			trait = healer
-			trait = death_knight
-			trait = demon_hunter
-			trait = necrolyte
-			trait = warlock
-			trait = necromancer
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-		}
-		NOT = {	lifestyle_traits = 2 }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_healer }
-		learning = 10
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			trait = ogre_magi
-			culture_group = orcish
-			culture = murloc
-			culture = gnoll
-			culture = kobold
-			culture = trogg
-			culture = draenei
-			culture = broken
-			culture = lost_one
-			culture = shivarra
-			AND = {
-				is_female = yes
-				culture = naga
-			}
-		}
-	}
 	lifestyle = yes
 	random = yes
 	learning = 1
@@ -522,77 +154,6 @@ healer_fake = {
 }
 
 priest = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = healer
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_priest }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			religion_group = light_group
-			religion_group = void_group
-			religion_group = goblin_group
-			religion_group = fel_group
-			religion = sunwell
-			religion = azshara
-		}
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			AND = {
-				culture_group = human
-				OR = {
-					NOT = { has_global_flag = trollwars_bookmark }
-					has_global_flag = holy_light_founded
-				}
-			}
-			culture = high_elven
-			culture = blood_elven
-			culture = gnomish
-			culture = goblin
-			culture = bronzebeard
-			culture = forsaken
-			culture = scourge
-			trait = ogre_magi
-			culture = draenei
-			culture = shivarra
-			AND = {
-				is_female = yes
-				culture = naga
-			}
-		}
-	}
 	lifestyle = yes
 	random = yes
 	learning = 3
@@ -605,71 +166,6 @@ priest_fake = {
 }
 
 shaman = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = healer
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_shaman }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			religion_group = elemental_group
-			religion = old_gods
-			religion = twilights_hammer
-			religion = cult_of_the_infinite
-			religion = cult_of_the_destroyer
-			religion = emerald_nightmare
-			religion = mercantilism
-		}
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			AND = {
-				culture_group = human
-				has_global_flag = human_shamanism
-			}
-			culture_group = orcish
-			culture = goblin
-			culture = wildhammer
-			culture = murloc
-			culture = kobold
-			culture = gnoll
-			culture = trogg
-			culture = draenei
-			culture = broken
-			culture = lost_one
-		}
-	}
 	lifestyle = yes
 	random = yes
 	learning = 3
@@ -682,67 +178,6 @@ shaman_fake = {
 }
 
 druid = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = healer
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_druid }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			religion_group = elemental_group
-			religion_group = wild_gods_group
-			religion = old_gods
-			religion = twilights_hammer
-			religion = emerald_nightmare
-			religion = cult_of_the_dreamer
-			religion = druidism
-		}
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = troll
-			culture = lost_one
-			AND = {
-				religion = druidism
-				has_global_flag = sunwell_embraced_nature
-				OR = {
-					culture = high_elven
-					culture = blood_elven
-				}
-			}
-		}
-	}
 	lifestyle = yes
 	random = yes
 	learning = 2
@@ -756,48 +191,6 @@ druid_fake = {
 }
 
 witch_doctor = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = healer
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_witch_doctor }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = troll
-			trait = ogre_magi
-			culture = murloc
-			culture = lost_one
-		}
-	}
 	opposite_opinion = -10
 	opposites = {
 		distrusts_magic
@@ -818,116 +211,12 @@ witch_doctor_fake = {
 }
 
 alchemist = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = {
-			trait = healer
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_alchemist }
-		learning = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			trait = ogre_magi
-			culture_group = orcish
-			culture = draenei
-			culture = broken
-			AND = {
-				is_female = yes
-				culture = naga
-			}
-		}
-	}
 	lifestyle = yes
 	random = yes
 	learning = 3
 }
 
 scout = {
-	potential = {
-		NOT = { trait = blinded }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = scout
-			trait = death_knight
-			trait = demon_hunter
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-		}
-		NOT = {	lifestyle_traits = 2 }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_scout }
-		learning = 10
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			culture_group = ogre
-			culture_group = orcish
-			culture = murloc
-			culture = gnoll
-			culture = kobold
-			culture = trogg
-			culture = eredar
-			culture = succubus
-			culture = dreadlord
-			culture = draenei
-			culture = broken
-			culture = lost_one
-			culture = shivarra
-			AND = {
-				is_female = no
-				culture = naga
-			}
-		}
-	}
 	lifestyle = yes
 	random = yes
 	stewardship = 1
@@ -940,66 +229,6 @@ scout_fake = {
 }
 
 assassin = {
-	potential = {
-		NOT = { trait = blinded }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = scout
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_assassin }
-		intrigue = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			culture_group = orcish
-			culture = murloc
-			culture = gnoll
-			culture = kobold
-			culture = succubus
-			culture = dreadlord
-			culture = shivarra
-			culture = broken
-			culture = lost_one
-			AND = {
-				is_female = no
-				culture = naga
-			}
-		}
-	}
 	lifestyle = yes
 	random = yes
 	intrigue = 3
@@ -1022,63 +251,6 @@ assassin = {
 }
 
 rogue = {
-	potential = {
-		NOT = { trait = blinded }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = scout
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_rogue }
-		intrigue = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			culture_group = orcish
-			culture = murloc
-			culture = gnoll
-			culture = kobold
-			AND = {
-				is_female = no
-				culture = naga
-			}
-			culture = lost_one
-			culture = broken
-		}
-	}
 	lifestyle = yes
 	random = yes
 	intrigue = 3
@@ -1101,166 +273,18 @@ rogue = {
 }
 
 beastmaster = {
-	potential = {
-		NOT = { trait = blinded }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = scout
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_beastmaster }
-		stewardship = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = goblin
-			culture_group = dwarf
-			culture_group = orcish
-			culture = murloc
-			culture = gnoll
-			culture_group = ogre
-			AND = {
-				is_female = no
-				culture = naga
-			}
-			culture = draenei
-			culture = broken
-			culture = lost_one
-		}
-	}
 	lifestyle = yes
 	random = yes
 	stewardship = 2
 }
 
 explorer = {
-	potential = {
-		NOT = { trait = blinded }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = scout
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_explorer }
-		stewardship = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = draenei
-		}
-	}
 	lifestyle = yes
 	random = yes
 	stewardship = 3
 }
 
 ranger = {
-	potential = {
-		NOT = { trait = blinded }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = scout
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_ranger }
-		stewardship = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			culture = eredar
-			culture = draenei
-			culture = broken
-		}
-	}
 	lifestyle = yes
 	random = yes
 	stewardship = 1
@@ -1268,169 +292,24 @@ ranger = {
 }
 
 tinker = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = {
-			trait = tinker
-			trait = death_knight
-			trait = demon_hunter
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-		}
-		NOT = {	lifestyle_traits = 2 }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_tinker }
-		stewardship = 10
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture = gnomish
-			culture = goblin
-		}
-	}
 	lifestyle = yes
 	random = yes
 	stewardship = 1
 }
 
 engineer = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = {
-			trait = tinker
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_engineer }
-		stewardship = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture = goblin
-			culture = gnomish
-		}
-	}
 	lifestyle = yes
 	random = yes
 	learning = 3
 }
 
 mechanist = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = {
-			trait = tinker
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_mechanist }
-		stewardship = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture = goblin
-			culture = gnomish
-		}
-	}
 	lifestyle = yes
 	random = yes
 	stewardship = 2
 }
 
 techmage = {
-	potential = {
-		NOT = { trait = imbecile }
-		NOT = { trait = distrusts_magic }
-		NOT = {
-			trait = tinker
-			trait = arcanist
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = warrior
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_techmage }
-		OR = {
-			stewardship = 15
-			learning = 15
-		}
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture = goblin
-			culture = gnomish
-		}
-	}
 	opposite_opinion = -10
 	opposites = {
 		distrusts_magic
@@ -1451,203 +330,18 @@ techmage_fake = {
 }
 
 fighter = {
-	potential = {
-		NOT = { trait = weak }
-		NOT = { trait = feeble }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = fighter
-			trait = death_knight
-			trait = demon_hunter
-			trait = warrior
-			trait = paladin
-			trait = monk
-		}
-		NOT = {	lifestyle_traits = 2 }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_fighter }
-		martial = 10
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			culture_group = ogre
-			culture_group = orcish
-			culture = murloc
-			culture = gnoll
-			culture = kobold
-			culture = trogg
-			culture = eredar
-			culture = draenei
-			culture = broken
-			culture = lost_one
-			culture = pit_lord
-			culture = doomlord
-			culture = fel_lord
-			AND = {
-				is_female = no
-				culture = naga
-			}
-		}
-	}
 	lifestyle = yes
 	random = yes
 	combat_rating = 1
 }
 
 warrior = {
-	potential = {
-		NOT = { trait = weak }
-		NOT = { trait = feeble }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = fighter
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = paladin
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_warrior }
-		martial = 15
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			culture_group = human
-			culture = high_elven
-			culture = blood_elven
-			culture_group = troll
-			culture = gnomish
-			culture = goblin
-			culture_group = dwarf
-			culture = forsaken
-			culture = scourge
-			culture_group = ogre
-			culture_group = orcish
-			culture = murloc
-			culture = gnoll
-			culture = kobold
-			culture = trogg
-			culture = eredar
-			AND = {
-				is_female = no
-				culture = naga
-			}
-			culture = fel_lord
-			culture = pit_lord
-			culture = doomlord
-			culture = draenei
-			culture = broken
-			culture = lost_one
-		}
-	}
 	lifestyle = yes
 	random = yes
 	combat_rating = 3
 }
 
 paladin = {
-	potential = {
-		NOT = { trait = weak }
-		NOT = { trait = feeble }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = fighter
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = monk
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_paladin }
-		OR = {
-			martial = 15
-			learning = 15
-		}
-		OR = {
-			has_game_rule = {
-				name = class_requirements
-				value = unrestricted
-			}
-			AND = {
-				NOT = { always = yes } #paladins exist
-				OR = {
-					AND = {
-						culture_group = human
-						OR = {
-							religion_group = light_group
-							has_landed_title = d_tyrs_guard
-							any_liege = {
-								has_landed_title = d_tyrs_guard
-							}
-							society_member_of = tyrs_guard_society
-						}
-					}
-					AND = {
-						culture = bronzebeard
-						religion_group = light_group
-					}
-				}
-			}
-			AND = {
-				religion_group = light_group
-				culture = draenei
-			}
-			AND = {
-				NOT = { always = yes } #blood knights exist
-				culture = blood_elven
-				religion = sunwell
-			}
-		}
-	}
 	lifestyle = yes
 	random = yes
 	combat_rating = 2
@@ -1655,43 +349,6 @@ paladin = {
 }
 
 monk = {
-	potential = {
-		NOT = { trait = weak }
-		NOT = { trait = feeble }
-		NOT = { trait = inbred }
-		NOT = {
-			trait = fighter
-			trait = mage
-			trait = warlock
-			trait = necromancer
-			trait = runemaster
-			trait = priest
-			trait = shaman
-			trait = druid
-			trait = witch_doctor
-			trait = alchemist
-			trait = assassin
-			trait = rogue
-			trait = beastmaster
-			trait = explorer
-			trait = ranger
-			trait = engineer
-			trait = mechanist
-			trait = techmage
-			trait = warrior
-			trait = paladin
-			trait = death_knight
-			trait = demon_hunter
-		}
-		NOT = {	has_character_flag = has_adv_class }
-		NOT = {	has_character_flag = ct_class_start }
-		NOT = { has_character_flag = refused_monk }
-		martial = 15
-		has_game_rule = {
-			name = class_requirements
-			value = unrestricted
-		}
-	}
 	lifestyle = yes
 	random = yes
 	combat_rating = 2
