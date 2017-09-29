@@ -1894,15 +1894,26 @@
 			NOR = {
 				trait = peasant_leader
 				trait = heresiarch
-				is_lowborn = no #Actually means "is lowborn"
-				prisoner = no
+				prisoner = yes
+				dynasty = none
 			}
+			NOT = { has_character_modifier = the_oubliette }
 		}
 		modifier = {
 			factor = 0
-			is_landed = yes
+			OR = {
+				is_landed = yes
+				spouse = { is_landed = yes }
+				wealth = 200
+			}
 			NOT = { has_character_modifier = the_oubliette }
 		}
+		modifier = {
+			factor = 0.01
+			wealth = 50
+			prisoner = no
+		}
+
 	}
 
 	# Noble clothes
