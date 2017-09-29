@@ -870,7 +870,6 @@ defined_text = {
 		trigger = { 
 			OR = {
 				trait = lunatic
-				trait = possessed
 				trait = rabies
 			}
 		}
@@ -1100,21 +1099,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			trait = possessed
-			is_female = no
+			trait = warlock
 		}
 		localisation_key = INSULT_WARLOCK
-	}
-	text = {
-		trigger = {
-			trait = possessed
-			is_female = yes
-		}
-		localisation_key = INSULT_DEVIL_WOMAN
-	}
-	text = {
-		trigger = { trait = possessed }
-		localisation_key = INSULT_DEVIL
 	}
 	text = {
 		trigger = { trait = leper }

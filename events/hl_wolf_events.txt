@@ -940,10 +940,6 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
-			trait = possessed
-		}
-		modifier = {
-			factor = 1.5
 			trait = gluttonous
 		}
 		modifier = {
@@ -1006,7 +1002,7 @@ character_event = {
 	}
 }
 
-# Howling at the moon (not if possessed or lunatic)
+# Howling at the moon (not if lunatic)
 character_event = {
 	id = HL.1510
 	desc = EVTDESC_HL_1510
@@ -1019,7 +1015,6 @@ character_event = {
 
 	trigger = {
 		has_character_modifier = wolf_blood
-		NOT = { trait = possessed }
 		NOT = { trait = lunatic }
 		NOT = { has_character_flag = wolf_howled_at_moon }
 	}

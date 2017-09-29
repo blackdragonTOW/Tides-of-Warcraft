@@ -54,12 +54,19 @@
 # 91 - Otter				- 92
 # 93 - Hedgehog				- 94
 
+# game\gfx\interface\modifier_icons.dds
+
+#Variables:
+#  is_visible: trigger, root is viewer, from is holder. Decides if the viewer can see this trait on holder, default is yes
+
 ##########################
-# Adventure modifiers
+# Remove levy (Raising troops)
 ##########################
 
-TOW_looted_province = {
+TOW_remove_levy_30 = {
+	is_visible = {
+		ROOT = { ai = yes }
+	}
+	levy_size = -0.30
 	icon = 31
-	levy_size = -0.05
-	local_tax_modifier = -0.15
 }

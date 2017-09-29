@@ -1978,7 +1978,6 @@ targetted_decisions = {
 				trait = undead_forsaken
 				trait = undead_scourge
 			}
-			distance = { who = ROOT value = 500 } # I have no idea
 		}
 		potential = {
 			independent = yes
@@ -1999,6 +1998,7 @@ targetted_decisions = {
 					NOT = { character = ROOT }
 				}
 			}
+			ROOT = { distance_from_realm = { who = FROM value = 500 } } # I have no idea
 		}
 		allow = {
 			FROM = {

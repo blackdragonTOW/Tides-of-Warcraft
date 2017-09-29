@@ -496,6 +496,7 @@ title_decisions = {
 			location = {
 				any_province_holding = {
 					TOW_holding_can_be_pillaged_by_from = yes
+					hidden_tooltip = { NOT = { holding_type = nomad } } # For some reason, without this, the scripted trigger causes an assert
 				}
 			}
 		}

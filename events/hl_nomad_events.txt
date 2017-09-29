@@ -367,10 +367,7 @@ character_event = { # Notification event that a holding is destroyed
 	option = {
 		name = EVTOPTC_HL_4814
 		trigger = {
-			OR = {
-				trait = zealous
-				trait = possessed
-			}
+			trait = zealous
 			event_target:target_location = {
 				NOT = {
 					any_province_holding = {

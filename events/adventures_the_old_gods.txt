@@ -35,8 +35,6 @@ character_event = {
 			is_female = no
 			liege = { has_law = status_of_women_4 }
 			liege = { has_law = true_cognatic_succession }
-			liege = { religion = cathar }
-			liege = { religion = messalian }
 			has_game_rule = {
 				name = gender
 				value = all
@@ -94,16 +92,8 @@ character_event = {
 			trait = brave
 		}
 		modifier = {
-			factor = 0.75
-			trait = born_in_the_purple
-		}
-		modifier = {
 			factor = 0.85
 			trait = proud
-		}
-		modifier = {
-			factor = 0.85
-			trait = sayyid
 		}
 		modifier = {
 			factor = 1.5
@@ -522,8 +512,7 @@ character_event = {
 			is_female = no
 			liege = { has_law = status_of_women_4 }
 			liege = { has_law = true_cognatic_succession }
-			liege = { religion = cathar }
-			liege = { religion = messalian }
+
 			has_game_rule = {
 				name = gender
 				value = all
@@ -552,17 +541,11 @@ character_event = {
 		NOT = { trait = craven }
 		
 		OR = { # Only these for now
-			culture_group = north_germanic
-			culture_group = west_germanic
-			culture_group = altaic
-			culture = norman
-			culture = frankish
-			culture = breton
-			culture = catalan
-			AND = {
-				culture = hungarian
-				NOT = { year = 1066 }
-			}
+			culture_group = human
+			culture_group = orcish
+			culture_group = dwarf
+			culture_group = elf
+			culture_group = troll
 			has_character_flag = demon_child_non_pagan
 		}
 		
@@ -637,19 +620,6 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			trait = ambitious
-		}
-		modifier = {
-			factor = 0.5
-			OR = {
-				AND = {
-					culture = norman
-					NOT = { year = 1250 }
-				}
-				AND = {
-					culture_group = north_germanic
-					NOT = { year = 1066 }
-				}
-			}
 		}
 		modifier = {
 			factor = 0.2
@@ -743,10 +713,6 @@ character_event = {
 					OR = {
 						AND = {
 							port = yes
-							ROOT = {
-								NOT = { culture_group = altaic }
-								NOT = { culture = hungarian }
-							}
 							NOT = {
 								distance = {
 									who = ROOT
@@ -758,14 +724,6 @@ character_event = {
 							owner = {
 								same_realm = ROOT
 							}
-						}
-					}
-					NOT = {
-						region = world_europe_north
-					}
-					NOT = {
-						duchy = {
-							title = d_bjarmia
 						}
 					}
 				}
@@ -782,10 +740,6 @@ character_event = {
 					OR = {
 						AND = {
 							port = yes
-							ROOT = {
-								NOT = { culture_group = altaic }
-								NOT = { culture = hungarian }
-							}
 							NOT = {
 								distance = {
 									who = ROOT
@@ -797,14 +751,6 @@ character_event = {
 							owner = {
 								same_realm = ROOT
 							}
-						}
-					}
-					NOT = {
-						region = world_europe_north
-					}
-					NOT = {
-						duchy = {
-							title = d_bjarmia
 						}
 					}
 				}
@@ -890,25 +836,11 @@ character_event = {
 			NOT = { is_vassal_or_below = ROOT }
 			any_realm_province = {
 				OR = {
-					AND = {
-						port = yes
-						ROOT = {
-							NOT = { culture_group = altaic }
-							NOT = { culture = hungarian }
-						}
-					}
+					port = yes
 					any_neighbor_province = {
 						owner = {
 							same_realm = ROOT
 						}
-					}
-				}
-				NOT = {
-					region = world_europe_north
-				}
-				NOT = {
-					duchy = {
-						title = d_bjarmia
 					}
 				}
 			}
@@ -946,25 +878,11 @@ character_event = {
 						NOT = { is_vassal_or_below = ROOT }
 						any_realm_province = {
 							OR = {
-								AND = {
-									port = yes
-									ROOT = {
-										NOT = { culture_group = altaic }
-										NOT = { culture = hungarian }
-									}
-								}
+								port = yes
 								any_neighbor_province = {
 									owner = {
 										same_realm = ROOT
 									}
-								}
-							}
-							NOT = {
-								region = world_europe_north
-							}
-							NOT = {
-								duchy = {
-									title = d_bjarmia
 								}
 							}
 						}
@@ -982,25 +900,11 @@ character_event = {
 					random_realm_province = {
 						limit = {
 							OR = {
-								AND = {
-									port = yes
-									ROOT = {
-										NOT = { culture_group = altaic }
-										NOT = { culture = hungarian }
-									}
-								}
+								port = yes
 								any_neighbor_province = {
 									owner = {
 										same_realm = ROOT
 									}
-								}
-							}
-							NOT = {
-								region = world_europe_north
-							}
-							NOT = {
-								duchy = {
-									title = d_bjarmia
 								}
 							}
 						}
@@ -1084,21 +988,14 @@ character_event = {
 			age = 25
 		}
 		
-		if  = {
-			limit = {
-				NOT = { culture_group = altaic }
-				NOT = { culture = hungarian }
-			}
-			
-			# Create a fleet, just to be sure
-			spawn_fleet = {
-				province = closest # closest sea zone
-				owner = ROOT
-				disband_on_peace = yes
-				troops =
-				{
-					galleys = { 200 200 }
-				}
+		# Create a fleet, just to be sure
+		spawn_fleet = {
+			province = closest # closest sea zone
+			owner = ROOT
+			disband_on_peace = yes
+			troops =
+			{
+				galleys = { 200 200 }
 			}
 		}
 	}

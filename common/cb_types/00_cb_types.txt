@@ -278,21 +278,21 @@ other_claim = {
 	infamy_modifier = 0.5
 
 	can_use = {
-		is_nomadic = no
 		FROM = { is_nomadic = no }
 		ROOT = {
 			mercenary = no
-		}
-		OR = {
-			NOR = {
-				trait = troll_jungle
-				trait = troll_forest
-				trait = troll_sand
-				trait = troll_dark
-				trait = troll_ice
-				trait = troll_zandalari
+			is_nomadic = no
+			OR = {
+				NOR = {
+					trait = troll_jungle
+					trait = troll_forest
+					trait = troll_sand
+					trait = troll_dark
+					trait = troll_ice
+					trait = troll_zandalari
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
 		}
 	}
 
@@ -641,18 +641,20 @@ claim_on_liege = {
 	infamy_modifier = 0.85
 	
 	can_use = {
-		is_nomadic = no
 		FROM = { is_nomadic = no }
-		OR = {
-			NOR = {
-				trait = troll_jungle
-				trait = troll_forest
-				trait = troll_sand
-				trait = troll_dark
-				trait = troll_ice
-				trait = troll_zandalari
+		ROOT = {
+			is_nomadic = no
+			OR = {
+				NOR = {
+					trait = troll_jungle
+					trait = troll_forest
+					trait = troll_sand
+					trait = troll_dark
+					trait = troll_ice
+					trait = troll_zandalari
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
 		}
 	}
 
@@ -954,18 +956,20 @@ claim_on_liege_plot = {
 	infamy_modifier = 0.85
 	
 	can_use = {
-		is_nomadic = no
 		FROM = { is_nomadic = no }
-		OR = {
-			NOR = {
-				trait = troll_jungle
-				trait = troll_forest
-				trait = troll_sand
-				trait = troll_dark
-				trait = troll_ice
-				trait = troll_zandalari
+		ROOT = {
+			is_nomadic = no
+			OR = {
+				NOR = {
+					trait = troll_jungle
+					trait = troll_forest
+					trait = troll_sand
+					trait = troll_dark
+					trait = troll_ice
+					trait = troll_zandalari
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
 		}
 	}
 
@@ -1200,18 +1204,20 @@ claim_on_vassal_plot = {
 	infamy_modifier = 0.85
 	
 	can_use = {
-		is_nomadic = no
 		FROM = { is_nomadic = no }
-		OR = {
-			NOR = {
-				trait = troll_dark
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_jungle
-				trait = troll_sand
-				trait = troll_zandalari
+		ROOT = {
+			is_nomadic = no
+			OR = {
+				NOR = {
+					trait = troll_dark
+					trait = troll_forest
+					trait = troll_ice
+					trait = troll_jungle
+					trait = troll_sand
+					trait = troll_zandalari
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
 		}
 	}
 
@@ -1363,18 +1369,20 @@ other_claim_on_liege = {
 	infamy_modifier = 0.5
 	
 	can_use = {
-		is_nomadic = no
 		FROM = { is_nomadic = no }
-		OR = {
-			NOR = {
-				trait = troll_dark
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_jungle
-				trait = troll_sand
-				trait = troll_zandalari
+		ROOT = {
+			is_nomadic = no
+			OR = {
+				NOR = {
+					trait = troll_dark
+					trait = troll_forest
+					trait = troll_ice
+					trait = troll_jungle
+					trait = troll_sand
+					trait = troll_zandalari
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
 		}
 	}
 
@@ -1761,20 +1769,20 @@ claim_all = {
 				strong = yes # Count only strong claims
 				value = 2
 			}
-		}
-		is_nomadic = no
-		FROM = { is_nomadic = no }
-		OR = {
-			NOR = {
-				trait = troll_dark
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_jungle
-				trait = troll_sand
-				trait = troll_zandalari
+			is_nomadic = no
+			OR = {
+				NOR = {
+					trait = troll_dark
+					trait = troll_forest
+					trait = troll_ice
+					trait = troll_jungle
+					trait = troll_sand
+					trait = troll_zandalari
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
 		}
+		FROM = { is_nomadic = no }
 	}
 	
 	can_use_gui = {
@@ -6237,31 +6245,35 @@ dejure_county_claim = {
 	infamy_modifier = 0.5
 	
 	can_use = {
-		OR = {
-			NOR = {
-				trait = troll_jungle
-				trait = troll_zandalari
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_dark
-				trait = troll_sand
+		ROOT = {
+			OR = {
+				NOR = {
+					trait = troll_jungle
+					trait = troll_zandalari
+					trait = troll_forest
+					trait = troll_ice
+					trait = troll_dark
+					trait = troll_sand
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
+			is_nomadic = no
 		}
-		is_nomadic = no
 		FROM = {
 			is_nomadic = no
 		}
 	}
 	
 	can_use_gui = {
-		OR = {
-			NOT = { trait = gnome }
-			AND = {
-				trait = gnome
-				OR = {
-					trait = undead_forsaken
-					prestige = 50
+		ROOT = {
+			OR = {
+				NOT = { trait = gnome }
+				AND = {
+					trait = gnome
+					OR = {
+						trait = undead_forsaken
+						prestige = 50
+					}
 				}
 			}
 		}
@@ -6318,15 +6330,17 @@ dejure_county_claim = {
 	}
 
 	on_add = {
-		if = {
-			limit = {
-				trait = gnome
-				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+		ROOT = {
+			if = {
+				limit = {
+					trait = gnome
+					NOT = {
+						trait = undead_scourge
+						trait = undead_forsaken
+					}
 				}
+				prestige = -50
 			}
-			prestige = -50
 		}
 	}
 	
@@ -6474,18 +6488,20 @@ dejure_barony_claim = {
 			NOT = { is_vassal_or_below = ROOT }
 			holy_order = no
 		}
-		OR = {
-			NOR = {
-				trait = troll_jungle
-				trait = troll_zandalari
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_dark
-				trait = troll_sand
+		ROOT = {
+			OR = {
+				NOR = {
+					trait = troll_jungle
+					trait = troll_zandalari
+					trait = troll_forest
+					trait = troll_ice
+					trait = troll_dark
+					trait = troll_sand
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
+			is_nomadic = no
 		}
-		is_nomadic = no
 		FROM = {
 			is_nomadic = no
 		}
@@ -6687,25 +6703,27 @@ other_dejure_county_claim = {
 		NOT = {
 			character = ROOT
 		}
-		OR = {
-			NOR = {
-				trait = troll_jungle
-				trait = troll_zandalari
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_dark
-				trait = troll_sand
+		ROOT = {
+			OR = {
+				NOR = {
+					trait = troll_jungle
+					trait = troll_zandalari
+					trait = troll_forest
+					trait = troll_ice
+					trait = troll_dark
+					trait = troll_sand
+				}
+				trait = undead_forsaken
 			}
-			trait = undead_forsaken
+			is_nomadic = no
+			mercenary = no
 		}
-		is_nomadic = no
 		FROM = {
 			is_nomadic = no
 		}
 		FROM = {
 			holy_order = no
 		}		
-		mercenary = no
 	}
 
 	can_use_title = {
