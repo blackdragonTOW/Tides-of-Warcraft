@@ -158,23 +158,22 @@ province_event = {
 		religion = holy_light
 		owner = {
 			religion = holy_light
-			trait = human
 			NOR = {
 				trait = undead_scourge
 				trait = undead_forsaken
 				trait = undead_generic
 				trait = felsworn
 			}
+			trait = human
 		}
 		any_province_lord = {
 			is_adult = yes
 			is_feudal = yes
-			is_female = no
 			NOT = { trait = incapable }
 		}
 		any_province_lord = {
-			NOT = { trait = incapable }
 			is_theocracy = yes
+			NOT = { trait = incapable }
 		}
 	}
 	
@@ -188,7 +187,6 @@ province_event = {
 			limit = {
 				is_adult = yes
 				is_feudal = yes
-				is_female = no
 				NOT = { trait = incapable }
 			}
 			save_event_target_as = target_feudal

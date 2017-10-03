@@ -3917,13 +3917,6 @@ character_event = {
 				random = {
 					chance = 10
 					if = {
-						limit = { NOT = { trait = possessed } }
-						character_event = { id = 38315 }
-					}
-				}
-				random = {
-					chance = 10
-					if = {
 						limit = { NOT = { trait = lunatic } }
 						character_event = { id = 38304 }
 					}
@@ -3960,13 +3953,6 @@ character_event = {
 					duration = 1825
 				}
 			hidden_tooltip = {
-				random = {
-					chance = 10
-					if = {
-						limit = { NOT = { trait = possessed } }
-						character_event = { id = 38315 }
-					}
-				}
 				random = {
 					chance = 10
 					if = {

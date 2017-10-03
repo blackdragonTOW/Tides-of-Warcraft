@@ -476,7 +476,6 @@ focus_hunting = {
 	allow = {
 		is_adult = yes
 		NOT = { trait = incapable }
-		NOT = { religion = jain }
 		prisoner = no
 		NOR = {
 			trait = druid
@@ -1040,10 +1039,6 @@ focus_theology = {
 		}
 		modifier = {
 			factor = 3.0
-			trait = mystic
-		}
-		modifier = {
-			factor = 3.0
 			trait = zealous
 		}
 		modifier = {
@@ -1057,10 +1052,6 @@ focus_theology = {
 		always = no
 	}
 	creation_effect = {
-		if = {
-			limit = { has_quest = quest_monastic_order_theology_focus }
-			character_event = { id = MNM.4016 }
-		}
 	}
 	
 	abort = {

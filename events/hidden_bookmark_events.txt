@@ -118,16 +118,18 @@ character_event = {
 				name = deadwind_borderlands duration = -1
 			}
 		}
-		c_grim_batol = {
-			location = {
-				limit = {
-					NOR = {
-						has_global_flag = trollwars_bookmark
-						has_global_flag = threehammers_bookmark
-					}
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = trollwars_bookmark
+					has_global_flag = threehammers_bookmark
 				}
-				add_province_modifier = {
-					name = grim_batol_curse duration = -1
+			}
+			c_grim_batol = {
+				location = {
+					add_province_modifier = {
+						name = grim_batol_curse duration = -1
+					}
 				}
 			}
 		}

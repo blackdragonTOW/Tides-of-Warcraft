@@ -14,6 +14,17 @@
 				government = troll_bcd_government
 			}
 		}
+		modifier = {
+			factor = 10
+			OR = {
+				is_landed = yes
+				spouse = { is_landed = yes }
+			}
+		}
+		modifier = {
+			factor = 0
+			in_command = yes
+		}
 	}
 
 	1 = { #throne room
@@ -31,6 +42,10 @@
 				government = troll_bcd_government
 			}
 		}
+		modifier = {
+			factor = 0
+			in_command = yes
+		}
 	}
 
 	2 = { # dungeon
@@ -47,14 +62,7 @@
 		modifier = {
 			factor = 0
 			NOT = { location = { terrain = forest } }
-		}
-		modifier = {
-			factor = 5
-			OR = {
-				is_nomadic = yes
-				is_tribal = yes
-				government = troll_bcd_government
-			}
+			NOT = { location = { terrain = woods } }
 		}
 	}
 
@@ -80,6 +88,10 @@
 			trait = infirm
 			is_alive = yes
 		}
+		modifier = {
+			factor = 0
+			in_command = yes
+		}
 	}
 	
 	5 = { # tavern
@@ -94,10 +106,14 @@
 				}
 			}
 		}
+		modifier = {
+			factor = 0
+			in_command = yes
+		}
 	}
 	
 	6 = { # military camp
-		factor = 100
+		factor = 3
 		modifier = {
 			factor = 0
 			OR = {
@@ -113,37 +129,34 @@
 			}
 		}
 		modifier = {
-			factor = 0.02
+			factor = 2
 			has_job_title = job_marshal
 		}
 	}
 	
-	7 = { # Dolmen
+	7 = { # Plains
 		factor = 1
 		modifier = {
-			factor = 0
-			always = yes
+			factor = 4
+			location = {
+				OR = {
+					terrain = plains
+					terrain = hills
+				}
+			}
 		}
 	}
 	
-	8 = { # Gallows
-		factor = 1
+	8 = { # Marsh
+		factor = 0.5
 		modifier = {
-			factor = 0
-			always = yes
+			factor = 20
+			location = { terrain = marsh }
 		}
 	}
 	
-	9 = { # Church
-		factor = 1
-		modifier = {
-			factor = 0
-			always = yes
-		}
-	}
-	
-	10 = { # Desert
-		factor = 5
+	9 = { # Desert
+		factor = 15
 		modifier = {
 			factor = 0
 			location = {
@@ -152,78 +165,123 @@
 		}
 	}
 	
-	11 = { # Steppe
+	10 = { # Steppe
 		factor = 1
 		modifier = {
-			factor = 0
+			factor = 2
 			location = {
-				NOT = { terrain = steppe }
+				terrain = plains
 			}
 		}
-		
+
 		modifier = {
-			factor = 5
-			is_nomadic = yes
+			factor = 3
+			location = {
+				terrain = steppe
+			}
 		}
 	}
 	
-	12 = { # Ocean w ships
+	11 = { # Ocean w ships
 		factor = 10
 		modifier = {
 			factor = 0
 			location = {
+				port = no
+				is_land = yes
+			}
+		}
+	}
+	
+	12 = { # Yellow plains
+		factor = 1
+		modifier = {
+			factor = 4
+			location = {
 				OR = {
-					port = no
-					is_land = yes
+					terrain = plains
+					terrain = hills
+					terrain = farmlands
 				}
 			}
 		}
 	}
-	
-	13 = { # Muslim interior
-		factor = 1
-		modifier = {
-			factor = 0
-			always = yes
-		}
-	}
-	
-	14 = { # Harem
-		factor = 1
-		modifier = {
-			factor = 0
-			always = yes
-		}
-	}
-	
-	15 = { # Muslim interior 2
-		factor = 5
-		modifier = {
-			factor = 0
-			always = yes
-		}
-	}
 
-	16 = { # Mongol camp 1
+	13 = { # City
 		factor = 1
 		modifier = {
 			factor = 0
-			always = yes
+			location = {
+				NOT = {
+					any_province_holding = {
+						holding_type = city
+					}
+				}
+			}
 		}
-	}
-
-	17 = { # Quel Thalas
-		factor = 100
+		modifier = {
+			factor = 20
+			OR = {
+				government = noble_republic_government
+				is_republic = yes
+			}
+		}
 		modifier = {
 			factor = 0
-			NOR = { 
-				trait = high_elf
-				trait = blood_elf
+			in_command = yes
+		}
+	}
+	
+	14 = { # Mountains
+		factor = 1.5
+		modifier = {
+			factor = 0
+			location = {
+				NOR = {
+					terrain = mountains
+					terrain = hills
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			culture_group = dwarf
+		}
+		modifier = {
+			factor = 2
+			location = {
+				terrain = mountains
+			}
+		}
+
+	}
+	
+	15 = { # Nice forest
+		factor = 1
+		modifier = {
+			factor = 4
+			location = {
+				OR = {
+					terrain = forest
+					terrain = woods
+				}
 			}
 		}
 	}
 
-	18 = { # Durotar
+	16 = { # Quel Thalas
+		factor = 15
+		modifier = {
+			factor = 0
+			NOT = {
+				location = {
+					region = world_sunwell_isle
+				}
+			}
+		}
+	}
+
+	17 = { # Durotar
 		factor = 25
 		modifier = {
 			factor = 0
@@ -234,20 +292,21 @@
 						terrain = plains
 						terrain = desert
 						terrain = hills
+						terrain = steppe
 					}
 				}
 			}
 		}
 	}
 
-	19 = { # Beach
+	18 = { # Beach
 		factor = 1
 		modifier = {
 			factor = 5
 			location = { port = yes }
 		}
 		modifier = {
-			factor = 0.05
+			factor = 0.5
 			NOR = {
 				is_nomadic = yes
 				is_tribal = yes
@@ -260,7 +319,7 @@
 		}
 	}
 
-	20 = { # Underwater
+	19 = { # Underwater
 		factor = 25
 		modifier = {
 			factor = 0
@@ -278,7 +337,7 @@
 		}
 	}
 
-	21 = { # Silvermoon City
+	20 = { # Silvermoon City
 		factor = 100
 		modifier = {
 			factor = 0
@@ -293,7 +352,7 @@
 		}
 	}
 
-	22 = { # Dalaran City
+	21 = { # Dalaran City
 		factor = 100
 		modifier = {
 			factor = 0
@@ -307,18 +366,17 @@
 		}
 	}
 
-	23 = { # Teldrassil
+	22 = { # Teldrassil
 		factor = 20
 		modifier = {
 			factor = 0
-			NOT = { 
-				trait = night_elf
-			}
+			always = yes
+			#NOT = { trait = night_elf }
 		}
 	}
 
-	24 = { # Jungle
-		factor = 50
+	23 = { # Jungle
+		factor = 5
 		modifier = {
 			factor = 0
 			NOT = { 
@@ -327,7 +385,7 @@
 		}
 	}
 
-	25 = { # Dun Morogh
+	24 = { # Dun Morogh
 		factor = 100
 		modifier = {
 			factor = 0
@@ -335,10 +393,6 @@
 				location = { region = world_dun_morogh }
 			}
 		}
-	}
-
-	26 = {
-		factor = 0
 	}
 }
 
@@ -899,24 +953,10 @@
 
 	0 = { # blank
 		factor = 100
-		modifier = {
-			factor = 0
-			OR = {
-				trait = has_bubonic_plague
-			}
-		}
  	}
 
 	1 = { # boils
-		factor = 100
-		modifier = {
-			factor = 0
-			OR = {
-				NOT = {
-					trait = has_bubonic_plague
-				}
-			}
-		}
+		factor = 0
  	}
  	
 }
@@ -1033,13 +1073,6 @@
 				is_tribal = yes
 				is_nomadic = yes
 				has_character_modifier = golden_mask
-			}
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				culture = manden
-				culture = maghreb_arabic
 			}
 		}
 	}
@@ -1387,19 +1420,9 @@
 			OR = {
 				NAND = {
 					trait = one_eyed
-					OR = {
-						trait = paranoid
-						trait = possessed
-					}
+					trait = paranoid
 				}
 				has_character_modifier = glass_eye
-			}
-		}
-		modifier = {
-			factor = 2
-			OR = {
-				trait = paranoid
-				trait = possessed
 			}
 		}
 	}
@@ -1498,10 +1521,7 @@
 		modifier = {
 			factor = 0
 			OR = {
-				NAND = {
-					trait = one_eyed
-					culture_group = celtic
-				}
+				NOT = { trait = one_eyed }
 				has_character_modifier = glass_eye
 			}
 		}
@@ -1929,15 +1949,26 @@
 			NOR = {
 				trait = peasant_leader
 				trait = heresiarch
-				is_lowborn = no #Actually means "is lowborn"
-				prisoner = no
+				prisoner = yes
+				dynasty = none
 			}
+			NOT = { has_character_modifier = the_oubliette }
 		}
 		modifier = {
 			factor = 0
-			is_landed = yes
+			OR = {
+				is_landed = yes
+				spouse = { is_landed = yes }
+				wealth = 200
+			}
 			NOT = { has_character_modifier = the_oubliette }
 		}
+		modifier = {
+			factor = 0.01
+			wealth = 50
+			prisoner = no
+		}
+
 	}
 
 	# Noble clothes

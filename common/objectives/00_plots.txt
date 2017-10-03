@@ -637,24 +637,6 @@ plot_kill_character = {
 	type = realm_characters_plus # All characters in the same realm, plus rivals and relatives of self, parents, children and spouse, and quest target
 	intrigue_plot = yes
 	murder_plot = yes
-	society_plot = {
-		ROOT = {
-			society_member_of = the_assassins
-			society_rank >= 2
-		}
-		OR = {
-			FROM = { 
-				NOR = {
-					religion = shiite
-					has_secret_religion = shiite
-				}
-			}
-			ROOT = {
-				has_quest = quest_the_assassins_assassination
-				quest_target = { character = FROM }
-			}
-		}
-	}
 	
 	# Plotter scope
 	potential = {
@@ -724,7 +706,6 @@ plot_kill_character = {
 				
 				# Is nuts...
 				trait = lunatic
-				trait = possessed
 			}
 		}
 	}
@@ -876,10 +857,7 @@ plot_kill_character = {
 				# Go nuts...
 				AND = {
 					same_liege = ROOT
-					OR = {
-						trait = lunatic
-						trait = possessed
-					}
+					trait = lunatic
 				}
 				
 				# Rivals
@@ -903,16 +881,10 @@ plot_kill_character = {
 		factor = 2
 
 		modifier = {
-			factor = 50
-			FROM = { has_quest = quest_the_assassins_assassination }
-			is_quest_target_of = FROM
-		}
-		modifier = {
 			factor = 0.01
 			FROM = {
 				trait = content
 				NOT = { trait = lunatic } 
-				NOT = { trait = possessed }
 			}
 		}
 		
@@ -1010,31 +982,6 @@ plot_kill_character = {
 			}
 		}
 		
-		modifier = {
-			factor = 4.0
-			plot_target_char = {
-				sibling = FROM
-				ai = yes
-				top_liege = { character = father }
-			}
-			FROM = {
-				religion_group = muslim
-				top_liege = { character = father }
-			}
-		}
-		modifier = {
-			factor = 2.0
-			plot_target_char = {
-				sibling = FROM
-				ai = yes
-				top_liege = { character = father }
-				is_landed = no
-			}
-			FROM = {
-				religion_group = muslim
-				top_liege = { character = father }
-			}
-		}
 	}
 	
 	success = {
@@ -1065,24 +1012,6 @@ plot_kill_spouse = {
 	type = spouse
 	intrigue_plot = yes
 	murder_plot = yes
-	society_plot = {
-		ROOT = {
-			society_member_of = the_assassins
-			society_rank >= 2
-		}
-		OR = {
-			FROM = { 
-				NOR = {
-					religion = shiite
-					has_secret_religion = shiite
-				}
-			}
-			ROOT = {
-				has_quest = quest_the_assassins_assassination
-				quest_target = { character = FROM }
-			}
-		}
-	}
 	
 	# Plotter scope
 	potential = {
@@ -1161,10 +1090,7 @@ plot_kill_spouse = {
 
 			# Insane plotter...
 			FROM = { 
-				OR = {
-					trait = lunatic 
-					trait = possessed
-				}
+				trait = lunatic 
 			}
 		}
 
@@ -1226,10 +1152,6 @@ plot_kill_spouse = {
 		}
 		modifier = {
 			factor = 1.25
-			FROM = { trait = possessed }
-		}
-		modifier = {
-			factor = 1.25
 			FROM = { trait = intricate_webweaver }
 		}
 		modifier = {
@@ -1248,11 +1170,6 @@ plot_kill_spouse = {
 					}
 				}
 			}
-		}
-		modifier = {
-			factor = 50
-			FROM = { has_quest = quest_the_assassins_assassination }
-			is_quest_target_of = FROM
 		}
 	}
 	
@@ -2234,82 +2151,5 @@ plot_seize_trade_post = {
 	}
 	effect = {
 		seize_trade_post = FROM
-	}
-}
-
-
-###SOCIETIES PLOTS###
-
-###Assassins###
-
-plot_assassins_collect_debt = {
-	type = realm_characters_plus # All characters in the same realm, plus rivals and relatives of self, parents, children and spouse, and quest target
-	intrigue_plot = yes
-	
-	# Plotter scope
-	potential = {
-		prisoner = no
-		is_adult = yes
-		NOT = { trait = incapable }
-		society_member_of = the_assassins
-		has_quest = quest_the_assassins_collect_debt
-	}
-	
-	# Targe scope scope
-	player_allow = {
-		FROM = { has_quest = quest_the_assassins_collect_debt }
-	}
-	
-	#Target scope
-	target_potential = {
-		FROM = {
-			has_quest = quest_the_assassins_collect_debt
-			quest_target = { character = ROOT }
-		}
-	}
-	
-	# Target character scope
-	allow = {
-		custom_tooltip = {
-			text = plot_assassins_collect_debt_allow_tt
-			FROM = {
-				has_quest = quest_the_assassins_collect_debt
-				quest_target = { character = ROOT }
-			}
-		}
-	}
-	
-	chance = {
-		factor = 50
-	}
-	
-	success = { #From is plotter, root is target
-		custom_tooltip = {
-			text = plot_assassins_collect_debt_success
-			FROM = { has_character_flag = collected_debt_success }
-		}
-	}
-
-	#From is plotter, root is target
-	abort = {	
-		OR = {
-			is_alive = no
-			FROM = {
-				OR = {
-					is_alive = no
-					has_character_flag = collected_debt_failure
-				}
-			}
-		}
-	}
-
-	#From is plotter, root is target
-	abort_effect = {
-		FROM = { clr_character_flag = collected_debt_failure }
-	}
-
-	#From is plotter, root is target
-	effect = {
-		FROM = { clr_character_flag = collected_debt_success }
 	}
 }

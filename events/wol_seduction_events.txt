@@ -5845,9 +5845,6 @@ character_event = {
 		# Scandal check
 		FROM = { character_event = { id = WoL.50 } }
 		
-		# Casanova achievement check event
-		hidden_tooltip = { character_event = { id = 718 } }
-
 		# Chance of impregnation
 
 		if = {
@@ -7955,9 +7952,6 @@ character_event = {
 		# Scandal check
 		FROM = { character_event = { id = WoL.50 } }
 		
-		# Casanova achievement check event
-		hidden_tooltip = { character_event = { id = 718 } }
-
 		# Chance of impregnation
 		if = {
 			limit = { is_female = yes }
@@ -9857,10 +9851,6 @@ character_event = {
 			factor = 0.5
 			trait = arbitrary
 		}
-		modifier = {
-			factor = 0.33
-			trait = possessed
-		}
 	}
 	
 	immediate = {
@@ -10069,10 +10059,6 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			trait = arbitrary
-		}
-		modifier = {
-			factor = 0.33
-			trait = possessed
 		}
 	}
 	

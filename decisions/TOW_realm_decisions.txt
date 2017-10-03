@@ -17,6 +17,7 @@ decisions = {
 			any_realm_province = {
 				any_province_holding = {
 					TOW_holding_can_be_pillaged_by_from = yes
+					hidden_tooltip = { NOT = { holding_type = nomad } } # For some reason, without this, the scripted trigger causes an assert
 				}
 			}
 		}
@@ -74,21 +75,14 @@ decisions = {
 			}
 
 			modifier = {
-				factor = 10
-				trait = warlike
-			}
-
-			modifier = {
-				factor = 0
-				wealth = 0
-				trait = pacifist
+				factor = 5
+				trait = wroth
 			}
 
 			modifier = {
 				factor = 0
 				war = yes
 				NOR = {
-					trait = warlike
 					trait = lunatic
 					trait = wroth
 				}
