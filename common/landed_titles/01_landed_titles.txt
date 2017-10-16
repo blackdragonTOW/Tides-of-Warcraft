@@ -1822,15 +1822,15 @@ e_arathor = {
 				b_plaguewood_mountains_3 = {
 				}
 			}
-			c_thondoril_mountains = { # 128
+			c_thondroril_mountains = { # 128
 				color={ 255 255 212 }
 				color2={ 255 255 255 }
 				
-				b_thondoril_mountains = {
+				b_thondroril_mountains = {
 				}
-				b_thondoril_mountains_2 = {
+				b_thondroril_mountains_2 = {
 				}
-				b_thondoril_mountains_3 = {
+				b_thondroril_mountains_3 = {
 				}
 			}
 		}
@@ -2008,17 +2008,17 @@ e_arathor = {
 				b_gahrrons_withering_4 = {
 				}
 			}
-			c_thondoril_river = { # 174
+			c_thondroril_valley = { # 174
 				color={ 214 135 0 }
 				color2={ 255 255 255 }
 				
-				b_thondoril_river = {
+				b_thondroril_valley = {
 				}
-				b_thondoril_river_2 = {
+				b_thondroril_valley_2 = {
 				}
-				b_thondoril_river_3 = {
+				b_thondroril_valley_3 = {
 				}
-				b_thondoril_river_4 = {
+				b_thondroril_valley_4 = {
 				}
 			}
 		}
@@ -2101,7 +2101,7 @@ e_arathor = {
 	}
 	k_alterac = {
 		color={ 245 100 20 }
-		color2={ 220 220 20 }
+		color2={ 220 220 220 }
 		
 		capital = 69 # c_ruins_of_alterac
 		culture = alteraci
@@ -2667,7 +2667,7 @@ e_arathor = {
 	}
 	k_gilneas = {
 		color={ 160 160 160 }
-		color2={ 220 220 20 }
+		color2={ 220 220 220 }
 		
 		capital = 143 # c_gilneas
 		culture = gilnean
@@ -3243,7 +3243,7 @@ e_arathor = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 266 province_id = 273 province_id = 377 } }
+					any_demesne_province = { OR = { province_id = 266 province_id = 273 province_id = 377 province_id = 345 } }
 				}
 			}
 			capital = 273 # c_goldshire
@@ -3289,6 +3289,15 @@ e_arathor = {
 				b_the_forests_edge_4 = {
 				}
 			}
+			c_elwynn_westcoast = { # 345
+				color={ 99 71 171 }
+				color2={ 255 255 255 }
+				
+				b_elwynn_westcoast = {
+				}
+				b_elwynn_westcoast_2 = {
+				}
+			}
 		}
 		d_lakeridge = {
 			color = { 80 130 200 }
@@ -3324,17 +3333,6 @@ e_arathor = {
 				b_lakeridge_3 = {
 				}
 				b_lakeridge_4 = {
-				}
-			}
-			c_redridge_coast = { # 286
-				color={ 184 61 153 }
-				color2={ 255 255 255 }
-				
-				b_redridge_coast = {
-				}
-				b_redridge_coast_2 = {
-				}
-				b_redridge_coast_3 = {
 				}
 			}
 			c_renders_valley = { # 300
@@ -3400,6 +3398,44 @@ e_arathor = {
 				b_three_corners_2 = {
 				}
 				b_three_corners_3 = {
+				}
+			}
+		}
+		d_farshore = {
+			color = { 90 50 220 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 286 province_id = 466 province_id = 461 } }
+				}
+			}
+			capital = 286 # c_redridge_coast
+			
+			c_redridge_coast = { # 286
+				color={ 184 61 153 }
+				color2={ 255 255 255 }
+				
+				b_redridge_coast = {
+				}
+				b_redridge_coast_2 = {
+				}
+				b_redridge_coast_3 = {
+				}
+			}
+			c_easttide = { # 466
+				color={ 55 136 99 }
+				color2={ 255 255 255 }
+				
+				b_easttide = {
+				}
+			}
+			c_redridge_highway = { # 461
+				color={ 70 162 200 }
+				color2={ 255 255 255 }
+				
+				b_redridge_highway = {
 				}
 			}
 		}
@@ -3556,17 +3592,17 @@ e_arathor = {
 				b_raven_hill_5 = {
 				}
 			}
-			c_raven_hill_north = { # 276
+			c_raven_bank = { # 276
 				color={ 156 87 153 }
 				color2={ 255 255 255 }
 				
-				b_raven_hill_north = {
+				b_raven_bank = {
 				}
-				b_raven_hill_north_2 = {
+				b_raven_bank_2 = {
 				}
-				b_raven_hill_north_3 = {
+				b_raven_bank_3 = {
 				}
-				b_raven_hill_north_4 = {
+				b_raven_bank_4 = {
 				}
 			}
 		}
@@ -3671,7 +3707,7 @@ e_arathor = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 207 province_id = 292 province_id = 336 province_id = 345 province_id = 401 province_id = 402 } }
+					any_demesne_province = { OR = { province_id = 207 province_id = 292 province_id = 336 province_id = 401 province_id = 402 province_id = 471 } }
 				}
 			}
 			capital = 292 # c_stormwind
@@ -3683,15 +3719,6 @@ e_arathor = {
 				b_elwynn_great_sea_coast = {
 				}
 				b_elwynn_great_sea_coast_2 = {
-				}
-			}
-			c_elwynn_westcoast = { # 345
-				color={ 99 71 171 }
-				color2={ 255 255 255 }
-				
-				b_elwynn_westcoast = {
-				}
-				b_elwynn_westcoast_2 = {
 				}
 			}
 			c_stormwind = { # 292
@@ -3740,6 +3767,13 @@ e_arathor = {
 				b_vashjir = {
 				}
 				b_vashjir_2 = {
+				}
+			}
+			c_the_burning_coast = { # 471
+				color={ 235 186 227 }
+				color2={ 255 255 255 }
+				
+				b_the_burning_coast = {
 				}
 			}
 		}
@@ -3794,17 +3828,17 @@ e_arathor = {
 				b_blackwell_farmlands_4 = {
 				}
 			}
-			c_crystal_lake = { # 257
+			c_elwynn_meadow = { # 257
 				color={ 13 186 214 }
 				color2={ 255 255 255 }
 				
-				b_crystal_lake = {
+				b_elwynn_meadow = {
 				}
-				b_crystal_lake_2 = {
+				b_elwynn_meadow_2 = {
 				}
-				b_crystal_lake_3 = {
+				b_elwynn_meadow_3 = {
 				}
-				b_crystal_lake_4 = {
+				b_elwynn_meadow_4 = {
 				}
 			}
 			c_ridgepoint = { # 244
@@ -4906,18 +4940,11 @@ e_gurubashi = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 221 province_id = 226 province_id = 320 province_id = 323 province_id = 413 province_id = 417 } }
+					any_demesne_province = { OR = { province_id = 226 province_id = 320 province_id = 323 } }
 				}
 			}
 			capital = 323 # c_nethergarde
 			
-			c_the_dark_portal = { # 221
-				color={ 179 66 209 }
-				color2={ 255 255 255 }
-				
-				b_the_dark_portal = {
-				}
-			}
 			c_shattershore = { # 320
 				color={ 173 201 38 }
 				color2={ 255 255 255 }
@@ -4949,28 +4976,6 @@ e_gurubashi = {
 				b_serpents_coil_3 = {
 				}
 			}
-			c_defilers_rise = { # 413
-				color={ 123 176 253 }
-				color2={ 255 255 255 }
-				
-				b_defilers_rise = {
-				}
-				b_defilers_rise_2 = {
-				}
-				b_defilers_rise_3 = {
-				}
-			}
-			c_shattered_front = { # 417
-				color={ 145 21 207 }
-				color2={ 255 255 255 }
-				
-				b_shattered_front = {
-				}
-				b_shattered_front_2 = {
-				}
-				b_shattered_front_3 = {
-				}
-			}
 		}
 		d_the_tornlands = {
 			color={ 193 158 63 }
@@ -4979,7 +4984,7 @@ e_gurubashi = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 294 province_id = 375 province_id = 414 province_id = 415 province_id = 416 } }
+					any_demesne_province = { OR = { province_id = 294 province_id = 414 province_id = 415 province_id = 416 } }
 				}
 			}
 			capital = 294 # c_the_tainted_scar
@@ -4993,15 +4998,6 @@ e_gurubashi = {
 				b_the_tainted_scar_2 = {
 				}
 				b_the_tainted_scar_3 = {
-				}
-			}
-			c_red_reaches = { # 375
-				color={ 209 133 41 }
-				color2={ 255 255 255 }
-				
-				b_red_reaches = {
-				}
-				b_red_reaches_2 = {
 				}
 			}
 			c_blasted_ridge = { # 414
@@ -5044,11 +5040,62 @@ e_gurubashi = {
 				}
 			}
 		}
+		d_blasted_lands = {
+			color={ 210 154 65 }
+			color2={ 255 255 255 }		
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 413 province_id = 417 province_id = 221 province_id = 375 } }
+				}
+			}
+			capital = 221 # c_the_dark_portal
+			
+			c_defilers_rise = { # 413
+				color={ 123 176 253 }
+				color2={ 255 255 255 }
+				
+				b_defilers_rise = {
+				}
+				b_defilers_rise_2 = {
+				}
+				b_defilers_rise_3 = {
+				}
+			}
+			c_shattered_front = { # 417
+				color={ 145 21 207 }
+				color2={ 255 255 255 }
+				
+				b_shattered_front = {
+				}
+				b_shattered_front_2 = {
+				}
+				b_shattered_front_3 = {
+				}
+			}
+			c_the_dark_portal = { # 221
+				color={ 179 66 209 }
+				color2={ 255 255 255 }
+				
+				b_the_dark_portal = {
+				}
+			}
+			c_red_reaches = { # 375
+				color={ 209 133 41 }
+				color2={ 255 255 255 }
+				
+				b_red_reaches = {
+				}
+				b_red_reaches_2 = {
+				}
+			}
+		}
 	}
 }
 e_khaz_modan = {
 	color = { 218 217 242 }
-	color2={ 255 255 20 }
+	color2={ 255 255 220 }
 	
 	capital = 193 # c_ironforge
 	culture = bronzebeard
@@ -5067,24 +5114,11 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 192 province_id = 288 province_id = 313 province_id = 332 province_id = 337 province_id = 373 } }
+					any_demesne_province = { OR = { province_id = 288 province_id = 332 province_id = 337 province_id = 258 province_id = 318 } }
 				}
 			}
 			capital = 337 # c_kharanos
 			
-			c_mistypine_refuge = { # 192
-				color={ 235 186 227 }
-				color2={ 255 255 255 }
-				
-				b_mistypine_refuge = {
-				}
-				b_mistypine_refuge_2 = {
-				}
-				b_mistypine_refuge_3 = {
-				}
-				b_mistypine_refuge_4 = {
-				}
-			}
 			c_amberstill = { # 288
 				color={ 74 163 105 }
 				color2={ 255 255 255 }
@@ -5096,17 +5130,6 @@ e_khaz_modan = {
 				b_amberstill_3 = {
 				}
 				b_amberstill_4 = {
-				}
-			}
-			c_golbolar = { # 313
-				color={ 196 77 186 }
-				color2={ 255 255 255 }
-				
-				b_golbolar = {
-				}
-				b_golbolar_2 = {
-				}
-				b_golbolar_3 = {
 				}
 			}
 			c_kharanos = { # 337
@@ -5122,17 +5145,6 @@ e_khaz_modan = {
 				b_kharanos_4 = {
 				}
 			}
-			c_northbed = { # 373
-				color={ 38 189 209 }
-				color2={ 255 255 255 }
-				
-				b_northbed = {
-				}
-				b_northbed_2 = {
-				}
-				b_northbed_3 = {
-				}
-			}
 			c_tundrid_hills = { # 332
 				color={ 33 181 140 }
 				color2={ 255 255 255 }
@@ -5144,6 +5156,26 @@ e_khaz_modan = {
 				b_tundrid_hills_3 = {
 				}
 			}
+			c_the_grizzled_den = { # 258
+				color={ 194 130 28 }
+				color2={ 255 255 255 }
+				
+				b_the_grizzled_den = {
+				}
+				b_the_grizzled_den_2 = {
+				}
+				b_the_grizzled_den_3 = {
+				}
+			}
+			c_bael_urist = { # 318
+				color={ 222 61 87 }
+				color2={ 255 255 255 }
+				
+				b_bael_urist = {
+				}
+				b_bael_urist_2 = {
+				}
+			}
 		}
 		d_algaz_watch = {
 			color={ 190 190 180 }
@@ -5152,20 +5184,11 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 256 province_id = 318 province_id = 365 } }
+					any_demesne_province = { OR = { province_id = 234 province_id = 378 province_id = 365 } }
 				}
 			}
-			capital = 356 # c_algaz_station
+			capital = 365 # c_algaz_station
 			
-			c_algaz_mountains = { # 256
-				color={ 181 196 99 }
-				color2={ 255 255 255 }
-				
-				b_algaz_mountains = {
-				}
-				b_algaz_mountains_2 = {
-				}
-			}
 			c_algaz_station = { # 365
 				color={ 82 69 189 }
 				color2={ 255 255 255 }
@@ -5177,13 +5200,26 @@ e_khaz_modan = {
 				b_algaz_station_3 = {
 				}
 			}
-			c_northern_dun_morogh_borderlands = { # 318
-				color={ 222 61 87 }
+			c_silver_hills = { # 234
+				color={ 92 166 214 }
 				color2={ 255 255 255 }
 				
-				b_northern_dun_morogh_borderlands = {
+				b_silver_hills = {
 				}
-				b_northern_dun_morogh_borderlands_2 = {
+				b_silver_hills_2 = {
+				}
+				b_silver_hills_3 = {
+				}
+			}
+			c_north_gate_outpost = { # 378
+				color={ 235 97 20 }
+				color2={ 255 255 255 }
+				
+				b_north_gate_outpost = {
+				}
+				b_north_gate_outpost_2 = {
+				}
+				b_north_gate_outpost_3 = {
 				}
 			}
 		}
@@ -5221,70 +5257,22 @@ e_khaz_modan = {
 				b_anvilmar_3 = {
 				}
 			}
-			c_coldridge_coast = { # 310
+			c_coldridge_pass = { # 310
 				color={ 186 217 194 }
 				color2={ 255 255 255 }
 				
-				b_coldridge_coast = {
+				b_coldridge_pass = {
 				}
-				b_coldridge_coast_2 = {
+				b_coldridge_pass_2 = {
 				}
 			}
-			c_coldridge_mountains = { # 307
+			c_frostmane_caverns = { # 307
 				color={ 69 71 48 }
 				color2={ 255 255 255 }
 				
-				b_coldridge_mountains = {
+				b_frostmane_caverns = {
 				}
-				b_coldridge_mountains_2 = {
-				}
-			}
-		}
-		d_dun_morogh_wilds = {
-			color={ 202 202 190 }
-			color2={ 255 255 255 }
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 258 province_id = 297 province_id = 357 } }
-				}
-			}
-			capital = 297 # c_frostmane_hold
-			
-			c_the_grizzled_den = { # 258
-				color={ 194 130 28 }
-				color2={ 255 255 255 }
-				
-				b_the_grizzled_den = {
-				}
-				b_the_grizzled_den_2 = {
-				}
-				b_the_grizzled_den_3 = {
-				}
-			}
-			c_frostmane_hold = { # 297
-				color={ 41 179 102 }
-				color2={ 255 255 255 }
-				
-				b_frostmane_hold = {
-				}
-				b_frostmane_hold_2 = {
-				}
-				b_frostmane_hold_3 = {
-				}
-				b_frostmane_hold_4 = {
-				}
-			}
-			c_ice_breeze_valley = { # 357
-				color={ 71 201 166 }
-				color2={ 255 255 255 }
-				
-				b_ice_breeze_valley = {
-				}
-				b_ice_breeze_valley_2 = {
-				}
-				b_ice_breeze_valley_3 = {
+				b_frostmane_caverns_2 = {
 				}
 			}
 		}
@@ -5295,7 +5283,7 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 193 province_id = 311 province_id = 371 } }
+					any_demesne_province = { OR = { province_id = 193 province_id = 311 province_id = 443 } }
 				}
 			}
 			capital = 193 # c_ironforge
@@ -5330,46 +5318,71 @@ e_khaz_modan = {
 				b_ironforge_heights_3 = {
 				}
 			}
-			c_shimmer_ridge = { # 371
-				color={ 36 89 209 }
+			c_frozen_heights = { # 443
+				color={ 75 21 69 }
 				color2={ 255 255 255 }
 				
-				b_shimmer_ridge = {
-				}
-				b_shimmer_ridge_2 = {
-				}
-				b_shimmer_ridge_3 = {
+				b_frozen_heights = {
 				}
 			}
 		}
-		d_the_burning_mountains = {
+		d_everpeak = {
 			color={ 225 180 180 }
 			color2={ 255 255 255 }
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 255 province_id = 362 } }
+					any_demesne_province = { OR = { province_id = 357 province_id = 362 province_id = 192 province_id = 441 province_id = 442 } }
 				}
 			}
-			capital = 255 # c_dun_morogh_mountains
+			capital = 357 # c_everpeak
 			
-			c_dun_morogh_mountains = { # 255
-				color={ 232 212 59 }
+			c_everpeak = { # 357
+				color={ 71 201 166 }
 				color2={ 255 255 255 }
 				
-				b_dun_morogh_mountains = {
+				b_everpeak = {
 				}
-				b_dun_morogh_mountains_2 = {
+				b_everpeak_2 = {
+				}
+				b_everpeak_3 = {
 				}
 			}
-			c_searing_gorge_borderlands = { # 362
+			c_frozen_pass = { # 192
+				color={ 235 186 227 }
+				color2={ 255 255 255 }
+				
+				b_frozen_pass = {
+				}
+				b_frozen_pass_2 = {
+				}
+				b_frozen_pass_3 = {
+				}
+				b_frozen_pass_4 = {
+				}
+			}
+			c_mountain_den = { # 362
 				color={ 191 227 83 }
 				color2={ 255 255 255 }
 				
-				b_searing_gorge_borderlands = {
+				b_mountain_den = {
 				}
-				b_searing_gorge_borderlands_2 = {
+				b_mountain_den_2 = {
+				}
+			}
+			c_alpine_valley = { # 441
+				color={ 65 12 0 }
+				color2={ 255 255 255 }
+				
+				b_apline_valley = {
+				}
+			}
+			c_dun_morogh_depths = { # 442
+				color={ 233 210 200 }
+				color2={ 255 255 255 }
+				
+				b_dun_morogh_depths = {
 				}
 			}
 		}
@@ -5380,69 +5393,93 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 236 province_id = 304 province_id = 356 } }
+					any_demesne_province = { OR = { province_id = 304 province_id = 194 province_id = 313 province_id = 373 } }
 				}
 			}
-			capital = 236 # c_dun_morogh_northern_coast
+			capital = 304 # c_the_lonely_peak
 			
-			c_dun_morogh_northern_coast = { # 236
-				color={ 191 140 51 }
+			c_dark_mountains = { # 194
+				color={ 51 152 36 }
 				color2={ 255 255 255 }
 				
-				b_dun_morogh_northern_coast = {
-				}
-				b_dun_morogh_northern_coast_2 = {
+				b_dark_mountains = {
 				}
 			}
-			c_dun_morogh_great_sea_coast = { # 356
-				color={ 199 79 38 }
-				color2={ 255 255 255 }
-				
-				b_dun_morogh_great_sea_coast = {
-				}
-				b_dun_morogh_great_sea_coast_2 = {
-				}
-			}
-			c_dun_morogh_western_coast = { # 304
+			c_the_lonely_peak = { # 304
 				color={ 59 79 82 }
 				color2={ 255 255 255 }
 				
-				b_dun_morogh_western_coast = {
+				b_the_lonely_peak = {
+				}
+			}
+			c_golbolar = { # 313
+				color={ 196 77 186 }
+				color2={ 255 255 255 }
+				
+				b_golbolar = {
+				}
+				b_golbolar_2 = {
+				}
+				b_golbolar_3 = {
+				}
+			}
+			c_helms_bed = { # 373
+				color={ 38 189 209 }
+				color2={ 255 255 255 }
+				
+				b_helms_bed = {
+				}
+				b_helms_bed_2 = {
+				}
+				b_helms_bed_3 = {
 				}
 			}
 		}
-		d_the_great_pass = {
+		d_valley_of_kings = {
 			color={ 244 227 160 }
 			color2={ 255 255 255 }
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 234 province_id = 378 } }
+					any_demesne_province = { OR = { province_id = 255 province_id = 322 province_id = 254 } }
 				}
 			}
-			capital = 234 # c_north_gate_pass
+			capital = 322 # c_valley_of_kings
 			
-			c_north_gate_pass = { # 234
-				color={ 92 166 214 }
+			c_south_gate_outpost = { # 255
+				color={ 232 212 59 }
 				color2={ 255 255 255 }
 				
-				b_north_gate_pass = {
+				b_south_gate_outpost = {
 				}
-				b_north_gate_pass_2 = {
-				}
-				b_north_gate_pass_3 = {
+				b_south_gate_outpost_2 = {
 				}
 			}
-			c_north_gate_outpost = { # 378
-				color={ 235 97 20 }
+			c_valley_of_kings = { # 322
+				color={ 46 53 189 }
 				color2={ 255 255 255 }
 				
-				b_north_gate_outpost = {
+				b_valley_of_kings = {
 				}
-				b_north_gate_outpost_2 = {
+				b_valley_of_kings_2 = {
 				}
-				b_north_gate_outpost_3 = {
+				b_valley_of_kings_3 = {
+				}
+				b_valley_of_kings_4 = {
+				}
+			}
+			c_stonewrought_pass = { # 254
+				color={ 15 222 222 }
+				color2={ 255 255 255 }
+				
+				b_stonewrought_pass = {
+				}
+				b_stonewrought_pass_2 = {
+				}
+				b_stonewrought_pass_3 = {
+				}
+				b_stonewrought_pass_4 = {
 				}
 			}
 		}
@@ -5484,19 +5521,6 @@ e_khaz_modan = {
 				b_stonesplinter_valley_4 = {
 				}
 			}
-			c_stonewraught_pass = { # 254
-				color={ 15 222 222 }
-				color2={ 255 255 255 }
-				
-				b_stonewraught_pass = {
-				}
-				b_stonewraught_pass_2 = {
-				}
-				b_stonewraught_pass_3 = {
-				}
-				b_stonewraught_pass_4 = {
-				}
-			}
 			c_thelsamar = { # 269
 				color={ 255 186 13 }
 				color2={ 255 255 255 }
@@ -5510,24 +5534,393 @@ e_khaz_modan = {
 				b_thelsamar_4 = {
 				}
 			}
-			c_valley_of_kings = { # 322
-				color={ 46 53 189 }
+		}
+	}
+	k_uldaman = {
+		color = { 200 100 100 }
+		color2 = { 220 220 220 }
+		
+		capital = 314 # c_uldaman
+		culture = dark_iron
+		
+		d_uldaman = {
+			color={ 138 130 130 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 463 province_id = 314 province_id = 351 province_id = 352 province_id = 468 } }
+				}
+			}
+			capital = 314 # c_uldaman
+			
+			c_angor_fortress = { # 351
+				color={ 28 163 196 }
 				color2={ 255 255 255 }
 				
-				b_valley_of_kings = {
+				b_angor_fortress = {
 				}
-				b_valley_of_kings_2 = {
+				b_angor_fortress_2 = {
 				}
-				b_valley_of_kings_3 = {
+				b_angor_fortress_3 = {
 				}
-				b_valley_of_kings_4 = {
+				b_angor_fortress_4 = {
+				}
+			}
+			c_hammertoes_dig_site = { # 352
+				color={ 28 79 196 }
+				color2={ 255 255 255 }
+				
+				b_hammertoes_dig_site = {
+				}
+				b_hammertoes_dig_site_2 = {
+				}
+			}
+			c_uldaman = { # 314
+				color={ 69 163 196 }
+				color2={ 255 255 255 }
+				
+				b_uldaman = {
+				}
+				b_uldaman_2 = {
+				}
+				b_uldaman_3 = {
+				}
+				b_uldaman_4 = {
+				}
+			}
+			c_the_makers_terrace = { # 463
+				color={ 64 192 63 }
+				color2={ 255 255 255 }
+				
+				b_the_makers_terrace = {
+				}
+			}
+			c_tomb_of_the_watchers = { # 468
+				color={ 54 109 198 }
+				color2={ 255 255 255 }
+				
+				b_tomb_of_the_watchers = {
+				}
+			}
+		}
+		d_the_loch = {
+			color={ 196 192 140 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 223 province_id = 253 province_id = 263 province_id = 312 province_id = 418 } }
+				}
+			}
+			capital = 312 # c_mogrosh_stronghold
+			
+			c_farstrider_lodge = { # 223
+				color={ 28 212 122 }
+				color2={ 255 255 255 }
+				
+				b_farstrider_lodge = {
+				}
+				b_farstrider_lodge_2 = {
+				}
+				b_farstrider_lodge_3 = {
+				}
+				b_farstrider_lodge_4 = {
+				}
+			}
+			c_ironbands_excavation_site = { # 263
+				color={ 209 100 59 }
+				color2={ 255 255 255 }
+				
+				b_ironbands_excavation_site = {
+				}
+				b_ironbands_excavation_site_2 = {
+				}
+				b_ironbands_excavation_site_3 = {
+				}
+			}
+			c_mogrosh_stronghold = { # 312
+				color={ 240 133 138 }
+				color2={ 255 255 255 }
+				
+				b_mogrosh_stronghold = {
+				}
+				b_mogrosh_stronghold_2 = {
+				}
+				b_mogrosh_stronghold_3 = {
+				}
+				b_mogrosh_stronghold_4 = {
+				}
+			}
+			c_stonewrought_dam = { # 253
+				color={ 28 20 204 }
+				color2={ 255 255 255 }
+				
+				b_stonewrought_dam = {
+				}
+				b_stonewrought_dam_2 = {
+				}
+				b_stonewrought_dam_3 = {
+				}
+				b_stonewrought_dam_4 = {
+				}
+			}
+			c_twilight_camp = { # 418
+				color={ 255 1 77 }
+				color2={ 255 255 255 }
+				
+				b_twilight_camp = {
+				}
+				b_twilight_camp_2 = {
+				}
+			}
+		}
+		d_goldvein_coast = {
+			color={ 254 245 160 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 200 province_id = 274 province_id = 346 province_id = 465 } }
+				}
+			}
+			capital = 346 # c_fuselight_by_the_sea
+			
+			c_loch_modan_coast = { # 200
+				color={ 73 64 125 }
+				color2={ 255 255 255 }
+				
+				b_loch_modan_coast = {
+				}
+				b_loch_modan_coast_2 = {
+				}
+				b_loch_modan_coast_3 = {
+				}
+			}
+			c_fuselight_by_the_sea = { # 346
+				color={ 150 77 92 }
+				color2={ 255 255 255 }
+				
+				b_fuselight_by_the_sea = {
+				}
+				b_fuselight_by_the_sea_2 = {
+				}
+			}
+			c_the_forbidding_landing = { # 274
+				color={ 207 48 56 }
+				color2={ 255 255 255 }
+				
+				b_the_forbidding_landing = {
+				}
+				b_the_forbidding_landing_2 = {
+				}
+			}
+			c_blackscale_shore = { # 465
+				color={ 142 211 46 }
+				color2={ 255 255 255 }
+				
+				b_blackscale_shore = {
+				}
+			}
+		}
+		d_dried_gulch = {
+			color={ 79 76 76 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 315 province_id = 326 province_id = 464 province_id = 227 province_id = 467 } }
+				}
+			}
+			capital = 464 # c_fuselight
+			
+			c_dustwind_gulch = { # 315
+				color={ 69 77 196 }
+				color2={ 255 255 255 }
+				
+				b_dustwind_gulch = {
+				}
+				b_dustwind_gulch_2 = {
+				}
+			}
+			c_lethlor_ravine = { # 326
+				color={ 28 79 138 }
+				color2={ 255 255 255 }
+				
+				b_lethlor_ravine = {
+				}
+				b_lethlor_ravine_2 = {
+				}
+				b_lethlor_ravine_3 = {
+				}
+			}
+			c_fuselight = { # 464
+				color={ 120 230 64 }
+				color2={ 255 255 255 }
+				
+				b_fuselight = {
+				}
+			}
+			c_camp_kosh = { # 227
+				color={ 181 102 207 }
+				color2={ 255 255 255 }
+				
+				b_camp_kosh = {
+				}
+				b_camp_kosh_2 = {
+				}
+				b_camp_kosh_3 = {
+				}
+			}
+			c_bloodwatcher_point = { # 467
+				color={ 233 197 20 }
+				color2={ 255 255 255 }
+				
+				b_bloodwatcher_point = {
+				}
+			}
+		}
+		d_kargath = {
+			color={ 222 220 220 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 249 province_id = 285 province_id = 289 province_id = 470 province_id = 381 province_id = 366 } }
+				}
+			}
+			capital = 285 # c_kargath
+			
+			c_apocryphans_rest = { # 249
+				color={ 54 158 138 }
+				color2={ 255 255 255 }
+				
+				b_apocryphans_rest = {
+				}
+				b_apocryphans_rest_2 = {
+				}
+				b_apocryphans_rest_3 = {
+				}
+			}
+			c_camp_wurg = { # 289
+				color={ 158 75 189 }
+				color2={ 255 255 255 }
+				
+				b_camp_wurg = {
+				}
+				b_camp_wurg_2 = {
+				}
+				b_camp_wurg_3 = {
+				}
+			}
+			c_kargath = { # 285
+				color={ 156 135 189 }
+				color2={ 255 255 255 }
+				
+				b_kargath = {
+				}
+				b_kargath_2 = {
+				}
+				b_kargath_3 = {
+				}
+			}
+			c_the_hidden_clutch = { # 470
+				color={ 75 0 76 }
+				color2={ 255 255 255 }
+				
+				b_the_hidden_clutch = {
+				}
+			}
+			c_camp_cagg = { # 381
+				color={ 112 69 199 }
+				color2={ 255 255 255 }
+				
+				b_camp_cagg = {
+				}
+				b_camp_cagg_2 = {
+				}
+				b_camp_cagg_3 = {
+				}
+			}
+			c_the_dustbowl = { # 366
+				color={ 54 99 217 }
+				color2={ 255 255 255 }
+				
+				b_the_dustbowl = {
+				}
+			}
+		}
+		d_agmonds_end = {
+			color={ 206 203 203 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 213 province_id = 298 province_id = 363 province_id = 353 province_id = 469 } }
+				}
+			}
+			capital = 298 # c_agmonds_end
+			
+			c_agmonds_end = { # 298
+				color={ 148 189 196 }
+				color2={ 255 255 255 }
+				
+				b_agmonds_end = {
+				}
+				b_agmonds_end_2 = {
+				}
+				b_agmonds_end_3 = {
+				}
+			}
+			c_camp_boff = { # 213
+				color={ 56 204 105 }
+				color2={ 255 255 255 }
+				
+				b_camp_boff = {
+				}
+				b_camp_boff_2 = {
+				}
+				b_camp_boff_3 = {
+				}
+			}
+			c_mirage_flats = { # 363
+				color={ 209 227 61 }
+				color2={ 255 255 255 }
+				
+				b_mirage_flats = {
+				}
+				b_mirage_flats_2 = {
+				}
+			}
+			c_valley_of_fangs = { # 353
+				color={ 135 191 92 }
+				color2={ 255 255 255 }
+				
+				b_valley_of_fangs = {
+				}
+				b_valley_of_fangs_2 = {
+				}
+				b_valley_of_fangs_3 = {
+				}
+			}
+			c_dragons_mouth = { # 469
+				color={ 64 177 255 }
+				color2={ 255 255 255 }
+				
+				b_dragons_mouth = {
 				}
 			}
 		}
 	}
 	k_dark_iron = {
 		color={ 91 100 100 }
-		color2={ 220 220 20 }
+		color2={ 220 220 220 }
 		
 		capital = 248 # c_blackrock_depths
 		culture = dark_iron
@@ -5539,18 +5932,11 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 194 province_id = 205 province_id = 335 } }
+					any_demesne_province = { OR = { province_id = 205 province_id = 335 province_id = 452 province_id = 453 } }
 				}
 			}
 			capital = 205 # c_thorium_point
 			
-			c_searing_gorge_mountains = { # 194
-				color={ 51 152 36 }
-				color2={ 255 255 255 }
-				
-				b_searing_gorge_mountains = {
-				}
-			}
 			c_firewatch_ridge = { # 335
 				color={ 28 161 173 }
 				color2={ 255 255 255 }
@@ -5573,6 +5959,20 @@ e_khaz_modan = {
 				b_thorium_point_4 = {
 				}
 			}
+			c_cinderfall = { # 452
+				color={ 181 75 9 }
+				color2={ 255 255 255 }
+				
+				b_cinderfall = {
+				}
+			}
+			c_the_conflagration = { # 453
+				color={ 255 150 150 }
+				color2={ 255 255 255 }
+				
+				b_the_conflagration = {
+				}
+			}
 		}
 		d_ash = {
 			color={ 115 109 109 }
@@ -5581,7 +5981,7 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 196 province_id = 296 province_id = 376 } }
+					any_demesne_province = { OR = { province_id = 196 province_id = 296 province_id = 376 province_id = 426 } }
 				}
 			}
 			capital = 196 # c_slither_rock
@@ -5617,103 +6017,11 @@ e_khaz_modan = {
 				b_terrorwing_path_2 = {
 				}
 			}
-		}
-		d_badlands_coast = {
-			color={ 206 203 203 }
-			color2={ 255 255 255 }
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 213 province_id = 274 province_id = 363 } }
-				}
-			}
-			capital = 213 # c_camp_boff
-			
-			c_camp_boff = { # 213
-				color={ 56 204 105 }
+			c_farsight = { # 462
+				color={ 42 76 2 }
 				color2={ 255 255 255 }
 				
-				b_camp_boff = {
-				}
-				b_camp_boff_2 = {
-				}
-				b_camp_boff_3 = {
-				}
-			}
-			c_badlands_mountains = { # 274
-				color={ 207 48 56 }
-				color2={ 255 255 255 }
-				
-				b_badlands_mountains = {
-				}
-				b_badlands_mountains_2 = {
-				}
-			}
-			c_mirage_flats = { # 363
-				color={ 209 227 61 }
-				color2={ 255 255 255 }
-				
-				b_mirage_flats = {
-				}
-				b_mirage_flats_2 = {
-				}
-			}
-		}
-		d_baeldorah = {
-			color={ 222 220 220 }
-			color2={ 255 255 255 }
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 227 province_id = 249 province_id = 285 province_id = 289 } }
-				}
-			}
-			capital = 285 # c_kargath
-			
-			c_dustbelch_grotto = { # 227
-				color={ 181 102 207 }
-				color2={ 255 255 255 }
-				
-				b_dustbelch_grotto = {
-				}
-				b_dustbelch_grotto_2 = {
-				}
-				b_dustbelch_grotto_3 = {
-				}
-			}
-			c_apocryphans_rest = { # 249
-				color={ 54 158 138 }
-				color2={ 255 255 255 }
-				
-				b_apocryphans_rest = {
-				}
-				b_apocryphans_rest_2 = {
-				}
-				b_apocryphans_rest_3 = {
-				}
-			}
-			c_camp_wurg = { # 289
-				color={ 158 75 189 }
-				color2={ 255 255 255 }
-				
-				b_camp_wurg = {
-				}
-				b_camp_wurg_2 = {
-				}
-				b_camp_wurg_3 = {
-				}
-			}
-			c_kargath = { # 285
-				color={ 156 135 189 }
-				color2={ 255 255 255 }
-				
-				b_kargath = {
-				}
-				b_kargath_2 = {
-				}
-				b_kargath_3 = {
+				b_farsight = {
 				}
 			}
 		}
@@ -5724,22 +6032,11 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 245 province_id = 248 province_id = 278 province_id = 358 province_id = 407 province_id = 403 province_id = 404 } }
+					any_demesne_province = { OR = { province_id = 248 province_id = 407 province_id = 403 province_id = 404 } }
 				}
 			}
 			capital = 248 # c_blackrock_depths
 			
-			c_altar_of_storms = { # 245
-				color={ 232 158 79 }
-				color2={ 255 255 255 }
-				
-				b_altar_of_storms = {
-				}
-				b_altar_of_storms_2 = {
-				}
-				b_altar_of_storms_3 = {
-				}
-			}
 			c_blackrock_depths = { # 248
 				color={ 26 46 163 }
 				color2={ 255 255 255 }
@@ -5778,30 +6075,6 @@ e_khaz_modan = {
 				b_blackrock_spire_7 = {
 				}
 			}
-			c_blackrock_stronghold = { # 358
-				color={ 120 217 158 }
-				color2={ 255 255 255 }
-				
-				b_blackrock_stronghold = {
-				}
-				b_blackrock_stronghold_2 = {
-				}
-				b_blackrock_stronghold_3 = {
-				}
-				b_blackrock_stronghold_4 = {
-				}
-			}
-			c_dracodar = { # 278
-				color={ 126 99 120 }
-				color2={ 255 255 255 }
-				
-				b_dracodar = {
-				}
-				b_dracodar_2 = {
-				}
-				b_dracodar_3 = {
-				}
-			}
 			c_molten_core = { # 403
 				color={ 25 142 139 }
 				color2={ 255 255 255 }
@@ -5821,17 +6094,124 @@ e_khaz_modan = {
 				}
 			}
 		}
-		d_char = {
+		d_embers = {
+			color={ 34 30 30 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 245 province_id = 454 province_id = 278 province_id = 358 province_id = 460 } }
+				}
+			}
+			capital = 358 # c_blackrock_stronghold
+			
+			c_altar_of_storms = { # 245
+				color={ 232 158 79 }
+				color2={ 255 255 255 }
+				
+				b_altar_of_storms = {
+				}
+				b_altar_of_storms_2 = {
+				}
+				b_altar_of_storms_3 = {
+				}
+			}
+			c_blackrock_stronghold = { # 358
+				color={ 120 217 158 }
+				color2={ 255 255 255 }
+				
+				b_blackrock_stronghold = {
+				}
+				b_blackrock_stronghold_2 = {
+				}
+				b_blackrock_stronghold_3 = {
+				}
+				b_blackrock_stronghold_4 = {
+				}
+			}
+			c_flamestar_post = { # 278
+				color={ 126 99 120 }
+				color2={ 255 255 255 }
+				
+				b_flamestar_post = {
+				}
+				b_flamestar_post_2 = {
+				}
+				b_flamestar_post_3 = {
+				}
+			}
+			c_blackrock_approach = { # 454 
+				color={ 88 88 88 }
+				color2={ 255 255 255 }
+				
+				b_blackrock_approach = {
+				}
+			}
+			c_grimrock = { # 460
+				color={ 244 231 72 }
+				color2={ 255 255 255 }
+				
+				b_grimrock = {
+				}
+			}
+		}
+		d_scorch = {
 			color={ 112 110 110 }
 			color2={ 255 255 255 }
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 212 province_id = 217 province_id = 241 } }
+					any_demesne_province = { OR = { province_id = 458 province_id = 217 province_id = 241 province_id = 459 } }
 				}
 			}
-			capital = 217 # c_the_pillar_of_ash
+			capital = 217 # c_black_tooth_camp
+			
+			c_the_whelping_downs = { # 241
+				color={ 189 64 33 }
+				color2={ 255 255 255 }
+				
+				b_the_whelping_downs = {
+				}
+				b_the_whelping_downs_2 = {
+				}
+			}
+			c_black_tooth_camp = { # 217
+				color={ 227 82 191 }
+				color2={ 255 255 255 }
+				
+				b_black_tooth_camp = {
+				}
+				b_black_tooth_camp_2 = {
+				}
+			}
+			c_black_crag = { # 458
+				color={ 64 166 109 }
+				color2={ 255 255 255 }
+				
+				b_black_crag = {
+				}
+			}
+			c_athankar = { # 459
+				color={ 100 72 253 }
+				color2={ 255 255 255 }
+				
+				b_athankar = {
+				}
+			}
+		}
+		d_spark = {
+			color={ 100 98 98 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 212 province_id = 455 province_id = 456 } }
+				}
+			}
+			capital = 217 # c_black_tooth_camp
 			
 			c_blackrock_pass = { # 212
 				color={ 16 120 64 }
@@ -5844,143 +6224,18 @@ e_khaz_modan = {
 				b_blackrock_pass_3 = {
 				}
 			}
-			c_the_burning_steppes = { # 241
-				color={ 189 64 33 }
+			c_chiselgrip = { # 455
+				color={ 42 120 246 }
 				color2={ 255 255 255 }
 				
-				b_the_burning_steppes = {
-				}
-				b_the_burning_steppes_2 = {
+				b_chiselgrip = {
 				}
 			}
-			c_the_pillar_of_ash = { # 217
-				color={ 227 82 191 }
+			c_valley_of_ashes = { # 456
+				color={ 123 93 19 }
 				color2={ 255 255 255 }
 				
-				b_the_pillar_of_ash = {
-				}
-				b_the_pillar_of_ash_2 = {
-				}
-			}
-		}
-		d_dried_gulch = {
-			color={ 79 76 76 }
-			color2={ 255 255 255 }
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 315 province_id = 326 province_id = 353 province_id = 381 } }
-				}
-			}
-			capital = 381 # c_camp_gosh
-			
-			c_dustwind_gulch = { # 315
-				color={ 69 77 196 }
-				color2={ 255 255 255 }
-				
-				b_dustwind_gulch = {
-				}
-				b_dustwind_gulch_2 = {
-				}
-			}
-			c_camp_gosh = { # 381
-				color={ 112 69 199 }
-				color2={ 255 255 255 }
-				
-				b_camp_gosh = {
-				}
-				b_camp_gosh_2 = {
-				}
-				b_camp_gosh_3 = {
-				}
-			}
-			c_lethlor_ravine = { # 326
-				color={ 28 79 138 }
-				color2={ 255 255 255 }
-				
-				b_lethlor_ravine = {
-				}
-				b_lethlor_ravine_2 = {
-				}
-				b_lethlor_ravine_3 = {
-				}
-			}
-			c_valley_of_fangs = { # 353
-				color={ 135 191 92 }
-				color2={ 255 255 255 }
-				
-				b_valley_of_fangs = {
-				}
-				b_valley_of_fangs_2 = {
-				}
-				b_valley_of_fangs_3 = {
-				}
-			}
-		}
-		d_dungolbar = {
-			color={ 138 130 130 }
-			color2={ 255 255 255 }
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 298 province_id = 314 province_id = 351 province_id = 352 province_id = 366 } }
-				}
-			}
-			capital = 351 # c_angor_fortress
-			
-			c_agmonds_end = { # 298
-				color={ 148 189 196 }
-				color2={ 255 255 255 }
-				
-				b_agmonds_end = {
-				}
-				b_agmonds_end_2 = {
-				}
-				b_agmonds_end_3 = {
-				}
-			}
-			c_angor_fortress = { # 351
-				color={ 28 163 196 }
-				color2={ 255 255 255 }
-				
-				b_angor_fortress = {
-				}
-				b_angor_fortress_2 = {
-				}
-				b_angor_fortress_3 = {
-				}
-				b_angor_fortress_4 = {
-				}
-			}
-			c_hammertoes_dig_site = { # 352
-				color={ 28 79 196 }
-				color2={ 255 255 255 }
-				
-				b_hammertoes_dig_site = {
-				}
-				b_hammertoes_dig_site_2 = {
-				}
-			}
-			c_the_dustbowl = { # 366
-				color={ 54 99 217 }
-				color2={ 255 255 255 }
-				
-				b_the_dustbowl = {
-				}
-			}
-			c_uldaman = { # 314
-				color={ 69 163 196 }
-				color2={ 255 255 255 }
-				
-				b_uldaman = {
-				}
-				b_uldaman_2 = {
-				}
-				b_uldaman_3 = {
-				}
-				b_uldaman_4 = {
+				b_valley_of_ashes = {
 				}
 			}
 		}
@@ -5991,20 +6246,20 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 229 province_id = 235 province_id = 238 } }
+					any_demesne_province = { OR = { province_id = 229 province_id = 235 province_id = 238 province_id = 457 } }
 				}
 			}
-			capital = 229 # c_the_ruins_of_tharrisan
+			capital = 229 # c_the_ruins_of_thaurissan
 			
-			c_the_ruins_of_tharrisan = { # 229
+			c_the_ruins_of_thaurissan = { # 229
 				color={ 186 184 61 }
 				color2={ 255 255 255 }
 				
-				b_the_ruins_of_tharrisan = {
+				b_the_ruins_of_thaurissan = {
 				}
-				b_the_ruins_of_tharrisan_2 = {
+				b_the_ruins_of_thaurissan_2 = {
 				}
-				b_the_ruins_of_tharrisan_3 = {
+				b_the_ruins_of_thaurissan_3 = {
 				}
 			}
 			c_dreadmaul_rock = { # 238
@@ -6027,6 +6282,13 @@ e_khaz_modan = {
 				b_flamecrest_2 = {
 				}
 			}
+			c_the_burning_ledge = { # 457
+				color={ 170 123 126 }
+				color2={ 255 255 255 }
+				
+				b_the_burning_ledge = {
+				}
+			}
 		}
 		d_smoke = {
 			color={ 81 79 79 }
@@ -6035,10 +6297,54 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 215 province_id = 216 province_id = 301 province_id = 347 } }
+					any_demesne_province = { OR = { province_id = 444 province_id = 445 province_id = 301 province_id = 446 } }
 				}
 			}
-			capital = 216 # c_the_gauntlet
+			capital = 445 # c_thorium_advance
+			
+			c_dustfire_valley = { # 301
+				color={ 41 97 113 }
+				color2={ 255 255 255 }
+				
+				b_dustfire_valley = {
+				}
+				b_dustfire_valley_2 = {
+				}
+			}
+			c_grimsilt_dig_site = { # 444
+				color={ 210 63 122 }
+				color2={ 255 255 255 }
+				
+				b_grimsilt_dig_site = {
+				}
+			}
+			c_thorium_advance = { # 445
+				color={ 122 230 199 }
+				color2={ 255 255 255 }
+				
+				b_thorium_advance = {
+				}
+			}
+			c_the_scorched_overlook = { # 446
+				color={ 90 90 90 }
+				color2={ 255 255 255 }
+				
+				b_the_scorched_overlook = {
+				}
+			}
+			
+		}
+		d_char = {
+			color={ 90 85 85 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 215 province_id = 347 province_id = 216 province_id = 446 province_id = 472 } }
+				}
+			}
+			capital = 216 # c_iron_summit
 			
 			c_the_sea_of_cinders = { # 215
 				color={ 71 82 31 }
@@ -6058,26 +6364,72 @@ e_khaz_modan = {
 				b_blackchar_2 = {
 				}
 			}
-			c_dustfire_valley = { # 301
-				color={ 41 97 113 }
-				color2={ 255 255 255 }
-				
-				b_dustfire_valley = {
-				}
-				b_dustfire_valley_2 = {
-				}
-			}
-			c_the_gauntlet = { # 216
+			c_iron_summit = { # 216
 				color={ 133 196 217 }
 				color2={ 255 255 255 }
 				
-				b_the_gauntlet = {
+				b_iron_summit = {
 				}
-				b_the_gauntlet_2 = {
+				b_iron_summit_2 = {
 				}
-				b_the_gauntlet_3 = {
+				b_iron_summit_3 = {
 				}
-				b_the_gauntlet_4 = {
+				b_iron_summit_4 = {
+				}
+			}
+			c_modguds_folly = { # 472
+				color={ 245 75 75 }
+				color2={ 255 255 255 }
+				
+				b_modguds_folly = {
+				}
+			}
+		}
+		d_slag = {
+			color={ 65 50 50 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 448 province_id = 449 province_id = 450 province_id = 451 } }
+				}
+			}
+			capital = 450 # c_the_cauldron
+			
+			c_pyrox_flats = { # 447
+				color={ 100 35 142 }
+				color2={ 255 255 255 }
+				
+				b_pyrox_flats = {
+				}
+			}
+			c_ashen_wastes = { # 448
+				color={ 164 62 107 }
+				color2={ 255 255 255 }
+				
+				b_ashen_wastes = {
+				}
+			}
+			c_the_slag_pit = { # 449
+				color={ 127 84 0 }
+				color2={ 255 255 255 }
+				
+				b_the_slag_pit = {
+				}
+			}
+			c_the_cauldron = { # 450
+				color={ 230 230 10 }
+				color2={ 255 255 255 }
+				
+				b_the_cauldron = {
+				}
+			}
+			c_torchlight = { # 451
+				color={ 0 255 255 }
+				color2={ 255 255 255 }
+				
+				b_torchlight = {
 				}
 			}
 		}
@@ -6096,7 +6448,7 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 228 province_id = 334 province_id = 340 } }
+					any_demesne_province = { OR = { province_id = 228 province_id = 236 province_id = 356 } }
 				}
 			}
 			capital = 228 # c_gnomeregan
@@ -6114,6 +6466,48 @@ e_khaz_modan = {
 				b_gnomeregan_4 = {
 				}
 			}
+			c_the_toxic_airfield = { # 236
+				color={ 191 140 51 }
+				color2={ 255 255 255 }
+				
+				b_the_toxic_airfield = {
+				}
+				b_the_toxic_airfield_2 = {
+				}
+			}
+			c_new_tinkertown = { # 356
+				color={ 199 79 38 }
+				color2={ 255 255 255 }
+				
+				b_new_tinkertown = {
+				}
+				b_new_tinkertown_2 = {
+				}
+			}
+		}
+		d_shimmer_ridge = {
+			color={ 36 89 209 }
+			color2={ 255 255 20 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 371 province_id = 340 province_id = 334 province_id = 475 } }
+				}
+			}
+			capital = 371 # c_shimmer_ridge
+			
+			c_shimmer_ridge = { # 371
+				color={ 36 89 209 }
+				color2={ 255 255 255 }
+				
+				b_shimmer_ridge = {
+				}
+				b_shimmer_ridge_2 = {
+				}
+				b_shimmer_ridge_3 = {
+				}
+			}
 			c_brewnall = { # 340
 				color={ 115 43 196 }
 				color2={ 255 255 255 }
@@ -6127,15 +6521,79 @@ e_khaz_modan = {
 				b_brewnall_4 = {
 				}
 			}
-			c_iceflow_lake = { # 334
+			c_iceflow = { # 334
 				color={ 232 117 71 }
 				color2={ 255 255 255 }
 				
-				b_iceflow_lake = {
+				b_iceflow = {
 				}
-				b_iceflow_lake_2 = {
+				b_iceflow_2 = {
 				}
-				b_iceflow_lake_3 = {
+				b_iceflow_3 = {
+				}
+			}
+			c_bael_modr = { # 475
+				color={ 231 66 43 }
+				color2={ 255 255 255 }
+				
+				b_bael_modr = {
+				}
+			}
+		}
+		d_dun_morogh_wilds = {
+			color={ 202 202 190 }
+			color2={ 255 255 255 }
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 256 province_id = 297 province_id = 473 province_id = 474 province_id = 477 } }
+				}
+			}
+			capital = 297 # c_frostmane_hold
+			
+			
+			c_frostmane_hold = { # 297
+				color={ 41 179 102 }
+				color2={ 255 255 255 }
+				
+				b_frostmane_hold = {
+				}
+				b_frostmane_hold_2 = {
+				}
+				b_frostmane_hold_3 = {
+				}
+				b_frostmane_hold_4 = {
+				}
+			}
+			c_khazad_modan = { # 256
+				color={ 181 196 99 }
+				color2={ 255 255 255 }
+				
+				b_khazad_modan = {
+				}
+				b_khazad_modan_2 = {
+				}
+			}
+			c_alpine_shore = { # 473
+				color={ 123 55 11 }
+				color2={ 255 255 255 }
+				
+				b_alpine_shore = {
+				}
+			}
+			c_seawatch = { # 474
+				color={ 42 66 199 }
+				color2={ 255 255 255 }
+				
+				b_seawatch = {
+				}
+			}
+			c_lands_end = { # 477
+				color={ 155 67 255 }
+				color2={ 255 255 255 }
+				
+				b_lands_end = {
 				}
 			}
 		}
@@ -6217,39 +6675,6 @@ e_khaz_modan = {
 				}
 			}
 		}
-		d_goldvein_coast = {
-			color={ 254 245 160 }
-			color2={ 255 255 255 }
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 200 province_id = 250 province_id = 346 } }
-				}
-			}
-			capital = 200 # c_loch_modan_coast
-			
-			c_loch_modan_coast = { # 200
-				color={ 73 64 125 }
-				color2={ 255 255 255 }
-				
-				b_loch_modan_coast = {
-				}
-				b_loch_modan_coast_2 = {
-				}
-				b_loch_modan_coast_3 = {
-				}
-			}
-			c_badlands_coast = { # 346
-				color={ 150 77 92 }
-				color2={ 255 255 255 }
-				
-				b_badlands_coast = {
-				}
-				b_badlands_coast_2 = {
-				}
-			}
-		}
 		d_menethil = {
 			color={ 244 141 120 }
 			color2={ 255 255 255 }
@@ -6257,7 +6682,7 @@ e_khaz_modan = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 198 province_id = 204 province_id = 309 } }
+					any_demesne_province = { OR = { province_id = 198 province_id = 204 province_id = 309 province_id = 476 } }
 				}
 			}
 			capital = 309 # c_menethil_isle
@@ -6297,76 +6722,23 @@ e_khaz_modan = {
 				b_menethil_isle_4 = {
 				}
 			}
-		}
-		d_the_loch = {
-			color={ 196 192 140 }
-			color2={ 255 255 255 }
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 223 province_id = 253 province_id = 263 province_id = 312 province_id = 418 } }
-				}
-			}
-			capital = 312 # c_mogrosh_stronghold
-			
-			c_farstrider_lodge = { # 223
-				color={ 28 212 122 }
+			c_rocky_strand = { # 476
+				color={ 12 55 99 }
 				color2={ 255 255 255 }
 				
-				b_farstrider_lodge = {
+				b_rocky_strand = {
 				}
-				b_farstrider_lodge_2 = {
+				b_rocky_strand_2 = {
 				}
-				b_farstrider_lodge_3 = {
+				b_rocky_strand_3 = {
 				}
-				b_farstrider_lodge_4 = {
+				b_rocky_strand_4 = {
 				}
-			}
-			c_ironbands_excavation_site = { # 263
-				color={ 209 100 59 }
-				color2={ 255 255 255 }
-				
-				b_ironbands_excavation_site = {
+				b_rocky_strand_5 = {
 				}
-				b_ironbands_excavation_site_2 = {
+				b_rocky_strand_6 = {
 				}
-				b_ironbands_excavation_site_3 = {
-				}
-			}
-			c_mogrosh_stronghold = { # 312
-				color={ 240 133 138 }
-				color2={ 255 255 255 }
-				
-				b_mogrosh_stronghold = {
-				}
-				b_mogrosh_stronghold_2 = {
-				}
-				b_mogrosh_stronghold_3 = {
-				}
-				b_mogrosh_stronghold_4 = {
-				}
-			}
-			c_stonewrought_dam = { # 253
-				color={ 28 20 204 }
-				color2={ 255 255 255 }
-				
-				b_stonewrought_dam = {
-				}
-				b_stonewrought_dam_2 = {
-				}
-				b_stonewrought_dam_3 = {
-				}
-				b_stonewrought_dam_4 = {
-				}
-			}
-			c_twilight_camp = { # 418
-				color={ 255 1 77 }
-				color2={ 255 255 255 }
-				
-				b_twilight_camp = {
-				}
-				b_twilight_camp_2 = {
+				b_rocky_strand_7 = {
 				}
 			}
 		}
@@ -6839,19 +7211,19 @@ e_khaz_modan = {
 				color={ 231 54 12 }
 				color2={ 255 255 255 }
 				
-				b_thunder_mountain = {
+				b_thundermountain = {
 				}
-				b_thunder_mountain_2 = {
+				b_thundermountain_2 = {
 				}
-				b_thunder_mountain_3 = {
+				b_thundermountain_3 = {
 				}
-				b_thunder_mountain_4 = {
+				b_thundermountain_4 = {
 				}
-				b_thunder_mountain_5 = {
+				b_thundermountain_5 = {
 				}
-				b_thunder_mountain_6 = {
+				b_thundermountain_6 = {
 				}
-				b_thunder_mountain_7 = {
+				b_thundermountain_7 = {
 				}
 			}
 			
@@ -6932,19 +7304,19 @@ e_khaz_modan = {
 				color={ 85 29 97 }
 				color2={ 255 255 255 }
 				
-				b_twilight_coast = {
+				b_twilight_shore = {
 				}
-				b_twilight_coast_2 = {
+				b_twilight_shore_2 = {
 				}
-				b_twilight_coast_3 = {
+				b_twilight_shore_3 = {
 				}
-				b_twilight_coast_4 = {
+				b_twilight_shore_4 = {
 				}
-				b_twilight_coast_5 = {
+				b_twilight_shore_5 = {
 				}
-				b_twilight_coast_6 = {
+				b_twilight_shore_6 = {
 				}
-				b_twilight_coast_7 = {
+				b_twilight_shore_7 = {
 				}
 			}
 			
