@@ -16,15 +16,16 @@ geographical_region = "geographical_region.txt"
 static = "statics"
 seasons = "seasons.txt"
 
-sea_zones = { 382 397 }
-sea_zones = { 399 541 }
+sea_zones = { 520 620 }
+sea_zones = { 382 398 }
+sea_zones = { 478 515 }
+sea_zones = { 516 519 }
 
-ocean_region = {	# Inland_ocean
+ocean_region = {	# Oceans
 	sea_zones = { 1 }
 }
-
-ocean_region = {	# OCEAN
-	sea_zones = { 2 }
+ocean_region = { # Lakes, because the game throws a fit otherwise
+	sea_zones = { 2 3 }
 }
 
 # Define which indices in trees.bmp palette which should count as trees for automatic terrain assignment
@@ -32,8 +33,10 @@ tree = { 3 4 7 10 }
 
 major_rivers = 
 {
-	# Inland_ocean
-	
-	# OCEAN
-	
+	# North EK
+	496 497 498 499 382 492 493 494 495 # Elrendar & Tael'evaede
+	500 383 501 502 503 # Darrow & Thondroril
+	484 485 486 487 488 489 490 491 # Gilneas
+	# South EK
+	504 505 506 507 508 509 510 511 512 513 393 # Nazferiti
 }
