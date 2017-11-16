@@ -2569,7 +2569,18 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = {
+		OR = {
+			ai = no
+			has_game_rule = {
+				name = supernatural_events
+				value = unrestricted
+			}
+		}
+		NOR = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
 			has_character_flag = cat_spymaster_flag
 		}
 		trait = lunatic
