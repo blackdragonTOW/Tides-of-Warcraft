@@ -8993,6 +8993,7 @@ add_kinslayer_trait_effect = {
 				trait = kinslayer
 				trait = familial_kinslayer
 			}
+			NOT = { religion_group = muslim }
 			OR = {
 				is_cousin_of = event_target:kinslayer_target
 				is_aunt_uncle_of = event_target:kinslayer_target

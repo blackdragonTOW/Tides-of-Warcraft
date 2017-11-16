@@ -1563,42 +1563,4 @@ cat = {
 		race = cat
 	}
 }
-
-# Tiered kinslaying traits
-# Kinslayer in 00_traits = Parents, Grandparents and above, Siblings, Children, Grandchildren and below
-# Familial Kinslayer = Aunts/Uncles (blood only), cousins, nieces/nephews
-# Dynastic Kinslayer = Any other dynasty member
-familial_kinslayer = {
-
-	opposites = {
-		kinslayer
-		dynastic_kinslayer
-	}
-
-	diplomacy = -4
-	
-	dynasty_opinion = -20
-	general_opinion = -5
-	
-	random = no
-	
-	male_insult = INSULT_KINSLAYER
-	female_insult = INSULT_KINSLAYER
-}
-dynastic_kinslayer = {
-
-	opposites = {
-		kinslayer
-		familial_kinslayer
-	}
-
-	diplomacy = -3
-	
-	dynasty_opinion = -15
-	
-	random = no
-	
-	male_insult = INSULT_KINSLAYER
-	female_insult = INSULT_KINSLAYER
-}
 }
