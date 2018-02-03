@@ -421,8 +421,8 @@ character_event = {
 		# Create a fleet, just to be sure
 		TOW_adventurers_spawn_fleet_with_manpower = yes
 
-		export_to_variable = { which = "TOW_TMP" value = treasury }
-		log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] declares war on [adventure_target.GetTitledName] for the [adventure_target_title.GetFullName] from the province [starting_province.GetName], [Root.GetSheHe] has [Root.TOW_adventure_manpower.GetValue]% of the target's manpower, [Root.GetSheHe] asked help from [Root.TOW_adventure_realm_asked.GetValue] realms and [Root.GetSheHe] has [Root.TOW_TMP.GetValue] money."
+		export_to_variable = { which = "local_TOW_TMP" value = treasury }
+		log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] declares war on [adventure_target.GetTitledName] for the [adventure_target_title.GetFullName] from the province [starting_province.GetName], [Root.GetSheHe] has [Root.TOW_adventure_manpower.GetValue]% of the target's manpower, [Root.GetSheHe] asked help from [Root.TOW_adventure_realm_asked.GetValue] realms and [Root.GetSheHe] has [Root.local_TOW_TMP.GetValue] money."
 
 		set_character_flag = claimant_adventurer
 		
@@ -1166,45 +1166,40 @@ character_event = {
 			break = yes
 		}
 
-		set_variable = { which = "TOW_TMP" value = 1 } # base value
+		set_variable = { which = "local_TOW_TMP" value = 1 } # base value
 		if = {
 			limit = { diplomacy = 9 }
-			export_to_variable = { which = "TOW_TMP" value = diplomacy }
-			subtract_variable = { which = "TOW_TMP" value = 8 }
-			divide_variable = { which = "TOW_TMP" value = 12 }
-			change_variable = { which = "TOW_TMP" value = 1 } # base value
+			export_to_variable = { which = "local_TOW_TMP" value = diplomacy }
+			subtract_variable = { which = "local_TOW_TMP" value = 8 }
+			divide_variable = { which = "local_TOW_TMP" value = 12 }
+			change_variable = { which = "local_TOW_TMP" value = 1 } # base value
 		}
 
 		if = {
 			limit = { martial = 9 }
-			export_to_variable = { which = "TOW_TMP2" value = martial }
-			subtract_variable = { which = "TOW_TMP2" value = 8 }
-			divide_variable = { which = "TOW_TMP2" value = 18 }
+			export_to_variable = { which = "local_TOW_TMP2" value = martial }
+			subtract_variable = { which = "local_TOW_TMP2" value = 8 }
+			divide_variable = { which = "local_TOW_TMP2" value = 18 }
 
-			change_variable = { which = "TOW_TMP" which = "TOW_TMP2" }
+			change_variable = { which = "local_TOW_TMP" which = "local_TOW_TMP2" }
 		}
 
 		random_list = {
-			3 = { multiply_variable = { which = "TOW_TMP" value = 4 } }
-			6 = { multiply_variable = { which = "TOW_TMP" value = 5 } }
-			3 = { multiply_variable = { which = "TOW_TMP" value = 6 } }
+			3 = { multiply_variable = { which = "local_TOW_TMP" value = 4 } }
+			6 = { multiply_variable = { which = "local_TOW_TMP" value = 5 } }
+			3 = { multiply_variable = { which = "local_TOW_TMP" value = 6 } }
 		}
 		
-		change_variable = { which = "TOW_adventure_manpower" which = "TOW_TMP" }
+		change_variable = { which = "TOW_adventure_manpower" which = "local_TOW_TMP" }
 		TOW_landless_claimant_adventurer_update_modifier = yes
 
-		export_to_variable = { which = "TOW_TMP" value = stewardship }
+		export_to_variable = { which = "local_TOW_TMP" value = stewardship }
 		random_list = {
-			1 = { change_variable = { which = "TOW_TMP" value = 1 } }
-			1 = { change_variable = { which = "TOW_TMP" value = 2 } }
-			1 = { change_variable = { which = "TOW_TMP" value = 3 } }
+			1 = { change_variable = { which = "local_TOW_TMP" value = 1 } }
+			1 = { change_variable = { which = "local_TOW_TMP" value = 2 } }
+			1 = { change_variable = { which = "local_TOW_TMP" value = 3 } }
 		}
-		while = {
-			limit = { check_variable = { which = "TOW_TMP" value = 1 } }
-			wealth = 1
-			subtract_variable = { which = "TOW_TMP" value = 1 }
-		}
-
+		wealth = local_TOW_TMP
 	}
 }
 
@@ -1433,11 +1428,11 @@ character_event = {
 			hidden_tooltip = {
 				FROM = {
 					random_list = {
-						3 = { change_variable = { which = "TOW_adventure_manpower" value = 6 } modifier = { factor = 0.5 stewardship = 12 } }
-						4 = { change_variable = { which = "TOW_adventure_manpower" value = 7 } modifier = { factor = 0.5 stewardship = 15 } }
-						5 = { change_variable = { which = "TOW_adventure_manpower" value = 8 } modifier = { factor = 0.5 stewardship = 18 } }
-						4 = { change_variable = { which = "TOW_adventure_manpower" value = 9 } modifier = { factor = 0.5 stewardship = 21 } }
-						2 = { change_variable = { which = "TOW_adventure_manpower" value = 10 } }
+						3 = { change_variable = { which = "TOW_adventure_manpower" value = 6 } }
+						4 = { change_variable = { which = "TOW_adventure_manpower" value = 7 } modifier = { factor = 0.5 NOT = { stewardship = 12 } } }
+						5 = { change_variable = { which = "TOW_adventure_manpower" value = 8 } modifier = { factor = 0.5 NOT = { stewardship = 15 } } }
+						4 = { change_variable = { which = "TOW_adventure_manpower" value = 9 } modifier = { factor = 0.5 NOT = { stewardship = 18 } } }
+						2 = { change_variable = { which = "TOW_adventure_manpower" value = 10 } modifier = { factor = 0.5 NOT = { stewardship = 21 } } }
 					}
 					TOW_landless_claimant_adventurer_update_modifier = yes
 					move_character = ROOT
@@ -1501,11 +1496,11 @@ character_event = {
 			hidden_tooltip = {
 				FROM = {
 					random_list = {
-						3 = { change_variable = { which = "TOW_adventure_manpower" value = 6 } modifier = { factor = 0.5 martial = 12 } }
-						4 = { change_variable = { which = "TOW_adventure_manpower" value = 7 } modifier = { factor = 0.5 martial = 15 } }
-						5 = { change_variable = { which = "TOW_adventure_manpower" value = 8 } modifier = { factor = 0.5 martial = 18 } }
-						4 = { change_variable = { which = "TOW_adventure_manpower" value = 9 } modifier = { factor = 0.5 martial = 21 } }
-						2 = { change_variable = { which = "TOW_adventure_manpower" value = 10 } }
+						3 = { change_variable = { which = "TOW_adventure_manpower" value = 6 } }
+						4 = { change_variable = { which = "TOW_adventure_manpower" value = 7 } modifier = { factor = 0.5 NOT = { martial = 12 } } }
+						5 = { change_variable = { which = "TOW_adventure_manpower" value = 8 } modifier = { factor = 0.5 NOT = { martial = 15 } } }
+						4 = { change_variable = { which = "TOW_adventure_manpower" value = 9 } modifier = { factor = 0.5 NOT = { martial = 18 } } }
+						2 = { change_variable = { which = "TOW_adventure_manpower" value = 10 } modifier = { factor = 0.5 NOT = { martial = 21 } } }
 					}
 					TOW_landless_claimant_adventurer_update_modifier = yes
 					move_character = ROOT
@@ -1683,7 +1678,7 @@ character_event = {
 							NOT = { has_province_modifier = thieves_guild }
 						}
 						remove_province_modifier = thieves_guild
-						PREV = { add_character_flag = TOW_removed_thieves_guild }
+						PREV = { set_character_flag = TOW_removed_thieves_guild }
 						log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] repelled thieves_guild from the [This.County.GetFullName] for [Root.TopLiege.GetBestName]."
 					}
 					1 = {
@@ -1692,7 +1687,7 @@ character_event = {
 							NOT = { has_province_modifier = smugglers_ring }
 						}
 						remove_province_modifier = smugglers_ring
-						PREV = { add_character_flag = TOW_removed_smugglers_ring }
+						PREV = { set_character_flag = TOW_removed_smugglers_ring }
 						log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] repelled smugglers_ring from the [This.County.GetFullName] for [Root.TopLiege.GetBestName]."
 					}
 					1 = {
@@ -1701,7 +1696,7 @@ character_event = {
 							NOT = { has_province_modifier = highway_robber_band }
 						}
 						remove_province_modifier = highway_robber_band
-						PREV = { add_character_flag = TOW_removed_highway_robber_band }
+						PREV = { set_character_flag = TOW_removed_highway_robber_band }
 						log = "-- TOW DEBUG -- : Adventure : [Root.GetBestName] repelled highway_robber_band from the [This.County.GetFullName] for [Root.TopLiege.GetBestName]."
 					}
 				}

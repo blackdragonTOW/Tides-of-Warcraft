@@ -6,9 +6,16 @@ decisions = {
 			TOW_race_can_employ = yes
 		}
 		allow = {
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = no }
+				wealth = 10
+			}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = yes }
+				wealth = 5
+			}
 			OR = {
 				AND = { 
-					TOW_is_poor_government = yes
 					wealth = 5
 				}
 				wealth = 10
@@ -88,12 +95,13 @@ decisions = {
 			TOW_race_can_employ = yes
 		}
 		allow = {
-			OR = {
-				AND = { 
-					TOW_is_poor_government = yes
-					wealth = 5
-				}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = no }
 				wealth = 10
+			}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = yes }
+				wealth = 5
 			}
 			prestige = 10
 			NOT = {
@@ -204,12 +212,13 @@ decisions = {
 			TOW_race_can_employ = yes
 		}
 		allow = {
-			OR = {
-				AND = { 
-					TOW_is_poor_government = yes
-					wealth = 7
-				}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = no }
 				wealth = 12
+			}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = yes }
+				wealth = 7
 			}
 			NOT = {
 				has_character_modifier = in_seclusion
@@ -287,12 +296,13 @@ decisions = {
 			TOW_race_can_employ = yes
 		}
 		allow = {
-			OR = {
-				AND = { 
-					TOW_is_poor_government = yes
-					wealth = 5
-				}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = no }
 				wealth = 10
+			}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = yes }
+				wealth = 5
 			}
 			NOT = {
 				has_character_modifier = in_seclusion
@@ -371,12 +381,13 @@ decisions = {
 			TOW_race_can_employ = yes
 		}
 		allow = {
-			OR = {
-				AND = { 
-					TOW_is_poor_government = yes
-					wealth = 5
-				}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = no }
 				wealth = 10
+			}
+			conditional_tooltip = {
+				trigger = { TOW_is_poor_government = yes }
+				wealth = 5
 			}
 			piety = 10
 			NOT = {

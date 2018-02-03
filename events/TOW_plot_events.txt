@@ -1759,20 +1759,18 @@ character_event = {
 			}
 			
 			location = {
-				ROOT = {
-					spawn_unit = {
-						province = PREV
-						home = PREV
-						owner = ROOT
-						troops = {
-							light_infantry = { 150 150 }
-							light_cavalry = { 50 50 }
-							heavy_infantry = { 125 125 }
-							archers = { 75 75 }
-						}
-						attrition = 1.0
-						disband_on_peace = yes
+				spawn_unit = {
+					province = closest_to_capital
+					home = PREV
+					owner = ROOT
+					troops = {
+						light_infantry = { 150 150 }
+						light_cavalry = { 50 50 }
+						heavy_infantry = { 125 125 }
+						archers = { 75 75 }
 					}
+					attrition = 1.0
+					disband_on_peace = yes
 				}
 			}
 			while = {
@@ -1781,17 +1779,15 @@ character_event = {
 				}
 
 				location = {
-					ROOT = {
-						spawn_unit = {
-							province = PREV
-							home = PREV
-							owner = ROOT
-							match_character = ROOT
-							match_mult = 1
-							match_min = 200
-							attrition = 1.0
-							disband_on_peace = yes
-						}
+					spawn_unit = {
+						province = closest_to_capital
+						home = PREV
+						owner = ROOT
+						match_character = ROOT
+						match_mult = 1
+						match_min = 200
+						attrition = 1.0
+						disband_on_peace = yes
 					}
 				}
 				hidden_tooltip = {
@@ -1807,7 +1803,7 @@ character_event = {
 				location = {
 					ROOT = {
 						spawn_unit = {
-							province = PREV
+							province = closest_to_capital
 							home = PREV
 							owner = ROOT
 							match_character = ROOT
@@ -1831,11 +1827,7 @@ character_event = {
 				location = {
 					ROOT = {
 						spawn_unit = {
-							owner = ROOT
-							province = PREV
-							home = PREV
-							spawn_unit = {
-							province = PREV
+							province = closest_to_capital
 							home = PREV
 							owner = ROOT
 							match_character = ROOT
