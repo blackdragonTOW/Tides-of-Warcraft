@@ -1778,6 +1778,18 @@
 				trait = assassin
 			}
 		}
+		hide_layers = {
+			# Remove hair if needed
+			1 = {
+				OR = {
+					graphical_culture = orcgfx
+					graphical_culture = borcgfx
+					graphical_culture = dorcgfx
+					graphical_culture = morcgfx
+					graphical_culture = rorcgfx
+				}
+			}
+		}
 	}
 	
 	# Martial
@@ -1817,6 +1829,18 @@
 					}
 				}
 				has_minor_title = title_commander
+			}
+		}
+		hide_layers = {
+			# Remove hair if needed
+			1 = {
+				OR = {
+					graphical_culture = orcgfx
+					graphical_culture = borcgfx
+					graphical_culture = dorcgfx
+					graphical_culture = morcgfx
+					graphical_culture = rorcgfx
+				}
 			}
 		}
 	}
