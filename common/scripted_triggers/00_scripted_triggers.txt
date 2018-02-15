@@ -71,6 +71,8 @@
 #child_personality_learning_trigger	Has a child trait with learning bonus.
 #is_learned_trigger					Has a scholarly trait, learning-oriented trait.
 
+#has_any_lifestyle_trait			Has any of the above lifestyle traits.
+
 #Religion
 #has_crusade_trait_trigger			Has a crusade type trait.
 #has_secret_religion_trait_trigger	Has a secret religion trait.
@@ -1524,6 +1526,52 @@ sibling_in_law_of_root_trigger = {
 	}
 }
 
+is_murder_quest_target_of_prev_trigger = {
+	PREVPREV = {
+	}
+}
+
+is_murder_quest_target_of_root_trigger = {
+	ROOT = {
+	}
+}
+
+assassins_appropriate_target_trigger = {
+	is_within_diplo_range = ROOT
+	is_adult = yes
+	is_quest_target = no
+
+	OR = {
+		is_ruler = no
+		AND = {
+			ROOT = {
+				society_rank = {
+					rank == 3
+					society = the_assassins
+				}
+			}
+			primary_title = { higher_real_tier_than = COUNT }
+		}
+		AND = {
+			ROOT = {
+				society_rank = {
+					rank == 2
+					society = the_assassins
+				}
+			}
+			primary_title = { lower_real_tier_than = EMPEROR }
+		}
+		AND = {
+			ROOT = {
+				society_rank = {
+					rank == 1
+					society = the_assassins
+				}
+			}
+			primary_title = { lower_real_tier_than = DUKE }
+		}
+	}
+}
 
 interesting_face_trigger = {
 	OR = {
@@ -2995,5 +3043,4 @@ the_hunt_for_an_artifact_has_made_enough_progress_trigger = {
 			event_target:relic_ruler = { has_character_modifier = relic_rumor_major } 
 		}
 	}
-}
 }
