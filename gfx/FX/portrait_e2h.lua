@@ -128,8 +128,6 @@ float4 main( VS_OUTPUT v ) : COLOR
 	//0     0.5   1.0
 	//c1 -> c2 -> c3
 
-	//float grey = 0.3 * OutColor.r + 0.59 * OutColor.g + 0.11 * OutColor.b;
-
 	float4 ctmp = lerp( HairColor1, HairColor2, saturate(OutColor.g * 2.0) );
 	ctmp = lerp( ctmp, HairColor3, saturate((OutColor.g - 0.5)*2.0 ));
 	
