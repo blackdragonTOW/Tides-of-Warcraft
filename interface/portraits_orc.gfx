@@ -8,27 +8,29 @@ spriteTypes = {
 	# Green Orc Male
 	portraitType = {
 		name = "PORTRAIT_orcgfx_male"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_orc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_orc_male_head:p2"
-			"GFX_orc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_orc_male_nose:d3"
-			"GFX_orc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_orc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
+			"GFX_orc_male_chin_uncolored:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -38,32 +40,33 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 8 2 } { 85 107 35 } { 228 236 90 }
+			{ 9 11 3 } { 85 107 35 } { 215 239 91 }
+			{ 5 7 0 } { 110 119 43 } { 234 246 109 }
+			{ 3 4 0 } { 101 104 38 } { 230 230 98 }
+			{ 6 6 2 } { 95 93 42 } { 221 221 114 }
+			{ 8 8 3 } { 103 93 36 } { 214 200 89 }
+			{ 9 9 4 } { 103 97 41 } { 215 214 98 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 3 0 } { 85 105 49 } { 203 213 108 }
+			# Bonus colors
+			{ 2 8 2 } { 95 112 32 } { 228 236 100 }
+			{ 8 8 0 } { 106 127 35 } { 234 239 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { 1 2 3 4 5 6 7 8 9 10 11 0 12 }
@@ -72,27 +75,29 @@ spriteTypes = {
 	# middle age
 	portraitType = {
 		name = "PORTRAIT_orcgfx_male1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_orc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_orc_male_head:p2"
-			"GFX_orc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_orc_male_nose:d3"
-			"GFX_orc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_orc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
+			"GFX_orc_male_chin_uncolored:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -102,32 +107,33 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 8 2 } { 85 107 35 } { 228 236 90 }
+			{ 9 11 3 } { 85 107 35 } { 215 239 91 }
+			{ 5 7 0 } { 110 119 43 } { 234 246 109 }
+			{ 3 4 0 } { 101 104 38 } { 230 230 98 }
+			{ 6 6 2 } { 95 93 42 } { 221 221 114 }
+			{ 8 8 3 } { 103 93 36 } { 214 200 89 }
+			{ 9 9 4 } { 103 97 41 } { 215 214 98 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 3 0 } { 85 105 49 } { 203 213 108 }
+			# Bonus colors
+			{ 2 8 2 } { 95 112 32 } { 228 236 100 }
+			{ 8 8 0 } { 106 127 35 } { 234 239 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { 1 2 3 4 5 6 7 8 9 10 11 0 12 }
@@ -136,27 +142,29 @@ spriteTypes = {
 	# old age
 	portraitType = {
 		name = "PORTRAIT_orcgfx_male2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_orc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_orc_male_head:p2"
-			"GFX_orc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_orc_male_nose:d3"
-			"GFX_orc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_orc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
+			"GFX_orc_male_chin_uncolored:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -166,32 +174,33 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 8 2 } { 85 107 35 } { 228 236 90 }
+			{ 9 11 3 } { 85 107 35 } { 215 239 91 }
+			{ 5 7 0 } { 110 119 43 } { 234 246 109 }
+			{ 3 4 0 } { 101 104 38 } { 230 230 98 }
+			{ 6 6 2 } { 95 93 42 } { 221 221 114 }
+			{ 8 8 3 } { 103 93 36 } { 214 200 89 }
+			{ 9 9 4 } { 103 97 41 } { 215 214 98 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 3 0 } { 85 105 49 } { 203 213 108 }
+			# Bonus colors
+			{ 2 8 2 } { 95 112 32 } { 228 236 100 }
+			{ 8 8 0 } { 106 127 35 } { 234 239 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { 1 2 3 4 5 6 7 8 9 10 11 0 12 }
@@ -207,59 +216,65 @@ spriteTypes = {
 	# orc female
 	portraitType = {
 		name = "PORTRAIT_orcgfx_female"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_orc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_orc_female_forehead:d5"
-			"GFX_orc_female_cheeks:d4"
-			"GFX_orc_female_nose:d3"
-			"GFX_orc_female_mouth:d2"
-			"GFX_orc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_orc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_orc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
+			"GFX_orc_female_hair:p1:e"
 			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 8 2 } { 85 107 35 } { 228 236 90 }
+			{ 9 11 3 } { 85 107 35 } { 215 239 91 }
+			{ 5 7 0 } { 110 119 43 } { 234 246 109 }
+			{ 3 4 0 } { 101 104 38 } { 230 230 98 }
+			{ 6 6 2 } { 95 93 42 } { 221 221 114 }
+			{ 8 8 3 } { 103 93 36 } { 214 200 89 }
+			{ 9 9 4 } { 103 97 41 } { 215 214 98 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 3 0 } { 85 105 49 } { 203 213 108 }
+			# Bonus colors
+			{ 2 8 2 } { 95 112 32 } { 228 236 100 }
+			{ 8 8 0 } { 106 127 35 } { 234 239 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -268,59 +283,65 @@ spriteTypes = {
 	# orc female midage
 	portraitType = {
 		name = "PORTRAIT_orcgfx_female1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_orc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_orc_female_forehead:d5"
-			"GFX_orc_female_cheeks:d4"
-			"GFX_orc_female_nose:d3"
-			"GFX_orc_female_mouth:d2"
-			"GFX_orc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_orc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_orc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
+			"GFX_orc_female_hair:p1:e"
 			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 8 2 } { 85 107 35 } { 228 236 90 }
+			{ 9 11 3 } { 85 107 35 } { 215 239 91 }
+			{ 5 7 0 } { 110 119 43 } { 234 246 109 }
+			{ 3 4 0 } { 101 104 38 } { 230 230 98 }
+			{ 6 6 2 } { 95 93 42 } { 221 221 114 }
+			{ 8 8 3 } { 103 93 36 } { 214 200 89 }
+			{ 9 9 4 } { 103 97 41 } { 215 214 98 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 3 0 } { 85 105 49 } { 203 213 108 }
+			# Bonus colors
+			{ 2 8 2 } { 95 112 32 } { 228 236 100 }
+			{ 8 8 0 } { 106 127 35 } { 234 239 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -329,60 +350,65 @@ spriteTypes = {
 	# orc female oldage
 	portraitType = {
 		name = "PORTRAIT_orcgfx_female2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_orc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_orc_female_forehead:d5"
-			"GFX_orc_female_cheeks:d4"
-			"GFX_orc_female_nose:d3"
-			"GFX_orc_female_mouth:d2"
-			"GFX_orc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_orc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_orc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
+			"GFX_orc_female_hair:p1:e"
 			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
-		
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 8 2 } { 85 107 35 } { 228 236 90 }
+			{ 9 11 3 } { 85 107 35 } { 215 239 91 }
+			{ 5 7 0 } { 110 119 43 } { 234 246 109 }
+			{ 3 4 0 } { 101 104 38 } { 230 230 98 }
+			{ 6 6 2 } { 95 93 42 } { 221 221 114 }
+			{ 8 8 3 } { 103 93 36 } { 214 200 89 }
+			{ 9 9 4 } { 103 97 41 } { 215 214 98 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 3 0 } { 85 105 49 } { 203 213 108 }
+			# Bonus colors
+			{ 2 8 2 } { 95 112 32 } { 228 236 100 }
+			{ 8 8 0 } { 106 127 35 } { 234 239 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -396,27 +422,28 @@ spriteTypes = {
 	# brown Orc Male
 	portraitType = {
 		name = "PORTRAIT_borcgfx_male"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_borc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_borc_male_head:p2"
-			"GFX_borc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_borc_male_nose:d3"
-			"GFX_borc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_borc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -426,32 +453,24 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 3 3 } { 71 54 49 } { 132 109 90 }
+			{ 3 2 2 } { 71 52 40 } { 125 106 90 }
+			{ 2 0 0 } { 68 49 42 } { 155 119 84 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -460,27 +479,28 @@ spriteTypes = {
 	# middle age
 	portraitType = {
 		name = "PORTRAIT_borcgfx_male1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_borc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_borc_male_head:p2"
-			"GFX_borc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_borc_male_nose:d3"
-			"GFX_borc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_borc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -490,34 +510,25 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 3 3 } { 71 54 49 } { 132 109 90 }
+			{ 3 2 2 } { 71 52 40 } { 125 106 90 }
+			{ 2 0 0 } { 68 49 42 } { 155 119 84 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
-		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -525,27 +536,28 @@ spriteTypes = {
 	# old age
 	portraitType = {
 		name = "PORTRAIT_borcgfx_male2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_borc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_borc_male_head:p2"
-			"GFX_borc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_borc_male_nose:d3"
-			"GFX_borc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_borc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -555,32 +567,24 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 3 3 } { 71 54 49 } { 132 109 90 }
+			{ 3 2 2 } { 71 52 40 } { 125 106 90 }
+			{ 2 0 0 } { 68 49 42 } { 155 119 84 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -596,28 +600,33 @@ spriteTypes = {
 	# borc female
 	portraitType = {
 		name = "PORTRAIT_borcgfx_female"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_borc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_borc_female_forehead:d5"
-			"GFX_borc_female_cheeks:d4"
-			"GFX_borc_female_nose:d3"
-			"GFX_borc_female_mouth:d2"
-			"GFX_borc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_borc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_borc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
@@ -625,30 +634,20 @@ spriteTypes = {
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 3 3 } { 71 54 49 } { 132 109 90 }
+			{ 3 2 2 } { 71 52 40 } { 125 106 90 }
+			{ 2 0 0 } { 68 49 42 } { 155 119 84 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -657,28 +656,33 @@ spriteTypes = {
 	# borc female midage
 	portraitType = {
 		name = "PORTRAIT_borcgfx_female1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_borc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_borc_female_forehead:d5"
-			"GFX_borc_female_cheeks:d4"
-			"GFX_borc_female_nose:d3"
-			"GFX_borc_female_mouth:d2"
-			"GFX_borc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_borc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_borc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
@@ -686,30 +690,20 @@ spriteTypes = {
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 3 3 } { 71 54 49 } { 132 109 90 }
+			{ 3 2 2 } { 71 52 40 } { 125 106 90 }
+			{ 2 0 0 } { 68 49 42 } { 155 119 84 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -718,28 +712,33 @@ spriteTypes = {
 	# borc female oldage
 	portraitType = {
 		name = "PORTRAIT_borcgfx_female2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_borc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_borc_female_forehead:d5"
-			"GFX_borc_female_cheeks:d4"
-			"GFX_borc_female_nose:d3"
-			"GFX_borc_female_mouth:d2"
-			"GFX_borc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_borc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_borc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
@@ -747,30 +746,20 @@ spriteTypes = {
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 3 3 } { 71 54 49 } { 132 109 90 }
+			{ 3 2 2 } { 71 52 40 } { 125 106 90 }
+			{ 2 0 0 } { 68 49 42 } { 155 119 84 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -782,27 +771,28 @@ spriteTypes = {
 	# Red Orc Male
 	portraitType = {
 		name = "PORTRAIT_rorcgfx_male"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_rorc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_rorc_male_head:p2"
-			"GFX_rorc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_rorc_male_nose:d3"
-			"GFX_rorc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_rorc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -812,32 +802,25 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 2 0 } { 123 22 0 } { 247 100 85 }
+			{ 6 2 0 } { 126 28 0 } { 247 110 85 }
+			{ 6 2 0 } { 120 28 21 } { 247 100 95 }
+			{ 6 2 0 } { 122 26 9 } { 237 90 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -846,27 +829,28 @@ spriteTypes = {
 	# middle age
 	portraitType = {
 		name = "PORTRAIT_rorcgfx_male1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_rorc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_rorc_male_head:p2"
-			"GFX_rorc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_rorc_male_nose:d3"
-			"GFX_rorc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_rorc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -876,32 +860,25 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 2 0 } { 123 22 0 } { 247 100 85 }
+			{ 6 2 0 } { 126 28 0 } { 247 110 85 }
+			{ 6 2 0 } { 120 28 21 } { 247 100 95 }
+			{ 6 2 0 } { 122 26 9 } { 237 90 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -910,27 +887,28 @@ spriteTypes = {
 	# old age
 	portraitType = {
 		name = "PORTRAIT_rorcgfx_male2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_rorc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_rorc_male_head:p2"
-			"GFX_rorc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_rorc_male_nose:d3"
-			"GFX_rorc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_rorc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -940,32 +918,25 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 2 0 } { 123 22 0 } { 247 100 85 }
+			{ 6 2 0 } { 126 28 0 } { 247 110 85 }
+			{ 6 2 0 } { 120 28 21 } { 247 100 95 }
+			{ 6 2 0 } { 122 26 9 } { 237 90 80 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -981,28 +952,33 @@ spriteTypes = {
 	# rorc female
 	portraitType = {
 		name = "PORTRAIT_rorcgfx_female"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_rorc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_rorc_female_forehead:d5"
-			"GFX_rorc_female_cheeks:d4"
-			"GFX_rorc_female_nose:d3"
-			"GFX_rorc_female_mouth:d2"
-			"GFX_rorc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_rorc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_rorc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
@@ -1010,30 +986,21 @@ spriteTypes = {
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 2 0 } { 123 22 0 } { 247 100 85 }
+			{ 6 2 0 } { 126 28 0 } { 247 110 85 }
+			{ 6 2 0 } { 120 28 21 } { 247 100 95 }
+			{ 6 2 0 } { 122 26 9 } { 237 90 80 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1042,28 +1009,33 @@ spriteTypes = {
 	# rorc female midage
 	portraitType = {
 		name = "PORTRAIT_rorcgfx_female1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_rorc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_rorc_female_forehead:d5"
-			"GFX_rorc_female_cheeks:d4"
-			"GFX_rorc_female_nose:d3"
-			"GFX_rorc_female_mouth:d2"
-			"GFX_rorc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_rorc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_rorc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
@@ -1071,30 +1043,21 @@ spriteTypes = {
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 2 0 } { 123 22 0 } { 247 100 85 }
+			{ 6 2 0 } { 126 28 0 } { 247 110 85 }
+			{ 6 2 0 } { 120 28 21 } { 247 100 95 }
+			{ 6 2 0 } { 122 26 9 } { 237 90 80 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1103,59 +1066,55 @@ spriteTypes = {
 	# rorc female oldage
 	portraitType = {
 		name = "PORTRAIT_rorcgfx_female2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_rorc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_rorc_female_forehead:d5"
-			"GFX_rorc_female_cheeks:d4"
-			"GFX_rorc_female_nose:d3"
-			"GFX_rorc_female_mouth:d2"
-			"GFX_rorc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_rorc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_rorc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
-		
+
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 2 0 } { 123 22 0 } { 247 100 85 }
+			{ 6 2 0 } { 126 28 0 } { 247 110 85 }
+			{ 6 2 0 } { 120 28 21 } { 247 100 95 }
+			{ 6 2 0 } { 122 26 9 } { 237 90 80 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1167,27 +1126,28 @@ spriteTypes = {
 	# Mok'Nathal Orc Male
 	portraitType = {
 		name = "PORTRAIT_morcgfx_male"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_morc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_morc_male_head:p2"
-			"GFX_morc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_morc_male_nose:d3"
-			"GFX_morc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_morc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -1197,32 +1157,24 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 5 2 } { 107 69 45 } { 202 144 78 }
+			{ 6 4 0 } { 112 64 41 } { 212 154 78 }
+			{ 5 4 4 } { 97 68 46 } { 202 148 98 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1231,27 +1183,28 @@ spriteTypes = {
 	# middle age
 	portraitType = {
 		name = "PORTRAIT_morcgfx_male1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_morc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_morc_male_head:p2"
-			"GFX_morc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_morc_male_nose:d3"
-			"GFX_morc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_morc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -1261,32 +1214,24 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 5 2 } { 107 69 45 } { 202 144 78 }
+			{ 6 4 0 } { 112 64 41 } { 212 154 78 }
+			{ 5 4 4 } { 97 68 46 } { 202 148 98 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1295,27 +1240,28 @@ spriteTypes = {
 	# old age
 	portraitType = {
 		name = "PORTRAIT_morcgfx_male2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_morc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_morc_male_head:p2"
-			"GFX_morc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_morc_male_nose:d3"
-			"GFX_morc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_morc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -1325,32 +1271,24 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 5 2 } { 107 69 45 } { 202 144 78 }
+			{ 6 4 0 } { 112 64 41 } { 212 154 78 }
+			{ 5 4 4 } { 97 68 46 } { 202 148 98 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1363,120 +1301,110 @@ spriteTypes = {
 	# morc female
 	portraitType = {
 		name = "PORTRAIT_morcgfx_female"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_morc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_morc_female_forehead:d5"
-			"GFX_morc_female_cheeks:d4"
-			"GFX_morc_female_nose:d3"
-			"GFX_morc_female_mouth:d2"
-			"GFX_morc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_morc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_morc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
-			"GFX_orc_female_clothes:p14"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
+			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 5 2 } { 107 69 45 } { 202 144 78 }
+			{ 6 4 0 } { 112 64 41 } { 212 154 78 }
+			{ 5 4 4 } { 97 68 46 } { 202 148 98 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
-		
+
 		headgear_that_hides_hair = { }
 	}
 
 	# morc female midage
 	portraitType = {
 		name = "PORTRAIT_morcgfx_female1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_morc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_morc_female_forehead:d5"
-			"GFX_morc_female_cheeks:d4"
-			"GFX_morc_female_nose:d3"
-			"GFX_morc_female_mouth:d2"
-			"GFX_morc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_morc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_morc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
-			"GFX_orc_female_clothes:p14"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
+			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 5 2 } { 107 69 45 } { 202 144 78 }
+			{ 6 4 0 } { 112 64 41 } { 212 154 78 }
+			{ 5 4 4 } { 97 68 46 } { 202 148 98 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1485,59 +1413,54 @@ spriteTypes = {
 	# morc female oldage
 	portraitType = {
 		name = "PORTRAIT_morcgfx_female2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_morc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_morc_female_forehead:d5"
-			"GFX_morc_female_cheeks:d4"
-			"GFX_morc_female_nose:d3"
-			"GFX_morc_female_mouth:d2"
-			"GFX_morc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_morc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_morc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
-			"GFX_orc_female_clothes:p14"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
+			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
-		
+
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 6 5 2 } { 107 69 45 } { 202 144 78 }
+			{ 6 4 0 } { 112 64 41 } { 212 154 78 }
+			{ 5 4 4 } { 97 68 46 } { 202 148 98 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1549,27 +1472,28 @@ spriteTypes = {
 	# Black Orc Male
 	portraitType = {
 		name = "PORTRAIT_dorcgfx_male"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_dorc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_dorc_male_head:p2"
-			"GFX_dorc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_dorc_male_nose:d3"
-			"GFX_dorc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_dorc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -1579,32 +1503,26 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 4 4 } { 74 78 70 } { 163 154 148 }
+			{ 3 4 3 } { 64 68 60 } { 142 150 140 }
+			{ 4 4 4 } { 70 75 72 } { 163 154 148 }
+			{ 4 5 3 } { 79 83 75 } { 183 174 148 }
+			{ 7 6 5 } { 106 90 83 } { 178 158 137 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1613,27 +1531,28 @@ spriteTypes = {
 	# middle age
 	portraitType = {
 		name = "PORTRAIT_dorcgfx_male1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_dorc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_dorc_male_head:p2"
-			"GFX_dorc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_dorc_male_nose:d3"
-			"GFX_dorc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_dorc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -1643,32 +1562,26 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 4 4 } { 74 78 70 } { 163 154 148 }
+			{ 3 4 3 } { 64 68 60 } { 142 150 140 }
+			{ 4 4 4 } { 70 75 72 } { 163 154 148 }
+			{ 4 5 3 } { 79 83 75 } { 183 174 148 }
+			{ 7 6 5 } { 106 90 83 } { 178 158 137 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1677,27 +1590,28 @@ spriteTypes = {
 	# old age
 	portraitType = {
 		name = "PORTRAIT_dorcgfx_male2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_male_hair_behind:p1:h:y"
-			"GFX_orc_male_beard_behind:p4:h:y"
-			"GFX_dorc_male_base:p2"
+			"GFX_orc_male_hair_behind:p1:e:y"
+			"GFX_orc_male_beard_behind:p4:e:y"
+			"GFX_orc_male_base:p2:h"
 			"GFX_orc_male_clothes:p14"
-			"GFX_dorc_male_head:p2"
-			"GFX_dorc_male_eyes:d6"
-			"GFX_orc_male_eyes2:d6:e"
-			"GFX_dorc_male_nose:d3"
-			"GFX_dorc_male_ear:d7"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
 			"GFX_orc_male_headgear_mid:p14"
-			"GFX_dorc_male_chin:d1"
+			"GFX_orc_male_chin:d1:h"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_orc_male_hair:p1:h:y"
+			"GFX_orc_male_hair:p1:e:y"
 		   	"GFX_orc_male_hair_detail:p1:y"
-			"GFX_orc_male_beard:p4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
 			"GFX_orc_male_beard_detail:p4:y"
 			"GFX_orc_male_mouth:d2"
 			"GFX_orc_male_blinded_eyes:p10"
@@ -1707,32 +1621,26 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 4 4 } { 74 78 70 } { 163 154 148 }
+			{ 3 4 3 } { 64 68 60 } { 142 150 140 }
+			{ 4 4 4 } { 70 75 72 } { 163 154 148 }
+			{ 4 5 3 } { 79 83 75 } { 183 174 148 }
+			{ 7 6 5 } { 106 90 83 } { 178 158 137 }
 		}
 
+		## Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1743,33 +1651,38 @@ spriteTypes = {
 ### dorc FEMALE ####
 
 
-	# Red Orc Female
+	# Dark Orc Female
 
 	# dorc female
 	portraitType = {
 		name = "PORTRAIT_dorcgfx_female"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_dorc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_dorc_female_forehead:d5"
-			"GFX_dorc_female_cheeks:d4"
-			"GFX_dorc_female_nose:d3"
-			"GFX_dorc_female_mouth:d2"
-			"GFX_dorc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_dorc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_dorc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
@@ -1777,30 +1690,22 @@ spriteTypes = {
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 4 4 } { 74 78 70 } { 163 154 148 }
+			{ 3 4 3 } { 64 68 60 } { 142 150 140 }
+			{ 4 4 4 } { 70 75 72 } { 163 154 148 }
+			{ 4 5 3 } { 79 83 75 } { 183 174 148 }
+			{ 7 6 5 } { 106 90 83 } { 178 158 137 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1809,28 +1714,33 @@ spriteTypes = {
 	# dorc female midage
 	portraitType = {
 		name = "PORTRAIT_dorcgfx_female1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_dorc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_dorc_female_forehead:d5"
-			"GFX_dorc_female_cheeks:d4"
-			"GFX_dorc_female_nose:d3"
-			"GFX_dorc_female_mouth:d2"
-			"GFX_dorc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_dorc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_dorc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
@@ -1838,30 +1748,22 @@ spriteTypes = {
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 4 4 } { 74 78 70 } { 163 154 148 }
+			{ 3 4 3 } { 64 68 60 } { 142 150 140 }
+			{ 4 4 4 } { 70 75 72 } { 163 154 148 }
+			{ 4 5 3 } { 79 83 75 } { 183 174 148 }
+			{ 7 6 5 } { 106 90 83 } { 178 158 137 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1870,60 +1772,56 @@ spriteTypes = {
 	# dorc female oldage
 	portraitType = {
 		name = "PORTRAIT_dorcgfx_female2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_orc_female_hair_behind:p1:h:y"
-			"GFX_dorc_female_base:p2"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
 			"GFX_orc_female_clothes:p14"
-			"GFX_dorc_female_forehead:d5"
-			"GFX_dorc_female_cheeks:d4"
-			"GFX_dorc_female_nose:d3"
-			"GFX_dorc_female_mouth:d2"
-			"GFX_dorc_female_eyes:d6"
-			"GFX_orc_female_eyes2:d6:e"			
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_dorc_female_mouth_uncolored:d2"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyes_uncolored:d6"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
 			"GFX_orc_female_scars:p7:y"
 			"GFX_orc_female_reddots:p8"
 			"GFX_orc_female_boils:p9"
 			"GFX_orc_female_blinded_eyes:p10"
-			"GFX_dorc_female_ear:d7"
+			"GFX_orc_female_ear:d7:h"
 			"GFX_orc_female_maimed_eyepatch:p13:y"
 			"GFX_orc_female_maimed_masks:p12:y"
-			"GFX_orc_female_hair:p1:h:y"
-			"GFX_orc_female_hair_uncolored:p1"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
 			"GFX_orc_female_clothes_infront:p14"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
-		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 7 7 10 } { 71 70 104 } { 255 255 255 }
-			{ 8 4 2 } { 86 42 23 } { 255 255 255 }
-			{ 8 2 2 } { 80 19 24 } { 255 255 255 }
-			{ 12 5 9 } { 128 60 100 } { 255 255 255 }
-			{ 15 9 16 } { 153 87 162 } { 255 255 255 }
-			{ 5 4 4 } { 112 103 104 } { 255 255 255 }
-			{ 15 13 10 } { 151 136 104 } { 255 255 255 }
+			{ 4 4 4 } { 74 78 70 } { 163 154 148 }
+			{ 3 4 3 } { 64 68 60 } { 142 150 140 }
+			{ 4 4 4 } { 70 75 72 } { 163 154 148 }
+			{ 4 5 3 } { 79 83 75 } { 183 174 148 }
+			{ 7 6 5 } { 106 90 83 } { 178 158 137 }
 		}
 
 		eye_color_index = 9
 		eye_color = {
-			{ 64 110 255}
-			{ 255 75 0 }
-			{ 40 200 40 }
-			{ 200 0 200}
-			{ 255 255 0 }
-			{ 124 220 220 }
-			{ 102 102 102 }
-			{ 255 128 0 }
-			{ 128 128 255 }
-			{ 20 120 255 }
-			{ 170 70 255 }
-			{ 255 65 55 }
-			{ 20 255 120 }
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
 		}
 		
 		headgear_that_hides_hair = { }
