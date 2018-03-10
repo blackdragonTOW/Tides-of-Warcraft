@@ -52,9 +52,9 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_trogg_male_clothes"
-		texturefile = "gfx\\characters\\trogg_male\\trogg_male_clothes.dds"
-		noOfFrames = 5
+		name = "GFX_trogg_male_cheeks"
+		texturefile = "gfx\\characters\\trogg_male\\trogg_male_cheeks.dds"
+		noOfFrames = 4
 		norefcount = yes
 		can_be_lowres = yes
 	}
@@ -85,14 +85,6 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_trogg_male_eyebrows"
-		texturefile = "gfx\\characters\\trogg_male\\trogg_male_eyebrows_1.dds"
-		noOfFrames = 10
-		norefcount = yes
-		can_be_lowres = yes
-	}
-
-		spriteType = {
-		name = "GFX_trogg_male_eyebrowse"
 		texturefile = "gfx\\characters\\trogg_male\\trogg_male_eyebrows_1.dds"
 		noOfFrames = 10
 		norefcount = yes
@@ -184,31 +176,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_trogg_female_body_hair"
 		texturefile = "gfx\\characters\\trogg_female\\trogg_female_body_hair_1.dds"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-
-	spriteType = {
-		name = "GFX_trogg_female_eyebrows"
-		texturefile = "gfx\\characters\\trogg_female\\trogg_female_eyebrows_1.dds"
-		noOfFrames = 10
-		norefcount = yes
-		can_be_lowres = yes
-	}
-
-		spriteType = {
-		name = "GFX_trogg_female_eyebrows"
-		texturefile = "gfx\\characters\\trogg_female\\trogg_female_eyebrows_1.dds"
-		noOfFrames = 10
-		norefcount = yes
-		can_be_lowres = yes
-	}
-	
-	spriteType = {
-		name = "GFX_trogg_female_eyebrows"
-		texturefile = "gfx\\characters\\trogg_female\\trogg_female_eyebrows_1.dds"
-		noOfFrames = 10
+		noOfFrames = 4
 		norefcount = yes
 		can_be_lowres = yes
 	}
@@ -228,7 +196,7 @@ spriteTypes = {
 		norefcount = yes
 		can_be_lowres = yes
 	}
-
+	
 	spriteType = {
 		name = "GFX_trogg_female_eyes"
 		texturefile = "gfx\\characters\\trogg_female\\trogg_female_eyes_1.dds"
@@ -238,9 +206,17 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_trogg_female_clothes"
-		texturefile = "gfx\\characters\\trogg_female\\trogg_female_clothes.dds"
-		noOfFrames = 5
+		name = "GFX_trogg_female_cheeks"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_cheeks.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_female_ear_behind"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_ear_behind_1.dds"
+		noOfFrames = 10
 		norefcount = yes
 		can_be_lowres = yes
 	}
@@ -254,8 +230,24 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_trogg_female_ear_behind"
-		texturefile = "gfx\\characters\\trogg_female\\trogg_female_ear_behind_1.dds"
+		name = "GFX_trogg_female_beard"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_beard_1.dds"
+		noOfFrames = 5
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_female_eyebrows"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_eyebrows_1.dds"
+		noOfFrames = 10
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	
+	spriteType = {
+		name = "GFX_trogg_female_eyebrows"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_eyebrows_1.dds"
 		noOfFrames = 10
 		norefcount = yes
 		can_be_lowres = yes
@@ -270,9 +262,41 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_trogg_female_scars"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_scars.dds"
+		noOfFrames = 5
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_female_blinded_eyes"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_blinded_eyes.dds"
+		noOfFrames = 2
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
 		name = "GFX_trogg_female_boils_illness"
 		texturefile = "gfx\\characters\\trogg_female\\trogg_female_boils.dds"
 		noOfFrames = 2
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_female_maimed_eyepatch"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_maimed_eyepatch.dds"
+		noOfFrames = 12
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_female_maimed_masks"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_maimed_masks.dds"
+		noOfFrames = 14
 		norefcount = yes
 		can_be_lowres = yes
 	}
@@ -285,19 +309,10 @@ spriteTypes = {
 		can_be_lowres = yes
 	}
 	
-	# children
 	spriteType = {
-		name = "PORTRAIT_trogggfx_child_male"
-		texturefile = "gfx\\characters\\default_son.tga"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-	
-	spriteType = {
-		name = "PORTRAIT_trogggfx_child_female"
-		texturefile = "gfx\\characters\\default_daughter.tga"
-		noOfFrames = 1
+		name = "GFX_trogg_female_clothes"
+		texturefile = "gfx\\characters\\trogg_female\\trogg_female_clothes.dds"
+		noOfFrames = 5
 		norefcount = yes
 		can_be_lowres = yes
 	}
