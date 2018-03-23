@@ -1,0 +1,33 @@
+2001 = {
+	name = "Rael"
+	dynasty = 2001
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 2
+	martial = 6
+	stewardship = 0
+	intrigue = 3
+	learning = 1
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = wroth
+	trait = content
+	disallow_random_traits = yes
+	9978.6.12 = {
+		birth = yes
+		employer = 12
+	}
+	9997.2.1 = {
+		employer = 13
+	}
+	10020.8.9 = {
+		effect = {
+			add_trait = race_undead_scourge
+			culture = scourge
+			religion = lich_king
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}

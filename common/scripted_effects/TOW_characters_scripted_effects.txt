@@ -14,7 +14,7 @@ TOW_initialize_character_race_from_culture = {
 	trigger_switch = {
 		on_trigger = culture_group
 		
-		human = { add_trait = human }
+		human = { add_trait = race_human }
 		orcish = {
 			if = {
 				limit = {
@@ -25,101 +25,115 @@ TOW_initialize_character_race_from_culture = {
 						#Twilight's hammer was destroyed during second war, or at any point before
 					}
 				}
-				add_trait = orc
+				add_trait = race_orc
 				if = {
 					limit = {
 						culture = twilights_hammer
-						set_graphical_culture = orc_gfx
 					}
+					set_graphical_culture = bleeding_hollow # doesn't matter
 				}
 			}
 			else = {
-				add_trait = pale_orc
+				add_trait = race_pale_orc
 			}
 		}
-		dwarf = { add_trait = AK_trait_dwarf }
-		gnome = { add_trait = gnome }
-		goblin = { add_trait = goblin }
-		ogre = { add_trait = ogre }
-		murloc = { add_trait = murloc }
-		gnoll = { add_trait = gnoll }
-		naga = { add_trait = naga }
-		kobold = { add_trait = kobold }
-		trogg = { add_trait = trogg }
+		dwarf = { add_trait = race_dwarf }
+		gnome = { add_trait = race_gnome }
+		goblin = { add_trait = race_goblin }
+		ogre = { add_trait = race_ogre }
+		murloc = { add_trait = race_murloc }
+		gnoll = { add_trait = race_gnoll }
+		naga = { add_trait = race_naga }
+		kobold = { add_trait = race_kobold }
+		trogg = { add_trait = race_trogg }
 	}
 	trigger_switch = {
 		on_trigger = culture
 		
-		high_elven = { add_trait = high_elf }
-		blood_elven = { add_trait = blood_elf }
+		high_elven = { add_trait = race_high_elf }
+		blood_elven = { add_trait = race_blood_elf }
 		felblood = {
-			add_trait = blood_elf
+			add_trait = race_blood_elf
 			set_graphical_culture = felblood
 			culture = blood_elven
-			add_trait = felsworn
+			add_trait = fel_corrupted
 		}
 		wretched = {
-			add_trait = wretched
-			set_graphical_culture = wretched
+			add_trait = race_wretched
+			set_graphical_culture = race_wretched
 			culture = blood_elven
 		}
-		red_dragonflight = { add_trait = dragon_red }
-		blue_dragonflight = { add_trait = dragon_blue }
-		bronze_dragonflight = { add_trait = dragon_bronze }
-		green_dragonflight = { add_trait = dragon_green }
-		black_dragonflight = { add_trait = dragon_black }
-		chromatic_dragonflight = { add_trait = dragon_chromatic }
-		twilight_dragonflight = { add_trait = dragon_twilight }
-		infinite_dragonflight = { add_trait = dragon_infinite }
-		nightmare_dragonflight = { add_trait = dragon_nightmare }
+		red_dragonflight = { add_trait = race_dragon }
+		blue_dragonflight = { add_trait = race_dragon }
+		bronze_dragonflight = { add_trait = race_dragon }
+		green_dragonflight = { add_trait = race_dragon }
+		black_dragonflight = { add_trait = race_dragon }
+		chromatic_dragonflight = { add_trait = race_dragon }
+		twilight_dragonflight = { add_trait = race_dragon }
+		infinite_dragonflight = { add_trait = race_dragon }
+		nightmare_dragonflight = { add_trait = race_dragon }
 		scourge = {
-			add_trait = human
-			add_trait = undead_scourge
+			add_trait = race_human
+			add_trait = race_undead_scourge
 		}
 		forsaken = {
-			add_trait = human
-			add_trait = undead_forsaken
+			add_trait = race_human
+			add_trait = race_undead_forsaken
 		}
-		amani = { add_trait = troll_forest }
-		atalai = { add_trait = troll_jungle }
-		razorbranch = { add_trait = troll_jungle }
-		firetree = { add_trait = troll_forest }
-		mossflayer = { add_trait = troll_forest }
-		revantusk = { add_trait = troll_forest }
-		vilebranch = { add_trait = troll_forest }
-		shadowpine = { add_trait = troll_forest }
-		witherbark = { add_trait = troll_forest }
-		bloodscalp = { add_trait = troll_jungle }
-		darkspear = { add_trait = troll_jungle }
-		gurubashi = { add_trait = troll_jungle }
-		shatterspear = { add_trait = troll_jungle }
-		skullsplitter = { add_trait = troll_jungle }
-		drakkari = { add_trait = troll_ice }
-		frostmane = { add_trait = troll_ice }
-		sandfury = { add_trait = troll_sand }
-		#hakkari = { add_trait = troll_hakkari }
-		smolderthorn = { add_trait = troll_forest }
-		shadowglen = { add_trait = troll_forest }
-		winterax = { add_trait = troll_ice }
-		winterfang = { add_trait = troll_ice }
-		shadowtooth = { add_trait = troll_dark }
-		zandalari = { add_trait = troll_zandalari }
-		eredar = { add_trait = eredar }
-		nathrezim = { add_trait = dreadlord }
-		sayaad = { add_trait = succubus }
-		ered_ruin = { add_trait = doomlord }
-		annihilan = { add_trait = pit_lord } 
-		mo_arg = { add_trait = fel_lord }
-		shivarra = { add_trait = shivarra }
-		draenei = { add_trait = draenei }
-		broken = { add_trait = broken }
-		lost_one = { add_trait = lost_one }
-		nraqi = { add_trait = faceless }
-		voidwalker = { add_trait = voidwalker }
-		air_elemental = { add_trait = air_elemental }
-		earth_elemental = { add_trait = earth_elemental }
-		fire_elemental = { add_trait = fire_elemental }
-		water_elemental = { add_trait = water_elemental }
+		amani = { add_trait = race_troll_forest }
+		atalai = { add_trait = race_troll_jungle }
+		razorbranch = { add_trait = race_troll_jungle }
+		firetree = { add_trait = race_troll_forest }
+		mossflayer = { add_trait = race_troll_forest }
+		revantusk = { add_trait = race_troll_forest }
+		vilebranch = { add_trait = race_troll_forest }
+		shadowpine = { add_trait = race_troll_forest }
+		witherbark = { add_trait = race_troll_forest }
+		bloodscalp = { add_trait = race_troll_jungle }
+		darkspear = { add_trait = race_troll_jungle }
+		gurubashi = { add_trait = race_troll_jungle }
+		shatterspear = { add_trait = race_troll_jungle }
+		skullsplitter = { add_trait = race_troll_jungle }
+		drakkari = { add_trait = race_troll_ice }
+		frostmane = { add_trait = race_troll_ice }
+		sandfury = { add_trait = race_troll_sand }
+		hakkari = { add_trait = race_troll_jungle }
+		smolderthorn = { add_trait = race_troll_forest }
+		shadowglen = { add_trait = race_troll_forest }
+		winterax = { add_trait = race_troll_ice }
+		winterfang = { add_trait = race_troll_ice }
+		shadowtooth = { add_trait = race_troll_dark }
+		zandalari = { add_trait = race_troll_zandalari }
+		eredar = { add_trait = race_eredar }
+		nathrezim = { add_trait = race_dreadlord }
+		sayaad = { add_trait = race_succubus }
+		ered_ruin = { add_trait = race_doomlord }
+		annihilan = { add_trait = race_pit_lord } 
+		mo_arg = {
+			if = {
+				limit = {
+					NOT = { stewardship = 9 } # Will need tweaking
+				}
+				add_trait = race_fel_lord
+			}
+			else = {
+				add_trait = race_mo_arg
+			}
+		}
+		shivarra = { add_trait = race_shivarra }
+		antaen = { add_trait = race_antaen }
+		aranasi = { add_trait = race_aranasi }
+		inquisitor = { add_trait = race_inquisitor }
+		observer = { add_trait = race_observer }
+		draenei = { add_trait = race_draenei }
+		broken = { add_trait = race_broken }
+		lost_one = { add_trait = race_lost_one }
+		nraqi = { add_trait = race_faceless }
+		voidwalker = { add_trait = race_voidwalker }
+		air_elemental = { add_trait = race_air_elemental }
+		earth_elemental = { add_trait = race_earth_elemental }
+		fire_elemental = { add_trait = race_fire_elemental }
+		water_elemental = { add_trait = race_water_elemental }
 	}
 }
 
@@ -132,52 +146,71 @@ TOW_update_character_race_from_liege = {
 				liege = {
 					graphical_culture = borcgfx
 				}
-				set_graphical_culture = mag_har
 			}
+			random_list = {
+				1 = {
+					set_graphical_culture = mag_har
+				}
+				10 = { # Set a modifier to make this 0 if in Draenor/Outland
+					set_graphical_culture = bleeding_hollow # doesn't matter
+				}
 		}
 		elseif = {
 			limit = {
 				liege = {
 					graphical_culture = rorcgfx
 				}
-				set_graphical_culture = fel_orc
+				OR = {
+					religion = burning_legion
+					religion = demonology
+				}
+			}
+			random_list = {
+				1 = {
+					set_graphical_culture = fel_orc
+					random_list = {
+						1 = {
+							add_trait = fel_corrupted
+						}
+						4 = {
+							add_trait = fel_tainted
+						}
+					}
+				}
+				1 = { # Set a modifier to make this 0 if in Outland
+					set_graphical_culture = bleeding_hollow # shouldn't matter
+					random_list = {
+						1 = {
+							add_trait = fel_tainted
+						}
+						4 = {
+							add_trait = fel_touched
+						}
+					}
+				}
 			}
 		}
 	}
 
 
 	if = {
-		limit = { trait = high_elf }
-		if = {
-			limit = {
-				liege = {
-					graphical_culture = welvengfx
-					trait = wretched
-				}
-				set_graphical_culture = wretched
+		limit = { 
+			OR = {
+				trait = race_high_elf
+				trait = race_blood_elf
 			}
 		}
-	}
-
-	if = {
-		limit = { trait = blood_elf }
-
-		#if = {
-		#	limit = {
-		#		liege = {
-		#			graphical_culture = felvengfx
-		#		}
-		#		set_graphical_culture = felblood
-		#	}
-		#}
 		if = {
 			limit = {
 				liege = {
 					graphical_culture = welvengfx
-					trait = wretched
+					trait = race_wretched
 				}
-				set_graphical_culture = wretched
 			}
+			set_graphical_culture = wretched
+			remove_trait = race_high_elf
+			remove_trait = race_blood_elf
+			add_trait = race_wretched
 		}
 	}
 }

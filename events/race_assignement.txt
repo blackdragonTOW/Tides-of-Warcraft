@@ -9,313 +9,1600 @@ character_event = { # this is only for on_birth
 	hide_window = yes
 	
 	immediate = {
-		set_character_flag = race_assigned
-		mother = {
-			ROOT = { set_graphical_culture = PREV }
-			trigger_switch = {
-				on_trigger = trait
-				
-				human = {
-					ROOT = { add_trait = human }
+		#First same-trait pairings
+		if = {
+			limit = {
+				mother = {
+					trait = race_human
 				}
-				orc = {
-					ROOT = { add_trait = orc }
+				real_father = {
+					trait = race_human
 				}
-				dwarf = {
-					ROOT = { add_trait = AK_trait_dwarf }
+			}
+			add_trait = race_human
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_high_elf
 				}
-				high_elf = {
-					ROOT = { add_trait = high_elf }
+				real_father = {
+					trait = race_high_elf
 				}
-				blood_elf = {
-					ROOT = { add_trait = blood_elf }
+			}
+			add_trait = race_high_elf
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_blood_elf
 				}
-				wretched = {
-					ROOT = { add_trait = wretched }
+				real_father = {
+					trait = race_blood_elf
 				}
-				gnome = {
-					ROOT = { add_trait = gnome }
+			}
+			add_trait = race_blood_elf
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_wretched
 				}
-				goblin = {
-					ROOT = { add_trait = goblin }
+				real_father = {
+					trait = race_wretched
 				}
-				dragon_red = {
-					ROOT = { add_trait = dragon_red }
+			}
+			add_trait = race_wretched
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_gnome
 				}
-				dragon_blue = {
-					ROOT = { add_trait = dragon_blue }
+				real_father = {
+					trait = race_gnome
 				}
-				dragon_bronze = {
-					ROOT = { add_trait = dragon_bronze }
+			}
+			add_trait = race_gnome
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_goblin
 				}
-				dragon_green = {
-					ROOT = { add_trait = dragon_green }
+				real_father = {
+					trait = race_goblin
 				}
-				dragon_black = {
-					ROOT = { add_trait = dragon_black }
+			}
+			add_trait = race_goblin
+		}
+		#Trolls are handled down in the crossbreed section
+		if = {
+			limit = {
+				mother = {
+					trait = race_ogre
 				}
-				dragon_chromatic = {
-					ROOT = { add_trait = dragon_chromatic }
+				real_father = {
+					trait = race_ogre
 				}
-				dragon_twilight = {
-					ROOT = { add_trait = dragon_twilight }
+			}
+			add_trait = race_ogre
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_murloc
 				}
-				dragon_infinite = {
-					ROOT = { add_trait = dragon_infinite }
+				real_father = {
+					trait = race_murloc
 				}
-				dragon_nightmare = {
-					ROOT = { add_trait = dragon_nightmare }
+			}
+			add_trait = race_murloc
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_gnoll
 				}
-				undead_scourge = {
-					ROOT = { add_trait = undead_scourge }
+				real_father = {
+					trait = race_gnoll
 				}
-				undead_forsaken = {
-					ROOT = { add_trait = undead_forsaken }
+			}
+			add_trait = race_gnoll
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_naga
 				}
-				undead_generic = {
-					ROOT = { add_trait = undead_generic }
+				real_father = {
+					trait = race_naga
 				}
-				troll_forest = {
-					ROOT = { add_trait = troll_forest }
+			}
+			add_trait = race_naga
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_trogg
 				}
-				troll_ice = {
-					ROOT = { add_trait = troll_ice }
+				real_father = {
+					trait = race_trogg
 				}
-				troll_jungle = {
-					ROOT = { add_trait = troll_jungle }
+			}
+			add_trait = race_trogg
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_kobold
 				}
-				troll_sand = {
-					ROOT = { add_trait = troll_sand }
+				real_father = {
+					trait = race_kobold
 				}
-				troll_zandalari = {
-					ROOT = { add_trait = troll_zandalari }
+			}
+			add_trait = race_kobold
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_draenei
 				}
-				ogre = {
-					ROOT = { add_trait = ogre }
+				real_father = {
+					trait = race_draenei
 				}
-				murloc = {
-					ROOT = { add_trait = murloc }
+			}
+			add_trait = race_draenei
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_broken
 				}
-				gnoll = {
-					ROOT = { add_trait = gnoll }
+				real_father = {
+					trait = race_broken
 				}
-				naga = {
-					ROOT = { add_trait = naga }
+			}
+			add_trait = race_broken
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_lost_one
 				}
-				kobold = {
-					ROOT = { add_trait = kobold }
+				real_father = {
+					trait = race_lost_one
 				}
-				trogg = {
-					ROOT = { add_trait = trogg }
+			}
+			add_trait = race_lost_one
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_pale_orc
 				}
-				faceless = {
-					ROOT = { add_trait = faceless }
+				real_father = {
+					trait = race_pale_orc
 				}
-				eredar = {
-					ROOT = { add_trait = eredar }
+			}
+			add_trait = race_pale_orc
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_half_elf
 				}
-				dreadlord = {
-					ROOT = { add_trait = dreadlord }
+				real_father = {
+					trait = race_half_elf
 				}
-				succubus = {
-					ROOT = { add_trait = succubus }
+			}
+			add_trait = race_half_elf
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOR = {
+								has_character_flag = half_high_elf
+								has_character_flag = quarter_high_elf
+							}
+						}
+						real_father = {
+							NOR = {
+								has_character_flag = half_high_elf
+								has_character_flag = quarter_high_elf
+							}
+						}
+					}
+					set_character_flag = half_high_elf
 				}
-				shivarra = {
-					ROOT = { add_trait = shivarra }
-				}
-				pit_lord = {
-					ROOT = { add_trait = pit_lord }
-				}
-				doomlord = {
-					ROOT = { add_trait = doomlord }
-				}
-				fel_lord = {
-					ROOT = { add_trait = fel_lord }
-				}
-				draenei = {
-					ROOT = { add_trait = draenei }
-				}
-				broken = {
-					ROOT = { add_trait = broken }
-				}
-				lost_one = {
-					ROOT = { add_trait = lost_one }
-				}
-				voidwalker = {
-					ROOT = { add_trait = voidwalker }
-				}
-				pale_orc = {
-					ROOT = { add_trait = pale_orc }
-				}
-				air_elemental = {
-					ROOT = { add_trait = air_elemental }
-				}
-				earth_elemental = {
-					ROOT = { add_trait = earth_elemental }
-				}
-				fire_elemental = {
-					ROOT = { add_trait = fire_elemental }
-				}
-				water_elemental = {
-					ROOT = { add_trait = water_elemental }
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOR = {
+								has_character_flag = half_blood_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+						real_father = {
+							NOR = {
+								has_character_flag = half_blood_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+					}
+					set_character_flag = half_blood_elf
 				}
 			}
 		}
-		any_sibling = {
+		if = {
 			limit = {
-				not = {
-					has_character_flag = race_assigned
+				mother = {
+					trait = race_half_draenei
+				}
+				real_father = {
+					trait = race_half_draenei
 				}
 			}
-			set_character_flag = race_assigned
-			mother = {
-				ROOT = { set_graphical_culture = PREV }
+			add_trait = race_half_draenei
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_half_ogre
+				}
+				real_father = {
+					trait = race_half_ogre
+				}
+			}
+			add_trait = race_half_ogre
+		}
+		# For the few race traits with multiple GFXes
+		if = {
+			limit = {
+				mother = {
+					trait = race_orc
+				}
+				real_father = {
+					trait = race_orc
+				}
+			}
+			add_trait = race_orc
+			if = {
+				limit = {
+					trait = race_orc
+					OR = {
+						mother = {
+							graphical_culture = rorcgfx
+						}
+						real_father = {
+							graphical_culture = rorcgfx
+						}
+					}
+				}
+				set_graphical_culture = fel_orc
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_dwarf
+				}
+				real_father = {
+					trait = race_dwarf
+				}
+			}
+			add_trait = race_dwarf
+			random_list = {
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = bronzebeardgfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = bronzebeardgfx }
+						}
+					}
+					set_graphical_culture = bronzebeard
+				 }
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = blackdwarfgfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = blackdwarfgfx }
+						}
+					}
+					set_graphical_culture = dark_iron
+				 }
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = wilddwarfgfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = wilddwarfgfx }
+						}
+					}
+					set_graphical_culture = wildhammer
+				 }
+			}
+		}
+		if = {
+			limit = {
+				mother = {
+					trait = race_dragon
+				}
+				real_father = {
+					trait = race_dragon
+				}
+			}
+			add_trait = race_dragon
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = bronzedragongfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = bronzedragongfx }
+						}
+					}
+					set_graphical_culture = bronze_dragonflight
+				 }
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = reddragongfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = reddragongfx }
+						}
+					}
+					set_graphical_culture = red_dragonflight
+				 }
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = blackdragongfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = blackdragongfx }
+						}
+					}
+					set_graphical_culture = black_dragonflight
+				 }
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = bluedragongfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = bluedragongfx }
+						}
+					}
+					set_graphical_culture = blue_dragonflight
+				 }
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = greendragongfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = greendragongfx }
+						}
+					}
+					set_graphical_culture = green_dragonflight
+				 }
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = infinitedragongfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = infinitedragongfx }
+						}
+					}
+					set_graphical_culture = infinite_dragonflight
+				 }
+				 1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { graphical_culture = nightdragongfx }
+						}
+						real_father = {
+							NOT = { graphical_culture = nightdragongfx }
+						}
+					}
+					set_graphical_culture = nightmare_dragonflight
+				 }
+				 # Add more as needed
+			}
+		}
+		#For crossbreeds and the cases with sub-races
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_human
+						}
+						real_father = {
+							OR = {
+								trait = race_high_elf
+								trait = race_blood_elf
+								trait = race_wretched
+								#all other elves later
+							}
+						}
+					}
+					AND = {
+						real_father = {
+							trait = race_human
+						}
+						mother = {
+							OR = {
+								trait = race_high_elf
+								trait = race_blood_elf
+								trait = race_wretched
+								#all other elves later
+							}
+						}
+					}
+				}
+			}
+			add_trait = race_half_elf
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							OR = {
+								trait = race_high_elf
+								AND = {
+									trait = race_wretched
+									culture = high_elven
+								}
+							}
+						}
+						real_father = {
+							OR = {
+								trait = race_high_elf
+								AND = {
+									trait = race_wretched
+									culture = high_elven
+								}
+							}
+						}
+					}
+				}
+				set_character_flag = half_high_elf
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							OR = {
+								trait = race_blood_elf
+								AND = {
+									trait = race_wretched
+									culture = blood_elven
+								}
+							}
+						}
+						real_father = {
+							OR = {
+								trait = race_blood_elf
+								AND = {
+									trait = race_wretched
+									culture = blood_elven
+								}
+							}
+						}
+					}
+				}
+				set_character_flag = half_blood_elf
+			}
+			#Add GFX when it is done
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_half_elf
+						}
+						real_father = {
+							trait = race_human
+						}
+					}
+					AND = {
+						real_father = {
+							trait = race_half_elf
+						}
+						mother = {
+							trait = race_human
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							OR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+						real_father = {
+							OR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+					}
+				}
+				add_trait = race_human
+				set_graphical_culture = humangfx
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							NOR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+						real_father = {
+							NOR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+					}
+				}
+				add_trait = race_half_elf
+				if = {
+					limit = {
+						OR = {
+							mother = {
+								has_character_flag = half_high_elf
+							}
+							real_father = {
+								has_character_flag = half_high_elf
+							}
+						} 
+					}
+					set_character_flag = quarter_high_elf
+				}
+				if = {
+					limit = {
+						OR = {
+							mother = {
+								has_character_flag = half_blood_elf
+							}
+							real_father = {
+								has_character_flag = half_blood_elf
+							}
+						} 
+					}
+					set_character_flag = quarter_blood_elf
+				}
+				#Add the GFX later
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_half_elf
+						}
+						real_father = {
+							trait = race_high_elf
+						}
+					}
+					AND = {
+						real_father = {
+							trait = race_half_elf
+						}
+						mother = {
+							trait = race_high_elf
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							OR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+						real_father = {
+							OR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+					}
+				}
+				add_trait = race_high_elf
+				set_graphical_culture = helvengfx
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							NOR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+						real_father = {
+							NOR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+					}
+				}
+				add_trait = race_half_elf
+				set_character_flag = quarter_high_elf
+				#Add the GFX later
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_half_elf
+						}
+						real_father = {
+							trait = race_blood_elf
+						}
+					}
+					AND = {
+						real_father = {
+							trait = race_half_elf
+						}
+						mother = {
+							trait = race_blood_elf
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							OR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+						real_father = {
+							OR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+					}
+				}
+				add_trait = race_blood_elf
+				set_graphical_culture = belvengfx
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							NOR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+						real_father = {
+							NOR = {
+								has_character_flag = quarter_high_elf
+								has_character_flag = quarter_blood_elf
+							}
+						}
+					}
+				}
+				add_trait = race_blood_elf
+				set_character_flag = quarter_blood_elf
+				#Add the GFX later
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_orc
+						}
+						real_father = {
+							trait = race_ogre
+						}
+					}
+					AND = {
+						mother = {
+							trait = race_ogre
+						}
+						real_father = {
+							trait = race_orc
+						}
+					}
+				}
+			}
+			add_trait = race_half_ogre
+			#Add GFX later
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_orc
+						}
+						real_father = {
+							trait = race_half_ogre
+						}
+					}
+					AND = {
+						mother = {
+							trait = race_half_ogre
+						}
+						real_father = {
+							trait = race_orc
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							has_character_flag = quarter_orc
+						}
+						real_father = {
+							has_character_flag = quarter_orc
+						}
+					}
+				}
+				add_trait = race_orc
+				if = {
+					limit = {
+						real_father = {
+							has_character_flag = quarter_orc
+						}
+					}
+					real_father = {
+						PREV = {
+							set_graphical_culture = PREV
+						}
+					}
+				}
+				if = { # In this order so mother will be the overriding one
+					limit = {
+						mother = {
+							has_character_flag = quarter_orc
+						}
+					}
+					mother = {
+						PREV = {
+							set_graphical_culture = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					mother = {
+						NOT = { has_character_flag = quarter_orc }
+					}
+					real_father = {
+						NOT = { has_character_flag = quarter_orc }
+					}
+				}
+				add_trait = race_half_ogre
+				set_character_flag = quarter_orc
+				#Add GFX later
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_ogre
+						}
+						real_father = {
+							trait = race_half_ogre
+						}
+					}
+					AND = {
+						mother = {
+							trait = race_half_ogre
+						}
+						real_father = {
+							trait = race_ogre
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							has_character_flag = quarter_ogre
+						}
+						real_father = {
+							has_character_flag = quarter_ogre
+						}
+					}
+				}
+				add_trait = race_ogre
+				set_graphical_culture = boulderfist # All of them use the same GFX, so doesn't matter
+			}
+			if = {
+				limit = {
+					mother = {
+						NOT = { has_character_flag = quarter_ogre }
+					}
+					real_father = {
+						NOT = { has_character_flag = quarter_ogre }
+					}
+				}
+				add_trait = race_half_ogre
+				set_character_flag = quarter_ogre
+				#Add GFX later
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_orc
+						}
+						real_father = {
+							OR = {
+								trait = race_draenei
+								trait = race_broken
+								trait = race_lost_One
+							}
+						}
+					}
+					AND = {
+						mother = {
+							OR = {
+								trait = race_draenei
+								trait = race_broken
+								trait = race_lost_One
+							}
+						}
+						real_father = {
+							trait = race_orc
+						}
+					}
+				}
+			}
+			add_trait = race_half_draenei
+			#Add GFX later
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_orc
+						}
+						real_father = {
+							trait = race_half_draenei
+						}
+					}
+					AND = {
+						mother = {
+							trait = race_half_draenei
+						}
+						real_father = {
+							trait = race_orc
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							has_character_flag = quarter_orc
+						}
+						real_father = {
+							has_character_flag = quarter_orc
+						}
+					}
+				}
+				add_trait = race_orc
+				if = {
+					limit = {
+						real_father = {
+							has_character_flag = quarter_orc
+						}
+					}
+					real_father = {
+						PREV = {
+							set_graphical_culture = PREV
+						}
+					}
+				}
+				if = { # In this order so mother will be the overriding one
+					limit = {
+						mother = {
+							has_character_flag = quarter_orc
+						}
+					}
+					mother = {
+						PREV = {
+							set_graphical_culture = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					mother = {
+						NOT = { has_character_flag = quarter_orc }
+					}
+					real_father = {
+						NOT = { has_character_flag = quarter_orc }
+					}
+				}
+				add_trait = race_half_draenei
+				set_character_flag = quarter_orc
+				#Add GFX later
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							OR = {
+								trait = race_draenei
+								trait = race_broken
+								trait = race_lost_One
+							}
+						}
+						real_father = {
+							trait = race_half_draenei
+						}
+					}
+					AND = {
+						mother = {
+							trait = race_half_draenei
+						}
+						real_father = {
+							OR = {
+								trait = race_draenei
+								trait = race_broken
+								trait = race_lost_One
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							has_character_flag = quarter_draenei
+						}
+						real_father = {
+							has_character_flag = quarter_draenei
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							mother = {
+								trait = race_draenei
+							}
+							real_father = {
+								trait = race_draenei
+							}
+						}
+					}
+					add_trait = race_draenei
+					#Add GFX later
+				}
+				if = {
+					limit = {
+						OR = {
+							mother = {
+								trait = race_broken
+							}
+							real_father = {
+								trait = race_broken
+							}
+						}
+					}
+					add_trait = race_broken
+					#Add GFX later
+				}
+				if = {
+					limit = {
+						OR = {
+							mother = {
+								trait = race_lost_one
+							}
+							real_father = {
+								trait = race_lost_one
+							}
+						}
+					}
+					add_trait = race_draenei
+					#Add GFX later
+				}
+			}
+			if = {
+				limit = {
+					mother = {
+						NOT = { has_character_flag = quarter_draenei }
+					}
+					real_father = {
+						NOT = { has_character_flag = quarter_draenei }
+					}
+				}
+				add_trait = race_half_draenei
+				set_character_flag = quarter_draenei
+				#Add GFX later
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_draenei
+						}
+						real_father = {
+							trait = race_broken
+						}
+					}
+					AND = {
+						real_father = {
+							trait = race_draenei
+						}
+						mother = {
+							trait = race_broken
+						}
+					}
+				}
+			}
+			random_list = {
+				1 = {
+					add_trait = race_draenei
+					#Add GFX later
+				}
+				1 = {
+					add_trait = race_broken
+					#Add GFX later
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_lost_one
+						}
+						real_father = {
+							trait = race_broken
+						}
+					}
+					AND = {
+						real_father = {
+							trait = race_lost_one
+						}
+						mother = {
+							trait = race_broken
+						}
+					}
+				}
+			}
+			random_list = {
+				1 = {
+					add_trait = race_lost_one
+					#Add GFX later
+				}
+				1 = {
+					add_trait = race_broken
+					#Add GFX later
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_draenei
+						}
+						real_father = {
+							trait = race_lost_one
+						}
+					}
+					AND = {
+						real_father = {
+							trait = race_draenei
+						}
+						mother = {
+							trait = race_lost_one
+						}
+					}
+				}
+			}
+			add_trait = broken
+			#Add GFX later
+		}
+		if = {
+			limit = {
+				mother = {
+					OR = {
+						trait = race_troll_forest
+						trait = race_troll_ice
+						trait = race_troll_dark
+						trait = race_troll_jungle
+						trait = race_troll_sand
+						trait = race_troll_zandalari
+					}
+				}
+				real_father = {
+					OR = {
+						trait = race_troll_forest
+						trait = race_troll_ice
+						trait = race_troll_dark
+						trait = race_troll_jungle
+						trait = race_troll_sand
+						trait = race_troll_zandalari
+					}
+				}
+			}
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { trait = race_troll_forest }
+						}
+						real_father = {
+							NOT = { trait = race_troll_forest }
+						}
+					}
+					add_trait = race_troll_forest
+					set_graphical_culture = amani
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { trait = race_troll_ice }
+						}
+						real_father = {
+							NOT = { trait = race_troll_ice }
+						}
+					}
+					add_trait = race_troll_ice
+					set_graphical_culture = drakkari
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { trait = race_troll_dark }
+						}
+						real_father = {
+							NOT = { trait = race_troll_dark }
+						}
+					}
+					add_trait = race_troll_dark
+					set_graphical_culture = shadowtooth
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { trait = race_troll_jungle }
+						}
+						real_father = {
+							NOT = { trait = race_troll_jungle }
+						}
+					}
+					add_trait = race_troll_jungle
+					set_graphical_culture = gurubashi
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { trait = race_troll_sand }
+						}
+						real_father = {
+							NOT = { trait = race_troll_sand }
+						}
+					}
+					add_trait = race_troll_sand
+					set_graphical_culture = sandfury
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOT = { trait = race_troll_zandalari }
+						}
+						real_father = {
+							NOT = { trait = race_troll_zandalari }
+						}
+					}
+					add_trait = race_troll_zandalari
+					set_graphical_culture = zandalari
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = race_orc
+						}
+						real_father = {
+							trait = race_pale_orc
+						}
+					}
+					AND = {
+						real_father = {
+							trait = race_orc
+						}
+						mother = {
+							trait = race_pale_orc
+						}
+					}
+				}
+			}
+			random_list = {
+				1 = {
+					add_trait = race_orc
+					if = {
+						limit = {
+							real_father = {
+								trait = race_orc
+							}
+						}
+						real_father = {
+							PREV = {
+								set_graphical_culture = PREV
+							}
+						}
+					}
+					if = {
+						limit = {
+							mother = {
+								trait = race_orc
+							}
+						}
+						mother = {
+							PREV = {
+								set_graphical_culture = PREV
+							}
+						}
+					}
+				}
+				1 = {
+					add_trait = race_pale_orc
+					if = {
+						limit = {
+							real_father = {
+								trait = race_pale_orc
+							}
+						}
+						real_father = {
+							PREV = {
+								set_graphical_culture = PREV
+							}
+						}
+					}
+					if = {
+						limit = {
+							mother = {
+								trait = race_pale_orc
+							}
+						}
+						mother = {
+							PREV = {
+								set_graphical_culture = PREV
+							}
+						}
+					}
+				}
+			}
+		}
+		#If both parents are corrupted
+		if = {
+			limit = {
+				mother = {
+					OR = {
+						trait = fel_touched
+						trait = fel_tainted
+						trait = fel_corrupted
+						trait = felsworn
+					}
+				}
+				real_father = {
+					OR = {
+						trait = fel_touched
+						trait = fel_tainted
+						trait = fel_corrupted
+						trait = felsworn
+					}
+				}
+			}
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						OR = {
+							AND = {
+								mother = {
+									trait = fel_touched
+								}
+								real_father = {
+									OR = {
+										trait = fel_tainted
+										trait = fel_corrupted
+										trait = felsworn
+									}
+								}
+							}
+							AND = {
+								mother = {
+									OR = {
+										trait = fel_tainted
+										trait = fel_corrupted
+										trait = felsworn
+									}
+								}
+								real_father = {
+									trait = fel_touched
+								}
+							}
+							AND = {
+								mother = {
+									OR = {
+										trait = fel_tainted
+										trait = fel_corrupted
+										trait = felsworn
+									}
+								}
+								real_father = {
+									OR = {
+										trait = fel_tainted
+										trait = fel_corrupted
+										trait = felsworn
+									}
+								}
+							}
+						}
+					}
+					add_trait = fel_traces
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						OR = {
+							AND = {
+								mother = {
+									trait = fel_tainted
+								}
+								real_father = {
+									OR = {
+										trait = fel_corrupted
+										trait = felsworn
+									}
+								}
+							}
+							AND = {
+								mother = {
+									OR = {
+										trait = fel_corrupted
+										trait = felsworn
+									}
+								}
+								real_father = {
+									trait = fel_tainted
+								}
+							}
+							AND = {
+								mother = {
+									OR = {
+										trait = fel_corrupted
+										trait = felsworn
+									}
+								}
+								real_father = {
+									OR = {
+										trait = fel_corrupted
+										trait = felsworn
+									}
+								}
+							}
+						}
+					}
+					add_trait = fel_touched
+					trigger_switch = {
+						on_trigger = trait
+						race_high_elf = {
+							set_graphical_culture = blood_elven
+						}
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						mother = {
+							NOR = {
+								trait = fel_tainted
+								trait = fel_corrupted
+								trait = felsworn
+							}
+						}
+						real_father = {
+							NOR = {
+								trait = fel_tainted
+								trait = fel_corrupted
+								trait = felsworn
+							}
+						}
+					}
+					add_trait = fel_tainted
+					trigger_switch = {
+						on_trigger = trait
+						race_high_elf = {
+							set_graphical_culture = blood_elven
+						}
+					}
+				}
+			}
+		}
+		#If one parent is corrupted
+		if = {
+			limit = {
+				OR = {
+					mother = {
+						OR = {
+							trait = fel_touched
+							trait = fel_tainted
+							trait = fel_corrupted
+							trait = felsworn
+						}
+					}
+					real_father = {
+						OR = {
+							trait = fel_touched
+							trait = fel_tainted
+							trait = fel_corrupted
+							trait = felsworn
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							trait = fel_touched
+						}
+						real_father = {
+							trait = fel_touched
+						}
+					}
+				}
+				random_list = {
+					1 = {
+						#nothing
+					}
+					1 = {
+						add_trait = fel_traces
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							trait = fel_tainted
+						}
+					}
+					OR = {
+						father = {
+							trait = fel_tainted
+						}
+					}
+				}
+				random_list = {
+					1 = {
+						add_trait = fel_traces
+					}
+					1 = {
+						add_trait = fel_touched
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							trait = fel_corrupted
+						}
+					}
+					OR = {
+						father = {
+							trait = fel_corrupted
+						}
+					}
+				}
+				random_list = {
+					1 = {
+						add_trait = fel_touched
+					}
+					1 = {
+						add_trait = fel_tainted
+						trigger_switch = {
+							on_trigger = trait
+							race_high_elf = {
+								set_graphical_culture = blood_elven
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						mother = {
+							trait = felsworn
+						}
+					}
+					OR = {
+						father = {
+							trait = felsworn
+						}
+					}
+				}
+				add_trait = fel_tainted
 				trigger_switch = {
 					on_trigger = trait
-					
-					human = {
-						ROOT = { add_trait = human }
-					}
-					orc = {
-						ROOT = { add_trait = orc }
-					}
-					dwarf = {
-						ROOT = { add_trait = AK_trait_dwarf }
-					}
-					high_elf = {
-						ROOT = { add_trait = high_elf }
-					}
-					blood_elf = {
-						ROOT = { add_trait = blood_elf }
-					}
-					wretched = {
-						ROOT = { add_trait = wretched }
-					}
-					gnome = {
-						ROOT = { add_trait = gnome }
-					}
-					goblin = {
-						ROOT = { add_trait = goblin }
-					}
-					dragon_red = {
-						ROOT = { add_trait = dragon_red }
-					}
-					dragon_blue = {
-						ROOT = { add_trait = dragon_blue }
-					}
-					dragon_bronze = {
-						ROOT = { add_trait = dragon_bronze }
-					}
-					dragon_green = {
-						ROOT = { add_trait = dragon_green }
-					}
-					dragon_black = {
-						ROOT = { add_trait = dragon_black }
-					}
-					dragon_chromatic = {
-						ROOT = { add_trait = dragon_chromatic }
-					}
-					dragon_twilight = {
-						ROOT = { add_trait = dragon_twilight }
-					}
-					dragon_infinite = {
-						ROOT = { add_trait = dragon_infinite }
-					}
-					dragon_nightmare = {
-						ROOT = { add_trait = dragon_nightmare }
-					}
-					undead_scourge = {
-						ROOT = { add_trait = undead_scourge }
-					}
-					undead_forsaken = {
-						ROOT = { add_trait = undead_forsaken }
-					}
-					undead_generic = {
-						ROOT = { add_trait = undead_generic }
-					}
-					troll_forest = {
-						ROOT = { add_trait = troll_forest }
-					}
-					troll_ice = {
-						ROOT = { add_trait = troll_ice }
-					}
-					troll_jungle = {
-						ROOT = { add_trait = troll_jungle }
-					}
-					troll_sand = {
-						ROOT = { add_trait = troll_sand }
-					}
-					troll_zandalari = {
-						ROOT = { add_trait = troll_zandalari }
-					}
-					ogre = {
-						ROOT = { add_trait = ogre }
-					}
-					murloc = {
-						ROOT = { add_trait = murloc }
-					}
-					gnoll = {
-						ROOT = { add_trait = gnoll }
-					}
-					naga = {
-						ROOT = { add_trait = naga }
-					}
-					kobold = {
-						ROOT = { add_trait = kobold }
-					}
-					trogg = {
-						ROOT = { add_trait = trogg }
-					}
-					faceless = {
-						ROOT = { add_trait = faceless }
-					}
-					eredar = {
-						ROOT = { add_trait = eredar }
-					}
-					dreadlord = {
-						ROOT = { add_trait = dreadlord }
-					}
-					succubus = {
-						ROOT = { add_trait = succubus }
-					}
-					shivarra = {
-						ROOT = { add_trait = shivarra }
-					}
-					pit_lord = {
-						ROOT = { add_trait = pit_lord }
-					}
-					doomlord = {
-						ROOT = { add_trait = doomlord }
-					}
-					fel_lord = {
-						ROOT = { add_trait = fel_lord }
-					}
-					draenei = {
-						ROOT = { add_trait = draenei }
-					}
-					broken = {
-						ROOT = { add_trait = broken }
-					}
-					lost_one = {
-						ROOT = { add_trait = lost_one }
-					}
-					voidwalker = {
-						ROOT = { add_trait = voidwalker }
-					}
-					pale_orc = {
-						ROOT = { add_trait = pale_orc }
-					}
-					air_elemental = {
-						ROOT = { add_trait = air_elemental }
-					}
-					earth_elemental = {
-						ROOT = { add_trait = earth_elemental }
-					}
-					fire_elemental = {
-						ROOT = { add_trait = fire_elemental }
-					}
-					water_elemental = {
-						ROOT = { add_trait = water_elemental }
+					race_high_elf = {
+						set_graphical_culture = blood_elven
 					}
 				}
 			}
@@ -330,14 +1617,14 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 	is_triggered_only = yes
 	hide_window = yes
 	
-	trigger = { not = { has_character_flag = race_assigned } }
+	trigger = { NOT = { has_race = yes } }
 	
 	immediate = {
 
 		TOW_initialize_character_race_from_culture = yes
 		TOW_update_character_race_from_liege = yes
 
-		if = {
+		if = { # Update this later!
 			limit = {
 				NOT = { lifestyle_traits = 2 }
 			}

@@ -1,0 +1,549 @@
+1 = {
+	name = "Dath'Remar"
+	dynasty = 1
+	culture = high_elven # Unsure if we should swap this for highborne later
+	religion = sunwell
+	diplomacy = 7
+	martial = 4
+	stewardship = 6
+	intrigue = 7
+	learning = 12
+	trait = race_high_elf
+	trait = scholarly_theologian
+	trait = mage
+	trait = quick
+	trait = proud
+	trait = ambitious
+	trait = gregarious
+	trait = brave
+	disallow_random_traits = yes
+	1.1.1 = {
+		birth = yes
+	}
+	3345.8.19 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+2 = {
+	name = "Eldin"
+	dynasty = 1
+	culture = high_elven
+	religion = sunwell
+	trait = race_high_elf
+	disallow_random_traits = no
+	father = 1
+	3142.4.1 = {
+		birth = yes
+	}
+	6013.5.9 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+3 = {
+	name = "Hale"
+	dynasty = 1
+	culture = high_elven
+	religion = sunwell
+	trait = race_high_elf
+	disallow_random_traits = no
+	father = 2
+	5240.5.11 = {
+		birth = yes
+	}
+	7043.6.30 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+4 = {
+	name = "Anasterian"
+	dynasty = 1
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 6
+	martial = 9
+	stewardship = 5
+	intrigue = 5
+	learning = 6
+	trait = race_high_elf
+	trait = warrior
+	trait = skilled_tactician
+	trait = diligent
+	trait = temperate
+	trait = proud
+	trait = content
+	trait = brave
+	trait = stubborn
+	disallow_random_traits = yes
+	father = 3
+	7003.9.1 = {
+		birth = yes
+	}
+	10020.7.9 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+5 = {
+	name = "Kael'thas"
+	dynasty = 1
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 7
+	stewardship = 3
+	intrigue = 7
+	learning = 10
+	trait = race_high_elf
+	trait = mage
+	trait = mastermind_theologian
+	trait = wroth
+	trait = envious
+	trait = proud
+	trait = ambitious
+	trait = brave
+	trait = gregarious
+	disallow_random_traits = yes
+	father = 4
+	9932.4.22 = {
+		birth = yes
+		effect = {
+			add_character_modifier = { name = evocation duration = -1 }
+		}
+	}
+	10000.1.1 = {
+		effect = {
+			add_friend = 7 # Rommath Falthan
+		}
+	}
+	10020.8.9 = { # Should be in Dalaran before this point
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10023.3.12 = {
+		effect = {
+			add_trait = cruel
+			add_trait = cynical
+			set_secret_religion = burning_legion
+		}
+		death = { death_reason = death_missing } # Placeholder while Outland is not a thing
+	}
+	10026.11.10 = {
+		effect = {
+			remove_trait = race_blood_elf
+			add_trait = race_wretched
+			set_graphical_culture = wretched
+			religion = burning_legion
+		}
+		death = { death_reason = death_battle }
+	}
+}
+
+6 = {
+	name = "Lor'Themar"
+	dynasty = 2
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 9
+	stewardship = 6
+	intrigue = 6
+	learning = 3
+	trait = high_elf
+	trait = ranger
+	trait = skilled_tactician
+	trait = robust
+	trait = diligent
+	trait = patient
+	trait = temperate
+	trait = proud
+	trait = brave
+	trait = content
+	trait = honest
+	disallow_random_traits = yes
+	9974.7.8 = {
+		birth = yes
+	}
+	9999.1.1 = {
+		add_friend = 8 # Halduron Brightwing
+	}
+	10000.6.3 = {
+		#employer = # Lireesa Windrunner
+	}
+	10005.1.21 = {
+		#employer = # Sylvannas Windrunner
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			add_trait = one_eyed
+			culture = blood_elven
+			set_graphical_culture = blood_elven
+		}
+	}
+	11000.1.1 = { # Need a date of death and this ensures it won't be affected by WoW expansions.
+		death = { death_reason = death_natural }
+	}
+}
+
+7 = {
+	name = "Rommath"
+	dynasty = 4
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 6
+	martial = 2
+	stewardship = 4
+	intrigue = 7
+	learning = 9
+	trait = race_high_elf
+	trait = mastermind_theologian
+	trait = quick
+	trait = mage
+	trait = diligent
+	trait = humble
+	trait = content
+	trait = honest
+	trait = just
+	trait = trusting
+	disallow_random_traits = yes
+	9966.6.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = { name = evocation duration = -1 }
+		}
+	}
+	10000.1.1 = {
+		add_friend = 5 # Kael'thas Sunstrider
+	}
+	10020.5.27 = { # Needs to be working in Dalaran prior to the third war
+		employer = 4 # Anasterian Sunstrider
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			culture = blood_elven
+			set_graphical_culture = blood_elven
+		}
+	}
+	10025.2.9 = {
+		employer = 6 # Lor'themar Theron
+		give_job_title = job_spiritual
+	}
+	10026.11.10 = {
+		effect = {
+			add_trait = depressed
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+8 = {
+	name = "Halduron"
+	dynasty = 5
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 9
+	stewardship = 6
+	intrigue = 6
+	learning = 2
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = ranger
+	trait = diligent
+	trait = brave
+	trait = just
+	trait = honest
+	trait = flanker
+	disallow_random_traits = yes
+	9969.10.2 = {
+		birth = yes
+	}
+	9999.1.1 = {
+		add_friend = 8 # Halduron Brightwing
+	}
+	10000.6.3 = {
+		#employer = # Lireesa Windrunner
+	}
+	10005.1.21 = {
+		#employer = # Sylvannas Windrunner
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			culture = blood_elven
+			set_graphical_culture = blood_elven
+		}
+	}
+	10025.2.9 = {
+		employer = 6 # Lor'themar Theron
+		give_job_title = job_marshal
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+9 = {
+	name = "Liadrin"
+	female = yes
+	dynasty = 6
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 9
+	stewardship = 3
+	intrigue = 2
+	learning = 7
+	trait = race_high_elf
+	trait = martial_cleric
+	trait = priest
+	trait = wroth
+	trait = proud
+	trait = envious
+	trait = temperate
+	trait = content
+	trait = zealous
+	trait = stubborn
+	disallow_random_traits = yes
+	9982.7.19 = {
+		birth = yes
+	}
+	10020.8.9 = { # Employ her at the North Sanctum
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			culture = blood_elven
+			set_graphical_culture = blood_elven
+			remove_trait = priest
+			remove_trait = content
+			add_trait = ambitious
+		}
+	}
+	10024.11.24 = {
+		effect = {
+			add_trait = brawny
+			add_trait = paladin
+			add_trait = holy_Warrior
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+10 = {
+	name = "Astalor"
+	dynasty = 7
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 1
+	stewardship = 6
+	intrigue = 6
+	learning = 8
+	trait = race_high_elf
+	trait = scholarly_theologian
+	trait = mage
+	trait = shrewd
+	trait = chaste
+	trait = proud
+	trait = wroth
+	trait = arbitrary
+	trait = erudite
+	disallow_random_traits = yes
+	9972.5.10 = {
+		birth = yes
+		effect = {
+			add_character_modifier = { name = abjuration duration = -1 }
+		}
+	}
+	10020.8.9 = { # Should be in Dalaran before this point
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10024.11.24 = {
+		employer = 9 # Liadrin Vellis
+		give_job_title = job_spiritual
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+11 = {
+	name = "Telos"
+	dynasty = 8
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 6
+	stewardship = 2
+	intrigue = 3
+	learning = 2
+	trait = race_high_elf
+	trait = misguided_warrior
+	trait = temperate
+	trait = lustful
+	trait = shy
+	disallow_random_traits = yes
+	9699.12.31 = {
+		birth = yes
+	}
+	9822.2.10 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+12 = {
+	name = "Eador"
+	dynasty = 8
+	culture = high_elven
+	religion = sunwell
+	trait = race_high_elf
+	disallow_random_traits = no
+	father = 11
+	9791.7.30 = {
+		birth = yes
+	}
+	9997.1.31 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+13 = {
+	name = "Falon"
+	dynasty = 8
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 5
+	stewardship = 3
+	intrigue = 3
+	learning = 7
+	trait = martial_cleric
+	trait = race_high_elf
+	trait = priest
+	trait = brave
+	trait = humble
+	trait = diligent
+	trait = honest
+	disallow_random_traits = yes
+	father = 12
+	9973.7.12 = {
+		birth = yes
+		employer = 12
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+		death = { death_reason = death_battle }
+	}
+}
+
+14 = {
+	name = "Solanar"
+	dynasty = 8
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 2
+	martial = 8
+	stewardship = 4
+	intrigue = 4
+	learning = 6
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = warrior
+	trait = brave
+	trait = proud
+	trait = chaste
+	trait = wroth
+	disallow_random-traits = yes
+	father = 12
+	9973.7.12 = {
+		birth = yes
+		employer = 12
+	}
+	9997.2.1 = {
+		employer = 13
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10024.11.24 = {
+		employer = 9 # Liadrin Vellis
+		remove_trait = warrior
+		add_trait = paladin
+		give_job_title = job_marshal
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+14 = {
+	name = "Talanas"
+	dynasty = 9
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 3
+	martial = 10
+	stewardship = 6
+	intrigue = 6
+	learning = 2
+	trait = race_high_elf
+	trait = skilled_tactician
+	trait = ranger
+	trait = diligent
+	trait = brave
+	trait = honest
+	trait = wroth
+	disallow_random_traits = yes
+	7061.8.22 = {
+		birth = yes
+	}
+}
+
+15 = {
+
+}
+
+X = {
+	name = "Anandor"
+	dynasty = 3
+	culture = high_elven
+	religion = sunwell
+	trait = race_high_elf
+	disallow_random_traits = yes
+	7069.6.9 = {
+		birth = yes
+	}
+	7360.9.11 = {
+		death = { death_reason = death_natural }
+	}
+}
