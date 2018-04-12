@@ -947,27 +947,58 @@ spriteTypes = {
 	# felven Male
 	portraitType = {
 		name = "PORTRAIT_felvengfx_male"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h_elf.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_belven_male_base:p2:h"
+			"GFX_elven_male_cheeks:d4:h"
+			"GFX_elven_male_mouth:d2:h"
+			"GFX_felven_male_mouth:d2"
+			"GFX_elven_male_chin:d1:h"
+			"GFX_elven_male_nose:d3:h"
+			"GFX_elven_male_forehead:d10:h"
+			"GFX_felven_male_runes:d5"
+			"GFX_felven_male_eyes:d6"
+			"GFX_elven_male_clothes:p14"
+			"GFX_elven_male_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_elven_male_boils:p9"
+			"GFX_felven_male_horns:d0"
+			"GFX_elven_male_beard:p4:y:e"
+			"GFX_elven_male_hair:p1:y:e"
+		   	"GFX_elven_male_hair_detail:p1:y"
+			"GFX_felven_male_horns_mid:d0"
+			"GFX_elven_male_blinded_eyes:p10"
+			"GFX_elven_male_mask:p12:y"
+			"GFX_felven_male_horns_front:d0"
+		   	"GFX_elven_male_hair_front:p1:y:e"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
 		}
 
+		# Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 4 4 5 } { 40 45 50 } { 140 150 160 }
-			{ 0 0 0 } { 40 40 55 } { 140 140 160 }
-			{ 10 7 5 } { 50 35 40 } { 170 140 150 }
-			{ 9 7 5 } { 49 35 40 } { 160 140 150 }
-			{ 6 3 6 } { 65 50 60 } { 159 139 142 }
-			{ 3 6 6 } { 50 55 50 } { 159 169 152 }
+			{ 10 0 0 } { 126 15 0 } { 227 166 132 }
+			{ 8 5 7 } { 89 62 73 } { 242 216 221 }
+			{ 0 0 0 } { 94 121 145 } { 205 211 232 }
+			{ 4 0 3 } { 107 29 56 } { 212 158 167 }
+			{ 14 12 9 } { 124 109 89 } { 241 239 229 }
+			{ 22 13 17 } { 68 50 57 } { 193 176 178 }
 		}
 
+		# Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 58 109 193 }
-			{ 120 74 46 }
-			{ 34 103 36 }
+			{ 30 30 40 }
+			{ 88 105 26 }
+			{ 185 200 208 }
+			{ 129 125 115 }
+			{ 235 168 94 }
+			{ 59 56 86 }
+			{ 78 67 104 }
+			{ 34 53 66 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -976,28 +1007,35 @@ spriteTypes = {
 	# middle age
 	portraitType = {
 		name = "PORTRAIT_felvengfx_male1"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h_elf.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 		}
 
 
+		# Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 4 4 5 } { 40 45 50 } { 140 150 160 }
-			{ 0 0 0 } { 40 40 55 } { 140 140 160 }
-			{ 10 7 5 } { 50 35 40 } { 170 140 150 }
-			{ 9 7 5 } { 49 35 40 } { 160 140 150 }
-			{ 6 3 6 } { 65 50 60 } { 159 139 142 }
-			{ 3 6 6 } { 50 55 50 } { 159 169 152 }
+			{ 10 0 0 } { 126 15 0 } { 227 166 132 }
+			{ 8 5 7 } { 89 62 73 } { 242 216 221 }
+			{ 0 0 0 } { 94 121 145 } { 205 211 232 }
+			{ 4 0 3 } { 107 29 56 } { 212 158 167 }
+			{ 14 12 9 } { 124 109 89 } { 241 239 229 }
+			{ 22 13 17 } { 68 50 57 } { 193 176 178 }
 		}
 
+		# Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 58 109 193}
-			{ 120 74 46 }
-			{ 34 103 36 }
+			{ 30 30 40 }
+			{ 88 105 26 }
+			{ 185 200 208 }
+			{ 129 125 115 }
+			{ 235 168 94 }
+			{ 59 56 86 }
+			{ 78 67 104 }
+			{ 34 53 66 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1006,28 +1044,35 @@ spriteTypes = {
 	# old age
 	portraitType = {
 		name = "PORTRAIT_felvengfx_male2"
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h_elf.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 		}
 
 
+		# Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 4 4 5 } { 40 45 50 } { 140 150 160 }
-			{ 0 0 0 } { 40 40 55 } { 140 140 160 }
-			{ 10 7 5 } { 50 35 40 } { 170 140 150 }
-			{ 9 7 5 } { 49 35 40 } { 160 140 150 }
-			{ 6 3 6 } { 65 50 60 } { 159 139 142 }
-			{ 3 6 6 } { 50 55 50 } { 159 169 152 }
+			{ 10 0 0 } { 126 15 0 } { 227 166 132 }
+			{ 8 5 7 } { 89 62 73 } { 242 216 221 }
+			{ 0 0 0 } { 94 121 145 } { 205 211 232 }
+			{ 4 0 3 } { 107 29 56 } { 212 158 167 }
+			{ 14 12 9 } { 124 109 89 } { 241 239 229 }
+			{ 22 13 17 } { 68 50 57 } { 193 176 178 }
 		}
 
+		# Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 58 109 193}
-			{ 120 74 46 }
-			{ 34 103 36 }
+			{ 30 30 40 }
+			{ 88 105 26 }
+			{ 185 200 208 }
+			{ 129 125 115 }
+			{ 235 168 94 }
+			{ 59 56 86 }
+			{ 78 67 104 }
+			{ 34 53 66 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1058,6 +1103,7 @@ spriteTypes = {
 			"GFX_elven_female_mouth:d2:h"
 			"GFX_felven_female_mouth:d2"
 			"GFX_elven_female_nose:d3:h"
+			"GFX_felven_female_eyes_glow:d6"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -1140,20 +1186,28 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		# Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 0 0 30 } { 159 155 170 } { 255 250 251 }
-			{ 0 0 0 } { 171 161 151 } { 255 255 255 }
-			{ 0 0 0 } { 171 166 161 } { 245 250 241 }
+			{ 10 0 0 } { 126 15 0 } { 227 166 132 }
+			{ 8 5 7 } { 89 62 73 } { 242 216 221 }
+			{ 0 0 0 } { 94 121 145 } { 205 211 232 }
+			{ 4 0 3 } { 107 29 56 } { 212 158 167 }
+			{ 14 12 9 } { 124 109 89 } { 241 239 229 }
+			{ 22 13 17 } { 68 50 57 } { 193 176 178 }
 		}
 
+		# Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 55 50 72 }
-			{ 55 70 82 }
-			{ 35 40 62 }
-			{ 45 50 92 }
-			{ 75 80 122 }
+			{ 30 30 40 }
+			{ 88 105 26 }
+			{ 185 200 208 }
+			{ 129 125 115 }
+			{ 235 168 94 }
+			{ 59 56 86 }
+			{ 78 67 104 }
+			{ 34 53 66 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1198,20 +1252,28 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
+		# Skin color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 0 0 30 } { 159 155 170 } { 255 250 251 }
-			{ 0 0 0 } { 171 161 151 } { 255 255 255 }
-			{ 0 0 0 } { 171 166 161 } { 245 250 241 }
+			{ 10 0 0 } { 126 15 0 } { 227 166 132 }
+			{ 8 5 7 } { 89 62 73 } { 242 216 221 }
+			{ 0 0 0 } { 94 121 145 } { 205 211 232 }
+			{ 4 0 3 } { 107 29 56 } { 212 158 167 }
+			{ 14 12 9 } { 124 109 89 } { 241 239 229 }
+			{ 22 13 17 } { 68 50 57 } { 193 176 178 }
 		}
 
+		# Hair color
 		eye_color_index = 9
 		eye_color = {
-			{ 55 50 72 }
-			{ 55 70 82 }
-			{ 35 40 62 }
-			{ 45 50 92 }
-			{ 75 80 122 }
+			{ 30 30 40 }
+			{ 88 105 26 }
+			{ 185 200 208 }
+			{ 129 125 115 }
+			{ 235 168 94 }
+			{ 59 56 86 }
+			{ 78 67 104 }
+			{ 34 53 66 }
 		}
 		
 		headgear_that_hides_hair = { }
