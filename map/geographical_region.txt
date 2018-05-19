@@ -13,14 +13,18 @@
 
 ## Northern EK Regions
 world_eversong_woods = {
-	duchies = { d_silvermoon d_suntouched_march d_highborne_midlands d_eversong_heartlands d_sunsail_bay d_thalassian_highlands d_thalassian_coast }
+	duchies = { d_silvermoon d_suntouched_march d_highborne_midlands d_eversong_heartlands d_sunsail_bay d_thalassian_coast }
 }
 world_ghostlands = {
-	duchies = { d_elrendar_basin d_sungraze_mountains d_windrunner_shore d_thalassian_pass d_zul_aman d_amani_coast }
+	duchies = { d_thalassian_highlands d_elrendar_basin d_sungraze_mountains d_windrunner_shore d_thalassian_pass d_zul_aman d_amani_coast }
 }
 world_isle_of_quel_danas = {
 	duchies = { d_quel_danas }
 }
 world_quel_thalas = {
 	regions = { world_eversong_woods world_ghostlands world_isle_of_quel_danas }
+}
+
+world_eastern_kingdoms = {
+	regions = { world_quel_thalas }
 }

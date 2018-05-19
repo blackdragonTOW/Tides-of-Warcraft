@@ -27,7 +27,7 @@ e_zul_aman = {
 	lost_one = "Quel'Thalas"
 	
 	k_quel_thalas = {
-		color = { 240 108 99 }
+		color = { 240 85 85 }
 		color2 = { 255 255 255 }
 		culture = high_elven
 		
@@ -47,8 +47,8 @@ e_zul_aman = {
 				}
 			}
 			
-			c_magisters_terrace = { # 1
-				color = { 227 34 125 }
+			c_magisters_terrace = {
+				color = { 45 57 111 }
 				color2 = { 255 255 255 }
 				
 				b_grand_magisters_asylum = {
@@ -234,7 +234,7 @@ e_zul_aman = {
 		}
 		
 		d_suntouched_march = {
-			color = { 299 112 116 }
+			color = { 255 112 116 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
@@ -318,7 +318,7 @@ e_zul_aman = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 11 province_id = 15 province_id = 16 } }
+					any_demesne_province = { OR = { province_id = 11 province_id = 15 province_id = 16 province_id = 26 } }
 				}
 			}
 			
@@ -379,6 +379,26 @@ e_zul_aman = {
 				b_magestaff = {
 				}
 				b_leyorb = {
+				}
+			}
+			
+			c_tor_watha = { # 26
+				color = { 108 71 65 }
+				color2 = { 255 255 255 }
+				
+				b_tor_watha = {
+				}
+				b_old_fortress = {
+				}
+				b_cliffside_camp = {
+				}
+				b_fist_of_the_amani = {
+				}
+				b_old_wrath = {
+				}
+				b_forestrage = {
+				}
+				b_gatecrash = {
 				}
 			}
 		}
@@ -862,9 +882,9 @@ e_zul_aman = {
 				color = { 105 62 102 }
 				color2 = { 255 255 255 }
 				
-				high_elf = "Thas'alah"
-				blood_elf = "Thas'alah"
-				night_elf = "Thas'alah"
+				high_elven = "Thas'alah"
+				blood_elven = "Thas'alah"
+				night_elven = "Thas'alah"
 				
 				b_tower_of_the_damned = {
 				}
@@ -920,7 +940,7 @@ e_zul_aman = {
 				}
 				b_flamestone = {
 				}
-				b_necrotic_demense = {
+				b_necrotic_demesne = {
 				}
 			}
 			
@@ -958,36 +978,16 @@ e_zul_aman = {
 			color2 = { 255 255 255 }
 			culture = amani
 			
-			capital = 26 # Tor'Watha
+			capital = 29 # Dawnstar Spire
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 26 province_id = 29 province_id = 48 province_id = 49 } }
+					any_demesne_province = { OR = { province_id = 29 province_id = 48 province_id = 49 } }
 				}
 			}
 			
-			c_tor_watha = { # 26
-				color = { 108 71 65 }
-				color2 = { 255 255 255 }
-				
-				b_tor_watha = {
-				}
-				b_old_fortress = {
-				}
-				b_cliffside_camp = {
-				}
-				b_fist_of_the_amani = {
-				}
-				b_old_wrath = {
-				}
-				b_forestrage = {
-				}
-				b_gatecrash = {
-				}
-			}
-			
-			c_dawnstar_spire = {
+			c_dawnstar_spire = { # 29
 				color = { 147 128 57 }
 				color2 = { 255 255 255 }
 				
@@ -1032,7 +1032,7 @@ e_zul_aman = {
 				}
 			}
 			
-			c_zeb_nowa = {
+			c_zeb_nowa = { # 48
 				color = { 145 94 47 }
 				color2 = { 255 255 255 }
 				
@@ -1052,7 +1052,7 @@ e_zul_aman = {
 				}
 			}
 			
-			c_zeb_tela = {
+			c_zeb_tela = { # 49
 				color = { 198 201 108 }
 				color2 = { 255 255 255 }
 				
@@ -1119,7 +1119,7 @@ e_zul_aman = {
 				}
 				b_scrystone = {
 				}
-				b_gaekepeers_mind = {
+				b_gatekepeers_mind = {
 				}
 				b_keycrystal = {
 				}

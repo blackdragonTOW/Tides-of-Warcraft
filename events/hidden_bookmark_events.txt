@@ -37,16 +37,23 @@ character_event = {
 		if = {
 			limit = {
 				year = 10005
-				NOT = { year = 10020 }
+				NOT = { year = 10018 }
 			}
 			set_global_flag = secondwar_bookmark
 		}
 		if = {
 			limit = {
-				year = 10020
-				NOT = { year = 10025 }
+				year = 10018
+				NOT = { year = 10022 }
 			}
 			set_global_flag = thirdwar_bookmark
+		}
+		if = {
+			limit = {
+				year = 10022
+				NOT = { year = 10025 }
+			}
+			set_global_flag = frozenthrone_bookmark
 		}
 		if = {
 			limit = {
@@ -59,6 +66,27 @@ character_event = {
 		set_variable = { which = global_doom value = 0 }
 		#Deal with titles
 		#Add province modifiers
+		#Kill specific characters (usually generic scourge ones that don't have any business being around before their time)
+		if = {
+			limit = {
+				NOT = { has_global_bookmark = wow_bookmark }
+			}
+			2001 = {
+				death = { death_reason = death_missing }
+			}
+			2002 = {
+				death = { death_reason = death_missing }
+			}
+			44 = {
+				death = { death_reason = death_missing }
+			}
+			45 = {
+				death = { death_reason = death_missing }
+			}
+			2002 = {
+				death = { death_reason = death_missing }
+			}
+		}
 		#Destroy settlements based on the start date
 		if = {
 			limit = {
@@ -73,7 +101,10 @@ character_event = {
 		}
 		if = {
 			limit = {
-				has_global_flag = wow_bookmark
+				OR = {
+					has_global_flag = frozenthrone_bookmark
+					has_global_flag = wow_bookmark
+				}
 			}
 			b_magehill = {
 				destroy_settlement = THIS

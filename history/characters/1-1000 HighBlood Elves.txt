@@ -42,7 +42,7 @@
 }
 
 3 = {
-	name = "Hale"
+	name = "Halein"
 	dynasty = 1
 	culture = high_elven
 	religion = sunwell
@@ -109,9 +109,6 @@
 	father = 4
 	9932.4.22 = {
 		birth = yes
-		effect = {
-			add_character_modifier = { name = evocation duration = -1 }
-		}
 	}
 	10000.1.1 = {
 		effect = {
@@ -134,15 +131,15 @@
 		}
 		death = { death_reason = death_missing } # Placeholder while Outland is not a thing
 	}
-	10026.11.10 = {
-		effect = {
-			remove_trait = race_blood_elf
-			add_trait = race_wretched
-			set_graphical_culture = wretched
-			religion = burning_legion
-		}
-		death = { death_reason = death_battle }
-	}
+	#10026.11.10 = {
+	#	effect = {
+	#		remove_trait = race_blood_elf
+	#		add_trait = race_wretched
+	#		set_graphical_culture = wretched
+	#		religion = burning_legion
+	#	}
+	#	death = { death_reason = death_battle }
+	#}
 }
 
 6 = {
@@ -155,7 +152,7 @@
 	stewardship = 6
 	intrigue = 6
 	learning = 3
-	trait = high_elf
+	trait = race_high_elf
 	trait = ranger
 	trait = skilled_tactician
 	trait = robust
@@ -171,13 +168,11 @@
 		birth = yes
 	}
 	9999.1.1 = {
-		add_friend = 8 # Halduron Brightwing
-	}
-	10000.6.3 = {
-		#employer = # Lireesa Windrunner
-	}
-	10005.1.21 = {
-		#employer = # Sylvannas Windrunner
+		effect = {
+			add_friend = 8 # Halduron Brightwing
+			add_friend = 9 # Liadrin
+			add_friend = 75 # Dar'khan Drathir
+		}
 	}
 	10020.8.9 = {
 		effect = {
@@ -216,17 +211,17 @@
 	disallow_random_traits = yes
 	9966.6.1 = {
 		birth = yes
-		effect = {
-			add_character_modifier = { name = evocation duration = -1 }
-		}
 	}
 	10000.1.1 = {
-		add_friend = 5 # Kael'thas Sunstrider
+		effect = {
+			add_friend = 5 # Kael'thas Sunstrider
+		}
 	}
 	10020.5.27 = { # Needs to be working in Dalaran prior to the third war
 		employer = 4 # Anasterian Sunstrider
 	}
 	10020.8.9 = {
+		remove_friend = 75
 		effect = {
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
@@ -271,13 +266,9 @@
 		birth = yes
 	}
 	9999.1.1 = {
-		add_friend = 8 # Halduron Brightwing
-	}
-	10000.6.3 = {
-		#employer = # Lireesa Windrunner
-	}
-	10005.1.21 = {
-		#employer = # Sylvannas Windrunner
+		effect = {
+			add_friend = 6 # Lor'themar Theron
+		}
 	}
 	10020.8.9 = {
 		effect = {
@@ -289,7 +280,7 @@
 	}
 	10025.2.9 = {
 		employer = 6 # Lor'themar Theron
-		give_job_title = job_marshal
+		give_job_title = job_spymaster
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -321,7 +312,15 @@
 	9982.7.19 = {
 		birth = yes
 	}
-	10020.8.9 = { # Employ her at the North Sanctum
+	9999.1.1 = {
+		effect = {
+			add_friend = 75 # Dar'khan Drathir
+			add_friend = 6 # Lor'themar Theron
+		}
+	}
+	10020.8.9 = {
+		employer = 32
+		remove_friend = 75
 		effect = {
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
@@ -334,9 +333,9 @@
 	}
 	10024.11.24 = {
 		effect = {
-			add_trait = brawny
+			add_trait = robust
 			add_trait = paladin
-			add_trait = holy_Warrior
+			add_trait = holy_warrior
 		}
 	}
 	11000.1.1 = {
@@ -366,9 +365,6 @@
 	disallow_random_traits = yes
 	9972.5.10 = {
 		birth = yes
-		effect = {
-			add_character_modifier = { name = abjuration duration = -1 }
-		}
 	}
 	10020.8.9 = { # Should be in Dalaran before this point
 		effect = {
@@ -478,7 +474,7 @@
 	trait = proud
 	trait = chaste
 	trait = wroth
-	disallow_random-traits = yes
+	disallow_random_traits = yes
 	father = 12
 	9973.7.12 = {
 		birth = yes
@@ -497,8 +493,10 @@
 	}
 	10024.11.24 = {
 		employer = 9 # Liadrin Vellis
-		remove_trait = warrior
-		add_trait = paladin
+		effect = {
+			remove_trait = warrior
+			add_trait = paladin
+		}
 		give_job_title = job_marshal
 	}
 	11000.1.1 = {
@@ -506,7 +504,7 @@
 	}
 }
 
-14 = {
+15 = {
 	name = "Talanas"
 	dynasty = 9
 	culture = high_elven
@@ -527,23 +525,1828 @@
 	7061.8.22 = {
 		birth = yes
 	}
+	7066.1.7 = {
+		death = { death_reason = death_natural }
+	}
 }
 
-15 = {
-
-}
-
-X = {
-	name = "Anandor"
-	dynasty = 3
+16 = {
+	name = "Faethian"
+	dynasty = 10
 	culture = high_elven
 	religion = sunwell
+	diplomacy = 1
+	martial = 6
+	stewardship = 9
+	intrigue = 3
+	learning = 3
 	trait = race_high_elf
+	trait = naive_appeaser
+	trait = paranoid
+	trait = content
+	disallow_random_traits = yes
+	7077.6.9 = {
+		birth = yes
+	}
+	7261.5.14 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+17 = {
+	name = "Anandor"
+	dynasty = 11
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 2
+	stewardship = 5
+	intrigue = 6
+	learning = 2
+	trait = race_high_elf
+	trait = fortune_builder
+	trait = gardener
+	trait = proud
 	disallow_random_traits = yes
 	7069.6.9 = {
 		birth = yes
 	}
 	7360.9.11 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+18 = {
+	name = "Rell"
+	dynasty = 3
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	diplomacy = 4
+	martial = 6
+	stewardship = 3
+	intrigue = 6
+	learning = 3
+	trait = race_high_elf
+	trait = warrior
+	trait = tough_soldier
+	trait = brave
+	trait = wroth
+	trait = robust
+	mother = 19
+	disallow_random_traits = yes
+	9950.9.6 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10023.1.1 = {
+		effect = {
+			add_trait = race_wretched
+			set_graphical_culture = wretched
+			religion = demonology
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+19 = {
+	name = "Leana"
+	dynasty = 3
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	diplomacy = 4
+	martial = 6
+	stewardship = 3
+	intrigue = 6
+	learning = 3
+	trait = race_high_elf
+	trait = amateurish_plotter
+	trait = deceitful
+	trait = envious
+	trait = paranoid
+	trait = rogue
+	disallow_random_traits = yes
+	9680.3.10 = {
+		birth = yes
+	}
+	9990.7.2 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+20 = {
+	name = "Calesthis"
+	dynasty = 12
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 2
+	stewardship = 8
+	intrigue = 6
+	learning = 3
+	trait = race_high_elf
+	trait = intricate_webweaver
+	trait = diligent
+	trait = gregarious
+	trait = envious
+	trait = chaste
+	trait = rogue
+	disallow_random_traits = yes
+	7099.7.7 = {
+		birth = yes
+	}
+	7503.1.18 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+21 = {
+	name = "Hatheon"
+	dynasty = 13
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 2
+	stewardship = 6
+	intrigue = 5
+	learning = 8
+	trait = race_high_elf
+	trait = grey_eminence
+	trait = lustful
+	trait = trusting
+	trait = shy
+	trait = content
+	disallow_random_traits = yes
+	9711.12.5 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10023.1.1 = {
+		effect = {
+			add_trait = race_wretched
+			set_graphical_culture = wretched
+			religion = demonology
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+22 = {
+	name = "Anailas"
+	dynasty = 14
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 5
+	stewardship = 4
+	intrigue = 7
+	learning = 6
+	trait = race_high_elf
+	trait = ranger
+	trait = flamboyant_schemer
+	trait = arbitrary
+	trait = stubborn
+	trait = ambitious
+	trait = brave
+	disallow_random_traits = yes
+	7153.6.7 = {
+		birth = yes
+	}
+	7233.9.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+23 = {
+	name = "Belaclya"
+	dynasty = 15
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 2
+	martial = 3
+	stewardship = 6
+	intrigue = 4
+	learning = 3
+	trait = race_high_elf
+	trait = ranger
+	trait = brilliant_strategist
+	trait = temperate
+	trait = cruel
+	trait = charitable
+	trait = lustful
+	trait = siege_leader
+	disallow_random_traits = yes
+	9993.12.28 = {
+		birth = yes
+		employer = 6
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+24 = {
+	name = "Galendror"
+	dynasty = 16
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 9
+	martial = 8
+	stewardship = 8
+	intrigue = 6
+	learning = 9
+	trait = race_high_elf
+	trait = priest
+	trait = charismatic_negotiator
+	trait = proud
+	trait = kind
+	trait = just
+	trait = gregarious
+	disallow_random_traits = yes
+	9989.8.19 = {
+		birth = yes
+		employer = 4
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+25 = {
+	name = "Glywiel"
+	dynasty = 17
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 9
+	martial = 0
+	stewardship = 1
+	intrigue = 2
+	learning = 13
+	trait = race_high_elf
+	trait = mage
+	trait = amateurish_plotter
+	trait = diligent
+	trait = honest
+	trait = content
+	disallow_random_traits = yes
+	9976.1.8 = {
+		birth = yes
+		employer = 4
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+26 = {
+	name = "Matero"
+	dynasty = 18
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 1
+	stewardship = 5
+	intrigue = 5
+	learning = 3
+	trait = race_high_elf
+	trait = flamboyant_schemer
+	trait = envious
+	trait = ambitious
+	trait = greedy
+	trait = humble
+	disallow_random_traits = yes
+	7089.9.5 = {
+		birth = yes
+	}
+	7299.7.17 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+27 = {
+	name = "Asric"
+	dynasty = 18
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 6
+	martial = 5
+	stewardship = 3
+	intrigue = 8
+	learning = 11
+	trait = race_high_elf
+	trait = mage
+	trait = mastermind_theologian
+	trait = craven
+	trait = deceitful
+	trait = gregarious
+	trait = kind
+	father = 53
+	disallow_random_traits = yes
+	9910.7.6 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+28 = {
+	name = "Bemarrin"
+	dynasty = 19
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 9
+	stewardship = 8
+	intrigue = 9
+	learning = 7
+	trait = race_high_elf
+	trait = naive_appeaser
+	trait = rogue
+	trait = trusting
+	trait = temperate
+	trait = deceitful
+	trait = gregarious
+	disallow_random_traits = yes
+	7168.3.30 = {
+		birth = yes
+	}
+	7299.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+29 = {
+	name = "Enala"
+	dynasty = 20
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 2
+	martial = 3
+	stewardship = 6
+	intrigue = 6
+	learning = 3
+	trait = race_high_elf
+	trait = warrior
+	trait = brilliant_strategist
+	trait = heavy_infantry_leader
+	trait = temperate
+	trait = cruel
+	trait = charitable
+	trait = lustful
+	disallow_random_traits = yes
+	9977.12.28 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+30 = {
+	name = "Celana"
+	female = yes
+	dynasty = 21
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 9
+	martial = 7
+	stewardship = 6
+	intrigue = 5
+	learning = 7
+	trait = race_high_elf
+	trait = detached_priest
+	trait = humble
+	trait = cruel
+	trait = gluttonous
+	trait = erudite
+	disallow_random_traits = yes
+	7156.1.24 = {
+		birth = yes
+	}
+	7299.9.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+31 = {
+	name = "Fargoth"
+	dynasty = 21
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 5
+	stewardship = 9
+	intrigue = 8
+	learning = 4
+	trait = race_high_elf
+	trait = underhanded_rogue
+	trait = arbitrary
+	trait = shy
+	trait = greedy
+	trait = chaste
+	mother = 55
+	disallow_random_traits = yes
+	9976.3.25 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+32 = {
+	name = "Caidanis"
+	dynasty = 22
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 9
+	stewardship = 2
+	intrigue = 7
+	learning = 10
+	trait = race_high_elf
+	trait = martial_cleric
+	trait = arbitrary
+	trait = brave
+	trait = kind
+	trait = proud
+	disallow_random_traits = yes
+	9968.2.23 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+33 = {
+	name = "Sanath"
+	dynasty = 23
+	religion = sunwell
+	culture = high_elven
+	diplomacy = 1
+	martial = 2
+	stewardship = 5
+	intrigue = 6
+	learning = 6
+	trait = race_high_elf
+	trait = brilliant_strategist
+	trait = slothful
+	trait = zealous
+	trait = humble
+	trait = brave
+	trait = organizer
+	trait = warrior
+	disallow_random_traits = yes
+	7166.8.17 = {
+		birth = yes
+	}
+	8120.7.7 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+34 = {
+	name = "Sorata"
+	dynasty = 23
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 3
+	stewardship = 9
+	intrigue = 3
+	learning = 1
+	trait = race_high_elf
+	trait = intricate_webweaver
+	trait = content
+	trait = humble
+	trait = honest
+	trait = zealous
+	disallow_random_traits = yes
+	9934.10.12 = {
+		birth = yes
+	}
+	10006.8.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+35 = {
+	name = "Antheol"
+	dynasty = 24
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 9
+	martial = 4
+	stewardship = 7
+	intrigue = 2
+	learning = 7
+	trait = race_high_elf
+	trait = mage
+	trait = scholarly_theologian
+	trait = erudite
+	trait = stubborn
+	trait = diligent
+	trait = chaste
+	trait = proud
+	disallow_random_traits = yes
+	9927.9.10 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+36 = {
+	name = "Alieshor"
+	dynasty = 25
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 2
+	stewardship = 6
+	intrigue = 9
+	learning = 7
+	trait = race_high_elf
+	trait = flamboyant_schemer
+	trait = rogue
+	trait = administrator
+	trait = clubfooted
+	trait = brave
+	trait = deceitful
+	trait = proud
+	trait = greedy
+	disallow_random_traits = yes
+	7168.9.1 = {
+		birth = yes
+	}
+	8511.9.9 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+37 = {
+	name = "Keltus"
+	dynasty = 25
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 7
+	stewardship = 3
+	intrigue = 3
+	learning = 9
+	trait = race_high_elf
+	trait = mage
+	trait = scholarly_theologian
+	trait = gregarious
+	trait = just
+	trait = patient
+	trait = erudite
+	disallow_random_traits = yes
+	9901.5.22 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+38 = {
+	name = "Tae'than"
+	dynasty = 26
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 6
+	martial = 2
+	stewardship = 8
+	intrigue = 5
+	learning = 7
+	trait = race_high_elf
+	trait = mage
+	trait = fortune_builder
+	trait = shrewd
+	trait = diligent
+	trait = proud
+	trait = ambitious
+	trait = cynical
+	trait = erudite
+	disallow_random_traits = yes
+	9931.10.9 = {
+		birth = yes
+		employer = 4
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10025.1.1 = {
+		employer = 6
+		give_job_title = job_treasurer
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+39 = {
+	name = "Bemarrin"
+	dynasty = 27
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 9
+	stewardship = 8
+	intrigue = 9
+	learning = 9
+	trait = race_high_elf
+	trait = detached_priest
+	trait = trusting
+	trait = humble
+	trait = deceitful
+	trait = gregarious
+	disallow_random_traits = yes
+	7169.3.30 = {
+		birth = yes
+	}
+	7240.9.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+40 = {
+	name = "Andrissa"
+	female = yes
+	dynasty = 27
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 6
+	martial = 4
+	stewardship = 6
+	intrigue = 7
+	learning = 10
+	trait = race_high_elf
+	trait = priest
+	trait = chaste
+	trait = temperate
+	trait = humble
+	trait = content
+	disallow_random_traits = yes
+	9958.9.28 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+41 = {
+	name = "Velania"
+	female = yes
+	dynasty = 27
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 2
+	martial = 9
+	stewardship = 0
+	intrigue = 1
+	learning = 17
+	trait = race_high_elf
+	trait = mage
+	trait = mastermind_theologian
+	trait = content
+	trait = greedy
+	trait = gluttonous
+	trait = chaste
+	disallow_random_traits = yes
+	mother = 40
+	9999.9.9 = {
+		birth = yes
+		employer = 40
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+42 = {
+	name = "Sanath"
+	dynasty = 28
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 1
+	martial = 2
+	stewardship = 4
+	intrigue = 6
+	learning = 6
+	trait = race_high_elf
+	trait = warrior
+	trait = brilliant_strategist
+	trait = slothful
+	trait = zealous
+	trait = humble
+	trait = just
+	disallow_random_traits = yes
+	7167.8.17 = {
+		birth = yes
+	}
+	7210.9.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+43 = {
+	name = "Velendris"
+	dynasty = 28
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 6
+	martial = 6
+	stewardship = 7
+	intrigue = 9
+	learning = 9
+	trait = race_high_elf
+	trait = detached_priest
+	trait = mage
+	trait = chaste
+	trait = greedy
+	trait = diligent
+	trait = wroth
+	disallow_random_traits = yes
+	9997.8.7 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+44 = {
+	name = "Aldaron"
+	dynasty = 29
+	culture = blood_elven
+	religion = demonology
+	diplomacy = 5
+	martial = 5
+	stewardship = 7
+	intrigue = 6
+	learning = 3
+	trait = race_wretched
+	trait = rogue
+	trait = skilled_tactician
+	trait = gluttonous
+	trait = greedy
+	trait = stubborn
+	trait = cynical
+	disallow_random_traits = yes
+	9992.2.26 = {
+		birth = yes
+		effect = { set_graphical_culture = wretched }
+		give_nickname = nick_the_reckless
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+45 = {
+	name = "Lyna"
+	female = yes
+	dynasty = 30
+	culture = blood_elven
+	religion = demonology
+	diplomacy = 3
+	martial = 6
+	stewardship = 8
+	intrigue = 2
+	learning = 7
+	trait = race_wretched
+	trait = intricate_webweaver
+	trait = just
+	trait = wroth
+	trait = envious
+	trait = paranoid
+	disallow_random_traits = yes
+	9987.12.29 = {
+		birth = yes
+		effect = { set_graphical_culture = wretched }
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+46 = {
+	name = "Ralen"
+	dynasty = 31
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 5
+	stewardship = 2
+	intrigue = 1
+	learning = 3
+	trait = race_high_elf
+	trait = naive_appeaser
+	trait = paranoid
+	trait = charitable
+	trait = envious
+	trait = diligent
+	disallow_random_traits = yes
+	7125.4.29 = {
+		birth = yes
+	}
+	7299.5.4 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+47 = {
+	name = "Teli'Larien"
+	dynasty = 32
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 6
+	martial = 7
+	stewardship = 5
+	intrigue = 8
+	learning = 2
+	trait = race_high_elf
+	trait = midas_touched
+	trait = lustful
+	trait = blacksmith
+	trait = envious
+	trait = content
+	trait = wroth
+	disallow_random_traits = yes
+	9900.7.18 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+48 = {
+	name = "Landra"
+	female = yes
+	dynasty = 32
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 7
+	stewardship = 2
+	intrigue = 9
+	learning = 6
+	trait = race_high_elf
+	trait = mage
+	trait = scholarly_theologian
+	trait = wroth
+	trait = cruel
+	trait = zealous
+	trait = trusting
+	disallow_random_traits = yes
+	father = 47
+	9991.12.3 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+49 = {
+	name = "Ilastar"
+	dynasty = 33
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 3
+	martial = 8
+	stewardship = 7
+	intrigue = 6
+	learning = 3
+	trait = race_high_elf
+	trait = flamboyant_schemer
+	trait = content
+	trait = brave
+	trait = stubborn
+	trait = humble
+	disallow_random_traits = yes
+	7166.10.20 = {
+		birth = yes
+	}
+	7275.1.9 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+50 = {
+	name = "Sathren"
+	dynasty = 33
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 1
+	martial = 6
+	stewardship = 3
+	intrigue = 3
+	learning = 6
+	trait = race_high_elf
+	trait = misguided_warrior
+	trait = lustful
+	trait = slothful
+	trait = stubborn
+	trait = shy
+	disallow_random_traits = yes
+	9959.2.7 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+51 = {
+	name = "Mehlar"
+	dynasty = 34
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 9
+	stewardship = 5
+	intrigue = 3
+	learning = 7
+	trait = race_high_elf
+	trait = flamboyant_schemer
+	trait = quick
+	trait = cynical
+	trait = cruel
+	trait = paranoid
+	trait = wroth
+	disallow_random_traits = yes
+	7180.4.14 = {
+		birth = yes
+	}
+	7251.10.7 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+52 = {
+	name = "Inaya"
+	female = yes
+	dynasty = 34
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 9
+	stewardship = 1
+	intrigue = 4
+	learning = 4
+	trait = race_high_elf
+	trait = indulgent_wastrel
+	trait = erudite
+	trait = cruel
+	trait = craven
+	trait = charitable
+	disallow_random_traits = yes
+	9979.4.18 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10024.9.18 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+53 = {
+	name = "Findol"
+	dynasty = 18
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 6
+	martial = 2
+	stewardship = 4
+	intrigue = 4
+	learning = 5
+	trait = race_high_elf
+	trait = naive_appeaser
+	trait = content
+	trait = trusting
+	trait = humble
+	trait = charitable
+	disallow_random_traits = yes
+	9750.9.9 = {
+		birth = yes
+	}
+	9920.5.21 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+54 = {
+	name = "Valdros"
+	dynasty = 20
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 3
+	martial = 7
+	stewardship = 0
+	intrigue = 6
+	learning = 2
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = brave
+	trait = wroth
+	trait = warrior
+	trait = blacksmith
+	disallow_random_traits = yes
+	9743.9.18 = {
+		birth = yes
+	}
+	9833.8.11 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+55 = {
+	name = "Sedana"
+	dynasty = 21
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 4
+	stewardship = 2
+	intrigue = 5
+	learning = 8
+	trait = race_high_elf
+	trait = martial_cleric
+	trait = priest
+	trait = just
+	trait = brave
+	trait = gregarious
+	trait = envious
+	disallow_random_traits = yes
+	9727.6.22 = {
+		birth = yes
+	}
+	9976.3.25 = {
+		death = { death_reason = death_childbirth }
+	}
+}
+
+56 = {
+	name = "Soryn"
+	dynasty = 23
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 9
+	martial = 6
+	stewardship = 7
+	intrigue = 1
+	learning = 4
+	trait = race_high_elf
+	trait = elusive_shadow
+	trait = schemer
+	trait = rogue
+	trait = humble
+	trait = temperate
+	trait = deceitful
+	trait = chaste
+	disallow_random_traits = yes
+	9734.12.26 = {
+		birth = yes
+	}
+	9799.7.12 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+57 = {
+	name = "Valaden"
+	dynasty = 14
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 1
+	stewardship = 9
+	intrigue = 6
+	learning = 4
+	trait = race_high_elf
+	trait = underhanded_rogue
+	trait = imbecile
+	trait = gluttonous
+	trait = humble
+	trait = craven
+	trait = paranoid
+	disallow_random_traits = yes
+	9732.6.8 = {
+		birth = yes
+	}
+	9781.2.19 = {
+		death = { death_reason = death_accident }
+	}
+}
+
+58 = {
+	name = "Carinda"
+	dynasty = 25
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 4
+	stewardship = 2
+	intrigue = 3
+	learning = 6
+	trait = race_high_elf
+	trait = flamboyant_schemer
+	trait = just
+	trait = brave
+	trait = gregarious
+	trait = proud
+	disallow_random_traits = yes
+	9699.12.30 = {
+		birth = yes
+	}
+	9771.12.30 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+59 = {
+	name = "Lyna"
+	dynasty = 5
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 1
+	martial = 7
+	stewardship = 4
+	intrigue = 2
+	learning = 7
+	trait = race_high_elf
+	trait = detached_priest
+	trait = fair
+	trait = warrior
+	trait = gluttonous
+	trait = deceitful
+	trait = wroth
+	trait = ambitious
+	disallow_random_traits = yes
+	9748.2.8 = {
+		birth = yes
+	}
+	9800.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+60 = {
+	name = "Ponaris"
+	dynasty = 28
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 4
+	stewardship = 4
+	intrigue = 3
+	learning = 5
+	trait = race_high_elf
+	trait = amateurish_plotter
+	trait = arbitrary
+	trait = cynical
+	trait = proud
+	trait = kind
+	disallow_random_traits = yes
+	9722.12.12 = {
+		birth = yes
+	}
+	9822.10.19 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+61 = {
+	name = "Arille"
+	dynasty = 31
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 2
+	stewardship = 2
+	intrigue = 5
+	learning = 4
+	trait = race_high_elf
+	trait = brilliant_strategist
+	trait = chaste
+	trait = wroth
+	trait = greedy
+	trait = kind
+	trait = cavalry_leader
+	disallow_random_traits = yes
+	9738.2.3 = {
+		birth = yes
+	}
+	9799.2.2 = {
+		death = { death_reason = death_natural }
+	}
+}
+62 = {
+	name = "Sedana"
+	dynasty = 33
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 4
+	stewardship = 2
+	intrigue = 8
+	learning = 8
+	trait = race_high_elf
+	trait = martial_cleric
+	trait = just
+	trait = brave
+	trait = gregarious
+	trait = honest
+	trait = mage
+	disallow_random_traits = yes
+	9747.6.22 = {
+		birth = yes
+	}
+	9800.1.16 = {
+		death = { death_reason = death_natural }
+	}
+}
+63 = {#zebwatha
+	name = "Telenus"
+	dynasty = 34
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 4
+	stewardship = 2
+	intrigue = 2
+	learning = 6
+	trait = race_high_elf
+	trait = flamboyant_schemer
+	trait = just
+	trait = brave
+	trait = gregarious
+	trait = humble
+	disallow_random_traits = yes
+	9711.9.11 = {
+		birth = yes
+	}
+	9852.6.16 = {
+		death = { death_reason = death_natural }
+	}
+}
+64 = {
+	name = "Sathren"
+	dynasty = 35
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 1
+	martial = 6
+	stewardship = 3
+	intrigue = 3
+	learning = 6
+	trait = race_high_elf
+	trait = misguided_warrior
+	trait = lustful
+	trait = slothful
+	trait = stubborn
+	trait = honest
+	disallow_random_traits = yes
+	7099.6.11 = {
+		birth = yes
+	}
+	7300.1.16 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+65 = {
+	name = "Fanoraithe"
+	dynasty = 35
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 1
+	martial = 3
+	stewardship = 1
+	intrigue = 	5
+	learning = 6
+	disallow_random_traits = yes
+	trait = race_high_elven
+	trait = charismatic_negotiator
+	trait = kind
+	trait = paranoid
+	trait = stubborn
+	trait = humble
+	disallow_random_traits = yes
+	9655.12.11 = {
+		birth = yes
+	}
+	9799.1.5 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+66 = {
+	name = "Jainthess"
+	dynasty = 35
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 2
+	martial = 1
+	stewardship = 0
+	intrigue = 10
+	learning = 9
+	trait = race_high_elf
+	trait = charismatic_negotiator
+	trait = rogue
+	trait = patient
+	trait = cynical
+	trait = lustful
+	trait = slothful
+	disallow_random_traits = yes
+	9965.7.11 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10021.3.14 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+67 = {
+	name = "Geranis"
+	dynasty = 36
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 9
+	martial = 9
+	stewardship = 7
+	intrigue = 5
+	learning = 5
+	trait = race_high_elf
+	trait = naive_appeaser
+	trait = deceitful
+	trait = proud
+	trait = zealous
+	trait = shy
+	disallow_random_traits = yes
+	7102.9.12 = {
+		birth = yes
+	}
+	7287.12.22 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+68 = {
+	name = "Mar'nah"
+	dynasty = 36
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	diplomacy = 15
+	martial = 4
+	stewardship = 8
+	intrigue = 0
+	learning = 3
+	trait = race_high_elf
+	trait = underhanded_rogue
+	trait = fair
+	trait = temperate
+	trait = patient
+	trait = deceitful
+	trait = chaste
+	disallow_random_traits = yes
+	9766.5.10 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	10023.1.1 = {
+		effect = {
+			add_trait = race_wretched
+			set_graphical_culture = wretched
+			religion = demonology
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+69 = {
+	name = "Tandron"
+	dynasty = 37
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 3
+	martial = 4
+	stewardship = 6
+	intrigue = 3
+	learning = 6
+	trait = race_high_elf
+	trait = underhanded_rogue
+	trait = honest
+	trait = patient
+	trait = lustful
+	trait = cruel
+	disallow_random_traits = yes
+	7143.2.19 = {
+		birth = yes
+	}
+	7301.9.10 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+70 = {
+	name = "Ysuria"
+	dynasty = 37
+	female = yes
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 6
+	stewardship = 4
+	intrigue = 3
+	learning = 2
+	trait = race_high_elf
+	trait = intricate_webweaver
+	trait = erudite
+	trait = shy
+	trait = just
+	trait = gluttonous
+	disallow_random_traits = yes
+	9753.1.8 = {
+		birth = yes
+	}
+	9799.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+71 = {
+	name = "Kalaen"
+	dynasty = 37
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 9
+	martial = 9
+	stewardship = 2
+	intrigue = 5
+	learning = 11
+	trait = race_high_elf
+	trait = detached_priest
+	trait = schemer
+	trait = mage
+	trait = arbitrary
+	trait = envious
+	trait = temperate
+	trait = patient
+	disallow_random_traits = yes
+	9967.10.12 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+72 = {
+	name = "Vael"
+	dynasty = 38
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 2
+	stewardship = 3
+	intrigue = 6
+	learning = 9
+	trait = race_high_elf
+	trait = mage
+	trait = erudite
+	trait = cynical
+	trait = chaste
+	trait = honest
+	disallow_random_traits = yes
+	9925.5.19 = {
+		birth = yes
+		employer = 4
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+			religion = forgotten_shadow
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+73 = {
+	name = "Sereth"
+	dynasty = 39
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 3
+	stewardship = 8
+	intrigue = 7
+	learning = 2
+	trait = race_high_elf
+	trait = brilliant_strategist
+	trait = ranger
+	trait = proud
+	trait = wroth
+	trait = temperate
+	trait = craven
+	trait = siege_leader
+	disallow_random_traits = yes
+	7145.4.12 = {
+		birth = yes
+	}
+	7311.9.18 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+74 = {
+	name = Caledis
+	dynasty = 39
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 7
+	stewardship = 9
+	intrigue = 7
+	learning = 8
+	trait = race_high_elf
+	trait = underhanded_rogue
+	trait = temperate
+	trait = gregarious
+	trait = greedy
+	trait = wroth
+	disallow_random_traits = yes
+	9710.2.13 = {
+		birth = yes
+	}
+	9990.5.5 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+75 = {
+	name = "Dar'Khan"
+	dynasty = 39
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 8
+	martial = 4
+	stewardship = 3
+	intrigue = 9
+	learning = 9
+	trait = race_high_elf
+	trait = mage
+	trait = scholarly_theologian
+	trait = deceitful
+	trait = envious
+	trait = proud
+	trait = wroth
+	trait = erudite
+	disallow_random_traits = yes
+	father = 74
+	9980.12.1 = {
+		birth = yes
+	}
+	9999.1.1 = {
+		add_friend = 6
+		add_friend = 9
+	}
+	10020.8.9 = {
+		give_nickname = nick_the_betrayer
+		effect = {
+			add_trait = race_undead_scourge
+		}
+		culture = scourge
+		religion = lich_king
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+76 = {
+	name = "Gilveradin"
+	dynasty = 40
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 1
+	martial = 4
+	stewardship = 7
+	intrigue = 3
+	learning = 7
+	trait = race_high_elf
+	trait = thrifty_clerk
+	trait = greedy
+	trait = gregarious
+	trait = kind
+	trait = erudite
+	disallow_random_traits = yes
+	7098.11.3 = {
+		birth = yes
+	}
+	7287.2.6 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+77 = {
+	name = "Cacame"
+	dynasty = 40
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 3
+	martial = 4
+	stewardship = 3
+	intrigue = 5
+	learning = 1
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = arbitrary
+	trait = greedy
+	trait = content
+	trait = brave
+	disallow_random_traits = yes
+	9734.6.18 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			add_trait = race_undead_scourge
+		}
+		culture = scourge
+			religion = lich_king
+	}
+	10024.1.1 = {
+		culture = high_elven
+		religion = forgotten_shadow
+	}
+	11000.1.1 = {
 		death = { death_reason = death_natural }
 	}
 }
