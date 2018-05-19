@@ -83,8 +83,13 @@ character_event = {
 			45 = {
 				death = { death_reason = death_missing }
 			}
-			2002 = {
+			2003 = {
 				death = { death_reason = death_missing }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_bookmark = frozenthrone_bookmark }
 			}
 		}
 		#Destroy settlements based on the start date
