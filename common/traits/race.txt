@@ -1,2557 +1,265 @@
-human = {
-	diplomacy = 1
-	opposite_opinion = -10
-	opposites = {
-		orc
-		blood_elf
-		wretched
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_human = {
 	random = no
 	customizer = no
 }
-orc = {
-	martial = 1
-	combat_rating = 1
-	diplomacy = -1
-	opposite_opinion = -10
-	opposites = {
-		human
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		AK_trait_dwarf
-		high_elf
-		wretched
-		gnome
-		undead_scourge
-		undead_generic
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_orc = {
 	random = no
 	customizer = no
 }
-AK_trait_dwarf = {
-	stewardship = 1
-	martial = 1
-	intrigue = -1
-	fertility = -0.1
+race_dwarf = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		orc
-		blood_elf
-		wretched
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-high_elf = {
-	stewardship = 1
-	learning = 1
-	fertility = -0.3
+race_high_elf = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		orc
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		blood_elf
-		wretched
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-blood_elf = {
-	intrigue = 1
-	learning = 1
-	fertility = -0.3
+race_blood_elf = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		AK_trait_dwarf
-		high_elf
-		wretched
-		gnome
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_sand
-		troll_zandalari
-		troll_dark
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-wretched = {
-	diplomacy = -1
-	stewardship = -1
-	learning = -1
-	fertility = -0.5
+race_wretched = {
 	immortal = yes
-	opposite_opinion = -40
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-gnome = {
-	learning = 2
-	martial = -1
+race_gnome = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		orc
-		blood_elf
-		wretched
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		goblin
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-goblin = {
-	stewardship = 2
-	martial = -1
-	opposite_opinion = -10
-	opposites = {
-		human
-		high_elf
-		wretched
-		AK_trait_dwarf
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		troll_ice
-		troll_sand
-		troll_zandalari
-		troll_dark
-		gnome
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_goblin = {
 	random = no
 	customizer = no
 }
-dragon_red = {
-	fertility = -0.2
-	health = 5
+race_dragon = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		wretched
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-dragon_blue = {
-	fertility = -0.2
-	health = 5
+race_undead_scourge = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		wretched
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-dragon_bronze = {
-	fertility = -0.2
-	health = 5
+race_undead_forsaken = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		wretched
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-dragon_green = {
-	fertility = -0.2
-	health = 5
-	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		wretched
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-dragon_black = {
-	fertility = -0.2
-	health = 5
-	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_red
-		dragon_green
-		dragon_blue
-		dragon_bronze
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		wretched
-		human
-		AK_trait_dwarf
-		gnome
-		high_elf
-		blood_elf
-		orc
-		ogre
-		goblin
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		#faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-dragon_chromatic = {
-	fertility = -0.7
-	health = 5
-	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_red
-		dragon_green
-		dragon_blue
-		dragon_bronze
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		wretched
-		human
-		AK_trait_dwarf
-		gnome
-		high_elf
-		blood_elf
-		orc
-		ogre
-		goblin
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		#faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-dragon_twilight = {
-	fertility = -0.2
-	health = 5
-	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_red
-		dragon_green
-		dragon_blue
-		dragon_bronze
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		wretched
-		human
-		AK_trait_dwarf
-		gnome
-		high_elf
-		blood_elf
-		orc
-		ogre
-		goblin
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		#faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-dragon_infinite = {
-	fertility = -0.2
-	health = 5
-	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_red
-		dragon_green
-		dragon_blue
-		dragon_bronze
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		wretched
-		human
-		AK_trait_dwarf
-		gnome
-		high_elf
-		blood_elf
-		orc
-		ogre
-		goblin
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-dragon_nightmare = {
-	fertility = -0.2
-	health = 5
-	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_red
-		dragon_green
-		dragon_blue
-		dragon_bronze
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		wretched
-		human
-		AK_trait_dwarf
-		gnome
-		high_elf
-		blood_elf
-		orc
-		ogre
-		goblin
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-#Add more dragons as they become relevant
-undead_scourge = {
-	diplomacy = -2
-	fertility = -999
-	immortal = yes
-	general_opinion = -50
-	same_opinion = 55
-	opposites = {
-		undead_generic
-		undead_forsaken
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-undead_forsaken = {
-	diplomacy = -2
-	fertility = -999
-	immortal = yes
-	general_opinion = -10
-	same_opinion = 15
-	opposites = {
-		undead_scourge
-		undead_generic
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 #undead_generic is here in case of non-scourge, non-forsaken undead characters. Old Horde death knights come to mind.
-undead_generic = {
-	diplomacy = -2
-	fertility = -999
+race_undead_generic = {
 	immortal = yes
-	general_opinion = -10
-	same_opinion = 15
-	opposites = {
-		undead_scourge
-		undead_forsaken
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-troll_forest = {
-	combat_rating = 1
-	diplomacy = -1
-	health = 1
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		wretched
-		human
-		AK_trait_dwarf
-		gnome
-		high_elf
-		blood_elf
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_dark
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_troll_forest = {
 	random = no
 	customizer = no
 }
-troll_ice = {
-	combat_rating = 1
-	diplomacy = -1
-	health = 1
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		undead_forsaken
-		wretched
-		human
-		orc
-		AK_trait_dwarf
-		goblin
-		gnome
-		high_elf
-		blood_elf
-		troll_forest
-		troll_jungle
-		troll_sand
-		troll_dark
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_troll_ice = {
 	random = no
 	customizer = no
 }
-troll_dark = {
-	combat_rating = 1
-	diplomacy = -1
-	health = 1
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		undead_forsaken
-		wretched
-		human
-		orc
-		AK_trait_dwarf
-		goblin
-		gnome
-		high_elf
-		blood_elf
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_forest
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_troll_dark = {
 	random = no
 	customizer = no
 }
-troll_jungle = {
-	intrigue = 1
-	diplomacy = -1
-	health = 1
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		wretched
-		human
-		AK_trait_dwarf
-		gnome
-		high_elf
-		troll_ice
-		troll_forest
-		troll_sand
-		troll_dark
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_troll_jungle = {
 	random = no
 	customizer = no
 }
-troll_sand = {
-	intrigue = 1
-	diplomacy = -1
-	health = 1
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		wretched
-		human
-		AK_trait_dwarf
-		gnome
-		high_elf
-		troll_ice
-		troll_jungle
-		troll_forest
-		troll_dark
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_troll_sand = {
 	random = no
 	customizer = no
 }
-troll_zandalari = {
-	learning = 1
-	diplomacy = 1
-	health = 1
+race_troll_zandalari = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_generic
-		undead_forsaken
-		wretched
-		human
-		orc
-		AK_trait_dwarf
-		goblin
-		gnome
-		high_elf
-		blood_elf
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-ogre = {
-	learning = -2
-	diplomacy = -1
-	martial = 2
-	combat_rating = 1
-	health = 2
-	opposite_opinion = -10
-	opposites = {
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_generic
-		undead_scourge
-		human
-		AK_trait_dwarf
-		goblin
-		gnome
-		high_elf
-		blood_elf
-		wretched
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_ogre = {
 	random = no
 	customizer = no
 }
-murloc = {
-	martial = 1
-	diplomacy = -1
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		wretched
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_murloc = {
 	random = no
 	customizer = no
 }
-gnoll = {
-	combat_rating = 1
-	diplomacy = -1
-	learning = -1
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		wretched
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_gnoll = {
 	random = no
 	customizer = no
 }
-naga = {
-	martial = 1
-	learning = 1
-	fertility = -0.3
+race_naga = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		wretched
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
-kobold = {
-	intrigue = 1
-	diplomacy = -1
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		wretched
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
+race_kobold = {
 	random = no
 	customizer = no
 }
-trogg = {
-	combat_rating = 1
-	diplomacy = -1
-	learning = -1
+race_trogg = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		high_elf
-		blood_elf
-		AK_trait_dwarf
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		wretched
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-hakkar_trait = {
+race_hakkar = {
 	immortal = yes
 	cannot_marry = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-faceless = {
-	martial = 5
-	combat_rating = 1
-	intrigue = 3
-	learning = 3
-	diplomacy = -5
-	fertility = -1000
+race_faceless = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-eredar = {
-	martial = 2
-	intrigue = 1
-	learning = 3
-	diplomacy = -2
-	combat_rating = 2
-	fertility = -1000
+race_eredar = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-dreadlord = {
-	martial = 1
-	intrigue = 5
-	learning = 1
-	combat_rating = 2
-	fertility = -1000
+race_dreadlord = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-succubus = {
-	intrigue = 4
-	stewardship = -1
-	martial = -1
-	diplomacy = 2
-	fertility = -1000
+race_succubus = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-pit_lord = {
-	martial = 5
-	intrigue = -5
-	learning = -2
-	diplomacy = -5
-	stewardship = -4
-	combat_rating = 5
-	fertility = -1000
+race_pit_lord = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-doomlord = {
-	martial = 4
-	intrigue = -3
-	learning = -4
-	diplomacy = -5
-	stewardship = -4
-	combat_rating = 4
-	fertility = -1000
+race_doomlord = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-fel_lord = {
-	martial = 3
-	intrigue = -5
-	learning = -2
-	diplomacy = -5
-	stewardship = -4
-	combat_rating = 5
-	fertility = -1000
+race_fel_lord = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-shivarra = {
-	intrigue = 3
-	martial = 1
-	learning = 2
-	diplomacy = 1
-	stewardship = -3
-	combat_rating = 2
-	fertility = -1000
+race_shivarra = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		faceless
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-draenei = {
-	learning = 2
-	diplomacy = 2
-	intrigue = -3
-	health = 2
+race_antaen = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		orc
-		blood_elf
-		wretched
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-broken = {
-	stewardship = 2
-	diplomacy = -1
+race_aranasi = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		orc
-		blood_elf
-		wretched
-		dragon_black
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_zandalari
-		troll_dark
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		lost_one
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-lost_one = {
-	intrigue = 2
-	diplomacy = -1
-	learning = -1
+race_inquisitor = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		high_elf
-		blood_elf
-		AK_trait_dwarf
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_ice
-		troll_jungle
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		trogg
-		naga
-		kobold
-		wretched
-		draenei
-		broken
-		hakkar_trait
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-voidwalker = {
-	martial = 3
-	intrigue = -2
-	learning = -2
-	diplomacy = -2
-	stewardship = -2
-	combat_rating = 2
-	fertility = -1000
+race_mo_arg = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		eredar
-		dreadlord
-		pit_lord
-		doomlord
-		succubus
-		shivarra
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-pale_orc = {
-	intrigue = 1
-	learning = 1
-	diplomacy = -5
-	opposite_opinion = -10
-	health = -1
-	fertility = -0.1
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		ogre
-		murloc
-		gnoll
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		hakkar_trait
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		air_elemental
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
-	random = no
-	customizer = no
-}
-
-air_elemental = {
+race_observer = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		hakkar_trait
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		fire_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-fire_elemental = {
+race_draenei = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		hakkar_trait
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		earth_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-earth_elemental = {
+race_broken = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		hakkar_trait
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		water_elemental
-	}
-	enatic = yes
 	random = no
 	customizer = no
 }
 
-water_elemental = {
+race_lost_one = {
 	immortal = yes
-	opposite_opinion = -10
-	opposites = {
-		human
-		orc
-		AK_trait_dwarf
-		high_elf
-		blood_elf
-		wretched
-		goblin
-		gnome
-		dragon_black
-		dragon_blue
-		dragon_bronze
-		dragon_green
-		dragon_red
-		dragon_chromatic
-		dragon_twilight
-		dragon_infinite
-		dragon_nightmare
-		undead_scourge
-		undead_forsaken
-		undead_generic
-		troll_forest
-		troll_jungle
-		troll_ice
-		troll_sand
-		troll_dark
-		troll_zandalari
-		hakkar_trait
-		ogre
-		murloc
-		gnoll
-		naga
-		kobold
-		trogg
-		draenei
-		broken
-		lost_one
-		faceless
-		eredar
-		succubus
-		dreadlord
-		pit_lord
-		doomlord
-		fel_lord
-		shivarra
-		voidwalker
-		pale_orc
-		air_elemental
-		fire_elemental
-		earth_elemental
-	}
-	enatic = yes
+	random = no
+	customizer = no
+}
+
+race_voidwalker = {
+	immortal = yes
+	random = no
+	customizer = no
+}
+
+race_pale_orc = {
+	random = no
+	customizer = no
+}
+
+race_air_elemental = {
+	immortal = yes
+	random = no
+	customizer = no
+}
+
+race_fire_elemental = {
+	immortal = yes
+	random = no
+	customizer = no
+}
+
+race_earth_elemental = {
+	immortal = yes
+	random = no
+	customizer = no
+}
+
+race_water_elemental = {
+	immortal = yes
+	random = no
+	customizer = no
+}
+
+race_half_elf = { # human/elf
+	immortal = yes
+	random = no
+	customizer = no
+}
+
+race_half_ogre = { # orc/ogre
+	immortal = yes
+	random = no
+	customizer = no
+}
+
+race_half_draenei = { # orc/draenei
+	immortal = yes
 	random = no
 	customizer = no
 }

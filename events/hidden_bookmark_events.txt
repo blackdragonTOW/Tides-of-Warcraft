@@ -37,16 +37,23 @@ character_event = {
 		if = {
 			limit = {
 				year = 10005
-				NOT = { year = 10020 }
+				NOT = { year = 10018 }
 			}
 			set_global_flag = secondwar_bookmark
 		}
 		if = {
 			limit = {
-				year = 10020
-				NOT = { year = 10025 }
+				year = 10018
+				NOT = { year = 10022 }
 			}
 			set_global_flag = thirdwar_bookmark
+		}
+		if = {
+			limit = {
+				year = 10022
+				NOT = { year = 10025 }
+			}
+			set_global_flag = frozenthrone_bookmark
 		}
 		if = {
 			limit = {
@@ -58,252 +65,50 @@ character_event = {
 		##DOOM
 		set_variable = { which = global_doom value = 0 }
 		#Deal with titles
-		activate_title = { title = e_zul status = no }
-		activate_title = { title = d_tyrs_guard status = no }
+		#Add province modifiers
+		#Kill specific characters (usually generic scourge ones that don't have any business being around before their time)
 		if = {
 			limit = {
-				NOR = {
-					has_global_flag = thirdwar_bookmark
+				NOT = { has_global_bookmark = wow_bookmark }
+			}
+			2001 = {
+				death = { death_reason = death_missing }
+			}
+			2002 = {
+				death = { death_reason = death_missing }
+			}
+			44 = {
+				death = { death_reason = death_missing }
+			}
+			45 = {
+				death = { death_reason = death_missing }
+			}
+			2003 = {
+				death = { death_reason = death_missing }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_global_bookmark = frozenthrone_bookmark }
+			}
+		}
+		#Destroy settlements based on the start date
+		if = {
+			limit = {
+				has_global_flag = threehammers_bookmark
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = frozenthrone_bookmark
 					has_global_flag = wow_bookmark
 				}
 			}
-			activate_title = { title = e_scourge status = no }
-		}
-		if = {
-			limit = {
-				NOT = { has_global_flag = wow_bookmark }
-			}
-			activate_title = { title = d_blood_knights status = no }
-		}
-		d_sunfury = {
-			holder_scope = {
-				set_government_type = militant_order_government
+			b_sunstone = {
+				destroy_settlemnt = THIS
 			}
 		}
-		#Add province modifiers
-		any_province = { # Can't use any lighter scopes, sadly.
-			limit = {
-				OR = {
-					has_global_flag = trollwars_bookmark
-					has_global_flag = threehammers_bookmark
-				}
-				OR = {
-					region = world_searing_gorge
-					region = world_burning_steppes
-				}
-			}
-			add_province_modifier = {
-				name = redridge_blackrock duration = -1
-			}
-		}
-		any_province = {
-			limit = {
-				region = world_blasted_lands
-				OR = {
-					has_global_flag = trollwars_bookmark
-					has_global_flag = threehammers_bookmark
-					has_global_flag = firstwar_bookmark
-				}
-			}
-			add_province_modifier = {
-				name = blastedlands_blackmorass duration = -1
-			}
-		}
-		any_province = {
-			limit = {
-				has_global_flag = trollwars_bookmark
-				region = world_deadwind
-			}
-			add_province_modifier = {
-				name = deadwind_borderlands duration = -1
-			}
-		}
-		if = {
-			limit = {
-				NOR = {
-					has_global_flag = trollwars_bookmark
-					has_global_flag = threehammers_bookmark
-				}
-			}
-			c_grim_batol = {
-				location = {
-					add_province_modifier = {
-						name = grim_batol_curse duration = -1
-					}
-				}
-			}
-		}
-		any_province = {
-			limit = {
-				culture = green_dragonflight
-			}
-			set_province_flag = green_dragon_land
-		}
-		any_province = {
-			limit = {
-				culture = red_dragonflight
-			}
-			set_province_flag = red_dragon_land
-		}
-		any_province = {
-			limit = {
-				culture = bronze_dragonflight
-			}
-			set_province_flag = bronze_dragon_land
-		}
-		any_province = {
-			limit = {
-				culture = blue_dragonflight
-			}
-			set_province_flag = blue_dragon_land
-		}
-		any_province = {
-			limit = {
-				culture = black_dragonflight
-			}
-			set_province_flag = black_dragon_land
-		}
-		any_province = {
-			limit = {
-				culture = nightmare_dragonflight
-			}
-			set_province_flag = nightmare_dragon_land
-		}
-		any_province = {
-			limit = {
-				culture = infinite_dragonflight
-			}
-			set_province_flag = infinite_dragon_land
-		}
-		any_province = {
-			limit = {
-				culture = chromatic_dragonflight
-			}
-			set_province_flag = chromatic_dragon_land
-		}
-		any_province = {
-			limit = {
-				culture = twilight_dragonflight
-			}
-			set_province_flag = twilight_dragon_land
-		}
-		#Add unique buildings
-		if = {
-			limit = {
-				NOT = { has_global_flag = wow_bookmark }
-			}
-			b_sunwell_plateau = {
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = city
-					}
-					add_building = ct_sunwell
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = castle
-					}
-					add_building = ca_sunwell
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = temple
-					}
-					add_building = tp_sunwell
-				}
-			}
-			b_goldenmist = {
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = city
-					}
-					add_building = ct_elfgate
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = castle
-					}
-					add_building = ca_elfgate
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = temple
-					}
-					add_building = tp_elfgate
-				}
-			}
-			b_stillwhisper_pond = {
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = city
-					}
-					add_building = ct_elfgate
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = castle
-					}
-					add_building = ca_elfgate
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = temple
-					}
-					add_building = tp_elfgate
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_global_flag = wow_bookmark
-			}
-			set_global_flag = sunwell_destroyed
-			b_sunwell_plateau = {
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = city
-					}
-					add_building = ct_sunwell_destroyed
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = castle
-					}
-					add_building = ca_sunwell_destroyed
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = temple
-					}
-					add_building = tp_sunwell_destroyed
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOT = { has_global_flag = thirdwar_bookmark }
-				NOT = { has_global_flag = wow_bookmark }
-			}
-			b_the_scorched_grove = {
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = city
-					}
-					add_building = ct_runestones
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = castle
-					}
-					add_building = ca_runestones
-				}
-				if = { #Since I got no clue what it'll be
-					limit = {
-						holding_type = temple
-					}
-					add_building = tp_runestones
-				}
-			}
-		}
+		#Add buildings ## Due to us going past year 10k, buildings added through history won't appear (unless it was fixed)
 	}
 }

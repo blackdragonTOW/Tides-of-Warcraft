@@ -932,6 +932,7 @@ orcish = {
 
 		modifier = default_culture_modifier
 		
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	fel_orc = {
@@ -960,6 +961,7 @@ orcish = {
 
 		modifier = default_culture_modifier
 		
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 }
@@ -1122,6 +1124,7 @@ elf = {
 
 		modifier = default_culture_modifier
 		
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -1151,6 +1154,7 @@ elf = {
 
 		modifier = default_culture_modifier
 		
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -1199,7 +1203,7 @@ elf = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-
+		allow_in_ruler_designer = no
 	}
 	
 	naga = {
@@ -1223,7 +1227,6 @@ elf = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
 		allow_looting = yes
 	}
@@ -3527,7 +3530,6 @@ murloc = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
 		allow_looting = yes
 		seafarer = yes
@@ -3559,7 +3561,6 @@ gnoll = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
 		allow_looting = yes
 	}
@@ -3591,7 +3592,6 @@ kobold = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
 		allow_looting = yes
 	}
@@ -3620,7 +3620,6 @@ trogg = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
 		allow_looting = yes
 	}
@@ -3648,8 +3647,9 @@ demonic = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -3672,8 +3672,9 @@ demonic = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -3696,8 +3697,9 @@ demonic = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -3720,8 +3722,10 @@ demonic = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -3744,8 +3748,10 @@ demonic = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -3768,8 +3774,10 @@ demonic = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -3792,8 +3800,140 @@ demonic = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
+		allow_looting = yes
+	}
+	
+	inquisitor = {
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.40 0.38 0.42 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
+		allow_looting = yes
+	}
+	
+	antaen = {
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.40 0.38 0.42 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
+		allow_looting = yes
+	}
+	
+	aranasi = {
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.40 0.38 0.42 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
+		allow_looting = yes
+	}
+	
+	mo_arg = {
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.40 0.38 0.42 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
+		allow_looting = yes
+	}
+	
+	observer = {
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.40 0.38 0.42 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 }
@@ -3820,7 +3960,6 @@ draenei = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
 		allow_looting = no
 	}
@@ -3843,7 +3982,7 @@ draenei = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
+
 		
 		allow_looting = yes
 	}
@@ -3866,7 +4005,7 @@ draenei = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
+		
 		
 		allow_looting = yes
 	}
@@ -3893,8 +4032,10 @@ void = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 	
@@ -3919,8 +4060,8 @@ void = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
-		
+
+		allow_in_ruler_designer = no
 		allow_looting = yes
 	}
 }
@@ -3947,8 +4088,9 @@ elemental = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = no
 	}
 	
@@ -3971,8 +4113,10 @@ elemental = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = no
 	}
 	
@@ -3995,8 +4139,10 @@ elemental = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = no
 	}
 	
@@ -4019,8 +4165,10 @@ elemental = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-		used_for_random = no
 		
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
 		allow_looting = no
 	}
 }
