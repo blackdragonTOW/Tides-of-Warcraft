@@ -16,19 +16,21 @@ geographical_region = "geographical_region.txt"
 static = "statics"
 seasons = "seasons.txt"
 
-sea_zones = { 1466 }
+sea_zones = { 420 453 }
+sea_zones = { 454 564 }
 
 ocean_region = {	# Oceans
-	sea_zones = {  }
+	sea_zones = { 2 }
 }
-ocean_region = { # Lakes, because the game throws a fit otherwise
-	sea_zones = {  }
-}
+#ocean_region = { # Lakes
+#	sea_zones = { 1 }
+#}
 
 # Define which indices in trees.bmp palette which should count as trees for automatic terrain assignment
 tree = { 3 4 7 10 }
 
 major_rivers = 
 {
-	
+	#Nazferiti System
+	454 455 456 457 458 459 460 461 462
 }

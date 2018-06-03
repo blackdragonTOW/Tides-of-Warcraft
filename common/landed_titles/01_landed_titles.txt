@@ -27,11 +27,11 @@ e_zul_aman = {
 	lost_one = "Quel'Thalas"
 	
 	k_quel_thalas = {
-		color = { 240 85 85 }
+		color = { 233 26 26 }
 		color2 = { 255 255 255 }
 		culture = high_elven
 		
-		capital = 7 # Silvermoon
+		capital = 5 # Silvermoon
 		
 		d_quel_danas = {
 			color = { 239 33 40 }
@@ -43,7 +43,7 @@ e_zul_aman = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 1 province_id = 2 province_id = 3 province_id = 4 } }
+					any_demesne_province = { OR = { province_id = 1 province_id = 2 province_id = 3 } }
 				}
 			}
 			
@@ -73,43 +73,23 @@ e_zul_aman = {
 				color = { 221 213 142 }
 				color2 = { 255 255 255 }
 				
-				b_suns_reach_harbor = {
+				b_suns_reach = {
 				}
-				b_suns_reach_armory = {
+				b_dawnstar_village = {
 				}
-				b_suns_reach_sanctum = {
+				b_dawnblade_fort = {
 				}
-				b_dawning_square = {
+				b_sunstone = {
 				}
 				b_shattered_sun_staging_area = {
 				}
-				b_suns_reach_fields = {
+				b_dawning_fields = {
 				}
 				b_noonpoint = {
 				}
 			}
 			
-			c_dawnstar = { # 3
-				color = { 162 150 142 }
-				color2 = { 255 255 255 }
-				
-				b_dawnstar_village = {
-				}
-				b_dawning_coast = {
-				}
-				b_dawnblade_fort = {
-				}
-				b_noontide = {
-				}
-				b_dawnstar_outskirts = {
-				}
-				b_sunstone = {
-				}
-				b_brightpoint = {
-				}
-			}
-			
-			c_sunwell_plateau = { # 4
+			c_sunwell_plateau = { # 3
 				color = { 162 57 71 }
 				color2 = { 255 255 255 }
 				
@@ -141,113 +121,16 @@ e_zul_aman = {
 			color2 = { 255 255 255 }
 			culture = high_elven
 		
-			capital = 7 # Silvermoon
+			capital = 5 # Silvermoon
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 6 province_id = 7 province_id = 8 province_id = 10 } }
+					any_demesne_province = { OR = { province_id = 4 province_id = 5 province_id = 6 province_id = 8 } }
 				}
 			}
 			
-			c_silver_coast = { # 6
-				color = { 111 111 210 }
-				color2 = { 255 255 255 }
-				
-				b_sunstrider_retreat = {
-				}
-				b_silverhome = {
-				}
-				b_rising_moon = {
-				}
-				b_phoenix_solar = {
-				}
-				b_princely_shore = {
-				}
-				b_wellwatch = {
-				}
-				b_solstice_sands = {
-				}
-			}
-			
-			c_silvermoon = { # 7
-				color = { 196 201 145 }
-				color2 = { 255 255 255 }
-				
-				b_court_of_the_sun = {
-				}
-				b_farstriders_square = {
-				}
-				b_walk_of_elders = {
-				}
-				b_the_bazaar = {
-				}
-				b_the_royal_exchange = {
-				}
-				b_the_sanctum = {
-				}
-				b_shepherds_gate = {
-				}
-				
-				holy_site = sunwell
-			}
-			
-			c_ruins_of_silvermoon = { # 8
-				color = { 215 96 45 }
-				color2 = { 255 255 255 }
-				
-				b_falconwing_square = {
-				}
-				b_commons_hall = {
-				}
-				b_dawning_lane = {
-				}
-				b_skulking_row = {
-				}
-				b_feths_way = {
-				}
-				b_huntress_of_the_sun = {
-				}
-				b_the_dead_scar = {
-				}
-			}
-			
-			c_azurebreeze_coast = { # 10
-				color = { 179 147 153 }
-				color2 = { 255 255 255 }
-				
-				b_azurebreeze_retreat = {
-				}
-				b_falther_elor = {
-				}
-				b_dragonhawks_rest = {
-				}
-				b_oceanbreeze_camp = {
-				}
-				b_placid_strand = {
-				}
-				b_lynx_copse = {
-				}
-				b_azure_sands = {
-				}
-			}
-		}
-		
-		d_suntouched_march = {
-			color = { 255 112 116 }
-			color2 = { 255 255 255 }
-			culture = high_elven
-			
-			capital = 5 # Sunstrider Isle
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 5 province_id = 9 province_id = 17 } }
-				}
-			}
-			
-			c_sunstrider_isle = { # 5
+			c_sunstrider_isle = { # 4
 				color = { 119 122 88 }
 				color2 = { 255 255 255 }
 				
@@ -267,27 +150,29 @@ e_zul_aman = {
 				}
 			}
 			
-			c_sunstrider_coast = { # 9
-				color = { 51 31 94 }
+			c_silvermoon = { # 5
+				color = { 196 201 145 }
 				color2 = { 255 255 255 }
 				
-				b_novices_stop = {
+				b_court_of_the_sun = {
 				}
-				b_apprentices_way = {
+				b_farstriders_square = {
 				}
-				b_gilded_sands = {
+				b_walk_of_elders = {
 				}
-				b_dawnguard = {
+				b_falconwing_square = {
 				}
-				b_eventide = {
+				b_the_royal_exchange = {
 				}
-				b_seaside_estates = {
+				b_the_sanctum = {
 				}
-				b_silversong = {
+				b_skulking_row = {
 				}
+				
+				holy_site = sunwell
 			}
 			
-			c_north_sanctum = { # 17
+			c_north_sanctum = { # 6
 				color = { 193 170 99 }
 				color2 = { 255 255 255 }
 				
@@ -306,6 +191,26 @@ e_zul_aman = {
 				b_surgestop = {
 				}
 			}
+			
+			c_the_silver_coast = { # 8
+				color = { 111 111 210 }
+				color2 = { 255 255 255 }
+				
+				b_sunstrider_retreat = {
+				}
+				b_silverhome = {
+				}
+				b_rising_moon = {
+				}
+				b_phoenix_solar = {
+				}
+				b_princely_shore = {
+				}
+				b_wellwatch = {
+				}
+				b_solstice_sands = {
+				}
+			}
 		}
 		
 		d_highborne_midlands = {
@@ -313,16 +218,36 @@ e_zul_aman = {
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
-			capital = 11 # Duskwither Spire
+			capital = 9 # Duskwither Spire
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 11 province_id = 15 province_id = 16 province_id = 26 } }
+					any_demesne_province = { OR = { province_id = 7 province_id = 9 province_id = 13 province_id = 15 } }
 				}
 			}
 			
-			c_duskwither_spire = { # 11
+			c_stillwhisper_grove = { # 7
+				color={ 64 11 11 }
+				color2={ 255 255 255 }
+				
+				b_farstrider_retreat = {
+				}
+				b_hawkeye_post = {
+				}
+				b_sunbow = {
+				}
+				b_spellslinger_clearing = {
+				}
+				b_arrowknee = {
+				}
+				b_primal_grove = {
+				}
+				b_greenkeep = {
+				}
+			}
+			
+			c_duskwither_spire = { # 9
 				color={ 54 120 12 }
 				color2={ 255 255 255 }
 				
@@ -342,47 +267,7 @@ e_zul_aman = {
 				}
 			}
 			
-			c_farstrider_retreat = { # 15
-				color={ 64 11 11 }
-				color2={ 255 255 255 }
-				
-				b_farstrider_retreat = {
-				}
-				b_hawkeye_post = {
-				}
-				b_sunbow = {
-				}
-				b_longstride = {
-				}
-				b_arrowknee = {
-				}
-				b_venka = {
-				}
-				b_grakata = {
-				}
-			}
-			
-			c_stillwhisper_grove = { # 16
-				color={ 126 17 109 }
-				color2={ 255 255 255 }
-				
-				b_stillwhisper_grove = {
-				}
-				b_spellslinger_clearing = {
-				}
-				b_elrendar_bend = {
-				}
-				b_primal_grove = {
-				}
-				b_greenkeep = {
-				}
-				b_magestaff = {
-				}
-				b_leyorb = {
-				}
-			}
-			
-			c_tor_watha = { # 26
+			c_tor_watha = { # 15
 				color = { 108 71 65 }
 				color2 = { 255 255 255 }
 				
@@ -401,69 +286,51 @@ e_zul_aman = {
 				b_gatecrash = {
 				}
 			}
-		}
-		
-		d_eversong_heartlands = {
-			color = { 181 9 15 }
-			color2 = { 255 255 255 }
-			culture = high_elven
 			
-			capital = 21 # East Sanctum
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 21 province_id = 22 province_id = 23 province_id = 25 } }
-				}
-			}
-			
-			c_east_sanctum = { # 21
-				color={ 145 162 198 }
-				color2={ 255 255 255 }
-				
-				b_east_sanctum = {
-				}
-				b_manascar = {
-				}
-				b_conjurers_stand = {
-				}
-				b_sundial = {
-				}
-				b_leyend = {
-				}
-				b_falahna = {
-				}
-				b_sinestar = {
-				}
-				
-				holy_site = sunwell
-			}
-			
-			c_the_living_wood = { # 22
-				color = { 255 74 116 }
-				color2 = { 255 255 255 }
-				
-				b_the_living_wood = {
-				}
-				b_treantwatch = {
-				}
-				b_verdant_slopes = {
-				}
-				b_starkline = {
-				}
-				b_everspring = {
-				}
-				b_neverwinter = {
-				}
-				b_blooming_meadow = {
-				}
-			}
-			
-			c_zeb_watha = { # 23
+			c_zeb_watha = { # 13
 				color = { 60 221 48 }
 				color2 = { 255 255 255 }
 				
+				azerothian = "The Living Wood"
+				stromic = "The Living Wood"
+				dalaranian = "The Living Wood"
+				lordaeronian = "The Living Wood"
+				gilnean = "The Living Wood"
+				tirasian = "The Living Wood"
+				alteraci = "The Living Wood"
+				arathi = "The Living Wood"
+				bronzebeard = "The Living Wood"
+				wildhammer = "The Living Wood"
+				dark_iron = "The Living Wood"
+				high_elven = "The Living Wood"
+				blood_elven = "The Living Wood"
+				night_elven = "The Living Wood"
+				naga = "The Living Wood"
+				gnome = "The Living Wood"
+				draenei = "The Living Wood"
+				broken = "The Living Wood"
+				lost_one = "The Living Wood"
+				
 				b_zeb_watha = {
+					azerothian = "The Living Wood"
+					stromic = "The Living Wood"
+					dalaranian = "The Living Wood"
+					lordaeronian = "The Living Wood"
+					gilnean = "The Living Wood"
+					tirasian = "The Living Wood"
+					alteraci = "The Living Wood"
+					arathi = "The Living Wood"
+					bronzebeard = "The Living Wood"
+					wildhammer = "The Living Wood"
+					dark_iron = "The Living Wood"
+					high_elven = "The Living Wood"
+					blood_elven = "The Living Wood"
+					night_elven = "The Living Wood"
+					naga = "The Living Wood"
+					gnome = "The Living Wood"
+					draenei = "The Living Wood"
+					broken = "The Living Wood"
+					lost_one = "The Living Wood"
 				}
 				b_elrendar_falls = {
 				}
@@ -478,26 +345,6 @@ e_zul_aman = {
 				b_circle_of_masks = {
 				}
 			}
-			
-			c_the_scorched_grove = { # 25
-				color = { 173 170 198 }
-				color2 = { 255 255 255 }
-				
-				b_the_scorched_grove = {
-				}
-				b_shandor = {
-				}
-				b_falithas = {
-				}
-				b_scorched_shore = {
-				}
-				b_ashfall = {
-				}
-				b_phoenix_tree = {
-				}
-				b_barkburn = {
-				}
-			}
 		}
 		
 		d_sunsail_bay = {
@@ -505,16 +352,16 @@ e_zul_aman = {
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
-			capital = 19 # Sunsail Anchorage
+			capital = 11 # Sunsail Anchorage
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 18 province_id = 19 province_id = 20 province_id = 24 } }
+					any_demesne_province = { OR = { province_id = 10 province_id = 11 province_id = 12 province_id = 14 } }
 				}
 			}
 			
-			c_west_sanctum = { # 18
+			c_west_sanctum = { # 10
 				color = { 88 62 230 }
 				color2 = { 255 255 255 }
 				
@@ -536,7 +383,7 @@ e_zul_aman = {
 				holy_site = sunwell
 			}
 			
-			c_sunsail_anchorage = { # 19
+			c_sunsail_anchorage = { # 11
 				color = { 62 62 37 }
 				color2 = { 255 255 255 }
 				
@@ -544,25 +391,25 @@ e_zul_aman = {
 				}
 				b_brightmast = {
 				}
-				b_golden_strand = {
+				b_goldenbough_spire = {
 				}
 				b_bright_harbor = {
 				}
-				b_sunsail_bay = {
+				b_springstep = {
 				}
 				b_shipwrights_strand = {
 				}
-				b_sunsail_outskirts = {
+				b_suntouched_vineyards = {
 				}
 			}
 			
-			c_fairbreeze = { # 20
+			c_fairbreeze = { # 12
 				color = { 198 102 54 }
 				color2 = { 255 255 255 }
 				
 				b_fairbreeze_village = {
 				}
-				b_fairbreeze_fields = {
+				b_east_sanctum = {
 				}
 				b_saltherils_haven = {
 				}
@@ -576,117 +423,50 @@ e_zul_aman = {
 				}
 			}
 			
-			c_goldenbough_pass = { # 24
-				color = { 88 62 48 }
+			c_the_scorched_grove = { # 14
+				color = { 173 170 198 }
 				color2 = { 255 255 255 }
 				
-				b_goldenbough_pass = {
+				b_the_scorched_grove = {
 				}
-				b_goldenbough_spire = {
+				b_shandor = {
 				}
-				b_suntouched_vineyards = {
+				b_falithas = {
 				}
-				b_golden_overlook = {
+				b_scorched_shore = {
 				}
-				b_goldgrass = {
+				b_ashfall = {
 				}
-				b_springstep = {
+				b_phoenix_tree = {
 				}
-				b_sunsail_road = {
+				b_barkburn = {
 				}
 			}
 		}
+	}
+	
+	k_zul_aman = {
+		color = { 0 255 111 }
+		color2 = { 255 255 255 }
+		culture = amani
 		
-		d_elrendar_basin = {
+		capital = 25 # Zul'Aman
+		
+		d_tranquillien = {
 			color = { 121 34 36 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
-			capital = 31 # Goldenmist
+			capital = 21 # Tranquillien
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 31 province_id = 33 province_id = 38 } }
+					any_demesne_province = { OR = { province_id = 17 province_id = 18 province_id = 38 } }
 				}
 			}
 			
-			c_goldenmist = { # 31
-				color = { 218 109 136 }
-				color2 = { 255 255 255 }
-				
-				b_goldenmist_village = {
-				}
-				b_goldenmist_fields = {
-				}
-				b_noble_retreats = {
-				}
-				b_ghostlands_border = {
-				}
-				b_butchers_triumph = {
-				}
-				b_feandolanore = {
-				}
-				b_rangers_stand = {
-				}
-			}
-			
-			c_an_daroth = { # 33
-				color = { 139 85 142 }
-				color2 = { 255 255 255 }
-				
-				b_an_daroth = {
-				}
-				b_altar_of_enulaia = {
-				}
-				b_elrendar_crossing = {
-				}
-				b_sentinel_encroachment = {
-				}
-				b_teladas = {
-				}
-				b_gatekeepers_soul = {
-				}
-				b_valenar = {
-				}
-			}
-			
-			c_elrendar_valley = { # 38
-				color = { 170 62 142 }
-				color2 = { 255 255 255 }
-				
-				b_between_rivers = {
-				}
-				b_elrendar_delta = {
-				}
-				b_shalandis_isle = {
-				}
-				b_marchford = {
-				}
-				b_ghostshore = {
-				}
-				b_mourning_strand = {
-				}
-				b_scourged_woods = {
-				}
-			}
-		}
-		
-		d_sungraze_mountains = {
-			color = { 255 61 68 }
-			color2 = { 255 255 255 }
-			culture = high_elven
-			
-			capital = 32 # Tranquillien
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 30 province_id = 32 province_id = 34 province_id = 35 } }
-				}
-			}
-			
-			c_suncrown = { # 30
+			c_suncrown = { # 17
 				color = { 237 219 18 }
 				color2 = { 255 255 255 }
 				
@@ -706,7 +486,27 @@ e_zul_aman = {
 				}
 			}
 			
-			c_tranquillien = { # 32
+			c_goldenmist = { # 18
+				color = { 218 109 136 }
+				color2 = { 255 255 255 }
+				
+				b_goldenmist_village = {
+				}
+				b_an_daroth = {
+				}
+				b_shalandis_isle = {
+				}
+				b_ghostshore = {
+				}
+				b_teladas = {
+				}
+				b_feandolanore = {
+				}
+				b_rangers_stand = {
+				}
+			}
+			
+			c_tranquillien = { # 21
 				color = { 94 153 60 }
 				color2 = { 255 255 255 }
 				
@@ -725,65 +525,25 @@ e_zul_aman = {
 				b_sungraze_slopes = {
 				}
 			}
-			
-			c_farstrider_enclave = { # 34
-				color = { 30 56 94 }
-				color2 = { 255 255 255 }
-				
-				b_farstrider_enclave = {
-				}
-				b_amani_catacombs = {
-				}
-				b_shadowpine_encroachment = {
-				}
-				b_elrendars_end = {
-				}
-				b_rangers_vigil = {
-				}
-				b_trollcleave = {
-				}
-				b_broken_tusks = {
-				}
-			}
-			
-			c_sanctum_of_the_sun = { # 35
-				color = { 165 156 57 }
-				color2 = { 255 255 255 }
-				
-				b_sanctum_of_the_sun = {
-				}
-				b_an_telas = {
-				}
-				b_altar_of_hannalee = {
-				}
-				b_guardian_barrier = {
-				}
-				b_gatekeepers_heart = {
-				}
-				b_backpass = {
-				}
-				b_highnoon = {
-				}
-				
-				holy_site = sunwell
-			}
 		}
 		
-		d_windrunner_shore = {
-			color = { 220 124 127 }
+		d_thas_alah = {
+			color = { 255 61 68 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
-			capital = 39 # Windrunner Spire
+			capital = 20 # Thas'Alah
+			
+			scourge = "Deatholme"
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 39 province_id = 40 province_id = 42 province_id = 43 } }
+					any_demesne_province = { OR = { province_id = 19 province_id = 20 province_id = 22 } }
 				}
 			}
 			
-			c_windrunner_spire = { # 39
+			c_windrunner_coast = { # 19
 				color = { 68 145 91 }
 				color2 = { 255 255 255 }
 				
@@ -803,106 +563,93 @@ e_zul_aman = {
 				}
 			}
 			
-			c_sanctum_of_the_moon = { # 40
-				color = { 136 99 65 }
+			c_thas_alah = { # 20
+				color = { 105 62 102 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Deatholme"
+				
+				b_thas_alah = {
+					scourge = "Tower of the Damned" 
+				}
+				b_woodheart = {
+					scourge = "Traitor's Eyes"
+				}
+				b_borderwood = {
+					scourge = "Gates of Deatholme"
+				}
+				b_forestlight = {
+					scourge = "Forestbane"
+				}
+				b_elfsong_copse = {
+					scourge = "Elfslaughter"
+				}
+				b_greensap = {
+					scourge = "Broken Moon"
+				}
+				b_greenhome = {
+					scourge = "Woodrot"
+				}
+			}
+			
+			c_underlight_hills = { # 22
+				color = { 77 125 139 }
 				color2 = { 255 255 255 }
 				
 				b_sanctum_of_the_moon = {
 				}
-				b_magisters_respite = {
+				b_underlight_camp = {
 				}
-				b_manawalk = {
+				b_bleeding_ziggurat = {
 				}
-				b_lunar_library = {
+				b_howling_ziggurat = {
 				}
 				b_eclipsewatch = {
 				}
 				b_moonshine = {
 				}
-				b_elfmoon = {
-				}
-			}
-			
-			c_underlight_hills = { # 42
-				color = { 77 125 139 }
-				color2 = { 255 255 255 }
-				
-				b_underlight_camp = {
-				}
-				b_underlight_mines = {
-				}
 				b_rockaura = {
-				}
-				b_blackpaw_huntgrounds = {
-				}
-				b_grimdawn = {
-				}
-				b_corpsebane = {
-				}
-				b_underlight_delve = {
-				}
-			}
-			
-			c_elfsong_copse = { # 43
-				color = { 94 79 96 }
-				color2 = { 255 255 255 }
-				
-				b_elfsong_copse = {
-				}
-				b_greenwood_borderlands = {
-				}
-				b_forestouch = {
-				}
-				b_hunters_range = {
-				}
-				b_woodtrail = {
-				}
-				b_backwoods = {
-				}
-				b_deepgreen = {
 				}
 			}
 		}
 		
-		d_thalassian_pass = {
+		d_greenwood_pass = {
 			color = { 159 125 126 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
-			capital = 36 # Deatholme
+			capital = 23 # Sanctum of the Sun
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 36 province_id = 37 province_id = 41 province_id = 44 } }
+					any_demesne_province = { OR = { province_id = 23 province_id = 24 } }
 				}
 			}
 			
-			c_deatholme = { # 36
-				color = { 105 62 102 }
+			c_sanctum_of_the_sun = { # 23
+				color = { 165 156 57 }
 				color2 = { 255 255 255 }
 				
-				high_elven = "Thas'alah"
-				blood_elven = "Thas'alah"
-				night_elven = "Thas'alah"
+				b_sanctum_of_the_sun = {
+				}
+				b_an_telas = {
+				}
+				b_andilien_estate = {
+				}
+				b_an_owyn = {
+				}
+				b_silkfang_grove = {
+				}
+				b_shadowfell = {
+				}
+				b_highnoon = {
+				}
 				
-				b_tower_of_the_damned = {
-				}
-				b_traitors_eyes = {
-				}
-				b_gates_of_deatholme = {
-				}
-				b_forestbane = {
-				}
-				b_elfslaughter = {
-				}
-				b_broken_moon = {
-				}
-				b_woodrot = {
-				}
+				holy_site = sunwell
 			}
 			
-			c_thalassian_pass = { # 37
+			c_thalassian_pass = { # 24
 				color = { 65 105 45 }
 				color2 = { 255 255 255 }
 				
@@ -923,71 +670,23 @@ e_zul_aman = {
 				
 				holy_site = sunwell
 			}
-			
-			c_twin_ziggurats = { # 41
-				color = { 190 62 108 }
-				color2 = { 255 255 255 }
-				
-				b_bleeding_ziggurat = {
-				}
-				b_howling_ziggurat = {
-				}
-				b_deathmarch = {
-				}
-				b_stonewing_perch = {
-				}
-				b_lightstone = {
-				}
-				b_flamestone = {
-				}
-				b_necrotic_demesne = {
-				}
-			}
-			
-			c_andilien_estate = { # 44
-				color = { 207 186 144 }
-				color2 = { 255 255 255 }
-				
-				b_andilien_estate = {
-				}
-				b_andilien_grounds = {
-				}
-				b_forested_clearing = {
-				}
-				b_south_march = {
-				}
-				b_silkfang_grove = {
-				}
-				b_shadowfell = {
-				}
-				b_void_trail = {
-				}
-			}
 		}
-	}
-	
-	k_zul_aman = {
-		color = { 0 255 111 }
-		color2 = { 255 255 255 }
-		culture = amani
-		
-		capital = 47 # Zul'Aman
 		
 		d_thalassian_highlands = {
 			color = { 51 192 112 }
 			color2 = { 255 255 255 }
 			culture = amani
 			
-			capital = 29 # Dawnstar Spire
+			capital = 16 # Dawnstar Spire
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 29 province_id = 48 province_id = 49 } }
+					any_demesne_province = { OR = { province_id = 16 province_id = 419 } }
 				}
 			}
 			
-			c_dawnstar_spire = { # 29
+			c_dawnstar_spire = { # 16
 				color = { 147 128 57 }
 				color2 = { 255 255 255 }
 				
@@ -1017,10 +716,34 @@ e_zul_aman = {
 				zandalari = "Zeb'Sora"
 				
 				b_dawnstar_spire = {
+					amani = "Zeb'Sora"
+					atalai = "Zeb'Sora"
+					razorbranch = "Zeb'Sora"
+					firetree = "Zeb'Sora"
+					mossflayer = "Zeb'Sora"
+					revantusk = "Zeb'Sora"
+					vilebranch = "Zeb'Sora"
+					shadowpine = "Zeb'Sora"
+					witherbark = "Zeb'Sora"
+					bloodscalp = "Zeb'Sora"
+					darkspear = "Zeb'Sora"
+					gurubashi = "Zeb'Sora"
+					shatterspear = "Zeb'Sora"
+					skullsplitter = "Zeb'Sora"
+					drakkari = "Zeb'Sora"
+					frostmane = "Zeb'Sora"
+					sandfury = "Zeb'Sora"
+					hakkari = "Zeb'Sora"
+					smolderthorn = "Zeb'Sora"
+					shadowglen = "Zeb'Sora"
+					winterax = "Zeb'Sora"
+					winterfang = "Zeb'Sora"
+					shadowtooth = "Zeb'Sora"
+					zandalari = "Zeb'Sora"
 				}
-				b_zeb_sora = {
+				b_pineax = {
 				}
-				b_dawnstar_grounds = {
+				b_darkrift = {
 				}
 				b_traitors_roost = {
 				}
@@ -1032,43 +755,96 @@ e_zul_aman = {
 				}
 			}
 			
-			c_zeb_nowa = { # 48
-				color = { 145 94 47 }
+			c_farstrider_enclave = { # 419
+				color = { 30 56 94 }
 				color2 = { 255 255 255 }
 				
-				b_zeb_nowa = {
-				}
-				b_chieftains_rise = {
-				}
-				b_loaspeaker_forest = {
-				}
-				b_tor_nowa = {
-				}
-				b_eastern_greenwood = {
-				}
-				b_gilded_tusk = {
-				}
-				b_bloodyaxe = {
-				}
-			}
-			
-			c_zeb_tela = { # 49
-				color = { 198 201 108 }
-				color2 = { 255 255 255 }
+				amani = "Zeb'Nowa"
+				atalai = "Zeb'Nowa"
+				razorbranch = "Zeb'Nowa"
+				firetree = "Zeb'Nowa"
+				mossflayer = "Zeb'Nowa"
+				revantusk = "Zeb'Nowa"
+				vilebranch = "Zeb'Nowa"
+				shadowpine = "Zeb'Nowa"
+				witherbark = "Zeb'Nowa"
+				bloodscalp = "Zeb'Nowa"
+				darkspear = "Zeb'Nowa"
+				gurubashi = "Zeb'Nowa"
+				shatterspear = "Zeb'Nowa"
+				skullsplitter = "Zeb'Nowa"
+				drakkari = "Zeb'Nowa"
+				frostmane = "Zeb'Nowa"
+				sandfury = "Zeb'Nowa"
+				hakkari = "Zeb'Nowa"
+				smolderthorn = "Zeb'Nowa"
+				shadowglen = "Zeb'Nowa"
+				winterax = "Zeb'Nowa"
+				winterfang = "Zeb'Nowa"
+				shadowtooth = "Zeb'Nowa"
+				zandalari = "Zeb'Nowa"
 				
-				b_zeb_tela = {
+				b_farstrider_enclave = {
+					amani = "Zeb'Nowa"
+					atalai = "Zeb'Nowa"
+					razorbranch = "Zeb'Nowa"
+					firetree = "Zeb'Nowa"
+					mossflayer = "Zeb'Nowa"
+					revantusk = "Zeb'Nowa"
+					vilebranch = "Zeb'Nowa"
+					shadowpine = "Zeb'Nowa"
+					witherbark = "Zeb'Nowa"
+					bloodscalp = "Zeb'Nowa"
+					darkspear = "Zeb'Nowa"
+					gurubashi = "Zeb'Nowa"
+					shatterspear = "Zeb'Nowa"
+					skullsplitter = "Zeb'Nowa"
+					drakkari = "Zeb'Nowa"
+					frostmane = "Zeb'Nowa"
+					sandfury = "Zeb'Nowa"
+					hakkari = "Zeb'Nowa"
+					smolderthorn = "Zeb'Nowa"
+					shadowglen = "Zeb'Nowa"
+					winterax = "Zeb'Nowa"
+					winterfang = "Zeb'Nowa"
+					shadowtooth = "Zeb'Nowa"
+					zandalari = "Zeb'Nowa"
 				}
-				b_zul_ai = {
+				b_elrendars_end = {
+					amani = "Zeb'Tela"
+					atalai = "Zeb'Tela"
+					razorbranch = "Zeb'Tela"
+					firetree = "Zeb'Tela"
+					mossflayer = "Zeb'Tela"
+					revantusk = "Zeb'Tela"
+					vilebranch = "Zeb'Tela"
+					shadowpine = "Zeb'Tela"
+					witherbark = "Zeb'Tela"
+					bloodscalp = "Zeb'Tela"
+					darkspear = "Zeb'Tela"
+					gurubashi = "Zeb'Tela"
+					shatterspear = "Zeb'Tela"
+					skullsplitter = "Zeb'Tela"
+					drakkari = "Zeb'Tela"
+					frostmane = "Zeb'Tela"
+					sandfury = "Zeb'Tela"
+					hakkari = "Zeb'Tela"
+					smolderthorn = "Zeb'Tela"
+					shadowglen = "Zeb'Tela"
+					winterax = "Zeb'Tela"
+					winterfang = "Zeb'Tela"
+					shadowtooth = "Zeb'Tela"
+					zandalari = "Zeb'Tela"
 				}
-				b_trollbark = {
+				b_amani_catacombs = {
 				}
-				b_jinthas_grasp = {
+				b_shadowpine_encroachment = {
 				}
-				b_eagleperch = {
+				b_rangers_vigil = {
 				}
-				b_shadowpine_barrows = {
+				b_trollcleave = {
 				}
-				b_mohawk_grove = {
+				b_broken_tusks = {
 				}
 			}
 		}
@@ -1078,56 +854,16 @@ e_zul_aman = {
 			color2 = { 255 255 255 }
 			culture = amani
 			
-			capital = 47 # Zul'Aman
+			capital = 25 # Zul'Aman
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 45 province_id = 46 province_id = 47 } }
+					any_demesne_province = { OR = { province_id = 25 province_id = 26 province_id = 27 } }
 				}
 			}
 			
-			c_hatchet_hills = { # 45
-				color = { 111 186 144 }
-				color2 = { 255 255 255 }
-				
-				b_nedreck_camp = {
-				}
-				b_incursion_point = {
-				}
-				b_axethrow = {
-				}
-				b_hexwood = {
-				}
-				b_berserkers_pit = {
-				}
-				b_hatchet_hills = {
-				}
-				b_amani_hillside = {
-				}
-			}
-			
-			c_an_owyn = { # 46
-				color = { 198 57 48 }
-				color2 = { 255 255 255 }
-				
-				b_an_owyn = {
-				}
-				b_altar_of_ennala = {
-				}
-				b_southmoon = {
-				}
-				b_scrystone = {
-				}
-				b_gatekepeers_mind = {
-				}
-				b_keycrystal = {
-				}
-				b_nightpost = {
-				}
-			}
-			
-			c_zul_aman = { # 47
+			c_zul_aman = { # 25
 				color = { 60 198 48 }
 				color2 = { 255 255 255 }
 				
@@ -1135,7 +871,7 @@ e_zul_aman = {
 				}
 				b_amani_pass = {
 				}
-				b_amani_sanctum = {
+				b_hatchet_hills = {
 				}
 				b_eagle_quarter = {
 				}
@@ -1148,138 +884,8 @@ e_zul_aman = {
 				
 				holy_site = loa
 			}
-		}
-		
-		d_amani_coast = {
-			color = { 0 218 94 }
-			color2 = { 255 255 255 }
-			culture = amani
 			
-			capital = 52 # Zeb'Intha
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 50 province_id = 51 province_id = 52 } }
-				}
-			}
-			
-			c_amani_trail = { # 50
-				color = { 96 119 108 }
-				color2 = { 255 255 255 }
-				
-				b_amani_outpost = {
-				}
-				b_hidden_gorge = {
-				}
-				b_northcrag = {
-				}
-				b_thalassian_heights = {
-				}
-				b_frozen_tusk = {
-				}
-				b_trollsblood = {
-				}
-				b_trailblaze = {
-				}
-			}
-			
-			c_nalorakks_wood = { # 51
-				color = { 96 54 207 }
-				color2 = { 255 255 255 }
-				
-				b_grove_of_the_bear = {
-				}
-				b_spiritstep_woods = {
-				}
-				b_altar_of_nalorakk = {
-				}
-				b_bearclaw_den = {
-				}
-				b_grizzlefury = {
-				}
-				b_hibernia = {
-				}
-				b_barkgouge = {
-				}
-			}
-			
-			c_zeb_intha = { # 52
-				color = { 96 193 187 }
-				color2 = { 255 255 255 }
-				
-				b_zeb_intha = {
-				}
-				b_amani_port = {
-				}
-				b_grimax = {
-				}
-				b_trollkeep = {
-				}
-				b_seatusk = {
-				}
-				b_forbidding_watch = {
-				}
-				b_warriors_pit = {
-				}
-			}
-		}
-		
-		d_thalassian_coast = {
-			color = { 47 129 83 }
-			color2 = { 255 255 255 }
-			culture = amani
-			
-			capital = 28 # Zuma'tel
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 27 province_id = 28 province_id = 53 } }
-				}
-			}
-			
-			c_dragonhawk_coast = { # 27
-				color = { 162 108 193 }
-				color2 = { 255 255 255 }
-				
-				b_camp_remote = {
-				}
-				b_dragonhawks_sanctuary = {
-				}
-				b_murgling_shore = {
-				}
-				b_reclusion = {
-				}
-				b_silentocean = {
-				}
-				b_graydirt = {
-				}
-				b_beachtower = {
-				}
-			}
-			
-			c_zuma_tel = { # 28
-				color = { 82 43 94 }
-				color2 = { 255 255 255 }
-				
-				b_zuma_tel = {
-				}
-				b_zuma_tel_outskirts = {
-				}
-				b_witch_doctors_bonfire = {
-				}
-				b_warriors_rest = {
-				}
-				b_lowspear = {
-				}
-				b_greenshore = {
-				}
-				b_towerfall = {
-				}
-			}
-			
-			c_spiritcatcher_shore = { # 53
+			c_spiritcatcher_shore = { # 26
 				color = { 162 60 96 }
 				color2 = { 255 255 255 }
 				
@@ -1296,6 +902,26 @@ e_zul_aman = {
 				b_beasthunt = {
 				}
 				b_burnfist = {
+				}
+			}
+			
+			c_nalorakks_cliffs = { # 27
+				color = { 96 54 207 }
+				color2 = { 255 255 255 }
+				
+				b_grove_of_the_bear = {
+				}
+				b_spiritstep_woods = {
+				}
+				b_altar_of_nalorakk = {
+				}
+				b_bearclaw_den = {
+				}
+				b_grizzlefury = {
+				}
+				b_hibernia = {
+				}
+				b_barkgouge = {
 				}
 			}
 		}

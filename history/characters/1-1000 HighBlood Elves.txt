@@ -120,8 +120,8 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	10023.3.12 = {
 		effect = {
@@ -179,9 +179,9 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			add_trait = one_eyed
-			culture = blood_elven
 			set_graphical_culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	11000.1.1 = { # Need a date of death and this ensures it won't be affected by WoW expansions.
 		death = { death_reason = death_natural }
@@ -225,9 +225,9 @@
 		effect = {
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
-			culture = blood_elven
 			set_graphical_culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	10025.2.9 = {
 		employer = 6 # Lor'themar Theron
@@ -274,9 +274,9 @@
 		effect = {
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
-			culture = blood_elven
 			set_graphical_culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	10025.2.9 = {
 		employer = 6 # Lor'themar Theron
@@ -324,12 +324,12 @@
 		effect = {
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
-			culture = blood_elven
 			set_graphical_culture = blood_elven
 			remove_trait = priest
 			remove_trait = content
 			add_trait = ambitious
 		}
+		culture = blood_elven
 	}
 	10024.11.24 = {
 		effect = {
@@ -371,8 +371,8 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	10024.11.24 = {
 		employer = 9 # Liadrin Vellis
@@ -388,17 +388,7 @@
 	dynasty = 8
 	culture = high_elven
 	religion = sunwell
-	diplomacy = 5
-	martial = 6
-	stewardship = 2
-	intrigue = 3
-	learning = 2
 	trait = race_high_elf
-	trait = misguided_warrior
-	trait = temperate
-	trait = lustful
-	trait = shy
-	disallow_random_traits = yes
 	9699.12.31 = {
 		birth = yes
 	}
@@ -413,7 +403,6 @@
 	culture = high_elven
 	religion = sunwell
 	trait = race_high_elf
-	disallow_random_traits = no
 	father = 11
 	9791.7.30 = {
 		birth = yes
@@ -444,15 +433,15 @@
 	father = 12
 	9973.7.12 = {
 		birth = yes
-		employer = 12
+		employer = 12 # Eador Bloodwrath
 	}
 	10020.8.9 = {
 		effect = {
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 		death = { death_reason = death_battle }
 	}
 }
@@ -478,18 +467,18 @@
 	father = 12
 	9973.7.12 = {
 		birth = yes
-		employer = 12
+		employer = 12 # Eador Bloodwrath
 	}
 	9997.2.1 = {
-		employer = 13
+		employer = 13 # Falon Bloodwrath
 	}
 	10020.8.9 = {
 		effect = {
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	10024.11.24 = {
 		employer = 9 # Liadrin Vellis
@@ -524,6 +513,8 @@
 	disallow_random_traits = yes
 	7061.8.22 = {
 		birth = yes
+		employer = 4 # Anasterian Sunstrider
+		give_job_title = job_marshal
 	}
 	7066.1.7 = {
 		death = { death_reason = death_natural }
@@ -535,16 +526,7 @@
 	dynasty = 10
 	culture = high_elven
 	religion = sunwell
-	diplomacy = 1
-	martial = 6
-	stewardship = 9
-	intrigue = 3
-	learning = 3
 	trait = race_high_elf
-	trait = naive_appeaser
-	trait = paranoid
-	trait = content
-	disallow_random_traits = yes
 	7077.6.9 = {
 		birth = yes
 	}
@@ -558,16 +540,7 @@
 	dynasty = 11
 	culture = high_elven
 	religion = sunwell
-	diplomacy = 4
-	martial = 2
-	stewardship = 5
-	intrigue = 6
-	learning = 2
 	trait = race_high_elf
-	trait = fortune_builder
-	trait = gardener
-	trait = proud
-	disallow_random_traits = yes
 	7069.6.9 = {
 		birth = yes
 	}
@@ -582,19 +555,8 @@
 	culture = high_elven
 	religion = sunwell
 	female = yes
-	diplomacy = 4
-	martial = 6
-	stewardship = 3
-	intrigue = 6
-	learning = 3
 	trait = race_high_elf
-	trait = warrior
-	trait = tough_soldier
-	trait = brave
-	trait = wroth
-	trait = robust
 	mother = 19
-	disallow_random_traits = yes
 	9950.9.6 = {
 		birth = yes
 	}
@@ -603,15 +565,15 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	10023.1.1 = {
 		effect = {
 			add_trait = race_wretched
 			set_graphical_culture = wretched
-			religion = demonology
 		}
+		religion = demonology
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -624,11 +586,6 @@
 	culture = high_elven
 	religion = sunwell
 	female = yes
-	diplomacy = 4
-	martial = 6
-	stewardship = 3
-	intrigue = 6
-	learning = 3
 	trait = race_high_elf
 	trait = amateurish_plotter
 	trait = deceitful
@@ -649,19 +606,7 @@
 	dynasty = 12
 	culture = high_elven
 	religion = sunwell
-	diplomacy = 7
-	martial = 2
-	stewardship = 8
-	intrigue = 6
-	learning = 3
 	trait = race_high_elf
-	trait = intricate_webweaver
-	trait = diligent
-	trait = gregarious
-	trait = envious
-	trait = chaste
-	trait = rogue
-	disallow_random_traits = yes
 	7099.7.7 = {
 		birth = yes
 	}
@@ -675,18 +620,7 @@
 	dynasty = 13
 	culture = high_elven
 	religion = sunwell
-	diplomacy = 4
-	martial = 2
-	stewardship = 6
-	intrigue = 5
-	learning = 8
 	trait = race_high_elf
-	trait = grey_eminence
-	trait = lustful
-	trait = trusting
-	trait = shy
-	trait = content
-	disallow_random_traits = yes
 	9711.12.5 = {
 		birth = yes
 	}
@@ -695,15 +629,15 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	10023.1.1 = {
 		effect = {
 			add_trait = race_wretched
 			set_graphical_culture = wretched
-			religion = demonology
 		}
+		religion = demonology
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -715,19 +649,7 @@
 	dynasty = 14
 	culture = high_elven
 	religion = sunwell
-	diplomacy = 7
-	martial = 5
-	stewardship = 4
-	intrigue = 7
-	learning = 6
 	trait = race_high_elf
-	trait = ranger
-	trait = flamboyant_schemer
-	trait = arbitrary
-	trait = stubborn
-	trait = ambitious
-	trait = brave
-	disallow_random_traits = yes
 	7153.6.7 = {
 		birth = yes
 	}
@@ -765,8 +687,8 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -800,8 +722,8 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -835,8 +757,8 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -895,8 +817,8 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -957,8 +879,8 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -971,18 +893,7 @@
 	dynasty = 21
 	culture = high_elven
 	religion = sunwell
-	diplomacy = 9
-	martial = 7
-	stewardship = 6
-	intrigue = 5
-	learning = 7
 	trait = race_high_elf
-	trait = detached_priest
-	trait = humble
-	trait = cruel
-	trait = gluttonous
-	trait = erudite
-	disallow_random_traits = yes
 	7156.1.24 = {
 		birth = yes
 	}
@@ -996,19 +907,8 @@
 	dynasty = 21
 	culture = high_elven
 	religion = sunwell
-	diplomacy = 8
-	martial = 5
-	stewardship = 9
-	intrigue = 8
-	learning = 4
 	trait = race_high_elf
-	trait = underhanded_rogue
-	trait = arbitrary
-	trait = shy
-	trait = greedy
-	trait = chaste
 	mother = 55
-	disallow_random_traits = yes
 	9976.3.25 = {
 		birth = yes
 	}
@@ -1029,6 +929,7 @@
 	learning = 10
 	trait = race_high_elf
 	trait = martial_cleric
+	trait = priest
 	trait = arbitrary
 	trait = brave
 	trait = kind
@@ -1042,8 +943,8 @@
 			remove_trait = race_high_elf
 			add_trait = race_blood_elf
 			set_graphical_culture = blood_elven
-			culture = blood_elven
 		}
+		culture = blood_elven
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
