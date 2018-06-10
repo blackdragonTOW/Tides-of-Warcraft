@@ -26,9 +26,9 @@ province;red;green;blue;x;x
 25;71;79;150;Zul'Aman;x
 26;159;142;74;Spiritcatcher Shore;x
 27;77;54;136;Nalorakk's Cliffs;x
-28;213;64;161;Thalassian Range;x
+28;213;64;161;Thalassian Heights;x
 29;135;200;17;Greenwood Cliffs;x
-30;213;71;71;Sungraze Peaks;x
+30;213;71;71;The Chain of Hunger;x
 31;105;94;181;Quel'Lithien;x
 32;187;193;62;Eastern Stratwood;x
 33;85;48;99;Western Sratwood;x
@@ -51,8 +51,8 @@ province;red;green;blue;x;x
 50;48;173;62;Crownlands;x
 51;170;105;176;Thondroril Highlands;x
 52;111;190;96;Bleakrock;x
-53;0;234;255;Thondroril Mountains;x
-54;187;34;77;Griffonroost Mountains;x
+53;0;234;255;Pineside;x
+54;187;34;77;Griffonroost;x
 55;94;156;142;Raven's Rill;x
 56;215;85;82;East Darrow;x
 57;85;156;51;South Darrow;x
@@ -80,7 +80,7 @@ province;red;green;blue;x;x
 80;119;179;113;Chillwind Valley;x
 81;221;62;162;Alterac's Fingers;x
 82;130;128;91;Rosengarde;x
-83;61;79;67;Alterac Mountains;x
+83;61;79;67;Halewatch;x
 84;153;184;111;Dalaran;x
 85;184;111;252;Lordamere Fields;x
 86;108;196;88;Alterac Foothills;x
@@ -104,8 +104,8 @@ province;red;green;blue;x;x
 104;116;122;99;Keeperweald;x
 105;207;147;71;Darkglen;x
 106;181;38;38;Whispering Mountains;x
-107;187;94;82;The Silver Cliffs;x
-108;97;85;99;Grey Mountains;x
+107;187;94;82;Slumber Pass;x
+108;97;85;99;Greypeak;x
 109;31;128;159;Greymane Wall;x
 110;147;139;128;The Sepulcher;x
 111;181;122;91;Pyrewood;x
@@ -145,8 +145,8 @@ province;red;green;blue;x;x
 145;113;130;179;Old Drustlands;x
 146;187;102;125;Shrouded Foothills;x
 147;59;32;40;Iceveil;x
-148;102;153;105;Shadra's Peaks;x
-149;218;182;197;Arathi Mountains;x
+148;102;153;105;Shadra's Peak;x
+149;218;182;197;Honor's Rest;x
 150;116;31;77;Dun Garok;x
 151;40;164;102;Tarren Mill;x
 152;164;139;173;Hillsbrad;x
@@ -191,11 +191,11 @@ province;red;green;blue;x;x
 189;125;173;82;Revan Coast;x
 190;198;111;79;Shelled Shore;x
 191;130;116;125;Emerald Strand;x
-192;176;119;116;Khaz Mountains;x
-193;82;207;91;Dark Mountains;x
-194;201;54;79;Redridge Range;x
-195;82;198;128;Deadwind Peaks;x
-196;164;77;136;Gurubashi Range;x
+192;176;119;116;Hollowpoint;x
+193;82;207;91;Shadowfang;x
+194;201;54;79;The Scorched Shore;x
+195;82;198;128;Morvun;x
+196;164;77;136;Stranglerange;x
 197;77;82;82;The Twilight Ridge;x
 198;119;113;71;Lordaeron Highlands;x
 199;181;176;224;Pinewood Gorge;x
@@ -244,7 +244,7 @@ province;red;green;blue;x;x
 242;68;88;91;South Gate Pass;x
 243;247;179;170;North Gate Pass;x
 244;150;62;7;Amber Valley;x
-245;136;136;136;Tinkertown;x
+245;136;136;136;Iron Caves;x
 246;193;102;162;Deeprun;x
 247;99;207;122;Algaz;x
 248;207;91;207;Stonewrought Dam;x
@@ -281,14 +281,14 @@ province;red;green;blue;x;x
 279;221;85;43;Thorium Point;x
 280;37;99;255;Firewatch Ridge;x
 281;76;180;187;Grimrock;x
-282;196;99;88;Blackchar Caves;
-283;91;204;179;Rumbling Depths;x
-284;164;108;116;Bonepicker Tunnels;x
-285;102;60;139;Blacklight;x
-286;204;145;77;Blind Deeps;x
-287;116;213;184;The Chain of Hunger;x
-288;224;99;113;Ragechasm;x
-289;22;42;16;The Forgotten Expanse;x
+282;196;99;88;Blackchar;x
+283;91;204;179;Storm Mountains;x
+284;164;108;116;Storm Coast;x
+285;102;60;139;Blackened Strand;x
+286;204;145;77;Thundering Heights;x
+287;116;213;184;Roaring Range;x
+288;224;99;113;Redcliff;x
+289;22;42;16;Smokepeaks;x
 290;255;181;74;Lith;x
 291;232;125;176;Izzatun;x
 292;213;159;145;Blackrock Pass;x
@@ -420,148 +420,200 @@ province;red;green;blue;x;x
 417;167;187;116;Stratholme;x
 418;77;207;74;Nortide;x
 419;57;201;111;Farstrider Enclave;x
-420;147;136;136;Stillwhisper Pond;x
-421;88;71;187;Lake Elrendar;x
-422;181;232;119;Lake Amani;x
-423;167;40;150;Woodheart Lakes;x
-424;119;159;96;Lake Strat;x
-425;204;99;170;Blackwood Lake;x
-426;113;204;99;Northpond;x
-427;215;74;34;Lake Mereldar;x
-428;65;164;190;Lake Thondroril;x
-429;218;62;111;Darrowmere;x
-430;122;164;196;Brightwater Lake;x
-431;77;94;99;Whispering Lake;x
-432;153;179;145;Lordamere;x
-433;224;113;176;Northgate Lake;x
-434;85;181;136;Tarren Pond;x
-435;167;79;181;Featherfall Lake;x
-436;193;224;116;Valorwind Lake;x
-437;190;65;136;Spiderwater;x
-438;116;136;91;Hinterlake;x
-439;181;62;179;Lake Strom;x
-440;142;153;99;Lake Bark;x
-441;147;111;235;Loch Verrall;x
-442;88;164;164;The Loch;x
-443;170;119;85;Thunder Spring;x
-444;99;102;201;Storm Lake;x
-445;207;184;159;Mirror Lake;x
-446;96;105;176;Crystal Lake;x
-447;179;167;102;Stone Cairn Lake;x
-448;201;119;227;Steaming Lake;x
-449;105;201;113;Lake Everstill;x
-450;190;94;113;Stonewatch Spring;x
-451;150;164;176;The Pool of Tears;x
-452;113;116;105;Lake Gurubashi;x
-453;176;218;196;Bloodlake;x
-454;79;204;128;Nazferiti River;x
-455;204;175;180;Lake Nazferiti;x
-456;136;176;65;Nazferiti River;x
-457;215;108;139;Nazferiti River;x
-458;215;215;67;Nazferiti River;x
-459;122;91;207;Nazferiti River;x
-460;137;205;210;Nazferiti River;x
-461;193;181;94;Nazferiti River;x
-462;142;82;193;Nazferiti River;x
-463;176;198;125;Plunder Sea;x
-464;221;99;215;Plunder Sea;x
-465;116;204;99;Plunder Sea;x
-466;184;94;150;Plunder Sea;x
-467;108;159;102;Plunder Sea;x
-468;184;122;179;Plunder Sea;x
-469;218;144;64;Stranglesea;x
-470;111;91;133;The Vile Reef;x
-471;181;122;162;Autumn Sea;x
-472;165;181;122;Autumn Sea;x
-473;198;91;187;Stormsea;x
-474;232;88;190;Shimmering Expanse;x
-475;99;128;153;Stormsea;x
-476;190;187;96;Stormsea;x
-477;79;99;136;Khaz Sea;x
-478;184;196;82;Khaz Sea;x
-479;156;167;167;Khaz Sea;x
-480;190;193;227;Tirasian Sea;x
-481;230;128;142;Baradin Bay;x
-482;102;173;68;Baradin Bay;x
-483;156;45;145;Baradin Bay;x
-484;221;181;84;Baradin Bay;x
-485;122;128;150;Baradin Bay;x
-486;184;162;108;Baradin Bay;x
-487;111;62;162;Baradin Bay;x
-488;116;91;111;Baradin Bay;x
-489;213;210;196;Baradin Bay;
-490;156;99;68;Baradin Bay;x
-491;91;156;190;Gilnean Channel;x
-492;215;156;68;Baradin Bay;x
-493;128;96;181;Tirasian Sea;x
-494;184;193;85;Autumn Sea;x
-495;159;94;133;Stormsea;x
-496;136;252;120;Tirasian Sea;x
-497;227;179;221;Gilnean Sea;x
-498;170;190;119;Gilnean Sea;x
-499;65;91;201;Gilnean Sea;x
-500;198;210;91;Northgate Channel;x
-501;196;114;114;Gilnean Sea;x
-502;142;62;125;Northgate Channel;x
-503;198;187;77;Gilnean Sea;x
-504;99;224;107;Silver Sea;x
-505;241;133;176;Silver Sea;x
-506;105;184;204;Silver Sea;x
-507;184;119;94;Whispering Waters;x
-508;150;127;118;Whispering Waters;x
-509;65;167;170;Whispering Waters;x
-510;156;79;77;Tirisfalen Coast;x
-511;156;187;193;Tirisfalen Coast;x
-512;207;71;108;Tirisfalen Coast;x
-513;147;190;187;Silver Sea;x
-514;116;108;187;Thondroril Shore;x
-515;190;187;85;Thondroril Shore;x
-516;102;207;173;Thondroril Shore;x
-517;167;79;65;Strat Bay;x
-518;99;176;150;Thondroril Shore;x
-519;187;139;198;Highcoast;x
-520;139;198;186;Highcoast;x
-521;193;57;142;Highcoast;x
-522;85;187;207;Thalassian Shore;x
-523;85;187;128;Sun's Crossing;x
-524;210;241;74;Sun's Crossing;x
-525;136;88;142;Solar Sea;x
-526;201;204;60;Solar Sea;x
-527;94;204;82;Solar Sea;x
-528;65;74;125;Thalassian Shore;x
-529;213;43;68;Thalassian Shore;x
-530;48;184;190;Amani Sea;x
-531;184;184;119;Amani Sea;x
-532;94;96;119;Amani Sea;x
-533;153;184;167;Tyran Sea;x
-534;122;122;116;Tyran Sea;x
-535;60;162;159;Hintercoast;x
-536;232;65;94;Hintercoast;x
-537;96;173;170;Hintercoast;x
-538;184;128;136;Arathi Sea;x
-539;91;153;190;Arathi Sea;x
-540;227;77;105;Thandol Span;x
-541;153;207;145;Thandol Span;x
-542;201;162;79;Thundersea;x
-543;111;77;201;Thundersea;x
-544;150;196;116;Thundersea;x
-545;62;77;71;Thundersea;x
-546;201;218;94;Twilight Sea;x
-547;221;78;137;Twilight Sea;x
-548;31;215;179;Twilight Sea;x
-549;179;130;99;Twilight Sea;x
-550;102;77;179;Arid Shore;x
-551;213;224;94;Arid Shore;x
-552;133;179;94;Forgotten Waters;x
-553;230;77;31;Forgotten Waters;x
-554;91;198;196;Forgotten Waters;x
-555;57;108;224;Forgotten Waters;x
-556;190;196;65;Sorrowsea;x
-557;249;96;108;Sorrowsea;x
-558;79;204;193;Sorrowsea;x
-559;215;204;79;Tides of Darkness;x
-560;125;82;139;Tides of War;x
-561;167;181;170;Tainted Sea;x
-562;31;201;65;Tainted Sea;x
-563;136;82;130;Stranglesea;x
-564;91;159;102;Stranglesea;x
+420;73;119;48;Sundered Peaks;x
+421;221;147;43;Obsidian Divide;x
+422;59;145;139;Mist Peak;x
+423;208;221;212;Black Reach;x
+424;221;111;105;Dreadstone;x
+425;193;159;207;Jin'wal;x
+426;82;176;105;Farsight;x
+427;190;60;207;Athan'kar;x
+428;85;164;122;Wavecrash;x
+429;218;94;122;Blacklight;x
+430;108;128;122;Hidden Clutch;x
+431;77;181;193;Earthen Deeps;x
+432;179;77;128;Cold Coast;x
+433;68;167;82;Newman's Landing;x
+434;215;195;195;Ironshore;x
+435;111;159;113;Port Gadget;x
+436;181;62;91;Bael Varr;x
+437;91;201;181;Everpeak;x
+438;187;85;102;Brightstone Vale;x
+439;91;187;167;Chillrise;x
+440;198;144;48;Bogrock;x
+441;201;196;133;Pebblerise;x
+442;105;77;133;Stonewrought Overlook;x
+443;213;190;102;Elementium Shore;x
+444;130;77;136;Black Crag;x
+445;121;204;181;Twilight Rise;x
+446;221;147;85;Eastpeak;x
+447;247;113;102;Thundercoast;x
+448;88;79;0;High Rock;x
+449;207;198;167;Scarred Ridge;x
+450;142;99;184;Channel Crag;x
+451;215;230;96;Barrier Cliffs;x
+452;230;77;142;Winterax Hold;x
+453;113;150;57;Chillrise;x
+454;179;91;198;Highmine;x
+455;198;113;125;Redchapel;x
+456;111;145;102;Cragwar;x
+457;213;111;159;Stonespur;x
+458;71;221;179;Amani Ridge;x
+459;187;125;207;Trollpass;x
+460;160;170;74;Azureroost;x
+461;96;215;88;Hatchet Pass;x
+462;60;164;145;Dreaming HeightsB;x
+463;;;;;x
+464;;;;;x
+465;;;;;x
+466;;;;;x
+467;147;136;136;Stillwhisper Pond;x
+468;88;71;187;Lake Elrendar;x
+469;181;232;119;Lake Amani;x
+470;167;40;150;Woodheart Lakes;x
+471;119;159;96;Lake Strat;x
+472;204;99;170;Blackwood Lake;x
+473;113;204;99;Northpond;x
+474;215;74;34;Lake Mereldar;x
+475;65;164;190;Lake Thondroril;x
+476;218;62;111;Darrowmere;x
+477;122;164;196;Brightwater Lake;x
+478;77;94;99;Whispering Lake;x
+479;153;179;145;Lordamere;x
+480;224;113;176;Northgate Lake;x
+481;85;181;136;Tarren Pond;x
+482;167;79;181;Featherfall Lake;x
+483;193;224;116;Valorwind Lake;x
+484;190;65;136;Spiderwater;x
+485;116;136;91;Hinterlake;x
+486;181;62;179;Lake Strom;x
+487;142;153;99;Lake Bark;x
+488;147;111;235;Loch Verrall;x
+489;88;164;164;The Loch;x
+490;170;119;85;Thunder Spring;x
+491;99;102;201;Storm Lake;x
+492;207;184;159;Mirror Lake;x
+493;96;105;176;Crystal Lake;x
+494;179;167;102;Stone Cairn Lake;x
+495;201;119;227;Steaming Lake;x
+496;105;201;113;Lake Everstill;x
+497;190;94;113;Stonewatch Spring;x
+498;150;164;176;The Pool of Tears;x
+499;113;116;105;Lake Gurubashi;
+500;176;218;196;Bloodlake;x
+501;79;204;128;Nazferiti River;x
+502;204;175;180;Lake Nazferiti;x
+503;136;176;65;Nazferiti River;x
+504;215;108;139;Nazferiti River;x
+505;215;215;67;Nazferiti River;x
+506;122;91;207;Nazferiti River;x
+507;137;205;210;Nazferiti River;x
+508;193;181;94;Nazferiti River;x
+509;142;82;193;Nazferiti River;x
+510;176;198;125;Plunder Sea;x
+511;221;99;215;Plunder Sea;x
+512;116;204;99;Plunder Sea;x
+513;184;94;150;Plunder Sea;x
+514;108;159;102;Plunder Sea;x
+515;184;122;179;Plunder Sea;x
+516;218;144;64;Stranglesea;x
+517;111;91;133;The Vile Reef;x
+518;181;122;162;Autumn Sea;x
+519;165;181;122;Autumn Sea;x
+520;198;91;187;Stormsea;x
+521;232;88;190;Shimmering Expanse;x
+522;99;128;153;Stormsea;x
+523;190;187;96;Stormsea;x
+524;79;99;136;Stormsea;x
+525;184;196;82;Khaz Sea;x
+526;156;167;167;Khaz Sea;x
+527;190;193;227;Tirasian Sea;x
+528;230;128;142;Baradin Bay;x
+529;102;173;68;Baradin Bay;x
+530;156;45;145;Baradin Bay;x
+531;221;181;84;Baradin Bay;x
+532;122;128;150;Baradin Bay;x
+533;184;162;108;Baradin Bay;x
+534;111;62;162;Baradin Bay;x
+535;116;91;111;Baradin Bay;x
+536;213;210;196;Baradin Bay;x
+537;156;99;68;Baradin Bay;x
+538;91;156;190;Gilnean Channel;x
+539;215;156;68;Baradin Bay;x
+540;128;96;181;Tirasian Sea;x
+541;184;193;85;Autumn Sea;x
+542;159;94;133;Stormsea;x
+543;136;252;120;Tirasian Sea;x
+544;227;179;221;Gilnean Sea;x
+545;170;190;119;Gilnean Sea;x
+546;65;91;201;Gilnean Sea;x
+547;198;210;91;Northgate Channel;x
+548;196;114;114;Gilnean Sea;x
+549;142;62;125;Northgate Channel;x
+550;198;187;77;Gilnean Sea;x
+551;99;224;107;Silver Sea;x
+552;241;133;176;Silver Sea;x
+553;105;184;204;Silver Sea;x
+554;184;119;94;Whispering Waters;x
+555;150;127;118;Whispering Waters;x
+556;65;167;170;Whispering Waters;x
+557;156;79;77;Tirisfalen Coast;x
+558;156;187;193;Tirisfalen Coast;x
+559;207;71;108;Tirisfalen Coast;x
+560;147;190;187;Silver Sea;x
+561;116;108;187;Thondroril Shore;x
+562;190;187;85;Thondroril Shore;x
+563;102;207;173;Thondroril Shore;x
+564;167;79;65;Strat Bay;x
+565;99;176;150;Thondroril Shore;x
+566;187;139;198;Highcoast;x
+567;139;198;186;Highcoast;x
+568;193;57;142;Highcoast;x
+569;85;187;207;Thalassian Shore;x
+570;85;187;128;Sun's Crossing;x
+571;210;241;74;Sun's Crossing;x
+572;136;88;142;Solar Sea;x
+573;201;204;60;Solar Sea;x
+574;94;204;82;Solar Sea;x
+575;65;74;125;Thalassian Shore;x
+576;213;43;68;Thalassian Shore;x
+577;48;184;190;Amani Sea;x
+578;184;184;119;Amani Sea;x
+579;94;96;119;Amani Sea;x
+580;153;184;167;Tyran Sea;x
+581;122;122;116;Tyran Sea;x
+582;60;162;159;Hintercoast;x
+583;232;65;94;Hintercoast;x
+584;96;173;170;Hintercoast;x
+585;184;128;136;Arathi Sea;x
+586;91;153;190;Arathi Sea;x
+587;227;77;105;Thandol Span;x
+588;153;207;145;Thandol Span;x
+589;201;162;79;Thundersea;x
+590;111;77;201;Thundersea;x
+591;150;196;116;Thundersea;x
+592;62;77;71;Thundersea;x
+593;201;218;94;Twilight Sea;x
+594;221;78;137;Twilight Sea;x
+595;31;215;179;Twilight Sea;x
+596;179;130;99;Twilight Sea;x
+597;102;77;179;Arid Shore;x
+598;213;224;94;Arid Shore;x
+599;133;179;94;Stormsea;x
+600;230;77;31;Forgotten Waters;x
+601;91;198;196;Forgotten Waters;x
+602;57;108;224;Forgotten Waters;x
+603;190;196;65;Sorrowsea;x
+604;249;96;108;Sorrowsea;x
+605;79;204;193;Sorrowsea;x
+606;215;204;79;Tides of Darkness;x
+607;125;82;139;Tides of War;x
+608;167;181;170;Tainted Sea;x
+609;31;201;65;Tainted Sea;x
+610;136;82;130;Stranglesea;x
+611;91;159;102;Stranglesea;x
+612;196;74;196;Ashen Sea;x
+613;74;164;119;Ashen Sea;x
+614;167;147;119;Khaz Sea;x
+615;190;62;207;Tirasian Sea;x
+616;190;62;207;Baradin Bay;x
