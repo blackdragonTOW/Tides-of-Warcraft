@@ -267,26 +267,6 @@ e_zul_aman = {
 				}
 			}
 			
-			c_tor_watha = { # 15
-				color = { 108 71 65 }
-				color2 = { 255 255 255 }
-				
-				b_tor_watha = {
-				}
-				b_old_fortress = {
-				}
-				b_cliffside_camp = {
-				}
-				b_fist_of_the_amani = {
-				}
-				b_old_wrath = {
-				}
-				b_forestrage = {
-				}
-				b_gatecrash = {
-				}
-			}
-			
 			c_zeb_watha = { # 13
 				color = { 60 221 48 }
 				color2 = { 255 255 255 }
@@ -343,6 +323,26 @@ e_zul_aman = {
 				b_hoodooshore = {
 				}
 				b_circle_of_masks = {
+				}
+			}
+			
+			c_tor_watha = { # 15
+				color = { 108 71 65 }
+				color2 = { 255 255 255 }
+				
+				b_tor_watha = {
+				}
+				b_old_fortress = {
+				}
+				b_cliffside_camp = {
+				}
+				b_fist_of_the_amani = {
+				}
+				b_old_wrath = {
+				}
+				b_forestrage = {
+				}
+				b_gatecrash = {
 				}
 			}
 		}
@@ -528,13 +528,14 @@ e_zul_aman = {
 		}
 		
 		d_thas_alah = {
-			color = { 255 61 68 }
+			color = { 200 61 180 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
 			capital = 20 # Thas'Alah
 			
 			scourge = "Deatholme"
+			forsaken = "Deatholme"
 			
 			allow = {
 				OR = {
@@ -568,27 +569,35 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				scourge = "Deatholme"
+				forsaken = "Deatholme"
 				
 				b_thas_alah = {
 					scourge = "Tower of the Damned" 
+					forsaken = "Tower of the Damned" 
 				}
 				b_woodheart = {
 					scourge = "Traitor's Eyes"
+					forsaken = "Traitor's Eyes"
 				}
 				b_borderwood = {
 					scourge = "Gates of Deatholme"
+					forsaken = "Gates of Deatholme"
 				}
 				b_forestlight = {
 					scourge = "Forestbane"
+					forsaken = "Forestbane"
 				}
 				b_elfsong_copse = {
 					scourge = "Elfslaughter"
+					forsaken = "Elfslaughter"
 				}
 				b_greensap = {
 					scourge = "Broken Moon"
+					forsaken = "Broken Moon"
 				}
 				b_greenhome = {
 					scourge = "Woodrot"
+					forsaken = "Woodrot"
 				}
 			}
 			
@@ -923,6 +932,226 @@ e_zul_aman = {
 				}
 				b_barkgouge = {
 				}
+			}
+		}
+		
+		d_blackwood = {
+			color = { 99 222 120 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 36 # Blackwood
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 31 province_id = 36 province_id = 37 } }
+				}
+			}
+			
+			c_quel_lithien = { # 31
+				color = { 105 94 181 }
+				color2 = { 255 255 255 }
+				
+				b_quel_lithien = {
+				}
+				b_hawks_roost = {
+				}
+				b_borderspear = {
+				}
+				b_greenwood_approach = {
+				}
+				b_passwatch = {
+				}
+				b_turnbow = {
+				}
+				b_huntslodge = {
+				}
+			}
+			
+			c_blackwood = { # 36
+				color = { 218 65 31 }
+				color2 = { 255 255 255 }
+				
+				b_blackwood_hall = {
+				}
+				b_blackwood = {
+				}
+				b_ravagers_rest = {
+				}
+				b_dark_waters = {
+					scourge = "Tainted Waters"
+					forsaken = "Tainted Waters"
+				}
+				b_marshal_fief = {
+				}
+				b_turnvale = {
+				}
+				b_wealdkeep = {
+				}
+			}	
+			
+			c_northpass = { # 37
+				color = { 142 130 255 }
+				color2 = { 255 255 255 }
+				
+				b_northpass_tower = {
+				}
+				b_siege_vise = {
+				}
+				b_elfroad = {
+				}
+				b_valeway = {
+				}
+				b_fertile_fields = {
+					scourge = "Dessicated Fields"
+					forsaken = "Dessicated Fields"
+				}
+				b_watchstone = {
+				}
+				b_northsilver = {
+				}
+			}
+		}
+		
+		d_northmarch = {
+			color = { 54 199 175 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 39 # northmarch
+			
+			amani = "Zul'Mashar"
+			atalai = "Zul'Mashar"
+			razorbranch = "Zul'Mashar"
+			firetree = "Zul'Mashar"
+			mossflayer = "Zul'Mashar"
+			revantusk = "Zul'Mashar"
+			vilebranch = "Zul'Mashar"
+			shadowpine = "Zul'Mashar"
+			witherbark = "Zul'Mashar"
+			bloodscalp = "Zul'Mashar"
+			darkspear = "Zul'Mashar"
+			gurubashi = "Zul'Mashar"
+			shatterspear = "Zul'Mashar"
+			skullsplitter = "Zul'Mashar"
+			drakkari = "Zul'Mashar"
+			frostmane = "Zul'Mashar"
+			sandfury = "Zul'Mashar"
+			hakkari = "Zul'Mashar"
+			smolderthorn = "Zul'Mashar"
+			shadowglen = "Zul'Mashar"
+			winterax = "Zul'Mashar"
+			winterfang = "Zul'Mashar"
+			shadowtooth = "Zul'Mashar"
+			zandalari = "Zul'Mashar"
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 38 province_id = 39 } }
+				}
+			}
+			
+			c_zul_mashar = { # 38
+				color = { 122 184 94 }
+				color2 = { 255 255 255 }
+				
+				b_zul_mashar = {
+				}
+				b_mazra_alor = {
+				}
+				b_mazra_watha = {
+				}
+				b_mossflayer_catacombs = {
+				}
+				b_tor_mashar = {
+				}
+				b_atal_akil_zon = {
+				}
+				b_eagleperch = {
+				}
+			}
+			
+			c_northmarch = { # 39
+				color = { 190 71 179 }
+				color2 = { 255 255 255 }
+				
+				b_eastwall_tower = {
+				}
+				b_northdale = {
+				}
+				b_northpond_glade = {
+					scourge = "Ix'lar's Domain"
+				}
+				b_fartown = {
+				}
+				b_northacres = {
+				}
+				b_rangehold = {
+				}
+				b_crooked_hook = {
+				}
+			}
+		}
+		
+		d_forbidding_watch = {
+			color = { 150 233 200 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 40 # The High Glade
+			
+			scourge = "Ebon Watch"
+			forsaken = "Ebon Watch"
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 40 province_id = 42 } }
+				}
+			}
+			
+			c_the_high_glade = {
+				color = { 85 210 57 }
+				color2 = { 255 255 255 }
+				
+				scourge = "The Noxious Glade"
+				forsaken = "The Noxious Glade"
+				
+				b_verdant_heights = {
+					scourge = "Pestilent Ziggurat"
+					forsaken = "Pestilent Ziggurat"
+				}
+				b_browmans_mill = {
+				}
+				b_red_ledge = {
+					scourge = "Death's Breach"
+					forsaken = "Death's Breach"
+				}
+				b_eaststar = {
+					scourge = "Plaguestar"
+					forsaken = "Plaguestar"
+				}
+				b_farise = {
+				}
+				b_oldperch = {
+				}
+				b_mountaincap = { # Acherus is last on purpose. An event will add a slot and the barony when it is time (and when later bookmarks are added, it will just be active and a slot will be added on startup)
+					scourge = "Acherus"
+				}
+			}
+			
+			c_forbidding_coast = {
+				color = { 85 184 119 }
+				
+				b_maritime_vigil = {
+				}
+				b_salted_camp = {
+				}
+				b_hermits_folly = {
+				}
+				b_
 			}
 		}
 	}

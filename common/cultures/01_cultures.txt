@@ -3500,6 +3500,35 @@ ogre = {
 	}
 }	
 
+vrykul = {
+	graphical_cultures = { humangfx westerngfx }
+	
+	drust = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.28 0.54 0.54 }
+		
+		male_names = { NAMES }
+		female_names = { NAMES }
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		dynasty_title_names = yes 
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		allow_looting = yes
+		seafarer = yes
+	}
+	
+	# Others will be added when they become relevant.
+}
 	
 murloc = {
 	graphical_cultures = { murlocgfx westerngfx }
@@ -3963,7 +3992,7 @@ draenei = {
 		
 		allow_looting = no
 	}
-	broken = {
+	sorrowstep = { # Swamp of Sorrows broken, headcannon'd a name because "Broken Exiles" is insufficient.
 		graphical_cultures = { westerngfx }
 		
 		color = { 0.11 0.69 0.46 }
@@ -3986,7 +4015,28 @@ draenei = {
 		
 		allow_looting = yes
 	}
-	lost_one = {
+	kurenai = {
+	
+	}
+	murkblood = {
+	
+	}
+	dreghood = {
+	
+	}
+	greyheart = {
+	
+	}
+	wrekt = {
+	
+	}
+	ashtongue = {
+	
+	}
+	wastewalker = {
+	
+	}
+	fallowreed = {
 		graphical_cultures = { westerngfx }
 		
 		color = { 0.11 0.50 0.34 }
@@ -4008,6 +4058,17 @@ draenei = {
 		
 		
 		allow_looting = yes
+	}
+	dustdreg = {
+	
+	}
+	feralfen = {
+	}
+	umbrafen = {
+	}
+	windyreed = {
+	}
+	tuurem = {
 	}
 }
 

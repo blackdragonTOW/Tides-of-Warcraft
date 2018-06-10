@@ -1,13 +1,4 @@
 #titular titles go here
-#troll tribes
-d_shadowpine_tribe = {
-	color = { 40 150 40 }
-	religion = loa
-	culture = shadowpine
-	short_name = yes
-	primary = yes
-	dynasty_title_names = no
-}
 #EK creeps
 d_saltgill_tribe = {
 	color = { 210 210 255 }
@@ -15,4 +6,35 @@ d_saltgill_tribe = {
 	culture = murloc
 	short_name = yes
 	primary = yes
+}
+#Non-creeps
+e_scourge = {
+	color = { 42 5 70 }
+	religion = lich_king
+	culture = scourge
+	short_name = yes
+	title = "LICH_KING"
+	title_female = "LICH_QUEEN"
+	foa = "FOA_MASTER"
+	controls_religion = yes # Might make a second scourge title in case of Bolvar because of this
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+e_alliance = {
+	color = { 0 0 255 }
+	short_name = yes
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+e_horde = {
+	color = { 255 0 0 }
+	short_name = yes
+	title = "WARCHIEF"
+	title_female = "WARCHIEF"
+	foa = "FOA_WARCHIEF"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
 }
