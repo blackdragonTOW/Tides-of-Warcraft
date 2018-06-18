@@ -995,85 +995,6 @@ e_zul_aman = {
 			}
 		}
 		
-		d_blackwood = {
-			color = { 99 222 120 }
-			color2 = { 255 255 255 }
-			culture = lordaeronian
-			
-			capital = 36 # Blackwood
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 31 province_id = 36 province_id = 37 } }
-				}
-			}
-			
-			c_quel_lithien = { # 31
-				color = { 105 94 181 }
-				color2 = { 255 255 255 }
-				
-				b_quel_lithien = {
-				}
-				b_hawks_roost = {
-				}
-				b_borderspear = {
-				}
-				b_greenwood_approach = {
-				}
-				b_passwatch = {
-				}
-				b_turnbow = {
-				}
-				b_huntslodge = {
-				}
-			}
-			
-			c_blackwood = { # 36
-				color = { 218 65 31 }
-				color2 = { 255 255 255 }
-				
-				b_blackwood_hall = {
-				}
-				b_blackwood = {
-				}
-				b_ravagers_rest = {
-				}
-				b_dark_waters = {
-					scourge = "Tainted Waters"
-					forsaken = "Tainted Waters"
-				}
-				b_marshal_fief = {
-				}
-				b_turnvale = {
-				}
-				b_wealdkeep = {
-				}
-			}	
-			
-			c_northpass = { # 37
-				color = { 142 130 255 }
-				color2 = { 255 255 255 }
-				
-				b_northpass_tower = {
-				}
-				b_siege_vise = {
-				}
-				b_elfroad = {
-				}
-				b_valeway = {
-				}
-				b_fertile_fields = {
-					scourge = "Dessicated Fields"
-					forsaken = "Dessicated Fields"
-				}
-				b_watchstone = {
-				}
-				b_northsilver = {
-				}
-			}
-		}
-		
 		d_northmarch = {
 			color = { 54 199 175 }
 			color2 = { 255 255 255 }
@@ -1168,11 +1089,11 @@ e_zul_aman = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 40 province_id = 42 } }
+					any_demesne_province = { OR = { province_id = 40 province_id = 42 province_id = 459 } }
 				}
 			}
 			
-			c_the_high_glade = {
+			c_the_high_glade = { # 40
 				color = { 85 210 57 }
 				color2 = { 255 255 255 }
 				
@@ -1202,7 +1123,7 @@ e_zul_aman = {
 				}
 			}
 			
-			c_forbidding_coast = {
+			c_forbidding_coast = { # 42
 				color = { 85 184 119 }
 				
 				b_maritime_vigil = {
@@ -1211,7 +1132,127 @@ e_zul_aman = {
 				}
 				b_hermits_folly = {
 				}
-				b_
+				b_gillwroth = {
+				}
+				b_goodfisher = {
+				}
+				b_forbidding_watch = {
+				}
+				b_prohibited_waters = {
+				}
+			}
+			
+			c_trollpass = { # 459
+				color = { 187 125 207 }
+				
+				b_trollrock = {
+				}
+				b_moldskin = {
+				}
+				b_hexerpass = {
+				}
+				b_pinecrag = {
+				}
+				b_bloodbark = {
+				}
+				b_zuma_tel = {
+				}
+				b_idan_gorge = {
+				}
+			}
+		}
+	}
+}
+
+e_thondroril = {
+	color = { 7 7 30 }
+	color2 = { 255 255 255 }
+	capital = 417 # Stratholme
+	culture = lordaeronian
+	
+	k_eastweald = {
+		color = { 22 24 80 }
+		color2 = { 255 255 255 }
+		culture = lordaeronian
+		
+		capital = 417 # Stratholme
+		
+		d_blackwood = {
+			color = { 99 222 120 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 36 # Blackwood
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 31 province_id = 36 province_id = 37 } }
+				}
+			}
+			
+			c_quel_lithien = { # 31
+				color = { 105 94 181 }
+				color2 = { 255 255 255 }
+				
+				b_quel_lithien = {
+				}
+				b_hawks_roost = {
+				}
+				b_borderspear = {
+				}
+				b_greenwood_approach = {
+				}
+				b_passwatch = {
+				}
+				b_turnbow = {
+				}
+				b_huntslodge = {
+				}
+			}
+			
+			c_blackwood = { # 36
+				color = { 218 65 31 }
+				color2 = { 255 255 255 }
+				
+				b_blackwood_hall = {
+				}
+				b_blackwood = {
+				}
+				b_ravagers_rest = {
+				}
+				b_dark_waters = {
+					scourge = "Tainted Waters"
+					forsaken = "Tainted Waters"
+				}
+				b_marshal_fief = {
+				}
+				b_turnvale = {
+				}
+				b_wealdkeep = {
+				}
+			}	
+			
+			c_northpass = { # 37
+				color = { 142 130 255 }
+				color2 = { 255 255 255 }
+				
+				b_northpass_tower = {
+				}
+				b_siege_vise = {
+				}
+				b_fertile_fields = {
+					scourge = "Dessicated Fields"
+					forsaken = "Dessicated Fields"
+				}
+				b_elfroad = {
+				}
+				b_valeway = {
+				}
+				b_watchstone = {
+				}
+				b_northsilver = {
+				}
 			}
 		}
 	}
