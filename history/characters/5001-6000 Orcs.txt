@@ -1,0 +1,38 @@
+5001 = {
+	name = "Ner'zhul" # I'll make his family later when it matters
+	dynasty = 5001
+	culture = shadowmoon
+	religion = shamanism
+	diplomacy = 6
+	martial = 3
+	stewardship = 7
+	intrigue = 2
+	learning = 9
+	trait = race_orc
+	trait = scholarly_theologian
+	trait = shaman
+	trait = humble
+	trait = diligent
+	trait = honest
+	trait = quick
+	disallow_random_traits = yes
+	9965.5.10 = {
+		birth = yes
+	}
+	10000.1.1 = {
+		religion = demonology
+		effect = {
+			remove_trait = shaman
+			add_trait = warlock
+			add_trait = disgraced_orc_shaman
+		}
+	}
+	10008.11.9 = {
+		religion = lich_king
+		culture = scourge
+		effect = {
+			#change graphics, add other to-be-made traits
+			add_trait = undead_scourge
+		}
+	}
+}

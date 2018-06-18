@@ -92,7 +92,7 @@ human = {
 		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
 		}
 		
-		parent = arathi		
+		parent = hillsbradan		
 		
 		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -127,7 +127,7 @@ human = {
 		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
 		}
 		
-		parent = arathi		
+		parent = tirisfalen		
 		
 		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -162,7 +162,7 @@ human = {
 		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
 		}
 		
-		parent = arathi		
+		parent = silverpiner		
 		
 		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -197,7 +197,7 @@ human = {
 		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
 		}
 		
-		parent = arathi		
+		parent = silverpiner		
 		
 		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -234,7 +234,7 @@ human = {
 		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
 		}
 
-		parent = arathi		
+		parent = hillsbradan		
 		
 		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -255,6 +255,108 @@ human = {
 		graphical_cultures = { humangfx westerngfx }
 		
 		color = { 0.26 0.56 0.85 }
+		
+		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
+		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
+		Huglar Ignaeus Inigo Isaac Isildor Ivar Jack Jaime Jarel Jarim Jasper Joachim Jocryn John Jorad Jorgen Jorum Kassan Keldric Kendor Khadgar Kirk Kurtis Landan Landazar Leeroy Leoric Liam Llane Logan Lordain Luc Lucio Lucan Marcus Mark
+		Marwyn Mathias Maxwell Mazen Metz Milton Morgan Nathanos Newton Nielas Omar Osric Othmar Ozzy Quixote Raynor Reginald Renato Renault Reno Rhonin Robert Saidan Salanar Salvador Samir Scott Seoman Sigvald Simon Solaire Stephen Strahad 
+		Tandred Taylor Teneb Terenas Thassarian Thomas Thoradin Thoras Thornby Thule Tim Tirion Tobias Turalyon Tyrathan Ulvus Uther Varian Victor Vincent Vishas Wayne Weldon Wendell Wilhelm Winston Xerxes Zardeth Zazzerpan
+		}
+		female_names = { Aerith Adele Adria Alexandra Alicia Allison Alma Althea Alyssa Amelia Amy Anetta Anveena Ardwyn Ariena Avette Bae Bernice Bonnie Breanna Brigitte Cadence Calia Carla Catherine Cersei Charys Clarise Coda Corina Crystal
+		Danielle Darcy Dawn Demisette Dominique Donni Drusilla Edna Elaine Elly Elone Emma Erika Erma Eva Fam Farah Felicia Gloria Gwen Hanah Helene Helga Herla Hope Iara Ilsa Ingrid Iris Isis Jaina Jalane Jennea Jessara Jillian Josetta Julia
+		Kahlee Karen Karlee Karter Katie Katrana Kelly Keryn Kimberly Kitta Kyra Lara Laurena Leesha Leah Leia Lilith Lina Lisbeth Loren Lorna Lydia Lyria Magatha Malissa Mara Maya Marda Maria Maris Martie Maybell Mercy Mayda Melinda Melody Mia
+		Michelle Milly Morgan Myriam Nalice Natalie Nikova Olena Olivia Pamela Penny Prya Rachel Rebecca Rema Samantha Sansa Sapphire Sarah Selina Shaina Sheri Sloan Sophie Stephanie Tabetah Taretha Taria Tess Theresa Therese Tiffin Tina Ursula
+		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
+		}
+		
+		
+		from_dynasty_prefix = "of "
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+	}
+	
+	tirisfalen = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.24 0.60 0.82 }
+		
+		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
+		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
+		Huglar Ignaeus Inigo Isaac Isildor Ivar Jack Jaime Jarel Jarim Jasper Joachim Jocryn John Jorad Jorgen Jorum Kassan Keldric Kendor Khadgar Kirk Kurtis Landan Landazar Leeroy Leoric Liam Llane Logan Lordain Luc Lucio Lucan Marcus Mark
+		Marwyn Mathias Maxwell Mazen Metz Milton Morgan Nathanos Newton Nielas Omar Osric Othmar Ozzy Quixote Raynor Reginald Renato Renault Reno Rhonin Robert Saidan Salanar Salvador Samir Scott Seoman Sigvald Simon Solaire Stephen Strahad 
+		Tandred Taylor Teneb Terenas Thassarian Thomas Thoradin Thoras Thornby Thule Tim Tirion Tobias Turalyon Tyrathan Ulvus Uther Varian Victor Vincent Vishas Wayne Weldon Wendell Wilhelm Winston Xerxes Zardeth Zazzerpan
+		}
+		female_names = { Aerith Adele Adria Alexandra Alicia Allison Alma Althea Alyssa Amelia Amy Anetta Anveena Ardwyn Ariena Avette Bae Bernice Bonnie Breanna Brigitte Cadence Calia Carla Catherine Cersei Charys Clarise Coda Corina Crystal
+		Danielle Darcy Dawn Demisette Dominique Donni Drusilla Edna Elaine Elly Elone Emma Erika Erma Eva Fam Farah Felicia Gloria Gwen Hanah Helene Helga Herla Hope Iara Ilsa Ingrid Iris Isis Jaina Jalane Jennea Jessara Jillian Josetta Julia
+		Kahlee Karen Karlee Karter Katie Katrana Kelly Keryn Kimberly Kitta Kyra Lara Laurena Leesha Leah Leia Lilith Lina Lisbeth Loren Lorna Lydia Lyria Magatha Malissa Mara Maya Marda Maria Maris Martie Maybell Mercy Mayda Melinda Melody Mia
+		Michelle Milly Morgan Myriam Nalice Natalie Nikova Olena Olivia Pamela Penny Prya Rachel Rebecca Rema Samantha Sansa Sapphire Sarah Selina Shaina Sheri Sloan Sophie Stephanie Tabetah Taretha Taria Tess Theresa Therese Tiffin Tina Ursula
+		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
+		}
+		
+		
+		from_dynasty_prefix = "of "
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+	}
+	
+	hillsbradan = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.28 0.58 0.80 }
+		
+		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
+		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
+		Huglar Ignaeus Inigo Isaac Isildor Ivar Jack Jaime Jarel Jarim Jasper Joachim Jocryn John Jorad Jorgen Jorum Kassan Keldric Kendor Khadgar Kirk Kurtis Landan Landazar Leeroy Leoric Liam Llane Logan Lordain Luc Lucio Lucan Marcus Mark
+		Marwyn Mathias Maxwell Mazen Metz Milton Morgan Nathanos Newton Nielas Omar Osric Othmar Ozzy Quixote Raynor Reginald Renato Renault Reno Rhonin Robert Saidan Salanar Salvador Samir Scott Seoman Sigvald Simon Solaire Stephen Strahad 
+		Tandred Taylor Teneb Terenas Thassarian Thomas Thoradin Thoras Thornby Thule Tim Tirion Tobias Turalyon Tyrathan Ulvus Uther Varian Victor Vincent Vishas Wayne Weldon Wendell Wilhelm Winston Xerxes Zardeth Zazzerpan
+		}
+		female_names = { Aerith Adele Adria Alexandra Alicia Allison Alma Althea Alyssa Amelia Amy Anetta Anveena Ardwyn Ariena Avette Bae Bernice Bonnie Breanna Brigitte Cadence Calia Carla Catherine Cersei Charys Clarise Coda Corina Crystal
+		Danielle Darcy Dawn Demisette Dominique Donni Drusilla Edna Elaine Elly Elone Emma Erika Erma Eva Fam Farah Felicia Gloria Gwen Hanah Helene Helga Herla Hope Iara Ilsa Ingrid Iris Isis Jaina Jalane Jennea Jessara Jillian Josetta Julia
+		Kahlee Karen Karlee Karter Katie Katrana Kelly Keryn Kimberly Kitta Kyra Lara Laurena Leesha Leah Leia Lilith Lina Lisbeth Loren Lorna Lydia Lyria Magatha Malissa Mara Maya Marda Maria Maris Martie Maybell Mercy Mayda Melinda Melody Mia
+		Michelle Milly Morgan Myriam Nalice Natalie Nikova Olena Olivia Pamela Penny Prya Rachel Rebecca Rema Samantha Sansa Sapphire Sarah Selina Shaina Sheri Sloan Sophie Stephanie Tabetah Taretha Taria Tess Theresa Therese Tiffin Tina Ursula
+		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
+		}
+		
+		
+		from_dynasty_prefix = "of "
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+	}
+	
+	silverpiner = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.34 0.58 0.82 }
 		
 		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
 		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
@@ -4016,27 +4118,144 @@ draenei = {
 		allow_looting = yes
 	}
 	kurenai = {
-	
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.11 0.69 0.46 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+
+		
+		allow_looting = yes
 	}
 	murkblood = {
-	
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.11 0.69 0.46 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+
+		
+		allow_looting = yes
 	}
 	dreghood = {
-	
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.11 0.69 0.46 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+
+		
+		allow_looting = yes
 	}
 	greyheart = {
-	
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.11 0.69 0.46 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+
+		
+		allow_looting = yes
 	}
 	wrekt = {
-	
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.11 0.69 0.46 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+
+		
+		allow_looting = yes
 	}
 	ashtongue = {
-	
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.11 0.69 0.46 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+
+		
+		allow_looting = yes
 	}
-	wastewalker = {
-	
-	}
-	fallowreed = {
+	lost_one = {
 		graphical_cultures = { westerngfx }
 		
 		color = { 0.11 0.50 0.34 }
@@ -4058,17 +4277,6 @@ draenei = {
 		
 		
 		allow_looting = yes
-	}
-	dustdreg = {
-	
-	}
-	feralfen = {
-	}
-	umbrafen = {
-	}
-	windyreed = {
-	}
-	tuurem = {
 	}
 }
 
