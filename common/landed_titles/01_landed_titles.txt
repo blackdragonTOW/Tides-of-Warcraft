@@ -599,6 +599,8 @@ e_zul_aman = {
 					scourge = "Woodrot"
 					forsaken = "Woodrot"
 				}
+				
+				holy_site = sunwell
 			}
 			
 			c_underlight_hills = { # 22
@@ -676,8 +678,6 @@ e_zul_aman = {
 				}
 				b_thalassian_approach = {
 				}
-				
-				holy_site = sunwell
 			}
 			
 			c_greenwood_cliffs = { # 29
@@ -1121,6 +1121,8 @@ e_zul_aman = {
 				b_mountaincap = { # Acherus is last on purpose. An event will add a slot and the barony when it is time (and when later bookmarks are added, it will just be active and a slot will be added on startup)
 					scourge = "Acherus"
 				}
+				
+				holy_site = lich_king
 			}
 			
 			c_forbidding_coast = { # 42
@@ -1178,7 +1180,7 @@ e_thondroril = {
 		capital = 417 # Stratholme
 		
 		d_blackwood = {
-			color = { 99 222 120 }
+			color = { 27 30 117 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -1252,6 +1254,103 @@ e_thondroril = {
 				b_watchstone = {
 				}
 				b_northsilver = {
+				}
+			}
+		}
+		
+		d_tyrs_hand = {
+			color = { 20 29 120 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 43 # Tyr's Hand
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 41 province_id = 43 province_id = 44 province_id = 457 } }
+				}
+			}
+			
+			c_havenshire = { # 41
+				color = { 173 54 91 }
+				color2 = { 255 255 255 }
+				
+				b_havenhall = {
+				}
+				b_havenshire = {
+				}
+				b_lights_point = {
+				}
+				b_eastfarm = {
+				}
+				b_sanctuary_hills = {
+				}
+				b_concord = {
+				}
+				b_redwatch = {
+				}
+			}
+			
+			c_tyrs_hand = { # 43
+				color = { 94 45 143 }
+				color2 = { 255 255 255 }
+				
+				b_tyrs_hand = {
+				}
+				b_scarlet_abbey = {
+				}
+				b_crusader_outpost = {
+				}
+				b_scarlet_front = {
+				}
+				b_eastlight = {
+				}
+				b_zealsword = {
+				}
+				b_faithshield = {
+				}
+				
+				holy_site = scarlet
+			}
+			
+			c_new_avalon = { # 44
+				color = { 179 190 105 }
+				color2 = { 255 255 255 }
+				
+				b_scarlet_hold = {
+				}
+				b_new_avalon = {
+				}
+				b_chapel_of_the_crimson_flame = {
+				}
+				b_kings_harbor = {
+				}
+				b_the_scarlet_overlook = {
+				}
+				b_sanctuary_of_remembrance = {
+				}
+				b_vermillion_holdfast = {
+				}
+			}
+			
+			c_stonespur = { # 457
+				color = { 213 111 159 }
+				color2 = { 255 255 255 }
+				
+				b_thorpes = {
+				}
+				b_ardglass = {
+				}
+				b_granitehands = {
+				}
+				b_gemclod = {
+				}
+				b_kilkenny = {
+				}
+				b_briar_glen = {
+				}
+				b_lowestoft = {
 				}
 			}
 		}
