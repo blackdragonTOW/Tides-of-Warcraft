@@ -1455,7 +1455,7 @@ e_thondroril = {
 				}
 			}
 			
-			c_fungal_vale = {
+			c_fungal_vale = { # 35
 				color = { 88 181 94 }
 				color2 = { 255 255 255 }
 				
@@ -1475,7 +1475,7 @@ e_thondroril = {
 				}
 			}
 			
-			c_darrowshire = {
+			c_darrowshire = { # 49
 				color = { 187 79 167 }
 				color2 = { 255 255 255 }
 				
@@ -1495,7 +1495,7 @@ e_thondroril = {
 				}
 			}
 			
-			c_crownlands = {
+			c_crownlands = { # 50
 				color = { 48 173 62 }
 				color2 = { 255 255 255 }
 				
@@ -1515,6 +1515,66 @@ e_thondroril = {
 				b_cardend = {
 				}
 				b_clacton = {
+				}
+			}
+		}
+		
+		d_wealdpass = {
+			color = { 34 40 132 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 48 # Eastlands
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 48 province_id = 53 } }
+				}
+			}
+			
+			c_eastlands = { # 48
+				color = { 85 167 85 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Death's Step"
+				forsaken = "Death's Step"
+				
+				b_eaststep = {
+					scourge = "Death's Step"
+					forsaken = "Death's Step"
+				}
+				b_undercroft = {
+				}
+				b_longdale = {
+				}
+				b_jedburgh = {
+				}
+				b_lerwick = {
+				}
+				b_mutebell = {
+				}
+				b_lastdrift = {
+				}
+			}
+			
+			c_pineside = { # 53
+				color = { 0 234 255 }
+				color2 = { 255 255 255 }
+				
+				b_draycott = {
+				}
+				b_aempleforth = {
+				}
+				b_farhill = {
+				}
+				b_bareball = {
+				}
+				b_fallhill = {
+				}
+				b_madholde = {
+				}
+				b_hazelhallow = {
 				}
 			}
 		}
