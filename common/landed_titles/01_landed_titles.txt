@@ -1360,6 +1360,8 @@ e_thondroril = {
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
+			scourge = "Light's End"
+			
 			capital = 45 # Light's Hope
 			
 			allow = {
@@ -1435,6 +1437,84 @@ e_thondroril = {
 				b_hewe = {
 				}
 				b_fallkirk = {
+				}
+			}
+		}
+		
+		d_darrowshire = {
+			color = { 26 30 85 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 49 # Darrowshire
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 35 province_id = 49 province_id = 50 } }
+				}
+			}
+			
+			c_fungal_vale = {
+				color = { 88 181 94 }
+				color2 = { 255 255 255 }
+				
+				b_sharpton = {
+				}
+				b_mutewatch = {
+				}
+				b_wilderun = {
+				}
+				b_darklight = {
+				}
+				b_glimmermore = {
+				}
+				b_llyn = {
+				}
+				b_bellmoral = {
+				}
+			}
+			
+			c_darrowshire = {
+				color = { 187 79 167 }
+				color2 = { 255 255 255 }
+				
+				b_darrowshire = {
+				}
+				b_marris_stead = {
+				}
+				b_westwend = {
+				}
+				b_berkton = {
+				}
+				b_steepwell = {
+				}
+				b_autumnland = {
+				}
+				b_drypoint = {
+				}
+			}
+			
+			c_crownlands = {
+				color = { 48 173 62 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Infectis Scar"
+				forsaken = "Infectis Scar"
+				
+				b_crown_guard_tower = {
+				}
+				b_lastgrave = {
+				}
+				b_fallcrest = {
+				}
+				b_ozryn = {
+				}
+				b_howe = {
+				}
+				b_cardend = {
+				}
+				b_clacton = {
 				}
 			}
 		}
