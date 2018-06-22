@@ -1354,5 +1354,89 @@ e_thondroril = {
 				}
 			}
 		}
+		
+		d_lights_hope = {
+			color =  { 59 62 105 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 45 # Light's Hope
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 45 province_id = 46  province_id = 47 } }
+				}
+			}
+			
+			c_lights_hope = { # 45
+				color = { 116 92 179 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Light's End"
+				
+				b_lights_hope = {
+					scourge = "Light's End"
+				}
+				b_pestilent_scar = {
+				}
+				b_swanhill = {
+				}
+				b_wakefield = {
+				}
+				b_larkinge = {
+				}
+				b_summerwick = {
+				}
+				b_newcliff = {
+				}
+				
+				holy_site = holy_light
+				holy_site = argent
+			}
+			
+			c_corins_crossing = { # 46
+				color = { 91 201 113 }
+				color2 = { 255 255 255 }
+				
+				b_corins_crossing = {
+				}
+				b_bleakglen = {
+				}
+				b_pirn = {
+				}
+				b_aylesbury = {
+				}
+				b_drylight = {
+				}
+				b_arrowside = {
+				}
+				b_farvein = {
+				}
+			}
+			
+			c_lights_march = { # 47
+				color = { 198 99 176 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Deathmarch"
+				
+				b_lights_shield_tower = {
+					scourge = "Heartland Tower"
+				}
+				b_windcross = {
+				}
+				b_sleetwich = {
+				}
+				b_eaglefair = {
+				}
+				b_slyham = {
+				}
+				b_hewe = {
+				}
+				b_fallkirk = {
+				}
+			}
+		}
 	}
 }
