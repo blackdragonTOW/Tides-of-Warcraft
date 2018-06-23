@@ -1704,4 +1704,191 @@ e_thondroril = {
 			}
 		}
 	}
+	k_thondroril = {
+		color = { 59 0 66 }
+		color2 = { 255 255 255 }
+		culture = lordaeronian
+		
+		capital = 198 # Lordaeron Highlands (yes, I noticed the irony here)
+		
+		d_thondroril_coast = {
+			color = { 55 11 63 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 52 # Bleakrock
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 52 province_id = 90 } }
+				}
+			}
+			
+			c_bleakrock = { # 52
+				color = { 111 190 96 }
+				color2 = { 255 255 255 }
+				
+				b_bleakrock_lighthouse = {
+				}
+				b_roseshore = {
+				}
+				b_emberharbor = {
+				}
+				b_foolshope = {
+				}
+				b_whiteridge = {
+				}
+				b_nancledra = {
+				}
+				b_swindmore = {
+				}
+			}
+			
+			c_mountainstrand = { # 90
+				color = { 196 224 139 }
+				color2 = { 255 255 255 }
+				
+				b_dralfield = {
+				}
+				b_barebreach = {
+				}
+				b_flamehaven = {
+				}
+				b_westwharf = {
+				}
+				b_wildedenn = {
+				}
+				b_blackburn = {
+				}
+				b_gilramore = {
+				}
+			}
+		}
+		
+		d_thondroril_highlands = {
+			color = { 40 0 50 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 198 # Lordaeron Highlands
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 198 province_id = 199 province_id = 200 } }
+				}
+			}
+			
+			c_lordaeron_highlands = { # 198
+				color = { 119 113 71 }
+				color2 = { 255 255 255 }
+				
+				b_mossley = {
+				}
+				b_dalhurst = {
+				}
+				b_rochdale = {
+				}
+				b_ebonhorn = {
+				}
+				b_shroudwick = {
+				}
+				b_ocleigh = {
+				}
+				b_plapstead = {
+				}
+			}
+			
+			c_pinewood_gorge = { # 199
+				color = { 181 176 224 }
+				color2 = { 255 255 255 }
+				
+				b_krusby = {
+				}
+				b_acashire = {
+				}
+				b_nightmouth = {
+				}
+				b_roguepass = {
+				}
+				b_northgrasp = {
+				}
+				b_oakencall = {
+				}
+				b_warrington = {
+				}
+			}
+			
+			c_highwood = { # 200
+				color = { 196 95 149 }
+				color2 = { 255 255 255 }
+				
+				b_erstonia = {
+				}
+				b_kings_watch = {
+				}
+				b_oakheart = {
+				}
+				b_fools_march = {
+				}
+				b_mouthmend = {
+				}
+				b_wolfpine = {
+				}
+				b_ayrith = {
+				}
+			}
+		}
+		
+		d_northcrag = {
+			color = { 60 23 69 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 454 province_id = 456 } }
+				}
+			}
+			
+			c_highmine = { # 454
+				color = { 179 91 198 }
+				color2 = { 255 255 255 }
+				
+				b_shadebreak = {
+				}
+				b_claychill = {
+				}
+				b_fallspire = {
+				}
+				b_sanlow = {
+				}
+				b_pitmedden = {
+				}
+				b_halivaara = {
+				}
+				b_eelry = {
+				}
+			}
+			
+			c_cragwar = { # 456
+				b_cresthill = {
+				}
+				b_athelney = {
+				}
+				b_shadeview = {
+				}
+				b_whitfell = {
+				}
+				b_barechill = {
+				}
+				b_mudpass = {
+				}
+				b_ghosthorn = {
+				}
+			}
+		}
+	}
 }
