@@ -27,14 +27,14 @@ e_zul_aman = {
 	lost_one = "Quel'Thalas"
 	
 	k_quel_thalas = {
-		color = { 233 26 26 }
+		color = { 93 166 230 }
 		color2 = { 255 255 255 }
 		culture = high_elven
 		
 		capital = 5 # Silvermoon
 		
 		d_quel_danas = {
-			color = { 239 33 40 }
+			color = { 91 178 255 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 		
@@ -115,7 +115,7 @@ e_zul_aman = {
 		}
 		
 		d_silvermoon = {
-			color = { 186 100 103 }
+			color = { 98 168 213 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 		
@@ -211,7 +211,7 @@ e_zul_aman = {
 		}
 		
 		d_highborne_midlands = {
-			color = { 202 135 137 }
+			color = { 25 112 188 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
@@ -345,7 +345,7 @@ e_zul_aman = {
 		}
 		
 		d_sunsail_bay = {
-			color = { 168 66 70 }
+			color = { 27 84 134 }
 			color2 = { 255 255 255 }
 			culture = high_elven
 			
@@ -1887,6 +1887,72 @@ e_thondroril = {
 				b_mudpass = {
 				}
 				b_ghosthorn = {
+				}
+			}
+		}
+	}
+	
+	k_northlands = {
+		color = { 143 145 108 }
+		color2 = { 255 255 255 }
+		culture = lordaeronian
+		
+		capital = 63 # Hearthglen
+		
+		scourge = "Western Plaguelands"
+		forsaken = "Western Plaguelands"
+		
+		d_hearthglen = {
+			color = { 189 192 146 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 63 # Hearthglen
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 63 province_id = 64 } }
+				}
+			}
+			
+			c_hearthglen = { # 63
+				color = { 215 156 82 }
+				color2 = { 255 255 255 }
+				
+				b_mardenholde = {
+				}
+				b_hearthglen = {
+				}
+				b_taelans_tower = {
+				}
+				b_sharpton = {
+				}
+				b_guthram = {
+				}
+				b_sherfield = {
+				}
+				b_starburgh = {
+				}
+			}
+			
+			c_redpine_woods = { # 64
+				color = { 139 57 198 }
+				color2 = { 255 255 255 }
+				
+				b_northridge_camp = {
+				}
+				b_rochdale = {
+				}
+				b_furness = {
+				}
+				b_lockinge = {
+				}
+				b_dogfield = {
+				}
+				b_tradebreach = {
+				}
+				b_oxbreak = {
 				}
 			}
 		}
