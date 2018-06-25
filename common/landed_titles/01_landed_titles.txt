@@ -1923,6 +1923,8 @@ e_thondroril = {
 				b_mardenholde = {
 				}
 				b_hearthglen = {
+					holy_site = scarlet
+					holy_site = argent
 				}
 				b_taelans_tower = {
 				}
@@ -1953,6 +1955,81 @@ e_thondroril = {
 				b_tradebreach = {
 				}
 				b_oxbreak = {
+				}
+			}
+		}
+		
+		d_thondroril_valley = {
+			color = { 161 165 105 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 55 # Raven's Rill
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 51 province_id = 55 province_id = 65 } }
+				}
+			}
+			
+			c_thondroril_valley = { # 51
+				color = { 170 105 176 }
+				color2 = { 255 255 255 }
+				
+				b_vandermar = {
+				}
+				b_moonbright = {
+				}
+				b_tarrin = {
+				}
+				b_cherrytown = {
+				}
+				b_ruststrand = {
+				}
+				b_clearfall = {
+				}
+				b_newhand = {
+				}
+			}
+			
+			c_ravens_rill = { # 55
+				color = { 94 156 142 }
+				color2 = { 255 255 255 }
+				
+				b_cinderhome = {
+				}
+				b_willsden = {
+				}
+				b_saker_keep = {
+				}
+				b_naporia = {
+				}
+				b_tarnstead = {
+				}
+				b_halivaara = {
+				}
+				b_broken_shield = {
+				}
+			}
+			
+			c_westvale = { # 65
+				color = { 232 187 91 }
+				color2 = { 255 255 255 }
+				
+				b_gharrons_withering = {
+				}
+				b_malicias_outpost = {
+				}
+				b_weeping_cave = {
+				}
+				b_sarton = {
+				}
+				b_bleakburn = {
+				}
+				b_crullfeld = {
+				}
+				b_woodhurst = {
 				}
 			}
 		}
