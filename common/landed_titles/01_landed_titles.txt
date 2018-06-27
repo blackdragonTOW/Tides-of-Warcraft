@@ -2033,5 +2033,215 @@ e_thondroril = {
 				}
 			}
 		}
+		
+		d_andorhal = {
+			color = { 123 127 67 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 62 # Andorhal
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 62 province_id = 66 province_id = 67 province_id = 69 } }
+				}
+			}
+			
+			c_andorhal = { # 62
+				color = { 116 116 125 }
+				color2 = { 255 255 255 }
+				
+				b_andorhal = {
+					holy_site = argent
+				}
+				b_acomb = {
+					scourge = "The Writhing Haunt"
+					forsaken = "The Writhing Haunt"
+				}
+				b_dirtward = {
+				}
+				b_roguemond = {
+				}
+				b_haran = {
+				}
+				b_skystead = {
+				}
+				b_erast = {
+				}
+			}
+			
+			c_harveston = { # 66
+				color = { 177;137;255 }
+				color2 = { 255 255 255 }
+				
+				b_chesterfield = {
+				}
+				b_openshaw = {
+				}
+				b_whitcrest = {
+				}
+				b_houndshear = {
+				}
+				b_saltham = {
+				}
+				b_flatlight = {
+				}
+				b_pondstar = {
+				}
+			}
+			
+			c_the_fertile_expanse = { # 67
+				color = { 71 210 122 }
+				color2 = { 255 255 255 }
+				
+				scourge = "The Plagued Expanse"
+				forsaken = "The Plagued Expanse"
+				
+				b_slyshear = {
+				}
+				b_riverpass = {
+				}
+				b_dimcall = {
+				}
+				b_sleekgarde = {
+				}
+				b_lightgulf = {
+				}
+				b_mythville = {
+				}
+				b_westgrave = {
+				}
+			}
+			
+			c_the_scarlet_march = { # 69
+				color = { 227 196 113 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Dalson's Tears"
+				forsaken = "Dalson's Tears"
+				
+				b_dalsons_tears = {
+				}
+				b_felstone = {
+				}
+				b_garthram = {
+				}
+				b_matlock = {
+				}
+				b_willowdale = {
+				}
+				b_blindvale = {
+				}
+				b_lastbell = {
+				}
+			}
+		}
+		
+		d_darrow = {
+			color = { 134 137 99 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 58 # Caer Darrow
+			
+			scourge = "Scholomance"
+			forsaken = "Scholomance"
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 56 province_id = 57 province_id = 58 province_id = 59 } }
+				}
+			}
+			
+			c_east_darrow = { # 56
+				color = { 215 85 82 }
+				color2 = { 255 255 255 }
+				
+				b_autumngulch = {
+				}
+				b_oldfield = {
+				}
+				b_millshore = {
+				}
+				b_fallburgh = {
+				}
+				b_mossgrasp = {
+				}
+				b_flatfell = {
+				}
+				b_flatland = {
+				}
+			}
+			
+			c_south_darrow = { # 57
+				color = { 85 156 51 }
+				color2 = { 255 255 255 }
+				
+				b_newgrove = {
+				}
+				b_clearband = {
+				}
+				b_roseshell = {
+				}
+				b_stonereach = {
+				}
+				b_nightham = {
+				}
+				b_timeston = {
+				}
+				b_hullbeck = {
+				}
+			}
+			
+			c_caer_darrow = { # 58
+				color = { 218 215 51 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Scholomance"
+				forsaken = "Scholomance"
+				
+				b_caer_darrow = {
+				}
+				b_darrow_estate = {
+					scourge = "Scholomance"
+					forsaken = "Scholomance"
+					
+					holy_site = lich_king
+					holy_site = forgotten_shadow
+				}
+				b_todmorden = {
+				}
+				b_spiritcrest = {
+				}
+				b_snakerock = {
+				}
+				b_amberhelm = {
+				}
+				b_gloomborn = {
+				}
+			}
+			
+			c_sorrow_hills = { # 59
+				color = { 142 68 176 }
+				color2 = { 255 255 255 }
+				
+				b_chillwind_camp = {
+				}
+				b_sorrow_hill = {
+				}
+				b_braedon = {
+				}
+				b_grimsby = {
+				}
+				b_nevercross = {
+				}
+				b_everfort = {
+				}
+				b_ravengulch = {
+				}
+			}
+		}
 	}
 }
