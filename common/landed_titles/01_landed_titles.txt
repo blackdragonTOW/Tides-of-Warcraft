@@ -2354,7 +2354,7 @@ e_lordaeron = {
 			
 			c_venomweb_vale = { # 88
 				color = { 113 187 139 }
-				color2 = { 255 255 255 
+				color2 = { 255 255 255 }
 				
 				b_venomweb_camp = {
 				}
@@ -2410,6 +2410,424 @@ e_lordaeron = {
 				b_hall_of_champions = {
 				}
 				b_scarlet_grounds = {
+				}
+			}
+		}
+		
+		d_north_coast = {
+			color = { 95 95 95 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 91 # Saltwatch
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 89 province_id = 91 province_id = 97 } }
+				}
+			}
+			
+			c_dragon_isles = { # 89
+				color = { 215 77 150 }
+				color2 = { 255 255 255 }
+				
+				b_nautiloid = {
+					holy_site = azshara # Just while we only have a single continent
+					holy_site = hydromancy
+				}
+				b_emiluma = {
+				}
+				b_inymneas = {
+				}
+				b_felotalos = {
+				}
+				b_shimmercrest = {
+				}
+				b_ollenlin = {
+				}
+				b_idoneth = {
+				}
+			}
+			
+			c_saltwatch = { # 91
+				color = { 54 96 179 }
+				color2 = { 255 255 255 }
+				
+				b_scarlet_watch_post = {
+				}
+				b_grayfrost = {
+				}
+				b_oldburn = {
+				}
+				b_westray = {
+				}
+				b_nuxvar = {
+				}
+				b_scrabster = {
+				}
+				b_houndcoast = {
+				}
+			}
+			
+			c_finned_shore = { # 97
+				color = { 116 91 45 }
+				color2 = { 255 255 255 }
+				
+				b_quickport = {
+				}
+				b_emberbourne = {
+				}
+				b_fallhallow = {
+				}
+				b_madtide = {
+				}
+				b_slycoast = {
+				}
+				b_lastmore = {
+				}
+				b_beachchill = {
+				}
+			}
+		}
+		
+		d_keeperweald = {
+			color = { 46 46 46 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 96 # Miller's Rise
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 96 province_id = 98 province_id = 105 } }
+				}
+			}
+			
+			c_millers_rise = { # 96
+				color = { 173 116 181 }
+				color2 = { 255 255 255 }
+				
+				b_agamand_mills = {
+				}
+				b_agamand_crypt = {
+				}
+				b_hwen = {
+				}
+				b_pirn = {
+				}
+				b_mournstead = {
+				}
+				b_highgrain = {
+				}
+				b_dirtdenn = {
+				}
+			}
+			
+			c_kings_glade = { # 98
+				color = { 187 60 179 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Garren's Haunt"
+				forsaken = "Garren's Haunt"
+				
+				b_garren_estate = {
+					scourge = "Garren's Haunt"
+					forsaken = "Garren's Haunt"
+				}
+				b_gunthers_retreat = {
+				}
+				b_falcon_haven = {
+				}
+				b_black_hallows = {
+				}
+				b_limewell = {
+				}
+				b_flathaven = {
+				}
+				b_silvertown = {
+				}
+			}
+			
+			c_darkglen = { # 105
+				color = { 207 147 71 }
+				color2 = { 255 255 255 }
+				
+				b_caleston_estate = {
+				}
+				b_cold_hearth = {
+				}
+				b_oldview = {
+				}
+				b_edgegate = {
+				}
+				b_dustlight = {
+				}
+				b_hazelglen = {
+				}
+				b_highgarde = {
+				}
+			}
+		}
+		
+		d_lightknell = {
+			color = { 177 177 177 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 95 # Lightknell
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 95 province_id = 418 } }
+				}
+			}
+			
+			c_lightknell = { # 95
+				color = { 122 71 176 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Deathknell"
+				forsaken = "Deathknell"
+				
+				b_lightknell = {
+					scourge = "Deathknell"
+					forsaken = "Deathknell"
+					
+					holy_site = forgotten_shadow
+				}
+				b_hallowed_grave = {
+					scourge = "Shadow Grave"
+					forsaken = "Shadow Grave"
+				}
+				b_merton = {
+					scourge = "Rotbrain Camp"
+					forsaken = "Rotbrain Camp"
+				}
+				b_night_webs_hollow = {
+				}
+				b_grimebarrow = {
+				}
+				b_ebonwatch = {
+				}
+				b_oldpost = {
+				}
+			}
+			
+			c_nortide = { # 418
+				color = { 77 207 74 }
+				color2 = { 255 255 255 }
+				
+				b_scarlet_palisade = {
+				}
+				b_solliden_estate = {
+				}
+				b_knightport = {
+				}
+				b_winterstar = {
+				}
+				b_grimguard = {
+				}
+				b_sunbreak = {
+				}
+				b_deadcove = {
+				}
+			}
+		}
+		
+		d_lordaeron = {
+			color = { 79 79 79 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 99 # Lordaeron
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 99 province_id = 102 province_id = 103 province_id = 104 } }
+				}
+			}
+			
+			c_lordaeron = { # 99
+				color = { 159 43 147 }
+				color2 = { 255 255 255 }
+				
+				b_lordaeron_keep = {
+					scourge = "The Royal Quarter"
+					forsaken = "The Royal Quarter"
+					
+					holy_site = lich_king
+				}
+				b_merchants_row = {
+					scourge = "The Trade Quarter"
+					forsaken = "The Trade Quarter"
+				}
+				b_magespire = {
+					scourge = "The Magic Quarter"
+					forsaken = "The Magic Quarter"
+				}
+				b_gates_of_lordaeron = {
+					scourge = "The War Quarter"
+					forsaken = "The War Quarter"
+					
+					holy_site = forgotten_shadow
+				}
+				b_lordaronian_cathedral = {
+					scourge = "The Apothecarium"
+					forsaken = "The Apothecarium"
+					
+					holy_site = holy_light
+					holy_site = scarlet
+					holy_site = argent
+				}
+				b_the_waterfront = {
+					scourge = "The Rogues' Quarter"
+					forsaken = "The Rogues' Quarter"
+				}
+				b_lordamere_docks = {
+					scourge = "Ruins of Lordaeron"
+					forsaken = "Ruins of Lordaeron"
+				}
+			}
+			
+			c_lordamere_acres = { # 102
+				color = { 88 94 71 }
+				color2 = { 255 255 255 }
+				
+				b_millstone = {
+				}
+				b_saker_keep = {
+				}
+				b_quickyard = {
+				}
+				b_redhaven = {
+				}
+				b_shadowhelm = {
+				}
+				b_crowmeadow = {
+				}
+				b_lasthaven = {
+				}
+			}
+			
+			c_dreaming_vale = { # 103
+				color = { 213 167 26 }
+				color2 = { 255 255 255 }
+				
+				b_scarlet_watchtower = {
+				}
+				b_glaenarm = {
+				}
+				b_everfair = {
+				}
+				b_greenhaven = {
+				}
+				b_batwood = {
+				}
+				b_cragbarrow = {
+				}
+				b_bleakfront = {
+				}
+			}
+			
+			c_bril = { # 104
+				color = { 116 122 99 }
+				color2 = { 255 255 255 }
+				
+				b_brill = {
+				}
+				b_farmeadow = {
+					scourge = "Death's Watch"
+					forsaken = "Death's Watch"
+				}
+				b_fallville = {
+				}
+				b_brittleside = {
+				}
+				b_coldcross = {
+				}
+				b_dimvein = {
+				}
+				b_deadfell = {
+				}
+			}
+		}
+		
+		d_whispering_forest = {
+			color = { 200 200 200 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 93 # Tyr's Fall
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 93 province_id = 94 province_id = 106 } }
+				}
+			}
+			
+			c_tyrs_fall = { # 93
+				color = { 43 136 173 }
+				color2 = { 255 255 255 }
+				
+				b_tyrs_tomb = {
+					holy_site = old_ways
+				}
+				b_keeperhold = {
+				}
+				b_stormscar = {
+				}
+				b_dimvalley = {
+				}
+				b_timberland = {
+				}
+				b_lightmond = {
+				}
+				b_blackfair = {
+				}
+			}
+			
+			c_whispering_forest = { # 94
+				color = { 187 136 91 }
+				color2 = { 255 255 255 }
+				
+				b_steepwood = {
+				}
+				b_neverhand = {
+				}
+				b_grimport = {
+				}
+				b_highband = {
+				}
+				b_arrowgrave = {
+				}
+				b_dogwater = {
+				}
+				b_highbreach = {
+				}
+			}
+			
+			c_whispering_mountains = { # 106
+				color = { 181 38 38 }
+				color2 = { 255 255 255 }
+				
+				b_ravenvein = {
+				}
+				b_shadeward = {
+				}
+				b_northwood = {
+				}
+				b_sleetreach = {
+				}
+				b_eldermeadow = {
+				}
+				b_grimwick = {
+				}
+				b_silentstar = {
 				}
 			}
 		}
