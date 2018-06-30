@@ -2245,3 +2245,173 @@ e_thondroril = {
 		}
 	}
 }
+
+e_lordaeron = {
+	color = { 60 60 60 }
+	color2 = { 255 255 255 }
+	culture = lordaeronian
+	
+	capital = 99 # Lordaeron
+	
+	k_lordaeron = {
+		color = { 75 75 75 }
+		color2 = { 255 255 255 }
+		culture = lordaeronian
+		
+		capital = 99 # Lordaeron
+		
+		d_the_bulwark = {
+			color = { 111 111 111 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 68 # The Bulwark
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 68 province_id = 100 province_id = 101 } }
+				}
+			}
+			
+			c_the_bulwark = { # 68
+				color = { 159 96 167 }
+				color2 = { 255 255 255 }
+				
+				b_the_bulwark = {
+				}
+				b_silver_holdfast = {
+				}
+				b_silentvalley = {
+				}
+				b_houndgrove = {
+				}
+				b_nightshell = {
+				}
+				b_azmarin = {
+				}
+				b_durnatel = {
+				}
+			}
+			
+			c_lordarmarch = { # 100
+				color = { 159 43 147 }
+				color2 = { 255 255 255 }
+				
+				b_balnir_estate = {
+				}
+				b_dangarnon = {
+				}
+				b_deershear = {
+				}
+				b_everfall = {
+				}
+				b_kilhand = {
+				}
+				b_grimwell = {
+				}
+				b_drywich = {
+				}
+			}
+			
+			c_green_acres = { # 101
+				color = { 187 255 147 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Tainted Acres"
+				forsaken = "Tainted Acres"
+				
+				b_crusade_outpost = {
+				}
+				b_wolfmoor = {
+				}
+				b_thornpoint = {
+				}
+				b_pineglen = {
+				}
+				b_ebonhost = {
+				}
+				b_nerton = {
+				}
+				b_kald = {
+				}
+			}
+		}
+		
+		d_venomweb_vale = {
+			color = { 154 154 154 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 455 # Scarlet Monastery
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 88 province_id = 92 province_id = 455 } }
+				}
+			}
+			
+			c_venomweb_vale = { # 88
+				color = { 113 187 139 }
+				color2 = { 255 255 255 
+				
+				b_venomweb_camp = {
+				}
+				b_mossrest = {
+				}
+				b_blackmeadow = {
+				}
+				b_bleakgrave = {
+				}
+				b_gloomstall = {
+				}
+				b_onryx = {
+				}
+				b_bredon = {
+				}
+			}
+			
+			c_brightmark = { # 92
+				color = { 213 96 88 }
+				color2 = { 255 255 255 }
+				
+				b_faols_rest = {
+					holy_site = holy_light
+				}
+				b_wolfden = {
+				}
+				b_aeston = {
+				}
+				b_knightfort = {
+				}
+				b_eldertide = {
+				}
+				b_barehill = {
+				}
+				b_oakenvein = {
+				}
+			}
+			c_scarlet_monastery = { # 455
+				color = { 198 113 125 }
+				color2 = { 255 255 255 }
+				
+				b_crusaders_chapel = {
+					holy_site = scarlet
+				}
+				b_the_grand_vestibule = {
+				}
+				b_forlorn_cloister = {
+				}
+				b_terrace_of_repose = {
+				}
+				b_huntsmans_cloister = {
+				}
+				b_hall_of_champions = {
+				}
+				b_scarlet_grounds = {
+				}
+			}
+		}
+	}
+}
