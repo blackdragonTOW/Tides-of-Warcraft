@@ -17,6 +17,8 @@
 	trait = gregarious
 	trait = brave
 	disallow_random_traits = yes
+	dna = 0bg0a0a0d00
+	properties = ub00e0000000000000
 	1.1.1 = {
 		birth = yes
 	}
@@ -26,13 +28,15 @@
 }
 
 2 = {
-	name = "Eldin"
+	name = "Eldretar"
 	dynasty = 1
 	culture = high_elven
 	religion = sunwell
 	trait = race_high_elf
 	disallow_random_traits = no
 	father = 1
+	dna = 0bg0a0a0b00
+	properties = ud00h0000000000000
 	3142.4.1 = {
 		birth = yes
 	}
@@ -42,14 +46,16 @@
 }
 
 3 = {
-	name = "Halein"
+	name = "Lorestar"
 	dynasty = 1
 	culture = high_elven
 	religion = sunwell
 	trait = race_high_elf
 	disallow_random_traits = no
 	father = 2
-	5240.5.11 = {
+	dna = 0bg0a0a0b00
+	properties = uj00k0000000000000
+	4240.5.11 = {
 		birth = yes
 	}
 	7043.6.30 = {
@@ -78,6 +84,8 @@
 	trait = stubborn
 	disallow_random_traits = yes
 	father = 3
+	dna = 0bf0a0a0b00
+	properties = ul00g0000000000000
 	7003.9.1 = {
 		birth = yes
 	}
@@ -107,6 +115,8 @@
 	trait = gregarious
 	disallow_random_traits = yes
 	father = 4
+	dna = 0bf0a0a0000
+	properties = un000000000000a000
 	9932.4.22 = {
 		birth = yes
 	}
@@ -164,6 +174,8 @@
 	trait = content
 	trait = honest
 	disallow_random_traits = yes
+	dna = 0d0id000ba0
+	properties = ti000f000000000a000
 	9974.7.8 = {
 		birth = yes
 	}
@@ -209,6 +221,8 @@
 	trait = just
 	trait = trusting
 	disallow_random_traits = yes
+	dna = 00aaf0h0c00
+	properties = ue00b000000000c000
 	9966.6.1 = {
 		birth = yes
 	}
@@ -248,6 +262,7 @@
 	dynasty = 5
 	culture = high_elven
 	religion = sunwell
+	mother = 59
 	diplomacy = 5
 	martial = 9
 	stewardship = 6
@@ -262,6 +277,8 @@
 	trait = honest
 	trait = flanker
 	disallow_random_traits = yes
+	dna = 0ceeh0e0000
+	properties = um00b0000000000000
 	9969.10.2 = {
 		birth = yes
 	}
@@ -309,6 +326,8 @@
 	trait = zealous
 	trait = stubborn
 	disallow_random_traits = yes
+	dna = 0chaa0a0ga0
+	properties = ui000000000000f000
 	9982.7.19 = {
 		birth = yes
 	}
@@ -511,12 +530,14 @@
 	trait = honest
 	trait = wroth
 	disallow_random_traits = yes
+	dna = 0eghh0e00a0
+	properties = uk0000000000000000
 	7061.8.22 = {
 		birth = yes
 		employer = 4 # Anasterian Sunstrider
 		give_job_title = job_marshal
 	}
-	7066.1.7 = {
+	8566.1.1 = {
 		death = { death_reason = death_natural }
 	}
 }
@@ -1720,7 +1741,7 @@
 	9748.2.8 = {
 		birth = yes
 	}
-	9800.1.1 = {
+	9988.1.1 = {
 		death = { death_reason = death_natural }
 	}
 }
@@ -2185,6 +2206,7 @@
 		}
 		culture = scourge
 		religion = lich_king
+		effect = { set_graphical_culture = wretched } # The Undead process
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
@@ -2217,7 +2239,7 @@
 }
 
 77 = {
-	name = "Cacame"
+	name = "Caledan"
 	dynasty = 40
 	culture = high_elven
 	religion = sunwell
@@ -2249,5 +2271,488 @@
 	}
 	11000.1.1 = {
 		death = { death_reason = death_natural }
+	}
+}
+
+78 = {
+	name = "Alinar"
+	dynasty = 41
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 4
+	stewardship = 8
+	intrigue = 5
+	learning = 3
+	trait = race_high_elf
+	trait = fortune_builder
+	trait = architect
+	trait = patient
+	trait = charitable
+	trait = honest
+	trait = shy
+	disallow_random_traits = yes
+	7152.1.1 = {
+		birth = yes
+	}
+	9853.1.1 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+79 = {
+	name = "Ashen"
+	dynasty = 41
+	father = 78
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 5
+	stewardship = 6
+	intrigue = 3
+	learning = 5
+	trait = race_high_elf
+	trait = fortune_builder
+	trait = patient
+	trait = charitable
+	trait = honest
+	trait = shy
+	trait = just
+	disallow_random_traits = yes
+	9563.1.1 = {
+		birth = yes
+	}
+	10020.1.1 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+80 = {
+	name = "Farsil"
+	dynasty = 42
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 4
+	martial = 4
+	stewardship = 5
+	intrigue = 3
+	learning = 4
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = greedy
+	trait = content
+	trait = brave
+	disallow_random_traits = yes
+	6524.1.1 = {
+		birth = yes
+	}
+	9883.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+81 = {
+	name = "Narsil"
+	dynasty = 42
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 3
+	stewardship = 6
+	intrigue = 4
+	learning = 6
+	trait = race_high_elf
+	trait = flamboyant_schemer
+	trait = greedy
+	trait = content
+	trait = brave
+	disallow_random_traits = yes
+	father = 80
+	9542.1.1 = {
+		birth = yes
+	}
+	10020.1.1 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+82 = {
+	name = "Tiana"
+	dynasty = 44
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	diplomacy = 5
+	martial = 3
+	stewardship = 6
+	intrigue = 6
+	learning = 5
+	trait = race_high_elf
+	trait = underhanded_rogue
+	trait = ranger
+	trait = patient
+	trait = kind
+	disallow_random_traits = yes
+	8751.1.1 = {
+		birth = yes
+	}
+	10020.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+83 = {
+	name = "Dame"
+	dynasty = 44
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	mother = 82
+	diplomacy = 4
+	martial = 3
+	stewardship = 4
+	intrigue = 6
+	learning = 5
+	trait = race_high_elf
+	trait = indulgent_wastrel
+	trait = arbitrary
+	trait = patient
+	disallow_random_traits = yes
+	9981.1.1 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+84 = {
+	name = "Janeda"
+	dynasty = 43
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	diplomacy = 5
+	martial = 7
+	stewardship = 4
+	intrigue = 8
+	learning = 10
+	trait = race_high_elf
+	trait = misguided_warrior
+	trait = mage
+	trait = lustful
+	trait = proud
+	trait = arbitrary
+	disallow_random_traits = yes
+	9753.1.1 = {
+		birth = yes
+	}
+	10020.8.9 = {
+		effect = {
+			remove_trait = race_high_elf
+			add_trait = race_blood_elf
+			set_graphical_culture = blood_elven
+			culture = blood_elven
+		}
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+85 = {
+	name = "Tanaris"
+	dynasty = 46
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	diplomacy = 4
+	martial = 5
+	stewardship = 6
+	intrigue = 5
+	learning = 4
+	trait = race_high_elf
+	trait = misguided_warrior
+	trait = warrior
+	trait = defensive_leader
+	trait = proud
+	trait = arbitrary
+	disallow_random_traits = yes
+	9753.1.1 = {
+		birth = yes
+	}
+	10020.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+86 = {
+	name = "Lireesa"
+	dynasty = 9
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	father = 15
+	diplomacy = 8
+	martial = 10
+	stewardship = 8
+	intrigue = 3
+	learning = 5
+	trait = race_high_elf
+	trait = skilled_tactician
+	trait = ranger
+	trait = fair
+	trait = kind
+	trait = diligent
+	trait = humble
+	trait = brave
+	trait = just
+	trait = light_foot_leader
+	disallow_random_traits = yes
+	dna = 0bfed0g00b0
+	properties = ur000000000000j000
+	8253.1.1 = {
+		birth = yes
+	}
+	10005.1.1 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+87 = {
+	name = "Alleria"
+	dynasty = 9
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	mother = 86
+	diplomacy = 10
+	martial = 10
+	stewardship = 5
+	intrigue = 4
+	learning = 9
+	trait = race_high_elf
+	trait = skilled_tactician
+	trait = ranger
+	trait = fair
+	trait = kind
+	trait = diligent
+	trait = trusting
+	trait = brave
+	trait = just
+	trait = light_foot_leader
+	disallow_random_traits = yes
+	dna = 00iha0g00b0
+	properties = un000000000000j000
+	9968.1.1 = {
+		birth = yes
+	}
+	10006.1.1 = {
+		death = { death_reason = death_missing } # Placeholder while Outland is not a thing
+	}
+}
+
+88 = {
+	name = "Sylvanas"
+	dynasty = 9
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	mother = 86
+	diplomacy = 4
+	martial = 10
+	stewardship = 5
+	intrigue = 7
+	learning = 4
+	trait = race_high_elf
+	trait = elusive_shadow
+	trait = ranger
+	trait = fair
+	trait = quick
+	trait = proud
+	trait = diligent
+	trait = brave
+	trait = just
+	trait = shrewd
+	trait = organizer
+	disallow_random_traits = yes
+	dna = 00fib0g0bb0
+	properties = up000000000000j000
+	9970.1.1 = {
+		birth = yes
+	}
+	10020.1.1 = {
+		effect = { set_graphical_culture = wretched } # The Undead process
+		add_trait = immortal
+		add_trait = schemer
+		add_trait = envious
+		add_trait = ambitious
+		add_trait = cruel
+		add_trait = cynical
+		add_claim = c_windrunner_coast
+		add_claim = c_thas_alah
+		add_claim = d_thas_alah		
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural } 
+	}
+}
+
+89 = {
+	name = "Vereesa"
+	dynasty = 9
+	culture = high_elven
+	religion = sunwell
+	female = yes
+	mother = 86
+	diplomacy = 6
+	martial = 8
+	stewardship = 7
+	intrigue = 6
+	learning = 9
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = ranger
+	trait = fair
+	trait = hunter
+	trait = kind
+	trait = charitable
+	trait = humble
+	trait = content
+	trait = just
+	trait = trusting
+	trait = light_foot_leader
+	disallow_random_traits = yes
+	dna = 00gha0h0bb0
+	properties = uq000000000000u000
+	9974.1.1 = {
+		birth = yes
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural } 
+	}
+}
+
+90 = {
+	name = "Lirath"
+	dynasty = 9
+	culture = high_elven
+	religion = sunwell
+	mother = 86
+	diplomacy = 4
+	martial = 5
+	stewardship = 3
+	intrigue = 2
+	learning = 7
+	trait = race_high_elf
+	trait = naive_appeaser
+	trait = fair
+	trait = chaste
+	trait = kind
+	trait = charitable
+	trait = humble
+	trait = content
+	trait = just
+	trait = trusting
+	trait = shy
+	trait = trusting
+	disallow_random_traits = yes
+	dna = 0cehd0c0000
+	properties = ug000000000000e000
+	9980.1.1 = {
+		birth = yes
+	}
+	10006.1.1 = {
+		death = { death_reason = death_battle } 
+	}
+}
+
+91 = {
+	name = "Ashra"
+	dynasty = 45
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 5
+	martial = 8
+	stewardship = 4
+	intrigue = 3
+	learning = 2
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = duelist
+	trait = proud
+	trait = zealous
+	trait = aggressive_leader
+	disallow_random_traits = yes
+	9740.1.1 = {
+		birth = yes
+	}
+	10020.1.1 = {
+			add_claim = c_underlight_hills
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural } 
+	}
+}
+
+92 = {
+	name = "Dali'nar"
+	dynasty = 47
+	culture = high_elven
+	religion = sunwell
+	diplomacy = 7
+	martial = 5
+	stewardship = 6
+	intrigue = 5
+	learning = 4
+	trait = race_high_elf
+	trait = tough_soldier
+	trait = ranger
+	trait = hunter
+	trait = content
+	trait = narrow_flank_leader
+	disallow_random_traits = yes
+	9740.1.1 = {
+		birth = yes
+	}
+	9980.1.1 = {
+		death = { death_reason = death_natural } 
+	}
+}
+
+93 = {
+	name = "Renthar"
+	dynasty = 47
+	culture = high_elven
+	religion = sunwell
+	father = 92
+	diplomacy = 6
+	martial = 7
+	stewardship = 6
+	intrigue = 4 
+	learning = 5
+	trait = race_high_elf
+	trait = skilled_tactician
+	trait = ranger
+	trait = hunter
+	trait = falconer
+	trait = brave
+	trait = narrow_flank_leader
+	disallow_random_traits = yes
+	dna = 0dggh0g0ca0
+	properties = li00d0000000000000
+	9974.1.1 = {
+		birth = yes
+	}
+	11000.1.1 = {
+		death = { death_reason = death_natural } 
 	}
 }
