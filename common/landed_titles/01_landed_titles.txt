@@ -52,6 +52,7 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_grand_magisters_asylum = {
+					holy_site = demonology
 				}
 				b_observation_grounds = {
 				}
@@ -65,8 +66,6 @@ e_zul_aman = {
 				}
 				b_court_of_style = {
 				}
-				
-				holy_site = demonology
 			}
 			
 			c_suns_reach = { # 2
@@ -94,6 +93,11 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_sunwell_plateau = {
+					holy_site = sunwell
+					holy_site = loa
+					holy_site = hakkar
+					holy_site = burning_legion
+					holy_site = lich_king
 				}
 				b_parhelion_plaza = {
 				}
@@ -107,12 +111,6 @@ e_zul_aman = {
 				}
 				b_archonisus = {
 				}
-				
-				holy_site = sunwell
-				holy_site = loa
-				holy_site = hakkar
-				holy_site = burning_legion
-				holy_site = lich_king
 			}
 		}
 		
@@ -155,6 +153,7 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_court_of_the_sun = {
+					holy_site = sunwell
 				}
 				b_farstriders_square = {
 				}
@@ -168,8 +167,6 @@ e_zul_aman = {
 				}
 				b_skulking_row = {
 				}
-				
-				holy_site = sunwell
 			}
 			
 			c_north_sanctum = { # 6
@@ -366,6 +363,7 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_west_sanctum = {
+					holy_site = sunwell
 				}
 				b_magehill = {
 				}
@@ -379,8 +377,6 @@ e_zul_aman = {
 				}
 				b_leymarch = {
 				}
-				
-				holy_site = sunwell
 			}
 			
 			c_sunsail_anchorage = { # 11
@@ -573,7 +569,9 @@ e_zul_aman = {
 				
 				b_thas_alah = {
 					scourge = "Tower of the Damned" 
-					forsaken = "Tower of the Damned" 
+					forsaken = "Tower of the Damned"
+					
+					holy_site = sunwell					
 				}
 				b_woodheart = {
 					scourge = "Traitor's Eyes"
@@ -641,6 +639,7 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_sanctum_of_the_sun = {
+					holy_site = sunwell
 				}
 				b_an_telas = {
 				}
@@ -654,8 +653,6 @@ e_zul_aman = {
 				}
 				b_highnoon = {
 				}
-				
-				holy_site = sunwell
 			}
 			
 			c_thalassian_pass = { # 24
@@ -676,8 +673,6 @@ e_zul_aman = {
 				}
 				b_thalassian_approach = {
 				}
-				
-				holy_site = sunwell
 			}
 			
 			c_greenwood_cliffs = { # 29
@@ -917,6 +912,7 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_warlords_pyramid = {
+					holy_site = loa
 				}
 				b_amani_pass = {
 				}
@@ -930,8 +926,6 @@ e_zul_aman = {
 				}
 				b_dragonhawk_quarter = {
 				}
-				
-				holy_site = loa
 			}
 			
 			c_spiritcatcher_shore = { # 26
@@ -1170,6 +1164,9 @@ e_thondroril = {
 	capital = 417 # Stratholme
 	culture = lordaeronian
 	
+	scourge = "Plaguelands"
+	forsaken = "Plaguelands"
+	
 	k_eastweald = {
 		color = { 22 24 80 }
 		color2 = { 255 255 255 }
@@ -1177,8 +1174,11 @@ e_thondroril = {
 		
 		capital = 417 # Stratholme
 		
+		scourge = "Eastern Plaguelands"
+		forsaken = "Eastern Plaguelands"
+		
 		d_blackwood = {
-			color = { 99 222 120 }
+			color = { 27 30 117 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -1252,6 +1252,454 @@ e_thondroril = {
 				b_watchstone = {
 				}
 				b_northsilver = {
+				}
+			}
+		}
+		
+		d_tyrs_hand = {
+			color = { 20 29 120 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 43 # Tyr's Hand
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 41 province_id = 43 province_id = 44 province_id = 457 } }
+				}
+			}
+			
+			c_havenshire = { # 41
+				color = { 173 54 91 }
+				color2 = { 255 255 255 }
+				
+				b_havenhall = {
+				}
+				b_havenshire = {
+				}
+				b_lights_point = {
+				}
+				b_eastfarm = {
+				}
+				b_sanctuary_hills = {
+				}
+				b_concord = {
+				}
+				b_redwatch = {
+				}
+			}
+			
+			c_tyrs_hand = { # 43
+				color = { 94 45 143 }
+				color2 = { 255 255 255 }
+				
+				b_tyrs_hand = {
+					holy_site = scarlet
+				}
+				b_scarlet_abbey = {
+				}
+				b_crusader_outpost = {
+				}
+				b_scarlet_front = {
+				}
+				b_eastlight = {
+				}
+				b_zealsword = {
+				}
+				b_faithshield = {
+				}
+			}
+			
+			c_new_avalon = { # 44
+				color = { 179 190 105 }
+				color2 = { 255 255 255 }
+				
+				b_scarlet_hold = {
+				}
+				b_new_avalon = {
+				}
+				b_chapel_of_the_crimson_flame = {
+				}
+				b_kings_harbor = {
+				}
+				b_the_scarlet_overlook = {
+				}
+				b_sanctuary_of_remembrance = {
+				}
+				b_vermillion_holdfast = {
+				}
+			}
+			
+			c_stonespur = { # 457
+				color = { 213 111 159 }
+				color2 = { 255 255 255 }
+				
+				b_thorpes = {
+				}
+				b_ardglass = {
+				}
+				b_granitehands = {
+				}
+				b_gemclod = {
+				}
+				b_kilkenny = {
+				}
+				b_briar_glen = {
+				}
+				b_lowestoft = {
+				}
+			}
+		}
+		
+		d_lights_hope = {
+			color =  { 59 62 105 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			scourge = "Light's End"
+			
+			capital = 45 # Light's Hope
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 45 province_id = 46  province_id = 47 } }
+				}
+			}
+			
+			c_lights_hope = { # 45
+				color = { 116 92 179 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Light's End"
+				
+				b_lights_hope = {
+					scourge = "Light's End"
+					
+					holy_site = holy_light
+					holy_site = argent
+				}
+				b_pestilent_scar = {
+				}
+				b_swanhill = {
+				}
+				b_wakefield = {
+				}
+				b_larkinge = {
+				}
+				b_summerwick = {
+				}
+				b_newcliff = {
+				}
+			}
+			
+			c_corins_crossing = { # 46
+				color = { 91 201 113 }
+				color2 = { 255 255 255 }
+				
+				b_corins_crossing = {
+				}
+				b_bleakglen = {
+				}
+				b_pirn = {
+				}
+				b_aylesbury = {
+				}
+				b_drylight = {
+				}
+				b_arrowside = {
+				}
+				b_farvein = {
+				}
+			}
+			
+			c_lights_march = { # 47
+				color = { 198 99 176 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Deathmarch"
+				
+				b_lights_shield_tower = {
+					scourge = "Heartland Tower"
+				}
+				b_windcross = {
+				}
+				b_sleetwich = {
+				}
+				b_eaglefair = {
+				}
+				b_slyham = {
+				}
+				b_hewe = {
+				}
+				b_fallkirk = {
+				}
+			}
+		}
+		
+		d_darrowshire = {
+			color = { 26 30 85 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 49 # Darrowshire
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 35 province_id = 49 province_id = 50 } }
+				}
+			}
+			
+			c_fungal_vale = { # 35
+				color = { 88 181 94 }
+				color2 = { 255 255 255 }
+				
+				b_sharpton = {
+				}
+				b_mutewatch = {
+				}
+				b_wilderun = {
+				}
+				b_darklight = {
+				}
+				b_glimmermore = {
+				}
+				b_llyn = {
+				}
+				b_bellmoral = {
+				}
+			}
+			
+			c_darrowshire = { # 49
+				color = { 187 79 167 }
+				color2 = { 255 255 255 }
+				
+				b_darrowshire = {
+				}
+				b_marris_stead = {
+				}
+				b_westwend = {
+				}
+				b_berkton = {
+				}
+				b_steepwell = {
+				}
+				b_autumnland = {
+				}
+				b_drypoint = {
+				}
+			}
+			
+			c_crownlands = { # 50
+				color = { 48 173 62 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Infectis Scar"
+				forsaken = "Infectis Scar"
+				
+				b_crown_guard_tower = {
+				}
+				b_lastgrave = {
+				}
+				b_fallcrest = {
+				}
+				b_ozryn = {
+				}
+				b_howe = {
+				}
+				b_cardend = {
+				}
+				b_clacton = {
+				}
+			}
+		}
+		
+		d_wealdpass = {
+			color = { 34 40 132 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 48 # Eastlands
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 48 province_id = 53 } }
+				}
+			}
+			
+			c_eastlands = { # 48
+				color = { 85 167 85 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Death's Step"
+				forsaken = "Death's Step"
+				
+				b_eaststep = {
+					scourge = "Death's Step"
+					forsaken = "Death's Step"
+				}
+				b_undercroft = {
+				}
+				b_longdale = {
+				}
+				b_jedburgh = {
+				}
+				b_lerwick = {
+				}
+				b_mutebell = {
+				}
+				b_lastdrift = {
+				}
+			}
+			
+			c_pineside = { # 53
+				color = { 0 234 255 }
+				color2 = { 255 255 255 }
+				
+				b_draycott = {
+				}
+				b_aempleforth = {
+				}
+				b_farhill = {
+				}
+				b_bareball = {
+				}
+				b_fallhill = {
+				}
+				b_madholde = {
+				}
+				b_hazelhallow = {
+				}
+			}
+		}
+		
+		d_stratholme = {
+			color = { 13 19 104 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 417 # Stratholme
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 32 province_id = 33 province_id = 34 province_id = 417 } }
+				}
+			}
+			
+			c_eastern_stratwood = { # 32
+				color = { 187 193 62 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Naxxramas"
+				forsaken = "Naxxramas"
+				
+				b_earthpoint = {
+					scourge = "Frostwyrm Lair"
+					forsaken = "Frostwyrm Lair"
+				}
+				b_blindhollow = {
+					scourge = "Arachnid Quarter"
+					forsaken = "Arachnid Quarter"
+				}
+				b_autumnspell = {
+					scourge = "Plague Quarter"
+					forsaken = "Plague Quarter"
+				}
+				b_rimemore = {
+					scourge = "Military Quarter"
+					forsaken = "Military Quarter"
+				}
+				b_falsewallow = {
+					scourge = "Construct Quarter"
+					forsaken = "Construct Quarter"
+				}
+				b_dimpost = {
+				}
+				b_honeywich = {
+				}
+			}
+			
+			c_western_stratwood = { # 33
+				color = { 85 48 99 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Plaguewood"
+				forsaken = "Plaguewood"
+				
+				b_stratwood_tower = {
+					scourge = "Plaguewood Tower"
+					forsaken = "Plaguewood Tower"
+				}
+				b_oakenburn = {
+				}
+				b_grasshand = {
+				}
+				b_wildfair = {
+				}
+				b_nearon = {
+				}
+				b_cromer = {
+				}
+				b_runswick = {
+				}
+			}
+			
+			c_westdale = { # 34
+				color = { 190 102 125 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Terrordale"
+				forsaken = "Terrrodale"
+				
+				b_westdale = {
+					scourge = "Terrordale"
+					forsaken = "Terrordale"
+				}
+				b_darkweb_tunnels = {
+					scourge = "Terrorweb Tunnels"
+					forsaken = "Terrorweb Tunnels"
+				}
+				b_silkfell = {
+				}
+				b_frostshield = {
+				}
+				b_madmond = {
+				}
+				b_warlington = {
+				}
+				b_acton = {
+				}
+			}
+			
+			c_stratholme = { # 417
+				color = { 167 187 116 }
+				color2 = { 255 255 255 }
+				
+				b_lights_square = {
+					scourge = "Slaughter Square"
+					forsaken = "Slaughter Square"
+					holy_site = lich_king
+				}
+				b_crusaders_square = {
+					holy_site = scarlet
+					holy_site = argent
+					holy_site = holy_light
+				}
+				b_elders_square = {
+				}
+				b_market_row = {
+				}
+				b_festival_lane = {
+				}
+				b_princely_lane = {
+					scourge = "The Gauntlet"
+					forsaken = "The Gauntlet"
+				}
+				b_stratholme_bastion = {
 				}
 			}
 		}
