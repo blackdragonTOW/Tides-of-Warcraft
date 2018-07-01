@@ -983,6 +983,10 @@
 				trait = blinded
 			}
 		}
+		hide_layers = {
+			# Remove undead eyes
+			16 = { always = yes }
+		}
 	}
 }
 
@@ -2054,9 +2058,9 @@
 		modifier = {
 			factor = 0
 			OR = {
-				trait = undead_scourge
-				trait = undead_generic
-				trait = undead_forsaken
+				trait = race_undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
 			}
 		}
 	}
@@ -2065,9 +2069,9 @@
 		modifier = {
 			factor = 0
 			NOR = {
-				trait = undead_scourge
-				trait = undead_generic
-				trait = undead_forsaken
+				trait = race_undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
 			}
 		}
 	}
@@ -2080,9 +2084,9 @@
 		modifier = {
 			factor = 0
 			OR = {
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 	}
@@ -2090,41 +2094,41 @@
 		factor = 1
 		modifier = {
 			factor = 100
-			trait = undead_generic
+			trait = race_undead_generic
 		}
 		modifier = {
 			factor = 0
 			OR = {
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 	}
-	1 = {
+	2 = {
 		factor = 1
 		modifier = {
 			factor = 100
-			trait = undead_forsaken
+			trait = race_undead_forsaken
 		}
 		modifier = {
 			factor = 0
 			OR = {
-				trait = undead_generic
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_scourge
 			}
 		}
 	}
-	1 = {
+	3 = {
 		factor = 1
 		modifier = {
 			factor = 100
-			trait = undead_scourge
+			trait = race_undead_scourge
 		}
 		modifier = {
 			factor = 0
 			OR = {
-				trait = undead_generic
-				trait = undead_forsaken
+				trait = race_undead_generic
+				trait = race_undead_forsaken
 			}
 		}
 	}
