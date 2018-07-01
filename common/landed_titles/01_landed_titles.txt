@@ -2857,5 +2857,82 @@ e_lordaeron = {
 		culture = lordaeronian
 		
 		capital = 110 # The Sepulcher
+		
+		d_tides_run = {
+			color = { 98 210 201 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 114 # Skitterock
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 112 province_id = 113 province_id = 114 } }
+				}
+			}
+			
+			c_south_tides_run = { # 112
+				color = { 82 43 130 }
+				color2 = { 255 255 255 }
+				
+				b_snakemaw = {
+				}
+				b_oceanburn = {
+				}
+				b_kilforest = {
+				}
+				b_newham = {
+				}
+				b_ilragorn = {
+				}
+				b_carran = {
+				}
+				b_hadleigh = {
+				}
+			}
+			
+			c_north_tides_run = { # 113
+				color = { 123 42 130 }
+				color2 = { 255 255 255 }
+				
+				b_north_tides_beachhead = {
+				}
+				b_north_tides_hollow = {
+				}
+				b_saltbreak = {
+				}
+				b_madview = {
+				}
+				b_direglen = {
+				}
+				b_saltstorm = {
+				}
+				b_dawnacre = {
+				}
+			}
+			
+			c_skitterock = { # 114
+				color = { 160 134 120 }
+				color2 = { 255 255 255 }
+				
+				b_millwallow = {
+					scourge = "Dead Field"
+					forsaken = "Dead Field"
+				}
+				b_skittering_dark = {
+				}
+				b_windmore = {
+				}
+				b_dawntide = {
+				}
+				b_saltbarrow = {
+				}
+				b_sandband = {
+				}
+				b_roguefrost = {
+				}
+			}
+		}
 	}
 }
