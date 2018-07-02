@@ -1,12 +1,12 @@
 elemental_group = {
 	has_coa_on_barony_only = yes
-	graphical_culture = norsegfx
+	graphical_culture = mongolgfx
 	playable = yes
 	ai_fabricate_claims = no
 	hostile_within_group = yes
 	
 	shamanism = {
-		graphical_culture = norsegfx
+		graphical_culture = mongolgfx
 		
 		icon = 21
 		color = { 0.18 0.82 0.35 }
@@ -36,13 +36,14 @@ elemental_group = {
 		intermarry = loa
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = wyrmcult
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
 	}
 	
 	geomancy = {
-		graphical_culture = norsegfx
+		graphical_culture = mongolgfx
 		
 		icon = 22
 		color = { 0.41 0.34 0.04 }
@@ -79,7 +80,7 @@ elemental_group = {
 	}
 	
 	aeromancy = {
-		graphical_culture = norsegfx
+		graphical_culture = mongolgfx
 		
 		icon = 25
 		color = { 0.67 0.86 0.85 }
@@ -116,7 +117,7 @@ elemental_group = {
 	}
 	
 	hydromancy = {
-		graphical_culture = norsegfx
+		graphical_culture = mongolgfx
 		
 		icon = 24
 		color = { 0.19 0.35 0.72 }
@@ -155,7 +156,7 @@ elemental_group = {
 	}
 	
 	pyromancy = {
-		graphical_culture = norsegfx
+		graphical_culture = mongolgfx
 		
 		icon = 23
 		color = { 0.71 0.05 0.05 }
@@ -185,41 +186,6 @@ elemental_group = {
 		intermarry = loa
 		intermarry = mercantilism
 		intermarry = old_ways
-		intermarry = druidism
-		
-		religious_clothing_head = 0 # Placeholder
-		religious_clothing_priest = 0 # Placeholder
-	}
-	
-	old_ways = {
-		graphical_culture = norsegfx
-		
-		icon = 26
-		color = { 0.18 0.82 0.35 }
-		
-		scripture_name = THE_OLD_WAYS
-		high_god_name = { GOD_TYR }
-		god_names = { GOD_TYR GOD_SPIRITS GOD_ANCESTORS GOD_ELEMENTS }
-		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS }
-		
-		
-		ai_fabricate_claims = yes
-		ai_convert_same_group = 0
-		ai_convert_other_group = 0
-		priests_can_marry = yes
-		female_temple_holders = yes
-		priest_title = PRIESTNAME_WITCH
-		priests_can_inherit = yes
-		feminist = yes
-		ai_peaceful = yes
-		
-		intermarry = geomancy
-		intermarry = aeromancy
-		intermarry = hydromancy
-		intermarry = pyromancy
-		intermarry = mercantilism
-		intermarry = holy_light
-		intermarry = argent
 		intermarry = druidism
 		
 		religious_clothing_head = 0 # Placeholder

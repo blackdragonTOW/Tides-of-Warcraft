@@ -30,6 +30,7 @@ arcane_group = {
 		intermarry = sunwell
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = wyrmcult
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -63,6 +64,7 @@ arcane_group = {
 		intermarry = old_ways
 		intermarry = forgotten_shadow
 		intermarry = druidism
+		intermarry = wyrmcult
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -90,6 +92,51 @@ arcane_group = {
 		feminist = yes
 		aggression = 0.5
 		pacifist = yes
+		
+		intermarry = old_ways
+		intermarry = arcane
+		intermarry = sunwell
+		intermarry = shamanism
+		intermarry = loa
+		intermarry = druidism
+		intermarry = elune
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	old_ways = {
+		graphical_culture = norsegfx
+		
+		icon = 26
+		color = { 0.18 0.82 0.35 }
+		
+		scripture_name = THE_OLD_WAYS
+		high_god_name = { GOD_TYR }
+		god_names = { GOD_TYR GOD_SPIRITS GOD_ANCESTORS GOD_ELEMENTS }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS }
+		
+		
+		ai_fabricate_claims = yes
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_WITCH
+		priests_can_inherit = yes
+		feminist = yes
+		ai_peaceful = yes
+		
+		intermarry = geomancy
+		intermarry = aeromancy
+		intermarry = hydromancy
+		intermarry = pyromancy
+		intermarry = mercantilism
+		intermarry = holy_light
+		intermarry = argent
+		intermarry = druidism
+		intermarry = wyrmcult
+		intermarry = arcane
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder

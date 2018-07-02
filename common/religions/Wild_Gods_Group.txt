@@ -38,6 +38,7 @@ wild_gods_group = {
 		intermarry = mercantilism
 		intermarry = forgotten_shadow
 		intermarry = demonology
+		intermarry = wyrmcult
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -74,7 +75,7 @@ wild_gods_group = {
 	}
 	
 	druidism = {
-		graphical_culture = muslimgfx
+		graphical_culture = norsegfx
 		
 		icon = 27
 		color = { 0.45 0.83 0.55 }
@@ -105,8 +106,42 @@ wild_gods_group = {
 		intermarry = holy_light
 		intermarry = argent
 		intermarry = old_ways
-		intermarry = cult_of_the_dreamer
 		intermarry = sunwell
+		intermarry = wyrmcult
+		intermarry = elune
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	elune = {
+		graphical_culture = hindugfx
+		
+		icon = 27
+		color = { 0.45 0.83 0.55 }
+		
+		scripture_name = WORD_OF_ELUNE
+		high_god_name = { GOD_ELUNE }
+		god_names = { GOD_ELUNE GOD_ANCIENTS GOD_MALORNE GOD_CENARIUS }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_ALAKIR GOD_RAGNAROS GOD_NEPTULON GOD_THERAZANE GOD_XAVIUS GOD_AZSHARA }
+		
+		
+		ai_convert_same_group = 1
+		ai_convert_other_group = 1
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_PRIESTESS
+		priests_can_inherit = yes
+		feminist = yes
+		can_hold_temples = yes
+		defensive_attrition = yes
+		ignores_defensive_attrition = yes
+		allow_looting = no
+		
+		intermarry = holy_light
+		intermarry = argent
+		intermarry = wyrmcult
+		intermarry = druidism
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder

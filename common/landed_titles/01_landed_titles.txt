@@ -2934,5 +2934,86 @@ e_lordaeron = {
 				}
 			}
 		}
+		
+		d_the_sepulcher = {
+			color = { 120 213 211 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 110 # The Sepulcher
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 110 province_id = 115 province_id = 116 } }
+				}
+			}
+			
+			c_the_sepulcher = { # 110
+				color = { 147 139 128 }
+				color2 = { 255 255 255 }
+				
+				b_the_sepulcher = {
+				}
+				b_olsens_farthing = {
+				}
+				b_moonhollow = {
+				}
+				b_rosepoint = {
+				}
+				b_whitegrave = {
+				}
+				b_deerhall = {
+				}
+				b_darkhorn = {
+				}
+			}
+			
+			c_the_shining_strand = { # 115
+				color = { 96 60 179 }
+				color2 = { 255 255 255 }
+				
+				scourge = "The Tainted Strand"
+				forsaken = "The Tainted Strand"
+				
+				b_maldens_orchard = {
+				}
+				b_ivar_fields = {
+				}
+				b_penketh = {
+				}
+				b_erostey = {
+				}
+				b_everton = {
+				}
+				b_accreton = {
+				}
+				b_lindow = {
+				}
+			}
+			
+			c_lakeside_fields = { # 116
+				color = { 198 184 77 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Decreipt Fields"
+				forsaken = "Decreipt Fields"
+				
+				b_decreipt_ferry = {
+				}
+				b_deep_elem = {
+				}
+				b_cliffshield = {
+				}
+				b_fairdrift = {
+				}
+				b_dimharbor = {
+				}
+				b_dogmaw = {
+				}
+				b_lastdale = {
+				}
+			}
+		}
 	}
 }
