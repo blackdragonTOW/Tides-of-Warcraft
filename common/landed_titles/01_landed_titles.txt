@@ -2227,7 +2227,6 @@ e_northeron = {
 					forsaken = "Scholomance"
 					
 					holy_site = lich_king
-					holy_site = forgotten_shadow
 				}
 				b_todmorden = {
 				}
@@ -2980,7 +2979,7 @@ e_lordaeron = {
 				}
 				b_ivar_fields = {
 				}
-				b_penketh = {
+				b_valgans_field = {
 				}
 				b_erostey = {
 				}
@@ -3014,6 +3013,256 @@ e_lordaeron = {
 				b_lastdale = {
 				}
 			}
+		}
+	}
+}
+
+e_gilneas = {
+	color = { 64 58 50 }
+	color2 = { 255 255 255 }
+	culture = gilnean
+	
+	capital = 122 # Gilneas
+	
+	k_gilneas = {
+		color = { 71 69 65 }
+		color2 = { 255 255 255 }
+		culture = gilnean
+		
+		capital = 122 # Gilneas
+	
+		d_southpine = {
+			color = { 137 124 108 }
+			color2 = { 255 255 255 }
+			culture = gilnean
+			
+			capital = 1178 # Amberdale
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 117 province_id = 118 province_id = 119 } }
+				}
+			}
+			
+			c_amberdale = { # 117
+				color = { 0 181 99 }
+				color2 = { 255 255 255 }
+				
+				b_ambermill = {
+				}
+				b_deadhollow = {
+				}
+				b_gaval_moch = {
+				}
+				b_bellcrest = {
+				}
+				b_ambervalley = {
+				}
+				b_deepborough = {
+				}
+				b_smoothgate = {
+				}
+			}
+			
+			c_ashen_stretch = { # 118
+				color = { 201 77 99 }
+				color2 = { 255 255 255 }
+				
+				b_berens_peril = {
+				}
+				b_sleeksummit = {
+				}
+				b_deerpost = {
+				}
+				b_silentscar = {
+				}
+				b_blindfell = {
+				}
+				b_shroudville = {
+				}
+				b_ironcross = {
+				}
+			}
+			
+			c_woodsheart = { # 119
+				color = { 113 159 94 }
+				color2 = { 255 255 255 }
+				
+				b_tranmere = {
+				}
+				b_duskhill = {
+				}
+				b_dustview = {
+				}
+				b_moonkeep = {
+				}
+				b_cliffvalley = {
+				}
+				b_starhill = {
+				}
+				b_riverwood = {
+				}
+			}
+		}
+	
+		d_shadowfang = {
+			color = { 92 84 72 }
+			color2 = { 255 255 255 }
+			culture = gilnean
+			
+			capital = 193 # Shadowfang
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 111 province_id = 193 } }
+				}
+			}
+			
+			c_pyrewood = { # 111
+				color = { 181 122 91 }
+				color2 = { 255 255 255 }
+				
+				b_pyrewood = {
+				}
+				b_hollowdale = {
+				}
+				b_mightmire = {
+				}
+				b_fairmire = {
+				}
+				b_thornbarrow = {
+				}
+				b_grayfront = {
+				}
+				b_flamefield = {
+				}
+			}
+			
+			c_shadowfang = { # 193
+				color = { 82 207 91 }
+				color2 = { 255 255 255 }
+				
+				b_shadowfang = {
+					holy_site = demonology
+					holy_site = forgotten_shadow
+				}
+				b_darkhall = {
+				}
+				b_bronzepoint = {
+				}
+				b_shadowland = {
+				}
+				b_ebonshear = {
+				}
+				b_rustchill = {
+				}
+				b_shadesummit = {
+				}
+			}
+		}
+	}
+}
+
+e_arathor = {
+	color = { 255 255 84 }
+	color2 = { 255 255 255 }
+	culture = stromic
+	
+	capital = 161 # Stromgarde
+	
+	k_dalaran = {
+		color = { 136 69 186 }
+		color2 = { 255 255 255 }
+		culture = dalaranian
+		
+		capital = 84 # Dalaran
+		
+		d_dalaran = {
+			color = { 154 78 212 }
+			color2 = { 255 255 255 }
+			culture = dalaranian
+			
+			capital = 84 # Dalaran
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 84 province_id = 85 province_id = 86 } }
+				}
+			}
+			
+			c_dalaran = { # 84
+				color = { 153 184 111 }
+				color2 = { 255 255 255 }
+				
+				b_violet_citadel = {
+					holy_site = burning_legion
+					holy_site = arcane
+				}
+				b_magus_commerce_exchange = {
+				}
+				b_violet_hold = {
+					holy_site = demonology
+				}
+				b_krasus_landing = {
+				}
+				b_silver_enclave = {
+				}
+				b_sunreavers_sanctuary = {
+				}
+				b_the_underbelly = {
+				}
+			}
+			
+			c_lordamere_fields = { # 85
+				color = { 184 111 252 }
+				color2 = { 255 255 255 }
+				
+				b_lordamere_internment_camp = {
+				}
+				b_clearview = {
+				}
+				b_redfront = {
+				}
+				b_slydale = {
+				}
+				b_deadmouth = {
+				}
+				b_stagfell = {
+				}
+				b_curserest = {
+				}
+			}
+			
+			c_alterac_foothills = { # 86
+				color = { 108 196 88 }
+				color2 = { 255 255 255 }
+				
+				b_arrowfrost = {
+				}
+				b_newfort = {
+				}
+				b_basinfrost = {
+				}
+				b_dustfield = {
+				}
+				b_bronzecliff = {
+				}
+				b_tradewich = {
+				}
+				b_flathollow = {
+				}
+			}
+		}
+		
+		d_lordamere = {
+			color = { 155 96 199 }
+			color2 = { 255 255 255 }
+			culture = dalaranian
+			
+			capital = 87 # Fenris Island
 		}
 	}
 }
