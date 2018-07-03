@@ -3162,6 +3162,419 @@ e_gilneas = {
 				}
 			}
 		}
+		
+		d_northgate = {
+			color = { 91 89 84 }
+			color2 = { 255 255 255 }
+			culture = gilnean
+			
+			capital = 124 # Northgate Woods
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 109 province_id = 123 province_id = 124 } }
+				}
+			}
+			
+			c_greymane_wall = { # 109
+				color = { 31 128 159 }
+				color2 = { 255 255 255 }
+				
+				b_graymane_wall = {
+				}
+				b_silverwatch = {
+				}
+				b_mightband = {
+				}
+				b_duskguard = {
+				}
+				b_ravenstorm = {
+				}
+				b_wolfmaw = {
+				}
+				b_direbourne = {
+				}
+			}
+			
+			c_northern_headlands = { # 123
+				color = { 170 179 68 }
+				color2 = { 255 255 255 }
+				
+				b_evervale = {
+				}
+				b_northfield = {
+				}
+				b_wolflight = {
+				}
+				b_ravenbasin = {
+				}
+				b_fairhedge = {
+				}
+				b_northbank = {
+				}
+				b_northcliff = {
+				}
+			}
+			
+			c_northgate_woods = { # 124
+				color = { 94 96 179 }
+				color2 = { 255 255 255 }
+				
+				b_crowley_estate = {
+				}
+				b_foxfield = {
+				}
+				b_pondbush = {
+				}
+				b_whitedge = {
+				}
+				b_irondale = {
+				}
+				b_wheatmoor = {
+				}
+				b_shadebush = {
+				}
+			}
+		}
+		
+		d_emberstone = {
+			color = { 107 102 88 }
+			color2 = { 255 255 255 }
+			culture = gilnean
+			
+			capital = 125 # Emberstone
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 108 province_id = 125 } }
+				}
+			}
+			
+			c_greypeak = { # 108
+				color = { 97 85 99 }
+				color2 = { 255 255 255 }
+				
+				b_havenborough = {
+				}
+				b_highhollow = {
+				}
+				b_woodwell = {
+				}
+				b_esterden = {
+				}
+				b_goldhaven = {
+				}
+				b_strongrock = {
+				}
+				b_delley = {
+				}
+			}
+			
+			c_emberstone = { # 125
+				color = { 91 184 45 }
+				color2 = { 255 255 255 }
+				
+				b_emberstone = {
+				}
+				b_livery_outpost = {
+				}
+				b_bluevale = {
+				}
+				b_moorville = {
+				}
+				b_marblerose = {
+				}
+				b_shoreley = {
+				}
+				b_eriwald = {
+				}
+			}
+		}
+		
+		d_tempests_reach = {
+			color = { 95 90 75 }
+			color2 = { 255 255 255 }
+			culture = gilnean
+			
+			capital = 126 # Tempest's Reach
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 126 province_id = 127 province_id = 128 } }
+				}
+			}
+			
+			c_tempests_reach = { # 126
+				color = { 145 164 136 }
+				color2 = { 255 255 255 }
+				
+				b_tempests_reach = {
+				}
+				b_newhall = {
+				}
+				b_foghill = {
+				}
+				b_stormgrass = {
+				}
+				b_highmere = {
+				}
+				b_wolfbourne = {
+				}
+				b_roseville = {
+				}
+			}
+			
+			c_the_blackwald = { # 127
+				color = { 201 94 179 }
+				color2 = { 255 255 255 }
+				
+				kaldorei = "Tal'Doren"
+				
+				b_taldoren = {
+					holy_site = old_ways
+					holy_site = druidism
+				}
+				b_rygnas_lair = {
+				}
+				b_bradshaw_mill = {
+				}
+				b_witchwood = {
+				}
+				b_bymill = {
+				}
+				b_aelholt = {
+				}
+				b_clearshade = {
+				}
+			}
+			
+			c_stormglen = { # 128
+				color = { 113 173 102 }
+				color2 = { 255 255 255 }
+				
+				b_stormglen = {
+				}
+				b_southcliff = {
+				}
+				b_newhurst = {
+				}
+				b_icefair = {
+				}
+				b_highfalcon = {
+				}
+				b_millville = {
+				}
+				b_linhaven = {
+				}
+			}
+		}
+		
+		d_duskmist_shore = {
+			color = { 67 62 50 }
+			color2 = { 255 255 255 }
+			culture = gilnean
+			
+			capital = 129 # Duskvale
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 121 province_id = 129 province_id = 130 } }
+				}
+			}
+			
+			c_havenswood = { # 121
+				color = { 82 159 122 }
+				color2 = { 255 255 255 }
+				
+				b_havenswood = {
+				}
+				b_whitemont = {
+				}
+				b_lightspring = {
+				}
+				b_millhedge = {
+				}
+				b_drachill = {
+				}
+				b_raylea = {
+				}
+				b_greenburn = {
+				}
+			}
+			
+			c_duskvale = { # 129
+				color = { 210 105 181 }
+				color2 = { 255 255 255 }
+				
+				b_duskhaven = {
+				}
+				b_queens_gate = {
+				}
+				b_kings_gate = {
+				}
+				b_allen_fields = {
+				}
+				b_hammond_fields = {
+				}
+				b_hayward_fishing_grounds = {
+				}
+				b_fallice = {
+				}
+			}
+			
+			c_roaring_cliffs = { # 130
+				color = { 125 201 207 }
+				color2 = { 255 255 255 }
+				
+				b_koroths_den = {
+				}
+				b_black_castle = {
+				}
+				b_ironham = {
+				}
+				b_stoneley = {
+				}
+				b_blackspring = {
+				}
+				b_pinemoor = {
+				}
+				b_coachpass = {
+				}
+			}
+		}
+		
+		d_gilneas = {
+			color = { 84 75 52 }
+			color2 = { 255 255 255 }
+			culture = gilnean
+			
+			capital = 122 # Gilneas
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 122 province_id = 131 province_id = 132 } }
+				}
+			}
+			
+			c_gilneas = { # 122
+				color = { 130 45 255 }
+				color2 = { 255 255 255 }
+				
+				b_greymane_court = {
+				}
+				b_merchants_square = {
+				}
+				b_cathedral_square = {
+				}
+				b_military_district = {
+				}
+				b_gaffers_ward = {
+				}
+				b_northgate_crossing = {
+				}
+				b_gilnean_shipyards = {
+				}
+			}
+			
+			c_wolfridge = { # 131
+				color = { 164 96 79 }
+				color2 = { 255 255 255 }
+				
+				b_greymane_manor = {
+				}
+				b_osthill = {
+				}
+				b_swynshore = {
+				}
+				b_wildecourt = {
+				}
+				b_newhaven = {
+				}
+				b_beechedge = {
+				}
+				b_aldmist = {
+				}
+			}
+			
+			c_grimdale = { # 132
+				color = { 156 173 90 }
+				color2 = { 255 255 255 }
+				
+				b_aderics_repose = {
+				}
+				b_keel_harbor = {
+				}
+				b_lorpond = {
+				}
+				b_whitebeach = {
+				}
+				b_janham = {
+				}
+				b_ironash = {
+				}
+				b_lightshade = {
+				}
+			}
+		}
+		
+		d_cape_of_gilneas = {
+			color = { 125 117 94 }
+			color2 = { 255 255 255 }
+			culture = gilnean
+			
+			capital = 133 # Western Headlands
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 120 province_id = 133 } }
+				}
+			}
+			
+			c_the_bite = { # 120
+				color = { 189 153 239 }
+				color2 = { 255 255 255 }
+				
+				b_galewatch = {
+				}
+				b_raymount = {
+				}
+				b_goldview = {
+				}
+				b_fairiron = {
+				}
+				b_highsea = {
+				}
+				b_blueland = {
+				}
+				b_silvercrest = {
+				}
+			}
+			c_western_headlands = { # 133
+				color = { 78 71 99 }
+				color2 = { 255 255 255 }
+				
+				b_coldwheat = {
+				}
+				b_fogland = {
+				}
+				b_prybourne = {
+				}
+				b_silverwitch = {
+				}
+				b_westcrag = {
+				}
+				b_ostwynne = {
+				}
+				b_winterwind = {
+				}
+			}
+		}
 	}
 }
 
@@ -3263,6 +3676,73 @@ e_arathor = {
 			culture = dalaranian
 			
 			capital = 87 # Fenris Island
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 74 province_id = 75 province_id = 86 } }
+				}
+			}
+			
+			c_dandreds_fold = { # 74
+				color = { 184 82 102 }
+				color2 = { 255 255 255 }
+				
+				b_dandreds_fold = {
+				}
+				b_knightbrook = {
+				}
+				b_heartpost = {
+				}
+				b_pinewall = {
+				}
+				b_mutemeadow = {
+				}
+				b_basinwallow = {
+				}
+				b_ghostspell = {
+				}
+			}
+			
+			c_misty_shore = { # 75
+				color = { 184 181 159 }
+				color2 = { 255 255 255 }
+				
+				b_fairfell = {
+				}
+				b_grimewood = {
+				}
+				b_emberburn = {
+				}
+				b_oldharbor = {
+				}
+				b_cloudcliff = {
+				}
+				b_spiritmond = {
+				}
+				b_timbervale = {
+				}
+			}
+			
+			c_fenris_island = { # 87
+				color = { 213 68 88 }
+				color2 = { 255 255 255 }
+				
+				b_fenris_keep = {
+				}
+				b_dawning_islands = {
+				}
+				b_cross_island = {
+				}
+				b_lakecross = {
+				}
+				b_windpost = {
+				}
+				b_steamgulch = {
+				}
+				b_farhelm = {
+				}
+			}
 		}
 	}
 }
