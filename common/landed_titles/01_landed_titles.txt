@@ -3576,6 +3576,120 @@ e_gilneas = {
 			}
 		}
 	}
+	
+	k_kul_tiras = {
+		color = { 122 209 72 }
+		color2 = { 255 255 255 }
+		culture = gilnean
+		
+		drust = "Drustvar"
+		
+		capital = 142 # Kul Tiras
+		
+		d_stormlands = {
+			color = { 125 230 64 }
+			color2 = { 255 255 255 }
+			culture = tirasian
+			
+			capital = 197 # Shrine of the Storm
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 139 province_id = 141 province_id = 197 } }
+				}
+			}
+			
+			c_cape_of_kul_tiras = { # 139
+				color = { 114 56 68 }
+				color2 = { 255 255 255 }
+				
+				b_sagehold = {
+				}
+				b_the_clearcut = {
+				}
+				b_drisburg = {
+				}
+				b_warfang_hold = {
+				}
+				b_tidemallow = {
+				}
+				b_fairsea = {
+				}
+				b_redwinter = {
+				}
+			}
+			
+			c_brinelands = { # 141
+				color = { 33 211 255 }
+				color2 = { 255 255 255 }
+				
+				b_brineworks = {
+				}
+				b_brighton = {
+				}
+				b_marshdell = {
+				}
+				b_aldmerrow = {
+				}
+				b_bayhollow = {
+				}
+				b_whitefox = {
+				}
+				b_waterley = {
+				}
+			}
+			
+			c_shrine_of_the_storm = { # 197
+				color = { 77 82 82 }
+				color2 = { 255 255 255 }
+				
+				b_stormsong_estate = {
+				}
+				b_shrine_of_the_storm = {
+					holy_site = azshara
+				}
+				b_tidewater_sanctum = {
+					holy_site = hydromancy
+				}
+				b_fonts_of_cleansing = {
+				}
+				b_seahollow = {
+				}
+				b_fathomcall = {
+				}
+				b_lorhaven = {
+				}
+			}
+		}
+		
+		d_stormsong = {
+			color = { 135 220 86 }
+			color2 = { 255 255 255 }
+			culture = tirasian
+			
+			capital = 140 # Windswept Coast
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 140 province_id = 467 province_id = 469 } }
+				}
+			}
+			
+			c_windswept_coast = { # 140
+				color = { 125 147 153 }
+				color2 = { 255 255 255 }
+				
+				b_fort_daelin = {
+				}
+				
+				b_fates_end = {
+				}
+				
+			}
+		}
+	}
 }
 
 e_arathor = {
