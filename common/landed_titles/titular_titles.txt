@@ -31,6 +31,7 @@ e_horde = {
 }
 k_silver_hand = { # For the Betrayer bookmark
 	color = { 208 245 255 }
+	culture = lordaeronian
 	short_name = yes
 	title = "HIHGLORD"
 	title_female = "HIHGLADY"
@@ -41,6 +42,7 @@ k_silver_hand = { # For the Betrayer bookmark
 }
 d_argent_dawn = {
 	color = { 255 254 239 }
+	culture = lordaeronian
 	short_name = yes
 	title = "HIHGLORD"
 	title_female = "HIHGLADY"
@@ -51,6 +53,7 @@ d_argent_dawn = {
 }
 k_scarlet_crusade = {
 	color = { 172 33 33 }
+	culture = lordaeronian
 	short_name = yes
 	title = "GRAND_CRUSADER"
 	title_female = "GRAND_CRUSADER"
@@ -61,6 +64,7 @@ k_scarlet_crusade = {
 }
 k_forsaken = {
 	color = { 99 15 140 }
+	culture = forsaken
 	short_name = yes
 	title = "DARK_LORD"
 	title_female = "DARK_LADY"
@@ -70,14 +74,18 @@ k_forsaken = {
 }
 e_nazjatar = {
 	color = { 24 195 183 }
+	culture = naga
+	religion = azshara
 	title = "KING"
 	title_female = "QUEEN"
 	primary = yes
 	landless = yes
+	controls_religion = yes
 	dynasty_title_names = no
 }
 k_alliance_resistance = {
 	color = { 50 50 200 }
+	culture = lordaeronian
 	short_name = yes
 	title = "GRAND_MARSHAL"
 	title_female = "GRAND_MARSHAL"
@@ -88,6 +96,7 @@ k_alliance_resistance = {
 }
 d_sunfury_expedition = {
 	color = { 200 100 100 }
+	culture = blood_elven
 	short_name = yes
 	title = "PRINCE" # It will be destroyed if Kael dies
 	title_female = "PRINCESS"
@@ -98,6 +107,7 @@ d_sunfury_expedition = {
 }
 d_wardens = {
 	color = { 140 23 140 }
+	culture = night_elven
 	short_name = yes
 	title = "COMMANDER"
 	title_female = "COMMANDER"
@@ -118,6 +128,7 @@ k_illidari = {
 }
 k_syndicate = {
 	color = { 240 136 0 }
+	culture = alteraci
 	short_name = yes
 	title = "LORD"
 	title_female = "LADY"
@@ -127,9 +138,99 @@ k_syndicate = {
 }
 k_northgate_rebellion = {
 	color = { 100 104 98 }
+	culture = gilnean
 	short_name = yes
 	title = "LORD"
 	title_female = "LADY"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+e_red_dragonflight = {
+	color = { 236 45 45 }
+	culture = red_dragonflight
+	religion = wyrmcult
+	short_name = yes
+	title = "ASPECT"
+	title_female = "ASPECT"
+	foa = "ASPECT"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+d_baradins_wardens = {
+	color = { 94 55 21 }
+	culture = stromic
+	short_name = yes
+	title = "COMMANDER"
+	title_female = "COMMANDER"
+	foa = "COMMANDER"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+k_blackrock_clan = {
+	color = { 131 0 0 }
+	culture = blackrock
+	short_name = yes
+	title = "WARLORD"
+	title_female = "WARLORD"
+	foa = "WARLORD"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+e_dark_horde = {
+	color = { 100 0 0 }
+	short_name = yes
+	title = "WARCHIEF"
+	title_female = "WARCHIEF"
+	foa = "WARCHIEF"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+d_stormpike_guard = {
+	color = { 115 28 28 }
+	color2 = { 255 255 255 }
+	culture = bronzebeard
+	short_name = yes
+	title = "GENERAL"
+	title_female = "GENERAL"
+	foa = "GENERAL"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+k_frostwolf_clan = {
+	color = { 93 144 202 }
+	culture = frostwolf
+	short_name = yes
+	title = "WARLORD"
+	title_female = "WARLORD"
+	foa = "WARLORD"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+k_warsong_clan = {
+	color = { 203 60 60 }
+	culture = warsong
+	short_name = yes
+	title = "WARLORD"
+	title_female = "WARLORD"
+	foa = "WARLORD"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+k_shattered_hand_clan = {
+	color = { 211 211 211 }
+	culture = shattered_hand
+	short_name = yes
+	title = "WARLORD"
+	title_female = "WARLORD"
+	foa = "WARLORD"
 	primary = yes
 	landless = yes
 	dynasty_title_names = no
