@@ -3683,10 +3683,382 @@ e_gilneas = {
 				
 				b_fort_daelin = {
 				}
-				
+				b_griffinshore = {
+				}
 				b_fates_end = {
 				}
+				b_dorgate = {
+				}
+				b_mallowmont = {
+				}
+				b_fairpond = {
+				}
+				b_blackland = {
+				}
+			}
+			
+			c_brennadam = { # 467
+				color = { 163 135 195 }
+				color2 = { 255 255 255 }
 				
+				b_brennadam = {
+				}
+				b_deadwash = {
+				}
+				b_briarback_kraul = {
+				}
+				b_irondell = {
+				}
+				b_wildeash = {
+				}
+				b_southfalcon = {
+				}
+				b_esterwynne = {
+				}
+			}
+			
+			c_last_watch = { # 469
+				color = { 201 119 72 }
+				color2 = { 255 255 255 }
+				
+				b_blueglass = {
+				}
+				b_graymeadow = {
+				}
+				b_dragonhollow = {
+				}
+				b_linden = {
+				}
+				b_whitecliff = {
+				}
+				b_valburn = {
+				}
+				b_courtville = {
+				}
+			}
+		}
+		
+		d_kul_tiras = {
+			color = { 102 172 61 }
+			color2 = { 255 255 255 }
+			culture = tirasian
+			
+			capital = 142 # Kul Tiras
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 142 province_id = 143 province_id = 468 } }
+				}
+			}
+			
+			c_kul_tiras = { # 142
+				color = { 119 57 71 }
+				color2 = { 255 255 255 }
+				
+				b_proudmoore_keep = {
+				}
+				b_tradewind_markets = {
+				}
+				b_the_outroad = {
+				}
+				b_stormsong_monastery = {
+					holy_site = hydromancy
+				}
+				b_norwington_estate = {
+				}
+				b_hatherford = {
+				}
+				b_bridgeport = {
+				}
+			}
+			
+			c_mariners_shore = { # 143
+				color = { 130 71 201 }
+				color2 = { 255 255 255 }
+				
+				b_freehold = {
+				}
+				b_smugglers_run = {
+				}
+				b_ring_of_booty = {
+				}
+				b_kennings_lodge = {
+				}
+				b_vigil_hill = {
+				}
+				b_plunder_harbor = {
+				}
+				b_corsairs_crag = {
+				}
+			}
+			
+			c_tol_dagor = { # 468
+				color = { 81 204 195 }
+				color2 = { 255 255 255 }
+				
+				b_overseers_summit = {
+				}
+				b_overseers_redoubt = {
+				}
+				b_karybis = {
+				}
+				b_scillus = {
+				}
+				b_the_brig = {
+				}
+				b_sodden_depths = {
+				}
+				b_the_drain = {
+				}
+			}
+		}
+		
+		d_drustvar = {
+			color = { 112 148 91 }
+			color2 = { 255 255 255 }
+			culture = tirasian
+			
+			capital = 145 # Old Drustlands
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 145 province_id = 147 province_id = 466 } }
+				}
+			}
+			
+			c_old_drustlands = { # 145
+				color = { 113 130 179 }
+				color2 = { 255 255 255 }
+				
+				b_gol_koval = {
+				}
+				b_gol_osigr = {
+				}
+				b_gol_var = {
+				}
+				b_forgotten_lodge = {
+				}
+				b_swiftwind_post = {
+				}
+				b_hangmans_point = {
+				}
+				b_mudfisher_cove = {
+				}
+			}
+			
+			c_iceveil = { # 147
+				color = { 59 32 40 }
+				color2 = { 255 255 255 }
+				
+				b_aroms_stand = {
+				}
+				b_aroms_crossing = {
+				}
+				b_vadekius_rest = {
+				}
+				b_krazzelfrazz = {
+				}
+				b_elderstone = {
+				}
+				b_watchmans_rise = {
+				}
+				b_pikemans_ridge = {
+				}
+			}
+			
+			c_barrowknoll = { # 466
+				color = { 81 103 195 }
+				color2 = { 255 255 255 }
+				
+				b_barrowknoll = {
+				}
+				b_fallhaven = {
+				}
+				b_fletchers_hollow = {
+				}
+				b_carvers_harbor = {
+				}
+				b_barbthorn_ridge = {
+				}
+				b_glenbrook = {
+				}
+				b_hunters_run = {
+				}
+			}
+		}
+		
+		d_whitegrove = {
+			color = { 85 134 57 }
+			color2 = { 255 255 255 }
+			culture = tirasian
+			
+			capital = 465 # Whitegrove
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 144 province_id = 146 province_id = 465 } }
+				}
+			}
+			
+			c_crimson_forest = { # 144
+				color = { 207 215 99 }
+				color2 = { 255 255 255 }
+				
+				b_falconhurst = {
+					drust = "Gol Inath"
+				}
+				b_wayward_thicket = {
+				}
+				b_watchers_wood = {
+				}
+				b_ashenwood = {
+				}
+				b_dorbarrow = {
+				}
+				b_redmoor = {
+				}
+				b_redcoast = {
+				}
+			}
+			
+			c_shrouded_foothills = { # 146
+				color = { 187 102 125 }
+				color2 = { 255 255 255 }
+				
+				b_corlain = {
+				}
+				b_anyport = {
+				}
+				b_upper_corlain = {
+				}
+				b_autumnvale = {
+				}
+				b_bleak_hill = {
+				}
+				b_snowmelt = {
+				}
+				b_rayton = {
+				}
+			}
+			
+			c_whitegrove = { # 465
+				color = { 168 173 43 }
+				color2 = { 255 255 255 }
+				
+				b_waycrest_estate = {
+				}
+				b_whitegrove = {
+				}
+				b_western_watch = {
+				}
+				b_north_pass = {
+				}
+				b_wildemeadow = {
+				}
+				b_dracnesse = {
+				}
+				b_witchill = {
+				}
+			}
+		}
+		
+		d_baradin_bay = {
+			color = { 142 210 102 }
+			color2 = { 255 255 255 }
+			culture = tirasian
+			
+			capital = 135 # Tol Barad
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 134 province_id = 135 province_id = 136 province_id = 137 } }
+				}
+			}
+			
+			c_zul_dare = { # 134
+				color = { 150 113 145 }
+				color2 = { 255 255 255 }
+				
+				b_zul_dare = {
+				}
+				b_byice = {
+				}
+				b_swynhill = {
+				}
+				b_landmount = {
+				}
+				b_baycrag = {
+				}
+				b_magehedge = {
+				}
+				b_vertville = {
+				}
+			}
+			
+			c_tol_barad = { # 135
+				color = { 96 179 99 }
+				color2 = { 255 255 255 }
+				
+				b_baradin_hold = {
+					holy_site = arcane
+				}
+				b_rustberg = {
+				}
+				b_farson_hold = {
+				}
+				b_slagworks = {
+				}
+				b_largos_overlook = {
+				}
+				b_the_darkwood = {
+				}
+				b_wellson_shipyard = {
+				}
+			}
+			
+			c_crestfall = { # 136
+				color = { 210 62 99 }
+				color2 = { 255 255 255 }
+				
+				b_crestfall = {
+					red_dragonflight = "Alexstrasza's Cave"
+				}
+				b_griffinhedge = {
+				}
+				b_wildedge = {
+				}
+				b_linshore = {
+				}
+				b_insul = {
+				}
+				b_cragborough = {
+				}
+				b_mistcoast = {
+				}
+			}
+			
+			c_hasic = { # 137
+				color = { 201 201 136 }
+				color2 = { 255 255 255 }
+				
+				b_hasic = {
+				}
+				b_fallwallow = {
+				}
+				b_valorcove = {
+				}
+				b_baradins_rest = {
+				}
+				b_baygarde = {
+				}
+				b_valbury = {
+				}
+				b_malmouth = {
+				}
 			}
 		}
 	}
@@ -3858,5 +4230,407 @@ e_arathor = {
 				}
 			}
 		}
+	}
+	
+	k_alterac = {
+		color = { 255 171 0 }
+		color2 = { 255 255 255 }
+		culture = alteraci
+		
+		capital = 72 # Alterac
+		
+		d_alterac_valley = {
+			color = { 225 77 14 }
+			color2 = { 255 255 255 }
+			culture = winterax
+			
+			capital = 71 # Southern Alterac Valley
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 70 province_id = 71 province_id = 452 } }
+				}
+			}
+			
+			c_northern_alterac_valley = { # 70
+				color = { 96 71 196 }
+				color2 = { 255 255 255 }
+				
+				b_dun_baldar = {
+				}
+				b_stormpike_camp = {
+				}
+				b_icewing_bunker = {
+				}
+				b_stonehearth_bunker = {
+				}
+				b_stormpike_graveyard = {
+				}
+				b_icewing_valley = {
+				}
+				b_irondeep_caves = {
+				}
+			}
+			
+			c_southern_alterac_valley = { # 71
+				color = { 145 170 74 }
+				color2 = { 255 255 255 }
+				
+				b_frostwolf_hold = {
+				}
+				b_frostwolf_village = {
+				}
+				b_iceblood_garrison = {
+				}
+				b_tower_point = {
+				}
+				b_rock_of_durotan = {
+				}
+				b_wildpaw_waterfall = {
+				}
+				b_coldtooth_caves = {
+				}
+			}
+			
+			c_winterax_hold = { # 452
+				color = { 230 77 142 }
+				color2 = { 255 255 255 }
+				
+				b_winterax_hold = {
+				}
+				b_field_of_strife = {
+				}
+				b_wildpaw_ridge = {
+				}
+				b_snowfall_bluff = {
+				}
+				b_frost_dagger_pass = {
+				}
+				b_icelords_rise = {
+				}
+				b_ancients_march = {
+				}
+			}
+		}
+		
+		d_chillwind = {
+			color = { 189 112 79 }
+			color2 = { 255 255 255 }
+			culture = winterax
+			
+			capital = 80 # Chillwind Valley
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 80 province_id = 453 } }
+				}
+			}
+			
+			c_chillwind_valley = { # 80
+				color = { 119 179 113 }
+				color2 = { 255 255 255 }
+				
+				b_chillwind_point = {
+				}
+				b_wellnesse = {
+				}
+				b_verton = {
+				}
+				b_woodmont = {
+				}
+				b_pryborough = {
+				}
+				b_swynview = {
+				}
+				b_cliffbush = {
+				}
+			}
+			
+			c_chillrise = { # 453
+				color = { 91 187 167 }
+				color2 = { 255 255 255 }
+				
+				b_ravenholdt = {
+				}
+				b_highdell = {
+				}
+				b_violetwinter = {
+				}
+				b_starryholt = {
+				}
+				b_linfort = {
+				}
+				b_greenley = {
+				}
+				b_glasston = {
+				}
+			}
+		}
+		
+		d_edge_of_alterac = {
+			color = { 164 61 16 }
+			color2 = { 255 255 255 }
+			culture = alteraci
+			
+			capital = 82 # Rosengarde
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 81 province_id = 82 } }
+				}
+			}
+			
+			c_alteracs_fingers = { # 81
+				color = { 221 62 162 }
+				color2 = { 255 255 255 }
+				
+				b_soferas_naze = {
+				}
+				b_corrahns_dagger = {
+				}
+				b_the_headland = {
+				}
+				b_gavins_naze = {
+				}
+				b_esterwilde = {
+				}
+				b_stonesummer = {
+				}
+				b_aelvale = {
+				}
+			}
+			
+			c_rosengarde = { # 82
+				color = { 130 128 91 }
+				color2 = { 255 255 255 }
+				
+				b_rosengarde = {
+				}
+				b_cleardale = {
+				}
+				b_mallowbeech = {
+				}
+				b_magescorch = {
+				}
+				b_fieldhurst = {
+				}
+				b_shadowness = {
+				}
+				b_bridgedell = {
+				}
+			}
+		}
+		
+		d_strahnbrad = {
+			color = { 236 150 113 }
+			color2 = { 255 255 255 }
+			culture = alteraci
+			
+			capital = 61 # Strahnbrad
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 60 province_id = 61 province_id = 79 } }
+				}
+			}
+			
+			c_the_uplands = { # 60
+				color = { 77 218 91 }
+				color2 = { 255 255 255 }
+				
+				b_westmoor = {
+				}
+				b_rockmead = {
+				}
+				b_westerhill = {
+				}
+				b_wildhall = {
+				}
+				b_oldcastle = {
+				}
+				b_osthollow = {
+				}
+				b_whitedale = {
+				}
+			}
+			
+			c_strahnbrad = { # 61
+				color = { 193 71 17 }
+				color2 = { 255 255 255 }
+				
+				b_strahnbrad = {
+				}
+				b_whitesummer = {
+				}
+				b_westapple = {
+				}
+				b_morbush = {
+				}
+				b_winteredge = {
+				}
+				b_byfar = {
+				}
+				b_stonewick = {
+				}
+			}
+			
+			c_rivermark = { # 79
+				color = { 184 128 187 }
+				color2 = { 255 255 255 }
+				
+				b_rivermark = {
+				}
+				b_valmont = {
+				}
+				b_deepacre = {
+				}
+				b_violetwald = {
+				}
+				b_rockden = {
+				}
+				b_bysage = {
+				}
+				b_ostmount = {
+				}
+			}
+		}
+		
+		d_alterac_heights = {
+			color = { 189 94 54 }
+			color2 = { 255 255 255 }
+			culture = alteraci
+			
+			capital = 77 # Red Cavery
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 77 province_id = 83 } }
+				}
+			}
+			
+			c_red_cavery = { # 77
+				color = { 85 170 170 }
+				color2 = { 255 255 255 }
+			
+				b_mordis_estate = {
+				}
+				b_red_cavery = {
+				}
+				b_rosemead = {
+				}
+				b_oldbank = {
+				}
+				b_clearcastle = {
+				}
+				b_prylyn = {
+				}
+				b_winterton = {
+				}
+			}
+			
+			c_halewatch = { # 83
+				color = { 61 79 67 }
+				color2 = { 255 255 255 }
+				
+				b_halewatch = {
+				}
+				b_north_overlook = {
+				}
+				b_whitelight = {
+				}
+				b_brightcliff = {
+				}
+				b_redden = {
+				}
+				b_ironton = {
+				}
+				b_bluesliver = {
+				}
+			}
+		}
+		
+		d_alterac = {
+			color = { 255 145 98 }
+			color2 = { 255 255 255 }
+			culture = alteraci
+			
+			capital = 72 # Alterac
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 72 province_id = 73 province_id = 76 } }
+				}
+			}
+			
+			c_alterac = { # 72
+				color = { 142 88 105 }
+				color2 = { 255 255 255 }
+				
+				b_keep_at_alterac = {
+				}
+				b_high_market = {
+				}
+				b_lightsquare = {
+				}
+				b_sloperow = {
+				}
+				b_orange_hold = {
+				}
+				b_crowhaven = {
+				}
+				b_watchpeak = {
+				}
+			}
+			
+			c_growless_pass = { # 73
+				color = { 85 164 162 }
+				color2 = { 255 255 255 }
+				
+				b_growless_cave = {
+				}
+				b_edgedale = {
+				}
+				b_snowcourt = {
+				}
+				b_wintergate = {
+				}
+				b_rayacre = {
+				}
+				b_stonehedge = {
+				}
+				b_orham = {
+				}
+			}
+			
+			c_crushridge_heights = { # 76
+				color = { 190 136 99 }
+				color2 = { 255 255 255 }
+				
+				b_crushridge_hold = {
+				}
+				b_gallows_corner = {
+				}
+				b_esterpine = {
+				}
+				b_westerdell = {
+				}
+				b_snowkeep = {
+				}
+				b_ironfog = {
+				}
+				b_grayden = {
+				}
+			}
+		}
+	}
+	
+	k_stromgarde = {
+	
 	}
 }
