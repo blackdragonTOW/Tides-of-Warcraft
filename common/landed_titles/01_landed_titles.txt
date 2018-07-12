@@ -4352,6 +4352,8 @@ e_arathor = {
 				color = { 91 187 167 }
 				color2 = { 255 255 255 }
 				
+				alteraci = "Ravenholdt"
+				
 				b_ravenholdt = {
 				}
 				b_highdell = {
@@ -4625,6 +4627,219 @@ e_arathor = {
 				b_ironfog = {
 				}
 				b_grayden = {
+				}
+			}
+		}
+	}
+	
+	k_hillsbrad = {
+		color = { 220 211 153 }
+		color2 = { 255 255 255 }
+		culture = alteraci # it's going to be a mess
+		
+		capital = 152 # Hillsbrad
+		
+		d_hillsbrad = {
+			color = { 238 226 154 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 152 # Hillsbrad
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 138 province_id = 152 province_id = 153 } }
+				}
+			}
+			
+			c_purgation_isle = { # 138
+				color = { 218 113 136 }
+				color2 = { 255 255 255 }
+				
+				b_purgation_keep = {
+				}
+				b_strongsage = {
+				}
+				b_dornesse = {
+				}
+				b_dracisle = {
+				}
+				b_woodwind = {
+				}
+				b_redhall = {
+				}
+				b_coldholt = {
+				}
+			}
+			
+			c_hillsbrad = { # 152
+				color = { 164 139 173 }
+				color2 = { 255 255 255 }
+				
+				b_hillsbrad_tower = {
+				}
+				b_hillsbrad = {
+				}
+				b_estermere = {
+				}
+				b_clearapple = {
+				}
+				b_starrygate = {
+				}
+				b_eritown = {
+				}
+				b_fallvale = {
+				}
+			}
+			
+			c_southpoint = { # 153
+				color = { 99 159 113 }
+				color2 = { 255 255 255 }
+				
+				b_azurelode = {
+				}
+				b_prybarrow = {
+				}
+				b_strongwinter = {
+				}
+				b_aelpond = {
+				}
+				b_eribush = {
+				}
+				b_deepshore = {
+				}
+				b_brookmount = {
+				}
+			}
+		}
+		
+		d_southshore = {
+			color = { 250 237 147 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			
+			capital = 154 # Southshore
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 154 province_id = 155 } }
+				}
+			}
+			
+			c_southshore = { # 154
+				color = { 164 101 193 }
+				color2 = { 255 255 255 }
+				
+				b_southshore = {
+				}
+				b_stonemere = {
+				}
+				b_meadowhome = {
+				}
+				b_wavebourne = {
+				}
+				b_aelwell = {
+				}
+				b_rosecoast = {
+				}
+				b_newbeach = {
+				}
+			}
+			
+			c_baywatch = { # 155
+				color = { 96 184 145 }
+				color2 = { 255 255 255 }
+				
+				b_springford = {
+				}
+				b_bushedge = {
+				}
+				b_raybarrow = {
+				}
+				b_oldborough = {
+				}
+				b_sagegate = {
+				}
+				b_merriford = {
+				}
+				b_byfox = {
+				}
+			}
+		}
+		
+		d_tarren_mill = {
+			color = { 233 225 168 }
+			color2 = { 255 255 255 }
+			culture = alteraci
+			
+			capital = 151 # Tarren Mill
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 151 province_id = 156 province_id = 157 } }
+				}
+			}
+			
+			c_tarren_mill = { # 151
+				color = { 40 164 102 }
+				color2 = { 255 255 255 }
+				
+				b_tarren_mill = {
+				}
+				b_wayedge = {
+				}
+				b_morlyn = {
+				}
+				b_westwell = {
+				}
+				b_blackgrass = {
+				}
+				b_auldoak = {
+				}
+				b_magemill = {
+				}
+			}
+			
+			c_darrow_hill = { # 156 
+				color = { 179 108 130 }
+				color2 = { 255 255 255 }
+				
+				b_darrow_hill = {
+				}
+				b_aretains_camp = {
+				}
+				b_deadly_waters = {
+				}
+				b_eagles_eyrie = {
+				}
+				b_flowermarch = {
+				}
+				b_summermount = {
+				}
+				b_wolfhaven = {
+				}
+			}
+			
+			c_marchford = { # 157
+				color = { 0 0 167 }
+				color2 = { 255 255 255 }
+				
+				b_marchford = {
+				}
+				b_dracfield = {
+				}
+				b_lormark = {
+				}
+				b_woodcastle = {
+				}
+				b_grasshollow = {
+				}
+				b_goldrun = {
+				}
+				b_greendoe = {
 				}
 			}
 		}
