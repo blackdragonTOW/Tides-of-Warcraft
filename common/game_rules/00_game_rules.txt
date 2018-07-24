@@ -53,7 +53,7 @@ three_hammers_events = {
 	}
 }
 
-first_war_events = {
+fall_of_sw_events = {
 	name = "RULE_1W_EVENTS"
 	group = "RULE_GROUP_TOW"
 	option = {
@@ -73,7 +73,7 @@ first_war_events = {
 	}
 }
 
-second_war_events = {
+tides_of_war_events = {
 	name = "RULE_2W_EVENTS"
 	group = "RULE_GROUP_TOW"
 	option = {
@@ -93,27 +93,47 @@ second_war_events = {
 	}
 }
 
-third_war_events = {
-	name = "RULE_3W_EVENTS"
+lord_of_the_clans_events = {
+	name = "RULE_LOTC_EVENTS"
 	group = "RULE_GROUP_TOW"
 	option = {
 		name = default
 		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_3W_EVENTS_DEFAULT_DESC"
+		desc = "RULE_LOTC_EVENTS_DEFAULT_DESC"
 	}
 	option = {
 		name = alternate
 		text = "RULE_OPTION_ALT_HISTORY"
-		desc = "RULE_3W_EVENTS_ALT_HISTORY_DESC"
+		desc = "RULE_LOTC_EVENTS_ALT_HISTORY_DESC"
 	}
 	option = {
 		name = off
 		text = "RULE_OPTION_OFF"
-		desc = "RULE_3W_EVENTS_OFF_DESC"
+		desc = "RULE_LOTC_EVENTS_OFF_DESC"
 	}
 }
 
-wow_events = {
+betrayer_events = {
+	name = "RULE_TFT_EVENTS"
+	group = "RULE_GROUP_TOW"
+	option = {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_TFT_EVENTS_DEFAULT_DESC"
+	}
+	option = {
+		name = alternate
+		text = "RULE_OPTION_ALT_HISTORY"
+		desc = "RULE_TFT_EVENTS_ALT_HISTORY_DESC"
+	}
+	option = {
+		name = off
+		text = "RULE_OPTION_OFF"
+		desc = "RULE_TFT_EVENTS_OFF_DESC"
+	}
+}
+
+drums_of_war_events = {
 	name = "RULE_WOW_EVENTS"
 	group = "RULE_GROUP_TOW"
 	option = {
@@ -217,6 +237,46 @@ nomad_pillage_vassal_holdings = {
 		name = off
 		text = "RULE_OPTION_OFF"
 		desc = "RULE_NOMAD_PILLAGE_VASSAL_HOLDINGS_OFF_DESC"
+	}
+}
+
+shattered_world = {
+	name = "RULE_SHATTERED_WORLD"
+	group = "RULE_GROUP_TOW"
+	option = {
+		name = off
+		text = "RULE_OPTION_OFF"
+		desc = "RULE_SHATTERED_WORLD_OFF_DESC"
+	}
+	option = {
+		name = on
+		text = "RULE_OPTION_ON"
+		desc = "RULE_SHATTERED_WORLD_ON_DESC"
+	}
+}
+
+class_frequency = {
+	name = "RULE_CLASS_FREQUENCY"
+	group = "RULE_GROUP_TOW"
+	option = {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_CLASSFREQ_DEFAULT_DESC"
+	}
+	option = {
+		name = less
+		text = "RULE_OPTION_LESS"
+		desc = "RULE_CLASSFREQ_LESS_DESC"
+	}
+	option = {
+		name = more
+		text = "RULE_OPTION_MORE"
+		desc = "RULE_CLASSFREQ_MORE_DESC"
+	}
+	option = {
+		name = everyone
+		text = "RULE_OPTION_EVERYONE"
+		desc = "RULE_CLASSFREQ_EVERYONE_DESC"
 	}
 }
 

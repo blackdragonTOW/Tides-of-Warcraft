@@ -589,7 +589,8 @@ e_zul_aman = {
 					scourge = "Tower of the Damned" 
 					forsaken = "Tower of the Damned"
 					
-					holy_site = sunwell					
+					holy_site = sunwell
+					holy_site = druidism
 				}
 				b_woodheart = {
 					scourge = "Traitor's Eyes"
@@ -3833,6 +3834,7 @@ e_gilneas = {
 				color2 = { 255 255 255 }
 				
 				b_gol_koval = {
+					holy_site = druidism
 				}
 				b_gol_osigr = {
 				}
@@ -4843,9 +4845,381 @@ e_arathor = {
 				}
 			}
 		}
+		
+		d_durnholde = {
+			color = { 216 212 179 }
+			color2 = { 255 255 255 }
+			culture = lordaeronian
+			
+			capital = 159 # Durnholde
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 150 province_id = 159 province_id = 160 } }
+				}
+			}
+			
+			c_dun_garok = { # 150
+				color = { 116 31 77 }
+				color2 = { 255 255 255 }
+				
+				b_dun_garok = {
+				}
+				b_nethander_fields = {
+				}
+				b_wallstrand = {
+				}
+				b_strongcrest = {
+				}
+				b_bysilver = {
+				}
+				b_orston = {
+				}
+				b_cordale = {
+				}
+			}
+			
+			c_durnholde = { # 159
+				color = { 210 74 147 }
+				color2 = { 255 255 255 }
+				
+				b_durnholde = {
+				}
+				b_blackwell = {
+				}
+				b_norgate = {
+				}
+				b_eriacre = {
+				}
+				b_oldhaven = {
+				}
+				b_falconcliff = {
+				}
+				b_eastgrass = {
+				}
+			}
+			
+			c_eastpoint = { # 160
+				color = { 111 176 176 }
+				color2 = { 255 255 255 }
+				
+				b_eastpoint_tower = {
+				}
+				b_arathi_approach = {
+				}
+				b_wallshadow = {
+				}
+				b_vertshade = {
+				}
+				b_goldgrass = {
+				}
+				b_blackdale = {
+				}
+				b_irongate = {
+				}
+			}
+		}
 	}
 	
 	k_stromgarde = {
-	
+		color = { 202 44 44 }
+		color2 = { 255 255 255 }
+		culture = stromic
+		
+		arathi = "Strom"
+		hillsbradan = "Strom"
+		silverpiner = "Strom"
+		tirisfalen = "Strom"
+		
+		capital = 161 # Stromgarde
+		
+		d_stromgarde = {
+			color = { 215 43 43 }
+			color2 = { 255 255 255 }
+			culture = stromic
+			
+			arathi = "Strom"
+			hillsbradan = "Strom"
+			silverpiner = "Strom"
+			tirisfalen = "Strom"
+			
+			capital = 161 # Stromgarde
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 161 province_id = 162 province_id = 451 } }
+				}
+			}
+			
+			c_stromgarde = { # 161
+				color = { 170 111 79 }
+				color2 = { 255 255 255 }
+				
+				arathi = "Strom"
+				hillsbradan = "Strom"
+				silverpiner = "Strom"
+				tirisfalen = "Strom"
+				
+				b_stromgarde_keep = {
+					holy_site = old_ways
+				}
+				b_lower_stromgarde = {
+					arathi = "Lower Strom"
+					hillsbradan = "Lower Strom"
+					silverpiner = "Lower Strom"
+					tirisfalen = "Lower Strom"
+				}
+				b_trollbane_sanctum = {
+				}
+				b_tower_of_arathor = {
+				}
+				b_fistkeep = {
+				}
+				b_upper_stromgarde = {
+					arathi = "Upper Strom"
+					hillsbradan = "Upper Strom"
+					silverpiner = "Upper Strom"
+					tirisfalen = "Upper Strom"
+				}
+				b_stromic_docks = {
+				}
+			}
+			
+			c_faldirs_cove = { # 162
+				color = { 77 164 164 }
+				color2 = { 255 255 255 }
+				
+				b_faldirs_cove = {
+				}
+				b_faldirs_tunnel = {
+				}
+				b_circle_of_inner_binding = {
+				}
+				b_stonesea = {
+				}
+				b_stromedge = {
+				}
+				b_spellbeach = {
+				}
+				b_snakewater = {
+				}
+			}
+			
+			c_barrier_cliffs = { # 451
+				color = { 215 230 96 }
+				color2 = { 255 255 255 }
+				
+				b_springfalcon = {
+				}
+				b_wayhill = {
+				}
+				b_foxvale = {
+				}
+				b_newley = {
+				}
+				b_woodhollow = {
+				}
+				b_ashton = {
+				}
+				b_estercrest = {
+				}
+			}
+		}
+		
+		d_shield_of_arathor = {
+			color = { 198 65 65 }
+			color2 = { 255 255 255 }
+			culture = stromic
+			
+			capital = 173 # Scionmark
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 173 province_id = 174 province_id = 176 } }
+				}
+			}
+			
+			c_scionmark = { # 173
+				color = { 179 48 102 }
+				color2 = { 255 255 255 }
+				
+				frostwolf = "Ar'gorok"
+				blackrock = "Ar'gorok"
+				bleeding_hollow = "Ar'gorok"
+				shattered_hand = "Ar'gorok"
+				shadowmoon = "Ar'gorok"
+				thunderlord = "Ar'gorok"
+				lightnings_blade = "Ar'gorok"
+				dragonmaw = "Ar'gorok"
+				bladewind = "Ar'gorok"
+				warsong = "Ar'gorok"
+				redwalker = "Ar'gorok"
+				burning_blade = "Ar'gorok"
+				whiteclaw = "Ar'gorok"
+				twilights_hammer = "Ar'gorok"
+				dark_scar = "Ar'gorok"
+				bonechewer = "Ar'gorok"
+				laughing_skull = "Ar'gorok"
+				flowerpicker = "Ar'gorok"
+				mok_nathal = "Ar'gorok"
+				mag_har = "Ar'gorok"
+				fel_orc = "Ar'gorok"
+				
+				b_northfold_manor = {
+					frostwolf = "Ar'gorok"
+					blackrock = "Ar'gorok"
+					bleeding_hollow = "Ar'gorok"
+					shattered_hand = "Ar'gorok"
+					shadowmoon = "Ar'gorok"
+					thunderlord = "Ar'gorok"
+					lightnings_blade = "Ar'gorok"
+					dragonmaw = "Ar'gorok"
+					bladewind = "Ar'gorok"
+					warsong = "Ar'gorok"
+					redwalker = "Ar'gorok"
+					burning_blade = "Ar'gorok"
+					whiteclaw = "Ar'gorok"
+					twilights_hammer = "Ar'gorok"
+					dark_scar = "Ar'gorok"
+					bonechewer = "Ar'gorok"
+					laughing_skull = "Ar'gorok"
+					flowerpicker = "Ar'gorok"
+					mok_nathal = "Ar'gorok"
+					mag_har = "Ar'gorok"
+					fel_orc = "Ar'gorok"
+				}
+				b_delland = {
+				}
+				b_fairfalcon = {
+				}
+				b_grayhome = {
+				}
+				b_valhollow = {
+				}
+				b_hedgecliff = {
+				}
+				b_redash = {
+				}
+			}
+			
+			c_westvigil = { # 174
+				color = { 113 145 71 }
+				color2 = { 255 255 255 }
+				
+				forsaken = "Galen's Fall"
+				
+				b_westvigil = {
+					forsaken = "Galen's Fall"
+				}
+				b_newstead = {
+				}
+				b_circle_of_west_binding = {
+				}
+				b_higholt = {
+				}
+				b_edgeburn = {
+				}
+				b_wallstone = {
+				}
+				b_marblewolf = {
+				}
+			}
+			
+			c_the_aegis = { # 176
+				color = { 169 182 231 }
+				color2 = { 255 255 255 }
+				
+				boulderfist = "Boulder'gor"
+				highmaul = "Boulder'gor"
+				crushridge = "Boulder'gor"
+				deadwind = "Boulder'gor"
+				dreadmaul = "Boulder'gor"
+				dunemaul = "Boulder'gor"
+				dustbelcher = "Boulder'gor"
+				gordok = "Boulder'gor"
+				gordunni = "Boulder'gor"
+				mo_grosh = "Boulder'gor"
+				mosh_ogg = "Boulder'gor"
+				spirestone = "Boulder'gor"
+				splinterfist = "Boulder'gor"
+				stonemaul = "Boulder'gor"
+				urok = "Boulder'gor"
+				bladespire = "Boulder'gor"
+				bloodmaul = "Boulder'gor"
+				warmaul = "Boulder'gor"
+				torchbelcher = "Boulder'gor"
+				tonma = "Boulder'gor"
+				stonegullet = "Boulder'gor"
+				ogrila = "Boulder'gor"
+				firegut = "Boulder'gor"
+				angorosh = "Boulder'gor"
+				
+				b_high_perch = {
+					boulderfist = "Boulder'gor"
+					highmaul = "Boulder'gor"
+					crushridge = "Boulder'gor"
+					deadwind = "Boulder'gor"
+					dreadmaul = "Boulder'gor"
+					dunemaul = "Boulder'gor"
+					dustbelcher = "Boulder'gor"
+					gordok = "Boulder'gor"
+					gordunni = "Boulder'gor"
+					mo_grosh = "Boulder'gor"
+					mosh_ogg = "Boulder'gor"
+					spirestone = "Boulder'gor"
+					splinterfist = "Boulder'gor"
+					stonemaul = "Boulder'gor"
+					urok = "Boulder'gor"
+					bladespire = "Boulder'gor"
+					bloodmaul = "Boulder'gor"
+					warmaul = "Boulder'gor"
+					torchbelcher = "Boulder'gor"
+					tonma = "Boulder'gor"
+					stonegullet = "Boulder'gor"
+					ogrila = "Boulder'gor"
+					firegut = "Boulder'gor"
+					angorosh = "Boulder'gor"
+				}
+				b_silversage = {
+				}
+				b_lorwald = {
+				}
+				b_icesage = {
+				}
+				b_oldgold = {
+				}
+				b_blueviolet = {
+				}
+				b_starryhall = {
+				}
+			}
+		}
+		
+		d_refuge = {
+			color = { 199 34 34 }
+			color2 = { 255 255 255 }
+			culture = stromic
+			
+			capital = 164 # Refuge
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 164 province_id = 175 province_id = 177 } }
+				}
+			}
+			
+			c_refuge = { # 164
+				color = { 190 77 170 }
+				color2 = { 255 255 255 }
+				
+				c_refuge_pointe = {
+				}
+				
+			}
+		}
 	}
 }
