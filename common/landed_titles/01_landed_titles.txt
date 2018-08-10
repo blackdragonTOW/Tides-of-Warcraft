@@ -4995,7 +4995,7 @@ e_arathor = {
 				}
 				b_faldirs_tunnel = {
 				}
-				b_circle_of_inner_binding = {
+				b_cliffpass = {
 				}
 				b_stonesea = {
 				}
@@ -5216,9 +5216,417 @@ e_arathor = {
 				color = { 190 77 170 }
 				color2 = { 255 255 255 }
 				
-				c_refuge_pointe = {
+				b_refuge_pointe = {
 				}
+				b_cragmill = {
+				}
+				b_circle_of_outer_binding = {
+				}
+				b_janley = {
+				}
+				b_highwick = {
+				}
+				b_graywyn = {
+				}
+				b_vallton = {
+				}
+			}
+			
+			c_northfist = { # 175
+				color = { 103 119 82 }
+				color2 = { 255 255 255 }
 				
+				b_dabyres_farms = {
+				}
+				b_circle_of_east_binding = {
+					holy_site = geomancy
+				}
+				b_baleness = {
+				}
+				b_aramont = {
+				}
+				b_loton = {
+				}
+				b_boldhome = {
+				}
+				b_newcrag = {
+				}
+			}
+			
+			c_strongmarch = { # 177
+				color = { 193 108 94 }
+				color2 = { 255 255 255 }
+				
+				b_acrehome = {
+				}
+				b_dourhall = {
+				}
+				b_oakedge = {
+				}
+				b_dirtcliff = {
+				}
+				b_oldward = {
+				}
+				b_oxgrove = {
+				}
+				b_nevershield = {
+				}
+			}
+		}
+		
+		d_midland = {
+			color = { 149 37 37 }
+			color2 = { 255 255 255 }
+			culture = stromic
+			
+			capital = 171 # Midland
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 170 province_id = 171 province_id = 172 } }
+				}
+			}
+			
+			c_bearded_crossing = { # 170
+				color = { 82 122 68 }
+				color2 = { 255 255 255 }
+				
+				b_thandol_outpost = {
+				}
+				b_southand = {
+				}
+				b_grassfield = {
+				}
+				b_bridgescar = {
+				}
+				b_dogstall = {
+				}
+				b_highcliff = {
+				}
+				b_direland = {
+				}
+			}
+			
+			c_midland = { # 171
+				color = { 150 116 139 }
+				color2 = { 255 255 255 }
+				
+				b_snakekeep = {
+				}
+				b_strompoint = {
+				}
+				b_last_front = {
+				}
+				b_limeglen = {
+				}
+				b_cloudvale = {
+				}
+				b_oldcrag = {
+				}
+				b_earthcross = {
+				}
+			}
+			
+			c_bindstone = { # 172
+				color = { 91 227 102 }
+				color2 = { 255 255 255 }
+				
+				b_dimshear = {
+				}
+				b_circle_of_inner_binding = {
+					holy_site = geomancy
+				}
+				b_crowpost = {
+				}
+				b_ambercairn = {
+				}
+				b_mutescar = {
+				}
+				b_knighthaven = {
+				}
+				b_dawngrave = {
+				}
+			}
+		}
+		
+		d_arathi_basin = {
+			color = { 194 43 43 }
+			color2 = { 255 255 255 }
+			culture = stromic
+			
+			capital = 165 # Western Arathi Basin
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 78 province_id = 165 province_id = 166 } }
+				}
+			}
+			
+			c_hunters_stretch = { # 78
+				color = { 189 255 48 }
+				color2 = { 255 255 255 }
+				
+				b_huntsmark = {
+					frostwolf = "Go'shek"
+					blackrock = "Go'shek"
+					bleeding_hollow = "Go'shek"
+					shattered_hand = "Go'shek"
+					shadowmoon = "Go'shek"
+					thunderlord = "Go'shek"
+					lightnings_blade = "Go'shek"
+					dragonmaw = "Go'shek"
+					bladewind = "Go'shek"
+					warsong = "Go'shek"
+					redwalker = "Go'shek"
+					burning_blade = "Go'shek"
+					whiteclaw = "Go'shek"
+					twilights_hammer = "Go'shek"
+					dark_scar = "Go'shek"
+					bonechewer = "Go'shek"
+					laughing_skull = "Go'shek"
+					flowerpicker = "Go'shek"
+					mok_nathal = "Go'shek"
+					mag_har = "Go'shek"
+					fel_orc = "Go'shek"
+				}
+				b_rockmaw = {
+				}
+				b_starcrest = {
+				}
+				b_clayspire = {
+				}
+				b_whitebrush = {
+				}
+				b_redvale = {
+				}
+				b_greencrest = {
+				}
+			}
+			
+			c_western_arathi_basin = { # 165
+				color = { 66 156 136 }
+				color2 = { 255 255 255 }
+				
+				b_trollbane_hall = {
+				}
+				b_riverhallow = {
+				}
+				b_deepvale = {
+				}
+				b_fareach = {
+				}
+				b_thornpond = {
+				}
+				b_rivergate = {
+				}
+				b_lastward = {
+				}
+			}
+			
+			c_eastern_arathi_basin = { # 166
+				color = { 122 85 181 }
+				color2 = { 255 255 255 }
+				
+				b_defilers_den = {
+				}
+				b_dryhost = {
+				}
+				b_millbreach = {
+				}
+				b_embervalley = {
+				}
+				b_dustburn = {
+				}
+				b_snakehill = {
+				}
+				b_quickview = {
+				}
+			}
+		}
+		d_barkskin = {
+			color = { 130 10 10 }
+			color2 = { 255 255 255 }
+			culture = stromic
+			
+			capital = 167 # Barkskin Grove
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 167 province_id = 169 province_id = 192 } }
+				}
+			}
+			
+			c_barkskin_grove = { # 167
+				color = { 122 207 150 }
+				color2 = { 255 255 255 }
+				
+				b_witherbark_village = {
+				}
+				b_mava_jul = {
+				}
+				b_juwanax = {
+				}
+				b_rassajal = {
+				}
+				b_vajindul = {
+				}
+				b_tulan = {
+				}
+				b_spiritpond = {
+				}
+			}
+			
+			c_bouldercoast = { # 169
+				color = { 147 179 187 }
+				color2 = { 255 255 255 }
+				
+				b_boulderfist_hall = {
+				}
+				b_newcall = {
+				}
+				b_greenhelm = {
+				}
+				b_cursehorn = {
+				}
+				b_grimcoast = {
+				}
+				b_boulderguard = {
+				}
+				b_pebblestrand = {
+				}
+			}
+			
+			c_hollowpoint = { # 192
+				color = { 176 119 116 }
+				color2 = { 255 255 255 }
+				
+				b_snake_hollow = {
+				}
+				b_vol_alor = {
+				}
+				b_rok_watha = {
+				}
+				b_lo_daia = {
+				}
+				b_witherperch = {
+				}
+				b_rockspeak = {
+				}
+				b_rockhollow = {
+				}
+			}
+		}
+		
+		d_hammerfall = {
+			color = { 200 55 55 }
+			color2 = { 255 255 255 }
+			culture = warsong
+			
+			capital = 163 # Hammerfall
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 149 province_id = 163 } }
+				}
+			}
+			
+			c_honors_rest = { # 149
+				color = { 218 182 197 }
+				color2 = { 255 25 255 }
+				
+				b_honors_rest = {
+				}
+				b_gul_varok = {
+				}
+				b_grimroar = {
+				}
+				b_houndskull = {
+				}
+				b_chainbreak = {
+				}
+				b_honorcrest = {
+				}
+				b_orcblood = {
+				}
+			}
+			
+			c_hammerfall = { # 163
+				color = { 82 164 77 }
+				color2 = { 255 255 255 }
+				
+				b_hammerfall = {
+				}
+				b_wolfpelt = {
+				}
+				b_brittlevale = {
+				}
+				b_wolfacre = {
+				}
+				b_falsemaw = {
+				}
+				b_ironscar = {
+				}
+				b_edgehand = {
+				}
+			}
+		}
+		
+		d_arathi_coast = {
+			color = { 155 32 32 }
+			color2 = { 255 255 255 }
+			culture = stromic
+			
+			capital = 168 # Dustdigger Coast
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 168 province_id = 463 } }
+				}
+			}
+			
+			c_dustdigger_coast = { # 168
+				color = { 247 108 91 }
+				color2 = { 255 255 255 }
+				
+				b_drywhisker_gorge = {
+				}
+				b_snowmelt = {
+				}
+				b_drywell = {
+				}
+				b_blackstrand = {
+				}
+				b_steepside = {
+				}
+				b_hollowband = {
+				}
+				b_deadfall = {
+				}
+			}
+			
+			c_lonely_shore = { # 463
+				color = { 91 82 62 }
+				color2 = { 255 255 255 }
+				
+				b_secluded_fields = {
+				}
+				b_silverstall = {
+				}
+				b_stonetown = {
+				}
+				b_mythrun = {
+				}
+				b_mudmeadow = {
+				}
+				b_idefell = {
+				}
+				b_midside = {
+				}
 			}
 		}
 	}
