@@ -57,7 +57,7 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
-		hair_color_index = 9
+		hair_color_index = 8
 		hair_color = { # dark, base, highlight
 			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
 			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
@@ -65,7 +65,7 @@ spriteTypes = {
 			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
 		}
 
-		eye_color_index = 8
+		eye_color_index = 9
 		eye_color = {
 			{ 81 97 44 }
 			{ 150 90 55 }
@@ -143,7 +143,7 @@ spriteTypes = {
 			"GFX_human_female_nose:d3:h"
 			"GFX_human_female_hair_mid:p1:e:y"
 			"GFX_human_female_undead_cheeks:d4:h"
-			"GFX_human_female_undead_eyes:p15"
+			"GFX_human_female_undead_eyes:p16"
 			"GFX_human_female_blinded_eyes:p10"
 			"GFX_human_female_undead_chin:d1:h"
 			"GFX_human_female_mouth:d2:h"
@@ -158,7 +158,7 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
-		hair_color_index = 9
+		hair_color_index = 8
 		hair_color = { # dark, base, highlight
 			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
 			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
@@ -166,7 +166,7 @@ spriteTypes = {
 			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
 		}
 
-		eye_color_index = 8
+		eye_color_index = 9
 		eye_color = {
 			{ 81 97 44 }
 			{ 150 90 55 }
@@ -182,7 +182,7 @@ spriteTypes = {
 
 	## Elven Male
 
-		spriteType = {
+	spriteType = {
 		name = "GFX_elven_male_undead"
 		texturefile = "gfx\\characters\\elven_male\\elven_male_undead.dds"
 		noOfFrames = 1
@@ -242,7 +242,7 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
-		hair_color_index = 9
+		hair_color_index = 8
 		hair_color = { # dark, base, highlight
 			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
 			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
@@ -250,7 +250,7 @@ spriteTypes = {
 			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
 		}
 
-		eye_color_index = 8
+		eye_color_index = 9
 		eye_color = {
 			{ 81 97 44 }
 			{ 150 90 55 }
@@ -335,7 +335,7 @@ spriteTypes = {
 			"GFX_player_overlay:p11"
 		}
 
-		hair_color_index = 9
+		hair_color_index = 8
 		hair_color = { # dark, base, highlight
 			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
 			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
@@ -343,7 +343,2088 @@ spriteTypes = {
 			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
 		}
 
-		eye_color_index = 8
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Fel Elven Male
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h_elf.lua"
+		name = "PORTRAIT_undead_felven_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				OR = {
+					portrait_has_trait = race_high_elf
+					portrait_has_trait = race_blood_elf
+					portrait_has_trait = race_wretched
+				}
+				portrait_has_trait = felsworn
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = {
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_elven_male_undead:p2:h"
+			"GFX_elven_male_cheeks:d4:h"
+			"GFX_elven_male_mouth:d2:h"
+			"GFX_felven_male_mouth:d2"
+			"GFX_elven_male_chin:d1:h"
+			"GFX_elven_male_nose:d3:h"
+			"GFX_elven_male_forehead:d10:h"
+			"GFX_felven_male_runes:d5"
+			"GFX_elven_male_clothes:p14"
+			"GFX_elven_male_scars:p7:y"
+			"GFX_elven_male_reddots:p8"
+			"GFX_elven_male_boils:p9"
+			"GFX_elven_male_undead_eyes:p16"
+			"GFX_elven_male_blinded_eyes:p10"
+			"GFX_felven_male_horns:d0"
+			"GFX_elven_male_beard:p4:y:e"
+			"GFX_elven_male_hair:p1:y:e"
+		   	"GFX_elven_male_hair_detail:p1:y"
+			"GFX_elven_male_eyepatch:p13:o28x51"
+			"GFX_felven_male_horns_mid:d0"
+			"GFX_character_mask:p12:y:o35x30"
+			"GFX_felven_male_horns_front:d0"
+		   	"GFX_elven_male_hair_front:p1:y:e"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Fel Elven Female
+
+	spriteType = {
+		name = "GFX_elven_female_undead"
+		texturefile = "gfx\\characters\\elven_female\\elven_female_undead_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h_elf.lua"
+		name = "PORTRAIT_undead_felven_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				OR = {
+					portrait_has_trait = race_high_elf
+					portrait_has_trait = race_blood_elf
+					portrait_has_trait = race_wretched
+				}
+				portrait_has_trait = felsworn
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = {
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_elven_female_clothes_behind:p14"
+			"GFX_elven_female_ear_behind:d7:h"
+			"GFX_elven_female_hair_behind:p1:e:y"
+			"GFX_elven_female_hair_behind_detail:p1"
+			"GFX_elven_female_undead:p2:h"
+			"GFX_felven_female_horns:d0"
+			"GFX_elven_female_clothes:p14"
+			"GFX_elven_female_chin:d1:h"
+			"GFX_elven_female_cheeks:d4:h"
+			"GFX_elven_female_ear:d7:h"
+			"GFX_belven_female_eyes:d6:h"
+			"GFX_felven_female_runes:d5"
+			"GFX_felven_female_eyes_uncolored:d6"
+			"GFX_elven_female_mouth:d2:h"
+			"GFX_felven_female_mouth:d2"
+			"GFX_elven_female_nose:d3:h"
+			"GFX_elven_female_scars:p7:y"
+			"GFX_elven_female_reddots:p8"
+			"GFX_elven_female_boils:p9"
+			"GFX_elven_female_undead_eyes:p16"
+			"GFX_elven_female_blinded_eyes:p10"
+			"GFX_character_eyepatch:p13:o35x52"
+			"GFX_elven_female_hair_middle:p1:e:y"
+			"GFX_elven_female_clothes_middle:p14"
+			"GFX_character_mask:p12:y:o43x34"
+			"GFX_elven_female_hair:p1:e:y"
+			"GFX_felven_female_horns_mid:d0"
+			"GFX_elven_female_hair_bangs:p1:e:y"
+			"GFX_elven_female_hair_detail:p1"
+			"GFX_felven_female_horns_front:d0"
+			"GFX_elven_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Dwarf Male
+
+	spriteType = {
+		name = "GFX_dwarf_male_undead"
+		texturefile = "gfx\\characters\\dwarf_male\\dwarf_male_undead.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dwarf_male_undead_eyes"
+		texturefile = "gfx\\characters\\dwarf_male\\dwarf_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h_elf.lua"
+		name = "PORTRAIT_undead_dwarf_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dwarf
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = {
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_dwarf_male_clothes_behind:p14"
+			"GFX_dwarf_male_undead:p2:h"
+			"GFX_bronzebeard_male_forehead:d1:h"
+			"GFX_bronzebeard_male_eyes:d6:h"
+			"GFX_bronzebeard_male_ear:d7:h"
+			"GFX_bronzebeard_male_nose:d3:h"
+			"GFX_dwarf_male_reddots:p8"
+			"GFX_dwarf_male_boils:p9"
+		   	"GFX_dwarf_male_clothes:p14"
+			"GFX_bronzebeard_male_undead_eyes:p16"
+		   	"GFX_dwarf_male_hair:p1:e:y"
+			"GFX_bronzebeard_male_beard:p4:e"
+			"GFX_bronzebeard_male_beard_over:p4"
+			"GFX_dwarf_male_scars:p7:y"
+			"GFX_dwarf_male_blinded_eyes:p10"
+			"GFX_dwarf_male_maimed_eyepatch:p13:o28x78"
+			"GFX_dwarf_male_maimed_masks:p12:o34x58"
+			"GFX_bronzebeard_male_headgear:p5"
+			"GFX_dwarf_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Dwarf Female
+
+	spriteType = {
+		name = "GFX_dwarf_female_undead"
+		texturefile = "gfx\\characters\\dwarf_female\\dwarf_female_undead.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dwarf_female_undead_eyes"
+		texturefile = "gfx\\characters\\dwarf_female\\dwarf_female_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dwarf_female_undead_cheeks"
+		texturefile = "gfx\\characters\\dwarf_female\\dwarf_female_undead_cheeks.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h_elf.lua"
+		name = "PORTRAIT_undead_dwarf_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dwarf
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = {
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_bronzebeard_female_clothes_behind:p14"
+			"GFX_bronzebeard_female_hair_behind:p1:e:y"
+			"GFX_bronzebeard_female_hair_uncolored_behind:p1:y"
+			"GFX_dwarf_female_undead:p2:h"
+			"GFX_dwarf_female_undead_cheeks:d4:h"
+			"GFX_bronzebeard_female_hair:p1:e:y"
+			"GFX_bronzebeard_female_hair_uncolored:p1:y"
+			"GFX_bronzebeard_female_ear:d7:h"
+			"GFX_dwarf_female_reddots_body:p8"
+			"GFX_dwarf_female_boils_body:p9"
+			"GFX_bronzebeard_female_clothes:p14"
+			"GFX_bronzebeard_female_chin:d1:h"
+			"GFX_bronzebeard_female_mouth:d2:h"
+			"GFX_bronzebeard_female_nose:d3:h"
+			"GFX_dwarf_female_scars:p7:y"
+			"GFX_dwarf_female_undead_eyes:p16"
+			"GFX_dwarf_female_reddots:p8"
+			"GFX_dwarf_female_boils:p9"
+			"GFX_dwarf_female_blinded_eyes:p10"
+			"GFX_dwarf_female_maimed_eyepatch:p13"
+			"GFX_dwarf_female_maimed_masks:p12:o40x42"
+			"GFX_bronzebeard_female_hair_front:p1:e:y"
+			"GFX_bronzebeard_female_hair_uncolored_front:p1:y"
+			"GFX_bronzebeard_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Troll Male
+
+	spriteType = {
+		name = "GFX_troll_male_undead_eyes"
+		texturefile = "gfx\\characters\\troll_male\\troll_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_undead_troll_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				OR = {
+					portrait_has_trait = race_troll_forest
+					portrait_has_trait = race_troll_ice
+					portrait_has_trait = race_troll_dark
+					portrait_has_trait = race_troll_jungle
+				}
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = {
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_undead_eyes:p16"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Troll Female
+
+	spriteType = {
+		name = "GFX_troll_female_undead_eyes"
+		texturefile = "gfx\\characters\\troll_female\\troll_female_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_troll_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				OR = {
+					portrait_has_trait = race_troll_forest
+					portrait_has_trait = race_troll_ice
+					portrait_has_trait = race_troll_dark
+					portrait_has_trait = race_troll_jungle
+				}
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = {
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_undead_eyes:p16"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Zandalari Troll Male
+
+	spriteType = {
+		name = "GFX_ztroll_male_undead_eyes"
+		texturefile = "gfx\\characters\\troll_male\\ztroll_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_undead_ztroll_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_troll_zandalari
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = {
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ztroll_male_hair_behind_uncolored:p1:y"
+		   	"GFX_ztroll_male_ear_behind:d7:h"
+			"GFX_ztroll_male_base:p2:h"
+			"GFX_ztroll_male_clothes:p14"
+			"GFX_ztroll_male_hair_mid:p1:e:y"
+		   	"GFX_ztroll_male_chin:d1:h"
+		   	"GFX_ztroll_male_mouth:d2:h"
+		   	"GFX_ztroll_male_undead_eyes:p16"
+		   	"GFX_ztroll_male_nose:d3:h"
+		   	"GFX_ztroll_male_nose_uncolored:d3"
+		   	"GFX_ztroll_male_hair:p1:e:y"
+		   	"GFX_ztroll_male_hair_uncolored:p1:y"
+		   	"GFX_ztroll_male_ear:d7:h"
+		   	"GFX_ztroll_male_ear_uncolored:d7"
+		   	"GFX_ztroll_male_tusks:d5"
+		   	"GFX_ztroll_male_hair_front:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Zandalari Troll Female
+
+	spriteType = {
+		name = "GFX_ztroll_female_undead_eyes"
+		texturefile = "gfx\\characters\\troll_female\\ztroll_female_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_undead_ztroll_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_troll_zandalari
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = {
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ztroll_female_hair_behind:p1:e:y"
+			"GFX_ztroll_female_hair_uncolored_behind:p1:y"
+			"GFX_ztroll_female_base:p2:h"
+			"GFX_ztroll_female_clothes:p14"
+			"GFX_ztroll_female_cheeks:d4:h"
+			"GFX_ztroll_female_chin:d1:h"
+			"GFX_ztroll_female_mouth:d2:h"
+			"GFX_ztroll_female_nose:d3:h"
+			"GFX_ztroll_female_undead_eyes:p16"
+			"GFX_ztroll_female_forehead:d10:h"
+			"GFX_ztroll_female_tusks:d5"
+			"GFX_ztroll_female_ear:d7:h"
+			"GFX_ztroll_female_earrings:d7"
+			"GFX_ztroll_female_hair:p1:e:y"
+			"GFX_ztroll_female_hair_uncolored:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Gnome Male
+
+	spriteType = {
+		name = "GFX_gnome_male_undead_eyes"
+		texturefile = "gfx\\characters\\gnome_male\\gnome_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_undead_gnome_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_gnome
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_gnome_male_clothes_behind:p14"
+			"GFX_gnome_male_headgear_behind:p5"
+			"GFX_gnome_male_hair_behind:p1:e:y"
+			"GFX_gnome_male_ear_behind:d7:h"
+			"GFX_gnome_male_base:p2:h"
+			"GFX_gnome_male_forehead:d10:h"
+			"GFX_gnome_male_chin:d1:h"
+			"GFX_gnome_male_cheeks:d4:h"
+			"GFX_gnome_male_mouth:d2:h"
+			"GFX_gnome_male_eyes:d6:h"
+			"GFX_gnome_male_undead_eyes:p16"
+		   	"GFX_gnome_male_hair:p1:e:y"
+			"GFX_gnome_male_ear:d7:h"
+			"GFX_gnome_male_nose:d3:h"
+			"GFX_gnome_male_scars:p7:y"
+			"GFX_gnome_male_reddots:p8"
+			"GFX_gnome_male_boils:p9"
+			"GFX_gnome_male_blinded_eyes:p10"
+			"GFX_gnome_male_clothes:p14"
+		   	"GFX_gnome_male_eyebrows_left:d5:e:y"
+			"GFX_gnome_male_maimed_eyepatch:p13"
+		   	"GFX_gnome_male_eyebrows_right:d5:e:y"
+			"GFX_gnome_male_beard:p4:e:y"
+			"GFX_gnome_male_maimed_masks:p12:o38x38"
+			"GFX_gnome_male_headgear_mid:p5"
+			"GFX_gnome_male_clothes_infront:p14"
+		   	"GFX_gnome_male_hair_front:p1:e:y"
+			"GFX_gnome_male_headgear:p5"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Gnome Female
+
+	spriteType = {
+		name = "GFX_gnome_female_undead_eyes"
+		texturefile = "gfx\\characters\\gnome_female\\gnome_female_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_undead_gnome_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_gnome
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_gnome_female_hair_behind:p1:e:y"
+			"GFX_gnome_female_base:p2:h"
+			"GFX_gnome_female_cheeks:d4:h"
+			"GFX_gnome_female_nose:d3:h"
+			"GFX_gnome_female_eyes:d6:h"
+			"GFX_gnome_female_ear:d7:h"
+			"GFX_gnome_female_mouth:d2:h"
+			"GFX_gnome_female_scars:p7:y"
+			"GFX_gnome_female_reddots:p8"
+			"GFX_gnome_female_boils:p9"
+			"GFX_gnome_female_blinded_eyes:p10"
+			"GFX_gnome_female_clothes:p14"
+			"GFX_gnome_female_hair_mid:p1:e:y"
+			"GFX_gnome_female_hair_mid_uncolored:p1:y"
+			"GFX_gnome_female_undead_eyes:p16"
+			"GFX_gnome_female_maimed_eyepatch:p13"
+			"GFX_gnome_female_maimed_masks:p12:o42x28"
+			"GFX_gnome_female_hair:p1:e:y"
+			"GFX_gnome_female_hair_uncolored:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Naga Male
+
+	spriteType = {
+		name = "GFX_naga_male_undead_eyes"
+		texturefile = "gfx\\characters\\naga_male\\naga_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_undead_naga_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_naga
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_naga_male_base:p2:h"
+			"GFX_naga_male_hair_behind:d5:e"
+			"GFX_naga_male_neck:d0:e"
+			"GFX_naga_male_eyes:d6:h"
+			"GFX_naga_male_eyes_tint:d8:h"
+		   	"GFX_naga_male_hair:d5:h"
+			"GFX_naga_male_nose:d3:h"
+			"GFX_naga_male_chin:p4:h"
+			"GFX_naga_male_mouth:d1"
+			"GFX_naga_male_beard:d2:h"
+			"GFX_naga_male_undead_eyes:p16"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_naga_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 60 60 60 }
+			{ 81 97 44 }
+			{ 50 40 35 }
+			{ 205 220 220 }
+			{ 40 40 50 }
+			{ 116 80 68 }
+			{ 82 45 82 }
+			{ 62 40 35 }
+			{ 49 82 55 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Naga Female
+
+	spriteType = {
+		name = "GFX_naga_female_undead_eyes"
+		texturefile = "gfx\\characters\\naga_female\\naga_female_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_undead_naga_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_naga
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_naga_female_forehead:d10:h"
+			"GFX_naga_female_hair_behind:d0:e:y"
+			"GFX_naga_female_hair_behind_shadow:d0"
+			"GFX_naga_female_hair_behind_skin:d0:h:y"
+			"GFX_naga_female_base:p2:h"
+			"GFX_naga_female_cheeks:d4:h"
+			"GFX_naga_female_reddots:p8"
+			"GFX_naga_female_chin:d1:h"
+			"GFX_naga_female_mouth:d8:h"
+			"GFX_naga_female_eyes:d6:h"
+			"GFX_naga_female_nose:d3:h"
+			"GFX_naga_female_undead_eyes:p16"
+			"GFX_naga_female_boils:p9:h"
+			"GFX_naga_female_hair:d0:h:y"
+			"GFX_naga_female_scars:p7:h:y"
+			"GFX_naga_female_blinded_eyes:p10"
+			"GFX_naga_female_maimed_eyepatch:p13"
+			"GFX_naga_female_maimed_masks:p12"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 60 60 60 }
+			{ 81 97 44 }
+			{ 50 40 35 }
+			{ 205 220 220 }
+			{ 40 40 50 }
+			{ 116 80 68 }
+			{ 82 45 82 }
+			{ 62 40 35 }
+			{ 49 82 55 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Orc Male
+
+	spriteType = {
+		name = "GFX_orc_male_undead"
+		texturefile = "gfx\\characters\\orc_male\\orc_male_undead.dds"
+		noOfFrames = 2
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+
+	spriteType = {
+		name = "GFX_orc_male_undead_eyes"
+		texturefile = "gfx\\characters\\orc_male\\orc_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_orc_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_orc_male_base:p2:h"
+			"GFX_orc_male_undead:p15:h"
+			"GFX_orc_male_clothes:p14"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_undead_eyes:p16"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
+			"GFX_orc_male_headgear_mid:p14"
+			"GFX_orc_male_chin:d1:h"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_orc_male_hair:p1:e:y"
+		   	"GFX_orc_male_hair_detail:p1:y"
+			"GFX_orc_male_beard:p4:e:y"
+			"GFX_orc_male_beard_detail:p4:y"
+			"GFX_orc_male_mouth:d2"
+			"GFX_orc_male_blinded_eyes:p10"
+			"GFX_orc_male_clothes_infront:p14"
+			"GFX_orc_male_headgear:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Orc Female
+
+	spriteType = {
+		name = "GFX_orc_female_undead_eyes"
+		texturefile = "gfx\\characters\\orc_female\\orc_female_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_orc_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_orc_female_ear_behind:d7:h"
+			"GFX_orc_female_hair_behind:p1:e"
+			"GFX_orc_female_base:p2:h"
+			"GFX_orc_female_eyes2:d10"
+			"GFX_orc_female_clothes:p14"
+			"GFX_orc_female_forehead:d5:h"
+			"GFX_orc_female_nose:d3:h"
+			"GFX_orc_female_mouth:d2:h"
+			"GFX_orc_female_mouth_tusks:d2"
+			"GFX_orc_female_eyes:d6:h"
+			"GFX_orc_female_eyebrows:d6:e"
+			"GFX_orc_female_cheeks:d4:h"
+			"GFX_orc_female_scars:p7:y"
+			"GFX_orc_female_reddots:p8"
+			"GFX_orc_female_boils:p9"
+			"GFX_orc_female_undead_eyes:p16"
+			"GFX_orc_female_blinded_eyes:p10"
+			"GFX_orc_female_ear:d7:h"
+			"GFX_orc_female_maimed_eyepatch:p13:y"
+			"GFX_orc_female_maimed_masks:p12:y"
+			"GFX_orc_female_hair:p1:e"
+			"GFX_orc_female_hair_uncolored:p1:y"
+			"GFX_orc_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 180 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Gnoll Male
+
+	spriteType = {
+		name = "GFX_gnoll_male_undead_eyes"
+		texturefile = "gfx\\characters\\gnoll_male\\gnoll_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_gnoll_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_gnoll
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_gnoll_male_base:p2:h"
+			"GFX_gnoll_male_neck:d0:h"
+		   	"GFX_gnoll_male_hair:p1:y:h"
+			"GFX_gnoll_male_nose:d3:h"
+			"GFX_gnoll_male_cheeks:d4:h"
+			"GFX_gnoll_male_eyes:d6"
+			"GFX_gnoll_male_ear:d7:h"
+			"GFX_gnoll_male_mouth:d2"
+			"GFX_gnoll_male_beard:p4:y:h"
+			"GFX_gnoll_male_undead_eyes:p16"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_gnoll_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 150 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Gnoll Female
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_gnoll_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_gnoll
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_gnoll_male_base:p2:h"
+			"GFX_gnoll_male_neck:d0:h"
+		   	"GFX_gnoll_male_hair:p1:y:h"
+			"GFX_gnoll_male_nose:d3:h"
+			"GFX_gnoll_male_cheeks:d4:h"
+			"GFX_gnoll_male_eyes:d6"
+			"GFX_gnoll_male_ear:d7:h"
+			"GFX_gnoll_male_mouth:d2"
+			"GFX_gnoll_male_beard:p4:y:h"
+			"GFX_gnoll_male_undead_eyes:p16"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_gnoll_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 159 155 150 } { 255 250 251 }
+			{ 10 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Murloc Male
+
+	spriteType = {
+		name = "GFX_murloc_male_undead_eyes"
+		texturefile = "gfx\\characters\\murloc_male\\murloc_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_murloc_male_undead_mouth"
+		texturefile = "gfx\\characters\\murloc_male\\murloc_male_undead_mouth.dds"
+		noOfFrames = 6
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_murloc_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_murloc
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_murloc_male_base:p2:h"
+			"GFX_murloc_male_neck:d0:h"
+			"GFX_murloc_male_cheeks:d4"
+			"GFX_murloc_male_eyes:d6"
+			"GFX_murloc_male_undead_eyes:p16"
+			"GFX_murloc_male_blinded_eyes:p10"
+			"GFX_murloc_male_fins_shadow:d7"
+			"GFX_murloc_male_fins:d7:e"
+			"GFX_murloc_male_nose:d3"
+			"GFX_murloc_male_undead_mouth:d2"
+			"GFX_murloc_male_scars:p7"
+			"GFX_murloc_male_reddots:p8"
+			"GFX_murloc_male_boils:p9"
+			"GFX_murloc_male_blinded_eyes:p10"
+			"GFX_murloc_male_eyepatch:p13"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 30 } { 149 155 150 } { 255 250 251 }
+			{ 0 10 10 } { 151 161 161 } { 255 255 255 }
+			{ 0 10 10 } { 161 176 181 } { 245 250 241 }
+			{ 0 20 0 } { 156 166 156 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Murloc Female
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_murloc_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_murloc
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_murloc_male_base:p2:h"
+			"GFX_murloc_male_neck:d0:h"
+			"GFX_murloc_male_cheeks:d4"
+			"GFX_murloc_male_eyes:d6"
+			"GFX_murloc_male_undead_eyes:p16"
+			"GFX_murloc_male_blinded_eyes:p10"
+			"GFX_murloc_male_fins_shadow:d7"
+			"GFX_murloc_male_fins:d7:e"
+			"GFX_murloc_male_nose:d3"
+			"GFX_murloc_male_undead_mouth:d2"
+			"GFX_murloc_male_scars:p7"
+			"GFX_murloc_male_reddots:p8"
+			"GFX_murloc_male_boils:p9"
+			"GFX_murloc_male_blinded_eyes:p10"
+			"GFX_murloc_male_eyepatch:p13"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 0 0 } { 149 135 130 } { 255 250 251 }
+			{ 10 0 0 } { 151 131 131 } { 255 250 250 }
+			{ 10 0 10 } { 161 146 151 } { 255 250 241 }
+			{ 20 0 0 } { 176 146 136 } { 255 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Goblin Male
+
+	spriteType = {
+		name = "GFX_goblin_male_undead_eyes"
+		texturefile = "gfx\\characters\\goblin_male\\goblin_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_goblin_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_goblin
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_goblin_male_clothes_behind:p14"
+			"GFX_goblin_male_ear_behind:d7:h"
+			"GFX_goblin_male_hair_behind:p1:e"
+			"GFX_goblin_male_base:p2:h"
+			"GFX_goblin_male_reddots_body:p8"
+			"GFX_goblin_male_boils_body:p9"
+			"GFX_goblin_male_cheeks:d4:h"
+			"GFX_goblin_male_forehead:d5:h"
+			"GFX_goblin_male_ear:d7:h"
+			"GFX_goblin_male_ear_uncolored:d7"
+			"GFX_goblin_male_clothes:p14"
+			"GFX_goblin_male_chin:d1:h"
+			"GFX_goblin_male_eyes:d6:h"
+			"GFX_goblin_male_undead_eyes:p16"
+			"GFX_goblin_male_blinded_eyes:p10"
+			"GFX_goblin_male_mouth:d2:h"
+			"GFX_goblin_male_nose:d3:h"
+			"GFX_goblin_male_nose_uncolored:d3"
+			"GFX_goblin_male_scars:p7:y"
+			"GFX_goblin_male_reddots:p8"
+			"GFX_goblin_male_boils:p9"
+			"GFX_goblin_male_maimed_eyepatch:p13"
+			"GFX_goblin_male_hair:p1:e"
+			"GFX_goblin_male_hair_detail:p1"
+			"GFX_goblin_male_maimed_masks:p12:o36x33"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 3 } { 159 185 180 } { 255 250 251 }
+			{ 2 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 2 2 } { 161 176 171 } { 245 250 241 }
+			{ 0 2 0 } { 186 196 186 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Goblin Female
+
+	spriteType = {
+		name = "GFX_goblin_female_undead_eyes"
+		texturefile = "gfx\\characters\\goblin_female\\goblin_female_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_goblin_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_goblin
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"			
+			"GFX_character_background:p0"
+			"GFX_goblin_female_clothes_behind:p14"
+			"GFX_goblin_female_hair_behind:p1:e"
+			"GFX_goblin_female_hair_detail_behind:p1"
+			"GFX_goblin_female_ear_behind:d7:h"
+			"GFX_goblin_female_ear_behind_uncolored:d7"
+			"GFX_goblin_female_base:p2:h"
+			"GFX_goblin_female_reddots_body:p8"
+			"GFX_goblin_female_boils_body:p9"
+			"GFX_goblin_female_clothes:p14"
+			"GFX_goblin_female_ear:d7:h"
+			"GFX_goblin_female_ear_uncolored:d7"
+			"GFX_goblin_female_cheeks:d4:h"
+			"GFX_goblin_female_eyebrows:d0:h"
+			"GFX_goblin_female_eyes:d6:h"
+			"GFX_goblin_female_undead_eyes:p16"
+			"GFX_goblin_female_nose:d3:h"
+			"GFX_goblin_female_nose_uncolored:d3"
+			"GFX_goblin_female_chin:d1:h"
+			"GFX_goblin_female_mouth:d2:h"
+			"GFX_goblin_female_scars:p7:y"
+			"GFX_goblin_female_reddots:p8"
+			"GFX_goblin_female_boils:p9"
+			"GFX_goblin_female_maimed_eyepatch:p13"
+			"GFX_goblin_female_hair:p1:e"
+			"GFX_goblin_female_hair_detail:p1"
+			"GFX_goblin_female_maimed_masks:p12:o45x33"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 3 } { 159 185 180 } { 255 250 251 }
+			{ 2 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 2 2 } { 161 176 171 } { 245 250 241 }
+			{ 0 2 0 } { 186 196 186 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Kobold Male
+
+	spriteType = {
+		name = "GFX_kobold_male_undead_eyes"
+		texturefile = "gfx\\characters\\kobold_male\\kobold_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_kobold_male_undead_flame"
+		texturefile = "gfx\\characters\\kobold_male\\kobold_male_undead_flame.dds"
+		noOfFrames = 12
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_kobold_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_kobold
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_kobold_male_clothes_behind:p14"
+			"GFX_kobold_male_beard_behind:p4:e:y"
+			"GFX_kobold_male_base:p2:h"
+			"GFX_kobold_male_hair:p1:e:y"
+			"GFX_kobold_male_clothes:p14"
+			"GFX_kobold_male_nose:d3:h"
+			"GFX_kobold_male_chin:d1:h"
+			"GFX_kobold_male_candle_shadow:d5"
+			"GFX_kobold_male_candle:d5"
+			"GFX_kobold_male_undead_flame:d5"
+			"GFX_kobold_male_eyes:d6:h"
+			"GFX_kobold_male_undead_eyes:p16"
+			"GFX_kobold_male_ear:d7:h"
+			"GFX_kobold_male_scars:p7"
+			"GFX_kobold_male_reddots:p8"
+			"GFX_kobold_male_boils:p9"
+			"GFX_kobold_male_blinded_eyes:p10"
+			"GFX_kobold_male_maimed_eyepatch:p13"
+			"GFX_kobold_male_beard:p4:e:y"
+			"GFX_kobold_male_maimed_masks:p12"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 3 } { 159 185 180 } { 255 250 251 }
+			{ 2 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 2 2 } { 161 176 171 } { 245 250 241 }
+			{ 0 2 0 } { 186 196 186 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Kobold Female
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_kobold_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_kobold
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_kobold_male_clothes_behind:p14"
+			"GFX_kobold_female_beard_behind:p4:e:y"
+			"GFX_kobold_female_hair_behind:p1:e:y"
+			"GFX_kobold_male_base:p2:h"
+			"GFX_kobold_male_clothes:p14"
+			"GFX_kobold_male_nose:d3:h"
+			"GFX_kobold_male_chin:d1:h"
+			"GFX_kobold_female_hair_mid:p1:e:y"
+			"GFX_kobold_male_candle_shadow:d5"
+			"GFX_kobold_male_candle:d5"
+			"GFX_kobold_male_undead_flame:d5"
+			"GFX_kobold_male_eyes:d6:h"
+			"GFX_kobold_male_undead_eyes:p16"
+			"GFX_kobold_male_ear:d7:h"
+			"GFX_kobold_male_scars:p7"
+			"GFX_kobold_male_reddots:p8"
+			"GFX_kobold_male_boils:p9"
+			"GFX_kobold_male_blinded_eyes:p10"
+			"GFX_kobold_female_hair:p1:e:y"
+			"GFX_kobold_male_maimed_eyepatch:p13"
+			"GFX_kobold_female_beard:p4:e:y"
+			"GFX_kobold_male_maimed_masks:p12"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 3 } { 159 185 180 } { 255 250 251 }
+			{ 2 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 2 2 } { 161 176 171 } { 245 250 241 }
+			{ 0 2 0 } { 186 196 186 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Trogg Male
+
+	spriteType = {
+		name = "GFX_trogg_male_undead_eyes"
+		texturefile = "gfx\\characters\\trogg_male\\trogg_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_trogg_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_trogg
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_trogg_male_ear_behind:d7:h"
+			"GFX_trogg_male_base:p2:h"
+			"GFX_trogg_male_cheeks:d4:h"
+		   	"GFX_trogg_male_boils:d0:h"
+		   	"GFX_trogg_male_body_hair:d5:e:y"
+			"GFX_trogg_male_eyes:d6:h"
+			"GFX_trogg_male_undead_eyes:p16"
+		   	"GFX_trogg_male_hair:p1:e:y"
+			"GFX_trogg_male_ear:d7:h"
+			"GFX_trogg_male_mouth:d2:h"
+			"GFX_trogg_male_nose:d3:h"
+		   	"GFX_trogg_male_eyebrows:d10:e:y"
+			"GFX_trogg_male_beard:p4:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 3 } { 159 185 180 } { 255 250 251 }
+			{ 2 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 2 2 } { 161 176 171 } { 245 250 241 }
+			{ 0 2 0 } { 186 196 186 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Trogg Female
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_trogg_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_trogg
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:d5"
+			"GFX_character_background:p0"
+			"GFX_trogg_female_ear_behind:d7:h"
+			"GFX_trogg_female_base:p2:h"
+			"GFX_trogg_female_cheeks:d4:h"
+			"GFX_trogg_female_body_hair:d5:e:y"
+			"GFX_trogg_female_clothes:p14"
+		   	"GFX_trogg_female_boils:d0:h"
+			"GFX_trogg_female_eyes:d6:h"
+			"GFX_trogg_male_undead_eyes:p16"
+			"GFX_trogg_female_beard:p4:e:y"
+		   	"GFX_trogg_female_hair:p1:e:y"
+			"GFX_trogg_female_ear:d7:h"
+			"GFX_trogg_female_mouth:d2:h"
+			"GFX_trogg_female_nose:d3:h"
+		   	"GFX_trogg_female_eyebrows:d10:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 3 } { 159 185 180 } { 255 250 251 }
+			{ 2 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 2 2 } { 161 176 171 } { 245 250 241 }
+			{ 0 2 0 } { 186 196 186 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Ogre Male
+
+	spriteType = {
+		name = "GFX_ogre_male_undead_eyes"
+		texturefile = "gfx\\characters\\ogre_male\\ogre_male_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_ogre_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_ogre
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+		
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ogre_male_beard_behind:p4:e:y"
+			"GFX_ogre_male_base:p2:h"
+			"GFX_ogre_male_eyes:d6:h"
+			"GFX_ogre_male_undead_eyes:p16"
+			"GFX_ogre_male_ear:d7:h"
+		   	"GFX_ogre_male_hair:p1:e:y"
+		   	"GFX_ogre_male_hair_details:p1:y"
+			"GFX_ogre_male_nose:d3:h"
+			"GFX_ogre_male_nose_uncolored:d3"
+			"GFX_ogre_male_chin:d1:h"
+			"GFX_ogre_male_forehead:d5:h"
+			"GFX_ogre_male_paint:d10"
+			"GFX_ogre_male_beard:p4:e:y"
+			"GFX_ogre_male_teeth:d5"
+			"GFX_ogre_male_mouth:d2"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 3 } { 159 185 180 } { 255 250 251 }
+			{ 2 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 2 2 } { 161 176 171 } { 245 250 241 }
+			{ 0 2 0 } { 186 196 186 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 81 97 44 }
+			{ 150 90 55 }
+			{ 176 165 138 }
+			{ 40 40 50 }
+			{ 196 150 148 }
+			{ 82 45 82 }
+			{ 122 40 35 }
+			{ 49 102 75 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	## Ogre Female
+
+	spriteType = {
+		name = "GFX_ogre_female_undead_eyes"
+		texturefile = "gfx\\characters\\ogre_female\\ogre_female_undead_eyes.dds"
+		noOfFrames = 4
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_undead_ogre_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age > child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_ogre
+				OR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ogre_female_hair_behind:p1:e"
+			"GFX_ogre_female_base:p2:h"
+			"GFX_ogre_female_hair_mid:p1:e"
+			"GFX_ogre_female_cheeks:d4:h"
+			"GFX_ogre_female_chin:d1:h"
+			"GFX_ogre_female_ear:d7:h"
+			"GFX_ogre_female_mouth:d2:h"
+			"GFX_ogre_female_mouth_uncolored:d2"
+			"GFX_ogre_female_eyes:d6:h"
+			"GFX_ogre_female_eyes_uncolored:d6"
+			"GFX_ogre_female_undead_eyes:p16"
+			"GFX_ogre_female_nose:d3:h"
+			"GFX_ogre_female_scars:p7:y"
+			"GFX_ogre_female_reddots:p8"
+			"GFX_ogre_female_boils:p9"
+			"GFX_ogre_female_clothes:p14"
+			"GFX_ogre_female_blinded_eyes:p10"
+			"GFX_ogre_female_maimed_eyepatch:p13:y"
+			"GFX_ogre_female_forehead_tusk:d10"
+			"GFX_ogre_female_forehead_tusk_base:d10:h"
+			"GFX_ogre_female_hair:p1:e"
+			"GFX_ogre_female_hair_uncolored:p1"
+			"GFX_ogre_female_tusk_holes:d5:h"
+			"GFX_ogre_female_tusks:d5"
+			"GFX_ogre_female_maimed_masks:p12:o44x35:y"
+			"GFX_ogre_female_forehead_tusk_front:d10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 3 } { 159 185 180 } { 255 250 251 }
+			{ 2 0 0 } { 171 161 161 } { 255 255 255 }
+			{ 0 2 2 } { 161 176 171 } { 245 250 241 }
+			{ 0 2 0 } { 186 196 186 } { 245 250 241 }
+		}
+
+		eye_color_index = 9
 		eye_color = {
 			{ 81 97 44 }
 			{ 150 90 55 }
