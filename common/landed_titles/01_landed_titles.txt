@@ -99,7 +99,7 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_sunwell_plateau = {
-					holy_site = sunwell
+					holy_site = arcane
 					holy_site = loa
 					holy_site = hakkar
 					holy_site = burning_legion
@@ -159,7 +159,6 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_court_of_the_sun = {
-					holy_site = sunwell
 				}
 				b_farstriders_square = {
 				}
@@ -381,7 +380,6 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_west_sanctum = {
-					holy_site = sunwell
 				}
 				b_magehill = {
 				}
@@ -589,7 +587,6 @@ e_zul_aman = {
 					scourge = "Tower of the Damned" 
 					forsaken = "Tower of the Damned"
 					
-					holy_site = sunwell
 					holy_site = druidism
 				}
 				b_woodheart = {
@@ -658,7 +655,6 @@ e_zul_aman = {
 				color2 = { 255 255 255 }
 				
 				b_sanctum_of_the_sun = {
-					holy_site = sunwell
 				}
 				b_an_telas = {
 				}
@@ -5629,5 +5625,62 @@ e_arathor = {
 				}
 			}
 		}
+	}
+}
+
+e_hinterlands = {
+	color = { 80 210 25 }
+	color2 = { 255 255 255 }
+	capital = 183 # Jintha'Alor
+	culture = vilebranch
+	
+	amani = "Jintha'Alor"
+	atalai = "Jintha'Alor"
+	razorbranch = "Jintha'Alor"
+	firetree = "Jintha'Alor"
+	mossflayer = "Jintha'Alor"
+	revantusk = "Jintha'Alor"
+	vilebranch = "Jintha'Alor"
+	shadowpine = "Jintha'Alor"
+	witherbark = "Jintha'Alor"
+	bloodscalp = "Jintha'Alor"
+	darkspear = "Jintha'Alor"
+	gurubashi = "Jintha'Alor"
+	shatterspear = "Jintha'Alor"
+	skullsplitter = "Jintha'Alor"
+	drakkari = "Jintha'Alor"
+	frostmane = "Jintha'Alor"
+	sandfury = "Jintha'Alor"
+	hakkari = "Jintha'Alor"
+	smolderthorn = "Jintha'Alor"
+	shadowglen = "Jintha'Alor"
+	winterax = "Jintha'Alor"
+	winterfang = "Jintha'Alor"
+	shadowtooth = "Jintha'Alor"
+	zandalari = "Jintha'Alor"
+	
+	k_jintha_alor = {
+		color = { 49 124 17 }
+		color2 = { 255 255 255 }
+		capital = 183 # Jintha'Alor
+		culture = vilebranch
+		
+		d_revan_coast = {
+			color = { 43 112 13 }
+			color2 = { 255 255 255 }
+			capital = 189 # Revan Coast
+			culture = revantusk
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 168 province_id = 463 } }
+				}
+			}
+		}
+	}
+	
+	k_aerie_peak = {
+	
 	}
 }
