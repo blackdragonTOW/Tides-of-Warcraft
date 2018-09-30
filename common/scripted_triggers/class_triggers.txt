@@ -31,10 +31,7 @@ accepts_warlock = {
 		religion_group = fel_group
 		religion_group = void_group
 		religion_group = wild_gods_group
-		religion_group = goblin_group
-		religion = cult_of_the_destroyer
-		religion = cult_of_the_infinite
-		religion = emerald_nightmare
+		religion_group = unaligned_group
 		AND = {
 			trait = warlock
 			OR = {
@@ -192,211 +189,69 @@ accepts_rogue = {
 	}
 }
 
-accepts_blood_magic = {
-	OR = {
-		has_game_rule = {
-			name = class_opinions
-			value = off
-		}
-		trait = undead_generic
-		trait = undead_scourge
-		trait = undead_forsaken
-		trait = naga
-		trait = troll_forest
-		trait = troll_ice
-		trait = troll_jungle
-		trait = troll_sand
-		trait = troll_dark
-		trait = troll_zandalari
-		trait = eredar
-		trait = succubus
-		trait = dreadlord
-		trait = fel_lord
-		trait = shivarra
-		trait = pit_lord
-		trait = doomlord
-		trait = voidwalker
-		trait = faceless
-		trait = hakkar_trait
-		trait = ogre
-		trait = wretched
-		trait = blood_elf
-		trait = broken
-		religion_group = fel_group
-		religion_group = void_group
-		religion_group = wild_gods_group
-		religion_group = goblin_group
-		religion = cult_of_the_destroyer
-		religion = cult_of_the_infinite
-		religion = emerald_nightmare
-		AND = {
-			has_character_modifier = blood_magic
-			OR = {
-				NOT = { has_character_flag = secret_blood_magic }
-				has_character_flag = blood_magic_discovered
-			}
-		}
-	}
-}
-
-accepts_shadow_priest = {
-	OR = {
-		has_game_rule = {
-			name = class_opinions
-			value = off
-		}
-		trait = undead_generic
-		trait = undead_scourge
-		trait = undead_forsaken
-		trait = naga
-		trait = troll_forest
-		trait = troll_ice
-		trait = troll_jungle
-		trait = troll_sand
-		trait = troll_dark
-		trait = troll_zandalari
-		trait = eredar
-		trait = succubus
-		trait = dreadlord
-		trait = fel_lord
-		trait = shivarra
-		trait = pit_lord
-		trait = doomlord
-		trait = voidwalker
-		trait = faceless
-		trait = hakkar_trait
-		trait = ogre
-		trait = high_elf
-		trait = wretched
-		trait = blood_elf
-		religion_group = fel_group
-		religion_group = void_group
-		religion_group = wild_gods_group
-		religion_group = goblin_group
-		religion = cult_of_the_destroyer
-		religion = cult_of_the_infinite
-		religion = emerald_nightmare
-		AND = {
-			has_character_modifier = shadow_priest
-			OR = {
-				NOT = { has_character_flag = secret_shadow_priest }
-				has_character_flag = shadow_priest_discovered
-			}
-		}
-	}
-}
-
-accepts_dark_shaman = {
-	OR = {
-		has_game_rule = {
-			name = class_opinions
-			value = off
-		}
-		trait = undead_generic
-		trait = undead_scourge
-		trait = undead_forsaken
-		trait = naga
-		trait = gnoll
-		trait = murloc
-		trait = kobold
-		trait = trogg
-		trait = troll_forest
-		trait = troll_ice
-		trait = troll_jungle
-		trait = troll_sand
-		trait = troll_dark
-		trait = troll_zandalari
-		trait = eredar
-		trait = succubus
-		trait = dreadlord
-		trait = fel_lord
-		trait = shivarra
-		trait = pit_lord
-		trait = doomlord
-		trait = voidwalker
-		trait = faceless
-		trait = hakkar_trait
-		trait = ogre
-		trait = wretched
-		trait = broken
-		trait = lost_one
-		religion_group = fel_group
-		religion_group = void_group
-		religion = hakkar
-		religion_group = goblin_group
-		religion = cult_of_the_destroyer
-		religion = cult_of_the_infinite
-		religion = emerald_nightmare
-		AND = {
-			has_character_modifier = dark_shaman
-			OR = {
-				NOT = { has_character_flag = secret_dark_shaman }
-				has_character_flag = dark_shaman_discovered
-			}
-		}
-	}
-}
-
-accepts_nightmare_druid = {
-	OR = {
-		has_game_rule = {
-			name = class_opinions
-			value = off
-		}
-		trait = naga
-		trait = eredar
-		trait = succubus
-		trait = dreadlord
-		trait = fel_lord
-		trait = shivarra
-		trait = pit_lord
-		trait = doomlord
-		trait = voidwalker
-		trait = faceless
-		religion_group = elemental_group
-		religion_group = wild_gods_group
-		religion = old_gods
-		religion = twilights_hammer
-		religion = cult_of_the_dreamer
-		religion = emerald_nightmare
-		AND = {
-			has_character_modifier = nightmare_druid
-			OR = {
-				NOT = { has_character_flag = secret_nightmare_druid }
-				has_character_flag = nightmare_druid_discovered
-			}
-		}
-	}
-}
-
 has_class = {
 	OR = {
-		trait = arcanist
-		trait = necrolyte
-		trait = healer
-		trait = scout
-		trait = tinker
-		trait = fighter
+		trait = warrior
 		trait = mage
 		trait = warlock
 		trait = necromancer
-		trait = runemaster
 		trait = priest
 		trait = shaman
 		trait = druid
-		trait = witch_doctor
-		trait = alchemist
-		trait = assassin
 		trait = rogue
-		trait = beastmaster
-		trait = explorer
 		trait = ranger
 		trait = engineer
-		trait = mechanist
 		trait = warrior
 		trait = paladin
 		trait = monk
 		trait = death_knight
 		trait = demon_hunter
+	}
+}
+
+can_be_class = {
+	NOR = {
+		trait = race_dragon
+		trait = race_hakkar
+		trait = race_faceless
+		trait = race_voidwalker
+		trait = race_eredar
+		trait = race_dreadlord
+		trait = race_succubus
+		trait = race_pit_lord
+		trait = race_fel_lord
+		trait = race_doomlord
+		trait = race_shivarra
+		trait = race_antaen
+		trait = race_aranasi
+		trait = race_inquisitor
+		trait = race_mo_arg
+		trait = race_observer
+		trait = race_air_elemental
+		trait = race_fire_elemental
+		trait = race_earth_elemental
+		trait = race_water_elemental
+	}
+}
+
+can_be_warrior = {
+	NOT = {
+		trait = race_naga
+		is_female = yes
+	}
+}
+
+can_be_mage = {
+	OR = {
+		AND = {
+			trait = race_human
+			OR = {
+				NOT = { has_global_flag = trollwars_bookmark }
+				
+			}
+		}
+		trait = race_
+		trait = race_
+		trait = race_
 	}
 }
