@@ -14,6 +14,9 @@ e_zul_aman = {
 	tirasian = "Quel'Thalas"
 	alteraci = "Quel'Thalas"
 	arathi = "Quel'Thalas"
+	hillsbradan = "Quel'Thalas"
+	silverpiner = "Quel'Thalas"
+	tirisfalen = "Quel'Thalas"
 	bronzebeard = "Quel'Thalas"
 	wildhammer = "Quel'Thalas"
 	dark_iron = "Quel'Thalas"
@@ -281,6 +284,9 @@ e_zul_aman = {
 				tirasian = "The Living Wood"
 				alteraci = "The Living Wood"
 				arathi = "The Living Wood"
+				hillsbradan = "The Living Wood"
+				silverpiner = "The Living Wood"
+				tirisfalen = "The Living Wood"
 				bronzebeard = "The Living Wood"
 				wildhammer = "The Living Wood"
 				dark_iron = "The Living Wood"
@@ -308,6 +314,9 @@ e_zul_aman = {
 					tirasian = "The Living Wood"
 					alteraci = "The Living Wood"
 					arathi = "The Living Wood"
+					hillsbradan = "The Living Wood"
+					silverpiner = "The Living Wood"
+					tirisfalen = "The Living Wood"
 					bronzebeard = "The Living Wood"
 					wildhammer = "The Living Wood"
 					dark_iron = "The Living Wood"
@@ -746,7 +755,6 @@ e_zul_aman = {
 				drakkari = "Zeb'Sora"
 				frostmane = "Zeb'Sora"
 				sandfury = "Zeb'Sora"
-				hakkari = "Zeb'Sora"
 				smolderthorn = "Zeb'Sora"
 				shadowglen = "Zeb'Sora"
 				winterax = "Zeb'Sora"
@@ -772,7 +780,6 @@ e_zul_aman = {
 					drakkari = "Zeb'Sora"
 					frostmane = "Zeb'Sora"
 					sandfury = "Zeb'Sora"
-					hakkari = "Zeb'Sora"
 					smolderthorn = "Zeb'Sora"
 					shadowglen = "Zeb'Sora"
 					winterax = "Zeb'Sora"
@@ -835,7 +842,6 @@ e_zul_aman = {
 				drakkari = "Zeb'Nowa"
 				frostmane = "Zeb'Nowa"
 				sandfury = "Zeb'Nowa"
-				hakkari = "Zeb'Nowa"
 				smolderthorn = "Zeb'Nowa"
 				shadowglen = "Zeb'Nowa"
 				winterax = "Zeb'Nowa"
@@ -861,7 +867,6 @@ e_zul_aman = {
 					drakkari = "Zeb'Nowa"
 					frostmane = "Zeb'Nowa"
 					sandfury = "Zeb'Nowa"
-					hakkari = "Zeb'Nowa"
 					smolderthorn = "Zeb'Nowa"
 					shadowglen = "Zeb'Nowa"
 					winterax = "Zeb'Nowa"
@@ -887,7 +892,6 @@ e_zul_aman = {
 					drakkari = "Zeb'Tela"
 					frostmane = "Zeb'Tela"
 					sandfury = "Zeb'Tela"
-					hakkari = "Zeb'Tela"
 					smolderthorn = "Zeb'Tela"
 					shadowglen = "Zeb'Tela"
 					winterax = "Zeb'Tela"
@@ -1028,7 +1032,6 @@ e_zul_aman = {
 			drakkari = "Zul'Mashar"
 			frostmane = "Zul'Mashar"
 			sandfury = "Zul'Mashar"
-			hakkari = "Zul'Mashar"
 			smolderthorn = "Zul'Mashar"
 			shadowglen = "Zul'Mashar"
 			winterax = "Zul'Mashar"
@@ -3178,7 +3181,7 @@ e_gilneas = {
 				color = { 31 128 159 }
 				color2 = { 255 255 255 }
 				
-				b_graymane_wall = {
+				b_greymane_wall = {
 				}
 				b_silverwatch = {
 				}
@@ -5629,7 +5632,7 @@ e_arathor = {
 }
 
 e_hinterlands = {
-	color = { 80 210 25 }
+	color = { 52 161 48 }
 	color2 = { 255 255 255 }
 	capital = 183 # Jintha'Alor
 	culture = vilebranch
@@ -5651,13 +5654,15 @@ e_hinterlands = {
 	drakkari = "Jintha'Alor"
 	frostmane = "Jintha'Alor"
 	sandfury = "Jintha'Alor"
-	hakkari = "Jintha'Alor"
 	smolderthorn = "Jintha'Alor"
 	shadowglen = "Jintha'Alor"
 	winterax = "Jintha'Alor"
 	winterfang = "Jintha'Alor"
 	shadowtooth = "Jintha'Alor"
 	zandalari = "Jintha'Alor"
+	bronzebeard = "Aerie Peaks"
+	dark_iron = "Aerie Peaks"
+	wildhammer = "Aerie Peaks"
 	
 	k_jintha_alor = {
 		color = { 49 124 17 }
@@ -5674,13 +5679,948 @@ e_hinterlands = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 168 province_id = 463 } }
+					any_demesne_province = { OR = { province_id = 189 province_id = 190 province_id = 191 } }
+				}
+			}
+			
+			c_revan_coast = { # 189
+				color = { 125 173 82 }
+				color2 = { 255 255 255 }
+				
+				b_revantusk_village = {
+				}
+				b_overlook_descent = {
+				}
+				b_ahkengo = {
+				}
+				b_zojin = {
+				}
+				b_basuk = {
+				}
+				b_mezo_alor = {
+				}
+				b_zicji = {
+				}
+			}
+			
+			c_shelled_shore = { # 190
+				color = { 198 111 79 }
+				color2 = { 255 255 255 }
+				
+				b_texuk = {
+				}
+				b_vil_goki = {
+				}
+				b_kadingo = {
+				}
+				b_zahizal = {
+				}
+				b_zansan = {
+				}
+				b_zul_dan = {
+				}
+				b_zenjaf = {
+				}
+			}
+			
+			c_emerald_strand = { # 191
+				color = { 130 116 125 }
+				color2 = { 255 255 255 }
+				
+				b_greenscale_rock = {
+				}
+				b_dreamroar = {
+				}
+				b_kanye = {
+				}
+				b_drac_halar = {
+				}
+				b_revdaaia = {
+				}
+				b_waku = {
+				}
+				b_haju = {
+				}
+			}
+		}
+		
+		d_jintha_alor = {
+			color = { 43 117 11 }
+			color2 = { 255 255 255 }
+			capital = 183 # Jintha'Alor
+			culture = vilebranch
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 148 province_id = 183 province_id = 184 } }
+				}
+			}
+			
+			c_shadras_peak = { # 148
+				color = { 102 153 105 }
+				color2 = { 255 255 255 }
+				
+				b_shadras_peak = {
+				}
+				b_iceweb = {
+				}
+				b_sujin = {
+				}
+				b_kanilla = {
+				}
+				b_vulzala = {
+				}
+				b_titamor = {
+				}
+				b_khitara = {
+				}
+			}
+			
+			c_jintha_alor = { # 183
+				color = { 79 164 94 }
+				color2 = { 255 255 255 }
+				
+				b_jintha_alor = {
+					holy_site = hakkar
+				}
+				b_shadras_sanctuary = {
+				}
+				b_tanjo = {
+				}
+				b_vulraz = {
+				}
+				b_alptu = {
+				}
+				b_tlatoani = {
+				}
+				b_sli_watha = {
+				}
+			}
+			
+			c_loaspeaker_rise = { # 184
+				color = { 139 34 221 }
+				color2 = { 255 255 255 }
+				
+				b_altar_of_zul = {
+					holy_site = loa
+				}
+				b_halarajas = {
+				}
+				b_zulgetjin = {
+				}
+				b_kuroree = {
+				}
+				b_trolku = {
+				}
+				b_trolgeta = {
+				}
+				b_shaktee = {
+				}
+			}
+		}
+		
+		d_backlands = {
+			color = { 57 166 10 }
+			color2 = { 255 255 255 }
+			capital = 187 # Agol'watha
+			culture = vilebranch
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 185 province_id = 187 province_id = 188 } }
+				}
+			}
+			
+			c_shaol_watha = { # 185
+				color = { 82 136 82 }
+				color2 = { 255 255 255 }
+				
+				b_shaol_watha = {
+				}
+				b_overlooks_edge = {
+				}
+				b_moxil = {
+				}
+				b_rjinzil = {
+				}
+				b_zulunya = {
+				}
+				b_paizahn = {
+				}
+				b_zunyaya = {
+				}
+			}
+			
+			c_agol_watha = { # 187
+				color = { 91 133 108 }
+				color2 = { 255 255 255 }
+				
+				b_agol_watha = {
+				}
+				b_sliraz = {
+				}
+				b_laokuzz = {
+				}
+				b_ayargu = {
+				}
+				b_ugjo = {
+				}
+				b_nuenzal = {
+				}
+				b_hypzim = {
+				}
+			}
+			
+			c_backland = { # 188
+				color = { 213 57 156 }
+				color2 = { 255 255 255 }
+				
+				bronzebeard = "Stormfeather"
+				dark_iron = "Stormfeather"
+				wildhammer = "Stormfeather"
+				
+				b_skulk_rock = {
+					bronzebeard = "Stormfeather"
+					dark_iron = "Stormfeather"
+					wildhammer = "Stormfeather"
+				}
+				b_halasajas = {
+				}
+				b_geteb_jin = {
+				}
+				b_troltilar = {
+				}
+				b_rhajin = {
+				}
+				b_hakamek = {
+				}
+				b_pujkis = {
+				}
+			}
+		}
+		
+		d_seradane = {
+			color = { 68 118 47 }
+			color = { 255 255 255 }
+			capital = 178 # Seradane
+			culture = green_dragonflight
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 178 province_id = 186 province_id = 462 } }
+				}
+			}
+			
+			c_seradane = { # 178
+				color = { 85 198 136 }
+				color2 = { 255 255 255 }
+				
+				b_seradane = {
+					holy_site = wyrmcult
+					holy_site = druidism
+				}
+				b_elwdia = {
+				}
+				b_tinarith = {
+				}
+				b_torendal = {
+				}
+				b_meiol = {
+				}
+				b_elriodria = {
+				}
+				b_glebriwan = {
+				}
+			}
+			
+			c_dreaming_woods = { # 186
+				color = { 196 94 108 }
+				color2 = { 255 255 255 }
+				
+				b_thrilriand = {
+				}
+				b_deris = {
+				}
+				b_amacil = {
+				}
+				b_eowanduil = {
+				}
+				b_celiman = {
+				}
+				b_elveldor = {
+				}
+				b_elrethien = {
+				}
+			}
+			
+			c_dreaming_heights = { # 462
+				color = { 60 164 145 }
+				color2 = { 255 255 255 }
+				
+				b_galadien = {
+				}
+				b_amidith = {
+				}
+				b_mildrac = {
+				}
+				b_tinarur = {
+				}
+				b_beliadel = {
+				}
+				b_eriador = {
+				}
+				b_baelirand = {
 				}
 			}
 		}
 	}
 	
-	k_aerie_peak = {
+	k_aerie_peaks = {
+		color = { 75 208 218 }
+		color2 = { 255 255 255 }
+		capital = 179 # Aerie Peak
+		culture = wildhammer
+		
+		d_aerie_peaks = {
+			color = { 68 118 47 }
+			color = { 255 255 255 }
+			capital = 179 # Aerie Peak
+			culture = wildhammer
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 158 province_id = 179 province_id = 180 } }
+				}
+			}
+			
+			c_hinterpass = { # 158
+				color = { 156 133 48 }
+				color2 = { 255 255 255 }
+				
+				b_brolir = {
+				}
+				b_gegnar = {
+				}
+				b_voifur = {
+				}
+				b_thiinar = {
+				}
+				b_radenar = {
+				}
+				b_featheraxe = {
+				}
+				b_gimli = {
+				}
+			}
+			
+			c_aerie_peak = { # 179
+				color = { 153 133 88 }
+				color2 = { 255 255 255 }
+				
+				b_aerie_peak = {
+					bronzebeard = "Wildhammer Keep"
+					dark_iron = "Wildhammer Keep"
+					wildhammer = "Wildhammer Keep"
+					holy_site = shamanism
+					holy_site = aeromancy
+				}
+				b_featherbeard_hold = {
+				}
+				b_vukona = {
+				}
+				b_copail = {
+				}
+				b_semnus = {
+				}
+				b_stormshard = {
+				}
+				b_nunaril = {
+				}
+			}
+			
+			c_quel_danil = { # 180
+				color = { 247 99 224 }
+				color2 = { 255 255 255 }
+				
+				amani = "Zun'watha"
+				atalai = "Zun'watha"
+				razorbranch = "Zun'watha"
+				firetree = "Zun'watha"
+				mossflayer = "Zun'watha"
+				revantusk = "Zun'watha"
+				vilebranch = "Zun'watha"
+				shadowpine = "Zun'watha"
+				witherbark = "Zun'watha"
+				bloodscalp = "Zun'watha"
+				darkspear = "Zun'watha"
+				gurubashi = "Zun'watha"
+				shatterspear = "Zun'watha"
+				skullsplitter = "Zun'watha"
+				drakkari = "Zun'watha"
+				frostmane = "Zun'watha"
+				sandfury = "Zun'watha"
+				smolderthorn = "Zun'watha"
+				shadowglen = "Zun'watha"
+				winterax = "Zun'watha"
+				winterfang = "Zun'watha"
+				shadowtooth = "Zun'watha"
+				zandalari = "Zun'watha"
+				
+				b_quel_danil = {
+					amani = "Zun'watha"
+					atalai = "Zun'watha"
+					razorbranch = "Zun'watha"
+					firetree = "Zun'watha"
+					mossflayer = "Zun'watha"
+					revantusk = "Zun'watha"
+					vilebranch = "Zun'watha"
+					shadowpine = "Zun'watha"
+					witherbark = "Zun'watha"
+					bloodscalp = "Zun'watha"
+					darkspear = "Zun'watha"
+					gurubashi = "Zun'watha"
+					shatterspear = "Zun'watha"
+					skullsplitter = "Zun'watha"
+					drakkari = "Zun'watha"
+					frostmane = "Zun'watha"
+					sandfury = "Zun'watha"
+					smolderthorn = "Zun'watha"
+					shadowglen = "Zun'watha"
+					winterax = "Zun'watha"
+					winterfang = "Zun'watha"
+					shadowtooth = "Zun'watha"
+					zandalari = "Zun'watha"
+				}
+				b_plaguemist_ravine = {
+				}
+				b_zensan = {
+				}
+				b_zenmator = {
+				}
+				b_veasin = {
+				}
+				b_glaimali = {
+				}
+				b_celara = {
+				}
+			}
+		}
+		
+		d_griffonroost = {
+			color = { 39 198 209 }
+			color2 = { 255 255 255 }
+			capital = 54 # Griffonroost
+			culture = wildhammer
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 54 province_id = 107 } }
+				}
+			}
+			
+			c_griffonroost = { # 54
+				color = { 187 34 77 }
+				color2 = { 255 255 255 }
+				
+				b_stormclaw = {
+				}
+				b_galefeather = {
+				}
+				b_wildroost = {
+				}
+				b_valorperch = {
+				}
+				b_dunwind = {
+				}
+				b_shockcrag = {
+				}
+				b_highwind = {
+				}
+			}
+			
+			c_slumber_pass = { # 107
+				color = { 187 94 82 }
+				color2 = { 255 255 255 }
+				
+				b_slumber_pass = {
+				}
+				b_nightmare_trail = {
+				}
+				b_greenwatch = {
+				}
+				b_scalebearer = {
+				}
+				b_darrowvigil = {
+				}
+				b_hinterledge = {
+				}
+				b_dormant_peak = {
+				}
+			}
+		}
+		
+		d_shadra_alor = {
+			color = { 15 94 100 }
+			color = { 255 255 255 }
+			capital = 181 # Shadra'Alor
+			culture = witherbark
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 181 province_id = 182 province_id = 460 province_id = 461 } }
+				}
+			}
+			
+			c_shadra_alor = { # 181
+				color =  { 111 201 43 }
+				color2 = { 255 255 255 }
+				
+				b_shadra_alor = {
+				}
+				b_venomqueens_altar = {
+				}
+				b_zulini = {
+				}
+				b_csimara = {
+				}
+				b_meijin = {
+				}
+				b_javzala = {
+				}
+				b_titamazi = {
+				}
+			}
+			
+			c_hiri_watha = { # 182
+				color = { 142 45 119 }
+				color2 = { 255 255 255 }
+				
+				b_hiri_watha = {
+				}
+				b_khija = {
+				}
+				b_suliq = {
+				}
+				b_jokrin = {
+				}
+				b_voorehe = {
+				}
+				b_samjin = {
+				}
+				b_rjinmez = {
+				}
+			}
+			
+			c_clawroost = { # 460
+				color = { 164 170 74 }
+				color2 = { 255 255 255 }
+				
+				b_bogens_ledge = {
+				}
+				b_sharptalon = {
+				}
+				b_stormweb = {
+				}
+				b_featherfall = {
+				}
+				b_dujab = {
+				}
+				b_withercrawl = {
+				}
+				b_vojkaz = {
+				}
+			}
+			
+			c_hatchet_pass = { # 461
+				color = { 96 215 88 }
+				color2 = { 255 255 255 }
+				
+				b_hatchet_pass = {
+				}
+				b_zulanya = {
+				}
+				b_jaykei = {
+				}
+				b_trezzin = {
+				}
+				b_teshin = {
+				}
+				b_laoyaya = {
+				}
+				b_vekvek = {
+				}
+			}
+		}
+	}
+}
+
+e_grim_batol = {
+	color = { 54 222 144 }
+	color2 = { 255 255 255 }
+	capital = 210 # Grim Batol
+	culture = wildhammer
 	
+	k_thandol = {
+		color = { 29 195 118 }
+		color2 = { 255 255 255 }
+		capital = 206 # Dun Modr
+		culture = bronzebeard
+		
+		d_wetlands_delta = {
+			color = { 17 158 92 }
+			color2 = { 255 255 255 }
+			capital = 201 # Menethil island
+			culture = lordaeronian
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 201 province_id = 204 province_id = 205 } }
+				}
+			}
+			
+			c_menethil_island = { # 201
+				color = { 173 162 91 }
+				color2 = { 255 255 255 }
+				
+				b_menethil_keep = {
+				}
+				b_menethil_harbor = {
+				}
+				b_black_channel = {
+				}
+				b_southview = {
+				}
+				b_strongmarsh = {
+				}
+				b_bellyn = {
+				}
+				b_foxbush = {
+				}
+			}
+			
+			c_bluegill_marsh = { # 204
+				color = { 94 218 96 }
+				color2 = { 255 255 255 }
+				
+				b_intrepids_wreck = {
+				}
+				b_wave_mistresss_wreck = {
+				}
+				b_pride_of_tiragardes_wreck = {
+				}
+				b_fathomdashers_wreck = {
+				}
+				b_songswallows_wreck = {
+				}
+				b_gales_reprieves_wreck = {
+				}
+				b_drustvarias_wreck = {
+				}
+			}
+			
+			c_sundown_marsh = { # 205
+				color = { 181 96 122 }
+				color2 = { 255 255 255 }
+				
+				b_swiftgear_station = {
+				}
+				b_saltspray_glen = {
+				}
+				b_ironbeards_tomb = {
+				}
+				b_shrouded_moor = {
+				}
+				b_byhollow = {
+				}
+				b_wetdelta = {
+				}
+				b_blueshadow = {
+				}
+			}
+		}
+		
+		d_thandol_span = {
+			color = { 17 158 92 }
+			color2 = { 255 255 255 }
+			capital = 206 # Dun Modr
+			culture = bronzebeard
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 206 province_id = 449 province_id = 450 } }
+				}
+			}
+			
+			c_dun_modr = { # 206
+				color = { 128 147 179 }
+				color2 = { 255 255 255 }
+				
+				b_dun_modr = {
+				}
+				b_dun_argath = {
+				}
+				b_tol_ronal = {
+				}
+				b_kulan = {
+				}
+				b_gloibur = {
+				}
+				b_gomgan = {
+				}
+				b_nomrin = {
+				}
+			}
+			
+			c_scarred_ridge = { # 449
+				color = { 207 198 167 }
+				color2 = { 255 255 255 }
+				
+				b_great_bulwakrs = {
+				}
+				b_ironshade = {
+				}
+				b_prymont = {
+				}
+				b_stonerock = {
+				}
+				b_silverburn = {
+				}
+				b_ironcrystal = {
+				}
+				b_stoneslope = {
+				}
+			}
+			
+			c_channel_crag = { # 450
+				color = { 142 99 184 }
+				color2 = { 255 255 255 }
+				
+				b_stonecoast = {
+				}
+				b_greymont = {
+				}
+				b_byoak = {
+				}
+				b_westsilver = {
+				}
+				b_westcrest = {
+				}
+				b_shadehaven = {
+				}
+				b_fogholt = {
+				}
+			}
+		}
+		
+		d_the_deep_fen = {
+			color = { 0 152 81 }
+			color2 = { 255 255 255 }
+			capital = 208 # Rator Ridge
+			culture = dark_iron
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 207 province_id = 208 province_id = 209 } }
+				}
+			}
+			
+			c_mosshide_fen = { # 207
+				color = { 170 79 130 }
+				color2 = { 255 255 255 }
+				
+				b_slabchisels_survey = {
+				}
+				b_mosshollow = {
+				}
+				b_grimeheart = {
+				}
+				b_gnawbog = {
+				}
+				b_rotmane = {
+				}
+				b_draindirt = {
+				}
+				b_mossback = {
+				}
+			}
+			
+			c_raptor_ridge = { # 208
+				color = { 125 184 190 }
+				color2 = { 255 255 255 }
+				
+				b_direforge_hill = {
+				}
+				b_fang_lair = {
+				}
+				b_ironmist = {
+				}
+				b_dracacre = {
+				}
+				b_peatburn = {
+				}
+				b_flatfort = {
+				}
+				b_sinkhome = {
+				}
+			}
+			
+			c_the_green_belt = { # 209
+				color = { 20 204 37 }
+				color2 = { 255 255 255 }
+				
+				b_greenwardens_grove = {
+				}
+				b_blackbog = {
+				}
+				b_dimhold = {
+				}
+				b_merdelain = {
+				}
+				b_spiritmoor = {
+				}
+				b_hollowhallow = {
+				}
+				b_blackcross = {
+				}
+			}
+		}
+		
+		d_khaz_approach = {
+			color = { 101 171 138 }
+			color2 = { 255 255 255 }
+			culture = dragonmaw
+			capital = 203 # Angerfang Cliffs
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 202 province_id = 203 province_id = 440 } }
+				}
+			}
+			
+			c_the_alpine_coast = { # 202
+				color = { 60 74 91 }
+				color2 = { 255 255 255 }
+				
+				b_fairbeach = {
+				}
+				b_woodburn = {
+				}
+				b_glasswinter = {
+				}
+				b_fairfog = {
+				}
+				b_westramp = {
+				}
+				b_vertby = {
+				}
+				b_oceanshield = {
+				}
+			}
+			
+			c_angerfang_cliffs = { # 203
+				color = { 128 187 164 }
+				color2 = { 255 255 255 }
+				
+				azerothian = "Whelgar's Retreat"
+				stromic = "Whelgar's Retreat"
+				dalaranian = "Whelgar's Retreat"
+				lordaeronian = "Whelgar's Retreat"
+				gilnean = "Whelgar's Retreat"
+				tirasian = "Whelgar's Retreat"
+				alteraci = "Whelgar's Retreat"
+				arathi = "Whelgar's Retreat"
+				hillsbradan = "Whelgar's Retreat"
+				silverpiner = "Whelgar's Retreat"
+				tirisfalen = "Whelgar's Retreat"
+				bronzebeard = "Whelgar's Retreat"
+				wildhammer = "Whelgar's Retreat"
+				dark_iron = "Whelgar's Retreat"
+				high_elven = "Whelgar's Retreat"
+				blood_elven = "Whelgar's Retreat"
+				night_elven = "Whelgar's Retreat"
+				gnomish = "Whelgar's Retreat"
+				draenei = "Whelgar's Retreat"
+				sorrowstep = "Whelgar's Retreat"
+				kurenai = "Whelgar's Retreat"
+				murkblood = "Whelgar's Retreat"
+				dreghood = "Whelgar's Retreat"
+				greyheart = "Whelgar's Retreat"
+				wrekt = "Whelgar's Retreat"
+				ashtongue = "Whelgar's Retreat"
+				lost_one = "Whelgar's Retreat"
+				
+				b_angerfang_camp = { # 203
+					azerothian = "Whelgar's Retreat"
+					stromic = "Whelgar's Retreat"
+					dalaranian = "Whelgar's Retreat"
+					lordaeronian = "Whelgar's Retreat"
+					gilnean = "Whelgar's Retreat"
+					tirasian = "Whelgar's Retreat"
+					alteraci = "Whelgar's Retreat"
+					arathi = "Whelgar's Retreat"
+					hillsbradan = "Whelgar's Retreat"
+					silverpiner = "Whelgar's Retreat"
+					tirisfalen = "Whelgar's Retreat"
+					bronzebeard = "Whelgar's Retreat"
+					wildhammer = "Whelgar's Retreat"
+					dark_iron = "Whelgar's Retreat"
+					high_elven = "Whelgar's Retreat"
+					blood_elven = "Whelgar's Retreat"
+					night_elven = "Whelgar's Retreat"
+					gnomish = "Whelgar's Retreat"
+					draenei = "Whelgar's Retreat"
+					sorrowstep = "Whelgar's Retreat"
+					kurenai = "Whelgar's Retreat"
+					murkblood = "Whelgar's Retreat"
+					dreghood = "Whelgar's Retreat"
+					greyheart = "Whelgar's Retreat"
+					wrekt = "Whelgar's Retreat"
+					ashtongue = "Whelgar's Retreat"
+					lost_one = "Whelgar's Retreat"
+				}
+				b_thelgen_rock = {
+				}
+				b_crowhollow = {
+				}
+				b_redhollow = {
+				}
+				b_clearmire = {
+				}
+				b_cliffgate = {
+				}
+				b_saltwatch = {
+				}
+			}
+			
+			c_bogrock = { # 440
+				color = { 198 144 48 }
+				color2 = { 255 255 255 }
+				
+				b_grayshade = {
+				}
+				b_heartwatch = {
+				}
+				b_dewview = {
+				}
+				b_widebreak = {
+				}
+				b_mossgrave = {
+				}
+				b_boneshield = {
+				}
+				b_southcairn = {
+				}
+			}
+		}
 	}
 }
