@@ -1,0 +1,421 @@
+# hair, mouth, chin, nose, eyes, cheek, ear, neck
+spriteTypes = {
+	
+	### vrykul MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# vrykul Male
+	portraitType = {
+		name = "PORTRAIT_vrykulgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_male_base:p2"
+			"GFX_vrykul_male_eyes:d6"
+			"GFX_vrykul_male_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_vrykulgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_male_base:p2"
+			"GFX_vrykul_male_eyes:d6"
+			"GFX_vrykul_male_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_vrykulgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_male_base:p2"
+			"GFX_vrykul_male_eyes:d6"
+			"GFX_vrykul_male_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+	}
+	
+
+
+	### vrykul FEMALE ####
+
+	# vrykul female
+	portraitType = {
+		name = "PORTRAIT_vrykulgfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_female_base:p2"
+			"GFX_vrykul_female_eyes:d6"
+			"GFX_vrykul_female_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+	}
+
+	# vrykul female midage
+	portraitType = {
+		name = "PORTRAIT_vrykulgfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_female_base:p2"
+			"GFX_vrykul_female_eyes:d6"
+			"GFX_vrykul_female_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+	}
+
+	# vrykul female oldage
+	portraitType = {
+		name = "PORTRAIT_vrykulgfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_female_base:p2"
+			"GFX_vrykul_female_eyes:d6"
+			"GFX_vrykul_female_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+	}
+
+	### drust MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# drust Male
+	portraitType = {
+		name = "PORTRAIT_drustgfx_male"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_male_base:e:p2"
+			"GFX_drust_male_eyes:d6"
+			"GFX_vrykul_male_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 8 8 8 } { 90 90 85 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 32 30 } { 226 216 221 } { 255 255 255 }
+			{ 40 42 40 } { 246 246 251 } { 255 255 255 }
+			{ 20 20 20 } { 156 158 165 } { 255 255 255 }
+			{ 7 7 8 } { 68 64 77 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 204 195 190 }
+		}
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_drustgfx_male1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_male_base:p2:e"
+			"GFX_vrykul_male_eyes:d6"
+			"GFX_vrykul_male_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 8 8 8 } { 90 90 85 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 32 30 } { 226 216 221 } { 255 255 255 }
+			{ 40 42 40 } { 246 246 251 } { 255 255 255 }
+			{ 20 20 20 } { 156 158 165 } { 255 255 255 }
+			{ 7 7 8 } { 68 64 77 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 204 195 190 }
+		}
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_drustgfx_male2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_male_base:p2:e"
+			"GFX_vrykul_male_eyes:d6"
+			"GFX_vrykul_male_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 8 8 8 } { 90 90 85 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 32 30 } { 226 216 221 } { 255 255 255 }
+			{ 40 42 40 } { 246 246 251 } { 255 255 255 }
+			{ 20 20 20 } { 156 158 165 } { 255 255 255 }
+			{ 7 7 8 } { 68 64 77 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 204 195 190 }
+		}
+	}
+	
+
+
+	### drust FEMALE ####
+
+	# drust female
+	portraitType = {
+		name = "PORTRAIT_drustgfx_female"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_female_base:p2:e"
+			"GFX_drust_female_eyes:d6"
+			"GFX_vrykul_female_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 8 8 8 } { 90 90 85 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 32 30 } { 226 216 221 } { 255 255 255 }
+			{ 40 42 40 } { 246 246 251 } { 255 255 255 }
+			{ 20 20 20 } { 156 158 165 } { 255 255 255 }
+			{ 7 7 8 } { 68 64 77 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 204 195 190 }
+		}
+	}
+
+	# drust female midage
+	portraitType = {
+		name = "PORTRAIT_drustgfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_female_base:p2:e"
+			"GFX_drust_female_eyes:d6"
+			"GFX_vrykul_female_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 8 8 8 } { 90 90 85 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 32 30 } { 226 216 221 } { 255 255 255 }
+			{ 40 42 40 } { 246 246 251 } { 255 255 255 }
+			{ 20 20 20 } { 156 158 165 } { 255 255 255 }
+			{ 7 7 8 } { 68 64 77 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 204 195 190 }
+		}
+	}
+
+	# drust female oldage
+	portraitType = {
+		name = "PORTRAIT_drustgfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_vrykul_female_base:p2:e"
+			"GFX_drust_female_eyes:d6"
+			"GFX_vrykul_female_hair:p1:h:y"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 8 8 8 } { 90 90 85 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 32 30 } { 226 216 221 } { 255 255 255 }
+			{ 40 42 40 } { 246 246 251 } { 255 255 255 }
+			{ 20 20 20 } { 156 158 165 } { 255 255 255 }
+			{ 7 7 8 } { 68 64 77 } { 255 255 255 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 204 195 190 }
+		}
+	}
+}
