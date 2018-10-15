@@ -3683,7 +3683,7 @@ e_gilneas = {
 				
 				b_fort_daelin = {
 				}
-				b_griffinshore = {
+				b_griffonshore = {
 				}
 				b_fates_end = {
 				}
@@ -4028,7 +4028,7 @@ e_gilneas = {
 				b_crestfall = {
 					red_dragonflight = "Alexstrasza's Cave"
 				}
-				b_griffinhedge = {
+				b_griffonhedge = {
 				}
 				b_wildedge = {
 				}
@@ -7122,6 +7122,134 @@ e_grim_batol = {
 				b_kunhosch = {
 				}
 				b_ninotol = {
+				}
+			}
+		}
+		
+		d_twin_peaks = {
+			color = { 35 141 31 }
+			color2 = { 255 255 255 }
+			culture = wildhammer
+			capital = 226 # Whiteridge
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 226 province_id = 227 } }
+				}
+			}
+			
+			c_whiteridge = { # 226
+				color = { 94 167 82 }
+				color2 = { 255 255 255 }
+				
+				b_wildhammer_enclave = {
+				}
+				b_brightmallow = {
+				}
+				b_griffonpond = {
+				}
+				b_grassford = {
+				}
+				b_landbarrow = {
+				}
+				b_clearbrush = {
+				}
+				b_whitebank = {
+				}
+			}
+			
+			c_blackridge = { # 227
+				color = { 119 125 82 }
+				color2 = { 255 255 255 }
+				
+				b_dragonmw_compound = {
+				}
+				b_northedge = {
+				}
+				b_drakebreak = {
+				}
+				b_spikesoar = {
+				}
+				b_burnthusk = {
+				}
+				b_mawvale = {
+				}
+				b_blackbank = {
+				}
+			}
+		}
+		
+		d_the_twilight_shore = {
+			color = { 35 141 31 }
+			color2 = { 255 255 255 }
+			culture = naga
+			capital = 216 # Highbank
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 216 province_id = 221 province_id = 225 } }
+				}
+			}
+			
+			c_highbank = { # 216
+				color = { 102 170 162 }
+				color2 = { 255 255 255 }
+				
+				b_highbank = {
+				}
+				b_baregate = {
+				}
+				b_heartwater = {
+				}
+				b_falltown = {
+				}
+				b_coldshade = {
+				}
+				b_limecoast = {
+				}
+				b_grayguard = {
+				}
+			}
+			
+			c_the_obsidian_forest = { # 221
+				color = { 27 88 53 }
+				color2 = { 255 255 255 }
+				
+				b_obsidian_lair = {
+				}
+				b_backburn = {
+				}
+				b_glassbeach = {
+				}
+				b_ashwood = {
+				}
+				b_charglen = {
+				}
+				b_firefall = {
+				}
+				b_curserock = {
+				}
+			}
+			
+			c_twilight_shore = { # 225
+				color = { 218 198 116 }
+				color2 = { 255 255 255 }
+				
+				b_lastcoast = {
+				}
+				b_roguechill = {
+				}
+				b_grimcall = {
+				}
+				b_dragonwallow = {
+				}
+				b_arrowwater = {
+				}
+				b_windstar = {
+				}
+				b_cursecoast = {
 				}
 			}
 		}
