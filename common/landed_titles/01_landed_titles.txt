@@ -7533,5 +7533,394 @@ e_dun_morogh = {
 				}
 			}
 		}
+		d_coldridge = {
+			color = { 151 109 11 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 234 # Anvilmar
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 234 province_id = 235 } }
+				}
+			}
+			
+			c_anvilmar = { # 234
+				color = { 255 119 74 }
+				color2 = { 255 255 255 }
+				
+				b_anvilmar = {
+				}
+				b_whitebeards_encampment = {
+				}
+				b_coldridge_pass = {
+				}
+				b_coldmore = {
+				}
+				b_shadowchill = {
+				}
+				b_lostpeak = {
+				}
+				b_gloomchill = {
+				}
+			}
+			
+			c_frostrock = { # 235
+				color = { 105 196 213 }
+				color2 = { 255 255 255 }
+				
+				b_frostmane_hovel = {
+				}
+				b_cavewell = {
+				}
+				b_everhollow = {
+				}
+				b_coldrock = {
+				}
+				b_cursepass = {
+				}
+				b_starhollow = {
+				}
+				b_chillpoint = {
+				}
+			}
+		}
+		d_kharanos = {
+			color = { 218 170 59 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 238 # Kharanos
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 237 province_id = 238 } }
+				}
+			}
+			
+			c_grizzled_valley = { # 237
+				color = { 39 187 124 }
+				color2 = { 255 255 255 }
+				
+				b_the_grizzled_den = {
+				}
+				b_grayrun = {
+				}
+				b_coldpelt = {
+				}
+				b_frosthorn = {
+				}
+				b_flatbreach = {
+				}
+				b_quickshear = {
+				}
+				b_midsummit = {
+				}
+			}
+			
+			c_kharanos = { # 238
+				color = { 201 122 170 }
+				color2 = { 255 255 255 }
+				
+				b_kharanos = {
+				}
+				b_steelgrills_depot = {
+				}
+				b_bearhill = {
+				}
+				b_pinestar = {
+				}
+				b_falsevale = {
+				}
+				b_coldburn = {
+				}
+				b_icevault = {
+				}
+			}
+		}
+		d_tundrid_highlands = {
+			color = { 212 177 95 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 240 # Tundrid Hills
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 240 province_id = 241 province_id = 244 } }
+				}
+			}
+			
+			c_tundrid_hills = { # 240
+				color = { 133 221 142 }
+				color2 = { 255 255 255 }
+				
+				b_frostmane_retreat = {
+				}
+				b_frostmane_front = {
+				}
+				b_dirtgrove = {
+				}
+				b_boulderhill = {
+				}
+				b_purebreak = {
+				}
+				b_frostmount = {
+				}
+				b_steelpost = {
+				}
+			}
+			
+			c_helms_bed = { # 241
+				color = { 201 11 190 }
+				color2 = { 255 255 255 }
+				
+				b_gol_bolar = {
+				}
+				b_ironband_compound = {
+				}
+				b_stonevein = {
+				}
+				b_coldbell = {
+				}
+				b_rimerock = {
+				}
+				b_elderguard = {
+				}
+				b_bronzemaw = {
+				}
+			}
+			
+			c_amber_valley = { # 244
+				color = { 150 62 7 }
+				color2 = { 255 255 255 }
+				
+				b_amberstill = {
+				}
+				b_barestorm = {
+				}
+				b_ironside = {
+				}
+				b_sleekspire = {
+				}
+				b_steamwallow = {
+				}
+				b_whitvale = {
+				}
+				b_fairforest = {
+				}
+			}
+		}
+		
+		d_khaz_coast = {
+			color = { 212 167 61 }
+			color2 = { 255 255 255 }
+			culture = murloc
+			capital = 433 # Newman's Landing
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 432 province_id = 433 } }
+				}
+			}
+			
+			c_cold_coast = { # 432
+				color = { 179 77 128 }
+				color2 = { 255 255 255 }
+				
+				b_blackfront = {
+				}
+				b_shroudhorn = {
+				}
+				b_brittlechill = {
+				}
+				b_grimeside = {
+				}
+				b_ragespell = {
+				}
+				b_smoothcall = {
+				}
+				b_rimeharbor = {
+				}
+			}
+			
+			c_newmans_landing = { # 433
+				color = { 68 167 82 }
+				color2 = { 255 255 255 }
+				
+				b_newmans_landing = {
+				}
+				b_steamside = {
+				}
+				b_lastland = {
+				}
+				b_saltwall = {
+				}
+				b_tradestorm = {
+				}
+				b_farport = {
+				}
+				b_houndcrest = {
+				}
+			}
+		}
+		
+		d_gate_pass = {
+			color = { 229 167 23 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 242 # South Gate Pass
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 242 province_id = 243 } }
+				}
+			}
+			
+			c_south_gate_pass = { # 242
+				color = { 68 88 91 }
+				color2 = { 255 255 255 }
+				
+				b_south_gate_outpost = {
+				}
+				b_the_mountain_den = {
+				}
+				b_oldmount = {
+				}
+				b_whitemere = {
+				}
+				b_winterfront = {
+				}
+				b_darkview = {
+				}
+				b_direreach = {
+				}
+			}
+			
+			c_north_gate_pass = { # 243
+				color = { 247 179 170 }
+				color2 = { 255 255 255 }
+				
+				b_north_gate_outpost = {
+				}
+				b_eldermond = {
+				}
+				b_silverguard = {
+				}
+				b_thornrock = {
+				}
+				b_northhost = {
+				}
+				b_slykeep = {
+				}
+				b_whitereach = {
+				}
+			}
+		}
+		
+		d_chillbreach = {
+			color = { 148 111 26 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 437 # Everpeak
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 437 province_id = 439 } }
+				}
+			}
+			
+			c_everpeak = { # 437
+				color = { 91 201 181 }
+				color2 = { 255 255 255 }
+				
+				b_everpeak = {
+				}
+				b_eight_peaks = {
+				}
+				b_redpeak = {
+				}
+				b_rockwall = {
+				}
+				b_caveholde = {
+				}
+				b_icehill = {
+				}
+				b_steepacre = {
+				}
+			}
+			
+			c_chillridge = { # 439
+				color = { 113 150 57 }
+				color2 = { 255 255 255 }
+				
+				b_neverwinter ={
+				}
+				b_clearbreak = {
+				}
+				b_bearshade = {
+				}
+				b_steelfort = {
+				}
+				b_kilfrost = {
+				}
+				b_iceguard = {
+				}
+				b_rogueden = {
+				}
+			}
+		}
+	}
+	
+	k_loch_modan = {
+		color = { 249 255 144 }
+		color2 = { 255 255 255 }
+		capital = 249 # Thelsamar
+		culture = bronzebeard
+		
+		d_stonewrought = {
+			color = { 251 255 179 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 248 # Stonewrought Dam
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 248 province_id = 251 province_id = 259 } }
+				}
+			}
+			
+			c_stonewrought_dam = {
+				color = { 207 91 207 }
+				color2 = { 255 255 255 }
+				
+				b_stonewrought_dam = {
+				}
+				b_northmead = {
+				}
+				b_janhedge = {
+				}
+				b_fairwinter = {
+				}
+				b_graybarrow = {
+				}
+				b_bushdell = {
+				}
+				b_mallowholt = {
+				}
+			}
+			
+			c_loch_isles = {
+				color = { 207 85 187 }
+				color2 = { 255 255 255 }
+				
+				b_
+			}
+		}
 	}
 }
