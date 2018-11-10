@@ -19,7 +19,7 @@
 	trait = proud
 	trait = ambitious
 	trait = gregarious
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	disallow_random_traits = yes
 	1.1.1 = {
 		birth = yes
@@ -70,7 +70,7 @@
 	intrigue = 6
 	learning = 8
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = warrior
 	trait = charismatic_negotiator
 	trait = robust
@@ -100,7 +100,7 @@
 	intrigue = 6
 	learning = 8
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = mage
 	trait = mastermind_theologian
 	trait = quick
@@ -131,7 +131,7 @@
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	father = 1 # Dath'Remar Sunstrider
 	3591.12.20 = {
 		birth = yes
@@ -146,7 +146,7 @@
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	father = 9 # Norfimbor Sunstrider
 	4430.2.1 = {
 		birth = yes
@@ -169,7 +169,7 @@
 	intrigue = 4
 	learning = 7
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = schorlarly_theologian
 	trait = scholar
 	trait = mage
@@ -204,7 +204,7 @@
 	religion = arcane
 	learning = 8
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = mage
 	father = 4 # Anasterian Sunstrider
 	7480.9.11 = {
@@ -222,7 +222,7 @@
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	8900.2.10 = {
 		birth = yes
 	}
@@ -243,7 +243,7 @@
 	intrigue = 6
 	learning = 2
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = skilled_tactician
 	trait = ranger
 	trait = hunter
@@ -274,7 +274,7 @@
 	intrigue = 7
 	learning = 3
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = ranger
 	trait = flamboyant_schemer
 	trait = robust
@@ -294,7 +294,10 @@
 		add_trait = race_undead_scourge
 		culture = scourge
 		religion = lich_king
-		#Place under Sylvannas
+		employer = 18 # Sylvannas Windrunner
+		effect = {
+			#remove_trait = arcane_sunwell
+		}
 	}
 	10022.10.31 = {
 		effect = {
@@ -324,7 +327,7 @@
 	intrigue = 3
 	learning = 4
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = skilled_tactician
 	trait = strong
 	trait = warrior
@@ -354,7 +357,7 @@
 	intrigue = 6
 	learning = 2
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = brilliant_strategist
 	trait = rough_terrain_leader
 	trait = ranger
@@ -381,7 +384,7 @@
 	martial = 8
 	intrigue = 5
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = ranger
 	father = 14 # Talanas Windrunner
 	8822.7.12 = {
@@ -399,7 +402,7 @@
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	father = 14 # Talanas Windrunner
 	8897.9.23 = {
 		birth = yes
@@ -422,7 +425,7 @@
 	intrigue = 5
 	learning = 4
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = ranger
 	trait = brilliant_strategist
 	trait = rough_terrain_leader
@@ -460,7 +463,7 @@
 	intrigue = 8
 	learning = 3
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = ranger
 	trait = intricate_webweaver
 	trait = wroth
@@ -486,6 +489,9 @@
 		religion = lich_king
 		add_trait = race_undead_scourge
 		add_trait = envious
+		effect = {
+			#remove_trait = arcane_sunwell
+		}
 	}
 	10022.10.31 = {
 		culture = forsaken
@@ -513,7 +519,7 @@
 	intrigue = 4
 	learning = 3
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = ranger
 	trait = proud
 	trait = intricate_webweaver
@@ -547,7 +553,7 @@
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	mother = 15 # Lireesa Windrunner
 	9992.5.29 = {
 		birth = yes
@@ -569,7 +575,7 @@
 	intrigue = 6
 	learning = 7
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = ambitious
 	trait = deceitful
 	trait = martial_cleric
@@ -638,7 +644,7 @@
 	religion = arcane
 	trait = race_high_elf
 	trait = twin
-	trait = arcane_scholastic
+	#trait = arcane_scholastic
 	#father = 0 # Rhonin Redhair
 	mother = 19 # Vereesa Windrunner
 	10014.7.2 = {
@@ -660,7 +666,7 @@
 	religion = arcane
 	trait = race_high_elf
 	trait = twin
-	trait = arcane_scholastic
+	#trait = arcane_scholastic
 	#father = 0 # Rhonin Redhair
 	mother = 19 # Vereesa Windrunner
 	10014.7.2 = {
@@ -685,7 +691,7 @@
 	diplomacy = 7
 	learning = 9
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = priest
 	trait = mastermind_theologian
 	trait = content
@@ -714,7 +720,7 @@
 	religion = arcane
 	learning = 9
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = mage
 	trait = proud
 	trait = diligent
@@ -746,7 +752,7 @@
 	intrigue = 4
 	learning = 6
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	disallow_random_traits = yes
 	9995.7.12 = {
 		birth = yes
@@ -789,7 +795,7 @@
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	9532.9.10 = {
 		birth = yes
 	}
@@ -806,7 +812,7 @@
 	religion = arcane
 	learning = 7
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = priest
 	father = 28 # Elrioril Bloodwrath
 	9980.7.10 = {
@@ -829,7 +835,7 @@
 	intrigue = 1
 	learning = 5
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	father = 28 # Elrioril Bloodwrath
 	10002.8.29 = {
 		birth = yes
@@ -854,7 +860,7 @@
 			remove_trait = warrior
 		}
 	}
-	10009.7.21 = {
+	10100.7.21 = {
 		death = { death_reason = death_natural }
 	}
 }
@@ -870,7 +876,7 @@
 	diplomacy = 5
 	learning = 7
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = mage
 	9920.1.20 = {
 		birth = yes
@@ -906,7 +912,7 @@
 	intrigue = 5
 	learning = 3
 	trait = race_high_elf
-	trait = arcane_sunwell
+	#trait = arcane_sunwell
 	trait = ranger
 	trait = skilled_tactician
 	trait = brave
@@ -930,5 +936,145 @@
 	}
 	10100.1.1 = {
 		death = { death_reason = death_natural }
+	}
+}
+
+#House Brighthand
+33 = { # Lord of Magister's Terrace and Quel'Danas 7108-8094
+    name = "Aertin"
+	dynasty = 11 # Brighthand
+	culture = high_elven
+	religion = arcane
+    learning = 7
+	trait = race_high_elf
+	#trait = arcane_sunwell
+	trait = scholarly_theologian
+	trait = mage
+	6873.6.10 = {
+		birth = yes
+	}
+	7000.1.1 = {
+        employer = 4 # Anasterian Sunstrider
+		give_job_title = job_spiritual
+    }
+	8094.10.22 = {
+        death = { death_reason = death_natural }
+    }
+}
+
+#House Brightwing
+34 = { # Lord of Azurebreeze Coast 10020-???
+	name = "Halduron"
+	dynasty = 12 # Brightwing
+	dna="0fede0e0000"
+	properties="um000000000000j000"
+	culture = high_elven
+	religion = arcane
+	diplomacy = 3
+	martial = 7
+	stewardship = 4
+	intrigue = 5
+	learning = 1
+	trait = race_high_elf
+	#trait = arcane_sunwell
+	9988.2.29 = {
+		birth = yes
+	}
+	10004.2.29 = {
+		add_trait = skilled_tactician
+		add_trait = ranger
+		add_friend = 32 # Lor'themar Theron
+	}
+	10022.1.1 = {
+		culture = blood_elven
+		add_trait = race_blood_elf
+		effect = {
+			remove_trait = race_high_elf
+			set_graphical_culture = blood_elven
+		}
+		employer = 32 # Lor'themar Theron
+		give_job_title = job_marshal
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+#House Tonath
+35 = {
+	name = "Rommath"
+	dynasty = 13 # Tonath
+	dna="0dfb00i0c00"
+	properties="u0000000000000k000"
+	culture = high_elven
+	religion = arcane
+	diplomacy = 5
+	martial = 2
+	stewardship = 2
+	intrigue = 4
+	learning = 8
+	trait = race_high_elf
+	#trait = arcane_sunwell
+	trait = mage
+	trait = mastermind_theologian
+	trait = erudite
+	trait = proud
+	trait = trusting
+	trait = feeble
+	disallow_random_traits = yes
+	9904.6.7 = {
+		birth = yes
+	}
+	9920.6.7 = {
+		add_friend = 5 # Kael'thas Sunstrider
+	}
+	#Have him be in Dalaran with Kael somewhere between these two
+	10022.1.1 = {
+		culture = blood_elven
+		add_trait = race_blood_elf
+		effect = {
+			remove_trait = race_high_elf
+			set_graphical_culture = blood_elven
+		}
+		employer = 32 # Lor'themar Theron
+		give_job_title = job_spiritual
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+#House Drathir
+36 = { # Lord of Dawnstar Spire 10000-10026 and Lord of Thas'Alah 10020-10026
+	name = "Dar'Khan"
+	dynasty = 14 # Drathir
+	dna="0dedb0f0c00"
+	properties="hd000000000000l000"
+	culture = high_elven
+	religion = arcane
+	diplomacy = 5
+	martial = 2
+	stewardship = 1
+	intrigue = 7
+	learning = 5
+	trait = race_high_elf
+	#trait = arcane_sunwell
+	trait = cruel
+	trait = envious
+	trait = ambitious
+	trait = mage
+	disallow_random_traits = yes
+	9984.5.1 = {
+		birth = yes
+	}
+	10020.5.3 = {
+		add_trait = race_undead_scourge
+		culture = scourge
+		religion = lich_king
+		add_trait = necromancer
+		effect = {
+			remove_trait = mage
+			#remove_trait = arcane_sunwell
+		}
 	}
 }
