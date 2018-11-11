@@ -1,4 +1,3 @@
-###### AUTO GENERATED CONTENT (c) CKTools v16 ######
 
 e_zul_aman = {
 	color = { 80 210 25 }
@@ -7895,7 +7894,7 @@ e_dun_morogh = {
 				}
 			}
 			
-			c_stonewrought_dam = {
+			c_stonewrought_dam = { # 248
 				color = { 207 91 207 }
 				color2 = { 255 255 255 }
 				
@@ -7915,12 +7914,391 @@ e_dun_morogh = {
 				}
 			}
 			
-			#c_loch_isles = {
-			#	color = { 207 85 187 }
-			#	color2 = { 255 255 255 }
-			#	
-			#	b_
-			#}
+			c_loch_isles = { # 251
+				color = { 207 85 187 }
+				color2 = { 255 255 255 }
+				
+				b_springward = {
+				}
+				b_midharbor = {
+				}
+				b_silverscar = {
+				}
+				b_dirtloch = {
+				}
+				b_sleekwell = {
+				}
+				b_snakegrave = {
+				}
+				b_bleakmouth = {
+				}
+			}
+			
+			c_lochside = { # 259
+				color = { 103 41 111 }
+				color2 = { 255 255 255 }
+				
+				b_earthbend = {
+				}
+				b_darkmaul = {
+				}
+				b_cliffshake = {
+				}
+				b_boulderburn = {
+				}
+				b_graygulch = {
+				}
+				b_neverhost = {
+				}
+				b_cliffsummit = {
+				}
+			}
+		}
+		
+		d_cragrise = {
+			color = { 220 223 139 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 444 # Black Crag
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 441 province_id = 444 province_id = 446 } }
+				}
+			}
+			
+			c_pebblerise = { # 441
+				color = { 201 196 133 }
+				color2 = { 255 255 255 }
+				
+				b_silverhollow = {
+				}
+				b_stonemaw = {
+				}
+				b_madstorm = {
+				}
+				b_whalewater = {
+				}
+				b_everwater = {
+				}
+				b_rustguard = {
+				}
+				b_cavehelm = {
+				}
+			}
+			
+			c_black_crag = { # 444
+				color = { 130 77 136 }
+				color2 = { 255 255 255 }
+				
+				b_black_crag = {
+				}
+				b_rotgut = {
+				}
+				b_ironhide = {
+				}
+				b_silentfront = {
+				}
+				b_ravenfell = {
+				}
+				b_mudfront = {
+				}
+				b_bronzeborn = {
+				}
+				b_blackbarrow = {
+				}
+			}
+			
+			c_eastpeak = { # 446
+				color = { 221 147 85 }
+				color2 = { 255 255 255 }
+				
+				b_angband = {
+				}
+				b_frostvalley = {
+				}
+				b_scorchspire = {
+				}
+				b_sunrun = {
+				}
+				b_highfort = {
+				}
+				b_bellbreak = {
+				}
+				b_iceband = {
+				}
+			}
+		}
+		
+		d_arid_border = {
+			color = { 196 199 104 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 256 # Ironhill
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 255 province_id = 256 province_id = 257 } }
+				}
+			}
+			
+			c_stonesplinter_valley = { # 255
+				color = { 68 156 190 }
+				color2 = { 255 255 255 }
+				
+				b_stonesplinter_caves = {
+				}
+				b_fearhelm = {
+				}
+				b_goldhand = {
+				}
+				b_killhollow = {
+				}
+				b_snakeward = {
+				}
+				b_bruterock = {
+				}
+				b_clubsmash = {
+				}
+			}
+			
+			c_ironhill = { # 256
+				color = { 184 167 108 }
+				color2 = { 255 255 255 }
+				
+				b_ironbands_excavation = {
+				}
+				b_ironwing_cavern = {
+				}
+				b_steelden = {
+				}
+				b_darkburn = {
+				}
+				b_ironland = {
+				}
+				b_saltpost = {
+				}
+				b_eboncairn = {
+				}
+			}
+			
+			c_rangers_rest = { # 257
+				color = { 218 85 173 }
+				color2 = { 255 255 255 }
+				
+				b_farstrider_lodge = {
+				}
+				b_oldstar = {
+				}
+				b_steephold = {
+				}
+				b_starhost = {
+				}
+				b_bleakbreak = {
+				}
+				b_dustverge = {
+				}
+				b_deadtown = {
+				}
+			}
+		}
+		
+		d_iron_pass = {
+			color = { 216 219 117 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 252 # Valley of Kings
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 252 province_id = 253 } }
+				}
+			}
+			
+			c_valley_of_kings = { # 252
+				color = { 122 187 79 }
+				color2 = { 255 255 255 }
+				
+				b_valley_of_kings = {
+				}
+				b_grizzlepaw_ridge = {
+				}
+				b_flamevalley = {
+				}
+				b_flamegate = {
+				}
+				b_graycall = {
+				}
+				b_fallrun = {
+				}
+				b_steamhand = {
+				}
+			}
+			
+			c_blackhammer_tunnels = { # 253
+				color = { 187 68 176 }
+				color2 = { 255 255 255 }
+				
+				b_sleetburn = {
+				}
+				b_drysummit = {
+				}
+				b_neverflame = {
+				}
+				b_edgehorn = {
+				}
+				b_edgemaw = {
+				}
+				b_dustfort = {
+				}
+				b_bonewatch = {
+				}
+			}
+		}
+		
+		d_thelsamar = {
+			color = { 180 182 109 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 249 # Valley of Kings
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 247 province_id = 249 province_id = 250 } }
+				}
+			}
+			
+			c_algaz = { # 247
+				color = { 99 207 122 }
+				color2 = { 255 255 255 }
+				
+				b_dun_algaz = {
+				}
+				b_algaz_outpost = {
+				}
+				b_falsecall = {
+				}
+				b_shadoward = {
+				}
+				b_flamewick = {
+				}
+				b_wetpass = {
+				}
+				b_direpass = {
+				}
+			}
+			
+			c_thelsamar = { # 249
+				color = { 142 129 77 }
+				color2 = { 255 255 255 }
+				
+				b_thelsamar = {
+				}
+				b_rimefell = {
+				}
+				b_stormhaven = {
+				}
+				b_steelhelm = {
+				}
+				b_grimreach = {
+				}
+				b_greenstorm = {
+				}
+				b_moonvein = {
+				}
+			}
+			
+			c_silverbank = { # 250
+				color = { 181 190 0 }
+				color2 = { 255 255 255 }
+				
+				b_silver_stream = {
+				}
+				b_dimfort = {
+				}
+				b_boatmurder = {
+				}
+				b_battlefail = {
+				}
+				b_raventrench = {
+				}
+				b_clayden = {
+				}
+				b_deadbank = {
+				}
+			}
+		}
+	}
+}
+
+e_blackrock = {
+	color = { 198 26 26 }
+	color2 = { 255 255 255 }
+	capital = 274 # Blackrock Depths
+	culture = dark_iron
+	
+	k_blackrock = {
+		color = { 218 31 31 }
+		color2 = { 255 255 255 }
+		capital = 274 # Blackrock Depths
+		culture = dark_iron
+		
+		d_blackrock_mountain = {
+			color = { 155 23 23 }
+			color2 = { 255 255 255 }
+			culture = dark_iron
+			capital = 274 # Blackrock Depths
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 273 province_id = 274 } }
+				}
+			}
+			
+			c_blackrock_spire = { # 273
+				color = { 45 51 150 }
+				color2 = { 255 255 255 }
+				
+				b_upper_blackrock_spire = {
+				}
+				b_lower_blackrock_spire = {
+				}
+				b_hordemar = {
+				}
+				b_tazz_alor = {
+				}
+				b_skitterweb_tunnels = {
+				}
+				b_blackwing_lair = {
+				}
+				b_blackwing_descent = {
+				}
+			}
+			
+			c_blackrock_depths = { # 274
+				color = { 119 14 14 }
+				color2 = { 255 255 255 }
+				
+				b_shadowforge = {
+				}
+				b_east_garrison = {
+				}
+				b_west_garrison = {
+				}
+				b_shrine_of_thaurissan = {
+				}
+				b_grinding_quarry = {
+				}
+				b_masonary = {
+				}
+				b_molten_core = { 
+				}
+			}
 		}
 	}
 }
