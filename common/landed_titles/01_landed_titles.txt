@@ -7914,7 +7914,7 @@ e_dun_morogh = {
 				}
 			}
 			
-			c_loch_isles = { # 251
+			c_loch_islands = { # 251
 				color = { 207 85 187 }
 				color2 = { 255 255 255 }
 				
@@ -8265,6 +8265,7 @@ e_blackrock = {
 				color2 = { 255 255 255 }
 				
 				b_upper_blackrock_spire = {
+					holy_site = old_gods
 				}
 				b_lower_blackrock_spire = {
 				}
@@ -8285,6 +8286,7 @@ e_blackrock = {
 				color2 = { 255 255 255 }
 				
 				b_shadowforge = {
+					holy_site = pyromancy
 				}
 				b_east_garrison = {
 				}
@@ -8297,6 +8299,795 @@ e_blackrock = {
 				b_masonary = {
 				}
 				b_molten_core = { 
+				}
+			}
+		}
+		
+		d_scorched_shore = {
+			color = { 179 43 43 }
+			color2 = { 255 255 255 }
+			culture = dark_iron
+			capital = 195 # Morvun
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 285 province_id = 195 } }
+				}
+			}
+			
+			c_blackened_strand = { # 285
+				color = { 201 54 79 }
+				color2 = { 255 255 255 }
+				
+				b_themli = {
+				}
+				b_ashcliff = {
+				}
+				b_darkscar = {
+				}
+				b_grayharbor = {
+				}
+				b_killcove = {
+				}
+				b_darkcall = {
+				}
+				b_saltharbor = {
+				}
+			}
+			
+			c_morvun = { # 195
+				color = { 82 198 128 }
+				color2 = { 255 255 255 }
+				
+				b_morvun = {
+				}
+				b_dryrock = {
+				}
+				b_blackash = {
+				}
+				b_quickgrave = {
+				}
+				b_blindland = {
+				}
+				b_nightfire = {
+				}
+				b_steepbreak = {
+				}
+			}
+		}
+		
+		d_thorium_heights = {
+			color = { 168 11 11 }
+			color2 = { 255 255 255 }
+			culture = dark_iron
+			capital = 279 # Thorium Point
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 278 province_id = 279 province_id = 280 } }
+				}
+			}
+			
+			c_pyrox_flats = { # 278
+				color = { 123 201 149 }
+				color2 = { 255 255 255 }
+				
+				b_direshield = {
+				}
+				b_brittlestorm = {
+				}
+				b_gloomgrasp = {
+				}
+				b_blindhelm = {
+				}
+				b_deadash = {
+				}
+				b_stonescar = {
+				}
+				b_mightward = {
+				}
+			}
+			
+			c_thorium_point = { # 279
+				color = { 221 85 43 }
+				color2 = { 255 255 255 }
+				
+				b_thorium_point = {
+				}
+				b_bonewick = {
+				}
+				b_cavepass = {
+				}
+				b_greyhill = {
+				}
+				b_widehand = {
+				}
+				b_chargrasp = {
+				}
+				b_burntstorm = {
+				}
+			}
+			
+			c_firewatch_rige = { # 280
+				color = { 37 99 255 }
+				color2 = { 255 255 255 }
+				
+				b_firewatch = {
+				}
+				b_shadowguard = {
+				}
+				b_ashgrave = {
+				}
+				b_flamefell = {
+				}
+				b_madgate = {
+				}
+				b_redstar = {
+				}
+				b_shadowborn = {
+				}
+			}
+		}
+		
+		d_ashen_pass = {
+			color = { 175 44 44 }
+			color2 = { 255 255 255 }
+			culture = dark_iron
+			capital = 272 # Dustfire Pass
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 254 province_id = 272 } }
+				}
+			}
+			
+			c_scorched_passage = { # 254
+				color = { 91 170 130 }
+				color2 = { 255 255 255 }
+				
+				b_cragpoint = {
+				}
+				b_darkcairn = {
+				}
+				b_ghostshade = {
+				}
+				b_dragonvein = {
+				}
+				b_mighthold = {
+				}
+				b_ravenpost = {
+				}
+				b_duskhost = {
+				}
+			}
+			
+			c_dustfire_valley = { # 272
+				color = { 224 96 227 }
+				color2 = { 255 255 255 }
+				
+				b_rustflat = {
+				}
+				b_hollowpass = {
+				}
+				b_mightshell = {
+				}
+				b_lostmore = {
+				}
+				b_falsegate = {
+				}
+				b_earthcliff = {
+				}
+				b_firemaw = {
+				}
+			}
+		}
+		
+		d_searing_gorge = {
+			color = { 206 86 86 }
+			color2 = { 255 255 255 }
+			culture = dark_iron
+			capital = 277 # The Cauldron
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 276 province_id = 277 province_id = 420 } }
+				}
+			}
+			
+			c_sea_of_cinders = { # 276
+				color = { 218 162 59 }
+				color2 = { 255 255 255 }
+				
+				b_grimsilt = {
+				}
+				b_thorium_advance = {
+				}
+				b_tanner_camp = {
+				}
+				b_midhorn = {
+				}
+				b_edgepoint = {
+				}
+				b_blackcairn = {
+				}
+				b_cindercross = {
+				}
+			}
+			
+			c_the_cauldron = { # 277
+				color = { 108 74 187 }
+				color2 = { 255 255 255 }
+				
+				b_the_cauldron = {
+				}
+				b_the_slag_pit = {
+				}
+				b_stoneheat = {
+				}
+				b_cinderguard = {
+				}
+				b_scorchbone = {
+				}
+				b_flamedig = {
+				}
+				b_pyreshade = {
+				}
+			}
+			
+			c_sundered_peaks = { # 420
+				color = { 73 119 48 }
+				color2 = { 255 255 255 }
+				
+				b_blazeit = {
+				}
+				b_falsewatch = {
+				}
+				b_direpoint = {
+				}
+				b_quickguard = {
+				}
+				b_edgerock = {
+				}
+				b_edgelord = {
+				}
+				b_drymine = {
+				}
+			}
+		}
+		
+		d_spires_approach = {
+			color = { 218 59 59 }
+			color2 = { 255 255 255 }
+			culture = dark_iron
+			capital = 275 # Iron Summit
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 275 province_id = 281 province_id = 282 } }
+				}
+			}
+			
+			c_iron_summit = { # 275
+				color = { 210 77 139 }
+				color2 = { 255 255 255 }
+				
+				b_iron_summit = {
+				}
+				b_duskrock = {
+				}
+				b_embershear = {
+				}
+				b_cinderscar = {
+				}
+				b_blackwall = {
+				}
+				b_ragecrag = {
+				}
+				b_darkfall = {
+				}
+			}
+			
+			c_grimrock = { # 281
+				color = { 76 180 187 }
+				color2 = { 255 255 255 }
+				
+				b_grimrock = {
+				}
+				b_demonfort = {
+				}
+				b_firerage = {
+				}
+				b_emberside = {
+				}
+				b_flamekiln = {
+				}
+				b_heartfire = {
+				}
+				b_madguard = {
+				}
+			}
+			
+			c_blackchar = { # 282
+				color = { 196 99 88 }
+				color2 = { 255 255 255 }
+				
+				b_blackchar = {
+				}
+				b_blackvalley = {
+				}
+				b_elderbarrow = {
+				}
+				b_emberborn = {
+				}
+				b_cinderlord = {
+				}
+				b_ashchampion = {
+				}
+				b_hollowlord = {
+				}
+			}
+		}
+	}
+	
+	k_uldaman = {
+		color = { 255 151 81 }
+		color2 = { 255 255 255 }
+		capital = 260 # Uldaman
+		culture = dustbelcher
+		
+		d_uldaman = {
+			color = { 219 147 99 }
+			color2 = { 255 255 255 }
+			culture = dark_iron
+			capital = 260 # Uldaman
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 260 province_id = 261 province_id = 431 } }
+				}
+			}
+			
+			c_uldaman = { # 260
+				color = { 128 162 85 }
+				color2 = { 255 255 255 }
+				
+				b_khaz_goroths_seat = {
+					holy_site = arcane
+					holy_site = geomancy
+				}
+				b_terrace_of_the_makers = {
+				}
+				b_excavation_center = {
+				}
+				b_echomok_cavern = {
+				}
+				b_stone_vault = {
+				}
+				b_sealed_hall = {
+				}
+				b_hall_of_the_keepers = {
+				}
+			}
+			
+			c_angor = { # 261
+				color = { 196 45 150 }
+				color2 = { 255 255 255 }
+				
+				b_angor_fortress = {
+				}
+				b_dusthold = {
+				}
+				b_craghorn = {
+				}
+				b_dryland = {
+				}
+				b_earthscar = {
+				}
+				b_grimcliff = {
+				}
+				b_blackshield = {
+				}
+			}
+			
+			c_earthen_deeps = { # 431
+				color = { 77 181 193 }
+				color2 = { 255 255 255 }
+				
+				b_rockstone = {
+				}
+				b_sandbarrow = {
+				}
+				b_cavemount = {
+				}
+				b_forgedhome = {
+				}
+				b_bronzegrave = {
+				}
+				b_mutehollow = {
+				}
+				b_ragelight = {
+				}
+			}
+		}
+		
+		d_wyrmfall = {
+			color = { 229 165 122 }
+			color2 = { 255 255 255 }
+			culture = shattered_hand
+			capital = 269 # Apocryphan's Rest
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 269 province_id = 271 province_id = 430 } }
+				}
+			}
+			
+			c_apocryphans_rest = { # 269
+				color = { 96 68 48 }
+				color2 = { 255 255 255 }
+				
+				frostwolf = "Kargath"
+				blackrock = "Kargath"
+				bleeding_hollow = "Kargath"
+				shattered_hand = "Kargath"
+				shadowmoon = "Kargath"
+				thunderlord = "Kargath"
+				lightnings_blade = "Kargath"
+				dragonmaw = "Kargath"
+				bladewind = "Kargath"
+				warsong = "Kargath"
+				redwalker = "Kargath"
+				burning_blade = "Kargath"
+				whiteclaw = "Kargath"
+				twilights_hammer = "Kargath"
+				dark_scar = "Kargath"
+				bonechewer = "Kargath"
+				laughing_skull = "Kargath"
+				flowerpicker = "Kargath"
+				mok_nathal = "Kargath"
+				mag_har = "Kargath"
+				fel_orc = "Kargath"
+				
+				b_apocryphans_rest = {
+					frostwolf = "Kargath"
+					blackrock = "Kargath"
+					bleeding_hollow = "Kargath"
+					shattered_hand = "Kargath"
+					shadowmoon = "Kargath"
+					thunderlord = "Kargath"
+					lightnings_blade = "Kargath"
+					dragonmaw = "Kargath"
+					bladewind = "Kargath"
+					warsong = "Kargath"
+					redwalker = "Kargath"
+					burning_blade = "Kargath"
+					whiteclaw = "Kargath"
+					twilights_hammer = "Kargath"
+					dark_scar = "Kargath"
+					bonechewer = "Kargath"
+					laughing_skull = "Kargath"
+					flowerpicker = "Kargath"
+					mok_nathal = "Kargath"
+					mag_har = "Kargath"
+					fel_orc = "Kargath"
+				}
+				b_darkrock = {
+				}
+				b_grimden = {
+				}
+				b_carnak = {
+				}
+				b_darandak = {
+				}
+				b_kailrart = {
+				}
+				b_pashdish = {
+				}
+			}
+			
+			c_dustbelch = { # 271
+				color = { 179 130 108 }
+				color2 = { 255 255 255 }
+				
+				b_dustbelch_grotto = {
+				}
+				b_camp_cagg = {
+				}
+				b_roguedust = {
+				}
+				b_littleband = {
+				}
+				b_clearmaw = {
+				}
+				b_bustgut = {
+				}
+				b_grimefist = {
+				}
+			}
+			
+			c_hidden_clutch = { # 430
+				color = { 108 128 122 }
+				color2 = { 255 255 255 }
+				
+				b_hidden_clutch = {
+				}
+				b_fallhorn = {
+				}
+				b_bonemore = {
+				}
+				b_cloudrock = {
+				}
+				b_everrock = {
+				}
+				b_steepvault = {
+				}
+				b_mightgrasp = {
+				}
+			}
+		}
+		
+		d_the_dustbowl = {
+			color = { 243 187 150 }
+			color2 = { 255 255 255 }
+			culture = dustbelcher
+			capital = 266 # The Dustbowl
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 266 province_id = 268 province_id = 270 } }
+				}
+			}
+			
+			c_the_dustbowl = { # 266
+				color = { 77 105 147 }
+				color2 = { 255 255 255 }
+				
+				b_camp_wurg = {
+					azerothian = "Dragon's Mouth"
+					stromic = "Dragon's Mouth"
+					dalaranian = "Dragon's Mouth"
+					lordaeronian = "Dragon's Mouth"
+					gilnean = "Dragon's Mouth"
+					tirasian = "Dragon's Mouth"
+					alteraci = "Dragon's Mouth"
+					arathi = "Dragon's Mouth"
+					hillsbradan = "Dragon's Mouth"
+					silverpiner = "Dragon's Mouth"
+					tirisfalen = "Dragon's Mouth"
+				}
+				b_sandland = {
+				}
+				b_emberspell = {
+				}
+				b_demonbreak = {
+				}
+				b_earthmaw = {
+				}
+				b_crushfield = {
+				}
+				b_flatrun = {
+				}
+			}
+			
+			c_agmonds_end = { # 268
+				color = { 164 102 164 }
+				color2 = { 255 255 255 }
+				
+				b_camp_boff = {
+				}
+				b_bloodwatcher_point = {
+				}
+				b_shademaw = {
+				}
+				b_oldruin = {
+				}
+				b_boulderfield = {
+				}
+				b_ironfair = {
+				}
+				b_dustgate = {
+				}
+			}
+			
+			c_mirage_flats = { # 270
+				color = { 170 170 176 }
+				color2 = { 255 255 255 }
+				
+				b_cragside = {
+				}
+				b_drylife = {
+				}
+				b_grimwind = {
+				}
+				b_warmdirt = {
+				}
+				b_wastemore = {
+				}
+				b_sunward = {
+				}
+				b_midgulch = {
+				}
+			}
+		}
+		
+		d_dry_wastes = {
+			color = { 236 137 71 }
+			color2 = { 255 255 255 }
+			culture = dustbelcher
+			capital = 267 # Valley of Fangs
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 264 province_id = 265 province_id = 267 } }
+				}
+			}
+			
+			c_dustwind_gulch = { # 264
+				color = { 255 255 255 }
+				color2 = { 255 255 255 }
+				
+				b_dustwind_dig = {
+				}
+				b_hollowhold = {
+				}
+				b_aridband = {
+				}
+				b_edgebreak = {
+				}
+				b_rusthelm = {
+				}
+				b_claywell = {
+				}
+				b_fearcrest = {
+				}
+			}
+			
+			c_lethlor_ravine = { # 265
+				color = { 170 108 74 }
+				color2 = { 255 255 255 }
+				
+				b_lethlor_ravine = {
+				}
+				b_rheas_camp = {
+				}
+				b_scorchspine = {
+				}
+				b_dragonbreak = {
+				}
+				b_blackscale = {
+				}
+				b_ebonrock = {
+				}
+				b_ironshell = {
+				}
+			}
+			
+			c_valley_of_fangs = { # 267
+				color = { 215 235 79 }
+				color2 = { 255 255 255 }
+				
+				b_hammertoes_dig = {
+				}
+				b_oldcrypt = {
+				}
+				b_drymouth = {
+				}
+				b_rumblerock = {
+				}
+				b_claygulch = {
+				}
+				b_badwalk = {
+				}
+				b_rockteeth = {
+				}
+			}
+		}
+		
+		d_forgotten_coast = {
+			color = { 228 117 43 }
+			color2 = { 255 255 255 }
+			culture = dustbelcher
+			capital = 262 # Fuselight
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 262 province_id = 428 province_id = 429 } }
+				}
+			}
+			
+			c_fuselight = { # 262
+				color = { 221 68 119 }
+				color2 = { 255 255 255 }
+				
+				b_fuselight = {
+					boulderfist = "Camp Kosh"
+					highmaul = "Camp Kosh"
+					crushridge = "Camp Kosh"
+					deadwind = "Camp Kosh"
+					dreadmaul = "Camp Kosh"
+					dunemaul = "Camp Kosh"
+					dustbelcher = "Camp Kosh"
+					gordok = "Camp Kosh"
+					gordunni = "Camp Kosh"
+					mo_grosh = "Camp Kosh"
+					mosh_ogg = "Camp Kosh"
+					spirestone = "Camp Kosh"
+					splinterfist = "Camp Kosh"
+					stonemaul = "Camp Kosh"
+					urok = "Camp Kosh"
+					bladespire = "Camp Kosh"
+					bloodmaul = "Camp Kosh"
+					warmaul = "Camp Kosh"
+					torchbelcher = "Camp Kosh"
+					tonma = "Camp Kosh"
+					stonegullet = "Camp Kosh"
+					ogrila = "Camp Kosh"
+					firegut = "Camp Kosh"
+					angorosh = "Camp Kosh"
+					glopgut = "Camp Kosh"
+					bloodeye = "Camp Kosh"
+				}
+				b_fuselight_by_the_sea = {
+				}
+				b_grimband = {
+				}
+				b_sandsurf = {
+				}
+				b_bareshore = {
+				}
+				b_craggrave = {
+				}
+				b_sunhollow = {
+				}
+			}
+			
+			c_wavecrash = { # 428
+				color = { 85 164 122 }
+				color2 = { 255 255 255 }
+				
+				b_forgotten_camp = {
+				}
+				b_grimehaven = {
+				}
+				b_stillwater = {
+				}
+				b_sunwind = {
+				}
+				b_gloomshear = { 
+				}
+				b_oceanhill = {
+				}
+				b_nightpost = {
+				}
+			}
+			
+			c_blacklight = { # 429
+				color = { 218 94 122 }
+				color2 = { 255 255 255 }
+				
+				b_blacklight = {
+				}
+				b_demonbarrow = {
+				}
+				b_nighthand = {
+				}
+				b_slygulch = {
+				}
+				b_sandhallow = {
+				}
+				b_blackside = {
+				}
+				b_duskmouth = {
 				}
 			}
 		}
