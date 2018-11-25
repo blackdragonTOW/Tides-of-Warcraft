@@ -19,26 +19,25 @@ character_event = {
 	only_playable = yes
 	
 	trigger = {
+		NOT = {
+			has_game_rule = {
+				name = silly_events
+				value = off
+			}
+		}
+		OR = {
+			trait = race_human
+			trait = race_vrykul
+			trait = race_dwarf
+		}
 		OR = {
 			is_feudal = yes
 			is_patrician = yes
 		}
 		OR = {
-			AND = {
-				region = world_EK_North
-				NOT = { region = world_kul_tiras }
-				NOT = { region = world_arathi_highlands }
-			}
-			region = world_twilight_highlands
-			region = world_loch_modan
-			region = world_dun_morogh
-			region = world_elwynn_forest
-			region = world_redridge_mountains
-		}
-		OR = {
 			ai = no
 			has_game_rule = {
-				name = supernatural_events
+				name = silly_events
 				value = unrestricted
 			}
 		}
@@ -70,20 +69,6 @@ character_event = {
 						age < 40
 						is_incapable = no
 						ai = yes
-						NOR = {
-							trait = felsworn
-							trait = undead_generic
-							trait = undead_forsaken
-							trait = undead_scourge
-							trait = voidwalker
-							trait = shivarra
-							trait = succubus
-							trait = faceless
-							trait = eredar
-							trait = doomlord
-							trait = fel_lord
-							trait = pit_lord
-						}
 					}
 					set_character_flag = secret_bear
 				}
@@ -111,6 +96,12 @@ character_event = {
 	only_capable = yes
 	
 	trigger = {
+		NOT = {
+			has_game_rule = {
+				name = silly_events
+				value = off
+			}
+		}
 		OR = {
 			is_feudal = yes
 			is_patrician = yes
@@ -126,7 +117,7 @@ character_event = {
 		OR = {
 			ai = no
 			has_game_rule = {
-				name = supernatural_events
+				name = silly_events
 				value = unrestricted
 			}
 		}
@@ -142,14 +133,14 @@ character_event = {
 				is_inaccessible_trigger = no
 				ai = yes
 			}
-			save_event_target_as = bear
+			save_event_target_as = bear_character
 		}
 		set_character_flag = secret_bear_chain
 	}
 	
 	option = {
 		name = bear.1.a
-		event_target:bear = {
+		event_target:bear_character = {
 			opinion = {
 				who = ROOT
 				modifier = opinion_annoyed
@@ -188,7 +179,7 @@ character_event = {
 	only_capable = yes
 	
 	trigger = {
-		event_target:bear = {
+		event_target:bear_character = {
 			prisoner = no
 			host = { character = ROOT }
 			is_alive = yes
@@ -199,12 +190,12 @@ character_event = {
 	fail_trigger_effect = {
 		if = {
 			limit = {
-				event_target:bear = { prisoner = yes }
+				event_target:bear_character = { prisoner = yes }
 			}
 			repeat_event = { id = bear.2 days = 30 }
 		}
 		else = {
-			event_target:bear = { clr_character_flag = secret_bear }
+			event_target:bear_character = { clr_character_flag = secret_bear }
 			clr_character_flag = secret_bear_chain
 		}
 	}
@@ -239,7 +230,7 @@ character_event = {
 	only_capable = yes
 	
 	trigger = {
-		event_target:bear = {
+		event_target:bear_character = {
 			prisoner = no
 			host = { character = ROOT }
 			is_alive = yes
@@ -254,7 +245,7 @@ character_event = {
 	immediate = {
 		random_close_relative = {
 			limit = {
-				NOT = { character = event_target:bear }
+				NOT = { character = event_target:bear_character }
 				prisoner = no
 				is_adult = yes
 				host = { character = ROOT }
@@ -268,7 +259,7 @@ character_event = {
 			is_married = yes
 			spouse = {
 				NOR = {
-					character = event_target:bear
+					character = event_target:bear_character
 					character = event_target:family_member
 				}
 			}
@@ -325,7 +316,7 @@ character_event = {
 	only_capable = yes
 	
 	trigger = {
-		event_target:bear = {
+		event_target:bear_character = {
 			prisoner = no
 			host = { character = ROOT }
 			is_alive = yes
@@ -391,7 +382,7 @@ character_event = {
 	only_capable = yes
 	
 	trigger = {
-		event_target:bear = {
+		event_target:bear_character = {
 			prisoner = no
 			host = { character = ROOT }
 			is_alive = yes
@@ -433,7 +424,7 @@ long_character_event = {
 	only_capable = yes
 	
 	trigger = {
-		event_target:bear = {
+		event_target:bear_character = {
 			prisoner = no
 			host = { character = ROOT }
 			is_alive = yes
@@ -446,7 +437,9 @@ long_character_event = {
 	}
 	
 	immediate = {
-		event_target:bear = {
+		event_target:bear_character = {
+			culture_scope = { save_event_target_as = original_culture }
+			gfx_culture_scope = { save_event_target_as = original_gfx_culture }
 			set_graphical_culture = bear
 			culture = bear
 			clr_character_flag = secret_bear
@@ -457,10 +450,17 @@ long_character_event = {
 		name = bear.6.a
 	}
 	option = {
-		name = bear.6.b
+		name = bear.6.undo
+		custom_tooltip = {
+			text = UNDO_BEAR_TRANSFORMATION
+			event_target:bear_character = {
+				set_graphical_culture = event_target:original_culture
+				culture = event_target:original_gfx_culture
+			}
+		}
 	}
 	option = {
-		name = bear.6.c
+		name = bear.6.b
 		trigger = {
 			NOT = { trait = hunter }
 		}
@@ -480,7 +480,7 @@ long_character_event = {
 		trigger = {
 			trait = cannibal_trait
 		}
-		event_target:bear = {
+		event_target:bear_character = {
 			death = {
 				death_reason = death_execution_eaten
 				killer = ROOT
@@ -494,7 +494,7 @@ long_character_event = {
 			NOT = { trait = cannibal_trait }
 			trait = lunatic
 		}
-		event_target:bear = {
+		event_target:bear_character = {
 			death = {
 				death_reason = death_execution_eaten
 				killer = ROOT
@@ -507,7 +507,7 @@ long_character_event = {
 		trigger = {
 			trait = hunter
 		}
-		event_target:bear = {
+		event_target:bear_character = {
 			death = {
 				death_reason = death_execution_hunt
 				killer = ROOT

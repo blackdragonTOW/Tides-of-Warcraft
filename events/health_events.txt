@@ -20,22 +20,9 @@ character_event = {
 	min_age = 16
 	capable_only = yes
 	lacks_dlc = "Reapers"
+	is_triggered_only = yes
 	
 	trigger = {
-		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = felsworn
-			trait = eredar
-			trait = succubus
-			trait = shivarra
-			trait = fel_lord
-			trait = dreadlord
-			trait = doomlord
-			trait = pit_lord
-			trait = faceless
-		}
 		NOT = {
 			trait = syphilitic
 		}
@@ -55,30 +42,30 @@ character_event = {
 		}
 	}
 	
-	mean_time_to_happen = {
-		months = 20000
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.1
+			factor = 10
 			spouse = { 
 				trait = syphilitic 
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			in_command = yes
 		}		
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = lustful
 		}
 		modifier = {
-			factor = 0.6
+			factor = 1.7
 			trait = hedonist
 		}
 		
 		modifier = {
-			factor = 5.0
+			factor = 0.2
 			trait = chaste
 		}
 	}
@@ -86,8 +73,8 @@ character_event = {
 	option = {
 		name = EVTOPTA6000
 		add_trait = syphilitic
-		
-		
+		blessing_removes_disease_effect = yes
+		deaths_gift_removes_disease_effect = yes
 	}
 }
 
@@ -102,21 +89,22 @@ character_event = {
 	is_sick = yes
 	only_capable = yes
 	lacks_dlc = "Reapers"
+	is_triggered_only = yes
 	
 	trigger = {
 		health = 6
 		trait = syphilitic
 	}
 	
-	mean_time_to_happen = {
-		months = 25000
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.5
+			factor = 2
 			health = 8
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			health = 9
 		}
 	}
@@ -133,56 +121,43 @@ character_event = {
 	desc = EVTDESC6010
 	picture = GFX_evt_illness
 	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
 	
 	min_age = 10
 	only_capable = yes
 	
 	trigger = {
-		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = felsworn
-			trait = eredar
-			trait = succubus
-			trait = shivarra
-			trait = fel_lord
-			trait = dreadlord
-			trait = doomlord
-			trait = pit_lord
-			trait = faceless
-		}
 		NOT = {
 			trait = leper
 		}
 		NOT = { health = 5 }
 	}
 	
-	mean_time_to_happen = {
-		months = 25000
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.5
+			factor = 2
 			NOT = { 
 				health = 4 
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			in_command = yes
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			any_courtier = {
 				trait = leper
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			is_weak_trigger = yes
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			OR = {
 				trait = infection
 				trait = severely_injured
@@ -190,7 +165,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = charitable
 		}
 		
@@ -202,6 +177,7 @@ character_event = {
 			if = {
 				limit = {
 					has_dlc = "Reapers"
+					is_playable = no
 				}
 				set_character_flag = new_leper_character
 				host = {
@@ -212,6 +188,20 @@ character_event = {
 						}
 						character_event = { id = RIP.11031 days = 1 }
 					}
+				}
+				character_event = { id = RIP.11063 days = 20 }
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+					is_playable = yes
+				}
+				set_character_flag = new_leper_character
+				random_courtier_or_vassal = {
+					limit = {
+						has_minor_title = title_court_physician
+					}
+					character_event = { id = RIP.11031 days = 1 }
 				}
 				character_event = { id = RIP.11063 days = 20 }
 			}
@@ -242,15 +232,22 @@ character_event = {
 	min_age = 16
 	is_sick = yes
 	only_capable = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		health = 4
 		treasury = 25
 		trait = leper
+		NOT = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
+		}
 	}
 	
-	mean_time_to_happen = {
-		months = 25000
+	weight_multiplier = {
+		days = 1
 	}
 	
 	option = {
@@ -265,6 +262,7 @@ character_event = {
 	id = 6020
 	picture = GFX_evt_lunatic
 	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
 	
 	desc = {
 		text = EVTDESC6020
@@ -315,93 +313,97 @@ character_event = {
 		NOT = {
 			trait = lunatic
 		}
-		NOT = { trait = incapable }
-		NOT = { trait = infirm }
+		OR = {
+			#Senile/comatose due to old age do not gain lunatic, immortals get a pass though
+			NOT = { age = 65 }
+			immortal = yes
+			NOT = { trait = incapable }
+		}
 	}
 	
-	mean_time_to_happen = {
-		months = 48000 # once in 4000 years on average
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.009
-			trait = wretched
+			factor = 333 # 12 years on average
+			OR = {
+				trait = syphilitic
+				trait = has_aztec_disease
+			}
 		}
 		modifier = {
-			factor = 0.003 # 12 years on average
-			trait = syphilitic
-		}
-		modifier = {
-			factor = 0.006 # 24 years on average
+			factor = 167 # 24 years on average
 			prisoner = yes
 			has_character_modifier = the_oubliette
 		}
 		modifier = {
-			factor = 0.02 # 80 years on average
+			factor = 50 # 80 years on average
 			OR = {
 				trait = has_typhoid_fever
 				trait = has_typhus
 			}
 		}
 		modifier = {
-			factor = 0.1
+			factor = 10
 			prisoner = yes
 			NOT = { has_character_modifier = the_oubliette }
 			NOT = { has_character_modifier = house_arrest }
 		}
 		modifier = {
-			factor = 0.2 # 800 years on average
+			factor = 5 # 800 years on average
 			is_ill = yes
 			NOR = {
 				trait = has_typhoid_fever
 				trait = has_typhus
 				trait = syphilitic
+				trait = has_aztec_disease
 			}
 		}
 		modifier = {
-			factor = 0.0025 # 1 year on average, rabies will also be ill
+			factor = 40 # 1 year on average, rabies will also be ill
 			trait = rabies
 		}
 		modifier = {
-			factor = 0.1
+			factor = 40
 			trait = incapable # Coma due to brain damage. Wakes up a lunatic.
 		}
 		modifier = {
-			factor = 0.1
+			factor = 40
 			AND = {
 				trait = incapable
 				immortal = yes # Incapable immortals more likely to wake up nuts
 			}
 		}
 		modifier = {
-			factor = 0.25
+			factor = 4
 			trait = paranoid
 		}
 		modifier = {
-			factor = 0.25
+			factor = 4
 			trait = stressed
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = depressed
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = zealous
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = inbred
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = imbecile
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = genius
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.333
 			trait = drunkard
 		}
 	}
@@ -476,19 +478,23 @@ character_event = {
 	
 	min_age = 16
 	only_capable = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		health = 4
 		trait = lunatic
 		NOT = {
-			trait = syphilitic
+			OR = {
+				trait = syphilitic
+				trait = has_aztec_disease
+			}
 		}
 	}
 	
-	mean_time_to_happen = {
-		months = 12000
+	weight_multiplier = {
+		days = 1
 		modifier = {
-			factor = 0.5
+			factor = 2
 			health = 6
 		}
 	}
@@ -496,6 +502,94 @@ character_event = {
 	option = {
 		name = EVTOPTA6021
 		remove_trait = lunatic
+	}
+}
+
+### Possessed ###
+character_event = {
+	id = 6030
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_religion
+	
+	desc = EVTDESC6030
+	
+	min_age = 10
+	only_capable = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { trait = possessed }
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 1.1
+			prestige < 20
+		}
+		
+		modifier = {
+			factor = 1.1
+			piety < 10
+		}
+		
+		modifier = {
+			factor = 1.1
+			trait = zealous
+		}
+	}
+	
+	option = {
+		name = EVTOPTA6030
+		add_trait = possessed
+	}
+}
+
+### Remove Possessed ###
+character_event = {
+	id = 6031
+	picture = GFX_evt_recovery
+	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
+	
+	desc = text = EVTDESC6031_ALL
+	
+	min_age = 10
+	only_capable = yes
+	
+	trigger = {
+		health = 4
+		trait = possessed
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 1.1
+			prestige = 20
+		}
+		
+		modifier = {
+			factor = 1.1
+			piety = 10
+		}
+	}
+	
+	immediate = {
+		remove_character_modifier = voice_of_satan
+		remove_character_modifier = voice_of_jesus
+		remove_character_modifier = holy_comet
+		remove_character_modifier = lycanthropy
+		clr_character_flag = demon_child
+		clr_character_flag = demon_child_fake
+		clr_character_flag = child_exorcism
+	}
+	
+	option = {
+		name = EVTOPTA6031_ALL
+		remove_trait = possessed
 	}
 }
 
@@ -508,6 +602,7 @@ character_event = {
 	
 	min_age = 16
 	only_capable = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		OR = {
@@ -519,21 +614,21 @@ character_event = {
 		NOT = { trait = infirm }
 	}
 	
-	mean_time_to_happen = {
-		months = 2000
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.75
+			factor = 1.333
 			trait = diligent
 		}
 		
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			in_command = yes
 		}
 		
 		modifier = {
-			factor = 10.0
+			factor = 0.1
 			trait = slothful
 		}
 	}
@@ -553,35 +648,36 @@ character_event = {
 	
 	min_age = 16
 	only_capable = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		trait = stressed
 	}
 	
-	mean_time_to_happen = {
-		months = 1200
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.005
+			factor = 200
 			is_ruler = no
 			is_councillor = no
 			in_command = no
 			NOT = { has_minor_title = title_regent }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.333
 			is_ruler = no
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.333
 			is_councillor = no
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.333
 			in_command = no
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.333
 			NOT = { has_minor_title = title_regent }
 		}
 	}
@@ -601,6 +697,7 @@ character_event = {
 	
 	min_age = 10
 	only_capable = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		NOT = { trait = depressed }
@@ -608,50 +705,50 @@ character_event = {
 		NOT = { trait = content }
 	}
 	
-	mean_time_to_happen = {
-		months = 12000
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.5
+			factor = 2
 			NOT = { age = 20 }
 			mother_even_if_dead = { is_alive = no } 
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			NOT = { age = 20 }
 			father_even_if_dead = { is_alive = no } 
 		}
 		
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = cynical
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = stressed
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			is_ill = yes
 		}
 		modifier = {
-			factor = 0.7
+			factor = 1.4
 			trait = slothful
 		}
 		modifier = {
-			factor = 0.7
-			trait = ugly
+			factor = 1.4
+			has_ugly_trait_trigger = yes
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			trait = ambitious
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			in_command = yes
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			trait = diligent
 		}
 	}
@@ -671,52 +768,53 @@ character_event = {
 	
 	min_age = 10
 	only_capable = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		trait = depressed
 	}
 	
-	mean_time_to_happen = {
-		months = 1200
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.1
+			factor = 10
 			trait = content
 		}
 		modifier = {
-			factor = 0.1
+			factor = 10
 			trait = zealous
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = diligent
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			trait = cynical
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			trait = stressed
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			is_ill = yes
 		}
 		modifier = {
-			factor = 1.5
+			factor = 0.666
 			trait = slothful
 		}
 		modifier = {
-			factor = 1.5
-			trait = ugly
+			factor = 0.666
+			has_ugly_trait_trigger = yes
 		}
 		modifier = {
-			factor = 1.3
+			factor = 0.75
 			trait = ambitious
 		}
 		modifier = {
-			factor = 1.3
+			factor = 0.75
 			in_command = yes
 		}
 	}
@@ -736,28 +834,11 @@ character_event = {
 	
 	is_triggered_only = yes
 	
-	trigger = {
-		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = felsworn
-			trait = eredar
-			trait = succubus
-			trait = shivarra
-			trait = fel_lord
-			trait = dreadlord
-			trait = doomlord
-			trait = pit_lord
-			trait = faceless
-		}
-	}
-	
 	option = {
 		name = EVTOPTA6060
 		add_trait = ill
-		
-		
+		blessing_removes_disease_effect = yes
+		deaths_gift_removes_disease_effect = yes
 	}
 }
 
@@ -766,22 +847,9 @@ character_event = {
 	id = 6063
 
 	hide_window = yes
+	is_triggered_only = yes
 	
 	trigger = {
-		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = felsworn
-			trait = eredar
-			trait = succubus
-			trait = shivarra
-			trait = fel_lord
-			trait = dreadlord
-			trait = doomlord
-			trait = pit_lord
-			trait = faceless
-		}
 		health = 3.0
 		is_ill = no
 
@@ -793,63 +861,63 @@ character_event = {
 		}
 	}
 	
-	mean_time_to_happen = {
-		months = 360
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = depressed
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = stressed
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			is_weak_trigger = yes
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			prisoner = yes
 			has_character_modifier = the_oubliette
 		}
 		modifier = {
-			factor = 0.9
+			factor = 1.1
 			prisoner = yes
 			has_character_modifier = the_dungeon
 		}
 		modifier = {
-			factor = 1.5
+			factor = 0.666
 			base_health = 6
 		}
 		modifier = {
-			factor = 1.5
+			factor = 0.666
 			is_strong_trigger = yes
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			base_health = 7
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			base_health = 8
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			has_game_rule = {
 				name = non_epidemic_diseases
 				value = more
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 0.5
 			has_game_rule = {
 				name = non_epidemic_diseases
 				value = fewer
 			}
 		}
 		modifier = {
-			factor = 4
+			factor = 0.25
 			has_game_rule = {
 				name = non_epidemic_diseases
 				value = rare
@@ -969,20 +1037,6 @@ character_event = {
 	lacks_dlc = "Reapers"
 	
 	trigger = {
-		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = felsworn
-			trait = eredar
-			trait = succubus
-			trait = shivarra
-			trait = fel_lord
-			trait = dreadlord
-			trait = doomlord
-			trait = pit_lord
-			trait = faceless
-		}
 		OR = {
 			trait = ill
 			trait = has_measles
@@ -1030,8 +1084,8 @@ character_event = {
 	option = {
 		name = EVTOPTA6070
 		add_trait = pneumonic
-		
-		
+		blessing_removes_disease_effect = yes
+		deaths_gift_removes_disease_effect = yes
 	}
 }
 
@@ -1098,6 +1152,7 @@ character_event = {
 	min_age = 16
 	only_capable = yes
 	prisoner = no
+	is_triggered_only = yes
 	
 	trigger = {
 		OR = {
@@ -1111,31 +1166,31 @@ character_event = {
 		}		
 	}
 	
-	mean_time_to_happen = {
-		months = 10000
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.9
+			factor = 1.1
 			trait = brave
 		}
 		
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			in_command = yes
 		}
 		
 		modifier = {
-			factor = 0.7
+			factor = 1.4
 			is_ruler = yes
 		}
 		
 		modifier = {
-			factor = 0.6
+			factor = 1.666
 			trait = misguided_warrior
 		}
 		
 		modifier = {
-			factor = 1.1
+			factor = 0.9
 			trait = paranoid
 		}
 	}
@@ -1154,11 +1209,6 @@ character_event = {
 	border = GFX_event_normal_frame_religion
 	
 	trigger = {
-		NOR = {
-			trait = undead_generic
-			trait = undead_forsaken
-			trait = undead_scourge
-		}
 		base_health = 4
 		trait = wounded
 		NOT = { trait = infection }
@@ -1166,21 +1216,12 @@ character_event = {
 	
 	mean_time_to_happen = {
 		months = 24
+		
 		modifier = {
 			factor = 0.5
 			base_health = 5.1
 		}
-		modifier = {
-			factor = 0.5
-			OR = {
-				trait = troll_jungle
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_sand
-				trait = troll_dark
-				trait = troll_zandalari
-			}
-		}
+		
 		modifier = {
 			factor = 0.4
 			base_health = 6
@@ -1190,19 +1231,7 @@ character_event = {
 	option = {
 		name = EVTOPTA6081
 		remove_trait = wounded
-		if = {
-			limit = {
-				NOR = {
-					trait = troll_jungle
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_zandalari
-				}
-			}
-			add_trait = scarred
-		}
+		add_scarred_tiered_effect = yes
 	}
 }
 
@@ -1213,50 +1242,37 @@ character_event = {
 	desc = EVTDESC6082
 	picture = GFX_evt_illness
 	border = GFX_event_normal_frame_religion
+	is_triggered_only = yes
 	
 	trigger = {
-		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = felsworn
-			trait = eredar
-			trait = succubus
-			trait = shivarra
-			trait = fel_lord
-			trait = dreadlord
-			trait = doomlord
-			trait = pit_lord
-			trait = faceless
-		}
 		trait = wounded
 		NOT = { base_health = 8 }
 		is_ill = no
 	}
 	
-	mean_time_to_happen = {
-		months = 240
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.9
+			factor = 1.1
 			in_command = yes
 		}
 		
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			trait = leper
 		}
 		
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			NOT = { base_health = 6 }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			age = 60
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			age = 70
 		}
 	}
@@ -1270,8 +1286,8 @@ character_event = {
 				}
 			}
 			add_trait = ill
-			
-			
+			blessing_removes_disease_effect = yes
+			deaths_gift_removes_disease_effect = yes
 		}
 		if = {
 			limit = {
@@ -1296,112 +1312,54 @@ character_event = {
 	min_age = 45
 	only_capable = yes
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		NOT = { trait = infirm }
-		NOR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_chromatic
-			trait = dragon_twilight
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = draenei
-			trait = broken
-			trait = lost_one
-			trait = eredar
-			trait = succubus
-			trait = pit_lord
-			trait = fel_lord
-			trait = dreadlord
-			trait = doomlord
-			trait = shivarra
-			trait = felsworn
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
+		immortal = no
 	}
 	
-	mean_time_to_happen = {
-		months = 1200
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			age = 60
-			NOR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
-				trait = ogre_magi
-				trait = troll_zandalari
-				trait = gnome
-				trait = AK_trait_dwarf
-			}
 		}
 		modifier = {
-			factor = 0.7
+			factor = 1.4
 			age = 70
-			NOR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
-				trait = ogre_magi
-				trait = troll_zandalari
-				trait = gnome
-				trait = AK_trait_dwarf
-			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			age = 80
-			NOR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
-				trait = ogre_magi
-				trait = troll_zandalari
-				trait = gnome
-				trait = AK_trait_dwarf
-			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			age = 90
-			NOR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
-				trait = ogre_magi
-				trait = troll_zandalari
-				trait = gnome
-				trait = AK_trait_dwarf
-			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = cancer
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			is_weak_trigger = yes
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.3
 			NOT = { base_health = 5.0 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.3
 			NOT = { base_health = 4.0 }
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			base_health = 5.1
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			base_health = 6.0
 		}
 	}
@@ -1419,57 +1377,38 @@ character_event = {
 	picture = GFX_evt_recovery
 	border = GFX_event_normal_frame_religion
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			trait = infirm
 			trait = inbred
 		}
-		NOR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_chromatic
-			trait = dragon_twilight
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = eredar
-			trait = succubus
-			trait = pit_lord
-			trait = fel_lord
-			trait = dreadlord
-			trait = doomlord
-			trait = shivarra
-			trait = felsworn
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 		NOT = { trait = incapable }
+		immortal = no
 	}
 	
-	mean_time_to_happen = {
-		months = 120
+	weight_multiplier = {
+		days = 1
 		
 		modifier = {
-			factor = 0.5
+			factor = 2
 			NOT = { health = 3.0 }
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			NOT = { base_health = 5.0 }
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			NOT = { trait = infirm }
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			base_health = 5.1
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			base_health = 6.0
 		}
 	}
@@ -1709,6 +1648,82 @@ character_event = {
 	option = {
 		name = EVTOPTA6113
 		remove_trait = has_typhus
+	}
+}
+
+#Recovery from the PLAGUE!
+character_event = {
+	id = 6114
+	desc = EVTDESC6114
+	picture = GFX_evt_plague_doctor
+	border = GFX_event_normal_frame_religion
+	
+	is_sick = yes
+	lacks_dlc = "Reapers"
+	
+	trigger = {
+		trait = has_bubonic_plague
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.75
+			base_health = 5.1
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 6.0
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 7.0
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { base_health = 5.0 }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { base_health = 4.1 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { age = 20 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { age = 30 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { age = 40 }
+		}
+		modifier = {
+			factor = 2.0
+			age = 50
+		}
+		modifier = {
+			factor = 2.0
+			age = 70
+		}
+		modifier = {
+			factor = 2.0
+			is_ill = yes
+		}
+		modifier = {
+			factor = 4.0
+			trait = infirm
+		}
+		modifier = {
+			factor = 5.0
+			trait = incapable
+		}
+	}
+	
+	option = {
+		name = EVTOPTA6114
+		remove_trait = has_bubonic_plague
 	}
 }
 
@@ -2167,6 +2182,12 @@ character_event = {
 	lacks_dlc = "Zeus"
 	
 	trigger = {
+		NOT = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
+		}
 		trait = lunatic
 		any_courtier = {
 			has_job_title = job_chancellor
@@ -2223,9 +2244,15 @@ character_event = {
 	min_age = 16
 	prisoner = no
 	only_playable = yes
+	religion_group = void_group
 	
 	trigger = {
-		NOT = { religion_group = void_group }
+		NOT = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
+		}
 		NOT = { has_character_flag = the_old_ones_are_waking }
 		NOT = { is_inaccessible_trigger = yes }
 	}
@@ -2269,9 +2296,15 @@ character_event = {
 	min_age = 16
 	prisoner = no
 	only_playable = yes
+	religion_group = void_group
 	
 	trigger = {
-		NOT = { religion_group = void_group }
+		NOT = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
+		}
 		NOT = { has_character_flag = the_old_ones_are_waking }
 		NOT = { is_inaccessible_trigger = yes }
 	}
@@ -2315,9 +2348,15 @@ character_event = {
 	min_age = 16
 	prisoner = no
 	only_playable = yes
+	religion_group = void_group
 	
 	trigger = {
-		NOT = { religion_group = void_group }
+		NOT = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
+		}
 		NOT = { has_character_flag = the_old_ones_are_waking }
 		NOT = { is_inaccessible_trigger = yes }
 	}
@@ -2361,9 +2400,15 @@ character_event = {
 	min_age = 16
 	prisoner = no
 	only_playable = yes
+	religion_group = void_group
 	
 	trigger = {
-		NOT = { religion_group = void_group }
+		NOT = {
+			has_game_rule = {
+				name = supernatural_events
+				value = off
+			}
+		}
 		NOT = { has_character_flag = the_old_ones_are_waking }
 		NOT = { is_inaccessible_trigger = yes }
 	}
@@ -2507,7 +2552,7 @@ character_event = {
 		text = EVTDESC_WOL_40_NC
 		trigger = {
 			is_female = yes
-			has_dlc = "Sons of Abraham"
+			has_DLC = "Sons of Abraham"
 		}
 		picture = GFX_evt_bad_news_female
 	}
@@ -2515,12 +2560,12 @@ character_event = {
 		text = EVTDESC_WOL_40_NC
 		trigger = {
 			is_female = no
-			has_dlc = "Sons of Abraham"
+			has_DLC = "Sons of Abraham"
 		}
 		picture = GFX_evt_bad_news
 	}
 	desc = {
-		trigger = { NOT = { has_dlc = "Sons of Abraham" } }
+		trigger = { NOT = { has_DLC = "Sons of Abraham" } }
 		text = EVTDESC_WOL_40_NC
 		picture = GFX_evt_recovery
 	}
@@ -2569,7 +2614,18 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = {
+		OR = {
+			ai = no
+			has_game_rule = {
+				name = silly_events
+				value = unrestricted
+			}
+		}
+		NOR = {
+			has_game_rule = {
+				name = silly_events
+				value = off
+			}
 			has_character_flag = cat_spymaster_flag
 		}
 		trait = lunatic
@@ -2697,7 +2753,6 @@ character_event = {
 		}
 		hidden_tooltip = {
 			remove_character_modifier = pet_cat
-			
 		}
 	}
 }
@@ -2722,6 +2777,10 @@ character_event = {
 					id = 6363
 				}
 			}
+			if = { 
+				limit = { trait = immortal }
+				character_event = { id = 6365 days = 10 }
+			}
     	}
     }
 }
@@ -2744,5 +2803,32 @@ character_event = {
 			who = FROMFROM
 			years = 100
 		}
+	}
+}
+
+# Immortality
+character_event = {
+	id = 6365
+	desc = EVTDESC6365
+	picture = GFX_evt_kitten_shadow
+	border = GFX_event_normal_frame_intrigue
+	
+	is_triggered_only = yes
+
+	
+	trigger = {
+		trait = lunatic
+		trait = immortal
+	}
+
+	option = {
+		name = EVTOPTA6365
+		FROM = { 
+			add_trait = immortal 
+		}
+	}
+
+	option = {
+		name = EVTOPTB6365
 	}
 }

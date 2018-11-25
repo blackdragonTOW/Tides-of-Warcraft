@@ -22,33 +22,6 @@ character_event = {
 	trigger = {
 		NOT = { trait = proud }
 		NOT = { trait = humble }
-		NOR = {
-			trait = dragon_red
-			trait = dragon_blue
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_chromatic
-			trait = dragon_twilight
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = doomlord
-			trait = pit_lord
-			trait = shivarra
-			trait = gnoll
-			trait = murloc
-			trait = trogg
-			trait = kobold
-			trait = lost_one
-			AND = {
-				trait = ogre
-				NOT = { trait = ogre_magi }
-			}
-		}
 	}
 
 	weight_multiplier = {
@@ -72,6 +45,10 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			trait = lunatic
+		}
+		modifier = {
+			factor = 0.75
+			trait = possessed
 		}
 		modifier = {
 			factor = 0.9
@@ -120,6 +97,10 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			trait = has_typhus
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_bubonic_plague
 		}
 		modifier = {
 			factor = 0.5
@@ -185,33 +166,6 @@ character_event = {
 	is_married = yes
 	
 	trigger = {
-		NOR = {
-			trait = dragon_red
-			trait = dragon_blue
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_chromatic
-			trait = dragon_twilight
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			trait = gnoll
-			trait = murloc
-			trait = trogg
-			trait = kobold
-			trait = lost_one
-			AND = {
-				trait = ogre
-				NOT = { trait = ogre_magi }
-			}
-		}
 		spouse = {
 			is_abroad = no
 			prisoner = no
@@ -219,12 +173,6 @@ character_event = {
 			NOT = { age = 21 }
 			NOT = { demesne_size = 1 }
 			fertility = 0.15
-			NOT = {
-				AND = {
-					trait = ogre
-					NOT = { trait = ogre_magi }
-				}
-			}
 		}
 	}
 
@@ -291,7 +239,10 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		trait = human
+		OR = {
+			culture_group = human
+			culture = forsaken
+		}
 		in_command = no
 		tier = count
 		wealth = 50
@@ -338,37 +289,12 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		NOR = {
-			trait = dragon_red
-			trait = dragon_blue
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = pit_lord
-			trait = fel_lord
-			trait = doomlord
-			trait = shivarra
-			trait = gnoll
-			trait = murloc
-			trait = trogg
-			trait = kobold
-			trait = lost_one
-			AND = {
-				trait = ogre
-				NOT = { trait = ogre_magi }
-			}
-		}
 		in_command = no
 		father_even_if_dead = {
 			is_alive = no
-			prestige = 100
+			primary_title = {
+				higher_tier_than = COUNT
+			}
 		}
 	}
 
@@ -414,38 +340,13 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		NOR = {
-			trait = dragon_red
-			trait = dragon_blue
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			trait = gnoll
-			trait = murloc
-			trait = trogg
-			trait = kobold
-			AND = {
-				trait = ogre
-				NOT = { trait = ogre_magi }
-			}
-		}
 		in_command = no
 		OR = {
 			trait = fair
 			trait = ugly
 		}
-		NOT = {	trait = humble	}
+		NOT = {	trait = humble }
+		NOT = {	trait = uncouth }
 	}
 
 	weight_multiplier = {
@@ -454,6 +355,10 @@ character_event = {
 			factor = 2.0
 			trait = proud
 			trait = fair
+		}
+		modifier = {
+			factor = 2.0
+			trait = groomed
 		}
 		modifier = {
 			factor = 0.8
@@ -466,6 +371,10 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			trait = lunatic
+		}
+		modifier = {
+			factor = 0.75
+			trait = possessed
 		}
 		modifier = {
 			factor = 0.9
@@ -517,6 +426,10 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
+			trait = has_bubonic_plague
+		}
+		modifier = {
+			factor = 0.5
 			trait = has_measles
 		}		
 		modifier = {
@@ -528,11 +441,11 @@ character_event = {
 	option = {
 		name = EVTOPTA73005 #Introduce fashion at the court
 		if = {
-			limit = { trait = fair }
+			limit = { has_fair_trait_trigger = yes }
 			random = {
 				chance = 10
 				add_trait = proud 
-				hidden_tooltip = { character_event = { id = 38261 }  }
+				hidden_tooltip = { character_event = { id = 38261 } }
 			}
 		}
 		scaled_wealth = -0.2
@@ -574,40 +487,16 @@ character_event = {
 	only_men = yes
 	
 	trigger = {
-		NOR = {
-			trait = dragon_red
-			trait = dragon_blue
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			trait = gnoll
-			trait = murloc
-			trait = trogg
-			trait = kobold
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 		any_child = {
+			NOR = {
+				is_undead = yes
+				is_elemental_or_void = yes
+				is_demon_race = yes
+				trait = race_dragon
+			}
 			is_married = no
 			is_female = no
 			age = 16
-			NOR = {
-				trait = undead_generic
-				trait = undead_scourge
-				trait = undead_forsaken
-			}
 			NOT = { age = 21 }
 			NOT = { demesne_size = 1 }
 			NOT = { trait = chaste }
@@ -671,6 +560,7 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTC73006 #Give him a beating for messing with inferiors
+		pacifists_lose_piety_effect = yes
 		event_target:knocked_up_maid = {
 			opinion = {
 				modifier = resentful_of_my_behaviour
@@ -679,6 +569,29 @@ character_event = {
 			}
 			add_trait = wroth
 			add_trait = ambitious
+		}
+	}
+	option = {
+		name = EVTOPTD73006 #Send him to confess his sins
+		trigger = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		}
+		event_target:knocked_up_maid = {
+			if = {
+				limit = {
+					religion_group = christian
+				}
+				add_trait = chaste
+			}
+			if = {
+				limit = {
+					religion_group = muslim
+				}
+				piety = -10
+			}
 		}
 	}
 }
@@ -697,33 +610,6 @@ character_event = {
 	only_men = yes
 	
 	trigger = {
-		NOR = {
-			trait = dragon_red
-			trait = dragon_blue
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			trait = gnoll
-			trait = murloc
-			trait = trogg
-			trait = kobold
-			trait = lost_one
-			AND = {
-				trait = ogre
-				NOT = { trait = ogre_magi }
-			}
-		}
 		in_command = no
 		spouse = {
 			is_abroad = no
@@ -731,13 +617,8 @@ character_event = {
 			is_alive = yes
 			NOT = { trait = shy } 
 			NOT = { trait = zealous }
+			NOT = { trait = uncouth }
 			NOT = { demesne_size = 1 }
-			NOT = {
-				AND = {
-					trait = ogre
-					NOT = { trait = ogre_magi }
-				}
-			}
 			opinion = { who = ROOT value = 10 }
 		}
 		NOT = { trait = zealous }
@@ -756,7 +637,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
-			spouse = { trait = fair }
+			spouse = { has_fair_trait_trigger = yes }
 		}
 		modifier = {
 			factor = 2.5
@@ -780,7 +661,7 @@ character_event = {
 	option = {
 		name = EVTOPTB73007 #Let's go to the church instead, darling
 		trigger = {
-			religion_group = light_group
+			religion_group = christian
 		}
 		if = {
 			limit = { trait = cynical }
@@ -820,26 +701,6 @@ character_event = {
 	ai = no
 	
 	trigger = {
-		NOR = {
-			trait = dragon_red
-			trait = dragon_blue
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = gnoll
-			trait = murloc
-			trait = trogg
-			trait = kobold
-			trait = lost_one
-			AND = {
-				trait = ogre
-				NOT = { trait = ogre_magi }
-			}
-		}
 		is_landed = yes
 		capital_scope = { TECH_NOBLE_CUSTOMS = 4 }
 	}
@@ -917,6 +778,10 @@ character_event = {
 			trait = lunatic
 		}
 		modifier = {
+			factor = 0.75
+			trait = possessed
+		}
+		modifier = {
 			factor = 0.9
 			is_ill = yes
 		}
@@ -963,6 +828,10 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			trait = has_typhus
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_bubonic_plague
 		}
 		modifier = {
 			factor = 0.5
@@ -1691,10 +1560,6 @@ character_event = {
 	lacks_dlc = "Zeus"
 	
 	trigger = {
-		OR = {
-			is_theocracy = yes
-			is_ruler = no
-		}
 		independent = no
 		is_councillor = no
 		NOT = { liege = { has_character_flag = asked_lord_spiritual_petition } }

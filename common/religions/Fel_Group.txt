@@ -16,6 +16,8 @@ fel_group = {
 		god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_FEL }
 		evil_god_names = { GOD_OLD_GODS GOD_FORGOTTEN_SHADOW GOD_VOID_LORDS GOD_HOLY_LIGHT GOD_NAARU GOD_TITANS GOD_AMANTHUL GOD_EONAR GOD_NORGANNON GOD_KHAZGOROTH GOD_AGGRAMAR GOD_GOLGANNETH GOD_WORLD_SOUL GOD_ELUNE }
 		
+		join_crusade_if_bordering_hostile = yes
+		
 		ai_convert_same_group = 0
 		ai_convert_other_group = 0
 		priests_can_marry = yes
@@ -23,8 +25,14 @@ fel_group = {
 		priest_title = PRIESTNAME_CULTIST
 		priests_can_inherit = yes
 		feminist = yes
+		female_temple_holders = yes
+		male_temple_holders = yes
+		women_can_take_consorts = yes
+		men_can_take_consorts = yes
 		aggression = 5
 		allow_looting = yes
+		uses_decadence = yes
+		max_consorts = 3
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -41,20 +49,65 @@ fel_group = {
 		god_names = { GOD_FEL }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_HOLY_LIGHT GOD_FORGOTTEN_SHADOW GOD_NAARU }
 		
+		join_crusade_if_bordering_hostile = yes
+		
 		ai_convert_same_group = 0
 		ai_convert_other_group = 0
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_NETHERMANCER
 		priests_can_inherit = yes
-		can_hold_temples = yes
 		feminist = yes
 		allow_looting = yes
+		female_temple_holders = yes
+		male_temple_holders = yes
+		women_can_take_consorts = yes
+		men_can_take_consorts = yes
+		uses_decadence = yes
+		max_consorts = 3
+		
+		reformed = demonology_reformed
 		
 		intermarry = forgotten_shadow
+		intermarry = forgotten_shadow_reformed
 		intermarry = loa
 	#	intermarry = sunwell
 		intermarry = mercantilism
+		intermarry = demonology_reformed
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	demonology_reformed = {
+		graphical_culture = muslimgfx
+		
+		icon = 4
+		color = { 0.29 0.06 0.49 }
+		
+		scripture_name = BOOK_OF_FEL
+		high_god_name = GOD_FEL
+		god_names = { GOD_FEL }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_HOLY_LIGHT GOD_FORGOTTEN_SHADOW GOD_NAARU }
+		
+		join_crusade_if_bordering_hostile = yes
+		
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		priest_title = PRIESTNAME_NETHERMANCER
+		priests_can_inherit = yes
+		feminist = yes
+		allow_looting = yes
+		female_temple_holders = yes
+		male_temple_holders = yes
+		uses_decadence = yes
+		
+		intermarry = forgotten_shadow
+		intermarry = forgotten_shadow_reformed
+		intermarry = loa
+	#	intermarry = sunwell
+		intermarry = mercantilism
+		intermarry = demonology
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -71,15 +124,18 @@ fel_group = {
 		god_names = { GOD_LICH_KING }
 		evil_god_names = { GOD_HOLY_LIGHT GOD_NAARU }
 		
+		join_crusade_if_bordering_hostile = yes
+		
 		ai_convert_same_group = 0
 		ai_convert_other_group = 0
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_ACOLYTE
 		priests_can_inherit = yes
-		can_hold_temples = yes
 		feminist = yes
 		allow_looting = yes
+		female_temple_holders = yes
+		male_temple_holders = yes
+		uses_decadence = yes
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder

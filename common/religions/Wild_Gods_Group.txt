@@ -3,9 +3,10 @@ wild_gods_group = {
 	graphical_culture = mesoamericangfx
 	playable = yes
 	hostile_within_group = yes
+	ai_fabricate_claims = yes
 	
 	loa = {
-		graphical_culture = mesoamericangfx
+		graphical_culture = africangfx
 		icon = 8
 		heresy_icon = 9
 		
@@ -16,28 +17,34 @@ wild_gods_group = {
 		god_names = { GOD_THE_LOA }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_CTHUN GOD_YSHAARJ GOD_YOGG_SARON GOD_NZOTH }
 		
-		ai_fabricate_claims = no
+		join_crusade_if_bordering_hostile = yes
+		
 		ai_convert_same_group = 1
-		ai_convert_other_group = 0
+		ai_convert_other_group = 1
 		priests_can_marry = yes
 		female_temple_holders = yes
-		can_hold_temples = yes
+		male_temple_holders = yes
 		priest_title = PRIESTNAME_WITCH_DOCTOR
 		priests_can_inherit = yes
 		aggression = 1.5
 		peace_prestige_loss = yes
 		allow_looting = yes
 		can_grant_invasion_cb = yes
-		max_wives = 4
+		men_can_take_consorts = yes
+		max_consorts = 3
+		uses_decadence = yes
 		
 		intermarry = shamanism
+		intermarry = shamanism_reformed
 		intermarry = geomancy
 		intermarry = aeromancy
 		intermarry = hydromancy
 		intermarry = pyromancy
 		intermarry = mercantilism
 		intermarry = forgotten_shadow
+		intermarry = forgotten_shadow_reformed
 		intermarry = demonology
+		intermarry = demonology_reformed
 		intermarry = wyrmcult
 		
 		religious_clothing_head = 0 # Placeholder
@@ -45,7 +52,7 @@ wild_gods_group = {
 	}
 	
 	hakkar = {
-		graphical_culture = mesoamericangfx
+		graphical_culture = africangfx
 		
 		color = { 0.95 0.07 0.07 }
 		
@@ -56,19 +63,22 @@ wild_gods_group = {
 		
 		parent = loa
 		
-		ai_fabricate_claims = no
+		join_crusade_if_bordering_hostile = yes
+		
 		ai_convert_same_group = 2
 		ai_convert_other_group = 1
 		priests_can_marry = yes
 		female_temple_holders = yes
-		can_hold_temples = yes
+		male_temple_holders = yes
+		men_can_take_consorts = yes
 		priest_title = PRIESTNAME_WITCH_DOCTOR
 		priests_can_inherit = yes
 		aggression = 5
 		peace_prestige_loss = yes
 		allow_looting = yes
 		can_grant_invasion_cb = yes
-		max_wives = 4
+		max_consorts = 3
+		uses_decadence = yes
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -81,10 +91,11 @@ wild_gods_group = {
 		color = { 0.45 0.83 0.55 }
 		
 		scripture_name = NATURES_CALL
-		high_god_name = { GOD_NATURE }
+		high_god_name = GOD_NATURE
 		god_names = { GOD_SPIRITS GOD_ANCIENTS GOD_WORLD_SOUL GOD_CENARIUS }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_ALAKIR GOD_RAGNAROS GOD_NEPTULON GOD_THERAZANE }
 		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 1
 		ai_convert_other_group = 1
@@ -93,10 +104,12 @@ wild_gods_group = {
 		priest_title = PRIESTNAME_TENDER
 		priests_can_inherit = yes
 		feminist = yes
-		can_hold_temples = yes
 		defensive_attrition = yes
 		ignores_defensive_attrition = yes
 		allow_looting = no
+		uses_decadence = yes
+		
+		reformed = forgotten_shadow_reformed
 		
 		intermarry = geomancy
 		intermarry = aeromancy
@@ -106,9 +119,54 @@ wild_gods_group = {
 		intermarry = holy_light
 		intermarry = argent
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 	#	intermarry = sunwell
 		intermarry = wyrmcult
 		intermarry = elune
+		intermarry = druidism_reformed
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	druidism_reformed = {
+		graphical_culture = norsegfx
+		
+		icon = 27
+		color = { 0.36 0.68 0.45 }
+		
+		scripture_name = NATURES_CALL
+		high_god_name = GOD_NATURE
+		god_names = { GOD_SPIRITS GOD_ANCIENTS GOD_WORLD_SOUL GOD_CENARIUS }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_ALAKIR GOD_RAGNAROS GOD_NEPTULON GOD_THERAZANE }
+		
+		join_crusade_if_bordering_hostile = yes
+		
+		ai_convert_same_group = 1
+		ai_convert_other_group = 1
+		priests_can_marry = yes
+		female_temple_holders = yes
+		priest_title = PRIESTNAME_TENDER
+		priests_can_inherit = yes
+		feminist = yes
+		defensive_attrition = yes
+		ignores_defensive_attrition = yes
+		allow_looting = no
+		uses_decadence = yes
+		
+		intermarry = geomancy
+		intermarry = aeromancy
+		intermarry = hydromancy
+		intermarry = pyromancy
+		intermarry = mercantilism
+		intermarry = holy_light
+		intermarry = argent
+		intermarry = old_ways
+		intermarry = old_ways_reformed
+	#	intermarry = sunwell
+		intermarry = wyrmcult
+		intermarry = elune
+		intermarry = druidism
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -121,19 +179,20 @@ wild_gods_group = {
 		color = { 0.1 0.2 0.4 }
 		
 		scripture_name = WORD_OF_ELUNE
-		high_god_name = { GOD_ELUNE }
+		high_god_name = GOD_ELUNE
 		god_names = { GOD_ELUNE GOD_ANCIENTS GOD_MALORNE GOD_CENARIUS }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_ALAKIR GOD_RAGNAROS GOD_NEPTULON GOD_THERAZANE GOD_XAVIUS GOD_AZSHARA }
 		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 1
 		ai_convert_other_group = 1
 		priests_can_marry = yes
 		female_temple_holders = yes
+		male_temple_holders = yes
 		priest_title = PRIESTNAME_PRIESTESS
 		priests_can_inherit = yes
 		feminist = yes
-		can_hold_temples = yes
 		defensive_attrition = yes
 		ignores_defensive_attrition = yes
 		allow_looting = no
@@ -142,6 +201,9 @@ wild_gods_group = {
 		intermarry = argent
 		intermarry = wyrmcult
 		intermarry = druidism
+		intermarry = druidism_reformed
+		intermarry = old_ways
+		intermarry = old_ways_reformed
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder

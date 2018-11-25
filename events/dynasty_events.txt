@@ -424,6 +424,9 @@ character_event = {
 							}
 						}
 					}
+					holder_scope = { # There's no war declaration notification, so not against players...
+						ai = no
+					}
 				}
 			}
 		}
@@ -436,6 +439,7 @@ character_event = {
 	immediate = {
 		random_dynasty_member = {
 			limit = {
+				is_offmap_ruler = no
 				is_landed = no
 				is_liege_or_above = ROOT
 				is_incapable = no
@@ -505,6 +509,9 @@ character_event = {
 									}
 								}
 							}
+						}
+						holder_scope = { # There's no war declaration notification, so not against players...
+							ai = no
 						}
 					}
 				}
@@ -602,6 +609,9 @@ character_event = {
 									}
 								}
 							}
+						}
+						holder_scope = { # There's no war declaration notification, so not against players...
+							ai = no
 						}
 					}
 				}

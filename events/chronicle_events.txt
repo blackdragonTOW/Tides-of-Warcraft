@@ -38,11 +38,46 @@ character_event = {
 				FROM = {
 					is_dying = no
 				}
+				ROOT = {
+					NOR = {
+						trait = crusader_king
+						trait = crusader_queen
+						has_character_flag = beneficiary_check_potential_player_character
+					}
+				}
 			}
 			chronicle = {
 				entry = CHRONICLE_PLAYER_INHERITANCE_LANDLESS
 				portrait = [Root.GetID]
 				picture = GFX_evt_emissary
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					is_dying = no
+				}
+				ROOT = {
+					OR = {
+						trait = crusader_king
+						trait = crusader_queen
+					}
+				}
+			}
+			chronicle = {
+				entry = CHRONICLE_BECAME_RULER_OF_CRUSADER_KINGDOM
+				portrait = [Root.GetID]
+				picture = GFX_evt_western_knights_byzantine
+			}
+		}
+		else_if = {
+			limit = {
+				has_character_flag = beneficiary_check_potential_player_character
+			}
+			chronicle = {
+				entry = CHRONICLE_BECAME_LORD_OF_CRUSADER_KINGDOM
+				portrait = [Root.GetID]
+				picture = GFX_evt_western_knights_byzantine
 			}
 		}
 		if = {
@@ -436,7 +471,10 @@ character_event = {
 							religion = PREV
 						}
 					}
-					NOT = { character = FROM }
+					OR = {
+						NOT = { character = FROM }
+						FROM = { uses_new_crusade = yes }
+					}
 				}
 				chronicle = {
 					entry = CHRONICLE_CRUSADE_WON
@@ -445,7 +483,10 @@ character_event = {
 			}
 			FROM = {
 				if = {
-					limit = { ai = no }
+					limit = { 
+						ai = no 
+						uses_new_crusade = no
+					}
 					chronicle = {
 						entry = CHRONICLE_CRUSADE_WON_AND_I_GOT_THE_TITLE
 						portrait = [From.GetID]
@@ -503,6 +544,58 @@ character_event = {
 				entry = CHRONICLE_CRUSADE_LOST
 				portrait = [New.GetID]
 			}
+		}
+	}
+}
+
+# Aztec first contact
+character_event = {
+	id = CM.10018
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		any_player = {
+			limit = {
+				capital_scope = {
+					NOT = { region = world_india }
+					NOT = { region = world_africa_east }
+				}
+			}
+			character_event = { id = CM.10019 }
+		}
+	}
+}
+
+character_event = {
+	id = CM.10019
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		chronicle = {
+			entry = CHRONICLE_AZTECS_FIRST_CONTACT
+			portrait = [From.GetID]
+		}
+	}
+}
+
+# Aztec Invasion
+character_event = {
+	id = CM.10020
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		chronicle = {
+			entry = CHRONICLE_AZTEC_INVASION
+			portrait = [From.GetID]
 		}
 	}
 }
@@ -1011,6 +1104,119 @@ character_event = {
 	}
 }
 
+# My forces captured major settlement
+character_event = {
+	id = CM.10034
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	ai = yes
+	
+	trigger = {
+		OR = {
+			FROM = { title = b_roma }
+			FROM = { title = b_constantinople }
+			FROM = { title = b_bagdad }
+			FROM = { title = b_indraprastha }
+			FROM = { title = b_jerusalem }
+			FROM = { title = b_mecca }
+			FROM = { title = b_alexandria }
+			FROM = { title = b_cordoba }
+			AND = {
+				year = 900
+				FROM = { title = b_venezia }
+			}
+			AND = {
+				year = 1164
+				FROM = { title = b_koln }
+			}
+			AND = {
+				year = 1200
+				FROM = { title = b_paris }
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				top_liege = {
+					ai = no
+					NOT = { at_location = ROOT }
+				}
+			}
+			top_liege = {
+				chronicle = {
+					entry = CHRONICLE_MY_FORCES_CAPTURED_MAJOR_SETTLEMENT
+					portrait = [Root.GetID] # The commander
+				}
+			}
+		}
+	}
+}
+
+# Enemy forces captured major settlement
+character_event = {
+	id = CM.10035
+	
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	ai = yes
+	
+	trigger = {
+		OR = {
+			FROM = { title = b_roma }
+			FROM = { title = b_constantinople }
+			FROM = { title = b_bagdad }
+			FROM = { title = b_indraprastha }
+			FROM = { title = b_jerusalem }
+			FROM = { title = b_mecca }
+			FROM = { title = b_alexandria }
+			FROM = { title = b_cordoba }
+			AND = {
+				year = 900
+				FROM = { title = b_venezia }
+			}
+			AND = {
+				year = 1164
+				FROM = { title = b_koln }
+			}
+			AND = {
+				year = 1200
+				FROM = { title = b_paris }
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				FROM = {
+					owner = {
+						top_liege = {
+							ai = no
+						}
+					}
+				}
+			}
+			FROM = {
+				owner = {
+					top_liege = {
+						chronicle = {
+							entry = CHRONICLE_ENEMY_FORCES_CAPTURED_MAJOR_SETTLEMENT
+							portrait = [Root.GetID] # The owner of the enemy forces
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 # Marriage of primary heir  - ROOT is employer. FROM is employers "employee". new_character is the other spouse.
 character_event = {
 	id = CM.10036
@@ -1304,6 +1510,38 @@ character_event = {
 #############################################################################################
 # Random content if chronicle is empty at year end (On Action on_create_chronicle_if_empty) #
 #############################################################################################
+
+# Dragon Sighted
+character_event = {
+	id = CM.10500
+	
+	is_triggered_only = yes 
+	
+	hide_window = yes
+	
+	immediate = {
+		random_realm_province = {
+			province_event = { id = CM.10501 }
+		}
+	}
+}
+
+province_event = {
+	id = CM.10501
+	
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			chronicle = {
+				entry = CHRONICLE_FILL0001
+				type = MONSTER_SIGHTED
+			}
+		}
+	}
+}
 
 # Giant sighted
 character_event = {

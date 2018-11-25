@@ -12,22 +12,28 @@ elemental_group = {
 		color = { 0.18 0.82 0.35 }
 		
 		scripture_name = THE_PATH_OF_THE_ELEMENTS
-		high_god_name = { GOD_WORLD_SOUL }
+		high_god_name = GOD_WORLD_SOUL
 		god_names = { GOD_ELEMENTS GOD_RAGNAROS GOD_NEPTULON GOD_THERAZANE GOD_ALAKIR GOD_WORLD_SOUL }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS }
 		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 2
 		ai_convert_other_group = 0
 		priests_can_marry = yes
-		female_temple_holders = yes
+		male_temple_holders = yes
 		priest_title = PRIESTNAME_SEER
 		priests_can_inherit = yes
 		feminist = yes
-		can_hold_temples = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
 		defensive_attrition = yes
 		ignores_defensive_attrition = yes
 		allow_looting = yes
+		uses_decadence = yes
+		max_consorts = 3
+		
+		reformed = forgotten_shadow_reformed
 		
 		intermarry = geomancy
 		intermarry = aeromancy
@@ -36,7 +42,52 @@ elemental_group = {
 		intermarry = loa
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = wyrmcult
+		intermarry = shamanism_reformed
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	shamanism_reformed = {
+		graphical_culture = mongolgfx
+		
+		icon = 21
+		color = { 0.06 0.81 0.26 }
+		
+		scripture_name = THE_PATH_OF_THE_ELEMENTS
+		high_god_name = GOD_WORLD_SOUL
+		god_names = { GOD_ELEMENTS GOD_RAGNAROS GOD_NEPTULON GOD_THERAZANE GOD_ALAKIR GOD_WORLD_SOUL }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS }
+		
+		join_crusade_if_bordering_hostile = yes
+		
+		ai_convert_same_group = 2
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		male_temple_holders = yes
+		priest_title = PRIESTNAME_SEER
+		priests_can_inherit = yes
+		feminist = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		defensive_attrition = yes
+		ignores_defensive_attrition = yes
+		allow_looting = yes
+		uses_decadence = yes
+		max_consorts = 3
+		
+		intermarry = geomancy
+		intermarry = aeromancy
+		intermarry = hydromancy
+		intermarry = pyromancy
+		intermarry = loa
+		intermarry = mercantilism
+		intermarry = old_ways
+		intermarry = old_ways_reformed
+		intermarry = wyrmcult
+		intermarry = shamanism
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -49,31 +100,39 @@ elemental_group = {
 		color = { 0.41 0.34 0.04 }
 		
 		scripture_name = THE_PATH_OF_EARTH
-		high_god_name = { GOD_THERAZANE }
+		high_god_name = GOD_THERAZANE
 		god_names = { GOD_ELEMENTS GOD_THERAZANE GOD_WORLD_SOUL }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_RAGNAROS GOD_NEPTULON GOD_ALAKIR }
 		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 2
 		ai_convert_other_group = 1
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_GEOMANCER
 		priests_can_inherit = yes
 		feminist = yes
-		can_hold_temples = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		women_can_take_consorts = yes
+		men_can_take_consorts = yes
 		defensive_attrition = yes
 		ignores_defensive_attrition = yes
 		allow_looting = yes
+		uses_decadence = yes
+		max_consorts = 3
 		
 		intermarry = shamanism
+		intermarry = shamanism_reformed
 		intermarry = aeromancy
 		intermarry = hydromancy
 		intermarry = pyromancy
 		intermarry = loa
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = druidism
+		intermarry = druidism_reformed
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -86,31 +145,39 @@ elemental_group = {
 		color = { 0.67 0.86 0.85 }
 		
 		scripture_name = THE_PATH_OF_AIR
-		high_god_name = { GOD_ALAKIR }
+		high_god_name = GOD_ALAKIR
 		god_names = { GOD_ELEMENTS GOD_ALAKIR GOD_WORLD_SOUL }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_RAGNAROS GOD_NEPTULON GOD_THERAZANE }
 		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 2
 		ai_convert_other_group = 1
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_AEROMANCER
 		priests_can_inherit = yes
 		feminist = yes
-		can_hold_temples = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		women_can_take_consorts = yes
+		men_can_take_consorts = yes
 		defensive_attrition = yes
 		ignores_defensive_attrition = yes
 		allow_looting = yes
+		uses_decadence = yes
+		max_consorts = 3
 		
 		intermarry = shamanism
+		intermarry = shamanism_reformed
 		intermarry = geomancy
 		intermarry = hydromancy
 		intermarry = pyromancy
 		intermarry = loa
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = druidism
+		intermarry = druidism_reformed
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -123,33 +190,41 @@ elemental_group = {
 		color = { 0.19 0.35 0.72 }
 		
 		scripture_name = THE_PATH_OF_WATER
-		high_god_name = { GOD_NEPTULON }
+		high_god_name = GOD_NEPTULON
 		god_names = { GOD_ELEMENTS GOD_NEPTULON GOD_WORLD_SOUL }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_RAGNAROS GOD_ALAKIR GOD_THERAZANE }
 		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 2
 		ai_convert_other_group = 1
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_HYDROMANCER
 		priests_can_inherit = yes
 		feminist = yes
-		can_hold_temples = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		women_can_take_consorts = yes
+		men_can_take_consorts = yes
 		defensive_attrition = yes
 		ignores_defensive_attrition = yes
 		allow_looting = yes
 		seafarer = yes
 		allow_rivermovement = yes
+		uses_decadence = yes
+		max_consorts = 3
 		
 		intermarry = shamanism
+		intermarry = shamanism_reformed
 		intermarry = geomancy
 		intermarry = aeromancy
 		intermarry = pyromancy
 		intermarry = loa
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = druidism
+		intermarry = druidism_reformed
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -162,31 +237,39 @@ elemental_group = {
 		color = { 0.71 0.05 0.05 }
 		
 		scripture_name = THE_PATH_OF_FIRE
-		high_god_name = { GOD_RAGNAROS }
+		high_god_name = GOD_RAGNAROS
 		god_names = { GOD_ELEMENTS GOD_RAGNAROS GOD_WORLD_SOUL }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS GOD_NEPTULON GOD_ALAKIR GOD_THERAZANE }
 		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 2
 		ai_convert_other_group = 1
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_PYROMANCER
 		priests_can_inherit = yes
 		feminist = yes
-		can_hold_temples = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		women_can_take_consorts = yes
+		men_can_take_consorts = yes
 		defensive_attrition = yes
 		ignores_defensive_attrition = yes
 		allow_looting = yes
+		uses_decadence = yes
+		max_consorts = 3
 		
 		intermarry = shamanism
+		intermarry = shamanism_reformed
 		intermarry = geomancy
 		intermarry = aeromancy
 		intermarry = hydromancy
 		intermarry = loa
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = druidism
+		intermarry = druidism_reformed
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder

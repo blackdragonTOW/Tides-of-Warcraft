@@ -32,6 +32,11 @@ character_event = {
 		tier = count
 		in_command = no
 		OR = {
+			trait = race_human
+			trait = race_dwarf
+		}
+		NOT = { is_undead = yes }
+		OR = {
 			trait = greedy
 			trait = midas_touched
 			trait = gluttonous
@@ -61,6 +66,9 @@ character_event = {
 	
 	option = { #Ignore
 		name = EVTOPTA4000
+		trigger = { 
+			NOT = { trait = just }
+		}
 		add_trait = just
 	}
 	
@@ -69,9 +77,6 @@ character_event = {
 		tooltip_info = just
 		trigger = {
 			trait = just
-			NOT = {
-				trait = wroth
-			}
 		}
 		add_character_modifier = {
 			name = the_judger
@@ -85,6 +90,99 @@ character_event = {
 	}
 }
 
+### Blasphemy! ###
+character_event = {
+	id = 4040
+	desc = EVTDESC4040
+	picture = GFX_evt_bishop
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	min_age = 20
+	capable_only = yes
+	prisoner = no
+	war = no
+	
+	trigger = {
+		OR = {
+			religion_group = light_group
+			religion = old_ways_reformed
+			religion = elune
+			religion = forgotten_shadow
+			religion = forgotten_shadow_reformed
+		}
+		in_command = no
+		piety = 50
+		tier = count
+		NOT = {
+			has_character_modifier = church_unfunny
+		}
+		job_spiritual = {
+			is_priest = yes
+			piety = 50
+			OR = {
+				trait = celibate
+				trait = chaste
+				trait = zealous
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 3
+			trait = just
+		}
+		modifier = {
+			factor = 0.66
+			trait = arbitrary
+		}
+	}
+	
+	option = { 
+		name = EVTOPTA4040 #Ignore
+		add_character_modifier = {
+			name = church_unfunny
+			duration = 90
+		}
+	}
+	
+	option = {
+		name = EVTOPTB4040 #Imprisonment
+		add_character_modifier = {
+			name = imprison_lawbreakers
+			duration = 60
+		}
+	}
+	
+	option = {
+		name = EVTOPTC4040 #Punish cook
+		tooltip_info = arbitrary
+		trigger = {
+			trait = arbitrary
+		}
+		add_character_modifier = {
+			name = punish_cook
+			duration = 60
+		}
+	}
+	
+	option = {
+		name = EVTOPTD4040 #Hanged
+		tooltip_info = zealous
+		trigger = {
+			trait = zealous
+		}
+		add_character_modifier = {
+			name = kill_lawbreakers
+			duration = 60
+		}
+	}
+}
+
 #Wolf hunting - Luparii
 character_event = {
 	id = 4085
@@ -95,12 +193,16 @@ character_event = {
 	
 	min_age = 20
 	only_playable = yes
-	only_men = yes
 	capable_only = yes
 	prisoner = no
 	war = no
 	
 	trigger = {
+		NOT = {
+			culture = frostwolf
+			culture = whiteclaw
+		}
+		is_nomadic = no
 		in_command = no
 		tier = count
 		NOT = {
@@ -232,6 +334,102 @@ character_event = {
 	}
 }
 
+
+#Witch!
+character_event = {
+	id = 4036
+	desc = EVTDESC4036
+	picture = GFX_evt_scandal
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	min_age = 20
+	capable_only = yes
+	prisoner = no
+	war = no
+	
+	trigger = {
+		in_command = no
+		tier = count
+		NOT = {
+			has_character_modifier = the_pious
+			has_character_modifier = modifier_witch
+			has_character_modifier = tortured_witch
+			has_character_modifier = the_kind
+		}
+		any_courtier = {
+			is_priest = yes
+			piety = 100
+		}
+		religion = scarlet
+		OR = {
+			trait = zealous
+			trait = cynical
+		}
+		OR = {
+			trait = chaste
+			trait = lustful
+		}
+		NOT = { is_inaccessible_trigger = yes }
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 5
+			prestige = 15
+		}
+		modifier = {
+			factor = 3
+			trait = just
+		}
+		modifier = {
+			factor = 0.66
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 0.8
+			trait = content
+		}
+	}
+	
+	option = { 
+		name = EVTOPTA4036 #Ignore
+		add_character_modifier = {
+			name = the_kind
+			duration = 180
+		}
+	}
+	
+	option = {
+		name = EVTOPTB4036 #Ordeal by water
+		pacifists_lose_piety_effect = yes
+		add_character_modifier = {
+			name = modifier_witch
+			duration = 90
+		}
+	}
+	
+	option = {
+		name = EVTOPTC4036 #Torture
+		pacifists_lose_piety_effect = yes
+		add_character_modifier = {
+			name = tortured_witch
+			duration = 90
+		}
+	}
+	
+	option = {
+		name = EVTOPTD4036 #Beautiful = witch
+		add_character_modifier = {
+			name = the_pious
+			duration = 180
+		}
+	}
+}
+
 #Cattle Rustling
 character_event = {
 	id = 4035
@@ -296,6 +494,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPTB4035 #Cut off hands
+		pacifists_lose_piety_effect = yes
 		add_character_modifier = {
 			name = the_cruel
 			duration = 180
@@ -304,6 +503,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPTC4035 #Kill!
+		pacifists_lose_piety_effect = yes
 		add_character_modifier = {
 			name = kill_lawbreakers
 			duration = 180
@@ -403,6 +603,7 @@ character_event = {
 				trait = wroth
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		prestige = 15
 		any_courtier = {
 			limit = {
@@ -434,6 +635,7 @@ character_event = {
 				trait = cruel
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		add_trait = cruel
 	}
 	
@@ -693,6 +895,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPTB4050 #Behead him!
+		pacifists_lose_piety_effect = yes
 		add_character_modifier = {
 			name = the_ruthless
 			duration = 180
@@ -729,6 +932,7 @@ character_event = {
 				trait = arbitrary
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		add_character_modifier = {
 			name = the_strong
 			duration = 180
@@ -741,12 +945,105 @@ character_event = {
 		trigger = {
 			trait = wroth
 		}
+		pacifists_lose_piety_effect = yes
 		add_character_modifier = {
 			name = the_cruel
 			duration = 180
 		}
 	}
 }
+
+#Dragon!
+character_event = {
+	id = 4055
+	desc = EVTDESC4055
+	picture = GFX_evt_heretic
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	only_playable = yes
+	min_age = 20
+	capable_only = yes
+	prisoner = no
+	war = no
+	
+	trigger = {
+		in_command = no
+		tier = count
+		any_vassal = {
+			war = no
+			prisoner = no
+			age = 20
+			OR = {
+				trait = ambitious
+				trait = brave
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 3
+			trait = brave
+		}
+		modifier = {
+			factor = 5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.66
+			trait = craven
+		}
+		modifier = {
+			factor = 0.8
+			trait = content
+		}
+	}
+	
+	option = {
+		name = EVTOPTA4055
+		scaled_wealth = -0.05
+		prestige = -10
+	}
+	
+	option = {
+		name = EVTOPTB4055
+		change_martial = 1
+	}
+	
+	option = {
+		name = EVTOPTC4055
+		add_character_modifier = {
+			name = the_perturbed
+			duration = 365
+		}
+	}
+	
+	option = {
+		name = EVTOPTD4055
+		any_vassal = {
+			limit = {
+				war = no
+				prisoner = no
+				age = 16
+				OR = {
+					trait = ambitious
+					trait = brave
+				}
+			}
+			opinion = {
+				modifier = brave_pos
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+}
+
+
 
 ################################################################################
 # Event Chain: Poachers
@@ -827,6 +1124,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPTB4020 #Ask someone to do something about it!
+		custom_tooltip = { text = EVTTOOLTIP4021 }
 		ai_chance = { factor = 80 }
 			any_courtier = {	
 				limit = {
@@ -843,7 +1141,6 @@ character_event = {
 			character_event = {
 				id = 4021
 				days = 10
-				tooltip = EVTTOOLTIP4021
 			}
 		}
 	}
@@ -938,6 +1235,7 @@ character_event = {
 				trait = just
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		FROM = {
 			set_character_flag = dead_poachers
 			character_event = {
@@ -957,6 +1255,7 @@ character_event = {
 				trait = arbitrary
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		FROM = {
 			set_character_flag = ears_off
 			character_event = {
@@ -1007,6 +1306,7 @@ character_event = {
 		trigger = {
 			has_character_flag = ears_off
 		}
+		pacifists_lose_piety_effect = yes
 		clr_character_flag = ears_off
 		FROM = {
 			character_event = {
@@ -1046,6 +1346,7 @@ character_event = {
 		trigger = {
 			has_character_flag = dead_poachers
 		}
+		pacifists_lose_piety_effect = yes
 		clr_character_flag = dead_poachers
 		FROM = {
 			character_event = {
@@ -1210,6 +1511,7 @@ character_event = {
 			trait = arbitrary
 		}
 		ai_chance = { factor = 20 }
+		pacifists_lose_piety_effect = yes
 		FROM = {
 			set_character_flag = heads_up
 			character_event = {
@@ -1227,6 +1529,7 @@ character_event = {
 			trait = wroth
 		}
 		ai_chance = { factor = 30 }
+		pacifists_lose_piety_effect = yes
 		FROM = {
 			set_character_flag = hands_off
 			character_event = {
@@ -1282,6 +1585,7 @@ character_event = {
 			has_character_flag = hands_off
 		}
 		ai_chance = { factor = 30 }
+		pacifists_lose_piety_effect = yes
 		clr_character_flag = hands_off
 		FROM = {
 			character_event = {
@@ -1297,6 +1601,7 @@ character_event = {
 			has_character_flag = hands_off
 		}
 		ai_chance = { factor = 70 }
+		pacifists_lose_piety_effect = yes
 		clr_character_flag = hands_off
 		FROM = {
 			character_event = {
@@ -1667,7 +1972,6 @@ character_event = {
 	is_triggered_only = yes
 	
 	only_playable = yes
-	only_men = yes
 	min_age = 20
 	capable_only = yes
 	prisoner = no
@@ -1778,7 +2082,6 @@ character_event = {
 	
 	min_age = 20
 	only_playable = yes
-	only_men = yes
 	capable_only = yes
 	prisoner = no
 	war = no
@@ -2217,16 +2520,18 @@ character_event = {
 	is_triggered_only = yes
 	
 	min_age = 20
-	only_men = yes
 	only_playable = yes
 	capable_only = yes
 	prisoner = no
+	culture_group = human
 	war = no
 	friends = yes
 	rivals = yes
 	
 	trigger = {
-		trait = human
+		NOT = {
+			culture = scourge
+		}
 		in_command = no
 		any_courtier = {
 			martial = 15
@@ -2338,13 +2643,13 @@ character_event = {
 	
 	min_age = 20
 	only_playable = yes
-	only_men = yes
 	capable_only = yes
 	prisoner = no
+	culture_group = human
 	war = no
 	
 	trigger = {
-		trait = human
+		NOT = { culture = scourge }
 		in_command = no
 		martial = 15
 		intrigue = 10
@@ -2444,7 +2749,6 @@ character_event = {
 	
 	min_age = 20
 	only_playable = yes
-	only_men = yes
 	capable_only = yes
 	prisoner = no
 	war = no
@@ -2630,6 +2934,8 @@ character_event = {
 	option = {
 		name = EVTOPTC4135
 		add_trait = gluttonous
+		gain_weight_small_effect = yes
+		weight_trait_check_effect = yes
 	}
 }
 
@@ -2645,7 +2951,6 @@ character_event = {
 	
 	min_age = 20
 	only_playable = yes
-	only_men = yes
 	capable_only = yes
 	prisoner = no
 	war = no
@@ -2868,20 +3173,7 @@ character_event = {
 	war = no
 	
 	trigger = {
-		NOR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = gnoll
-			trait = kobold
-			trait = murloc
-			trait = trogg
-			trait = ogre
-		}
+		is_nomadic = no
 		in_command = no
 		NOT = {
 			has_character_modifier = the_sullen
@@ -3006,7 +3298,6 @@ character_event = {
 	
 	min_age = 20
 	only_playable = yes
-	only_men = yes
 	capable_only = yes
 	prisoner = no
 	war = no
@@ -3015,6 +3306,7 @@ character_event = {
 		in_command = no
 		OR = {
 			trait = lunatic
+			trait = possessed
 			trait = infirm
 			trait = drunkard
 		}

@@ -3,6 +3,7 @@ light_group = {
 	graphical_culture = westerngfx
 	playable = yes
 	ai_fabricate_claims = yes
+	ai_peaceful = yes
 	
 	holy_light = {
 		graphical_culture = westerngfx
@@ -16,11 +17,13 @@ light_group = {
 		god_names = { GOD_HOLY_LIGHT }
 		evil_god_names = { GOD_SARGERAS GOD_VOID_LORDS GOD_BURNING_LEGION GOD_FORGOTTEN_SHADOW }
 		
+		join_crusade_if_bordering_hostile = yes
+		
 		ai_convert_same_group = 1
 		ai_convert_other_group = 1
-		ai_peaceful = yes
 		priests_can_marry = yes
 		female_temple_holders = yes
+		male_temple_holders = yes
 		priest_title = PRIESTNAME_CLERIC
 		can_retire_to_monastery = yes
 		priests_can_inherit = yes
@@ -30,6 +33,7 @@ light_group = {
 		peace_piety_gain = 1 # Need to be balanced
 		attacking_same_religion_piety_loss = yes
 		can_grant_divorce = yes
+		uses_decadence = yes
 		
 		intermarry = scarlet
 		intermarry = argent
@@ -37,7 +41,9 @@ light_group = {
 	#	intermarry = sunwell
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = druidism
+		intermarry = druidism_reformed
 		intermarry = elune
 		
 		religious_clothing_head = 0 # Placeholder
@@ -54,12 +60,15 @@ light_group = {
 		scripture_name = BOOK_OF_LIGHT
 		high_god_name = GOD_HOLY_LIGHT
 		god_names = { GOD_HOLY_LIGHT }
-		evil_gods_names = { GOD_SARGERAS GOD_VOID_LORDS GOD_BURNING_LEGION GOD_LICH_KING GOD_FORGOTTEN_SHADOW }
+		evil_god_names = { GOD_SARGERAS GOD_VOID_LORDS GOD_BURNING_LEGION GOD_LICH_KING GOD_FORGOTTEN_SHADOW }
+		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 2
 		ai_convert_other_group = 2
 		priests_can_marry = yes
 		female_temple_holders = yes
+		male_temple_holders = yes
 		priest_title = PRIESTNAME_INTERROGATOR
 		priests_can_inherit = yes
 		feminist = yes
@@ -69,6 +78,7 @@ light_group = {
 		can_grant_divorce = yes
 		can_excommunicate = yes
 		investiture = yes
+		uses_decadence = yes
 		
 		intermarry = holy_light
 		
@@ -86,25 +96,31 @@ light_group = {
 		scripture_name = BOOK_OF_LIGHT
 		high_god_name = GOD_HOLY_LIGHT
 		god_names = { GOD_HOLY_LIGHT }
-		evil_gods_names = { GOD_SARGERAS GOD_VOID_LORDS GOD_BURNING_LEGION GOD_LICH_KING GOD_FORGOTTEN_SHADOW }
+		evil_god_names = { GOD_SARGERAS GOD_VOID_LORDS GOD_BURNING_LEGION GOD_LICH_KING GOD_FORGOTTEN_SHADOW }
+		
+		join_crusade_if_bordering_hostile = yes
 		
 		ai_convert_same_group = 0
 		ai_convert_other_group = 0
 		priests_can_marry = yes
 		female_temple_holders = yes
+		male_temple_holders = yes
 		priest_title = PRIESTNAME_CLERIC
 		priests_can_inherit = yes
 		feminist = yes
 		attacking_same_religion_piety_loss = yes
 		can_grant_divorce = yes
 		ignores_defensive_attrition = yes
+		uses_decadence = yes
 		
 		intermarry = holy_light
 		intermarry = arcane
 	#	intermarry = sunwell
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = druidism
+		intermarry = druidism_reformed
 		intermarry = elune
 		
 		religious_clothing_head = 0 # Placeholder
