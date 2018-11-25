@@ -11,11 +11,12 @@ tribal = {
 		
 		fort_level = 0.25
 		levy_size = 0.05
+		retinuesize = 100
 		ai_creation_factor = 97
 		ai_feudal_modifier = 10
 		ai_republic_modifier = -10
 		
-		extra_tech_building_start = 1
+		extra_tech_building_start = 0.3
 	}
 	
 	tb_hillfort_2 = {
@@ -83,6 +84,7 @@ tribal = {
 		build_time = 365
 		
 		tax_income = 0.5
+		retinuesize = 20
 		ai_creation_factor = 97
 		ai_feudal_modifier = -10
 		ai_republic_modifier = 10
@@ -207,7 +209,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		port = yes
 		trigger = { TECH_NAVAL = 1 }
-		prestige_cost = 300
+		prestige_cost = 100
 		build_time = 365
 		galleys = 6
 		ai_creation_factor = 96
@@ -226,7 +228,7 @@ tribal = {
 		port = yes
 		trigger = { TECH_NAVAL = 2 }
 		upgrades_from = tb_shipyard_1
-		prestige_cost = 400
+		prestige_cost = 200
 		build_time = 730
 		galleys = 7
 		ai_creation_factor = 95
@@ -245,7 +247,7 @@ tribal = {
 		port = yes
 		trigger = { TECH_NAVAL = 3 }
 		upgrades_from = tb_shipyard_2
-		prestige_cost = 500
+		prestige_cost = 300
 		build_time = 1095
 		galleys = 8
 		ai_creation_factor = 94
@@ -264,7 +266,7 @@ tribal = {
 		port = yes
 		trigger = { TECH_NAVAL = 4 }
 		upgrades_from = tb_shipyard_3
-		prestige_cost = 600
+		prestige_cost = 400
 		build_time = 1460
 		galleys = 9
 		ai_creation_factor = 93
@@ -281,13 +283,13 @@ tribal = {
 		desc = tb_training_grounds_desc
 		potential = { has_game_started = yes }
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-		prestige_cost = 300
+		prestige_cost = 100
 		build_time = 547
 		levy_size = 0.025
 		garrison_size = 0.025
 		ai_creation_factor = 98
 
-		extra_tech_building_start = 1
+		extra_tech_building_start = 0.3
 	}
 	
 	tb_training_grounds_2 = {
@@ -295,7 +297,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		upgrades_from = tb_training_grounds_1
-		prestige_cost = 400
+		prestige_cost = 200
 		build_time = 730
 		levy_size = 0.05
 		garrison_size = 0.05
@@ -313,7 +315,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		upgrades_from = tb_training_grounds_2
-		prestige_cost = 500
+		prestige_cost = 300
 		build_time = 1095
 		levy_size = 0.075
 		garrison_size = 0.075
@@ -327,7 +329,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		upgrades_from = tb_training_grounds_3
-		prestige_cost = 600
+		prestige_cost = 400
 		build_time = 1460
 		levy_size = 0.1
 		garrison_size = 0.1
@@ -344,7 +346,7 @@ tribal = {
 		desc = tb_war_camp_desc
 		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
-		prestige_cost = 300
+		prestige_cost = 100
 		build_time = 365
 		light_infantry = 40
 		ai_creation_factor = 95
@@ -357,7 +359,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_war_camp_1
-		prestige_cost = 400
+		prestige_cost = 200
 		build_time = 547
 		light_infantry = 40
 		ai_creation_factor = 94
@@ -377,7 +379,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_war_camp_2
-		prestige_cost = 500
+		prestige_cost = 300
 		build_time = 730
 		light_infantry = 40
 		ai_creation_factor = 93
@@ -390,7 +392,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_war_camp_3
-		prestige_cost = 600
+		prestige_cost = 400
 		build_time = 1095
 		light_infantry = 40
 		ai_creation_factor = 92
@@ -409,7 +411,7 @@ tribal = {
 		desc = tb_practice_range_desc
 		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
-		prestige_cost = 300
+		prestige_cost = 100
 		build_time = 365
 		archers = 15
 		ai_creation_factor = 95
@@ -422,7 +424,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_practice_range_1
-		prestige_cost = 400
+		prestige_cost = 200
 		build_time = 547
 		archers = 15
 		ai_creation_factor = 94
@@ -438,7 +440,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_practice_range_2
-		prestige_cost = 500
+		prestige_cost = 300
 		build_time = 730
 		archers = 15
 		ai_creation_factor = 93
@@ -451,7 +453,7 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_practice_range_3
-		prestige_cost = 600
+		prestige_cost = 400
 		build_time = 1095
 		archers = 15
 		ai_creation_factor = 92
@@ -466,10 +468,11 @@ tribal = {
 		desc = tb_arsenal_desc
 		potential = { has_game_started = yes }
 		trigger = { TECH_RECRUITMENT = 0 }
-		prestige_cost = 300
+		prestige_cost = 100
 		build_time = 547
 		land_morale = 0.1
 		levy_reinforce_rate = 0.1
+		retinuesize = 25
 		ai_creation_factor = 98
 
 		extra_tech_building_start = 1
@@ -480,10 +483,11 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_RECRUITMENT = 0 }
 		upgrades_from = tb_arsenal_1
-		prestige_cost = 400
+		prestige_cost = 200
 		build_time = 730
 		land_morale = 0.1
 		levy_reinforce_rate = 0.1
+		retinuesize = 20
 		ai_creation_factor = 97
 
 		extra_tech_building_start = 1.5
@@ -497,10 +501,11 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_RECRUITMENT = 0 }
 		upgrades_from = tb_arsenal_2
-		prestige_cost = 500
+		prestige_cost = 300
 		build_time = 1095
 		land_morale = 0.1
 		levy_reinforce_rate = 0.1
+		retinuesize = 15
 		ai_creation_factor = 96
 		
 		extra_tech_building_start = 2
@@ -511,10 +516,11 @@ tribal = {
 		potential = { has_game_started = yes }
 		trigger = { TECH_RECRUITMENT = 0 }
 		upgrades_from = tb_arsenal_3
-		prestige_cost = 600
+		prestige_cost = 400
 		build_time = 1460
 		land_morale = 0.1
 		levy_reinforce_rate = 0.1
+		retinuesize = 10
 		ai_creation_factor = 95
 		
 		extra_tech_building_start = 2.5

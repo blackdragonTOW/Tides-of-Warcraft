@@ -82,3 +82,249 @@ character_event = {
 		name = EVTOPTALoR.834
 	}
 }
+
+### Tzykanion
+
+# AI Challenges
+character_event = {
+	id = LoR.900
+	hide_window = yes
+	
+	ai = yes
+	min_age = 16
+	max_age = 50
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	#only_men = yes
+	
+	trigger = {
+		primary_title = { higher_tier_than = COUNT }
+		is_feudal = yes
+		OR = {
+			culture_group = human
+			AND = {
+				culture = forsaken
+				trait = race_human
+			}
+		}
+		OR = {
+			NOT = { age = 50 }
+			trait = race_undead_forsaken
+		}
+		OR = {
+			liege = {
+				has_dlc = "Legacy of Rome"
+				NOT = { has_character_flag = no_more_tzykanion }
+				ai = no
+				OR = {
+					culture_group = human
+					AND = {
+						culture = forsaken
+						trait = race_human
+					}
+				}
+				prisoner = no
+				age = 16
+				OR = {
+					NOT = { age = 50 }
+					trait = race_undead_forsaken
+				}
+				NOT = { trait = infirm }
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
+			}
+			liege = {
+				any_realm_lord = {
+					ai = no
+					has_dlc = "Legacy of Rome"
+					NOT = { has_character_flag = no_more_tzykanion }
+					same_liege = ROOT
+					OR = {
+						culture_group = human
+						AND = {
+							culture = forsaken
+							trait = race_human
+						}
+					}
+					prisoner = no
+					age = 16
+					OR = {
+						NOT = { age = 50 }
+						trait = race_undead_forsaken
+					}
+					NOT = { trait = infirm }
+					NOT = { trait = incapable }
+					NOT = { is_inaccessible_trigger = yes }
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1800
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				liege = {
+					ai = no
+					OR = {
+						culture_group = human
+						AND = {
+							culture = forsaken
+							trait = race_human
+						}
+					}
+					prisoner = no
+					age = 16
+					OR = {
+						NOT = { age = 50 }
+						trait = race_undead_forsaken
+					}
+					NOT = { trait = infirm }
+					NOT = { trait = incapable }
+					NOT = { is_inaccessible_trigger = yes }
+				}
+			}
+			liege = {
+				save_event_target_as = tzykanion
+				character_event = { id = LoR.901 }
+			}
+		}
+		if = {
+			limit = { NOT = { event_target:tzykanion = { always = yes } } }
+
+			liege = {
+				random_realm_lord = {
+					limit = { 
+						ai = no
+						NOT = { has_character_flag = no_more_tzykanion }
+						same_liege = ROOT
+						OR = {
+							culture_group = human
+							AND = {
+								culture = forsaken
+								trait = race_human
+							}
+						}
+						prisoner = no
+						age = 16
+						OR = {
+							NOT = { age = 50 }
+							trait = race_undead_forsaken
+						}
+						NOT = { trait = infirm }
+						NOT = { trait = incapable }
+						NOT = { is_inaccessible_trigger = yes }
+					}
+					save_event_target_as = tzykanion
+					character_event = { id = LoR.901 }
+				}
+			}
+		}		
+	}
+}
+
+# Player is Challenged
+character_event = {
+	id = LoR.901
+	desc = EVTDESCLoR.901
+	picture = GFX_evt_hippodrome_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTALoR.901
+		custom_tooltip = {
+			text = tzykanion_accepted
+			hidden_tooltip = {
+				if = {
+					limit = {
+						NOT = { trait = wroth }
+					}
+					random_list = {
+						50 = {
+							character_event = { id = LoR.902 }
+						}
+						50 = {
+							character_event = { id = LoR.903 }
+						}
+					}
+				}
+				if = {
+					limit = { trait = wroth }
+					character_event = { id = LoR.904 }
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTBLoR.901
+		custom_tooltip = { text = tzykanion_declined }
+	}
+}
+
+# Player Wins
+character_event = {
+	id = LoR.902
+	desc = EVTDESCLoR.902
+	picture = GFX_evt_hippodrome_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTALoR.902
+		prestige = 25
+
+		event_target:tzykanion = {
+			opinion = {
+				modifier = opinion_tzykanion_pos
+				who = ROOT
+			}
+		}
+	}
+}
+
+# Player Loses
+character_event = {
+	id = LoR.903
+	desc = EVTDESCLoR.903
+	picture = GFX_evt_hippodrome_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTALoR.903
+		
+		event_target:tzykanion = {
+			opinion = {
+				modifier = opinion_tzykanion_pos
+				who = ROOT
+			}
+		}
+	}
+}
+
+# Player Goes Bananas
+character_event = {
+	id = LoR.904
+	desc = EVTDESCLoR.904
+	picture = GFX_evt_hippodrome_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTALoR.904
+		prestige = -25
+		set_character_flag = no_more_tzykanion
+		
+		event_target:tzykanion = {
+			opinion = {
+				modifier = opinion_tzykanion_neg
+				who = ROOT
+			}
+		}
+	}
+}

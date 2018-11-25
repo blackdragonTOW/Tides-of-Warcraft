@@ -17,17 +17,12 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
+	religion = catholic
 	war = no
 	
 	picture = GFX_evt_emissary
 
 	trigger = {
-		trait = human
-		NOT = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 		in_command = no
 		NOT = { has_character_flag = hedge_knights_visiting }
 		NOT = { has_character_flag = hates_hedge_knights }
@@ -70,6 +65,10 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			trait = lunatic
+		}
+		modifier = {
+			factor = 0.75
+			trait = possessed
 		}
 		modifier = {
 			factor = 0.9
@@ -118,6 +117,10 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			trait = has_typhus
+		}
+		modifier = {
+			factor = 0.5
+			trait = has_bubonic_plague
 		}
 		modifier = {
 			factor = 0.5
@@ -220,17 +223,12 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
+	religion = catholic
 
 	has_character_flag = hedge_knights_visiting
 	
 	picture = GFX_evt_joust
 	trigger = {
-		trait = human
-		NOT = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 		NOT = {	has_character_flag = hedge_knight_recruited }
 		NOT = {	has_character_flag = hedge_knight_woman_seduced	}
 	}
@@ -270,6 +268,7 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
+	religion = catholic
 	ai = no
 
 	has_character_flag = hedge_knights_visiting
@@ -277,12 +276,6 @@ character_event = {
 	picture = GFX_evt_joust
 	
 	trigger =  {
-		trait = human
-		NOT = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 		NOT = {	has_character_flag = hedge_knight_recruited }
 		NOT = {	has_character_flag = hedge_knight_woman_seduced	}
 	}
@@ -312,12 +305,7 @@ character_event = {
 			attributes = {
 				martial = 10
 			}
-			trait = human
-			flag = race_assigned
-		}
-		new_character = {
-			give_minor_title = title_knight_male
-		}
+		}	
 		scaled_wealth = -0.1
 	}
 	option = {
@@ -335,17 +323,12 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
+	religion = catholic
 
 	has_character_flag = hedge_knights_visiting
 	
 	picture = GFX_evt_joust
 	trigger = {
-		trait = human
-		NOT = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 	 	any_courtier = {
 	 		age = 16
 	 		is_female = no
@@ -418,6 +401,7 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
+	religion = catholic
 	ai = no
 
 	has_character_flag = hedge_knights_visiting
@@ -425,12 +409,6 @@ character_event = {
 	picture = GFX_evt_lovers
 	
 	trigger = {
-		trait = human
-		NOT = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 		NOT = {	has_character_flag = hedge_knight_recruited }
 		NOT = {	has_character_flag = hedge_knight_woman_seduced	}
 		any_courtier = {
@@ -476,16 +454,9 @@ character_event = {
 				fertility = 0.6
 				female = no
 				age = 24
-				trait = human
-				flag = race_assigned
 	 		}
 			new_character = {
-				give_minor_title = title_knight_male
-				PREV = {
-					save_event_target_as = akimpreg_father
-				}
-				character_event = { id = akimpreg.1 }
-	 			#impregnate = PREV
+	 			impregnate = PREV
 	 			add_lover = PREV
 				add_trait = lustful
 	 		}
@@ -519,16 +490,9 @@ character_event = {
 				fertility = 0.6
 				female = no
 				age = 24
-				trait = human
-				flag = race_assigned
 	 		}
 			new_character = {
-				give_minor_title = title_knight_male
-				PREV = {
-					save_event_target_as = akimpreg_father
-				}
-				character_event = { id = akimpreg.1 }
-	 			#impregnate = PREV
+	 			impregnate = PREV
 	 			add_lover = PREV
 				add_trait = lustful
 				imprison = root
@@ -545,16 +509,11 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
+	religion = catholic
 	
 	has_character_flag = hedge_knights_visiting
 	
 	trigger = {
-		trait = human
-		NOT = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 	 	always = yes
 	}	
 	immediate = {
@@ -593,17 +552,12 @@ character_event = {
 	
 	only_playable = yes
 	prisoner = no
+	religion = catholic
 	war = no
 	
 	picture = GFX_evt_melee
 	
 	trigger = {
-		trait = human
-		NOT = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
-		}
 		in_command = no
 		NOT = { has_character_flag = hedge_knights_visiting }
 		any_courtier = {

@@ -28,6 +28,8 @@ character_event = {
 	only_men = yes
 	is_married = yes
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -41,10 +43,6 @@ character_event = {
 		NOT = { has_character_flag = warrior_mentor }
 		NOT = { has_character_flag = toy_army_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -68,18 +66,16 @@ character_event = {
 	only_rulers = yes
 	only_capable = yes
 	min_age = 16
+	has_character_flag = toy_army_prepare
+	
+	is_triggered_only = yes
 	
 	trigger = {
-		has_character_flag = toy_army_prepare
 		OR = {
 			has_ambition = obj_improve_martial
 			has_focus = focus_war
 		}
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 60
 	}
 	
 	option = {
@@ -188,6 +184,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -203,10 +201,6 @@ character_event = {
 		NOT = { is_inaccessible_trigger = yes }
 	}
 	
-	mean_time_to_happen = {
-		months = 280
-	}
-	
 	option = {
 		name = EVTOPTA94005
 		set_character_flag = street_ruffians
@@ -219,6 +213,7 @@ character_event = {
 				character_event = { id = 94006 tooltip = EVTTOOLTIP94006 }
 			}
 		}
+		pacifists_lose_piety_effect = yes
 	}
 	option = {
 		name = EVTOPTB94005
@@ -286,6 +281,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -299,10 +296,6 @@ character_event = {
 		NOT = { has_character_flag = warrior_mentor }
 		NOT = { has_character_flag = warrior_mentor_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -321,17 +314,15 @@ character_event = {
 	
 	hide_from = yes
 	only_rulers = yes
+	has_character_flag = warrior_mentor_search
+	
+	is_triggered_only = yes
 	
 	trigger = {
 		OR = {
 			has_ambition = obj_improve_martial
 			has_focus = focus_war
 		}
-		has_character_flag = warrior_mentor_search
-	}
-	
-	mean_time_to_happen = {
-		months = 60
 	}
 	
 	option = {
@@ -455,6 +446,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -466,10 +459,6 @@ character_event = {
 		NOT = { has_character_flag = toy_army }
 		NOT = { has_character_flag = street_ruffians }
 		NOT = { has_character_flag = warrior_mentor }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -490,6 +479,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -503,10 +494,6 @@ character_event = {
 		NOT = { has_character_flag = warrior_mentor }
 	}
 	
-	mean_time_to_happen = {
-		months = 280
-	}
-	
 	option = {
 		name = EVTOPTA94017
 		change_martial = 1
@@ -516,14 +503,19 @@ character_event = {
 ### Alexander/Ashoka the Great
 character_event = {
 	id = 94018
-	desc = EVTDESC94018
 	picture = GFX_evt_library
 	border = GFX_event_normal_frame_war
+
+	desc = {
+		text = EVTDESC94018
+	}
 	
 	capable_only = yes
 	only_rulers = yes
 	prisoner = no
 	min_age = 16
+	
+	is_triggered_only = yes
 	
 	trigger = {
 		OR = {
@@ -547,13 +539,21 @@ character_event = {
 		}
 	}
 	
-	mean_time_to_happen = {
-		months = 280
-	}
-	
 	option = {
 		name = EVTOPTA94018
 		trigger = {
+			capital_scope = { NOT = { region = world_india } }
+			OR = {
+				has_ambition = obj_improve_martial
+				NOT = { martial = 8 }
+			}
+		}
+		change_martial = 1
+	}
+	option = {
+		name = EVTOPTB_94018
+		trigger = {
+			capital_scope = { region = world_india }
 			OR = {
 				has_ambition = obj_improve_martial
 				NOT = { martial = 8 }
@@ -578,9 +578,12 @@ character_event = {
 # Further studies in strategy
 character_event = {
 	id = 94019
-	desc = EVTDESC_94019
 	picture = GFX_evt_library
 	border = GFX_event_normal_frame_war
+
+	desc = {
+		text = EVTDESC_94019
+	}
 	
 	is_triggered_only = yes
 	
@@ -642,6 +645,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -656,10 +661,6 @@ character_event = {
 		NOT = { has_character_flag = the_survey }
 		NOT = { has_character_flag = the_inn_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -696,46 +697,18 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA94051
-		trigger = { NOT = { uses_decadence = yes } }
 		character_event = { id = 94052 days = 30 random = 10 tooltip = EVTTOOLTIP94052 }
 	}
 	option = {
 		name = EVTOPTB94051
-		trigger = {
-			NOT = { uses_decadence = yes }
-		}
 		character_event = { id = 94052 days = 30 random = 10 tooltip = EVTTOOLTIP94052 }
 	}
 	option = {
 		name = EVTOPTC94051
-		trigger = { NOT = { uses_decadence = yes } }
 		character_event = { id = 94052 days = 30 random = 10 tooltip = EVTTOOLTIP94052 }
 	}
 	option = {
 		name = EVTOPTD94051
-		trigger = {
-			NOT = { uses_decadence = yes }
-		}
-		character_event = { id = 94052 days = 30 random = 10 tooltip = EVTTOOLTIP94052 }
-	}
-	option = {
-		name = EVTOPTE94051
-		trigger = { uses_decadence = yes }
-		character_event = { id = 94052 days = 30 random = 10 tooltip = EVTTOOLTIP94052 }
-	}
-	option = {
-		name = EVTOPTF94051
-		trigger = { uses_decadence = yes }
-		character_event = { id = 94052 days = 30 random = 10 tooltip = EVTTOOLTIP94052 }
-	}
-	option = {
-		name = EVTOPTG94051
-		trigger = { uses_decadence = yes }
-		character_event = { id = 94052 days = 30 random = 10 tooltip = EVTTOOLTIP94052 }
-	}
-	option = {
-		name = EVTOPTH94051
-		trigger = { uses_decadence = yes }
 		character_event = { id = 94052 days = 30 random = 10 tooltip = EVTTOOLTIP94052 }
 	}
 }
@@ -802,6 +775,13 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA94053
+		trigger = {
+			OR = {
+				religion_group = light_group
+				religion = forgotten_shadow
+				religion = forgotten_shadow_reformed
+			}
+		}
 		character_event = { id = 94054 days = 30 random = 10 tooltip = EVTTOOLTIP94054 }
 		wealth = -5
 	}
@@ -1012,6 +992,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1025,10 +1007,6 @@ character_event = {
 		NOT = { has_character_flag = the_survey }
 		NOT = { has_character_flag = the_garden_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1078,6 +1056,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1090,10 +1070,6 @@ character_event = {
 		NOT = { has_character_flag = the_garden }
 		NOT = { has_character_flag = the_survey }
 		NOT = { has_character_flag = the_survey_taken }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1137,6 +1113,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1148,10 +1126,6 @@ character_event = {
 		NOT = { has_character_flag = the_inn }
 		NOT = { has_character_flag = the_garden }
 		NOT = { has_character_flag = the_survey }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1172,6 +1146,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1183,10 +1159,6 @@ character_event = {
 		NOT = { has_character_flag = the_inn }
 		NOT = { has_character_flag = the_garden }
 		NOT = { has_character_flag = the_survey }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1207,6 +1179,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1221,10 +1195,6 @@ character_event = {
 		NOT = { is_inaccessible_trigger = yes }
 	}
 	
-	mean_time_to_happen = {
-		months = 280
-	}
-	
 	option = {
 		name = EVTOPTA94074
 		change_stewardship = 1
@@ -1234,6 +1204,524 @@ character_event = {
 #####################
 # Learning Ambition #
 #####################
+
+### The Flying Machine
+
+# The Flying Machine
+character_event = {
+	id = 94080
+	desc = EVTDESC94080
+	picture = GFX_evt_falconing
+	border = GFX_event_normal_frame_religion
+	
+	capable_only = yes
+	only_rulers = yes
+	prisoner = no
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_focus = focus_scholarship
+				NOT = { learning = 8 }
+			}
+			has_ambition = obj_improve_learning
+		}
+		NOT = { has_character_flag = flying_machine }
+		NOT = { has_character_flag = ancient_tome }
+		NOT = { has_character_flag = hermit_visit }
+		NOT = { has_character_flag = flying_machine_taken }
+		NOT = { is_inaccessible_trigger = yes }
+	}
+	
+	option = {
+		name = EVTOPTA94080
+		character_event = { id = 94081 days = 30 random = 10 tooltip = EVTTOOLTIP94081 }
+		set_character_flag = flying_machine
+		set_character_flag = meldrick_fly
+		set_character_flag = flying_machine_taken
+	}
+	option = {
+		name = EVTOPTB94080
+		custom_tooltip = { text = improve_learning_quit }
+	}
+}
+
+# Studies 
+character_event = {
+	id = 94081
+	desc = EVTDESC94081
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_ambition = obj_improve_learning
+			has_focus = focus_scholarship
+		}
+		has_character_flag = flying_machine
+	}
+	
+	option = {
+		name = EVTOPTA94081
+		character_event = { id = 94082 days = 30 random = 10 tooltip = EVTTOOLTIP94082 }
+	}
+}
+
+# Enlist Pilot
+character_event = {
+	id = 94082
+	desc = EVTDESC94082
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_ambition = obj_improve_learning
+			has_focus = focus_scholarship
+		}
+		has_character_flag = flying_machine
+	}
+	
+	option = { # Otis
+		name = EVTOPTA94082
+		character_event = { id = 94083 days = 5 tooltip = EVTTOOLTIP94083 }
+	}
+	option = { # Meldrick
+		name = EVTOPTB94082
+		character_event = { id = 94084 days = 5 tooltip = EVTTOOLTIP94084 }
+	}
+	option = { # Dog
+		name = EVTOPTC94082
+		character_event = { id = 94085 days = 5 tooltip = EVTTOOLTIP94085 }
+	}
+}
+
+# Otis Flies
+character_event = {
+	id = 94083
+	desc = EVTDESC94083
+	picture = GFX_evt_bloody_man
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94083
+		character_event = { id = 94086 days = 5 tooltip = EVTTOOLTIP94086 }
+	}
+}
+
+# al-Otis Flies (Muslim version)
+character_event = {
+	id = 94092
+	desc = EVTDESC94092
+	picture = GFX_evt_bloody_man
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94092
+		character_event = { id = 94094 days = 5 tooltip = EVTTOOLTIP94086 }
+	}
+}
+
+# Meldrick Flies
+character_event = {
+	id = 94084
+	desc = EVTDESC94084
+	picture = GFX_evt_bloody_man
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94084
+		character_event = { id = 94087 days = 5 tooltip = EVTTOOLTIP94086 }
+	}
+}
+
+# Ba'ah al-Drik Flies (Muslim version)
+character_event = {
+	id = 94093
+	desc = EVTDESC94093
+	picture = GFX_evt_bloody_man
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94093
+		character_event = { id = 94095 days = 5 tooltip = EVTTOOLTIP94086 }
+	}
+}
+
+# Dog Flies
+character_event = {
+	id = 94085
+	desc = EVTDESC94085
+	picture = GFX_evt_bloody_man
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94085
+		character_event = { id = 94088 days = 5 tooltip = EVTTOOLTIP94088 }
+		add_trait = wounded
+	}
+}
+
+# Otis Aftermath
+character_event = {
+	id = 94086
+	desc = EVTDESC94086
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94086
+		character_event = { id = 94089 days = 15 random = 5 tooltip = EVTTOOLTIP94089 }
+	}
+	option = {
+		name = EVTOPTB94086
+		custom_tooltip = { text = improve_learning_quit }
+	}
+}
+
+# al-Otis Aftermath (Muslim version)
+character_event = {
+	id = 94094
+	desc = EVTDESC94094
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94086
+		character_event = { id = 94096 days = 15 random = 5 tooltip = EVTTOOLTIP94089 }
+	}
+	option = {
+		name = EVTOPTB94086
+		custom_tooltip = { text = improve_learning_quit }
+	}
+}
+
+# Meldrick Aftermath
+character_event = {
+	id = 94087
+	desc = EVTDESC94087
+	picture = GFX_evt_whispers
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94087
+		character_event = { id = 94090 days = 15 random = 5 tooltip = EVTTOOLTIP94090 }
+	}
+	option = {
+		name = EVTOPTB94087
+		custom_tooltip = { text = improve_learning_quit }
+	}
+}
+
+# Ba'ah al-Drik Aftermath (Muslim version)
+character_event = {
+	id = 94095
+	desc = EVTDESC94095
+	picture = GFX_evt_whispers
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94087
+		character_event = { id = 94097 days = 15 random = 5 tooltip = EVTTOOLTIP94097 }
+	}
+	option = {
+		name = EVTOPTB94087
+		custom_tooltip = { text = improve_learning_quit }
+	}
+}
+
+# Dog Aftermath
+character_event = {
+	id = 94088
+	desc = EVTDESC94088
+	picture = GFX_evt_monk
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94088
+		trigger = { NOT = { religion_group = muslim } }
+		change_learning = 1
+	}
+	option = {
+		name = EVTOPTA94091
+		trigger = { religion_group = muslim }
+		change_learning = 1
+	}
+}
+
+# Otis Second Attempt
+character_event = {
+	id = 94089
+	desc = EVTDESC94089
+	picture = GFX_evt_falconing
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94089
+		character_event = { id = 94091 days = 6 tooltip = EVTTOOLTIP94091 }
+	}
+}
+
+# al-Otis Second Attempt (Muslim version)
+character_event = {
+	id = 94096
+	desc = EVTDESC94096
+	picture = GFX_evt_falconing
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94096
+		character_event = { id = 94091 days = 6 tooltip = EVTTOOLTIP94091 }
+	}
+}
+
+# Meldrick Second Attempt
+character_event = {
+	id = 94090
+	desc = EVTDESC94090
+	picture = GFX_evt_falconing
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94090
+		character_event = { id = 94091 days = 6 tooltip = EVTTOOLTIP94091 }
+	}
+}
+
+# Ba'ah al-Drik Second Attempt
+character_event = {
+	id = 94097
+	desc = EVTDESC94097
+	picture = GFX_evt_falconing
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94090
+		character_event = { id = 94091 days = 6 tooltip = EVTTOOLTIP94091 }
+	}
+}
+
+# Aftermath
+character_event = {
+	id = 94091
+	desc = EVTDESC94091
+	picture = GFX_evt_falconing
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94088
+		trigger = { NOT = { religion_group = muslim } }
+		change_learning = 2
+	}
+	option = {
+		name = EVTOPTA94091
+		trigger = { religion_group = muslim }
+		change_learning = 2
+	}
+}
+
+### St. Augustine's Confessions
+
+# Augustine
+character_event = {
+	id = 94098
+	desc = EVTDESC94098
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+
+	capable_only = yes
+	only_rulers = yes
+	prisoner = no
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_focus = focus_theology
+				NOT = { learning = 8 }
+			}
+			has_ambition = obj_improve_learning
+		}
+		NOT = { has_character_flag = flying_machine }
+		NOT = { has_character_flag = ancient_tome }
+		NOT = { has_character_flag = hermit_visit }
+		NOT = { has_character_flag = ancient_tome_taken }
+		NOT = {
+			has_alternate_start_parameter = {
+				key = religion_names
+				value = random
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA94098
+		character_event = { id = 94099 days = 6 tooltip = EVTTOOLTIP94099 }
+		set_character_flag = ancient_tome
+		set_character_flag = ancient_tome_taken
+	}
+	option = {
+		name = EVTOPTB94098
+		custom_tooltip = { text = improve_learning_quit }
+	}
+}
+
+# Finished Reading
+character_event = {
+	id = 94099
+	desc = EVTDESC94099
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94099
+		change_learning = 2
+	}
+}
+
+### The Shahnameh
+
+# The Shahnameh
+character_event = {
+	id = 94100
+	desc = EVTDESC94100
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+	
+	capable_only = yes
+	only_rulers = yes
+	prisoner = no
+	min_age = 16
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+		year = 1010
+		OR = {
+			AND = {
+				has_focus = focus_theology
+				NOT = { learning = 8 }
+			}
+			has_ambition = obj_improve_learning
+		}
+		NOT = { has_character_flag = flying_machine }
+		NOT = { has_character_flag = ancient_tome }
+		NOT = { has_character_flag = hermit_visit }
+		NOT = { has_character_flag = ancient_tome_taken }
+		NOT = {
+			has_alternate_start_parameter = {
+				key = religion_names
+				value = random
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA94098
+		character_event = { id = 94101 days = 6 tooltip = EVTTOOLTIP94099 }
+		set_character_flag = ancient_tome
+		set_character_flag = ancient_tome_taken
+	}
+	option = {
+		name = EVTOPTB94098
+		custom_tooltip = { text = improve_learning_quit }
+	}
+}
+
+# Finished Reading
+character_event = {
+	id = 94101
+	desc = EVTDESC94101
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+	
+	hide_from = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA94099
+		change_learning = 2
+	}
+}
 
 ### The Hermit
 
@@ -1248,6 +1736,8 @@ character_event = {
 	only_rulers = yes
 	prisoner = no
 	min_age = 16
+	
+	is_triggered_only = yes
 	
 	trigger = {
 		OR = {
@@ -1264,10 +1754,6 @@ character_event = {
 		NOT = { is_inaccessible_trigger = yes }
 		NOT = { has_character_flag = do_not_disturb }
 		in_command = no
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1367,6 +1853,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1375,12 +1863,9 @@ character_event = {
 			}
 			has_ambition = obj_improve_learning
 		}
+		NOT = { has_character_flag = flying_machine }
 		NOT = { has_character_flag = ancient_tome }
 		NOT = { has_character_flag = hermit_visit }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1401,6 +1886,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1409,12 +1896,9 @@ character_event = {
 			}
 			has_ambition = obj_improve_learning
 		}
+		NOT = { has_character_flag = flying_machine }
 		NOT = { has_character_flag = ancient_tome }
 		NOT = { has_character_flag = hermit_visit }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1435,6 +1919,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1443,12 +1929,9 @@ character_event = {
 			}
 			has_ambition = obj_improve_learning
 		}
+		NOT = { has_character_flag = flying_machine }
 		NOT = { has_character_flag = ancient_tome }
 		NOT = { has_character_flag = hermit_visit }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1475,6 +1958,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1488,10 +1973,6 @@ character_event = {
 		NOT = { has_character_flag = the_suicide }
 		NOT = { has_character_flag = the_feud_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1631,6 +2112,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA94116
+		pacifists_lose_piety_effect = yes
 		character_event = { id = 94117 tooltip = EVTTOOLTIP94112 }
 	}
 	option = {
@@ -1721,6 +2203,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1733,10 +2217,6 @@ character_event = {
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
 		NOT = { has_character_flag = the_mirror_taken }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1757,17 +2237,15 @@ character_event = {
 	capable_only = yes
 	only_rulers = yes
 	prisoner = no
+	has_character_flag = the_mirror
+	
+	is_triggered_only = yes
 	
 	trigger = {
-		has_character_flag = the_mirror
 		OR = {
 			has_ambition = obj_improve_diplomacy
 			has_focus = focus_carousing
 		}
-	}
-	
-	mean_time_to_happen = {
-		months = 60
 	}
 	
 	option = {
@@ -1789,6 +2267,8 @@ character_event = {
 	only_rulers = yes
 	prisoner = no
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1802,10 +2282,6 @@ character_event = {
 		NOT = { has_character_flag = the_suicide }
 		NOT = { has_character_flag = the_suicide_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -1966,6 +2442,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -1978,10 +2456,6 @@ character_event = {
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -2002,6 +2476,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -2013,10 +2489,6 @@ character_event = {
 		NOT = { has_character_flag = the_feud }
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -2037,6 +2509,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -2048,10 +2522,6 @@ character_event = {
 		NOT = { has_character_flag = the_feud }
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -2078,6 +2548,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -2091,10 +2563,6 @@ character_event = {
 		NOT = { has_character_flag = old_spymaster }
 		NOT = { has_character_flag = the_necklace_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = { # Do it
@@ -2241,6 +2709,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA94146
+		trigger = { NOT = { religion_group = muslim } }
 		custom_tooltip = {
 			text = hurry_dungeons
 			hidden_tooltip = {
@@ -2321,6 +2790,7 @@ character_event = {
 	
 	option = { # Meldrick
 		name = EVTOPTA94150
+		trigger = { NOT = { religion_group = muslim } }
 		character_event = { id = 94151 tooltip = EVTTOOLTIP94151 }
 	}
 }
@@ -2419,6 +2889,7 @@ character_event = {
 				}
 			}
 		}
+		trigger = { NOT = { religion_group = muslim } }
 	}
 }
 
@@ -2470,6 +2941,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -2483,10 +2956,6 @@ character_event = {
 		NOT = { has_character_flag = old_spymaster }
 		NOT = { has_character_flag = gossip_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -2532,6 +3001,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -2545,10 +3016,6 @@ character_event = {
 		NOT = { has_character_flag = old_spymaster }
 		NOT = { has_character_flag = old_spymaster_taken }
 		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -2626,6 +3093,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -2637,10 +3106,6 @@ character_event = {
 		NOT = { has_character_flag = the_necklace }
 		NOT = { has_character_flag = gossip }
 		NOT = { has_character_flag = old_spymaster }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -2661,6 +3126,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -2672,10 +3139,6 @@ character_event = {
 		NOT = { has_character_flag = the_necklace }
 		NOT = { has_character_flag = gossip }
 		NOT = { has_character_flag = old_spymaster }
-	}
-	
-	mean_time_to_happen = {
-		months = 280
 	}
 	
 	option = {
@@ -2696,6 +3159,8 @@ character_event = {
 	prisoner = no
 	min_age = 16
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		OR = {
 			AND = {
@@ -2709,12 +3174,10 @@ character_event = {
 		NOT = { has_character_flag = old_spymaster }
 	}
 	
-	mean_time_to_happen = {
-		months = 280
-	}
-	
 	option = {
 		name = EVTOPTA94173
 		change_intrigue = 1
 	}
 }
+
+#Teneb: Decadence events will be remade

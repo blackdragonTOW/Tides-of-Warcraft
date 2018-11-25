@@ -1,0 +1,113 @@
+namespace = genderflip
+
+#By Teneb
+
+#The point of this is to have events like the "irresistable young wench", but for either the other gender or for homosexual/bisexual characters.
+
+#Irresistable young lad
+character_event = {
+	id = genderflip.1
+	desc = {
+		text = "DESCGENDERFLIP.2"
+		trigger = {
+			is_female = yes
+			OR = {
+				NOT = { trait = homosexual }
+				trait = bisexual
+			}
+		}
+	}
+	desc = {
+		text = "DESCGENDERFLIP.3"
+		trigger = {
+			is_female = no
+			OR = {
+				trait = homosexual
+				trait = bisexual
+			}
+		}
+	}
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_intrigue
+	
+	min_age = 16
+	max_age = 25
+	only_rulers = yes
+	capable_only = yes
+	is_married = no
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { is_undead = yes }
+		NOT = { is_elemental_or_void = yes }
+		NOT = { is_demon_race = yes }
+		NOT = { trait = race_dragon }
+		NOT = { trait = race_hakkar }
+		NOR = {
+			trait = chaste
+			trait = celibate
+			trait = eunuch
+			has_lover = yes
+		}
+		OR = {
+			AND = {
+				is_female = yes
+				NOT = { trait = homosexual }
+			}
+			AND = {
+				is_female = no
+				OR = {
+					trait = homosexual
+					trait = bisexual
+				}
+			}
+		}
+		fertility = 0.6
+	}
+	
+	weight_multiplier = {
+		days = 1
+		
+		modifier = {
+			factor = 2
+			trait = lustful
+		}
+		modifier = {
+			factor = 2
+			trait = gregarious
+		}
+		
+		modifier = {
+			factor = 0.5
+			trait = shy
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA76000"
+		piety = -10
+		if = {
+			limit = {
+				NOT = {
+					trait = lustful
+				}
+			}
+			random = {
+				chance = 50
+				
+				add_trait = lustful
+				hidden_tooltip = {
+					character_event = {
+						id = 38272 #Notify Lustful
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB76000"
+		add_trait = chaste
+	}
+}
+

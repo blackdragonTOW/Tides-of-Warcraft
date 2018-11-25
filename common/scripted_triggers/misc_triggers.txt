@@ -1,41 +1,3 @@
-quel_thalas_antimagic = {
-	OR = {
-		NOT = {
-			any_province = {
-				OR = {
-					region = world_eversong_woods
-					region = world_ghostlands
-				}
-				has_building = quel_thalas_runestone
-			}
-		}
-		NOT = {
-			OR = {
-				region = world_eversong_woods
-				region = world_ghostlands
-			}
-		}
-		AND = {
-			any_province = {
-				OR = {
-					region = world_eversong_woods
-					region = world_ghostlands
-				}
-				has_building = quel_thalas_runestone
-			}
-			OR = {
-				region = world_eversong_woods
-				region = world_ghostlands
-			}
-			OR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
-			}
-		}
-	}
-}
-
 same_region_as = {
 	OR = {
 		AND = {
@@ -263,5 +225,67 @@ is_undead = {
 		trait = race_undead_scourge
 		trait = race_undead_forsaken
 		trait = race_undead_generic
+	}
+}
+
+is_elemental_or_void = {
+	OR = {
+		trait = race_air_elemental
+		trait = race_fire_elemental
+		trait = race_water_elemental
+		trait = race_earth_elemental
+		trait = race_voidwalker
+		trait = race_faceless
+	}
+}
+
+is_demon_race = {
+	OR = {
+		trait = race_eredar
+		trait = race_dreadlord
+		trait = race_succubus
+		trait = race_pit_lord
+		trait = race_fel_lord
+		trait = race_doomlord
+		trait = race_shivarra
+		trait = race_antaen
+		trait = race_aranasi
+		trait = race_inquisitor
+		trait = race_mo_arg
+		trait = race_observer
+	}
+}
+
+is_long_lived_race = {
+	OR = {
+		trait = race_dwarf
+		trait = race_high_elf
+		trait = race_blood_elf
+		trait = race_wretched
+		trait = race_gnome
+		trait = race_dragon
+		trait = race_naga
+		trait = race_eredar
+		trait = race_dreadlord
+		trait = race_succubus
+		trait = race_pit_lord
+		trait = race_fel_lord
+		trait = race_doomlord
+		trait = race_shivarra
+		trait = race_antaen
+		trait = race_aranasi
+		trait = race_inquisitor
+		trait = race_mo_arg
+		trait = race_observer
+		trait = race_air_elemental
+		trait = race_fire_elemental
+		trait = race_earth_elemental
+		trait = race_water_elemental
+		trait = race_voidwalker
+		trait = race_faceless
+		trait = race_draenei
+		trait = race_broken
+		trait = race_lost_one
+		trait = race_hakkar
 	}
 }

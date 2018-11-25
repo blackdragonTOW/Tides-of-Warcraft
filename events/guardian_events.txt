@@ -85,6 +85,8 @@ character_event = {
 				trait = gluttonous
 			}
 		}
+		
+		pacifists_lose_piety_effect = yes
 		reverse_opinion = {
 			who = FROM
 			modifier = opinion_sad
@@ -94,6 +96,8 @@ character_event = {
 			chance = 40
 			FROM = { 
 				remove_trait = gluttonous
+			lose_weight_medium_effect = yes
+			weight_trait_check_effect = yes
 				hidden_tooltip = { 
 					character_event = { 
 						id = 1501 
@@ -128,6 +132,8 @@ character_event = {
 			50 = { 
 				FROM = { 
 					add_trait = temperate
+					lose_weight_medium_effect = yes
+					weight_trait_check_effect = yes
 					hidden_tooltip = { 
 						ROOT = { 
 							character_event = { 
@@ -143,6 +149,8 @@ character_event = {
 			50 = { 
 				FROM = { 
 					remove_trait = gluttonous
+			lose_weight_medium_effect = yes
+			weight_trait_check_effect = yes
 					hidden_tooltip = {
 						character_event = {	
 							id = 1501
@@ -155,6 +163,10 @@ character_event = {
 	option = {
 		name = EVTOPTD2000 # Pray God will save her..
 		trigger = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+			}
 			NOT = { trait = cynical }
 		}
 		ai_chance = {
@@ -170,6 +182,8 @@ character_event = {
 			chance = 20 
 			FROM = { 
 				remove_trait = gluttonous
+			lose_weight_medium_effect = yes
+			weight_trait_check_effect = yes
 				hidden_tooltip = { 
 					character_event = {	
 						id = 1501
@@ -282,6 +296,9 @@ character_event = {
 		name = EVTOPTC2010 # Thank God for X's virtues!
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { religion = arcane }
+			NOT = { religion = demonology }
+			NOT = { religion = mercantilism }
 		}
 		ai_chance = {
 			factor = 2
@@ -295,6 +312,8 @@ character_event = {
 			chance = 10
 			FROM = { 
 				add_trait = gluttonous
+				gain_weight_small_effect = yes
+				weight_trait_check_effect = yes
 				hidden_tooltip = { 
 					ROOT = { 
 						character_event = { 
@@ -334,6 +353,8 @@ character_event = {
 			random_list = {
 				50 = {
 					add_trait = gluttonous
+					gain_weight_small_effect = yes
+					weight_trait_check_effect = yes
 					hidden_tooltip = {
 						ROOT = {
 							character_event = {
@@ -427,6 +448,8 @@ character_event = {
 				trait = greedy
 			}
 		}
+		
+		pacifists_lose_piety_effect = yes
 		random = {
 			chance = 40
 			FROM = { 
@@ -483,6 +506,33 @@ character_event = {
 				}
 			}
 			10 = { }
+		}
+	}
+
+	option = {
+		name = EVTOPTD2020 # God will save him from Hell
+		trigger = {
+			NOT = { trait = cynical }
+			religion_group = christian
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 150
+				trait = zealous
+			}
+		}
+		piety = 5
+		random = {
+			chance = 20
+			FROM = { 
+				remove_trait = greedy
+				hidden_tooltip = { 
+					character_event = {	
+						id = 1521
+					}
+				}
+			}
 		}
 	}
 }
@@ -590,6 +640,9 @@ character_event = {
 		name = EVTOPTC2030 # Thank God for X's virtues!
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { religion = arcane }
+			NOT = { religion = demonology }
+			NOT = { religion = mercantilism }
 		}
 		ai_chance = {
 			factor = 2
@@ -736,6 +789,8 @@ character_event = {
 				trait = slothful
 			}
 		}
+		
+		pacifists_lose_piety_effect = yes
 		random = {
 			chance = 40
 			FROM = { 
@@ -947,6 +1002,9 @@ character_event = {
 		name = EVTOPTC2050 # Thank God for X's virtues!
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { religion = arcane }
+			NOT = { religion = demonology }
+			NOT = { religion = mercantilism }
 		}
 		ai_chance = {
 			factor = 2
@@ -1097,6 +1155,8 @@ character_event = {
 				trait = slothful
 			}
 		}
+		
+		pacifists_lose_piety_effect = yes
 		random = {
 			chance = 40
 			FROM = { 
@@ -1286,6 +1346,9 @@ character_event = {
 		name = EVTOPTC2070 # Thank God for X's virtues!
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { religion = arcane }
+			NOT = { religion = demonology }
+			NOT = { religion = mercantilism }
 		}
 		ai_chance = {
 			factor = 2
@@ -1428,6 +1491,7 @@ character_event = {
 				trait = arbitrary
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		FROM = {
 			random_list = {
 				70 = { }
@@ -1625,6 +1689,9 @@ character_event = {
 		name = EVTOPTC2090 # Thank God for X's virtues!
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { religion = arcane }
+			NOT = { religion = demonology }
+			NOT = { religion = mercantilism }
 		}
 		ai_chance = {
 			factor = 2
@@ -1765,6 +1832,7 @@ character_event = {
 				trait = arbitrary
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		random_list = {
 			60 = { }
 			40 = { 
@@ -1904,6 +1972,9 @@ character_event = {
 		name = EVTOPTB2110 # Thank God for X's virtues!
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { religion = arcane }
+			NOT = { religion = demonology }
+			NOT = { religion = mercantilism }
 		}
 		ai_chance = {
 			factor = 2
@@ -2058,6 +2129,8 @@ character_event = {
 				trait = wroth
 			}
 		}
+		
+		pacifists_lose_piety_effect = yes
 		random_list = {
 			50 = { }
 			40 = {
@@ -2229,6 +2302,89 @@ character_event = {
 			}
 		}
 		
+		if = {
+			limit = {
+				trait = zealous
+			}
+			remove_trait = zealous
+			piety = -50
+		}
+		FROM = {
+			remove_trait = zealous
+			hidden_tooltip = {
+				character_event = {
+					id = 1631
+				}
+			}
+		}
+	}
+}
+
+#Fosterling is Zealous - Muslim
+character_event = {
+	id = 2132
+	desc = EVTDESC2132
+	picture = GFX_evt_child_bully
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA2130 # Encourage
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 200
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				trait = cynical
+			}
+		}
+		if = {
+			limit = {
+				trait = cynical
+			}
+			remove_trait = cynical
+		}
+		if = {
+			limit = {
+				learning = 10
+			}
+			FROM = { change_learning = 1}
+		}
+		if = {
+			limit = {
+				trait = zealous
+				learning = 10
+			}
+			FROM = { piety = 5}
+		}		
+		FROM = {
+			tooltip = {
+				add_trait = zealous
+			}
+			opinion = {
+				modifier = opinion_happy_with_guardian
+				who = ROOT
+				years = 2
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB2130 # Discourage
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 200
+				trait = cynical
+			}
+			modifier = {
+				factor = 0
+				trait = zealous
+			}
+		}
 		if = {
 			limit = {
 				trait = zealous
@@ -2753,6 +2909,8 @@ character_event = {
 				trait = shy
 			}
 		}
+		
+		pacifists_lose_piety_effect = yes
 		random_list = {
 			60 = { }
 			40 = { 
@@ -2822,6 +2980,9 @@ character_event = {
 		name = EVTOPTD2170 # Pray God will give her strength.
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { religion = arcane }
+			NOT = { religion = demonology }
+			NOT = { religion = mercantilism }
 		}
 		ai_chance = {
 			factor = 2
@@ -2953,6 +3114,9 @@ character_event = {
 		name = EVTOPTC2180 # Thank God for X's virtues!
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { religion = arcane }
+			NOT = { religion = demonology }
+			NOT = { religion = mercantilism }
 		}
 		ai_chance = {
 			factor = 2
@@ -3356,9 +3520,26 @@ character_event = {
 		}
 		FROM = {
 			remove_trait = cynical
-			hidden_tooltip = {
-				character_event = {
-					id = 1731
+			if = {
+				limit = {
+					NOT = {
+						religion_group = muslim
+					}
+				}
+				hidden_tooltip = {
+					character_event = {
+						id = 1731
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion_group = muslim
+				}
+				hidden_tooltip = {
+					character_event = {
+						id = 1733
+					}
 				}
 			}
 		}
@@ -3392,6 +3573,8 @@ character_event = {
 				trait = greedy
 			}
 		}
+		
+		pacifists_lose_piety_effect = yes
 		if = {
 			limit = { trait = kind }
 			prestige = -5
@@ -3430,6 +3613,7 @@ character_event = {
 				trait = cruel
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		random_list = {
 			60 = { }
 			40 = { 
@@ -3532,7 +3716,7 @@ character_event = {
 	
 	min_age = 20
 	max_age = 70
-	only_rulers = yes
+	only_playable = yes
 	prisoner = no
 	capable_only = yes
 	
@@ -3559,6 +3743,12 @@ character_event = {
 				is_alive = yes
 				NOT = { age = 16 }
 				prisoner = no
+				NOT = {
+					AND = {
+						is_female = yes
+						religion_group = muslim
+					}
+				}
 				has_guardian = no
 			}
 		}
@@ -3781,6 +3971,11 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA38100 # Ask the guardian about God
+		trigger = {
+			NOT = {
+				religion_group = muslim
+			}
+		}
 		ai_chance = { factor = 100}
 		guardian = {
 			character_event = {
@@ -3795,6 +3990,21 @@ character_event = {
 		name = EVTOPTB38100 # Go play with my friends
 		ai_chance = { factor = 0}
 		piety = -5
+	}
+	option = {
+		name = EVTOPTC38100 # Ask the guardian about Allah
+		trigger = {
+			religion_group = muslim
+		}
+		ai_chance = { factor = 100}
+		guardian = {
+			character_event = {
+				id = 38101
+				days = 2
+				tooltip = EVTTOOLTIPA38101
+			}
+		}
+		piety = 5
 	}
 }
 
@@ -3986,7 +4196,8 @@ character_event = {
 				factor = 0
 				father = { trait = kind}
 			}			
-		}
+		}			
+		pacifists_lose_piety_effect = yes
 		random_list = {
 			80 = {	FROM = { add_trait = wroth	hidden_tooltip = { ROOT = { character_event = { id = 38154}} character_event = { id = 38254}}}}
 			15 = {	FROM = { add_trait = deceitful	hidden_tooltip = { ROOT = { character_event = { id = 38155}} character_event = { id = 38255}}}}
@@ -4021,7 +4232,10 @@ character_event = {
 			50 = {	FROM = { add_trait = stutter	hidden_tooltip = { ROOT = { character_event = { id = 38153}} character_event = { id = 38253}}}}
 			50 = {	FROM = { add_trait = greedy	hidden_tooltip = { ROOT = { character_event = { id = 38152}} character_event = { id = 38252} }}}
 		}
+
 	}
+
+
 }
 
 
@@ -4088,7 +4302,8 @@ character_event = {
 				factor = 2
 				father = { trait = wroth}
 			}
-		}
+		}			
+		pacifists_lose_piety_effect = yes
 		random_list = {
 			40 = {	FROM = { add_trait = craven	hidden_tooltip = { ROOT = { character_event = { id = 38157}} character_event = { id = 38257} }}}
 			40 = {	FROM = { add_trait = wroth	hidden_tooltip = { ROOT = { character_event = { id = 38154}} character_event = { id = 38254} }}}
@@ -4182,7 +4397,8 @@ character_event = {
 				factor = 4
 				father = { trait = proud}
 			}
-		}
+		}			
+		pacifists_lose_piety_effect = yes
 		random_list = {
 			40 = {	FROM = { add_trait = proud	hidden_tooltip = { ROOT = { character_event = { id = 38161}} character_event = { id = 38261} }}}
 			30 = {	FROM = { add_trait = wroth	hidden_tooltip = { ROOT = { character_event = { id = 38154}} character_event = { id = 38254} }}}
@@ -4220,6 +4436,25 @@ character_event = {
 			50 = {	FROM = { add_trait = wroth	hidden_tooltip = { ROOT = { character_event = { id = 38154}} character_event = { id = 38254} }}}
 			30 = {	FROM = { add_trait = proud	hidden_tooltip = { ROOT = { character_event = { id = 38161}} character_event = { id = 38261} }}}
 			20 = {	FROM = { add_trait = craven	hidden_tooltip = { ROOT = { character_event = { id = 38157}} character_event = { id = 38257} }}}
+		}
+	}
+	
+	option = {
+		name = EVTOPTD38203 # Let the monks purge sin from the child
+		trigger = {
+			religion_group = christian
+		}
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 4
+				father = { trait = humble}
+			}
+		}			
+		random_list = {
+			70 = {	FROM = { add_trait = humble	hidden_tooltip = { ROOT = { character_event = { id = 38160}} character_event = { id = 38260 } }}}
+			20 = {	FROM = { add_trait = craven	hidden_tooltip = { ROOT = { character_event = { id = 38157}} character_event = { id = 38257} }}}
+			10 = {	FROM = { add_trait = trusting	hidden_tooltip = { ROOT = { character_event = { id = 38150}} character_event = { id = 38250} }}}
 		}
 	}
 }
@@ -4303,6 +4538,32 @@ character_event = {
 	
 	is_triggered_only = yes
 	
+	option = {
+		name = EVTOPTA38205 # Mom is an angel now
+		trigger = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = jewish_group
+			}
+		}
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 4
+				trait = honest
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+		}		
+		random_list = {
+			50 = {	FROM = { add_trait = honest	hidden_tooltip = { ROOT = { character_event = { id = 38162}} character_event = { id = 38262} }}}
+			30 = {	FROM = { add_trait = humble	hidden_tooltip = { ROOT = { character_event = { id = 38160}} character_event = { id = 38260 } }}}
+			20 = {	FROM = { add_trait = shy	hidden_tooltip = { ROOT = { character_event = { id = 38163}} character_event = { id = 38263 } }}}
+		}
+	}
 	option = {
 		name = EVTOPTB38205 # Mom has gone to a long journey
 		ai_chance = { 
@@ -4467,7 +4728,8 @@ character_event = {
 				factor = 2
 				trait = cruel
 			}
-		}
+		}		
+		pacifists_lose_piety_effect = yes
 		random_list = {
 			70 = {	FROM = { add_trait = wroth	hidden_tooltip = { ROOT = { character_event = { id = 38154}} character_event = { id = 38254} }}}
 			30 = {	FROM = { add_trait = deceitful	hidden_tooltip = { ROOT = { character_event = { id = 38155}} character_event = { id = 38255}}}}
@@ -4728,6 +4990,30 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTC38211 # It's all part of God's plan
+		trigger = {
+			religion_group = christian
+		}
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 2
+				trait = honest
+			}
+			modifier = {
+				factor = 8
+				trait = zealous
+			}			
+		}		
+		random_list = {
+			70 = {	FROM = { add_trait = honest	hidden_tooltip = { ROOT = { character_event = { id = 38162}} character_event = { id = 38262 } }}}		
+			30 = {	FROM = { add_trait = proud	hidden_tooltip = { ROOT = { character_event = { id = 38161}} character_event = { id = 38261} }}}
+		}
+	}
+	option = {
+		name = EVTOPTD38211 # It's all part of Allah's plan
+		trigger = {
+			religion_group = muslim
+		}
 		ai_chance = { 
 			factor = 10
 			modifier = {
@@ -4866,17 +5152,24 @@ character_event = {
 				}
 			}
 			40 = {
-				FROM = {
-					add_trait = lustful
-					hidden_tooltip = {
-						ROOT = {
-							character_event = {
-								id = 38172
-							}
+				if = {
+					limit = {
+						NOT = {
+							religion_group = muslim
 						}
-						character_event = {
-							id = 38272
-						} 
+					}
+					FROM = {
+						add_trait = lustful
+						hidden_tooltip = {
+							ROOT = {
+								character_event = {
+									id = 38172
+								}
+							}
+							character_event = {
+								id = 38272
+							} 
+						}
 					}
 				}
 			}
@@ -4914,20 +5207,140 @@ character_event = {
 				}
 			}
 			40 = {
-				FROM = { 
-					add_trait = chaste
-					hidden_tooltip = {
-						ROOT = { 
-							character_event = { 
-								id = 38174
-							}
+				if = {
+					limit = {
+						NOT = {
+							religion_group = muslim
 						}
-						character_event = {
-							id = 38274
+					}
+					FROM = { 
+						add_trait = chaste
+						hidden_tooltip = {
+							ROOT = { 
+								character_event = { 
+									id = 38174
+								}
+							}
+							character_event = {
+								id = 38274
+							}
 						}
 					}
 				}
 			}
+		}
+	}
+}
+
+# If we're Catholic and our enemies are Catholic, why are we fighting?
+character_event = {
+	id = 38214
+	desc = EVTDESC38214
+	picture = GFX_evt_child_play
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA38214 # Fighting heathens is just silly church thing
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 5
+				trait = cynical
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}			
+		}		
+		
+		random_list = {
+			50 = {	FROM = { add_trait = cynical	hidden_tooltip = { ROOT = { character_event = { id = 38158}} character_event = { id = 38258} }}}
+			50 = {	FROM = { add_trait = arbitrary	hidden_tooltip = { ROOT = { character_event = { id = 38166}} character_event = { id = 38266} }}}
+		}
+	}
+	option = {
+		name = EVTOPTB38214 # I fight who I like!
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 5
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = cruel
+			}			
+		}		
+		
+		random_list = {
+			50 = {	FROM = { add_trait = wroth	hidden_tooltip = { ROOT = { character_event = { id = 38154}} character_event = { id = 38254} }}}
+			30 = {	FROM = { add_trait = cruel	hidden_tooltip = { ROOT = { character_event = { id = 38159}} character_event = { id = 38259} }}}
+			20 = {	FROM = { add_trait = proud	hidden_tooltip = { ROOT = { character_event = { id = 38161}} character_event = { id = 38261} }}}
+		}
+	}	
+	option = {
+		name = EVTOPTC38214 # Sometimes, even your brother can be an enemy
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { trait = paranoid}
+			}
+		}		
+		
+		random_list = {
+			50 = {	FROM = { add_trait = arbitrary	hidden_tooltip = { ROOT = { character_event = { id = 38166}} character_event = { id = 38266} }}}
+			45 = {}
+			5 = {	FROM = { add_trait = paranoid	hidden_tooltip = { ROOT = { character_event = { id = 38175}} character_event = { id = 38275} }}}
+		}
+	}
+}
+
+# Why is the church so rich when the peasants are starving and poor?
+character_event = {
+	id = 38215
+	desc = EVTDESC38215
+	picture = GFX_evt_child_play
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA38215 # Because for the poor is the kingdom of heaven
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 2
+				trait = greedy
+			}
+			modifier = {
+				factor = 5
+				trait = zealous
+			}			
+		}		
+		
+		random_list = {
+			70 = {	FROM = { add_trait = zealous	hidden_tooltip = { ROOT = { character_event = { id = 38169}} character_event = { id = 38269 } }}}
+			30 = {	FROM = { add_trait = greedy	hidden_tooltip = { ROOT = { character_event = { id = 38152}} character_event = { id = 38252} }}}
+		}
+	}
+	option = {
+		name = EVTOPTB38215 # How about sharing of your own then?
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 5
+				trait = charitable
+			}
+			modifier = {
+				factor = 3
+				trait = just
+			}			
+		}		
+		
+		random_list = {
+			70 = {	FROM = { add_trait = charitable	hidden_tooltip = { ROOT = { character_event = { id = 38173}} character_event = { id = 38273} }}}
+			30 = {	FROM = { add_trait = just	hidden_tooltip = { ROOT = { character_event = { id = 38167}} character_event = { id = 38267 } }}}
 		}
 	}
 }
@@ -5055,7 +5468,7 @@ character_event = {
 			10 = {	change_learning = -1}
 		}
 	}
-}
+}	
 
 # Since we all die anyway, why to be so hassled about life?
 character_event = {
@@ -5081,21 +5494,31 @@ character_event = {
 		
 		random_list = {
 			50 = {
-				FROM = { 
-					add_trait = chaste
-					hidden_tooltip = {
-						ROOT = { 
-							character_event = { 
-								id = 38174
-							}
+				if = {
+					limit = {
+						NOT = {
+							religion_group = muslim
 						}
-						character_event = { 
-							id = 38274
+					}
+					FROM = { 
+						add_trait = chaste
+						hidden_tooltip = {
+							ROOT = { 
+								character_event = { 
+									id = 38174
+								}
+							}
+							character_event = { 
+								id = 38274
+							}
 						}
 					}
 				}
 			}
-			50 = {	FROM = { add_trait = temperate	hidden_tooltip = { ROOT = { character_event = { id = 38176}} character_event = { id = 38276 } }}}
+			50 = {	FROM = { add_trait = temperate	
+					lose_weight_medium_effect = yes
+					weight_trait_check_effect = yes
+					hidden_tooltip = { ROOT = { character_event = { id = 38176}} character_event = { id = 38276 } }}}
 		}
 	}
 
@@ -5115,7 +5538,11 @@ character_event = {
 		
 		random_list = {
 			50 = {	FROM = { add_trait = lustful	hidden_tooltip = { ROOT = { character_event = { id = 38172}} character_event = { id = 38272} }}}
-			50 = {	FROM = { add_trait = gluttonous	hidden_tooltip = { ROOT = { character_event = { id = 38177}} character_event = { id = 38277 } }}}
+			50 = {	FROM = { add_trait = gluttonous	
+
+				gain_weight_small_effect = yes
+				weight_trait_check_effect = yes
+				hidden_tooltip = { ROOT = { character_event = { id = 38177}} character_event = { id = 38277 } }}}
 		}
 	}
 }
@@ -5155,6 +5582,102 @@ character_event = {
 		random_list = {
 			80 = {	FROM = { add_trait = just	hidden_tooltip = { ROOT = { character_event = { id = 38167}} character_event = { id = 38267 } }}}
 			20 = {	FROM = { add_trait = zealous	hidden_tooltip = { ROOT = { character_event = { id = 38169}} character_event = { id = 38269 } }}}
+		}
+	}
+}
+
+# Female Ward is playing with swords instead of sewing
+character_event = {
+	id = 38221
+	desc = EVTDESC38221
+	picture = GFX_evt_child_play
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA38221 #Let her do it
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 100
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 100
+				trait = brave
+			}
+		}
+		FROM = {
+			random_list = {
+				75 = {
+					add_trait = brave
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38170 #Notify Child is brave
+							}
+						}
+						character_event = {
+							id = 38270 #Notify Brave
+						}
+					}
+				}
+				25 = {
+					add_trait = wounded
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38180 #Notify Child is brave
+							}
+						}
+						character_event = {
+							id = 38280 #Notify Brave
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB38221
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 100
+				trait = just
+			}
+		}
+		FROM = {
+			random_list = {
+				75 = {
+					add_trait = just
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38167 #Notify Child is just
+							}
+						}
+						character_event = {
+							id = 38267 #Notify Just
+						}
+					}
+				}
+				25 = {
+					add_trait = humble
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38160 #Notify Child is humble
+							}
+						}
+						character_event = {
+							id = 38260 #Notify Humble
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -5270,6 +5793,7 @@ character_event = {
 				trait = wroth
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		FROM = {
 			random_list = {
 				50 = { 
@@ -5781,6 +6305,78 @@ character_event = {
 			}
 		}
 	}
+	option = {
+		name = EVTOPTC38227 #Money is for god
+		trigger = {
+			religion_group = christian
+		}
+		FROM = {
+			random_list = {
+				75 = {
+					add_trait = zealous
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38169 #Notify Child is zealous
+							}
+						}
+						character_event = {
+							id = 38269 #Notify Zealous
+						}
+					}
+				}
+				25 = {
+					add_trait = charitable
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38173 #Notify Child is charitable
+							}
+						}
+						character_event = {
+							id = 38273 #Notify Charitable
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD38227 #Money is for god
+		trigger = {
+			religion_group = muslim
+		}
+		FROM = {
+			random_list = {
+				75 = {
+					add_trait = zealous
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38169 #Notify Child is zealous
+							}
+						}
+						character_event = {
+							id = 38269 #Notify Zealous
+						}
+					}
+				}
+				25 = {
+					add_trait = charitable
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38173 #Notify Child is charitable
+							}
+						}
+						character_event = {
+							id = 38273 #Notify Charitable
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 # Ward shows interest in visitors to the court
@@ -5888,7 +6484,9 @@ character_event = {
 	option = {
 		name = EVTOPTA38229 #This will turn him into a great knight!
 		trigger = {
-			trait = human
+			NOT = {
+				religion_group = muslim
+			}
 		}
 		if = {
 			limit = {
@@ -6056,7 +6654,7 @@ character_event = {
 	option = {
 		name = EVTOPTC38229 #This will turn him into a great swordsmaster!
 		trigger = {
-			NOT = { trait = human }
+			religion_group = muslim
 		}
 		if = {
 			limit = {
@@ -6331,6 +6929,8 @@ character_event = {
 				}
 				10 = {
 					add_trait = gluttonous
+					gain_weight_small_effect = yes
+					weight_trait_check_effect = yes
 					hidden_tooltip = {
 						ROOT = {
 							character_event = {
@@ -6364,6 +6964,8 @@ character_event = {
 			random_list = {
 				80 = {
 					add_trait = gluttonous
+					gain_weight_small_effect = yes
+					weight_trait_check_effect = yes
 					hidden_tooltip = {
 						ROOT = {
 							character_event = {
@@ -6457,6 +7059,7 @@ character_event = {
 				NOT = { trait = wroth }
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		FROM = {
 			random_list = {
 				80 = {
@@ -6581,6 +7184,60 @@ character_event = {
 	is_triggered_only = yes
 	
 	option = {
+		name = EVTOPTA38233 #Make the child fast to atone for its sins
+		trigger = {
+			religion_group = christian
+		}
+		ai_chance = {
+			factor = 1
+		
+			modifier = {
+				factor = 100
+				trait = zealous
+			}
+		}
+		FROM = {
+			random_list = {
+				45 = {
+					add_trait = pneumonic
+				}
+				50 = {
+					remove_trait = ill #Not triggered with Reapers
+					hidden_tooltip = {
+						ROOT = {
+							character_event = {
+								id = 38183 #Notify Child is no longer ill
+							}
+						}
+						character_event = {
+							id = 38283 #Notify Remove Ill
+						}
+					}
+				}
+				5 = {
+					death = {
+						death_reason = death_murder_unknown
+						killer = ROOT
+					}
+					set_character_flag = murdered_by_guardian
+				}
+			}
+			if = {
+				limit = {
+					trait = gluttonous
+					NOT = {
+						trait = zealous
+					}
+				}
+				opinion = {
+					modifier = opinion_mad_at_guardian
+					who = ROOT
+					years = 2
+				}
+			}
+		}
+	}
+	option = {
 		name = EVTOPTB38233 #Pay a doctor to cure ward
 		ai_chance = {
 			factor = 1
@@ -6620,7 +7277,102 @@ character_event = {
 		}
 	}
 	option = {
+		name = EVTOPTC38233 #Only God decides over life and death
+		trigger = {
+			religion_group = christian
+		}
+		FROM = {
+			random = {
+				chance = 60
+			
+				death = {
+					death_reason = death_trait
+				}
+				if = {
+					limit = {
+						father = {
+							is_alive = yes
+						}
+					}
+					father = {
+						opinion = {
+							modifier = opinion_killed_close_kin
+							who = ROOT
+							years = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						father_even_if_dead = {
+							is_alive = no
+						}
+						mother = {
+							is_alive = yes
+						}
+					}
+					mother = {
+						opinion = {
+							modifier = opinion_killed_close_kin
+							who = ROOT
+							years = 5
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD38233 #Only Allah decides over life and death
+		trigger = {
+			religion_group = muslim
+		}
+		FROM = {
+			random = {
+				chance = 60
+			
+				death = {
+					death_reason = death_trait
+				}
+				if = {
+					limit = {
+						father = {
+							is_alive = yes
+						}
+					}
+					father = {
+						opinion = {
+							modifier = opinion_killed_close_kin
+							who = ROOT
+							years = 5
+						}
+					}
+				}
+				if = {
+					limit = {
+						father_even_if_dead = {
+							is_alive = no
+						}
+						mother = {
+							is_alive = yes
+						}
+					}
+					mother = {
+						opinion = {
+							modifier = opinion_killed_close_kin
+							who = ROOT
+							years = 5
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
 		name = EVTOPTE38233 #Do nothing
+		trigger = {
+			religion_group = muslim
+		}
 		ai_chance = {
 			factor = 1
 		
@@ -6681,6 +7433,32 @@ character_event = {
 	is_triggered_only = yes
 	
 	option = {
+		name = EVTOPTA38234 #Make the child fast to atone for its sins
+		trigger = {
+			religion_group = christian
+		}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 9
+				trait = zealous
+			}
+		}
+		FROM = {
+			random = {
+				chance = 20
+				
+				remove_trait = homosexual
+				opinion = {
+					modifier = opinion_mad_at_guardian
+					who = ROOT
+					years = 5
+				}
+			}
+		}
+	}
+	option = {
 		name = EVTOPTB38234 #Try to beat it out of him/her
 		ai_chance = {
 			factor = 10
@@ -6690,6 +7468,7 @@ character_event = {
 				trait = cruel
 			}
 		}
+		pacifists_lose_piety_effect = yes
 		FROM = {
 			random = {
 				chance = 10
@@ -6871,6 +7650,8 @@ character_event = {
 			10 = {	
 				FROM = { 
 					add_trait = gluttonous
+					gain_weight_small_effect = yes
+					weight_trait_check_effect = yes
 					hidden_tooltip = { 
 						ROOT = {
 							character_event = { 

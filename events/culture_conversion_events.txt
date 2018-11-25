@@ -38,6 +38,35 @@ province_event = {
 				has_province_modifier = depopulated_3
 			}
 		}
+		NOT = { # No flipping back to old human cultures after the flipping starts
+			AND = {
+				owner = {
+					OR = {
+						AND = {
+							culture = arathi
+							NOT = { has_character_flag = arathi_restoration }
+						}
+						culture = tirisfalen
+						culture = hillsbradan
+						culture = silverpiner
+					}
+				}
+				ROOT = {
+					OR = {
+						culture = azerothian
+						culture = stromic
+						culture = dalaranian
+						culture = lordaeronian
+						culture = gilnean
+						culture = tirasian
+						culture = alteraci
+					}
+				}
+				NOT = {
+					has_global_flag = human_cultures_changing
+				}
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -159,6 +188,23 @@ province_event = {
 				}
 			}
 		}
+		modifier = {
+			factor = 0.6
+			owner = {
+		    	any_owned_bloodline = {
+    				has_bloodline_flag = cultural_saintly_bloodline
+    				founder = {
+    					culture = PREVPREV
+    				}
+    			}
+			}
+		}
+		modifier = { #Arathi Renaissance.
+			factor = 0.5
+			has_global_flag = arathi_restoration
+			liege = { culture = arathi }
+			location = { county = { culture_group = human } }
+		}
 	}
 
 	option = {
@@ -266,6 +312,36 @@ province_event = {
 				}
 			}
 		}
+		
+		NOT = { # No flipping back to old human cultures after the flipping starts
+			AND = {
+				owner = {
+					OR = {
+						AND = {
+							culture = arathi
+							NOT = { has_character_flag = arathi_restoration }
+						}
+						culture = tirisfalen
+						culture = hillsbradan
+						culture = silverpiner
+					}
+				}
+				ROOT = {
+					OR = {
+						culture = azerothian
+						culture = stromic
+						culture = dalaranian
+						culture = lordaeronian
+						culture = gilnean
+						culture = tirasian
+						culture = alteraci
+					}
+				}
+				NOT = {
+					has_global_flag = human_cultures_changing
+				}
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -348,6 +424,12 @@ province_event = {
 				}
 			}
 		}
+		modifier = { #Arathi Renaissance.
+			factor = 0.5
+			has_global_flag = arathi_restoration
+			liege = { culture = arathi }
+			location = { county = { culture_group = human } }
+		}
 	}
 
 	option = {
@@ -369,136 +451,5 @@ province_event = {
 				}
 			}
 		}
-	}
-}
-
-# A ruler is assimilated by the local culture
-character_event = {
-	id = 55010
-	desc = "EVTDESC55010"
-	picture = GFX_evt_stone_church
-	
-	only_rulers = yes
-	min_age = 16
-	capable_only = yes
-	prisoner = no
-	lacks_dlc = "Rajas of India" # Controlled by Decision: convert_to_local_culture
-	
-	trigger = {
-		NOT = { government = nomadic_government }
-		primary_title = { 
-			NOT = { conquest_culture = ROOT } 
-			NOT = { culture = ROOT }
-			any_previous_holder = {
-				NOT = { character = ROOT } # The first holder of a title does not convert
-			}
-		}
-		capital_scope = {
-			NOT = { culture = ROOT }
-		}
-		top_liege = {
-			OR = {
-				character = ROOT
-				ROOT = { 
-					capital_scope = {
-						culture = PREVPREV
-					}
-				}
-			}
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 1200
-		modifier = {
-			factor = 0.5
-			top_liege = {
-				NOT = { character = ROOT }
-				ROOT = { 
-					capital_scope = {
-						culture = PREVPREV
-					}
-				}
-			}
-		}
-		modifier = {
-			factor = 0.5
-			primary_title = {
-				ROOT = {
-					capital_scope = {
-						culture = PREVPREV
-					}
-				}
-			}
-		}
-		modifier = {
-			factor = 2.0
-			capital_scope = {
-				culture_group = ROOT # Same culture group: slower assimilation
-			}
-		}
-	}
-
-	option = {
-		name = "EVTOPTA55010"
-		
-		# Piss off the appropriate vassals
-		any_vassal = {
-			limit = {
-				culture = ROOT
-				age = 16
-			}
-			opinion = {
-				who = ROOT
-				modifier = opinion_adopted_foreign_ways
-				years = 10
-			}
-			hidden_tooltip = { character_event = { id = 55011 days = 0 } }
-		}
-		
-		capital_scope = {
-			reverse_culture = ROOT
-		}
-	}
-	
-	option = {
-		name = "EVTOPTB55010"
-		ai_chance = {
-			factor = 0
-		}
-	}
-}
-
-
-character_event = {
-	id = 55011
-	desc = "EVTDESC55011"
-	picture = GFX_evt_scandal
-
-	is_triggered_only = yes
-
-	option = {
-		name = "EVTOPTA55011"
-		tooltip = {
-			opinion = {
-				who = FROM
-				modifier = opinion_adopted_foreign_ways
-				years = 10
-			}
-		}
-	}
-}
-
-character_event = {
-	id = 55100
-	desc = EVTDESC55100
-	picture = GFX_evt_courier
-	
-	notification = yes
-	
-	is_triggered_only = yes
-
-	option = {
-		name = OK
 	}
 }

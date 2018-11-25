@@ -12,13 +12,28 @@
 #Irresistable young wench
 character_event = {
 	id = 76000
-	desc = "EVTDESC76000"
+	desc = {
+		text = "EVTDESC76000"
+		trigger = {
+			is_female = no
+			NOT = { trait = homosexual }
+		}
+	}
+	desc = {
+		text = "DESCGENDERFLIP.1"
+		trigger = {
+			is_female = yes
+			OR = {
+				trait = homosexual
+				trait = bisexual
+			}
+		}
+	}
 	picture = GFX_evt_lovers
 	border = GFX_event_normal_frame_intrigue
 	
 	min_age = 16
 	max_age = 25
-	only_men = yes
 	only_rulers = yes
 	capable_only = yes
 	is_married = no
@@ -26,21 +41,29 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
+		NOT = { is_undead = yes }
+		NOT = { is_elemental_or_void = yes }
+		NOT = { is_demon_race = yes }
+		NOT = { trait = race_dragon }
+		NOT = { trait = race_hakkar }
 		NOR = {
 			trait = chaste
 			trait = celibate
-			trait = homosexual
 			trait = eunuch
 			has_lover = yes
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_blue
-			trait = dragon_green
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_nightmare
-			trait = dragon_infinite
+		}
+		OR = {
+			AND = {
+				is_female = no
+				NOT = { trait = homosexual }
+			}
+			AND = {
+				is_female = yes
+				OR = {
+					trait = homosexual
+					trait = bisexual
+				}
+			}
 		}
 		fertility = 0.6
 	}
@@ -108,7 +131,15 @@ character_event = {
 			is_female = yes
 			is_alive = yes
 			age = 16
-			NOT = { age = 45 }
+			OR = {
+				NOT = { age = 45 }
+				is_long_lived_race = yes
+			}
+			NOT = { is_undead = yes }
+			NOT = { is_elemental_or_void = yes }
+			NOT = { is_demon_race = yes }
+			NOT = { trait = race_dragon }
+			NOT = { trait = race_hakkar }
 			is_married = no
 			fertility = 0.4
 			NOT = {
@@ -120,17 +151,6 @@ character_event = {
 			NOT = {
 				trait = homosexual
 			}
-		}
-		NOR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_bronze
-			trait = dragon_blue
-			trait = dragon_green
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_nightmare
-			trait = dragon_infinite
 		}
 		any_courtier = {
 			has_job_title = job_spymaster
@@ -144,7 +164,15 @@ character_event = {
 				is_councillor = no
 				is_alive = yes
 				age = 16
-				NOT = { age = 45 }
+				OR = {
+					NOT = { age = 45 }
+					is_long_lived_race = yes
+				}
+				NOT = { is_undead = yes }
+				NOT = { is_elemental_or_void = yes }
+				NOT = { is_demon_race = yes }
+				NOT = { trait = race_dragon }
+				NOT = { trait = race_hakkar }
 				is_married = no
 				fertility = 0.4
 				NOT = {
@@ -252,13 +280,8 @@ character_event = {
 		add_trait = deceitful
 		random = {
 			chance = 10
-			
-			add_trait = kinslayer
-			hidden_tooltip = {
-				character_event = {
-					id = 38287 #Notify Kinslayer
-				}
-			}
+			event_target:daughter_with_bastard = { save_event_target_as = kinslayer_target }
+			add_kinslayer_trait_effect = yes
 		}
 	}
 	option = {
@@ -361,6 +384,15 @@ character_event = {
 	}
 	option = {
 		name = "EVTOPTC76008"
+		event_target:daughter_with_bastard = {
+			create_character = {
+				age = 0
+				trait = bastard
+			}
+			new_character = {
+				set_mother = PREV
+			}
+		}
 	}
 }
 

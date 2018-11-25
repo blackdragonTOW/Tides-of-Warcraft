@@ -16,21 +16,28 @@ arcane_group = {
 		god_names = { GOD_ARCANE GOD_TITANS GOD_NORGANNON }
 		evil_god_names = { GOD_SARGERAS GOD_OLD_GODS GOD_BURNING_LEGION }
 		
+		join_crusade_if_bordering_hostile = yes
+		
 		ai_convert_same_group = 0
 		ai_convert_other_group = 0
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_ARCANIST
 		priests_can_inherit = yes
 		feminist = yes
 		aggression = 0.5
+		male_temple_holders = yes
+		female_temple_holders = yes
+		uses_decadence = yes
 		
 		intermarry = holy_light
 		intermarry = argent
 	#	intermarry = sunwell
 		intermarry = mercantilism
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = wyrmcult
+		intermarry = forgotten_shadow
+		intermarry = forgotten_shadow_reformed
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -81,25 +88,32 @@ arcane_group = {
 		god_names = { GOD_ALEXSTRASZA GOD_MALYGOS GOD_NOZDORMU GOD_YSERA GOD_TITANS }
 		evil_god_names = { GOD_SARGERAS GOD_OLD_GODS GOD_BURNING_LEGION GOD_GALAKROND GOD_DEATHWING }
 		
+		join_crusade_if_bordering_hostile = yes
+		
 		ai_convert_same_group = 0
 		ai_convert_other_group = 0
-		ai_peaceful = yes
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_GUARDIAN
 		priests_can_inherit = yes
-		can_hold_temples = yes
 		feminist = yes
 		aggression = 0.5
 		pacifist = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		uses_decadence = yes
 		
 		intermarry = old_ways
+		intermarry = old_ways_reformed
 		intermarry = arcane
 	#	intermarry = sunwell
 		intermarry = shamanism
+		intermarry = shamanism_reformed
 		intermarry = loa
 		intermarry = druidism
+		intermarry = druidism_reformed
 		intermarry = elune
+		intermarry = forgotten_shadow
+		intermarry = forgotten_shadow_reformed
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
@@ -112,20 +126,23 @@ arcane_group = {
 		color = { 0.18 0.82 0.35 }
 		
 		scripture_name = THE_OLD_WAYS
-		high_god_name = { GOD_TYR }
+		high_god_name = GOD_TYR
 		god_names = { GOD_TYR GOD_SPIRITS GOD_ANCESTORS GOD_ELEMENTS }
 		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS }
 		
+		join_crusade_if_bordering_hostile = yes
 		
-		ai_fabricate_claims = yes
 		ai_convert_same_group = 0
 		ai_convert_other_group = 0
 		priests_can_marry = yes
-		female_temple_holders = yes
 		priest_title = PRIESTNAME_WITCH
 		priests_can_inherit = yes
 		feminist = yes
-		ai_peaceful = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		uses_decadence = yes
+		
+		reformed = old_ways_reformed
 		
 		intermarry = geomancy
 		intermarry = aeromancy
@@ -135,9 +152,56 @@ arcane_group = {
 		intermarry = holy_light
 		intermarry = argent
 		intermarry = druidism
+		intermarry = druidism_reformed
 		intermarry = wyrmcult
 		intermarry = arcane
 	#	intermarry = sunwell
+		intermarry = forgotten_shadow
+		intermarry = forgotten_shadow_reformed
+		intermarry = old_ways_reformed
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
+	
+	old_ways_reformed = {
+		graphical_culture = norsegfx
+		
+		icon = 26
+		color = { 0.21 0.95 0.40 }
+		
+		scripture_name = THE_OLD_WAYS
+		high_god_name = GOD_TYR
+		god_names = { GOD_TYR GOD_SPIRITS GOD_ANCESTORS GOD_ELEMENTS }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_OLD_GODS }
+		
+		join_crusade_if_bordering_hostile = yes
+		
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		priest_title = PRIESTNAME_WITCH
+		priests_can_inherit = yes
+		feminist = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		uses_decadence = yes
+		
+		intermarry = geomancy
+		intermarry = aeromancy
+		intermarry = hydromancy
+		intermarry = pyromancy
+		intermarry = mercantilism
+		intermarry = holy_light
+		intermarry = argent
+		intermarry = druidism
+		intermarry = druidism_reformed
+		intermarry = wyrmcult
+		intermarry = arcane
+	#	intermarry = sunwell
+		intermarry = forgotten_shadow
+		intermarry = forgotten_shadow_reformed
+		intermarry = old_ways
 		
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
