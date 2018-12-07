@@ -17,12 +17,18 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
-	religion = catholic
+	culture_group = human
 	war = no
 	
 	picture = GFX_evt_emissary
 
 	trigger = {
+		government = feudal
+		NOT = {
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
+			trait = race_undead_generic
+		}
 		in_command = no
 		NOT = { has_character_flag = hedge_knights_visiting }
 		NOT = { has_character_flag = hates_hedge_knights }
@@ -223,7 +229,6 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
-	religion = catholic
 
 	has_character_flag = hedge_knights_visiting
 	
@@ -268,7 +273,6 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
-	religion = catholic
 	ai = no
 
 	has_character_flag = hedge_knights_visiting
@@ -293,19 +297,40 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA71002  #take him in your service.
-		create_character = {
-			random_traits = no
-			dynasty = random
-			female = no
-			age = 16
-			trait = brave
-			trait = ambitious
-			trait = humble
-			health = 10
-			attributes = {
-				martial = 10
+		random_list = {
+			1 = {
+				create_character = {
+					random_traits = no
+					dynasty = random
+					female = no
+					age = 16
+					trait = race_human
+					trait = brave
+					trait = ambitious
+					trait = humble
+					health = 10
+					attributes = {
+						martial = 10
+					}
+				}
 			}
-		}	
+			1 = {
+				create_character = {
+					random_traits = no
+					dynasty = random
+					female = yes
+					age = 16
+					trait = race_human
+					trait = brave
+					trait = ambitious
+					trait = humble
+					health = 10
+					attributes = {
+						martial = 10
+					}
+				}
+			}
+		}
 		scaled_wealth = -0.1
 	}
 	option = {
@@ -323,7 +348,6 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
-	religion = catholic
 
 	has_character_flag = hedge_knights_visiting
 	
@@ -401,7 +425,6 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
-	religion = catholic
 	ai = no
 
 	has_character_flag = hedge_knights_visiting
@@ -509,7 +532,6 @@ character_event = {
 	only_playable = yes
 	min_age = 16
 	prisoner = no
-	religion = catholic
 	
 	has_character_flag = hedge_knights_visiting
 	
@@ -552,12 +574,18 @@ character_event = {
 	
 	only_playable = yes
 	prisoner = no
-	religion = catholic
+	culture_group = human
 	war = no
 	
 	picture = GFX_evt_melee
 	
 	trigger = {
+		government = feudal
+		NOT = {
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
+			trait = race_undead_generic
+		}
 		in_command = no
 		NOT = { has_character_flag = hedge_knights_visiting }
 		any_courtier = {
