@@ -9558,7 +9558,7 @@ e_azeroth = {
 		culture = azerothian
 		
 		d_stormsea = {
-			color = { 155 23 23 }
+			color = { 121 211 233 }
 			color2 = { 255 255 255 }
 			culture = azerothian
 			capital = 320 # Balor
@@ -9591,7 +9591,118 @@ e_azeroth = {
 			}
 			
 			c_vashjir = { # 321
+				color = { 99 198 128 }
+				color2 = { 255 255 255 }
+				
+				b_vashjir = {
+				}
+				b_smugglers_scar = {
+				}
+				b_deepmist_grotto = {
+				}
+				b_damplight_chamber = {
+				}
+				b_silver_tide_hollow = {
+				}
+				b_tranquil_wash = {
+				}
+				b_tenebrous_cavern = {
+				}
+			}
+		}
+		
+		d_stormwind = {
+			color = { 92 192 218 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 318 # Stormwind
 			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 283 province_id = 284 province_id = 318 province_id = 319 } }
+				}
+			}
+			
+			c_storm_mountains = { # 283
+				color = { 91 204 179 }
+				color2 = { 255 255 255 }
+				
+				b_lostmond = {
+				}
+				b_newreach = {
+				}
+				b_stonewell = {
+				}
+				b_maplehall = {
+				}
+				b_midview = {
+				}
+				b_stormlight = {
+				}
+				b_mistfall = {
+				}
+			}
+			
+			c_storm_coast = { # 284
+				color = { 164 108 116 }
+				color2 = { 255 255 255 }
+				
+				b_baywater = {
+				}
+				b_barerest = {
+				}
+				b_boneborn = {
+				}
+				b_saltwood = {
+				}
+				b_hollowfort = {
+				}
+				b_millfair = {
+				}
+				b_lightmaw = {
+				}
+			}
+			
+			c_stormwind = { # 318
+				color = { 193 68 179 }
+				color2 = { 255 255 255 }
+				
+				b_stormwind_keep = {
+				}
+				b_trade_district = {
+				}
+				b_cathedral_of_the_light = {
+					holy_site = holy_light
+				}
+				b_dwarven_district = {
+				}
+				b_old_town = {
+				}
+				b_mage_quarter = {
+				}
+				b_stormwind_stockade = {
+				}
+			}
+			
+			c_blue_coast = { # 319
+				color = { 113 215 142 }
+				color2 = { 255 255 255 }
+				
+				b_sunshire = {
+				}
+				b_shadowgulf = {
+				}
+				b_silentfell = {
+				}
+				b_windside = {
+				}
+				b_edgeacre = {
+				}
+				b_blackport = {
+				}
+				b_baywallow = {
+				}
 			}
 		}
 	}
