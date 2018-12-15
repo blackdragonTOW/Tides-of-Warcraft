@@ -49,7 +49,7 @@ title_appointed_regent = {
 		prisoner = no
 		NOT = { trait = incapable }
 		has_regent = no
-		TOW_can_have_a_job = yes
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -193,13 +193,7 @@ title_commander = {
 		liege = { character = FROM }
 		OR = {
 			AND = {
-				OR = {
-					NOT = { trait = ogre }
-					AND = {
-						trait = ogre
-						is_female = no
-					}
-				}
+				TOW_is_character_woman_tolerant_trigger = yes
 				is_adult = yes
 			}
 			has_character_flag = special_marshal
@@ -209,7 +203,7 @@ title_commander = {
 		NOT = { trait = incapable }
 		NOT = { is_inaccessible_trigger = yes }
 		NOT = { has_character_flag = guru }
-		TOW_can_have_a_job = yes
+		Keitaro_can_have_a_job = yes
 	}
 	
 	gain_effect = {
@@ -377,13 +371,7 @@ title_master_of_the_hunt = {
 			primary_title = { temporary = yes } 
 		}
 		is_adult = yes
-		OR = {
-			NOT = { trait = ogre }
-			AND = {
-				trait = ogre
-				is_female = no
-			}
-		}
+		TOW_is_character_woman_tolerant_trigger = yes
 		NOT = { has_character_flag = guru }
 		NOT = { trait = incapable } 
 	}
@@ -952,13 +940,7 @@ title_champion = {
 			primary_title = { temporary = yes } 
 		}
 		is_adult = yes
-		OR = { 
-			AND = {
-				is_female = no
-				trait = ogre
-			}
-			NOT = { trait = ogre }
-		}
+		TOW_is_character_woman_tolerant_trigger = yes
 		NOT = { trait = incapable } 
 	}
 
@@ -1176,7 +1158,7 @@ title_councilmember_king = {
 			primary_title = { temporary = yes } 
 		}
 		can_be_councilmember_king_trigger = yes
-		TOW_can_have_a_job = yes
+		Keitaro_can_have_a_job = yes
 	}
 	revoke_trigger = {
 		FROM = {
@@ -1224,7 +1206,7 @@ title_councilmember_emperor = {
 			primary_title = { temporary = yes } 
 		}
 		can_be_councilmember_emperor_trigger = yes
-		TOW_can_have_a_job = yes
+		Keitaro_can_have_a_job = yes
 	}
 
 	revoke_trigger = {
@@ -1332,7 +1314,7 @@ title_court_physician = {
 		prisoner = no
 		NOT = { trait = in_hiding }
 		NOT = { trait = incapable }
-		TOW_can_have_a_job = yes
+		Keitaro_can_have_a_job = yes
 	}
 
 	revoke_trigger = {

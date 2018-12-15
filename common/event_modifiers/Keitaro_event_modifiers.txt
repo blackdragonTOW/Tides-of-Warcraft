@@ -54,19 +54,41 @@
 # 91 - Otter				- 92
 # 93 - Hedgehog				- 94
 
-# game\gfx\interface\modifier_icons.dds
-
-#Variables:
-#  is_visible: trigger, root is viewer, from is holder. Decides if the viewer can see this trait on holder, default is yes
-
 ##########################
-# Remove levy (Raising troops)
+# Adventure modifiers
 ##########################
 
-TOW_remove_levy_30 = {
-	is_visible = {
-		ROOT = { ai = yes }
-	}
-	levy_size = -0.30
+Keitaro_sent_troops_to_adventurer = {
 	icon = 31
+
+	is_visible = { 
+		character = FROM
+	}
+	global_levy_size = -0.1
+	levy_reinforce_rate = -0.1
+}
+
+Keitaro_adventurer_puny_army = {
+	icon = 13
+	monthly_character_prestige = 0.1
+}
+
+Keitaro_adventurer_weak_army = {
+	icon = 13
+	monthly_character_prestige = 0.25
+}
+
+Keitaro_adventurer_medium_army = {
+	icon = 13
+	monthly_character_prestige = 0.5
+}
+
+Keitaro_adventurer_powerful_army = {
+	icon = 13
+	monthly_character_prestige = 1
+}
+
+Keitaro_adventurer_very_powerful_army = {
+	icon = 13
+	monthly_character_prestige = 2
 }

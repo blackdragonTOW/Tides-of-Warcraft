@@ -1,6 +1,6 @@
-namespace = TOW_Plot
+namespace = Keitaro_Plot
 
-#reserved: TOW_Plot.1 to TOW_Plot.13
+#reserved: Keitaro_Plot.1 to Keitaro_Plot.13
 
 #Written by Keitaro_Ura
 
@@ -12,12 +12,12 @@ namespace = TOW_Plot
 
 ###########################################
 # Increase Revolt risk (make the peasants angrier) - A plot backer sees an opportunity
-## TOW_Plot.1 to TOW TOW_Plot.7
+## Keitaro_Plot.1 to Keitaro_Plot.7
 ###########################################
 
 character_event = {
-	id = TOW_Plot.1
-	desc = "EVTDESC_TOW_Plot_1"
+	id = Keitaro_Plot.1
+	desc = "EVTDESC_Keitaro_Plot_1"
 	picture = GFX_evt_book_carolingian_script
 	border = GFX_event_normal_frame_intrigue
 	
@@ -27,7 +27,7 @@ character_event = {
 	
 	trigger = {
 		any_backed_character = {
-			has_plot = plot_TOW_foment_rebellion
+			has_plot = plot_Keitaro_foment_rebellion
 			plot_power = 0.5
 			plot_target_char = {
 				NOT = { # Does not already have a revolt (there are others events for that)
@@ -41,8 +41,8 @@ character_event = {
 					}
 				}
 			}
-			NOT = { has_character_flag = plot_TOW_foment_rebellion_in_motion }
-			NOT = { has_character_flag = plot_TOW_foment_rebellion_already_increased_revolt_risk }
+			NOT = { has_character_flag = plot_Keitaro_foment_rebellion_in_motion }
+			NOT = { has_character_flag = plot_Keitaro_foment_rebellion_already_increased_revolt_risk }
 
 			ROOT = {
 				plot_power_contribution = 
@@ -90,7 +90,7 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_target_char = {
 					any_demesne_province = {
 						NOT = { religion = PREV }
@@ -102,7 +102,7 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_target_char = {
 					any_demesne_province = {
 						NOT = { culture = PREV }
@@ -113,7 +113,7 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -126,7 +126,7 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -139,7 +139,7 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -152,7 +152,7 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -165,7 +165,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -178,7 +178,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -191,7 +191,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -204,7 +204,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -217,7 +217,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -231,7 +231,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -245,7 +245,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -259,7 +259,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -273,7 +273,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -287,7 +287,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -301,7 +301,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -315,7 +315,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -329,7 +329,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -343,7 +343,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -357,7 +357,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -371,7 +371,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 0.6
 			}
 		}
@@ -379,7 +379,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 0.7
 			}
 		}
@@ -387,7 +387,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 0.8
 			}
 		}
@@ -395,7 +395,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 0.9
 			}
 		}
@@ -403,7 +403,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 1.0
 			}
 		}
@@ -411,7 +411,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 1.25
 			}
 		}
@@ -419,7 +419,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 1.5
 			}
 		}
@@ -427,7 +427,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 1.75
 			}
 		}
@@ -435,7 +435,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 2.0
 			}
 		}
@@ -443,7 +443,7 @@ character_event = {
 		modifier = {
 			factor = 0.8
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 2.25
 			}
 		}
@@ -451,7 +451,7 @@ character_event = {
 		modifier = {
 			factor = 0.8
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 2.5
 			}
 		}
@@ -459,7 +459,7 @@ character_event = {
 		modifier = {
 			factor = 0.8
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 2.75
 			}
 		}
@@ -467,7 +467,7 @@ character_event = {
 		modifier = {
 			factor = 0.8
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 3
 			}
 		}
@@ -475,7 +475,7 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 3.25
 			}
 		}
@@ -483,7 +483,7 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 3.5
 			}
 		}
@@ -491,7 +491,7 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 3.75
 			}
 		}
@@ -499,7 +499,7 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 4
 			}
 		}
@@ -507,7 +507,7 @@ character_event = {
 		modifier = {
 			factor = 0.7
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 4.25
 			}
 		}
@@ -515,7 +515,7 @@ character_event = {
 		modifier = {
 			factor = 0.7
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 4.5
 			}
 		}
@@ -523,7 +523,7 @@ character_event = {
 		modifier = {
 			factor = 0.7
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 4.75
 			}
 		}
@@ -531,7 +531,7 @@ character_event = {
 		modifier = {
 			factor = 0.7
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 5.0
 			}
 		}
@@ -539,9 +539,33 @@ character_event = {
 		modifier = { # War gives more opportunities
 			factor = 0.35
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_target_char = {
 					war_with = PREV
+				}
+			}
+		}
+
+		modifier = { # Spymaster sabotaging or creating spy network
+			factor = 0.8
+			any_backed_character = {
+				has_plot = plot_Keitaro_foment_rebellion
+				plot_target_char = {
+					PREV = { # any_backed_character
+						job_spymaster = {
+							OR = {
+								has_job_action = action_sabotage_province
+								has_job_action = action_organize_spies
+							}
+							PREVPREV = { # plot_target_char
+								any_demesne_title = {
+									PREVPREV = { # job_spymaster
+										at_location = PREV
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -550,7 +574,7 @@ character_event = {
 	immediate = {
 		random_backed_character = {
 			limit = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 0.5
 				plot_target_char = {
 					NOT = { # Does not already have a revolt (there are others events for that)
@@ -564,8 +588,8 @@ character_event = {
 						}
 					}
 				}
-				NOT = { has_character_flag = plot_TOW_foment_rebellion_in_motion }
-				NOT = { has_character_flag = plot_TOW_foment_rebellion_already_increased_revolt_risk }
+				NOT = { has_character_flag = plot_Keitaro_foment_rebellion_in_motion }
+				NOT = { has_character_flag = plot_Keitaro_foment_rebellion_already_increased_revolt_risk }
 
 				ROOT = {
 					plot_power_contribution = 
@@ -581,11 +605,11 @@ character_event = {
 				save_event_target_as = plot_target
 			}
 		}
-		log = "-- TOW DEBUG -- : Plot opportunity to increase revolt risk by [Root.GetTitledName], plot leader is [plot_leader.GetTitledName]"
+		if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Plot opportunity to increase revolt risk by [Root.GetTitledName], plot leader is [plot_leader.GetTitledName]" }
 	}
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_1" # The conspirators provide a revolt leader
+		name = "EVTOPTA_Keitaro_Plot_1" # The conspirators provide a revolt leader
 		ai_chance = {
       		factor = 6
     	}
@@ -596,13 +620,13 @@ character_event = {
 			}
 		}
 		event_target:plot_leader = {
-			character_event = { id = TOW_Plot.2 days = 3 tooltip = "EVTTOOLTIP_TOW_Plot_1_Tell" }
-			set_character_flag = plot_TOW_foment_rebellion_in_motion
-			set_character_flag = plot_TOW_foment_rebellion_increase_revolt_risk_greater_power
+			character_event = { id = Keitaro_Plot.2 days = 3 tooltip = "EVTTOOLTIP_Keitaro_Plot_1_Tell" }
+			set_character_flag = plot_Keitaro_foment_rebellion_in_motion
+			set_character_flag = plot_Keitaro_foment_rebellion_increase_revolt_risk_greater_power
 		}
 	}
 	option = {
-		name = "EVTOPTB_TOW_Plot_1" # Ask the Plotter for funds
+		name = "EVTOPTB_Keitaro_Plot_1" # Ask the Plotter for funds
 		trigger = {
 			NOT = {
 				intrigue = 12
@@ -616,13 +640,13 @@ character_event = {
       		modifier = { factor = 4 trait = greedy }
     	}
 		event_target:plot_leader = {
-			character_event = { id = TOW_Plot.6 days = 3 tooltip = "EVTTOOLTIP_TOW_Plot_1_Ask" }
-			set_character_flag = plot_TOW_foment_rebellion_in_motion
+			character_event = { id = Keitaro_Plot.6 days = 3 tooltip = "EVTTOOLTIP_Keitaro_Plot_1_Ask" }
+			set_character_flag = plot_Keitaro_foment_rebellion_in_motion
 		}
 	}
 	
 	option = {
-		name = "EVTOPTC_TOW_Plot_1" # Pay the locals
+		name = "EVTOPTC_Keitaro_Plot_1" # Pay the locals
 		ai_chance = {
       		factor = 3
       		modifier = { factor = 0 NOT = { wealth = 10 } }
@@ -633,13 +657,13 @@ character_event = {
 			max = -20
 		}
 		event_target:plot_leader = {
-			character_event = { id = TOW_Plot.2 days = 3 tooltip = "EVTTOOLTIP_TOW_Plot_1_Tell" }
-			set_character_flag = plot_TOW_foment_rebellion_in_motion
+			character_event = { id = Keitaro_Plot.2 days = 3 tooltip = "EVTTOOLTIP_Keitaro_Plot_1_Tell" }
+			set_character_flag = plot_Keitaro_foment_rebellion_in_motion
 		}
 	}
 	
 	option = {
-		name = "EVTOPTD_TOW_Plot_1" # This is not worth doing
+		name = "EVTOPTD_Keitaro_Plot_1" # This is not worth doing
 		ai_chance = {
       		factor = 3
       		modifier = { factor = 1.5 trait = slothful }
@@ -662,16 +686,16 @@ character_event = {
 
 # Increase Revolt Risk - Backer informs Plotter of plan
 character_event = {
-	id = TOW_Plot.2
-	desc = "EVTDESC_TOW_Plot_2"
+	id = Keitaro_Plot.2
+	desc = "EVTDESC_Keitaro_Plot_2"
 	picture = GFX_evt_spymaster
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_2"
-		FROM = { character_event = { id = TOW_Plot.3 tooltip = "EVTTOOLTIP_TOW_Approve_the_plan" days = 2 random = 2 } }
+		name = "EVTOPTA_Keitaro_Plot_2"
+		FROM = { character_event = { id = Keitaro_Plot.3 tooltip = "EVTTOOLTIP_Keitaro_Approve_the_plan" days = 2 random = 2 } }
 	}
 }
 
@@ -679,8 +703,8 @@ character_event = {
 # ROOT : Backer
 # Increase Revolt Risk - Plotter tells backer to go ahead
 character_event = {
-	id = TOW_Plot.3
-	desc = "EVTDESC_TOW_Plot_3"
+	id = Keitaro_Plot.3
+	desc = "EVTDESC_Keitaro_Plot_3"
 	picture = GFX_evt_whispers
 	border = GFX_event_normal_frame_intrigue
 	
@@ -696,38 +720,38 @@ character_event = {
 	}
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_3"
+		name = "EVTOPTA_Keitaro_Plot_3"
 		if = {
 			limit = {
-				NOT = { FROM = { has_character_flag = plot_TOW_foment_rebellion_increase_revolt_risk_greater_power } }
+				NOT = { FROM = { has_character_flag = plot_Keitaro_foment_rebellion_increase_revolt_risk_greater_power } }
 			}
 			event_target:target_province = {
 				add_province_modifier = {
-					name = TOW_peasants_are_angry
+					name = Keitaro_peasants_are_angry
 					duration = 540
 				}
 			}
-			log = "-- TOW DEBUG -- : Plot - Risk of revolt increased in [plot_target.GetTitledName]'s [target_title.GetFullName], plot leader is [plot_leader.GetTitledName]"
+			if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Plot - Risk of revolt increased in [plot_target.GetTitledName]'s [target_title.GetFullName], plot leader is [plot_leader.GetTitledName]" }
 		}
 		if = {
 			limit = {
-				FROM = { has_character_flag = plot_TOW_foment_rebellion_increase_revolt_risk_greater_power }
+				FROM = { has_character_flag = plot_Keitaro_foment_rebellion_increase_revolt_risk_greater_power }
 			}
 			event_target:target_province = {
 				add_province_modifier = {
-					name = TOW_peasants_are_very_angry
+					name = Keitaro_peasants_are_very_angry
 					duration = 600
 				}
 			}
-			FROM = { clr_character_flag = plot_TOW_foment_rebellion_increase_revolt_risk_greater_power }
-			log = "-- TOW DEBUG -- : Plot - Risk of revolt greatly increased in [plot_target.GetTitledName]'s [target_title.GetFullName], plot leader is [plot_leader.GetTitledName]"
+			FROM = { clr_character_flag = plot_Keitaro_foment_rebellion_increase_revolt_risk_greater_power }
+			if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Plot - Risk of revolt greatly increased in [plot_target.GetTitledName]'s [target_title.GetFullName], plot leader is [plot_leader.GetTitledName]" }
 		}
 		random_list = {
 			350 = { # No plot reveal
 				custom_tooltip = {
-					text = EVTTOOLTIP_TOW_The_plot_succeeds
+					text = EVTTOOLTIP_Keitaro_The_plot_succeeds
 					hidden_tooltip = {
-						FROM = { character_event = { id = TOW_Plot.4 days = 1 } }
+						FROM = { character_event = { id = Keitaro_Plot.4 days = 1 } }
 					}
 				}
 			}
@@ -740,7 +764,7 @@ character_event = {
 					trait = zealous
 					event_target:target_province = {
 						owner = {
-							TOW_root_dislikes_religion = yes
+							Keitaro_root_dislikes_religion = yes
 						}
 					}
 				}
@@ -789,12 +813,12 @@ character_event = {
 				modifier = { factor = 0.9 intrigue = 30 }
 
 				custom_tooltip = {
-					text = EVTTOOLTIP_TOW_The_plot_succeeds_but_is_revealed
+					text = EVTTOOLTIP_Keitaro_The_plot_succeeds_but_is_revealed
 					hidden_tooltip = {
 						FROM = {
 							reveal_plot_w_message = yes
-							reverse_opinion = { modifier = TOW_opinion_fomented_a_rebellion_in_my_realm who = event_target:plot_target years = 15 }
-							character_event = { id = TOW_Plot.5 days = 1 }
+							reverse_opinion = { modifier = Keitaro_opinion_fomented_a_rebellion_in_my_realm who = event_target:plot_target years = 15 }
+							character_event = { id = Keitaro_Plot.5 days = 1 }
 						}
 					}
 				}
@@ -805,32 +829,32 @@ character_event = {
 
 # Increase Revolt Risk - Leader has been informed that the revolt risk is increased
 character_event = {
-	id = TOW_Plot.4
-	desc = "EVTDESC_TOW_Plot_4"
+	id = Keitaro_Plot.4
+	desc = "EVTDESC_Keitaro_Plot_4"
 	picture = GFX_evt_peasants
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_4" # Plot is ended (success)
-		custom_tooltip = { text = EVTTOOLTIP_TOW_The_plot_succeeded }
-		set_character_flag = plot_TOW_foment_rebellion_success
-		plot_target_char = { ROOT = { set_character_flag = plot_TOW_foment_rebellion_increased_risk_cooldown_@PREV } }
+		name = "EVTOPTA_Keitaro_Plot_4" # Plot is ended (success)
+		custom_tooltip = { text = EVTTOOLTIP_Keitaro_The_plot_succeeded }
+		set_character_flag = plot_Keitaro_foment_rebellion_success
+		plot_target_char = { ROOT = { set_character_flag = plot_Keitaro_foment_rebellion_increased_risk_cooldown_@PREV } }
 	}
 
 	option = {
-		name = "EVTOPTB_TOW_Plot_4" # Plot is not over, i want to help the rebellion
+		name = "EVTOPTB_Keitaro_Plot_4" # Plot is not over, i want to help the rebellion
 		trigger = {
 			always = no #Disabled
 			intrigue = 8
 			NOT = { trait = content }
 		}
-		custom_tooltip = { text = EVTTOOLTIP_TOW_The_plot_continues }
-		set_character_flag = plot_TOW_foment_rebellion_already_increased_revolt_risk
-		clr_character_flag = plot_TOW_foment_rebellion_in_motion
-		#set_character_flag = plot_TOW_foment_rebellion_success
-		plot_target_char = { ROOT = { set_character_flag = plot_TOW_foment_rebellion_increased_risk_cooldown_@PREV } }
+		custom_tooltip = { text = EVTTOOLTIP_Keitaro_The_plot_continues }
+		set_character_flag = plot_Keitaro_foment_rebellion_already_increased_revolt_risk
+		clr_character_flag = plot_Keitaro_foment_rebellion_in_motion
+		#set_character_flag = plot_Keitaro_foment_rebellion_success
+		plot_target_char = { ROOT = { set_character_flag = plot_Keitaro_foment_rebellion_increased_risk_cooldown_@PREV } }
 		## Help the rebellion when it pops
 		tooltip_info = intrigue
 	}
@@ -838,74 +862,74 @@ character_event = {
 
 # Increase Revolt Risk - Leader has been informed that the revolt risk is increased but plot is revealed
 character_event = {
-	id = TOW_Plot.5
-	desc = "EVTDESC_TOW_Plot_5"
+	id = Keitaro_Plot.5
+	desc = "EVTDESC_Keitaro_Plot_5"
 	picture = GFX_evt_peasants
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_5" # Plot is ended (success)
-		custom_tooltip = { text = EVTTOOLTIP_TOW_The_plot_succeeded }
-		set_character_flag = plot_TOW_foment_rebellion_success
-		plot_target_char = { ROOT = { set_character_flag = plot_TOW_foment_rebellion_increased_risk_cooldown_@PREV } }
+		name = "EVTOPTA_Keitaro_Plot_5" # Plot is ended (success)
+		custom_tooltip = { text = EVTTOOLTIP_Keitaro_The_plot_succeeded }
+		set_character_flag = plot_Keitaro_foment_rebellion_success
+		plot_target_char = { ROOT = { set_character_flag = plot_Keitaro_foment_rebellion_increased_risk_cooldown_@PREV } }
 	}
 }
 
 # Increase Revolt Risk - Asked for funds
 character_event = {
-	id = TOW_Plot.6
-	desc = "EVTDESC_TOW_Plot_6"
+	id = Keitaro_Plot.6
+	desc = "EVTDESC_Keitaro_Plot_6"
 	picture = GFX_evt_spymaster
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_6" # Pay what's needed
+		name = "EVTOPTA_Keitaro_Plot_6" # Pay what's needed
 		scaled_wealth = {
 			value = -0.1
 			min = -10
 			max = -20
 		}
 		FROM = {
-			character_event = { id = TOW_Plot.3 days = 3 }
+			character_event = { id = Keitaro_Plot.3 days = 3 }
 		}
 	}
 
 	option = {
-		name = "EVTOPTB_TOW_Plot_6" # Pay More
+		name = "EVTOPTB_Keitaro_Plot_6" # Pay More
 		scaled_wealth = {
 			value = -0.2
 			min = -20
 			max = -40
 		}
-		set_character_flag = plot_TOW_foment_rebellion_increase_revolt_risk_greater_power
+		set_character_flag = plot_Keitaro_foment_rebellion_increase_revolt_risk_greater_power
 		FROM = {
-			character_event = { id = TOW_Plot.3 days = 3 }
+			character_event = { id = Keitaro_Plot.3 days = 3 }
 		}
 	}
 
 	option = {
-		name = "EVTOPTC_TOW_Plot_6" # Don't pay
+		name = "EVTOPTC_Keitaro_Plot_6" # Don't pay
 		FROM = {
-			character_event = { id = TOW_Plot.7 days = 3 }
+			character_event = { id = Keitaro_Plot.7 days = 3 }
 		}
 	}
 }
 
 # Increase Revolt Risk - Plotter tells backer he doesn't want to pay
 character_event = {
-	id = TOW_Plot.7
-	desc = "EVTDESC_TOW_Plot_7"
+	id = Keitaro_Plot.7
+	desc = "EVTDESC_Keitaro_Plot_7"
 	picture = GFX_evt_whispers
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTC_TOW_Plot_1" # Pay the locals
+		name = "EVTOPTC_Keitaro_Plot_1" # Pay the locals
 		ai_chance = {
       		factor = 0.5
       		modifier = { factor = 0 NOT = { wealth = 10 } }
@@ -916,13 +940,13 @@ character_event = {
 			max = -20
 		}
 		event_target:plot_leader = {
-			character_event = { id = TOW_Plot.2 days = 3 tooltip = "EVTTOOLTIP8160" }
-			set_character_flag = plot_TOW_foment_rebellion_in_motion
+			character_event = { id = Keitaro_Plot.2 days = 3 tooltip = "EVTTOOLTIP8160" }
+			set_character_flag = plot_Keitaro_foment_rebellion_in_motion
 		}
 	}
 	
 	option = {
-		name = "EVTOPTD_TOW_Plot_1" # This is not worth doing
+		name = "EVTOPTD_Keitaro_Plot_1" # This is not worth doing
 		trigger = {
 			OR = {
 				ai = no
@@ -940,12 +964,12 @@ character_event = {
 
 ###########################################
 ## Help existing rebellion (give troops) - A plot backer sees an opportunity
-## TOW_Plot.8 to TOW_Plot.12
+## Keitaro_Plot.8 to Keitaro_Plot.12
 ###########################################
 
 character_event = {
-	id = TOW_Plot.8
-	desc = "EVTDESC_TOW_Plot_8"
+	id = Keitaro_Plot.8
+	desc = "EVTDESC_Keitaro_Plot_8"
 	picture = GFX_evt_book_carolingian_script
 	border = GFX_event_normal_frame_intrigue
 	
@@ -955,7 +979,7 @@ character_event = {
 	
 	trigger = {
 		any_backed_character = {
-			has_plot = plot_TOW_foment_rebellion
+			has_plot = plot_Keitaro_foment_rebellion
 			plot_power = 0.01
 			plot_target_char = {
 				# Already have a revolt
@@ -968,7 +992,7 @@ character_event = {
 					}
 				}
 			}
-			NOT = { has_character_flag = plot_TOW_foment_rebellion_in_motion }
+			NOT = { has_character_flag = plot_Keitaro_foment_rebellion_in_motion }
 
 			ROOT = {
 				plot_power_contribution = 
@@ -1016,7 +1040,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1029,7 +1053,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1042,7 +1066,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1055,7 +1079,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1068,7 +1092,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1081,7 +1105,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1094,7 +1118,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1107,7 +1131,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1120,7 +1144,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1134,7 +1158,7 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1148,7 +1172,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1162,7 +1186,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1176,7 +1200,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1190,7 +1214,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1204,7 +1228,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1218,7 +1242,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1232,7 +1256,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1246,7 +1270,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1260,7 +1284,7 @@ character_event = {
 		modifier = {
 			factor = 0.85
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				ROOT = {
 					plot_power_contribution = 
 					{
@@ -1273,44 +1297,68 @@ character_event = {
 
 
 		
-		modifier = { factor = 0.75 any_backed_character = { has_character_flag = plot_TOW_foment_rebellion_already_increased_revolt_risk } }
+		modifier = { factor = 0.75 any_backed_character = { has_character_flag = plot_Keitaro_foment_rebellion_already_increased_revolt_risk } }
 
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 1.6 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 1.7 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 1.8 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 1.9 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.0 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.1 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.2 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.3 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.4 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.5 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.6 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.7 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.8 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 2.9 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.0 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.1 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.2 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.3 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.4 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.5 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.6 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.7 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.8 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 3.9 } }
-		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 4.0 } }
-		modifier = { factor = 0.9 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 4.25 } }
-		modifier = { factor = 0.9 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 4.5 } }
-		modifier = { factor = 0.9 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 4.75 } }
-		modifier = { factor = 0.9 any_backed_character = { has_plot = plot_TOW_foment_rebellion plot_power = 5.0 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 1.6 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 1.7 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 1.8 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 1.9 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.0 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.1 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.2 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.3 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.4 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.5 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.6 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.7 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.8 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 2.9 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.0 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.1 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.2 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.3 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.4 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.5 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.6 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.7 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.8 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 3.9 } }
+		modifier = { factor = 0.95 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 4.0 } }
+		modifier = { factor = 0.9 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 4.25 } }
+		modifier = { factor = 0.9 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 4.5 } }
+		modifier = { factor = 0.9 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 4.75 } }
+		modifier = { factor = 0.9 any_backed_character = { has_plot = plot_Keitaro_foment_rebellion plot_power = 5.0 } }
 
 		modifier = { # War gives more opportunities
 			factor = 0.5
 			any_backed_character = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_target_char = {
 					war_with = PREV
+				}
+			}
+		}
+
+		modifier = { # Spymaster sabotaging or creating spy network
+			factor = 0.8
+			any_backed_character = {
+				has_plot = plot_Keitaro_foment_rebellion
+				plot_target_char = {
+					PREV = { # any_backed_character
+						job_spymaster = {
+							OR = {
+								has_job_action = action_sabotage_province
+								has_job_action = action_organize_spies
+							}
+							PREVPREV = { # plot_target_char
+								any_demesne_title = {
+									PREVPREV = { # job_spymaster
+										at_location = PREV
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1319,7 +1367,7 @@ character_event = {
 	immediate = {
 		random_backed_character = {
 			limit = {
-				has_plot = plot_TOW_foment_rebellion
+				has_plot = plot_Keitaro_foment_rebellion
 				plot_power = 0.01
 				plot_target_char = {
 					# Already have a revolt
@@ -1332,7 +1380,7 @@ character_event = {
 						}
 					}
 				}
-				NOT = { has_character_flag = plot_TOW_foment_rebellion_in_motion }
+				NOT = { has_character_flag = plot_Keitaro_foment_rebellion_in_motion }
 
 				ROOT = {
 					plot_power_contribution = 
@@ -1347,11 +1395,11 @@ character_event = {
 			}
 			save_event_target_as = plot_leader
 		}
-		log = "-- TOW DEBUG -- : Plot opportunity to help a current rebellion by [Root.GetTitledName], plot leader is [plot_leader.GetTitledName]"
+		if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Plot opportunity to help a current rebellion by [Root.GetTitledName], plot leader is [plot_leader.GetTitledName]" }
 	}
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_8" # The conspirator will use his own troops
+		name = "EVTOPTA_Keitaro_Plot_8" # The conspirator will use his own troops
 		ai_chance = {
       		factor = 4
       		modifier = { factor = 1.5 trait = diligent }
@@ -1359,20 +1407,20 @@ character_event = {
 		trigger = {
 			is_ruler = yes
 		}
-		set_character_flag = plot_TOW_foment_rebellion_sent_my_troops
+		set_character_flag = plot_Keitaro_foment_rebellion_sent_my_troops
 		event_target:plot_leader = {
-			character_event = { id = TOW_Plot.9 days = 3 tooltip = "EVTTOOLTIP_TOW_Plot_1_Tell" }
-			set_character_flag = plot_TOW_foment_rebellion_in_motion
+			character_event = { id = Keitaro_Plot.9 days = 3 tooltip = "EVTTOOLTIP_Keitaro_Plot_1_Tell" }
+			set_character_flag = plot_Keitaro_foment_rebellion_in_motion
 			random_list = {
-				6 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 18 } }
-				10 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 20 } }
-				6 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 22 } }
+				6 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 18 } }
+				10 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 20 } }
+				6 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 22 } }
 			}
 		}
 	}
 
 	option = {
-		name = "EVTOPTB_TOW_Plot_8" # The conspirator will stir up things
+		name = "EVTOPTB_Keitaro_Plot_8" # The conspirator will stir up things
 		ai_chance = {
       		factor = 4
       		modifier = { factor = 1.5 trait = diligent }
@@ -1381,21 +1429,21 @@ character_event = {
 			is_ruler = no
 		}
 		event_target:plot_leader = {
-			character_event = { id = TOW_Plot.9 days = 3 tooltip = "EVTTOOLTIP_TOW_Plot_1_Tell" }
-			set_character_flag = plot_TOW_foment_rebellion_in_motion
+			character_event = { id = Keitaro_Plot.9 days = 3 tooltip = "EVTTOOLTIP_Keitaro_Plot_1_Tell" }
+			set_character_flag = plot_Keitaro_foment_rebellion_in_motion
 			hidden_tooltip = {
 				random_list = {
-					7 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 8 } }
-					10 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 10 } }
-					4 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 12 } }
-					3 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 14 } }
+					7 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 8 } }
+					10 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 10 } }
+					4 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 12 } }
+					3 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 14 } }
 				}
 			}
 		}
 	}
 	
 	option = {
-		name = "EVTOPTC_TOW_Plot_8" # The conspirator will pay some mercenaries
+		name = "EVTOPTC_Keitaro_Plot_8" # The conspirator will pay some mercenaries
 		ai_chance = {
       		factor = 4
       		modifier = { factor = 0.1 trait = greedy }
@@ -1408,20 +1456,20 @@ character_event = {
 		}
 
 		event_target:plot_leader = {
-			character_event = { id = TOW_Plot.9 days = 3 tooltip = "EVTTOOLTIP_TOW_Plot_1_Tell" }
-			set_character_flag = plot_TOW_foment_rebellion_in_motion
+			character_event = { id = Keitaro_Plot.9 days = 3 tooltip = "EVTTOOLTIP_Keitaro_Plot_1_Tell" }
+			set_character_flag = plot_Keitaro_foment_rebellion_in_motion
 			hidden_tooltip = {
 				random_list = {
-					6 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 10 } }
-					10 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 12 } }
-					6 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 14 } }
+					6 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 10 } }
+					10 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 12 } }
+					6 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 14 } }
 				}
 			}
 		}
 	}
 
 	option = {
-		name = "EVTOPTD_TOW_Plot_8" # The conspirator will pay a lot of mercenaries
+		name = "EVTOPTD_Keitaro_Plot_8" # The conspirator will pay a lot of mercenaries
 		ai_chance = {
       		factor = 3
       		modifier = { factor = 0.1 trait = greedy }
@@ -1434,20 +1482,20 @@ character_event = {
 		}
 
 		event_target:plot_leader = {
-			character_event = { id = TOW_Plot.9 days = 3 tooltip = "EVTTOOLTIP_TOW_Plot_1_Tell" }
-			set_character_flag = plot_TOW_foment_rebellion_in_motion
+			character_event = { id = Keitaro_Plot.9 days = 3 tooltip = "EVTTOOLTIP_Keitaro_Plot_1_Tell" }
+			set_character_flag = plot_Keitaro_foment_rebellion_in_motion
 			hidden_tooltip = {
 				random_list = {
-					6 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 16 } }
-					10 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 18 } }
-					6 = { set_variable = { which = plot_TOW_foment_rebellion_troops_count value = 20 } }
+					6 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 16 } }
+					10 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 18 } }
+					6 = { set_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 20 } }
 				}
 			}
 		}
 	}
 	
 	option = {
-		name = "EVTOPTE_TOW_Plot_8" # This is not worth doing
+		name = "EVTOPTE_Keitaro_Plot_8" # This is not worth doing
 		ai_chance = {
       		factor = 3
       		modifier = { factor = 1.5 trait = slothful }
@@ -1471,15 +1519,15 @@ character_event = {
 
 # Help existing rebellion (give troops) - Backer informs Plotter of plan, plotter chooses a revolt that can be reinforced
 character_event = {
-	id = TOW_Plot.9
-	desc = "EVTDESC_TOW_Plot_9"
+	id = Keitaro_Plot.9
+	desc = "EVTDESC_Keitaro_Plot_9"
 	picture = GFX_evt_spymaster
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 
 	immediate = {
-		set_variable = { which = TOW_Plot_9_revolts_number value = 0 }
+		set_variable = { which = Keitaro_Plot_9_revolts_number value = 0 }
 		plot_target_char = {
 			any_war = {
 				if = {
@@ -1494,127 +1542,127 @@ character_event = {
 
 					if = {
 						limit = {
-							ROOT = { is_variable_equal = { which = TOW_Plot_9_revolts_number value = 4 } } # 4 revolts max
+							ROOT = { is_variable_equal = { which = Keitaro_Plot_9_revolts_number value = 4 } } # 4 revolts max
 						}
 						break = yes
 					}
 
 					if = {
 						limit = {
-							ROOT = { is_variable_equal = { which = TOW_Plot_9_revolts_number value = 0 } }
+							ROOT = { is_variable_equal = { which = Keitaro_Plot_9_revolts_number value = 0 } }
 						}
 
 						attacker = {
-							save_event_target_as = TOW_Plot_9_revolt_1
+							save_event_target_as = Keitaro_Plot_9_revolt_1
 						}
 					}
-					if = {
+					else_if = {
 						limit = {
-							ROOT = { is_variable_equal = { which = TOW_Plot_9_revolts_number value = 1 } }
+							ROOT = { is_variable_equal = { which = Keitaro_Plot_9_revolts_number value = 1 } }
 						}
 
 						attacker = {
-							save_event_target_as = TOW_Plot_9_revolt_2
+							save_event_target_as = Keitaro_Plot_9_revolt_2
 						}
 					}
-					if = {
+					else_if = {
 						limit = {
-							ROOT = { is_variable_equal = { which = TOW_Plot_9_revolts_number value = 2 } }
+							ROOT = { is_variable_equal = { which = Keitaro_Plot_9_revolts_number value = 2 } }
 						}
 
 						attacker = {
-							save_event_target_as = TOW_Plot_9_revolt_3
+							save_event_target_as = Keitaro_Plot_9_revolt_3
 						}
 					}
-					if = {
+					else_if = {
 						limit = {
-							ROOT = { is_variable_equal = { which = TOW_Plot_9_revolts_number value = 3 } }
+							ROOT = { is_variable_equal = { which = Keitaro_Plot_9_revolts_number value = 3 } }
 						}
 
 						attacker = {
-							save_event_target_as = TOW_Plot_9_revolt_4
+							save_event_target_as = Keitaro_Plot_9_revolt_4
 						}
 					}
-					ROOT = { change_variable = { which = TOW_Plot_9_revolts_number value = 1 } }
+					ROOT = { change_variable = { which = Keitaro_Plot_9_revolts_number value = 1 } }
 				}
 			}
 		}
 	}
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_9"
+		name = "EVTOPTA_Keitaro_Plot_9"
 		trigger = {
-			check_variable = { which = TOW_Plot_9_revolts_number value = 1 }
+			check_variable = { which = Keitaro_Plot_9_revolts_number value = 1 }
 		}
-		event_target:TOW_Plot_9_revolt_1 = {
-			save_event_target_as = plot_TOW_foment_rebellion_revolter_to_help
+		event_target:Keitaro_Plot_9_revolt_1 = {
+			save_event_target_as = plot_Keitaro_foment_rebellion_revolter_to_help
 		}
-		FROM = { character_event = { id = TOW_Plot.10 tooltip = "EVTTOOLTIP_TOW_Approve_the_plan" days = 2 random = 2 } }
+		FROM = { character_event = { id = Keitaro_Plot.10 tooltip = "EVTTOOLTIP_Keitaro_Approve_the_plan" days = 2 random = 2 } }
 	}
 
 	option = {
 		trigger = {
-			check_variable = { which = TOW_Plot_9_revolts_number value = 2 }
+			check_variable = { which = Keitaro_Plot_9_revolts_number value = 2 }
 		}
-		name = "EVTOPTB_TOW_Plot_9"
-		event_target:TOW_Plot_9_revolt_2 = {
-			save_event_target_as = plot_TOW_foment_rebellion_revolter_to_help
+		name = "EVTOPTB_Keitaro_Plot_9"
+		event_target:Keitaro_Plot_9_revolt_2 = {
+			save_event_target_as = plot_Keitaro_foment_rebellion_revolter_to_help
 		}
-		FROM = { character_event = { id = TOW_Plot.10 tooltip = "EVTTOOLTIP_TOW_Approve_the_plan" days = 2 random = 2 } }
+		FROM = { character_event = { id = Keitaro_Plot.10 tooltip = "EVTTOOLTIP_Keitaro_Approve_the_plan" days = 2 random = 2 } }
 	}
 
 	option = {
 		trigger = {
-			check_variable = { which = TOW_Plot_9_revolts_number value = 3 }
+			check_variable = { which = Keitaro_Plot_9_revolts_number value = 3 }
 		}
-		name = "EVTOPTC_TOW_Plot_9"
-		event_target:TOW_Plot_9_revolt_3 = {
-			save_event_target_as = plot_TOW_foment_rebellion_revolter_to_help
+		name = "EVTOPTC_Keitaro_Plot_9"
+		event_target:Keitaro_Plot_9_revolt_3 = {
+			save_event_target_as = plot_Keitaro_foment_rebellion_revolter_to_help
 		}
-		FROM = { character_event = { id = TOW_Plot.10 tooltip = "EVTTOOLTIP_TOW_Approve_the_plan" days = 2 random = 2 } }
+		FROM = { character_event = { id = Keitaro_Plot.10 tooltip = "EVTTOOLTIP_Keitaro_Approve_the_plan" days = 2 random = 2 } }
 	}
 
 	option = {
 		trigger = {
-			check_variable = { which = TOW_Plot_9_revolts_number value = 4 }
+			check_variable = { which = Keitaro_Plot_9_revolts_number value = 4 }
 		}
-		name = "EVTOPTD_TOW_Plot_9"
-		event_target:TOW_Plot_9_revolt_4 = {
-			save_event_target_as = plot_TOW_foment_rebellion_revolter_to_help
+		name = "EVTOPTD_Keitaro_Plot_9"
+		event_target:Keitaro_Plot_9_revolt_4 = {
+			save_event_target_as = plot_Keitaro_foment_rebellion_revolter_to_help
 		}
-		FROM = { character_event = { id = TOW_Plot.10 tooltip = "EVTTOOLTIP_TOW_Approve_the_plan" days = 2 random = 2 } }
+		FROM = { character_event = { id = Keitaro_Plot.10 tooltip = "EVTTOOLTIP_Keitaro_Approve_the_plan" days = 2 random = 2 } }
 	}
 
 	option = {
 		trigger = {
-			is_variable_equal = { which = TOW_Plot_9_revolts_number value = 0 }
+			is_variable_equal = { which = Keitaro_Plot_9_revolts_number value = 0 }
 		}
-		name = "EVTOPTE_TOW_Plot_9"
+		name = "EVTOPTE_Keitaro_Plot_9"
 		event_target:plot_leader = {
-			clr_character_flag = plot_TOW_foment_rebellion_in_motion
+			clr_character_flag = plot_Keitaro_foment_rebellion_in_motion
 		}
 		custom_tooltip = {
-			text = EVTTOOLTIP_TOW_Plot_9
+			text = EVTTOOLTIP_Keitaro_Plot_9
 		}
 	}
 }
 
 # Increase Revolt Risk - Plotter tells backer to go ahead
 character_event = {
-	id = TOW_Plot.10
-	desc = "EVTDESC_TOW_Plot_10"
+	id = Keitaro_Plot.10
+	desc = "EVTDESC_Keitaro_Plot_10"
 	picture = GFX_evt_whispers
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA_TOW_Plot_10"
+		name = "EVTOPTA_Keitaro_Plot_10"
 		if = {
 			limit = {
-				has_character_flag = plot_TOW_foment_rebellion_sent_my_troops
+				has_character_flag = plot_Keitaro_foment_rebellion_sent_my_troops
 			}
-			clr_character_flag = plot_TOW_foment_rebellion_sent_my_troops
+			clr_character_flag = plot_Keitaro_foment_rebellion_sent_my_troops
 			hidden_tooltip = {
 				any_demesne_title = {
 					limit = {
@@ -1636,7 +1684,7 @@ character_event = {
 						}
 
 						add_holding_modifier = {
-							name = TOW_remove_levy_30
+							name = Keitaro_remove_levy_30
 							duration = 1
 						}
 					}
@@ -1653,7 +1701,7 @@ character_event = {
 
 						capital_holding = {
 							add_holding_modifier = {
-								name = TOW_remove_levy_30
+								name = Keitaro_remove_levy_30
 								duration = 1
 							}
 						}
@@ -1661,8 +1709,8 @@ character_event = {
 				}
 			}
 		}
-		event_target:plot_TOW_foment_rebellion_revolter_to_help = {
-			character_event = { id = TOW_Plot.11 tooltip = "EVTTOOLTIP_TOW_Troops_are_sent" days = 3 random = 6 }
+		event_target:plot_Keitaro_foment_rebellion_revolter_to_help = {
+			character_event = { id = Keitaro_Plot.11 tooltip = "EVTTOOLTIP_Keitaro_Troops_are_sent" days = 3 random = 6 }
 		}
 		
 	}
@@ -1670,28 +1718,28 @@ character_event = {
 
 # Increase Revolt Risk - Revolter gets troops
 character_event = {
-	id = TOW_Plot.11
-	desc = "EVTDESC_TOW_Plot_11"
+	id = Keitaro_Plot.11
+	desc = "EVTDESC_Keitaro_Plot_11"
 	picture = GFX_evt_peasants
 	border = GFX_event_normal_frame_war
 	
 	is_triggered_only = yes
 
 	immediate = {
-		log = "-- TOW DEBUG -- : Plot - Revolter ([Root.GetTitledName]) gets +[plot_leader.plot_TOW_foment_rebellion_troops_count.GetValue]% troops against [plot_leader.PlotTarget.GetTitledName], plot leader is [plot_leader.GetTitledName]"
+		if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Plot - Revolter ([Root.GetTitledName]) gets +[plot_leader.plot_Keitaro_foment_rebellion_troops_count.GetValue]% troops against [plot_target.GetTitledName], plot leader is [plot_leader.GetTitledName]" }
 	}
 	
 	option = {
 		name = EXCELLENT
 		custom_tooltip = {
-			text = EVTTOOLTIP_TOW_Plot_11
+			text = EVTTOOLTIP_Keitaro_Plot_11
 			random_list = {
 				350 = { # No plot reveal
 					custom_tooltip = {
-						text = EVTTOOLTIP_TOW_The_plot_succeeds
+						text = EVTTOOLTIP_Keitaro_The_plot_succeeds
 						hidden_tooltip = {
 							event_target:plot_leader = {
-								character_event = { id = TOW_Plot.12 days = 2 random = 2 }
+								character_event = { id = Keitaro_Plot.12 days = 2 random = 2 }
 							}
 						}
 					}
@@ -1745,101 +1793,95 @@ character_event = {
 					modifier = { factor = 0.9 intrigue = 30 }
 
 					custom_tooltip = {
-						text = EVTTOOLTIP_TOW_The_plot_succeeds_but_is_revealed
+						text = EVTTOOLTIP_Keitaro_The_plot_succeeds_but_is_revealed
 						hidden_tooltip = {
 							event_target:plot_leader = {
-								plot_target_char = { opinion = { modifier = TOW_opinion_fomented_a_rebellion_in_my_realm who = PREV years = 15 } }
+								reverse_opinion = {
+									modifier = Keitaro_opinion_fomented_a_rebellion_in_my_realm
+									who = event_target:plot_target
+									years = 15
+								} 
 								reveal_plot_w_message = yes
-								character_event = { id = TOW_Plot.13 days = 2 random = 2 }
+								character_event = { id = Keitaro_Plot.13 days = 2 random = 2 }
 							}
-							
 						}
 					}
 				}
 			}
+			capital_scope = {
+				save_event_target_as = root_capital
+			}
 			
-			location = {
+			spawn_unit = {
+				province = event_target:root_capital
+				home = event_target:root_capital
+				owner = ROOT
+				troops = {
+					light_infantry = { 150 150 }
+					light_cavalry = { 50 50 }
+					heavy_infantry = { 125 125 }
+					archers = { 75 75 }
+				}
+				attrition = 1.0
+				disband_on_peace = yes
+			}
+			while = {
+				limit = {
+					event_target:plot_leader = { check_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 100 } }
+				}
+
 				spawn_unit = {
-					province = closest_to_capital
-					home = PREV
+					province = event_target:root_capital
+					home = event_target:root_capital
 					owner = ROOT
-					troops = {
-						light_infantry = { 150 150 }
-						light_cavalry = { 50 50 }
-						heavy_infantry = { 125 125 }
-						archers = { 75 75 }
-					}
+					match_character = ROOT
+					match_mult = 1
+					match_min = 200
 					attrition = 1.0
 					disband_on_peace = yes
 				}
-			}
-			while = {
-				limit = {
-					event_target:plot_leader = { check_variable = { which = plot_TOW_foment_rebellion_troops_count value = 100 } }
-				}
-
-				location = {
-					spawn_unit = {
-						province = closest_to_capital
-						home = PREV
-						owner = ROOT
-						match_character = ROOT
-						match_mult = 1
-						match_min = 200
-						attrition = 1.0
-						disband_on_peace = yes
-					}
-				}
 				hidden_tooltip = {
-					event_target:plot_leader = { subtract_variable = { which = plot_TOW_foment_rebellion_troops_count value = 100 } }
+					event_target:plot_leader = { subtract_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 100 } }
 				}
 			}
 
 			while = {
 				limit = {
-					event_target:plot_leader = { check_variable = { which = plot_TOW_foment_rebellion_troops_count value = 10 } }
+					event_target:plot_leader = { check_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 10 } }
 				}
 
-				location = {
-					ROOT = {
-						spawn_unit = {
-							province = closest_to_capital
-							home = PREV
-							owner = ROOT
-							match_character = ROOT
-							match_mult = 0.1
-							match_min = 20
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
+				spawn_unit = {
+					province = event_target:root_capital
+					home = event_target:root_capital
+					owner = ROOT
+					match_character = ROOT
+					match_mult = 0.1
+					match_min = 20
+					attrition = 1.0
+					disband_on_peace = yes
 				}
 				hidden_tooltip = {
-					event_target:plot_leader = { subtract_variable = { which = plot_TOW_foment_rebellion_troops_count value = 10 } }
+					event_target:plot_leader = { subtract_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 10 } }
 				}
 			}
 
 			while = {
 				limit = {
-					event_target:plot_leader = { check_variable = { which = plot_TOW_foment_rebellion_troops_count value = 1 } }
+					event_target:plot_leader = { check_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 1 } }
 				}
 
-				location = {
-					ROOT = {
-						spawn_unit = {
-							province = closest_to_capital
-							home = PREV
-							owner = ROOT
-							match_character = ROOT
-							match_mult = 0.01
-							match_min = 2
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
+				spawn_unit = {
+					province = event_target:root_capital
+					home = event_target:root_capital
+					owner = ROOT
+					match_character = ROOT
+					match_mult = 0.01
+					match_min = 2
+					attrition = 1.0
+					disband_on_peace = yes
 				}
 				hidden_tooltip = {
-					event_target:plot_leader = { subtract_variable = { which = plot_TOW_foment_rebellion_troops_count value = 1 } }
+					event_target:plot_leader = { subtract_variable = { which = plot_Keitaro_foment_rebellion_troops_count value = 1 } }
 				}
 			}
 		}
@@ -1849,34 +1891,34 @@ character_event = {
 
 # Help existing rebellion (give troops) - Plotter is informed that the troops have been sent
 character_event = {
-	id = TOW_Plot.12
-	desc = "EVTDESC_TOW_Plot_12"
+	id = Keitaro_Plot.12
+	desc = "EVTDESC_Keitaro_Plot_12"
 	picture = GFX_evt_spymaster
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 
 	option = {
-		name = "EVTOPTA_TOW_Plot_12" # Plot is ended (success)
-		custom_tooltip = { text = EVTTOOLTIP_TOW_The_plot_succeeded }
-		set_character_flag = plot_TOW_foment_rebellion_success
-		plot_target_char = { ROOT = { set_character_flag = plot_TOW_foment_rebellion_helped_revolt_cooldown_@PREV } }
+		name = "EVTOPTA_Keitaro_Plot_12" # Plot is ended (success)
+		custom_tooltip = { text = EVTTOOLTIP_Keitaro_The_plot_succeeded }
+		set_character_flag = plot_Keitaro_foment_rebellion_success
+		set_character_flag = plot_Keitaro_foment_rebellion_helped_revolt_cooldown_@event_target:plot_target
 	}
 }
 
 # Help existing rebellion (give troops) - Plotter is informed that the troops have been sent but with plot revealed
 character_event = {
-	id = TOW_Plot.13
-	desc = "EVTDESC_TOW_Plot_13"
+	id = Keitaro_Plot.13
+	desc = "EVTDESC_Keitaro_Plot_13"
 	picture = GFX_evt_spymaster
 	border = GFX_event_normal_frame_intrigue
 	
 	is_triggered_only = yes
 
 	option = {
-		name = "EVTOPTA_TOW_Plot_13" # Plot is ended (success)
-		custom_tooltip = { text = EVTTOOLTIP_TOW_The_plot_succeeded }
-		set_character_flag = plot_TOW_foment_rebellion_success
-		plot_target_char = { ROOT = { set_character_flag = plot_TOW_foment_rebellion_helped_revolt_cooldown_@PREV } }
+		name = "EVTOPTA_Keitaro_Plot_13" # Plot is ended (success)
+		custom_tooltip = { text = EVTTOOLTIP_Keitaro_The_plot_succeeded }
+		set_character_flag = plot_Keitaro_foment_rebellion_success
+		set_character_flag = plot_Keitaro_foment_rebellion_helped_revolt_cooldown_@event_target:plot_target
 	}
 }

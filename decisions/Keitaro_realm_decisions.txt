@@ -1,6 +1,6 @@
 decisions = {
 
-	TOW_pillage_everything = {
+	Keitaro_pillage_everything = {
 		only_playable = yes
 		is_high_prio = yes
 		
@@ -16,8 +16,7 @@ decisions = {
 			has_dlc = "Horse Lords"
 			any_realm_province = {
 				any_province_holding = {
-					TOW_holding_can_be_pillaged_by_from = yes
-					hidden_tooltip = { NOT = { holding_type = nomad } } # For some reason, without this, the scripted trigger causes an assert
+					Keitaro_holding_can_be_pillaged_by_from = yes
 				}
 			}
 		}
@@ -25,9 +24,9 @@ decisions = {
 		allow = {
 			any_realm_province = {
 				any_province_holding = {
-					TOW_holding_can_be_pillaged_by_from_tooltip = yes
+					Keitaro_holding_can_be_pillaged_by_from_tooltip = yes
 
-					TOW_holding_can_be_pillaged_allow = yes
+					Keitaro_holding_can_be_pillaged_allow = yes
 				}
 			}
 		}
@@ -35,13 +34,13 @@ decisions = {
 			any_realm_province = {
 				any_province_holding = {
 					limit = {
-						TOW_holding_can_be_pillaged_by_from_tooltip = yes
+						Keitaro_holding_can_be_pillaged_by_from_tooltip = yes
 
-						TOW_holding_can_be_pillaged_allow = yes
+						Keitaro_holding_can_be_pillaged_allow = yes
 					}
 
 					ROOT = { save_event_target_as = pillager }
-					TOW_pillage_holding = yes
+					Keitaro_pillage_holding = yes
 				}
 			}
 		}
@@ -49,8 +48,7 @@ decisions = {
 			factor = 1
 
 			modifier = {
-				factor = 0.01
-				always = yes
+				factor = 0.03
 			}
 
 			modifier = {
@@ -75,8 +73,14 @@ decisions = {
 			}
 
 			modifier = {
-				factor = 5
+				factor = 10
 				trait = wroth
+			}
+
+			modifier = {
+				factor = 0
+				wealth = 0
+				pacifist = yes
 			}
 
 			modifier = {
@@ -95,8 +99,9 @@ decisions = {
 		}
 	}
 
-	TOW_stop_pillage_everything = {
+	Keitaro_stop_pillage_everything = {
 		only_playable = yes
+		ai = no
 		
 		potential = {
 			is_playable = yes
@@ -158,7 +163,7 @@ decisions = {
 						}
 					}
 					custom_tooltip = {
-						text = TOOLTIP_TOW_is_allowed_to_pillage_custom_tooltip
+						text = Keitaro_is_allowed_to_pillage_custom_tooltip
 						hidden_tooltip = {
 							OR = {
 								owner = { character = ROOT }
@@ -203,7 +208,7 @@ decisions = {
 					}
 
 					custom_tooltip = {
-						text = TOOLTIP_TOW_stop_pillaging
+						text = KEITARO_TOOLTIP_STOP_PILLAGING
 						hidden_tooltip = {
 							add_holding_modifier = {
 								modifier = stop_burning_land

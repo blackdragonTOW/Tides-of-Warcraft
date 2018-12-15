@@ -156,7 +156,7 @@ TOW_update_character_race_from_liege = {
 				}
 			}
 		}
-		elseif = {
+		else_if = {
 			limit = {
 				liege = {
 					graphical_culture = rorcgfx
@@ -214,4 +214,53 @@ TOW_update_character_race_from_liege = {
 			add_trait = race_wretched
 		}
 	}
+}
+
+TOW_new_character_employed_traits_effect = {
+	Keitaro_remove_bad_traits = yes
+	Keitaro_remove_lifestyle_traits = yes
+	TOW_remove_class_traits = yes
+	TOW_initialize_character_race_from_culture = yes
+	TOW_update_character_race_from_liege = yes
+	TOW_employed_remove_unwanted_traits_with_ET_employer = yes
+}
+
+TOW_remove_class_traits = {
+	remove_trait = mage
+	remove_trait = warlock
+	remove_trait = necromancer
+	remove_trait = priest
+	remove_trait = shaman
+	remove_trait = druid
+	remove_trait = rogue
+	remove_trait = ranger
+	remove_trait = engineer
+	remove_trait = warrior
+	remove_trait = paladin
+	remove_trait = monk
+	remove_trait = death_knight
+	remove_trait = demon_hunter
+}
+
+TOW_employed_remove_unwanted_traits_with_ET_employer = {
+	if = {
+		limit = { event_target:employer = { accepts_warlock = no } }
+		remove_trait = warlock
+		remove_trait = necrolyte
+	}
+	if = {
+		limit = { event_target:employer = { accepts_necromancer = no } }
+		remove_trait = necromancer
+		remove_trait = necrolyte
+	}
+	if = {
+		limit = { event_target:employer = { accepts_assassin = no } }
+		remove_trait = assassin
+	}
+	if = {
+		limit = { event_target:employer = { accepts_rogue = no } }
+		remove_trait = rogue
+	}
+	remove_trait = demon_hunter
+	remove_trait = death_knight
 }

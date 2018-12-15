@@ -1,6 +1,6 @@
-namespace = TOW_Interactions
+namespace = Keitaro_Interactions
 
-#reserved: TOW_Interactions.1
+#reserved: Keitaro_Interactions.1
 
 #######################################
 # INTERACTIONS EVENTS
@@ -8,7 +8,7 @@ namespace = TOW_Interactions
 
 # REQUEST_SUPPORT_ACCEPT_EVENT =
 diploresponse_event = {
-	id = TOW_Interactions.1
+	id = Keitaro_Interactions.1
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -20,7 +20,7 @@ diploresponse_event = {
 	immediate = {
 		# Prevents firing the councillor for a time
 		opinion = {
-			modifier = TOW_opinion_asked_council_support
+			modifier = Keitaro_opinion_asked_council_support
 			who = FROM
 			months = 18
 		}

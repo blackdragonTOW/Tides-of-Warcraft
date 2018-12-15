@@ -1,117 +1,3 @@
-TOW_holding_can_be_pillaged_by_from_tooltip = {
-	NOT = { holding_type = nomad }
-	OR = {
-		NOT = { holding_type = tribal }
-		FROM = { is_tribal = no }
-	}
-	OR = {
-		FROM = { is_nomadic = yes }
-		location = {
-			num_of_settlements = 2
-		}
-	}
-	custom_tooltip = {
-		text = TOOLTIP_TOW_is_allowed_to_pillage_custom_tooltip
-		hidden_tooltip = {
-			OR = {
-				owner = { character = FROM }
-				AND = {
-					FROM = { is_nomadic = yes }
-					owner = { liege = { character = FROM } }
-					location = { owner = { character = FROM } }
-					has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
-				}
-			}
-		}
-	}
-}
-
-TOW_holding_can_be_pillaged_by_from = {
-	NOT = { holding_type = nomad }
-	OR = {
-		NOT = { holding_type = tribal }
-		FROM = { is_tribal = no }
-	}
-	OR = {
-		FROM = { is_nomadic = yes }
-		location = {
-			num_of_settlements = 2
-		}
-	}
-	OR = {
-		owner = { character = FROM }
-		AND = {
-			FROM = { is_nomadic = yes }
-			owner = { liege = { character = FROM } }
-			location = { owner = { character = FROM } }
-			has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
-		}
-	}
-}
-
-TOW_holding_can_be_pillaged_allow = {
-	NOT = { has_holding_modifier = recently_burnt_the_land }
-	has_siege = no
-	custom_tooltip = {
-		text = stop_pillaging_custom_tooltip
-		hidden_tooltip = {
-			NOT = { has_holding_modifier = stop_burning_land }
-		}
-	}
-}
-
-TOW_holding_can_stop_pillage_by_from = {
-	has_holding_modifier = recently_burnt_the_land
-	NOT = { has_holding_modifier = stop_burning_land }
-	NOT = { holding_type = nomad }
-	OR = {
-		NOT = { holding_type = tribal }
-		FROM = { is_tribal = no }
-	}
-	OR = {
-		owner = { character = FROM }
-		AND = {
-			FROM = { is_nomadic = yes }
-			location = { owner = { character = FROM } }
-			owner = { liege = { character = FROM } }
-			has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
-		}
-	}
-}
-
-TOW_holding_can_stop_pillage_by_from_allow = {
-	has_holding_modifier = recently_burnt_the_land
-	custom_tooltip = {
-		text = stop_pillaging_custom_tooltip
-		hidden_tooltip = {
-			NOT = { has_holding_modifier = stop_burning_land }
-		}
-	}
-	NOT = { holding_type = nomad }
-	OR = {
-		NOT = { holding_type = tribal }
-		FROM = { is_tribal = no }
-	}
-}
-
-TOW_can_have_a_job = {
-	custom_tooltip = {
-		text = TOOLTIP_TOW_can_have_a_job
-		hidden_tooltip = {
-			NOT = { has_character_flag = TOW_preparing_adventure }
-		}
-	}
-}
-
-TOW_hasnt_asked_root_for_council_support = {
-	custom_tooltip = {
-		text = TOOLTIP_TOW_hasnt_asked_for_council_support
-		hidden_tooltip = {
-			NOT = { has_opinion_modifier = { who = ROOT modifier = TOW_opinion_asked_council_support } }
-		}
-	}
-}
-
 TOW_is_not_using_council_of_six = {
 	custom_tooltip = {
 		text = TOOLTIP_TOW_is_not_using_council_of_six
@@ -125,5 +11,47 @@ TOW_is_not_using_council_of_six = {
 				government = kirin_tor_government
 			}
 		}
+	}
+}
+
+TOW_ruler_tolerates_women_trigger = {
+	hidden_tooltip = {
+		trigger_if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = gender
+						value = all
+					}
+				}
+			}
+			TOW_is_character_woman_tolerant_trigger = yes
+			OR = {
+				is_female = no
+				custom_tooltip = {
+					text = tooltip_feminist_liege_religion_feature
+					AND = {
+						OR = {
+							has_religion_feature = religion_equal
+							has_religion_feature = religion_matriarchal
+						}
+						liege = {
+							has_religion_feature = religion_equal
+							has_religion_feature = religion_matriarchal
+						}
+					}
+				}
+				primary_title = {
+					has_law = status_of_women_4
+				}
+			}
+		}
+	}
+}
+
+TOW_is_character_woman_tolerant_trigger = {
+	NOR = {
+		trait = ogre
+		culture_group = ogre
 	}
 }
