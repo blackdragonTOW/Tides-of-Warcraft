@@ -4,6 +4,9 @@ targetted_decisions = {
 		only_rulers = yes
 		filter = realm
 		ai_target_filter = self 
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_council_diplomacy
 		
 		from_potential = {
 			has_dlc = "Zeus"
@@ -35,6 +38,9 @@ targetted_decisions = {
 		only_playable = yes
 		filter = sub_realm
 		ai_target_filter = court
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_education_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -109,7 +115,7 @@ targetted_decisions = {
 				}
 			}
 			modifier = {
-				factor = 0.05
+				factor = 0.5
 			}
 		}
 	}
@@ -118,6 +124,9 @@ targetted_decisions = {
 		only_playable = yes
 		filter = court
 		ai_target_filter = court
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_education_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -182,7 +191,16 @@ targetted_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05
+				factor = 0.5
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					educator = {
+						culture = FROM
+						religion = FROM
+					}
+				}
 			}
 		}
 	}
@@ -191,15 +209,20 @@ targetted_decisions = {
 		only_playable = yes
 		filter = liege
 		ai_target_filter = liege
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_praying_diplomacy
 		
 		from_potential = {
 			has_dlc = "Zeus"
 			is_playable = yes
 			NOT = { trait = incapable }
+			
 		}
 		potential = {
 			NOT = { trait = incapable }
 			owes_favor_to = FROM
+			FROM = { is_liege_or_above = ROOT }
 		}
 		allow = {
 			ROOT = {
@@ -244,9 +267,12 @@ targetted_decisions = {
 	introduce_heir = {
 		only_playable = yes
 		is_high_prio = yes
+
+		diplomacy_icon = GFX_Keitaro_dynasty_diplomacy
 		
 		filter = home_court
 		ai_target_filter = home_court
+		ai_check_interval = 12
 	
 		from_potential = {
 			is_playable = yes
@@ -265,7 +291,6 @@ targetted_decisions = {
 				trait = undead_forsaken
 			}
 			war = no
-			num_of_vassals = 7
 		}
 		
 		potential = {
@@ -297,6 +322,9 @@ targetted_decisions = {
 				is_inaccessible_trigger = yes
 				is_ascetic_trigger = yes
 			}
+			is_inaccessible_trigger = no
+			host = { character = FROM }
+			FROM = { num_of_vassals = 7 }
 		}
 		effect = {
 			custom_tooltip = {
@@ -317,7 +345,7 @@ targetted_decisions = {
 			factor = 1
 			
 			modifier = {
-				factor = 0.01
+				factor = 0.1
 				always = yes
 			}
 		}
@@ -327,6 +355,9 @@ targetted_decisions = {
 		only_playable = yes
 		filter = sub_realm
 		ai_target_filter = court
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_education_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -400,7 +431,7 @@ targetted_decisions = {
 				}
 			}
 			modifier = {
-				factor = 0.05
+				factor = 0.5
 			}
 		}
 	}
@@ -409,6 +440,9 @@ targetted_decisions = {
 		only_playable = yes
 		filter = court
 		ai_target_filter = court
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_education_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -472,7 +506,15 @@ targetted_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05
+				factor = 0.5
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					educator = {
+						religion = FROM
+					}
+				}
 			}
 		}
 	}

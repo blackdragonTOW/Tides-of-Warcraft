@@ -17,9 +17,13 @@ targetted_decisions = {
 	commit_suicide = {
 		filter = self
 		ai_target_filter = self
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_death_diplomacy
+
 		potential = {
-			ai = no
 			is_adult = yes
+
 			OR = {
 				trait = depressed
 				AND = {
@@ -36,6 +40,21 @@ targetted_decisions = {
 					OR = {
 						trait = depressed
 						trait = incapable
+					}
+				}
+			}
+			prisoner = no
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = {
+					# NOR  = { has_character_flag = do_not_disturb is_inaccessible_trigger = yes }
+					# Line above outcommented to account for Seclusion (below)
+					OR = {
+						in_seclusion = yes
+						NOR = {
+							has_character_flag = do_not_disturb
+							is_inaccessible_trigger = yes
+						}
 					}
 				}
 			}
@@ -81,8 +100,11 @@ targetted_decisions = {
 
 	legitimize_bastard = {
 		only_playable = yes
-		filter = dynasty
-		ai_target_filter = dynasty
+		filter = close_relatives
+		ai_target_filter = close_relatives
+		ai_check_interval = 30
+
+		diplomacy_icon = GFX_Keitaro_bastard_diplomacy
 	
 		from_potential = {
 			ai = no
@@ -123,7 +145,9 @@ targetted_decisions = {
 				}
 			}
 			FROM = {
+				show_scope_change = no
 				spouse = {
+					show_scope_change = no
 					if = {
 						limit = {
 							NOT = {
@@ -168,7 +192,10 @@ targetted_decisions = {
 		
 		filter = dynasty
 		ai_target_filter = dynasty
+		ai_check_interval = 12
 	
+		diplomacy_icon = GFX_Keitaro_hiding_diplomacy
+
 		from_potential = {
 			is_ruler = yes
 			has_regent = no
@@ -403,7 +430,10 @@ targetted_decisions = {
 		
 		filter = dynasty
 		ai_target_filter = dynasty
+		ai_check_interval = 12
 	
+		diplomacy_icon = GFX_Keitaro_hiding_diplomacy
+
 		from_potential = {
 			is_ruler = yes
 			has_regent = no
@@ -500,15 +530,18 @@ targetted_decisions = {
 	}
 	
 	go_into_hiding = {
-		only_rulers = yes
+		only_playable = yes
 		is_high_prio = yes
 		
 		filter = self
 		ai_target_filter = self
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_hiding_diplomacy
 		
 		potential = {
 			prisoner = no
-			NOT = { is_inaccessible_trigger = yes }
+			is_inaccessible_trigger = no
 			OR = {
 				ai = no
 				trait = amateurish_plotter
@@ -639,7 +672,10 @@ targetted_decisions = {
 		
 		filter = self
 		ai_target_filter = self
+		ai_check_interval = 12
 		
+		diplomacy_icon = GFX_Keitaro_hiding_diplomacy
+
 		potential = {
 			is_ruler = yes
 			trait = in_hiding
@@ -730,7 +766,10 @@ targetted_decisions = {
 		
 		filter = spouse
 		ai_target_filter = spouse
+		ai_check_interval = 12
 		
+		diplomacy_icon = GFX_Keitaro_hiding_diplomacy
+
 		from_potential = {
 			is_ruler = yes
 			has_regent = no
@@ -909,6 +948,9 @@ targetted_decisions = {
 		
 		filter = spouse
 		ai_target_filter = spouse
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_hiding_diplomacy
 		
 		from_potential = {
 			is_ruler = yes

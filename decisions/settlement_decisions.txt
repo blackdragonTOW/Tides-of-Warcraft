@@ -17,6 +17,9 @@ settlement_decisions = {
 		filter = owned
 		ai_target_filter = owned
 		is_high_prio = yes
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_build_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -114,6 +117,9 @@ settlement_decisions = {
 		filter = owned
 		ai_target_filter = owned
 		is_high_prio = yes
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_build_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -203,6 +209,9 @@ settlement_decisions = {
 		filter = owned
 		ai_target_filter = owned
 		is_high_prio = yes
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_build_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -295,6 +304,9 @@ settlement_decisions = {
 		only_playable = yes
 		filter = owned
 		ai_target_filter = owned
+		ai_check_interval = 3
+
+		diplomacy_icon = GFX_Keitaro_title_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -318,13 +330,13 @@ settlement_decisions = {
 						is_merchant_republic = no
 						is_nomadic = no
 					}
-					capital_scope = {
-						ROOT = {
-							location = {
-								NOT = { province = PREVPREV }
-							}
-						}
-					}
+					#capital_scope = {
+						#ROOT = {
+							#location = {
+								#NOT = { province = PREVPREV }
+							#}
+						#}
+					#}
 				}
 			}
 		}
@@ -366,6 +378,8 @@ settlement_decisions = {
 		only_playable = yes
 		filter = owned
 		ai_target_filter = owned
+
+		diplomacy_icon = GFX_Keitaro_title_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -403,6 +417,9 @@ settlement_decisions = {
 		filter = owned
 		ai_target_filter = owned
 		is_high_prio = yes
+		ai_check_interval = 3
+
+		diplomacy_icon = GFX_Keitaro_raider_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -485,6 +502,8 @@ settlement_decisions = {
 	# Debug decision to fix holdings with a dead owner
 	fix_holding_with_dead_owner = {
 		
+		diplomacy_icon = GFX_Keitaro_government_diplomacy
+
 		from_potential = {
 			is_playable = yes
 			ai = no
