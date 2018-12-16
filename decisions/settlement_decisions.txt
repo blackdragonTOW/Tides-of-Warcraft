@@ -49,8 +49,18 @@ settlement_decisions = {
 			}
 		}
 		allow = {
-			location = {
-				religion = FROM
+			conditional_tooltip = {
+				trigger = {
+					FROM = {
+						NOT = {
+							government = order_government
+						}
+					}
+				}
+
+				location = {
+					religion = FROM
+				}
 			}
 			has_building = tb_hillfort_4
 		}
@@ -226,7 +236,6 @@ settlement_decisions = {
 				government = faceless_government
 				government = troll_ke_government
 			}
-			higher_tier_than = BARON
 		}
 		
 		potential = {
@@ -482,6 +491,7 @@ settlement_decisions = {
 		}
 		
 		effect = {
+			
 			hidden_tooltip = {
 				add_holding_modifier = {
 					modifier = stop_burning_land

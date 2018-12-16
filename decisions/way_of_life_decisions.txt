@@ -179,6 +179,28 @@ targetted_decisions = {
 						break = yes
 					}
 					
+					if = {
+						limit = {
+							same_sex = ROOT
+						}
+						character_event = { id = WoL.104 days = 1 } # Warning - Homosexual scandal risk
+						break = yes
+					}
+					
+					
+					if = {
+						limit = { 
+							age_diff = {
+								who = ROOT
+								years = 25
+							}
+							TOW_race_has_similar_to_regular_lifespan = yes
+							ROOT = { TOW_race_has_similar_to_regular_lifespan = yes }
+						}
+						character_event = { id = WoL.101 days = 1 } # Warning - Age scandal risk
+						break = yes
+					}
+					
 					character_event = { id = WoL.100 days = 1 } # No warning - Let the chase begin!
 				}
 			}

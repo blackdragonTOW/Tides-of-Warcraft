@@ -285,11 +285,7 @@ targetted_decisions = {
 			government = feudal_government
 			trait = human
 			trait = AK_trait_dwarf
-			NOR = {
-				trait = undead_generic
-				trait = undead_scourge
-				trait = undead_forsaken
-			}
+			TOW_is_undead = no
 			war = no
 		}
 		
@@ -308,18 +304,20 @@ targetted_decisions = {
 		}
 		allow = {
 			is_primary_heir = FROM
-			is_adult = no 
 			age = 12
-			is_landed = no
-			host = { character = FROM }
-			prisoner = no
-			NOT = { trait = incapable }
 			NOR = {
-				trait = bastard
-				trait = eunuch
-				trait = celibate
-				trait = incapable
-				is_inaccessible_trigger = yes
+				is_landed = yes
+				prisoner = yes
+				is_adult = yes
+				custom_tooltip = {
+					text = bastard_eunuch_celibate_or_incapable_tt
+					OR = {
+						trait = bastard
+						trait = eunuch
+						trait = celibate
+						trait = incapable
+					}
+				}
 				is_ascetic_trigger = yes
 			}
 			is_inaccessible_trigger = no

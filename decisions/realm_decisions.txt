@@ -3,6 +3,7 @@ decisions = {
 	hold_a_epic_tournament  = {
 		only_independent = yes
 		is_high_prio = yes
+		ai_check_interval = 24
 		
 		potential = {
 			is_playable = yes
@@ -18,6 +19,10 @@ decisions = {
 			}
 			independent = yes
 			NOT = { is_nomadic = yes }
+			OR = {
+				gender_equality_trigger = yes
+				NOT = { is_female = yes	}
+			}
 			OR = {
 				tier = king
 				tier = emperor 
@@ -126,6 +131,7 @@ decisions = {
 	petition_doge_for_tp = {
 		only_playable = yes
 		is_high_prio = yes
+		ai_check_interval = 6
 		potential = {
 			is_playable = yes
 			is_merchant_republic = no
@@ -175,6 +181,7 @@ decisions = {
 	usurp_tp = {
 		only_playable = yes
 		is_high_prio = yes
+		ai_check_interval = 6
 		potential = {
 			is_playable = yes
 			is_merchant_republic = yes
@@ -251,13 +258,23 @@ decisions = {
 	form_new_kingdom = {
 		only_independent = yes
 		is_high_prio = yes
+		ai_check_interval = 24
 		
 		potential = {
 			is_playable = yes
 			tier = DUKE
 			NOT = { tier = KING }
 			
-			has_dlc = "Charlemagne"
+			OR = {
+				has_dlc = "Charlemagne"
+				AND = {
+					is_alternate_start = yes
+					has_alternate_start_parameter = {
+						key = dejure_kingdoms
+						value = none
+					}
+				}
+			}
 			
 			holy_order = no
 			
@@ -286,6 +303,13 @@ decisions = {
 					}
 				}
 				prestige = 15000
+				AND = {
+					is_alternate_start = yes
+					has_alternate_start_parameter = {
+						key = dejure_kingdoms
+						value = none
+					}
+				}
 			}
 		}
 		allow = {
@@ -293,7 +317,35 @@ decisions = {
 			prisoner = no
 			NOT = { trait = incapable }
 			independent = yes
-			prestige = 1000
+			
+			conditional_tooltip = {
+				trigger = {
+					AND = {
+						is_alternate_start = yes
+						has_alternate_start_parameter = {
+							key = dejure_kingdoms
+							value = none
+						}
+					}
+				}
+				prestige = 250
+				wealth = 50
+			}
+			
+			conditional_tooltip = {
+				trigger = {
+					NOT = {
+						is_alternate_start = yes
+						has_alternate_start_parameter = {
+							key = dejure_kingdoms
+							value = none
+						}
+					}
+				}
+				prestige = 1000
+				wealth = 300
+			}
+
 			OR = {
 				realm_size = 35
 				custom_tooltip = {
@@ -306,7 +358,6 @@ decisions = {
 					}
 				}
 			}
-			wealth = 300
 		}
 		effect = {
 			primary_title = {
@@ -319,6 +370,10 @@ decisions = {
 					holder = ROOT
 					base_title = THIS
 					copy_title_laws = yes
+				}
+
+				new_title = {
+					copy_title_history = PREV
 				}
 
 				hidden_tooltip = {
@@ -342,6 +397,20 @@ decisions = {
 									}
 									de_jure_liege = PREVPREV
 								}
+								if = {
+									limit = {
+										has_alternate_start_parameter = {
+											key = dejure_kingdoms
+											value = none
+										}
+									}
+									any_title_under = {
+										limit = {
+											tier = DUKE
+										}
+										de_jure_liege = PREVPREV
+									}
+								}
 								any_title_under = {
 									limit = {
 										tier = COUNT
@@ -364,13 +433,62 @@ decisions = {
 										}
 									}
 								}
+								if = {
+									limit = {
+										has_alternate_start_parameter = {
+											key = dejure_kingdoms
+											value = none
+										}
+									}
+									any_title_under = {
+										limit = {
+											tier = COUNT
+											location = {
+												duchy = {
+													NOT = { de_jure_liege_or_above = PREVPREVPREVPREV }
+													ROOT = {
+														completely_controls = PREV
+													}
+												}
+											}
+										}
+										location = {
+											duchy = {
+												de_jure_liege = PREVPREVPREVPREV
+											}
+										}
+									}
+								}
 							}
 						}
 					}
 				}
 
 			}
-			wealth = -300
+			if = {
+				limit = {
+					AND = {
+						is_alternate_start = yes
+						has_alternate_start_parameter = {
+							key = dejure_kingdoms
+							value = none
+						}
+					}
+				}
+				wealth = -50
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_alternate_start = yes
+						has_alternate_start_parameter = {
+							key = dejure_kingdoms
+							value = none
+						}
+					}
+				}
+				wealth = -300
+			}
 			custom_tooltip = { text = form_new_kingdom_tooltip }
 			chronicle = {
 				entry = CHRONICLE_FOUNDED_NEW_KINGDOM_OR_EMPIRE
@@ -388,12 +506,28 @@ decisions = {
 	form_new_empire = {
 		only_independent = yes
 		is_high_prio = yes
+		ai_check_interval = 24
 		
 		potential = {
 			is_playable = yes
 			tier = KING
-			is_nomadic = no
-			has_dlc = "Charlemagne"
+			
+			OR = {
+				has_dlc = "Charlemagne"
+				AND = {
+					is_alternate_start = yes
+					OR = {
+						has_alternate_start_parameter = {
+							key = dejure_kingdoms
+							value = none
+						}
+						has_alternate_start_parameter = {
+							key = dejure_empires
+							value = none
+						}
+					}
+				}
+			}
 			
 			holy_order = no
 			
@@ -409,6 +543,19 @@ decisions = {
 					prestige = 40000
 				}
 				prestige = 120000
+				AND = {
+					is_alternate_start = yes
+					OR = {
+						has_alternate_start_parameter = {
+							key = dejure_kingdoms
+							value = none
+						}
+						has_alternate_start_parameter = {
+							key = dejure_empires
+							value = none
+						}
+					}
+				}
 			}
 			
 			NOT = {
@@ -423,7 +570,35 @@ decisions = {
 			prisoner = no
 			NOT = { trait = incapable }
 			independent = yes
-			prestige = 8000
+			
+			conditional_tooltip = {
+				trigger = {
+					AND = {
+						is_alternate_start = yes
+						has_alternate_start_parameter = {
+							key = dejure_empires
+							value = none
+						}
+					}
+				}
+				prestige = 2000
+				wealth = 200
+			}
+			
+			conditional_tooltip = {
+				trigger = {
+					NOT = {
+						is_alternate_start = yes
+						has_alternate_start_parameter = {
+							key = dejure_empires
+							value = none
+						}
+					}
+				}
+				prestige = 8000
+				wealth = 1000
+			}
+			
 			OR = {
 				realm_size = 180
 				custom_tooltip = {
@@ -436,7 +611,6 @@ decisions = {
 					}
 				}
 			}
-			wealth = 1000
 		}
 		effect = {
 			primary_title = {
@@ -451,6 +625,10 @@ decisions = {
 					copy_title_laws = yes
 				}
 
+				new_title = {
+					copy_title_history = PREV
+				}
+
 				hidden_tooltip = {
 					ROOT = {
 						primary_title = {
@@ -458,8 +636,8 @@ decisions = {
 								any_title_under = {
 									limit = {
 										tier = KING
-										empire = {
-											has_holder = no
+										NOT = {
+											empire = { has_holder = yes }
 										}
 									}
 									de_jure_liege = PREVPREV
@@ -469,8 +647,8 @@ decisions = {
 										tier = DUKE
 										location = {
 											kingdom = {
-												empire = {
-													has_holder = no
+												NOT = {
+													empire = { has_holder = yes }
 												}
 												
 												NOT = { de_jure_liege_or_above = PREVPREVPREVPREV }
@@ -491,7 +669,32 @@ decisions = {
 					}
 				}
 			}
-			wealth = -1000
+			
+			if = {
+				limit = {
+					AND = {
+						is_alternate_start = yes
+						has_alternate_start_parameter = {
+							key = dejure_empires
+							value = none
+						}
+					}
+				}
+				wealth = -200
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_alternate_start = yes
+						has_alternate_start_parameter = {
+							key = dejure_empires
+							value = none
+						}
+					}
+				}
+				wealth = -1000
+			}
+			
 			custom_tooltip = { text = form_new_empire_tooltip }
 			chronicle = {
 				entry = CHRONICLE_FOUNDED_NEW_KINGDOM_OR_EMPIRE

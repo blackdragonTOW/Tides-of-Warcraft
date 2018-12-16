@@ -1617,7 +1617,7 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 	is_triggered_only = yes
 	hide_window = yes
 	
-	trigger = { NOT = { has_race = yes } }
+	trigger = { NOT = { TOW_has_race = yes } }
 	
 	immediate = {
 

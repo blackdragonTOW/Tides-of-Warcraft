@@ -707,6 +707,7 @@ decisions = {
 		
 		potential = {
 			is_playable = yes
+			NOT = { trait = troubled_pregnancy } #Treatment handled by special event chain.
 			OR = {
 				trait = has_tuberculosis
 				trait = has_typhoid_fever
@@ -894,6 +895,19 @@ decisions = {
 				trait = dragon_infinite
 				trait = dragon_nightmare
 			}
+			OR = {
+				mercenary = no
+				ai = no
+			}
+			OR = {
+				higher_tier_than = COUNT
+				ai = no
+				is_ill = yes
+				num_of_symptoms > 0
+			}
+			NOT = {
+				has_assigned_minor_title = title_court_physician
+			}
 		}
 		allow = {
 			hidden_tooltip = {
@@ -1023,6 +1037,7 @@ decisions = {
 					}
 				}
 			}
+			NOT = { has_character_modifier = out_traveling }
 			NOT = { has_character_modifier = recently_opened_gates }
 		}
 		effect = {
@@ -1132,6 +1147,20 @@ decisions = {
 		}
 		ai_will_do = {
 			factor = 0.2
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					capital_scope = {
+						OR = {
+							has_epidemic = yes
+							any_neighbor_province = {
+								has_epidemic = yes
+							}
+						}
+					}
+				}
+			}
 			
 			modifier = {
 				factor = 0.01

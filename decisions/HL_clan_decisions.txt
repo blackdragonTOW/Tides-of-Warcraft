@@ -113,6 +113,7 @@ targetted_decisions = {
 						any_realm_character = {
 							limit = {
 								is_nomadic = yes
+								NOT = { character = PREV }
 							}
 							if = {
 								limit = {
@@ -137,7 +138,7 @@ targetted_decisions = {
 			factor = 1
 			
 			modifier = {
-				factor = 0.1
+				factor = 0.5
 			}
 			
 			modifier = {
@@ -288,7 +289,7 @@ targetted_decisions = {
 			factor = 1
 			
 			modifier = {
-				factor = 0.3
+				factor = 0.5
 			}
 			
 			modifier = { # Try not having more feuds than one (others can still add you to a feud however

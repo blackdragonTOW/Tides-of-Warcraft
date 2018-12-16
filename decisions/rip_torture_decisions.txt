@@ -997,8 +997,23 @@ targetted_decisions = {
 					character_event = { id = RIP.11511 days = 1 }
 				}
 				FROM = {
+					add_blood_splatter_effect = yes
 					random_list = {
 						50 = { # Nothing happens
+							modifier = {
+								factor = 0
+								OR = {
+									ROOT = {
+										immortal = yes
+									}
+									AND = {
+										ROOT = {
+											controls_religion = yes
+										}
+										FROM = { NOT = { religion_group = ROOT } }
+									}
+								}
+							}
 						}
 						40 = { # Get sick
 							modifier = {

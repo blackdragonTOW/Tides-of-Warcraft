@@ -119,8 +119,17 @@ targetted_decisions = {
 			is_liege_or_above = FROM
 		}
 		allow = {
-			FROM = {
-				piety = 20
+			conditional_tooltip = {
+				trigger = {
+					NOT = {
+						any_owned_bloodline = {
+							has_bloodline_flag = bloodline_legitimize
+						}
+					}
+				}
+				FROM = {
+					piety = 20
+				}
 			}
 		}
 		effect = {
@@ -128,7 +137,21 @@ targetted_decisions = {
 			remove_trait = bastard
 			add_trait = legit_bastard
 			recalc_succession = yes
-			FROM = { piety = -20 }
+			FROM = { 
+				show_scope_change = no
+				if = {
+					limit = {
+						NOT = {
+							any_owned_bloodline = {
+								has_bloodline_flag = bloodline_legitimize
+							}
+						}
+					}
+					FROM = {
+						piety = -20
+					}
+				}
+			}
 			if = {
 				limit = {
 					prisoner = yes
@@ -137,11 +160,15 @@ targetted_decisions = {
 				imprison = no
 			}
 			
-			mother = {
-				opinion = {
-					who = FROM
-					modifier = legitimized_child
-					years = 10
+			if = {
+				limit = { FROM = { is_female = no } }
+				mother = {
+					show_scope_change = no
+					opinion = {
+						who = FROM
+						modifier = legitimized_child
+						years = 10
+					}
 				}
 			}
 			FROM = {
@@ -157,22 +184,35 @@ targetted_decisions = {
 							}
 						}
 						opinion = {
-							who = FROM
+							who = ROOT_FROM
 							modifier = legitimized_bastard
 							years = 20
 						}
 					}
 				}
-				any_child = {
+				if = {
 					limit = {
-						NOT = { character = ROOT }
-						dynasty = FROM
-						NOT = { trait = bastard }
+						any_child = {
+							dynasty = ROOT_FROM
+							NOT = { character = ROOT }
+							NOT = { trait = bastard }
+						}
 					}
-					opinion = {
-						who = FROM
-						modifier = legitimized_bastard
-						months = 12
+					custom_tooltip = {
+						text = any_child_gets_angry_tt
+						any_child = {
+							show_scope_change = no
+							limit = {
+								NOT = { character = ROOT }
+								dynasty = ROOT_FROM
+								NOT = { trait = bastard }
+							}
+							opinion = {
+								who = ROOT_FROM
+								modifier = legitimized_bastard
+								months = 12
+							}
+						}
 					}
 				}
 			}
@@ -387,7 +427,7 @@ targetted_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.1
+				factor = 0.5
 			}
 			modifier = {
 				factor = 0.5
@@ -508,7 +548,7 @@ targetted_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.1
+				factor = 0.3
 				FROM = { trait = paranoid }
 			}
 			modifier = {
@@ -641,7 +681,7 @@ targetted_decisions = {
 				}
 			}
 			modifier = {
-				factor = 0.1
+				factor = 0.5
 			}
 			modifier = {
 				factor = 0.1
@@ -732,7 +772,7 @@ targetted_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.1
+				factor = 0.3
 				trait = paranoid
 			}
 			modifier = {
@@ -879,7 +919,7 @@ targetted_decisions = {
 			factor = 1 
 			
 			modifier = {
-				factor = 0.1
+				factor = 0.5
 			}
 			modifier = {
 				factor = 0.1
@@ -1000,7 +1040,7 @@ targetted_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.1
+				factor = 0.3
 				trait = paranoid
 			}
 			modifier = {

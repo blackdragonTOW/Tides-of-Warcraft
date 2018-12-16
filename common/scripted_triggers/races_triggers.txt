@@ -1,3 +1,122 @@
+TOW_has_race = {
+	OR = {
+		trait = race_human
+		trait = race_orc
+		trait = race_dwarf
+		trait = race_high_elf
+		trait = race_blood_elf
+		trait = race_wretched
+		trait = race_gnome
+		trait = race_goblin
+		trait = race_dragon
+		trait = race_troll_forest
+		trait = race_troll_ice
+		trait = race_troll_dark
+		trait = race_troll_jungle
+		trait = race_troll_sand
+		trait = race_troll_zandalari
+		trait = race_ogre
+		trait = race_murloc
+		trait = race_gnoll
+		trait = race_naga
+		trait = race_kobold
+		trait = race_trogg
+		trait = race_hakkar
+		trait = race_faceless
+		trait = race_eredar
+		trait = race_dreadlord
+		trait = race_succubus
+		trait = race_pit_lord
+		trait = race_fel_lord
+		trait = race_doomlord
+		trait = race_shivarra
+		trait = race_antaen
+		trait = race_aranasi
+		trait = race_inquisitor
+		trait = race_mo_arg
+		trait = race_observer
+		trait = race_draenei
+		trait = race_broken
+		trait = race_lost_one
+		trait = race_voidwalker
+		trait = race_pale_orc
+		trait = race_air_elemental
+		trait = race_fire_elemental
+		trait = race_earth_elemental
+		trait = race_water_elemental
+	}
+}
+
+TOW_is_undead = {
+	OR = {
+		trait = race_undead_scourge
+		trait = race_undead_forsaken
+		trait = race_undead_generic
+	}
+}
+
+TOW_is_elemental_or_void = {
+	OR = {
+		trait = race_air_elemental
+		trait = race_fire_elemental
+		trait = race_water_elemental
+		trait = race_earth_elemental
+		trait = race_voidwalker
+		trait = race_faceless
+	}
+}
+
+TOW_is_demon_race = {
+	OR = {
+		trait = race_eredar
+		trait = race_dreadlord
+		trait = race_succubus
+		trait = race_pit_lord
+		trait = race_fel_lord
+		trait = race_doomlord
+		trait = race_shivarra
+		trait = race_antaen
+		trait = race_aranasi
+		trait = race_inquisitor
+		trait = race_mo_arg
+		trait = race_observer
+	}
+}
+
+TOW_is_long_lived_race = {
+	OR = {
+		trait = race_dwarf
+		trait = race_high_elf
+		trait = race_blood_elf
+		trait = race_wretched
+		trait = race_gnome
+		trait = race_dragon
+		trait = race_naga
+		trait = race_eredar
+		trait = race_dreadlord
+		trait = race_succubus
+		trait = race_pit_lord
+		trait = race_fel_lord
+		trait = race_doomlord
+		trait = race_shivarra
+		trait = race_antaen
+		trait = race_aranasi
+		trait = race_inquisitor
+		trait = race_mo_arg
+		trait = race_observer
+		trait = race_air_elemental
+		trait = race_fire_elemental
+		trait = race_earth_elemental
+		trait = race_water_elemental
+		trait = race_voidwalker
+		trait = race_faceless
+		trait = race_draenei
+		trait = race_broken
+		trait = race_lost_one
+		trait = race_hakkar
+	}
+}
+
 TOW_race_can_employ = {
 	NOR = {
 		trait = eredar
@@ -23,5 +142,50 @@ TOW_race_can_employ = {
 		trait = dragon_twilight
 		trait = dragon_nightmare
 		trait = dragon_infinite
+	}
+}
+
+TOW_race_is_elf = {
+	OR = {
+		trait = race_high_elf
+		trait = race_blood_elf
+		trait = race_night_elf
+		trait = race_wretched
+	}
+}
+
+TOW_race_is_troll = {
+	OR = {
+		trait = race_troll_forest
+		trait = race_troll_ice
+		trait = race_troll_dark
+		trait = race_troll_jungle
+		trait = race_troll_sand
+		trait = race_troll_zandalari
+	}
+}
+
+TOW_race_has_regular_lifespan = {
+	OR = {
+		trait = race_human
+		trait = race_orc
+		trait = race_ogre
+		trait = race_goblin
+	}
+}
+
+TOW_race_has_slightly_lower_lifespan = {
+	OR = {
+		trait = race_kobold
+		trait = race_gnoll
+		trait = race_murloc
+		trait = race_trogg
+	}
+}
+
+TOW_race_has_similar_to_regular_lifespan = {
+	OR = {
+		TOW_race_has_regular_lifespan = yes
+		TOW_race_has_slightly_lower_lifespan = yes
 	}
 }

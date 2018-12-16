@@ -203,6 +203,15 @@ targetted_decisions = {
 			capital_scope = {
 				reverse_culture = ROOT
 			}
+			hidden_tooltip = {
+				any_child = {
+					limit = {
+						is_ruler = no
+						liege = { character = ROOT }
+					}
+					culture = ROOT
+				}
+			}
 		}
 		revoke_allowed = {
 			always = no
@@ -210,7 +219,7 @@ targetted_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.01
+				factor = 0.25
 			}
 			modifier = {
 				factor = 0
@@ -269,13 +278,13 @@ targetted_decisions = {
 				AND = {
 					prestige = 500
 					capital_scope = {
-						religion_group = ROOT
+						true_religion_group = ROOT
 					}
 				}
 				AND = {
 					prestige = 1000
 					capital_scope = {
-						NOT = { religion_group = ROOT }
+						NOT = { true_religion_group = ROOT }
 					}
 				}
 			}
@@ -284,7 +293,7 @@ targetted_decisions = {
 			if = {
 				limit = {
 					capital_scope = {
-						NOT = { religion_group = ROOT }
+						NOT = { true_religion_group = ROOT }
 					}
 				}
 				prestige = -1000
@@ -292,7 +301,7 @@ targetted_decisions = {
 			if = {
 				limit = {
 					capital_scope = {
-						religion_group = ROOT
+						true_religion_group = ROOT
 					}
 				}
 				prestige = -500
@@ -301,8 +310,11 @@ targetted_decisions = {
 			religion_authority = {
 				modifier = ruler_converted_from
 			}
-			capital_scope = {
-				reverse_religion = ROOT
+			custom_tooltip = { text = local_religion_conversion_tooltip }
+			hidden_tooltip = {
+				capital_scope = {
+					reverse_religion = ROOT
+				}
 			}
 			hidden_tooltip = {
 				religion_authority = {
@@ -374,6 +386,7 @@ targetted_decisions = {
 		from_potential = {
 			ai = no
 			is_playable = yes
+			TOW_is_uncivilized_trigger = yes
 			controls_religion = no
 		}
 		
@@ -400,15 +413,14 @@ targetted_decisions = {
 				prestige = -500
 				religion_authority = {
 					modifier = ruler_converted_from
-				}				
+				}
+				religion = ROOT
 				hidden_tooltip = {
 					religion_authority = {
 						modifier = ruler_converted_to
 					}
 				}
 				piety = 200
-
-				religion = ROOT
 			}
 		}
 		
@@ -455,9 +467,6 @@ decisions = {
 		effect = {
 			prestige = -500
 			piety = 100
-			religion_authority = {
-				modifier = ruler_converted_from
-			}
 			
 			hidden_tooltip = {
 				any_war = {
@@ -475,41 +484,44 @@ decisions = {
 					}
 				}
 			}
-			
-			event_target:enemy_attacker = {
-				hidden_tooltip = {
-					letter_event = { id = 62800 }
-					ROOT = {
-						any_courtier = {
-							limit = {
-								religion = ROOT
-								employer = { character = ROOT }
-							}
-							religion = PREVPREV
-						}
-						any_vassal = {
-							limit = {
-								is_playable = no
-								religion = ROOT
-							}
-							religion = PREVPREV
-						}
-						capital_scope = {
-							if = {
-								limit = { religion = ROOT }
+
+				event_target:enemy_attacker = {
+					hidden_tooltip = {
+						letter_event = { id = 62800 }
+						ROOT = {
+							any_courtier = {
+								limit = {
+									religion = ROOT
+									employer = { character = ROOT }
+								}
 								religion = PREVPREV
+							}
+							any_vassal = {
+								limit = {
+									is_playable = no
+									religion = ROOT
+								}
+								religion = PREVPREV
+							}
+							capital_scope = {
+								if = {
+									limit = { religion = ROOT }
+									religion = PREVPREV
+								}
 							}
 						}
 					}
+					hidden_tooltip = {
+						religion_authority = {
+							modifier = ruler_converted_to
+						}
+					}
+					reverse_religion = ROOT 
 				}
-				reverse_religion = ROOT 
-			}
-			
-			hidden_tooltip = {
 				religion_authority = {
-					modifier = ruler_converted_to
+					modifier = ruler_converted_from
 				}
-			}
+			
 		}
 		
 		revoke_allowed = {
@@ -519,7 +531,7 @@ decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.1
+				factor = 0.5
 			}
 			modifier = {
 				factor = 0.05
