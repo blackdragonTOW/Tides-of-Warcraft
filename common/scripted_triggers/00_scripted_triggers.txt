@@ -354,7 +354,6 @@ character_disease_trigger = {
 		trait = has_bubonic_plague
 		trait = has_measles
 		trait = has_small_pox
-		trait = has_aztec_disease
 		trait = syphilitic
 		trait = flu
 		trait = dysentery
@@ -374,7 +373,6 @@ has_disease_trigger = {
 		trait = has_bubonic_plague
 		trait = has_measles
 		trait = has_small_pox
-		trait = has_aztec_disease
 		trait = syphilitic
 		trait = flu
 		trait = dysentery
@@ -529,7 +527,6 @@ has_infertile_trait_trigger = {
 		trait = pneumonic
 		trait = leper
 		trait = syphilitic
-		trait = has_aztec_disease
 		trait = infirm
 		trait = incapable
 		trait = inbred
@@ -722,90 +719,6 @@ has_any_lifestyle_trait = {
 
 ##RELIGION##
 
-has_crusade_trait_trigger = {
-	OR = {
-		AND = {
-			OR = {
-				religion = norse_pagan
-				religion = norse_pagan_reformed
-			}
-			trait = valhalla_bound
-		}
-		AND = {
-			OR = {
-				religion = tengri_pagan
-				religion = tengri_pagan_reformed
-			}
-			trait = tengri_warrior
-		}
-		AND = {
-			OR = {
-				religion = baltic_pagan
-				religion = baltic_pagan_reformed
-			}
-			trait = romuvas_own
-		}
-		AND = {
-			OR = {
-				religion = finnish_pagan
-				religion = finnish_pagan_reformed
-			}
-			trait = ukkos_shield
-		}
-		AND = {
-			OR = {
-				religion = aztec
-				religion = aztec_reformed
-			}
-			trait = eagle_warrior
-		}
-		AND = {
-			OR = {
-				religion = slavic_pagan
-				religion = slavic_pagan_reformed
-			}
-			trait = peruns_chosen
-		}
-		AND = {
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
-			trait = nyames_shield
-		}
-		AND = {
-			OR = {
-				religion = zun_pagan
-				religion = zun_pagan_reformed
-			}
-			trait = sun_warrior
-		}
-		AND = {
-			OR = {
-				religion = hellenic_pagan
-				religion = hellenic_pagan_reformed
-			}
-			trait = ares_own
-		}
-		AND = {
-			religion_group = muslim
-			trait = mujahid
-		}
-		AND = {
-			religion_group = christian
-			trait = crusader
-		}
-		AND = {
-			religion_group = zoroastrian_group
-			trait = gondi_shahansha
-		}
-		AND = {
-			religion_group = jewish_group
-			trait = shaddai
-		}
-	}
-}
-
 has_secret_religion_trait_trigger = {
 	custom_tooltip = {
 		text = no_secret_religion
@@ -829,18 +742,6 @@ can_be_mercenary_leader_potential_trigger = {
 	same_realm = FROM
 	OR = {
 		is_female = no
-		AND = {
-			religion = cathar
-			FROM = {
-				religion = cathar
-			}
-		}
-		AND = {
-			religion = messalian
-			FROM = {
-				religion = messalian
-			}
-		}
 		FROM = {
 			has_law = true_cognatic_succession
 		}
@@ -888,13 +789,6 @@ replace_mercenary_captain_allow_trigger = {
 #Used with character interaction to swap council job. DO NOT REMOVE
 change_council_job_potential_trigger = {
 	liege = { character = FROM }
-	NOT = {
-		AND = {
-			has_job_title = job_spiritual
-			liege = { religion_group = muslim }
-			religion = FROM
-		}
-	}
 	OR = {
 		AND = {
 			OR = {
@@ -906,10 +800,7 @@ change_council_job_potential_trigger = {
 				can_be_marshal_trigger = yes
 				can_be_treasurer_trigger = yes
 				can_be_spymaster_trigger = yes
-				AND = {
-					can_be_spiritual_trigger = yes
-					ROOT = { NOT = { religion_group = muslim } }
-				}
+				can_be_spiritual_trigger = yes
 			}
 		}
 		AND = {
@@ -965,14 +856,6 @@ can_be_chancellor_trigger = {
 					} 
 				}
 				trait = horse # So we can have female glitterhoofs! :D
-				AND = {
-					religion = cathar
-					liege = { religion = cathar }
-				}
-				AND = {
-					religion = messalian
-					liege = { religion = messalian }
-				}
 				AND = {
 					liege = {
 						primary_title = {
@@ -1044,16 +927,6 @@ can_be_marshal_trigger = {
 					} 
 				}
 				trait = horse # So we can have female glitterhoofs! :D
-				OR = {
-					AND = {
-						religion = cathar
-						liege = { religion = cathar }
-					}
-					AND = {
-						religion = messalian
-						liege = { religion = messalian }
-					}
-				}
 				AND = {
 					liege = {
 						primary_title = {
@@ -1085,10 +958,6 @@ can_be_marshal_trigger = {
 						value = all
 					}
 				}
-			}
-			OR = {
-				NOT = { religion = hindu }
-				trait = kshatriya
 			}
 			is_adult = yes
 		}
@@ -1128,14 +997,6 @@ can_be_treasurer_trigger = {
 					} 
 				}
 				trait = horse # So we can have female glitterhoofs! :D
-				AND = {
-					religion = cathar
-					liege = { religion = cathar }
-				}
-				AND = {
-					religion = messalian
-					liege = { religion = messalian }
-				}
 				AND = {
 					liege = {
 						primary_title = {
@@ -1216,36 +1077,6 @@ can_be_spymaster_trigger = {
 					OR = {
 						mother = { character = ROOT }
 						any_spouse = { character = ROOT }
-					}
-				}
-				AND = {
-					religion_group = pagan_group
-					liege = {
-						religion_group = pagan_group
-						NOR = {
-							liege = { has_religion_feature = religion_matriarchal } 
-							liege = { has_religion_feature = religion_patriarchal } 
-						}
-					}
-				}
-				AND = {
-					religion = cathar
-					liege = { 
-						religion = cathar 
-						NOR = {
-							liege = { has_religion_feature = religion_matriarchal } 
-							liege = { has_religion_feature = religion_patriarchal } 
-						}
-					}
-				}
-				AND = {
-					religion = messalian
-					liege = { 
-						religion = messalian 
-						NOR = {
-							liege = { has_religion_feature = religion_matriarchal } 
-							liege = { has_religion_feature = religion_patriarchal } 
-						}
 					}
 				}
 				AND = {
@@ -1336,8 +1167,6 @@ can_be_spiritual_trigger = {
 				has_religion_feature = religion_patriarchal
 			}
 			OR = {
-				NOT = { religion = hindu }
-				trait = brahmin
 				is_ascetic_trigger = yes
 			}
 		}
@@ -1350,7 +1179,6 @@ can_be_spiritual_trigger = {
 			liege = { is_tribal = yes }
 			is_ruler = no
 		}
-		liege = { religion_group = muslim }
 		AND = {
 			clan = yes
 			liege = {
@@ -1371,8 +1199,6 @@ can_be_spiritual_trigger = {
 	}
 	
 	OR = {
-		NOT = { religion_group = muslim }
-		NOT = { liege = { religion_group = muslim } }
 		trait = detached_priest
 		trait = martial_cleric
 		trait = scholarly_theologian
@@ -1404,13 +1230,6 @@ can_be_councilmember_king_trigger = {
 			AND = {
 				is_female = yes 
 				NOT = { liege = { has_religion_feature = religion_patriarchal } } 
-			}
-			AND = {
-				OR = {
-					religion = cathar
-					religion = messalian
-				}
-				liege = { religion = ROOT }
 			}
 			AND = {
 				is_female = yes
@@ -1468,14 +1287,6 @@ can_be_councilmember_emperor_trigger = {
 						liege = { has_religion_feature = religion_equal } 
 						liege = { has_religion_feature = religion_feature_bon } 
 					} 
-				}
-				AND = {
-					religion = cathar
-					liege = { religion = cathar }
-				}
-				AND = {
-					religion = messalian
-					liege = { religion = messalian }
 				}
 				AND = {
 					is_female = yes
@@ -1538,7 +1349,6 @@ physician_bad_trigger = {
 physician_good_trigger = { 
 	OR = {
 		is_learned_trigger = yes
-		religion_group = jewish_group
 	} 
 }
 
@@ -1675,7 +1485,6 @@ has_epidemic_disease_trigger = {
 		trait = has_bubonic_plague
 		trait = has_measles
 		trait = has_small_pox
-		trait = has_aztec_disease
 	}
 }
 
@@ -1845,8 +1654,7 @@ block_general_event_trigger = {
 
 gender_equality_trigger = {
 	OR = {
-		religion = cathar
-		religion = messalian
+		TOW_is_character_woman_tolerant_trigger = yes
 		has_religion_feature = religion_equal
 		has_religion_feature = religion_feature_bon
 		AND = {
@@ -1902,18 +1710,6 @@ female_can_hold_minor_title_trigger = {
 		is_female = yes
 		OR = {
 			custom_tooltip = {
-				text = tooltip_feminist_liege_vanilla_religion
-				AND = {
-					OR = {
-						religion = cathar
-						religion = messalian
-						religion = bogomilist
-						religion = mazdaki
-					}
-					liege = { religion = ROOT }
-				}
-			}
-			custom_tooltip = {
 				text = tooltip_feminist_liege_religion_feature
 				AND = {
 					OR = {
@@ -1958,24 +1754,8 @@ female_can_hold_minor_commander_title_trigger = {
 		OR = {
 			has_character_flag = special_marshal
 			AND = {
-				trait = shieldmaiden
-				liege = { religion = ROOT }
-			}
-			AND = {
 				is_member_of_any_warrior_lodge_trigger = yes
 				liege = { religion = ROOT }
-			}
-			custom_tooltip = {
-				text = tooltip_feminist_liege_vanilla_religion
-				AND = {
-					OR = {
-						religion = cathar
-						religion = messalian
-						religion = bogomilist
-						religion = mazdaki
-					}
-					liege = { religion = ROOT }
-				}
 			}
 			custom_tooltip = {
 				text = tooltip_feminist_liege_religion_feature
@@ -2065,246 +1845,6 @@ useless_character_trigger = {
 	}
 }
 
-#True religion triggers
-true_religion_catholic_trigger = {
-	true_religion = catholic
-}
-
-true_religion_cathar_trigger = {
-	true_religion = cathar
-}
-
-true_religion_fraticelli_trigger = {
-	true_religion = fraticelli
-}
-
-true_religion_waldensian_trigger = {
-	true_religion = waldensian
-}
-
-true_religion_lollard_trigger = {
-	true_religion = lollard
-}
-
-true_religion_orthodox_trigger = {
-	true_religion = orthodox
-}
-
-true_religion_bogomilist_trigger = {
-	true_religion = bogomilist
-}
-
-true_religion_monothelite_trigger = {
-	true_religion = monothelite
-}
-
-true_religion_iconoclast_trigger = {
-	true_religion = iconoclast
-}
-
-true_religion_paulician_trigger = {
-	true_religion = paulician
-}
-
-true_religion_miaphysite_trigger = {
-	true_religion = miaphysite
-}
-
-true_religion_monophysite_trigger = {
-	true_religion = monophysite
-}
-
-true_religion_nestorian_trigger = {
-	true_religion = nestorian
-}
-
-true_religion_messalian_trigger = {
-	true_religion = messalian
-}
-
-true_religion_sunni_trigger = {
-	true_religion = sunni
-}
-
-true_religion_zikri_trigger = {
-	true_religion = zikri
-}
-
-true_religion_yazidi_trigger = {
-	true_religion = yazidi
-}
-
-true_religion_shiite_trigger = {
-	true_religion = shiite
-}
-
-true_religion_druze_trigger = {
-	true_religion = druze
-}
-
-true_religion_hurufi_trigger = {
-	true_religion = hurufi
-}
-
-true_religion_ibadi_trigger = {
-	true_religion = ibadi
-}
-
-true_religion_kharijite_trigger = {
-	true_religion = kharijite
-}
-
-true_religion_jewish_trigger = {
-	true_religion = jewish
-}
-
-true_religion_samaritan_trigger = {
-	true_religion = samaritan
-}
-
-true_religion_karaite_trigger = {
-	religion = karaite
-}
-
-true_religion_zoroastrian_trigger = {
-	true_religion = zoroastrian
-}
-
-true_religion_mazdaki_trigger = {
-	true_religion = mazdaki
-}
-
-true_religion_manichean_trigger = {
-	true_religion = manichean
-}
-
-true_religion_khurmazta_trigger = {
-	true_religion = khurmazta
-}
-
-true_religion_bon_trigger = {
-	true_religion = bon
-}
-true_religion_bon_reformed_trigger = {
-	true_religion = bon_reformed
-}
-
-true_religion_taoist_trigger = {
-	true_religion = taoist
-}
-
-true_religion_hindu_trigger = {
-	true_religion = hindu
-}
-
-true_religion_buddhist_trigger = {
-	true_religion = buddhist
-}
-
-true_religion_jain_trigger = {
-	true_religion = jain
-}
-
-true_religion_norse_pagan_trigger = {
-	true_religion = norse_pagan
-}
-
-true_religion_norse_pagan_reformed_trigger = {
-	true_religion = norse_pagan_reformed
-}
-
-true_religion_baltic_pagan_trigger = {
-	true_religion = baltic_pagan
-}
-
-true_religion_baltic_pagan_reformed_trigger = {
-	true_religion = baltic_pagan_reformed
-}
-
-true_religion_finnish_pagan_trigger = {
-	true_religion = finnish_pagan
-}
-
-true_religion_finnish_pagan_reformed_trigger = {
-	true_religion = finnish_pagan_reformed
-}
-
-true_religion_slavic_pagan_trigger = {
-	true_religion = slavic_pagan
-}
-
-true_religion_slavic_pagan_reformed_trigger = {
-	true_religion = slavic_pagan_reformed
-}
-
-true_religion_tengri_pagan_trigger = {
-	true_religion = tengri_pagan
-}
-
-true_religion_tengri_pagan_reformed_trigger = {
-	true_religion = tengri_pagan_reformed
-}
-
-true_religion_aztec_trigger = {
-	true_religion = aztec
-}
-
-true_religion_aztec_reformed_trigger = {
-	true_religion = aztec_reformed
-}
-
-true_religion_west_african_pagan_trigger = {
-	true_religion = west_african_pagan
-}
-
-true_religion_west_african_pagan_reformed_trigger = {
-	true_religion = west_african_pagan_reformed
-}
-
-true_religion_zun_pagan_trigger = {
-	true_religion = zun_pagan
-}
-
-true_religion_zun_pagan_reformed_trigger = {
-	true_religion = zun_pagan_reformed
-}
-
-true_religion_hellenic_pagan_trigger = {
-	true_religion = hellenic_pagan
-}
-
-true_religion_hellenic_pagan_reformed_trigger = {
-	true_religion = hellenic_pagan_reformed
-}
-
-true_religion_pagan_trigger = {
-	true_religion = pagan
-}
-
-true_religion_group_christian_trigger = {
-	true_religion_group = christian
-}
-
-true_religion_group_muslim_trigger = {
-	true_religion_group = muslim
-}
-
-true_religion_group_jewish_group_trigger = {
-	true_religion_group = jewish_group
-}
-
-true_religion_group_zoroastrian_group_trigger = {
-	true_religion_group = zoroastrian_group
-}
-
-true_religion_group_indian_group_trigger = {
-	true_religion_group = indian_group
-}
-
-true_religion_group_pagan_group_trigger = {
-	true_religion_group = pagan_group
-}
-
 relationship_with_root_trigger = {
 	OR = {
 		is_lover = ROOT
@@ -2321,109 +1861,11 @@ is_widow_or_widower_trigger = {
 }
 
 FROMs_religion_is_playable_trigger = {
-	NOR = {
-		AND = { #Means you're not allowed to play Muslims
-			FROM = { religion_group = muslim }
-			NOT = { has_dlc = "The Sword of Islam" }
-		}
-		AND = { #Means you're not allowed to play Jewish
-			FROM = { religion_group = jewish_group }
-			NOT = { has_dlc = "Sons of Abraham" }
-		}
-		AND = { #Means you're not allowed to play (most) Pagans
-			FROM = {
-				religion_group = pagan_group
-				NOT = { religion = bon }
-				NOT = { religion = bon_reformed }
-			}
-			NOT = { has_dlc = "The Old Gods" }
-		}
-		AND = { #Means you're not allowed to play the Bön religion (Pagan)
-			FROM = { 
-				OR = { 
-					religion = bon
-					religion = bon_reformed
-				}
-			}
-			NOR = {
-				has_dlc = "The Old Gods"
-				has_dlc = "Jade Dragon"
-			}
-		}
-		AND = { #Means you're not allowed to play the Eastern Religions
-			FROM = { religion_group = indian_group }
-			NOT = { 
-				FROM = { 
-					religion = taoist
-				} 
-			}
-			NOT = {	has_dlc = "Rajas of India" }
-		}
-		AND = { #Means you're not allowed to play the Zoroastrians
-			FROM = { religion_group = zoroastrian_group }
-			NOT = { has_dlc = "The Old Gods" }
-		}
-		AND = { #Means you're not allowed to play the Taoist religion 
-			FROM = { religion = taoist }
-			NOR = { 
-				has_dlc = "Jade Dragon"
-				has_dlc = "Rajas of India"
-			}
-		}
-	}
+	always = yes
 }
 
 ROOTs_religion_is_playable_trigger = { #For targeted decision where FROM is the player
-	NOR = {
-		AND = { #Means you're not allowed to play Muslims
-			ROOT = { religion_group = muslim }
-			NOT = { has_dlc = "The Sword of Islam" }
-		}
-		AND = { #Means you're not allowed to play Jewish
-			ROOT = { religion_group = jewish_group }
-			NOT = { has_dlc = "Sons of Abraham" }
-		}
-		AND = { #Means you're not allowed to play (most) Pagans
-			ROOT = {
-				religion_group = pagan_group
-				NOT = { religion = bon }
-				NOT = { religion = bon_reformed }
-			}
-			NOT = { has_dlc = "The Old Gods" }
-		}
-		AND = { #Means you're not allowed to play the Bön religion (Pagan)
-			ROOT = { 
-				OR = { 
-					religion = bon 
-					religion = bon_reformed
-				} 
-			}
-			NOR = {
-				has_dlc = "The Old Gods"
-				has_dlc = "Jade Dragon"
-			}
-		}
-		AND = { #Means you're not allowed to play the Eastern Religions
-			ROOT = { religion_group = indian_group }
-			NOT = { 
-				ROOT = { 
-					religion = taoist
-				} 
-			}
-			NOT = {	has_dlc = "Rajas of India" }
-		}
-		AND = { #Means you're not allowed to play the Zoroastrians
-			ROOT = { religion_group = zoroastrian_group }
-			NOT = { has_dlc = "The Old Gods" }
-		}
-		AND = { #Means you're not allowed to play the Taoist religion 
-			ROOT = { religion = taoist }
-			NOR = { 
-				has_dlc = "Jade Dragon"
-				has_dlc = "Rajas of India"
-			}
-		}
-	}
+	always = yes
 }
 ###Use the actual is_<family member>_of = scope triggers now
 family_of_root_trigger = { #use is_blood_relative_of_root_trigger for all relatives
@@ -2726,7 +2168,6 @@ is_virgin_trigger = {
 		trait = seducer
 		trait = seductress
 		trait = lovers_pox
-		trait = has_aztec_disease
 		trait = syphilitic
 	}
 	OR = {
@@ -2761,176 +2202,12 @@ is_secret_religious_society_member_trigger = {
 	society_member_of = secret_religious_cult
 }
 
-is_christian_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	secret_religion_group = christian
-}
-
-is_muslim_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	secret_religion_group = muslim
-}
-
-is_zoroastrian_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	secret_religion_group = zoroastrian_group
-}
-
-is_indian_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	secret_religion_group = indian_group
-}
-
-is_jewish_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	secret_religion_group = jewish_group
-}
-
-is_norse_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	OR = {
-		society_member_of = secret_religious_society_norse_pagan_reformed
-		society_member_of = secret_religious_society_norse_pagan
-	}
-}
-
-is_slavic_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	OR = {
-		society_member_of = secret_religious_society_slavic_pagan_reformed
-		society_member_of = secret_religious_society_slavic_pagan
-	}
-}
-
-is_tengri_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	OR = {
-		society_member_of = secret_religious_society_tengri_pagan_reformed
-		society_member_of = secret_religious_society_tengri_pagan
-	}
-}
-
-is_baltic_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	OR = {
-		society_member_of = secret_religious_society_baltic_pagan_reformed
-		society_member_of = secret_religious_society_baltic_pagan
-	}
-}
-
-is_finnish_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	OR = {
-		society_member_of = secret_religious_society_finnish_pagan_reformed
-		society_member_of = secret_religious_society_finnish_pagan
-	}
-}
-
-is_west_african_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	OR = {
-		society_member_of = secret_religious_society_west_african_pagan_reformed
-		society_member_of = secret_religious_society_west_african_pagan
-	}
-}
-
-is_zun_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	OR = {
-		society_member_of = secret_religious_society_zun_pagan_reformed
-		society_member_of = secret_religious_society_zun_pagan
-	}
-}
-
-is_aztec_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_cult
-	OR = {
-		society_member_of = secret_religious_society_aztec_reformed
-		society_member_of = secret_religious_society_aztec
-	}
-}
-
-is_bon_secret_religious_society_member_trigger = {
-	OR = {
-		society_member_of = secret_religious_society_bon
-		society_member_of = secret_religious_society_bon_reformed
-	}
-}
-
-is_hellenic_secret_religious_society_member_trigger = {
-	OR = {
-		society_member_of = secret_religious_society_hellenic_pagan
-		society_member_of = secret_religious_society_hellenic_pagan_reformed
-	}
-}
-is_taoist_secret_religious_society_member_trigger = {
-	society_member_of = secret_religious_society_taoist
-}
-
 is_openly_of_prevs_secret_religion_trigger = {
 	religion = { target = PREV target_type = secret }
 }
 
 is_openly_of_roots_secret_religion_trigger = {
 	religion = { target = ROOT target_type = secret }
-}
-
-has_sympathy_for_true_religion_of_prev_trigger = { 
-	OR = {
-		AND = {
-			trait = sympathy_christendom
-			PREV = { true_religion_group_christian_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_islam
-			PREV = { true_religion_group_muslim_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_pagans
-			PREV = { true_religion_group_pagan_group_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_zoroastrianism
-			PREV = { true_religion_group_zoroastrian_group_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_judaism
-			PREV = { true_religion_group_jewish_group_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_indian
-			PREV = { true_religion_group_indian_group_trigger = yes }
-		}
-	}
-}
-
-has_sympathy_for_true_religion_of_root_trigger = { 
-	OR = {
-		AND = {
-			trait = sympathy_christendom
-			ROOT = { true_religion_group_christian_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_islam
-			ROOT = { true_religion_group_muslim_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_pagans
-			ROOT = { true_religion_group_pagan_group_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_zoroastrianism
-			ROOT = { true_religion_group_zoroastrian_group_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_judaism
-			ROOT = { true_religion_group_jewish_group_trigger = yes }
-		}
-		AND = {
-			trait = sympathy_indian
-			ROOT = { true_religion_group_indian_group_trigger = yes }
-		}
-	}
 }
 
 ok_sr_induction_mission_target_trigger = {
@@ -2946,47 +2223,6 @@ ok_sr_induction_mission_target_trigger = {
 		has_sympathy_for_true_religion_of_root_trigger = yes
 	}
 }
-
-ok_sr_sympathy_mission_target_trigger = {
-	has_secret_religion_trait_trigger = no
-	ROOT = {
-		NOT = { secret_religion = { target_type = public target = PREV } }
-		NOR = {
-			AND = {
-				true_religion_group = christian
-				PREV = { trait = sympathy_christendom }
-			}
-			AND = {
-				true_religion_group = muslim
-				PREV = { trait = sympathy_islam }
-			}
-			AND = {
-				true_religion_group = pagan_group
-				PREV = { trait = sympathy_pagans }
-			}
-			AND = {
-				true_religion_group = zoroastrian_group
-				PREV = { trait = sympathy_zoroastrianism }
-			}
-			AND = {
-				true_religion_group = jewish_group
-				PREV = { trait = sympathy_judaism }
-			}
-			AND = {
-				true_religion_group = indian_group
-				PREV = { trait = sympathy_indian }
-			}
-		}
-	}
-	ROOT = { PREV = { is_openly_of_prevs_secret_religion_trigger = no } }
-	ROOT = { PREV = { has_sympathy_for_true_religion_of_prev_trigger = no } }
-	prisoner = no
-	is_adult = yes
-	NOT = { trait = incapable }
-	is_inaccessible_trigger = no
-	NOT = { has_character_modifier = secret_religion_sympathy_timer }
-}
-
 has_prevs_secret_religion_truly_trigger = {
 	secret_religion = { target = PREV target_type = true }
 }
@@ -3000,208 +2236,7 @@ has_my_liege_secret_religion_truly_trigger = {
 }
 
 is_in_prevs_interesting_society_trigger = {
-	OR = {
-		AND = {
-			society_member_of = secret_religious_society_catholic
-			PREV = { interested_in_society = secret_religious_society_catholic }
-		}
-		AND = {
-			society_member_of = secret_religious_society_cathar
-			PREV = { interested_in_society = secret_religious_society_cathar }
-		}
-		AND = {
-			society_member_of = secret_religious_society_fraticelli
-			PREV = { interested_in_society = secret_religious_society_fraticelli }
-		}
-		AND = {
-			society_member_of = secret_religious_society_waldensian
-			PREV = { interested_in_society = secret_religious_society_waldensian }
-		}
-		AND = {
-			society_member_of = secret_religious_society_lollard
-			PREV = { interested_in_society = secret_religious_society_lollard }
-		}
-		AND = {
-			society_member_of = secret_religious_society_orthodox
-			PREV = { interested_in_society = secret_religious_society_orthodox }
-		}
-		AND = {
-			society_member_of = secret_religious_society_miaphysite
-			PREV = { interested_in_society = secret_religious_society_miaphysite }
-		}
-		AND = {
-			society_member_of = secret_religious_society_monophysite
-			PREV = { interested_in_society = secret_religious_society_monophysite }
-		}
-		AND = {
-			society_member_of = secret_religious_society_bogomilist
-			PREV = { interested_in_society = secret_religious_society_bogomilist }
-		}
-		AND = {
-			society_member_of = secret_religious_society_monothelite
-			PREV = { interested_in_society = secret_religious_society_monothelite }
-		}
-		AND = {
-			society_member_of = secret_religious_society_iconoclast
-			PREV = { interested_in_society = secret_religious_society_iconoclast }
-		}
-		AND = {
-			society_member_of = secret_religious_society_paulician
-			PREV = { interested_in_society = secret_religious_society_paulician }
-		}
-		AND = {
-			society_member_of = secret_religious_society_nestorian
-			PREV = { interested_in_society = secret_religious_society_nestorian }
-		}
-		AND = {
-			society_member_of = secret_religious_society_messalian
-			PREV = { interested_in_society = secret_religious_society_messalian }
-		}
-		AND = {
-			society_member_of = secret_religious_society_sunni
-			PREV = { interested_in_society = secret_religious_society_sunni }
-		}
-		AND = {
-			society_member_of = secret_religious_society_zikri
-			PREV = { interested_in_society = secret_religious_society_zikri }
-		}
-		AND = {
-			society_member_of = secret_religious_society_yazidi
-			PREV = { interested_in_society = secret_religious_society_yazidi }
-		}
-		AND = {
-			society_member_of = secret_religious_society_ibadi
-			PREV = { interested_in_society = secret_religious_society_ibadi }
-		}
-		AND = {
-			society_member_of = secret_religious_society_kharijite
-			PREV = { interested_in_society = secret_religious_society_kharijite }
-		}
-		AND = {
-			society_member_of = secret_religious_society_shiite
-			PREV = { interested_in_society = secret_religious_society_shiite }
-		}
-		AND = {
-			society_member_of = secret_religious_society_druze
-			PREV = { interested_in_society = secret_religious_society_druze }
-		}
-		AND = {
-			society_member_of = secret_religious_society_hurufi
-			PREV = { interested_in_society = secret_religious_society_hurufi }
-		}
-		AND = {
-			society_member_of = secret_religious_society_jewish
-			PREV = { interested_in_society = secret_religious_society_jewish }
-		}
-		AND = {
-			society_member_of = secret_religious_society_karaite
-			PREV = { interested_in_society = secret_religious_society_karaite }
-		}
-		AND = {
-			society_member_of = secret_religious_society_samaritan
-			PREV = { interested_in_society = secret_religious_society_samaritan }
-		}
-		AND = {
-			society_member_of = secret_religious_society_zoroastrian
-			PREV = { interested_in_society = secret_religious_society_zoroastrian }
-		}
-		AND = {
-			society_member_of = secret_religious_society_mazdaki
-			PREV = { interested_in_society = secret_religious_society_mazdaki }
-		}
-		AND = {
-			society_member_of = secret_religious_society_manichean
-			PREV = { interested_in_society = secret_religious_society_manichean }
-		}
-		AND = {
-			society_member_of = secret_religious_society_khurmazta
-			PREV = { interested_in_society = secret_religious_society_khurmazta }
-		}
-		AND = {
-			society_member_of = secret_religious_society_bon
-			PREV = { interested_in_society = secret_religious_society_bon }
-		}
-		AND = {
-			society_member_of = secret_religious_society_taoist
-			PREV = { interested_in_society = secret_religious_society_taoist }
-		}
-		AND = {
-			society_member_of = secret_religious_society_hindu
-			PREV = { interested_in_society = secret_religious_society_hindu}
-		}
-		AND = {
-			society_member_of = secret_religious_society_buddhist
-			PREV = { interested_in_society = secret_religious_society_buddhist }
-		}
-		AND = {
-			society_member_of = secret_religious_society_jain
-			PREV = { interested_in_society = secret_religious_society_jain }
-		}
-		AND = {
-			society_member_of = secret_religious_society_norse_pagan_reformed
-			PREV = { interested_in_society = secret_religious_society_norse_pagan_reformed }
-		}
-		AND = {
-			society_member_of = secret_religious_society_slavic_pagan_reformed
-			PREV = { interested_in_society = secret_religious_society_slavic_pagan_reformed }
-		}
-		AND = {
-			society_member_of = secret_religious_society_tengri_pagan_reformed
-			PREV = { interested_in_society = secret_religious_society_tengri_pagan_reformed }
-		}
-		AND = {
-			society_member_of = secret_religious_society_baltic_pagan_reformed
-			PREV = { interested_in_society = secret_religious_society_baltic_pagan_reformed }
-		}
-		AND = {
-			society_member_of = secret_religious_society_finnish_pagan_reformed
-			PREV = { interested_in_society = secret_religious_society_finnish_pagan_reformed }
-		}
-		AND = {
-			society_member_of = secret_religious_society_west_african_pagan_reformed
-			PREV = { interested_in_society = secret_religious_society_west_african_pagan_reformed }
-		}
-		AND = {
-			society_member_of = secret_religious_society_zun_pagan_reformed
-			PREV = { interested_in_society = secret_religious_society_zun_pagan_reformed }
-		}
-		AND = {
-			society_member_of = secret_religious_society_norse_pagan
-			PREV = { interested_in_society = secret_religious_society_norse_pagan }
-		}
-		AND = {
-			society_member_of = secret_religious_society_slavic_pagan
-			PREV = { interested_in_society = secret_religious_society_slavic_pagan }
-		}
-		AND = {
-			society_member_of = secret_religious_society_tengri_pagan
-			PREV = { interested_in_society = secret_religious_society_tengri_pagan }
-		}
-		AND = {
-			society_member_of = secret_religious_society_baltic_pagan
-			PREV = { interested_in_society = secret_religious_society_baltic_pagan }
-		}
-		AND = {
-			society_member_of = secret_religious_society_finnish_pagan
-			PREV = { interested_in_society = secret_religious_society_finnish_pagan }
-		}
-		AND = {
-			society_member_of = secret_religious_society_west_african_pagan
-			PREV = { interested_in_society = secret_religious_society_west_african_pagan }
-		}
-		AND = {
-			society_member_of = secret_religious_society_zun_pagan
-			PREV = { interested_in_society = secret_religious_society_zun_pagan }
-		}
-		AND = {
-			society_member_of = secret_religious_society_aztec
-			PREV = { interested_in_society = secret_religious_society_aztec }
-		}
-		AND = {
-			society_member_of = secret_religious_society_aztec_reformed
-			PREV = { interested_in_society = secret_religious_society_aztec_reformed }
-		}
-	}
+	always = no
 }
 
 shares_prevs_secret_religion_trigger = {
@@ -3240,317 +2275,6 @@ is_visible_to_self_trigger = { #For hidden modifiers
 	}
 }
 
-#has_any_char_old_religion = {
-#	OR = {
-#		AND = {
-#			has_character_flag = character_was_catholic
-#	    	any_character = {
-#	    		religion = catholic
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_cathar
-#	    	any_character = {
-#	    		religion = cathar
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_fraticelli
-#	    	any_character = {
-#	    		religion = fraticelli
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_waldensian
-#	    	any_character = {
-#	    		religion = waldensian
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_lollard
-#	    	any_character = {
-#	    		religion = lollard
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_orthodox
-#	    	any_character = {
-#	    		religion = orthodox
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_miaphysite
-#	    	any_character = {
-#	    		religion = miaphysite
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_monophysite
-#	    	any_character = {
-#	    		religion = monophysite
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_bogomilist
-#	    	any_character = {
-#	    		religion = bogomilist
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_monothelite
-#	    	any_character = {
-#	    		religion = monothelite
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_iconoclast
-#	    	any_character = {
-#	    		religion = iconoclast
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_paulician
-#	    	any_character = {
-#	    		religion = paulician
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_nestorian
-#	    	any_character = {
-#	    		religion = nestorian
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_messalian
-#	    	any_character = {
-#	    		religion = messalian
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_sunni
-#	    	any_character = {
-#	    		religion = sunni
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_zikri
-#	    	any_character = {
-#	    		religion = zikri
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_yazidi
-#	    	any_character = {
-#	    		religion = yazidi
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_ibadi
-#	    	any_character = {
-#	    		religion = ibadi
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_kharijite
-#	    	any_character = {
-#	    		religion = kharijite
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_shiite
-#	    	any_character = {
-#	    		religion = shiite
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_druze
-#	    	any_character = {
-#	    		religion = druze
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_hurufi
-#	    	any_character = {
-#	    		religion = hurufi
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_jewish
-#	    	any_character = {
-#	    		religion = jewish
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_karaite
-#	    	any_character = {
-#	    		religion = karaite
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_samaritan
-#	    	any_character = {
-#	    		religion = samaritan
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_zoroastrian
-#	    	any_character = {
-#	    		religion = zoroastrian
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_mazdaki
-#	    	any_character = {
-#	    		religion = mazdaki
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_manichean
-#	    	any_character = {
-#	    		religion = manichean
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_khurmazta
-#	    	any_character = {
-#	    		religion = khurmazta
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_bon
-#	    	any_character = {
-#	    		religion = bon
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_bon_reformed
-#	    	any_character = {
-#	    		religion = bon_reformed
-#	    	}
-#	    }
-#		AND = {
-#			has_character_flag = character_was_taoist
-#	    	any_character = {
-#	    		religion = taoist
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_hindu
-#	    	any_character = {
-#	    		religion = hindu
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_buddhist
-#	    	any_character = {
-#	    		religion = buddhist
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_jain
-#	    	any_character = {
-#	    		religion = jain
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_norse_pagan_reformed
-#	    	any_character = {
-#	    		religion = norse_pagan_reformed
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_slavic_pagan_reformed
-#	    	any_character = {
-#	    		religion = slavic_pagan_reformed
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_tengri_pagan_reformed
-#	    	any_character = {
-#	    		religion = tengri_pagan_reformed
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_baltic_pagan_reformed
-#	    	any_character = {
-#	    		religion = baltic_pagan_reformed
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_finnish_pagan_reformed
-#	    	any_character = {
-#	    		religion = finnish_pagan_reformed
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_west_african_pagan_reformed
-#	    	any_character = {
-#	    		religion = west_african_pagan_reformed
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_zun_pagan_reformed
-#	    	any_character = {
-#	    		religion = zun_pagan_reformed
-#	    	}
-#	    }
-#		AND = { 
-#	    	has_character_flag = character_was_norse_pagan
-#	    	any_character = {
-#	    		religion = norse_pagan
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_slavic_pagan
-#	    	any_character = {
-#	    		religion = slavic_pagan
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_tengri_pagan
-#	    	any_character = {
-#	    		religion = tengri_pagan
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_baltic_pagan
-#	    	any_character = {
-#	    		religion = baltic_pagan
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_finnish_pagan
-#	    	any_character = {
-#	    		religion = finnish_pagan
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_west_african_pagan
-#	    	any_character = {
-#	    		religion = west_african_pagan
-#	    	}
-#	    }
-#	    AND = { 
-#	    	has_character_flag = character_was_zun_pagan
-#	    	any_character = {
-#	    		religion = zun_pagan
-#	    	}
-#	    }
-#		AND = { 
-#	    	has_character_flag = character_was_aztec
-#	    	any_character = {
-#	    		religion = aztec
-#	    	}
-#	    }
-#		AND = { 
-#	    	has_character_flag = character_was_aztec_reformed
-#	    	any_character = {
-#	    		religion = aztec_reformed
-#	    	}
-#	    }
-#	}
-#}
-
 can_add_admin_bonus_trigger = {
 	NAND = {
 		has_province_modifier = harvest_festivals
@@ -3567,111 +2291,6 @@ can_be_sabotaged_trigger = {
 	}
 }
 
-has_assassins_prerequisites = {
-	age = 16
-	conditional_tooltip = { #recruitment decision
-		trigger = { FROM = { society_member_of = the_assassins } }
-		OR = {
-			FROM = { ai = no }
-			hidden_trigger = { ai = no }
-			religion_group = muslim
-		}
-	}
-	conditional_tooltip = { #showing interest via interface
-		trigger = { NOT = { FROM = { society_member_of = the_assassins } } }
-		OR = {
-			true_religion = shiite
-			religion_group = muslim
-			AND = {
-				ai = no
-				NOT = { trait = zealous }
-				any_playable_ruler = {
-					religion = shiite
-					NOT = {
-						distance_from_realm = { value = 300 who = ROOT }
-					}
-				}
-			}
-		}
-	}
-	OR = {
-		is_female = no
-		has_game_rule = {
-			name = gender
-			value = all
-		}
-	}
-}
-
-has_common_devilworship_prerequisites = {
-	age = 16
-	custom_tooltip = {
-		text = must_be_a_sinner_tooltip
-		hidden_tooltip = {
-			OR = {
-				has_impious_trait_trigger = yes
-				has_vice_trigger = yes
-				trait = drunkard
-				trait = lunatic
-			}
-		}
-	}
-}
-
-has_satanists_prerequisites = {
-	has_common_devilworship_prerequisites = yes
-	OR = {
-		religion_group = christian
-		religion_group = muslim
-		religion_group = zoroastrian_group
-		religion_group = jewish_group
-		religion = zun_pagan
-		religion = zun_pagan_reformed
-	}
-}
-
-has_trollcrafters_prerequisites = {
-	has_common_devilworship_prerequisites = yes
-	religion_openly_norse_or_reformed_trigger = yes
-}
-
-has_cult_of_kali_prerequisites = {
-	has_common_devilworship_prerequisites = yes
-	OR = {
-		religion = hindu
-	}
-}
-
-has_cold_ones_prerequisites = {
-	has_common_devilworship_prerequisites = yes
-	OR = {
-		religion_openly_baltic_or_reformed_trigger = yes
-		religion_openly_slavic_or_reformed_trigger = yes
-		religion_openly_finnish_or_reformed_trigger = yes
-	}
-}
-
-has_plaguebringers_prerequisites = {
-	has_common_devilworship_prerequisites = yes
-	religion_openly_tengri_or_reformed_trigger = yes
-}
-
-has_vodouns_prerequisites = {
-	has_common_devilworship_prerequisites = yes
-	religion_openly_west_african_or_reformed_trigger = yes
-}
-
-has_bacchants_prerequisites = {
-	has_common_devilworship_prerequisites = yes
-	OR = { 
-		religion_openly_hellenic_or_reformed_trigger = yes
-		culture = roman #Historically fashionable thrill for bored patricians.
-		AND = { 
-			has_global_flag = flag_started_roman_renaissance
-			top_liege = { has_landed_title = e_roman_empire } #Historically a plague for the Empire.
-		} 
-	} 
-}
 same_society_rank_as_prev_trigger = {
 	OR = {
 		AND = {
@@ -3743,356 +2362,6 @@ looting_artifact_event_religious_artifacts_trigger = {
 		any_artifact = {
 			has_artifact_flag = looted_artifact_tooltip_1
 			has_artifact_flag = religious
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = catholic
-				ROOT = { religion = catholic }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = cathar
-				ROOT = { religion = cathar }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = fraticelli
-				ROOT = { religion = fraticelli }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = waldensian
-				ROOT = { religion = waldensian }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = lollard
-				ROOT = { religion = lollard }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = orthodox
-				ROOT = { religion = orthodox }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = bogomilist
-				ROOT = { religion = bogomilist }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = monothelite
-				ROOT = { religion = monothelite }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = iconoclast
-				ROOT = { religion = iconoclast }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = paulician
-				ROOT = { religion = paulician }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = miaphysite
-				ROOT = { religion = miaphysite }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = monophysite
-				ROOT = { religion = monophysite }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = nestorian
-				ROOT = { religion = nestorian }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = messalian
-				ROOT = { religion = messalian }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = sunni
-				ROOT = { religion = sunni }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = zikri
-				ROOT = { religion = zikri }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = yazidi
-				ROOT = { religion = yazidi }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = shiite
-				ROOT = { religion = shiite }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = druze
-				ROOT = { religion = druze }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = hurufi
-				ROOT = { religion = hurufi }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = ibadi
-				ROOT = { religion = ibadi }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = kharijite
-				ROOT = { religion = kharijite }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = jewish
-				ROOT = { religion = jewish }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = samaritan
-				ROOT = { religion = samaritan }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = karaite
-				ROOT = { religion = karaite }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = zoroastrian
-				ROOT = { religion = zoroastrian }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = mazdaki
-				ROOT = { religion = mazdaki }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = manichean
-				ROOT = { religion = manichean }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = khurmazta
-				ROOT = { religion = khurmazta }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = bon
-				ROOT = { OR = { religion = bon religion = bon_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = taoist
-				ROOT = { religion = taoist }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = hindu
-				ROOT = { religion = hindu }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = buddhist
-				ROOT = { religion = buddhist }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = jain
-				ROOT = { religion = jain }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = norse_pagan
-				ROOT = { OR = { religion = norse_pagan religion = norse_pagan_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = baltic_pagan
-				ROOT = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = finnish_pagan
-				ROOT = { OR = { religion = finnish_pagan religion = finnish_pagan_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = slavic_pagan
-				ROOT = { OR = { religion = slavic_pagan religion = slavic_pagan_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = tengri_pagan
-				ROOT = { OR = { religion = tengri_pagan religion = tengri_pagan_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = aztec
-				ROOT = { OR = { religion = aztec religion = aztec_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = west_african_pagan
-				ROOT = { OR = { religion = west_african_pagan religion = west_african_pagan_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = zun_pagan
-				ROOT = { OR = { religion = zun_pagan religion = zun_pagan_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = hellenic_pagan
-				ROOT = { OR = { religion = hellenic_pagan religion = hellenic_pagan_reformed } }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = pagan
-				ROOT = { religion = pagan }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = christian
-				ROOT = { religion_group = christian }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = muslim
-				ROOT = { religion_group = muslim }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = pagan_group
-				ROOT = { religion_group = pagan_group }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = zoroastrian_group
-				ROOT = { religion_group = zoroastrian_group }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = jewish_group
-				ROOT = { religion_group = jewish_group }
-			}
-		}
-		NAND = {
-			any_artifact = {
-				has_artifact_flag = looted_artifact_tooltip_1
-				has_artifact_flag = indian_group
-				ROOT = { religion_group = indian_group }
-			}
 		}
 	}
 }
@@ -4687,72 +2956,7 @@ is_romantic_zodiac_mismatch_with_root = {
 }
 
 has_unsafe_secret_religion = {
-	NOT = { is_nomadic = yes }
-	OR = {
-		AND = {
-			NOT = { has_dlc = "The Sword of Islam" }
-			OR = {
-				secret_religion = sunni
-				secret_religion = zikri
-				secret_religion = yazidi
-				secret_religion = shiite
-				secret_religion = druze
-				secret_religion = hurufi
-				secret_religion = ibadi
-				secret_religion = kharijite
-			}
-		}
-		AND = {
-			NOT = { has_dlc = "Sons of Abraham" }
-			OR = {
-				secret_religion = jewish
-				secret_religion = samaritan
-				secret_religion = karaite
-			}
-		}
-		AND = {
-			NOT = { has_dlc = "The Old Gods" }
-			OR = {
-				secret_religion = zoroastrian
-				secret_religion = mazdaki
-				secret_religion = manichean
-				secret_religion = khurmazta
-				secret_religion = bon
-				secret_religion = bon_reformed
-				secret_religion = norse_pagan
-				secret_religion = norse_pagan_reformed
-				secret_religion = baltic_pagan
-				secret_religion = baltic_pagan_reformed
-				secret_religion = finnish_pagan
-				secret_religion = finnish_pagan_reformed
-				secret_religion = slavic_pagan
-				secret_religion = slavic_pagan_reformed
-				secret_religion = tengri_pagan
-				secret_religion = tengri_pagan_reformed
-				secret_religion = west_african_pagan
-				secret_religion = west_african_pagan_reformed
-				secret_religion = zun_pagan
-				secret_religion = zun_pagan_reformed
-				secret_religion = hellenic_pagan
-				secret_religion = hellenic_pagan_reformed
-				secret_religion = pagan
-				secret_religion = aztec
-				secret_religion = aztec_reformed
-			}
-		}
-		AND = {
-			NOT = { has_dlc = "Rajas of India" }
-			OR = {
-				secret_religion = hindu
-				secret_religion = buddhist
-				secret_religion = jain
-			}
-		}
-		AND = {
-			NOT = { has_dlc = "Jade Dragon" }
-			secret_religion = taoist
-		}
-	}
+	always = yes
 }
 
 #to check type of ingredient... (if more are added, they need to go in here to work with the current system)
@@ -5039,295 +3243,6 @@ same_true_religion_as_root_trigger = {
 	true_religion = ROOT
 }
 
-religion_openly_norse_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_norse_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = norse_pagan
-				religion = norse_pagan_reformed
-			}
-		}
-	}
-}
-
-religion_openly_baltic_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_baltic_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = baltic_pagan
-				religion = baltic_pagan_reformed
-			}
-		}
-	}
-}
-
-religion_openly_finnish_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_finnish_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = finnish_pagan
-				religion = finnish_pagan_reformed
-			}
-		}
-	}
-}
-
-religion_openly_slavic_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_slavic_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = slavic_pagan
-				religion = slavic_pagan_reformed
-			}
-		}
-	}
-}
-
-religion_openly_tengri_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_tengri_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = tengri_pagan
-				religion = tengri_pagan_reformed
-			}
-		}
-	}
-}
-
-religion_openly_west_african_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_west_african_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
-		}
-	}
-}
-
-religion_openly_zun_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_zun_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = zun_pagan
-				religion = zun_pagan_reformed
-			}
-		}
-	}
-}
-religion_openly_bon_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_bon_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = bon
-				religion = bon_reformed
-			}
-		}
-	}
-}
-religion_openly_hellenic_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_hellenic_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = hellenic_pagan
-				religion = hellenic_pagan_reformed
-			}
-		}
-	}
-}
-
-religion_openly_aztec_or_reformed_trigger = {
-	custom_tooltip = {
-		text = religion_openly_aztec_or_reformed_tooltip
-		hidden_trigger = {
-			OR = {
-				religion = aztec
-				religion = aztec_reformed
-			}
-		}
-	}
-}
-
-has_dharmic_religion_trigger = {
-	OR = {
-		religion = hindu
-		religion = buddhist
-		religion = jain
-	}
-}
-
-###CHINA TRIGGERS###
-
-#Grace triggers
-has_grace_trivial_trigger = {
-	has_offmap_currency = { offmap = offmap_china value = 10 }
-}
-has_grace_minor_trigger = {
-	has_offmap_currency = { offmap = offmap_china value = 50 }
-}
-has_grace_medium_trigger = {
-	has_offmap_currency = { offmap = offmap_china value = 150 }
-}
-has_grace_major_trigger = {
-	has_offmap_currency = { offmap = offmap_china value = 500 }
-}
-has_grace_massive_trigger = { 
-	has_offmap_currency = { offmap = offmap_china value = 1000 }
-}
-
-
-#Always put this at the end of your triggers!
-china_diplo_interaction_trigger = { 
-	offmap_china = {
-		governor = { 
-			NOT = { war_with = PREVPREV } 
-			is_within_diplo_range = PREVPREV
-		}
-		NOT = { has_policy = china_isolationist }
-	}
-	conditional_tooltip = { 
-		trigger = { government = chinese_imperial_government }
-		custom_tooltip = { 
-			text = china_offmap_decisions_pretender_emperor_tt
-			always = no
-		}
-	}
-}
-
-china_is_suffering_trigger = {
-	offmap_china = {
-		OR = {
-			has_status = china_unrest
-			has_status = china_civil_war
-			has_status = china_famine
-			has_status = china_plague
-			has_status = china_mongol_invasion
-			has_status = china_jurchen_invasion
-		}
-	}
-}
-
-china_is_fine_trigger = { #"fine", read like "fiii-iine", i.e. China is currently treating the world as their oyster
-	offmap_china = {
-		OR = {
-			has_status = china_golden_age
-			has_status = china_stable
-		}
-		OR = {
-			has_policy = china_open
-			has_policy = china_expansionist
-		}
-	}
-}
-
-china_is_stable_open_trigger = {
-	offmap_china = {
-		has_status = china_stable
-		has_policy = china_open
-	}
-}
-china_is_stable_expansionist_trigger = {
-	offmap_china = {
-		has_status = china_stable
-		has_policy = china_expansionist
-	}
-}
-china_is_golden_age_open_trigger = {
-	offmap_china = {
-		has_status = china_golden_age
-		has_policy = china_open
-	}
-}
-china_is_golden_age_expansionist_trigger = {
-	offmap_china = {
-		has_status = china_golden_age
-		has_policy = china_expansionist
-	}
-}
-
-
-#Found in the 00_offmap_powers file... and the conditions for the decisions
-china_offmap_boon_decisions_enabled_trigger = {
-	china_offmap_decisions_enabled_trigger = yes
-	custom_tooltip = {
-		text = china_offmap_boon_decisions_enabled_trigger_cd_tt #From is player character
-		FROM = { NOT = { has_character_modifier = jd_china_boon_cd } } #boon cooldown, which is set in each decision (one year!)...
-	}
-}
-
-#Found in the 00_offmap_powers file... and the conditions for the decisions, use custom tooltip for that decisions cooldown modifier
-china_offmap_tribute_decisions_enabled_trigger = {
-	china_offmap_decisions_enabled_trigger = yes
-}
-
-#What goes into the two triggers above...
-china_offmap_decisions_enabled_trigger = { 
-	offmap_china = {
-		NOT = { has_policy = china_isolationist }
-		custom_tooltip = {
-			text = china_offmap_decisions_enabled_trigger_war_tt #"Is at peace with §Y[From.GetTitledFirstName]§!"
-			NOT = { governor = { war_with = FROM } }
-		}
-		governor = {
-			show_scope_change = no
-			is_within_diplo_range = FROM
-			hidden_trigger  = { NOT = { character = FROM } } #Governor cannot use boon/tributes decisions
-		}
-	}
-	custom_tooltip = {
-		text = china_offmap_boon_decisions_enabled_trigger_raiding_tt
-		FROM = {
-			NOR = {
-				has_character_modifier = china_raid_active
-				has_character_modifier = china_raid_grace_cd
-			}
-		}
-	}
-	hidden_trigger = { has_dlc = "Jade Dragon" }
-	conditional_tooltip = { 
-		trigger = { FROM = { primary_title = { has_title_flag = rebel_general_title } } }
-		custom_tooltip = { 
-			text = china_offmap_decisions_pretender_emperor_tt
-			always = no
-		}
-	}
-	conditional_tooltip = { 
-		trigger = { FROM = { has_character_modifier = failed_invasion_of_china } }
-		custom_tooltip = { 
-			text = china_offmap_decisions_failed_invasion_tt
-			always = no
-		}
-	}
-}
-
-#Found in the 00_offmap_powers file... and the conditions for the force open china decision
-china_offmap_hostile_decisions_enabled_trigger = {
-	offmap_china = {
-		custom_tooltip = {
-			text = china_offmap_decisions_enabled_trigger_war_tt #"Is at peace with §Y[From.GetTitledFirstName]§!"
-			NOT = { governor = { war_with = FROM } }
-		}
-		governor = {
-			show_scope_change = no
-			is_within_diplo_range = FROM
-			hidden_trigger  = { NOT = { character = FROM } } #Governor cannot use boon/tributes decisions
-		}
-		offmap_ruler = {
-			NOT = { dynasty = FROM }
-		}
-	}
-	hidden_trigger = { has_dlc = "Jade Dragon" }
-}
-
 #Used with Sending Tribute characters to China...
 local_third_party_score_low_trigger = {
 	NOT = { check_variable = { which = local_third_party_score value = 91 } }
@@ -5338,215 +3253,6 @@ local_third_party_score_medium_trigger = {
 }
 local_third_party_score_great_trigger = {
 	check_variable = { which = local_third_party_score value = 141 }
-}
-
-# For checking the Chinese Emperor's likes & dislikes
-is_liked_by_China_trigger = {
-	liked_by_offmap = {
-        type = offmap_china
-    }
-    NOT = {
-        disliked_by_offmap = {
-            type = offmap_china
-        }
-    }
-    offmap_china = {
-        show_scope_change = no
-        custom_tooltip = { text = emperor_likes_THIS_tt }
-    }
-}
-
-is_disliked_by_China_trigger = {
-	disliked_by_offmap = {
-        type = offmap_china
-    }
-    NOT = {
-		liked_by_offmap = {
-            type = offmap_china
-        }
-    }
-    offmap_china = {
-        show_scope_change = no
-        custom_tooltip = { text = emperor_dislikes_THIS_tt }
-    }
-}
-
-is_liked_and_disliked_by_China = {
-    disliked_by_offmap = {
-        type = offmap_china
-    }
-    liked_by_offmap = {
-        type = offmap_china
-    }
-    offmap_china = {
-        show_scope_change = no
-        custom_tooltip = { text = emperor_has_ambiguous_feelings_of_THIS_tt }
-    }
-}
-
-#Used in the invasion script...
-valid_offmap_china_target = {
-	NOT = { character = ROOT }
-	NOT = { has_character_modifier = peace_deal_with_china }
-	NOT = { has_character_flag = defeated_china }
-	NOT = {	is_tributary = { suzerain = ROOT } }
-	in_revolt = no
-	is_within_diplo_range = ROOT
-	is_landed = yes
-	higher_tier_than = BARON
-	NOT = { primary_title = { has_title_flag = rebel_general_title } } #uses special cb to target
-	NOT = { offmap_china = { offmap_ruler = { dynasty = PREVPREV } } }
-}
-
-valid_offmap_china_target_location = {
-	OR = {
-		any_realm_province = { region = custom_chinese_invasion_target_region }
-		any_neighbor_independent_ruler = {
-			has_landed_title = e_china_west_governor
-		}
-	}
-}
-
-valid_offmap_china_target_location_tributary_chain = {
-	OR = {
-		#any_realm_province = { region = custom_chinese_invasion_target_region }
-		any_neighbor_independent_ruler = {
-			has_landed_title = e_china_west_governor
-		}
-		any_neighbor_independent_ruler = {
-			is_tributary = yes
-			suzerain = {
-				has_landed_title = e_china_west_governor
-			}
-		}
-	}
-}
-
-# JADE DRAGON
-# EMPEROR LIKES & DISLIKES
-likes_concubines = {
-	context = concubine # Not a trigger, but used by the 'liked_by_offmap' & 'disliked_by_offmap' triggers
-}
-likes_eunuchs = {
-	context = eunuch # Not a trigger, but used by the 'liked_by_offmap' & 'disliked_by_offmap' triggers
-	trait = eunuch
-}
-likes_wealth = {
-	context = wealth # Not a trigger, but used by the 'liked_by_offmap' & 'disliked_by_offmap' triggers
-}
-likes_tributaries = {
-	context = tributary # Not a trigger, but used by the 'liked_by_offmap' & 'disliked_by_offmap' triggers
-}
-likes_indians = {
-	culture_group = indo_aryan_group
-}
-likes_dravidians = {
-	culture_group = dravidian_group
-}
-likes_tibetans = {
-	culture_group = tibetan_group
-}
-likes_germanics = {
-	OR = {
-		culture_group = north_germanic
-		culture_group = central_germanic
-		culture_group = west_germanic
-	}
-}
-likes_latino_iberians = {
-	OR = {
-		culture_group = latin
-		culture_group = iberian
-	}
-}
-likes_byzantines = {
-	culture_group = byzantine
-}
-likes_celts = {
-	culture_group = celtic
-}
-likes_finno_ugrics = {
-	OR = {
-		culture_group = finno_ugric
-		culture_group = magyar
-	}
-}
-likes_altaics = {
-	culture_group = altaic
-}
-likes_balto_slavics = {
-	OR = {
-		culture_group = baltic
-		culture_group = east_slavic
-		culture_group = west_slavic
-		culture_group = south_slavic
-	}
-}
-likes_arabs = {
-	culture_group = arabic
-}
-likes_iranians = {
-	culture_group = iranian
-}
-likes_africans = {
-	OR = {
-		culture_group = west_african
-		culture_group = east_african
-	}
-}
-likes_mesoamericans = {
-	culture_group = mesoamerican
-}
-likes_muslims = {
-	religion_group = muslim
-}
-likes_christians = {
-	religion_group = christian
-}
-likes_jews = {
-	religion_group = jewish_group
-}
-likes_mazdans = {
-	religion_group = zoroastrian_group
-}
-likes_zoroastrians = {
-	religion = zoroastrian
-}
-likes_mazdakis = {
-	religion = mazdaki
-}
-likes_manicheans = {
-	religion = manichean
-}
-likes_khurmaztans = {
-	religion = khurmazta
-}
-likes_buddhists = {
-	religion = buddhist
-}
-likes_hindus = {
-	religion = hindu
-}
-likes_jains = {
-	religion = jain
-}
-likes_tengris = {
-	OR = {
-		religion = tengri_pagan
-		religion = tengri_pagan_reformed
-	}
-}
-likes_zunists = {
-	OR = {
-		religion = zun_pagan
-		religion = zun_pagan_reformed
-	}
-}
-likes_bon = {
-	OR = {
-		religion = bon
-		religion = bon_reformed
-	}
 }
 
 is_blood_relative_of_root_trigger = {
@@ -5561,143 +3267,11 @@ is_blood_relative_of_root_trigger = {
 	}
 }
 
-silk_road_trade_post_trigger = {
-	custom_tooltip = {
-		text = silk_road_province_desc
-		hidden_tooltip = {
-			OR = {
-				province_id = 1491
-				province_id = 1498
-				province_id = 1478
-				province_id = 1359
-				province_id = 1365
-				province_id = 1448
-				province_id = 1440
-				province_id = 1439
-				province_id = 678
-				province_id = 764
-				province_id = 802
-				province_id = 596
-				province_id = 667
-				province_id = 693
-				province_id = 649
-				province_id = 646
-				province_id = 641
-				province_id = 630
-				province_id = 1180
-				province_id = 1297
-				province_id = 1127
-				province_id = 1220
-				province_id = 1114
-				province_id = 1221
-				province_id = 1446
-				province_id = 868
-				province_id = 719
-				province_id = 1338
-				province_id = 1369
-				province_id = 858
-				province_id = 903
-				province_id = 1185
-				province_id = 1129
-				province_id = 1318
-				province_id = 1297
-				province_id = 1163
-				province_id = 1154
-				province_id = 1151
-				province_id = 1481
-				province_id = 1115
-				province_id = 1288
-				province_id = 796
-				province_id = 1362
-				province_id = 728
-				province_id = 774
-				province_id = 620
-				province_id = 1794
-				province_id = 775
-				province_id = 775
-				province_id = 633
-				province_id = 664
-				province_id = 644
-				province_id = 1797
-			}
-		}
-	}
-}
-
 is_any_kinslayer_trigger = {
 	OR = {
 		trait = kinslayer
 		trait = familial_kinslayer
 		trait = dynastic_kinslayer
-	}
-}
-
-has_unsafe_religion = {
-	NOT = { is_nomadic = yes }
-	OR = {
-		AND = {
-			NOT = { has_dlc = "The Sword of Islam" }
-			OR = {
-				religion = sunni
-				religion = zikri
-				religion = yazidi
-				religion = shiite
-				religion = druze
-				religion = hurufi
-				religion = ibadi
-				religion = kharijite
-			}
-		}
-		AND = {
-			NOT = { has_dlc = "Sons of Abraham" }
-			OR = {
-				religion = jewish
-				religion = samaritan
-				religion = karaite
-			}
-		}
-		AND = {
-			NOT = { has_dlc = "The Old Gods" }
-			OR = {
-				religion = zoroastrian
-				religion = mazdaki
-				religion = manichean
-				religion = khurmazta
-				religion = bon
-				religion = bon_reformed
-				religion = norse_pagan
-				religion = norse_pagan_reformed
-				religion = baltic_pagan
-				religion = baltic_pagan_reformed
-				religion = finnish_pagan
-				religion = finnish_pagan_reformed
-				religion = slavic_pagan
-				religion = slavic_pagan_reformed
-				religion = tengri_pagan
-				religion = tengri_pagan_reformed
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-				religion = zun_pagan
-				religion = zun_pagan_reformed
-				religion = hellenic_pagan
-				religion = hellenic_pagan_reformed
-				religion = pagan
-				religion = aztec
-				religion = aztec_reformed
-			}
-		}
-		AND = {
-			NOT = { has_dlc = "Rajas of India" }
-			OR = {
-				religion = hindu
-				religion = buddhist
-				religion = jain
-			}
-		}
-		AND = {
-			NOT = { has_dlc = "Jade Dragon" }
-			religion = taoist
-		}
 	}
 }
 
@@ -5807,7 +3381,6 @@ is_elder_age_trigger = {
 # Root - The executioner
 # event_target:kinslayer_target - The person being executed
 will_add_kinslayer = {
-	NOT = { religion_group = muslim }
 	OR = {
 		AND = {
 			NOT = { trait = kinslayer }
@@ -6100,7 +3673,7 @@ pagan_baptism_trigger = {
 	custom_tooltip = {
 		text = TT_UNREFORMED_PAGAN
 		hidden_tooltip = {
-			religion_group = pagan_group
+			TOW_is_uncivilized_trigger = yes
 			NOT = { is_reformed_religion = yes }
 			#NOT = { religion = bon }
 		}
@@ -6697,25 +4270,9 @@ has_scarred_trait_trigger = {
 this_is_warrior_culture_trigger = { #Not really about culture - Used in AI voting logic.
 	NOT = { pacifist = yes }
 	OR = { 
-		religion_group = muslim
-		religion = norse_pagan
-		religion = tengri_pagan
-		religion = aztec
 		has_religion_feature = religion_warlike
 		is_tribal = yes
 		is_nomadic = yes
-		AND = { 
-			NOT = { has_dlc = "Holy Fury"}
-			religion = norse_pagan_reformed
-		}
-		AND = { 
-			NOT = { has_dlc = "Holy Fury"}
-			religion = tengri_pagan_reformed
-		}
-		AND = { 
-			NOT = { has_dlc = "Holy Fury"}
-			religion = aztec_reformed
-		}
 	}
 }
 
@@ -6726,26 +4283,14 @@ this_is_diplomatic_culture_trigger = { #Not really about culture - Used in AI vo
 		is_merchant_republic = yes
 	} 
 	OR = { 
-		religion_group = christian
-		religion_group = jewish_group
-		religion_group = zoroastrian_group
-		religion = hellenic_pagan
-		has_religion_feature = religion_cosmopolitan
-		AND = { 
-			NOT = { has_dlc = "Holy Fury"}
-			religion = hellenic_pagan_reformed
-		}
+		religion_group = arcane_group
+		religion_group = light_group
 	}
 }
 this_is_spiritual_culture_trigger = { #Not really about culture - Used in AI voting logic.
 	OR = { 
-		religion_group = indian_group
-		religion = bon
-		has_religion_feature = religion_peaceful
-		AND = { 
-			NOT = { has_dlc = "Holy Fury"}
-			religion = bon_reformed
-		}
+		religion_group = wild_gods_group
+		religion_group = elemental_group
 	}
 }
 this_is_sea_raider_trigger = {
@@ -7763,46 +5308,7 @@ has_any_astrology_trait_trigger = {
 }
 
 dlc_religion_check_trigger = {
-	OR = {
-		AND = {
-			religion_group = muslim
-			has_dlc = "The Sword of Islam"
-		}
-		AND = {
-			religion_group = jewish_group
-			has_dlc = "Sons of Abraham"
-		}
-		AND = {
-			religion_group = pagan_group
-			OR = {
-				has_dlc = "The Old Gods"
-				has_dlc = "Holy Fury"
-			}
-		}
-		AND = {
-			OR = {
-				religion = bon
-				religion = bon_reformed
-			}
-			has_dlc = "Jade Dragon"
-		}
-		AND = {
-			religion_group = zoroastrian_group
-			has_dlc = "The Old Gods"
-		}
-		AND = {
-			religion = khurmazta
-			has_dlc = "Jade Dragon"
-		}
-		AND = {
-			religion_group = indian_group
-			has_dlc = "Rajas of India"
-		}
-		AND = {
-			religion = taoist
-			has_dlc = "Jade Dragon"
-		}
-	}
+	always = yes
 }
 
 reconquista_check_trigger = {
@@ -7960,47 +5466,4 @@ root_has_imprisonment_reason_opinion_trigger = {
 		has_opinion_modifier = { who = ROOT modifier = opinion_accused_apostate }
 	}
 }
-
-region_africa_west_central_or_east_trigger = {
-	OR = {
-		region = world_africa_west
-		region = world_africa_east
-		region = world_africa_central
-	}
-}
-
-has_rain_or_drought_modifier_trigger = {
-	OR = {
-		has_province_modifier = africa_light_rain
-		has_province_modifier = africa_heavy_rain
-		has_province_modifier = africa_drought_risk
-		has_province_modifier = africa_drought
-	}
-}
-
-any_neighbor_province_has_dry_weather_trigger = {
-	any_neighbor_province = {
-    	is_land = yes
-		region_africa_west_central_or_east_trigger = yes
-		OR = {
-			has_province_modifier = africa_drought_risk
-			has_province_modifier = africa_drought
-		}
-	}
-}
-any_neighbor_province_has_heavy_rain_trigger = {
-	any_neighbor_province = {
-    	is_land = yes
-		region_africa_west_central_or_east_trigger = yes
-		has_province_modifier = africa_heavy_rain
-	}
-}
-any_neighbor_province_has_light_rain_trigger = {
-	any_neighbor_province = {
-    	is_land = yes
-		region_africa_west_central_or_east_trigger = yes
-		has_province_modifier = africa_light_rain
-	}
-}
-
 
