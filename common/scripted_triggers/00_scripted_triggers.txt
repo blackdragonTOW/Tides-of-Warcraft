@@ -5735,17 +5735,13 @@ death_no_trace_trigger = {
 
 proselytize_convert_independent_trigger = {
 	owner = {
-		OR = { 
-			FROM = { NOT = { religion_group = pagan_group } } 
+		OR = {
+			FROM = { TOW_is_uncivilized_trigger = no } 
 			FROM = { has_religion_feature = religion_proselytizing }
 		}
 		independent = yes
 		NOT = { religion = FROM }
-		religion_group = pagan_group
-		OR = {
-			NOT = { religion = aztec }
-			year = 1350
-		}
+		TOW_is_uncivilized_trigger = yes
 		is_reformed_religion = no
 		capital_scope = {
 			province = ROOT

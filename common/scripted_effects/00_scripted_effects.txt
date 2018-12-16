@@ -205,6 +205,18 @@ add_trait_honest_effect = {
 		hidden_tooltip = { character_event = { id = 38262 } } #Notify Honest
 	}
 }
+add_trait_humble_effect = {
+	if = {
+		limit = {
+			NOR = {
+				trait = humble
+				trait = proud
+			}
+		}
+		add_trait = humble
+		hidden_tooltip = { character_event = { id = 38260 } } #Notify Humble
+	}
+}
 
 add_trait_kind_effect = {
 	if = {
@@ -499,6 +511,18 @@ add_trait_silently_cynical_effect = {
 	}
 }
 
+add_trait_silently_content_effect = {
+	if = {
+		limit = {
+			NOR = {
+				trait = content
+				trait = ambitious
+			}
+		}
+		add_trait = content
+	}
+}
+
 add_trait_silently_deceitful_effect = {
 	if = {
 		limit = { 
@@ -755,6 +779,14 @@ add_trait_silently_wroth_effect = {
 #Add new ones in alphabetical order.
 
 #Add with notification
+
+remove_trait_brave_effect = {
+	if = {
+		limit = { trait = brave }
+		remove_trait = brave
+		hidden_tooltip = { character_event = { id = 38320 } }
+	}
+}
 remove_trait_charitable_effect = {
 	if = {
 		limit = { trait = charitable }
@@ -791,6 +823,14 @@ remove_trait_cruel_effect = {
 		limit = { trait = cruel }
 		remove_trait = cruel
 	}	
+}
+
+remove_trait_depressed_effect = {
+	if = {
+		limit = { trait = depressed }
+		remove_trait = depressed
+		hidden_tooltip = { character_event = { id = 38314 } }
+	}
 }
 
 remove_trait_diligent_effect = {
@@ -912,6 +952,18 @@ remove_trait_zealous_effect = {
 }
 
 #Silently
+remove_trait_silently_ambitious_effect = {
+	if = {
+		limit = { trait = ambitious }
+		remove_trait = ambitious
+	}
+}
+remove_trait_silently_brave_effect = {
+	if = {
+		limit = { trait = brave }
+		remove_trait = brave
+	}
+}
 remove_trait_silently_charitable_effect = {
 	if = {
 		limit = { trait = charitable }
@@ -1901,66 +1953,50 @@ increase_depopulation_effect = {
 			40 = {
 				modifier = {
 					factor = 1.5
-					location = {
-						AND = {
-							any_province_holding = {
-								OR = {
-									holding_type = nomad
-									holding_type = tribal
-								}
+					AND = {
+						any_province_holding = {
+							OR = {
+								holding_type = nomad
+								holding_type = tribal
 							}
-							NOT = { num_of_settlements = 3 }
 						}
+						NOT = { num_of_settlements = 3 }
 					}
 				}
 				modifier = {
 					factor = 1.2
-					location = {
-						hospital_level = 1
-					}
+					hospital_level = 1
 				}
 				modifier = {
 					factor = 1.2
-					location = {
-						hospital_level = 2
-					}
+					hospital_level = 2
 				}
 				modifier = {
 					factor = 1.2
-					location = {
-						hospital_level = 3
-					}
+					hospital_level = 3
 				}
 				modifier = {
 					factor = 1.2
-					location = {
-						hospital_level = 4
-					}
+					hospital_level = 4
 				}
 				modifier = {
 					factor = 1.2
-					location = {
-						hospital_level = 5
-					}
+					hospital_level = 5
 				}
 				modifier = {
 					factor = 1.2
-					location = {
-						hospital_level = 6
-					}
+					hospital_level = 6
 				}
 			}
 			60 = {
 				modifier = {
 					factor = 0
-					location = {
-						any_province_holding = {
-							NOR = {
-								holding_type = city
-								holding_type = temple
-								holding_type = castle
-								holding_type = tribal
-							}
+					any_province_holding = {
+						NOR = {
+							holding_type = city
+							holding_type = temple
+							holding_type = castle
+							holding_type = tribal
 						}
 					}
 				}
@@ -1982,66 +2018,50 @@ increase_depopulation_effect = {
 			20 = {
 				modifier = {
 					factor = 4
-					location = {
-						AND = {
-							any_province_holding = {
-								OR = {
-									holding_type = nomad
-									holding_type = tribal
-								}
+					AND = {
+						any_province_holding = {
+							OR = {
+								holding_type = nomad
+								holding_type = tribal
 							}
-							NOT = { num_of_settlements = 3 }
 						}
+						NOT = { num_of_settlements = 3 }
 					}
 				}
 				modifier = {
 					factor = 1.4
-					location = {
 						hospital_level = 1
-					}
 				}
 				modifier = {
 					factor = 1.4
-					location = {
 						hospital_level = 2
-					}
 				}
 				modifier = {
 					factor = 1.4
-					location = {
 						hospital_level = 3
-					}
 				}
 				modifier = {
 					factor = 1.4
-					location = {
 						hospital_level = 4
-					}
 				}
 				modifier = {
 					factor = 1.4
-					location = {
 						hospital_level = 5
-					}
 				}
 				modifier = {
 					factor = 1.4
-					location = {
 						hospital_level = 6
-					}
 				}
 			}
 			80 = {
 				modifier = {
 					factor = 0
-					location = {
-						any_province_holding = {
-							NOR = {
-								holding_type = city
-								holding_type = temple
-								holding_type = castle
-								holding_type = tribal
-							}
+					any_province_holding = {
+						NOR = {
+							holding_type = city
+							holding_type = temple
+							holding_type = castle
+							holding_type = tribal
 						}
 					}
 				}
@@ -2068,66 +2088,50 @@ increase_depopulation_effect = {
 			5 = {
 				modifier = {
 					factor = 15
-					location = {
-						AND = {
-							any_province_holding = {
-								OR = {
-									holding_type = nomad
-									holding_type = tribal
-								}
+					AND = {
+						any_province_holding = {
+							OR = {
+								holding_type = nomad
+								holding_type = tribal
 							}
-							NOT = { num_of_settlements = 3 }
 						}
+						NOT = { num_of_settlements = 3 }
 					}
 				}
 				modifier = {
 					factor = 1.5
-					location = {
-						hospital_level = 1
-					}
+					hospital_level = 1
 				}
 				modifier = {
 					factor = 1.5
-					location = {
-						hospital_level = 2
-					}
+					hospital_level = 2
 				}
 				modifier = {
 					factor = 1.5
-					location = {
 						hospital_level = 3
-					}
 				}
 				modifier = {
 					factor = 1.5
-					location = {
 						hospital_level = 4
-					}
 				}
 				modifier = {
 					factor = 1.5
-					location = {
 						hospital_level = 5
-					}
 				}
 				modifier = {
 					factor = 1.5
-					location = {
 						hospital_level = 6
-					}
 				}
 			}
 			95 = {
 				modifier = {
 					factor = 0
-					location = {
-						any_province_holding = {
-							NOR = {
-								holding_type = city
-								holding_type = temple
-								holding_type = castle
-								holding_type = tribal
-							}
+					any_province_holding = {
+						NOR = {
+							holding_type = city
+							holding_type = temple
+							holding_type = castle
+							holding_type = tribal
 						}
 					}
 				}
@@ -2292,16 +2296,28 @@ jailor_torture_effect = {
 	
 	random_list = {
 		80 = {
+				if = {
+					limit = { trait = stressed }
+					health = -0.25
+				}
 				add_trait = stressed
 			}
 		10 = {
+			if = {
+				limit = { OR = { trait = craven trait = berserker } }
+				health = -0.5
+			}
 			if = {
 				limit = { NOR = { trait = craven trait = berserker } }
 				add_trait = craven
 			}
 		}
 		5 = {
-				add_trait = lunatic
+			if = {
+				limit = { trait = lunatic }
+				health = -1.0
+			}
+			add_trait = lunatic
 		}
 		5 = {
 			#nothing
@@ -2661,6 +2677,12 @@ resolve_severely_injured_effect = {
 	}
 }
 
+#For when you "only" become really injured, but still want the risk of infection...
+add_severely_injured_effect = {
+	add_trait = severely_injured
+	resolve_severely_injured_effect = yes
+}
+
 leave_council_position_effect = {
 	if = {
 		limit = { has_job_title = job_chancellor }
@@ -2761,6 +2783,19 @@ increase_prosperity_effect = {
 		add_province_modifier = { name = prosperity_modifier_3 duration = -1 }
 		hidden_tooltip = { set_variable = { which = prosperity_value value = 500 } }
 		break = yes
+	}
+}
+
+decrease_prosperity_effect = {
+	if = {
+		limit = {
+			has_province_modifier = prosperity_modifier_3
+		}
+		hidden_tooltip = {
+			remove_province_modifier = prosperity_modifier_3
+			set_variable = { which = prosperity_value value = 250 }
+		}
+		add_province_modifier = { name = prosperity_modifier_2 duration = -1 }
 	}
 }
 
@@ -3315,7 +3350,7 @@ venereal_disease_effect_event_target = {
 #Tries to impregnate either event_target:sex_partner or THIS if all conditions are met
 impregnate_effect_event_target = {
 	if = {
-		limit = { is_opposite_sex = FROM }
+		limit = { is_opposite_sex = event_target:sex_partner }
 
 		#If THIS is a female which can get pregnant
 		if = {
@@ -3345,8 +3380,7 @@ impregnate_effect_event_target = {
 						}
 					}
 				}
-				event_target:sex_partner = { save_event_target_as = akimpreg_father }
-				character_event = { id = akimpreg.1 }
+				event_target:sex_partner = { impregnate = PREV }
 			}
 
 			#THIS is consort/spouse of someone else than event_target:sex_partner
@@ -3363,8 +3397,7 @@ impregnate_effect_event_target = {
 					 	}
 					}
 				}
-				event_target:sex_partner = { save_event_target_as = akimpreg_father }
-				character_event = { id = akimpreg.2 }
+				event_target:sex_partner = { impregnate_cuckoo = PREV }
 			}
 		}
 
@@ -3400,8 +3433,7 @@ impregnate_effect_event_target = {
 						}
 					}
 				}
-				save_event_target_as = akimpreg_father
-				event_target:sex_partner = { character_event = { id = akimpreg.1 } }
+				impregnate = event_target:sex_partner
 			}
 
 			#event_target:sex_partner is consort/spouse of someone else than THIS
@@ -3420,8 +3452,8 @@ impregnate_effect_event_target = {
 						}
 					}
 				}
-				save_event_target_as = akimpreg_father
-				event_target:sex_partner = { character_event = { id = akimpreg.1 } }
+
+				impregnate_cuckoo = event_target:sex_partner
 			}
 		}
 	}
@@ -3549,8 +3581,7 @@ impregnate_effect = {
 						}
 					}
 				}
-				FROM = { save_event_target_as = akimpreg_father }
-				character_event = { id = akimpreg.1 }
+				FROM = { impregnate = ROOT }
 			}
 
 			#ROOT is consort/spouse of someone else than FROM
@@ -3567,8 +3598,7 @@ impregnate_effect = {
 					 	}
 					}
 				}
-				FROM = { save_event_target_as = akimpreg_father }
-				character_event = { id = akimpreg.2 }
+				FROM = { impregnate_cuckoo = ROOT }
 			}
 		}
 
@@ -3604,8 +3634,7 @@ impregnate_effect = {
 						}
 					}
 				}
-				save_event_target_as = akimpreg_father
-				FROM = { character_event = { id = akimpreg.1 } }
+				impregnate = FROM
 			}
 
 			#FROM is consort/spouse of someone else than ROOT
@@ -3624,8 +3653,8 @@ impregnate_effect = {
 						}
 					}
 				}
-				save_event_target_as = akimpreg_father
-				FROM = { character_event = { id = akimpreg.2 } }
+
+				impregnate_cuckoo = FROM
 			}
 		}
 	}

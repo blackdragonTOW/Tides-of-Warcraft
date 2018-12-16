@@ -14,41 +14,6 @@ TOW_is_not_using_council_of_six = {
 	}
 }
 
-TOW_ruler_tolerates_women_trigger = {
-	hidden_tooltip = {
-		trigger_if = {
-			limit = {
-				NOT = {
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-			}
-			TOW_is_character_woman_tolerant_trigger = yes
-			OR = {
-				is_female = no
-				custom_tooltip = {
-					text = tooltip_feminist_liege_religion_feature
-					AND = {
-						OR = {
-							has_religion_feature = religion_equal
-							has_religion_feature = religion_matriarchal
-						}
-						liege = {
-							has_religion_feature = religion_equal
-							has_religion_feature = religion_matriarchal
-						}
-					}
-				}
-				primary_title = {
-					has_law = status_of_women_4
-				}
-			}
-		}
-	}
-}
-
 TOW_is_character_woman_tolerant_trigger = {
 	NOR = {
 		trait = ogre

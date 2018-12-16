@@ -8,14 +8,15 @@
 #	allowed_to_grant: conditions for a ruler to grant the title
 #	regent: This is the title for regents (not really "minor")
 #	gain_effect: fires when the title is granted
-#	lose_effect: fires when a title is lost if dismissal_trigger evaluates to false
+#	lose_effect: fires when a title is lost through most causes
+#	retire_effect: fires when a title is lost due to the character stepping down
+#	death_effect: fires when a title is lost due to the character dying
 #	message: should fire a message to the its owner when set
 #	The other fields are all character modifiers.
 
 #######################################
 # HARD: AUTO-GRANTED - DO NOT REMOVE!
 #######################################
-
 title_regent = {
 	realm_in_name = yes
 	dignity = 0.9
@@ -61,12 +62,16 @@ title_appointed_regent = {
 			}
 		}
 	}
+	revoke_trigger = {
+		FROM = { has_regent = no }
+	}
 
 	gain_effect = {
 	}
 
 	lose_effect = {
 	}
+	message = yes
 }
 
 title_ruler_consort = {
@@ -142,7 +147,7 @@ title_prince = {
 # Pagan consort
 title_courtesan = {
 	dignity = 0.05
-#	realm_in_name = yes
+	#realm_in_name = yes
 	revoke_allowed = no
 	
 	monthly_salary = 0.02
@@ -183,6 +188,7 @@ title_commander = {
 	
 	monthly_salary = 0.05
 	monthly_prestige = 0.50
+	#combat_rating = 10 # Reactivate if we get this working
 	
 	revoke_allowed = no # Handled by diplomatic interaction
 	
@@ -203,6 +209,7 @@ title_commander = {
 		NOT = { trait = incapable }
 		NOT = { is_inaccessible_trigger = yes }
 		NOT = { has_character_flag = guru }
+		NOT = { has_character_modifier = refusing_to_lead }
 		Keitaro_can_have_a_job = yes
 	}
 	
@@ -235,6 +242,7 @@ title_court_jester = {
 		}
 		is_adult = yes
 		NOT = { has_character_flag = guru }
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -283,6 +291,7 @@ title_keeper_of_swans = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -332,6 +341,7 @@ title_master_of_the_horse = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -374,6 +384,7 @@ title_master_of_the_hunt = {
 		TOW_is_character_woman_tolerant_trigger = yes
 		NOT = { has_character_flag = guru }
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -408,6 +419,7 @@ title_high_almoner = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -447,6 +459,7 @@ title_cupbearer = {
 		is_adult = yes
 		NOT = { has_character_flag = guru }
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -488,6 +501,7 @@ title_seneschal = {
 		is_adult = yes
 		NOT = { has_character_flag = guru }
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -542,6 +556,7 @@ title_paramount_knight = {
 			has_minor_title = title_knight_female
 		}
 		independent = no
+		Keitaro_can_have_a_job = yes
 	}
 	allowed_to_grant = {
 		OR = {
@@ -585,6 +600,7 @@ title_court_calligrapher = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -634,6 +650,7 @@ title_court_musician = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -677,6 +694,7 @@ title_court_poet = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -720,6 +738,7 @@ title_chief_architect = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -766,6 +785,7 @@ title_state_inquisitor = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -797,6 +817,7 @@ title_high_admiral = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -828,6 +849,7 @@ title_high_judge = {
 		}
 		is_adult = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -874,6 +896,7 @@ title_patrician_heir = {
 		NOT = { is_ascetic_trigger = yes }
 		NOT = { trait = eunuch }
 		NOT = { trait = celibate }
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -906,6 +929,7 @@ title_lawspeaker = {
 		is_adult = yes
 		is_nomadic = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -942,6 +966,7 @@ title_champion = {
 		is_adult = yes
 		TOW_is_character_woman_tolerant_trigger = yes
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -996,6 +1021,7 @@ title_master_of_the_blade = {
 		trait = orc
 		NOT = { has_minor_title = title_master_of_the_bow }
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -1035,6 +1061,7 @@ title_master_of_the_bow = {
 		is_adult = yes
 		NOT = { has_minor_title = title_master_of_the_blade }
 		NOT = { trait = incapable } 
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -1084,6 +1111,7 @@ title_venerable_elder = {
 				age = 180
 			}
 		}
+		Keitaro_can_have_a_job = yes
 	}
 
 	allowed_to_grant = {
@@ -1123,6 +1151,7 @@ title_guru = {
 		}
 		is_adult = yes
 		always = no
+		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = { 

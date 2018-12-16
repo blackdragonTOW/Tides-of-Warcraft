@@ -386,6 +386,17 @@ plot_gain_vassal_title = {
 					}
 				}
 			}
+			# Belongs to Tyrannical Bloodline
+			custom_tooltip = {
+				text = TT_PLOT_GAIN_VASSAL_TITLE_TYRANNICAL_BLOODLINE
+				hidden_tooltip = {
+					FROM = {
+						any_owned_bloodline = {
+							has_bloodline_flag = bloodline_revocation_plot 
+						}
+					}
+				}
+			}
 		}
 		holder_scope = {
 			custom_tooltip = { # liege_before_war lacks localisation, among other things
@@ -589,6 +600,12 @@ plot_gain_vassal_title = {
 							num_of_count_titles = 2
 						}
 					}
+					# Bloodline
+					FROM = {
+						any_owned_bloodline = {
+							has_bloodline_flag = bloodline_revocation_plot 
+						}
+					}
 				}
 			}
 			FROM = {
@@ -716,6 +733,7 @@ plot_kill_character = {
 		NOT = { is_child_of = FROM } # Not my own children
 		is_within_diplo_range = FROM
 		NOT = { has_blood_oath_with = FROM }
+		assassination_interaction_trigger = yes
 	}
 	
 	target_potential = {
@@ -857,7 +875,12 @@ plot_kill_character = {
 				# Go nuts...
 				AND = {
 					same_liege = ROOT
-					trait = lunatic
+					OR = {
+						trait = lunatic
+						any_owned_bloodline = {
+							has_bloodline_flag = bloodline_murderous 
+						}
+					}
 				}
 				
 				# Rivals
@@ -981,7 +1004,13 @@ plot_kill_character = {
 				dynasty_realm_power = 0.6
 			}
 		}
-		
+
+		modifier = {
+			factor = 2.0
+			any_owned_bloodline = { #Backstabbing family.
+				has_bloodline_flag = bloodline_murderous 
+			}
+		}
 	}
 	
 	success = {

@@ -38,6 +38,7 @@ amateurish_plotter = {
 	
 	intrigue = 1
 	stewardship = -1
+	combat_rating = 4 #new value!
 	
 	male_insult_adj = INSULT_SCHEMING
 	female_insult_adj = INSULT_SCHEMING
@@ -65,6 +66,7 @@ flamboyant_schemer = {
 	
 	intrigue = 3
 	stewardship = -1
+	combat_rating = 8 #new value!
 	
 	male_insult_adj = INSULT_SCHEMING
 	female_insult_adj = INSULT_SCHEMING
@@ -94,6 +96,7 @@ intricate_webweaver = {
 	martial = 1
 	diplomacy = 1
 	stewardship = -1
+	combat_rating = 12 #new value!
 	
 	male_compliment_adj = COMPL_CLEVER
 	female_compliment_adj = COMPL_CLEVER
@@ -125,6 +128,7 @@ elusive_shadow = {
 	martial = 2
 	diplomacy = 2
 	stewardship = -1
+	combat_rating = 16 #new value!
 	
 	male_compliment_adj = COMPL_CLEVER
 	female_compliment_adj = COMPL_CLEVER
@@ -404,7 +408,7 @@ misguided_warrior = {
 	martial = 1
 	learning = -1
 	
-	combat_rating = 1
+	combat_rating = 5 #old value: 1
 	
 	health = 0.5
 }
@@ -431,7 +435,7 @@ tough_soldier = {
 	martial = 3
 	learning = -1
 	
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	
 	health = 0.5
 }
@@ -460,7 +464,7 @@ skilled_tactician = {
 	stewardship = 1
 	learning = -1
 	
-	combat_rating = 1
+	combat_rating = 15 #old value: 1
 	
 	health = 0.5
 }
@@ -489,7 +493,7 @@ brilliant_strategist = {
 	stewardship = 2
 	learning = -1
 	
-	combat_rating = 1
+	combat_rating = 20 #old value: 1
 	
 	health = 0.5
 
@@ -637,6 +641,7 @@ stressed = {
 	stewardship = -1
 	health = -1
 	fertility = -0.1
+	combat_rating = -10 #new value!
 }
 depressed = {
 	is_health = yes
@@ -646,6 +651,7 @@ depressed = {
 	intrigue = -1
 	health = -1
 	fertility = -0.05
+	combat_rating = -5 #new value!
 	
 	male_insult_adj = INSULT_LUGUBRIOUS
 	female_insult_adj = INSULT_LUGUBRIOUS
@@ -680,7 +686,7 @@ ill = {
 	health = -2
 	fertility = -0.1
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 }
@@ -700,7 +706,7 @@ pneumonic = {
 	health_penalty = -4
 	fertility_penalty = -0.5
 	
-	combat_rating = -3
+	combat_rating = -35 #old value: -3
 	
 	customizer = no
 }
@@ -709,7 +715,8 @@ syphilitic = {
 	is_illness = yes
 	inherit_chance = 10
 	
-	sex_appeal_opinion = -30
+	sex_appeal_opinion = -10
+	general_opinion = -5
 	
 	diplomacy_penalty = -1
 	stewardship_penalty = -1
@@ -736,7 +743,7 @@ leper = {
 	
 	fertility_penalty = -0.95
 	
-	combat_rating = -2
+	combat_rating = -25 #old value: -2
 	
 	male_insult = INSULT_LEPER
 	female_insult = INSULT_LEPER
@@ -751,7 +758,7 @@ wounded = {
 		maimed
 	}
 	
-	combat_rating = -1
+	combat_rating = -15 #old value: -1
 	
 	martial = -1
 	health = -1
@@ -765,7 +772,7 @@ maimed = {
 		wounded
 	}
 	
-	combat_rating = -4
+	combat_rating = -30 #old value: -4
 	
 	sex_appeal_opinion = -15
 	same_opinion = 5
@@ -793,7 +800,7 @@ infirm = {
 	
 	ai_rationality = -10
 	
-	combat_rating = -5
+	combat_rating = -50 #old value: -5
 	
 	male_insult = INSULT_DODDERER
 	male_insult_adj = INSULT_SENILE
@@ -814,7 +821,7 @@ incapable = {
 	health = -3
 	fertility = -0.3
 	
-	combat_rating = -10
+	combat_rating = -100 #old value: -10
 	
 	male_insult = INSULT_VEGETABLE
 	female_insult = INSULT_VEGETABLE
@@ -826,7 +833,7 @@ drunkard = {
 	
 	stewardship = -2
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	same_opinion = 5
 	church_opinion = -5
@@ -849,7 +856,7 @@ has_tuberculosis = {
 	stewardship_penalty = -1
 	health_penalty = -2
 	
-	combat_rating = -2
+	combat_rating = -25 #old value: -2
 	
 	customizer = no
 	male_insult_adj = INSULT_SICKLY
@@ -868,7 +875,7 @@ has_typhoid_fever = {
 	
 	health_penalty = -3
 	
-	combat_rating = -4
+	combat_rating = -40 #old value: -4
 	
 	fertility_penalty = -0.10
 	
@@ -892,7 +899,7 @@ has_typhus = {
 	
 	fertility_penalty = -0.20
 	
-	combat_rating = -4
+	combat_rating = -40 #old value: -4
 	
 	customizer = no
 
@@ -913,7 +920,7 @@ has_measles = {
 	
 	fertility_penalty = -0.1
 	
-	combat_rating = -3
+	combat_rating = -30 #old value: -3
 	
 	customizer = no
 
@@ -935,7 +942,7 @@ has_small_pox = {
 	
 	fertility_penalty = -0.25
 	
-	combat_rating = -10
+	combat_rating = -100 #old value: -10
 	
 	customizer = no
 
@@ -955,7 +962,7 @@ crusader = {
 	}
 	
 	martial = 2
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	
 	church_opinion = 15
 	same_opinion_if_same_religion = 15
@@ -995,7 +1002,7 @@ legit_bastard = {
 	male_insult_adj = INSULT_BASEBORN
 }
 pregnant = {
-	combat_rating = -2
+	combat_rating = -20 #old value: -2
 	
 	spouse_opinion = 15
 	
@@ -1007,6 +1014,10 @@ excommunicated = {
 
 	religious = yes
 	customizer = no
+
+	potential = {
+		NOT = { controls_religion = yes }
+	}
 	
 	male_insult = INSULT_RENEGADE
 	female_insult = INSULT_RENEGADE
@@ -1016,15 +1027,22 @@ excommunicated = {
 	child_insult_adj = INSULT_EVIL
 }
 kinslayer = {
+	potential = {
+		is_tribal = no
+	}
+
 	opposites = {
 		familial_kinslayer
 		dynastic_kinslayer
+		tribal_kinslayer
 	}
 
 	diplomacy = -5
 	
 	dynasty_opinion = -25
 	general_opinion = -10
+	
+	random = no
 	
 	male_insult = INSULT_KINSLAYER
 	female_insult = INSULT_KINSLAYER
@@ -1046,7 +1064,7 @@ clubfooted = {
 	birth = 50
 	inherit_chance = 15
 	
-	combat_rating = -1
+	combat_rating = -5 #old value: -1
 	
 	sex_appeal_opinion = -10
 	same_opinion = 5
@@ -1092,7 +1110,6 @@ lisp = {
 	birth = 50
 	inherit_chance = 15
 	
-	sex_appeal_opinion = -5
 	same_opinion = 5
 	
 	diplomacy = -1
@@ -1162,9 +1179,13 @@ dwarf = {
 	sex_appeal_opinion = -30
 	same_opinion = 5
 	
+	opposites =  {
+		giant
+	}
+	
 	martial = -1
 	
-	combat_rating = -3
+	combat_rating = -15 #old value: -3
 	
 	male_insult = INSULT_DWARF
 	female_insult = INSULT_DWARF
@@ -1188,7 +1209,7 @@ genius = {
 	martial = 5
 	learning = 5
 	
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	
 	ai_rationality = 30
 	
@@ -1211,7 +1232,8 @@ quick = {
 		slow
 		genius
 	}
-	
+	combat_rating = 5 #new value!
+
 	diplomacy = 3
 	intrigue = 3
 	stewardship = 3
@@ -1229,7 +1251,8 @@ slow = {
 		quick
 		genius
 	}
-	
+	combat_rating = -5 #new value!
+
 	diplomacy = -3
 	intrigue = -3
 	stewardship = -3
@@ -1262,7 +1285,7 @@ imbecile = {
 	martial = -8
 	learning = -8
 	
-	combat_rating = -3
+	combat_rating = -30 #old value: -3
 	
 	ai_rationality = -30
 	
@@ -1289,7 +1312,7 @@ inbred = {
 	martial = -5
 	learning = -5
 	
-	combat_rating = -2
+	combat_rating = -20 #old value: -2
 	
 	vassal_opinion = -10
 	
@@ -1316,7 +1339,7 @@ strong = {
 	health = 1
 	fertility = 0.1
 	
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	
 	sex_appeal_opinion = 10
 	vassal_opinion = 5
@@ -1336,7 +1359,7 @@ weak = {
 	fertility = -0.05
 	
 	martial = -1
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	sex_appeal_opinion = -10
 	vassal_opinion = -5
@@ -1366,11 +1389,11 @@ celibate = {
 	
 	ai_zeal = 30
 	
-	male_compliment = COMPL_VIRTUOUS
-	female_compliment = COMPL_VIRTUOUS
+	male_compliment_adj = COMPL_VIRTUOUS
+	female_compliment_adj = COMPL_VIRTUOUS
 	child_compliment_adj = COMPL_NICE
-	male_insult = INSULT_UNMANLY
-	female_insult = INSULT_FRIGID
+	male_insult_adj = INSULT_UNMANLY
+	female_insult_adj = INSULT_FRIGID
 	child_insult_adj = INSULT_STUPID
 }
 
@@ -1446,6 +1469,8 @@ impaler = {
 	command_modifier = {
 		morale_offence = 0.1
 	}
+
+	combat_rating = 10 #new value!
 	
 	male_insult = INSULT_TORTURER
 	female_insult = INSULT_TORTURER
@@ -1459,7 +1484,7 @@ duelist = {
 	lifestyle = yes
 	
 	martial = 3
-	combat_rating = 5
+	combat_rating = 30 #old value: 5
 	
 	same_opinion = 10
 	
@@ -1473,6 +1498,8 @@ hunter = {
 
 	martial = 2
 	diplomacy = 1
+
+	combat_rating = 10 #new value!
 	
 	command_modifier = {
 		pursue = 0.2
@@ -1645,6 +1672,7 @@ charitable = {
 	church_opinion = 5
 	opposite_opinion = -5
 	same_opinion = 5
+	combat_rating = -3 #new value!
 	
 	ai_honor = 10
 	ai_ambition = -15
@@ -1670,6 +1698,7 @@ slothful = {
 	stewardship = -1
 	martial = -1
 	learning = -1
+	combat_rating = -5 #new value!
 	
 	ai_ambition = -10
 	
@@ -1716,6 +1745,7 @@ envious = {
 	
 	intrigue = 2
 	diplomacy = -1
+	combat_rating = 3 #new value!
 	
 	liege_opinion = -15
 	
@@ -1735,6 +1765,7 @@ kind = {
 	
 	intrigue = -2
 	diplomacy = 2
+	combat_rating = -5 #new value!
 	
 	vassal_opinion = 5
 	opposite_opinion = -5
@@ -1757,6 +1788,7 @@ wroth = {
 	diplomacy = -1
 	intrigue = -1
 	martial = 3
+	combat_rating = 3 #new value!
 	
 	ai_rationality = -10
 	ai_honor = -5
@@ -1778,6 +1810,7 @@ patient = {
 	stewardship = 1
 	learning = 1
 	opposite_opinion = -5
+	combat_rating = 5 #new value!
 	
 	ai_rationality = 10
 	
@@ -1836,6 +1869,7 @@ deceitful = {
 	
 	intrigue = 3
 	diplomacy = -2
+	combat_rating = 3 #new value!
 	
 	opposite_opinion = -5
 	
@@ -1853,6 +1887,7 @@ honest = {
 	
 	intrigue = -2
 	diplomacy = 3
+	combat_rating = -2 #new value!
 	
 	opposite_opinion = -5
 	same_opinion = 5
@@ -1872,7 +1907,7 @@ craven = {
 	vassal_opinion = -5
 	
 	martial = -2
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	command_modifier = {
 		morale_defence = -0.2
@@ -1894,7 +1929,7 @@ brave = {
 	same_opinion = 5
 	
 	martial = 2
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	
 	command_modifier = {
 		morale_defence = 0.1
@@ -1910,6 +1945,7 @@ shy = {
 	}
 	
 	diplomacy = -2
+	combat_rating = -2 #new value!
 	
 	male_insult_adj = INSULT_TIMID
 	female_insult_adj = INSULT_COY
@@ -1948,7 +1984,8 @@ ambitious = {
 	diplomacy = 2
 	martial = 2
 	learning = 2
-	
+	combat_rating = 3 #new value!
+
 	same_opinion = -5
 	ambition_opinion = -25 # Against those they want something from
 	
@@ -1984,6 +2021,7 @@ arbitrary = {
 	}
 	
 	stewardship = -2
+	intrigue = 1
 	learning = -1
 	
 	vassal_opinion = -5
@@ -2101,6 +2139,7 @@ trusting = {
 	
 	intrigue = -2
 	diplomacy = 1
+	combat_rating = -2 #new value!
 	
 	ai_honor = 10
 	
@@ -2118,6 +2157,7 @@ cruel = {
 	
 	intrigue = 1
 	diplomacy = -1
+	combat_rating = 3 #new value!
 	
 	vassal_opinion = -5
 	ai_honor = -5
