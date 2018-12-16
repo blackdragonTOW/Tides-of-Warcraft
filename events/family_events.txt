@@ -37,19 +37,9 @@ character_event = {
 	trigger = {
 		has_ambition = obj_wants_landed_title
 		independent = no
-		NOT = { trait = race_ogre }
+		TOW_is_character_woman_tolerant_trigger = yes
 		liege = {
-			OR = {
-				has_law = status_of_women_4
-				NOR = {
-					trait = race_troll_ice
-					trait = race_troll_forest
-					trait = race_troll_jungle
-					trait = race_troll_dark
-					trait = race_troll_sand
-				}
-			}
-			NOT = { trait = race_ogre }
+			TOW_is_character_woman_tolerant_trigger = yes
 			OR = {
 				war = no
 				ai = yes
@@ -1506,6 +1496,7 @@ character_event = {
 		any_spouse = {
 			has_prev_education_trigger = yes
 			opinion = { who = ROOT value = 20 }
+			is_inaccessible_or_incapable_trigger = no
 		}
 		NOT = { has_character_flag = spouse_offered_help }
 	}

@@ -22,19 +22,7 @@ character_event = {
 			has_religion_feature = religion_equal
 			has_religion_feature = religion_feature_bon
 		}
-		OR = {
-			trait = race_ogre
-			AND = {
-				has_law = status_of_women_4
-				OR = {
-					trait = race_troll_ice
-					trait = race_troll_forest
-					trait = race_troll_jungle
-					trait = race_troll_sand
-					trait = race_troll_dark
-				}
-			}
-		}
+		TOW_is_character_woman_tolerant_trigger = no
 	}
 	
 	hide_window = yes
@@ -821,19 +809,7 @@ character_event = {
 			primary_title = { has_law = status_of_women_3 }
 			primary_title = { has_law = status_of_women_4 }
 		} 
-		OR = {
-			trait = race_ogre
-			AND = {
-				has_law = status_of_women_4
-				OR = {
-					trait = race_troll_ice
-					trait = race_troll_forest
-					trait = race_troll_jungle
-					trait = race_troll_sand
-					trait = race_troll_dark
-				}
-			}
-		}
+		TOW_is_character_woman_tolerant_trigger = no
 
 		any_realm_character = {	
 			is_close_relative = ROOT
@@ -1285,19 +1261,7 @@ character_event = {
 			has_religion_feature = religion_equal
 			has_religion_feature = religion_feature_bon
 		} 
-		OR = {
-			trait = race_ogre
-			AND = {
-				has_law = status_of_women_4
-				OR = {
-					trait = race_troll_ice
-					trait = race_troll_forest
-					trait = race_troll_jungle
-					trait = race_troll_sand
-					trait = race_troll_dark
-				}
-			}
-		}
+		TOW_is_character_woman_tolerant_trigger = no
 
 		any_vassal = {	
 			is_landed = yes

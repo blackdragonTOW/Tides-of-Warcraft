@@ -16,7 +16,11 @@ TOW_is_not_using_council_of_six = {
 
 TOW_is_character_woman_tolerant_trigger = {
 	NOR = {
-		trait = ogre
+		trait = race_ogre
 		culture_group = ogre
+	}
+	OR = {
+		TOW_race_is_troll = no
+		has_law = status_of_women_4
 	}
 }
