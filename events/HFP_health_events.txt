@@ -1536,24 +1536,6 @@ character_event = {
 			change_variable = { which = physique_variable value = -2 }
 		}
 
-		# Africa: Drought
-		if = { 
-			limit = { 
-				location = { 
-					has_province_modifier = africa_drought_risk
-				}
-			}
-			change_variable = { which = physique_variable value = -2 }
-		}
-		if = { 
-			limit = { 
-				location = { 
-					has_province_modifier = africa_drought
-				}
-			}
-			change_variable = { which = physique_variable value = -3 }
-		}
-
 		#Health complications
 		if = { 
 			limit = { 
