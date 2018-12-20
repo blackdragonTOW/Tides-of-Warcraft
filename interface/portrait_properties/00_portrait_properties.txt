@@ -233,7 +233,7 @@
 	}
 	
 	14 = { # Mountains
-		factor = 1.5
+		factor = 4
 		modifier = {
 			factor = 0
 			location = {
@@ -256,28 +256,49 @@
 
 	}
 	
-	15 = { # Nice forest
-		factor = 1
+	15 = { # ocean window
+		factor = 5
 		modifier = {
-			factor = 4
+			factor = 0
 			location = {
 				OR = {
-					terrain = forest
-					terrain = woods
+					terrain = desert
+					terrain = arctic
+					terrain = jungle
 				}
+			}
+		}
+		modifier = {
+			factor = 0
+			lower_real_tier_than = DUKE
+			spouse = { lower_real_tier_than = DUKE } 
+		}
+		modifier = {
+			factor = 5
+			location = { 
+				port = yes 
 			}
 		}
 	}
 
-	16 = { # Quel Thalas
-		factor = 15
+	16 = { # field window
+		factor = 5
 		modifier = {
 			factor = 0
-			NOT = {
-				location = {
-					region = world_sunwell_isle
+			location = {
+				NOR = {
+					terrain = plains
+					terrain = hills
+					terrain = woods
+					terrain = steppe
+					terrain = farmlands
 				}
 			}
+		}
+		modifier = {
+			factor = 0
+			lower_real_tier_than = DUKE
+			spouse = { lower_real_tier_than = DUKE } 
 		}
 	}
 
@@ -286,7 +307,7 @@
 		modifier = {
 			factor = 0
 			OR = {
-				NOT = { trait = orc }
+				NOT = { trait = race_orc }
 				location = {
 					NOR = {
 						terrain = plains
@@ -315,7 +336,7 @@
 		}
 		modifier = {
 			factor = 10
-			trait = murloc
+			trait = race_murloc
 		}
 	}
 
@@ -324,16 +345,19 @@
 		modifier = {
 			factor = 0
 			OR = {
-				location = { port = no }
+				AND = {
+					location = { port = no }
+					is_at_sea = no
+				}
 				NOR = {
-					trait = naga
-					trait = murloc
+					trait = race_naga
+					trait = race_murloc
 				}
 			}
 		}
 		modifier = {
 			factor = 0.25
-			trait = murloc
+			trait = race_murloc
 		}
 	}
 
@@ -370,16 +394,15 @@
 		factor = 20
 		modifier = {
 			factor = 0
-			always = yes
-			#NOT = { trait = night_elf }
+			NOT = { trait = race_night_elf }
 		}
 	}
 
 	23 = { # Jungle
-		factor = 5
+		factor = 10
 		modifier = {
 			factor = 0
-			NOT = { 
+			NOT = {
 				location = { terrain = jungle }
 			}
 		}
@@ -393,10 +416,15 @@
 				location = { region = world_dun_morogh }
 			}
 		}
-	}
-
-	25 = { # Northrend
-		factor = 0
+		modifier = {
+			factor = 0
+			NOR = {
+				terrain = mountains
+				terrain = hills
+				terrain = plains
+				terrain = arctic
+			}
+		}
 	}
 }
 
@@ -2120,4 +2148,83 @@
 			}
 		}
 	}
+}
+
+
+# p17 freckles
+#Freckles traits from thinnest to thickest:
+#freckles_3
+#freckles_2
+#freckles
+#freckles_4
+#freckles_5
+17 = {
+	0 = { # blank
+		factor = 100
+		modifier = {
+			factor = 0
+			OR = { 
+				trait = freckles_3
+				trait = freckles_2
+				trait = freckles
+				trait = freckles_4
+				trait = freckles_5
+			}
+		}
+ 	}
+
+	1 = { # freckles
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = { trait = freckles }
+		}
+  	}
+	2 = { # freckles
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = { trait = freckles_2 }
+		}
+  	}
+	3 = { # freckles
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = { trait = freckles_3 }
+		}
+  	}
+	4 = { # freckles
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = { trait = freckles_4 }
+		}
+  	}
+	5 = { # freckles
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = { trait = freckles_5 }
+		}
+  	}
+}
+
+# p18 child background
+18 = {
+	0 = { # blank
+		factor = 100
+		modifier = {
+			factor = 0
+			age >= 6
+		}
+ 	}
+
+	1 = { # background enabled
+		factor = 100
+		modifier = {
+			factor = 0
+			age < 6
+		}
+  	}
 }
