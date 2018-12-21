@@ -63,7 +63,7 @@ spriteTypes = {
 		}
 	}
 
-	# Night Elf Male
+	# Night Elf Male Mid
 	portraitType = {
 		name = "PORTRAIT_nelvengfx_male1"
 		effectFile = "gfx/FX/portrait_e2h.lua"
@@ -122,7 +122,7 @@ spriteTypes = {
 		}
 	}
 
-	# Night Elf Male
+	# Night Elf Male Old
 	portraitType = {
 		name = "PORTRAIT_nelvengfx_male2"
 		effectFile = "gfx/FX/portrait_e2h.lua"
@@ -166,6 +166,159 @@ spriteTypes = {
 			{ 0 8 9 } { 178 186 199 } { 217 232 241 }
 			{ 5 2 5 } { 135 104 133 } { 238 221 220 }
 			{ 9 5 10 } { 147 116 140 } { 231 206 209 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 52 101 12 }
+			{ 82 101 12 }
+			{ 8 194 104 }
+			{ 29 141 103 }
+			{ 0 196 171 }
+			{ 225 229 236 }
+			{ 49 144 167 }
+			{ 57 71 136 }
+			{ 90 34 134 }
+		}
+	}
+
+	# Night Elf Female
+	portraitType = {
+		name = "PORTRAIT_nelvengfx_female"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_night_elf_female_base:p2:h"
+			"GFX_night_elf_female_cheeks:d4:h"
+			"GFX_night_elf_female_eyes2:d5"
+			"GFX_night_elf_female_eyes:d6:h"
+			"GFX_night_elf_female_nose:d3:h"
+			"GFX_night_elf_female_tattoo:p18:e" # for now it uses hair color
+			"GFX_night_elf_female_mouth:d2:h"
+			"GFX_night_elf_female_mouth_uncolored:d2"
+			"GFX_night_elf_female_shade:d8"
+			"GFX_night_elf_female_hair:p1:e"
+			"GFX_night_elf_female_eyebrows:d5:e"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 0 12 } { 151 122 131 } { 238 221 240 }
+			{ 11 0 10 } { 183 131 142 } { 240 226 224 }
+			{ 9 4 12 } { 144 116 128 } { 228 211 230 }
+			{ 2 4 5 } { 149 144 154 } { 250 255 255 }
+			{ 0 12 20 } { 159 145 135 } { 241 231 252 }
+			{ 9 4 9 } { 134 129 141 } { 239 235 239 }
+			{ 5 2 5 } { 125 94 123 } { 218 201 200 }
+			{ 9 5 10 } { 137 106 130 } { 231 206 209 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 52 101 12 }
+			{ 82 101 12 }
+			{ 8 194 104 }
+			{ 29 141 103 }
+			{ 0 196 171 }
+			{ 225 229 236 }
+			{ 49 144 167 }
+			{ 57 71 136 }
+			{ 90 34 134 }
+		}
+	}
+
+	# Night Elf Female Mid
+	portraitType = {
+		name = "PORTRAIT_nelvengfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_night_elf_female_base:p2:h"
+			"GFX_night_elf_female_cheeks:d4:h"
+			"GFX_night_elf_female_eyes2:d5"
+			"GFX_night_elf_female_eyes:d6:h"
+			"GFX_night_elf_female_nose:d3:h"
+			"GFX_night_elf_female_tattoo:p18:e" # for now it uses hair color
+			"GFX_night_elf_female_mouth:d2:h"
+			"GFX_night_elf_female_mouth_uncolored:d2"
+			"GFX_night_elf_female_shade:d8"
+			"GFX_night_elf_female_hair:p1:e"
+			"GFX_night_elf_female_eyebrows:d5:e"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 0 12 } { 151 122 131 } { 238 221 240 }
+			{ 11 0 10 } { 183 131 142 } { 240 226 224 }
+			{ 9 4 12 } { 144 116 128 } { 228 211 230 }
+			{ 2 4 5 } { 149 144 154 } { 250 255 255 }
+			{ 0 12 20 } { 159 145 135 } { 241 231 252 }
+			{ 9 4 9 } { 134 129 141 } { 239 235 239 }
+			{ 5 2 5 } { 125 94 123 } { 218 201 200 }
+			{ 9 5 10 } { 137 106 130 } { 231 206 209 }
+		}
+		eye_color_index = 9
+		eye_color = {
+			{ 52 101 12 }
+			{ 82 101 12 }
+			{ 8 194 104 }
+			{ 29 141 103 }
+			{ 0 196 171 }
+			{ 225 229 236 }
+			{ 49 144 167 }
+			{ 57 71 136 }
+			{ 90 34 134 }
+		}
+	}
+
+	# Night Elf Female Old
+	portraitType = {
+		name = "PORTRAIT_nelvengfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_night_elf_female_base:p2:h"
+			"GFX_night_elf_female_cheeks:d4:h"
+			"GFX_night_elf_female_eyes2:d5"
+			"GFX_night_elf_female_eyes:d6:h"
+			"GFX_night_elf_female_nose:d3:h"
+			"GFX_night_elf_female_tattoo:p18:e" # for now it uses hair color
+			"GFX_night_elf_female_mouth:d2:h"
+			"GFX_night_elf_female_mouth_uncolored:d2"
+			"GFX_night_elf_female_shade:d8"
+			"GFX_night_elf_female_hair:p1:e"
+			"GFX_night_elf_female_eyebrows:d5:e"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 0 12 } { 151 122 131 } { 238 221 240 }
+			{ 11 0 10 } { 183 131 142 } { 240 226 224 }
+			{ 9 4 12 } { 144 116 128 } { 228 211 230 }
+			{ 2 4 5 } { 149 144 154 } { 250 255 255 }
+			{ 0 12 20 } { 159 145 135 } { 241 231 252 }
+			{ 9 4 9 } { 134 129 141 } { 239 235 239 }
+			{ 5 2 5 } { 125 94 123 } { 218 201 200 }
+			{ 9 5 10 } { 137 106 130 } { 231 206 209 }
 		}
 		eye_color_index = 9
 		eye_color = {

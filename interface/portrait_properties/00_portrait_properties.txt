@@ -2079,22 +2079,23 @@
 	}
 }
 
-# p15 - Undead
+# p15 child background
 15 = {
-	0 = {
-		factor = 1
+	0 = { # blank
+		factor = 100
 		modifier = {
 			factor = 0
-			TOW_is_undead = yes
+			age >= 6
 		}
-	}
-	1 = {
-		factor = 1
+ 	}
+
+	1 = { # background enabled
+		factor = 100
 		modifier = {
 			factor = 0
-			TOW_is_undead = no
+			age < 6
 		}
-	}
+  	}
 }
 
 # p16 - Undead Type (eyes)
@@ -2210,21 +2211,46 @@
   	}
 }
 
-# p18 child background
+
+# p18 tattoo
 18 = {
 	0 = { # blank
 		factor = 100
 		modifier = {
 			factor = 0
-			age >= 6
+			NAND = { # Only female nelf for now have tattoo property
+				trait = race_night_elf
+				is_female = yes
+				age = 110
+			}
 		}
  	}
 
-	1 = { # background enabled
-		factor = 100
-		modifier = {
-			factor = 0
-			age < 6
-		}
+	1 = {
+		factor = 1
+  	}
+  	2 = {
+		factor = 1
+  	}
+  	3 = {
+		factor = 1
+  	}
+  	4 = {
+		factor = 1
+  	}
+  	5 = {
+		factor = 1
+  	}
+  	6 = {
+		factor = 1
+  	}
+  	7 = {
+		factor = 1
+  	}
+  	8 = {
+		factor = 1
+  	}
+  	9 = {
+		factor = 1
   	}
 }
