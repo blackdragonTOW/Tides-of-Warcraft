@@ -3,9 +3,12 @@
 targeted_decisions = {
 
 	Keitaro_ask_for_money = {
-
 		only_playable = yes
+		filter = all
 		ai_target_filter = realm
+		ai_check_interval = 3
+
+		diplomacy_icon = GFX_Keitaro_favor_diplomacy
 	
 		from_potential = {
 			is_ruler = yes
@@ -30,23 +33,22 @@ targeted_decisions = {
 				}
 			}
 
+			is_within_diplo_range = FROM
 			is_alive = yes
 			is_adult = yes
 			prisoner = no
+			is_inaccessible_trigger = no
+			owes_favor_to = FROM
 			NOT = { character = FROM }
 		}
 		
 		allow = {
-			is_within_diplo_range = FROM
 			owes_favor_to = FROM
 			FROM = {
 				prestige = 50
 			}
 			ROOT = {
-				is_inaccessible_trigger = no
-				NOT = {	trait = incapable }
-				scaled_wealth = 0.8
-				wealth = 10
+				is_inaccessible_or_incapable_trigger = no
 			}
 			NOT = {
 				has_opinion_modifier = {
@@ -66,7 +68,7 @@ targeted_decisions = {
 					who = FROM
 					months = 18
 				}
-				character_event = {
+				letter_event = {
 					id = Keitaro_Decisions.1
 					tooltip = EVTTOOLTIP_Keitaro_ask_for_money
 					days = 1
@@ -126,6 +128,22 @@ targeted_decisions = {
 			modifier = {
 				factor = 0.5
 				wealth = 1000
+			}
+		}
+
+		ai_acceptance = {
+			factor = 1	# The base score	
+			yes_threshold = 50
+			show_maybe_for_human = yes
+	
+			additive_modifier = {
+				value = -1000
+				NOT = { scaled_wealth = { value = 0.8 min = 10 } }
+			}
+
+			additive_modifier = {
+				value = -1000
+				is_foe = FROM
 			}
 		}
 	}

@@ -12,6 +12,8 @@ plot_Keitaro_foment_rebellion = {
 	type = realm_characters_plus # All characters in the same realm, plus rivals and relatives of self, parents, children and spouse
 	vassal_intrigue_plot = yes
 	intrigue_plot = yes
+
+	diplomacy_icon = GFX_Keitaro_plot_to_foment_diplomacy
 	
 	# Plotter scope
 	potential = {
@@ -57,6 +59,7 @@ plot_Keitaro_foment_rebellion = {
 		is_ruler = yes
 		higher_real_tier_than = baron
 		demesne_size = 1
+		is_nomadic = no
 
 		# can't create a revolt in my realm
 		NOT = { is_liege_or_above = FROM }
@@ -183,6 +186,7 @@ plot_Keitaro_foment_rebellion = {
 			FROM = {
 				trait = content
 				NOT = { trait = lunatic } 
+				NOT = { trait = possessed }
 			}
 		}
 
@@ -313,6 +317,10 @@ plot_Keitaro_foment_rebellion = {
 	}
 	
 	success = {
+		OR = {
+			custom_tooltip = { text = Keitaro_TOOLTIP_foment_rebellion_success_condition_1 }
+			custom_tooltip = { text = Keitaro_TOOLTIP_foment_rebellion_success_condition_2 }
+		}
 		hidden_tooltip = {
 			FROM = { has_character_flag = plot_Keitaro_foment_rebellion_success }
 		}
@@ -323,7 +331,6 @@ plot_Keitaro_foment_rebellion = {
 			is_ruler = no
 			NOT = { higher_real_tier_than = baron }
 			is_nomadic = yes
-			is_tribal = yes
 		}
 	}
 	abort_effect = {
