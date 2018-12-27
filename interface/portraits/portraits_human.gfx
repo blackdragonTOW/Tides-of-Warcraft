@@ -194,94 +194,6 @@ spriteTypes = {
 		
 		headgear_that_hides_hair = { }
 	}
-	
-	spriteType = {
-		name = "GFX_human_male_child_base"
-		texturefile = "gfx\\characters\\human_male\\child\\human_male_child_base.dds"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-
-	spriteType = {
-		name = "GFX_human_male_child_hair"
-		texturefile = "gfx\\characters\\human_male\\child\\human_male_child_hair.dds"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-
-	spriteType = {
-		name = "GFX_human_male_child_eyes2"
-		texturefile = "gfx\\characters\\human_male\\child\\human_male_child_eyes2.dds"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-
-	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
-		name = "PORTRAIT_human_male_child"
-		
-		weight = {
-			additive_modifier = {
-				value = 10000
-				portrait_age <= child
-				portrait_is_female = no
-				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_human
-				NOR = {
-					portrait_has_trait = race_undead_generic
-					portrait_has_trait = race_undead_forsaken
-					portrait_has_trait = race_undead_scourge
-				}
-			}
-		}
-
-		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
-			"GFX_character_background:p0"
-			"GFX_child_background:p15"
-			"GFX_human_male_child_base:p2"
-			"GFX_human_male_child_hair:p1:h:y"
-			"GFX_human_male_child_eyes2:d6:e"
-			"GFX_character_imprisoned:p6"
-			"GFX_child_male_border:d3"
-			"GFX_player_overlay:p11"
-		}
-
-		hair_color_index = 8
-		hair_color = { # dark, base, highlight
-			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
-			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
-			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
-			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
-			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
-			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
-			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
-		}
-
-		eye_color_index = 9
-		eye_color = {
-			{ 83 76 45 }
-			{ 120 74 46 }
-			{ 170 104 46 }
-			{ 176 60 0 }
-			{ 169 116 0 }
-			{ 96 143 22 }
-			{ 34 143 36 }
-			{ 107 101 65 }
-			{ 66 121 102 }
-			{ 58 109 193 }
-			{ 65 78 160 }
-			{ 160 160 210 }
-			{ 140 60 164 }
-			{ 167 66 124 }
-			{ 200 95 200 }
-		}
-		
-		allow_property_values = { }
-	}
 
 ### human FEMALE ####
 
@@ -486,6 +398,30 @@ spriteTypes = {
 		}
 		
 		headgear_that_hides_hair = { }
+	}
+
+	spriteType = {
+		name = "GFX_human_female_child_base"
+		texturefile = "gfx\\characters\\human_female\\child\\human_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_human_female_child_hair"
+		texturefile = "gfx\\characters\\human_female\\child\\human_female_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_human_female_child_eyes2"
+		texturefile = "gfx\\characters\\human_female\\child\\human_female_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
 	}
 
 }
