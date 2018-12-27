@@ -47,6 +47,7 @@ spriteTypes = {
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
 			"GFX_human_male_child_base:p2"
+			"GFX_child_male_clothes:d0"
 			"GFX_human_male_child_hair:p1:h:y"
 			"GFX_human_male_child_eyes2:d6:e"
 			"GFX_character_imprisoned:p6"
@@ -87,6 +88,22 @@ spriteTypes = {
 		allow_property_values = { }
 	}
 
+	spriteType = {
+		name = "GFX_human_female_child_base"
+		texturefile = "gfx\\characters\\human_female\\child\\human_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_human_female_child_eyes2"
+		texturefile = "gfx\\characters\\human_female\\child\\human_female_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
 	portraitType = {
 		effectFile = "gfx/FX/portrait.lua"
 		name = "PORTRAIT_humangfx_female_child"
@@ -111,7 +128,8 @@ spriteTypes = {
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
 			"GFX_human_female_child_base:p2"
-			"GFX_human_female_child_hair:p1:h:y"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:h:y"
 			"GFX_human_female_child_eyes2:d6:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"

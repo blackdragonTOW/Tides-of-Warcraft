@@ -1,0 +1,300 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_dwarf_male_child_base"
+		texturefile = "gfx\\characters\\dwarf_male\\child\\dwarf_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dwarf_male_child_hair"
+		texturefile = "gfx\\characters\\dwarf_male\\child\\dwarf_male_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dwarf_male_child_beard"
+		texturefile = "gfx\\characters\\dwarf_male\\child\\dwarf_male_child_beard.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dwarf_male_child_eyes2"
+		texturefile = "gfx\\characters\\dwarf_male\\child\\dwarf_male_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_dwarfgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dwarf
+				NOT = { portrait_gfx_culture = blackdwarfgfx }
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dwarf_male_child_base:p2"
+			"GFX_dwarf_male_child_beard:d0:h"
+			"GFX_child_male_clothes:d0"
+			"GFX_dwarf_male_child_hair:p1:h:y"
+			"GFX_dwarf_male_child_eyes2:d6:e"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 10 10 5 } { 235 198 100 } { 255 255 255 }
+			{ 0 0 0 } { 50 50 50 } { 200 200 200 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 12 8 5 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 9 } { 140 90 45 } { 255 255 255 }
+			{ 15 11 9 } { 120 85 55 } { 255 255 255 }
+			{ 10 4 4 } { 241 91 38 } { 255 255 255 }
+			{ 12 4 4 } { 230 55 35 } { 255 255 255 }
+			{ 4 4 5 } { 45 45 50 } { 220 220 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_blackdwarf_male_child_base"
+		texturefile = "gfx\\characters\\dwarf_male\\child\\blackdwarf_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_blackdwarfgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dwarf
+				portrait_gfx_culture = blackdwarfgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_blackdwarf_male_child_base:p2"
+			"GFX_dwarf_male_child_beard:d0:h"
+			"GFX_child_male_clothes:d0"
+			"GFX_dwarf_male_child_hair:p1:h:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 4 4 8 } { 45 45 80 } { 255 255 255 }
+			{ 7 7 7 } { 140 140 140 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 45 45 50 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_dwarf_female_child_base"
+		texturefile = "gfx\\characters\\dwarf_female\\child\\dwarf_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dwarf_female_child_eyes2"
+		texturefile = "gfx\\characters\\dwarf_female\\child\\dwarf_female_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_dwarfgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dwarf
+				NOT = { portrait_gfx_culture = blackdwarfgfx }
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dwarf_female_child_base:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:h:y"
+			"GFX_dwarf_female_child_eyes2:d6:e"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 10 10 5 } { 235 198 100 } { 255 255 255 }
+			{ 0 0 0 } { 50 50 50 } { 200 200 200 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 12 8 5 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 9 } { 140 90 45 } { 255 255 255 }
+			{ 15 11 9 } { 120 85 55 } { 255 255 255 }
+			{ 10 4 4 } { 241 91 38 } { 255 255 255 }
+			{ 12 4 4 } { 230 55 35 } { 255 255 255 }
+			{ 4 4 5 } { 45 45 50 } { 220 220 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_blackdwarf_female_child_base"
+		texturefile = "gfx\\characters\\dwarf_female\\child\\blackdwarf_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_blackdwarfgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dwarf
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_blackdwarf_female_child_base:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:h:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 4 4 8 } { 45 45 80 } { 255 255 255 }
+			{ 7 7 7 } { 140 140 140 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 45 45 50 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+}
