@@ -9705,5 +9705,21 @@ e_azeroth = {
 				}
 			}
 		}
+		
+		d_elwynn_glades = {
+			color = { 124 213 235 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 323 # Goldshire
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 322 province_id = 323 province_id = 464 } }
+				}
+			}
+			
+			
+		}
 	}
 }
