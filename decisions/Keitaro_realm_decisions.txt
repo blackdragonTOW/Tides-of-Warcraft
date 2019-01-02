@@ -1,0 +1,227 @@
+decisions = {
+
+	Keitaro_pillage_everything = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			is_playable = yes
+			OR = {
+				is_nomadic = yes
+				AND = {
+					is_tribal = yes
+					independent = yes
+				}
+			}
+			has_dlc = "Horse Lords"
+			any_realm_province = {
+				any_province_holding = {
+					Keitaro_holding_can_be_pillaged_by_from = yes
+				}
+			}
+		}
+
+		allow = {
+			any_realm_province = {
+				any_province_holding = {
+					Keitaro_holding_can_be_pillaged_by_from_tooltip = yes
+
+					Keitaro_holding_can_be_pillaged_allow = yes
+				}
+			}
+		}
+		effect = {
+			any_realm_province = {
+				any_province_holding = {
+					limit = {
+						Keitaro_holding_can_be_pillaged_by_from_tooltip = yes
+
+						Keitaro_holding_can_be_pillaged_allow = yes
+					}
+
+					ROOT = { save_event_target_as = pillager }
+					Keitaro_pillage_holding = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0.03
+			}
+
+			modifier = {
+				factor = 100
+				NOT = { wealth = 0 }
+			}
+
+			modifier = {
+				factor = 5
+				wealth = 0
+				NOT = { wealth = 500 }
+			}
+
+			modifier = {
+				factor = 5
+				trait = greedy
+			}
+
+			modifier = {
+				factor = 10
+				trait = cruel
+			}
+
+			modifier = {
+				factor = 10
+				trait = wroth
+			}
+
+			modifier = {
+				factor = 0
+				wealth = 0
+				pacifist = yes
+			}
+
+			modifier = {
+				factor = 0
+				war = yes
+				NOR = {
+					trait = lunatic
+					trait = wroth
+				}
+			}
+
+			modifier = {
+				factor = 0
+				trait = kind
+			}
+		}
+	}
+
+	Keitaro_stop_pillage_everything = {
+		only_playable = yes
+		ai = no
+		
+		potential = {
+			is_playable = yes
+			OR = {
+				is_nomadic = yes
+				AND = {
+					is_tribal = yes
+					independent = yes
+				}
+			}
+			has_dlc = "Horse Lords"
+			any_realm_province = {
+				any_province_holding = {
+					has_holding_modifier = recently_burnt_the_land
+					NOT = { has_holding_modifier = stop_burning_land }
+					NOT = { holding_type = nomad }
+					OR = {
+						NOT = { holding_type = tribal }
+						ROOT = { is_tribal = no }
+					}
+					OR = {
+						ROOT = { is_nomadic = yes }
+						location = {
+							num_of_settlements = 2
+						}
+					}
+					OR = {
+						owner = { character = ROOT }
+						AND = {
+							ROOT = { is_nomadic = yes }
+							has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+							location = { owner = { character = ROOT } }
+							owner = { liege = { character = ROOT } }
+						}
+					}
+				}
+			}
+		}
+
+		allow = {
+			any_realm_province = {
+				any_province_holding = {
+					has_holding_modifier = recently_burnt_the_land
+					custom_tooltip = {
+						text = stop_pillaging_custom_tooltip
+						hidden_tooltip = {
+							NOT = { has_holding_modifier = stop_burning_land }
+						}
+					}
+					NOT = { holding_type = nomad }
+					OR = {
+						NOT = { holding_type = tribal }
+						ROOT = { is_tribal = no }
+					}
+					OR = {
+						ROOT = { is_nomadic = yes }
+						location = {
+							num_of_settlements = 2
+						}
+					}
+					custom_tooltip = {
+						text = Keitaro_is_allowed_to_pillage_custom_tooltip
+						hidden_tooltip = {
+							OR = {
+								owner = { character = ROOT }
+								AND = {
+									ROOT = { is_nomadic = yes }
+									owner = { liege = { character = ROOT } }
+									location = { owner = { character = ROOT } }
+									has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			any_realm_province = {
+				any_province_holding = {
+					limit = {
+						has_holding_modifier = recently_burnt_the_land
+						NOT = { has_holding_modifier = stop_burning_land }
+						NOT = { holding_type = nomad }
+						OR = {
+							NOT = { holding_type = tribal }
+							ROOT = { is_tribal = no }
+						}
+						OR = {
+							ROOT = { is_nomadic = yes }
+							location = {
+								num_of_settlements = 2
+							}
+						}
+						OR = {
+							owner = { character = ROOT }
+							AND = {
+								ROOT = { is_nomadic = yes }
+								has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+								location = { owner = { character = ROOT } }
+								owner = { liege = { character = ROOT } }
+							}
+						}
+					}
+
+					custom_tooltip = {
+						text = KEITARO_TOOLTIP_STOP_PILLAGING
+						hidden_tooltip = {
+							add_holding_modifier = {
+								modifier = stop_burning_land
+								hidden = yes
+								years = 1
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

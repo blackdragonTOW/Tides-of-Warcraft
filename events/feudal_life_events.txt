@@ -35,7 +35,7 @@ character_event = {
 			trait = race_human
 			trait = race_dwarf
 		}
-		NOT = { is_undead = yes }
+		NOT = { TOW_is_undead = yes }
 		OR = {
 			trait = greedy
 			trait = midas_touched
@@ -3306,7 +3306,6 @@ character_event = {
 		in_command = no
 		OR = {
 			trait = lunatic
-			trait = possessed
 			trait = infirm
 			trait = drunkard
 		}

@@ -25,7 +25,7 @@ blinded = {
 	
 	customizer = no
 	
-	combat_rating = -10
+	combat_rating = -100 #old value: -10
 	
 	blinding = yes
 	
@@ -105,6 +105,7 @@ child_of_consort = {
 
 peasant_leader = {
 	diplomacy = -5
+	combat_rating = 3 #new value!
 	
 	same_opinion = 25
 	
@@ -123,6 +124,7 @@ heresiarch = {
 	infidel_opinion = -15
 	
 	same_religion_opinion = 25
+	combat_rating = 3 #new value!
 	
 	rebel_inherited = yes
 	customizer = no
@@ -146,7 +148,7 @@ berserker = {
 	}
 	martial = 4
 	diplomacy = -2
-	combat_rating = 3
+	combat_rating = 25 #old value: 3
 	
 	same_opinion = 10
 	
@@ -172,19 +174,19 @@ viking = {
 		sea_queen
 	}
 	martial = 1
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	monthly_character_prestige = 0.3
 	same_religion_opinion = 15
 	
 	same_opinion = 5
-	religious = yes
+	#religious = yes
 	
 	male_insult = COMPL_PIRATE
 	female_insult = COMPL_PIRATE
 	male_compliment = COMPL_VIKING
-	male_compliment_adj = COMPL_VIKING
+	male_compliment_adj = COMPL_VIKING_adj
 	female_compliment = COMPL_VALKYRIE
-	female_compliment_adj = COMPL_VIKING
+	female_compliment_adj = COMPL_VIKING_adj
 }
 
 # Babies can be born sickly
@@ -223,7 +225,7 @@ decadent = {
 	customizer = no
 	random = no
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	male_insult = INSULT_SYBARITE
 	female_insult = INSULT_SYBARITE
@@ -457,8 +459,8 @@ adventurer = {
 
 	martial = 1
 	diplomacy = -1
-	combat_rating = 1
-	levy_size = 0.2
+	combat_rating = 10 #old value: 1
+	global_levy_size = 0.2
 	max_manpower_mult = 0.1
 	
 	same_opinion = 10
@@ -484,6 +486,7 @@ erudite = {
 	personality = yes
 	
 	learning = 2
+	combat_rating = -2 #new value!
 	
 	church_opinion = 5
 	
@@ -503,6 +506,7 @@ stubborn = {
 	
 	stewardship = 1
 	diplomacy = -1
+	combat_rating = 3 #new value!
 	
 	vassal_opinion = -5
 	ai_ambition = 10
@@ -692,7 +696,7 @@ robust = {
 	
 	health = 1
 	
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	
 	sex_appeal_opinion = 5
 	vassal_opinion = 5
@@ -707,7 +711,7 @@ feeble = {
 	}
 	
 	martial = -1
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	health = -0.5
 	
@@ -728,6 +732,7 @@ shrewd = {
 	stewardship = 2
 	martial = 2
 	learning = 2
+	combat_rating = 3 #new value!
 	
 	ai_rationality = 15
 }
@@ -742,6 +747,7 @@ dull = {
 	stewardship = -2
 	martial = -2
 	learning = -2
+	combat_rating = -3 #new value!
 	
 	ai_rationality = -15
 	
@@ -787,7 +793,7 @@ fever = {
 
 	ai_rationality = -10
 
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 
@@ -804,7 +810,7 @@ diarrhea = {
 	is_symptom = yes
 	is_illness = yes
 
-	sex_appeal_opinion = -10
+	sex_appeal_opinion = -5
 
 	martial_penalty = -2
 	intrigue_penalty = -2
@@ -812,7 +818,7 @@ diarrhea = {
 	health_penalty = -1
 	fertility_penalty = -0.2
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 
@@ -829,7 +835,7 @@ vomiting = {
 	is_symptom = yes
 	is_illness = yes
 
-	sex_appeal_opinion = -10
+	sex_appeal_opinion = -5
 
 	diplomacy_penalty = -2
 	intrigue_penalty = -2
@@ -837,7 +843,7 @@ vomiting = {
 	health_penalty = -1
 	fertility_penalty = -0.3
 
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 
@@ -857,7 +863,7 @@ chest_pain = {
 
 	health_penalty = -2
 
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 
@@ -878,7 +884,7 @@ cramps = {
 	
 	health_penalty = -0.5
 
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 
@@ -921,7 +927,7 @@ headache = {
 	learning_penalty = -1
 	health_penalty = -0.5
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 
 	ai_rationality = -10
 	
@@ -997,7 +1003,7 @@ infection = {
 	is_health = yes
 	is_illness = yes
 
-	sex_appeal_opinion = -15
+	sex_appeal_opinion = -10
 
 	diplomacy_penalty = -3
 	intrigue_penalty = -3
@@ -1005,7 +1011,7 @@ infection = {
 	stewardship_penalty = -3
 	learning_penalty = -3
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	health_penalty = -2
 	
@@ -1027,10 +1033,9 @@ one_eyed = {
 	is_health = yes
 	
 	sex_appeal_opinion = -5
-	pagan_group_opinion = 10
 	same_opinion = 5
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 
@@ -1050,7 +1055,7 @@ one_handed = {
 	sex_appeal_opinion = -5
 	same_opinion = 5
 	
-	combat_rating = -2
+	combat_rating = -20 #old value: -2
 	
 	customizer = no
 	
@@ -1070,7 +1075,7 @@ one_legged = {
 	sex_appeal_opinion = -10
 	same_opinion = 5
 	
-	combat_rating = -3
+	combat_rating = -30 #old value: -3
 
 	customizer = no
 	
@@ -1115,7 +1120,7 @@ mangled = {
 	learning = -2
 	stewardship = -2
 	
-	combat_rating = -4
+	combat_rating = -40 #old value: -4
 
 	health = -3
 	
@@ -1141,7 +1146,7 @@ severely_injured = {
 	intrigue_penalty = -2
 	martial_penalty = -2
 	
-	combat_rating = -2
+	combat_rating = -20 #old value: -2
 
 	health_penalty = -2
 	
@@ -1160,7 +1165,7 @@ flu = {
 	is_health = yes
 	is_illness = yes
 
-	sex_appeal_opinion = -30
+	sex_appeal_opinion = -10
 
 	diplomacy_penalty = -1
 	intrigue_penalty = -1
@@ -1169,7 +1174,7 @@ flu = {
 	learning_penalty = -1
 	health_penalty = -2
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 
@@ -1182,7 +1187,7 @@ dysentery = {
 	is_health = yes
 	is_illness = yes
 
-	sex_appeal_opinion = -30
+	sex_appeal_opinion = -15
 
 	intrigue_penalty = -3
 	martial_penalty = -3
@@ -1191,7 +1196,7 @@ dysentery = {
 	
 	health_penalty = -4
 	
-	combat_rating = -2
+	combat_rating = -20 #old value: -2
 	
 	customizer = no
 
@@ -1209,7 +1214,7 @@ gout = {
 
 	health_penalty = -2
 	
-	combat_rating = -2
+	combat_rating = -20 #old value: -2
 	
 	customizer = no
 
@@ -1225,7 +1230,7 @@ food_poisoning = {
 	is_health = yes
 	is_illness = yes
 
-	sex_appeal_opinion = -25
+	sex_appeal_opinion = -15
 
 	diplomacy_penalty = -2
 	intrigue_penalty = -2
@@ -1237,7 +1242,7 @@ food_poisoning = {
 
 	health_penalty = -3
 	
-	combat_rating = -1
+	combat_rating = -10 #old value: -1
 	
 	customizer = no
 
@@ -1260,7 +1265,7 @@ rabies = {
 	stewardship_penalty = -2
 	learning_penalty = -2
 
-	combat_rating = 3
+	combat_rating = 30 #old value: 3
 
 	health_penalty = -7
 	
@@ -1303,9 +1308,8 @@ valhalla_bound  = {
 	}
 	
 	martial = 2
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	
-	pagan_group_opinion = 5
 	same_opinion_if_same_religion = 15
 	
 	ai_zeal = 10
@@ -1320,49 +1324,59 @@ ravager = {
 		always = no
 	}
 	opposites =  {
+		pirate
 		viking
 		seaking
 		sea_queen
 	}
 	martial = 2
-	combat_rating = 2
+	combat_rating = 20 #old value: 2
 	monthly_character_prestige = 0.4
-	same_religion_opinion = 20
 	
 	same_opinion = 5
-	religious = yes
+	#religious = yes
 	
 	male_insult = COMPL_PIRATE
 	female_insult = COMPL_PIRATE
 	male_compliment = COMPL_VIKING
-	male_compliment_adj = COMPL_VIKING
+	male_compliment_adj = COMPL_VIKING_adj
 	female_compliment = COMPL_VALKYRIE
-	female_compliment_adj = COMPL_VIKING
+	female_compliment_adj = COMPL_VIKING_adj
 }
 
 seaking = {
 	potential = {
-		always = no
+		OR = {
+			any_owned_bloodline = {
+				has_bloodline_flag = bloodline_viking
+			}
+			AND = {
+				has_religion_feature = religion_adventuring
+				has_religion_feature = religion_seafaring
+			}
+		}
 	}
 	opposites =  {
+		pirate
 		viking
 		ravager
 		sea_queen
 	}
 	martial = 3
-	combat_rating = 2
+	combat_rating = 20 #old value: 2
 	monthly_character_prestige = 0.5
 	same_religion_opinion = 25
 	
-	religious = yes
+	#religious = yes
 	
 	male_insult = COMPL_PIRATE
 	female_insult = COMPL_PIRATE
 	male_compliment = COMPL_VIKING
-	male_compliment_adj = COMPL_VIKING
+	male_compliment_adj = COMPL_VIKING_adj
 	female_compliment = COMPL_VALKYRIE
-	female_compliment_adj = COMPL_VIKING
+	female_compliment_adj = COMPL_VIKING_adj
 }
+
 
 physician = {
 	
@@ -1399,7 +1413,7 @@ scurvy = {
 	stewardship_penalty = -1
 	intrigue_penalty = -1
 	learning_penalty = -1
-	combat_rating = -2
+	combat_rating = -20 #old value: -2
 	
 	customizer = no
 	
@@ -1434,33 +1448,44 @@ cannot_marry = {
 
 sea_queen = {
 	potential = {
-		always = no
+		OR = {
+			any_owned_bloodline = {
+				has_bloodline_flag = bloodline_viking
+			}
+			AND = {
+				has_religion_feature = religion_adventuring
+				has_religion_feature = religion_seafaring
+			}
+		}
 	}
 	opposites =  {
+		pirate
 		viking
 		ravager
 		seaking
 	}
 	martial = 3
-	combat_rating = 2
+	combat_rating = 20 #old value: 2
 	monthly_character_prestige = 0.5
 	same_religion_opinion = 25
 	
-	religious = yes
+	#religious = yes
 	customizer = no
 	
 	male_insult = COMPL_PIRATE
 	female_insult = COMPL_PIRATE
 	male_compliment = COMPL_VIKING
-	male_compliment_adj = COMPL_VIKING
+	male_compliment_adj = COMPL_VIKING_adj
 	female_compliment = COMPL_VALKYRIE
-	female_compliment_adj = COMPL_VIKING
+	female_compliment_adj = COMPL_VIKING_adj
 }
+
+
 
 cannibal_trait = {
 	martial = 3
 	general_opinion = -10
-	combat_rating = 1
+	combat_rating = 10 #old value: 1
 	
 	same_opinion = 25
 	
@@ -1476,7 +1501,6 @@ cannibal_trait = {
 lovers_pox = {
 	sex_appeal_opinion = -5
 	
-	customizer = no
 	customizer = no
 	
 	male_insult_adj = INSULT_POX_RIDDEN
@@ -1557,10 +1581,14 @@ cat = {
 # Familial Kinslayer = Aunts/Uncles (blood only), cousins, nieces/nephews
 # Dynastic Kinslayer = Any other dynasty member
 familial_kinslayer = {
+	potential = {
+		is_tribal = no
+	}
 
 	opposites = {
 		kinslayer
 		dynastic_kinslayer
+		tribal_kinslayer
 	}
 
 	diplomacy = -4
@@ -1574,10 +1602,14 @@ familial_kinslayer = {
 	female_insult = INSULT_KINSLAYER
 }
 dynastic_kinslayer = {
+	potential = {
+		is_tribal = no
+	}
 
 	opposites = {
 		kinslayer
 		familial_kinslayer
+		tribal_kinslayer
 	}
 
 	diplomacy = -3
@@ -1589,3 +1621,433 @@ dynastic_kinslayer = {
 	male_insult = INSULT_KINSLAYER
 	female_insult = INSULT_KINSLAYER
 }
+giant = {
+	birth = 50
+	inherit_chance = 5
+	
+	opposites =  {
+		dwarf
+	}
+	
+	fertility = -0.20
+	health = -0.5
+	combat_rating = 10
+	
+	vassal_opinion = 5
+	tribal_opinion = 10
+	sex_appeal_opinion = -5
+	
+	male_insult = INSULT_ABOMINATION
+	female_insult = INSULT_FREAK
+	child_insult = INSULT_TROLL
+	male_insult_adj = INSULT_MONSTROUS
+	female_insult_adj = INSULT_HIDEOUS
+	child_insult_adj = INSULT_UGLY
+	male_compliment_adj = COMPL_STRONG
+}
+travelling = {
+	pilgrimage = yes # Will need a regent, but can still be guardian to children.
+	customizer = no
+}
+
+pregnancy_finishing = {
+	in_hiding = yes # Will need a regent, but can still be guardian to children
+	is_health = yes
+	customizer = no
+}
+hard_pregnancy = {
+	#in_hiding = yes # Will need a regent
+	is_health = yes
+	# Highly event driven
+	opposites = { troubled_pregnancy
+	}
+	
+	combat_rating = -50
+	spouse_opinion = 15
+
+	customizer = no
+
+	
+	ai_rationality = -5
+}
+
+troubled_pregnancy = {
+	incapacitating = yes # Will need a regent
+	is_health = yes
+	# Highly event driven
+	opposites = { hard_pregnancy }
+	
+	combat_rating = -100
+	spouse_opinion = 15
+
+	customizer = no
+
+	ai_rationality = -15
+}
+
+lefthanded = {
+	inherit_chance = 25
+	birth = 75
+
+	combat_rating = 15
+	same_opinion = 5
+	
+	customizer = yes
+	
+	christian_church_opinion = -10
+
+	male_insult_adj = INSULT_LEFTHANDED
+	female_insult_adj = INSULT_LEFTHANDED
+}
+
+freckles = { #Inherited via script - Base version.
+#	inherit_chance = 40
+#	birth = 250
+	random = no	
+	hidden = yes
+	opposites = { 
+		freckles_2 
+		freckles_3 
+		freckles_4 
+		freckles_5
+	}
+
+#	potential = { 
+#		OR = { 
+#			graphical_culture = norsegfx
+#			graphical_culture = saxongfx
+#			graphical_culture = celticgfx 
+#			AND = { 
+#				culture = uyghur
+#				graphical_culture = cumangfx 
+#			}
+#		} 
+#	}
+	
+#	sex_appeal_opinion = 5
+#	christian_church_opinion = -5
+	customizer = no
+	male_insult_adj = INSULT_CURSED
+	female_insult_adj = INSULT_CURSED
+}
+
+sturdy = {
+	
+	opposites = { 
+		feeble
+		robust 
+	}
+
+	health = 0.25
+	
+	combat_rating = 2
+	
+}
+is_fat = {
+
+	opposites = { is_malnourished }
+	
+	combat_rating = -10
+	tribal_opinion = -5
+	
+	random = no
+	customizer = no
+
+	male_insult = INSULT_FATPIG
+	female_insult = INSULT_SOW
+	male_insult_adj = INSULT_BLOATED
+	female_insult_adj = INSULT_BLOATED
+
+	male_compliment_adj = COMPL_MAGNIFICENT
+	female_compliment_adj = COMPL_MAGNIFICENT
+
+	ai_zeal = -20
+
+}
+
+is_malnourished = {
+
+	opposites = { is_fat }
+	
+	combat_rating = -10
+	fertility = -0.05
+	
+	random = no
+	customizer = no
+
+	male_insult = INSULT_WEAKLING
+	female_insult = INSULT_CORPSE
+	male_insult_adj = INSULT_STARVED
+	female_insult_adj = INSULT_STARVED
+
+	male_compliment_adj = COMPL_FRUGAL
+	female_compliment_adj = COMPL_FRUGAL
+
+	ai_zeal = -20
+}
+
+#Freckles from thinner to thicker:
+#freckles_3
+#freckles_2
+#freckles
+#freckles_4
+#freckles_5
+
+freckles_2 = { #Inherited via script - Thin
+	random = no	
+	hidden = yes
+	opposites = {
+		freckles
+		freckles_3 
+		freckles_4 
+		freckles_5
+	}
+	customizer = no
+	male_insult_adj = INSULT_CURSED
+	female_insult_adj = INSULT_CURSED
+}
+freckles_3 = { #Inherited via script - Very Thin
+	random = no	
+	hidden = yes
+	opposites = {
+		freckles_2 
+		freckles
+		freckles_4 
+		freckles_5
+	}
+
+	customizer = no
+	male_insult_adj = INSULT_CURSED
+	female_insult_adj = INSULT_CURSED
+}
+
+freckles_4 = { #Inherited via script - Thick
+	random = no	
+	hidden = yes
+	opposites = {
+		freckles_2 
+		freckles_3 
+		freckles
+		freckles_5
+	}
+
+	customizer = no
+	male_insult_adj = INSULT_CURSED
+	female_insult_adj = INSULT_CURSED
+}
+freckles_5 = { #Inherited via script - Very Thick
+	random = no	
+	hidden = yes
+	opposites = {
+		freckles_2 
+		freckles_3 
+		freckles_4 
+		freckles
+	}
+
+	customizer = no
+	male_insult_adj = INSULT_CURSED
+	female_insult_adj = INSULT_CURSED
+}
+
+i_used_to_be_a_player = {
+	customizer = no
+	hidden = yes
+}
+child_of_consort_male = {
+	diplomacy = -1
+
+	customizer = no
+}
+pirate = {
+	potential = {
+		OR = {
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+			has_character_flag = acquired_pirate_trait_by_bloodline
+			AND = {
+				has_religion_feature = religion_adventuring
+				has_religion_feature = religion_seafaring
+			}
+		}
+	}
+	opposites =  {
+		viking
+		ravager
+		seaking
+		sea_queen
+	}
+	martial = 1
+	combat_rating = 10 #old value: 1
+	monthly_character_prestige = 0.3
+	
+	same_opinion = 5
+	#religious = yes
+	
+	male_insult = COMPL_PIRATE
+	female_insult = COMPL_PIRATE
+}
+
+bloodthirsty_gods_1 = { #10 burned_hearts_points
+	potential = {
+		OR = {
+			has_religion_feature = religion_ritual_sacrifice
+			religion = aztec
+			religion = aztec_reformed
+		}
+	}
+	opposites =  {
+		bloodthirsty_gods_2
+		bloodthirsty_gods_3
+	}
+	monthly_character_piety = 0.1
+	castle_opinion = -5
+	town_opinion = -5
+	tribal_opinion = 5
+	church_opinion = 5
+	same_opinion = 5
+	opposite_opinion = 5
+	#religious = yes
+
+	male_insult = INSULT_FANATIC
+	female_insult = INSULT_FANATIC
+	male_insult_adj = INSULT_NARROWMINDED
+	female_insult_adj = INSULT_NARROWMINDED
+	child_insult_adj = INSULT_NASTY
+	male_compliment_adj = COMPL_RIGHTEOUS
+	female_compliment_adj = COMPL_RIGHTEOUS
+	child_compliment_adj = COMPL_GOOD
+
+	ai_rationality = -15
+	ai_zeal = 30
+	customizer = yes
+	random = no
+	ruler_designer_cost = 10
+}
+bloodthirsty_gods_2 = { #50 burned_hearts_points
+	potential = {
+		OR = {
+			has_religion_feature = religion_ritual_sacrifice
+			religion = aztec
+			religion = aztec_reformed
+		}
+	}
+	opposites =  {
+		bloodthirsty_gods_1
+		bloodthirsty_gods_3
+	}
+	monthly_character_piety = 0.2
+	castle_opinion = -10
+	town_opinion = -10
+	tribal_opinion = 10
+	church_opinion = 10
+	same_opinion = 5
+	opposite_opinion = 10
+	#religious = yes
+
+	male_insult = INSULT_FANATIC
+	female_insult = INSULT_FANATIC
+	male_insult_adj = INSULT_NARROWMINDED
+	female_insult_adj = INSULT_NARROWMINDED
+	child_insult_adj = INSULT_NASTY
+	male_compliment_adj = COMPL_RIGHTEOUS
+	female_compliment_adj = COMPL_RIGHTEOUS
+	child_compliment_adj = COMPL_GOOD
+
+	ai_rationality = -30
+	ai_zeal = 70
+	customizer = yes
+	random = no
+	ruler_designer_cost = 20
+}
+bloodthirsty_gods_3 = { #100 burned_hearts_points
+	potential = {
+		OR = {
+			has_religion_feature = religion_ritual_sacrifice
+			religion = aztec
+			religion = aztec_reformed
+		}
+	}
+	opposites =  {
+		bloodthirsty_gods_2
+		bloodthirsty_gods_1
+	}
+	monthly_character_piety = 0.3
+	castle_opinion = -15
+	town_opinion = -15
+	tribal_opinion = 15
+	church_opinion = 15
+	same_opinion = 5
+	opposite_opinion = 15
+	#religious = yes
+
+	male_insult = INSULT_FANATIC
+	female_insult = INSULT_FANATIC
+	male_insult_adj = INSULT_NARROWMINDED
+	female_insult_adj = INSULT_NARROWMINDED
+	child_insult_adj = INSULT_NASTY
+	male_compliment_adj = COMPL_RIGHTEOUS
+	female_compliment_adj = COMPL_RIGHTEOUS
+	child_compliment_adj = COMPL_GOOD
+
+	ai_rationality = -75
+	ai_zeal = 100
+	customizer = yes
+	random = no
+	ruler_designer_cost = 40
+}
+
+groomed = {
+	sex_appeal_opinion = 15
+	
+	opposites =  {
+		uncouth
+	}
+
+	opposite_opinion = -5
+	
+	female_compliment = COMPL_BEAUTY
+	female_compliment_adj = COMPL_FAIR
+	male_compliment = COMPL_CHARMER
+	male_compliment_adj = COMPL_HANDSOME
+	child_compliment_adj = COMPL_PRETTY
+}
+
+uncouth = {
+	sex_appeal_opinion = -10
+	
+	opposites =  {
+		groomed
+	}
+	
+	opposite_opinion = -5
+
+	male_insult = INSULT_FILTHY
+	female_insult = INSULT_HARPY
+	male_insult_adj = INSULT_ROUGH
+	female_insult_adj = INSULT_ROUGH
+	child_insult_adj = INSULT_UGLY
+}
+
+tribal_kinslayer = {
+	potential = {
+		is_tribal = yes
+	}
+
+	opposites = {
+		kinslayer
+		familial_kinslayer
+		dynastic_kinslayer
+	}
+
+	diplomacy = -3
+	
+	dynasty_opinion = -5
+	sex_appeal_opinion = 15
+	
+	random = no
+	
+	male_insult = INSULT_KINSLAYER
+	female_insult = INSULT_KINSLAYER
+}
+

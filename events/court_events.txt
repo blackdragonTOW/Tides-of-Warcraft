@@ -47,10 +47,6 @@ character_event = {
 			trait = lunatic
 		}
 		modifier = {
-			factor = 0.75
-			trait = possessed
-		}
-		modifier = {
 			factor = 0.9
 			is_ill = yes
 		}
@@ -373,10 +369,6 @@ character_event = {
 			trait = lunatic
 		}
 		modifier = {
-			factor = 0.75
-			trait = possessed
-		}
-		modifier = {
 			factor = 0.9
 			is_ill = yes
 		}
@@ -489,9 +481,9 @@ character_event = {
 	trigger = {
 		any_child = {
 			NOR = {
-				is_undead = yes
-				is_elemental_or_void = yes
-				is_demon_race = yes
+				TOW_is_undead = yes
+				TOW_is_elemental_or_void = yes
+				TOW_is_demon_race = yes
 				trait = race_dragon
 			}
 			is_married = no
@@ -776,10 +768,6 @@ character_event = {
 		modifier = {
 			factor = 0.75
 			trait = lunatic
-		}
-		modifier = {
-			factor = 0.75
-			trait = possessed
 		}
 		modifier = {
 			factor = 0.9

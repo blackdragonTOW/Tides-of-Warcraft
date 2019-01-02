@@ -34,7 +34,7 @@ character_event = {
 		culture_group = human
 		trait = race_human
 		NOT = {
-			is_undead = yes
+			TOW_is_undead = yes
 		}
 		OR = {
 			primary_title = { tier = EMPEROR }
@@ -99,6 +99,10 @@ character_event = {
 		NOT = { has_character_flag = do_not_disturb }
 		any_child = {
 			age = 9
+			OR = {
+				is_female = no
+				ROOT = { TOW_is_character_woman_tolerant_trigger = yes }
+			}
 			guardian = {
 				has_character_flag = hero_knight
 				NOT = { has_character_flag = knight_adventure }
@@ -111,6 +115,10 @@ character_event = {
 		random_child = {
 			limit = {
 				age = 9
+				OR = {
+					is_female = no
+					ROOT = { TOW_is_character_woman_tolerant_trigger = yes }
+				}
 				guardian = {
 					has_character_flag = hero_knight
 					prisoner = no

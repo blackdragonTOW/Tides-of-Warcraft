@@ -8,7 +8,7 @@
 ###############
 
 # Foment a rebellion
-plot_TOW_foment_rebellion = {
+plot_Keitaro_foment_rebellion = {
 	type = realm_characters_plus # All characters in the same realm, plus rivals and relatives of self, parents, children and spouse
 	vassal_intrigue_plot = yes
 	intrigue_plot = yes
@@ -28,7 +28,7 @@ plot_TOW_foment_rebellion = {
 				trait = honest
 				trait = kind
 				trait = just
-				NOT = { has_character_modifier = TOW_has_recently_fomented_a_rebellion }
+				NOT = { has_character_modifier = Keitaro_has_recently_fomented_a_rebellion }
 			}
 		}
 	}
@@ -38,16 +38,16 @@ plot_TOW_foment_rebellion = {
 	player_allow = {
 		is_within_diplo_range = FROM
 		custom_tooltip = {
-			text = TOW_TOOLTIP_Has_not_recently_fomented_a_rebellion
-			FROM = { NOT = { has_character_modifier = TOW_has_recently_fomented_a_rebellion } }
+			text = Keitaro_TOOLTIP_Has_not_recently_fomented_a_rebellion
+			FROM = { NOT = { has_character_modifier = Keitaro_has_recently_fomented_a_rebellion } }
 
 			OR = {
 				# Increased risk cooldown
-				NOT = { has_character_flag = plot_TOW_foment_rebellion_increased_risk_cooldown_@ROOT }
-				had_character_flag = { flag = plot_TOW_foment_rebellion_increased_risk_cooldown_@ROOT days = 1825 }
+				NOT = { has_character_flag = plot_Keitaro_foment_rebellion_increased_risk_cooldown_@ROOT }
+				had_character_flag = { flag = plot_Keitaro_foment_rebellion_increased_risk_cooldown_@ROOT days = 1825 }
 				# Helped revolt cooldown
-				NOT = { has_character_flag = plot_TOW_foment_rebellion_helped_revolt_cooldown_@ROOT }
-				had_character_flag = { flag = plot_TOW_foment_rebellion_helped_revolt_cooldown_@ROOT days = 1825 }
+				NOT = { has_character_flag = plot_Keitaro_foment_rebellion_helped_revolt_cooldown_@ROOT }
+				had_character_flag = { flag = plot_Keitaro_foment_rebellion_helped_revolt_cooldown_@ROOT days = 1825 }
 			}
 		}
 	}
@@ -119,7 +119,7 @@ plot_TOW_foment_rebellion = {
 					is_foe = ROOT
 
 					#heretic or infidel which isn't tolerated
-					TOW_root_dislikes_religion = yes
+					Keitaro_root_dislikes_religion = yes
 
 					#If I could inherit
 					any_heir_title = {
@@ -314,7 +314,7 @@ plot_TOW_foment_rebellion = {
 	
 	success = {
 		hidden_tooltip = {
-			FROM = { has_character_flag = plot_TOW_foment_rebellion_success }
+			FROM = { has_character_flag = plot_Keitaro_foment_rebellion_success }
 		}
 	}
 	abort = {
@@ -328,8 +328,8 @@ plot_TOW_foment_rebellion = {
 	}
 	abort_effect = {
 		FROM = {
-			clr_character_flag = plot_TOW_foment_rebellion_in_motion
-			clr_character_flag = plot_TOW_foment_rebellion_success
+			clr_character_flag = plot_Keitaro_foment_rebellion_in_motion
+			clr_character_flag = plot_Keitaro_foment_rebellion_success
 		}
 	}
 	effect = {
@@ -343,14 +343,14 @@ plot_TOW_foment_rebellion = {
 			}
 			# Global plot cooldown
 			add_character_modifier = {
-				name = TOW_has_recently_fomented_a_rebellion
+				name = Keitaro_has_recently_fomented_a_rebellion
 				days = 365
 				hidden = yes
 			}
 			# Clear flags
 			hidden_tooltip = {
-				clr_character_flag = plot_TOW_foment_rebellion_in_motion
-				clr_character_flag = plot_TOW_foment_rebellion_success
+				clr_character_flag = plot_Keitaro_foment_rebellion_in_motion
+				clr_character_flag = plot_Keitaro_foment_rebellion_success
 			}
 		}
 	}

@@ -6,6 +6,15 @@
 # Events that can trigger off this action. This info is only used by the GUI.
 # All modifiers (like 'local_build_time_modifier') are multiplied by the attribute
 
+# display_on_map = {
+#	tooltip = JOB_PROSELYTIZE_DIFFERENT_RELIGION  # Key of the loc to add to the tooltip
+#	trigger = {                                   # Trigger for when this should happen. Same scopes as the allow/potential for the job action itself
+#		NOT = { religion = FROM }
+#	}
+#	color = { 255 0 0 }                           # What color to use on the map
+# }
+
+ 
 # Chancellor
 action_improve_relations = {
 	attribute = diplomacy
@@ -20,6 +29,7 @@ action_improve_relations = {
 			FROM = {
 				job_chancellor = {
 					NOT = { character = PREVPREV } # Can't be sent to improve relations with himself...
+
 				}
 			}
 		}
@@ -47,6 +57,7 @@ action_clan_sentiment = {
 			FROM = {
 				job_chancellor = {
 					NOT = { character = PREVPREV } # Can't be sent to improve relations with himself...
+
 				}
 			}
 			
@@ -74,6 +85,7 @@ action_fabricate_claims = {
 			FROM = {
 				job_chancellor = {
 					NOT = { character = PREVPREV } # Can't be sent to improve relations with himself...
+
 				}
 			}
 		}
@@ -183,6 +195,16 @@ action_settle_tribe = {
 			character = FROM
 		}
 		NOT = { culture = FROM }
+		OR = {
+			NOT = { 
+				has_game_rule = {
+					name = culture_conversion
+					value = restricted
+				}
+			}
+			any_neighbor_province = { culture = FROM } 
+			any_neighbor_province = { port = yes } 
+		}
 	}
 	
 	events = { 925 20206 }
@@ -330,7 +352,7 @@ action_organize_spies = {
 	
 	plot_power_modifier = 0.005
 	
-	events = { 936 }
+	events = { 935 936 }
 }
 
 action_organize_spies_mystics = {
@@ -349,7 +371,7 @@ action_organize_spies_mystics = {
 	
 	plot_power_modifier = 0.005
 	
-	events = { 936 931 9000 9020 }
+	events = { 935 936 931 9000 9020 }
 }
 
 action_sabotage_province = {
@@ -500,26 +522,12 @@ action_inquisition = {
 	
 	trigger = {
 		num_of_settlements = 1
+		NAND = {
+			FROM = { job_spiritual = { has_character_modifier = spiritual_refused_pagans } }  # See Event ZE.5040
+			owner = { AND = { TOW_is_uncivilized_trigger = yes NOT = { religion = FROM } } }
+		}
 		OR = {
-			owner = {
-				independent = yes
-				NOT = { religion = FROM }
-				capital_scope = {
-					province = ROOT
-				}
-				controls_religion = no
-				FROM = {
-					higher_tier_than = COUNT
-					OR = {
-						independent = yes
-						higher_tier_than = DUKE
-					}
-				}
-				NOT = {
-					has_opinion_modifier = { who = FROM modifier = opinion_sent_preacher }
-				}
-				is_within_diplo_range = FROM
-			}
+			proselytize_convert_independent_trigger = yes
 			any_province_lord = {
 				OR = {
 					character = FROM
@@ -527,6 +535,42 @@ action_inquisition = {
 				}
 			}
 		}
+	}
+	
+	display_on_map = {
+		tooltip = JOB_PROSELYTIZE_SAME_RELIGION
+		trigger = {
+			religion = FROM
+			any_province_lord = {
+				OR = {
+					character = FROM
+					is_liege_or_above = FROM
+				}
+			}
+		}
+		color = { 0 0 255 }
+	}
+	
+	display_on_map = {
+		tooltip = JOB_PROSELYTIZE_DIFFERENT_RELIGION
+		trigger = {
+			NOT = { religion = FROM }
+			any_province_lord = {
+				OR = {
+					character = FROM
+					is_liege_or_above = FROM
+				}
+			}
+		}
+		color = { 0 255 0 }
+	}
+	
+	display_on_map = {
+		tooltip = JOB_PROSELYTIZE_CONVERT_INDEPENDENT
+		trigger = {
+			proselytize_convert_independent_trigger = yes
+		}
+		color = { 255 35 35 }
 	}
 
 	events = { 900 901 902 903 }
@@ -609,7 +653,6 @@ action_hunt_heretics = {
 	events = { MNM.70100 }
 }
 
-# Lord Spiritual (Muslim only)
 #action_charity = {
 #	attribute = learning
 #	

@@ -39,7 +39,6 @@ faction_succ_seniority = {
 				}
 			}
 		}
-		
 		NOT = { trait = incapable }
 		liege = {
 			is_vice_royalty = no
@@ -127,6 +126,7 @@ faction_succ_seniority = {
 			government = forsaken_government
 			government = ogre_tribe_government
 		}
+		
 		holder_scope = {
 			NOT = {
 				any_war = {
@@ -269,6 +269,13 @@ faction_succ_seniority = {
 		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
+		}
+
+		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
 		}
 		
 		modifier = {
@@ -421,6 +428,14 @@ faction_succ_seniority = {
 		modifier = {
 			factor = 0
 			has_character_modifier = faction_succ_seniority_ultimatum_timer
+		}
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
 		}
 		
 		modifier = {
@@ -850,6 +865,7 @@ faction_succ_primogeniture = {
 			government = forsaken_government
 			government = ogre_tribe_government
 		}
+		
 		holder_scope = {
 			NOT = {
 				any_war = {
@@ -980,6 +996,12 @@ faction_succ_primogeniture = {
 		}
 		
 		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
+		modifier = {
 			factor = 1.5
 			NOT = { FROM = { opinion = { who = LIEGE value = 0 } } }
 		}
@@ -1074,6 +1096,14 @@ faction_succ_primogeniture = {
 	membership = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0.2
 			pacifist = yes
@@ -1658,6 +1688,12 @@ faction_succ_gavelkind = {
 		#	}
 		#}
 		
+		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
 		# Try to exclude people who should rather support a claimant
 		modifier = {
 			factor = 0
@@ -1851,6 +1887,14 @@ faction_succ_gavelkind = {
 	membership = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0.2
 			pacifist = yes
@@ -2363,6 +2407,7 @@ faction_succ_feudal_elective = {
 			government = scourge_government
 			government = ogre_tribe_government
 		}
+		
 		holder_scope = {
 			NOT = {
 				any_war = {
@@ -2412,6 +2457,12 @@ faction_succ_feudal_elective = {
 	chance = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
 		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
@@ -2676,6 +2727,14 @@ faction_succ_feudal_elective = {
 	membership = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0.2
 			pacifist = yes
@@ -3099,6 +3158,12 @@ faction_lower_crown_authority = {
 		factor = 1
 		
 		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
+		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
 		}		
@@ -3305,6 +3370,14 @@ faction_lower_crown_authority = {
 	membership = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0.2
 			pacifist = yes
@@ -3694,6 +3767,12 @@ faction_lower_tribal_organization = {
 		factor = 1
 		
 		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
+		modifier = {
 			factor = 0
 			FROM = { dislike_tribal_organization = no }
 		}
@@ -3900,6 +3979,14 @@ faction_lower_tribal_organization = {
 	membership = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0
 			dislike_tribal_organization = no
@@ -4342,6 +4429,12 @@ faction_independence = {
 		factor = 4
 		
 		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
+		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
 		}
@@ -4638,6 +4731,14 @@ faction_independence = {
 	membership = {
 		factor = 4
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0.2
 			pacifist = yes
@@ -5210,7 +5311,18 @@ faction_claimant = {
 			
 			OR = {
 				is_female = no
-				NOT = { ROOT = { succ_law_title = { has_law = agnatic_succession } } }
+				AND = { 
+					NOT = { ROOT = { succ_law_title = { has_law = agnatic_succession } } }
+					NOT = { has_religion_feature = religion_patriarchal }
+				}
+			}
+			OR = {
+				is_female = yes
+				TOW_is_character_woman_tolerant_trigger = yes
+				AND = { 
+					NOT = { ROOT = { succ_law_title = { has_law = enatic_succession } } }
+					NOT = { has_religion_feature = religion_matriarchal }
+				}
 			}
 			
 			OR = {
@@ -5289,6 +5401,12 @@ faction_claimant = {
 	chance = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
 		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
@@ -5373,6 +5491,42 @@ faction_claimant = {
 			}
 		}
 		
+		#If claimaint's sex is incompatible with religious dogma.
+		modifier = {
+			factor = 0
+			has_religion_feature = religion_patriarchal
+			new_character = {
+				is_female = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			has_religion_feature = religion_matriarchal
+			new_character = {
+				is_female = no
+			}
+		}
+		#Or if vassal is under the yoke of the wrong kind of liege.
+		modifier = {
+			factor = 3
+			has_religion_feature = religion_patriarchal
+			FROM = {
+				is_female = yes
+			}
+			new_character = {
+				is_female = no
+			}
+		}
+		modifier = {
+			factor = 3
+			has_religion_feature = religion_matriarchal
+			FROM = {
+				is_female = no
+			}
+			new_character = {
+				is_female = yes
+			}
+		}
 		modifier = {
 			factor = 0
 			new_character = {
@@ -5459,7 +5613,7 @@ faction_claimant = {
 		modifier = {
 			factor = 0
 			is_conquered = yes
-#			NOT = { conquest_culture = FROM }
+			#NOT = { conquest_culture = FROM }
 			NOT = { new_character = { culture = FROM } }
 		}
 		
@@ -5575,6 +5729,8 @@ faction_claimant = {
 			NAND = {
 				has_dlc = "Zeus"
 				OR = {
+					has_religion_feature = religion_matriarchal
+					has_religion_feature = religion_equal
 					has_law = status_of_women_4
 					has_game_rule = {
 						name = gender
@@ -5731,6 +5887,14 @@ faction_claimant = {
 	membership = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0.2
 			pacifist = yes
@@ -6025,6 +6189,8 @@ faction_claimant = {
 				has_dlc = "Zeus"
 				OR = {
 					has_law = status_of_women_4
+					has_religion_feature = religion_equal
+					has_religion_feature = religion_matriarchal
 					has_game_rule = {
 						name = gender
 						value = all
@@ -6466,6 +6632,12 @@ faction_antiking = {
 		factor = 1
 		
 		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
+		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
 		}		
@@ -6619,6 +6791,14 @@ faction_antiking = {
 	membership = {
 		factor = 1		
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -6946,6 +7126,12 @@ faction_overthrow = {
 	chance = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
 		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
@@ -7300,6 +7486,14 @@ faction_overthrow = {
 	membership = {
 		factor = 1
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -7879,6 +8073,12 @@ faction_increase_council_power = {
 		factor = 1
 		
 		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
+		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
 		}		
@@ -8107,6 +8307,14 @@ faction_increase_council_power = {
 	membership = {
 		factor = 1			
 		
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -8575,6 +8783,12 @@ faction_powerful_vassal_takeover = {
 		factor = 1
 		
 		modifier = {
+			factor = 0.5
+			liege = {  
+				any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+			}
+		}
+		modifier = {
 			factor = 0.2
 			FROM = { pacifist = yes }
 		}		
@@ -8769,6 +8983,14 @@ faction_powerful_vassal_takeover = {
 	membership = {
 		factor = 1
 
+		modifier = {
+			factor = 0.5
+			ROOT = {  
+				liege = { 
+					any_owned_bloodline = { has_bloodline_flag = bloodline_less_factions }
+				}
+			}
+		}
 		modifier = {
 			factor = 0
 			OR = {

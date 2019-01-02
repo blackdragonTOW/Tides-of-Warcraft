@@ -2057,22 +2057,14 @@
 		factor = 1
 		modifier = {
 			factor = 0
-			OR = {
-				trait = race_undead_scourge
-				trait = race_undead_generic
-				trait = race_undead_forsaken
-			}
+			TOW_is_undead = yes
 		}
 	}
 	1 = {
 		factor = 1
 		modifier = {
 			factor = 0
-			NOR = {
-				trait = race_undead_scourge
-				trait = race_undead_generic
-				trait = race_undead_forsaken
-			}
+			TOW_is_undead = no
 		}
 	}
 }
@@ -2083,11 +2075,7 @@
 		factor = 100
 		modifier = {
 			factor = 0
-			OR = {
-				trait = race_undead_generic
-				trait = race_undead_forsaken
-				trait = race_undead_scourge
-			}
+			TOW_is_undead = yes
 		}
 	}
 	1 = {

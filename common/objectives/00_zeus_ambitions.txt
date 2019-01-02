@@ -14,50 +14,11 @@ obj_become_council_member = {
 	
 	potential = {
 		independent = no
-		NOT = {
-			liege = {
-				government = kirin_tor_government
-				OR = {
-					AND = {
-						has_landed_title = k_dalaran
-					}
-					AND = {
-						has_landed_title = d_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-					}
-					AND = {
-						has_landed_title = c_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-						OR = {
-							d_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = d_dalaran }
-						}
-					}
-				}
-			}
-		}
+		TOW_liege_is_head_of_kirin_tor_gov = no
 	}
 
 	allow = {
-		liege = { independent = yes }
+		#liege = { independent = yes }
 		NOT = {
 			liege = { spouse = { character = ROOT } }
 		}
@@ -65,6 +26,7 @@ obj_become_council_member = {
 		prisoner = no
 		is_adult = yes
 		is_councillor = no
+		is_landed = yes
 		OR = {
 			can_hold_title = job_chancellor
 			can_hold_title = job_marshal
@@ -140,17 +102,16 @@ obj_become_council_member = {
 	}
 	abort = {
 		OR = {
-			liege = { spouse = { character = ROOT } }
-			is_inaccessible_trigger = yes
 			independent = yes
 			trait = incapable
-			NOR = { 
+			NOR = {
 				can_hold_title = job_chancellor
 				can_hold_title = job_marshal
 				can_hold_title = job_treasurer
 				can_hold_title = job_spymaster
 				can_hold_title = job_spiritual
 			}
+			is_landed = no
 		}
 	}
 	abort_effect = {
@@ -159,7 +120,7 @@ obj_become_council_member = {
 		opinion = {
 			who = liege
 			modifier = opinion_ambition_fulfilled
-			months = 24
+			years = 5
 		}
 	}
 	
@@ -175,41 +136,20 @@ obj_land_for_son = {
 	potential = {
 		independent = no
 		is_nomadic = no
+		NOT = { 
+			has_religion_feature = religion_matriarchal
+		}
 		liege = {
 			is_nomadic = no
+			NOT = { 
+				has_religion_feature = religion_matriarchal
+			}
 		}
-		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = faceless
-			trait = eredar
-			trait = shivarra
-			trait = succubus
-			trait = dreadlord
-			trait = pit_lord
-			trait = doomlord
-			trait = fel_lord
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_green
-			trait = dragon_bronze
-			trait = dragon_infinite
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_nightmare
-			government = kirin_tor_government
-			government = technocracy_government
-			government = templar_order_government
-			government = militant_order_government
-			government = demon_government
-			government = faceless_government
-		}
+		TOW_cares_about_land_for_heir = yes
 	}
 
 	allow = {
-		liege = { independent = yes }
+		#liege = { independent = yes }
 		has_dlc = "Zeus"
 		prisoner = no
 		is_adult = yes
@@ -295,6 +235,129 @@ obj_land_for_son = {
 			NOT = {
 				any_child = {
 					is_female = no
+					is_adult = yes
+					is_landed = no
+					is_heir = no
+				}
+			}
+			independent = yes
+			trait = incapable
+		}
+	}
+	abort_effect = {
+	}
+	effect = {
+	}
+}
+
+# Gain land for daughter
+
+obj_land_for_daughter = {
+	type = character
+	
+	potential = {
+		independent = no
+		is_nomadic = no
+		OR = { 
+			has_religion_feature = religion_matriarchal
+			has_religion_feature = religion_equal
+		}
+		liege = {
+			is_nomadic = no
+			OR = { 
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
+			}
+		}
+		TOW_cares_about_land_for_heir = yes
+	}
+
+	allow = {
+		#liege = { independent = yes }
+		has_dlc = "Zeus"
+		prisoner = no
+		is_adult = yes
+		NOR = { 
+			trait = incapable 
+			has_character_flag = land_for_daughter_successful
+		}
+		any_child = {
+			is_female = yes
+			is_landed = no
+			is_adult = yes
+			is_heir = no
+			prisoner = no
+			NOR = {
+				trait = incapable
+				is_ascetic_trigger = yes
+			}
+			liege = {
+				character = ROOT
+			}
+		}
+	}
+	
+	chance = {
+		factor = 100
+		
+		modifier = {
+			factor = 0.5
+			trait = content
+		}
+		modifier = {
+			factor = 3.0
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.5
+			trait = shy
+		}
+		modifier = {
+			factor = 1.5
+			trait = gregarious
+		}
+		modifier = {
+			factor = 2
+			trait = proud
+		}
+		modifier = {
+			factor = 0.5
+			trait = humble
+		}
+		modifier = {
+			factor = 1.25
+			from_ruler_dynasty = yes
+		}
+		modifier = {
+			factor = 1.5
+			diplomacy = 16
+		}
+		modifier = { 
+			factor = 10
+			is_councillor = yes
+		}
+		modifier = { 
+			factor = 5
+			relative_income_to_liege = 0.5
+		}
+	}
+	success = {
+		custom_tooltip = {
+			text = obj_land_for_daughter_success_tooltip
+			hidden_tooltip = {
+				has_character_flag = land_for_daughter_successful
+			}
+		}
+	}
+	abort = {
+		is_nomadic = yes
+		liege = {
+			is_nomadic = yes
+		}
+		OR = {
+			NOT = {
+				any_child = {
+					is_female = yes
 					is_adult = yes
 					is_landed = no
 					is_heir = no
@@ -476,34 +539,7 @@ obj_groom_an_heir = {
 		higher_tier_than = BARON
 		holy_order = no
 		mercenary = no
-		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = faceless
-			trait = eredar
-			trait = shivarra
-			trait = succubus
-			trait = dreadlord
-			trait = pit_lord
-			trait = doomlord
-			trait = fel_lord
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_green
-			trait = dragon_bronze
-			trait = dragon_infinite
-			trait = dragon_twilight
-			trait = dragon_chromatic
-			trait = dragon_nightmare
-			government = kirin_tor_government
-			government = technocracy_government
-			government = templar_order_government
-			government = militant_order_government
-			government = demon_government
-			government = faceless_government
-		}
+		TOW_does_care_about_land_for_heir = yes
 	}
 	
 	allow = {
@@ -521,17 +557,34 @@ obj_groom_an_heir = {
 			any_child = {
 				is_adult = yes 
 				NOR = {
-					trait = bastard
-					trait = eunuch
-					trait = celibate
-					trait = incapable
+					custom_tooltip = {
+						text = bastard_eunuch_celibate_or_incapable_tt
+						OR = {
+							trait = bastard
+							trait = eunuch
+							trait = celibate
+							trait = incapable
+						}
+					}
 					is_ascetic_trigger = yes
 				}
 				OR = {
-					is_female = no
-					AND = {
-						is_female = yes
-						ROOT = { has_law = true_cognatic_succession }
+					custom_tooltip = { #it's a boy, and you have Agnatic
+						text = boy_agnatic_tt
+						is_female = no
+						ROOT = { has_law = agnatic_succession }
+					}
+					custom_tooltip = { #it's a girl and you have Enatic
+						text = girl_enatic_tt
+						is_female = yes	
+						ROOT = { has_law = enatic_succession }
+					}
+					custom_tooltip = {
+						text = not_enatic_or_agnatic_tt
+						NOR = {
+							ROOT = { has_law = enatic_succession }	
+							ROOT = { has_law = agnatic_succession }
+						}
 					}
 				}
 			}
@@ -590,18 +643,48 @@ obj_groom_an_heir = {
 		any_child = {
 			is_adult = yes 
 			NOR = {
-				trait = bastard
-				trait = eunuch
-				trait = celibate
-				trait = incapable
+				custom_tooltip = {
+					text = bastard_eunuch_celibate_or_incapable_tt
+					OR = {
+						trait = bastard
+						trait = eunuch
+						trait = celibate
+						trait = incapable
+					}
+				}
 				is_ascetic_trigger = yes
 			}
 			OR = {
-				is_female = no
-				AND = {
-					is_female = yes
-					ROOT = { has_law = true_cognatic_succession }
+				custom_tooltip = { #it's a boy, and you have Agnatic
+					text = boy_agnatic_tt
+					is_female = no
+					ROOT = { has_law = agnatic_succession }
 				}
+				custom_tooltip = { #it's a girl and you have Enatic
+					text = girl_enatic_tt
+					is_female = yes	
+					ROOT = { has_law = enatic_succession }
+				}
+				custom_tooltip = {
+					text = not_enatic_or_agnatic_tt
+					NOR = {
+						ROOT = { has_law = enatic_succession }	
+						ROOT = { has_law = agnatic_succession }
+					}
+				}
+#				is_female = no
+#				AND = {
+#					is_female = yes
+#					ROOT = { has_law = true_cognatic_succession }
+#				}
+#				AND = {
+#					is_female = yes
+#					ROOT = { has_law = enatic_succession }
+#				}
+#				AND = {
+#					is_female = yes
+#					ROOT = { has_law = enatic_cognatic_succession }
+#				}
 			}
 		}
 	}
@@ -629,6 +712,14 @@ obj_groom_an_heir = {
 							AND = {
 								is_female = yes
 								ROOT = { has_law = true_cognatic_succession }
+							}
+							AND = {
+								is_female = yes
+								ROOT = { has_law = enatic_succession }
+							}
+							AND = {
+								is_female = yes
+								ROOT = { has_law = enatic_cognatic_succession }
 							}
 						}
 					}

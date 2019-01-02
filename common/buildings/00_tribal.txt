@@ -4,7 +4,6 @@
 tribal = {	
 	tb_hillfort_1 = {
 		desc = tb_hillfort_1_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
 		gold_cost = 25
 		build_time = 365
@@ -21,7 +20,6 @@ tribal = {
 	
 	tb_hillfort_2 = {
 		desc = tb_hillfort_2_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
 		upgrades_from = tb_hillfort_1
 		gold_cost = 50
@@ -34,14 +32,13 @@ tribal = {
 		ai_republic_modifier = -10
 		
 		convert_to_city = ct_wall_1
-		convert_to_temple = tp_wall_1
+		convert_to_castle = ca_wall_1
 		
 		extra_tech_building_start = 1.5
 	}
 	
 	tb_hillfort_3 = {
 		desc = tb_hillfort_3_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
 		upgrades_from = tb_hillfort_2
 		gold_cost = 75
@@ -58,7 +55,6 @@ tribal = {
 	
 	tb_hillfort_4 = {
 		desc = tb_hillfort_4_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
 		upgrades_from = tb_hillfort_3
 		gold_cost = 100
@@ -71,6 +67,7 @@ tribal = {
 		ai_republic_modifier = -10
 		
 		convert_to_city = ct_wall_2
+		convert_to_castle = ca_wall_2
 		convert_to_temple = tp_wall_2
 		
 		extra_tech_building_start = 2.5
@@ -78,7 +75,6 @@ tribal = {
 	
 	tb_market_town_1 = {
 		desc = tb_market_town_1_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		gold_cost = 25
 		build_time = 365
@@ -89,12 +85,11 @@ tribal = {
 		ai_feudal_modifier = -10
 		ai_republic_modifier = 10
 		
-		extra_tech_building_start = 1
+		extra_tech_building_start = 0.3
 	}
 	
 	tb_market_town_2 = {
 		desc = tb_market_town_2_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		upgrades_from = tb_market_town_1
 		gold_cost = 50
@@ -106,6 +101,7 @@ tribal = {
 		ai_republic_modifier = 10
 		
 		convert_to_castle = ca_town_1
+		convert_to_city = ct_marketplace_1
 		convert_to_temple = tp_town_1
 		
 		extra_tech_building_start = 1.5
@@ -113,7 +109,6 @@ tribal = {
 	
 	tb_market_town_3 = {
 		desc = tb_market_town_3_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		upgrades_from = tb_market_town_2
 		gold_cost = 75
@@ -129,7 +124,6 @@ tribal = {
 	
 	tb_market_town_4 = {
 		desc = tb_market_town_4_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		upgrades_from = tb_market_town_3
 		gold_cost = 100
@@ -141,6 +135,7 @@ tribal = {
 		ai_republic_modifier = 10
 		
 		convert_to_castle = ca_town_2
+		convert_to_city = ct_marketplace_2
 		convert_to_temple = tp_town_2
 		
 		extra_tech_building_start = 2.5
@@ -148,7 +143,6 @@ tribal = {
 	
 	tb_sacred_grounds_1 = {
 		desc = tb_sacred_grounds_1_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_TEMPLE_CONSTRUCTION = 0 }
 		gold_cost = 25
 		build_time = 365
@@ -161,7 +155,6 @@ tribal = {
 	
 	tb_sacred_grounds_2 = {
 		desc = tb_sacred_grounds_1_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_TEMPLE_CONSTRUCTION = 0 }
 		upgrades_from = tb_sacred_grounds_1
 		gold_cost = 50
@@ -175,7 +168,6 @@ tribal = {
 	
 	tb_sacred_grounds_3 = {
 		desc = tb_sacred_grounds_1_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_TEMPLE_CONSTRUCTION = 1 }
 		upgrades_from = tb_sacred_grounds_2
 		gold_cost = 75
@@ -189,7 +181,6 @@ tribal = {
 	
 	tb_sacred_grounds_4 = {
 		desc = tb_sacred_grounds_1_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_TEMPLE_CONSTRUCTION = 1 }
 		upgrades_from = tb_sacred_grounds_3
 		gold_cost = 100
@@ -206,7 +197,6 @@ tribal = {
 	
 	tb_shipyard_1 = {
 		desc = shipyard_desc
-		potential = { has_game_started = yes }
 		port = yes
 		trigger = { TECH_NAVAL = 1 }
 		prestige_cost = 100
@@ -224,7 +214,6 @@ tribal = {
 	
 	tb_shipyard_2 = {
 		desc = shipyard_desc
-		potential = { has_game_started = yes }
 		port = yes
 		trigger = { TECH_NAVAL = 2 }
 		upgrades_from = tb_shipyard_1
@@ -243,7 +232,6 @@ tribal = {
 	
 	tb_shipyard_3 = {
 		desc = shipyard_desc
-		potential = { has_game_started = yes }
 		port = yes
 		trigger = { TECH_NAVAL = 3 }
 		upgrades_from = tb_shipyard_2
@@ -262,7 +250,6 @@ tribal = {
 	
 	tb_shipyard_4 = {
 		desc = shipyard_desc
-		potential = { has_game_started = yes }
 		port = yes
 		trigger = { TECH_NAVAL = 4 }
 		upgrades_from = tb_shipyard_3
@@ -281,7 +268,6 @@ tribal = {
 	
 	tb_training_grounds_1 = {
 		desc = tb_training_grounds_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		prestige_cost = 100
 		build_time = 547
@@ -294,7 +280,6 @@ tribal = {
 	
 	tb_training_grounds_2 = {
 		desc = tb_training_grounds_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		upgrades_from = tb_training_grounds_1
 		prestige_cost = 200
@@ -312,7 +297,6 @@ tribal = {
 	
 	tb_training_grounds_3 = {
 		desc = tb_training_grounds_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		upgrades_from = tb_training_grounds_2
 		prestige_cost = 300
@@ -326,7 +310,6 @@ tribal = {
 	
 	tb_training_grounds_4 = {
 		desc = tb_training_grounds_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		upgrades_from = tb_training_grounds_3
 		prestige_cost = 400
@@ -344,7 +327,6 @@ tribal = {
 	
 	tb_war_camp_1 = {
 		desc = tb_war_camp_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		prestige_cost = 100
 		build_time = 365
@@ -356,7 +338,6 @@ tribal = {
 	
 	tb_war_camp_2 = {
 		desc = tb_war_camp_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_war_camp_1
 		prestige_cost = 200
@@ -376,7 +357,6 @@ tribal = {
 	
 	tb_war_camp_3 = {
 		desc = tb_war_camp_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_war_camp_2
 		prestige_cost = 300
@@ -389,7 +369,6 @@ tribal = {
 	
 	tb_war_camp_4 = {
 		desc = tb_war_camp_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_war_camp_3
 		prestige_cost = 400
@@ -409,7 +388,6 @@ tribal = {
 	
 	tb_practice_range_1 = {
 		desc = tb_practice_range_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		prestige_cost = 100
 		build_time = 365
@@ -421,7 +399,6 @@ tribal = {
 	
 	tb_practice_range_2 = {
 		desc = tb_practice_range_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_practice_range_1
 		prestige_cost = 200
@@ -437,7 +414,6 @@ tribal = {
 	
 	tb_practice_range_3 = {
 		desc = tb_practice_range_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_practice_range_2
 		prestige_cost = 300
@@ -450,7 +426,6 @@ tribal = {
 	
 	tb_practice_range_4 = {
 		desc = tb_practice_range_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_LIGHT_INFANTRY = 0 }
 		upgrades_from = tb_practice_range_3
 		prestige_cost = 400
@@ -466,7 +441,6 @@ tribal = {
 	
 	tb_arsenal_1 = {
 		desc = tb_arsenal_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_RECRUITMENT = 0 }
 		prestige_cost = 100
 		build_time = 547
@@ -480,7 +454,6 @@ tribal = {
 	
 	tb_arsenal_2 = {
 		desc = tb_arsenal_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_RECRUITMENT = 0 }
 		upgrades_from = tb_arsenal_1
 		prestige_cost = 200
@@ -498,7 +471,6 @@ tribal = {
 	
 	tb_arsenal_3 = {
 		desc = tb_arsenal_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_RECRUITMENT = 0 }
 		upgrades_from = tb_arsenal_2
 		prestige_cost = 300
@@ -513,7 +485,6 @@ tribal = {
 	
 	tb_arsenal_4 = {
 		desc = tb_arsenal_desc
-		potential = { has_game_started = yes }
 		trigger = { TECH_RECRUITMENT = 0 }
 		upgrades_from = tb_arsenal_3
 		prestige_cost = 400

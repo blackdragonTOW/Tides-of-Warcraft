@@ -1,81 +1,6 @@
-# Used when creating a new character
-TOW_remove_bad_traits = {
-	remove_trait = weak
-	remove_trait = ugly
-	remove_trait = slow
-	remove_trait = imbecile
-	remove_trait = inbred
-	remove_trait = dull
-	remove_trait = depressed
-	remove_trait = stressed
-}
+###PILLAGE EFFECTS###
 
-TOW_employed_remove_unwanted_traits_with_ET_employer = {
-	if = {
-		limit = { event_target:employer = { accepts_warlock = no } }
-		remove_trait = warlock
-		remove_trait = necrolyte
-	}
-	if = {
-		limit = { event_target:employer = { accepts_necromancer = no } }
-		remove_trait = necromancer
-		remove_trait = necrolyte
-	}
-	if = {
-		limit = { event_target:employer = { accepts_assassin = no } }
-		remove_trait = assassin
-	}
-	if = {
-		limit = { event_target:employer = { accepts_rogue = no } }
-		remove_trait = rogue
-	}
-	remove_trait = demon_hunter
-	remove_trait = death_knight
-}
-
-# Create a courtier, can generate a female if allowed
-# save primary title of employer as employer
-# save employer as employer_character
-TOW_create_random_courtier_gender_equality = {
-	if = {
-		limit = { gender_equality_trigger = no }
-		create_character = {
-			random_traits = yes
-			dynasty = random
-			female = no
-			employer = event_target:employer
-		}
-	}
-	if = {
-		limit = { gender_equality_trigger = yes }
-		random_list = {
-			1 = {
-				create_character = {
-					random_traits = yes
-					dynasty = random
-					female = yes
-					employer = event_target:employer
-				}
-			}
-			1 = {
-				create_character = {
-					random_traits = yes
-					dynasty = random
-					female = no
-					employer = event_target:employer
-				}
-			}
-		}
-	}
-	new_character = {
-		TOW_initialize_character_race_from_culture = yes
-		TOW_update_character_race_from_liege = yes
-	}
-}
-
-## Pillage
-
-TOW_pillage_holding = {
+Keitaro_pillage_holding = {
 	hidden_tooltip = {
 		location = { save_event_target_as = nickname_target }
 		event_target:pillager = { save_event_target_as = nickname_receiver }
@@ -123,7 +48,7 @@ TOW_pillage_holding = {
 	if = {
 		limit = { NOT = { holding_type = tribal } }
 		event_target:pillager = {
-			wealth = 40
+			wealth = 50
 		}
 		custom_tooltip = {
 			text = gain_tech_custom_tooltip
@@ -155,7 +80,7 @@ TOW_pillage_holding = {
 		}
 		owner = {
 			opinion = {
-				modifier = TOW_opinion_pillaged_my_lands
+				modifier = Keitaro_opinion_pillaged_my_lands
 				who = event_target:pillager
 				years = 100
 			}
@@ -255,34 +180,88 @@ TOW_pillage_holding = {
 	}
 }
 
+# Used when creating a new character
+Keitaro_remove_bad_traits = {
+	remove_trait = weak
+	remove_trait = ugly
+	remove_trait = slow
+	remove_trait = imbecile
+	remove_trait = inbred
+	remove_trait = dull
+	remove_trait = depressed
+	remove_trait = stressed
+}
 
-TOW_adventurers_manpower_factors = {
-	if = { limit = { martial = 10 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
-	if = { limit = { martial = 12 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
-	if = { limit = { martial = 14 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
-	if = { limit = { martial = 16 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
-	if = { limit = { martial = 18 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
-	if = { limit = { martial = 20 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
-	if = { limit = { martial = 22 } multiply_variable = { which = "TOW_adventure_manpower" value = 1.05 } }
+Keitaro_remove_lifestyle_traits = {
+	#remove_trait = mystic
+	remove_trait = socializer
+	remove_trait = gamer
+	remove_trait = hedonist
+	remove_trait = duelist
+	remove_trait = hunter
+	remove_trait = strategist
+	remove_trait = administrator
+	remove_trait = architect
+	remove_trait = gardener
+	remove_trait = schemer
+	remove_trait = impaler
+	remove_trait = seducer
+	remove_trait = seductress
+	remove_trait = theologian
+	remove_trait = scholar
+}
+
+# Create a courtier, can generate a female if allowed
+# save primary title of employer as employer
+# save employer as employer_character
+Keitaro_create_random_courtier_gender_equality = {
+	if = {
+		limit = { gender_equality_trigger = no }
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			employer = event_target:employer
+		}
+	}
+	if = {
+		limit = { gender_equality_trigger = yes }
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			female = random
+			employer = event_target:employer
+		}
+	}
+}
+
+Keitaro_adventurers_manpower_factors = {
+	if = { limit = { martial = 10 } multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 12 } multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 14 } multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 16 } multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 18 } multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 20 } multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.05 } }
+	if = { limit = { martial = 22 } multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.05 } }
 
 	if = { # what's happening ?
 		limit = { has_character_flag = demon_child_non_pagan }
 
 		random_list = {
-			2 = { multiply_variable = { which = "TOW_adventure_manpower" value = 1.25 } }
-			2 = { multiply_variable = { which = "TOW_adventure_manpower" value = 1.5 } }
-			1 = { multiply_variable = { which = "TOW_adventure_manpower" value = 2 } }
+			2 = { multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.25 } }
+			2 = { multiply_variable = { which = "Keitaro_adventure_manpower" value = 1.5 } }
+			1 = { multiply_variable = { which = "Keitaro_adventure_manpower" value = 2 } }
 		}
 		
 	}
 }
 
-TOW_adventurers_spawn_unit_with_manpower = { 
-	set_variable = { which = TOW_TMP which = TOW_adventure_manpower }
+Keitaro_adventurers_spawn_unit_with_manpower = { 
+	set_variable = { which = Keitaro_TMP which = Keitaro_adventure_manpower }
 	while = {
 		limit = {
 			check_variable = {
-				which = TOW_TMP
+				which = Keitaro_TMP
 				value = 5
 			}
 		}
@@ -316,12 +295,12 @@ TOW_adventurers_spawn_unit_with_manpower = {
 				}
 			}
 		}
-		subtract_variable = { which = TOW_TMP value = 5 }
+		subtract_variable = { which = Keitaro_TMP value = 5 }
 	}
 	while = {
 		limit = {
 			check_variable = {
-				which = TOW_TMP
+				which = Keitaro_TMP
 				value = 1
 			}
 		}
@@ -337,12 +316,12 @@ TOW_adventurers_spawn_unit_with_manpower = {
 			earmark = claimant_adventure
 			merge = yes
 		}
-		subtract_variable = { which = TOW_TMP value = 1 }
+		subtract_variable = { which = Keitaro_TMP value = 1 }
 	}
 	while = {
 		limit = {
 			check_variable = {
-				which = TOW_TMP
+				which = Keitaro_TMP
 				value = 0.1
 			}
 		}
@@ -358,21 +337,21 @@ TOW_adventurers_spawn_unit_with_manpower = {
 			earmark = claimant_adventure
 			merge = yes
 		}
-		subtract_variable = { which = TOW_TMP value = 0.1 }
+		subtract_variable = { which = Keitaro_TMP value = 0.1 }
 	}
 }
 
-TOW_adventurers_spawn_fleet_with_manpower = { 
-	export_to_variable = { which = TOW_TMP2 value = realm_levies who = event_target:adventure_target }
-	multiply_variable = { which = TOW_TMP2 which = TOW_adventure_manpower }
-	divide_variable = { which = TOW_TMP2 value = 10000 } # percentage * 100 soldier per fleet
-	change_variable = { which = TOW_TMP2 value = 10 } # base fleet count
+Keitaro_adventurers_spawn_fleet_with_manpower = { 
+	export_to_variable = { which = Keitaro_TMP2 value = realm_levies who = event_target:adventure_target }
+	multiply_variable = { which = Keitaro_TMP2 which = Keitaro_adventure_manpower }
+	divide_variable = { which = Keitaro_TMP2 value = 10000 } # percentage + 100 soldier per fleet
+	change_variable = { which = Keitaro_TMP2 value = 10 } # base fleet count
 
-	set_variable = { which = TOW_TMP which = TOW_TMP2 }
+	set_variable = { which = Keitaro_TMP which = Keitaro_TMP2 }
 	while = {
 		limit = {
 			check_variable = {
-				which = TOW_TMP
+				which = Keitaro_TMP
 				value = 50
 			}
 		}
@@ -387,12 +366,12 @@ TOW_adventurers_spawn_fleet_with_manpower = {
 			}
 			earmark = claimant_adventure
 		}
-		subtract_variable = { which = TOW_TMP value = 50 }
+		subtract_variable = { which = Keitaro_TMP value = 50 }
 	}
 	while = {
 		limit = {
 			check_variable = {
-				which = TOW_TMP
+				which = Keitaro_TMP
 				value = 10
 			}
 		}
@@ -407,12 +386,12 @@ TOW_adventurers_spawn_fleet_with_manpower = {
 			}
 			earmark = claimant_adventure
 		}
-		subtract_variable = { which = TOW_TMP value = 10 }
+		subtract_variable = { which = Keitaro_TMP value = 10 }
 	}
 	while = {
 		limit = {
 			check_variable = {
-				which = TOW_TMP
+				which = Keitaro_TMP
 				value = 1
 			}
 		}
@@ -427,88 +406,88 @@ TOW_adventurers_spawn_fleet_with_manpower = {
 			}
 			earmark = claimant_adventure
 		}
-		subtract_variable = { which = TOW_TMP value = 1 }
+		subtract_variable = { which = Keitaro_TMP value = 1 }
 	}
 }
 
 
-TOW_clear_landless_claimant_adventure = {
+Keitaro_clear_landless_claimant_adventure = {
 	hidden_tooltip = {
-		clr_character_flag = TOW_preparing_adventure
-		clear_flags_with_prefix = TOW_adventure_asked_
-		set_variable = { which = "TOW_adventure_manpower" value = 0 }
-		set_variable = { which = "TOW_adventure_realm_asked" value = 0 }
-		remove_character_modifier = TOW_adventurer_puny_army
-		remove_character_modifier = TOW_adventurer_weak_army
-		remove_character_modifier = TOW_adventurer_medium_army
-		remove_character_modifier = TOW_adventurer_powerful_army
-		remove_character_modifier = TOW_adventurer_very_powerful_army
+		clr_character_flag = Keitaro_preparing_adventure
+		clear_flags_with_prefix = Keitaro_adventure_asked_
+		set_variable = { which = "Keitaro_adventure_manpower" value = 0 }
+		set_variable = { which = "Keitaro_adventure_realm_asked" value = 0 }
+		remove_character_modifier = Keitaro_adventurer_puny_army
+		remove_character_modifier = Keitaro_adventurer_weak_army
+		remove_character_modifier = Keitaro_adventurer_medium_army
+		remove_character_modifier = Keitaro_adventurer_powerful_army
+		remove_character_modifier = Keitaro_adventurer_very_powerful_army
 	}
 }
 
-TOW_landless_claimant_adventurer_update_modifier = {
+Keitaro_landless_claimant_adventurer_update_modifier = {
 	hidden_tooltip = {
 		if = {
 			limit = {
-				check_variable = { which = "TOW_adventure_manpower" value = 15 }
-				NOT = { check_variable = { which = "TOW_adventure_manpower" value = 40 } }
-				NOT = { has_character_modifier = TOW_adventurer_puny_army }
+				check_variable = { which = "Keitaro_adventure_manpower" value = 15 }
+				NOT = { check_variable = { which = "Keitaro_adventure_manpower" value = 40 } }
+				NOT = { has_character_modifier = Keitaro_adventurer_puny_army }
 			}
 			add_character_modifier = {
-				name = TOW_adventurer_puny_army
+				name = Keitaro_adventurer_puny_army
 				duration = -1
 			}
 		}
 		if = {
 			limit = {
-				check_variable = { which = "TOW_adventure_manpower" value = 40 }
-				NOT = { check_variable = { which = "TOW_adventure_manpower" value = 65 } }
-				NOT = { has_character_modifier = TOW_adventurer_weak_army }
+				check_variable = { which = "Keitaro_adventure_manpower" value = 40 }
+				NOT = { check_variable = { which = "Keitaro_adventure_manpower" value = 65 } }
+				NOT = { has_character_modifier = Keitaro_adventurer_weak_army }
 			}
-			remove_character_modifier = TOW_adventurer_puny_army
+			remove_character_modifier = Keitaro_adventurer_puny_army
 			add_character_modifier = {
-				name = TOW_adventurer_weak_army
+				name = Keitaro_adventurer_weak_army
 				duration = -1
 			}
 		}
 		if = {
 			limit = {
-				check_variable = { which = "TOW_adventure_manpower" value = 65 }
-				NOT = { check_variable = { which = "TOW_adventure_manpower" value = 90 } }
-				NOT = { has_character_modifier = TOW_adventurer_medium_army }
+				check_variable = { which = "Keitaro_adventure_manpower" value = 65 }
+				NOT = { check_variable = { which = "Keitaro_adventure_manpower" value = 90 } }
+				NOT = { has_character_modifier = Keitaro_adventurer_medium_army }
 			}
-			remove_character_modifier = TOW_adventurer_puny_army
-			remove_character_modifier = TOW_adventurer_weak_army
+			remove_character_modifier = Keitaro_adventurer_puny_army
+			remove_character_modifier = Keitaro_adventurer_weak_army
 			add_character_modifier = {
-				name = TOW_adventurer_medium_army
+				name = Keitaro_adventurer_medium_army
 				duration = -1
 			}
 		}
 		if = {
 			limit = {
-				check_variable = { which = "TOW_adventure_manpower" value = 90 }
-				NOT = { check_variable = { which = "TOW_adventure_manpower" value = 115 } }
-				NOT = { has_character_modifier = TOW_adventurer_powerful_army }
+				check_variable = { which = "Keitaro_adventure_manpower" value = 90 }
+				NOT = { check_variable = { which = "Keitaro_adventure_manpower" value = 115 } }
+				NOT = { has_character_modifier = Keitaro_adventurer_powerful_army }
 			}
-			remove_character_modifier = TOW_adventurer_puny_army
-			remove_character_modifier = TOW_adventurer_weak_army
-			remove_character_modifier = TOW_adventurer_medium_army
+			remove_character_modifier = Keitaro_adventurer_puny_army
+			remove_character_modifier = Keitaro_adventurer_weak_army
+			remove_character_modifier = Keitaro_adventurer_medium_army
 			add_character_modifier = {
-				name = TOW_adventurer_powerful_army
+				name = Keitaro_adventurer_powerful_army
 				duration = -1
 			}
 		}
 		if = {
 			limit = {
-				check_variable = { which = "TOW_adventure_manpower" value = 115 }
-				NOT = { has_character_modifier = TOW_adventurer_very_powerful_army }
+				check_variable = { which = "Keitaro_adventure_manpower" value = 115 }
+				NOT = { has_character_modifier = Keitaro_adventurer_very_powerful_army }
 			}
-			remove_character_modifier = TOW_adventurer_puny_army
-			remove_character_modifier = TOW_adventurer_weak_army
-			remove_character_modifier = TOW_adventurer_medium_army
-			remove_character_modifier = TOW_adventurer_powerful_army
+			remove_character_modifier = Keitaro_adventurer_puny_army
+			remove_character_modifier = Keitaro_adventurer_weak_army
+			remove_character_modifier = Keitaro_adventurer_medium_army
+			remove_character_modifier = Keitaro_adventurer_powerful_army
 			add_character_modifier = {
-				name = TOW_adventurer_very_powerful_army
+				name = Keitaro_adventurer_very_powerful_army
 				duration = -1
 			}
 		}

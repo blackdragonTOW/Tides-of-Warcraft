@@ -1,0 +1,7 @@
+Remove whe fallback is at the beginning
+Find: \tfallback_text = {\n\t\tlocalisation_key = (.*)\n\t}(\n\ttext = {\n(^((?!^\t}).)*$\n)+\t})+
+Replace: \tfallback_text = {\n\t\tlocalisation_key = $1\n\t}
+
+Remove when fallback is at the end
+Find: (\ttext = {\n(^((?!^\tfallback_text).)*$\n)+\t}\n)+\tfallback_text = {\n\t\tlocalisation_key = (.*)\n\t}
+Replace: \tfallback_text = {\n\t\tlocalisation_key = $4\n\t}

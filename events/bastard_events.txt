@@ -41,9 +41,9 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { is_undead = yes }
-		NOT = { is_elemental_or_void = yes }
-		NOT = { is_demon_race = yes }
+		NOT = { TOW_is_undead = yes }
+		NOT = { TOW_is_elemental_or_void = yes }
+		NOT = { TOW_is_demon_race = yes }
 		NOT = { trait = race_dragon }
 		NOT = { trait = race_hakkar }
 		NOR = {
@@ -133,11 +133,11 @@ character_event = {
 			age = 16
 			OR = {
 				NOT = { age = 45 }
-				is_long_lived_race = yes
+				TOW_is_long_lived_race = yes
 			}
-			NOT = { is_undead = yes }
-			NOT = { is_elemental_or_void = yes }
-			NOT = { is_demon_race = yes }
+			NOT = { TOW_is_undead = yes }
+			NOT = { TOW_is_elemental_or_void = yes }
+			NOT = { TOW_is_demon_race = yes }
 			NOT = { trait = race_dragon }
 			NOT = { trait = race_hakkar }
 			is_married = no
@@ -166,11 +166,11 @@ character_event = {
 				age = 16
 				OR = {
 					NOT = { age = 45 }
-					is_long_lived_race = yes
+					TOW_is_long_lived_race = yes
 				}
-				NOT = { is_undead = yes }
-				NOT = { is_elemental_or_void = yes }
-				NOT = { is_demon_race = yes }
+				NOT = { TOW_is_undead = yes }
+				NOT = { TOW_is_elemental_or_void = yes }
+				NOT = { TOW_is_demon_race = yes }
 				NOT = { trait = race_dragon }
 				NOT = { trait = race_hakkar }
 				is_married = no
