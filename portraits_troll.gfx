@@ -1,0 +1,1808 @@
+# hair, mouth, chin, nose, eyes, cheek, ear, neck
+spriteTypes = {
+	
+	### TROLL MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# gtroll Male
+	portraitType = {
+		name = "PORTRAIT_gtrollgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_special_clothes:p19"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_gtroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 5 2 } { 93 111 43 } { 233 255 143 }
+			{ 4 8 3 } { 86 123 61 } { 175 235 160 } 
+			{ 4 8 4 } { 91 116 52 } { 202 245 151 } 
+			{ 5 4 0 } { 107 112 17 } { 216 227 118 }
+			{ 6 7 2 } { 122 141 38 } { 224 227 138 } 
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_gtrollgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_special_clothes:p19"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_gtroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 5 2 } { 93 111 43 } { 233 255 143 }
+			{ 4 8 3 } { 86 123 61 } { 175 235 160 } 
+			{ 4 8 4 } { 91 116 52 } { 202 245 151 } 
+			{ 5 4 0 } { 107 112 17 } { 216 227 118 }
+			{ 6 7 2 } { 122 141 38 } { 224 227 138 } 
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_gtrollgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_special_clothes:p19"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_gtroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 5 2 } { 93 111 43 } { 233 255 143 }
+			{ 4 8 3 } { 86 123 61 } { 175 235 160 } 
+			{ 4 8 4 } { 91 116 52 } { 202 245 151 } 
+			{ 5 4 0 } { 107 112 17 } { 216 227 118 }
+			{ 6 7 2 } { 122 141 38 } { 224 227 138 } 
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### gtroll FEMALE ####
+
+
+	# gtroll female
+	portraitType = {
+		name = "PORTRAIT_gtrollgfx_female"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_gtroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_gtroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_gtroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 5 2 } { 93 111 43 } { 233 255 143 }
+			{ 4 8 3 } { 86 123 61 } { 175 235 160 } 
+			{ 4 8 4 } { 91 116 52 } { 202 245 151 } 
+			{ 5 4 0 } { 107 112 17 } { 216 227 118 }
+			{ 6 7 2 } { 122 141 38 } { 224 227 138 } 
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# gtroll female midage
+	portraitType = {
+		name = "PORTRAIT_gtrollgfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_gtroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_gtroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_gtroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 5 2 } { 93 111 43 } { 233 255 143 }
+			{ 4 8 3 } { 86 123 61 } { 175 235 160 } 
+			{ 4 8 4 } { 91 116 52 } { 202 245 151 } 
+			{ 5 4 0 } { 107 112 17 } { 216 227 118 }
+			{ 6 7 2 } { 122 141 38 } { 224 227 138 } 
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# gtroll female oldage
+	portraitType = {
+		name = "PORTRAIT_gtrollgfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_gtroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_gtroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_gtroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 5 2 } { 93 111 43 } { 233 255 143 }
+			{ 4 8 3 } { 86 123 61 } { 175 235 160 } 
+			{ 4 8 4 } { 91 116 52 } { 202 245 151 } 
+			{ 5 4 0 } { 107 112 17 } { 216 227 118 }
+			{ 6 7 2 } { 122 141 38 } { 224 227 138 } 
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# btroll Male
+	portraitType = {
+		name = "PORTRAIT_btrollgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_base:p2:h"
+			"GFX_troll_male_reddots_body:p8"
+			"GFX_troll_male_boils_body:p9"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_special_clothes:p19"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_btroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+			"GFX_troll_male_scars:p7"
+			"GFX_troll_male_reddots:p8"
+			"GFX_troll_male_boils:p9"
+			"GFX_troll_male_blinded_eyes:p10"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+			"GFX_troll_male_maimed_eyepatch:p13:o38x45"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_maimed_masks:p12:o46x22"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 6 8 } { 82 127 161 } { 191 236 229 }
+			{ 4 5 8 } { 79 113 158 } { 188 228 249 }
+			{ 4 7 7 } { 82 148 148 } { 215 239 227 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_btrollgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_special_clothes:p19"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_btroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 6 8 } { 82 127 161 } { 191 236 229 }
+			{ 4 5 8 } { 79 113 158 } { 188 228 249 }
+			{ 4 7 7 } { 82 148 148 } { 215 239 227 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_btrollgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_special_clothes:p19"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_btroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 6 8 } { 82 127 161 } { 191 236 229 }
+			{ 4 5 8 } { 79 113 158 } { 188 228 249 }
+			{ 4 7 7 } { 82 148 148 } { 215 239 227 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### btroll FEMALE ####
+
+
+	# btroll Female
+
+	# btroll female
+	portraitType = {
+		name = "PORTRAIT_btrollgfx_female"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_btroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_btroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_btroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 6 8 } { 82 127 161 } { 134 192 215 }
+			{ 4 5 8 } { 79 113 158 } { 131 197 230 }
+			{ 4 7 7 } { 82 148 148 } { 174 209 199 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# btroll female midage
+	portraitType = {
+		name = "PORTRAIT_btrollgfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_btroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_btroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_btroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 6 8 } { 82 127 161 } { 134 192 215 }
+			{ 4 5 8 } { 79 113 158 } { 131 197 230 }
+			{ 4 7 7 } { 82 148 148 } { 174 209 199 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# btroll female oldage
+	portraitType = {
+		name = "PORTRAIT_btrollgfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_btroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_btroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_btroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 6 8 } { 82 127 161 } { 134 192 215 }
+			{ 4 5 8 } { 79 113 158 } { 131 197 230 }
+			{ 4 7 7 } { 82 148 148 } { 174 209 199 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+
+## ZTROLL ##
+
+	# ztroll Male
+	portraitType = {
+		name = "PORTRAIT_ztrollgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ztroll_male_hair_behind_uncolored:p1:y"
+		   	"GFX_ztroll_male_ear_behind:d7:h"
+			"GFX_ztroll_male_base:p2:h"
+			"GFX_ztroll_male_clothes:p14"
+			"GFX_ztroll_male_hair_mid:p1:e:y"
+		   	"GFX_ztroll_male_chin:d1:h"
+		   	"GFX_ztroll_male_mouth:d2:h"
+		   	"GFX_ztroll_male_eyes2:d10"
+		   	"GFX_ztroll_male_eyes:d6:h"
+		   	"GFX_ztroll_male_eyes_uncolored:d6"
+		   	"GFX_ztroll_male_nose:d3:h"
+		   	"GFX_ztroll_male_nose_uncolored:d3"
+		   	"GFX_ztroll_male_hair:p1:e:y"
+		   	"GFX_ztroll_male_hair_uncolored:p1:y"
+		   	"GFX_ztroll_male_ear:d7:h"
+		   	"GFX_ztroll_male_ear_uncolored:d7"
+		   	"GFX_ztroll_male_tusks:d5"
+		   	"GFX_ztroll_male_hair_front:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 3 5 4 } { 76 113 98 } { 146 216 195 }
+			{ 4 5 18 } { 81 112 109 } { 188 217 212 }
+			{ 5 5 6 } { 99 105 117 } { 227 230 239 }
+			{ 4 5 5 } { 82 111 106 } { 163 200 193 }
+			{ 5 7 4 } { 94 130 85 } { 172 217 166 }
+			{ 6 7 6 } { 122 134 122 } { 199 212 198 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_ztrollgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ztroll_male_hair_behind_uncolored:p1:y"
+		   	"GFX_ztroll_male_ear_behind:d7:h"
+			"GFX_ztroll_male_base:p2:h"
+			"GFX_ztroll_male_clothes:p14"
+			"GFX_ztroll_male_hair_mid:p1:e:y"
+		   	"GFX_ztroll_male_chin:d1:h"
+		   	"GFX_ztroll_male_mouth:d2:h"
+		   	"GFX_ztroll_male_eyes2:d10"
+		   	"GFX_ztroll_male_eyes:d6:h"
+		   	"GFX_ztroll_male_eyes_uncolored:d6"
+		   	"GFX_ztroll_male_nose:d3:h"
+		   	"GFX_ztroll_male_nose_uncolored:d3"
+		   	"GFX_ztroll_male_hair:p1:e:y"
+		   	"GFX_ztroll_male_hair_uncolored:p1:y"
+		   	"GFX_ztroll_male_ear:d7:h"
+		   	"GFX_ztroll_male_ear_uncolored:d7"
+		   	"GFX_ztroll_male_tusks:d5"
+		   	"GFX_ztroll_male_hair_front:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 10 0 5 } { 200 3 110 } { 255 190 190 } # magenta
+			{ 17 6 6 } { 196 45 45 } { 255 180 60 } # red
+			{ 18 6 0 } { 180 60 0 } { 220 220 0 } # orange
+			{ 42 32 2 } { 220 180 0 } { 255 255 255 } # yellow
+			{ 6 16 0 } { 65 160 0 } { 255 255 0 } # green
+			{ 2 12 16 } { 0 110 160 } { 0 255 0 } # teal/blue
+			{ 2 6 18 } { 1 75 180 } { 0 255 255 } # blue
+			{ 0 2 8 } { 15 35 95 } { 170 170 220 } # dark blue
+			{ 5 7 8 } { 110 140 160 } { 255 255 255 } # bluish light grey
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 12 248 202 }
+			{ 15 255 190 }
+			{ 255 232 20 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_ztrollgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ztroll_male_hair_behind_uncolored:p1:y"
+		   	"GFX_ztroll_male_ear_behind:d7:h"
+			"GFX_ztroll_male_base:p2:h"
+			"GFX_ztroll_male_clothes:p14"
+			"GFX_ztroll_male_hair_mid:p1:e:y"
+		   	"GFX_ztroll_male_chin:d1:h"
+		   	"GFX_ztroll_male_mouth:d2:h"
+		   	"GFX_ztroll_male_eyes2:d10"
+		   	"GFX_ztroll_male_eyes:d6:h"
+		   	"GFX_ztroll_male_eyes_uncolored:d6"
+		   	"GFX_ztroll_male_nose:d3:h"
+		   	"GFX_ztroll_male_nose_uncolored:d3"
+		   	"GFX_ztroll_male_hair:p1:e:y"
+		   	"GFX_ztroll_male_hair_uncolored:p1:y"
+		   	"GFX_ztroll_male_ear:d7:h"
+		   	"GFX_ztroll_male_ear_uncolored:d7"
+		   	"GFX_ztroll_male_tusks:d5"
+		   	"GFX_ztroll_male_hair_front:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 10 0 5 } { 200 3 110 } { 255 190 190 } # magenta
+			{ 17 6 6 } { 196 45 45 } { 255 180 60 } # red
+			{ 18 6 0 } { 180 60 0 } { 220 220 0 } # orange
+			{ 42 32 2 } { 220 180 0 } { 255 255 255 } # yellow
+			{ 6 16 0 } { 65 160 0 } { 255 255 0 } # green
+			{ 2 12 16 } { 0 110 160 } { 0 255 0 } # teal/blue
+			{ 2 6 18 } { 1 75 180 } { 0 255 255 } # blue
+			{ 0 2 8 } { 15 35 95 } { 170 170 220 } # dark blue
+			{ 5 7 8 } { 110 140 160 } { 255 255 255 } # bluish light grey
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 12 248 202 }
+			{ 15 255 190 }
+			{ 255 232 20 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### ztroll FEMALE ####
+
+
+	# ztroll Female
+
+	# ztroll female
+	portraitType = {
+		name = "PORTRAIT_ztrollgfx_female"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ztroll_female_hair_behind:p1:e:y"
+			"GFX_ztroll_female_hair_uncolored_behind:p1:y"
+			"GFX_ztroll_female_base:p2:h"
+			"GFX_ztroll_female_clothes:p14"
+			"GFX_ztroll_female_cheeks:d4:h"
+			"GFX_ztroll_female_chin:d1:h"
+			"GFX_ztroll_female_mouth:d2:h"
+			"GFX_ztroll_female_nose:d3:h"
+			"GFX_ztroll_female_eyes2:d0"
+			"GFX_ztroll_female_eyes:d6:h"
+			"GFX_ztroll_female_forehead:d10:h"
+			"GFX_ztroll_female_tusks:d5"
+			"GFX_ztroll_female_ear:d7:h"
+			"GFX_ztroll_female_earrings:d7"
+			"GFX_ztroll_female_hair:p1:e:y"
+			"GFX_ztroll_female_hair_uncolored:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 3 5 4 } { 76 113 98 } { 146 216 195 }
+			{ 4 5 18 } { 81 112 109 } { 188 217 212 }
+			{ 5 5 6 } { 99 105 117 } { 227 230 239 }
+			{ 4 5 5 } { 82 111 106 } { 163 200 193 }
+			{ 5 7 4 } { 94 130 85 } { 172 217 166 }
+			{ 6 7 6 } { 122 134 122 } { 199 212 198 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# ztroll female midage
+	portraitType = {
+		name = "PORTRAIT_ztrollgfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ztroll_female_hair_behind:p1:e:y"
+			"GFX_ztroll_female_hair_uncolored_behind:p1:y"
+			"GFX_ztroll_female_base:p2:h"
+			"GFX_ztroll_female_clothes:p14"
+			"GFX_ztroll_female_cheeks:d4:h"
+			"GFX_ztroll_female_chin:d1:h"
+			"GFX_ztroll_female_mouth:d2:h"
+			"GFX_ztroll_female_nose:d3:h"
+			"GFX_ztroll_female_eyes2:d0"
+			"GFX_ztroll_female_eyes:d6:h"
+			"GFX_ztroll_female_forehead:d10:h"
+			"GFX_ztroll_female_tusks:d5"
+			"GFX_ztroll_female_ear:d7:h"
+			"GFX_ztroll_female_earrings:d7"
+			"GFX_ztroll_female_hair:p1:e:y"
+			"GFX_ztroll_female_hair_uncolored:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 3 5 4 } { 76 113 98 } { 146 216 195 }
+			{ 4 5 18 } { 81 112 109 } { 188 217 212 }
+			{ 5 5 6 } { 99 105 117 } { 227 230 239 }
+			{ 4 5 5 } { 82 111 106 } { 163 200 193 }
+			{ 5 7 4 } { 94 130 85 } { 172 217 166 }
+			{ 6 7 6 } { 122 134 122 } { 199 212 198 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# ztroll female oldage
+	portraitType = {
+		name = "PORTRAIT_ztrollgfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_ztroll_female_hair_behind:p1:e:y"
+			"GFX_ztroll_female_hair_uncolored_behind:p1:y"
+			"GFX_ztroll_female_base:p2:h"
+			"GFX_ztroll_female_clothes:p14"
+			"GFX_ztroll_female_cheeks:d4:h"
+			"GFX_ztroll_female_chin:d1:h"
+			"GFX_ztroll_female_mouth:d2:h"
+			"GFX_ztroll_female_nose:d3:h"
+			"GFX_ztroll_female_eyes2:d0"
+			"GFX_ztroll_female_eyes:d6:h"
+			"GFX_ztroll_female_forehead:d10:h"
+			"GFX_ztroll_female_tusks:d5"
+			"GFX_ztroll_female_ear:d7:h"
+			"GFX_ztroll_female_earrings:d7"
+			"GFX_ztroll_female_hair:p1:e:y"
+			"GFX_ztroll_female_hair_uncolored:p1:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 3 5 4 } { 76 113 98 } { 146 216 195 }
+			{ 4 5 18 } { 81 112 109 } { 188 217 212 }
+			{ 5 5 6 } { 99 105 117 } { 227 230 239 }
+			{ 4 5 5 } { 82 111 106 } { 163 200 193 }
+			{ 5 7 4 } { 94 130 85 } { 172 217 166 }
+			{ 6 7 6 } { 122 134 122 } { 199 212 198 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# itroll Male
+	portraitType = {
+		name = "PORTRAIT_itrollgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_btroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 8 8 } { 75 161 161 } { 165 247 226 }
+			{ 3 8 8 } { 81 172 170 } { 120 230 240 }
+			{ 0 0 30 } { 76 164 166 } { 164 236 241 }
+			{ 0 5 10 } { 83 167 173 } { 187 225 224 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_itrollgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_btroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 8 8 } { 75 161 161 } { 165 247 226 }
+			{ 3 8 8 } { 81 172 170 } { 120 230 240 }
+			{ 0 0 30 } { 56 174 176 } { 164 236 241 }
+			{ 0 5 10 } { 53 177 183 } { 187 225 224 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_itrollgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_btroll_male_mouth_uncolored:d2"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 8 8 } { 75 161 161 } { 165 247 226 }
+			{ 3 8 8 } { 81 172 170 } { 120 230 240 }
+			{ 0 0 30 } { 56 174 176 } { 164 236 241 }
+			{ 0 5 10 } { 53 177 183 } { 187 225 224 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### itroll FEMALE ####
+
+
+	# itroll Female
+
+	# itroll female
+	portraitType = {
+		name = "PORTRAIT_itrollgfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_itroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_itroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_itroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 8 8 } { 75 161 161 } { 165 247 226 }
+			{ 3 8 8 } { 81 172 170 } { 120 230 240 }
+			{ 0 0 30 } { 56 174 176 } { 164 236 241 }
+			{ 0 5 10 } { 53 177 183 } { 187 225 224 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+
+		headgear_that_hides_hair = { }
+	}
+
+	# itroll female midage
+	portraitType = {
+		name = "PORTRAIT_itrollgfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_itroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_itroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_itroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 8 8 } { 75 161 161 } { 165 247 226 }
+			{ 3 8 8 } { 81 172 170 } { 120 230 240 }
+			{ 0 0 30 } { 56 174 176 } { 164 236 241 }
+			{ 0 5 10 } { 53 177 183 } { 187 225 224 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# itroll female oldage
+	portraitType = {
+		name = "PORTRAIT_itrollgfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_itroll_female_mouth_uncolored:d2"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_itroll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_itroll_female_ear_uncolored:d7"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 8 8 } { 75 161 161 } { 165 247 226 }
+			{ 3 8 8 } { 81 172 170 } { 120 230 240 }
+			{ 0 0 30 } { 56 174 176 } { 164 236 241 }
+			{ 0 5 10 } { 53 177 183 } { 187 225 224 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+
+	## dtroll Male ##
+
+	portraitType = {
+		name = "PORTRAIT_dtrollgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 19 9 13 } { 63 56 65 } { 116 128 144 }
+			{ 19 9 13 } { 53 46 65 } { 116 128 144 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_dtrollgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 19 9 13 } { 63 56 65 } { 175 182 193 }
+			{ 19 9 13 } { 53 46 65 } { 175 182 193 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_dtrollgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_troll_male_hair_behind:p1:e:y"
+		   	"GFX_troll_male_hair_behind_uncolored:p1:y"
+			"GFX_troll_male_clothes_behind:p14"
+			"GFX_troll_male_ear_behind:d7:h"
+			"GFX_troll_male_big_base:p2:h"
+			"GFX_troll_male_clothes:p14"
+		   	"GFX_troll_male_hair_mid:p1:e:y"
+			"GFX_troll_male_clothes_mid:p14"
+			"GFX_troll_male_right_tusk:d5"
+			"GFX_troll_male_eyes2:d10"
+			"GFX_troll_male_eyes:d6:h"
+			"GFX_troll_male_eyes_uncolored:d6"
+			"GFX_troll_male_big_chin:d1:h"
+			"GFX_troll_male_mouth:d2:h"
+			"GFX_troll_male_face_paint:d0"
+			"GFX_troll_male_nose:d3:h"
+		   	"GFX_troll_male_hair:p1:e:y"
+		   	"GFX_troll_male_hair_uncolored:p1:y"
+			"GFX_troll_male_ear:d7:h"
+		   	"GFX_troll_male_hair_front:p1:e:y"
+			"GFX_troll_male_left_tusk:d5"
+			"GFX_troll_male_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 19 9 13 } { 63 56 65 } { 175 182 193 }
+			{ 19 9 13 } { 53 46 65 } { 175 182 193 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### dtroll FEMALE ####
+
+
+	# dtroll Female
+
+	# dtroll female
+	portraitType = {
+		name = "PORTRAIT_dtrollgfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 19 9 13 } { 63 56 65 } { 175 182 193 }
+			{ 19 9 13 } { 53 46 65 } { 175 182 193 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+
+		headgear_that_hides_hair = { }
+	}
+
+	# dtroll female midage
+	portraitType = {
+		name = "PORTRAIT_dtrollgfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 19 9 13 } { 63 56 65 } { 175 182 193 }
+			{ 19 9 13 } { 53 46 65 } { 175 182 193 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# dtroll female oldage
+	portraitType = {
+		name = "PORTRAIT_dtrollgfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_troll_female_clothes_behind:p14"
+			"GFX_troll_female_hair_behind:p1:e:y"
+			"GFX_troll_female_earrings_behind:d7"
+			"GFX_troll_female_base:p2:h"
+			"GFX_troll_female_clothes:p14"
+			"GFX_troll_female_cheeks:d4:h"
+			"GFX_troll_female_chin:d1:h"
+			"GFX_troll_female_mouth:d2:h"
+			"GFX_troll_female_nose:d3:h"
+			"GFX_troll_female_eyes2:d0"
+			"GFX_troll_female_eyes:d6:h"
+			"GFX_troll_female_eyes_uncolored:d6"
+			"GFX_troll_female_face_paint:d10"
+			"GFX_troll_female_scars:p7:y"
+			"GFX_troll_female_reddots:p8"
+			"GFX_troll_female_boils:p9"
+			"GFX_troll_female_tusks:d5"
+			"GFX_troll_female_ear:d7:h"
+			"GFX_troll_female_earrings:d7"
+			"GFX_troll_female_blinded_eyes:p10"
+			"GFX_troll_female_maimed_eyepatch:p13"
+			"GFX_troll_female_maimed_masks:p12:o43x22"
+			"GFX_troll_female_hair:p1:e:y"
+			"GFX_troll_female_hair_uncolored:p1:y"
+			"GFX_troll_female_clothes_infront:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 19 9 13 } { 63 56 65 } { 175 182 193 }
+			{ 19 9 13 } { 53 46 65 } { 175 182 193 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 3 110 } # magenta
+			{ 196 45 45 } # red
+			{ 180 60 0 } # orange
+			{ 220 180 0 } # yellow
+			{ 65 160 0 } # green
+			{ 0 110 160 } # teal/blue
+			{ 1 75 180 } # blue
+			{ 15 35 95 } # dark blue
+			{ 110 140 160 } # bluish light grey
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+}
