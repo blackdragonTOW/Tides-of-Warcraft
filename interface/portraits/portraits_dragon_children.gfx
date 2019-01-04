@@ -1,0 +1,901 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_dragon_male_child_base"
+		texturefile = "gfx\\characters\\dragon_male\\child\\dragon_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dragon_male_child_skin"
+		texturefile = "gfx\\characters\\dragon_male\\child\\dragon_male_child_skin.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dragon_male_child_eyes2"
+		texturefile = "gfx\\characters\\dragon_male\\child\\dragon_male_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dragon_male_child_eyes2_uncolored"
+		texturefile = "gfx\\characters\\dragon_male\\child\\dragon_male_child_eyes2_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dragon_male_child_horns"
+		texturefile = "gfx\\characters\\dragon_male\\child\\dragon_male_child_horns.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dragon_male_child_nosehorn"
+		texturefile = "gfx\\characters\\dragon_male\\child\\dragon_male_child_nosehorn.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dragon_male_child_mouth"
+		texturefile = "gfx\\characters\\dragon_male\\child\\dragon_male_child_mouth.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_nightdragon_male_child_neck"
+		texturefile = "gfx\\characters\\dragon_male\\child\\nightdragon_male_child_neck.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_nightdragon_male_child_eyes2_uncolored"
+		texturefile = "gfx\\characters\\dragon_male\\child\\nightdragon_male_child_eyes2_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_nightdragongfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = nightdragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_nightdragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_male_child_mouth:p2"
+			"GFX_dragon_male_child_horns:p2"
+			"GFX_dragon_male_child_nosehorn:p2:h:y"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_nightdragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 2 2 2 } { 84 89 109 } { 255 255 255 }
+			{ 2 2 2 } { 74 79 99 } { 255 255 255 }
+			{ 2 2 2 } { 74 74 89 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 20 20 }
+			{ 240 130 130 }
+			{ 235 190 220 }
+			{ 230 230 230 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_nightdragongfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = nightdragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_nightdragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_female_child_mouth:p2"
+			"GFX_dragon_female_child_horns:p2"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_nightdragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 2 2 2 } { 84 89 109 } { 255 255 255 }
+			{ 2 2 2 } { 74 79 99 } { 255 255 255 }
+			{ 2 2 2 } { 74 74 89 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 20 20 }
+			{ 240 130 130 }
+			{ 235 190 220 }
+			{ 230 230 230 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_infinitedragon_male_child_neck"
+		texturefile = "gfx\\characters\\dragon_male\\child\\infinitedragon_male_child_neck.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_infinitedragon_male_child_overlay"
+		texturefile = "gfx\\characters\\dragon_male\\child\\infinitedragon_male_child_overlay.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_infinitedragongfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = infinitedragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_infinitedragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_male_child_mouth:p2"
+			"GFX_dragon_male_child_horns:p2"
+			"GFX_dragon_male_child_nosehorn:p2:h:y"
+			"GFX_infinitedragon_male_child_overlay:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 31 34 31 } { 200 200 200 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_infinitedragongfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = infinitedragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_infinitedragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_female_child_mouth:p2"
+			"GFX_dragon_female_child_horns:p2"
+			"GFX_infinitedragon_male_child_overlay:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 31 34 31 } { 200 200 200 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_greendragon_male_child_neck"
+		texturefile = "gfx\\characters\\dragon_male\\child\\greendragon_male_child_neck.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_greendragongfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = greendragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_greendragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_male_child_mouth:p2"
+			"GFX_dragon_male_child_horns:p2"
+			"GFX_dragon_male_child_nosehorn:p2:h:y"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 4 0 } { 25 120 54 } { 255 255 255 }
+			{ 0 4 0 } { 50 120 30 } { 255 255 255 }
+			{ 0 4 0 } { 50 130 50 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 180 180 }
+			{ 215 130 110 }
+			{ 255 80 50 }
+			{ 230 30 30 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_greendragongfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = greendragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_greendragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_female_child_mouth:p2"
+			"GFX_dragon_female_child_horns:p2"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 4 0 } { 25 120 54 } { 255 255 255 }
+			{ 0 4 0 } { 50 120 30 } { 255 255 255 }
+			{ 0 4 0 } { 50 130 50 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 200 180 180 }
+			{ 215 130 110 }
+			{ 255 80 50 }
+			{ 230 30 30 }
+		}
+		
+		allow_property_values = { }
+	}
+
+
+	spriteType = {
+		name = "GFX_bronzedragon_male_child_neck"
+		texturefile = "gfx\\characters\\dragon_male\\child\\bronzedragon_male_child_neck.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_bronzedragongfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = bronzedragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_bronzedragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_male_child_mouth:p2"
+			"GFX_dragon_male_child_horns:p2"
+			"GFX_dragon_male_child_nosehorn:p2:h:y"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 4 0 } { 205 155 30 } { 255 255 255 }
+			{ 4 4 0 } { 180 130 40 } { 255 255 255 }
+			{ 4 4 0 } { 190 140 45 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 110 240 200 }
+			{ 70 240 180 }
+			{ 120 240 50 }
+			{ 50 200 240 }
+			{ 70 180 240 }
+			{ 50 240 240 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_bronzedragongfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = bronzedragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_bronzedragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_female_child_mouth:p2"
+			"GFX_dragon_female_child_horns:p2"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 4 0 } { 205 155 30 } { 255 255 255 }
+			{ 4 4 0 } { 180 130 40 } { 255 255 255 }
+			{ 4 4 0 } { 190 140 45 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 110 240 200 }
+			{ 70 240 180 }
+			{ 120 240 50 }
+			{ 50 200 240 }
+			{ 70 180 240 }
+			{ 50 240 240 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_blackdragon_male_child_neck"
+		texturefile = "gfx\\characters\\dragon_male\\child\\blackdragon_male_child_neck.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_blackdragongfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = blackdragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_blackdragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_male_child_mouth:p2"
+			"GFX_dragon_male_child_horns:p2"
+			"GFX_dragon_male_child_nosehorn:p2:h:y"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 44 16 10 } { 255 255 255 }
+			{ 0 0 0 } { 38 30 20 } { 255 255 255 }
+			{ 0 0 0 } { 40 22 10 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 235 180 50 }
+			{ 225 200 100 }
+			{ 220 240 80 }
+			{ 200 240 120 }
+			{ 180 240 70 }
+			{ 120 240 50 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_blackdragongfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = blackdragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_blackdragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_female_child_mouth:p2"
+			"GFX_dragon_female_child_horns:p2"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 44 16 10 } { 255 255 255 }
+			{ 0 0 0 } { 38 30 20 } { 255 255 255 }
+			{ 0 0 0 } { 40 22 10 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 235 180 50 }
+			{ 225 200 100 }
+			{ 220 240 80 }
+			{ 200 240 120 }
+			{ 180 240 70 }
+			{ 120 240 50 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_reddragon_male_child_neck"
+		texturefile = "gfx\\characters\\dragon_male\\child\\reddragon_male_child_neck.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_reddragongfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = reddragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_reddragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_male_child_mouth:p2"
+			"GFX_dragon_male_child_horns:p2"
+			"GFX_dragon_male_child_nosehorn:p2:h:y"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 0 0 } { 155 40 20 } { 255 255 255 }
+			{ 4 0 0 } { 165 50 0 } { 255 255 255 }
+			{ 4 0 0 } { 145 20 10 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 150 100 }
+			{ 255 150 50 }
+			{ 255 175 150 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_reddragongfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = reddragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_reddragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_female_child_mouth:p2"
+			"GFX_dragon_female_child_horns:p2"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 0 0 } { 155 40 20 } { 255 255 255 }
+			{ 4 0 0 } { 165 50 0 } { 255 255 255 }
+			{ 4 0 0 } { 145 20 10 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 150 100 }
+			{ 255 150 50 }
+			{ 255 175 150 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_bluedragon_male_child_neck"
+		texturefile = "gfx\\characters\\dragon_male\\child\\bluedragon_male_child_neck.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_bluedragongfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = bluedragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_bluedragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_male_child_mouth:p2"
+			"GFX_dragon_male_child_horns:p2"
+			"GFX_dragon_male_child_nosehorn:p2:h:y"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 2 4 } { 65 130 215 } { 255 255 255 }
+			{ 0 2 4 } { 65 140 215 } { 255 255 255 }
+			{ 0 2 4 } { 45 120 195 } { 255 255 255 }
+			{ 0 2 4 } { 85 150 200 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 200 100 }
+			{ 255 225 150 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_dragon_female_child_horns"
+		texturefile = "gfx\\characters\\dragon_female\\child\\dragon_female_child_horns.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_dragon_female_child_mouth"
+		texturefile = "gfx\\characters\\dragon_female\\child\\dragon_female_child_mouth.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_bluedragongfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dragon
+				portrait_gfx_culture = bluedragongfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_dragon_male_child_base:p2"
+			"GFX_bluedragon_male_child_neck:d8:y"
+			"GFX_dragon_male_child_skin:p1:h:y"
+			"GFX_dragon_female_child_mouth:p2"
+			"GFX_dragon_female_child_horns:p2"
+			"GFX_dragon_male_child_eyes2:d6:e"
+			"GFX_dragon_male_child_eyes2_uncolored:d6"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 2 4 } { 65 130 215 } { 255 255 255 }
+			{ 0 2 4 } { 65 140 215 } { 255 255 255 }
+			{ 0 2 4 } { 45 120 195 } { 255 255 255 }
+			{ 0 2 4 } { 85 150 200 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 255 200 100 }
+			{ 255 225 150 }
+		}
+		
+		allow_property_values = { }
+	}
+}

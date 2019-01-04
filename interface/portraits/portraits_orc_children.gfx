@@ -1,0 +1,901 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_orc_male_child_base"
+		texturefile = "gfx\\characters\\orc_male\\child\\orc_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_orc_male_child_base_uncolored"
+		texturefile = "gfx\\characters\\orc_male\\child\\orc_male_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_orc_male_child_hair"
+		texturefile = "gfx\\characters\\orc_male\\child\\orc_male_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_orc_male_child_eyes2"
+		texturefile = "gfx\\characters\\orc_male\\child\\orc_male_child_eyes2.dds"
+		noOfFrames = 13
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_orcgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				NOR = {
+					portrait_gfx_culture = borcgfx
+					portrait_gfx_culture = rorcgfx
+					portrait_gfx_culture = morcgfx
+					portrait_gfx_culture = dorcgfx
+					portrait_gfx_culture = worcgfx
+					portrait_gfx_culture = gorcgfx
+				}
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_male_child_base:p2:h"
+			"GFX_orc_male_child_eyes2:d10"
+			"GFX_orc_male_child_base_uncolored:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_orc_male_child_hair:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 8 2 } { 85 107 35 } { 228 236 90 }
+			{ 9 11 3 } { 85 107 35 } { 215 239 91 }
+			{ 5 7 0 } { 110 119 43 } { 234 246 109 }
+			{ 3 4 0 } { 101 104 38 } { 230 230 98 }
+			{ 6 6 2 } { 95 93 42 } { 221 221 114 }
+			{ 8 8 3 } { 103 93 36 } { 214 200 89 }
+			{ 9 9 4 } { 103 97 41 } { 215 214 98 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 3 0 } { 85 105 49 } { 203 213 108 }
+			# Bonus colors
+			{ 2 8 2 } { 95 112 32 } { 228 236 100 }
+			{ 8 8 0 } { 106 127 35 } { 234 239 80 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_borcgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = borcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_male_child_base:p2:h"
+			"GFX_orc_male_child_eyes2:d10"
+			"GFX_orc_male_child_base_uncolored:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_orc_male_child_hair:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 3 3 } { 71 54 49 } { 132 109 90 }
+			{ 3 2 2 } { 71 52 40 } { 125 106 90 }
+			{ 2 0 0 } { 68 49 42 } { 155 119 84 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_rorcgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = rorcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_male_child_base:p2:h"
+			"GFX_orc_male_child_eyes2:d10"
+			"GFX_orc_male_child_base_uncolored:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_orc_male_child_hair:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 2 0 } { 123 22 0 } { 247 100 85 }
+			{ 6 2 0 } { 126 28 0 } { 247 110 85 }
+			{ 6 2 0 } { 120 28 21 } { 247 100 95 }
+			{ 6 2 0 } { 122 26 9 } { 237 90 80 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_morcgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = morcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_male_child_base:p2:h"
+			"GFX_orc_male_child_eyes2:d10"
+			"GFX_orc_male_child_base_uncolored:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_orc_male_child_hair:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 5 2 } { 107 69 45 } { 202 144 78 }
+			{ 6 4 0 } { 112 64 41 } { 212 154 78 }
+			{ 5 4 4 } { 97 68 46 } { 202 148 98 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_dorcgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = dorcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_male_child_base:p2:h"
+			"GFX_orc_male_child_eyes2:d10"
+			"GFX_orc_male_child_base_uncolored:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_orc_male_child_hair:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 4 4 } { 74 78 70 } { 163 154 148 }
+			{ 3 4 3 } { 64 68 60 } { 142 150 140 }
+			{ 4 4 4 } { 70 75 72 } { 163 154 148 }
+			{ 4 5 3 } { 79 83 75 } { 183 174 148 }
+			{ 7 6 5 } { 106 90 83 } { 178 158 137 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_worcgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = worcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_male_child_base:p2:h"
+			"GFX_orc_male_child_eyes2:d10"
+			"GFX_orc_male_child_base_uncolored:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_orc_male_child_hair:p1:e:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 5 4 6 } { 153 146 143 } { 239 231 225 }
+			{ 5 4 6 } { 154 141 139 } { 239 231 245 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_gorc_male_child_base"
+		texturefile = "gfx\\characters\\orc_male\\child\\monday_morning.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_gorc_male_child_base_uncolored"
+		texturefile = "gfx\\characters\\orc_male\\child\\gorc_male_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_gorcgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = gorcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_gorc_male_child_base:p2:h"
+			"GFX_gorc_male_child_base_uncolored:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 4 2 } { 144 146 113 } { 224 229 213 }
+			{ 6 4 2 } { 132 125 113 } { 224 229 213 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_orc_female_child_base"
+		texturefile = "gfx\\characters\\orc_female\\child\\orc_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_orc_female_child_base_uncolored"
+		texturefile = "gfx\\characters\\orc_female\\child\\orc_female_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_orc_female_child_eyes2"
+		texturefile = "gfx\\characters\\orc_female\\child\\orc_female_child_eyes2.dds"
+		noOfFrames = 13
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_orcgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				NOR = {
+					portrait_gfx_culture = borcgfx
+					portrait_gfx_culture = rorcgfx
+					portrait_gfx_culture = morcgfx
+					portrait_gfx_culture = dorcgfx
+					portrait_gfx_culture = worcgfx
+					portrait_gfx_culture = gorcgfx
+				}
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_female_child_base:p2:h"
+			"GFX_orc_female_child_base_uncolored:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:e:y"
+			"GFX_orc_female_child_eyes2:d10"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 8 2 } { 85 107 35 } { 228 236 90 }
+			{ 9 11 3 } { 85 107 35 } { 215 239 91 }
+			{ 5 7 0 } { 110 119 43 } { 234 246 109 }
+			{ 3 4 0 } { 101 104 38 } { 230 230 98 }
+			{ 6 6 2 } { 95 93 42 } { 221 221 114 }
+			{ 8 8 3 } { 103 93 36 } { 214 200 89 }
+			{ 9 9 4 } { 103 97 41 } { 215 214 98 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 3 0 } { 85 105 49 } { 203 213 108 }
+			# Bonus colors
+			{ 2 8 2 } { 95 112 32 } { 228 236 100 }
+			{ 8 8 0 } { 106 127 35 } { 234 239 80 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_borcgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = borcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_female_child_base:p2:h"
+			"GFX_orc_female_child_base_uncolored:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:e:y"
+			"GFX_orc_female_child_eyes2:d10"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 3 3 } { 71 54 49 } { 132 109 90 }
+			{ 3 2 2 } { 71 52 40 } { 125 106 90 }
+			{ 2 0 0 } { 68 49 42 } { 155 119 84 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_rorcgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = rorcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_female_child_base:p2:h"
+			"GFX_orc_female_child_base_uncolored:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:e:y"
+			"GFX_orc_female_child_eyes2:d10"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 2 0 } { 123 22 0 } { 247 100 85 }
+			{ 6 2 0 } { 126 28 0 } { 247 110 85 }
+			{ 6 2 0 } { 120 28 21 } { 247 100 95 }
+			{ 6 2 0 } { 122 26 9 } { 237 90 80 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_morcgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = morcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_female_child_base:p2:h"
+			"GFX_orc_female_child_base_uncolored:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:e:y"
+			"GFX_orc_female_child_eyes2:d10"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 5 2 } { 107 69 45 } { 202 144 78 }
+			{ 6 4 0 } { 112 64 41 } { 212 154 78 }
+			{ 5 4 4 } { 97 68 46 } { 202 148 98 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_dorcgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = dorcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_female_child_base:p2:h"
+			"GFX_orc_female_child_base_uncolored:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:e:y"
+			"GFX_orc_female_child_eyes2:d10"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 4 4 4 } { 74 78 70 } { 163 154 148 }
+			{ 3 4 3 } { 64 68 60 } { 142 150 140 }
+			{ 4 4 4 } { 70 75 72 } { 163 154 148 }
+			{ 4 5 3 } { 79 83 75 } { 183 174 148 }
+			{ 7 6 5 } { 106 90 83 } { 178 158 137 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_worcgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = worcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_orc_female_child_base:p2:h"
+			"GFX_orc_female_child_base_uncolored:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:e:y"
+			"GFX_orc_female_child_eyes2:d10"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 5 4 6 } { 153 146 143 } { 239 231 225 }
+			{ 5 4 6 } { 154 141 139 } { 239 231 245 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_gorcgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_orc
+				portrait_gfx_culture = gorcgfx
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_gorc_male_child_base:p2:h"
+			"GFX_gorc_male_child_base_uncolored:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 4 2 } { 144 146 113 } { 224 229 213 }
+			{ 6 4 2 } { 132 125 113 } { 224 229 213 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+}

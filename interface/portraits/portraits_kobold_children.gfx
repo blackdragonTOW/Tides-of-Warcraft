@@ -1,0 +1,204 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_kobold_male_child_base"
+		texturefile = "gfx\\characters\\kobold_male\\child\\kobold_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_kobold_male_child_hair"
+		texturefile = "gfx\\characters\\kobold_male\\child\\kobold_male_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_kobold_male_child_eyes2"
+		texturefile = "gfx\\characters\\kobold_male\\child\\kobold_male_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_kobold_male_child_candle"
+		texturefile = "gfx\\characters\\kobold_male\\child\\kobold_male_child_coloured_candle.dds"
+		noOfFrames = 24
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_kobold_male_child_candle_shadow"
+		texturefile = "gfx\\characters\\kobold_male\\child\\kobold_male_child_candle_shadow.dds"
+		noOfFrames = 12
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_kobold_male_child_flame"
+		texturefile = "gfx\\characters\\kobold_male\\child\\kobold_male_child_flame.dds"
+		noOfFrames = 12
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_koboldgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_kobold
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_kobold_male_child_base:p2"
+			"GFX_kobold_male_child_eyes2:d6:e"
+			"GFX_kobold_male_child_hair:p1:h:y"
+			"GFX_kobold_male_child_candle_shadow:d5"
+			"GFX_kobold_male_child_candle:d5"
+			"GFX_kobold_male_child_flame:d5"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 16 15 9 } { 160 115 90 } { 255 255 255 }
+			{ 5 5 5 } {  40 40 40 } { 255 255 255 }
+			{ 11 9 6 } { 196 155 98 } { 255 255 255 }
+			{ 10 7 6 } { 75 47 40 } { 255 255 255 }
+			{ 7 4 2 } { 100 40 20 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 168 168 168 }
+			{ 158 158 158 }
+			{ 178 178 178 }
+			{ 128 128 128 }
+			{ 146 146 146 }
+			{ 96 96 96 }
+			{ 255 100 100 }
+			{ 220 120 60 }
+			{ 180 100 100 }
+			{ 255 120 60 }
+			{ 80 200 140 }
+			{ 110 140 255 }
+			{ 100 90 210 }
+			{ 200 152 255 }
+			{ 250 210 60 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_kobold_female_child_base"
+		texturefile = "gfx\\characters\\kobold_female\\child\\kobold_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+
+	spriteType = {
+		name = "GFX_kobold_female_child_hair"
+		texturefile = "gfx\\characters\\kobold_female\\child\\kobold_female_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_kobold_female_child_eyes2"
+		texturefile = "gfx\\characters\\kobold_female\\child\\kobold_female_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_koboldgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_kobold
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_kobold_female_child_base:p2"
+			"GFX_kobold_male_child_eyes2:d6:e"
+			"GFX_kobold_female_child_hair:p1:h:y"
+			"GFX_kobold_male_child_candle_shadow:d5"
+			"GFX_kobold_male_child_candle:d5"
+			"GFX_kobold_male_child_flame:d5"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 16 15 9 } { 160 115 90 } { 255 255 255 }
+			{ 5 5 5 } {  40 40 40 } { 255 255 255 }
+			{ 11 9 6 } { 196 155 98 } { 255 255 255 }
+			{ 10 7 6 } { 75 47 40 } { 255 255 255 }
+			{ 7 4 2 } { 100 40 20 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 168 168 168 }
+			{ 158 158 158 }
+			{ 178 178 178 }
+			{ 128 128 128 }
+			{ 146 146 146 }
+			{ 96 96 96 }
+			{ 255 100 100 }
+			{ 220 120 60 }
+			{ 180 100 100 }
+			{ 255 120 60 }
+			{ 80 200 140 }
+			{ 110 140 255 }
+			{ 100 90 210 }
+			{ 200 152 255 }
+			{ 250 210 60 }
+		}
+		
+		allow_property_values = { }
+	}
+}
