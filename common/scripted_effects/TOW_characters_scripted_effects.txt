@@ -1,5 +1,12 @@
 ### Characters Scripted Effects
 
+# Used on new generated characters
+TOW_initialize_character = {
+	TOW_initialize_character_race_from_culture = yes
+	TOW_update_character_race_from_liege = yes
+	TOW_initialize_character_portraits_features = yes
+}
+
 ### New character assignement based on Culture
 
 TOW_initialize_character_race_from_culture = {
@@ -216,13 +223,12 @@ TOW_update_character_race_from_liege = {
 	}
 }
 
-TOW_new_character_employed_traits_effect = {
-	Keitaro_remove_bad_traits = yes
-	Keitaro_remove_lifestyle_traits = yes
-	TOW_remove_class_traits = yes
-	TOW_initialize_character_race_from_culture = yes
-	TOW_update_character_race_from_liege = yes
-	TOW_employed_remove_unwanted_traits_with_ET_employer = yes
+# Used on new characters
+TOW_initialize_character_portraits_features = {
+	if = { # Night elf female tattoo
+		limit = { TOW_can_have_female_night_elf_tattoo = yes }
+		TOW_female_night_elf_assign_random_tattoo_depending_on_traits = yes
+	}
 }
 
 TOW_remove_class_traits = {
@@ -263,4 +269,12 @@ TOW_employed_remove_unwanted_traits_with_ET_employer = {
 	}
 	remove_trait = demon_hunter
 	remove_trait = death_knight
+}
+
+TOW_new_character_employed_effect = {
+	Keitaro_remove_bad_traits = yes
+	Keitaro_remove_lifestyle_traits = yes
+	TOW_remove_class_traits = yes
+	TOW_initialize_character = yes
+	TOW_employed_remove_unwanted_traits_with_ET_employer = yes
 }
