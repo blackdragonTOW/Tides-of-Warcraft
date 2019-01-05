@@ -1,0 +1,48 @@
+###########################################
+#                                         #
+# Warrior Lodge events				      #
+# Fired from all overrun				  #
+#                                         #
+# ID HF.10100-HF.10200  	              #
+#                                         #
+###########################################
+
+##########################################################
+################ Other Maintenance events ################
+##########################################################
+
+namespace = HFP
+
+# Root = the character that got a new host
+# From = the previous host
+# FromFrom = new employer
+character_event = {
+    id = HFP.19000
+    hide_window = yes
+
+    has_dlc = "Reapers"
+    
+    is_triggered_only = yes
+
+    trigger = {
+        is_alive = yes
+        FROMFROM = { #If new liege is *not* In Seclusion
+            NOT = { has_character_modifier = in_seclusion }
+        }
+        OR = { # But you still have some left over modifiers...
+            has_character_modifier = in_seclusion
+            has_character_modifier = tiny_food_shortage
+            has_character_modifier = minor_food_shortage
+            has_character_modifier = normal_food_shortage
+            has_character_modifier = starving_food_shortage
+        }
+    }
+
+    immediate = {
+        remove_character_modifier = in_seclusion
+        remove_character_modifier = tiny_food_shortage
+        remove_character_modifier = minor_food_shortage
+        remove_character_modifier = normal_food_shortage
+        remove_character_modifier = starving_food_shortage
+    }
+}

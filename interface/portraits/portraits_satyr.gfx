@@ -1,0 +1,375 @@
+spriteTypes = {
+	
+	### Night Elf Male ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# Night Elf Male
+	portraitType = {
+		name = "PORTRAIT_satyrgfx_male"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_satyr_male_horns_behind:d0"
+			"GFX_night_elf_male_clothes_behind:p14"
+			"GFX_night_elf_male_hair_behind:p1:e:y"
+			"GFX_night_elf_male_hair_behind_uncolored:p1:y"
+			"GFX_satyr_male_beard_behind:p4:e:y"
+			"GFX_night_elf_male_base:p2:h"
+			"GFX_satyr_male_horns:d0"
+			"GFX_night_elf_male_eyes2:d5"
+			"GFX_night_elf_male_eyes:d6:h"
+			"GFX_night_elf_male_cheeks:d4:h"
+			"GFX_night_elf_male_mouth:d2:h"
+			"GFX_night_elf_male_nose:d3:h"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_satyr_male_body_hair:p14:e"
+			"GFX_night_elf_male_hair:p1:e:y"
+			"GFX_satyr_male_horns_front:d0"
+			"GFX_night_elf_male_chin:d1:h"
+			"GFX_night_elf_male_shade:d8"
+			"GFX_night_elf_male_ear:d7:h"
+			"GFX_satyr_male_beard:p4:e:y" 
+			"GFX_night_elf_male_hair_front:p1:e:y"
+			"GFX_night_elf_male_eyebrows:d10:e:y"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_night_elf_male_clothes_front:p14"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 142 135 128 } { 200 200 196 }
+			{ 2 17 15 } { 159 197 200 } { 215 234 234 }
+			{ 10 5 0 } { 209 183 130 } { 237 228 197 }
+			{ 10 8 8 } { 200 160 159 } { 237 220 220 }
+			{ 7 7 10 } { 183 189 239 } { 223 223 248 }
+			{ 10 9 8 } { 213 194 165 } { 246 236 227 }
+			{ 7 3 2 } { 182 78 67 } { 239 202 188 }
+		}
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 161 17 15 }
+			{ 124 104 8 }
+			{ 8 147 192 }
+			{ 179 94 30 }
+			{ 101 25 113 }
+			{ 131 75 151 }
+			{ 88 62 37 }
+		}
+	}
+
+	# Night Elf Male Mid
+	portraitType = {
+		name = "PORTRAIT_satyrgfx_male1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_satyr_male_horns_behind:d0"
+			"GFX_night_elf_male_clothes_behind:p14"
+			"GFX_night_elf_male_hair_behind:p1:e:y"
+			"GFX_night_elf_male_hair_behind_uncolored:p1:y"
+			"GFX_satyr_male_beard_behind:p4:e:y"
+			"GFX_night_elf_male_base:p2:h"
+			"GFX_satyr_male_horns:d0"
+			"GFX_night_elf_male_eyes2:d5"
+			"GFX_night_elf_male_eyes:d6:h"
+			"GFX_night_elf_male_cheeks:d4:h"
+			"GFX_night_elf_male_mouth:d2:h"
+			"GFX_night_elf_male_nose:d3:h"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_satyr_male_body_hair:p14:e"
+			"GFX_night_elf_male_hair:p1:e:y"
+			"GFX_satyr_male_horns_front:d0"
+			"GFX_night_elf_male_chin:d1:h"
+			"GFX_night_elf_male_shade:d8"
+			"GFX_night_elf_male_ear:d7:h"
+			"GFX_satyr_male_beard:p4:e:y" 
+			"GFX_night_elf_male_hair_front:p1:e:y"
+			"GFX_night_elf_male_eyebrows:d10:e:y"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_night_elf_male_clothes_front:p14"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 142 135 128 } { 200 200 196 }
+			{ 2 17 15 } { 159 197 200 } { 215 234 234 }
+			{ 10 5 0 } { 209 183 130 } { 237 228 197 }
+			{ 10 8 8 } { 200 160 159 } { 237 220 220 }
+			{ 7 7 10 } { 183 189 239 } { 223 223 248 }
+			{ 10 9 8 } { 213 194 165 } { 246 236 227 }
+			{ 7 3 2 } { 182 78 67 } { 239 202 188 }
+		}
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 161 17 15 }
+			{ 124 104 8 }
+			{ 8 147 192 }
+			{ 179 94 30 }
+			{ 101 25 113 }
+			{ 131 75 151 }
+			{ 88 62 37 }
+		}
+	}
+
+	# Night Elf Male Old
+	portraitType = {
+		name = "PORTRAIT_satyrgfx_male2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_satyr_male_horns_behind:d0"
+			"GFX_night_elf_male_clothes_behind:p14"
+			"GFX_night_elf_male_hair_behind:p1:e:y"
+			"GFX_night_elf_male_hair_behind_uncolored:p1:y"
+			"GFX_satyr_male_beard_behind:p4:e:y"
+			"GFX_night_elf_male_base:p2:h"
+			"GFX_satyr_male_horns:d0"
+			"GFX_night_elf_male_eyes2:d5"
+			"GFX_night_elf_male_eyes:d6:h"
+			"GFX_night_elf_male_cheeks:d4:h"
+			"GFX_night_elf_male_mouth:d2:h"
+			"GFX_night_elf_male_nose:d3:h"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_satyr_male_body_hair:p14:e"
+			"GFX_night_elf_male_hair:p1:e:y"
+			"GFX_satyr_male_horns_front:d0"
+			"GFX_night_elf_male_chin:d1:h"
+			"GFX_night_elf_male_shade:d8"
+			"GFX_night_elf_male_ear:d7:h"
+			"GFX_satyr_male_beard:p4:e:y" 
+			"GFX_night_elf_male_hair_front:p1:e:y"
+			"GFX_night_elf_male_eyebrows:d10:e:y"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_night_elf_male_clothes_front:p14"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 142 135 128 } { 200 200 196 }
+			{ 2 17 15 } { 159 197 200 } { 215 234 234 }
+			{ 10 5 0 } { 209 183 130 } { 237 228 197 }
+			{ 10 8 8 } { 200 160 159 } { 237 220 220 }
+			{ 7 7 10 } { 183 189 239 } { 223 223 248 }
+			{ 10 9 8 } { 213 194 165 } { 246 236 227 }
+			{ 7 3 2 } { 182 78 67 } { 239 202 188 }
+		}
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 161 17 15 }
+			{ 124 104 8 }
+			{ 8 147 192 }
+			{ 179 94 30 }
+			{ 101 25 113 }
+			{ 131 75 151 }
+			{ 88 62 37 }
+		}
+	}
+
+	# Night Elf Female
+	portraitType = {
+		name = "PORTRAIT_satyrgfx_female"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_satyr_female_horns_behind:d0"
+			"GFX_night_elf_female_clothes_behind:p14"
+			"GFX_night_elf_female_hair_behind:p1:e"
+			"GFX_night_elf_female_hair_uncolored_behind:p1"
+			"GFX_night_elf_female_base:p2:h"
+			"GFX_night_elf_female_cheeks:d4:h"
+			"GFX_night_elf_female_eyes2:d5"
+			"GFX_night_elf_female_eyes:d6:h"
+			"GFX_night_elf_female_nose:d3:h"
+			"GFX_night_elf_female_tattoo:p18:e" # for now it uses hair color
+			"GFX_night_elf_female_mouth:d2:h"
+			"GFX_night_elf_female_mouth_uncolored:d2"
+			"GFX_night_elf_female_clothes:p14"
+			"GFX_night_elf_female_ear:d7:h"
+			"GFX_night_elf_female_shade:d8"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_satyr_female_horns:d0"
+			"GFX_night_elf_female_hair:p1:e"
+			"GFX_night_elf_female_hair_uncolored:p1"
+			"GFX_satyr_female_horns_front:d0"
+			"GFX_night_elf_female_eyebrows:d5:e"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_night_elf_female_clothes_front:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 112 105 98 } { 180 180 176 }
+			{ 2 17 15 } { 129 167 170 } { 195 214 214 }
+			{ 10 5 0 } { 179 153 100 } { 217 208 177 }
+			{ 10 8 8 } { 170 120 129 } { 217 200 200 }
+			{ 7 7 10 } { 153 159 209 } { 203 203 228 }
+			{ 10 9 8 } { 183 164 135 } { 226 216 207 }
+			{ 7 3 2 } { 152 48 37 } { 219 182 168 }
+		}
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 161 17 15 }
+			{ 124 104 8 }
+			{ 8 147 192 }
+			{ 179 94 30 }
+			{ 101 25 113 }
+			{ 131 75 151 }
+			{ 88 62 37 }
+		}
+	}
+
+	# Night Elf Female Mid
+	portraitType = {
+		name = "PORTRAIT_satyrgfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_satyr_female_horns_behind:d0"
+			"GFX_night_elf_female_clothes_behind:p14"
+			"GFX_night_elf_female_hair_behind:p1:e"
+			"GFX_night_elf_female_hair_uncolored_behind:p1"
+			"GFX_night_elf_female_base:p2:h"
+			"GFX_night_elf_female_cheeks:d4:h"
+			"GFX_night_elf_female_eyes2:d5"
+			"GFX_night_elf_female_eyes:d6:h"
+			"GFX_night_elf_female_nose:d3:h"
+			"GFX_night_elf_female_tattoo:p18:e" # for now it uses hair color
+			"GFX_night_elf_female_mouth:d2:h"
+			"GFX_night_elf_female_mouth_uncolored:d2"
+			"GFX_night_elf_female_clothes:p14"
+			"GFX_night_elf_female_ear:d7:h"
+			"GFX_night_elf_female_shade:d8"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_satyr_female_horns:d0"
+			"GFX_night_elf_female_hair:p1:e"
+			"GFX_night_elf_female_hair_uncolored:p1"
+			"GFX_satyr_female_horns_front:d0"
+			"GFX_night_elf_female_eyebrows:d5:e"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_night_elf_female_clothes_front:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+		
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 112 105 98 } { 180 180 176 }
+			{ 2 17 15 } { 129 167 170 } { 195 214 214 }
+			{ 10 5 0 } { 179 153 100 } { 217 208 177 }
+			{ 10 8 8 } { 170 120 129 } { 217 200 200 }
+			{ 7 7 10 } { 153 159 209 } { 203 203 228 }
+			{ 10 9 8 } { 183 164 135 } { 226 216 207 }
+			{ 7 3 2 } { 152 48 37 } { 219 182 168 }
+		}
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 161 17 15 }
+			{ 124 104 8 }
+			{ 8 147 192 }
+			{ 179 94 30 }
+			{ 101 25 113 }
+			{ 131 75 151 }
+			{ 88 62 37 }
+		}
+	}
+
+	# Night Elf Female Old
+	portraitType = {
+		name = "PORTRAIT_satyrgfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_satyr_female_horns_behind:d0"
+			"GFX_night_elf_female_clothes_behind:p14"
+			"GFX_night_elf_female_hair_behind:p1:e"
+			"GFX_night_elf_female_hair_uncolored_behind:p1"
+			"GFX_night_elf_female_base:p2:h"
+			"GFX_night_elf_female_cheeks:d4:h"
+			"GFX_night_elf_female_eyes2:d5"
+			"GFX_night_elf_female_eyes:d6:h"
+			"GFX_night_elf_female_nose:d3:h"
+			"GFX_night_elf_female_tattoo:p18:e" # for now it uses hair color
+			"GFX_night_elf_female_mouth:d2:h"
+			"GFX_night_elf_female_mouth_uncolored:d2"
+			"GFX_night_elf_female_clothes:p14"
+			"GFX_night_elf_female_ear:d7:h"
+			"GFX_night_elf_female_shade:d8"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_satyr_female_horns:d0"
+			"GFX_night_elf_female_hair:p1:e"
+			"GFX_night_elf_female_hair_uncolored:p1"
+			"GFX_satyr_female_horns_front:d0"
+			"GFX_night_elf_female_eyebrows:d5:e"
+			"GFX_character_eyepatch:p13:y:o31x56"
+			"GFX_character_mask:p12:y:o40x38"
+			"GFX_night_elf_female_clothes_front:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+		
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 112 105 98 } { 180 180 176 }
+			{ 2 17 15 } { 129 167 170 } { 195 214 214 }
+			{ 10 5 0 } { 179 153 100 } { 217 208 177 }
+			{ 10 8 8 } { 170 120 129 } { 217 200 200 }
+			{ 7 7 10 } { 153 159 209 } { 203 203 228 }
+			{ 10 9 8 } { 183 164 135 } { 226 216 207 }
+			{ 7 3 2 } { 152 48 37 } { 219 182 168 }
+		}
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 161 17 15 }
+			{ 124 104 8 }
+			{ 8 147 192 }
+			{ 179 94 30 }
+			{ 101 25 113 }
+			{ 131 75 151 }
+			{ 88 62 37 }
+		}
+	}
+}

@@ -522,24 +522,6 @@ spriteTypes = {
 		norefcount = yes
 		can_be_lowres = yes
 	}
-	
-	# children
-	spriteType = {
-		name = "PORTRAIT_btrollgfx_child_male"
-		texturefile = "gfx\\characters\\btroll_son.tga"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-	
-	spriteType = {
-		name = "PORTRAIT_btrollgfx_child_female"
-		texturefile = "gfx\\characters\\btroll_daughter.tga"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-	
 }
 
 # hair, mouth, chin, nose, eyes, cheek, ear, neck
@@ -580,24 +562,6 @@ spriteTypes = {
 		norefcount = yes
 		can_be_lowres = yes
 	}
-
-	# children
-	spriteType = {
-		name = "PORTRAIT_gtrollgfx_child_male"
-		texturefile = "gfx\\characters\\gtroll_son.tga"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-	
-	spriteType = {
-		name = "PORTRAIT_gtrollgfx_child_female"
-		texturefile = "gfx\\characters\\gtroll_daughter.tga"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-
 }
 
 
@@ -887,24 +851,6 @@ spriteTypes = {
 		norefcount = yes
 		can_be_lowres = yes
 	}
-
-	# children
-	spriteType = {
-		name = "PORTRAIT_ztrollgfx_child_male"
-		texturefile = "gfx\\characters\\ztroll_son.tga"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-	
-	spriteType = {
-		name = "PORTRAIT_ztrollgfx_child_female"
-		texturefile = "gfx\\characters\\ztroll_daughter.tga"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
-
 }
 
 
@@ -938,22 +884,44 @@ spriteTypes = {
 		norefcount = yes
 		can_be_lowres = yes
 	}
+}
 
-	# children
-	spriteType = {
-		name = "PORTRAIT_itrollgfx_child_male"
-		texturefile = "gfx\\characters\\itroll_son.tga"
-		noOfFrames = 1
-		norefcount = yes
-		can_be_lowres = yes
-	}
+# hair, mouth, chin, nose, eyes, cheek, ear, neck
+spriteTypes = {
 	
+	### stroll MALE ####
+
 	spriteType = {
-		name = "PORTRAIT_itrollgfx_child_female"
-		texturefile = "gfx\\characters\\itroll_daughter.tga"
+		name = "GFX_stroll_male_eyes2"
+		texturefile = "gfx\\characters\\troll_male\\stroll_male_eyes2.dds"
 		noOfFrames = 1
 		norefcount = yes
 		can_be_lowres = yes
 	}
 
+	spriteType = {
+		name = "GFX_stroll_male_face_paint"
+		texturefile = "gfx\\characters\\troll_male\\stroll_male_face_paint.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	### stroll FEMALE ####
+
+	spriteType = {
+		name = "GFX_stroll_female_eyes2"
+		texturefile = "gfx\\characters\\troll_female\\stroll_female_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_stroll_female_face_paint"
+		texturefile = "gfx\\characters\\troll_female\\stroll_female_face_paint.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
 }

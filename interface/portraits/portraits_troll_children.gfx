@@ -33,8 +33,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = gtrollgfx
+				portrait_has_trait = race_troll_forest
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -97,8 +96,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = btrollgfx
+				portrait_has_trait = race_troll_jungle
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -159,8 +157,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = ztrollgfx
+				portrait_has_trait = race_troll_zandalari
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -224,8 +221,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = itrollgfx
+				portrait_has_trait = race_troll_ice
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -287,8 +283,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = dtrollgfx
+				portrait_has_trait = race_troll_dark
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -315,6 +310,65 @@ spriteTypes = {
 		hair_color = { # dark, base, highlight
 			{ 19 9 13 } { 63 56 65 } { 175 182 193 }
 			{ 19 9 13 } { 53 46 65 } { 175 182 193 }
+		}
+
+		# Copied from troll_male_eyes2.dds
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 255 }
+			{ 255 0 0 }
+			{ 0 255 0 }
+			{ 255 255 0 }
+			{ 212 212 212 }
+			{ 255 128 255 }
+			{ 128 128 255 }
+			{ 100 100 100 }
+			{ 120 10 255 }
+			{ 255 35 120 }
+			{ 20 255 120 }
+			{ 0 255 255 }
+			{ 20 120 255 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_strollgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_troll_sand
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_troll_male_child_base:p2:h"
+			"GFX_troll_male_child_base_uncolored:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_troll_male_child_eyes2:d6:e"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 10 10 9 } { 195 179 147 } { 255 255 255 }
 		}
 
 		# Copied from troll_male_eyes2.dds
@@ -372,8 +426,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = gtrollgfx
+				portrait_has_trait = race_troll_forest
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -436,8 +489,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = btrollgfx
+				portrait_has_trait = race_troll_jungle
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -498,8 +550,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = ztrollgfx
+				portrait_has_trait = race_troll_zandalari
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -563,8 +614,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = itrollgfx
+				portrait_has_trait = race_troll_ice
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -626,8 +676,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_troll
-				portrait_gfx_culture = dtrollgfx
+				portrait_has_trait = race_troll_dark
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -654,6 +703,65 @@ spriteTypes = {
 		hair_color = { # dark, base, highlight
 			{ 19 9 13 } { 63 56 65 } { 175 182 193 }
 			{ 19 9 13 } { 53 46 65 } { 175 182 193 }
+		}
+
+		# Copied from troll_female_eyes2.dds
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 255 }
+			{ 255 0 0 }
+			{ 0 255 0 }
+			{ 255 255 0 }
+			{ 212 212 212 }
+			{ 255 128 255 }
+			{ 128 128 255 }
+			{ 100 100 100 }
+			{ 120 10 255 }
+			{ 255 35 120 }
+			{ 20 255 120 }
+			{ 0 255 255 }
+			{ 20 120 255 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_strollgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_troll_sand
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_troll_female_child_base:p2:h"
+			"GFX_troll_female_child_eyes2:d6:e"
+			"GFX_troll_female_child_base_uncolored:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 10 10 9 } { 195 179 147 } { 255 255 255 }
 		}
 
 		# Copied from troll_female_eyes2.dds

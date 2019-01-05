@@ -30,14 +30,14 @@ claim = {
 				OR = {
 					has_character_flag = claimant_adventurer
 					NOR = {
-						trait = troll_jungle
-						trait = troll_zandalari
-						trait = troll_forest
-						trait = troll_ice
-						trait = troll_dark
-						trait = troll_sand
+						trait = race_troll_jungle
+						trait = race_troll_zandalari
+						trait = race_troll_forest
+						trait = race_troll_ice
+						trait = race_troll_dark
+						trait = race_troll_sand
 					}
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 				}
 			}
 			OR = {
@@ -80,11 +80,11 @@ claim = {
 	can_use_gui = {
 		OR = {
 			has_character_flag = claimant_adventurer
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -106,10 +106,10 @@ claim = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -274,14 +274,14 @@ other_claim = {
 			is_nomadic = no
 			OR = {
 				NOR = {
-					trait = troll_jungle
-					trait = troll_forest
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_ice
-					trait = troll_zandalari
+					trait = race_troll_jungle
+					trait = race_troll_forest
+					trait = race_troll_sand
+					trait = race_troll_dark
+					trait = race_troll_ice
+					trait = race_troll_zandalari
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 		}
 	}
@@ -365,11 +365,11 @@ other_claim = {
 	
 	can_use_gui = {
 		OR = {
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -379,10 +379,10 @@ other_claim = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -658,14 +658,14 @@ claim_on_liege = {
 			is_nomadic = no
 			OR = {
 				NOR = {
-					trait = troll_jungle
-					trait = troll_forest
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_ice
-					trait = troll_zandalari
+					trait = race_troll_jungle
+					trait = race_troll_forest
+					trait = race_troll_sand
+					trait = race_troll_dark
+					trait = race_troll_ice
+					trait = race_troll_zandalari
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 		}
 	}
@@ -725,11 +725,11 @@ claim_on_liege = {
 	
 	can_use_gui = {
 		OR = {
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -760,10 +760,10 @@ claim_on_liege = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -980,14 +980,14 @@ claim_on_liege_plot = {
 			is_nomadic = no
 			OR = {
 				NOR = {
-					trait = troll_jungle
-					trait = troll_forest
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_ice
-					trait = troll_zandalari
+					trait = race_troll_jungle
+					trait = race_troll_forest
+					trait = race_troll_sand
+					trait = race_troll_dark
+					trait = race_troll_ice
+					trait = race_troll_zandalari
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 		}
 	}
@@ -1005,11 +1005,11 @@ claim_on_liege_plot = {
 	
 	can_use_gui = {
 		OR = {
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -1054,10 +1054,10 @@ claim_on_liege_plot = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -1234,14 +1234,14 @@ claim_on_vassal_plot = {
 			is_nomadic = no
 			OR = {
 				NOR = {
-					trait = troll_dark
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_jungle
-					trait = troll_sand
-					trait = troll_zandalari
+					trait = race_troll_dark
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_jungle
+					trait = race_troll_sand
+					trait = race_troll_zandalari
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 		}
 	}
@@ -1259,11 +1259,11 @@ claim_on_vassal_plot = {
 	
 	can_use_gui = {
 		OR = {
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -1282,10 +1282,10 @@ claim_on_vassal_plot = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -1399,14 +1399,14 @@ other_claim_on_liege = {
 			is_nomadic = no
 			OR = {
 				NOR = {
-					trait = troll_dark
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_jungle
-					trait = troll_sand
-					trait = troll_zandalari
+					trait = race_troll_dark
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_jungle
+					trait = race_troll_sand
+					trait = race_troll_zandalari
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 		}
 	}
@@ -1453,11 +1453,11 @@ other_claim_on_liege = {
 	
 	can_use_gui = {
 		OR = {
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -1519,10 +1519,10 @@ other_claim_on_liege = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -1816,14 +1816,14 @@ claim_all = {
 			is_nomadic = no
 			OR = {
 				NOR = {
-					trait = troll_dark
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_jungle
-					trait = troll_sand
-					trait = troll_zandalari
+					trait = race_troll_dark
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_jungle
+					trait = race_troll_sand
+					trait = race_troll_zandalari
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 		}
 		FROM = { is_nomadic = no }
@@ -1831,11 +1831,11 @@ claim_all = {
 
 	can_use_gui = {
 		OR = {
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -1855,10 +1855,10 @@ claim_all = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -5378,13 +5378,13 @@ orcogre_subjugation = {
 	can_use = {
 		ROOT = {
 			OR = {
-				trait = orc
-				trait = ogre
-				trait = pale_orc
+				trait = race_orc
+				trait = race_ogre
+				trait = race_pale_orc
 			}
 			NOR = {
-				trait = undead_scourge
-				trait = undead_forsaken
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
 			}
 			NOT = { same_realm = FROM }
 			NOT = { is_liege_or_above = FROM }
@@ -5411,13 +5411,13 @@ orcogre_subjugation = {
 		
 		FROM = {
 			OR = {
-				trait = orc
-				trait = ogre
-				trait = pale_orc
+				trait = race_orc
+				trait = race_ogre
+				trait = race_pale_orc
 			}
 			NOR = {
-				trait = undead_scourge
-				trait = undead_forsaken
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
 			}
 			in_revolt = no
 			NOT = {
@@ -6313,31 +6313,31 @@ troll_county_conquest = {
 		FROM = {
 			is_nomadic = no
 			OR = {
-				trait = troll_ice
-				trait = troll_forest
-				trait = troll_jungle
-				trait = troll_sand
-				trait = troll_dark
-				trait = troll_zandalari
+				trait = race_troll_ice
+				trait = race_troll_forest
+				trait = race_troll_jungle
+				trait = race_troll_sand
+				trait = race_troll_dark
+				trait = race_troll_zandalari
 			}
 			NOR = {
-				trait = undead_scourge
-				trait = undead_forsaken
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
 			}
 		}
 		ROOT = {
 			OR = {
 				NOR = {
-					trait = troll_ice
-					trait = troll_forest
-					trait = troll_jungle
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_zandalari
+					trait = race_troll_ice
+					trait = race_troll_forest
+					trait = race_troll_jungle
+					trait = race_troll_sand
+					trait = race_troll_dark
+					trait = race_troll_zandalari
 				}
 				OR = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 		}
@@ -6492,14 +6492,14 @@ dejure_county_claim = {
 		ROOT = {
 			OR = {
 				NOR = {
-					trait = troll_jungle
-					trait = troll_zandalari
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_dark
-					trait = troll_sand
+					trait = race_troll_jungle
+					trait = race_troll_zandalari
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_dark
+					trait = race_troll_sand
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 			is_nomadic = no
 		}
@@ -6511,11 +6511,11 @@ dejure_county_claim = {
 	can_use_gui = {
 		ROOT = {
 			OR = {
-				NOT = { trait = gnome }
+				NOT = { trait = race_gnome }
 				AND = {
-					trait = gnome
+					trait = race_gnome
 					OR = {
-						trait = undead_forsaken
+						trait = race_undead_forsaken
 						prestige = 50
 					}
 				}
@@ -6577,10 +6577,10 @@ dejure_county_claim = {
 		ROOT = {
 			if = {
 				limit = {
-					trait = gnome
+					trait = race_gnome
 					NOT = {
-						trait = undead_scourge
-						trait = undead_forsaken
+						trait = race_undead_scourge
+						trait = race_undead_forsaken
 					}
 				}
 				prestige = -50
@@ -6731,14 +6731,14 @@ dejure_barony_claim = {
 		ROOT = {
 			OR = {
 				NOR = {
-					trait = troll_jungle
-					trait = troll_zandalari
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_dark
-					trait = troll_sand
+					trait = race_troll_jungle
+					trait = race_troll_zandalari
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_dark
+					trait = race_troll_sand
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 			is_nomadic = no
 		}
@@ -6771,11 +6771,11 @@ dejure_barony_claim = {
 	
 	can_use_gui = {
 		OR = {
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -6785,10 +6785,10 @@ dejure_barony_claim = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -6942,14 +6942,14 @@ other_dejure_county_claim = {
 		ROOT = {
 			OR = {
 				NOR = {
-					trait = troll_jungle
-					trait = troll_zandalari
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_dark
-					trait = troll_sand
+					trait = race_troll_jungle
+					trait = race_troll_zandalari
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_dark
+					trait = race_troll_sand
 				}
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 			}
 			is_nomadic = no
 			mercenary = no
@@ -7003,11 +7003,11 @@ other_dejure_county_claim = {
 	
 	can_use_gui = {
 		OR = {
-			NOT = { trait = gnome }
+			NOT = { trait = race_gnome }
 			AND = {
-				trait = gnome
+				trait = race_gnome
 				OR = {
-					trait = undead_forsaken
+					trait = race_undead_forsaken
 					prestige = 50
 				}
 			}
@@ -7017,10 +7017,10 @@ other_dejure_county_claim = {
 	on_add = {
 		if = {
 			limit = {
-				trait = gnome
+				trait = race_gnome
 				NOT = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 				}
 			}
 			prestige = -50
@@ -7315,16 +7315,16 @@ tributary_cb = {
 				religion = FROM
 			}
 			OR = {
-				trait = troll_sand
-				trait = troll_dark
-				trait = troll_jungle
-				trait = troll_ice
-				trait = troll_forest
-				trait = troll_zandalari
+				trait = race_troll_sand
+				trait = race_troll_dark
+				trait = race_troll_jungle
+				trait = race_troll_ice
+				trait = race_troll_forest
+				trait = race_troll_zandalari
 			}
 			NOR = {
-				trait = undead_scourge
-				trait = undead_forsaken
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
 			}
 		}
 		FROM = {
@@ -7338,16 +7338,16 @@ tributary_cb = {
 			}
 			independent = yes
 			OR = {
-				trait = troll_sand
-				trait = troll_dark
-				trait = troll_jungle
-				trait = troll_ice
-				trait = troll_forest
-				trait = troll_zandalari
+				trait = race_troll_sand
+				trait = race_troll_dark
+				trait = race_troll_jungle
+				trait = race_troll_ice
+				trait = race_troll_forest
+				trait = race_troll_zandalari
 			}
 			NOR = {
-				trait = undead_scourge
-				trait = undead_forsaken
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
 			}
 		}
 		

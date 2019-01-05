@@ -1,0 +1,163 @@
+TOW_female_night_elf_assign_random_tattoo = {
+	random_list = {
+		1 = { add_trait = night_elf_tattoo_1 }
+		1 = { add_trait = night_elf_tattoo_2 }
+		1 = { add_trait = night_elf_tattoo_3 }
+		1 = { add_trait = night_elf_tattoo_4 }
+		1 = { add_trait = night_elf_tattoo_5 }
+		1 = { add_trait = night_elf_tattoo_6 }
+		1 = { add_trait = night_elf_tattoo_7 }
+		1 = { add_trait = night_elf_tattoo_8 }
+		1 = { add_trait = night_elf_tattoo_9 }
+	}
+}
+
+TOW_female_night_elf_assign_random_tattoo_depending_on_traits = {
+	random_list = {
+		1 = { # Bear
+			modifier = {
+				factor = 1000
+				has_severe_disability_trigger = no
+				OR = {
+					martial = 8
+					diplomacy = 8
+				}
+				OR = {
+					is_strong_trigger = yes
+					combat_rating = 70
+					num_of_friends = 4
+					trait = socializer
+					trait = gregarious
+					trait = trusting
+					trait = warrior
+					trait = monk
+					trait = paladin
+				}
+			}
+			add_trait = night_elf_tattoo_1
+		}
+		1 = { # Blades
+			modifier = {
+				factor = 1000
+				OR = {
+					trait = just
+					trait = brave
+					trait = zealous
+				}
+			}
+			add_trait = night_elf_tattoo_2
+		}
+		1 = { # Crane
+			modifier = {
+				factor = 1000
+				OR = {
+					trait = priest
+					trait = patient
+					trait = diligent
+					is_attractive_trigger = yes
+					trait = seductress
+					AND = {
+						NOT = { trait = shy }
+						OR = {
+							learning = 16
+							trait = scholar
+							trait = erudite
+						}
+					}
+				}
+			}
+			add_trait = night_elf_tattoo_3
+		}
+		1 = { # Leaf
+			modifier = {
+				factor = 1000
+				OR = {
+					trait = ranger
+					trait = druid
+					trait = priest
+					trait = gardener
+					trait = kind
+				}
+			}
+			add_trait = night_elf_tattoo_4
+		}
+		1 = { # Claws
+			modifier = {
+				factor = 1000
+				is_weak_trigger = no
+				is_dumb_trigger = no
+				has_severe_disability_trigger = no
+				trait = is_fat
+				OR = {
+					trait = schemer
+					trait = deceitful
+					trait = hunter
+					trait = ranger
+					trait = rogue
+					is_smart_trigger = yes
+				}
+			}
+			add_trait = night_elf_tattoo_5
+		}
+		1 = { # Wings
+			modifier = {
+				factor = 1000
+				has_medium_disability_trigger = no
+				NOT = { trait = clubfooted }
+				OR = {
+					trait = mage
+					trait = ambitious
+					trait = proud
+					trait = honest
+				}
+			}
+			add_trait = night_elf_tattoo_6
+		}
+		1 = { # Serpent
+			modifier = {
+				factor = 1000
+				is_weak_trigger = no
+				has_severe_disability_trigger = no
+				intrigue = 8
+				OR = {
+					trait = patience
+					trait = deceitful
+					trait = ambitious
+					trait = impaler
+					trait = schemer
+				}
+			}
+			add_trait = night_elf_tattoo_7
+		}
+		1 = { # Owl
+			modifier = {
+				factor = 1000
+				is_dumb_trigger = no
+				NOT = { trait = one_eyed }
+				intrigue = 8
+				OR = {
+					is_smart_trigger = yes
+					trait = hunter
+					trait = ranger
+					trait = rogue
+					trait = cynical
+					trait = paranoid
+				}
+			}
+			add_trait = night_elf_tattoo_8
+		}
+		1 = { # Shadow
+			modifier = {
+				factor = 1000
+				OR = {
+					trait = schemer
+					trait = rogue
+					trait = craven
+					trait = shy
+					intrigue = 16
+				}
+			}
+			add_trait = night_elf_tattoo_9
+		}
+	}
+}
