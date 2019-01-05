@@ -52,6 +52,7 @@ TOW_initialize_character_race_from_culture = {
 		
 		high_elven = { add_trait = race_high_elf }
 		blood_elven = { add_trait = race_blood_elf }
+		night_elven = { add_trait = race_night_elf }
 		felblood = {
 			add_trait = race_blood_elf
 			set_graphical_culture = felblood
@@ -200,19 +201,15 @@ TOW_update_character_race_from_liege = {
 				trait = race_high_elf
 				trait = race_blood_elf
 			}
-		}
-		if = {
-			limit = {
-				liege = {
-					graphical_culture = welvengfx
-					trait = race_wretched
-				}
+			liege = {
+				graphical_culture = welvengfx
+				trait = race_wretched
 			}
-			set_graphical_culture = wretched
-			remove_trait = race_high_elf
-			remove_trait = race_blood_elf
-			add_trait = race_wretched
 		}
+		set_graphical_culture = wretched
+		remove_trait = race_high_elf
+		remove_trait = race_blood_elf
+		add_trait = race_wretched
 	}
 }
 
