@@ -1,0 +1,264 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ogre_male_child_base"
+		texturefile = "gfx\\characters\\ogre_male\\child\\ogre_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_male_child_base_uncolored"
+		texturefile = "gfx\\characters\\ogre_male\\child\\ogre_male_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_male_child_hair"
+		texturefile = "gfx\\characters\\ogre_male\\child\\ogre_male_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_male_child_eyes2"
+		texturefile = "gfx\\characters\\ogre_male\\child\\ogre_male_child_eyes2.dds"
+		noOfFrames = 10
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_male_child_horn"
+		texturefile = "gfx\\characters\\ogre_male\\child\\ogre_male_child_horn.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_male_child_chest"
+		texturefile = "gfx\\characters\\ogre_male\\child\\ogre_male_child_chest.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_male_child_clothes"
+		texturefile = "gfx\\characters\\ogre_male\\child\\ogre_male_child_clothes.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_ogregfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_ogre
+				NOR = {
+					portrait_gfx_culture = bogregfx
+					portrait_gfx_culture = rogregfx
+					portrait_gfx_culture = mogregfx
+					portrait_gfx_culture = dogregfx
+					portrait_gfx_culture = wogregfx
+					portrait_gfx_culture = gogregfx
+				}
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_ogre_male_child_base:p2:h"
+			"GFX_ogre_male_child_chest:p2:h"
+			"GFX_ogre_male_child_clothes:p2"
+			"GFX_ogre_male_child_eyes2:d0"
+			"GFX_ogre_male_child_base_uncolored:p2"
+			"GFX_ogre_male_child_hair:p1:e:y"
+			"GFX_ogre_male_child_horn:d5"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 4 0 } { 179 124 43 } { 255 245 200 }
+			{ 5 3 0 } { 174 119 53 } { 255 235 200 }
+			{ 6 2 0 } { 189 139 83 } { 255 245 210 }
+			{ 6 2 0 } { 180 90 50 } { 255 220 220 }
+			{ 0 0 0 } { 90 90 114 } { 190 190 210 }
+			{ 5 5 5 } { 104 102 108 } { 220 220 220 }
+			{ 6 6 10 } { 76 90 104 } { 190 190 230 }
+			{ 2 4 8 } { 86 140 200 } { 240 250 255 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_ogre_female_child_base"
+		texturefile = "gfx\\characters\\ogre_female\\child\\ogre_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_female_child_base_uncolored"
+		texturefile = "gfx\\characters\\ogre_female\\child\\ogre_female_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_female_child_eyes2"
+		texturefile = "gfx\\characters\\ogre_female\\child\\ogre_female_child_eyes2.dds"
+		noOfFrames = 10
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_female_child_hair"
+		texturefile = "gfx\\characters\\ogre_female\\child\\ogre_female_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_female_child_hair_uncolored"
+		texturefile = "gfx\\characters\\ogre_female\\child\\ogre_female_child_hair_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_female_child_horn"
+		texturefile = "gfx\\characters\\ogre_female\\child\\ogre_female_child_horn.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_female_child_chest"
+		texturefile = "gfx\\characters\\ogre_female\\child\\ogre_female_child_chest.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ogre_female_child_clothes"
+		texturefile = "gfx\\characters\\ogre_female\\child\\ogre_female_child_clothes.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_ogregfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_ogre
+				NOR = {
+					portrait_gfx_culture = bogregfx
+					portrait_gfx_culture = rogregfx
+					portrait_gfx_culture = mogregfx
+					portrait_gfx_culture = dogregfx
+					portrait_gfx_culture = wogregfx
+					portrait_gfx_culture = gogregfx
+				}
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_ogre_female_child_hair:p1:e"
+			"GFX_ogre_female_child_hair_uncolored:p1"
+			"GFX_ogre_female_child_chest:p2:h"
+			"GFX_ogre_female_child_clothes:p14"
+			"GFX_ogre_female_child_base:p2:h"
+			"GFX_ogre_female_child_eyes2:d0"
+			"GFX_ogre_female_child_base_uncolored:p2"
+			"GFX_ogre_female_child_horn:d5"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 4 0 } { 179 124 43 } { 255 245 200 }
+			{ 5 3 0 } { 174 119 53 } { 255 235 200 }
+			{ 6 2 0 } { 189 139 83 } { 255 245 210 }
+			{ 6 2 0 } { 180 90 50 } { 255 220 220 }
+			{ 0 0 0 } { 90 90 114 } { 190 190 210 }
+			{ 5 5 5 } { 104 102 108 } { 220 220 220 }
+			{ 6 6 10 } { 76 90 104 } { 190 190 230 }
+			{ 2 4 8 } { 86 140 200 } { 240 250 255 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		allow_property_values = { }
+	}
+}
