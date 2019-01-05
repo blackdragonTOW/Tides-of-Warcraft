@@ -124,10 +124,6 @@ good_soldier_outcome_score = {
 	}
 	modifier = {
 		factor = 0.5
-		trait = possessed
-	}
-	modifier = {
-		factor = 0.5
 		is_ill = yes
 	}
 	modifier = {
@@ -286,10 +282,6 @@ bad_soldier_outcome_score = { #will make something score higher if current scope
 	modifier = {
 		factor = 1.1
 		trait = lunatic
-	}
-	modifier = {
-		factor = 1.1
-		trait = possessed
 	}
 	modifier = {
 		factor = 1.1
@@ -457,10 +449,6 @@ bad_soldier_outcome_enemy_commander_score = { #will make something score higher 
 	modifier = {
 		factor = 1.1
 		event_target:enemy_commander = { trait = lunatic }
-	}
-	modifier = {
-		factor = 1.1
-		event_target:enemy_commander = { trait = possessed }
 	}
 	modifier = {
 		factor = 1.1
@@ -1172,10 +1160,6 @@ warrior_recruit_score = { #rename to... "new_warrior_lodge_recruit_eligibility_s
 	modifier = {
 		factor = 0.5
 		trait = lunatic
-	}
-	modifier = {
-		factor = 0.5
-		trait = possessed
 	}
 	modifier = {
 		factor = 0.9

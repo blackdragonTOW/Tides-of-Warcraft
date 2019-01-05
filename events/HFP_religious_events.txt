@@ -1,0 +1,79 @@
+# Written by Flavio (HFP.23001 - HFP.23027)
+
+namespace = HFP
+
+#on_war_ended_victory: restore spouse under enemy's concubinage.
+# From = Attacker, Root = Defender
+character_event = {
+	id = HFP.23025
+	hide_window = yes
+	trigger = { 
+		ROOT = { 
+			any_consort = {
+				FROM = {
+					has_opinion_modifier = {
+						modifier = opinion_abducted_spouse
+						who = PREV
+					}
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+
+	immediate = { 
+		ROOT = { 
+			any_consort = {
+				limit = {
+					FROM = {
+						has_opinion_modifier = {
+							modifier = opinion_abducted_spouse
+							who = PREV
+						}
+					}
+				}
+				ROOT = { remove_consort = PREV }
+				move_character = FROM
+			}
+		}
+	}
+}
+
+#on_war_ended_defeat: restore spouse under enemy's concubinage.
+# From = Attacker, Root = Defender
+character_event = {
+	id = HFP.23026
+	hide_window = yes
+	trigger = { 
+		FROM = { 
+			any_consort = {
+				ROOT = {
+					has_opinion_modifier = {
+						modifier = opinion_abducted_spouse
+						who = PREV
+					}
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+
+	immediate = { 
+		FROM = { 
+			any_consort = {
+				limit = {
+					ROOT = {
+						has_opinion_modifier = {
+							modifier = opinion_abducted_spouse
+							who = PREV
+						}
+					}
+				}
+				FROM = { remove_consort = PREV }
+				move_character = ROOT
+			}
+		}
+	}
+}

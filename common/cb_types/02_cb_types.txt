@@ -11,25 +11,25 @@ troll_invasion = {
 	can_use = {
 		ROOT = {
 			OR = {
-				trait = troll_sand
-				trait = troll_zandalari
-				trait = troll_dark
-				trait = troll_ice
-				trait = troll_forest
-				trait = troll_jungle
+				trait = race_troll_sand
+				trait = race_troll_zandalari
+				trait = race_troll_dark
+				trait = race_troll_ice
+				trait = race_troll_forest
+				trait = race_troll_jungle
 			}
 			NOR = {
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 		FROM = {
 			NOR = {
-				trait = gnoll
-				trait = kobold
-				trait = trogg
-				trait = murloc
-				trait = lost_one
+				trait = race_gnoll
+				trait = race_kobold
+				trait = race_trogg
+				trait = race_murloc
+				trait = race_lost_one
 			}
 		}
 	}
@@ -162,34 +162,34 @@ troll_subjugation = {
 		ROOT = {
 			same_realm = FROM
 			OR = {
-				trait = troll_sand
-				trait = troll_zandalari
-				trait = troll_dark
-				trait = troll_ice
-				trait = troll_forest
-				trait = troll_jungle
+				trait = race_troll_sand
+				trait = race_troll_zandalari
+				trait = race_troll_dark
+				trait = race_troll_ice
+				trait = race_troll_forest
+				trait = race_troll_jungle
 			}
 			NOT = { is_liege_or_above = FROM }
 			NOT = { is_vassal_or_below = FROM }
 			mercenary = no
 			NOR = {
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 		
 		FROM = {
 			OR = {
-				trait = troll_sand
-				trait = troll_zandalari
-				trait = troll_dark
-				trait = troll_ice
-				trait = troll_forest
-				trait = troll_jungle
+				trait = race_troll_sand
+				trait = race_troll_zandalari
+				trait = race_troll_dark
+				trait = race_troll_ice
+				trait = race_troll_forest
+				trait = race_troll_jungle
 			}
 			NOR = {
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 	}
@@ -372,12 +372,12 @@ flower_war = {
 			NOT = { is_vassal_or_below = FROM }
 			mercenary = no
 			OR = {
-				trait = troll_zandalari
-				trait = troll_jungle
-				trait = troll_ice
-				trait = troll_forest
-				trait = troll_sand
-				trait = troll_dark
+				trait = race_troll_zandalari
+				trait = race_troll_jungle
+				trait = race_troll_ice
+				trait = race_troll_forest
+				trait = race_troll_sand
+				trait = race_troll_dark
 			}
 		}
 		FROM = {
@@ -385,12 +385,12 @@ flower_war = {
 			NOT = { is_vassal_or_below = ROOT }
 			mercenary = no
 			OR = {
-				trait = troll_zandalari
-				trait = troll_jungle
-				trait = troll_ice
-				trait = troll_forest
-				trait = troll_sand
-				trait = troll_dark
+				trait = race_troll_zandalari
+				trait = race_troll_jungle
+				trait = race_troll_ice
+				trait = race_troll_forest
+				trait = race_troll_sand
+				trait = race_troll_dark
 			}
 		}
 	}
@@ -699,14 +699,14 @@ helf_ftroll_preemtive_strike = {
 				higher_real_tier_than = DUKE
 			}
 			OR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
+				trait = race_high_elf
+				trait = race_blood_elf
+				trait = race_wretched
 			}
 			NOR = {
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 		FROM = {
@@ -723,13 +723,13 @@ helf_ftroll_preemtive_strike = {
 				}
 			}
 			independent = yes
-			trait = troll_forest
+			trait = race_troll_forest
 			higher_real_tier_than = COUNT
 			is_landed = yes
 			NOR = {
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 	}
@@ -737,24 +737,24 @@ helf_ftroll_preemtive_strike = {
 	is_valid = {
 		ROOT = {
 			OR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
+				trait = race_high_elf
+				trait = race_blood_elf
+				trait = race_wretched
 			}
 			NOR = {
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 		FROM = {
-			trait = troll_forest
+			trait = race_troll_forest
 			is_landed = yes
 			higher_real_tier_than = COUNT
 			NOR = {
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 	}
@@ -855,14 +855,14 @@ sunwell_reconquest = {
 		has_global_flag = sunwell_conquered
 		ROOT = {
 			OR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
+				trait = race_high_elf
+				trait = race_blood_elf
+				trait = race_wretched
 			}
 			NOR = {
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 		FROM = {
@@ -879,14 +879,14 @@ sunwell_reconquest = {
 		has_global_flag = sunwell_conquered
 		ROOT = {
 			OR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
+				trait = race_high_elf
+				trait = race_blood_elf
+				trait = race_wretched
 			}
 			NOR = {
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 		FROM = {
@@ -966,7 +966,7 @@ wretched_revolt = {
 	
 	is_valid = {
 		FROM = {
-			NOT = { trait = wretched }
+			NOT = { trait = race_wretched }
 		}
 	}
 
@@ -1177,7 +1177,7 @@ wildhammer_migration = {
 			culture = trogg
 			religion = geomancy
 			random_traits = yes
-			trait = trogg
+			trait = race_trogg
 			flag = race_assigned
 		}
 		ROOT = {
