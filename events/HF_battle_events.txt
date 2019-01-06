@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+########################################
+###### New battle events 2018 ##########
+##### Written by Milla Isaksson ########
+########################################
+
+
+>>>>>>> master
 namespace = HFP
 
 ### Testing events ###
@@ -131,10 +140,17 @@ character_event = {
     }
 
     immediate = {
+<<<<<<< HEAD
     	if = { #Quick fix to half the amount of time the AI gets the events
     		limit = { ai = yes }
     		random = {
     			chance = 50
+=======
+    	if = { #Quick fix to reduce the amount of time the AI gets the events
+    		limit = { ai = yes }
+    		random = {
+    			chance = 75
+>>>>>>> master
     			break = yes
     		}
     	}
@@ -143,7 +159,19 @@ character_event = {
 
     	# To keep scopes straight...
     	save_event_target_as = home_commander
+<<<<<<< HEAD
 		FROM = { save_event_target_as = enemy_commander } #note: might not always exist
+=======
+    	if = {  #work around: in rare edge cases, the flank leader will belong to a flank which has fled, while the commander already *died* and code fails to update this.
+    		limit = {
+    			FROM = {
+    				is_alive = yes
+    				is_dying = no
+    			}
+    		}
+			FROM = { save_event_target_as = enemy_commander } #note: might not always exist
+    	}
+>>>>>>> master
 		FROMFROM = { save_event_target_as = enemy_liege } #note: might be the same character as enemy_commander
 		location = {
 			save_event_target_as = battlefield_location
@@ -541,6 +569,7 @@ character_event = {
 			50 = {
 				trigger = {
 					has_dlc = "The Old Gods"
+<<<<<<< HEAD
 					OR = {
 						trait = race_troll_zandalari
 						trait = race_troll_dark
@@ -555,6 +584,12 @@ character_event = {
 						trait = race_pale_orc
 						trait = race_half_ogre
 						trait = race_half_draenei
+=======
+					culture_group = north_germanic
+					OR = {
+						religion = norse_pagan
+						religion = norse_pagan_reformed
+>>>>>>> master
 					}
 					is_alive = yes
 					NOT = { trait = berserker }
@@ -619,8 +654,13 @@ character_event = {
 			15 = {
 				trigger = {
 					OR = {
+<<<<<<< HEAD
 						religion = old_ways
 						religion = old_ways_reformed
+=======
+						religion = norse_pagan
+						religion = norse_pagan_reformed
+>>>>>>> master
 						liege = { is_member_of_any_warrior_lodge_trigger = yes }
 					}
 					trait = shieldmaiden
@@ -641,13 +681,22 @@ character_event = {
 					}
 				}
 				character_event = { id = 79009 } # Shieldmaiden can save liege on battlefield (choice for Shieldmaiden who is ROOT)
+<<<<<<< HEAD
 				log = "fired OLD battle EVENT 79001"
+=======
+				log = "fired OLD battle EVENT 79009"
+>>>>>>> master
 			}
 			15 = {
 				trigger = {
 					OR = {
+<<<<<<< HEAD
 						religion = old_ways
 						religion = old_ways_reformed
+=======
+						religion = norse_pagan
+						religion = norse_pagan_reformed
+>>>>>>> master
 						is_member_of_any_warrior_lodge_trigger = yes
 					}
 					age = 16
@@ -749,6 +798,14 @@ character_event = {
 
 	immediate = {
 		hidden_effect = {
+<<<<<<< HEAD
+=======
+    		random = { #Quick fix
+    			chance = 75
+    			break = yes
+    		}
+			disallow_new_battle_events_effect = yes #to keep the tombola from spamming you... (if MP)
+>>>>>>> master
 			#Find someone to think of in dying moment...
 			save_beloved_character_effect = yes
 		
@@ -1802,8 +1859,29 @@ character_event = {
 		trigger = { has_character_flag = desc_A }
 	}
 	desc = {
+<<<<<<< HEAD
 		text = EVTDESC_HFP_11011_B
 		trigger = { has_character_flag = desc_B }
+=======
+		text = EVTDESC_HFP_11011_B_1 #Default variant B
+		trigger = {
+			has_character_flag = desc_B
+			NOT = {
+				event_target:enemy_commander = {
+					always = yes
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESC_HFP_11011_B_2 #Second variant: makes sure to fetch the correct culture for the enemy commander, if they exist
+		trigger = {
+			has_character_flag = desc_B
+			event_target:enemy_commander = {
+				always = yes
+			}
+		}
+>>>>>>> master
 	}
 	desc = {
 		text = EVTDESC_HFP_11011_C
@@ -2133,9 +2211,19 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+<<<<<<< HEAD
 		disallow_new_battle_events_effect = yes #to keep the tombola from spamming you...
 		battle_commander_counter_negative_effect = yes
 
+=======
+		random = {  #Quick fix
+			chance = 75
+			break = yes
+		}
+
+		disallow_new_battle_events_effect = yes #to keep the tombola from spamming you...
+		battle_commander_counter_negative_effect = yes
+>>>>>>> master
 		add_blood_splatter_effect = yes
 		random_list = {
 			60 = {
@@ -2418,6 +2506,17 @@ character_event = {
 		add_trait = jungle_terrain_leader
 	}
 	option = {
+<<<<<<< HEAD
+=======
+		name = EVTOPTL96500 # War elephants
+		trigger = {
+			has_dharmic_religion_trigger = yes
+			NOT = { trait = war_elephant_leader }
+		}
+		add_trait = war_elephant_leader
+	}
+	option = {
+>>>>>>> master
 		name = EVTOPTM96500 # WINTER Terrain Specialization
 		trigger = {
 			location = { is_winter = yes }
@@ -4911,8 +5010,11 @@ character_event = {
         		OR = {
         			trait = lunatic
         			trait = envious
+<<<<<<< HEAD
         			trait = possessed
         			is_devil_worshiper_trigger = yes
+=======
+>>>>>>> master
         		}
         		OR = {
         			event_target:commander_to_the_rescue = { duelist_skill_compared_to_prev_high_group_trigger = yes } #commander_to_the_rescue is a better dueler than you...
@@ -4935,8 +5037,11 @@ character_event = {
         		OR = {
         			trait = lunatic
         			trait = envious
+<<<<<<< HEAD
         			trait = possessed
         			is_devil_worshiper_trigger = yes
+=======
+>>>>>>> master
         		}
         		OR = {
         			event_target:commander_to_the_rescue = { duelist_skill_compared_to_prev_high_group_trigger = yes } #commander_to_the_rescue is a better dueler than you...
@@ -4959,8 +5064,11 @@ character_event = {
         		OR = {
         			trait = lunatic
         			trait = envious
+<<<<<<< HEAD
         			trait = possessed
         			is_devil_worshiper_trigger = yes
+=======
+>>>>>>> master
         		}
         		OR = {
         			event_target:commander_to_the_rescue = { duelist_skill_compared_to_prev_high_group_trigger = yes } #commander_to_the_rescue is a better dueler than you...
@@ -5409,6 +5517,7 @@ character_event = {
 		tooltip_info_custom = available_due_to_warrior_lodge
 		custom_tooltip = { text = EVTOPTC50020_TT }
 		if = { 
+<<<<<<< HEAD
 			limit = { NOR = { has_religion_feature = religion_ritual_sacrifice } }
 			tiered_high_piety_negative_effect = yes 
 		}
@@ -5419,14 +5528,60 @@ character_event = {
 			stacking = yes
 		}
 
+=======
+			limit = { NOR = { religion_group = pagan_group has_religion_feature = religion_ritual_sacrifice } }
+			tiered_high_piety_negative_effect = yes 
+		}
+
+		if = { # If you already have three instances of this modifier...
+			limit = {
+				has_instances_of_character_modifier = {
+					modifier = sacrificed_prisoner
+					amount = 3
+				}
+			}
+			hidden_effect = { # Do some hidden removal and adding, in order to refresh the final date of the modifier...
+				remove_character_modifier = sacrificed_prisoner #Removes all instances
+				add_character_modifier = {
+					name = sacrificed_prisoner #Add 1st
+					duration = 1000
+					stacking = yes
+				}
+				add_character_modifier = { #Add 2nd
+					name = sacrificed_prisoner
+					duration = 1000
+					stacking = yes
+				}
+			}
+			add_character_modifier = { #Add 3rd
+				name = sacrificed_prisoner
+				duration = 1000
+				stacking = yes
+			}
+		}
+		else = { #If you don't have three instances, just add one...
+			add_character_modifier = {
+				name = sacrificed_prisoner
+				duration = 1000
+				stacking = yes
+			}
+		}
+
+
+>>>>>>> master
 		hidden_effect = {
 			event_target:captured_commander = { character_event = { id = 50021 } } #"They took one look at me and then I was toast"-event.
 			if = {
 				limit = {
 					OR = {
 						has_religion_feature = religion_ritual_sacrifice
+<<<<<<< HEAD
 						religion = loa
 						religion = hakkar
+=======
+						religion = aztec
+						religion = aztec_reformed
+>>>>>>> master
 					}
 				}
 				if = { #A foreign religious head is also quite good.
@@ -5907,7 +6062,11 @@ character_event = {
 	hide_from = yes
 
 	is_triggered_only = yes
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> master
 	trigger = {
 		event_target:battlefield_location = {
 			OR = {
@@ -5941,6 +6100,12 @@ character_event = {
 		}
 	}
 	
+<<<<<<< HEAD
+=======
+	immediate = {
+		disallow_new_battle_events_effect = yes
+	}
+>>>>>>> master
 	
 	option = {
 		name = EVTOPTA_HFP_30200
@@ -6060,4 +6225,30 @@ character_event = { # Duelist Bloodline Earned
 		}
 		prestige = 500
 	}
+<<<<<<< HEAD
 }
+=======
+}
+
+# Hidden event to give commanders (who do not have it already) the commander bonus
+character_event = {
+    id = HFP.11051
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+    	has_minor_title = title_commander
+    	NOT = { has_character_modifier = hidden_commander_bonus }
+    }
+
+    immediate = {
+    	hidden_effect = { # Because this cannot be added in the passive effects, for some code reason
+			add_character_modifier = {
+	        	name = hidden_commander_bonus
+	        	duration = -1
+	        	hidden = yes
+	        }
+		}
+    }
+}
+>>>>>>> master

@@ -39,9 +39,9 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { is_undead = yes }
-		NOT = { is_elemental_or_void = yes }
-		NOT = { is_demon_race = yes }
+		NOT = { TOW_is_undead = yes }
+		NOT = { TOW_is_elemental_or_void = yes }
+		NOT = { TOW_is_demon_race = yes }
 		NOT = { trait = race_dragon }
 		NOT = { trait = race_hakkar }
 		NOR = {

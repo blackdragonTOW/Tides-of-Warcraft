@@ -1,0 +1,95 @@
+Keitaro_holding_can_be_pillaged_by_from_tooltip = {
+	NOT = { holding_type = nomad }
+	OR = {
+		NOT = { holding_type = tribal }
+		FROM = { is_tribal = no }
+	}
+	OR = {
+		FROM = { is_nomadic = yes }
+		location = {
+			num_of_settlements = 2
+		}
+	}
+	custom_tooltip = {
+		text = Keitaro_is_allowed_to_pillage_custom_tooltip
+		hidden_tooltip = {
+			OR = {
+				owner = { character = FROM }
+				AND = {
+					FROM = { is_nomadic = yes }
+					owner = { liege = { character = FROM } }
+					location = { owner = { character = FROM } }
+					has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+				}
+			}
+		}
+	}
+}
+
+Keitaro_holding_can_be_pillaged_by_from = {
+	NOT = { holding_type = nomad }
+	OR = {
+		NOT = { holding_type = tribal }
+		FROM = { is_tribal = no }
+	}
+	OR = {
+		FROM = { is_nomadic = yes }
+		location = {
+			num_of_settlements = 2
+		}
+	}
+	OR = {
+		owner = { character = FROM }
+		AND = {
+			FROM = { is_nomadic = yes }
+			owner = { liege = { character = FROM } }
+			location = { owner = { character = FROM } }
+			has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+		}
+	}
+}
+
+Keitaro_holding_can_be_pillaged_allow = {
+	NOT = { has_holding_modifier = recently_burnt_the_land }
+	has_siege = no
+	custom_tooltip = {
+		text = stop_pillaging_custom_tooltip
+		hidden_tooltip = {
+			NOT = { has_holding_modifier = stop_burning_land }
+		}
+	}
+}
+
+Keitaro_holding_can_stop_pillage_by_from = {
+	has_holding_modifier = recently_burnt_the_land
+	NOT = { has_holding_modifier = stop_burning_land }
+	NOT = { holding_type = nomad }
+	OR = {
+		NOT = { holding_type = tribal }
+		FROM = { is_tribal = no }
+	}
+	OR = {
+		owner = { character = FROM }
+		AND = {
+			FROM = { is_nomadic = yes }
+			location = { owner = { character = FROM } }
+			owner = { liege = { character = FROM } }
+			has_game_rule = { name = nomad_pillage_vassal_holdings value = on }
+		}
+	}
+}
+
+Keitaro_holding_can_stop_pillage_by_from_allow = {
+	has_holding_modifier = recently_burnt_the_land
+	custom_tooltip = {
+		text = stop_pillaging_custom_tooltip
+		hidden_tooltip = {
+			NOT = { has_holding_modifier = stop_burning_land }
+		}
+	}
+	NOT = { holding_type = nomad }
+	OR = {
+		NOT = { holding_type = tribal }
+		FROM = { is_tribal = no }
+	}
+}

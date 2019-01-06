@@ -9719,7 +9719,697 @@ e_azeroth = {
 				}
 			}
 			
+			c_mirrorwood = { # 322
+				color = { 102 105 210 }
+				color2 = { 255 255 255 }
+				
+				b_mirror_lake_estate = {
+				}
+				b_swiftgrove = {
+				}
+				b_dewhorn = {
+				}
+				b_mirrorvale = {
+				}
+				b_sunacre = {
+				}
+				b_stillvale = {
+				}
+				b_grassmeadow = {
+				}
+			}
 			
+			c_goldshire = { # 323
+				color = { 99 145 108 }
+				color2 = { 255 255 255 }
+				
+				b_goldshire = {
+				}
+				b_eastgrove = {
+				}
+				b_embercairn = {
+				}
+				b_silvergrave = {
+				}
+				b_lasthand = {
+				}
+				b_greengrove = {
+				}
+				b_eaglefield = {
+				}
+			}
+			
+			c_northshire = { # 464
+				color = { 204 190 99 }
+				color2 = { 255 255 255 }
+				
+				b_northshire_abbey = {
+					holy_site = forgotten_shadow
+				}
+				b_echo_ridge = {
+				}
+				b_whitevein = {
+				}
+				b_earthfront = {
+				}
+				b_clayhall = {
+				}
+				b_silentguard = {
+				}
+				b_farward = {
+				}
+			}
 		}
+		
+		d_forests_edge = {
+			color = { 103 217 246 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 324 # Forest's Edge
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 324 province_id = 330 province_id = 416 } }
+				}
+			}
+			
+			c_forests_edge = { # 324
+				color = { 238 82 48 }
+				color2 = { 255 255 255 }
+				
+				b_westbrook_garrison = {
+				}
+				b_westbrook = {
+				}
+				b_riveredge = {
+				}
+				b_windmoor = {
+				}
+				b_direbrook = {
+				}
+				b_fieldwatch = {
+				}
+				b_dirtwick = {
+				}
+			}
+			
+			c_fertile_fields = { # 330
+				color = { 99 179 108 }
+				color2 = { 255 255 255 }
+				
+				b_maclure_estate = {
+				}
+				b_stonefield_estate = {
+				}
+				b_fargodeep = {
+				}
+				b_goldtooth_den = {
+				}
+				b_dirtshield = {
+				}
+				b_midbell = {
+				}
+				b_cloudwind = {
+				}
+			}
+			
+			c_howling_bank = { # 416
+				color = { 130 207 190 }
+				color2 = { 255 255 255 }
+				
+				b_hogger_hill = {
+				}
+				b_grimeguard = {
+				}
+				b_farshell = {
+				}
+				b_mudwind = {
+				}
+				b_gnawreach = {
+				}
+				b_clayrise = {
+				}
+				b_houndstooth = {
+				}
+			}
+		}
+		
+		d_azerothian_fields = {
+			color = { 144 210 226 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 347 # Sunnyglade
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 328 province_id = 331 province_id = 347 province_id = 348 } }
+				}
+			}
+			
+			c_eastvale = { # 328
+				color = { 105 176 119 }
+				color2 = { 255 255 255 }
+				
+				b_ridgepoint = {
+				}
+				b_eastvale_camp = {
+				}
+				b_tradecliff = {
+				}
+				b_silverlight = {
+				}
+				b_lastwind = {
+				}
+				b_ebonmond = {
+				}
+				b_highmore = {
+				}
+			}
+			
+			c_riverdale = { # 331
+				color = { 179 142 94 }
+				color2 = { 255 255 255 }
+				
+				b_jerods_landing = {
+				}
+				b_moongrave = {
+				}
+				b_ambermount = {
+				}
+				b_mightwatch = {
+				}
+				b_ravenstrand = {
+				}
+				b_grayhallow = {
+				}
+				b_grimewatch = {
+				}
+			}
+			
+			c_sunnyglade = { # 347
+				color = { 179 82 99 }
+				color2 = { 255 255 255 }
+				
+				b_tower_of_azora = {
+				}
+				b_sunnyglade = {
+				}
+				b_tradegrave = {
+				}
+				b_stillburgh = {
+				}
+				b_dimlight = {
+				}
+				b_pondfall = {
+				}
+				b_rockmire = {
+				}
+			}
+			
+			c_westroad = { # 348
+				color = { 145 184 184 }
+				color2 = { 255 255 255 }
+				
+				b_brackwell_estate = {
+				}
+				b_silverhall = {
+				}
+				b_swanbreach = {
+				}
+				b_sunhallow = {
+				}
+				b_smallshell = {
+				}
+				b_riverfront = {
+				}
+				b_eldergate = {
+				}
+			}
+		}
+		
+		d_stone_cairn = {
+			color = { 164 216 229 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 325 # Stone Cairn Isle
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 287 province_id = 325 province_id = 326 province_id = 329 } }
+				}
+			}
+			
+			c_roaring_range = { # 287
+				color = { 116 213 184 }
+				color2 = { 255 255 255 }
+				
+				b_roaring_watch = {
+				}
+				b_autumnshell = {
+				}
+				b_whiteburn = {
+				}
+				b_cragsummit = {
+				}
+				b_oldpoint = {
+				}
+				b_boulderbreak = {
+				}
+				b_dewhold = {
+				}
+			}
+			
+			c_stone_cairn_isle = { # 325
+				color = { 102 91 66 }
+				color2 = { 255 255 255 }
+				
+				b_heroes_vigil = {
+				}
+				b_lakeglen = {
+				}
+				b_smoothgrave = {
+				}
+				b_clayhallow = {
+				}
+				b_herobrook = {
+				}
+				b_rosehand = {
+				}
+				b_bareside = {
+				}
+			}
+			
+			c_jasper_ridge = { # 326
+				color = { 156 116 147 }
+				color2 = { 255 255 255 }
+				
+				b_jasperlode = {
+				}
+				b_dirtvault = {
+				}
+				b_mossborn = {
+				}
+				b_brittleshin = {
+				}
+				b_highcairn = {
+				}
+				b_clearwall = {
+				}
+				b_stagrun = {
+				}
+			}
+			
+			c_ridgewood = { # 329
+				color = { 153 54 181 }
+				color2 = { 255 255 255 }
+				
+				b_lakewood = {
+				}
+				b_timberchop = {
+				}
+				b_shadowstep = {
+				}
+				b_clearkeep = {
+				}
+				b_wildsummit = {
+				}
+				b_stagwich = {
+				}
+				b_greencross = {
+				}
+			}
+		}
+	}
+	k_redridge_range = {
+		color = { 255 114 63 }
+		color2 = { 255 255 255 }
+		capital = 309 # Lakeshire
+		culture = azerothian
+		
+		d_rethban_ridge = {
+			color = { 223 100 56 }
+			color2 = { 255 255 255 }
+			culture = blackrock
+			capital = 305 # Rethban Rock
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 288 province_id = 305 province_id = 310 } }
+				}
+			}
+			
+			c_redcliff = { # 288
+				color = { 224 99 113 }
+				color2 = { 255 255 255 }
+				
+				b_grimbreach = {
+				}
+				b_shadowfort = {
+				}
+				b_cliffville = {
+				}
+				b_swifthelm = {
+				}
+				b_bronzeburn = {
+				}
+				b_steeppass = {
+				}
+				b_silkshield = {
+				}
+			}
+			
+			c_rethban_rock = { # 305
+				color = { 99 48 213 }
+				color2 = { 255 255 255 }
+				
+				frostwolf = "Render's Rock"
+				blackrock = "Render's Rock"
+				bleeding_hollow = "Render's Rock"
+				shattered_hand = "Render's Rock"
+				shadowmoon = "Render's Rock"
+				thunderlord = "Render's Rock"
+				lightnings_blade = "Render's Rock"
+				dragonmaw = "Render's Rock"
+				bladewind = "Render's Rock"
+				warsong = "Render's Rock"
+				redwalker = "Render's Rock"
+				burning_blade = "Render's Rock"
+				whiteclaw = "Render's Rock"
+				twilights_hammer = "Render's Rock"
+				dark_scar = "Render's Rock"
+				bonechewer = "Render's Rock"
+				laughing_skull = "Render's Rock"
+				flowerpicker = "Render's Rock"
+				mok_nathal = "Render's Rock"
+				mag_har = "Render's Rock"
+				fel_orc = "Render's Rock"
+				
+				b_rethban_caverns = {
+				}
+				b_dragonvein = {
+				}
+				b_bleakview = {
+				}
+				b_cliffdrift = {
+				}
+				b_blackacre = {
+				}
+				b_windscar = {
+				}
+				b_gloomhorn = {
+				}
+			}
+			
+			c_redridge_canyons = { # 310
+				color = { 215 99 85 }
+				color2 = { 255 255 255 }
+				
+				b_yowlers_den = {
+				}
+				b_houndshade = {
+				}
+				b_thornspire = {
+				}
+				b_emberwatch = {
+				}
+				b_gnawcrest = {
+				}
+				b_knightclay = {
+				}
+				b_steamhelm = {
+				}
+			}
+		}
+		
+		d_lakeshire = {
+			color = { 218 115 77 }
+			color2 = { 255 255 255 }
+			capital = 309 # Lakeshire
+			culture = azerothian
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 309 province_id = 313 province_id = 317 } }
+				}
+			}
+			
+			c_lakeshire = { # 309
+				color = { 88 167 193 }
+				color2 = { 255 255 255}
+				
+				b_lakeshire = {
+				}
+				b_stillcliff = {
+				}
+				b_bearrest = {
+				}
+				b_boulderpoint = {
+				}
+				b_heartpass = {
+				}
+				b_rockwatch = {
+				}
+				b_ebonhollow = {
+				}
+			}
+			
+			c_three_corners = { # 313
+				color = { 142 255 210 }
+				color2 = { 255 255 255 }
+				
+				b_tower_watch = {
+				}
+				b_oakenpeak = {
+				}
+				b_summerglen = {
+				}
+				b_wolfpoint = {
+				}
+				b_deerhand = {
+				}
+				b_swanville = {
+				}
+				b_shroudshade = {
+				}
+			}
+			
+			c_everstill_fields = { # 317
+				color = { 82 122 96 }
+				color2 = { 255 255 255 }
+				
+				b_camp_everstill = {
+				}
+				b_earthstall = {
+				}
+				b_grasswich = {
+				}
+				b_mosspost = {
+				}
+				b_dryfield = {
+				}
+				b_roseshield = {
+				}
+				b_amberstar = {
+				}
+			}
+		}
+		
+		d_redridge_highlands = {
+			color = { 219 92 46 }
+			color2 = { 255 255 255 }
+			capital = 315 # Everdell
+			culture = azerothian
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 306 province_id = 308 province_id = 315 province_id = 316 } }
+				}
+			}
+			
+			c_searing_peak = { # 306
+				color = { 147 184 94 }
+				color2 = { 255 255 255 }
+				
+				b_searing_ledge = {
+					holy_site = wyrmcult
+					holy_site = blackwyrm_cult
+				}
+				b_direhollow = {
+				}
+				b_wingburn = {
+				}
+				b_mutereach = {
+				}
+				b_steelcall = {
+				}
+				b_southflame = {
+				}
+				b_charheart = {
+				}
+			}
+			
+			c_red_way = { # 308
+				color = { 111 91 77 }
+				color2 = { 255 255 255 }
+				
+				b_deepfront = {
+				}
+				b_autumnmouth = {
+				}
+				b_mistspell = {
+				}
+				b_quickdrift = {
+				}
+				b_redbreak = {
+				}
+				b_madfall = {
+				}
+				b_crumblecliff = {
+				}
+			}
+			
+			c_everdell = { # 315
+				color = { 94 187 147 }
+				color2 = { 255 255 255 }
+				
+				b_athers_mill = {
+				}
+				b_keeshans_post = {
+				}
+				b_mudhost = {
+				}
+				b_rustcross = {
+				}
+				b_lakeburn = {
+				}
+				b_dragonbreach = {
+				}
+				b_whitgrave = {
+				}
+			}
+			
+			c_honorfield = { # 316
+				color = { 207 88 156 }
+				color2 = { 255 255 255 }
+				
+				b_neverchill = {
+				}
+				b_arrowdale = {
+				}
+				b_duskhome = {
+				}
+				b_millspire = {
+				}
+				b_dimgulch = {
+				}
+				b_bouldermond = {
+				}
+				b_pureforest = {
+				}
+			}
+		}
+		
+		d_stonewatch_valleys = {
+			color = { 247 153 120 }
+			color2 = { 255 255 255 }
+			capital = 311 # Stonewatch
+			culture = azerothian
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 311 province_id = 312 province_id = 314 } }
+				}
+			}
+			
+			c_stonewatch = { # 311
+				color = { 198 227 51 }
+				color2 = { 255 255 255 }
+				
+				b_stonewatch_keep = {
+				}
+				b_fallwatch = {
+				}
+				b_cloudrise = {
+				}
+				b_rivergulch = {
+				}
+				b_redbourne = {
+				}
+				b_silkburn = {
+				}
+				b_elderwell = {
+				}
+			}
+			
+			c_galardell_valley = { # 312
+				color = { 125 54 179 }
+				color2 = { 255 255 255 }
+				
+				b_tower_of_ilgalar = {
+				}
+				b_fangore_camp = {
+				}
+				b_cloudmaw = {
+				}
+				b_darkshield = {
+				}
+				b_lostburgh = {
+				}
+				b_snakehallow = {
+				}
+				b_shallowpoint = {
+				}
+			}
+			
+			c_redwind_valley = { # 314
+				color = { 213 123 208 }
+				color2 = { 255 255 255 }
+				
+				frostwolf = "Render's Valley"
+				blackrock = "Render's Valley"
+				bleeding_hollow = "Render's Valley"
+				shattered_hand = "Render's Valley"
+				shadowmoon = "Render's Valley"
+				thunderlord = "Render's Valley"
+				lightnings_blade = "Render's Valley"
+				dragonmaw = "Render's Valley"
+				bladewind = "Render's Valley"
+				warsong = "Render's Valley"
+				redwalker = "Render's Valley"
+				burning_blade = "Render's Valley"
+				whiteclaw = "Render's Valley"
+				twilights_hammer = "Render's Valley"
+				dark_scar = "Render's Valley"
+				bonechewer = "Render's Valley"
+				laughing_skull = "Render's Valley"
+				flowerpicker = "Render's Valley"
+				mok_nathal = "Render's Valley"
+				mag_har = "Render's Valley"
+				fel_orc = "Render's Valley"
+				
+				b_knightbreak = {
+				}
+				b_gloomrock = {
+				}
+				b_dragongrass = {
+				}
+				b_boulderstorm = {
+				}
+				b_edgecrag = {
+				}
+				b_rageward = {
+				}
+				b_houndwich = {
+				}
+			}
+		}
+			
 	}
 }

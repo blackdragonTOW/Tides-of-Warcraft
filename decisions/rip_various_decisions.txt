@@ -3,9 +3,12 @@ targeted_decisions = {
 	release_tributary = {
 		
 		ai_target_filter = self
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_tributary_diplomacy
 		
 		from_potential = {
-			ai = no
+			
 		}
 		potential = {
 			is_tributary = yes
@@ -17,7 +20,9 @@ targeted_decisions = {
 		}
 		effect = {
 			remove_tributary = FROM
-			prestige = -200
+			FROM = {
+				prestige = -200
+			}
 		}
 		revoke_allowed = {
 			always = no
@@ -29,9 +34,12 @@ targeted_decisions = {
 
 	break_non_aggression_pact = {
 		ai_target_filter = self
-		
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_non_aggression_diplomacy
+
 		from_potential = {
-			ai = no
+			
 		}
 		potential = {
 			is_landed = yes
@@ -73,9 +81,11 @@ targeted_decisions = {
 	recruit_prisoner = {
 		filter = court
 		ai_target_filter = court
+		ai = no
 		
+		diplomacy_icon = GFX_Keitaro_imprison_recruit_diplomacy
+
 		from_potential = {
-			ai = no
 			has_dlc = "Reapers"
 		}
 		
@@ -121,7 +131,8 @@ targeted_decisions = {
 			if = {
 				limit = {
 					is_consort = yes
-					is_female = yes
+					is_senior_consort_party = no
+
 				}
 				consort = {
 					remove_consort = ROOT
@@ -144,9 +155,11 @@ targeted_decisions = {
 	interfere_in_vassal_war_attacker = {
 		filter = vassal_wars
 		ai_target_filter = vassal_wars
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_peace_diplomacy
 	
 		from_potential = {
-			ai = no
 			has_dlc = "Reapers"
 		}
 		
@@ -179,7 +192,7 @@ targeted_decisions = {
 					save_event_target_as = target_defender
 				}
 			}
-			letter_event = { id = RIP.30000 days = 3 }
+			character_event = { id = RIP.30000 days = 3 }
 			
 			hidden_tooltip = {
 				opinion = {
@@ -203,9 +216,11 @@ targeted_decisions = {
 	interfere_in_vassal_war_attacker_use_favor = {
 		filter = vassal_wars
 		ai_target_filter = vassal_wars
-	
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_favor_diplomacy
+
 		from_potential = {
-			ai = no
 			has_dlc = "Reapers"
 			has_dlc = "Conclave"
 		}
@@ -234,7 +249,7 @@ targeted_decisions = {
 			
 			reverse_remove_favor = FROM
 			
-			letter_event = { id = RIP.30010 days = 3 }
+			character_event = { id = RIP.30010 days = 3 }
 		}
 		
 		revoke_allowed = {
@@ -250,9 +265,11 @@ targeted_decisions = {
 	interfere_in_vassal_war_defender = {
 		filter = vassal_wars
 		ai_target_filter = vassal_wars
+		ai = no
 	
+		diplomacy_icon = GFX_Keitaro_peace_diplomacy
+
 		from_potential = {
-			ai = no
 			has_dlc = "Reapers"
 		}
 		
@@ -285,7 +302,7 @@ targeted_decisions = {
 					save_event_target_as = target_attacker
 				}
 			}
-			letter_event = { id = RIP.30020 days = 3 }
+			character_event = { id = RIP.30020 days = 3 }
 			
 			hidden_tooltip = {
 				opinion = {
@@ -309,9 +326,11 @@ targeted_decisions = {
 	interfere_in_vassal_war_defender_use_favor = {
 		filter = vassal_wars
 		ai_target_filter = vassal_wars
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_favor_diplomacy
 	
 		from_potential = {
-			ai = no
 			has_dlc = "Reapers"
 			has_dlc = "Conclave"
 		}
@@ -340,7 +359,7 @@ targeted_decisions = {
 			
 			reverse_remove_favor = FROM
 			
-			letter_event = { id = RIP.30030 days = 3 }
+			character_event = { id = RIP.30030 days = 3 }
 		}
 		
 		revoke_allowed = {
@@ -355,11 +374,15 @@ targeted_decisions = {
 	demand_gavelkind = {
 		filter = vassals
 		ai_target_filter = vassals
+		
+		only_playable = yes
+		ai = no
 	
+		diplomacy_icon = GFX_Keitaro_law_diplomacy
+
 		from_potential = {
-			ai = no
 			has_dlc = "Reapers"
-			government = feudal_government
+			is_feudal = yes
 			is_vice_royalty = no
 			prisoner = no
 			NOT = { trait = incapable }
@@ -373,7 +396,7 @@ targeted_decisions = {
 			NOT = { has_law = succ_gavelkind }
 			NOT = { owes_favor_to = FROM }
 			NOT = { has_opinion_modifier = { who = FROM name = opinion_demanded_succ_law_change } }
-			government = feudal_government
+			is_feudal = yes
 			mercenary = no
 			holy_order = no
 			is_vice_royalty = no
@@ -392,7 +415,7 @@ targeted_decisions = {
 		
 		effect = {
 			prestige = -100
-			letter_event = { id = RIP.30040 days = 3 }
+			character_event = { id = RIP.30040 days = 3 }
 			
 			hidden_tooltip = {
 				opinion = {
@@ -415,12 +438,16 @@ targeted_decisions = {
 	demand_gavelkind_use_favor = {
 		filter = vassals
 		ai_target_filter = vassals
+		
+		only_playable = yes
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_favor_diplomacy
 	
 		from_potential = {
-			ai = no
 			has_dlc = "Reapers"
 			has_dlc = "Conclave"
-			government = feudal_government
+			is_feudal = yes
 			is_vice_royalty = no
 			prisoner = no
 			NOT = { trait = incapable }
@@ -434,7 +461,7 @@ targeted_decisions = {
 			NOT = { has_law = succ_gavelkind }
 			owes_favor_to = FROM
 			NOT = { has_opinion_modifier = { who = FROM name = opinion_demanded_succ_law_change } }
-			government = feudal_government
+			is_feudal = yes
 			mercenary = no
 			holy_order = no
 			is_vice_royalty = no
@@ -453,7 +480,7 @@ targeted_decisions = {
 		
 		effect = {
 			prestige = -100
-			letter_event = { id = RIP.30050 days = 3 }
+			character_event = { id = RIP.30050 days = 3 }
 			hidden_tooltip = {
 				opinion = {
 					who = FROM
@@ -475,9 +502,11 @@ targeted_decisions = {
 	ask_to_leave_court = {
 		filter = court
 		ai_target_filter = court
+		ai = no
 		
+		diplomacy_icon = GFX_Keitaro_banish_diplomacy
+
 		from_potential = {
-			ai = no
 			has_dlc = "Reapers"
 		}
 		potential = {
@@ -610,9 +639,12 @@ targeted_decisions = {
 	exchange_land_for_hospital = {
 		filter = all
 		ai_target_filter = all
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_holy_order_diplomacy
+
 		from_potential = {
 			has_dlc = "Reapers"
-			ai = no
 			#capital has space and no hospital
 			capital_scope = {
 				num_of_empty_holdings = 1
@@ -671,9 +703,11 @@ decisions = {
 	seek_treatment = {
 		only_playable = yes
 		is_high_prio = yes
+		ai_check_interval = 6
 		
 		potential = {
 			is_playable = yes
+			NOT = { trait = troubled_pregnancy } #Treatment handled by special event chain.
 			OR = {
 				trait = has_tuberculosis
 				trait = has_typhoid_fever
@@ -694,6 +728,7 @@ decisions = {
 		}
 		
 		allow = {
+			prisoner = no
 			custom_tooltip = {
 				text = seek_treatment_tooltip_2
 				OR = {
@@ -833,6 +868,7 @@ decisions = {
 	employ_court_physician = {
 		only_playable = yes
 		is_high_prio = yes
+		ai_check_interval = 24
 		potential = {
 			has_dlc = "Reapers"
 			NOR = {
@@ -858,6 +894,19 @@ decisions = {
 				trait = dragon_twilight
 				trait = dragon_infinite
 				trait = dragon_nightmare
+			}
+			OR = {
+				mercenary = no
+				ai = no
+			}
+			OR = {
+				higher_tier_than = COUNT
+				ai = no
+				is_ill = yes
+				num_of_symptoms > 0
+			}
+			NOT = {
+				has_assigned_minor_title = title_court_physician
 			}
 		}
 		allow = {
@@ -895,7 +944,7 @@ decisions = {
 			always = no
 		}
 		ai_will_do = {
-			factor = 0.1
+			factor = 0.5
 			
 			modifier = {
 				factor = 0
@@ -988,6 +1037,7 @@ decisions = {
 					}
 				}
 			}
+			NOT = { has_character_modifier = out_traveling }
 			NOT = { has_character_modifier = recently_opened_gates }
 		}
 		effect = {
@@ -1088,7 +1138,7 @@ decisions = {
 						is_councillor = yes 
 						liege = { ai = no }
 					}
-					liege = { character_event = { id = RIP.12101 days = 1 } }
+					liege = { letter_event = { id = RIP.12101 days = 1 } }
 				}
 			}
 		}
@@ -1097,6 +1147,20 @@ decisions = {
 		}
 		ai_will_do = {
 			factor = 0.2
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					capital_scope = {
+						OR = {
+							has_epidemic = yes
+							any_neighbor_province = {
+								has_epidemic = yes
+							}
+						}
+					}
+				}
+			}
 			
 			modifier = {
 				factor = 0.01
@@ -1135,6 +1199,7 @@ decisions = {
 	open_the_gates = {
 		only_rulers = yes
 		is_high_prio = yes
+		ai_check_interval = 3
 		
 		filter = self
 		
@@ -1224,7 +1289,7 @@ decisions = {
 			always = no
 		}
 		ai_will_do = {
-			factor = 0.1
+			factor = 0.3
 
 			modifier = {
 				factor = 0
@@ -1263,6 +1328,7 @@ title_decisions = {
 		only_playable = yes
 		hide_in_decisions_list = yes		# player can build hospitals from the province view
 		ai_target_filter = owned
+		ai_check_interval = 36
 		
 		from_potential = {					# scope: character who is building
 			ai = yes

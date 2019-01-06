@@ -2,12 +2,26 @@
 decisions = {
 	recruit_troops_norse = {
 		only_rulers = yes
+		ai_check_interval = 16
+		
 		potential = {
 			is_ruler = yes
 			has_character_flag = raiding_adventurer
 			ai = yes
 			war = no
-			wealth = 100
+			OR = { #Adventurers want to save money after 5 years
+				AND = {
+					wealth = 25
+					NOT = { had_character_flag = { flag = raiding_adventurer days = 1825 } }
+				}
+				AND = {
+					wealth = 375
+					had_character_flag = { flag = raiding_adventurer days = 1825 }
+				}
+				
+			}
+
+			wealth = 25
 			NOT = { realm_levies = 6000 }
 			OR = {
 				AND = {
@@ -48,7 +62,7 @@ decisions = {
 		}
 		
 		effect = {
-			wealth = -75
+			wealth = -15
 			location = {
 				ROOT = {
 					spawn_unit = {
@@ -70,13 +84,14 @@ decisions = {
 					}
 				}
 			}
+			change_variable = { which = global_raiding_adventurer_recruit_troops value = 1 }
 		}
 		
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0.1
-			}
+			#modifier = {
+			#	factor = 0.1
+			#}
 		}
 	}
 }

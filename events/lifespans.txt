@@ -9,26 +9,26 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = AK_trait_dwarf
-			trait = high_elf
-			trait = blood_elf
-			trait = wretched
-			trait = gnome
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_chromatic
-			trait = dragon_twilight
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = troll_zandalari
+			trait = race_dwarf
+			trait = race_high_elf
+			trait = race_blood_elf
+			trait = race_wretched
+			trait = race_gnome
+			trait = race_dragon_red
+			trait = race_dragon_black
+			trait = race_dragon_blue
+			trait = race_dragon_bronze
+			trait = race_dragon_chromatic
+			trait = race_dragon_twilight
+			trait = race_dragon_infinite
+			trait = race_dragon_nightmare
+			trait = race_troll_zandalari
 			trait = ogre_magi
-			trait = naga
-			trait = trogg
-			trait = draenei
-			trait = broken
-			trait = lost_one
+			trait = race_naga
+			trait = race_trogg
+			trait = race_draenei
+			trait = race_broken
+			trait = race_lost_one
 		}
 		NOT = { trait = felsworn }
 		#Not dragon aspect
@@ -62,50 +62,50 @@ character_event = {
 		OR = {
 			AND = {
 				OR = {
-					trait = troll_zandalari
+					trait = race_troll_zandalari
 					trait = ogre_magi
-					trait = gnome
+					trait = race_gnome
 				}
 				age = 100
 			}
 			AND = {
 				OR = {
-					trait = AK_trait_dwarf
-					trait = trogg
+					trait = race_dwarf
+					trait = race_trogg
 				}
 				age = 200
 			}
 			AND = {
 				OR = {
-					trait = high_elf
-					trait = blood_elf
-					trait = wretched
-					trait = naga
+					trait = race_high_elf
+					trait = race_blood_elf
+					trait = race_wretched
+					trait = race_naga
 				}
 				age = 800
 			}
 			AND = {
 				OR = {
-					trait = gnoll
-					trait = murloc
+					trait = race_gnoll
+					trait = race_murloc
 				}
 				age = 50
 			}
 		}
-		NOT = { trait = felsworn }
+		NOT = { trait = race_felsworn }
 		#Not dragon aspect
-		NOT = { trait = undead_generic }
-		NOT = { trait = undead_forsaken }
-		NOT = { trait = undead_scourge }
+		NOT = { trait = race_undead_generic }
+		NOT = { trait = race_undead_forsaken }
+		NOT = { trait = race_undead_scourge }
 	}
 	
 	immediate = {
 		if = {
 			limit = {
 				OR = {
-					trait = troll_zandalari
-					trait = ogre_magi
-					trait = gnome
+					trait = race_troll_zandalari
+					trait = race_ogre_magi
+					trait = race_gnome
 				}
 				age = 100
 			}
@@ -165,8 +165,8 @@ character_event = {
 		if = {
 			limit = {
 				OR = {
-					trait = AK_trait_dwarf
-					trait = trogg
+					trait = race_dwarf
+					trait = race_trogg
 				}
 				age = 200
 			}
@@ -226,10 +226,10 @@ character_event = {
 		if = {
 			limit = {
 				OR = {
-					trait = high_elf
-					trait = blood_elf
-					trait = wretched
-					trait = naga
+					trait = race_high_elf
+					trait = race_blood_elf
+					trait = race_wretched
+					trait = race_naga
 				}
 				age = 800
 			}
@@ -289,8 +289,8 @@ character_event = {
 		if = {
 			limit = {
 				OR = {
-					trait = gnoll
-					trait = murloc
+					trait = race_gnoll
+					trait = race_murloc
 				}
 				age = 50
 			}

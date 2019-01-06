@@ -1,0 +1,155 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_gnome_male_child_base"
+		texturefile = "gfx\\characters\\gnome_male\\child\\gnome_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_gnome_male_child_hair"
+		texturefile = "gfx\\characters\\gnome_male\\child\\gnome_male_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_gnome_male_child_eyes2"
+		texturefile = "gfx\\characters\\gnome_male\\child\\gnome_male_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_gnomegfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_gnome
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_gnome_male_child_base:p2"
+			"GFX_child_male_clothes:d0"
+			"GFX_gnome_male_child_hair:p1:h:y"
+			"GFX_gnome_male_child_eyes2:d6:e"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 8 5 7 } { 167 104 147 } { 255 255 255 }
+			{ 5 6 9 } { 59 64 95 } { 255 255 255 }
+			{ 6 3 2 } { 110 51 25 } { 255 255 255 }
+			{ 15 15 17 } { 151 157 179 } { 255 255 255 }
+			{ 10 3 3 } { 105 36 37 } { 255 255 255 }
+			{ 4 6 8 } { 98 124 159 } { 220 255 255 }
+			{ 3 6 2 } { 47 117 43 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 177 189 }
+			{ 191 127 224 }
+			{ 192 138 9 }
+			{ 174 86 16 }
+			{ 56 108 42 }
+			{ 157 102 59 }
+			{ 136 145 122 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_gnome_female_child_base"
+		texturefile = "gfx\\characters\\gnome_female\\child\\gnome_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_gnome_female_child_eyes2"
+		texturefile = "gfx\\characters\\gnome_female\\child\\gnome_female_child_eyes2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_gnomegfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_gnome
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_gnome_female_child_base:p2"
+			"GFX_child_female_clothes:d0"
+			"GFX_child_female_hair:p1:h:y"
+			"GFX_gnome_female_child_eyes2:d6:e"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 8 5 7 } { 167 104 147 } { 255 255 255 }
+			{ 5 6 9 } { 59 64 95 } { 255 255 255 }
+			{ 6 3 2 } { 110 51 25 } { 255 255 255 }
+			{ 15 15 17 } { 151 157 179 } { 255 255 255 }
+			{ 10 3 3 } { 105 36 37 } { 255 255 255 }
+			{ 4 6 8 } { 98 124 159 } { 220 255 255 }
+			{ 3 6 2 } { 47 117 43 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 177 189 }
+			{ 191 127 224 }
+			{ 192 138 9 }
+			{ 174 86 16 }
+			{ 56 108 42 }
+			{ 157 102 59 }
+			{ 136 145 122 }
+		}
+		
+		allow_property_values = { }
+	}
+}

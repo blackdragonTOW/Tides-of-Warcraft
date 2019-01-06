@@ -41,10 +41,7 @@ character_event = {
 
 		OR = {
 			is_female = no
-			AND = {
-				liege = { has_law = status_of_women_4 }
-				NOT = { trait = race_ogre }
-			}
+			liege = { TOW_is_character_woman_tolerant_trigger = yes }
 			liege = { has_law = true_cognatic_succession }
 			NOR = {
 				trait = race_ogre
@@ -1305,10 +1302,6 @@ character_event = {
 				}
 			}
 		}
-	}
-	
-	option = {
-		name = OK
 	}
 }
 

@@ -15,6 +15,9 @@ title_decisions = {
 		only_playable = yes
 		filter = sub_realm_owned
 		ai_target_filter = sub_realm_owned
+		ai_check_interval = 36
+
+		diplomacy_icon = GFX_Keitaro_independance_diplomacy
 		
 		from_potential = {
 			is_nomadic = yes
@@ -115,11 +118,71 @@ title_decisions = {
 		}
 	}
 	
+	reclaim_nomad_province = {
+		only_playable = yes
+		filter = sub_realm_owned
+		ai_target_filter = sub_realm_owned
+		is_high_prio = yes
+		ai_check_interval = 36
+
+		diplomacy_icon = GFX_Keitaro_claim_diplomacy
+		
+		from_potential = {
+			is_nomadic = yes
+			has_dlc = "Horse Lords"
+			OR = {
+				war = no
+				ai = no
+			}
+			any_realm_province = {
+				has_province_modifier = nomad_agitation
+			}
+		}
+		
+		potential = {
+			tier = COUNT
+			location = {
+				owner = {
+					same_realm = FROM
+					is_nomadic = no
+					ai = yes
+				}
+				has_province_modifier = nomad_agitation
+			}
+		}
+
+		allow = {
+			FROM = {
+				war = no
+			}
+			location = {
+				has_province_modifier = nomad_agitation
+			}
+		}
+		effect = {
+			location = {
+				ROOT = {
+					grant_title = FROM
+				}
+				remove_province_modifier = nomad_agitation
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	set_crown_focus = { # High Prio version
 		only_playable = yes
 		filter = owned
 		ai_target_filter = owned
 		is_high_prio = yes
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_crown_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -184,6 +247,7 @@ title_decisions = {
 						OR = {
 							is_merchant_republic = yes
 							is_republic = yes
+							government = order_government
 						}
 					}
 				}
@@ -215,6 +279,9 @@ title_decisions = {
 		only_playable = yes
 		filter = owned
 		ai_target_filter = owned
+		ai_check_interval = 120
+
+		diplomacy_icon = GFX_Keitaro_crown_diplomacy
 		
 		from_potential = {
 			is_playable = yes
@@ -302,293 +369,6 @@ title_decisions = {
 
 		ai_will_do = {
 			factor = 1
-		}
-	}
-
-	## Create new Vassal
-	TOW_title_create_new_vassal = {
-		only_rulers = yes
-		ai_target_filter = owned
-		filter = owned
-		
-		from_potential = {
-			is_playable = yes
-			higher_real_tier_than = COUNT
-		}
-
-		potential = {
-			tier = COUNT
-			owner = { character = FROM }
-		}
-
-		allow = {
-			location = {
-				capital_holding = {
-					OR = {
-						holding_type = castle
-						holding_type = city
-						holding_type = temple
-						holding_type = tribal
-					}
-				}
-			}
-			custom_tooltip = {
-				text = TOOLTIP_TOW_province_not_capital
-				hidden_tooltip = {
-					FROM = {
-						capital_scope = {
-					    	county = {
-					    		NOT = { title = ROOT }
-					    	}
-					  	}
-					}
-				}
-			}
-			#is_occupied = no
-			#NOT = {
-			#	any_province_holding = {
-			#		has_siege = yes
-			#	}
-			#}
-		}
-
-		effect = {
-			FROM = {
-				save_event_target_as = employer
-				hidden_tooltip = {
-					primary_title = {
-						FROM = {
-							TOW_create_random_courtier_gender_equality = yes
-							TOW_employed_remove_unwanted_traits_with_ET_employer = yes
-							new_character = {
-								TOW_remove_bad_traits = yes
-								grant_title = ROOT
-							}
-						}
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	
-	## Grant title to smallest clan
-	TOW_title_grant_title_to_smallest_clan = {
-		only_rulers = yes
-		ai_target_filter = owned
-		filter = owned
-		
-		from_potential = {
-			is_playable = yes
-			is_nomadic = yes
-			tier = emperor
-		}
-
-		potential = {
-			tier = COUNT
-			owner = { character = FROM }
-		}
-
-		allow = {
-			custom_tooltip = {
-				text = province_not_capital_tooltip
-				hidden_tooltip = {
-					FROM = {
-						capital_scope = {
-							county = {
-					    		NOT = { title = ROOT }
-					    	}
-					  	}
-					}
-				}
-			}
-			FROM = {
-				any_vassal = {
-					is_nomadic = yes
-					tier = king
-					clan_title = { always = yes }
-				}
-			}
-		}
-
-		effect = {
-			hidden_tooltip = {
-				FROM = {
-					set_variable = { which = global_TOW_smallest_clan_land_count value = -1 }
-					set_variable = { which = global_TOW_smallest_clan_std_land_count value = -1 }
-					any_vassal = {
-						limit = {
-							is_nomadic = yes
-							tier = king
-							clan_title = { always = yes }
-						}
-						set_variable = { which = TOW_clan_standard_land_count value = 0 }
-						set_variable = { which = TOW_clan_nomadic_land_count value = 0 }
-						any_demesne_title = {
-							limit = {
-								tier = count
-								location = { TOW_is_county_nomadic = yes }
-							}
-							PREV = { change_variable = { which = TOW_clan_nomadic_land_count value = 1 } }
-						}
-						any_demesne_title = {
-							limit = {
-								tier = count
-								location = { NOT = { TOW_is_county_nomadic = yes } }
-							}
-							PREV = { change_variable = { which = TOW_clan_standard_land_count value = 1 } }
-						}
-
-						
-						if = {
-							limit = {
-								OR = {
-									is_variable_equal = { which = global_TOW_smallest_clan_land_count value = -1 }
-									NOT = { check_variable = { which = TOW_clan_nomadic_land_count which = global_TOW_smallest_clan_land_count } }
-									AND = {
-										is_variable_equal = { which = TOW_clan_nomadic_land_count which = global_TOW_smallest_clan_land_count }
-										NOT = { check_variable = { which = TOW_clan_standard_land_count which = global_TOW_smallest_clan_std_land_count } }
-									}
-								}
-							}
-							set_variable = { which = global_TOW_smallest_clan_land_count which = TOW_clan_nomadic_land_count }
-							set_variable = { which = global_TOW_smallest_clan_std_land_count which = TOW_clan_standard_land_count }
-							save_event_target_as = smallest_clan_holder
-						}
-						
-					}
-				}
-			}
-			event_target:smallest_clan_holder = {
-				grant_title = ROOT
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	TOW_title_pillage_all_settlements = {
-		only_rulers = yes
-		ai_target_filter = owned
-		filter = owned
-		
-		from_potential = {
-			is_playable = yes
-			OR = {
-				is_nomadic = yes
-				AND = {
-					is_tribal = yes
-					independent = yes
-				}
-			}
-			has_dlc = "Horse Lords"
-		}
-
-		potential = {
-			tier = COUNT
-			owner = { character = FROM }
-
-			location = {
-				any_province_holding = {
-					TOW_holding_can_be_pillaged_by_from = yes
-					hidden_tooltip = { NOT = { holding_type = nomad } } # For some reason, without this, the scripted trigger causes an assert
-				}
-			}
-		}
-
-		allow = {
-			location = {
-				any_province_holding = {
-					TOW_holding_can_be_pillaged_by_from_tooltip = yes
-
-					TOW_holding_can_be_pillaged_allow = yes
-				}
-			}
-		}
-
-		effect = {
-			location = {
-				any_province_holding = {
-					limit = {
-						TOW_holding_can_be_pillaged_by_from_tooltip = yes
-					
-						TOW_holding_can_be_pillaged_allow = yes
-					}
-
-					FROM = { save_event_target_as = pillager }
-					TOW_pillage_holding = yes
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	TOW_title_stop_pillage_all_settlements = {
-		only_rulers = yes
-		ai_target_filter = owned
-		filter = owned
-		
-		from_potential = {
-			is_playable = yes
-			OR = {
-				is_nomadic = yes
-				AND = {
-					is_tribal = yes
-					independent = yes
-				}
-			}
-			has_dlc = "Horse Lords"
-		}
-
-		potential = {
-			tier = COUNT
-			owner = { character = FROM }
-			location = {
-				any_province_holding = {
-					TOW_holding_can_stop_pillage_by_from = yes
-				}
-			}
-		}
-
-		allow = {
-			location = {
-				any_province_holding = {
-					TOW_holding_can_stop_pillage_by_from_allow = yes
-				}
-			}
-		}
-
-		effect = {
-			location = {
-				any_province_holding = {
-					limit = {
-						TOW_holding_can_stop_pillage_by_from = yes
-					}
-
-					custom_tooltip = {
-						text = TOOLTIP_TOW_stop_pillaging
-						hidden_tooltip = {
-							add_holding_modifier = {
-								modifier = stop_burning_land
-								hidden = yes
-								years = 1
-							}
-						}
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
 		}
 	}
 }

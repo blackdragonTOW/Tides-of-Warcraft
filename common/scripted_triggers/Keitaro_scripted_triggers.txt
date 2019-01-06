@@ -1,0 +1,137 @@
+####TRAIT GROUP TRIGGERS####
+
+#Religion
+#Keitaro_root_dislikes_religion		ROOT character dislikes religion
+#Keitaro_prev_dislikes_religion		PREV character dislikes religion
+
+#County
+#Keitaro_is_county_nomadic			Is the county nomadic
+
+#Opinion
+#Keitaro_is_liege_tyrant			Do I think LIEGE is a tyrant
+#Keitaro_is_prev_tyrant				Do I think PREV is a tyrant
+#Keitaro_is_tyrant_to_prev			PREV thinks I am a tyrant
+
+##Religion###
+
+Keitaro_root_dislikes_religion = {
+	ROOT = {
+		PREV = {
+			Keitaro_prev_dislikes_religion = yes
+		}
+	}
+}
+
+Keitaro_prev_dislikes_religion = {
+	OR = {
+		NOT = { religion_group = { target_type = secret target = PREV } }
+		is_heresy_of = PREV
+		is_parent_religion = PREV
+	}
+}
+
+##County###
+
+Keitaro_is_county_nomadic = {
+	NOT = { num_of_settlements = 2 }
+}
+
+##Opinion###
+
+Keitaro_is_liege_tyrant = {
+	OR = {
+		has_opinion_modifier = { who = LIEGE modifier = opinion_tyrant }
+		has_opinion_modifier = { who = LIEGE modifier = opinion_evil_tyrant }
+	}
+}
+
+Keitaro_is_prev_tyrant = {
+	OR = {
+		has_opinion_modifier = { who = PREV modifier = opinion_tyrant }
+		has_opinion_modifier = { who = PREV modifier = opinion_evil_tyrant }
+	}
+}
+
+Keitaro_is_tyrant_to_prev = {
+	OR = {
+		reverse_has_opinion_modifier = { who = PREV modifier = opinion_tyrant }
+		reverse_has_opinion_modifier = { who = PREV modifier = opinion_evil_tyrant }
+	}
+}
+
+Keitaro_is_landless_claimant_adventurer_valid = {
+	# Somewhat clunky way of checking that the character stands to inherit any titles
+	NOT = {
+		any_heir_title = {
+			always = yes
+		}
+		any_spouse = { is_ruler = yes }
+	}
+	is_ruler = no
+
+	any_claim = {
+		has_holder = yes
+		holder_scope = {
+			independent = yes # Only do this vs independent rulers
+			NAND = {
+				government = nomadic_government
+				OR = {
+					clan_title = {
+						title = PREVPREV
+					}
+					primary_title = {
+						title = PREVPREV
+					}
+				}
+			}
+			OR = {
+				# Don't target my liege unless I am ambitious
+				NOT = { is_vassal_or_below = ROOT }
+				ROOT = { trait = ambitious }
+			}
+			OR = {
+				is_merchant_republic = no
+				NOT = {
+					capital_holding = {
+						de_jure_liege_or_above = PREVPREV
+					}
+				}
+			}
+			ROOT = {
+				NOR = {
+					obedient = PREV
+					non_interference = PREV
+				}
+			}
+		}
+		OR = {
+			tier = KING
+			holder_scope = { tier = PREV }
+		}
+	}	
+}
+
+Keitaro_can_have_a_job = {
+	custom_tooltip = {
+		text = Keitaro_can_have_a_job_custom_tooltip
+		hidden_tooltip = {
+			NOT = { has_character_flag = Keitaro_preparing_adventure }
+		}
+	}
+}
+
+Keitaro_hasnt_asked_root_for_council_support = {
+	custom_tooltip = {
+		text = Keitaro_hasnt_asked_for_council_support_custom_tooltip
+		hidden_tooltip = {
+			NOT = { has_opinion_modifier = { who = ROOT modifier = Keitaro_opinion_asked_council_support } }
+		}
+	}
+}
+
+Keitaro_is_government_poor_trigger = {
+	OR = {
+		is_tribal = yes
+		is_nomadic = yes
+	}
+}

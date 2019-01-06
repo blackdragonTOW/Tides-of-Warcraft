@@ -127,9 +127,22 @@ character_event = {
         			20 = {
         				trigger = {
         					OR = {
+<<<<<<< HEAD
 								religion_group = elemental_group
 								religion = old_ways_reformed
 							}
+=======
+        						AND = {
+        							government = nomadic_government
+        							OR = {
+        								religion = tengri_pagan
+        								religion = tengri_pagan_reformed
+        							}
+        						}
+        						religion = bon
+        						religion = bon_reformed
+        					}
+>>>>>>> master
         				}
         				modifier = {
         					factor = 0.2
@@ -239,7 +252,12 @@ character_event = {
         				modifier = {
         					factor = 0.1
         					any_owned_bloodline = {
+<<<<<<< HEAD
         						has_bloodline_flag = more_raiders_bloodline
+=======
+                                has_bloodline_flag = more_raiders_bloodline
+                                bloodline_is_active_for = PREV
+>>>>>>> master
         					}
         				}
         				if = {

@@ -1,0 +1,18 @@
+TOW_can_have_female_night_elf_tattoo = {
+	AND = {
+		is_female = yes
+		age >= 110
+		graphical_culture = nelvengfx
+		NOR = {
+			trait = night_elf_tattoo_1
+			trait = night_elf_tattoo_2
+			trait = night_elf_tattoo_3
+			trait = night_elf_tattoo_4
+			trait = night_elf_tattoo_5
+			trait = night_elf_tattoo_6
+			trait = night_elf_tattoo_7
+			trait = night_elf_tattoo_8
+			trait = night_elf_tattoo_9
+		}
+	}
+}

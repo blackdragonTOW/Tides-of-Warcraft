@@ -1,5 +1,7 @@
 namespace = tirisfalen
 
+# TOW TODO : replace duel.1 event id
+
 #Demons appear near Dalaran
 narrative_event = {
 	id = tirisfalen.1
@@ -11,7 +13,7 @@ narrative_event = {
 	mean_time_to_happen = {
 		years = 150
 	}
-	
+
 	trigger = {
 		NOT = { has_global_flag = tirisfalen_start }
 		NOT = {
@@ -1401,7 +1403,7 @@ character_event = {
 		FROM = {
 			set_character_flag = duel_cannot_surrender
 			set_character_flag = duel_guardian
-			character_event = { id = duel.1 }
+			#character_event = { id = duel.1 }
 		}
 	}
 	
@@ -1467,7 +1469,7 @@ character_event = {
 				FROM = {
 					set_character_flag = duel_cannot_surrender
 					set_character_flag = duel_guardian
-					character_event = { id = duel.1 }
+					#character_event = { id = duel.1 }
 				}
 			}
 		}
@@ -1567,7 +1569,7 @@ character_event = {
 		FROM = {
 			set_character_flag = duel_cannot_surrender
 			set_character_flag = duel_guardian
-			character_event = { id = duel.1 }
+			#character_event = { id = duel.1 }
 		}
 	}
 	
@@ -1624,7 +1626,7 @@ character_event = {
 				FROM = {
 					set_character_flag = duel_cannot_surrender
 					set_character_flag = duel_guardian
-					character_event = { id = duel.1 }
+					#character_event = { id = duel.1 }
 				}
 			}
 		}

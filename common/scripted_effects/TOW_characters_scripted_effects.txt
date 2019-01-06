@@ -1,5 +1,12 @@
 ### Characters Scripted Effects
 
+# Used on new generated characters
+TOW_initialize_character = {
+	TOW_initialize_character_race_from_culture = yes
+	TOW_update_character_race_from_liege = yes
+	TOW_initialize_character_portraits_features = yes
+}
+
 ### New character assignement based on Culture
 
 TOW_initialize_character_race_from_culture = {
@@ -52,6 +59,7 @@ TOW_initialize_character_race_from_culture = {
 		
 		high_elven = { add_trait = race_high_elf }
 		blood_elven = { add_trait = race_blood_elf }
+		night_elven = { add_trait = race_night_elf }
 		felblood = {
 			add_trait = race_blood_elf
 			set_graphical_culture = felblood
@@ -156,7 +164,7 @@ TOW_update_character_race_from_liege = {
 				}
 			}
 		}
-		elseif = {
+		else_if = {
 			limit = {
 				liege = {
 					graphical_culture = rorcgfx
@@ -200,18 +208,70 @@ TOW_update_character_race_from_liege = {
 				trait = race_high_elf
 				trait = race_blood_elf
 			}
-		}
-		if = {
-			limit = {
-				liege = {
-					graphical_culture = welvengfx
-					trait = race_wretched
-				}
+			liege = {
+				graphical_culture = welvengfx
+				trait = race_wretched
 			}
-			set_graphical_culture = wretched
-			remove_trait = race_high_elf
-			remove_trait = race_blood_elf
-			add_trait = race_wretched
 		}
+		set_graphical_culture = wretched
+		remove_trait = race_high_elf
+		remove_trait = race_blood_elf
+		add_trait = race_wretched
 	}
+}
+
+# Used on new characters
+TOW_initialize_character_portraits_features = {
+	if = { # Night elf female tattoo
+		limit = { TOW_can_have_female_night_elf_tattoo = yes }
+		TOW_female_night_elf_assign_random_tattoo_depending_on_traits = yes
+	}
+}
+
+TOW_remove_class_traits = {
+	remove_trait = mage
+	remove_trait = warlock
+	remove_trait = necromancer
+	remove_trait = priest
+	remove_trait = shaman
+	remove_trait = druid
+	remove_trait = rogue
+	remove_trait = ranger
+	remove_trait = engineer
+	remove_trait = warrior
+	remove_trait = paladin
+	remove_trait = monk
+	remove_trait = death_knight
+	remove_trait = demon_hunter
+}
+
+TOW_employed_remove_unwanted_traits_with_ET_employer = {
+	if = {
+		limit = { event_target:employer = { accepts_warlock = no } }
+		remove_trait = warlock
+		remove_trait = necrolyte
+	}
+	if = {
+		limit = { event_target:employer = { accepts_necromancer = no } }
+		remove_trait = necromancer
+		remove_trait = necrolyte
+	}
+	if = {
+		limit = { event_target:employer = { accepts_assassin = no } }
+		remove_trait = assassin
+	}
+	if = {
+		limit = { event_target:employer = { accepts_rogue = no } }
+		remove_trait = rogue
+	}
+	remove_trait = demon_hunter
+	remove_trait = death_knight
+}
+
+TOW_new_character_employed_effect = {
+	Keitaro_remove_bad_traits = yes
+	Keitaro_remove_lifestyle_traits = yes
+	TOW_remove_class_traits = yes
+	TOW_initialize_character = yes
+	TOW_employed_remove_unwanted_traits_with_ET_employer = yes
 }

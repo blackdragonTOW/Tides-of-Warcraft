@@ -1617,12 +1617,11 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 	is_triggered_only = yes
 	hide_window = yes
 	
-	trigger = { NOT = { has_race = yes } }
+	trigger = { NOT = { TOW_has_race = yes } }
 	
 	immediate = {
 
-		TOW_initialize_character_race_from_culture = yes
-		TOW_update_character_race_from_liege = yes
+		TOW_initialize_character = yes
 
 		if = { # Update this later!
 			limit = {

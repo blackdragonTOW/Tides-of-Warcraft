@@ -903,11 +903,6 @@ invading_population_halt = {
 	icon = 1
 }
 
-chinese_embargo = {
-	tradevalue = -20
-	icon = 34
-}
-
 publicly_humiliated = {
 	general_opinion = -25
 	monthly_character_prestige = -2
@@ -1129,22 +1124,6 @@ stargazing_timer = { icon = 1 }
 hermetics_infiltrate_laboratory_timer = { icon = 1 }
 
 write_theory_paper_decision_cooldown_timer = { icon = 1 }
-
-chinese_grace_send_gift_timer = { icon = 1 }
-
-chinese_grace_send_eunuch_timer = { icon = 1 }
-
-chinese_grace_send_commander_timer = { icon = 1 }
-
-chinese_grace_send_concubine_timer = { icon = 1 }
-
-chinese_grace_tributary_timer = { icon = 1 }
-
-jd_china_boon_cd = { icon = 1 }
-
-jd_china_tribute_cd = { icon = 1 } # not used anymore
-
-china_force_open_cooldown = { icon = 1 }
 
 baptism_request_cooldown = { icon = 1 }
 
@@ -1568,13 +1547,6 @@ pious_priests = {
 	icon = 8
 }
 
-greatest_of_khans = {
-	general_opinion = 10
-	global_revolt_risk = -0.05
-	land_morale = 0.25
-	icon = 1
-}
-
 war_taxes = {
 	icon = 4
 	global_tax_modifier = 0.1
@@ -1684,31 +1656,6 @@ hot_revenge = {
 	intrigue = 5
 	icon = 5
 }
-imam_appreciates = {
-	monthly_character_piety = 0.2
-	icon = 17
-}
-
-pious_imams = {
-	monthly_character_piety = 0.2
-	global_tax_modifier = -0.1
-	icon = 8
-}
-unfunny_imam = {
-	monthly_character_piety = -0.10
-	icon = 26
-}
-
-muslim_hedonist = {
-	monthly_character_prestige = 0.05
-	fertility = 0.2
-	icon = 7
-}
-
-muslim_poet = {
-	diplomacy = 2
-	icon = 3
-}
 
 iddah_period = {
 	diplomacy = 1
@@ -1767,19 +1714,6 @@ architect_improvements = {
 	icon = 12
 }
 
-observed_ramadan = {
-	monthly_character_piety = 0.4
-	icon = 18
-}
-aspiring_hafiz = {
-	monthly_character_piety = 0.25
-	icon = 8
-}
-aspiring_faqih = {
-	monthly_character_prestige = 0.2
-	icon = 7
-}
-
 morale_from_nerge = {
 	land_morale = 0.3
 	icon = 13
@@ -1814,12 +1748,6 @@ broken_spirit = {
 	intrigue = -4
 	learning = -4
 	icon = 40
-}
-
-expelled_jewish = {
-	icon = 64
-	diplomacy = -2
-	global_tax_modifier = -0.1
 }
 
 defied_church = {
@@ -1898,71 +1826,6 @@ planning_duchy_adventure = { icon = 1 }
 launched_prepared_invasion = { icon = 1 } # Used in the code - do NOT remove!
 launched_subjugation = { icon = 1 }
 
-# The format for these must be "expelled_[title tag]" or you will be able to employ expelled orders
-expelled_d_knights_templar = {
-	icon = 35
-}
-expelled_d_knights_hospitaler = {
-	icon = 35
-}
-expelled_d_teutonic_order = {
-	icon = 35
-}
-expelled_d_jomsvikings = {
-	icon = 35
-}
-expelled_d_bektashi = {
-	icon = 35
-}
-expelled_d_hashshashin = {
-	icon = 35
-}
-expelled_d_holy_sepulchre = {
-	icon = 35
-}
-expelled_d_immortals = {
-	icon = 35
-}
-expelled_d_zealots = {
-	icon = 35
-}
-expelled_d_saint_anthony = {
-	icon = 35
-}
-expelled_d_sky_lords = {
-	icon = 35
-}
-expelled_d_spirit_guardians = {
-	icon = 35
-}
-expelled_d_warriors_perun = {
-	icon = 35
-}
-expelled_d_chosen_perkunas = {
-	icon = 35
-}
-expelled_d_sons_kaleva = {
-	icon = 35
-}
-expelled_d_huitzilopochtli = {
-	icon = 35
-}
-expelled_d_knights_santiago = {
-	icon = 35
-}
-expelled_d_knights_calatrava = {
-	icon = 35
-}
-expelled_d_saint_addai = {
-	icon = 35
-}
-expelled_d_zun_warriors = {
-	icon = 35
-}
-expelled_d_haruriyyah = {
-	icon = 35
-}
-
 active_inquisition = {
 	local_revolt_risk = 0.1
 	icon = 35
@@ -1971,30 +1834,6 @@ active_inquisition = {
 theological_dialogue = {
 	local_revolt_risk = -0.50
 	icon = 35
-}
-
-# Loans
-borrowed_from_knights_templar = {
-	icon = 24
-	church_opinion = -10
-}
-
-borrowed_from_assassins = {
-	icon = 24
-	church_opinion = -10
-}
-
-borrowed_from_bektashi = {
-	icon = 24
-	church_opinion = -10
-}
-borrowed_from_jews = {
-	icon = 24
-	church_opinion = -10
-}
-borrowed_from_haruriyyah = {
-	icon = 24
-	church_opinion = -10
 }
 
 # Donations
@@ -2041,44 +1880,8 @@ known_witch  = {
 	general_opinion = -50
 	global_revolt_risk = 0.02
 }
-patron_shiva = {
-	icon = 43
-	martial = 1
-	diplomacy = -1
-}
-patron_vishnu = {
-	icon = 43
-	diplomacy = 1
-	martial = -1
-}
-patron_brahma = {
-	icon = 43
-	intrigue = 1
-	stewardship = -1
-}
-patron_kali = {
-	icon = 43
-	martial = 1
-	learning = -1
-}
-patron_ganesha = {
-	icon = 43
-	learning = 1
-	intrigue = -1
-}
-patron_ganga = {
-	icon = 43
-	stewardship = 1
-	martial = -1
-}
-holding_diwali_feast = {
-	monthly_character_prestige = 0.05
-	icon = 43
-}
-holding_kali_puja_feast = {
-	monthly_character_prestige = 0.05
-	icon = 43
-}
+
+
 married_monkey = {
 	monthly_character_piety = -0.5
 	icon = 36
@@ -2123,15 +1926,6 @@ jain_naked_ascetic = {
 the_diamond_thief = {
 	general_opinion = -10
 	icon = 23
-}
-holding_zun_feast = {
-	monthly_character_prestige = 0.05
-	icon = 43
-}
-zun_judgement = {
-	health = -2
-	diplomacy = -20
-	icon = 38
 }
 incestuous_adulterer = {
 	general_opinion = -10
@@ -3227,6 +3021,7 @@ glass_eye = {
 martially_ambidextrous = {
 	combat_rating = 5
 	martial = 1
+	icon = 123
 }
 
 golden_hand = {
@@ -3452,149 +3247,6 @@ secluded_revelry = {
 	icon = 41
 	diplomacy = 1
 	health = 1
-}
-
-follower_of_perun = {
-	icon = 48
-	martial = 2
-	intrigue = -1
-}
-
-follower_of_veles = {
-	icon = 48
-	intrigue = 2
-	martial = -1
-} 
-
-follower_of_jarilo = {
-	icon = 48
-	stewardship = 2
-	martial = -1
-}
-
-follower_of_morana = {
-	icon = 48
-	learning = 2
-	stewardship = -1
-}
-
-follower_of_ayyur = {
-	icon = 79
-	diplomacy = 2
-	intrigue = -1
-} 
-
-follower_of_bida = {
-	icon = 50
-	stewardship = 2
-	learning = -1
-}
-
-follower_of_tsumburbura = {
-	icon = 113
-	dynasty_opinion = 10
-	defensive_plot_power_modifier = -0.15
-}
-
-follower_of_dongo = {
-	icon = 13
-	combat_rating = 10
-	diplomacy = -1
-}
-
-follower_of_anansi = {
-	icon = 14
-	plot_power_modifier	 = 0.2
-	defensive_plot_power_modifier = -0.15
-}
-
-follower_of_dan = {
-	icon = 50
-	learning = 2
-	martial = -1
-}
-
-follower_of_ukko = {
-	icon = 48
-	stewardship = 2
-	intrigue = -1
-}
-
-follower_of_akka = {
-	icon = 48
-	diplomacy = 2
-	martial = -1
-}
-
-follower_of_taipo_and_mielikki = {
-	icon = 48
-	martial = 2
-	learning = -1
-}
-
-follower_of_lempo = {
-	icon = 48
-	intrigue = 2
-	martial = -1
-}
-
-follower_of_dievas = {
-	icon = 48
-	diplomacy = 2
-	intrigue = -1
-}
-
-follower_of_velnias = {
-	icon = 48
-	intrigue = 2
-	diplomacy = -1
-}
-
-follower_of_perkunas = {
-	icon = 48
-	martial = 2
-	learning = -1
-}
-
-follower_of_zemyna = {
-	icon = 48
-	stewardship = 2
-	martial = -1
-}
-
-struck_by_lightning = {
-	icon = 40
-	health = -3
-}
-
-zemynas_blessing = {
-	icon = 39
-	fertility = 0.2
-}
-
-tsumburburas_blessing = {
-	icon = 39
-	fertility = 0.2
-}
-
-akkas_blessing = {
-	icon = 39
-	fertility = 0.2
-}
-
-voice_of_akka = {
-	icon = 3
-	general_opinion = 10
-}
-
-voice_of_ayyur = {
-	icon = 3
-	general_opinion = 10
-}
-
-voice_of_dievas = {
-	icon = 3
-	general_opinion = 10
 }
 
 blessed_lands = {
@@ -4000,380 +3652,6 @@ preserver_of_poetry = {
 published_poet = {
 	monthly_character_prestige = 0.2
 	icon = 16
-}
-
-
-### secret_religious_society modifiers
-
-secret_catholic_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_catholic
-	}
-}
-
-secret_cathar_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_cathar
-	}
-}
-
-secret_fraticelli_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_fraticelli
-	}
-}
-
-secret_waldensian_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_waldensian
-	}
-}
-
-secret_lollard_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_lollard
-	}
-}
-
-
-secret_orthodox_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_orthodox
-	}
-}
-
-secret_miaphysite_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_miaphysite
-	}
-}
-
-secret_monophysite_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_monophysite
-	}
-}
-
-secret_bogomilist_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_bogomilist
-	}
-}
-
-secret_monothelite_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_monothelite
-	}
-}
-
-secret_iconoclast_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_iconoclast
-	}
-}
-
-secret_paulician_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_paulician
-	}
-}
-
-secret_nestorian_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_nestorian
-	}
-}
-
-secret_messalian_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_messalian
-	}
-}
-
-secret_sunni_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_sunni
-	}
-}
-
-secret_zikri_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_zikri
-	}
-}
-
-secret_yazidi_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_yazidi
-	}
-}
-
-secret_ibadi_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_ibadi
-	}
-}
-
-secret_kharijite_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_kharijite
-	}
-}
-
-secret_shiite_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_shiite
-	}
-}
-
-secret_druze_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_druze
-	}
-}
-
-secret_hurufi_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_hurufi
-	}
-}
-
-secret_norse_pagan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_norse_pagan
-	}
-}
-
-secret_tengri_pagan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_tengri_pagan
-	}
-}
-
-secret_baltic_pagan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_baltic_pagan
-	}
-}
-
-secret_finnish_pagan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_finnish_pagan
-	}
-}
-
-secret_aztec_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_aztec
-	}
-}
-
-secret_aztec_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_aztec_reformed
-	}
-}
-
-secret_slavic_pagan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_slavic_pagan
-	}
-}
-
-secret_west_african_pagan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_west_african_pagan
-	}
-}
-
-secret_zun_pagan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_zun_pagan
-	}
-}
-
-secret_jewish_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_jewish
-	}
-}
-
-secret_samaritan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_samaritan
-	}
-}
-
-secret_karaite_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_karaite
-	}
-}
-
-secret_zoroastrian_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_zoroastrian
-	}
-}
-
-secret_mazdaki_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_mazdaki
-	}
-}
-
-secret_manichean_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_manichean
-	}
-}
-
-secret_khurmazta_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_khurmazta
-	}
-}
-
-secret_bon_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_bon
-	}
-}
-
-secret_bon_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_bon_reformed
-	}
-}
-
-secret_hellenic_pagan_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_hellenic_pagan
-	}
-}
-secret_hellenic_pagan_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_hellenic_pagan_reformed
-	}
-}
-
-secret_taoist_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_taoist
-	}
-}
-
-secret_hindu_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_hindu
-	}
-}
-
-secret_buddhist_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_buddhist
-	}
-}
-
-secret_jain_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_jain
-	}
-}
-
-secret_norse_pagan_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_norse_pagan_reformed
-	}
-}
-
-secret_baltic_pagan_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_baltic_pagan_reformed
-	}
-}
-
-secret_finnish_pagan_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_finnish_pagan_reformed
-	}
-}
-
-secret_slavic_pagan_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_slavic_pagan_reformed
-	}
-}
-
-secret_tengri_pagan_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_tengri_pagan_reformed
-	}
-}
-
-secret_west_african_pagan_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_west_african_pagan_reformed
-	}
-}
-
-secret_zun_pagan_reformed_community = {
-	icon = 18
-	is_visible = {
-		society_member_of = secret_religious_society_zun_pagan_reformed
-	}
 }
 
 attempting_to_blend_in = {
@@ -5261,74 +4539,6 @@ proud_hunters_spirit = {
 	icon = 1
 }
 
-patron_desi = {
-	icon = 93
-	stewardship = 2
-	build_cost_modifier = -0.05
-	martial = -1
-}
-patron_parn = {
-	icon = 93
-	intrigue = 2
-	monthly_character_prestige = 0.5
-	stewardship = -1
-}
-patron_nanaiya = {
-	icon = 93
-	diplomacy = 2
-	fertility = 0.25
-	intrigue = -1
-}
-patron_weshparkar = {
-	icon = 93
-	diplomacy = -1
-	health = 1
-}
-patron_wishaghn = {
-	icon = 93
-	martial = 3
-	learning = -1
-}
-patron_zurvan = {
-	icon = 93
-	intrigue = -1
-	learning = 3
-}
-
-patron_damchen = {
-	icon = 48
-	martial = 2
-	combat_rating = 10
-	diplomacy = -1
-}
-patron_shenla_okar = {
-	icon = 48
-	diplomacy = 2
-	monthly_character_piety = 0.25
-	martial = -1
-}
-patron_shinje = {
-	icon = 48
-	intrigue = 3
-	stewardship = -1
-}
-patron_kula_kari = {
-	icon = 48
-	martial = 2
-	vassal_opinion = 5
-	learning = -1
-}
-patron_lamlha = {
-	icon = 48
-	learning = 2
-	monthly_character_prestige = 0.5
-	intrigue = -1
-}
-patron_sangpo_bumtri = {
-	icon = 48
-	health = 1
-	martial = -1
-}
 jd_master_engineer = {
 	icon = 101
 	martial = 1
@@ -5445,20 +4655,6 @@ strengthen_religion_ambition = {
 	icon = 9
 }
 
-jd_chinese_honor_guard_timer = { icon = 1 }
-
-jd_chinese_regiment_timer = { icon = 1 }
-
-chinese_imperial_trade_contract = {
-	multiplicative_trade_post_income_modifier = 1.0
-	icon = 99
-}
-
-chinese_favored_in_trade = {
-	multiplicative_trade_post_income_modifier = 1.0
-	icon = 99
-}
-
 trade_competition_count = {
 	icon = 1
 }
@@ -5476,68 +4672,6 @@ trade_competition_emperor = {
 }
 
 trade_competition_in_progress = {
-	icon = 1
-}
-
-school_zhengyi = {
-	icon = 95
-	intrigue = 1
-    martial = 1
-    global_revolt_risk = -0.02
-	diplomacy = -2
-}
-
-school_quanzhen = {
-	icon = 95
-	fertility = -0.25
-	martial = -2
-	health = 1
-	build_time_modifier = -0.1
-	build_cost_modifier = -0.1
-}
-
-school_shangqing = {
-	icon = 95
-	learning = 3
-    diplomacy = 1
-	stewardship = -2
-}
-
-china_send_relief = {
-	icon = 60
-	global_tax_modifier = -0.1
-	levy_reinforce_rate = -0.3
-}
-
-angered_china_modifier = { #Scripter! Update angered_china_tt if values change here.
-	icon = 110
-	monthly_character_prestige = -0.5
-	monthly_grace = -2
-}
-
-war_with_china_modifier = {
-	icon = 110
-	levy_reinforce_rate = -0.75
-}
-
-failed_invasion_of_china = { icon = 1}
-
-china_supply_horses = {
-	manpower_growth = -0.15
-	monthly_grace = 2
-	icon = 56
-}
-
-china_raid_active = {
-	manpower_growth = -0.15
-	levy_reinforce_rate = -0.15
-	global_levy_size = -0.10
-	multiplicative_trade_post_income_modifier = -0.25
-	monthly_grace = -5
-	icon = 105
-}
-
-china_raid_grace_cd = {
 	icon = 1
 }
 
@@ -6237,71 +5371,6 @@ pet_snake = {
 	health = 0.2
 }
 
-#Dedicated Hellenic Temple modifiers (for character)
-
-dedicated_to_zeus = {
-	icon = 79
-	diplomacy = 1
-	fertility = 0.1
-	monthly_character_prestige = 0.05
-}
-dedicated_to_poseidon = {
-	icon = 79
-	intrigue = 2
-	build_cost_modifier = -0.05
-	build_time_modifier = -0.05
-}
-dedicated_to_hades = {
-	icon = 79
-	stewardship = 1
-	global_tax_modifier = 0.02
-}
-dedicated_to_hermes = {
-	icon = 79
-	plot_power_modifier = 0.05
-	defensive_plot_power_modifier = 0.05
-}
-dedicated_to_demeter = {
-	icon = 79
-	global_revolt_risk = -0.05
-	disease_defence = 0.05
-}
-dedicated_to_athena = {
-	icon = 79
-	martial = 2
-}
-dedicated_to_apollo = {
-	icon = 79
-	learning = 1
-	combat_rating = 5
-	monthly_character_prestige = 0.03
-}
-dedicated_to_arthemis = {
-	icon = 79
-	intrigue = 1
-	monthly_character_piety = 0.02
-}
-dedicated_to_ares = {
-	icon = 79
-	martial = 1
-	combat_rating = 5
-}
-dedicated_to_aphrodite = { #Naturally, between Ares and Ephaestus...
-	icon = 79
-	fertility = 0.05
-	sex_appeal_opinion = 5
-}
-dedicated_to_ephaestus = {
-	icon = 79
-	tech_growth_modifier_military = 0.02
-}
-dedicated_to_hestia = {
-	icon = 79
-	dynasty_opinion = 10
-}
-recently_dedicated_temple_cooldown = {
-	icon = 79 #Hidden
-}
 emulating_legend = {
 	icon = 9
 	vassal_opinion = 5
@@ -6338,40 +5407,6 @@ intimidated_plotters = {
 	icon = 81
 	global_revolt_risk = -0.05
 	defensive_plot_power_modifier = 0.1
-}
-
-lodge_summon_warriors_cooldown = {
-	icon = 1
-}
-lodge_call_of_the_steppe_boost = {
-	icon = 56
-	levy_reinforce_rate = 0.35
-}
-lodge_zun_battle_trance_1 = {
-	icon = 52
-	command_modifier = {
-		center = 0.4
-	}
-	fertility = -0.50
-	health = -1.0
-}
-lodge_zun_battle_trance_2 = {
-	icon = 52
-	combat_rating = 50
-	fertility = -0.50
-	health = -1.0
-}
-lodge_zun_battle_trance_3 = {
-	icon = 52
-	command_modifier = {
-		morale_defence = 0.3
-		morale_offence = 0.3
-	}
-	fertility = -0.50
-	health = -1.0
-}
-lodge_slavic_stand_together_cooldown = {
-	icon = 1
 }
 incredibly_poor = {
 	icon = 22
@@ -6454,32 +5489,6 @@ blood_splatter_2 = {
 	icon = 1
 }
 blood_splatter_3 = {
-	icon = 1
-}
-
-#Always hidden, determine warpaint visual.
-aztec_warpaint_1 = {
-	icon = 1
-}
-aztec_warpaint_2 = {
-	icon = 1
-}
-finnish_warpaint_1 = {
-	icon = 1
-}
-finnish_warpaint_2 = {
-	icon = 1
-}
-zun_warpaint_1 = {
-	icon = 1
-}
-zun_warpaint_2 = {
-	icon = 1
-}
-tengri_warpaint_1 = {
-	icon = 1
-}
-tengri_warpaint_2 = {
 	icon = 1
 }
 
@@ -6989,7 +5998,7 @@ tribal_festival_bought_cheap_trinkets = {
 mud_splatter = {
 	icon = 25
 	sex_appeal_opinion = -15
-	monthly_character_prestige = 0.25
+	monthly_character_prestige = -0.25
 }
 tribal_king_of_fair = {
 	icon = 7
@@ -7034,53 +6043,6 @@ donate_to_holy_order_cooldown = {
 	icon = 1
 }
 
-recently_pledged_to_crusade_cooldown = {
-	icon = 1
-}
-
-recently_unpledged_to_crusade_cooldown = {
-	icon = 1
-}
-
-not_pledged_to_crusade = {
-	icon = 1
-}
-
-kid_crusade_pledged_troops = {
-	garrison_size = -0.1
-	local_revolt_risk = -0.1
-	icon = 31
-}
-
-kid_crusade_recruited_peasants = {
-	levy_reinforce_rate = -0.1
-	icon = 31
-}
-kid_crusade_economic_support = {
-	global_tax_modifier = -0.1
-	icon = 24
-}
-children_crusade_morale_0 = {
-	land_morale = -0.4
-	icon = 26
-}
-children_crusade_morale_1 = {
-	land_morale = -0.3
-	icon = 26
-}
-children_crusade_morale_2 = {
-	land_morale = -0.2
-	icon = 26
-}
-children_crusade_morale_3 = {
-	land_morale = -0.1
-	icon = 26
-}
-children_crusade_morale_4 = {
-	land_morale = 0.05
-	icon = 8
-}
-
 exploring_local_culture = {
 	learning = 1
 	icon = 18
@@ -7110,38 +6072,6 @@ very_inspirational_comet = {
 	land_morale = 0.15
 	martial = 1
 	icon = 1
-}
-settled_crusader_state = {
-	levy_size = -0.2
-	icon = 19
-}
-crusade_event_reminiscing_about_home_cooldown = {
-	icon = 1
-}
-crusade_event_questioning_the_faith_cooldown = {
-	icon = 1
-}
-
-shepherds_crusade_cooldown = {
-	icon = 1
-}
-
-left_for_shepherds_crusade = {
-	icon = 19
-	levy_size = -0.2	
-}
-
-shepherds_chaos = {
-	icon = 27
-	levy_size = -0.3
-	local_revolt_risk = 0.1
-	tax_income = -0.2
-}
-
-shepherds_settled = {
-	icon = 9
-	levy_size = 0.2
-	tax_income = 0.2
 }
 
 ritual_hunt_trophy_wolf = {
@@ -7202,10 +6132,6 @@ cowardly_ruler = {
 	tribal_opinion = -10
 }
 
-crusader_state_ai_cd = {
-	icon = 1
-}
-
 #Legendary Bloodlines ambition modifiers.
 forging_legend_revisiting_laws_1 = {
 	icon = 22
@@ -7222,7 +6148,7 @@ forging_legend_peasant_disobedience_1 = {
 	icon = 22
 	health_penalty = -2
 	global_tax_modifier = -0.25
-	global_revolt_risk = 0.35
+	global_revolt_risk = 0.1
 	vassal_opinion = -10
 
 }
@@ -7230,7 +6156,7 @@ forging_legend_peasant_disobedience_2 = {
 	icon = 22
 	health_penalty = -1
 	global_tax_modifier = -0.1
-	global_revolt_risk = 0.15
+	global_revolt_risk = 0.05
 }
 
 forging_legend_family_dedication_1 = {
@@ -7351,7 +6277,7 @@ forging_legend_martial_law_1 = {
 }
 forging_legend_martial_law_2 = {
 	icon = 29
-	global_revolt_risk = 0.1
+	global_revolt_risk = 0.05
 	vassal_opinion = -10
 }
 
@@ -7438,10 +6364,6 @@ ephemeral_knowledge = {
 	icon = 2
 }
 
-crusade_event_meeting_caravan_cooldown = {
-	icon = 1
-}
-
 joyous_festivities = {
 	diplomacy = 2
 	icon = 18
@@ -7453,46 +6375,6 @@ harvest_festival_believer = {
 	religion_flex = -0.3
 	culture_flex = -0.3
 	icon = 18
-}
-
-crusade_organized_army = {
-	martial = 1
-	land_organisation = 0.1
-	icon = 13
-}
-crusade_very_organized_army = {
-	martial = 2
-	land_organisation = 0.2
-	icon = 13
-}
-crusade_inspired_army = {
-	martial = 1
-	land_morale = 0.1
-	icon = 13
-}
-crusade_very_inspired_army = {
-	martial = 2
-	land_morale = 0.2
-	icon = 13
-}
-crusade_great_general = {
-	martial = 5
-	global_levy_size = 0.3
-	land_morale = 0.3
-	land_organisation = 0.3
-	icon = 13
-}
-
-assassins_raise_troops_cooldown = {
-	icon = 1
-}
-
-hire_teutonic_honor_guard_cooldown = {
-	icon = 1
-}
-
-northern_crusade_cooldown = {
-	icon = 1
 }
 
 drinking_to_fallen_friends = {
@@ -7513,48 +6395,15 @@ annoyed_with_barbarians = {
 duels_declined = {
 	icon = 122
 }
+has_recently_declined_duel_cooldown = {
+	icon = 122
+}
 trigger_happy = {
 	icon = 13
 }
 recently_challenged_rule_timer = {
 	icon = 1
 }
-reconquista_mercenary_cooldown = {
-	icon = 1
-}
-
-reconquista_mercenary_other_cooldown = {
-	icon = 1
-}
-
-reconquista_preparation_duration = {
-	icon = 1
-}
-
-reconquista_pope_aid_event_cooldown = {
-	icon = 1
-}
-
-reconquista_boat_event_cooldown = {
-	icon = 1
-}
-
-reconquista_commander_event_cooldown = {
-	icon = 1
-}
-
-reconquista_adventurer_cooldown = {
-	icon = 1
-}
-
-reconquista_flavor_cooldown = {
-	icon = 1
-}
-
-reconquista_preparation_left = {
-	icon = 17
-}
-
 renowned_sponsor = {
 	icon = 7
 	command_modifier = {
@@ -7648,85 +6497,6 @@ told_story_nr_6 = {
 	humble_opinion = 5
 	proud_opinion = 5
 }
-africa_light_rain = { #Prosperity bonus
-	icon = 129
-	city_tax_modifier = 0.05
-	castle_tax_modifier = 0.05
-	temple_tax_modifier = 0.05
-	tribal_tax_modifier = 0.50
-	levy_reinforce_rate = 0.1
-	levy_size = 0.1
-	local_revolt_risk = -0.01
-}
-africa_heavy_rain = { #Prosperity bonus
-	icon = 131
-	city_tax_modifier = 0.10
-	castle_tax_modifier = 0.10
-	temple_tax_modifier = 0.10
-	tribal_tax_modifier = 1
-	levy_reinforce_rate = 0.2
-	levy_size = 0.1
-	local_revolt_risk = -0.02
-	disease_defence = -0.15
-}
-africa_drought_risk = { #Prosperity malus
-	icon = 130
-	local_revolt_risk = 0.01
-	supply_limit = -1
-	city_tax_modifier = -0.10
-	castle_tax_modifier = -0.10
-	temple_tax_modifier = -0.10
-	tribal_tax_modifier = -0.50
-	levy_reinforce_rate = -0.1
-}
-africa_drought = { #Prosperity malus
-	icon = 134
-	local_revolt_risk = 0.02
-	levy_reinforce_rate = -0.2
-	levy_size = -0.1
-	supply_limit = -2
-	city_tax_modifier = -0.20
-	castle_tax_modifier = -0.20
-	temple_tax_modifier = -0.20
-	tribal_tax_modifier = -1
-	disease_defence = -0.20
-}
-africa_rain_dance_1 = { #Praying for rain
-	icon = 18
-	monthly_character_piety = 0.05
-	land_morale = 0.05
-}
-africa_rain_dance_2 = { # Keep it coming-festivals
-	icon = 18
-	monthly_character_piety = 0.05
-}
-africa_rain_dance_successful = {
-	icon = 133
-	monthly_character_piety = 0.05
-	levy_size = 0.1
-	land_morale = 0.15
-}
-africa_weather_updated = { #Temp (only for changing the weather every 5 years)
-	icon = 130
-}
-africa_surplus_grain = { # Hidden
-	icon = 130
-}
-africa_drought_cooldown_1 = {
-	icon = 130	
-}
-africa_drought_cooldown_2 = {
-	icon = 130
-}
-africa_heavy_rain_cooldown_1 = {
-	icon = 130	
-}
-africa_heavy_rain_cooldown_2 = {
-	icon = 130
-}
-africa_heavy_rain_cooldown_3 = {
-	icon = 130
-}
 local_relief_efforts_food = {
 	icon = 59
 	land_morale = 0.15
@@ -7775,32 +6545,6 @@ relief_efforts_builders = {
 	build_time_modifier = -0.1
 }
 
-#Animism.
-african_adulthood_rites_1 = { #Prosperity
-	icon = 129
-	fertility = 0.15
-	sex_appeal_opinion = 15
-	brave_opinion = -5
-	combat_rating = -10
-}
-african_adulthood_rites_2 = { #Power
-	icon = 127
-	global_tax_modifier = 0.1
-	global_revolt_risk = -0.02
-	church_opinion = -20
-}
-african_adulthood_rites_3 = { #Shadows
-	icon = 115
-	murder_plot_power_modifier = 0.3
-	combat_rating = 10
-	land_morale = -0.05
-}
-african_adulthood_rites_4 = { #Death
-	icon = 41
-	defensive_plot_power_modifier = 0.3
-	health = 2.0
-	vassal_opinion = -10
-}
 depleted_gold_mine = {
 	icon = 24
 }
@@ -7822,5 +6566,23 @@ uncivilized_dueler = {
 	icon = 124
 	church_opinion = -20
 	vassal_opinion = -10
+}
+unicorns_blessing = {
+	icon = 56
+	sex_appeal_opinion = 20
+	diplomacy = 2
+}
+argent_blood_vessels = {
+	icon = 56
+	health = 2
+	martial = 1
+}
+cautious_decision_making = {
+	icon = 81
+	defensive_plot_power_modifier = 0.35
+}
+hidden_commander_bonus = {
+	icon = 1
+	combat_rating = 10
 }
 

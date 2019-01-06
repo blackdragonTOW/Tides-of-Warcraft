@@ -1,20 +1,16 @@
 on_war_ended_victory = {
 	events = {
 		trollwars.20
-		dwarfnator.6
 		gurubashiwar.9
 		gurubashiwar.19
-		dwarfnator.22
 	}
 }
 
 on_war_ended_defeat = {
 	events = {
 		trollwars.21
-		dwarfnator.8
 		gurubashiwar.11
 		gurubashiwar.16
-		dwarfnator.24
 	}
 }
 
@@ -26,8 +22,6 @@ on_create_title = {
 
 on_new_holder = {
 	events = {
-		dwarfnator.12
-		dwarfnator.18
 		religopinion.1
 		classops.1
 		classops.2
@@ -55,17 +49,12 @@ on_startup = {
 		dragmain.2
 		dragmain.3
 		dragmain.4
-		classmain.1
-		classmain.2
-		classmain.3
-		classmain.4
 		helfm.1
 	}
 }
 
 on_death = {
 	events = {
-		dwarfnator.5
 		gurubashiwar.24
 		tyr.26
 		dalaran.7
@@ -91,11 +80,6 @@ on_birth = {
 
 on_yearly_pulse = {
 	events = {
-		religopinion.1
-		classmain.1
-		classmain.2
-		classmain.3
-		classmain.4
 		classops.1
 		classops.2
 		doom.5
@@ -149,9 +133,13 @@ on_siege_pulse = {
 }
 
 on_five_year_pulse = {
-	qtmags.1
+	events = { 
+		qtmags.1
+	}
 }
 
 on_adulthood = {
-	classedu.1
+	events = { 
+		classedu.1
+	}
 }

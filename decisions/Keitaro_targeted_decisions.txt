@@ -1,0 +1,150 @@
+# FROM is the decision taker
+# ROOT is the decision target
+targeted_decisions = {
+
+	Keitaro_ask_for_money = {
+		only_playable = yes
+		filter = all
+		ai_target_filter = realm
+		ai_check_interval = 3
+
+		diplomacy_icon = GFX_Keitaro_favor_diplomacy
+	
+		from_potential = {
+			is_ruler = yes
+			is_adult = yes
+			prisoner = no
+			is_inaccessible_trigger = no
+		}
+		
+		potential = {
+			has_dlc = "Conclave"
+			OR = {
+				has_game_rule = {
+					name = ask_for_money
+					value = on
+				}
+				AND = {
+					ai = no
+					has_game_rule = {
+						name = ask_for_money
+						value = players_only
+					}
+				}
+			}
+
+			is_within_diplo_range = FROM
+			is_alive = yes
+			is_adult = yes
+			prisoner = no
+			is_inaccessible_trigger = no
+			owes_favor_to = FROM
+			NOT = { character = FROM }
+		}
+		
+		allow = {
+			owes_favor_to = FROM
+			FROM = {
+				prestige = 50
+			}
+			ROOT = {
+				is_inaccessible_or_incapable_trigger = no
+			}
+			NOT = {
+				has_opinion_modifier = {
+					who = FROM
+					modifier = Keitaro_opinion_demanded_favor_money
+				}
+			}
+		}
+		
+		effect = {
+			FROM = {
+				prestige = -50
+			}
+			ROOT = {
+				opinion = {
+					modifier = Keitaro_opinion_demanded_favor_money
+					who = FROM
+					months = 18
+				}
+				letter_event = {
+					id = Keitaro_Decisions.1
+					tooltip = EVTTOOLTIP_Keitaro_ask_for_money
+					days = 1
+					random = 3
+				}
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0.1
+				always = yes # Slow it down
+			}
+			
+			modifier = {
+				factor = 0.01
+				trait = charitable
+			}
+			modifier = {
+				factor = 0.6
+				trait = proud
+			}
+			modifier = {
+				factor = 3
+				trait = greedy
+			}
+			modifier = {
+				factor = 50
+				NOT = { wealth = 0 }
+			}
+			modifier = {
+				factor = 0.75
+				wealth = 50
+			}
+			modifier = {
+				factor = 0.7
+				wealth = 150
+			}
+			modifier = {
+				factor = 0.7
+				wealth = 300
+			}
+			modifier = {
+				factor = 0.7
+				wealth = 500
+			}
+			modifier = {
+				factor = 0.6
+				wealth = 700
+			}
+			modifier = {
+				factor = 0.5
+				wealth = 1000
+			}
+		}
+
+		ai_acceptance = {
+			factor = 1	# The base score	
+			yes_threshold = 50
+			show_maybe_for_human = yes
+	
+			additive_modifier = {
+				value = -1000
+				NOT = { scaled_wealth = { value = 0.8 min = 10 } }
+			}
+
+			additive_modifier = {
+				value = -1000
+				is_foe = FROM
+			}
+		}
+	}
+}

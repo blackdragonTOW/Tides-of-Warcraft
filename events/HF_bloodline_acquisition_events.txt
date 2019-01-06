@@ -42,8 +42,13 @@ character_event = { # Extra chance for player children to become Children of Des
 					liege = {
 						has_law = agnatic_succession
 					}
+<<<<<<< HEAD
 					AND = { # Non-randomized ogres usually prohibit women from ruling
 						trait = race_ogre
+=======
+					AND = { # Non-randomized muslims usually prohibit women from ruling
+						religion_group = muslim
+>>>>>>> master
 						NOT = {
 							has_alternate_start_parameter = { key = religion_names value = random }
 						}
@@ -187,8 +192,13 @@ character_event = { # Child becomes Child of Destiny
 					liege = {
 						has_law = agnatic_succession
 					}
+<<<<<<< HEAD
 					AND = { # Non-randomized ogres usually prohibit women from ruling
 						trait = race_ogre
+=======
+					AND = { # Non-randomized muslims usually prohibit women from ruling
+						religion_group = muslim
+>>>>>>> master
 						NOT = {
 							has_alternate_start_parameter = { key = religion_names value = random }
 						}
@@ -394,6 +404,7 @@ character_event = { # Child of Destiny journey randomization tombola
 				10 = { # Vision from highgod
 					modifier = {
 						factor = 0
+<<<<<<< HEAD
 						OR = {
 							religion = arcane
 							religion = demonology
@@ -403,6 +414,8 @@ character_event = { # Child of Destiny journey randomization tombola
 					}
 					modifier = {
 						factor = 0
+=======
+>>>>>>> master
 						NOT = { age = 6 }
 					}
 					modifier = {
@@ -1252,11 +1265,17 @@ character_event = { # Vision from Highgod
 		if = {
 			limit = {
 				NOR = {
+<<<<<<< HEAD
 					religion_group = elemental_group
 					religion_group = arcane_group
 					religion_group = light_group
 					religion = druidism
 					religion = druidism_reformed
+=======
+					religion_group = indian_group
+					religion_group = pagan_group
+					religion_group = zoroastrian_group
+>>>>>>> master
 				}
 			}
 			add_character_modifier = {
@@ -2062,10 +2081,14 @@ character_event = { # Attempted Murder
 			else_if = {
 				limit = {
 					any_realm_character = {
+<<<<<<< HEAD
 						OR = {
 							trait = lunatic
 							trait = possessed
 						}
+=======
+						trait = lunatic
+>>>>>>> master
 						is_adult = yes
 						ai = yes
 						NOR = {
@@ -2077,10 +2100,14 @@ character_event = { # Attempted Murder
 				}
 				random_realm_character = {
 					limit = {
+<<<<<<< HEAD
 						OR = {
 							trait = lunatic
 							trait = possessed
 						}
+=======
+						trait = lunatic
+>>>>>>> master
 						is_adult = yes
 						ai = yes
 						NOR = {
@@ -2102,7 +2129,10 @@ character_event = { # Attempted Murder
 					random_traits = yes
 					female = 50
 					trait = lunatic
+<<<<<<< HEAD
 					trait = possessed
+=======
+>>>>>>> master
 					trait = ugly
 				}
 				new_character = {

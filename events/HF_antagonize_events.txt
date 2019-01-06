@@ -171,7 +171,10 @@ character_event = {
 							trait = depressed
 							trait = drunkard
 							trait = lunatic
+<<<<<<< HEAD
 							trait = possessed
+=======
+>>>>>>> master
 							has_ugly_trait_trigger = yes
 							trait = chaste
 							trait = temperate
@@ -199,11 +202,18 @@ character_event = {
 							AND = { 
 								trait = erudite 
 								NOR = { 
+<<<<<<< HEAD
 									religion = shamanism
 									religion = shamanism_reformed
 									culture = black_iron
 								}
 								ROOT = { religion_group = elemental_group }
+=======
+									religion = hellenic_pagan
+									religion = hellenic_pagan_reformed
+								}
+								ROOT = { religion_group = pagan_group }
+>>>>>>> master
 							}
 							AND = { 
 								trait = cynical 
@@ -1898,6 +1908,7 @@ character_event = {
 				}		
 				set_character_flag = flag_antagonized_option_lunatic
 			}
+<<<<<<< HEAD
 
 			20 = {
 				modifier = { 
@@ -1914,6 +1925,8 @@ character_event = {
 				}		
 				set_character_flag = flag_antagonized_option_possessed
 			}
+=======
+>>>>>>> master
 			10 = {
 				modifier = { 
 					factor = 0
@@ -2278,6 +2291,7 @@ character_event = {
 				}	
 				modifier = { #Context
 					factor = 0
+<<<<<<< HEAD
 					FROM = { NOT = { religion_group = elemental_group } }
 				}
 				modifier = { #Context
@@ -2291,6 +2305,17 @@ character_event = {
 				modifier = { #Context
 					factor = 0
 					FROM = { religion = dark_iron }
+=======
+					FROM = { NOT = { religion_group = pagan_group } }
+				}
+				modifier = { #Context
+					factor = 0
+					FROM = { religion = hellenic_pagan }
+				}
+				modifier = { #Context
+					factor = 0
+					FROM = { religion = hellenic_pagan_reformed }
+>>>>>>> master
 				}
 				modifier = { #Try to pick opposite traits if any are available
 					factor = 1.5
@@ -2495,7 +2520,10 @@ character_event = {
 				OR = { 
 					has_character_flag = flag_antagonized_option_cynical
 					has_character_flag = flag_antagonized_option_heretic
+<<<<<<< HEAD
 					has_character_flag = flag_antagonized_option_possessed
+=======
+>>>>>>> master
 					has_character_flag = flag_antagonized_option_infidel
 				}
 			}
@@ -2533,7 +2561,10 @@ character_event = {
 			clr_character_flag = flag_antagonized_option_depressed
 			clr_character_flag = flag_antagonized_option_drunkard
 			clr_character_flag = flag_antagonized_option_lunatic
+<<<<<<< HEAD
 			clr_character_flag = flag_antagonized_option_possessed
+=======
+>>>>>>> master
 			clr_character_flag = flag_antagonized_option_ugly
 			clr_character_flag = flag_antagonized_option_chaste
 			clr_character_flag = flag_antagonized_option_temperate
@@ -3021,7 +3052,10 @@ character_event = {
 		clr_character_flag = flag_antagonized_option_depressed
 		clr_character_flag = flag_antagonized_option_drunkard
 		clr_character_flag = flag_antagonized_option_lunatic
+<<<<<<< HEAD
 		clr_character_flag = flag_antagonized_option_possessed
+=======
+>>>>>>> master
 		clr_character_flag = flag_antagonized_option_ugly
 		clr_character_flag = flag_antagonized_option_chaste
 		clr_character_flag = flag_antagonized_option_temperate
@@ -3522,7 +3556,10 @@ character_event = {
 		clr_character_flag = flag_antagonized_option_depressed
 		clr_character_flag = flag_antagonized_option_drunkard
 		clr_character_flag = flag_antagonized_option_lunatic
+<<<<<<< HEAD
 		clr_character_flag = flag_antagonized_option_possessed
+=======
+>>>>>>> master
 		clr_character_flag = flag_antagonized_option_ugly
 		clr_character_flag = flag_antagonized_option_chaste
 		clr_character_flag = flag_antagonized_option_temperate

@@ -771,30 +771,6 @@ character_event = {
 	}
 }
 
-# Becomes possessed
-character_event = {
-	id = CM.6130
-	desc = EVTDESC_CM_6130
-	picture = GFX_evt_lunatic
-	
-	is_triggered_only = yes
-
-	trigger = {
-		trait = in_hiding
-		OR = {
-			trait = zealous
-			trait = lunatic
-		}
-		NOT = { trait = possessed }
-		age = 13
-	}
-	
-	option = {
-		name = EVTOPTA_CM_6130
-		add_trait = possessed
-	}
-}
-
 # Starts drinking...
 character_event = {
 	id = CM.6132

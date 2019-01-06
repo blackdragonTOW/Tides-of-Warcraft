@@ -1,16 +1,9 @@
 dragon_whelp = {
 	potential = {
 		NOT = { age = 20 }
-		OR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-		}
+		trait = race_dragon
 	}
+	attribute = diplomacy
 	education = yes
 	fertility = -10
 	
@@ -25,16 +18,9 @@ dragon_drake = {
 	potential = {
 		age = 20
 		NOT = { age = 200 }
-		OR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-		}
+		trait = race_dragon
 	}
+	attribute = diplomacy
 	education = yes
 	fertility = -0.3
 	
@@ -50,16 +36,9 @@ dragon_dragon = {
 	potential = {
 		age = 200
 		NOT = { age = 500 }
-		OR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-		}
+		trait = race_dragon
 	}
+	attribute = diplomacy
 	education = yes
 	
 	diplomacy = 10
@@ -74,16 +53,9 @@ dragon_wyrm = {
 	potential = {
 		age = 200
 		NOT = { age = 1000 }
-		OR = {
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-		}
+		trait = race_dragon
 	}
+	attribute = diplomacy
 	education = yes
 	
 	diplomacy = 20
@@ -97,10 +69,10 @@ dragon_wyrm = {
 elemental_elemental = {
 	potential = {
 		OR = {
-			trait = air_elemental
-			trait = earth_elemental
-			trait = fire_elemental
-			trait = water_elemental
+			trait = race_air_elemental
+			trait = race_earth_elemental
+			trait = race_fire_elemental
+			trait = race_water_elemental
 		}
 		NOR = {
 			has_landed_title = e_skywall
@@ -109,6 +81,7 @@ elemental_elemental = {
 			has_landed_title = e_abyssal_maw
 		}
 	}
+	attribute = diplomacy
 	education = yes
 	
 	diplomacy = 2
@@ -123,10 +96,10 @@ elemental_elemental = {
 elemental_lord = {
 	potential = {
 		OR = {
-			trait = air_elemental
-			trait = earth_elemental
-			trait = fire_elemental
-			trait = water_elemental
+			trait = race_air_elemental
+			trait = race_earth_elemental
+			trait = race_fire_elemental
+			trait = race_water_elemental
 		}
 		OR = {
 			has_landed_title = e_skywall
@@ -135,6 +108,7 @@ elemental_lord = {
 			has_landed_title = e_abyssal_maw
 		}
 	}
+	attribute = diplomacy
 	education = yes
 	
 	diplomacy = 10

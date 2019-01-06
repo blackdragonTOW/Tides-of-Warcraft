@@ -14,46 +14,7 @@ obj_become_chancellor = {
 	
 	potential = {
 		independent = no
-		NOT = {
-			liege = {
-				government = kirin_tor_government
-				OR = {
-					AND = {
-						has_landed_title = k_dalaran
-					}
-					AND = {
-						has_landed_title = d_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-					}
-					AND = {
-						has_landed_title = c_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-						OR = {
-							d_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = d_dalaran }
-						}
-					}
-				}
-			}
-		}
+		TOW_liege_is_head_of_kirin_tor_gov = no
 	}
 
 	allow = {
@@ -153,7 +114,7 @@ obj_become_chancellor = {
 		opinion = {
 			who = liege
 			modifier = opinion_ambition_fulfilled
-			months = 24
+			years = 5
 		}
 		set_character_flag = successful_council_ambition
 	}
@@ -166,46 +127,7 @@ obj_become_marshal = {
 	
 	potential = {
 		independent = no
-		NOT = {
-			liege = {
-				government = kirin_tor_government
-				OR = {
-					AND = {
-						has_landed_title = k_dalaran
-					}
-					AND = {
-						has_landed_title = d_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-					}
-					AND = {
-						has_landed_title = c_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-						OR = {
-							d_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = d_dalaran }
-						}
-					}
-				}
-			}
-		}
+		TOW_liege_is_head_of_kirin_tor_gov = no
 	}
 	
 	allow = {
@@ -304,7 +226,7 @@ obj_become_marshal = {
 		opinion = {
 			who = liege
 			modifier = opinion_ambition_fulfilled
-			months = 24
+			years = 5
 		}
 		set_character_flag = successful_council_ambition
 	}
@@ -317,46 +239,7 @@ obj_become_treasurer = {
 	
 	potential = {
 		independent = no
-		NOT = {
-			liege = {
-				government = kirin_tor_government
-				OR = {
-					AND = {
-						has_landed_title = k_dalaran
-					}
-					AND = {
-						has_landed_title = d_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-					}
-					AND = {
-						has_landed_title = c_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-						OR = {
-							d_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = d_dalaran }
-						}
-					}
-				}
-			}
-		}
+		TOW_liege_is_head_of_kirin_tor_gov = no
 	}
 	
 	allow = {
@@ -463,7 +346,7 @@ obj_become_treasurer = {
 		opinion = {
 			who = liege
 			modifier = opinion_ambition_fulfilled
-			months = 24
+			years = 5
 		}
 		set_character_flag = successful_council_ambition
 	}
@@ -476,46 +359,7 @@ obj_become_spymaster = {
 	
 	potential = {
 		independent = no
-		NOT = {
-			liege = {
-				government = kirin_tor_government
-				OR = {
-					AND = {
-						has_landed_title = k_dalaran
-					}
-					AND = {
-						has_landed_title = d_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-					}
-					AND = {
-						has_landed_title = c_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-						OR = {
-							d_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = d_dalaran }
-						}
-					}
-				}
-			}
-		}
+		TOW_liege_is_head_of_kirin_tor_gov = no
 	}
 	
 	allow = {
@@ -632,46 +476,7 @@ obj_become_spiritual = {
 	
 	potential = {
 		independent = no
-		NOT = {
-			liege = {
-				government = kirin_tor_government
-				OR = {
-					AND = {
-						has_landed_title = k_dalaran
-					}
-					AND = {
-						has_landed_title = d_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-					}
-					AND = {
-						has_landed_title = c_dalaran
-						OR = {
-							k_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = k_dalaran }
-						}
-						OR = {
-							d_dalaran = {
-								holder_scope = {
-									NOT = { government = kirin_tor_government }
-								}
-							}
-							NOT = { is_title_active = d_dalaran }
-						}
-					}
-				}
-			}
-		}
+		TOW_liege_is_head_of_kirin_tor_gov = no
 	}
 	
 	allow = {
@@ -762,7 +567,7 @@ obj_become_spiritual = {
 		opinion = {
 			who = liege
 			modifier = opinion_ambition_fulfilled
-			months = 24
+			years = 5
 		}
 		set_character_flag = successful_council_ambition
 	}
@@ -783,7 +588,8 @@ obj_amass_wealth = {
 		NOT = { has_dlc = "Zeus" }
 		is_adult = yes
 		NOT = { wealth = 200 }
-		is_ruler = yes
+		is_playable = yes
+		is_landed = yes
 		NOT = { trait = charitable }
 		NOT = { trait = incapable }
 	}
@@ -833,19 +639,19 @@ obj_become_paragon_of_virtue = {
 	type = character
 	
 	potential = {
-		NOT = { religion_group = fel_group }
-		NOT = { religion_group = draconic_group }
-		NOT = { religion_group = arcane_group }
-		NOT = { religion_group = void_group }
-		NOT = { religion_group = goblin_group }
+		TOW_religion_cares_about_piety = yes
 	}
 	
 	allow = {
 		is_adult = yes
-		NOT = { piety = 100 }
-		is_ruler = yes
-		NOT = { trait = cruel }
-		NOT = { trait = impaler }
+		NOT = { piety = 1000 }
+		OR = {
+			has_education_learning_trigger = yes
+			has_pious_trait_trigger = yes
+		}
+		has_impious_trait_trigger = no
+		is_playable = yes
+		is_landed = yes
 		NOT = { trait = incapable }
 	}
 	
@@ -858,34 +664,27 @@ obj_become_paragon_of_virtue = {
 		}
 		modifier = {
 			factor = 0.01
-			NOT = { tier = king }
-			NOT = { tier = emperor }
+			NOR = {
+				tier = king 
+				tier = emperor
+				is_theocracy = yes
+			}
 		}
 		modifier = {
 			factor = 10.0
-			OR = {
-				trait = detached_priest
-				trait = martial_cleric
-				trait = scholarly_theologian
-				trait = mastermind_theologian
-			}
+			has_education_learning_trigger = yes
 		}
 		modifier = {
 			factor = 10.0
 			trait = zealous
 		}
-		modifier = {
-			factor = 0.01
-			trait = cynical
-		}
 	}
 	success = {
-		piety = 500
+		piety = 2000
 	}
 	abort = {
 		OR = {
-			trait = cruel
-			trait = impaler
+			has_impious_trait_trigger = yes
 			trait = incapable
 		}
 	}
@@ -908,7 +707,7 @@ obj_become_paragon_of_virtue = {
 			opinion = {
 				who = ROOT
 				modifier = opinion_paragon
-				months = 1200
+				years = 100
 			}
 		}
 		any_vassal = {
@@ -919,7 +718,7 @@ obj_become_paragon_of_virtue = {
 			opinion = {
 				who = ROOT
 				modifier = opinion_paragon
-				months = 1200
+				years = 100
 			}
 		}
 		# Achievement
@@ -942,10 +741,21 @@ obj_become_exalted = {
 	
 	allow = {
 		is_adult = yes
-		NOT = { prestige = 200 }
-		is_ruler = yes
-		NOT = { trait = content }
-		NOT = { trait = humble }
+		NOT = { prestige = 1000 }
+		is_playable = yes
+		is_landed = yes
+		OR = { 
+			tier = king
+			tier = emperor
+			trait = ambitious
+			trait = envious
+			trait = proud
+		}
+		NOR = {
+			trait = content
+			trait = humble
+			trait = shy
+		}
 		NOT = { trait = incapable }
 	}
 	chance = {
@@ -957,8 +767,10 @@ obj_become_exalted = {
 		}
 		modifier = {
 			factor = 0.01
-			NOT = { tier = king }
-			NOT = { tier = emperor }
+			NOR = { 
+				tier = king
+				tier = emperor
+			}
 		}
 		modifier = {
 			factor = 5.0
@@ -970,12 +782,13 @@ obj_become_exalted = {
 		}
 	}
 	success = {
-		prestige = 1000
+		prestige = 5000
 	}
 	abort = {
 		OR = {
 			trait = content
 			trait = humble
+			trait = shy
 			trait = incapable
 		}
 	}
@@ -988,7 +801,7 @@ obj_become_exalted = {
 			opinion = {
 				who = ROOT
 				modifier = opinion_exalted
-				months = 1200
+				years = 100
 			}
 		}
 		# Achievement
@@ -1012,7 +825,10 @@ obj_get_married = {
 	}
 	
 	allow = {
-		NOT = { has_dlc = "Zeus" }
+		OR = {
+			NOT = { has_dlc = "Zeus" }
+			ai = yes
+		}
 		prisoner = no
 		is_marriage_adult = yes
 		NOT = { trait = celibate }
@@ -1083,11 +899,11 @@ obj_get_married = {
 	effect = {
 		piety = 10
 		if = {
-			limit = { independent = no }
+			limit = { is_ruler = no }
 			opinion = {
 				who = liege
 				modifier = opinion_fulfilled_marriage_wish
-				months = 24
+				years = 5
 			}
 		}
 		hidden_tooltip = {
@@ -1108,7 +924,10 @@ obj_marry_ruler = {
 	}
 	
 	allow = {
-		NOT = { has_dlc = "Zeus" }
+		OR = {
+			NOT = { has_dlc = "Zeus" }
+			ai = yes
+		}
 		prisoner = no
 		is_marriage_adult = yes
 		NOT = { trait = celibate }
@@ -1149,8 +968,16 @@ obj_marry_ruler = {
 	abort = {
 		OR = {
 			AND = {
+				is_married = yes
+				is_ruler = yes
+			}
+			AND = {
 				is_priest = yes
 				can_marry = no
+			}
+			AND = {
+				is_ruler = no
+				age = 45
 			}
 			trait = celibate
 			trait = incapable
@@ -1186,6 +1013,7 @@ obj_have_a_daughter = {
 			ai = no
 			is_female = yes
 			num_of_children = 2
+			has_religion_feature = religion_matriarchal
 		}
 		NOT = { trait = celibate }
 		NOT = { trait = incapable }
@@ -1247,6 +1075,7 @@ obj_have_a_son = {
 		OR = {
 			ai = no
 			is_female = no
+			has_religion_feature = religion_patriarchal
 			# Have at least two daughters
 			any_child = {
 				is_female = yes
@@ -1304,7 +1133,10 @@ obj_wants_landed_title = {
 	}
 	
 	allow = {
-		NOT = { has_dlc = "Zeus" }
+		OR = {
+			NOT = { has_dlc = "Zeus" }
+			ai = yes
+		}
 		prisoner = no
 		is_adult = yes
 		NOT = { trait = incapable }
@@ -1395,7 +1227,7 @@ obj_wants_landed_title = {
 		opinion = {
 			who = liege
 			modifier = opinion_generous_relative
-			months = 60
+			years = 10
 		}
 		hidden_tooltip = {
 			clr_character_flag = flag_denied_title
@@ -1417,6 +1249,10 @@ obj_become_heir = {
 			liege = { primary_title = { has_law = agnatic_succession } }
 			is_female = yes
 		}
+		NOT = { 
+			liege = { primary_title = { has_law = enatic_succession } }
+			is_female = no
+		}
 		NOT = { trait = bastard }
 		liege = {
 			any_child = {
@@ -1433,7 +1269,10 @@ obj_become_heir = {
 	}
 	
 	allow = {
-		NOT = { has_dlc = "Zeus" }
+		OR = {
+			NOT = { has_dlc = "Zeus" }
+			ai = yes
+		}
 		prisoner = no
 		is_adult = yes
 		is_primary_heir = no
@@ -1828,6 +1667,11 @@ obj_become_king = {
 				higher_tier_than = DUKE
 			}
 		}
+		capital_scope = {
+			kingdom = {
+				always = yes
+			}
+		}
 	}
 	
 	allow = {
@@ -1839,6 +1683,7 @@ obj_become_king = {
 		
 		modifier = {
 			factor = 0
+			TOW_is_uncivilized_trigger = no
 			NOT = { trait = ambitious }
 		}
 		modifier = {
@@ -1859,7 +1704,13 @@ obj_become_king = {
 		}
 		modifier = {
 			factor = 3.0
-			independent = yes
+			OR = {
+				independent = yes
+				AND = {
+					TOW_is_uncivilized_trigger = yes
+					is_reformed_religion = no
+				}
+			}
 		}
 		modifier = {
 			factor = 0.1
@@ -1933,10 +1784,11 @@ obj_gain_any_title = {
 		is_adult = yes
 		is_playable = yes
 		independent = no
-		liege = { independent = yes }
+		#liege = { independent = yes }
 		is_nomadic = no
 		liege = { is_nomadic = no }
 		NOT = { has_character_flag = gain_any_title_ambition_success }
+		is_landed = yes
 	}
 	
 	allow = {
@@ -1965,6 +1817,10 @@ obj_gain_any_title = {
 		modifier = {
 			factor = 0.1
 			trait = slothful
+		}
+		modifier = {
+			factor = 0.1
+			is_theocracy = yes
 		}
 	}
 	

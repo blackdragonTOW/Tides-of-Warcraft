@@ -1,0 +1,46 @@
+###########################################
+#                                         #
+# M&M Hermetics Society Events            #
+#                                         #
+# ID MNM.1000-MNM.1999		              #
+#                                         #
+###########################################
+
+#IDs:
+#1000-1099 David
+#1100-1199 Henrik
+#1200-1399 Milla
+#1400-1599 Mathilda
+#1600-1799 Drikus
+#1800-1899 Joel
+#1900-1999 Emil
+
+
+namespace = MNM
+
+### To handle loss of titles:
+character_event = { # 1. new holder of title (ROOT) sends event to old holder (FROMFROM), if they are still alive (sent from on_new_holder, on_new_holder_inheritance and on_new_holder_usurpation)
+    id = MNM.1216
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+    	FROMFROM = { is_alive = yes }
+    }
+
+    immediate = {
+    	save_event_target_as = new_holder_target
+    	FROMFROM = { save_event_target_as = old_holder_target }
+    	character_event = { id = MNM.1218 days = 1 }
+    }
+}
+
+diploresponse_event = { # 1.B: new holder of title gets exception flag, if the title was granted voluntarily (sent from GRANT_LANDED_TITLE_INTERACTION_ACCEPT_EVENT)
+    id = MNM.1217
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+		FROM = { set_character_flag = was_granted_title_voluntarily }
+    }
+}

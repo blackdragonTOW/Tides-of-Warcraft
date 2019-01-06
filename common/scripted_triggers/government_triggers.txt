@@ -1,18 +1,76 @@
-TOW_is_poor_government = {
-	custom_tooltip = {
-		text = TOOLTIP_TOW_is_poor_government
-		hidden_tooltip = {
-			OR = {
-				is_nomadic = yes
-				is_tribal = yes
-				government = troll_bcd_government
-				government = ogre_tribe_government
-				government = troll_bcd_government
-			}
-		}
+# Replaces general condition "religion_group = pagan_group"
+TOW_is_uncivilized_trigger = {
+	always = no # To define
+}
+
+TOW_cares_about_land_for_heir = {
+	NOR = {
+		trait = undead_scourge
+		trait = undead_forsaken
+		trait = undead_generic
+		trait = faceless
+		trait = eredar
+		trait = shivarra
+		trait = succubus
+		trait = dreadlord
+		trait = pit_lord
+		trait = doomlord
+		trait = fel_lord
+		trait = dragon_red
+		trait = dragon_black
+		trait = dragon_blue
+		trait = dragon_green
+		trait = dragon_bronze
+		trait = dragon_infinite
+		trait = dragon_twilight
+		trait = dragon_chromatic
+		trait = dragon_nightmare
+		government = kirin_tor_government
+		government = technocracy_government
+		government = templar_order_government
+		government = militant_order_government
+		government = demon_government
+		government = faceless_government
 	}
 }
 
-TOW_is_county_nomadic = {
-	NOT = { num_of_settlements = 2 }
+TOW_liege_is_head_of_kirin_tor_gov = {
+	liege = {
+		government = kirin_tor_government
+		OR = {
+			AND = {
+				has_landed_title = k_dalaran
+			}
+			AND = {
+				has_landed_title = d_dalaran
+				OR = {
+					k_dalaran = {
+						holder_scope = {
+							NOT = { government = kirin_tor_government }
+						}
+					}
+					NOT = { is_title_active = k_dalaran }
+				}
+			}
+			AND = {
+				has_landed_title = c_dalaran
+				OR = {
+					k_dalaran = {
+						holder_scope = {
+							NOT = { government = kirin_tor_government }
+						}
+					}
+					NOT = { is_title_active = k_dalaran }
+				}
+				OR = {
+					d_dalaran = {
+						holder_scope = {
+							NOT = { government = kirin_tor_government }
+						}
+					}
+					NOT = { is_title_active = d_dalaran }
+				}
+			}
+		}
+	}
 }
