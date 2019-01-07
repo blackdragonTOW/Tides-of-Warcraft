@@ -229,7 +229,7 @@ title_court_jester = {
 	dignity = 0.01
 	realm_in_name = yes
 	grant_limit = 1
-	opinion_effect = -5
+	opinion_effect = -10
 	
 	monthly_salary = 0.02
 	monthly_prestige = -0.25
@@ -242,16 +242,27 @@ title_court_jester = {
 		}
 		is_adult = yes
 		NOT = { has_character_flag = guru }
+		is_ruler = no
+		dynasty = none
+		FROM = {
+			NOT = { spouse = { character = ROOT } }
+		}
+		OR = { 
+			male_can_hold_minor_title_trigger = yes
+			female_can_hold_minor_title_trigger = yes
+		}
 		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
-		trait = human
-		trait = goblin
+		OR = {
+			trait = race_human
+			trait = race_goblin
+		}
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 		OR = {
 			is_feudal = yes
@@ -349,11 +360,11 @@ title_master_of_the_horse = {
 			is_feudal = yes
 			is_tribal = yes
 		}
-		trait = human
+		trait = race_human
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -467,11 +478,11 @@ title_cupbearer = {
 			is_feudal = yes
 			is_tribal = yes
 		}
-		trait = human
+		trait = race_human
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -516,12 +527,12 @@ title_seneschal = {
 			}
 		}
 		OR = {
-			trait = human
-			trait = undead_forsaken
+			trait = race_human
+			trait = race_undead_forsaken
 		}
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
+			trait = race_undead_generic
+			trait = race_undead_scourge
 		}
 	}
 	
@@ -568,11 +579,11 @@ title_paramount_knight = {
 				tier = emperor
 			}
 		}
-		trait = human
+		trait = race_human
 		NOR = {
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = undead_scourge
+			trait = race_undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
 		}
 	}
 	gain_effect = {
@@ -615,13 +626,13 @@ title_court_calligrapher = {
 			}
 		}
 		OR = {
-			trait = high_elf
-			trait = blood_elf
+			trait = race_high_elf
+			trait = race_blood_elf
 		}
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -659,13 +670,13 @@ title_court_musician = {
 			is_tribal = yes
 		}
 		OR = {
-			trait = high_elf
-			trait = blood_elf
+			trait = race_high_elf
+			trait = race_blood_elf
 		}
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -703,13 +714,13 @@ title_court_poet = {
 			is_tribal = yes
 		}
 		OR = {
-			trait = high_elf
-			trait = blood_elf
+			trait = race_high_elf
+			trait = race_blood_elf
 		}
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -747,13 +758,13 @@ title_chief_architect = {
 			is_tribal = yes
 		}
 		OR = {
-			trait = high_elf
-			trait = blood_elf
+			trait = race_high_elf
+			trait = race_blood_elf
 		}
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -885,11 +896,11 @@ title_patrician_heir = {
 			dynasty = FROM
 			same_realm = FROM
 		}
-		trait = goblin
+		trait = race_goblin
 		NOR = {
-			trait = undead_forsaken
-			trait = undead_generic
-			trait = undead_scourge
+			trait = race_undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
 		}
 		NOT = { trait = incapable }
 		NOT = { trait = bastard }
@@ -976,23 +987,23 @@ title_champion = {
 			is_nomadic = yes
 		}
 		OR = {
-			trait = ogre
-			trait = orc
-			trait = troll_dark
-			trait = troll_sand
-			trait = troll_zandalari
-			trait = troll_jungle
-			trait = troll_forest
-			trait = troll_ice
-			trait = gnoll
-			trait = murloc
-			trait = lost_one
-			trait = broken
+			trait = race_ogre
+			trait = race_orc
+			trait = race_troll_dark
+			trait = race_troll_sand
+			trait = race_troll_zandalari
+			trait = race_troll_jungle
+			trait = race_troll_forest
+			trait = race_troll_ice
+			trait = race_gnoll
+			trait = race_murloc
+			trait = race_lost_one
+			trait = race_broken
 		}
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -1018,7 +1029,7 @@ title_master_of_the_blade = {
 			primary_title = { temporary = yes } 
 		}
 		is_adult = yes
-		trait = orc
+		trait = race_orc
 		NOT = { has_minor_title = title_master_of_the_bow }
 		NOT = { trait = incapable } 
 		Keitaro_can_have_a_job = yes
@@ -1029,11 +1040,11 @@ title_master_of_the_blade = {
 			is_feudal = yes
 			is_tribal = yes
 		}
-		trait = orc
+		trait = race_orc
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -1070,13 +1081,13 @@ title_master_of_the_bow = {
 			is_tribal = yes
 		}
 		OR = {
-			trait = high_elf
-			trait = blood_elf
+			trait = race_high_elf
+			trait = race_blood_elf
 		}
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -1103,11 +1114,11 @@ title_venerable_elder = {
 		}
 		OR = {
 			AND = {
-				NOT = { trait = trogg }
+				NOT = { trait = race_trogg }
 				age = 50
 			}
 			AND = {
-				trait = trogg
+				trait = race_trogg
 				age = 180
 			}
 		}
@@ -1116,11 +1127,11 @@ title_venerable_elder = {
 
 	allowed_to_grant = {
 		is_nomadic = yes
-		NOT = { trait = lost_one }
+		NOT = { trait = race_lost_one }
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -1277,26 +1288,26 @@ title_court_physician = {
 	
 	allowed_to_grant = {
 		NOR = {
-			trait = faceless
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = pit_lord
-			trait = doomlord
-			trait = fel_lord
-			trait = shivarra
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_chromatic
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = dragon_red
-			trait = dragon_twilight
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_faceless
+			trait = race_eredar
+			trait = race_succubus
+			trait = race_dreadlord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_fel_lord
+			trait = race_shivarra
+			trait = race_dragon_black
+			trait = race_dragon_blue
+			trait = race_dragon_bronze
+			trait = race_dragon_chromatic
+			trait = race_dragon_green
+			trait = race_dragon_infinite
+			trait = race_dragon_nightmare
+			trait = race_dragon_red
+			trait = race_dragon_twilight
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 		OR = {
 			higher_tier_than = BARON

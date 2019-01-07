@@ -1,0 +1,529 @@
+defined_text = {
+	name = GetLocationTerrain
+
+	text = {
+		trigger = { location = { terrain = arctic } }
+		localisation_key = arctic
+	}
+	text = {
+		trigger = { location = { terrain = farmlands } }
+		localisation_key = farmlands
+	}
+	text = {
+		trigger = { location = { terrain = forest } }
+		localisation_key = forest
+	}
+	text = {
+		trigger = { location = { terrain = hills } }
+		localisation_key = hills
+	}
+	text = {
+		trigger = { location = { terrain = woods } }
+		localisation_key = woods
+	}
+	text = {
+		trigger = { location = { terrain = mountain } }
+		localisation_key = mountain
+	}
+	text = {
+		trigger = { location = { terrain = steppe } }
+		localisation_key = steppe
+	}
+	text = {
+		trigger = { location = { terrain = plains } }
+		localisation_key = plains
+	}
+	text = {
+		trigger = { location = { terrain = jungle } }
+		localisation_key = jungle
+	}
+	text = {
+		trigger = { location = { terrain = marsh } }
+		localisation_key = marsh
+	}
+	text = {
+		trigger = { location = { terrain = desert } }
+		localisation_key = desert
+	}
+}
+
+defined_text = {
+	name = GetCrusaderName
+
+	text = {
+		trigger = { religion_group = christian }
+		localisation_key = Keitaro_CRUSADER
+	}
+	text = {
+		trigger = { religion_group = muslim }
+		localisation_key = Keitaro_MUJAHID
+	}
+	text = {
+		trigger = {
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		}
+		localisation_key = Keitaro_GREAT_HOLY_WARRIOR
+	}
+}
+
+defined_text = {
+	name = GetJesterOccasion
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_none }
+		localisation_key = KeitaroLoc_JesterOccasion_None
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_random_feast }
+		localisation_key = KeitaroLoc_JesterOccasion_Feast
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_random_fancy_feast }
+		localisation_key = KeitaroLoc_JesterOccasion_FancyFeast
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_summer_fair }
+		localisation_key = KeitaroLoc_JesterOccasion_SummerFair
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_festival }
+		localisation_key = KeitaroLoc_JesterOccasion_Festival
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_dance }
+		localisation_key = KeitaroLoc_JesterOccasion_Dance
+	}
+}
+
+defined_text = {
+	name = GetJesterStory
+
+	text = {
+		localisation_key = KeitaroLoc_JesterStory
+	}
+
+	text = {
+		localisation_key = KeitaroLoc_JesterStory_2
+	}
+
+	text = {
+		trigger = { trait = zealous }
+		localisation_key = KeitaroLoc_JesterStoryZealous
+	}
+}
+
+defined_text = {
+	name = GetJesterStoryResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterStoryResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterStoryResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterStoryResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterStoryResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterStoryResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterSong
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_flavor_song_1 }
+		localisation_key = KeitaroLoc_JesterSong
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_flavor_song_2 }
+		localisation_key = KeitaroLoc_JesterSong_2
+	}
+}
+
+defined_text = {
+	name = GetJesterSongResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterSongResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterSongResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterSongResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterSongResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterSongResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterMusic
+
+	text = {
+		localisation_key = KeitaroLoc_JesterMusic
+	}
+
+	text = {
+		localisation_key = KeitaroLoc_JesterMusic_2
+	}
+}
+
+defined_text = {
+	name = GetJesterMusicResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterMusicResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterMusicResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterMusicResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterMusicResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterMusicResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterPoetry
+
+	text = {
+		localisation_key = KeitaroLoc_JesterPoetry
+	}
+
+	text = {
+		localisation_key = KeitaroLoc_JesterPoetry_2
+	}
+}
+
+defined_text = {
+	name = GetJesterPoetryResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterPoetryResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterPoetryResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterPoetryResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterPoetryResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterPoetryResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterAcrobatics
+
+	text = {
+		localisation_key = KeitaroLoc_JesterAcrobatics
+	}
+
+	text = {
+		localisation_key = KeitaroLoc_JesterAcrobatics_2
+	}
+}
+
+defined_text = {
+	name = GetJesterAcrobaticsResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterAcrobaticsResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterAcrobaticsResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterAcrobaticsResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterAcrobaticsResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterAcrobaticsResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterJuggling
+
+	text = {
+		localisation_key = KeitaroLoc_JesterJuggling
+	}
+
+	text = {
+		localisation_key = KeitaroLoc_JesterJuggling_2
+	}
+}
+
+defined_text = {
+	name = GetJesterJugglingResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterJugglingResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterJugglingResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterJugglingResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterJugglingResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterJugglingResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterJokes
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_flavor_jokes_1 }
+		localisation_key = KeitaroLoc_JesterJokes
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_flavor_jokes_2 }
+		localisation_key = KeitaroLoc_JesterJokes_2
+	}
+
+	
+}
+
+defined_text = {
+	name = GetJesterJokesResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterJokesResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterJokesResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterJokesResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterJokesResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterJokesResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterTricks
+
+	text = {
+		localisation_key = KeitaroLoc_JesterTricks
+	}
+
+	text = {
+		localisation_key = KeitaroLoc_JesterTricks_2
+	}
+}
+
+defined_text = {
+	name = GetJesterTricksResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterTricksResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterTricksResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterTricksResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterTricksResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterTricksResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterLunatic
+
+	text = {
+		localisation_key = KeitaroLoc_JesterLunatic
+	}
+}
+
+defined_text = {
+	name = GetJesterLunaticResult
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible }
+		localisation_key = KeitaroLoc_JesterLunaticResult_Terrible
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		localisation_key = KeitaroLoc_JesterLunaticResult_Bad
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		localisation_key = KeitaroLoc_JesterLunaticResult_Mediocre
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		localisation_key = KeitaroLoc_JesterLunaticResult_Good
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		localisation_key = KeitaroLoc_JesterLunaticResult_Excellent
+	}
+}
+
+defined_text = {
+	name = GetJesterChoice
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_story }
+		localisation_key = KeitaroLoc_JesterChoice_Story
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_song }
+		localisation_key = KeitaroLoc_JesterChoice_Song
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_music }
+		localisation_key = KeitaroLoc_JesterChoice_Music
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_poetry }
+		localisation_key = KeitaroLoc_JesterChoice_Poetry
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_acrobatics }
+		localisation_key = KeitaroLoc_JesterChoice_Acrobatics
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_juggling }
+		localisation_key = KeitaroLoc_JesterChoice_Juggling
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_jokes }
+		localisation_key = KeitaroLoc_JesterChoice_Jokes
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_tricks }
+		localisation_key = KeitaroLoc_JesterChoice_Tricks
+	}
+
+	text = {
+		trigger = { has_character_flag = Keitaro_jester_choice_lunatic }
+		localisation_key = KeitaroLoc_JesterChoice_Lunatic
+	}
+}

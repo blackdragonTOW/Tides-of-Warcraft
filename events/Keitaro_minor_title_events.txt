@@ -1,0 +1,1440 @@
+namespace = Keitaro_MT
+
+#reserved: Keitaro_MT.1
+
+#######################################
+# MINOR TITLE EVENTS
+#######################################
+
+# Send event to court jester
+character_event = {
+	id = Keitaro_MT.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	capable_only = yes
+	prisoner = no
+	only_rulers = yes
+
+	trigger = {
+		NOT = { has_character_flag = do_not_disturb }
+		is_inaccessible_or_incapable_trigger = no
+		in_command = no
+		any_courtier_or_vassal = {
+			has_minor_title = title_court_jester
+			NOT = { has_character_flag = Keitaro_jester_ongoing }
+
+			character_disease_trigger = no
+			is_inaccessible_or_incapable_trigger = no
+			in_command = no
+			NOT = { trait = dancing_plague }
+		}
+	}
+
+	immediate = {
+		save_event_target_as = liege
+		random_courtier_or_vassal = {
+			limit = {
+				has_minor_title = title_court_jester
+			}
+			save_event_target_as = jester
+			set_character_flag = Keitaro_jester_ongoing
+			if = { 
+				limit = { 
+					NOR = {
+						has_character_flag = Keitaro_jester_occasion_none
+						has_character_flag = Keitaro_jester_occasion_random_feast
+						has_character_flag = Keitaro_jester_occasion_random_fancy_feast
+						has_character_flag = Keitaro_jester_occasion_feast
+						has_character_flag = Keitaro_jester_occasion_fancy_feast
+						has_character_flag = Keitaro_jester_occasion_festival
+						has_character_flag = Keitaro_jester_occasion_dance
+						has_character_flag = Keitaro_jester_occasion_summer_fair
+					}
+				}
+
+				if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Random jester for [Root.GetTitledName]" }
+				random_list = {
+					40 = {
+						set_variable = { which = local_Keitaro_occasion_type value = 1 } # no occasion
+						set_character_flag = Keitaro_jester_occasion_none
+					}
+					20 = {
+						modifier = {
+							factor = 0
+							OR = {
+								tier = king
+								tier = emperor
+								wealth = 1000
+							}
+						}
+						set_character_flag = Keitaro_jester_occasion_random_feast
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							NOR = {
+								tier = king
+								tier = emperor
+								wealth = 1000
+							}
+						}
+						set_character_flag = Keitaro_jester_occasion_random_fancy_feast
+					}
+				}
+			}
+			character_event = { id = Keitaro_MT.2 }
+		}
+	}
+}
+
+# Court jester select what he does
+character_event = {
+	id = Keitaro_MT.2
+	border = GFX_event_normal_frame_diplomacy
+	desc = EVTDESC_Keitaro_MT_2
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+
+	desc = {
+		trigger = {
+			has_character_flag = Keitaro_jester_occasion_none
+		}
+		picture = GFX_evt_emissary
+    }
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_feast }
+		picture = GFX_evt_feast
+    }
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_fancy_feast }
+		picture = GFX_evt_fancy_feast
+	}
+
+	desc = {
+		trigger = {
+			OR = {
+				has_character_flag = Keitaro_jester_occasion_summer_fair
+				has_character_flag = Keitaro_jester_occasion_festival
+			}
+		}
+		picture = GFX_evt_market
+	}
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_occasion_dance }
+		picture = GFX_evt_dancing
+	}
+
+	immediate = {
+		random_list = {
+			10 = {
+				modifier = { factor = 3 trait = detached_priest }
+				modifier = { factor = 3 trait = martial_cleric }
+				modifier = { factor = 1.25 is_dumb_trigger = yes }
+				modifier = { factor = 0.8 trait = ambitious }
+				modifier = { factor = 0.5 learning = 8 }
+				modifier = { factor = 0.75 learning = 10 }
+				modifier = { factor = 0.75 learning = 12 }
+				modifier = { factor = 0.75 learning = 14 }
+				modifier = { factor = 0 learning = 16 }
+				set_variable = { which = local_possibilities_count value = 1 }
+			}
+			20 = {
+				modifier = { factor = 3 trait = martial_cleric }
+				modifier = { factor = 3 trait = scholarly_theologian }
+				modifier = { factor = 1.25 is_dumb_trigger = yes }
+				modifier = { factor = 0 learning = 24 }
+				set_variable = { which = local_possibilities_count value = 2 }
+			}
+			20 = {
+				modifier = { factor = 0.75 has_education_learning_trigger = no }
+				modifier = { factor = 0.8 trait = stressed }
+				modifier = { factor = 0.6 trait = depressed }
+				modifier = { factor = 3 trait = scholarly_theologian }
+				modifier = { factor = 3 trait = mastermind_theologian }
+				modifier = { factor = 1.25 trait = scholar }
+				modifier = { factor = 1.25 trait = erudite }
+				modifier = { factor = 1.25 trait = ambitious }
+				modifier = { factor = 1.25 is_smart_trigger = yes }
+				modifier = { factor = 0 NOT = { learning = 4 } }
+				set_variable = { which = local_possibilities_count value = 3 }
+			}
+			10 = {
+				modifier = { factor = 0.5 has_education_learning_trigger = no }
+				modifier = { factor = 0.8 trait = stressed }
+				modifier = { factor = 0.6 trait = depressed }
+				modifier = { factor = 3 trait = mastermind_theologian }
+				modifier = { factor = 0 NOT = { learning = 8 } }
+				modifier = { factor = 1.25 trait = scholar }
+				modifier = { factor = 1.25 trait = erudite }
+				modifier = { factor = 1.25 trait = ambitious }
+				modifier = { factor = 1.25 is_smart_trigger = yes }
+				modifier = { factor = 1.25 learning = 14 }
+				modifier = { factor = 1.25 learning = 16 }
+				modifier = { factor = 1.25 learning = 18 }
+				modifier = { factor = 1.25 learning = 20 }
+				modifier = { factor = 1.25 learning = 20 }
+				set_variable = { which = local_possibilities_count value = 4 }
+			}
+		}
+		set_variable = { which = local_count value = 0 }
+		while = {
+			count = 4
+			limit = { NOT = { check_variable = { which = local_count which = local_possibilities_count } } }
+
+			random_list = {
+				10 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_story }
+					modifier = { factor = 2 trait = gregarious }
+					modifier = { factor = 1.75 trait = zealous } # Story about religious events
+					modifier = { factor = 1.5 trait = erudite }
+					modifier = { factor = 1.5 trait = scholar }
+					modifier = { factor = 0.9 NOT = { learning = 1 } }
+					modifier = { factor = 0.9 NOT = { learning = 2 } }
+					modifier = { factor = 0.9 NOT = { learning = 3 } }
+					modifier = { factor = 0.9 NOT = { learning = 4 } }
+					modifier = { factor = 0.95 NOT = { learning = 5 } }
+					modifier = { factor = 0.95 NOT = { learning = 6 } }
+					modifier = { factor = 0.95 NOT = { learning = 7 } }
+					modifier = { factor = 0.95 NOT = { learning = 8 } }
+					modifier = { factor = 1.05 learning = 9 }
+					modifier = { factor = 1.05 learning = 10 }
+					modifier = { factor = 1.05 learning = 11 }
+					modifier = { factor = 1.05 learning = 12 }
+					modifier = { factor = 1.1 learning = 13 }
+					modifier = { factor = 1.1 learning = 14 }
+					modifier = { factor = 1.1 learning = 15 }
+					modifier = { factor = 1.1 learning = 16 }
+					modifier = { factor = 1.1 learning = 17 }
+					modifier = { factor = 1.1 learning = 18 }
+					set_character_flag = Keitaro_jester_choice_story
+				}
+				10 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_song }
+					modifier = { factor = 0.1 trait = deaf }
+					modifier = { factor = 2 trait = gregarious }
+					set_character_flag = Keitaro_jester_choice_song
+				}
+				10 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_music }
+					modifier = { factor = 0.1 trait = deaf }
+					modifier = { factor = 2 trait = gregarious }
+					set_character_flag = Keitaro_jester_choice_music
+				}
+				10 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_poetry }
+					modifier = { factor = 5 trait = poet }
+					modifier = { factor = 2 trait = gregarious }
+					modifier = { factor = 1.5 trait = erudite }
+					modifier = { factor = 1.5 trait = scholar }
+					modifier = { factor = 0.9 NOT = { learning = 1 } }
+					modifier = { factor = 0.9 NOT = { learning = 2 } }
+					modifier = { factor = 0.9 NOT = { learning = 3 } }
+					modifier = { factor = 0.9 NOT = { learning = 4 } }
+					modifier = { factor = 0.95 NOT = { learning = 5 } }
+					modifier = { factor = 0.95 NOT = { learning = 6 } }
+					modifier = { factor = 0.95 NOT = { learning = 7 } }
+					modifier = { factor = 0.95 NOT = { learning = 8 } }
+					modifier = { factor = 1.05 learning = 9 }
+					modifier = { factor = 1.05 learning = 10 }
+					modifier = { factor = 1.05 learning = 11 }
+					modifier = { factor = 1.05 learning = 12 }
+					modifier = { factor = 1.1 learning = 13 }
+					modifier = { factor = 1.1 learning = 14 }
+					modifier = { factor = 1.1 learning = 15 }
+					modifier = { factor = 1.1 learning = 16 }
+					modifier = { factor = 1.1 learning = 17 }
+					modifier = { factor = 1.1 learning = 18 }
+					set_character_flag = Keitaro_jester_choice_poetry
+				}
+				10 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_acrobatics }
+					modifier = { factor = 0 has_severe_disability_trigger = yes }
+					modifier = { factor = 0.2 has_medium_disability_trigger = yes }
+					modifier = { factor = 0.4 has_injury_trigger = yes }
+					modifier = { factor = 0.5 trait = slothful }
+					modifier = { factor = 0.8 trait = temperate }
+					modifier = { factor = 0.75 is_weak_trigger = yes }
+					modifier = { factor = 1.75 trait = brave }
+					modifier = { factor = 1.5 is_strong_trigger = yes }
+					modifier = { factor = 1.05 martial = 9 }
+					set_character_flag = Keitaro_jester_choice_acrobatics
+				}
+				10 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_juggling }
+					modifier = { factor = 0.8 trait = temperate }
+					modifier = { factor = 0.5 trait = slothful }
+					modifier = { factor = 0.2 has_injury_trigger = yes }
+					modifier = { factor = 0.75 is_weak_trigger = yes }
+					modifier = { factor = 1.75 trait = brave }
+					modifier = { factor = 1.5 is_strong_trigger = yes }
+					set_character_flag = Keitaro_jester_choice_juggling
+				}
+				20 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_jokes }
+					modifier = { factor = 0.25 trait = just }
+					modifier = { factor = 0.5 trait = kind }
+					modifier = { factor = 0.5 trait = content }
+					modifier = { factor = 0.75 trait = craven }
+					modifier = { factor = 3 trait = cruel }
+					modifier = { factor = 3 trait = envious }
+					modifier = { factor = 2 trait = cynical }
+					modifier = { factor = 2 trait = gregarious }
+					modifier = { factor = 1.75 trait = paranoid }
+					modifier = { factor = 1.5 trait = honest }
+					set_character_flag = Keitaro_jester_choice_jokes
+				}
+				10 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_tricks }
+					modifier = { factor = 2 trait = deceitful }
+					modifier = { factor = 2 trait = schemer }
+					modifier = { factor = 0.85 is_weak_trigger = yes }
+					modifier = { factor = 0.2 trait = zealous }
+					modifier = { factor = 0.25 trait = just }
+					modifier = { factor = 0.25 trait = honest }
+					modifier = { factor = 0.9 NOT = { intrigue = 1 } }
+					modifier = { factor = 0.9 NOT = { intrigue = 2 } }
+					modifier = { factor = 0.9 NOT = { intrigue = 3 } }
+					modifier = { factor = 0.9 NOT = { intrigue = 4 } }
+					modifier = { factor = 0.95 NOT = { intrigue = 5 } }
+					modifier = { factor = 0.95 NOT = { intrigue = 6 } }
+					modifier = { factor = 0.95 NOT = { intrigue = 7 } }
+					modifier = { factor = 0.95 NOT = { intrigue = 8 } }
+					modifier = { factor = 1.05 intrigue = 9 }
+					modifier = { factor = 1.05 intrigue = 10 }
+					modifier = { factor = 1.05 intrigue = 11 }
+					modifier = { factor = 1.05 intrigue = 12 }
+					modifier = { factor = 1.1 intrigue = 13 }
+					modifier = { factor = 1.1 intrigue = 14 }
+					modifier = { factor = 1.1 intrigue = 15 }
+					modifier = { factor = 1.1 intrigue = 16 }
+					modifier = { factor = 1.1 intrigue = 17 }
+					modifier = { factor = 1.1 intrigue = 18 }
+					set_character_flag = Keitaro_jester_choice_tricks
+				}
+				40 = {
+					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_lunatic }
+					modifier = { factor = 0 NOT = { trait = lunatic } }
+					set_character_flag = Keitaro_jester_choice_lunatic
+				}
+			}
+
+			change_variable = { which = local_count value = 1 }
+		}
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_2_story
+		trigger = { has_character_flag = Keitaro_jester_choice_story }
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_story
+	}
+	option = {
+		name = EVTOPT_Keitaro_MT_2_song
+		trigger = { has_character_flag = Keitaro_jester_choice_song }
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_song
+	}
+	option = {
+		name = EVTOPT_Keitaro_MT_2_music
+		trigger = { has_character_flag = Keitaro_jester_choice_music }
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_music
+	}
+	option = {
+		name = EVTOPT_Keitaro_MT_2_poetry
+		trigger = { has_character_flag = Keitaro_jester_choice_poetry }
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_poetry
+	}
+	option = {
+		name = EVTOPT_Keitaro_MT_2_acrobatics
+		trigger = { has_character_flag = Keitaro_jester_choice_acrobatics }
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_acrobatics
+	}
+	option = {
+		name = EVTOPT_Keitaro_MT_2_juggling
+		trigger = { has_character_flag = Keitaro_jester_choice_juggling }
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_juggling
+	}
+	option = {
+		name = EVTOPT_Keitaro_MT_2_jokes
+		trigger = { has_character_flag = Keitaro_jester_choice_jokes }
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_jokes
+	}
+	option = {
+		name = EVTOPT_Keitaro_MT_2_tricks
+		trigger = { has_character_flag = Keitaro_jester_choice_tricks }
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_tricks
+	}
+	option = {
+		name = EVTOPT_Keitaro_MT_2_lunatic
+		trigger = { has_character_flag = Keitaro_jester_choice_lunatic }
+		tooltip_info = lunatic
+		clear_flags_with_prefix = Keitaro_jester_choice
+		set_character_flag = Keitaro_jester_choice_lunatic
+	}
+
+	after = {
+		# Calculate result
+		hidden_tooltip = {
+			if = {
+				limit = { # Diplomatic actions
+					OR = {
+						has_character_flag = Keitaro_jester_choice_story
+						has_character_flag = Keitaro_jester_choice_song
+						has_character_flag = Keitaro_jester_choice_music
+						has_character_flag = Keitaro_jester_choice_poetry
+						has_character_flag = Keitaro_jester_choice_jokes
+					}
+				}
+			
+				random_list = {
+					25 = { # Bad
+						modifier = { factor = 1.1 NOT = { diplomacy = 1 } }
+						modifier = { factor = 1.1 NOT = { diplomacy = 2 } }
+						modifier = { factor = 1.1 NOT = { diplomacy = 3 } }
+						modifier = { factor = 1.1 NOT = { diplomacy = 4 } }
+						modifier = { factor = 1.1 NOT = { diplomacy = 5 } }
+						modifier = { factor = 1.1 NOT = { diplomacy = 6 } }
+						modifier = { factor = 1.1 NOT = { diplomacy = 7 } }
+						modifier = { factor = 1.1 NOT = { diplomacy = 8 } }
+						modifier = { factor = 0.8 trait = kind }
+						modifier = { factor = 2 trait = shy }
+						modifier = { factor = 3 trait = proud }
+						modifier = { factor = 0.9 trait = slothful }
+						modifier = { factor = 0.8 trait = stressed }
+						modifier = { factor = 0.8 trait = depressed }
+						modifier = { factor = 1.5 has_ugly_trait_trigger = yes }
+						modifier = { factor = 1.25 trait = cynical }
+						modifier = { factor = 1.2 FROM = { trait = cynical } }
+						modifier = { factor = 0.5 is_friend = FROM }
+
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -9 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -19 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -29 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -39 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -49 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -59 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -69 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -79 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -89 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -99 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -9 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -19 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -29 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -39 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -49 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -59 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -69 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -79 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -89 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -99 } } }
+
+						random_list = {
+							30 = { # Terrible
+								modifier = { factor = 0.5 diplomacy = 8 }
+								set_character_flag = Keitaro_jester_result_terrible
+							}
+							70 = { # Bad
+								set_character_flag = Keitaro_jester_result_bad
+							}
+						}
+					}
+					50 = { # Mediocre
+						set_character_flag = Keitaro_jester_result_mediocre
+					}
+					25 = { # Good
+						modifier = { factor = 0.9 FROM = { trait = diligent } }
+						modifier = { factor = 0.85 FROM = { trait = wroth } }
+						modifier = { factor = 1.1 diplomacy = 9 }
+						modifier = { factor = 1.1 diplomacy = 10 }
+						modifier = { factor = 1.1 diplomacy = 11 }
+						modifier = { factor = 1.1 diplomacy = 12 }
+						modifier = { factor = 1.1 diplomacy = 13 }
+						modifier = { factor = 1.1 diplomacy = 14 }
+						modifier = { factor = 1.1 diplomacy = 15 }
+						modifier = { factor = 1.1 diplomacy = 16 }
+						modifier = { factor = 1.1 diplomacy = 17 }
+						modifier = { factor = 1.1 diplomacy = 18 }
+						modifier = { factor = 1.1 diplomacy = 19 }
+						modifier = { factor = 1.1 diplomacy = 20 }
+						modifier = { factor = 1.1 diplomacy = 21 }
+						modifier = { factor = 1.1 diplomacy = 22 }
+						modifier = { factor = 1.1 diplomacy = 23 }
+						modifier = { factor = 1.1 diplomacy = 24 }
+						modifier = { factor = 1.1 diplomacy = 25 }
+						modifier = { factor = 1.1 diplomacy = 26 }
+						modifier = { factor = 1.1 diplomacy = 27 }
+						modifier = { factor = 1.1 diplomacy = 28 }
+						modifier = { factor = 1.1 diplomacy = 29 }
+						modifier = { factor = 1.1 diplomacy = 30 }
+						modifier = { factor = 1.5 has_fair_trait_trigger = yes }
+						modifier = { factor = 1.5 trait = gregarious }
+						modifier = { factor = 1.2 trait = socializer }
+						modifier = { factor = 0.75 trait = stutter }
+						modifier = { factor = 0.75 trait = lisp }
+						modifier = { factor = 4 has_character_flag = Keitaro_jester_choice_poetry trait = poet }
+						modifier = { factor = 1.25 is_smart_trigger = yes }
+						modifier = { factor = 1.25 is_dumb_trigger = yes FROM = { is_dumb_trigger = yes } }
+						modifier = { factor = 3 trait = drunkard FROM = { trait = drunkard } }
+						modifier = { factor = 2 trait = cynical FROM = { trait = cynical } }
+						modifier = { factor = 1.5 trait = hedonist FROM = { trait = hedonist } }
+
+						modifier = { # Mean dude is easier to please
+							factor = 2.5
+							FROM = {
+								OR = {
+									trait = envious
+									trait = cruel
+								}
+							}
+							OR = {
+								has_minor_disability_trigger = yes
+								is_dumb_trigger = yes
+								has_ugly_trait_trigger = yes
+							}
+						}
+						modifier = { factor = 0.5 is_foe = FROM }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 10 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 20 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 30 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 40 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 50 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 60 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 70 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 80 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 90 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 100 } }
+
+						random_list = {
+							70 = { # Good
+								set_character_flag = Keitaro_jester_result_good
+							}
+							30 = { # Excellent
+								modifier = { factor = 0.5 NOT = { diplomacy = 9 } }
+								set_character_flag = Keitaro_jester_result_excellent
+							}
+						}
+					}
+				}
+
+				# Custom Localisation Flavor
+				hidden_tooltip = {
+					random_list = {
+						1 = {
+							event_target:liege = {
+								random_courtier_or_vassal = {
+									limit = {
+										NOT = { character = event_target:jester }
+										NOT = { character = event_target:liege }
+									}
+									save_event_target_as = diplomatic_target
+									event_target:jester = { if = { limit = { has_character_flag = Keitaro_jester_choice_song } PREV = { save_event_target_as = jester_flavor_song_target } } }
+								}
+								if = { limit = { has_character_flag = Keitaro_jester_choice_jokes } set_character_flag = Keitaro_jester_flavor_jokes_1 }
+								if = { limit = { has_character_flag = Keitaro_jester_choice_song } set_character_flag = Keitaro_jester_flavor_song_1 }
+							}
+						}
+						1 = {
+							any_independent_ruler = {
+								limit = { 
+									NOT = { character = event_target:liege }
+								}
+								save_event_target_as = diplomatic_target
+							}
+							event_target:jester = {
+								if = { limit = { has_character_flag = Keitaro_jester_choice_jokes } set_character_flag = Keitaro_jester_flavor_jokes_2 }
+								if = { limit = { has_character_flag = Keitaro_jester_choice_song } set_character_flag = Keitaro_jester_flavor_song_2 }
+							}
+						}
+					}
+					event_target:liege = {
+						any_neighbor_independent_ruler = {
+							event_target:jester = {
+								if = {
+									limit = { has_character_flag = Keitaro_jester_flavor_song_2  }
+									PREV = { save_event_target_as = jester_flavor_song_target }
+								}
+							}
+							culture_scope = { save_event_target_as = random_neighbor_culture }
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { # Dexterous actions
+					OR = {
+						has_character_flag = Keitaro_jester_choice_acrobatics
+						has_character_flag = Keitaro_jester_choice_juggling
+					}
+				}
+			
+				random_list = {
+					25 = { # Bad
+						modifier = { factor = 1.1 NOT = { combat_rating = -9 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -19 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -29 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -39 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -49 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -59 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -69 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -79 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -89 } }
+						modifier = { factor = 1.1 NOT = { combat_rating = -99 } }
+						modifier = { factor = 1.75 is_weak_trigger = yes }
+						modifier = { factor = 5 has_severe_disability_trigger = yes }
+						modifier = { factor = 4 has_medium_disability_trigger = yes }
+						modifier = { factor = 3 has_injury_trigger = yes }
+						modifier = { factor = 8 trait = drunkard }
+					
+						modifier = { factor = 0.5 is_friend = FROM }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -9 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -19 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -29 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -39 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -49 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -59 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -69 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -79 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -89 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -99 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -9 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -19 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -29 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -39 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -49 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -59 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -69 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -79 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -89 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -99 } } }
+
+						random_list = {
+							30 = { # Terrible
+								set_character_flag = Keitaro_jester_result_terrible
+							}
+							70 = { # Bad
+								set_character_flag = Keitaro_jester_result_bad
+							}
+						}
+					}
+					50 = { # Mediocre
+						set_character_flag = Keitaro_jester_result_mediocre
+					}
+					25 = { # Good
+						modifier = { factor = 0.9 FROM = { trait = diligent } }
+						modifier = { factor = 1.1 combat_rating = 10 }
+						modifier = { factor = 1.1 combat_rating = 20 }
+						modifier = { factor = 1.1 combat_rating = 30 }
+						modifier = { factor = 1.1 combat_rating = 40 }
+						modifier = { factor = 1.1 combat_rating = 50 }
+						modifier = { factor = 1.1 combat_rating = 60 }
+						modifier = { factor = 1.1 combat_rating = 70 }
+						modifier = { factor = 1.1 combat_rating = 80 }
+						modifier = { factor = 1.1 combat_rating = 90 }
+						modifier = { factor = 1.1 combat_rating = 100 }
+						modifier = { factor = 1.05 diplomacy = 9 }
+						modifier = { factor = 1.05 diplomacy = 10 }
+						modifier = { factor = 1.05 diplomacy = 11 }
+						modifier = { factor = 1.05 diplomacy = 12 }
+						modifier = { factor = 1.05 diplomacy = 13 }
+						modifier = { factor = 1.05 diplomacy = 14 }
+						modifier = { factor = 1.05 diplomacy = 15 }
+						modifier = { factor = 1.05 diplomacy = 16 }
+						modifier = { factor = 1.05 diplomacy = 17 }
+						modifier = { factor = 1.05 diplomacy = 18 }
+						modifier = { factor = 1.05 diplomacy = 19 }
+						modifier = { factor = 1.05 diplomacy = 20 }
+						modifier = { factor = 1.05 diplomacy = 21 }
+						modifier = { factor = 1.05 diplomacy = 22 }
+						modifier = { factor = 1.05 diplomacy = 23 }
+						modifier = { factor = 1.025 diplomacy = 24 }
+						modifier = { factor = 1.025 diplomacy = 25 }
+						modifier = { factor = 1.025 diplomacy = 26 }
+						modifier = { factor = 1.025 diplomacy = 27 }
+						modifier = { factor = 1.025 diplomacy = 28 }
+						modifier = { factor = 1.025 diplomacy = 29 }
+						modifier = { factor = 1.025 diplomacy = 30 }
+						modifier = { factor = 1.75 is_strong_trigger = yes }
+						modifier = { factor = 1.5 trait = brave }
+
+						modifier = { # Mean dude is easier to please
+							factor = 2.5
+							FROM = {
+								OR = {
+									trait = envious
+									trait = cruel
+								}
+							}
+							OR = {
+								has_minor_disability_trigger = yes
+								is_dumb_trigger = yes
+								has_ugly_trait_trigger = yes
+							}
+						}
+						modifier = { factor = 0.5 is_foe = FROM }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 10 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 20 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 30 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 40 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 50 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 60 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 70 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 80 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 90 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 100 } }
+
+						random_list = {
+							80 = { # Good
+								set_character_flag = Keitaro_jester_result_good
+							}
+							20 = { # Excellent
+								set_character_flag = Keitaro_jester_result_excellent
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { # Tricky actions
+					has_character_flag = Keitaro_jester_choice_tricks
+				}
+
+				random_list = {
+					25 = { # Bad
+						modifier = { factor = 1.1 NOT = { intrigue = 1 } }
+						modifier = { factor = 1.1 NOT = { intrigue = 2 } }
+						modifier = { factor = 1.1 NOT = { intrigue = 3 } }
+						modifier = { factor = 1.1 NOT = { intrigue = 4 } }
+						modifier = { factor = 1.1 NOT = { intrigue = 5 } }
+						modifier = { factor = 1.1 NOT = { intrigue = 6 } }
+						modifier = { factor = 1.1 NOT = { intrigue = 7 } }
+						modifier = { factor = 1.1 NOT = { intrigue = 8 } }
+						modifier = { factor = 1.5 trait = shy }
+						modifier = { factor = 2 trait = proud }
+						modifier = { factor = 0.9 trait = slothful }
+						modifier = { factor = 0.8 trait = stressed }
+						modifier = { factor = 0.8 trait = depressed }
+						modifier = { factor = 4 trait = honest }
+						modifier = { factor = 1.5 trait = cynical }
+						modifier = { factor = 2 FROM = { trait = zealous } }
+
+						modifier = { factor = 0.5 is_friend = FROM }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -9 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -19 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -29 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -39 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -49 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -59 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -69 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -79 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -89 } } }
+						modifier = { factor = 1.02 NOT = { opinion = { who = FROM value = -99 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -9 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -19 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -29 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -39 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -49 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -59 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -69 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -79 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -89 } } }
+						modifier = { factor = 1.1 NOT = { reverse_opinion = { who = FROM value = -99 } } }
+
+						random_list = {
+							30 = { # Terrible
+								modifier = { factor = 0.5 intrigue = 8 }
+								set_character_flag = Keitaro_jester_result_terrible
+							}
+							70 = { # Bad
+								set_character_flag = Keitaro_jester_result_bad
+							}
+						}
+					}
+					50 = { # Mediocre
+						set_character_flag = Keitaro_jester_result_mediocre
+					}
+					25 = { # Good
+						modifier = { factor = 0.85 FROM = { trait = wroth } }
+						modifier = { factor = 0.9 FROM = { trait = diligent } }
+						modifier = { factor = 0.2 FROM = { trait = cynical } }
+						modifier = { factor = 1.1 intrigue = 9 }
+						modifier = { factor = 1.1 intrigue = 10 }
+						modifier = { factor = 1.1 intrigue = 11 }
+						modifier = { factor = 1.1 intrigue = 12 }
+						modifier = { factor = 1.1 intrigue = 13 }
+						modifier = { factor = 1.1 intrigue = 14 }
+						modifier = { factor = 1.1 intrigue = 15 }
+						modifier = { factor = 1.1 intrigue = 16 }
+						modifier = { factor = 1.1 intrigue = 17 }
+						modifier = { factor = 1.1 intrigue = 18 }
+						modifier = { factor = 1.1 intrigue = 19 }
+						modifier = { factor = 1.1 intrigue = 20 }
+						modifier = { factor = 1.1 intrigue = 21 }
+						modifier = { factor = 1.1 intrigue = 22 }
+						modifier = { factor = 1.1 intrigue = 23 }
+						modifier = { factor = 1.1 intrigue = 24 }
+						modifier = { factor = 1.1 intrigue = 25 }
+						modifier = { factor = 1.1 intrigue = 26 }
+						modifier = { factor = 1.1 intrigue = 27 }
+						modifier = { factor = 1.1 intrigue = 28 }
+						modifier = { factor = 1.1 intrigue = 29 }
+						modifier = { factor = 1.1 intrigue = 30 }
+						modifier = { factor = 1.05 diplomacy = 9 }
+						modifier = { factor = 1.05 diplomacy = 10 }
+						modifier = { factor = 1.05 diplomacy = 11 }
+						modifier = { factor = 1.05 diplomacy = 12 }
+						modifier = { factor = 1.05 diplomacy = 13 }
+						modifier = { factor = 1.05 diplomacy = 14 }
+						modifier = { factor = 1.05 diplomacy = 15 }
+						modifier = { factor = 1.05 diplomacy = 16 }
+						modifier = { factor = 1.05 diplomacy = 17 }
+						modifier = { factor = 1.05 diplomacy = 18 }
+						modifier = { factor = 1.05 diplomacy = 19 }
+						modifier = { factor = 1.05 diplomacy = 20 }
+						modifier = { factor = 1.05 diplomacy = 21 }
+						modifier = { factor = 1.05 diplomacy = 22 }
+						modifier = { factor = 1.05 diplomacy = 23 }
+						modifier = { factor = 1.025 diplomacy = 24 }
+						modifier = { factor = 1.025 diplomacy = 25 }
+						modifier = { factor = 1.025 diplomacy = 26 }
+						modifier = { factor = 1.025 diplomacy = 27 }
+						modifier = { factor = 1.025 diplomacy = 28 }
+						modifier = { factor = 1.025 diplomacy = 29 }
+						modifier = { factor = 1.025 diplomacy = 30 }
+						modifier = { factor = 1.5 has_fair_trait_trigger = yes }
+						modifier = { factor = 4 has_character_flag = Keitaro_jester_choice_poetry trait = poet }
+						modifier = { factor = 1.25 is_smart_trigger = yes }
+						modifier = { factor = 1.25 is_dumb_trigger = yes FROM = { is_dumb_trigger = yes } }
+						modifier = { factor = 3 FROM = { trait = drunkard } }
+						modifier = { factor = 1.5 trait = hedonist FROM = { trait = hedonist } }
+						modifier = { factor = 0.8 FROM = { intrigue = 12 } }
+						modifier = { factor = 0.7 FROM = { intrigue = 18 } }
+
+						modifier = { # Mean dude is easier to please
+							factor = 2.5
+							FROM = {
+								OR = {
+									trait = envious
+									trait = cruel
+								}
+							}
+							OR = {
+								has_minor_disability_trigger = yes
+								is_dumb_trigger = yes
+								has_ugly_trait_trigger = yes
+							}
+						}
+						modifier = { factor = 0.5 is_foe = FROM }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 10 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 20 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 30 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 40 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 50 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 60 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 70 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 80 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 90 } }
+						modifier = { factor = 1.1 reverse_opinion = { who = FROM value = 100 } }
+
+						random_list = {
+							70 = { # Good
+								set_character_flag = Keitaro_jester_result_good
+							}
+							30 = { # Excellent
+								modifier = { factor = 0.5 NOT = { intrigue = 9 } }
+								set_character_flag = Keitaro_jester_result_excellent
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { # Lunatic action
+					has_character_flag = Keitaro_jester_choice_lunatic
+				}
+				random_list = {
+					40 = { # Terrible
+						set_character_flag = Keitaro_jester_result_terrible
+						modifier = { factor = 0 FROM = { trait = lunatic } }
+					}
+					20 = { # Bad
+						set_character_flag = Keitaro_jester_result_bad
+						modifier = { factor = 0 FROM = { trait = lunatic } }
+					}
+					10 = { # Mediocre
+						set_character_flag = Keitaro_jester_result_mediocre
+						modifier = { factor = 0 FROM = { trait = lunatic } }
+					}
+					20 = { # Good
+						set_character_flag = Keitaro_jester_result_good
+						modifier = { factor = 0 FROM = { trait = lunatic } }
+					}
+					40 = { # Excellent
+						set_character_flag = Keitaro_jester_result_excellent
+					}
+				}
+			}
+		}
+
+		FROM = { character_event = { id = Keitaro_MT.3 } }
+	}
+}
+
+# Result for ruler
+character_event = {
+	id = Keitaro_MT.3
+	border = GFX_event_normal_frame_diplomacy
+	picture = GFX_evt_jugglers
+	is_triggered_only = yes
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_story } }
+		text = EVTDESC_Keitaro_MT_3_story
+	}
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_song } }
+		text = EVTDESC_Keitaro_MT_3_song
+	}
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_music } }
+		text = EVTDESC_Keitaro_MT_3_music
+	}
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_poetry } }
+		text = EVTDESC_Keitaro_MT_3_poetry
+	}
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_acrobatics } }
+		text = EVTDESC_Keitaro_MT_3_acrobatics
+	}
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_juggling } }
+		text = EVTDESC_Keitaro_MT_3_juggling
+	}
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_jokes } }
+		text = EVTDESC_Keitaro_MT_3_jokes
+	}
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_tricks } }
+		text = EVTDESC_Keitaro_MT_3_tricks
+	}
+
+	desc = {
+		trigger = { FROM = { has_character_flag = Keitaro_jester_choice_lunatic } }
+		text = EVTDESC_Keitaro_MT_3_lunatic
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_3_terrible
+		trigger = { FROM = { has_character_flag = Keitaro_jester_result_terrible } }
+		opinion = { modifier = Keitaro_opinion_terrible_jester who = FROM years = 2 }
+
+		if = {
+			limit = { NOT = { FROM = { has_character_flag = Keitaro_jester_choice_lunatic } } }
+		
+			if = {
+				limit = { NOT = { trait = stressed } }
+				random = { chance = 10 add_trait = stressed }
+			}
+			else_if = {
+				limit = { NOT = { trait = depressed } }
+				random = { chance = 5 add_trait = depressed }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = proud }
+				FROM = {
+					OR = {
+						has_character_flag = Keitaro_jester_choice_jokes
+						has_character_flag = Keitaro_jester_choice_story
+					}
+				}
+			}
+			random = { chance = 20 add_trait = proud }
+		}
+		if = {
+			limit = {
+				NOT = { trait = deaf }
+				age = 50
+				FROM = {
+					OR = {
+						has_character_flag = Keitaro_jester_choice_song
+						has_character_flag = Keitaro_jester_choice_music
+					}
+				}
+			}
+			random = { chance = 5 add_trait = deaf }
+		}
+		add_character_modifier = { name = Keitaro_unhappy duration = 120 }
+	}
+
+	# Imprison jester
+	option = {
+		name = EVTOPT_Keitaro_MT_3_imprison
+		trigger = {
+			FROM = {
+				has_character_flag = Keitaro_jester_result_terrible
+				has_character_flag = Keitaro_jester_choice_jokes
+			}
+			OR = {
+				trait = cruel
+				trait = arbitrary
+				trait = lunatic
+				trait = wroth
+				trait = envious
+				trait = proud
+			}
+		}
+		opinion = { modifier = Keitaro_opinion_terrible_jester who = FROM years = 2 }
+
+		if = {
+			limit = { NOT = { FROM = { has_character_flag = Keitaro_jester_choice_lunatic } } }
+		
+			if = {
+				limit = { NOT = { trait = stressed } }
+				random = { chance = 10 add_trait = stressed }
+			}
+			else_if = {
+				limit = { NOT = { trait = depressed } }
+				random = { chance = 5 add_trait = depressed }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = proud }
+				FROM = {
+					OR = {
+						has_character_flag = Keitaro_jester_choice_jokes
+						has_character_flag = Keitaro_jester_choice_story
+					}
+				}
+			}
+			random = { chance = 20 add_trait = proud }
+		}
+		if = {
+			limit = {
+				NOT = { trait = deaf }
+				age = 50
+				FROM = {
+					OR = {
+						has_character_flag = Keitaro_jester_choice_song
+						has_character_flag = Keitaro_jester_choice_music
+					}
+				}
+			}
+			random = { chance = 5 add_trait = deaf }
+		}
+
+		add_character_modifier = { name = Keitaro_unhappy duration = 120 }
+			
+		FROM = {
+			show_scope_change = no
+			imprison = ROOT
+			set_character_flag = Keitaro_jester_imprisoned
+		}
+		tooltip = { reverse_opinion = { modifier = Keitaro_imprisoned_me_unjustly who = FROM years = 20 } }
+
+		if = {
+			limit = {
+				trait = arbitrary
+				NOT = {
+					trait = cruel
+				}
+			}
+			random = {
+				chance = 20
+
+				add_trait = cruel
+				hidden_tooltip = {
+					character_event = {
+						id = 38259 #Notify Cruel
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				trait = cruel
+				NOT = {
+					trait = arbitrary
+				}
+			}
+			random = {
+				chance = 20
+
+				add_trait = arbitrary
+				hidden_tooltip = {
+					character_event = {
+						id = 38266 #Notify Arbitrary
+					}
+				}
+			}
+		}
+
+		any_vassal = {
+			limit = {
+				NOT = { opinion = { who = ROOT value = 70 } }
+			}
+			show_scope_change = no
+			opinion = {
+				modifier = opinion_disappointed
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_3_bad
+		trigger = { FROM = { has_character_flag = Keitaro_jester_result_bad } }
+		opinion = { modifier = Keitaro_opinion_bad_jester who = FROM years = 2 }
+		add_character_modifier = { name = Keitaro_grumpy duration = 120 }
+
+		# Flavor
+		if = {
+			limit = { FROM = { has_character_flag = Keitaro_jester_choice_jokes } }
+			show_portrait = event_target:diplomatic_target
+		}
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_3_mediocre
+		trigger = { FROM = { has_character_flag = Keitaro_jester_result_mediocre } }
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_3_good
+		trigger = { FROM = { has_character_flag = Keitaro_jester_result_good } }
+		opinion = { modifier = opinion_thoroughly_impressed who = FROM years = 2 }
+		add_character_modifier = { name = Keitaro_jolly duration = 120 }
+		if = {
+			limit = { NOT = { FROM = { has_character_flag = Keitaro_jester_choice_lunatic } } }
+			if = {
+				limit = { trait = depressed }
+				random = { chance = 5 remove_trait = depressed }
+			}
+			else_if = {
+				limit = { trait = stressed }
+				random = { chance = 15 remove_trait = stressed }
+			}
+		}
+
+		# Flavor
+		if = {
+			limit = { FROM = { OR = { has_character_flag = Keitaro_jester_choice_song has_character_flag = Keitaro_jester_choice_jokes } } }
+			show_portrait = event_target:diplomatic_target
+		}
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_3_excellent
+		trigger = { FROM = { has_character_flag = Keitaro_jester_result_excellent } }
+		opinion = { modifier = opinion_wildly_impressed who = FROM years = 2 }
+		add_character_modifier = { name = Keitaro_happy duration = 120 }
+		if = {
+			limit = { NOT = { FROM = { has_character_flag = Keitaro_jester_choice_lunatic } } }
+			if = {
+				limit = { trait = depressed }
+				random = { chance = 10 remove_trait = depressed }
+			}
+			else_if = {
+				limit = { trait = stressed }
+				random = { chance = 30 remove_trait = stressed }
+			}
+		}
+		if = {
+			limit = {
+				trait = wroth
+				FROM = {
+					OR = {
+						has_character_flag = Keitaro_jester_choice_music
+						has_character_flag = Keitaro_jester_choice_song
+						has_character_flag = Keitaro_jester_choice_poetry
+					}
+				}
+			}
+			random = { chance = 30 remove_trait = wroth }
+		}
+		if = {
+			limit = {
+				trait = proud
+				FROM = {
+					OR = {
+						has_character_flag = Keitaro_jester_choice_jokes
+						has_character_flag = Keitaro_jester_choice_story
+					}
+				}
+			}
+			random = { chance = 15 remove_trait = proud }
+		}
+	}
+
+    after = {
+		FROM = { character_event = { id = Keitaro_MT.4 } }
+    }
+}
+
+# Result for jester
+character_event = {
+	id = Keitaro_MT.4
+	border = GFX_event_normal_frame_diplomacy
+	picture = GFX_evt_powerful_ruler
+	is_triggered_only = yes
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible has_character_flag = Keitaro_jester_imprisoned }
+		text = EVTDESC_Keitaro_MT_4_imprison
+		picture = GFX_evt_bad_news
+	}
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_result_terrible NOT = { has_character_flag = Keitaro_jester_imprisoned } }
+		text = EVTDESC_Keitaro_MT_4_terrible
+		picture = GFX_evt_bad_news
+	}
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		text = EVTDESC_Keitaro_MT_4_bad
+		picture = GFX_evt_powerful_ruler
+	}
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		text = EVTDESC_Keitaro_MT_4_mediocre
+		picture = GFX_evt_powerful_ruler
+	}
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		text = EVTDESC_Keitaro_MT_4_good
+		picture = GFX_evt_emissary
+	}
+
+	desc = {
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		text = EVTDESC_Keitaro_MT_4_excellent
+		picture = GFX_evt_emissary
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_4_imprison
+		trigger = { has_character_flag = Keitaro_jester_result_terrible has_character_flag = Keitaro_jester_imprisoned }
+		tooltip = {
+			FROM = {
+				show_scope_change = no
+				opinion = { modifier = Keitaro_opinion_terrible_jester who = ROOT years = 2 }
+			}
+		}
+		opinion = { modifier = Keitaro_imprisoned_me_unjustly who = FROM years = 20 }
+		
+		clr_character_flag = Keitaro_jester_imprisoned
+		prestige = -50
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_4_terrible
+		trigger = { has_character_flag = Keitaro_jester_result_terrible NOT = { has_character_flag = Keitaro_jester_imprisoned } }
+		tooltip = {
+			FROM = {
+				show_scope_change = no
+				opinion = { modifier = Keitaro_opinion_terrible_jester who = ROOT years = 2 }
+			}
+		}
+		prestige = -30
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_4_bad
+		trigger = { has_character_flag = Keitaro_jester_result_bad }
+		tooltip = {
+			FROM = {
+				show_scope_change = no
+				opinion = { modifier = Keitaro_opinion_bad_jester who = ROOT years = 2 }
+			}
+		}
+		prestige = -20
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_4_mediocre
+		trigger = { has_character_flag = Keitaro_jester_result_mediocre }
+		prestige = -10
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_4_good
+		trigger = { has_character_flag = Keitaro_jester_result_good }
+		tooltip = {
+			FROM = {
+				show_scope_change = no
+				opinion = { modifier = opinion_thoroughly_impressed who = ROOT years = 2 }
+			}
+		}
+		prestige = 15
+	}
+
+	option = {
+		name = EVTOPT_Keitaro_MT_4_excellent
+		trigger = { has_character_flag = Keitaro_jester_result_excellent }
+		tooltip = {
+			FROM = {
+				show_scope_change = no
+				opinion = { modifier = opinion_wildly_impressed who = ROOT years = 2 }
+			}
+		}
+		prestige = 25
+	}
+
+    after = {
+		clear_flags_with_prefix = Keitaro_jester_choice
+		clear_flags_with_prefix = Keitaro_jester_result
+		clear_flags_with_prefix = Keitaro_jester_occasion
+		clear_flags_with_prefix = Keitaro_jester_flavor
+		clr_character_flag = Keitaro_jester_ongoing
+    }
+}
+
+#Summer fair triggers jester
+character_event = {
+	id = Keitaro_MT.5
+	hide_window = yes
+
+	min_age = 6
+	capable_only = yes
+	prisoner = no
+	only_rulers = yes
+
+	trigger = {
+		any_courtier_or_vassal = {
+			has_minor_title = title_court_jester
+			NOT = { has_character_flag = Keitaro_jester_ongoing }
+
+			character_disease_trigger = no
+			is_inaccessible_or_incapable_trigger = no
+			in_command = no
+			NOT = { trait = dancing_plague }
+		}
+
+		OR = {
+			NOT = { has_character_flag = fair_event_happened }
+			had_character_flag = {
+				flag = fair_event_happened
+				days = 3
+			}
+		}			
+		has_character_modifier = holding_summer_fair
+		had_character_flag = {
+			flag = summer_fair_begin
+			days = 3
+		}
+		NOT = { has_character_flag = fair_event_Keitaro_MT_5 }
+	}
+	
+	immediate = {
+		set_character_flag = fair_event_happened
+		set_character_flag = fair_event_Keitaro_MT_5
+
+		if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Summer fair event jester for [Root.GetTitledName]" }
+
+		any_courtier_or_vassal = {
+			limit = {
+				has_minor_title = title_court_jester
+			}
+			set_character_flag = Keitaro_jester_occasion_summer_fair
+		}
+
+		character_event = { id = Keitaro_MT.1 days = 10 }
+	}	
+
+	mean_time_to_happen = {
+		days = 240
+		
+		modifier = {
+			factor = 0.33
+			NOT = { has_character_flag = fair_event_happened }
+		}	
+		
+		modifier = {
+			factor = 1.5
+			has_character_flag = fair_event_happened
+		}			
+
+		modifier = {
+			factor = 3
+			trait = wroth
+		}
+
+		modifier = {
+			factor = 0.8
+			trait = kind
+		}
+
+		modifier = {
+			factor = 0.75
+			any_courtier_or_vassal = {
+				has_minor_title = title_court_jester
+				trait = gregarious
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			any_courtier_or_vassal = {
+				has_minor_title = title_court_jester
+				trait = kind
+			}
+		}
+	}
+}
+
+# AI give jester title
+character_event = {
+	id = Keitaro_MT.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	capable_only = yes
+	prisoner = no
+	only_rulers = yes
+	ai = yes
+
+	trigger = {
+		NOT = { has_character_flag = do_not_disturb }
+		is_inaccessible_or_incapable_trigger = no
+		NOT = { has_assigned_minor_title = title_court_jester }
+	}
+
+	immediate = {
+		save_event_target_as = liege
+		random_courtier_or_vassal = {
+			limit = {
+				can_hold_title = title_court_jester
+			}
+			score_value = { #Prioritizes selecting an appropriate holder...
+                value = 10
+                Keitaro_jester_selection_score = yes
+            }
+            give_minor_title = title_court_jester
+			if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : [Root.GetTitledName] selected [This.GetTitledName] as the Court Jester." }
+		}
+	}
+}
