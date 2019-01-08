@@ -1,0 +1,59 @@
+TOW_is_travelling = {
+	OR = {
+		trait = on_pilgrimage
+		trait = travelling
+		has_character_modifier = out_traveling
+	}
+}
+
+TOW_character_can_be_councillor = {
+	OR = {
+		AND = { # Male councillor
+			is_female = no
+			liege = { NOT = { has_religion_feature = religion_matriarchal } } #Matriarchal religions can only hire females. 
+		}
+		AND = { # Female councillor
+			is_female = yes 
+			liege = { NOT = { has_religion_feature = religion_patriarchal } } #Patriarchal religions can only hire males. 
+			OR = {
+				liege = { gender_equality_trigger = yes }
+				liege = {
+					OR = {
+						dynasty = PREV
+						is_close_relative = PREV
+						any_spouse = { character = PREV }
+						any_consort = { character = PREV }
+					}
+				}
+				is_landed = yes
+			}
+		}
+	}
+}
+
+TOW_character_can_be_spymaster = {
+	OR = {
+		AND = { # Male councillor
+			is_female = no
+			liege = { NOT = { has_religion_feature = religion_matriarchal } } #Matriarchal religions can only hire females. 
+		}
+		AND = { # Female councillor
+			is_female = yes 
+			liege = { NOT = { has_religion_feature = religion_patriarchal } } #Patriarchal religions can only hire males. 
+			OR = {
+				liege = { is_child_of = PREV }
+				liege = { gender_equality_trigger_1 = yes }
+				liege = { spouse = { character = PREVPREV } }
+				liege = {
+					OR = {
+						dynasty = PREV
+						is_close_relative = PREV
+						any_spouse = { character = PREV }
+						any_consort = { character = PREV }
+					}
+				}
+				is_landed = yes
+			} 
+		}
+	}
+}

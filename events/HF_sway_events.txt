@@ -99,7 +99,7 @@ character_event = {
 					}
 					event_target:potential_antagonized = { 
 						trait = sympathy_pagans
-						ROOT = { NOT = { religion_group = pagan_group } }
+						ROOT = { NOT = { TOW_is_uncivilized_religion_trigger = yes } }
 					}
 					event_target:potential_antagonized = { 
 						trait = sympathy_zoroastrianism
@@ -251,10 +251,6 @@ character_event = {
 					event_target:potential_antagonized = { 
 						trait = gardener
 						ROOT = { trait = gardener }
-					}
-					event_target:potential_antagonized = { 
-						trait = mystic
-						ROOT = { trait = mystic }
 					}
 					event_target:potential_antagonized = { 
 						trait = impaler
@@ -449,7 +445,7 @@ character_event = {
 					}
 					AND = {
 						ROOT = { trait = sympathy_pagans }
-						religion_group = pagan_group
+						TOW_is_uncivilized_religion_trigger = yes
 					}
 					AND = {
 						ROOT = { trait = sympathy_zoroastrianism }
@@ -472,7 +468,7 @@ character_event = {
 					has_character_flag = flag_character_being_swayed
 					has_character_flag = flag_character_being_antagonized
 					AND = {
-						religion_group = pagan_group
+						TOW_is_uncivilized_religion_trigger = yes
 						NOT = { religion = ROOT }
 						ROOT = { trait = zealous }
 					}
@@ -669,10 +665,6 @@ character_event = {
 					event_target:potential_swayed = { 
 						trait = gardener
 						ROOT = { trait = gardener }
-					}
-					event_target:potential_swayed = { 
-						trait = mystic
-						ROOT = { trait = mystic }
 					}
 					event_target:potential_swayed = { 
 						trait = impaler
@@ -1671,16 +1663,12 @@ character_event = {
 						}
 						AND = {
 							OR = {
-								trait = mystic
 								trait = scholar
-								trait = faqih
 								trait = theologian
 							}
 							persistent_event_target:sway_target = {
 								OR = {
-									trait = mystic
 									trait = scholar
-									trait = faqih
 									trait = theologian
 								}
 							}
@@ -7011,7 +6999,7 @@ character_event = {
 						NOT = { trait = sympathy_zoroastrianism } 
 					} 
 					AND = { 
-						FROM = { religion_group = pagan_group }
+						FROM = { TOW_is_uncivilized_religion_trigger = yes }
 						NOT = { trait = sympathy_pagans } 
 					} 
 					AND = { 
@@ -7152,7 +7140,7 @@ character_event = {
 			limit = { 
 				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_pagans }
-				FROM = { religion_group = pagan_group }
+				FROM = { TOW_is_uncivilized_religion_trigger = yes }
 				FROM = { has_character_flag = flag_appease_kind_religion }
 			} 
 			random = { chance = 30 add_trait = sympathy_pagans }
@@ -7391,7 +7379,7 @@ character_event = {
 			limit = { 
 				NOT = { religion_group = FROM } 
 				NOT = { trait = sympathy_pagans }
-				FROM = { religion_group = pagan_group }
+				FROM = { TOW_is_uncivilized_religion_trigger = yes }
 			} 
 			random = { chance = 30 add_trait = sympathy_pagans }
 		} 
@@ -8177,7 +8165,6 @@ character_event = {
 			OR = { 
 				trait = poet
 				trait = scholar
-				trait = mystic
 				trait = proud
 			} 
 		}
@@ -8403,7 +8390,6 @@ character_event = {
 			NOR = { 
 				trait = poet
 				trait = scholar
-				trait = mystic
 				trait = proud
 			} 
 		}
@@ -10105,7 +10091,6 @@ character_event = {
 					factor = 1.5
 					OR = {
 						trait = scholar
-						trait = mystic
 						trait = socializer
 						trait = gamer
 						trait = hedonist  
@@ -10452,14 +10437,6 @@ character_event = {
 		}
 	}
 	desc = {
-		text = EVTDESCHFPF21104
-		picture = GFX_evt_library
-		trigger = { 
-			trait = mystic
-			has_character_flag = flag_appease_visit_inside
-		}
-	}
-	desc = {
 		text = EVTDESCHFPG21104
 		picture = GFX_evt_library
 		trigger = { 
@@ -10473,7 +10450,6 @@ character_event = {
 		trigger = { #Generic 
 			NOR = {
 				trait = scholar
-				trait = mystic
 				trait = socializer
 				trait = gamer
 				trait = hedonist 
@@ -14138,7 +14114,6 @@ character_event = {
 						FROM = { 
 							NOR = {
 								trait = scholar
-								trait = mystic
 								trait = hunter
 								trait = falconer
 								trait = gardener
@@ -14364,13 +14339,6 @@ character_event = {
 			10 = {
 				modifier = { 
 					factor = 0
-					NOT = { trait = mystic }
-				}
-				FROM = { set_character_flag = flag_becoming_mystic }
-			}
-			10 = {
-				modifier = { 
-					factor = 0
 					NOT = { trait = socializer }
 				}
 				FROM = { set_character_flag = flag_becoming_socializer }
@@ -14510,10 +14478,6 @@ character_event = {
 		if = { 
 			limit = { has_character_flag = flag_becoming_scholar }
 			add_trait = scholar
-		}
-		if = { 
-			limit = { has_character_flag = flag_becoming_mystic }
-			add_trait = mystic
 		}
 		if = { 
 			limit = { has_character_flag = flag_becoming_socializer }

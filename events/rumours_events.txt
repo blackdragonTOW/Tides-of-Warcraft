@@ -2988,9 +2988,6 @@ character_event = {
 			has_character_modifier = dabble_dark_arts_timer
 		}
 		NOT = {
-			trait = possessed
-		}
-		NOT = {
 			trait = stressed
 		}
 	}
@@ -3051,21 +3048,6 @@ character_event = {
 		clr_character_flag = suspected_occultist
 		clr_character_flag = occultist_flagged
 		piety = 10
-	}
-	option = {
-		name = EVTOPTC69047
-		trigger = {
-			trait = paranoid
-			religion_group = christian
-		}
-		tooltip_info = paranoid
-		piety = -5
-		random = {
-			chance = 33
-			
-			add_trait = possessed
-			character_event = { id = 38315 } # Notify Possessed
-		}
 	}
 }
 

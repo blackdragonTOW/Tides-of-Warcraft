@@ -23,7 +23,7 @@ accepts_warlock = {
 		trait = race_doomlord
 		trait = race_voidwalker
 		trait = race_faceless
-		trait = race_hakkar_trait
+		trait = race_hakkar
 		trait = race_ogre
 		trait = race_wretched
 		trait = race_blood_elf
@@ -37,14 +37,6 @@ accepts_warlock = {
 			OR = {
 				NOT = { has_character_flag = secret_warlock }
 				has_character_flag = warlock_discovered
-			}
-		}
-		AND = {
-			trait = necrolyte
-			OR = {
-				NOT = { trait = race_gnoll }
-				NOT = { has_character_flag = secret_necrolyte }
-				has_character_flag = necrolyte_discovered
 			}
 		}
 	}
@@ -69,7 +61,7 @@ accepts_necromancer = {
 		trait = race_doomlord
 		trait = race_voidwalker
 		trait = race_faceless
-		trait = race_hakkar_trait
+		trait = race_race_hakkar
 		trait = race_ogre
 		trait = race_gnoll
 		religion_group = fel_group
@@ -83,66 +75,6 @@ accepts_necromancer = {
 			OR = {
 				NOT = { has_character_flag = secret_necromancer }
 				has_character_flag = necromancer_discovered
-			}
-		}
-		AND = {
-			trait = necrolyte
-			OR = {
-				NOT = { has_character_flag = secret_necrolyte }
-				has_character_flag = necrolyte_discovered
-			}
-			NOT = {
-				trait = race_troll_forest
-				trait = race_troll_ice
-				trait = race_troll_jungle
-				trait = race_troll_sand
-				trait = race_troll_dark
-				trait = race_troll_zandalari
-				trait = race_blood_elf
-				trait = race_wretched
-				religion = loa
-				religion_group = goblin_group
-			}
-		}
-	}
-}
-
-accepts_assassin = {
-	OR = {
-		has_game_rule = {
-			name = class_opinions
-			value = off
-		}
-		trait = race_undead_generic
-		trait = race_undead_scourge
-		trait = race_undead_forsaken
-		trait = race_naga
-		trait = race_eredar
-		trait = race_succubus
-		trait = race_dreadlord
-		trait = race_fel_lord
-		trait = race_shivarra
-		trait = race_pit_lord
-		trait = race_doomlord
-		trait = race_voidwalker
-		trait = race_faceless
-		trait = race_gnoll
-		trait = race_murloc
-		trait = race_kobold
-		trait = race_trogg
-		trait = race_wretched
-		trait = race_hakkar_trait
-		religion_group = fel_group
-		religion_group = void_group
-		religion = hakkar
-		religion = cult_of_the_destroyer
-		religion = cult_of_the_infinite
-		religion = emerald_nightmare
-		AND = {
-			trait = assassin
-			OR = {
-				NOT = { has_character_flag = secret_assassin }
-				has_character_flag = assassin_discovered
 			}
 		}
 	}
@@ -172,7 +104,7 @@ accepts_rogue = {
 		trait = race_kobold
 		trait = race_trogg
 		trait = race_wretched
-		trait = race_hakkar_trait
+		trait = race_race_hakkar
 		religion_group = fel_group
 		religion_group = void_group
 		religion = hakkar
@@ -250,8 +182,6 @@ can_be_mage = {
 				
 			}
 		}
-		#trait = race_
-		#trait = race_
 		#trait = race_
 	}
 }

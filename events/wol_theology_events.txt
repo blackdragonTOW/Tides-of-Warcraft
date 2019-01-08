@@ -36,7 +36,7 @@ character_event = {
 	desc = {
 		trigger = {
 			OR = {
-				NOT = { religion_group = pagan_group } # Scriptures
+				NOT = { TOW_is_uncivilized_religion_trigger = yes } # Scriptures
 				is_reformed_religion = yes
 			}
 		}
@@ -44,7 +44,7 @@ character_event = {
 	}
 	desc = {
 		trigger = {
-			religion_group = pagan_group # Stories
+			TOW_is_uncivilized_religion_trigger = yes # Stories
 			is_reformed_religion = no
 		}
 		text = EVTDESC_WoL_7000_unref_pagan
@@ -58,7 +58,7 @@ character_event = {
 		name = EVTOPTA_WoL_7000 # Yes, study scriptures
 		trigger = {
 			OR = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 				is_reformed_religion = yes
 			}
 		}
@@ -68,7 +68,7 @@ character_event = {
 	option = {
 		name = EVTOPTB_WoL_7000 # Yes, listen to stories
 		trigger = {
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			is_reformed_religion = no
 		}
 		piety = 20
@@ -97,7 +97,7 @@ character_event = {
 	desc = {
 		trigger = {
 			OR = {
-				NOT = { religion_group = pagan_group } # Scriptures
+				NOT = { TOW_is_uncivilized_religion_trigger = yes } # Scriptures
 				is_reformed_religion = yes
 			}
 		}
@@ -105,7 +105,7 @@ character_event = {
 	}
 	desc = {
 		trigger = {
-			religion_group = pagan_group # Stories
+			TOW_is_uncivilized_religion_trigger = yes # Stories
 			is_reformed_religion = no
 		}
 		text = EVTDESC_WoL_7001_unref_pagan
@@ -115,7 +115,7 @@ character_event = {
 		name = EVTOPTA_WoL_7001 # Scriptures
 		trigger = {
 			OR = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 				is_reformed_religion = yes
 			}
 		}
@@ -154,7 +154,7 @@ character_event = {
 	option = {
 		name = EVTOPTB_WoL_7001 # Stories
 		trigger = {
-			religion_group = pagan_group # Stories
+			TOW_is_uncivilized_religion_trigger = yes # Stories
 			is_reformed_religion = no
 		}
 		piety = 20
@@ -402,7 +402,6 @@ character_event = {
 		is_priest = no
 		has_focus = focus_theology
 		NOT = { has_character_flag = wol_theology_reflect_on_self_and_gods }
-		NOT = { trait = possessed }
 		NOT = { trait = theologian }
 		NOT = { has_character_modifier = religious_philosopher }
 		any_realm_character = {
@@ -585,7 +584,7 @@ character_event = {
 		text = EVTDESC_WoL_7050
 		trigger = {
 			OR = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 				is_reformed_religion = yes
 				has_alternate_start_parameter = {
 					key = religion_names
@@ -598,7 +597,7 @@ character_event = {
 	desc = {
 		text = EVTDESC_WoL_7050_PAGAN
 		trigger = {
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			is_reformed_religion = no
 			NOT = {
 				has_alternate_start_parameter = {
@@ -888,7 +887,7 @@ character_event = {
 		text = EVTDESC_WoL_7080
 		trigger = {
 			NOR = {
-				religion_group = pagan_group
+				TOW_is_uncivilized_religion_trigger = yes
 				religion_group = muslim
 				has_dharmic_religion_trigger = yes
 			}
@@ -896,7 +895,7 @@ character_event = {
 	}
 	desc = {
 		text = EVTDESC_WoL_7080_PAGAN
-		trigger = { religion_group = pagan_group }
+		trigger = { TOW_is_uncivilized_religion_trigger = yes }
 	}
 	desc = {
 		text = EVTDESC_WoL_7080_MUSLIM
@@ -1020,7 +1019,7 @@ character_event = {
 		trigger = {
 			NOR = {
 				trait = lunatic
-				religion_group = pagan_group
+				TOW_is_uncivilized_religion_trigger = yes
 				has_dharmic_religion_trigger = yes
 			}
 		}
@@ -1031,7 +1030,7 @@ character_event = {
 			NOT = {
 				trait = lunatic				
 			}
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 		}
 	}
 	desc = {
@@ -1225,29 +1224,6 @@ character_event = {
 			factor = 1000
 		}
 		remove_trait = syphilitic
-	}
-	
-	option = {
-		name = EVTOPT_WoL_7091_LUNATIC
-		trigger = {
-			trait = lunatic
-			NOT = { trait = possessed }
-		}
-		ai_chance = {
-			factor = 100
-		}
-		
-		random = {
-			chance = 50
-			remove_trait = lunatic
-			character_event = { id = 38309 } # Notify Lunatic lost
-		}
-		
-		random = {
-			chance = 50
-			add_trait = possessed
-			character_event = { id = 38315 } # Notify Possessed
-		}
 	}
 	
 	option = {

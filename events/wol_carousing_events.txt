@@ -447,7 +447,6 @@ character_event = {
 						AND = {
 							OR = {
 								trait = lunatic
-								trait = possessed
 								trait = impaler
 								top_liege = {
 									any_realm_character = {
@@ -457,7 +456,6 @@ character_event = {
 										}
 										OR = {
 											trait = lunatic
-											trait = possessed
 											trait = impaler
 										}
 									}
@@ -679,7 +677,6 @@ character_event = {
 			limit = {
 				OR = {
 					trait = lunatic
-					trait = possessed
 					trait = impaler
 					any_artifact = { artifact_type = the_omnivore }
 				}
@@ -696,8 +693,7 @@ character_event = {
 					}
 					OR = {
 						trait = lunatic
-						trait = possessed
-						trait = impaler
+ 						trait = impaler
 						any_artifact = { artifact_type = the_omnivore }
 					}
 					ROOT = { ai = yes }

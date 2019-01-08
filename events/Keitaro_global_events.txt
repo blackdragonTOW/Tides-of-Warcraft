@@ -18,7 +18,6 @@ character_event = {
 
 	trigger = {
 		NOT = { has_global_flag = Keitaro_global_events_called }
-		1 = { owner = { character = ROOT } } # only for the ruler of province 1 to run it once
 	}
 	immediate = {
 		set_global_flag = Keitaro_global_events_called

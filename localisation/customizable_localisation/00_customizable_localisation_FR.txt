@@ -1800,36 +1800,6 @@ defined_text = {
 		localisation_key = String_FR_random_mythological_creature_variante_cyclops
 	}
 	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = String_FR_random_mythological_creature_variante_sleipnir
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = String_FR_random_mythological_creature_variante_fenrir
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = String_FR_random_mythological_creature_variante_jörmungandr
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = String_FR_random_mythological_creature_variante_nidhogg
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = String_FR_random_mythological_creature_variante_draugr
-	}
-	text = {
 		localisation_key = String_FR_random_mythological_creature_variante_chimera
 	}
 	text = {
@@ -1868,15 +1838,6 @@ defined_text = {
 		trigger = {
 			has_character_flag = weapon_is_sword
 			NOT = { has_character_flag = mock_duel }
-		}
-	}
-	text = {
-		localisation_key = String_Get_on_DuelWeapon_jian_sword
-		trigger = {
-			has_character_flag = weapon_is_sword
-			NOT = { has_character_flag = mock_duel }
-			culture = han
-			culture = tangut
 		}
 	}
 	text = {
@@ -2130,25 +2091,6 @@ defined_text = {
 		localisation_key = String_FR_GetLarveVermisseau_female
 		trigger = {
 			is_female = yes
-		}
-	}
-}
-
-# MONDE ALEATOIRE
-
-defined_text = {
-	name = Get_juifs
-	use_first_valid = yes
-	text = {
-		localisation_key = String_FR_Get_juifs_normal
-		trigger = {
-			jewish = { is_name_randomized = no }
-		}
-	}
-	text = {
-		localisation_key = String_FR_Get_juifs_random
-		trigger = {
-			jewish = { is_name_randomized = yes }
 		}
 	}
 }

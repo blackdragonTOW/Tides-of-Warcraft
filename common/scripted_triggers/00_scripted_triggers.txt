@@ -127,10 +127,6 @@ has_pious_trait_trigger = {
 		trait = on_pilgrimage
 		trait = pilgrim
 		is_ascetic_trigger = yes
-		trait = hajjaj
-		trait = on_hajj
-		trait = ashari
-		trait = shieldmaiden
 		trait = zealous
 	}
 }
@@ -192,12 +188,7 @@ has_unpleasant_personality_trigger = {
 has_impious_trait_trigger = {
 	OR = {
 		trait = cynical
-		trait = bad_priest_christian
-		trait = bad_priest_muslim
-		trait = bad_priest_norse
-		trait = bad_priest_tengri
-		trait = bad_priest_zoroastrian
-		trait = bad_priest_aztec
+		trait = bad_priest_light_group
 		trait = hedonist
 		trait = lustful
 		trait = cannibal_trait
@@ -680,8 +671,6 @@ has_lifestyle_learning_trigger = {
 	OR = {
 		trait = scholar
 		trait = theologian
-		trait = mystic
-		trait = faqih
 	}
 }
 
@@ -699,7 +688,6 @@ is_learned_trigger = {
 		trait = scholarly_theologian
 		trait = mastermind_theologian
 		trait = physician
-		trait = faqih
 	}
 }
 
@@ -840,54 +828,7 @@ change_council_job_potential_trigger = {
 can_be_chancellor_trigger = {
 	OR = {
 		AND = {
-			OR = {
-				AND = { #Patriarchal religions can only hire males. Matriarchal religions can only hire females.
-					is_female = no 
-					NOT = { liege = { has_religion_feature = religion_matriarchal } } 
-				}
-				AND = {
-					is_female = yes 
-					OR = { 
-						liege = { has_religion_feature = religion_matriarchal } 
-						liege = { has_religion_feature = religion_equal } 
-						liege = { has_religion_feature = religion_feature_bon } 
-					} 
-				}
-				trait = horse # So we can have female glitterhoofs! :D
-				AND = {
-					liege = {
-						primary_title = {
-							OR = {
-								has_law = status_of_women_2
-								has_law = status_of_women_3
-							}
-						}
-					}
-					OR = {
-						liege = {
-							OR = {
-								dynasty = ROOT
-								is_close_relative = ROOT
-								any_spouse = { character = ROOT }
-								any_consort = { character = ROOT }
-							}
-						}
-						is_landed = yes
-						trait = nun
-						
-					}
-				}
-				OR = {
-					AND = { 
-						is_female = yes
-						liege = { primary_title = { has_law = status_of_women_4 } } 
-					}
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-			}
+			TOW_character_can_be_councillor = yes
 			is_adult = yes
 		}
 		has_character_flag = special_chancellor
@@ -911,52 +852,7 @@ can_be_chancellor_trigger = {
 can_be_marshal_trigger = {
 	OR = {
 		AND = {
-			OR = {
-				AND = { #Patriarchal religions can only hire males. Matriarchal religions can only hire females.
-					is_female = no 
-					NOT = { liege = { has_religion_feature = religion_matriarchal } } 
-				}
-				AND = {
-					is_female = yes 
-					OR = { 
-						liege = { has_religion_feature = religion_matriarchal } 
-						liege = { has_religion_feature = religion_equal } 
-						liege = { has_religion_feature = religion_feature_bon } 
-					} 
-				}
-				trait = horse # So we can have female glitterhoofs! :D
-				AND = {
-					liege = {
-						primary_title = {
-							OR = {
-								has_law = status_of_women_3
-							}
-						}
-					}
-					OR = {
-						liege = {
-							OR = {
-								dynasty = ROOT
-								is_close_relative = ROOT
-								any_spouse = { character = ROOT }
-								any_consort = { character = ROOT }
-							}
-						}
-						is_landed = yes
-						
-					}
-				}
-				OR = {
-					AND = { 
-						is_female = yes
-						liege = { primary_title = { has_law = status_of_women_4 } } 
-					}
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-			}
+			TOW_character_can_be_councillor = yes
 			is_adult = yes
 		}
 		has_character_flag = special_marshal
@@ -981,54 +877,7 @@ can_be_marshal_trigger = {
 can_be_treasurer_trigger = {
 	OR = {
 		AND = {
-			OR = {
-				AND = { #Patriarchal religions can only hire males. Matriarchal religions can only hire females.
-					is_female = no 
-					NOT = { liege = { has_religion_feature = religion_matriarchal } } 
-				}
-				AND = {
-					is_female = yes 
-					OR = { 
-						liege = { has_religion_feature = religion_matriarchal } 
-						liege = { has_religion_feature = religion_equal } 
-						liege = { has_religion_feature = religion_feature_bon } 
-					} 
-				}
-				trait = horse # So we can have female glitterhoofs! :D
-				AND = {
-					liege = {
-						primary_title = {
-							OR = {
-								has_law = status_of_women_2
-								has_law = status_of_women_3
-							}
-						}
-					}
-					OR = {
-						liege = {
-							OR = {
-								dynasty = ROOT
-								is_close_relative = ROOT
-								any_spouse = { character = ROOT }
-								any_consort = { character = ROOT }
-							}
-						}
-						is_landed = yes
-						trait = nun
-						
-					}
-				}
-				OR = {
-					AND = { 
-						is_female = yes
-						liege = { primary_title = { has_law = status_of_women_4 } } 
-					}
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-			}
+			TOW_character_can_be_councillor = yes
 			is_adult = yes
 		}
 		has_character_flag = special_treasurer
@@ -1053,65 +902,7 @@ can_be_treasurer_trigger = {
 can_be_spymaster_trigger = {
 	OR = {
 		AND = {
-			OR = {
-				AND = { #Patriarchal religions can only hire males. Matriarchal religions can only hire females.
-					is_female = no 
-					NOT = { liege = { has_religion_feature = religion_matriarchal } } 
-				}
-				AND = {
-					is_female = yes 
-					OR = { 
-						liege = { has_religion_feature = religion_matriarchal } 
-						liege = { has_religion_feature = religion_equal } 
-						liege = { has_religion_feature = religion_feature_bon } 
-					} 
-				}
-				trait = horse # So we can have female glitterhoofs! :D
-				liege = { 
-					NOR = {
-						liege = { has_religion_feature = religion_matriarchal } 
-						liege = { has_religion_feature = religion_patriarchal } 
-					}
-					OR = {
-						mother = { character = ROOT }
-						any_spouse = { character = ROOT }
-					}
-				}
-				AND = {
-					liege = {
-						primary_title = {
-							OR = {
-								has_law = status_of_women_1
-								has_law = status_of_women_2
-								has_law = status_of_women_3
-							}
-						}
-					}
-					OR = {
-						liege = {
-							OR = {
-								dynasty = ROOT
-								is_close_relative = ROOT
-								any_spouse = { character = ROOT }
-								any_consort = { character = ROOT }
-							}
-						}
-						is_landed = yes
-						trait = nun
-						
-					}
-				}
-				OR = {
-					AND = { 
-						is_female = yes
-						liege = { primary_title = { has_law = status_of_women_4 } } 
-					}
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-			}
+			TOW_character_can_be_spymaster = yes
 			is_adult = yes
 		}
 		has_character_flag = special_spymaster
@@ -1163,9 +954,6 @@ can_be_spiritual_trigger = {
 				is_female = yes
 				religion_allows_male_temple_holders = yes
 				has_religion_feature = religion_patriarchal
-			}
-			OR = {
-				is_ascetic_trigger = yes
 			}
 		}
 		has_character_flag = special_spiritual
@@ -1237,20 +1025,11 @@ can_be_councilmember_king_trigger = {
 							has_law = status_of_women_1
 							has_law = status_of_women_2
 							has_law = status_of_women_3
+							has_law = status_of_women_4
 						}
 					}
 				}
 				is_landed = yes
-			}
-			OR = {
-				AND = { 
-					is_female = yes
-					liege = { primary_title = { has_law = status_of_women_4 } } 
-				}
-				has_game_rule = {
-					name = gender
-					value = all
-				}
 			}
 		}
 		is_adult = yes
@@ -1486,7 +1265,6 @@ developing_epidemic_disease_trigger = {
 		has_character_flag = got_tuberculosis
 		has_character_flag = got_typhoid_fever
 		has_character_flag = got_typhus
-		has_character_flag = got_bubonic_plague
 		has_character_flag = got_measles
 		has_character_flag = got_small_pox
 		has_character_flag = got_aztec_disease
@@ -1645,24 +1423,136 @@ block_general_event_trigger = {
 	}
 }
 
-gender_equality_trigger = {
-	OR = {
-		TOW_is_character_woman_tolerant_trigger = yes
-		has_religion_feature = religion_equal
-		has_religion_feature = religion_feature_bon
-		AND = {
-			is_landed = yes
-			primary_title = { 
-				has_law = status_of_women_4 
+gender_equality_trigger_4 = {
+	trigger_if = {
+		limit = {
+			NOT = {
+				has_game_rule = {
+					name = gender
+					value = all
+				}
 			}
 		}
-		AND = {
-			is_landed = no
-			liege = { primary_title = { has_law = status_of_women_4 } }
+		OR = {
+			AND = {
+				is_ruler = yes
+				primary_title = { has_law = status_of_women_4 }
+			}
+			AND = {
+				is_ruler = no
+				liege = { primary_title = { has_law = status_of_women_4 } }
+			}
 		}
-		has_game_rule = {
-			name = gender
-			value = all
+	}
+}
+
+gender_equality_trigger_3 = {
+	trigger_if = {
+		limit = {
+			NOT = {
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+			}
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				primary_title = {
+					OR = {
+						has_law = status_of_women_4
+						has_law = status_of_women_3
+					}
+				}
+			}
+			AND = {
+				is_ruler = no
+				liege = {
+					primary_title = {
+						OR = {
+							has_law = status_of_women_4
+							has_law = status_of_women_3
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+gender_equality_trigger_1 = {
+	trigger_if = {
+		limit = {
+			NOT = {
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+			}
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				primary_title = {
+					OR = {
+						has_law = status_of_women_4
+						has_law = status_of_women_3
+						has_law = status_of_women_2
+						has_law = status_of_women_1
+					}
+				}
+			}
+			AND = {
+				is_ruler = no
+				liege = {
+					primary_title = {
+						OR = {
+							has_law = status_of_women_4
+							has_law = status_of_women_3
+							has_law = status_of_women_2
+							has_law = status_of_women_1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+gender_equality_trigger = {
+	trigger_if = {
+		limit = {
+			NOT = {
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+			}
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				primary_title = {
+					OR = {
+						has_law = status_of_women_4
+						has_law = status_of_women_3
+						has_law = status_of_women_2
+					}
+				}
+			}
+			AND = {
+				is_ruler = no
+				liege = {
+					primary_title = {
+						OR = {
+							has_law = status_of_women_4
+							has_law = status_of_women_3
+							has_law = status_of_women_2
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -3303,12 +3193,12 @@ death_no_trace_trigger = {
 proselytize_convert_independent_trigger = {
 	owner = {
 		OR = {
-			FROM = { TOW_is_uncivilized_trigger = no } 
+			FROM = { TOW_is_uncivilized_religion_trigger = no } 
 			FROM = { has_religion_feature = religion_proselytizing }
 		}
 		independent = yes
 		NOT = { religion = FROM }
-		TOW_is_uncivilized_trigger = yes
+		TOW_is_uncivilized_religion_trigger = yes
 		is_reformed_religion = no
 		capital_scope = {
 			province = ROOT
@@ -3666,7 +3556,7 @@ pagan_baptism_trigger = {
 	custom_tooltip = {
 		text = TT_UNREFORMED_PAGAN
 		hidden_tooltip = {
-			TOW_is_uncivilized_trigger = yes
+			TOW_is_uncivilized_religion_trigger = yes
 			NOT = { is_reformed_religion = yes }
 			#NOT = { religion = bon }
 		}
@@ -4665,12 +4555,7 @@ preferred_gender_based_on_laws_trigger = {
 
 has_bad_priest_trait_trigger = {
 	OR = {
-		trait = bad_priest_christian
-		trait = bad_priest_muslim
-		trait = bad_priest_norse
-		trait = bad_priest_tengri
-		trait = bad_priest_zoroastrian
-		trait = bad_priest_aztec
+		trait = bad_priest_light_group
 	}
 }
 
@@ -4889,11 +4774,9 @@ this_has_execution_reason_opinion_trigger = {
 		has_opinion_modifier = { who = THIS modifier = opinion_murder_attempt }
 		has_opinion_modifier = { who = THIS modifier = opinion_killed_close_kin }
 		has_opinion_modifier = { who = THIS modifier = opinion_killed_father }
-		has_opinion_modifier = { who = THIS modifier = opinion_hajj_attempt_murder }
 		has_opinion_modifier = { who = THIS modifier = opinion_castrated_me }
 		has_opinion_modifier = { who = THIS modifier = opinion_blinded_me }
 		has_opinion_modifier = { who = THIS modifier = opinion_witch }
-		has_opinion_modifier = { who = THIS modifier = opinion_takfir }
 		has_opinion_modifier = { who = THIS modifier = opinion_attempted_abduction }
 		has_opinion_modifier = { who = THIS modifier = opinion_unfaithful_wife }
 		has_opinion_modifier = { who = THIS modifier = opinion_unfaithful_husband_crime }
@@ -4922,11 +4805,9 @@ root_has_execution_reason_opinion_trigger = {
 		has_opinion_modifier = { who = ROOT modifier = opinion_murder_attempt }
 		has_opinion_modifier = { who = ROOT modifier = opinion_killed_close_kin }
 		has_opinion_modifier = { who = ROOT modifier = opinion_killed_father }
-		has_opinion_modifier = { who = ROOT modifier = opinion_hajj_attempt_murder }
 		has_opinion_modifier = { who = ROOT modifier = opinion_castrated_me }
 		has_opinion_modifier = { who = ROOT modifier = opinion_blinded_me }
 		has_opinion_modifier = { who = ROOT modifier = opinion_witch }
-		has_opinion_modifier = { who = ROOT modifier = opinion_takfir }
 		has_opinion_modifier = { who = ROOT modifier = opinion_attempted_abduction }
 		has_opinion_modifier = { who = ROOT modifier = opinion_unfaithful_wife }
 		has_opinion_modifier = { who = ROOT modifier = opinion_unfaithful_husband_crime }
@@ -4957,7 +4838,6 @@ root_has_imprisonment_reason_opinion_trigger = {
 		has_opinion_modifier = { who = ROOT modifier = opinion_murder_attempt }
 		has_opinion_modifier = { who = ROOT modifier = opinion_killed_close_kin }
 		has_opinion_modifier = { who = ROOT modifier = opinion_killed_father }
-		has_opinion_modifier = { who = ROOT modifier = opinion_hajj_attempt_murder }
 		has_opinion_modifier = { who = ROOT modifier = opinion_fatwa_target }
 		has_opinion_modifier = { who = ROOT modifier = opinion_refused_order }
 		has_opinion_modifier = { who = ROOT modifier = opinion_castrated_me }
@@ -4967,7 +4847,6 @@ root_has_imprisonment_reason_opinion_trigger = {
 		has_opinion_modifier = { who = ROOT modifier = opinion_blinded_family }
 		has_opinion_modifier = { who = ROOT modifier = opinion_blinded_close_kin }
 		has_opinion_modifier = { who = ROOT modifier = opinion_witch }
-		has_opinion_modifier = { who = ROOT modifier = opinion_takfir }
 		has_opinion_modifier = { who = ROOT modifier = opinion_attempted_abduction }
 		has_opinion_modifier = { who = ROOT modifier = opinion_killed_lover }
 		has_opinion_modifier = { who = ROOT modifier = opinion_unfaithful_wife }

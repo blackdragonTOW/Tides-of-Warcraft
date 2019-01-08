@@ -4468,12 +4468,12 @@ faction_independence = {
 						NOT = { distance = { who = ROOT distance = 200 } }
 						ROOT = {
 							OR = {
-								NOT = { religion_group = pagan_group }
+								NOT = { TOW_is_uncivilized_religion_trigger = yes }
 								is_reformed_religion = yes
 							}
 						}
 						OR = {
-							NOT = { ROOT = { religion_group = pagan_group } }
+							NOT = { ROOT = { TOW_is_uncivilized_religion_trigger = yes } }
 							ROOT = { is_reformed_religion = yes }
 						}
 					}
@@ -4498,7 +4498,7 @@ faction_independence = {
 			factor = 0
 			lower_tier_than = KING
 			OR = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 				is_reformed_religion = yes
 			}
 			liege = {
@@ -4561,7 +4561,7 @@ faction_independence = {
 		modifier = {
 			factor = 0.1
 			OR = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 				is_reformed_religion = yes
 			}
 			liege = {
@@ -4592,7 +4592,7 @@ faction_independence = {
 		
 		modifier = {
 			factor = 2.0
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			is_reformed_religion = no
 		}
 		
@@ -4779,7 +4779,7 @@ faction_independence = {
 						NOT = { distance = { who = ROOT distance = 200 } }
 						ROOT = {
 							OR = {
-								NOT = { religion_group = pagan_group }
+								NOT = { TOW_is_uncivilized_religion_trigger = yes }
 								is_reformed_religion = yes
 							}
 						}
@@ -4802,7 +4802,7 @@ faction_independence = {
 			factor = 0
 			lower_tier_than = KING
 			OR = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 				is_reformed_religion = yes
 			}
 			liege = {
@@ -4948,7 +4948,7 @@ faction_independence = {
 		modifier = {
 			factor = 0.1
 			OR = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 				is_reformed_religion = yes
 			}
 			liege = {
@@ -5006,7 +5006,7 @@ faction_independence = {
 		
 		modifier = {
 			factor = 2.0
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			is_reformed_religion = no
 		}
 		
@@ -5318,7 +5318,7 @@ faction_claimant = {
 			}
 			OR = {
 				is_female = yes
-				TOW_is_character_woman_tolerant_trigger = yes
+				bad_priest_light_group = yes
 				AND = { 
 					NOT = { ROOT = { succ_law_title = { has_law = enatic_succession } } }
 					NOT = { has_religion_feature = religion_matriarchal }

@@ -154,7 +154,6 @@ character_event = {
 							trait = dynastic_kinslayer
 							trait = excommunicated
 							trait = eunuch
-							trait = mystic
 							trait = seducer
 							trait = seductress
 							trait = lovers_pox
@@ -201,7 +200,7 @@ character_event = {
 									religion = hellenic_pagan
 									religion = hellenic_pagan_reformed
 								}
-								ROOT = { religion_group = pagan_group }
+								ROOT = { TOW_is_uncivilized_religion_trigger = yes }
 							}
 							AND = { 
 								trait = cynical 
@@ -1687,10 +1686,6 @@ character_event = {
 				set_character_flag = flag_antagonized_option_eunuch
 			}
 			20 = {
-				modifier = { 
-					factor = 0
-					NOT = { trait = mystic }
-				}	
 				modifier = { #Try to pick opposite traits if any are available
 					factor = 1.5
 					FROM = { trait = theologian }
@@ -2260,7 +2255,7 @@ character_event = {
 				}	
 				modifier = { #Context
 					factor = 0
-					FROM = { NOT = { religion_group = pagan_group } }
+					FROM = { NOT = { TOW_is_uncivilized_religion_trigger = yes } }
 				}
 				modifier = { #Context
 					factor = 0

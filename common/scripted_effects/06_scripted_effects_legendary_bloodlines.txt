@@ -867,7 +867,6 @@ spawn_old_duelist_effect = {
 		remove_trait = craven
 		remove_trait = paranoid
 		
-		remove_trait = mystic
 		remove_trait = socializer
 		remove_trait = gamer
 		remove_trait = hedonist
@@ -1092,7 +1091,7 @@ spawn_old_duelist_effect = {
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 				}
 				random_list = {  
 					5 = {
@@ -1164,7 +1163,6 @@ spawn_giant_duelist_effect = {
 		remove_trait = craven
 		remove_trait = paranoid
 		
-		remove_trait = mystic
 		remove_trait = socializer
 		remove_trait = gamer
 		remove_trait = hedonist
@@ -1343,7 +1341,7 @@ spawn_giant_duelist_effect = {
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 				}
 				random_list = {  
 					5 = {
@@ -1412,7 +1410,6 @@ spawn_creature_champion_effect = {
 		remove_trait = craven
 		remove_trait = paranoid
 		
-		remove_trait = mystic
 		remove_trait = socializer
 		remove_trait = gamer
 		remove_trait = hedonist
@@ -1666,7 +1663,7 @@ spawn_creature_champion_effect = {
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 				}
 				random_list = {  
 					5 = {

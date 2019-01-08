@@ -1039,7 +1039,7 @@ narrative_event = {
 			trait = ambitious
 			trait = arbitrary
 			trait = zealous
-			trait = hakkar_trait
+			trait = race_hakkar
 			trait = holy_warrior
 			trait = impaler
 		}
@@ -1191,7 +1191,7 @@ character_event = {
 	
 	trigger = {
 		has_global_flag = hakkar_godbreaker
-		trait = hakkar_trait
+		trait = race_hakkar
 		host = {
 			character = event_target:godbreaker
 		}
@@ -1259,7 +1259,7 @@ character_event = {
 	
 	trigger = {
 		ROOT = {
-			trait = hakkar_trait
+			trait = race_hakkar
 		}
 		event_target:godbreaker = {
 			NOT = { character = FROM }

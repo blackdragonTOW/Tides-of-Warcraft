@@ -681,7 +681,7 @@ feudal_elective = {
 				} 
 				AND = {  
 					trait = sympathy_pagans
-					FROM = { religion_group = pagan_group } 
+					FROM = { TOW_is_uncivilized_religion_trigger = yes } 
 				} 
 				AND = {  
 					trait = sympathy_zoroastrianism
@@ -1330,13 +1330,6 @@ feudal_elective = {
 			}
 		}
 		additive_modifier = {
-			value = -35
-			localisation_key = tooltip_feudal_elector_vote_has_bubonic_plague
-			FROM = { 
-				trait = has_bubonic_plague
-			}
-		}
-		additive_modifier = {
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_disfigured
 			this_is_warrior_culture_trigger = no
@@ -1811,7 +1804,7 @@ feudal_elective = {
 			OR = { 
 				trait = lustful 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -1849,7 +1842,7 @@ feudal_elective = {
 			OR = { 
 				trait = gluttonous
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -1969,7 +1962,7 @@ feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -1988,7 +1981,7 @@ feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -2027,7 +2020,7 @@ feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -2066,7 +2059,7 @@ feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 				}
@@ -2148,7 +2141,7 @@ feudal_elective = {
 			value = 15
 			localisation_key = tooltip_feudal_elector_vote_proud_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -2184,7 +2177,7 @@ feudal_elective = {
 			value = 5
 			localisation_key = tooltip_feudal_elector_vote_ambitious_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -2283,7 +2276,7 @@ feudal_elective = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_content_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				trait = content
 				religion = bon
@@ -2341,7 +2334,7 @@ feudal_elective = {
 			}
 			OR = { 
 				is_reformed_religion = yes
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 			}
 			FROM = { 
 				trait = cynical
@@ -3920,7 +3913,7 @@ tanistry = {
 				} 
 				AND = {  
 					trait = sympathy_pagans
-					FROM = { religion_group = pagan_group } 
+					FROM = { TOW_is_uncivilized_religion_trigger = yes } 
 				} 
 				AND = {  
 					trait = sympathy_zoroastrianism
@@ -4612,13 +4605,6 @@ tanistry = {
 			}
 		}
 		additive_modifier = {
-			value = -35
-			localisation_key = tooltip_feudal_elector_vote_has_bubonic_plague
-			FROM = { 
-				trait = has_bubonic_plague
-			}
-		}
-		additive_modifier = {
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_disfigured
 			this_is_warrior_culture_trigger = no
@@ -5093,7 +5079,7 @@ tanistry = {
 			OR = { 
 				trait = lustful 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -5131,7 +5117,7 @@ tanistry = {
 			OR = { 
 				trait = gluttonous
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -5251,7 +5237,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -5270,7 +5256,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -5309,7 +5295,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -5348,7 +5334,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 				}
@@ -5430,7 +5416,7 @@ tanistry = {
 			value = 15
 			localisation_key = tooltip_feudal_elector_vote_proud_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -5466,7 +5452,7 @@ tanistry = {
 			value = 5
 			localisation_key = tooltip_feudal_elector_vote_ambitious_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -5565,7 +5551,7 @@ tanistry = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_content_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				trait = content
 				religion = bon
@@ -5623,7 +5609,7 @@ tanistry = {
 			}
 			OR = { 
 				is_reformed_religion = yes
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 			}
 			FROM = { 
 				trait = cynical
@@ -7148,7 +7134,7 @@ elective_gavelkind = {
 				} 
 				AND = {  
 					trait = sympathy_pagans
-					FROM = { religion_group = pagan_group } 
+					FROM = { TOW_is_uncivilized_religion_trigger = yes } 
 				} 
 				AND = {  
 					trait = sympathy_zoroastrianism
@@ -7884,13 +7870,6 @@ elective_gavelkind = {
 			}
 		}
 		additive_modifier = {
-			value = -35
-			localisation_key = tooltip_feudal_elector_vote_has_bubonic_plague
-			FROM = { 
-				trait = has_bubonic_plague
-			}
-		}
-		additive_modifier = {
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_disfigured
 			this_is_warrior_culture_trigger = no
@@ -8365,7 +8344,7 @@ elective_gavelkind = {
 			OR = { 
 				trait = lustful 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -8403,7 +8382,7 @@ elective_gavelkind = {
 			OR = { 
 				trait = gluttonous
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -8523,7 +8502,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -8542,7 +8521,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -8581,7 +8560,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -8620,7 +8599,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 				}
@@ -8702,7 +8681,7 @@ elective_gavelkind = {
 			value = 15
 			localisation_key = tooltip_feudal_elector_vote_proud_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -8738,7 +8717,7 @@ elective_gavelkind = {
 			value = 5
 			localisation_key = tooltip_feudal_elector_vote_ambitious_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -8837,7 +8816,7 @@ elective_gavelkind = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_content_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				trait = content
 				religion = bon
@@ -8895,7 +8874,7 @@ elective_gavelkind = {
 			}
 			OR = { 
 				is_reformed_religion = yes
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 			}
 			FROM = { 
 				trait = cynical
@@ -10530,7 +10509,7 @@ eldership_rules = {
 				} 
 				AND = {  
 					trait = sympathy_pagans
-					FROM = { religion_group = pagan_group } 
+					FROM = { TOW_is_uncivilized_religion_trigger = yes } 
 				} 
 				AND = {  
 					trait = sympathy_zoroastrianism
@@ -11249,16 +11228,6 @@ eldership_rules = {
 			}
 		}
 		additive_modifier = {
-			value = -35
-			localisation_key = tooltip_feudal_elector_vote_has_bubonic_plague
-			FROM = { 
-				trait = has_bubonic_plague
-			}
-			FROMFROM = { 
-				holder_scope = { character = ROOT } 
-			}
-		}
-		additive_modifier = {
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_disfigured
 			this_is_warrior_culture_trigger = no
@@ -11719,7 +11688,7 @@ eldership_rules = {
 			OR = { 
 				trait = lustful 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -11763,7 +11732,7 @@ eldership_rules = {
 			OR = { 
 				trait = gluttonous
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -11913,7 +11882,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -11935,7 +11904,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -11980,7 +11949,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -12025,7 +11994,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 				}
@@ -12128,7 +12097,7 @@ eldership_rules = {
 			value = 15
 			localisation_key = tooltip_feudal_elector_vote_proud_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -12170,7 +12139,7 @@ eldership_rules = {
 			value = 5
 			localisation_key = tooltip_feudal_elector_vote_ambitious_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -12290,7 +12259,7 @@ eldership_rules = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_content_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				trait = content
 				religion = bon
@@ -12360,7 +12329,7 @@ eldership_rules = {
 			}
 			OR = { 
 				is_reformed_religion = yes
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 			}
 			FROM = { 
 				trait = cynical
@@ -13692,7 +13661,7 @@ eldership_rules = {
 				} 
 				AND = {  
 					trait = sympathy_pagans
-					FROM = { religion_group = pagan_group } 
+					FROM = { TOW_is_uncivilized_religion_trigger = yes } 
 				} 
 				AND = {  
 					trait = sympathy_zoroastrianism
@@ -14370,14 +14339,6 @@ eldership_rules = {
 			has_elector_stance = { stance = elder_pleased title = FROMFROM }
 		}
 		additive_modifier = {
-			value = -35
-			localisation_key = tooltip_feudal_elector_vote_has_bubonic_plague
-			FROM = { 
-				trait = has_bubonic_plague
-			}
-			has_elector_stance = { stance = elder_pleased title = FROMFROM }
-		}
-		additive_modifier = {
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_disfigured
 			this_is_warrior_culture_trigger = no
@@ -14766,7 +14727,7 @@ eldership_rules = {
 			OR = { 
 				trait = lustful 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -14806,7 +14767,7 @@ eldership_rules = {
 			OR = { 
 				trait = gluttonous
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -14936,7 +14897,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -14956,7 +14917,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -14997,7 +14958,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 					NOT = { religion = hellenic_pagan }
@@ -15038,7 +14999,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				AND = { 
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { religion = bon }
 					NOT = { religion = bon_reformed }
 				}
@@ -15129,7 +15090,7 @@ eldership_rules = {
 			value = 15
 			localisation_key = tooltip_feudal_elector_vote_proud_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -15167,7 +15128,7 @@ eldership_rules = {
 			value = 5
 			localisation_key = tooltip_feudal_elector_vote_ambitious_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				religion = bon
 				religion = bon_reformed
@@ -15273,7 +15234,7 @@ eldership_rules = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_content_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			NOR = { 
 				trait = content
 				religion = bon
@@ -15335,7 +15296,7 @@ eldership_rules = {
 			}
 			OR = { 
 				is_reformed_religion = yes
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 			}
 			FROM = { 
 				trait = cynical

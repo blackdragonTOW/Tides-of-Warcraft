@@ -138,12 +138,12 @@ heresiarch = {
 berserker = {
 	potential = {
 		OR = {
-			trait = troll_ice
-			trait = troll_forest
-			trait = troll_jungle
-			trait = troll_sand
-			trait = troll_dark
-			trait = troll_zandalari
+			trait = race_troll_ice
+			trait = race_troll_forest
+			trait = race_troll_jungle
+			trait = race_troll_sand
+			trait = race_troll_dark
+			trait = race_troll_zandalari
 		}
 	}
 	martial = 4
@@ -189,6 +189,22 @@ viking = {
 	female_compliment_adj = COMPL_VIKING_adj
 }
 
+
+on_pilgrimage = {
+	potential = {
+		religion_group = christian
+		NOT = { trait = pilgrim }
+	}
+	
+	cached = yes    # Keep a cache of all trait holders, to use with the corresponding event trigger 
+	
+	monthly_character_piety = 0.2
+	same_religion_opinion = 5
+	
+	pilgrimage = yes    # Will need a regent, but can still be guardian to children
+	customizer = no
+}
+
 # Babies can be born sickly
 sickly = {
 	is_health = yes
@@ -204,6 +220,32 @@ sickly = {
 	random = no
 }
 
+bad_priest_light_group = {
+
+	religious = yes
+
+	potential = {
+		OR = {
+			is_theocracy = yes
+			is_ruler = no
+		}
+	}
+
+	church_opinion = -10
+	same_opinion_if_same_religion = 25
+
+	monthly_character_piety = -1
+
+	customizer = no
+	random = no
+
+	male_insult = INSULT_SCARECROW
+	female_insult = INSULT_SCARECROW
+	child_insult = INSULT_SCARECROW
+	male_insult_adj = INSULT_DECADENT
+	female_insult_adj = INSULT_CORRUPT
+	child_insult_adj = INSULT_CRUMMY
+}
 narrow_flank_leader = {
 	leader = yes
 	
@@ -1645,6 +1687,72 @@ giant = {
 	child_insult_adj = INSULT_UGLY
 	male_compliment_adj = COMPL_STRONG
 }
+
+crowned_by_priest = {
+	opposites =  {
+		crowned_by_bishop
+		crowned_by_pope
+		crowned_by_myself
+	}
+	
+	monthly_character_prestige = 0.05
+	monthly_character_piety = 0.1
+	
+	customizer = no
+	random = no
+}
+crowned_by_bishop = {
+	opposites =  {
+		crowned_by_priest
+		crowned_by_pope
+		crowned_by_myself
+	}
+	church_opinion = 5
+	
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.25
+	
+	customizer = no
+	random = no
+}
+crowned_by_pope = {
+	opposites =  {
+		crowned_by_priest
+		crowned_by_bishop
+		crowned_by_myself
+	}
+	church_opinion = 10
+	vassal_opinion = 5
+
+	monthly_character_prestige = 0.5
+	monthly_character_piety = 0.5
+	
+	customizer = no
+	random = no
+}
+
+crowned_by_myself = {
+	opposites =  {
+		crowned_by_priest
+		crowned_by_bishop
+		crowned_by_pope
+	}
+	church_opinion = -25
+	vassal_opinion = 10
+
+	monthly_character_prestige = 1.0
+	monthly_character_piety = -0.5
+	
+	customizer = no
+	random = no
+}
+
+uncrowned = { #Used to handle portrait appearance
+	hidden = yes
+	customizer = no
+	random = no
+}
+
 travelling = {
 	pilgrimage = yes # Will need a regent, but can still be guardian to children.
 	customizer = no
@@ -1862,8 +1970,6 @@ child_of_consort_male = {
 pirate = {
 	potential = {
 		OR = {
-			religion = norse_pagan
-			religion = norse_pagan_reformed
 			has_character_flag = acquired_pirate_trait_by_bloodline
 			AND = {
 				has_religion_feature = religion_adventuring
@@ -1890,11 +1996,7 @@ pirate = {
 
 bloodthirsty_gods_1 = { #10 burned_hearts_points
 	potential = {
-		OR = {
-			has_religion_feature = religion_ritual_sacrifice
-			religion = aztec
-			religion = aztec_reformed
-		}
+		has_religion_feature = religion_ritual_sacrifice
 	}
 	opposites =  {
 		bloodthirsty_gods_2
@@ -1926,11 +2028,7 @@ bloodthirsty_gods_1 = { #10 burned_hearts_points
 }
 bloodthirsty_gods_2 = { #50 burned_hearts_points
 	potential = {
-		OR = {
-			has_religion_feature = religion_ritual_sacrifice
-			religion = aztec
-			religion = aztec_reformed
-		}
+		has_religion_feature = religion_ritual_sacrifice
 	}
 	opposites =  {
 		bloodthirsty_gods_1
@@ -1962,11 +2060,7 @@ bloodthirsty_gods_2 = { #50 burned_hearts_points
 }
 bloodthirsty_gods_3 = { #100 burned_hearts_points
 	potential = {
-		OR = {
-			has_religion_feature = religion_ritual_sacrifice
-			religion = aztec
-			religion = aztec_reformed
-		}
+		has_religion_feature = religion_ritual_sacrifice
 	}
 	opposites =  {
 		bloodthirsty_gods_2

@@ -6709,31 +6709,6 @@ narrative_event = {
     after = { clr_artifact_flagsmodifiers_effect = yes }
 }
 
-###Seal of Solomon removes possession###
-character_event = {
-    id = MNM.9815
-    desc = EVTDESC_MNM_9815
-    picture = GFX_evt_secluded_in_prayer
-    border = GFX_event_normal_frame_religion
-
-    is_triggered_only = yes
-
-    has_dlc = "Mystics"
-
-    trigger = {
-    	trait = possessed
-    	has_artifact = seal_of_solomon
-    }
-
-    option = { #remove possession
-        name = EVTOPTA_MNM_9815
-        remove_trait = possessed
-    }
-    option = { #nah I'm good
-    	name = EVTOPTB_MNM_9815
-	}
-}
-
 ###Blessed Mantle allows you to make Water of the Blessed Mantle###
 character_event = {
     id = MNM.9816

@@ -13,7 +13,7 @@ character_event = {
 			religion = loa
 			religion = hakkar
 		}
-		NOT = { trait = hakkar_trait }
+		NOT = { trait = race_hakkar }
 		OR = {
 			trait = troll_dark
 			trait = troll_zandalari
@@ -1696,7 +1696,7 @@ character_event = {
 	}
 	
 	trigger = {
-		trait = hakkar_trait
+		trait = race_hakkar
 		OR = {
 			NOT = { religion = hakkar }
 			NOT = { culture = hakkari }

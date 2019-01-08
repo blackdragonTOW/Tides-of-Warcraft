@@ -29,7 +29,7 @@ character_event = {
 			independent = yes
 			higher_tier_than = DUKE
 		}
-		NOT = { religion_group = pagan_group }
+		NOT = { TOW_is_uncivilized_religion_trigger = yes }
 		job_spiritual = {
 			ai = yes
 			trait = zealous
@@ -48,7 +48,7 @@ character_event = {
 				religion = ROOT
 				has_opinion_modifier = { who = ROOT modifier = opinion_sent_preacher }
 			}
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			OR = {
 				NOT = { religion = aztec }
 				year = 1350
@@ -91,7 +91,7 @@ character_event = {
 					religion = ROOT
 					has_opinion_modifier = { who = ROOT modifier = opinion_sent_preacher }
 				}
-				religion_group = pagan_group
+				TOW_is_uncivilized_religion_trigger = yes
 				OR = {
 					NOT = { religion = aztec }
 					year = 1350
@@ -561,10 +561,10 @@ letter_event = {
 	
 	trigger = {
 		has_dlc = "Zeus"
-		NOT = { religion_group = pagan_group }
+		NOT = { TOW_is_uncivilized_religion_trigger = yes }
 		job_spiritual = {
 			has_job_action = action_inquisition
-			location = { owner = { religion_group = pagan_group } }
+			location = { owner = { TOW_is_uncivilized_religion_trigger = yes } }
 			OR = {
 				trait = craven
 				trait = cynical

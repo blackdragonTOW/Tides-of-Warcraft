@@ -1122,7 +1122,7 @@ character_event = {
 			limit = {
 				is_female = no
 				is_married = yes
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 			}
 			tooltip = {
 				add_character_modifier = {
@@ -6473,7 +6473,6 @@ character_event = {
 				factor = 0.1
 				NOT = { learning = 5 }
 				NOT = { trait = scholar }
-				NOT = { trait = mystic }
 				NOT = { trait = poet }
 				NOT = { trait = mastermind_theologian }
 				NOT = { trait = scholarly_theologian }
@@ -6482,7 +6481,6 @@ character_event = {
 				factor = 0.25
 				NOT = { age = 25 }
 				NOT = { trait = scholar }
-				NOT = { trait = mystic }
 				NOT = { trait = poet }
 				NOT = { trait = mastermind_theologian }
 				NOT = { trait = scholarly_theologian }
@@ -6494,10 +6492,6 @@ character_event = {
 			modifier = {
 				factor = 5.0
 				trait = scholar
-			}
-			modifier = {
-				factor = 3.0
-				trait = mystic
 			}
 			modifier = {
 				factor = 1.5
@@ -6884,10 +6878,6 @@ character_event = {
 			modifier = {
 				factor = 1.5
 				FROM = { has_character_modifier = wol_seducer_2 }
-			}
-			modifier = {
-				factor = 1.5
-				trait = mystic
 			}
 			modifier = {
 				factor = 1.5
@@ -7850,7 +7840,6 @@ character_event = {
 				factor = 0.1
 				NOT = { learning = 5 }
 				NOT = { trait = scholar }
-				NOT = { trait = mystic }
 				NOT = { trait = poet }
 				NOT = { trait = mastermind_theologian }
 				NOT = { trait = scholarly_theologian }
@@ -7859,7 +7848,6 @@ character_event = {
 				factor = 0.25
 				NOT = { age = 25 }
 				NOT = { trait = scholar }
-				NOT = { trait = mystic }
 				NOT = { trait = poet }
 				NOT = { trait = mastermind_theologian }
 				NOT = { trait = scholarly_theologian }
@@ -7871,10 +7859,6 @@ character_event = {
 			modifier = {
 				factor = 5.0
 				trait = scholar
-			}
-			modifier = {
-				factor = 3.0
-				trait = mystic
 			}
 			modifier = {
 				factor = 1.5
@@ -8267,10 +8251,6 @@ character_event = {
 			modifier = {
 				factor = 1.5
 				FROM = { has_character_modifier = wol_seducer_2 }
-			}
-			modifier = {
-				factor = 1.5
-				trait = mystic
 			}
 			modifier = {
 				factor = 1.5
@@ -10661,10 +10641,6 @@ character_event = {
 			factor = 0.5
 			trait = arbitrary
 		}
-		modifier = {
-			factor = 0.33
-			trait = possessed
-		}
 	}
 	
 	immediate = {
@@ -10887,10 +10863,6 @@ character_event = {
 		modifier = {
 			factor = 0.5
 			trait = arbitrary
-		}
-		modifier = {
-			factor = 0.33
-			trait = possessed
 		}
 	}
 	

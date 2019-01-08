@@ -2430,7 +2430,10 @@ character_event = {
 	
 	immediate = {
 		if = {
-			limit = { has_character_flag = spouse_diamond } # Still same spouse?
+			limit = {
+				NOT = { trait = lunatic }
+				has_character_flag = spouse_diamond
+			} # Still same spouse?
 			FROM = {
 				character_event = { id = RoI.230 }
 			}
@@ -2452,10 +2455,6 @@ character_event = {
 			if = {
 				limit = { NOT = { trait = lunatic } }
 				add_trait = lunatic
-			}
-			if = {
-				limit = { trait = lunatic }
-				add_trait = possessed
 			}
 		}
 		hidden_tooltip = { character_event = { id = RoI.240 } }

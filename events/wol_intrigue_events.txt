@@ -1041,7 +1041,7 @@ character_event = {
 							AND = {
 								liege = { religion_group = PREV }
 								NOT = { liege = { religion = PREV } }
-								NOT = { religion_group = pagan_group }
+								NOT = { TOW_is_uncivilized_religion_trigger = yes }
 								NOT = { religion_group = indian_group }
 							}
 						}
@@ -1057,7 +1057,7 @@ character_event = {
 							NOT = { liege = { religion_group = PREV } }
 							AND = {
 								NOT = { liege = { religion = PREV } }
-								religion_group = pagan_group
+								TOW_is_uncivilized_religion_trigger = yes
 							}
 						}
 					}
@@ -1072,7 +1072,6 @@ character_event = {
 							trait = decadent
 							trait = hedonist
 							trait = homosexual
-							trait = possessed
 							trait = lunatic
 							trait = arbitrary
 							trait = cruel

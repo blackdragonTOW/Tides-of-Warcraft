@@ -44,7 +44,7 @@ decisions = {
 	sacrifice_limb = {
 		potential = {
 			religion = hakkar
-			NOT = { trait = hakkar_trait }
+			NOT = { trait = race_hakkar }
 			NOT = { has_character_modifier = sacrificed_hakkar }
 		}
 		allow = {
@@ -93,7 +93,7 @@ decisions = {
 				trait = troll_ice
 				trait = troll_forest
 				trait = troll_jungle
-				trait = hakkar_trait
+				trait = race_hakkar
 			}
 			culture_group = troll
 			NOT = { is_title_active = e_zul }
@@ -131,7 +131,7 @@ targeted_decisions = {
 				trait = troll_ice
 				trait = troll_forest
 				trait = troll_jungle
-				trait = hakkar_trait
+				trait = race_hakkar
 			}
 			culture_group = troll
 			independent = yes
@@ -215,7 +215,7 @@ targeted_decisions = {
 				trait = troll_ice
 				trait = troll_forest
 				trait = troll_jungle
-				trait = hakkar_trait
+				trait = race_hakkar
 			}
 			culture_group = troll
 			OR = {

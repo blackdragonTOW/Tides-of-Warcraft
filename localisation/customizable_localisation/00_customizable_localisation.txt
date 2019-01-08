@@ -1033,7 +1033,7 @@ defined_text = {
 	text = {
 		trigger = { 
 			interesting_face_trigger = no
-			graphical_culture = norsegfx 
+			#graphical_culture = norsegfx 
 		}
 		localisation_key = String_ruddy
 	}
@@ -3233,92 +3233,6 @@ defined_text = {
 	}
 }
 
-### Chinese flavor
-defined_text = {
-	name = GetChineseConvoTopic #Note that these are a little dry sounding and don't necessarily mention China by name. How to use in a sentence: 
-	# "As we discuss [adventurous_spirit.GetHerHis] travels to the [the_protector_general.Offmap.GetFullName] [adventurous_spirit.GetSheHe] speaks passionately about [adventurous_spirit.GetChineseConvoTopic]"
-	text = {
-		localisation_key = String_such_a_wealthy_realm
-		trigger = { china_is_fine_trigger = yes }
-	}
-	text = {
-		localisation_key = String_such_white_papers
-		trigger = { trait = poet }
-	}
-	text = {
-		localisation_key = String_so_full_of_life
-	}
-	text = {
-		localisation_key = String_the_street_jugglers
-	}
-	text = {
-		localisation_key = String_the_many_festivals
-	}
-	text = {
-		localisation_key = String_crowded_water_routes
-	}
-	text = {
-		localisation_key = String_artisan_potters
-	}
-	text = {
-		localisation_key = String_the_melody_of_Chinese_language
-		trigger = {
-			OR = {
-				has_character_modifier = multilingual
-				has_character_modifier = student_of_language
-				learning = 15
-			}
-		}
-	}
-	text = {
-		localisation_key = String_the_magnificent_architecture
-	}
-	text = {
-		localisation_key = String_a_religious_ceremony
-	}
-	text = {
-		localisation_key = String_a_pleasure_trip_on_a_lake
-	}
-	text = {
-		localisation_key = String_the_construction_of_Chinese_boats
-	}
-	text = {
-		localisation_key = String_the_Chinese_food
-	}
-	text = {
-		localisation_key = String_the_intricacies_of_Chinese_government
-	}
-	text = {
-		localisation_key = String_the_artistic_sensibility
-	}
-	text = {
-		localisation_key = String_friendly_to_outsiders
-		trigger = {
-			offmap_china = {
-				offmap_ruler = {
-					culture = mongol
-				}
-			}
-		}
-	}
-}
-
-defined_text = { # Must only be used after having visited China, as it talks in past tense and uses pronouns, eg: "When asked about [From.GetHerHis] travels, [From.GetSheHe] just mutters about [adventurous_spirit.GetNegativeChineseConvoTopic]."
-	name = GetNegativeChineseConvoTopic
-	text = {
-		localisation_key = String_too_much_people
-	}
-	text = {
-		localisation_key = String_firecrackers
-	}
-	text = {
-		localisation_key = String_bad_weather_and_language_barrier
-	}
-	#pirates?
-	##Disdain for traders
-}
-
-
 #GetRootMatchingPersonalityStreak
 defined_text = {
 	name = GetRootMatchingPersonalityStreak # Example: "I had a lovely conversation with myself the other day! I and [Root.GetFirstName] spoke for hours about [GetRootMatchingPersonalityStreak]."
@@ -3654,16 +3568,6 @@ defined_text = {
 		trigger = {
 			trait = falconer
 			ROOT = { trait = falconer }
-		}
-	}
-	text = {
-		localisation_key = String_personality_mystic
-		weight_multiplier = {
-			factor = 10
-		}
-		trigger = {
-			trait = mystic
-			ROOT = { trait = mystic }
 		}
 	}
 	text = {
@@ -6567,33 +6471,6 @@ defined_text = {
 defined_text = { 
 	name = GetFertilityGoddess
 	
-	text = {
-		trigger = {
-			OR = { 
-				religion = norse_pagan
-				religion = norse_pagan_reformed
-			}
-		}
-		localisation_key = string_goddess_freyja
-	}
-	text = {
-		trigger = {
-			OR = { 
-				religion = baltic_pagan
-				religion = baltic_pagan_reformed
-			}
-		}
-		localisation_key = string_goddess_zemyna
-	}
-	text = {
-		trigger = {
-			OR = { 
-				religion = finnish_pagan
-				religion = finnish_pagan_reformed
-			}
-		}
-		localisation_key = string_goddess_akka
-	}
 	fallback_text = {
 		localisation_key = string_fallback_old_goddess 
 	}
@@ -7036,111 +6913,8 @@ defined_text = {
 defined_text = { #Dead Christians forget their Popes.
 	name = GetBaptizedByName
 
-	text = {
-		trigger = {
-			ROOT = { persistent_event_target:baptizing_pope_per = { always = yes } }
-			is_alive = yes
-			OR = { 
-				trait = baptized_by_pope 
-				trait = baptized_by_patriarch
-			}
-		}
-		localisation_key = string_baptized_by_pope_alive
-	}
-	text = {
-		trigger = {
-			FROM = { persistent_event_target:baptizing_pope_per = { always = yes } }
-			FROM = {
-				is_alive = yes
-				OR = { 
-					trait = baptized_by_pope 
-					trait = baptized_by_patriarch
-				}
-			}
-		}
-		localisation_key = string_from_baptized_by_pope_aliveop
-	}
-	text = {
-		trigger = {
-			is_alive = no
-			trait = baptized_by_pope
-		}
-		localisation_key = string_baptized_by_pope_dead
-	}
-	text = {
-		trigger = {
-			is_alive = no
-			trait = baptized_by_patriarch
-		}
-		localisation_key = string_baptized_by_patriarch_dead
-	}
-	text = {
-		trigger = {
-			ROOT = { persistent_event_target:baptizing_bishop_per = { always = yes } }
-			is_alive = yes
-			trait = baptized_by_bishop
-		}
-		localisation_key = string_baptized_by_bishop_alive
-	}
-	text = {
-		trigger = {
-			FROM = { persistent_event_target:baptizing_bishop_per = { always = yes } }
-			FROM = {
-				is_alive = yes
-				trait = baptized_by_bishop
-			}
-		}
-		localisation_key = string_from_baptized_by_bishop_aliveop
-	}
-	text = {
-		trigger = {
-			is_alive = no
-			trait = baptized_by_bishop
-		}
-		localisation_key = string_baptized_by_bishop_dead
-	}
-	text = {
-		trigger = {
-			is_alive = yes
-			persistent_event_target:baptizing_satanist_per = { is_female = no }
-			trait = baptized_by_satan
-		}
-		localisation_key = string_baptized_by_satan_alive_male
-	}
-	text = {
-		trigger = {
-			FROM = { persistent_event_target:baptizing_satanist_per = { is_female = no } }
-			FROM = {
-				is_alive = yes
-				trait = baptized_by_satan
-			}
-		}
-		localisation_key = string_from_baptized_by_satan_male_aliveop
-	}
-	text = {
-		trigger = {
-			is_alive = yes
-			persistent_event_target:baptizing_satanist_per = { is_female = yes }
-			trait = baptized_by_satan
-		}
-		localisation_key = string_baptized_by_satan_alive_female
-	}
-	text = {
-		trigger = {
-			FROM = { persistent_event_target:baptizing_satanist_per = { always = yes } }
-			FROM = {
-				is_alive = yes
-				trait = baptized_by_satan
-			}
-		}
-		localisation_key = string_from_baptized_by_satan_female_aliveop
-	}
-	text = {
-		trigger = {
-			is_alive = no
-			trait = baptized_by_satan
-		}
-		localisation_key = string_baptized_by_satan_dead
+	fallback_text = {
+		localisation_key = TOW_LOCALISATION_PLACEHOLDER_GetBaptizedByName
 	}
 }
 
@@ -7255,15 +7029,6 @@ defined_text = { #Intro for the Appeased's response event.
 	text = {
 		trigger = {
 			FROM = {
-				trait = mystic
-				has_character_flag = flag_appease_visit_inside 
-			}
-		}
-		localisation_key = string_appease_visit_inside_mystic
-	}
-	text = {
-		trigger = {
-			FROM = {
 				trait = scholar
 				has_character_flag = flag_appease_visit_inside 
 			}
@@ -7275,7 +7040,6 @@ defined_text = { #Intro for the Appeased's response event.
 			FROM = {
 				NOR = {
 					trait = scholar
-					trait = mystic
 					trait = socializer
 					trait = gamer
 					trait = hedonist 
@@ -7474,12 +7238,6 @@ defined_text = { #Custom loc for Main Antagonize slander event.
 			FROM = { has_character_flag = flag_antagonized_option_eunuch }
 		}
 		localisation_key = string_antagonized_desc_eunuch
-	}
-	text = {
-		trigger = {
-			FROM = { has_character_flag = flag_antagonized_option_mystic }
-		}
-		localisation_key = string_antagonized_desc_mystic
 	}
 	text = {
 		trigger = {
@@ -7806,12 +7564,6 @@ defined_text = { #Custom loc for Main Antagonize slander event (for Antagonized 
 			ROOT = { has_character_flag = flag_antagonized_option_eunuch }
 		}
 		localisation_key = string_antagonized_reaction_eunuch
-	}
-	text = {
-		trigger = {
-			ROOT = { has_character_flag = flag_antagonized_option_mystic }
-		}
-		localisation_key = string_antagonized_reaction_mystic
 	}
 	text = {
 		trigger = {
@@ -8153,7 +7905,6 @@ defined_text = { #Custom loc for Main Antagonize slander event (for Antagonized 
 					has_character_flag = flag_antagonized_option_impaler
 					has_character_flag = flag_antagonized_option_schemer
 					has_character_flag = flag_antagonized_option_seducer
-					has_character_flag = flag_antagonized_option_mystic
 					has_character_flag = flag_antagonized_option_eunuch
 					has_character_flag = flag_antagonized_option_excommunicated
 					has_character_flag = flag_antagonized_option_kinslayer
@@ -8250,98 +8001,13 @@ defined_text = {
 	text = {
 		trigger = { 
 			ROOT = { 
-				religion = norse_pagan_reformed
-				NOR = { 
-					has_religion_feature = religion_matriarchal 
-					has_religion_feature = religion_equal
-				} 
-			} 
+				#religion = tengri_pagan_reformed
+			}
 		}
-		localisation_key = string_reformed_religion_norse
+		#localisation_key = string_reformed_religion_tengri
 	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = norse_pagan_reformed
-				OR = { 
-					has_religion_feature = religion_matriarchal 
-					has_religion_feature = religion_equal
-				} 
-			} 
-		}
-		localisation_key = string_reformed_religion_norse_equal
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = tengri_pagan_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_tengri
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = slavic_pagan_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_slavic
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = baltic_pagan_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_baltic
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = finnish_pagan_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_finnish
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = west_african_pagan_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_west_african
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = zun_pagan_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_zunist
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = bon_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_bon
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = aztec_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_aztec
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = hellenic_pagan_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_hellenic
+	fallback_text = {
+		localisation_key = TOW_LOCALISATION_PLACEHOLDER_GetReformationReligion
 	}
 }
 
@@ -8386,94 +8052,10 @@ defined_text = {
 	name = GetReformationOutro
 	
 	text = {
-		trigger = { 
-			ROOT = { 
-				NOR = { 
-					religion = hellenic_pagan_reformed
-					religion = bon_reformed
-					religion = zun_pagan_reformed
-					religion = aztec_reformed
-				} 
-			} 
-		}
 		localisation_key = string_reformed_religion_default_outro
 	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = aztec_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_aztec_outro
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				religion = hellenic_pagan_reformed
-			} 
-		}
-		localisation_key = string_reformed_religion_hellenic_outro
-	}
-	text = {
-		trigger = { 
-			ROOT = { 
-				OR = { 
-					religion = zun_pagan_reformed
-					religion = bon_reformed
-				} 
-			} 
-		}
-		localisation_key = string_reformed_religion_eastern_outro
-	}
 }
 
-defined_text = {
-	name = GoldOwedToJews
-
-	text = {
-		trigger = {
-			any_owned_bloodline = {
-	    		has_bloodline_flag = jewish_saintly_bloodline
-	    	}
-		}
-		localisation_key = string_friendly_jewish_amount
-	}
-
-	text = {
-		trigger = {
-			NOT = {
-		    	any_owned_bloodline = {
-	    			has_bloodline_flag = jewish_saintly_bloodline
-	    		}
-			}
-		}
-		localisation_key = string_unfriendly_jewish_amount
-	}
-}
-
-defined_text = {
-	name = JewishGoldInterests
-
-	text = {
-		trigger = {
-			any_owned_bloodline = {
-				has_bloodline_flag = jewish_saintly_bloodline
-			}
-		}
-		localisation_key = string_friendly_jewish_interest
-	}
-
-	text = {
-		trigger = {
-			NOT = {
-				any_owned_bloodline = {
-					has_bloodline_flag = jewish_saintly_bloodline
-				}
-			}
-		}
-		localisation_key = string_unfriendly_jewish_interest
-	}
-}
 defined_text = {
 	name = GetMiracleShort
 
@@ -9278,36 +8860,6 @@ defined_text = {
 	}
 	text = {
 		localisation_key = random_mythological_creature_cyclops
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = random_mythological_creature_sleipnir
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = random_mythological_creature_fenrir
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = random_mythological_creature_jörmungandr
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = random_mythological_creature_nidhogg
-	}
-	text = {
-		trigger = {
-		culture = norse
-		}
-		localisation_key = random_mythological_creature_draugr
 	}
 	text = {
 		localisation_key = random_mythological_creature_chimera
@@ -10633,7 +10185,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 		}
 		localisation_key = string_blessed_ancestor
 	}
@@ -10650,7 +10202,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 		}
 		localisation_key = string_saint_view_title_pagan
 	}

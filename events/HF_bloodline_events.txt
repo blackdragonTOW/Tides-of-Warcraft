@@ -378,10 +378,10 @@ character_event = { # Sympathy for founder group
 				is_alive = no
 				OR = {
 					AND = {
-						religion_group = pagan_group
+						TOW_is_uncivilized_religion_trigger = yes
 						ROOT = {
 							NOR = {
-								religion_group = pagan_group
+								TOW_is_uncivilized_religion_trigger = yes
 								trait = sympathy_pagans
 							}
 						}
@@ -446,10 +446,10 @@ character_event = { # Sympathy for founder group
 					is_alive = no
 					OR = {
 						AND = {
-							religion_group = pagan_group
+							TOW_is_uncivilized_religion_trigger = yes
 							ROOT = {
 								NOR = {
-									religion_group = pagan_group
+									TOW_is_uncivilized_religion_trigger = yes
 									trait = sympathy_pagans
 								}
 							}
@@ -540,7 +540,7 @@ character_event = { # Sympathy for founder group
 		if = {
 			limit = {
 				event_target:target_bloodline_founder = {
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 				}
 			}
 			add_trait = sympathy_pagans
@@ -927,7 +927,7 @@ character_event = {
 					is_alternate_start = no 
 					independent = yes
 					lower_tier_than = EMPEROR
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { realm_size = 120 }
 					NOR = { 
 						religion = hellenic_pagan
@@ -958,7 +958,7 @@ character_event = {
 					is_alternate_start = no 
 					independent = yes
 					lower_tier_than = EMPEROR
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { realm_size = 120 }
 					NOR = { 
 						religion = hellenic_pagan
@@ -995,7 +995,7 @@ character_event = {
 					is_alternate_start = no 
 					independent = yes
 					lower_tier_than = EMPEROR
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { realm_size = 120 }
 					NOR = { 
 						religion = hellenic_pagan
@@ -1030,7 +1030,7 @@ character_event = {
 					is_alternate_start = no 
 					independent = yes
 					lower_tier_than = EMPEROR
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					NOT = { realm_size = 120 }
 					NOR = { 
 						religion = hellenic_pagan
@@ -2083,7 +2083,6 @@ character_event = {
 		trigger = {  
 			OR = {
 				trait = lunatic
-				trait = possessed
 				trait = cannibal_trait
 			}
 			trait = cruel
@@ -4850,7 +4849,7 @@ narrative_event = {
 			}
 		}
 		else_if = { 
-			limit = { religion_group = pagan_group }
+			limit = { TOW_is_uncivilized_religion_trigger = yes }
 			if = { 
 				limit = { is_female = no }
 				create_bloodline = {
@@ -5509,7 +5508,7 @@ narrative_event = {
 			}
 		}
 		else_if = { 
-			limit = { religion_group = pagan_group }
+			limit = { TOW_is_uncivilized_religion_trigger = yes }
 			if = { 
 				limit = { is_female = no }
 				create_bloodline = {
@@ -14774,7 +14773,6 @@ character_event = { # Mystic character arrives
 	immediate = {
 		spawn_fantastic_scholar_effect = yes
 		event_target:invited_character = {
-			add_trait = mystic
 			change_intrigue = 12
 			remove_trait = honest
 			remove_trait = trusting

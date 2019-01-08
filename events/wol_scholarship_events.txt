@@ -90,10 +90,6 @@ character_event = {
 			factor = 100
 			modifier = {
 				factor = 10
-				trait = possessed
-			}
-			modifier = {
-				factor = 10
 				trait = lunatic
 			}
 			modifier = {
@@ -1213,11 +1209,6 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_WoL_6370 # Keep it secret but continue dedicating myself to knowledge
-		if = {
-			limit = { NOT = { lifestyle_traits = 1 } }
-			remove_character_modifier = studying_the_stars
-			add_trait = mystic
-		}
 		if = {
 			limit = { has_nickname = no }
 			random_list = {
