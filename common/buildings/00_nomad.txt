@@ -2360,7 +2360,8 @@ nomad = {
 	
 	no_lamellar_armor_crafter_5 = {
 		desc = no_lamellar_armor_crafter_desc
-		v = { FROM = { TECH_CASTLE_CONSTRUCTION = 3 } }
+		potential = { has_game_started = yes }
+		trigger = { FROM = { TECH_CASTLE_CONSTRUCTION = 3 } }
 		gold_cost = 200
 		build_time = 365
 		ai_creation_factor = 97

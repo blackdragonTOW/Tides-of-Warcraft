@@ -10,9 +10,6 @@ character_event = {
 	hide_window = yes
 	
 	is_triggered_only = yes
-	only_rulers = yes
-	min_age = 16
-	only_men = yes
 
 	trigger = {
 		NOT = { has_global_flag = TOW_global_events_called }
@@ -24,9 +21,14 @@ character_event = {
 
 		religion_scope = {
 
-			ROOT = {
 				log = " -- Tides Of Warcraft -- : Set rel flag test [This.GetBestName]"
-				set_character_flag = my_religion_@PREV
+				set_flag = yo_watsup_@PREV
+			}
+		}
+
+		random_province = {
+			aeromancy = {
+				set_flag = hey_thisprovince_@PREV
 			}
 		}
 	}
