@@ -1,0 +1,35 @@
+namespace = TOW
+
+#######################################
+# GLOBAL EVENTS
+#######################################
+
+#Global events
+character_event = {
+	id = TOW.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = TOW_global_events_called }
+	}
+	immediate = {
+		set_global_flag = TOW_global_events_called
+
+		log = " -- Tides Of Warcraft -- : Global events called."
+
+		religion_scope = {
+
+				log = " -- Tides Of Warcraft -- : Set rel flag test [This.GetBestName]"
+				set_flag = yo_watsup_@PREV
+			}
+		}
+
+		random_province = {
+			aeromancy = {
+				set_flag = hey_thisprovince_@PREV
+			}
+		}
+	}
+}

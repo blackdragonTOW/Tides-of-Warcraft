@@ -669,7 +669,7 @@ character_event = {
 		}
 		name = { # A dozen of tough warriors
 			text = EVTOPTA_WOL_10114_WARRIORS
-			trigger = { religion_group = pagan_group }
+			trigger = { TOW_is_uncivilized_religion_trigger = yes }
 		}
 		wealth = -30
 		FROM = {
@@ -1957,7 +1957,7 @@ character_event = {
 				NOT = {
 					OR = {
 						religion_group = indian_group
-						religion_group = pagan_group
+						TOW_is_uncivilized_religion_trigger = yes
 					}
 				}
 				any_vassal = {
@@ -2030,27 +2030,6 @@ character_event = {
 				modifier = opinion_happy
 				who = ROOT
 				months = 240
-			}
-		}
-		hidden_tooltip = {
-			long_character_event = { id = WoL.10216 days = 60 }
-		}
-	}
-	
-	option = { # I'm just following the words of 'God'.
-		trigger = {
-			trait = possessed
-		}
-		name = EVTOPTC_WOL_10210
-		if = {
-			limit = { NOT = { trait = zealous } }
-			add_trait = zealous
-		}
-		religion_head = {
-			opinion = {
-				modifier = opinion_religious_agenda
-				who = ROOT
-				months = 60
 			}
 		}
 		hidden_tooltip = {

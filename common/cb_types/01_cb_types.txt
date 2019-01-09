@@ -1239,13 +1239,6 @@ liberate_religion = { # New6
 			}
 		}
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
-		if = {
-			limit = { defender = { is_offmap_governor = offmap_china } }
-			attacker = {  
-				sound_effect = china_angered_emperor
-				detract_grace_super_huge_effect = yes
-			}
-		}
 	}
 
 	can_use = {
@@ -3377,11 +3370,7 @@ flower_war_cb = {
 	can_use = {
 		ROOT = {
 			has_dlc = "Holy Fury"
-			OR = {
-				has_religion_feature = religion_ritual_sacrifice
-				religion = aztec
-				religion = aztec_reformed
-			}
+			has_religion_feature = religion_ritual_sacrifice
 			NOT = { has_religion_feature = religion_peaceful } #Aztecs could reform as Peaceful.
 			NOT = { same_realm = FROM }
 			NOT = { is_liege_or_above = FROM }
@@ -3404,24 +3393,13 @@ flower_war_cb = {
 	}
 	is_valid = {
 		ROOT = { 
-			OR = {
-				has_religion_feature = religion_ritual_sacrifice
-				religion = aztec
-				religion = aztec_reformed
-			}
+			has_religion_feature = religion_ritual_sacrifice
 			trait = bloodthirsty_gods_3 
 		}
 	}
 
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
-		if = {
-			limit = { defender = { is_offmap_governor = offmap_china } }
-			attacker = {  
-				sound_effect = china_angered_emperor
-				detract_grace_super_huge_effect = yes 
-			}
-		}
 	}
 
 	on_success = {
@@ -3552,21 +3530,6 @@ flower_war_cb = {
 		FROM = {
 			show_scope_change = no
 			piety = 100
-			if = {
-				limit = { 
-					has_dlc = "Legacy of Rome"
-					OR = { 
-						has_landed_title = e_byzantium
-						has_landed_title = e_roman_empire
-					}
-						OR = { 
-							religion_group = christian
-							religion = hellenic_pagan
-							religion = hellenic_pagan_reformed
-						}
-				}
-				hidden_tooltip = { character_event = { id = LoR.30 days = 12 } }
-			}
 			participation_scaled_prestige = 100
 		}
 		any_defender = {
@@ -3599,8 +3562,7 @@ flower_war_cb = {
 			ROOT = {
 				is_feudal = yes
 				OR = {
-					religion = catholic
-					religion = fraticelli
+					religion = holy_light
 				}
 				NOR = {
 					trait = crowned_by_priest
@@ -3630,13 +3592,6 @@ matriarchal_deposition_war = {
 	
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
-		if = {
-			limit = { defender = { is_offmap_governor = offmap_china } }
-			attacker = {  
-				sound_effect = china_angered_emperor
-				detract_grace_super_huge_effect = yes
-			}
-		}
 	}
 
 	can_use = {
@@ -4058,8 +4013,7 @@ matriarchal_deposition_war = {
 			ROOT = {
 				is_feudal = yes
 				OR = {
-					religion = catholic
-					religion = fraticelli
+					religion = holy_light
 				}
 				NOR = {
 					trait = crowned_by_priest
@@ -4102,13 +4056,6 @@ patriarchal_deposition_war = {
 	
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
-		if = {
-			limit = { defender = { is_offmap_governor = offmap_china } }
-			attacker = {  
-				sound_effect = china_angered_emperor
-				detract_grace_super_huge_effect = yes
-			}
-		}
 	}
 
 	can_use = {
@@ -4530,8 +4477,7 @@ patriarchal_deposition_war = {
 			ROOT = {
 				is_feudal = yes
 				OR = {
-					religion = catholic
-					religion = fraticelli
+					religion = holy_light
 				}
 				NOR = {
 					trait = crowned_by_priest

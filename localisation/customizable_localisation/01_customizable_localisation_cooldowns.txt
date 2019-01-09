@@ -1,15 +1,4 @@
 defined_text = {
-	name = GetRaidCD
-	
-	text = {
-		trigger = {
-			has_character_modifier = china_raid_grace_cd
-		}
-		localisation_key = string_raid_cd
-	}
-}
-
-defined_text = {
 	name = GetNegotiateCD
 	
 	text = {
@@ -80,27 +69,5 @@ defined_text = {
 			has_character_modifier = donate_to_holy_order_cooldown
 		}
 		localisation_key = donate_to_holy_order_cd
-	}
-}
-
-defined_text = {
-	name = GetCrusadePledgeCD
-
-	text = {
-		trigger = {
-			has_character_modifier = recently_pledged_to_crusade_cooldown
-		}
-		localisation_key = string_pledged_to_crusade_cooldown
-	}
-}
-
-defined_text = {
-	name = GetCrusadeUnpledgeCD
-
-	text = {
-		trigger = {
-			has_character_modifier = recently_unpledged_to_crusade_cooldown
-		}
-		localisation_key = string_unpledged_to_crusade_cooldown
 	}
 }

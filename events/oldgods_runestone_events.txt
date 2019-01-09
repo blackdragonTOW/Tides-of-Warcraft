@@ -293,7 +293,6 @@ character_event = {
 				trait = just
 				trait = zealous
 				trait = cruel
-				trait = possessed
 			}
 		}
 		
@@ -321,7 +320,6 @@ character_event = {
 			trait = drunkard
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -338,7 +336,6 @@ character_event = {
 			trait = fair
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -355,7 +352,6 @@ character_event = {
 			trait = dwarf
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -372,7 +368,6 @@ character_event = {
 			is_smart_trigger = yes
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -401,7 +396,6 @@ character_event = {
 			is_strong_trigger = yes
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -418,7 +412,6 @@ character_event = {
 			trait = scholar
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -435,7 +428,6 @@ character_event = {
 			trait = impaler
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -452,7 +444,6 @@ character_event = {
 			trait = poet
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -469,7 +460,6 @@ character_event = {
 			trait = lustful
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -486,7 +476,6 @@ character_event = {
 			trait = gluttonous
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -503,7 +492,6 @@ character_event = {
 			trait = charitable
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -520,7 +508,6 @@ character_event = {
 			trait = kind
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -537,7 +524,6 @@ character_event = {
 			trait = proud
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -554,7 +540,6 @@ character_event = {
 			trait = humble
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -571,7 +556,6 @@ character_event = {
 			trait = brave
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -588,7 +572,6 @@ character_event = {
 			trait = just
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -609,7 +592,6 @@ character_event = {
 			}
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -626,25 +608,12 @@ character_event = {
 			trait = cruel
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
 		custom_tooltip = { 
 			text = runestone_carved
 			hidden_tooltip = { narrative_event = { id = TOG.571 days = 60 random = 10 } }
-		}
-	}
-	option = {
-		name = EVTOPTY_TOG_501
-		tooltip_info = possessed
-		trigger = {
-			trait = possessed
-		}
-
-		custom_tooltip = { 
-			text = runestone_carved
-			hidden_tooltip = { narrative_event = { id = TOG.572 days = 60 random = 10 } }
 		}
 	}
 	option = {
@@ -655,7 +624,6 @@ character_event = {
 			religion_group = christian
 			NOT = {
 				trait = lunatic
-				trait = possessed
 				is_dumb_trigger = yes
 			}
 		}
@@ -2266,35 +2234,6 @@ narrative_event = {
 			limit = { ai = no }
 			chronicle = {
 				entry = CHRONICLE_RUNESTONE_CRUEL
-				picture = GFX_evt_runestone_raising_oldgods
-			}
-		}
-	}
-}
-
-# Possessed
-narrative_event = {
-	id = TOG.572
-	title = EVTNAME_TOG_550
-	desc = EVTDESC_TOG_572
-	picture = GFX_evt_runestone_raising_oldgods
-	border = GFX_event_narrative_frame_diplomacy
-	
-	is_triggered_only = yes
-	
-	hide_from = yes
-	
-	option = {
-		name = EVTOPTA_TOG_550
-		prestige = 100
-		add_character_modifier = {
-			name = raised_runestone
-			duration = 730
-		}
-		if = {
-			limit = { ai = no }
-			chronicle = {
-				entry = CHRONICLE_RUNESTONE_POSSESSED
 				picture = GFX_evt_runestone_raising_oldgods
 			}
 		}

@@ -1728,10 +1728,6 @@ character_event = {
 				factor = 3.0
 				trait = lunatic
 			}
-			modifier = {
-				factor = 3.0
-				trait = possessed
-			}
 		}
 		
 		random_list = {
@@ -4346,7 +4342,6 @@ character_event = {
 			trigger = {
 				FROM = { trait = lunatic }
 				NOT = { trait = lunatic }
-				NOT = { trait = possessed }
 			}
 		}
 		name = {
@@ -4355,7 +4350,6 @@ character_event = {
 				FROM = { trait = lunatic }
 				OR = {
 					trait = lunatic
-					trait = possessed
 				}
 			}
 		}

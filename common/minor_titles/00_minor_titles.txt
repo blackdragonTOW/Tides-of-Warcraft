@@ -199,7 +199,7 @@ title_commander = {
 		liege = { character = FROM }
 		OR = {
 			AND = {
-				TOW_is_character_woman_tolerant_trigger = yes
+				bad_priest_light_group = yes
 				is_adult = yes
 			}
 			has_character_flag = special_marshal
@@ -307,13 +307,13 @@ title_keeper_of_swans = {
 	
 	allowed_to_grant = {
 		OR = {
-			trait = high_elf
-			trait = blood_elf
+			trait = race_high_elf
+			trait = race_blood_elf
 		}
 		NOR = {
-			trait = undead_forsaken
-			trait = undead_scourge
-			trait = undead_generic
+			trait = race_undead_forsaken
+			trait = race_undead_scourge
+			trait = race_undead_generic
 		}
 		OR = {
 			is_feudal = yes
@@ -392,7 +392,7 @@ title_master_of_the_hunt = {
 			primary_title = { temporary = yes } 
 		}
 		is_adult = yes
-		TOW_is_character_woman_tolerant_trigger = yes
+		bad_priest_light_group = yes
 		NOT = { has_character_flag = guru }
 		NOT = { trait = incapable } 
 		Keitaro_can_have_a_job = yes
@@ -975,7 +975,7 @@ title_champion = {
 			primary_title = { temporary = yes } 
 		}
 		is_adult = yes
-		TOW_is_character_woman_tolerant_trigger = yes
+		bad_priest_light_group = yes
 		NOT = { trait = incapable } 
 		Keitaro_can_have_a_job = yes
 	}
@@ -1296,6 +1296,7 @@ title_court_physician = {
 			trait = race_doomlord
 			trait = race_fel_lord
 			trait = race_shivarra
+<<<<<<< HEAD
 			trait = race_dragon_black
 			trait = race_dragon_blue
 			trait = race_dragon_bronze
@@ -1305,6 +1306,9 @@ title_court_physician = {
 			trait = race_dragon_nightmare
 			trait = race_dragon_red
 			trait = race_dragon_twilight
+=======
+			trait = race_dragon
+>>>>>>> A lot of fixes.
 			trait = race_undead_generic
 			trait = race_undead_scourge
 			trait = race_undead_forsaken
@@ -1333,12 +1337,9 @@ title_court_physician = {
 				OR = {
 					trait = physician
 					trait = scholar
-					trait = healer
 					trait = priest
 					trait = shaman
 					trait = druid
-					trait = alchemist
-					trait = witch_doctor
 					trait = paladin
 				}
 			}

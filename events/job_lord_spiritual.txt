@@ -256,18 +256,18 @@ character_event = {
 				religion = bon_reformed
 			}
 			location = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 			}
 		}
 		
 		modifier = {
 			factor = 3.0
 			has_job_action = action_inquisition
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			is_reformed_religion = no
 			location = {
 				OR = {
-					NOT = { religion_group = pagan_group }
+					NOT = { TOW_is_uncivilized_religion_trigger = yes }
 					is_reformed_religion = yes
 				}
 			}
@@ -483,7 +483,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 3.0
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 			is_reformed_religion = no
 		}
 	}
@@ -855,7 +855,7 @@ character_event = {
 		NOT = { has_character_modifier = bedridden_illness }
 		NOT = { trait = incapable }
 		NOT = { has_religion_feature = religion_cosmopolitan }
-		NOT = { religion_group = pagan_group }
+		NOT = { TOW_is_uncivilized_religion_trigger = yes }
 		NOT = { religion_group = indian_group }
 		trait = zealous
 		location = {
@@ -1323,7 +1323,7 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				religion_group = pagan_group
+				TOW_is_uncivilized_religion_trigger = yes
 				NOT = { same_realm = ROOT }
 				NOT = { has_character_flag = flag_converting_baptism }
 				NOT = { has_character_modifier = baptism_request_cooldown }
@@ -1372,7 +1372,7 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				religion_group = pagan_group
+				TOW_is_uncivilized_religion_trigger = yes
 				is_reformed_religion = no
 				NOT = { same_realm = ROOT }
 				controls_religion = no
@@ -1508,7 +1508,7 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				religion_group = pagan_group
+				TOW_is_uncivilized_religion_trigger = yes
 				is_reformed_religion = no
 				NOT = { same_realm = ROOT }
 			}
@@ -1584,7 +1584,7 @@ character_event = {
 							at_location = ROOT
 							NOT = { trait = incapable }
 							ai = yes
-							religion_group = pagan_group
+							TOW_is_uncivilized_religion_trigger = yes
 						}
 						character_event = { id = 39610 days = 1 }
 					}
@@ -1617,7 +1617,7 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				religion_group = pagan_group
+				TOW_is_uncivilized_religion_trigger = yes
 				NOT = { same_realm = ROOT }
 			}
 		}

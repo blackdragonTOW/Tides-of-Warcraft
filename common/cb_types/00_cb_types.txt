@@ -67,7 +67,7 @@ claim = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						TOW_is_character_woman_tolerant_trigger = no
+						bad_priest_light_group = no
 						ROOT = { is_female = no }
 						holder_scope ={ is_female = yes }
 					}
@@ -325,7 +325,7 @@ other_claim = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						TOW_is_character_woman_tolerant_trigger = no
+						bad_priest_light_group = no
 						ROOT = { is_female = no }
 						holder_scope = { is_female = yes }
 					}
@@ -688,7 +688,7 @@ claim_on_liege = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						TOW_is_character_woman_tolerant_trigger = no
+						bad_priest_light_group = no
 						ROOT = { is_female = no }
 						holder_scope ={ is_female = yes }
 					}
@@ -1415,7 +1415,7 @@ other_claim_on_liege = {
 		OR = {
 			ROOT = {
 				OR = {
-					TOW_is_character_woman_tolerant_trigger = yes
+					bad_priest_light_group = yes
 					is_female = no
 				}
 			}
@@ -1440,7 +1440,7 @@ other_claim_on_liege = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						TOW_is_character_woman_tolerant_trigger = no
+						bad_priest_light_group = no
 						ROOT = { is_female = no }
 						holder_scope ={ is_female = yes }
 					}
@@ -2770,6 +2770,26 @@ invasion = {
 	
 	defender_ai_defeat_worth = {
 		factor = 100
+	}
+	
+	ai_will_do = { 
+		factor = 1
+		modifier = { #Focus on Coronation first.
+			factor = 0.1
+			has_dlc = "Holy Fury"
+			ROOT = {
+				is_feudal = yes
+				OR = {
+					religion = holy_light
+				}
+				NOR = {
+					trait = crowned_by_priest
+					trait = crowned_by_bishop
+					trait = crowned_by_pope
+					trait = crowned_by_myself
+				}
+			}
+		}
 	}
 }
 
@@ -5004,6 +5024,22 @@ embargo_cb = {
 	# ai importance placed on this CB: scope is the targeted title, ROOT is the attacking character, FROM is the defending character
 	ai_will_do = { 
 		factor = 1
+		modifier = { #Focus on Coronation first.
+			factor = 0.1
+			has_dlc = "Holy Fury"
+			ROOT = {
+				is_feudal = yes
+				OR = {
+					religion = holy_light
+				}
+				NOR = {
+					trait = crowned_by_priest
+					trait = crowned_by_bishop
+					trait = crowned_by_pope
+					trait = crowned_by_myself
+				}
+			}
+		}
 		modifier = {
 			factor = 0
 			ROOT = {
@@ -5172,6 +5208,22 @@ seize_trade_post = {
 	# ai importance placed on this CB: scope is the targeted title, ROOT is the attacking character, FROM is the defending character
 	ai_will_do = { 
 		factor = 1
+		modifier = { #Focus on Coronation first.
+			factor = 0.1
+			has_dlc = "Holy Fury"
+			ROOT = {
+				is_feudal = yes
+				OR = {
+					religion = holy_light
+				}
+				NOR = {
+					trait = crowned_by_priest
+					trait = crowned_by_bishop
+					trait = crowned_by_pope
+					trait = crowned_by_myself
+				}
+			}
+		}
 		modifier = {
 			factor = 0.25
 			ROOT = {
@@ -5552,6 +5604,22 @@ orcogre_subjugation = {
 	
 	ai_will_do = { 
 		factor = 1
+		modifier = { #Focus on Coronation first.
+			factor = 0.1
+			has_dlc = "Holy Fury"
+			ROOT = {
+				is_feudal = yes
+				OR = {
+					religion = holy_light
+				}
+				NOR = {
+					trait = crowned_by_priest
+					trait = crowned_by_bishop
+					trait = crowned_by_pope
+					trait = crowned_by_myself
+				}
+			}
+		}
 	}
 }
 
@@ -6691,6 +6759,22 @@ dejure_county_claim = {
 	
 	ai_will_do = { 
 		factor = 1
+		modifier = { #Focus on Coronation first.
+			factor = 0.1
+			has_dlc = "Holy Fury"
+			ROOT = {
+				is_feudal = yes
+				OR = {
+					religion = holy_light
+				}
+				NOR = {
+					trait = crowned_by_priest
+					trait = crowned_by_bishop
+					trait = crowned_by_pope
+					trait = crowned_by_myself
+				}
+			}
+		}
 		
 		modifier = {
 			factor = 0 # AIs will not take the last counties off their liege's direct vassals

@@ -22,7 +22,7 @@ character_event = {
 			has_religion_feature = religion_equal
 			has_religion_feature = religion_feature_bon
 		}
-		TOW_is_character_woman_tolerant_trigger = no
+		bad_priest_light_group = no
 	}
 	
 	hide_window = yes
@@ -84,7 +84,6 @@ character_event = {
 					remove_trait = seductress
 					remove_trait = scholar
 					remove_trait = theologian
-					remove_trait = mystic
 
 					#Adds some more traits
 					random_list = {
@@ -168,7 +167,6 @@ character_event = {
 					remove_trait = seductress
 					remove_trait = scholar
 					remove_trait = theologian
-					remove_trait = mystic
 
 					#Adds some more traits
 					random_list = {
@@ -250,7 +248,6 @@ character_event = {
 					remove_trait = seductress
 					remove_trait = scholar
 					remove_trait = theologian
-					remove_trait = mystic
 
 					#Adds some more traits
 					random_list = {
@@ -329,7 +326,6 @@ character_event = {
 					remove_trait = seductress
 					remove_trait = scholar
 					remove_trait = theologian
-					remove_trait = mystic
 
 					#Adds some more traits
 					random_list = {
@@ -809,7 +805,7 @@ character_event = {
 			primary_title = { has_law = status_of_women_3 }
 			primary_title = { has_law = status_of_women_4 }
 		} 
-		TOW_is_character_woman_tolerant_trigger = no
+		bad_priest_light_group = no
 
 		any_realm_character = {	
 			is_close_relative = ROOT
@@ -879,8 +875,8 @@ character_event = {
 							ROOT = { primary_title = { has_law = status_of_women_2 } }
 							ROOT = { primary_title = { has_law = status_of_women_1 } }
 							AND = {
-								ROOT = { religion_group = pagan_group }
-								religion_group = pagan_group
+								ROOT = { TOW_is_uncivilized_religion_trigger = yes }
+								TOW_is_uncivilized_religion_trigger = yes
 							}
 							any_spouse = { character = ROOT }
 							any_child = { character = ROOT }
@@ -942,8 +938,8 @@ character_event = {
 						FROM = { primary_title = { has_law = status_of_women_2 } } 
 						FROM = { primary_title = { has_law = status_of_women_1 } } 
 						AND = {
-							FROM = { religion_group = pagan_group }
-							religion_group = pagan_group
+							FROM = { TOW_is_uncivilized_religion_trigger = yes }
+							TOW_is_uncivilized_religion_trigger = yes
 						}
 					}
 				}
@@ -1261,7 +1257,7 @@ character_event = {
 			has_religion_feature = religion_equal
 			has_religion_feature = religion_feature_bon
 		} 
-		TOW_is_character_woman_tolerant_trigger = no
+		bad_priest_light_group = no
 
 		any_vassal = {	
 			is_landed = yes
@@ -1367,8 +1363,8 @@ character_event = {
 							ROOT = { primary_title = { has_law = status_of_women_2 } }
 							ROOT = { primary_title = { has_law = status_of_women_1 } }
 							AND = {
-								ROOT = { religion_group = pagan_group }
-								religion_group = pagan_group
+								ROOT = { TOW_is_uncivilized_religion_trigger = yes }
+								TOW_is_uncivilized_religion_trigger = yes
 							}
 							any_spouse = { character = ROOT }
 							any_child = { character = ROOT }
@@ -1448,8 +1444,8 @@ character_event = {
 				FROM = { primary_title = { has_law = status_of_women_2 } }
 				FROM = { primary_title = { has_law = status_of_women_1 } } 
 				AND = {
-					FROM = { religion_group = pagan_group }
-					religion_group = pagan_group
+					FROM = { TOW_is_uncivilized_religion_trigger = yes }
+					TOW_is_uncivilized_religion_trigger = yes
 				}
 			}			
 		}

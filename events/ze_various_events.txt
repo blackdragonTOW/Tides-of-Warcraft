@@ -29,7 +29,6 @@ character_event = {
 			is_female = yes
 			NOT = { new_character = { is_lover = FROM } }
 			OR = {
-				trait = possessed
 				is_smart_trigger = yes
 				trait = celibate
 				trait = diligent
@@ -253,7 +252,6 @@ character_event = {
 				ROOT = { killer = { religion = PREVPREV } }
 			}
 			OR = {
-				trait = possessed
 				is_smart_trigger = yes
 				trait = celibate
 				trait = diligent
@@ -297,7 +295,6 @@ character_event = {
 					ROOT = { killer = { religion = PREVPREV } }
 				}
 				OR = {
-					trait = possessed
 					is_smart_trigger = yes
 					trait = celibate
 					trait = diligent
@@ -376,7 +373,6 @@ character_event = {
 				}
 			}
 			OR = {
-				trait = possessed
 				is_smart_trigger = yes
 				trait = celibate
 				trait = diligent
@@ -427,7 +423,6 @@ character_event = {
 					}
 				}
 				OR = {
-					trait = possessed
 					is_smart_trigger = yes
 					trait = celibate
 					trait = diligent
@@ -823,10 +818,6 @@ character_event = {
 				}
 				modifier = {
 					factor = 2
-					trait = possessed
-				}
-				modifier = {
-					factor = 2
 					trait = wroth
 				}
 				modifier = {
@@ -863,7 +854,7 @@ character_event = {
 				}
 				modifier = {
 					factor = 0
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 				}
 				modifier = {
 					factor = 0.5

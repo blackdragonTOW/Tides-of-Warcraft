@@ -317,11 +317,6 @@ character_event = {
 					ROOT = { character_event = { id = ZE.3006 days = 365 } }
 					break = yes
 				}
-				if = { #possessed = demon on a throne
-					limit = { event_target:target_treasurer = { trait = possessed } }
-					ROOT = { character_event = { id = ZE.3009 days = 365 } }
-					break = yes
-				}
 				if = { #zealous = head of religion +piety
 					limit = { 
 						event_target:target_treasurer = { trait = zealous }
@@ -467,23 +462,6 @@ character_event = {
 		}
 		if = { limit = { trait = lustful } remove_trait = lustful }
 		if = { limit = { NOT = { trait = chaste }} add_trait = chaste }
-	}
-}
-
-#statue completed and revealed, possessed type
-character_event = {
-	id = ZE.3009
-	picture = GFX_evt_relaxed_ruler
-	border = GFX_event_normal_frame_economy
-	desc = EVTDESC_ZE_3009
-
-	is_triggered_only = yes
-	only_playable = yes
-
-	#Statue revealed
-	option = {
-		name = EVTOPTA_ZE_3009
-		piety = -200
 	}
 }
 

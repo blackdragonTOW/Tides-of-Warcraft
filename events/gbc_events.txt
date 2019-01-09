@@ -20,18 +20,21 @@ letter_event = {
 	has_global_flag = black_death_happened
 
 	trigger = {
+		# TODO : use an appropriate illness
+		always = no
+
 		NOT = { has_character_flag = gbc_mourning }
 		OR = {
 			any_friend = {
 				is_adult = yes
 				ai = yes
-				trait = has_bubonic_plague
+				#trait = has_bubonic_plague
 			}			
 	    	any_dynasty_member = {
 	    		is_offmap_ruler = no
 				is_adult = yes
 				ai = yes
-				trait = has_bubonic_plague
+				#trait = has_bubonic_plague
 			}
 		}
    }
@@ -45,14 +48,14 @@ letter_event = {
 				any_friend = {
 					is_adult = yes
 					ai = yes
-					trait = has_bubonic_plague
+					#trait = has_bubonic_plague
 				}
 			}
 			random_friend = {
 				limit = {
 					is_adult = yes
 					ai = yes
-					trait = has_bubonic_plague        
+					#trait = has_bubonic_plague        
 				}
 				save_event_target_as = GBC_dead_one               
 			}
@@ -63,7 +66,7 @@ letter_event = {
 					any_friend = {
 						is_adult = yes
 						ai = yes
-						trait = has_bubonic_plague
+						#trait = has_bubonic_plague
 					}
 				}
 			}
@@ -72,7 +75,7 @@ letter_event = {
 					is_offmap_ruler = no
 					is_adult = yes
 					ai = yes
-					trait = has_bubonic_plague        
+					#trait = has_bubonic_plague        
 				}
 				save_event_target_as = GBC_dead_one               
 			}

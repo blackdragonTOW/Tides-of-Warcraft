@@ -813,7 +813,7 @@ targetted_decisions = {
 #					is_female = yes
 #					OR = {
 #						trait = brave
-#						religion_group = pagan_group
+#						TOW_is_uncivilized_religion_trigger = yes
 #						is_nomadic = yes
 #						religion = buddhist
 #						religion = bogomilist
@@ -860,7 +860,7 @@ targetted_decisions = {
 #							OR = {
 #								trait = brave
 #								gender_equality_trigger = yes
-#								religion_group = pagan_group
+#								TOW_is_uncivilized_religion_trigger = yes
 #								is_nomadic = yes
 #								religion = buddhist
 #								religion = bogomilist
@@ -868,7 +868,7 @@ targetted_decisions = {
 #							FROM = {
 #								OR = {
 #									gender_equality_trigger = yes
-#									religion_group = pagan_group
+#									TOW_is_uncivilized_religion_trigger = yes
 #									is_nomadic = yes
 #									religion = buddhist
 #									religion = bogomilist
@@ -963,7 +963,7 @@ targetted_decisions = {
 #									OR = {
 #										trait = brave
 #										gender_equality_trigger = yes
-#										religion_group = pagan_group
+#										TOW_is_uncivilized_religion_trigger = yes
 #										is_nomadic = yes
 #										religion = buddhist
 #										religion = bogomilist
@@ -971,7 +971,7 @@ targetted_decisions = {
 #									FROM = {
 #										OR = {
 #											gender_equality_trigger = yes
-#											religion_group = pagan_group
+#											TOW_is_uncivilized_religion_trigger = yes
 #											is_nomadic = yes
 #											religion = buddhist
 #											religion = bogomilist
@@ -982,7 +982,7 @@ targetted_decisions = {
 #							### Not priest or challenger religion is pagan
 #							OR = {
 #								is_priest = no
-#								FROM = { religion_group = pagan_group }
+#								FROM = { TOW_is_uncivilized_religion_trigger = yes }
 #							}
 							#
 #						}
@@ -1104,7 +1104,6 @@ decisions = {
 			has_focus = focus_scholarship
 			NOT = { trait = incapable }
 			NOT = { trait = scholar }
-			NOT = { trait = mystic }
 			NOT = { has_character_flag = building_observatory }
 			NOT = { has_character_flag = built_observatory }
 			NOT = { has_character_modifier = studying_the_stars }

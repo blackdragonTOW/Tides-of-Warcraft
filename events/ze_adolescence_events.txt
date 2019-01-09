@@ -2909,7 +2909,6 @@ character_event = {
 					factor = 1.5
 					educator = {
 						OR = { 
-							trait = possessed
 							trait = lunatic
 						}
 					}
@@ -3778,15 +3777,15 @@ character_event = {
 					set_character_flag = add_sympathy_pagans
 					modifier = {
 						factor = 0
-						religion_group = pagan_group
+						TOW_is_uncivilized_religion_trigger = yes
 					}
 					modifier = {
 						factor = 0
 						NOR = {
-							educator = { religion_group = pagan_group }
-							location = { religion_group = pagan_group } 
-							any_friend = { religion_group = pagan_group } 
-							any_sibling = { religion_group = pagan_group } 
+							educator = { TOW_is_uncivilized_religion_trigger = yes }
+							location = { TOW_is_uncivilized_religion_trigger = yes } 
+							any_friend = { TOW_is_uncivilized_religion_trigger = yes } 
+							any_sibling = { TOW_is_uncivilized_religion_trigger = yes } 
 						}
 					}
 				}

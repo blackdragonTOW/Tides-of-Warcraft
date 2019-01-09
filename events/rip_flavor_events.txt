@@ -561,10 +561,6 @@ character_event = {
 					factor = 5
 					trait = lunatic
 				}
-				modifier = {
-					factor = 5
-					trait = possessed
-				}
 				
 				FROM = {
 					set_character_flag = fertility_increased_too_much
@@ -1090,10 +1086,6 @@ character_event = {
 			trait = scholar
 		}
 		modifier = {
-			factor = 2
-			trait = mystic
-		}
-		modifier = {
 			factor = 1.5
 			any_courtier_or_vassal = {
 				liege = { character = ROOT }
@@ -1168,10 +1160,6 @@ character_event = {
 						}
 						modifier = {
 							factor = 2
-							trait = mystic
-						}
-						modifier = {
-							factor = 2
 							trait = diligent
 						}
 						modifier = {
@@ -1184,10 +1172,6 @@ character_event = {
 						modifier = {
 							factor = 3
 							trait = scholar
-						}
-						modifier = {
-							factor = 2
-							trait = mystic
 						}
 						modifier = {
 							factor = 2
@@ -2576,9 +2560,9 @@ character_event = {
 				is_landless_type_title = no
 			}
 			OR = {
-				NOT = { religion_group = pagan_group }
+				NOT = { TOW_is_uncivilized_religion_trigger = yes }
 				AND = {
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 					is_reformed_religion = yes
 				}
 			}
@@ -2619,9 +2603,9 @@ character_event = {
 					is_landless_type_title = no
 				}
 				OR = {
-					NOT = { religion_group = pagan_group }
+					NOT = { TOW_is_uncivilized_religion_trigger = yes }
 					AND = {
-						religion_group = pagan_group
+						TOW_is_uncivilized_religion_trigger = yes
 						is_reformed_religion = yes
 					}
 				}
@@ -2644,7 +2628,6 @@ character_event = {
 			}
 			new_character = {
 				remove_trait = cynical
-				remove_trait = mystic
 				remove_trait = poet
 				remove_trait = socializer
 				remove_trait = gamer
@@ -2819,7 +2802,7 @@ character_event = {
 			modifier = {
 				factor = 0
 				NOT = {
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 				}
 			}
 		}
@@ -2833,7 +2816,7 @@ character_event = {
 		}
 		if = {
 			limit = {
-				religion_group = pagan_group
+				TOW_is_uncivilized_religion_trigger = yes
 			}
 			add_trait = sympathy_pagans
 		}
@@ -3938,7 +3921,6 @@ character_event = { # Execution nicknames
 							factor = 0
 							NOR = {
 								NOT = { piety = -50 }
-								trait = possessed
 								is_any_kinslayer_trigger = yes
 							}
 						}
@@ -4627,7 +4609,6 @@ character_event = {
 				trait = wroth
 				trait = impaler
 				trait = lunatic
-				trait = possessed
 				trait = arbitrary
 			}
 		}
@@ -7836,80 +7817,6 @@ character_event = {
 	}
 }
 
-character_event = {
-	id = RIP.29802
-	desc = EVTDESC_RIP_29802
-	picture = GFX_evt_into_the_dungeon
-	hide_from = yes
-
-	ai = no
-
-
-	trigger = {
-		NOR = { 
-			trait = reincarnation
-			trait = incapable
-			prisoner = yes
-			is_inaccessible_trigger = yes
-		}
-	}
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTA_RIP_29802
-		custom_tooltip = {
-			text = EVTOPTA_RIP_29802_TOOLTIP
-		}
-		hidden_tooltip = {
-			random_list = {
-				50 = {
-					#get possessed, reincarnation trait
-					character_event = { id = RIP.29803 days = 10 }
-				}
-				50 = {
-					#find some money
-					character_event = { id = RIP.29804 days = 10 }
-				}
-			}
-		}
-	}
-
-	option = {
-		name = EVTOPTB_RIP_29802
-		custom_tooltip = {
-			text = EVTOPTB_RIP_29802_TOOLTIP
-		}
-		prestige = 50
-	}
-}
-
-#get reincarnation, and possessed
-character_event = {
-	id = RIP.29803
-	desc = EVTDESC_RIP_29803
-	picture = GFX_evt_into_the_dungeon
-
-	ai = no
-
-	trigger = {
-		NOR = { 
-			trait = reincarnation
-			trait = incapable
-			prisoner = yes
-			is_inaccessible_trigger = yes
-		}
-	}
-
-	is_triggered_only = yes
-
-	option = { #what is happening to meeeeeee
-		name = EVTOPTA_RIP_29803
-		add_trait = possessed
-		add_trait = reincarnation
-	}
-}
-
 #found valuables
 character_event = {
 	id = RIP.29804
@@ -10647,13 +10554,6 @@ character_event = {
 
 	weight_multiplier = {
 		days = 1
-		modifier = {
-			factor = 2
-			OR = {
-				any_realm_province = { disease = bubonic_plague }
-				any_realm_province = { any_neighbor_province = { disease = bubonic_plague } }
-			}
-		}
 		modifier = {
 			factor = 1.5
 			age = 70
@@ -13423,7 +13323,6 @@ character_event = { # the power of money
 		trigger = {
 			OR = {
 				trait = lunatic
-				trait = possessed  
 				trait = hunter
 			}
 		}

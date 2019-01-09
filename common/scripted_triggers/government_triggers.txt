@@ -1,30 +1,76 @@
 # Replaces general condition "religion_group = pagan_group"
-TOW_is_uncivilized_trigger = {
-	always = no # To define
+TOW_is_uncivilized_religion_trigger = {
+	always = no # TOW TODO : To Define
 }
+
+# Replaces general condition "is_tribal"
+TOW_is_tribal = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_government_is_uncivilized = {
+	OR = {
+		TOW_is_tribal = yes
+		is_nomadic = yes
+	}
+}
+
+# Replaces general condition "is_republic"
+TOW_is_republic = {
+	always = no # TOW TODO : To Define
+}
+
+# ROOT is character
+TOW_has_access_to_castle = {
+	location = {
+		any_province_holding = {
+			holding_type = castle
+			OR = {
+				owner = {
+					OR = {
+						character = PREVPREVPREV
+						same_realm = PREVPREVPREV
+					}
+				}
+				controlled_by = PREVPREV
+			}
+		}
+	}
+}
+
+# ROOT is character
+TOW_has_access_to_city = {
+	location = {
+		any_province_holding = {
+			holding_type = city
+			OR = {
+				owner = {
+					OR = {
+						character = PREVPREVPREV
+						same_realm = PREVPREVPREV
+					}
+				}
+				controlled_by = PREVPREV
+			}
+		}
+	}
+}
+
 
 TOW_cares_about_land_for_heir = {
 	NOR = {
-		trait = undead_scourge
-		trait = undead_forsaken
-		trait = undead_generic
-		trait = faceless
-		trait = eredar
-		trait = shivarra
-		trait = succubus
-		trait = dreadlord
-		trait = pit_lord
-		trait = doomlord
-		trait = fel_lord
-		trait = dragon_red
-		trait = dragon_black
-		trait = dragon_blue
-		trait = dragon_green
-		trait = dragon_bronze
-		trait = dragon_infinite
-		trait = dragon_twilight
-		trait = dragon_chromatic
-		trait = dragon_nightmare
+		trait = race_undead_scourge
+		trait = race_undead_forsaken
+		trait = race_undead_generic
+		trait = race_faceless
+		trait = race_eredar
+		trait = race_shivarra
+		trait = race_succubus
+		trait = race_dreadlord
+		trait = race_pit_lord
+		trait = race_doomlord
+		trait = race_fel_lord
+		trait = race_dragon
 		government = kirin_tor_government
 		government = technocracy_government
 		government = templar_order_government

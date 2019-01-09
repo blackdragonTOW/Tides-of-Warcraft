@@ -46,15 +46,6 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = String_jian_sword
-		trigger = {
-			has_character_flag = weapon_is_sword
-			NOT = { has_character_flag = mock_duel }
-			culture = han
-			culture = tangut
-		}
-	}
-	text = {
 		localisation_key = String_jewelled_sword
 		trigger = {
 			has_character_flag = weapon_is_sword
@@ -1357,7 +1348,6 @@ defined_text = {
 				character_disease_trigger = yes
 				OR = { #lovers_pox excluded
 					trait = scurvy
-					trait = dancing_plague
 					trait = ill
 					trait = leper
 				}
@@ -1384,7 +1374,7 @@ defined_text = {
 		trigger = {
             is_priest = yes #They are a priest
 			is_member_of_any_warrior_lodge_trigger = no #They are not a warrior
-            NOT = { event_target:combatant_1 = { religion_group = pagan_group } } #Attacker is NOT pagan
+            #NOT = { event_target:combatant_1 = { TOW_is_uncivilized_religion_trigger = yes } } #Attacker is NOT pagan
 		}
 		localisation_key = String_priest_title
 	}
@@ -1398,23 +1388,19 @@ defined_text = {
                 OR = {
                     trait = brave #She is brave
                     gender_equality_trigger = yes
-                    religion_group = pagan_group
+                    #TOW_is_uncivilized_religion_trigger = yes
                     is_nomadic = yes
-                    religion = buddhist
-                    religion = bogomilist
                 }
                 event_target:combatant_1 = { #Same as "FROM" in this case
                     OR = {
                         gender_equality_trigger = yes
-                        religion_group = pagan_group
+                        #TOW_is_uncivilized_religion_trigger = yes
                         is_nomadic = yes
-                        religion = buddhist
-                        religion = bogomilist
                     }
                 }
             }
             is_priest = yes #They are a priest
-            NOT = { event_target:combatant_1 = { religion_group = pagan_group } } #Attacker is NOT pagan
+            #NOT = { event_target:combatant_1 = { TOW_is_uncivilized_religion_trigger = yes } } #Attacker is NOT pagan
 		}
 		localisation_key = String_priest_woman
 	}
@@ -1561,10 +1547,6 @@ defined_text = {
 	text = {
 		localisation_key = paranoid
 		trigger = { trait = paranoid }
-	}
-	text = {
-		localisation_key = possessed
-		trigger = { trait = possessed }
 	}
 	text = {
 		localisation_key = lunatic
@@ -1881,10 +1863,6 @@ defined_text = {
 			modifier = {
 				factor = 10
 				trait = lunatic
-			}
-			modifier = {
-				factor = 10
-				trait = possessed
 			}
 		}
 		localisation_key = string_unconventional_tactics

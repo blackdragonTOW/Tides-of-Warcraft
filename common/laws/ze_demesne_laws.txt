@@ -13,21 +13,22 @@ law_groups = {
 laws = {
 	status_of_women_0 = {
 		group = status_of_women
+		default_selection = {
+			factor = 0
+			additive_modifier = {
+				value = 10
+				holder_scope = { 
+					OR = {
+						trait = race_ogre
+						culture_group = ogre
+					}
+				}
+			}
+		}
 		allow = {
 			has_law = status_of_women_1
 		}
 		potential = {
-			holder_scope = {
-				OR = {
-					trait = troll_ice
-					trait = troll_jungle
-					trait = troll_dark
-					trait = troll_forest
-					trait = troll_sand
-					trait = troll_zandalari
-					trait = hakkar_trait
-				}
-			}
 			has_dlc = "Zeus"
 		}
 		revoke_allowed = {
@@ -118,6 +119,15 @@ laws = {
 	}
 	status_of_women_1 = {
 		group = status_of_women
+		default_selection = {
+			factor = 0
+			additive_modifier = {
+				value = 10
+				holder_scope = { 
+					TOW_race_is_troll = yes
+				}
+			}
+		}
 		allow = {
 			OR = {
 				has_law = status_of_women_0
@@ -126,17 +136,7 @@ laws = {
 		}
 		potential = {
 			has_dlc = "Zeus"
-			holder_scope = {
-				OR = {
-					trait = troll_ice
-					trait = troll_jungle
-					trait = troll_dark
-					trait = troll_forest
-					trait = troll_sand
-					trait = troll_zandalari
-					trait = hakkar_trait
-				}
-			}
+			holder_scope = { NOT = { trait = race_hakkar } }
 		}
 		revoke_allowed = {
 			always = no
@@ -225,17 +225,7 @@ laws = {
 		}
 		potential = {
 			has_dlc = "Zeus"
-			holder_scope = {
-				OR = {
-					trait = troll_ice
-					trait = troll_jungle
-					trait = troll_dark
-					trait = troll_forest
-					trait = troll_sand
-					trait = troll_zandalari
-					trait = hakkar_trait
-				}
-			}
+			holder_scope = { NOT = { trait = race_hakkar } }
 		}
 		revoke_allowed = {
 			always = no
@@ -317,17 +307,7 @@ laws = {
 		}
 		potential = {
 			has_dlc = "Zeus"
-			holder_scope = {
-				OR = {
-					trait = troll_ice
-					trait = troll_jungle
-					trait = troll_dark
-					trait = troll_forest
-					trait = troll_sand
-					trait = troll_zandalari
-					trait = hakkar_trait
-				}
-			}
+			holder_scope = { NOT = { trait = race_hakkar } }
 		}
 		revoke_allowed = {
 			always = no
@@ -404,22 +384,13 @@ laws = {
 	}
 	status_of_women_4 = {
 		group = status_of_women
+		default = yes
 		allow = {
 			has_law = status_of_women_3
 		}
 		potential = {
 			has_dlc = "Zeus"
-			holder_scope = {
-				OR = {
-					trait = troll_ice
-					trait = troll_jungle
-					trait = troll_dark
-					trait = troll_forest
-					trait = troll_sand
-					trait = troll_zandalari
-					trait = hakkar_trait
-				}
-			}
+			holder_scope = { NOT = { trait = race_hakkar } }
 		}
 		revoke_allowed = {
 			always = no

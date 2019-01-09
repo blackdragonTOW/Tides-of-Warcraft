@@ -2483,7 +2483,6 @@ remove_disease_flags_effect = {
 	clr_character_flag = got_tuberculosis
 	clr_character_flag = got_typhoid_fever
 	clr_character_flag = got_typhus
-	clr_character_flag = got_bubonic_plague
 	clr_character_flag = got_measles
 	clr_character_flag = got_smallpox
 	clr_character_flag = got_aztec_disease
@@ -9382,10 +9381,6 @@ random_list = {
 			trait = has_typhus
 		} 
 		modifier = { 
-			factor = 5
-			trait = has_bubonic_plague
-		} 
-		modifier = { 
 			factor = 1.75
 			trait = has_measles
 		} 
@@ -9465,10 +9460,6 @@ random_list = {
 			factor = 1.35
 			trait = hedonist
 		} 
-		modifier = { 
-			factor = 0.85
-			trait = mystic
-		} 	
 		modifier = { 	
 			factor = 0.85	
 			trait = gardener
@@ -9744,10 +9735,6 @@ random_list = {
 			trait = has_typhus
 		} 
 		modifier = { 
-			factor = 5
-			trait = has_bubonic_plague
-		} 
-		modifier = { 
 			factor = 1.75
 			trait = has_measles
 		} 
@@ -9827,10 +9814,6 @@ random_list = {
 			factor = 1.35
 			trait = hedonist
 		} 
-		modifier = { 
-			factor = 0.85
-			trait = mystic
-		} 	
 		modifier = { 	
 			factor = 0.85	
 			trait = gardener
@@ -13026,7 +13009,6 @@ remove_opinions_with_prison_reason_effect = {
 	remove_opinion = { modifier = opinion_murder_attempt who = PREV }
 	remove_opinion = { modifier = opinion_killed_close_kin who = PREV }
 	remove_opinion = { modifier = opinion_killed_father who = PREV }
-	remove_opinion = { modifier = opinion_hajj_attempt_murder who = PREV }
 	remove_opinion = { modifier = opinion_fatwa_target who = PREV }
 	remove_opinion = { modifier = opinion_refused_order who = PREV }
 	remove_opinion = { modifier = opinion_castrated_me who = PREV }
@@ -13748,7 +13730,7 @@ spawn_debutante_effect = {
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader
-					religion_group = pagan_group
+					TOW_is_uncivilized_religion_trigger = yes
 				}
 				random_list = {  
 					5 = {
@@ -15913,7 +15895,7 @@ add_sympathy_for_religion_effect = {
 	}
 	else_if = {
 		limit = {
-			religion_group = pagan_group
+			TOW_is_uncivilized_religion_trigger = yes
 		}
 		ROOT = {
 			add_trait = sympathy_pagans

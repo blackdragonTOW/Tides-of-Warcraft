@@ -167,10 +167,6 @@ character_event = {
 	mean_time_to_happen = {
 		years = 500
 		modifier = {
-			factor = 0.5
-			trait = possessed
-		}
-		modifier = {
 			factor = 0.75
 			trait = lunatic
 		}
@@ -417,10 +413,6 @@ character_event = {
 			}
 			modifier = {
 				factor = 2
-				FROM = { trait = possessed }
-			}
-			modifier = {
-				factor = 2
 				FROM = { trait = lunatic }
 			}
 			modifier = {
@@ -430,10 +422,6 @@ character_event = {
 			modifier = {
 				factor = 4
 				FROM = { trait = impaler }
-			}
-			modifier = {
-				factor = 2
-				FROM = { trait = mystic }
 			}
 			modifier = {
 				factor = 2
@@ -501,10 +489,6 @@ character_event = {
 			}
 			modifier = {
 				factor = 2
-				FROMFROM = { mother = { trait = possessed } }
-			}
-			modifier = {
-				factor = 2
 				FROMFROM = { mother = { trait = lunatic } }
 			}
 			modifier = {
@@ -514,10 +498,6 @@ character_event = {
 			modifier = {
 				factor = 4
 				FROMFROM = { mother = { trait = impaler } }
-			}
-			modifier = {
-				factor = 2
-				FROMFROM = { mother = { trait = mystic } }
 			}
 			modifier = {
 				factor = 2
@@ -1042,7 +1022,6 @@ character_event = {
 			limit = {
 				is_ruler = yes
 				war = yes
-#				trait = possessed
 				OR = {
 					is_primary_war_defender = yes
 					is_primary_war_attacker = yes
@@ -1155,7 +1134,6 @@ character_event = {
 		add_trait = ambitious
 		add_trait = cruel
 		add_trait = genius
-		add_trait = possessed
 		add_trait = strong
 		change_diplomacy = 5
 		change_martial = 5
@@ -1920,7 +1898,6 @@ character_event = {
 					trait = cynical
 					trait = deceitful
 					trait = fair
-					trait = mystic
 					trait = brilliant_strategist
 					trait = flanker
 				}
@@ -2037,7 +2014,6 @@ character_event = {
 					trait = genius
 					trait = deceitful
 					trait = fair
-					trait = mystic
 					trait = elusive_shadow
 					trait = defensive_leader
 				}
@@ -2269,7 +2245,7 @@ character_event = {
 	trigger = {
 		is_ruler = no
 		is_consort = no
-		NOT = { religion_group = pagan_group }
+		NOT = { TOW_is_uncivilized_religion_trigger = yes }
 		NOT = {
 			any_courtier = {
 				has_character_flag = demon_child_non_pagan
@@ -2340,7 +2316,7 @@ character_event = {
 	
 	trigger = {
 		has_dlc = "Sons of Abraham"
-		NOT = { religion_group = pagan_group }
+		NOT = { TOW_is_uncivilized_religion_trigger = yes }
 		OR = {
 			ai = no
 			liege = {

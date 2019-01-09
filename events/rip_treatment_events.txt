@@ -1624,10 +1624,6 @@ character_event = {
 				trait = cynical
 			}
 			modifier = {
-				factor = 0.25
-				trait = mystic
-			}
-			modifier = {
 				factor = 0.5
 				trait = humble
 			}
@@ -1889,10 +1885,6 @@ character_event = {
 				trait = cynical
 			}
 			modifier = {
-				factor = 0.25
-				trait = mystic
-			}
-			modifier = {
 				factor = 0.5
 				trait = humble
 			}
@@ -2094,227 +2086,6 @@ character_event = {
 			}
 
 			character_event = { id = RIP.11040 days = 3 }
-		}
-	}
-
-	# Mystic treatment
-	option = {
-		name = EVTOPTE_RIP_11035
-		custom_tooltip = {
-			text = EVTOPTE_RIP_11035_TOOLTIP #explain mystic treatment
-		}
-		
-		ai_chance = {
-			factor = 50
-			
-			modifier = {
-				factor = 3
-				trait = mystic
-			}
-			
-			modifier = {
-				factor = 2
-				trait = trusting
-			}
-			
-			modifier = {
-				factor = 2
-				is_smart_trigger = yes
-			}
-			
-			modifier = {
-				factor = 3.0
-				trait = zealous
-				trait = mystic
-			}
-			
-			modifier = {
-				factor = 0.25
-				trait = zealous
-				NOT = { trait = mystic }
-			}
-			
-			modifier = {
-				factor = 0.5
-				trait = humble
-				NOT = { trait = mystic }
-			}
-		}
-		
-		trigger = {
-			FROM = { trait = mystic }
-			is_adult = yes
-			NOT = {
-				has_game_rule = {
-					name = supernatural_events
-					value = off
-				}
-			}
-		}
-
-		hidden_tooltip = {
-			random_list = {
-
-				40 = {
-					modifier = {
-						factor = 1.2
-						is_strong_trigger = yes
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							trait = physician
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							learning = 25
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							learning = 20
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							learning = 15
-						}
-					}
-					modifier = {
-						factor = 0.8
-						FROM = {
-							NOT = { learning = 15 }
-						}
-					}
-					modifier = {
-						factor = 0.8
-						FROM = {
-							NOT = { learning = 10 }
-						}
-					}
-					modifier = {
-						factor = 0.8
-						is_weak_trigger = yes
-					}
-					modifier = {
-						factor = 1.2
-						FROM = { physician_good_trigger = yes }
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							opinion = { who = ROOT value = 0 }
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							opinion = { who = ROOT value = 25 }
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							opinion = { who = ROOT value = 50 }
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							opinion = { who = ROOT value = 75 }
-						}
-					}
-					random_list = {
-						60 = { 
-							set_character_flag = MYSTIC_AMAZING_OUTCOME
-						}
-						40 = { 
-							set_character_flag = MYSTIC_DECENT_OUTCOME
-						}
-					}
-				}
-				60 = {
-					modifier = {
-						factor = 0.8
-						is_strong_trigger = yes
-					}
-					modifier = {
-						factor = 0.8
-						FROM = {
-							learning = 25
-						}
-					}
-					modifier = {
-						factor = 0.8
-						FROM = {
-							learning = 20
-						}
-					}
-					modifier = {
-						factor = 0.8
-						FROM = {
-							learning = 15
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							NOT = { learning = 15 }
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							NOT = { learning = 10 }
-						}
-					}
-					modifier = {
-						factor = 1.2
-						is_weak_trigger = yes
-					}
-					modifier = {
-						factor = 1.2
-						FROM = { physician_bad_trigger = yes }
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							NOT = { opinion = { who = ROOT value = 0 } }
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							NOT = { opinion = { who = ROOT value = -25 } }
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							NOT = { opinion = { who = ROOT value = -50 } }
-						}
-					}
-					modifier = {
-						factor = 1.2
-						FROM = {
-							NOT = { opinion = { who = ROOT value = -75 } }
-						}
-					}
-					random_list = {
-						50 = { 
-							set_character_flag = MYSTIC_POOR_OUTCOME
-						}
-						50 = { 
-							set_character_flag = MYSTIC_TERRIBLE_OUTCOME
-						}
-					}
-				}
-			}
-			character_event = { id = RIP.11047 days = 3 }
 		}
 	}
 
@@ -3707,7 +3478,6 @@ character_event = {
 					factor = 0
 					AND = {
 						trait = paranoid
-						trait = possessed
 					}
 				}
 				set_character_flag = EVTDESC_RIP_11047_2_FLAG 
@@ -3796,7 +3566,6 @@ character_event = {
 				modifier ={
 					factor = 0
 					OR = {
-						trait = possessed
 						trait = lunatic
 					}
 				}
@@ -3941,13 +3710,6 @@ character_event = {
 				random = {
 					chance = 10
 					if = {
-						limit = { NOT = { trait = possessed } }
-						character_event = { id = 38315 }
-					}
-				}
-				random = {
-					chance = 10
-					if = {
 						limit = { NOT = { trait = lunatic } }
 						character_event = { id = 38304 }
 					}
@@ -3984,13 +3746,6 @@ character_event = {
 					duration = 1825
 				}
 			hidden_tooltip = {
-				random = {
-					chance = 10
-					if = {
-						limit = { NOT = { trait = possessed } }
-						character_event = { id = 38315 }
-					}
-				}
 				random = {
 					chance = 10
 					if = {
@@ -4066,14 +3821,6 @@ character_event = {
 			if = {
 				limit = { NOT = { trait = paranoid } }
 					add_trait = paranoid
-			}
-			
-			random = {
-				chance =  25
-				if = {
-					limit = { NOT = { trait = possessed } }
-					add_trait = possessed
-				}
 			}
 		}
 		
@@ -4159,10 +3906,6 @@ character_event = {
 
 		if = {
 			limit = { has_character_flag = EVTDESC_RIP_11047_10_FLAG }
-			if = {
-				limit = { NOT = { trait = possessed } }
-					add_trait = possessed
-			}
 			
 			random = {
 				chance =  25

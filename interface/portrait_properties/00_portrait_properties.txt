@@ -8,11 +8,7 @@
 		factor = 1
 		modifier = {
 			factor = 0
-			OR = {
-				is_nomadic = yes
-				is_tribal = yes
-				government = troll_bcd_government
-			}
+			TOW_government_is_uncivilized = yes
 		}
 		modifier = {
 			factor = 10
@@ -23,7 +19,10 @@
 		}
 		modifier = {
 			factor = 0
-			in_command = yes
+			OR = {
+				in_command = yes
+				TOW_has_access_to_castle = no
+			}
 		}
 	}
 
@@ -36,15 +35,14 @@
 		}
 		modifier = {
 			factor = 0
-			OR = {
-				is_nomadic = yes
-				is_tribal = yes
-				government = troll_bcd_government
-			}
+			TOW_government_is_uncivilized = yes
 		}
 		modifier = {
 			factor = 0
-			in_command = yes
+			OR = {
+				in_command = yes
+				TOW_has_access_to_castle = no
+			}
 		}
 	}
 
@@ -58,11 +56,18 @@
 	}
 
 	3 = { # forest
-		factor = 1
+		factor = 10
 		modifier = {
 			factor = 0
 			NOT = { location = { terrain = forest } }
 			NOT = { location = { terrain = woods } }
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
+			}
 		}
 	}
 
@@ -113,7 +118,7 @@
 	}
 	
 	6 = { # military camp
-		factor = 3
+		factor = 20
 		modifier = {
 			factor = 0
 			OR = {
@@ -135,54 +140,88 @@
 	}
 	
 	7 = { # Plains
-		factor = 1
+		factor = 10
 		modifier = {
-			factor = 4
-			location = {
-				OR = {
-					terrain = plains
-					terrain = hills
+			factor = 0
+			NOT = {
+				location = {
+					OR = {
+						terrain = plains
+						terrain = hills
+					}
 				}
+			}
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
 			}
 		}
 	}
 	
 	8 = { # Marsh
-		factor = 0.5
+		factor = 10
 		modifier = {
-			factor = 20
-			location = { terrain = marsh }
+			factor = 0
+			NOT = { location = { terrain = marsh } }
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
+			}
 		}
 	}
 	
 	9 = { # Desert
-		factor = 15
+		factor = 10
 		modifier = {
 			factor = 0
 			location = {
 				NOT = { terrain = desert }
 			}
 		}
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
+			}
+		}
 	}
 	
 	10 = { # Steppe
-		factor = 1
+		factor = 2
 		modifier = {
-			factor = 2
+			factor = 0
 			location = {
-				terrain = plains
+				NOR = {
+					terrain = plains
+					terrain = steppe
+				}
 			}
 		}
 
 		modifier = {
-			factor = 3
+			factor = 5
 			location = {
 				terrain = steppe
 			}
 		}
+
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
+			}
+		}
 	}
 	
-	11 = { # Ocean w ships
+	11 = { # Ocean
 		factor = 10
 		modifier = {
 			factor = 0
@@ -194,15 +233,23 @@
 	}
 	
 	12 = { # Yellow plains
-		factor = 1
+		factor = 10
 		modifier = {
-			factor = 4
+			factor = 0
 			location = {
-				OR = {
+				NOR = {
 					terrain = plains
 					terrain = hills
 					terrain = farmlands
 				}
+			}
+		}
+
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
 			}
 		}
 	}
@@ -210,30 +257,20 @@
 	13 = { # City
 		factor = 1
 		modifier = {
-			factor = 0
-			location = {
-				NOT = {
-					any_province_holding = {
-						holding_type = city
-					}
-				}
-			}
-		}
-		modifier = {
 			factor = 20
-			OR = {
-				government = noble_republic_government
-				is_republic = yes
-			}
+			TOW_is_republic = yes
 		}
 		modifier = {
 			factor = 0
-			in_command = yes
+			OR = {
+				in_command = yes
+				TOW_has_access_to_city = no
+			}
 		}
 	}
 	
 	14 = { # Mountains
-		factor = 4
+		factor = 5
 		modifier = {
 			factor = 0
 			location = {
@@ -243,9 +280,14 @@
 				}
 			}
 		}
-		modifier = {
-			factor = 2
-			culture_group = dwarf
+		modifier = { # use snowy mountains instead
+			factor = 0
+			location = {
+				OR = {
+					climate = severe_winter
+					is_winter = yes
+				}
+			}
 		}
 		modifier = {
 			factor = 2
@@ -253,11 +295,17 @@
 				terrain = mountains
 			}
 		}
-
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
+			}
+		}
 	}
 	
 	15 = { # ocean window
-		factor = 5
+		factor = 10
 		modifier = {
 			factor = 0
 			location = {
@@ -265,6 +313,7 @@
 					terrain = desert
 					terrain = arctic
 					terrain = jungle
+					terrain = farmlands
 				}
 			}
 		}
@@ -277,6 +326,13 @@
 			factor = 5
 			location = { 
 				port = yes 
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				in_command = yes
+				TOW_has_access_to_castle = no
 			}
 		}
 	}
@@ -300,42 +356,46 @@
 			lower_real_tier_than = DUKE
 			spouse = { lower_real_tier_than = DUKE } 
 		}
-	}
-
-	17 = { # Durotar
-		factor = 25
 		modifier = {
 			factor = 0
 			OR = {
-				NOT = { trait = race_orc }
-				location = {
-					NOR = {
-						terrain = plains
-						terrain = desert
-						terrain = hills
-						terrain = steppe
-					}
-				}
+				in_command = yes
+				TOW_has_access_to_castle = no
 			}
+		}
+	}
+
+	17 = { # Durotar
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { trait = race_orc }
 		}
 	}
 
 	18 = { # Beach
-		factor = 1
+		factor = 5
 		modifier = {
-			factor = 5
-			location = { port = yes }
-		}
-		modifier = {
-			factor = 0.5
-			NOR = {
-				is_nomadic = yes
-				is_tribal = yes
-				government = troll_bcd_government
+			factor = 0
+			OR = {
+				NOR = {
+					borders_lake = yes
+					location = { port = yes }
+				}
+				terrain = arctic
+				terrain = mountains
+				terrain = arctic
 			}
 		}
 		modifier = {
-			factor = 10
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
+			}
+		}
+		modifier = {
+			factor = 2
 			trait = race_murloc
 		}
 	}
@@ -391,7 +451,7 @@
 	}
 
 	22 = { # Teldrassil
-		factor = 20
+		factor = 1
 		modifier = {
 			factor = 0
 			NOT = { trait = race_night_elf }
@@ -406,16 +466,17 @@
 				location = { terrain = jungle }
 			}
 		}
-	}
-
-	24 = { # Dun Morogh
-		factor = 100
 		modifier = {
-			factor = 0
-			NOT = {
-				location = { region = world_dun_morogh }
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
 			}
 		}
+	}
+
+	24 = { # Snowy mountains
+		factor = 10
 		modifier = {
 			factor = 0
 			NOR = {
@@ -423,6 +484,22 @@
 				terrain = hills
 				terrain = plains
 				terrain = arctic
+			}
+		}
+		modifier = { # use regular mountains instead
+			factor = 0
+			location = {
+				NOR = {
+					climate = severe_winter
+					is_winter = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
 			}
 		}
 	}
@@ -1807,7 +1884,6 @@
 			NOR = {
 				has_job_title = job_spymaster
 				trait = rogue
-				trait = assassin
 			}
 		}
 		hide_layers = {
@@ -1838,9 +1914,9 @@
 					}
 				}
 				has_minor_title = title_commander
-				trait = fighter
 				trait = warrior
 				trait = paladin
+				trait = death_knight
 			}
 		}
 		modifier = {
@@ -1849,7 +1925,6 @@
 				real_tier = king
 				real_tier = emperor
 			}
-			is_nomadic = no
 		}
 		modifier = { # reduce chance to have classes clothes if there are any
 			factor = 0.2
@@ -1883,8 +1958,7 @@
 		factor = 100
 		modifier = {
 			factor = 0
-			NOR = {
-				trait = arcanist
+			NOT = {
 				trait = mage
 			}
 		}
@@ -1894,7 +1968,6 @@
 				real_tier = king
 				real_tier = emperor
 			}
-			is_nomadic = no
 		}
 	}
 
@@ -1905,7 +1978,6 @@
 			factor = 0
 			NOR = {
 				# TODO : Discovered cases
-				trait = necrolyte
 				trait = warlock
 				trait = necromancer
 			}
@@ -1916,7 +1988,6 @@
 				real_tier = king
 				real_tier = emperor
 			}
-			is_nomadic = no
 		}
 	}
 	
@@ -1928,8 +1999,6 @@
 			NOR = {
 				trait = shaman
 				trait = druid
-				trait = witch_doctor
-				trait = runemaster
 			}
 		}
 		modifier = {
@@ -1938,7 +2007,6 @@
 				real_tier = king
 				real_tier = emperor
 			}
-			is_nomadic = no
 		}
 	}
 	
@@ -1948,7 +2016,6 @@
 		modifier = {
 			factor = 0
 			NOR = {
-				trait = healer
 				trait = priest
 				trait = monk
 			}
@@ -1959,7 +2026,6 @@
 				real_tier = king
 				real_tier = emperor
 			}
-			is_nomadic = no
 		}
 	}
 	
@@ -1969,10 +2035,7 @@
 		modifier = {
 			factor = 0
 			NOR = {
-				trait = beastmaster
-				trait = explorer
 				trait = ranger
-				trait = scout
 				trait = demon_hunter
 			}
 		}
@@ -1982,7 +2045,6 @@
 				real_tier = king
 				real_tier = emperor
 			}
-			is_nomadic = no
 		}
 	}
 
@@ -1991,11 +2053,8 @@
 		factor = 100
 		modifier = {
 			factor = 0
-			NOR = {
-				trait = alchemist
+			NOT = {
 				trait = engineer
-				trait = mechanist
-				trait = techmage
 			}
 		}
 		modifier = {
@@ -2004,7 +2063,6 @@
 				real_tier = king
 				real_tier = emperor
 			}
-			is_nomadic = no
 		}
 	}
 
@@ -2018,6 +2076,10 @@
 				trait = heresiarch
 				prisoner = yes
 				dynasty = none
+				AND = {
+					NOT = { prestige = 0 }
+					NOT = { wealth = 0 }
+				}
 			}
 			NOT = { has_character_modifier = the_oubliette }
 		}
@@ -2026,13 +2088,13 @@
 			OR = {
 				is_landed = yes
 				spouse = { is_landed = yes }
-				wealth = 200
+				wealth = 150
 			}
 			NOT = { has_character_modifier = the_oubliette }
 		}
 		modifier = {
 			factor = 0.01
-			wealth = 50
+			wealth = 25
 			prisoner = no
 		}
 

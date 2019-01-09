@@ -729,28 +729,6 @@ character_event = {
 	}
 }
 
-# Spends time contemplating mystical and weird things
-character_event = {
-	id = CM.6126
-	desc = EVTDESC_CM_6126
-	picture = GFX_evt_library
-	
-	min_age = 13
-	lacks_dlc = "Way of Life"
-	
-	is_triggered_only = yes
-
-	trigger = {
-		trait = in_hiding
-		NOT = { lifestyle_traits = 1 }
-	}
-	
-	option = {
-		name = EVTOPTA_CM_6126
-		add_trait = mystic
-	}
-}
-
 # Takes up writing poetry
 character_event = {
 	id = CM.6128
