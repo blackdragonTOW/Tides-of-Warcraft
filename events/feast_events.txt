@@ -1313,22 +1313,36 @@ character_event = {
 				#10 = {} #Empty as fallback
 			}
 			random_list = { # Second wave of events
-				10 = { #Jester makes bad joke (Liege)
+				20 = { #Jester 
 					modifier = {
 						factor = 0
 						NOR = {
-							any_courtier = {
+							any_courtier_or_vassal = { 
 								has_minor_title = title_court_jester
-								NOT = {
-									opinion = { who = ROOT value = 25 }
-								}
 							}
 							any_vassal = {
 								has_character_flag = guest_feast_started
 							}
 						}
 					}
-					character_event = { id = 72060 days = 10 }
+
+					modifier = {
+						factor = 0
+						any_courtier_or_vassal = { 
+							has_minor_title = title_court_jester
+							has_character_flag = Keitaro_jester_ongoing
+						}
+					}
+
+					any_courtier_or_vassal = {
+						limit = {
+							has_minor_title = title_court_jester
+						}
+						set_character_flag = Keitaro_jester_occasion_feast
+					}
+					if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Feast event jester for [Root.GetTitledName]" }
+
+					character_event = { id = Keitaro_MT.1 days = 10 }
 				}
 				10 = { #Highway robber band (vassal)
 					modifier = {
