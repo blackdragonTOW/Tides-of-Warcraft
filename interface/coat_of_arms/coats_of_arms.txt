@@ -14,13 +14,13 @@ culture = {
 		"burning_legion"
 		"demonology"
 		"demonology_reformed"
-		"lich_king"
+		#"lich_king"
 		#"holy_light"
 		#"scarlet"
 		#"argent"
 		"mercantilism"
-		"forgotten_shadow"
-		"forgotten_shadow_reformed"
+		#"forgotten_shadow"
+		#"forgotten_shadow_reformed"
 		"nzoth"
 		"cthun"
 		"yogg_saron"
@@ -192,6 +192,197 @@ culture = {
 			noOfFrames = 35
 			color = 2
 			emblem = no
+		}
+		
+		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	}
+}
+
+culture = {
+	religion = {
+		"lich_king"
+	}
+	
+	templates = { 
+		"coa_undead:1"
+	}
+
+	color = {
+		{ 201 43 43 } 	#0   	Gules (Red)
+		{ 20 20 20 }	#1   	Sable (Black)
+		{ 113 0 0 }		#2   	Sanguine (Blood Red)
+		{ 245 245 245 } #3   	Argent (White )
+		{ 57 131 130 } 	#4   	Dark Teal
+		{ 41 0 103 } 	#5		Dark Purple
+		{ 28 103 0 } 	#6		Dark Green
+		{ 27 38 103 } 	#7		Dark Blue
+		{ 129 201 221 } #8		Light Blue
+		{ 49 72 72 } 	#9		Greyish Dark Blue
+		{ 100 100 100 } #10		Grey
+	}
+	
+	rebel_colors = { 0 1 2 }
+	
+	banned_colors = 
+	{ 
+		{ 0 1 2 3 4 5 6 7 8 9 10 } 	#0   	Gules (Red)
+		{ 1 0 5 }					#1   	Sable (Black)
+		{ 2 0 5 6 7 }				#2   	Sanguine (Blood Red)
+		{ 3 0 } 					#3   	Argent (White )
+		{ 4 0 9 } 					#4   	Dark Teal
+		{ 5 0 6 7 } 				#5		Dark Purple
+		{ 6 0 2 4 5 } 				#6		Dark Green
+		{ 7 0 2 5 9 } 				#7		Dark Blue
+		{ 8 0 2 } 					#8		Light Blue
+		{ 9 0 } 					#9		Greyish Dark Blue
+		{ 10 0 } 					#10		Grey
+	}
+	
+	emblem = {
+		file = "gfx\\coats_of_arms\\emblem_empty.tga"
+		noOfFrames = 1
+	}
+
+	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	textures = {
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic.tga"
+			size = { x = 10 y = 3 }
+			noOfFrames = 23
+			color = 2
+			emblem = no
+			random = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 19
+			color = 2
+			emblem = no
+			random = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_undead.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 16
+			color = 2
+			emblem = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\coa_undead.tga"
+			size = { x = 2 y = 1 }
+			noOfFrames = 2
+			color = 0
+			emblem = no
+			random = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_lich_king.tga"
+			size = { x = 10 y = 1 }
+			noOfFrames = 7
+			color = 2
+			emblem = no
+			random = no
+		}
+		
+		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	}
+}
+
+culture = {
+	religion = {
+		"forgotten_shadow"
+		"forgotten_shadow_reformed"
+	}
+	
+	templates = { 
+		"coa_undead:1"
+	}
+
+	color = {
+		{ 201 43 43 } 	#0   	Gules (Red)
+		{ 20 20 20 }	#1   	Sable (Black)
+		{ 113 0 0 }		#2   	Sanguine (Blood Red)
+		{ 245 245 245 } #3   	Argent (White )
+		{ 57 131 130 } 	#4   	Dark Teal
+		{ 41 0 103 } 	#5		Dark Purple
+		{ 28 103 0 } 	#6		Dark Green
+		{ 27 38 103 } 	#7		Dark Blue
+		{ 129 201 221 } #8		Light Blue
+		{ 49 72 72 } 	#9		Greyish Dark Blue
+		{ 100 100 100 } #10		Grey
+	}
+	
+	rebel_colors = { 0 1 2 }
+	
+	banned_colors = 
+	{ 
+		{ 0 1 2 3 4 5 6 7 8 9 10 } 	#0   	Gules (Red)
+		{ 1 0 5 }					#1   	Sable (Black)
+		{ 2 0 5 6 7 }				#2   	Sanguine (Blood Red)
+		{ 3 0 } 					#3   	Argent (White )
+		{ 4 0 9 } 					#4   	Dark Teal
+		{ 5 0 6 7 } 				#5		Dark Purple
+		{ 6 0 2 4 5 } 				#6		Dark Green
+		{ 7 0 2 5 9 } 				#7		Dark Blue
+		{ 8 0 2 } 					#8		Light Blue
+		{ 9 0 } 					#9		Greyish Dark Blue
+		{ 10 0 } 					#10		Grey
+	}
+	
+	emblem = {
+		file = "gfx\\coats_of_arms\\emblem_empty.tga"
+		noOfFrames = 1
+	}
+
+	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	textures = {
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic.tga"
+			size = { x = 10 y = 3 }
+			noOfFrames = 23
+			color = 2
+			emblem = no
+			random = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 19
+			color = 2
+			emblem = no
+			random = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_undead.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 16
+			color = 2
+			emblem = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\coa_undead.tga"
+			size = { x = 2 y = 1 }
+			noOfFrames = 2
+			color = 0
+			emblem = no
+			random = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_forsaken.tga"
+			size = { x = 10 y = 1 }
+			noOfFrames = 10
+			color = 2
+			emblem = no
+			random = no
 		}
 		
 		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
@@ -878,7 +1069,7 @@ culture = {
 	}
 	
 	templates = { 
-		"coa_plain_elune:1"
+		"coa_elune:1"
 	}
 
 	color = {
