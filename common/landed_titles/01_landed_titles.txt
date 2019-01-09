@@ -10409,7 +10409,87 @@ e_azeroth = {
 				b_houndwich = {
 				}
 			}
-		}
+		}	
+	}
+	
+	k_westfall = {
+		color = { 255 255 149 }
+		color2 = { 255 255 255 }
+		capital = 333 # Moonbrook
+		culture = azerothian
+		
+		d_longshore = {
+			color = { 223 223 128 }
+			color2 = { 255 255 255 }
+			culture = murloc
+			capital = 338 # Longshore West
 			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 337 province_id = 338 province_id = 339 } }
+				}
+			}
+			
+			c_longshore_south = { # 337
+				color = { 168 168 190 }
+				color2 = { 255 255 255 }
+				
+				b_westfall_lighthouse = {
+				}
+				b_southstorm = {
+				}
+				b_littlepost = {
+				}
+				b_lightcall = {
+				}
+				b_beachden = {
+				}
+				b_gullharbor = {
+				}
+				b_fishwalk = {
+				}
+			}
+			
+			c_longshore_west = { # 338
+				color = { 91 105 108 }
+				color2 = { 255 255 255 }
+				
+				b_gold_coast_quarry = {
+				}
+				b_shadowbay = {
+				}
+				b_beachshell = {
+				}
+				b_oceanfair = {
+				}
+				b_mistwatch = {
+				}
+				b_surfhaven = {
+				}
+				b_fearborn = {
+				}
+			}
+			
+			c_longshore_north = { # 339
+				color = { 207 179 179 }
+				color2 = { 255 255 255 }
+				
+				b_roguestar = {
+				}
+				b_stillshade = {
+				}
+				b_sandharbor = {
+				}
+				b_diresurf = {
+				}
+				b_midwave = {
+				}
+				b_graycrest = {
+				}
+				b_battlefailed = {
+				}
+			}
+		}
 	}
 }
