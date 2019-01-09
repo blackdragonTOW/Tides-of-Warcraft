@@ -4,10 +4,12 @@ elemental_group = {
 	playable = yes
 	ai_fabricate_claims = no
 	hostile_within_group = yes
+	interface_skin = { pagan_interface }
 	
 	shamanism = {
 		graphical_culture = mongolgfx
-		
+		interface_skin = { shamanism_interface pagan_interface }
+
 		icon = 21
 		color = { 0.18 0.82 0.35 }
 		
@@ -52,6 +54,7 @@ elemental_group = {
 	
 	shamanism_reformed = {
 		graphical_culture = mongolgfx
+		interface_skin = { shamanism_interface pagan_interface }
 		
 		icon = 21
 		color = { 0.06 0.81 0.26 }
