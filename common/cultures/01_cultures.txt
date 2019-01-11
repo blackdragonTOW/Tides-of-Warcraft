@@ -2647,6 +2647,50 @@ troll = {
 		
 		allow_looting = yes
 	}
+	zulian = {
+		graphical_cultures = { btrollgfx westerngfx }
+		
+		color = { 0.51 0.92 0.44 }
+		
+		male_names = { Agolo Akil'ojon Akil'rogg Akil'ron Akil'zon Akila'ogg Akilran Akor'mar Akoril'jin Arbaj Awilo Bakkor Baku Balej Balez Banrax Bath'rah Bok'rek Bokmar Both'rogg Burj 
+		Canaga Daakara Daga Denjai Drulzegar Du'ga Exzhal Falthir Fu'jin Gadra Gadrin Gambarinka Gan'jo Gar'jin Garwathi Gaz Gazan Geba'li Gol'jin Gur'zil Hai'zan Hameya Hana'zua Har'tan 
+		Haxjil Haz'rogg Haz'tan Hazak Hazaki Hazakk Hazjil Hazz Hegor Hexjil Hezek Hgan Honwathi Horakk Horg'tan Hul Hula'mahi Hunlo Hurj Hux'kar Hux'ran Hux'rin Ij Ilarek Ilonex Isa'ihex 
+		Jahubo Jalathor Jalto Janzar Jarkal Je'neu Jerthex Jes'rimon Jin'sora Jin'Zil Jinar'Zillen Jinet'jin Jolt'jori Jolt'tan Jorwathi Jul Jun'ik Jur Kalyimah Katoom Kazi'jin Kazra'jin 
+		Kel'gash Ken'jai Ken'zigla Kez'tan Khalan Ki'hala Kilram Kontokanis Kor'ghan Korran Krul'jin Krul'tan Ku'nanji Kul'dex Kul'mor Kuray'bin Kyunghee Lar Lau'Tiki Lin'do Lorezk Ma'lij 
+		Mai'jin Maka'tan Malux Markhor Merajit Miao'zan Moji'ko Monjin Munjil Nakansi Nalorakk Nanashi Nar'kal Nimar Nor'arek Norro Ohodo Onaj'kal Orsaxx Palaj Pele'keiki Prig'mon Qeeju 
+		Raiza Reavij Rej Retherokk Rgan Rhinag Ril Rin'ji Rin'wosho Rjan Rjatax Rokalas Rokhan Sani'i Searn Seraxx Sesebi Shenthul Sr'ji T'chali Tanjalar Tari'qa Taz'ishi Telf Ter'lij 
+		Ter'tarj Thal'trak Thresh'jin To'arch To'bor Tollo Tooki Tor'gan Tor'gash Torunscar Trayexir Tukk Ty'jin Ula'elek Umbu Un'Thuwa Unalij Unjil Ur'kyo Uthel'nay Uzer'i Var'jun Vel'rin 
+		Vo'tan Vornal Vu'Shalay Waax Wathi Wex Wik'Tar Wulan Xan'tish Xen'to Xen'Zilla Xon'cha Yeh'kinya Yur Yur'jin Yur'rogg Yurg'tan Zalas Zaman Zan'zata Zando'zan Zanga Zanor Zansoa 
+		Zebu'tan Zeh'gehn Zen'vorka Zend'li Zendo'jian Zengu Zilzibin Zimar Zimkalar Zjolnir Zu'joi Zul'alan Zul'arek Zul'brin Zul'jin Zul'Marosh Zul'rogg Zun'jori Zun'mata 
+		Zun'rek Zurai Zuru
+		}
+		female_names = { Akkanaz Ameenah Asgari Ashi Bakkulax Balai Ban'zu Bax Baxua Bek'zulu Beksal'a Bekz Bomata Borrua Buunu Chin'ika Dagoda Danni'ka Deino Gara Gatax Genji Hae'Wilani 
+		Hasana Haxana Haxxi Hazhaka Hazj Hazla Hexx Hexxa Hitah'ya Hola'mahi Holi I'shi Jahnra Jamani Jamra Jandi Janex Janidi Jantalanra Jasta Jastara Jatal'jan Jen'shan Jini Jinta 
+		Jinthara Jinthora Joli'thra Kai'jin Kali Kanzee Kil'Hiwana Kimbiza Kin'weelay Kro'jaksi Kuzari Lah'Mawhani Lonjaz Lui'Mala Magasha Mai'ah Mai'Lahii Majanra Majmata Majnata Majora 
+		Mak'jarin Mau'ari Maywiki Mijanra Mimbihi Miracona Mirax Mirim'koa Misensi Mishiki Mojmata Mojnata Morjora Murakai Nada Nalorah Neftis Nimboya Nofal Norhaza Norjara Norkozee 
+		Norsala Ogxua Onxua Pan'ya Qiaga Raenah Raja Renji Rikkari Rorjaah Saree Se'jib Sha'ni Shad'jina Shadra Shoja'my Sian'dur Sian'tsu Sin'kala Sorzun T'kelah Tai'jan Tai'jin Tai'tasi 
+		Tar'jara Taxez Thalja Thorji Tia'jorn Tora Torana Torex Torxua Tun'zu Umbiwa Unjari Utamu Vanira Vehena Velratha Ven'zu Waaxia Xar'ti Yamuna Yayo'jin Yorjaah Yorji Yorrua Zamja 
+		Zandara Zeal'aya Zeedree Zen'tabra Zenhra Zeya Zirazi Zun'ja Zuna Zurjaya Zuuwax Zuxez
+		}
+		dynasty_title_names = yes 
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		allow_looting = yes
+	}
 }
 ogre = {
 	graphical_cultures = { ogregfx westerngfx }
@@ -3619,6 +3663,31 @@ trogg = {
 
 demonic = {
 	graphical_cultures = { westerngfx }
+	
+	demonic = { # Used exclusively for provinces!
+		graphical_cultures = { westerngfx }
+		
+		color = { 0.31 0.29 0.33 }
+		
+		male_names = { TEMP }
+		female_names = { TEMP }
+		dynasty_title_names = no
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		used_for_random = no
+		allow_in_ruler_designer = no
+		allow_looting = yes
+	}
 	
 	eredar = {
 		graphical_cultures = { westerngfx }

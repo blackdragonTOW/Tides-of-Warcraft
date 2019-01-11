@@ -10788,4 +10788,408 @@ e_azeroth = {
 			}
 		}
 	}
+	
+	k_duskwood = {
+		color = { 190 113 235 }
+		color2 = { 255 255 255 }
+		capital = 355 # Darkshire
+		culture = azerothian
+		
+		d_darkshire = {
+			color = { 198 131 236 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 355 # Darkshire
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 354 province_id = 355 province_id = 359 } }
+				}
+			}
+			
+			c_the_darkened_bank = { # 354
+				color = { 150 210 119 }
+				color2 = { 255 255 255 }
+				
+				b_darkened_camp = {
+				}
+				b_ghosthand = {
+				}
+				b_ravencairn = {
+				}
+				b_dirtwatch = {
+				}
+				b_shadowdrift = {
+				}
+				b_grimrun = {
+				}
+				b_elderstrolls = {
+				}
+			}
+			
+			c_darkshire = { # 355
+				color = { 82 128 218 }
+				color2 = { 255 255 255 }
+				
+				b_darkshire = {
+				}
+				b_blindforest = {
+				}
+				b_cliffdenn = {
+				}
+				b_crowview = {
+				}
+				b_bellburgh = {
+				}
+				b_duskreach = {
+				}
+				b_shadelight = {
+				}
+			}
+			
+			c_mistglade = { # 359
+				color = { 201 119 193 }
+				color2 = { 255 255 255 }
+				
+				b_mistmantle_estate = {
+				}
+				b_beggars_haunt = {
+				}
+				b_newguard = {
+				}
+				b_neverrock = {
+				}
+				b_ghostwind = {
+				}
+				b_brittlegrasp = {
+				}
+				b_deadsight = {
+				}
+			}
+		}
+		
+		d_deadwind_pass = {
+			color = { 182 97 232 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 363 # Karazhan
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 361 province_id = 362 province_id = 363 } }
+				}
+			}
+			
+			c_deadmans_crossing = { # 361
+				color = { 79 57 122 }
+				color2 = { 255 255 255 }
+				
+				b_aridens_camp = {
+				}
+				b_oldmaw = {
+				}
+				b_edgeden = {
+				}
+				b_darkmoon = {
+				}
+				b_madhollow = {
+				}
+				b_shadowgarde = {
+				}
+				b_cragbreak = {
+				}
+			}
+			
+			c_deadwind_ravine = { # 362
+				color = { 196 153 190 }
+				color2 = { 255 255 255 }
+				
+				b_the_vice = {
+				}
+				b_groshgok_compound = {
+				}
+				b_sleeping_gorge = {
+				}
+				b_roguehand = {
+				}
+				b_direvalley = {
+				}
+				b_demonhollow = {
+				}
+				b_dusklight = {
+				}
+			}
+			
+			c_karazhan = { # 363
+				color = { 71 79 196 }
+				color2 = { 255 255 255 }
+				
+				b_karazhan = {
+				}
+				b_morgans_plot = {
+				}
+				b_forgotten_crypt = {
+				}
+				b_masters_cellar = {
+				}
+				b_alturus_sanctum = {
+				}
+				b_arrexis_camp = {
+				}
+				b_netherspace = {
+				}
+			}
+		}
+		
+		d_twilight_grove = {
+			color = { 181 120 261 }
+			color2 = { 255 255 255 }
+			culture = green_dragonflight
+			capital = 349 # Twilight Grove
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 349 province_id = 352 province_id = 353 } }
+				}
+			}
+			
+			c_twilight_grove = { # 349
+				color = { 116 167 130 }
+				color2 = { 255 255 255 }
+				
+				b_twilight_grove = {
+				}
+				b_dimgrove = {
+				}
+				b_flathand = {
+				}
+				b_mosshelm = {
+				}
+				b_blackden = {
+				}
+				b_nightchill = {
+				}
+				b_shadeshield = {
+				}
+			}
+			
+			c_dawning_wood = { # 352
+				color = { 113 190 119 }
+				color2 = { 255 255 255 }
+				
+				b_tanglefoot_junction = {
+				}
+				b_eagletown = {
+				}
+				b_greenpeak = {
+				}
+				b_pondwater = {
+				}
+				b_basinhand = {
+				}
+				b_gloomcross = {
+				}
+				b_fearbell = {
+				}
+			}
+			
+			c_brightwood_grove = { # 353
+				color = { 201 85 196 }
+				color2 = { 255 255 255 }
+				
+				b_clifflight = {
+				}
+				b_tradefield = {
+				}
+				b_falsehill = {
+				}
+				b_arrowtide = {
+				}
+				b_cursemore = {
+				}
+				b_newgarde = {
+				}
+				b_ragemeadow = {
+				}
+			}
+		}
+		
+		d_ravens_wood = {
+			color = { 179 144 225 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 351 # Raven Hill
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 350 province_id = 351 province_id = 357 } }
+				}
+			}
+			
+			c_the_hushed_bank = { # 350
+				color = { 196 85 147}
+				color2 = { 255 255 255 }
+				
+				b_hushed_camp = {
+				}
+				b_newrun = {
+				}
+				b_oxview = {
+				}
+				b_redmouth = {
+				}
+				b_nightmaw = {
+				}
+				b_midacre = {
+				}
+				b_goldward = {
+				}
+			}
+			
+			c_raven_hill = { # 351
+				color = { 184 133 77 }
+				color2 = { 255 255 255 }
+				
+				b_raven_hill = {
+				}
+				b_forlorn_rowe = {
+				}
+				b_wolfcall = {
+				}
+				b_grimhallow = {
+				}
+				b_everdark = {
+				}
+				b_embercall = {
+				}
+				b_madspell = {
+				}
+			}
+			
+			c_southvale = { # 357
+				color = { 68 150 147 }
+				color2 = { 255 255 255 }
+				
+				b_addle_stead = {
+				}
+				b_snakemeadow = {
+				}
+				b_wolfbreach = {
+				}
+				b_knightrun = {
+				}
+				b_ambermeadow = {
+				}
+				b_warmgrave = {
+				}
+				b_farhollow = {
+				}
+			}
+		}
+		
+		d_dark_glades = {
+			color = { 200 165 246 }
+			color2 = { 255 255 255 }
+			culture = azerothian
+			capital = 356 # Armstrong Downs
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 356 province_id = 358 province_id = 360 } }
+				}
+			}
+			
+			c_armstrong_downs = { # 356
+				color = { 184 128 79 }
+				color2 = { 255 255 255 }
+				
+				boulderfist = "Vul'Gol"
+				highmaul = "Vul'Gol"
+				crushridge = "Vul'Gol"
+				deadwind = "Vul'Gol"
+				dreadmaul = "Vul'Gol"
+				dunemaul = "Vul'Gol"
+				dustbelcher = "Vul'Gol"
+				gordok = "Vul'Gol"
+				gordunni = "Vul'Gol"
+				mo_grosh = "Vul'Gol"
+				mosh_ogg = "Vul'Gol"
+				spirestone = "Vul'Gol"
+				splinterfist = "Vul'Gol"
+				stonemaul = "Vul'Gol"
+				urok = "Vul'Gol"
+				bladespire = "Vul'Gol"
+				bloodmaul = "Vul'Gol"
+				warmaul = "Vul'Gol"
+				torchbelcher = "Vul'Gol"
+				tonma = "Vul'Gol"
+				stonegullet = "Vul'Gol"
+				ogrila = "Vul'Gol"
+				firegut = "Vul'Gol"
+				angorosh = "Vul'Gol"
+				glopgut = "Vul'Gol"
+				bloodeye = "Vul'Gol"
+				
+				b_vul_gol = {
+				}
+				b_flatrock = {
+				}
+				b_embershell = {
+				}
+				b_duskshield = {
+				}
+				b_blackbreach = {
+				}
+				b_madacre = {
+				}
+				b_oldcrow = {
+				}
+			}
+			
+			c_wolfswood = { # 358
+				color = { 150 207 119 }
+				color2 = { 255 255 255 }
+				
+				b_rolands_doom = {
+				}
+				b_yorgen_stead = {
+				}
+				b_pondstall = {
+				}
+				b_littlehallow = {
+				}
+				b_highfall = {
+				}
+				b_ragewatch = {
+				}
+				b_clearglen = {
+				}
+			}
+			
+			c_tranquil_hills = { # 360
+				color = { 139 213 94 }
+				color2 = { 255 255 255 }
+				
+				b_tranquil_gardens = {
+				}
+				b_knights_hollow = {
+				}
+				b_deadmond = {
+				}
+				b_drychill = {
+				}
+				b_smallfell = {
+				}
+				b_silentwell = {
+				}
+				b_stillfield = {
+				}
+			}
+		}
+	}
 }
