@@ -8785,36 +8785,33 @@ increase_vassal_freedom_effect = {
 }
 
 spawn_good_commander_effect = {
-	random_list = {
-		1 = {
-			create_random_soldier = {
-				random_traits = yes
-				dynasty = random
-				female = no
-				attributes = {
-					diplomacy = 2
-					learning = 2
-					stewardship = 2
-					intrigue = 2
-					martial = 8
-				}
+	if = { 
+		limit = { has_religion_feature = religion_matriarchal }
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			female = yes
+			attributes = {
+				diplomacy = 2
+				learning = 2
+				stewardship = 2
+				intrigue = 2
+				martial = 8
 			}
 		}
-		1 = {
-			modifier = {
-				trait = ogre
-			}
-			create_random_soldier = {
-				random_traits = yes
-				dynasty = random
-				female = yes
-				attributes = {
-					diplomacy = 2
-					learning = 2
-					stewardship = 2
-					intrigue = 2
-					martial = 8
-				}
+	}
+	if = { 
+		limit = { NOT = { has_religion_feature = religion_matriarchal } }
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			attributes = {
+				diplomacy = 2
+				learning = 2
+				stewardship = 2
+				intrigue = 2
+				martial = 8
 			}
 		}
 	}
@@ -8823,6 +8820,8 @@ spawn_good_commander_effect = {
 		remove_trait = slow
 		remove_trait = imbecile
 		remove_trait = dull
+		
+		remove_trait = mystic
 		remove_trait = socializer
 		remove_trait = gamer
 		remove_trait = hedonist
@@ -8872,8 +8871,895 @@ spawn_good_commander_effect = {
 			5 = { 
 				add_trait = shrewd
 			}
+			3 = { 
+				add_trait = giant
+			}
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					TOW_religion_practices_astrology = yes
+				}
+				hidden_tooltip = { add_western_zodiac_trait_effect = yes }
+			}
+			if = {
+				limit = {
+					has_religion_feature = religion_no_leader
+					religion_group = pagan_group
+				}
+				random_list = {  
+					5 = {
+						add_trait = pagan_branch_1
+					}
+					25 = {
+						add_trait = pagan_branch_2
+					}
+					25 = {
+						add_trait = pagan_branch_3
+					}
+					25 = {
+						add_trait = pagan_branch_4
+					}
+				}
+			}
 		}
 		set_character_flag = invited_soldier
+		save_event_target_as = invited_character
+	}
+}
+
+spawn_great_commander_effect = {
+	if = { 
+		limit = { has_religion_feature = religion_matriarchal }
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			female = yes
+			attributes = {
+				diplomacy = 3
+				learning = 3
+				stewardship = 3
+				intrigue = 3
+				martial = 9
+			}
+		}
+	}
+	if = { 
+		limit = { NOT = { has_religion_feature = religion_matriarchal } }
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			female = no
+			attributes = {
+				diplomacy = 3
+				learning = 3
+				stewardship = 3
+				intrigue = 3
+				martial = 9
+			}
+		}
+	}
+	new_character = {
+		remove_trait = weak
+		remove_trait = slow
+		remove_trait = imbecile
+		remove_trait = dull
+		remove_trait = dwarf
+		remove_trait = giant
+		remove_trait = hunchback
+		remove_trait = clubfooted
+		remove_trait = craven
+		
+		remove_trait = mystic
+		remove_trait = socializer
+		remove_trait = gamer
+		remove_trait = hedonist
+		remove_trait = duelist
+		remove_trait = hunter
+		remove_trait = strategist
+		remove_trait = administrator
+		remove_trait = architect
+		remove_trait = gardener
+		remove_trait = schemer
+		remove_trait = impaler
+		remove_trait = seducer
+		remove_trait = seductress
+		remove_trait = theologian
+		remove_trait = scholar
+		
+		remove_trait = misguided_warrior
+		remove_trait = tough_soldier
+		remove_trait = skilled_tactician
+		remove_trait = brilliant_strategist
+
+		random_list = {
+			5 = { add_trait = misguided_warrior }
+			10 = { add_trait = tough_soldier }
+			20 = { add_trait = skilled_tactician }
+			30 = { add_trait = brilliant_strategist }
+		}
+	
+		random_list = { # Flavor Randomization
+			35 = { 
+				# Nothing
+			}
+			15 = {
+				change_martial = 2
+			}
+			10 = {
+				add_trait = robust
+			}
+			10 = {
+				add_trait = duelist
+			}
+			10 = {
+				add_trait = hunter
+			}
+			5 = {
+				add_trait = strategist
+			}
+			5 = {
+				change_martial = 4
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					add_trait = one_eyed
+				}
+			}
+			5 = { 
+				add_trait = shrewd
+			}
+			1 = { 
+				add_trait = giant
+			}
+		}
+		random_list = {
+			50 = {
+				#Nothing
+			}
+			10 = {
+				add_trait = narrow_flank_leader
+			}
+			10 = {
+				add_trait = defensive_leader
+			}
+			10 = {
+				add_trait = experimenter
+			}
+			10 = {
+				add_trait = flanker
+			}
+			10 = {
+				add_trait = heavy_infantry_leader
+			}
+			10 = {
+				add_trait = inspiring_leader
+			}
+			10 = {
+				add_trait = organizer
+			}
+			10 = {
+				add_trait = siege_leader
+			}
+			10 = {
+				add_trait = trickster
+			}
+			10 = {
+				add_trait = aggressive_leader
+			}
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					TOW_religion_practices_astrology = yes
+				}
+				hidden_tooltip = { add_western_zodiac_trait_effect = yes }
+			}
+			if = {
+				limit = {
+					has_religion_feature = religion_no_leader
+					religion_group = pagan_group
+				}
+				random_list = {  
+					5 = {
+						add_trait = pagan_branch_1
+					}
+					25 = {
+						add_trait = pagan_branch_2
+					}
+					25 = {
+						add_trait = pagan_branch_3
+					}
+					25 = {
+						add_trait = pagan_branch_4
+					}
+				}
+			}
+		}
+		set_character_flag = invited_soldier
+		save_event_target_as = invited_character
+	}
+}
+
+spawn_fantastic_commander_effect = {
+
+	if = { 
+		limit = { has_religion_feature = religion_matriarchal }
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = actually_culture
+			female = yes
+			attributes = {
+				diplomacy = 4
+				learning = 4
+				stewardship = 4
+				intrigue = 4
+				martial = 12
+			}
+		}
+	}
+	if = { 
+		limit = { NOT = { has_religion_feature = religion_matriarchal } }
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = actually_culture
+			female = no
+			attributes = {
+				diplomacy = 4
+				learning = 4
+				stewardship = 4
+				intrigue = 4
+				martial = 12
+			}
+		}
+	}
+	new_character = {
+		remove_trait = weak
+		remove_trait = slow
+		remove_trait = imbecile
+		remove_trait = dull
+		remove_trait = dwarf
+		remove_trait = giant
+		remove_trait = hunchback
+		remove_trait = clubfooted
+		remove_trait = craven
+		remove_trait = paranoid
+		
+		remove_trait = mystic
+		remove_trait = socializer
+		remove_trait = gamer
+		remove_trait = hedonist
+		remove_trait = duelist
+		remove_trait = hunter
+		remove_trait = strategist
+		remove_trait = administrator
+		remove_trait = architect
+		remove_trait = gardener
+		remove_trait = schemer
+		remove_trait = impaler
+		remove_trait = seducer
+		remove_trait = seductress
+		remove_trait = theologian
+		remove_trait = scholar
+		
+		remove_trait = misguided_warrior
+		remove_trait = tough_soldier
+		remove_trait = skilled_tactician
+		
+		add_trait = brilliant_strategist
+		
+		random_list = {
+			20 = {
+				add_trait = robust
+			}
+			10 = {
+				add_trait = strong
+			}
+			5 = {
+				health = 1
+			}
+		}
+		
+		random_list = {
+			10 = {
+				add_trait = narrow_flank_leader
+			}
+			10 = {
+				add_trait = defensive_leader
+			}
+			10 = {
+				add_trait = experimenter
+			}
+			10 = {
+				add_trait = flanker
+			}
+			10 = {
+				add_trait = heavy_infantry_leader
+			}
+			10 = {
+				add_trait = inspiring_leader
+			}
+			10 = {
+				add_trait = organizer
+			}
+			10 = {
+				add_trait = siege_leader
+			}
+			10 = {
+				add_trait = trickster
+			}
+			10 = {
+				add_trait = aggressive_leader
+			}
+		}
+		
+		random_list = { # Flavor Randomization
+			20 = {
+				add_trait = giant
+				add_trait = robust
+				add_trait = hunter
+				change_martial = 2
+				give_nickname = nick_the_giant
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						has_dlc = "Reapers"
+					}
+				}
+				add_trait = giant
+				add_trait = robust
+				add_trait = strategist
+				add_trait = one_eyed
+				change_martial = 1
+				give_nickname = nick_the_cyclops
+			}
+			20 = {
+				add_trait = holy_warrior
+				add_trait = scarred
+				change_martial = 3
+				give_nickname = nick_the_hammer
+			}
+			20 = {
+				add_trait = brave
+				add_trait = poet
+				change_martial = 2
+				give_nickname = nick_the_fearless
+			}
+			20 = {
+				add_trait = robust
+				remove_trait = temperate
+				add_trait = wroth
+				add_trait = falconer
+				change_martial = 1
+				give_nickname = nick_the_ill_tempered
+			}
+			20 = {
+				add_trait = unyielding_leader
+				remove_trait = wroth
+				add_trait = patient
+				change_martial = 2
+				give_nickname = nick_the_defender
+			}
+			20 = {
+				add_trait = aggressive_leader
+				remove_trait = patient
+				add_trait = wroth
+				change_martial = 3
+				give_nickname = nick_the_destroyer
+			}
+			20 = {
+				add_trait = shrewd
+				add_trait = brave
+				change_martial = 2
+				give_nickname = nick_the_brave
+			}
+			20 = {
+				add_trait = robust
+				add_trait = strategist
+				change_martial = 1
+				give_nickname = nick_the_strong
+			}
+			20 = {
+				add_trait = genius
+				add_trait = socializer
+				add_trait = poet
+				change_martial = 4
+				give_nickname = nick_the_noble
+			}
+			20 = {
+				add_trait = blinded
+				add_trait = strategist
+				add_trait = genius
+				change_martial = 4
+				give_nickname = nick_the_blind
+			}
+			20 = {
+				remove_trait = humble
+				add_trait = proud
+				add_trait = duelist
+				change_martial = 2
+				give_nickname = nick_the_proud
+			}
+			20 = {
+				add_trait = hunter
+				add_trait = shrewd
+				change_martial = 3
+				give_nickname = nick_the_hunter
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						has_dlc = "Reapers"
+					}
+				}
+				add_trait = disfigured
+				add_trait = scarred
+				add_trait = genius
+				change_martial = 2
+				change_intrigue = 12
+				give_nickname = nick_of_a_thousand_faces
+			}
+			20 = {
+				add_trait = genius
+				add_trait = clubfooted
+				change_martial = 1
+				give_nickname = nick_the_bear
+			}
+			20 = {
+				add_trait = trusting
+				add_trait = quick
+				change_martial = 4
+				give_nickname = nick_the_loyal
+			}
+			20 = {
+				add_trait = ugly
+				add_trait = strong
+				add_trait = duelist
+				change_martial = 1
+				give_nickname = nick_the_boar
+			}
+			20 = {
+				add_trait = fair
+				add_trait = strategist
+				change_martial = 4
+				give_nickname = nick_the_lion
+			}
+			20 = {
+				add_trait = brave
+				add_trait = duelist
+				change_martial = 3
+				give_nickname = nick_the_bold
+			}
+			20 = {
+				add_trait = shrewd
+				add_trait = hedonist
+				change_martial = 4
+				give_nickname = nick_the_quarreller
+			}
+			20 = {
+				add_trait = shrewd
+				add_trait = cavalry_leader
+				change_martial = 2
+				give_nickname = nick_the_wolf
+			}
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_religion_feature = religion_no_leader
+					religion_group = pagan_group
+				}
+				random_list = {  
+					5 = {
+						add_trait = pagan_branch_1
+					}
+					25 = {
+						add_trait = pagan_branch_2
+					}
+					25 = {
+						add_trait = pagan_branch_3
+					}
+					25 = {
+						add_trait = pagan_branch_4
+					}
+				}
+			}
+		}
+		set_character_flag = invited_soldier
+		save_event_target_as = invited_character
+	}
+}
+
+spawn_fantastic_diplomat_effect = {
+
+	if = { 
+		limit = { has_religion_feature = religion_matriarchal }
+		create_random_diplomat = {
+			random_traits = yes
+			dynasty = actually_culture
+			female = yes
+			attributes = {
+				diplomacy = 12
+				learning = 4
+				stewardship = 4
+				intrigue = 4
+				martial = 4
+			}
+		}
+	}
+	if = { 
+		limit = { NOT = { has_religion_feature = religion_matriarchal } }
+		create_random_diplomat = {
+			random_traits = yes
+			dynasty = actually_culture
+			female = no
+			attributes = {
+				diplomacy = 12
+				learning = 4
+				stewardship = 4
+				intrigue = 4
+				martial = 4
+			}
+		}
+	}
+	new_character = {
+		remove_trait = weak
+		remove_trait = slow
+		remove_trait = imbecile
+		remove_trait = dull
+		remove_trait = dwarf
+		remove_trait = giant
+		remove_trait = hunchback
+		remove_trait = clubfooted
+		remove_trait = craven
+		remove_trait = paranoid
+		
+		remove_trait = mystic
+		remove_trait = socializer
+		remove_trait = gamer
+		remove_trait = hedonist
+		remove_trait = duelist
+		remove_trait = hunter
+		remove_trait = strategist
+		remove_trait = administrator
+		remove_trait = architect
+		remove_trait = gardener
+		remove_trait = schemer
+		remove_trait = impaler
+		remove_trait = seducer
+		remove_trait = seductress
+		remove_trait = theologian
+		remove_trait = scholar
+		
+		remove_trait = naive_appeaser
+		remove_trait = underhanded_rogue
+		remove_trait = charismatic_negotiator
+		
+		add_trait = grey_eminence
+
+		random_list = {
+			27 = {
+				add_trait = shrewd
+			}
+			3 = {
+				add_trait = quick
+			}
+			70 = {
+				health = 1
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = christian_crusades_unlocked
+			}
+			random = { 
+				chance = 20 
+				add_trait = crusader
+			}
+		}
+		
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_religion_feature = religion_no_leader
+					religion_group = pagan_group
+				}
+				random_list = {  
+					5 = {
+						add_trait = pagan_branch_1
+					}
+					25 = {
+						add_trait = pagan_branch_2
+					}
+					25 = {
+						add_trait = pagan_branch_3
+					}
+					25 = {
+						add_trait = pagan_branch_4
+					}
+				}
+			}
+		}
+		set_character_flag = invited_soldier
+		save_event_target_as = invited_character
+	}
+}
+
+spawn_fantastic_scholar_effect = {
+
+	if = { 
+		limit = { has_religion_feature = religion_matriarchal }
+		create_random_priest = {
+			random_traits = yes
+			dynasty = actually_culture
+			female = yes
+			attributes = {
+				diplomacy = 4
+				learning = 12
+				stewardship = 4
+				intrigue = 4
+				martial = 4
+			}
+		}
+	}
+	if = { 
+		limit = { NOT = { has_religion_feature = religion_matriarchal } }
+		create_random_priest = {
+			random_traits = yes
+			dynasty = actually_culture
+			female = no
+			attributes = {
+				diplomacy = 4
+				learning = 12
+				stewardship = 4
+				intrigue = 4
+				martial = 4
+			}
+		}
+	}
+	new_character = {
+		remove_trait = weak
+		remove_trait = slow
+		remove_trait = imbecile
+		remove_trait = dull
+		remove_trait = dwarf
+		remove_trait = giant
+		remove_trait = hunchback
+		remove_trait = clubfooted
+		remove_trait = craven
+		remove_trait = paranoid
+		
+		remove_trait = mystic
+		remove_trait = socializer
+		remove_trait = gamer
+		remove_trait = hedonist
+		remove_trait = duelist
+		remove_trait = hunter
+		remove_trait = strategist
+		remove_trait = administrator
+		remove_trait = architect
+		remove_trait = gardener
+		remove_trait = schemer
+		remove_trait = impaler
+		remove_trait = seducer
+		remove_trait = seductress
+		remove_trait = theologian
+		remove_trait = scholar
+		
+		remove_trait = naive_appeaser
+		remove_trait = underhanded_rogue
+		remove_trait = charismatic_negotiator
+		remove_trait = grey_eminence
+		
+		add_trait = mastermind_theologian
+
+		random_list = {
+			27 = {
+				add_trait = shrewd
+			}
+			3 = {
+				add_trait = quick
+			}
+			70 = {
+				change_diplomacy = 1
+			}
+		}
+		
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_religion_feature = religion_no_leader
+					religion_group = pagan_group
+				}
+				random_list = {  
+					5 = {
+						add_trait = pagan_branch_1
+					}
+					25 = {
+						add_trait = pagan_branch_2
+					}
+					25 = {
+						add_trait = pagan_branch_3
+					}
+					25 = {
+						add_trait = pagan_branch_4
+					}
+				}
+			}
+		}
+		set_character_flag = invited_soldier
+		save_event_target_as = invited_character
+	}
+}
+
+spawn_elder_effect = {
+
+	if = { 
+		limit = { has_religion_feature = religion_matriarchal }
+		create_random_priest = {
+			random_traits = yes
+			dynasty = actually_culture
+			female = yes
+			age = 50
+			attributes = {
+				diplomacy = 4
+				learning = 10
+				stewardship = 6
+				intrigue = 4
+				martial = 4
+			}
+		}
+	}
+	if = { 
+		limit = { NOR = { has_religion_feature = religion_matriarchal has_religion_feature = religion_patriarchal } }
+		random_list = {
+			50 = {
+				create_random_priest = {
+					random_traits = yes
+					dynasty = actually_culture
+					female = no
+					age = 50
+					attributes = {
+						diplomacy = 4
+						learning = 10
+						stewardship = 6
+						intrigue = 4
+						martial = 4
+					}
+				}
+			}
+			50 = {
+				create_random_priest = {
+					random_traits = yes
+					dynasty = actually_culture
+					female = yes
+					age = 50
+					attributes = {
+						diplomacy = 4
+						learning = 10
+						stewardship = 6
+						intrigue = 4
+						martial = 4
+					}
+				}
+			}
+		}
+	}
+	if = { 
+		limit = { has_religion_feature = religion_patriarchal }
+		create_random_priest = {
+			random_traits = yes
+			dynasty = actually_culture
+			female = no
+			age = 50
+			attributes = {
+				diplomacy = 4
+				learning = 10
+				stewardship = 6
+				intrigue = 4
+				martial = 4
+			}
+		}
+	}
+	new_character = {
+
+		remove_trait = weak
+		remove_trait = slow
+		remove_trait = imbecile
+		remove_trait = dull
+		remove_trait = dwarf
+		remove_trait = giant
+		remove_trait = hunchback
+		remove_trait = clubfooted
+		remove_trait = craven
+		remove_trait = paranoid
+		
+		remove_trait = mystic
+		remove_trait = socializer
+		remove_trait = gamer
+		remove_trait = hedonist
+		remove_trait = duelist
+		remove_trait = hunter
+		remove_trait = strategist
+		remove_trait = administrator
+		remove_trait = architect
+		remove_trait = gardener
+		remove_trait = schemer
+		remove_trait = impaler
+		remove_trait = seducer
+		remove_trait = seductress
+		remove_trait = theologian
+		remove_trait = scholar
+		
+		remove_trait = detached_priest
+		remove_trait = martial_cleric
+		remove_trait = scholarly_theologian
+		remove_trait = mastermind_theologian
+		
+		add_character_modifier = { name = elder_long_life_modifier years = 100 }
+		give_nickname = nick_the_elder 
+
+		random_list = {
+			50 = {
+				add_trait = martial_cleric
+			}
+			25 = {
+				add_trait = scholarly_theologian
+			}
+			10 = {
+				add_trait = mastermind_theologian
+			}
+		}
+		random_list = {
+			5 = {
+				add_trait = stubborn
+			}
+			1 = {
+				add_trait = mystic
+			}
+			1 = {
+				add_trait = hunchback
+			}
+			1 = {
+				add_trait = ugly
+			}
+			10 = {
+				add_scarred_tiered_effect = yes
+			}
+			70 = {
+				change_stewardship = 1
+			}
+		}
+		
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_religion_feature = religion_no_leader
+					religion_group = pagan_group
+				}
+				random_list = {  
+					5 = {
+						add_trait = pagan_branch_1
+					}
+					25 = {
+						add_trait = pagan_branch_2
+					}
+					25 = {
+						add_trait = pagan_branch_3
+					}
+					25 = {
+						add_trait = pagan_branch_4
+					}
+				}
+			}
+		}
+		set_character_flag = invited_elder
 		save_event_target_as = invited_character
 	}
 }
@@ -12921,33 +13807,9 @@ select_and_save_fellow_society_member_effect = { #[Runs for ROOT]
 add_warrior_lodge_leader_trait_effect = {
 	trigger_switch = {
 		on_trigger = society_member_of
-		warrior_lodge_norse = {
-			add_trait = norse_leader
-		}
-		warrior_lodge_tengri = {
-			add_trait = tengri_leader
-		}
-		warrior_lodge_baltic = {
-			add_trait = baltic_leader
-		}
-		warrior_lodge_finnish = {
-			add_trait = finnish_leader
-		}
-		warrior_lodge_slavic = {
-			add_trait = slavic_leader
-		}
-		warrior_lodge_west_african = {
-			add_trait = west_african_leader
-		}
-		warrior_lodge_zun = {
-			add_trait = zun_leader
-		}
-		warrior_lodge_bon = {
-			add_trait = bon_leader
-		}
-		warrior_lodge_hellenic = {
-			add_trait = hellenic_leader
-		}
+		#warrior_lodge_norse = {
+		#	add_trait = norse_leader
+		#}
 	}
 }
 fire_haruspicy_event_effect = {
@@ -13124,10 +13986,7 @@ child_of_destiny_journey_resume_effect = {
 pacifists_lose_piety_effect = {
 	if = {
 		limit = {
-			religion = jain
-			NOT = {
-				has_alternate_start_parameter = { key = religion_names value = random }
-			}
+			TOW_religion_is_pacifist = yes
 		}
 		piety = -20
 		custom_tooltip = { text = jain_ahimsa_tooltip }
@@ -13538,147 +14397,6 @@ bloodthirsty_tiered_traits_effect = {
 	}
 }
 
-add_random_tattoo_effect = { #Tied to religion, used only for special events.
-	if = { 
-		limit = { 
-			OR = { 
-				religion = norse_pagan
-				religion = norse_pagan_reformed
-			}
-			NOR = { 
-				trait = african_tattoo_1
-				trait = african_tattoo_2
-				trait = african_tattoo_3
-				trait = african_tattoo_4
-				trait = african_tattoo_5
-				trait = african_tattoo_6
-				trait = african_tattoo_7
-				trait = african_tattoo_8
-				trait = african_tattoo_9
-				trait = african_tattoo_10
-				trait = african_tattoo_11
-				trait = african_tattoo_12
-				trait = slavic_tattoo_1
-				trait = slavic_tattoo_2
-				trait = slavic_tattoo_3
-				trait = slavic_tattoo_4
-				trait = slavic_tattoo_5
-				trait = slavic_tattoo_6
-				trait = norse_tattoo_1
-				trait = norse_tattoo_2
-				trait = norse_tattoo_3
-				trait = norse_tattoo_4
-				trait = norse_tattoo_5
-				trait = norse_tattoo_6
-			}
-		}
-		random_list = { 
-			50 = { add_trait = norse_tattoo_1 }
-			50 = { add_trait = norse_tattoo_2 }
-			40 = { add_trait = norse_tattoo_3 }
-			30 = { add_trait = norse_tattoo_4 }
-			20 = { add_trait = norse_tattoo_5 }
-			10 = { add_trait = norse_tattoo_6 } 
-		}
-	}
-	if = { 
-		limit = { 
-			OR = { 
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-				religion = zun_pagan
-				religion = zun_pagan_reformed
-			}
-			NOR = { 
-				trait = african_tattoo_1
-				trait = african_tattoo_2
-				trait = african_tattoo_3
-				trait = african_tattoo_4
-				trait = african_tattoo_5
-				trait = african_tattoo_6
-				trait = african_tattoo_7
-				trait = african_tattoo_8
-				trait = african_tattoo_9
-				trait = african_tattoo_10
-				trait = african_tattoo_11
-				trait = african_tattoo_12
-				trait = slavic_tattoo_1
-				trait = slavic_tattoo_2
-				trait = slavic_tattoo_3
-				trait = slavic_tattoo_4
-				trait = slavic_tattoo_5
-				trait = slavic_tattoo_6
-				trait = norse_tattoo_1
-				trait = norse_tattoo_2
-				trait = norse_tattoo_3
-				trait = norse_tattoo_4
-				trait = norse_tattoo_5
-				trait = norse_tattoo_6
-			}
-		}
-		random_list = { 
-			50 = { add_trait = african_tattoo_1 }
-			40 = { add_trait = african_tattoo_2 }
-			40 = { add_trait = african_tattoo_3 }
-			30 = { add_trait = african_tattoo_4 }
-			30 = { add_trait = african_tattoo_5 }
-			20 = { add_trait = african_tattoo_6 }
-			20 = { add_trait = african_tattoo_7 }
-			10 = { add_trait = african_tattoo_8 } 
-			6 = { add_trait = african_tattoo_9 } 
-			4 = { add_trait = african_tattoo_10 } 
-			2 = { add_trait = african_tattoo_11 } 
-			1 = { add_trait = african_tattoo_12 } 
-		}
-	}
-	if = { 
-		limit = { 
-			OR = { 
-				religion = slavic_pagan
-				religion = slavic_pagan_reformed
-				religion = baltic_pagan
-				religion = baltic_pagan_reformed
-				religion = finnish_pagan
-				religion = finnish_pagan_reformed
-			}
-			NOR = { 
-				trait = african_tattoo_1
-				trait = african_tattoo_2
-				trait = african_tattoo_3
-				trait = african_tattoo_4
-				trait = african_tattoo_5
-				trait = african_tattoo_6
-				trait = african_tattoo_7
-				trait = african_tattoo_8
-				trait = african_tattoo_9
-				trait = african_tattoo_10
-				trait = african_tattoo_11
-				trait = african_tattoo_12
-				trait = slavic_tattoo_1
-				trait = slavic_tattoo_2
-				trait = slavic_tattoo_3
-				trait = slavic_tattoo_4
-				trait = slavic_tattoo_5
-				trait = slavic_tattoo_6
-				trait = norse_tattoo_1
-				trait = norse_tattoo_2
-				trait = norse_tattoo_3
-				trait = norse_tattoo_4
-				trait = norse_tattoo_5
-				trait = norse_tattoo_6
-			}
-		}
-		random_list = { 
-			50 = { add_trait = slavic_tattoo_1 }
-			50 = { add_trait = slavic_tattoo_2 }
-			40 = { add_trait = slavic_tattoo_3 }
-			30 = { add_trait = slavic_tattoo_4 }
-			20 = { add_trait = slavic_tattoo_5 }
-			10 = { add_trait = slavic_tattoo_6 } 
-		}
-	}
-}
-
 spawn_debutante_effect = {
 	if = { 
 		limit = { has_religion_feature = religion_matriarchal }
@@ -13735,206 +14453,27 @@ spawn_debutante_effect = {
 }
 
 transfer_crown_on_abdication_effect = {
-	if = {
-		limit = { 
-			has_landed_title = e_hre
-			any_artifact = { artifact_type = crown_hre } 
-		}
-			current_heir = { save_event_target_as = crown_hre_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_hre }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_hre_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = e_byzantium
-			any_artifact = { artifact_type = crown_byzantine }
-		}
-			current_heir = { save_event_target_as = crown_byzantine_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_byzantine }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_byzantine_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = e_persia
-			any_artifact = { artifact_type = crown_pahlavi }
-		}
-			current_heir = { save_event_target_as = crown_pahlavi_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_pahlavi }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_pahlavi_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_norse_pagan_reformed
-			any_artifact = { artifact_type = crown_fylkir }
-		}
-			current_heir = { save_event_target_as = crown_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_tengri_pagan_reformed
-			any_artifact = { artifact_type = crown_tengri_fylkir }
-		}
-			current_heir = { save_event_target_as = crown_tengri_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_tengri_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_tengri_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_slavic_pagan_reformed
-			any_artifact = { artifact_type = crown_slavic_fylkir }
-		}
-			current_heir = { save_event_target_as = crown_slavic_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_slavic_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_slavic_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_baltic_pagan_reformed
-			any_artifact = { artifact_type = crown_romuva_fylkir }
-		}
-			current_heir = { save_event_target_as = crown_romuva_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_romuva_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_romuva_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_finnish_pagan_reformed
-			any_artifact = { artifact_type = crown_finnish_fylkir }
-		}
-			current_heir = { save_event_target_as = crown_finnish_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_finnish_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_finnish_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_west_african_pagan_reformed
-			any_artifact = { artifact_type = crown_west_african_fylkir }
-		}
-			current_heir = { save_event_target_as = crown_west_african_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_west_african_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_west_african_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_zun_pagan_reformed
-			any_artifact = { artifact_type = crown_zun_fylkir }
-		}
-			current_heir = { save_event_target_as = crown_zun_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_zun_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_zun_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_bon_reformed
-			any_artifact = { artifact_type = scepter_bon_fylkir }
-		}
-			current_heir = { save_event_target_as = scepter_bon_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = scepter_bon_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:scepter_bon_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = d_aztec_reformed
-			any_artifact = { artifact_type = crown_aztec_fylkir }
-		}
-			current_heir = { save_event_target_as = crown_aztec_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = crown_aztec_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:crown_aztec_fylkir_heir
-				} 
-			}
-	}
-	if = {
-		limit = { 
-			has_landed_title = k_hellenic_pagan
-			any_artifact = { artifact_type = scepter_hellenic_fylkir }
-		}
-			current_heir = { save_event_target_as = scepter_hellenic_fylkir_heir }
-			any_artifact = { 
-				limit = { artifact_type = scepter_hellenic_fylkir }
-				transfer_artifact = {
-					from = PREV
-					to = event_target:scepter_hellenic_fylkir_heir
-				} 
-			}
-	}
+	# TOW TODO : Maybe use artifact flags instead of copying this ?
+	#if = {
+	#	limit = { 
+	#		has_landed_title = e_hre
+	#		any_artifact = { artifact_type = crown_hre } 
+	#	}
+	#		current_heir = { save_event_target_as = crown_hre_heir }
+	#		any_artifact = { 
+	#			limit = { artifact_type = crown_hre }
+	#			transfer_artifact = {
+	#				from = PREV
+	#				to = event_target:crown_hre_heir
+	#			} 
+	#		}
+	#}
 	#Now transfer all other remaining artifacts to the player_heir, who may or may not be the current_heir.
 	player_heir = { save_event_target_as = scoped_player_heir }
 	any_artifact = { 
 		limit = { 
 			NOR = {
-				artifact_type = crown_hre
-				artifact_type = crown_byzantine 
-				artifact_type = crown_pahlavi
-				artifact_type = crown_fylkir
-				artifact_type = crown_tengri_fylkir
-				artifact_type = crown_slavic_fylkir
-				artifact_type = crown_romuva_fylkir
-				artifact_type = crown_finnish_fylkir
-				artifact_type = crown_west_african_fylkir
-				artifact_type = crown_zun_fylkir
-				artifact_type = scepter_bon_fylkir 
-				artifact_type = crown_aztec_fylkir
-				artifact_type = scepter_hellenic_fylkir 
+				#artifact_type = crown_hre
 			}
 		}
 		transfer_artifact = {
@@ -13949,226 +14488,6 @@ rename_character_effect = {
 	prompt_name = {
 		player = FROM
 		type = RENAME_CHARACTER_MESSAGE
-	}
-}
-
-move_childrens_crusade_region_effect = {
-	if = { #If at any point during the preparation Jerusalem is no longer a valid target, or a real Crusade starts, stop everything.
-		limit = {
-			OR = {
-				k_jerusalem = { has_holder = yes holder_scope = { religion_group = christian } }
-				c_jerusalem = { holder_scope = { religion_group = christian } }
-				c_jerusalem = { holder_scope = { is_crusade_target = yes } }
-				religion_head = { is_preparing_crusade = yes }
-				religion_head = { 
-					OR = { 
-						any_war = { using_cb = crusade }  
-						any_war = { using_cb = new_crusade } 
-					} 
-				} 
-			}
-		}
-		any_player = { 
-				limit = {
-				religion_group = christian
-				NOT = {
-					character = ROOT
-				}
-			}
-			narrative_event = { id = HF.25819 days = 30 } #Notify everyone that the crusade has flopped.
-		}
-		primary_title = {
-			activate_title = { title = THIS status = no }
-			destroy_landed_title = THIS
-		}
-		clr_character_flag = flag_childrens_crusade_leader
-		add_trait = lunatic
-		piety = -150
-		remove_trait = disinherited 
-		set_variable = { which = children_crusade_forces value = 0 }
-		set_variable = { which = children_crusade_morale value = 0 }
-		set_variable = { which = children_crusade_heavy_troops value = 0 }
-		any_courtier = { 
-			remove_trait = disinherited
-			clr_character_flag = no_court_invites
-		}
-		break = yes
-	}
-	if = { #Move to Genoa first.
-		limit = {
-			has_character_flag = flag_children_at_beginning
-		}
-		primary_title = { set_preferred_capital = c_genoa } #Historically traveled here.
-		change_variable = { which = children_crusade_forces value = 1 }
-		change_variable = { which = children_crusade_morale value = -1 }
-		clr_character_flag = flag_children_at_beginning
-		set_character_flag = flag_children_at_genoa
-		if = { 
-			limit = {  
-				NOT = { persistent_event_target:childrens_crusade_sponsor_per = { is_alive = yes } }
-			}
-			change_variable = { which = children_crusade_morale value = -2 }
-		}
-		any_player = { 
-				limit = {
-				religion_group = christian
-				NOT = {
-					character = ROOT
-				}
-			}
-			narrative_event = { id = HF.25815 days = 30 } #Notify everyone that the crusade has reached Genoa and the sea did not part before them.
-		}
-		narrative_event = { id = HF.25808 days = 50 random = 100 } #Ping back to main event to check travel progress.
-	}
-	else_if = { #Then shipwreck to Achaia.
-		limit = {
-			has_character_flag = flag_children_at_genoa
-		}
-		primary_title = { set_preferred_capital = c_achaia } 
-		change_variable = { which = children_crusade_morale value = -1 }
-		clr_character_flag = flag_children_at_genoa
-		set_character_flag = flag_children_at_achaia 
-		any_player = { 
-				limit = {
-				religion_group = christian
-				NOT = {
-					character = ROOT
-				}
-			}
-			narrative_event = { id = HF.25816 days = 30 } #Notify everyone that the crusade has shipwrecked into Achaia.
-		}
-		if = { 
-			limit = {  
-				NOT = { persistent_event_target:childrens_crusade_sponsor_per = { is_alive = yes } }
-			}
-			random = { 
-				chance = 25  
-				change_variable = { which = children_crusade_forces value = -1 }
-			} 
-		}
-		narrative_event = { id = HF.25808 days = 50 random = 100 } #Ping back to main event to check travel progress.
-	}
-	else_if = { #Then crawl to Nikaea.
-		limit = {
-			has_character_flag = flag_children_at_achaia
-		}
-		primary_title = { set_preferred_capital = c_nikaea } 
-		clr_character_flag = flag_children_at_achaia
-		set_character_flag = flag_children_at_nikaea
-		change_variable = { which = children_crusade_forces value = 1 } #Base forces score is 3 = circa 15.000 poorly armed troops.
-		any_player = { 
-				limit = {
-				religion_group = christian
-				NOT = {
-					character = ROOT
-				}
-			}
-			narrative_event = { id = HF.25817 days = 30 } #Notify everyone that the crusade has crawled its way to Nikaea.
-		}
-		narrative_event = { id = HF.25808 days = 50 random = 100 } #Ping back to main event to check travel progress.
-	}
-	else_if = { #We actually got there. Start the war.
-		limit = {
-			has_character_flag = flag_children_at_nikaea
-		}
-		primary_title = { set_preferred_capital = c_antiocheia } #Where the troops will spawn.
-		clr_character_flag = flag_children_at_nikaea
-		set_character_flag = flag_children_at_antioch
-		narrative_event = { id = HF.25820 days = 25 } #START THE CRUSADE.
-		any_player = { 
-				limit = {
-				religion_group = christian
-				NOT = {
-					character = ROOT
-				}
-			}
-			narrative_event = { id = HF.25818 days = 30 } #Notify everyone that the crusade has actually reached Antioch and is ready to engage.
-		}
-	}
-	else = { #Move directly to Antioch in case something went wrong.
-		primary_title = { set_preferred_capital = c_antiocheia } #Historically traveled here.
-		clr_character_flag = flag_children_at_achaia
-		clr_character_flag = flag_children_at_nikaea
-		clr_character_flag = flag_children_at_genoa
-		set_character_flag = flag_children_at_antioch
-		change_variable = { which = children_crusade_forces value = 1 }
-		change_variable = { which = children_crusade_morale value = -1 }
-		if = { 
-			limit = {  
-				NOT = { persistent_event_target:childrens_crusade_sponsor_per = { is_alive = yes } }
-			}
-			change_variable = { which = children_crusade_morale value = -2 }
-		}
-		narrative_event = { id = HF.25820 days = 25 } #START THE CRUSADE.
-		any_player = { 
-				limit = {
-				religion_group = christian
-				NOT = {
-					character = ROOT
-				}
-			}
-			narrative_event = { id = HF.25818 days = 30 } #Notify everyone that the crusade has actually reached Antioch and is ready to engage.
-		}
-	}
-}
-
-spawn_childrens_crusade_light_troops_effect = {
-	change_variable = { which = children_crusade_forces value = -1 }
-	location = {
-		ROOT = {
-			spawn_unit = {
-				province = PREV
-				home = PREV
-				owner = ROOT
-				attrition = 0.5
-				reinforces = no
-				is_looter = no
-				can_toggle_looting = no
-				cannot_inherit = yes
-				merge = yes
-				disband_on_peace = yes
-				earmark = childrens_crusade_infantry_earmark
-				troops = {
-					light_infantry = { 3000 3000 }
-					archers = { 100 100 }
-				}
-			}
-		}
-	}
-	if = { 
-		limit = { 
-			check_variable = { which = children_crusade_forces value = 1 } #Keep looping until the variable reaches 0.
-		} 
-		character_event = { id = HF.25821 }
-	}
-}
-
-spawn_childrens_crusade_heavy_troops_effect = {
-	change_variable = { which = children_crusade_heavy_troops value = -1 }
-	location = {
-		ROOT = {
-			spawn_unit = {
-				province = PREV
-				home = PREV
-				owner = ROOT
-				attrition = 0.5
-				reinforces = no
-				is_looter = no
-				can_toggle_looting = no
-				cannot_inherit = yes
-				merge = yes
-				troops = {
-					heavy_infantry = { 500 500 }
-					light_cavalry = { 150 150 }
-				}
-			}
-		}
-	}
-	if = { 
-		limit = { 
-			check_variable = { which = children_crusade_heavy_troops value = 1 } #Keep looping until the variable reaches 0.
-		} 
-		character_event = { id = HF.25822 }
 	}
 }
 
@@ -16025,42 +16344,42 @@ add_random_commander_trait_effect = {
 			}
 			add_trait = winter_soldier
 		}
-		1 = {
-			trigger = {
-				NOT = {
-					trait = logistics_expert
-				}
-				culture_group = chinese_group
-			}
-			add_trait = logistics_expert
-		}
-		1 = {
-			trigger = {
-				NOT = {
-					trait = master_of_flame
-				}
-				culture_group = chinese_group
-			}
-			add_trait = master_of_flame
-		}
-		1 = {
-			trigger = {
-				NOT = {
-					trait = sapper
-				}
-				culture_group = chinese_group
-			}
-			add_trait = sapper
-		}
-		1 = {
-			trigger = {
-				NOT = {
-					trait = levy_coordinator
-				}
-				culture_group = chinese_group
-			}
-			add_trait = levy_coordinator
-		}
+		#1 = {
+		#	trigger = {
+		#		NOT = {
+		#			trait = logistics_expert
+		#		}
+		#		culture_group = chinese_group
+		#	}
+		#	add_trait = logistics_expert
+		#}
+		#1 = {
+		#	trigger = {
+		#		NOT = {
+		#			trait = master_of_flame
+		#		}
+		#		culture_group = chinese_group
+		#	}
+		#	add_trait = master_of_flame
+		#}
+		#1 = {
+		#	trigger = {
+		#		NOT = {
+		#			trait = sapper
+		#		}
+		#		culture_group = chinese_group
+		#	}
+		#	add_trait = sapper
+		#}
+		#1 = {
+		#	trigger = {
+		#		NOT = {
+		#			trait = levy_coordinator
+		#		}
+		#		culture_group = chinese_group
+		#	}
+		#	add_trait = levy_coordinator
+		#}
 	}
 }
 

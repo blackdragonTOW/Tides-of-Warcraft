@@ -8,15 +8,7 @@ targetted_decisions = {
 		filter = court
 		ai_target_filter = court
 		from_potential = {
-			OR = {
-				trait = dragon_black
-				trait = dragon_blue
-				trait = dragon_bronze
-				trait = dragon_green
-				trait = dragon_red
-				trait = dragon_infinite
-				trait = dragon_nightmare
-			}
+			trait = race_dragon
 			OR = {
 				has_character_flag = dragon_aspect # change this later to the trait or whatever it ends up being.
 				NOT = { has_lover = yes }
@@ -31,15 +23,7 @@ targetted_decisions = {
 		}
 		potential = {
 			NOT = { character = FROM }
-			OR = {
-				trait = dragon_black
-				trait = dragon_blue
-				trait = dragon_bronze
-				trait = dragon_green
-				trait = dragon_red
-				trait = dragon_infinite
-				trait = dragon_nightmare
-			}
+			trait = race_dragon
 			NOT = { has_lover = yes }
 			NOT = { has_character_flag = dragon_aspect } # aspect takes consorts, not the other way around.
 			prisoner = no

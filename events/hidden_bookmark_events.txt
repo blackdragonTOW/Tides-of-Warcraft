@@ -69,13 +69,13 @@ character_event = {
 		#Kill specific characters (usually generic scourge ones that don't have any business being around before their time)
 		if = {
 			limit = {
-				NOT = { has_global_bookmark = wow_bookmark }
+				NOT = { has_global_flag = wow_bookmark }
 			}
 			
 		}
 		if = {
 			limit = {
-				NOT = { has_global_bookmark = frozenthrone_bookmark }
+				NOT = { has_global_flag = frozenthrone_bookmark }
 			}
 		}
 		#Destroy settlements based on the start date

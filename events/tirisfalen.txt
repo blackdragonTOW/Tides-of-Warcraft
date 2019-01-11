@@ -65,8 +65,8 @@ narrative_event = {
 			k_silvermoon = {
 				holder_scope = {
 					OR = {
-						trait = high_elf
-						trait = blood_elf
+						trait = race_high_elf
+						trait = race_blood_elf
 					}
 				}
 			}
@@ -121,7 +121,7 @@ narrative_event = {
 			dynasty = random
 			employer = THIS
 			female = no
-			trait = dreadlord
+			trait = race_dreadlord
 			flag = race_assigned
 			random_traits = yes
 		}
@@ -261,8 +261,8 @@ narrative_event = {
 				random_traits = yes
 				female = no
 				historical = yes
-				trait = human
-				trait = undead_generic
+				trait = race_human
+				trait = race_undead_generic
 				trait = warlock
 				trait = mage_fake
 				flag = race_assigned
@@ -404,7 +404,7 @@ character_event = {
 			religion = burning_legion
 			dynasty = random
 			female = no
-			trait = dreadlord
+			trait = race_dreadlord
 			flag = race_assigned
 			random_traits = yes
 		}
@@ -636,7 +636,7 @@ character_event = {
 			trait = guardian_of_tirisfal
 			dynasty = none
 			culture = dalaranian
-			trait = human
+			trait = race_human
 			flag = race_assigned
 			trait = mage
 			flag = has_adv_class
@@ -807,7 +807,7 @@ character_event = {
 			trait = guardian_of_tirisfal
 			dynasty = none
 			culture = dalaranian
-			trait = human
+			trait = race_human
 			flag = race_assigned
 			trait = mage
 			flag = has_adv_class

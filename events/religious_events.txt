@@ -24,9 +24,6 @@ province_event = {
 	trigger = {
 		is_heretic = no
 		has_heresies = yes
-		NOT = { province_id = 333 } # Rome
-		NOT = { province_id = 497 } # Thrace
-		NOT = { province_id = 719 } # Mecca
 	}
 	
 	mean_time_to_happen = {
@@ -184,7 +181,6 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	only_rulers = yes
-	religion_group = christian
 	lacks_dlc = "Sons of Abraham"
 	
 	trigger = {
@@ -196,7 +192,6 @@ character_event = {
 			
 			any_courtier = {
 				is_heretic = yes
-				religion_group = christian
 				prisoner = no
 				is_councillor = yes
 			}
@@ -1250,15 +1245,11 @@ character_event = {
 	prisoner = no
 	only_men = yes
 	only_playable = yes
-	religion_group = christian
 	war = no
 	
 	trigger = {
 		controls_religion = yes
-		OR = {
-			religion = catholic
-			religion = fraticelli
-		}
+		TOW_religion_rel_head_wants_full_authority = yes
 	
 		religion_authority = 0.30
 		prestige = 20
@@ -1438,14 +1429,10 @@ character_event = {
 	only_men = yes
 	only_playable = yes	
 	war = no
-	religion_group = christian
 	
 	trigger = {
 		controls_religion = yes
-		OR = {
-			religion = catholic
-			religion = fraticelli
-		}
+		TOW_religion_rel_head_wants_full_authority = yes
 	
 		any_vassal = {
 			tier = baron
@@ -1696,25 +1683,13 @@ character_event = {
 			}
 			modifier = {
 				factor = 0.2
-				OR = {
-					culture = old_saxon
-					culture_group = baltic
-					culture_group = finno_ugric  # The most stubborn pagans
-				}
-				
+				TOW_background_hard_to_religiously_convert = yes
 			}
 			modifier = {
 				factor = 0.2
-				culture_group = east_slavic # Like alcohol
+				TOW_background_likes_to_drink_a_lot = yes
 				FROM = {
-					religion_group = muslim
-				}
-			}
-			modifier = {
-				factor = 0.2
-				culture_group = north_germanic # Vikings do like their alcohol
-				FROM = {
-					religion_group = muslim
+					TOW_religion_forbidden_alcohol = yes
 				}
 			}
 			
@@ -1780,8 +1755,7 @@ character_event = {
 			modifier = {
 				factor = 0.2
 				NOR = {
-					religion = tengri_pagan
-					religion = aztec
+					TOW_religion_is_aggressive = yes
 					any_realm_province = {
 						any_neighbor_province = {
 							owner = {
@@ -1952,33 +1926,14 @@ character_event = {
 			}
 			modifier = {
 				factor = 0.2
-				OR = {
-					culture_group = baltic
-					culture_group = finno_ugric  # The most stubborn pagans
-				}
-				
+				TOW_background_hard_to_religiously_convert = yes
 			}
 			modifier = {
 				factor = 0.2
-				culture_group = east_slavic # Like alcohol
+				TOW_background_likes_to_drink_a_lot = yes
 				FROM = {
-					religion_group = muslim
+					TOW_religion_forbidden_alcohol = yes
 				}
-			}
-			modifier = {
-				factor = 0.2
-				culture_group = north_germanic # Vikings do like their alcohol
-				FROM = {
-					religion_group = muslim
-				}
-			}
-			modifier = {
-				factor = 0.2
-				religion = bon
-			}
-			modifier = {
-				factor = 0.2
-				religion = bon_reformed
 			}
 			
 			# Pragmatism
@@ -2047,8 +2002,7 @@ character_event = {
 			modifier = {
 				factor = 0.2
 				NOR = {
-					religion = tengri_pagan
-					religion = aztec
+					TOW_religion_is_aggressive = yes
 					any_realm_province = {
 						any_neighbor_province = {
 							owner = {
@@ -2346,24 +2300,13 @@ letter_event = {
 			}
 			modifier = {
 				factor = 0.2
-				OR = {
-					culture = old_saxon
-					culture_group = baltic
-					culture_group = finno_ugric  # The most stubborn pagans
-				}
+				TOW_background_hard_to_religiously_convert = yes
 			}
 			modifier = {
 				factor = 0.2
-				culture_group = east_slavic # Like alcohol
+				TOW_background_likes_to_drink_a_lot = yes
 				FROM = {
-					religion_group = muslim
-				}
-			}
-			modifier = {
-				factor = 0.2
-				culture_group = north_germanic # Vikings do like their alcohol
-				FROM = {
-					religion_group = muslim
+					TOW_religion_forbidden_alcohol = yes
 				}
 			}
 		}
@@ -2821,12 +2764,6 @@ character_event = {
 		religion = FROMFROM
 		if = {
 			limit = {
-				religion_group = indian_group
-			}
-			character_event = { id = RoI.120 } # Assign Indian religion branch
-		}
-		if = {
-			limit = {
 				character = FROM
 			}
 			character_event = { id = MNM.3949 days = 3 random = 10 }
@@ -2854,12 +2791,6 @@ character_event = {
 		clr_religion_char_flag_effect = yes #Must clear all old flags to avoid double traits
 		add_religion_char_flag_effect = yes
 		religion = FROMFROM
-		if = {
-			limit = {
-				religion_group = indian_group
-			}
-			character_event = { id = RoI.120 } # Assign Indian religion branch
-		}
 		if = {
 			limit = {
 				character = FROM

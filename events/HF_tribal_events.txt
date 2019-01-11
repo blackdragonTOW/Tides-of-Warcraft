@@ -6950,22 +6950,8 @@ character_event = {
 				TOW_is_uncivilized_religion_trigger = yes 
 				is_reformed_religion = no
 			}
-			NOT = { 
-				religion_group = christian
-			}
 		}
 		picture = GFX_evt_pagan
-	}
-	desc = { 
-		text = EVTDESCHFB23910
-		trigger = { 
-			NOT = { 
-				TOW_is_uncivilized_religion_trigger = yes 
-				is_reformed_religion = no
-			}
-			religion_group = christian
-		}
-		picture = GFX_evt_icon
 	}
 	desc = { 
 		text = EVTDESCHFC23910
@@ -7180,25 +7166,9 @@ character_event = {
 					TOW_is_uncivilized_religion_trigger = yes 
 					is_reformed_religion = no
 				}
-				NOT = { 
-					religion_group = christian
-				}
 			}
 		}
 		picture = GFX_evt_pagan
-	}
-	desc = { 
-		text = EVTDESCHFB23911
-		trigger = { 
-			FROM = { 
-				NOT = { 
-					TOW_is_uncivilized_religion_trigger = yes 
-					is_reformed_religion = no
-				}
-				religion_group = christian
-			}
-		}
-		picture = GFX_evt_icon
 	}
 	desc = { 
 		text = EVTDESCHFC23911

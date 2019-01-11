@@ -1143,100 +1143,6 @@ character_event = {
 		}
 	}
 }
-# Removing bubonic plague
-character_event = {
-	id = RIP.11027
-	picture = GFX_evt_recovery
-	desc = EVTDESC_RIP_11027
-	border = GFX_event_normal_frame_religion
-	
-	is_sick = yes
-
-	trigger = { 
-		trait = has_bubonic_plague
-		has_dlc = "Reapers"
-		OR = {
-			had_character_flag = { flag = manifest_bubonic_plague days = 30 }
-			NOT = { has_character_flag = manifest_bubonic_plague }
-		}
-	}
-	
-	mean_time_to_happen = {
-		months = 3
-		modifier = {
-			factor = 0.75
-			base_health = 5.1
-		}
-		modifier = {
-			factor = 0.5
-			base_health = 6.0
-		}
-		modifier = {
-			factor = 0.5
-			base_health = 7.0
-		}
-		modifier = {
-			factor = 1.5
-			NOT = { base_health = 5.0 }
-		}
-		modifier = {
-			factor = 2.0
-			NOT = { base_health = 4.1 }
-		}
-		modifier = {
-			factor = 0.66
-			NOT = { age = 20 }
-		}
-		modifier = {
-			factor = 0.75
-			NOT = { age = 30 }
-		}
-		modifier = {
-			factor = 0.75
-			NOT = { age = 40 }
-		}
-		modifier = {
-			factor = 2.0
-			age = 50
-		}
-		modifier = {
-			factor = 2.0
-			age = 70
-		}
-		modifier = {
-			factor = 2.0
-			is_ill = yes
-		}
-		modifier = {
-			factor = 4.0
-			trait = infirm
-		}
-		modifier = {
-			factor = 5.0
-			trait = incapable
-		}
-	}
-
-	option = {
-		name = EVTOPTA_RIP_11001
-		remove_trait = has_bubonic_plague
-		clear_disease_level_effect = yes
-		clr_character_flag = developing_illness
-		clr_character_flag = got_bubonic_plague
-		clr_character_flag = manifest_bubonic_plague
-		set_character_flag = immune_bubonic_plague
-		scrying_omen_fulfilled_by_removing_disease_effect = yes
-		hidden_tooltip = {
-			remove_treatment_modifiers_effect = yes
-			if = {
-				limit = {
-					ai = no
-				}
-				set_character_flag = achievement_i_got_better
-			}
-		}
-	}
-}
 # Removing measles
 character_event = {
 	id = RIP.11028
@@ -2799,8 +2705,6 @@ character_event = {
 			if = { limit = { trait = has_tuberculosis } remove_trait = has_tuberculosis set_character_flag = immune_tuberculosis }
 			if = { limit = { trait = has_typhoid_fever } remove_trait = has_typhoid_fever set_character_flag = immune_typhoid_fever}
 			if = { limit = { trait = has_typhus } remove_trait = has_typhus set_character_flag = immune_typhus}
-			if = { limit = { trait = has_bubonic_plague ai = yes } remove_trait = has_bubonic_plague set_character_flag = immune_bubonic_plague}
-			if = { limit = { trait = has_bubonic_plague ai = no } remove_trait = has_bubonic_plague set_character_flag = immune_bubonic_plague set_character_flag = achievement_i_got_better}
 			if = { limit = { trait = has_measles } remove_trait = has_measles set_character_flag = immune_measles}
 			if = { limit = { trait = has_small_pox } remove_trait = has_small_pox set_character_flag = immune_smallpox }
 			remove_treatment_modifiers_effect = yes
@@ -3625,8 +3529,6 @@ character_event = {
 				if = { limit = { trait = has_tuberculosis } remove_trait = has_tuberculosis set_character_flag = immune_tuberculosis }
 				if = { limit = { trait = has_typhoid_fever } remove_trait = has_typhoid_fever set_character_flag = immune_typhoid_fever}
 				if = { limit = { trait = has_typhus } remove_trait = has_typhus set_character_flag = immune_typhus}
-				if = { limit = { trait = has_bubonic_plague ai = no } remove_trait = has_bubonic_plague set_character_flag = immune_bubonic_plague set_character_flag = achievement_i_got_better }
-				if = { limit = { trait = has_bubonic_plague ai = yes } remove_trait = has_bubonic_plague set_character_flag = immune_bubonic_plague }
 				if = { limit = { trait = has_measles } remove_trait = has_measles set_character_flag = immune_measles}
 				if = { limit = { trait = has_small_pox } remove_trait = has_small_pox set_character_flag = immune_smallpox }
 				remove_treatment_modifiers_effect = yes
@@ -4155,38 +4057,6 @@ character_event = {
 			has_character_flag = EVTDESC_RIP_11045_has_typhus_flag_uncertain
 		}
 	}
-
-	desc = {
-		text = EVTDESC_RIP_11045_has_bubonic_plague
-		trigger = {
-			has_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag
-		}
-	}
-	desc = {
-		text = EVTDESC_RIP_11045_has_bubonic_plague_horse
-		trigger = {
-			has_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_horse
-		}
-	}
-	desc = {
-		text = EVTDESC_RIP_11045_has_bubonic_plague_certain
-		trigger = {
-			has_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_certain
-		}
-	}
-	desc = {
-		text = EVTDESC_RIP_11045_has_bubonic_plague_sure
-		trigger = {
-			has_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_sure
-		}
-	}
-	desc = {
-		text = EVTDESC_RIP_11045_has_bubonic_plague_uncertain
-		trigger = {
-			has_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_uncertain
-		}
-	}
-
 	desc = {
 		text = EVTDESC_RIP_11045_has_measles
 		trigger = {
@@ -4560,10 +4430,7 @@ character_event = {
 				modifier = {
 					factor = 1.5
 					FROM = {
-						OR = {
-							trait = scholar
-							trait = mutazilite
-						}
+						trait = scholar
 					}
 				}
 				modifier = {
@@ -4924,83 +4791,6 @@ character_event = {
 				}
 				
 				set_character_flag = EVTDESC_RIP_11045_has_typhus_flag
-			}
-			10 = {
-				modifier = {
-					factor  = 0
-					AND = {
-						has_character_flag = correct_diagnosis
-						NOT = { has_character_flag = got_bubonic_plague }
-					}
-				}
-				modifier = {
-					factor  = 0
-					AND = {
-						has_character_flag = faulty_diagnosis
-						has_character_flag = got_bubonic_plague
-					}
-				}
-				
-				if = {
-					limit = {	#horse
-						FROM = {
-							culture = horse
-						}	
-					}
-					set_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_horse
-					break = yes
-				}
-				if = {
-					limit = {
-						has_character_flag = correct_diagnosis #Really good doctors know for sure
-						FROM = {
-							OR = {
-								learning = 25
-								AND = {
-									physician_good_trigger = yes
-									learning = 20
-								}
-							}
-						}	
-					}
-					set_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_certain
-					break = yes
-				}
-				if = {	#Good doctors are pretty sure
-					limit = {
-						FROM = {
-							OR = {
-								learning = 20
-								AND = {
-									physician_good_trigger = yes
-									learning = 15
-								}
-							}
-						}	
-					}
-					set_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_sure
-					break = yes
-				}
-				if = {
-					limit = { # awful doctors are uncertain 
-						FROM = {
-							OR = {
-								AND = {
-									NOT = { learning = 10 }	
-									physician_bad_trigger = no
-								}
-								AND = {
-									NOT = { learning = 15 }	
-									physician_bad_trigger = yes
-								}
-							}
-						}	
-					}
-					set_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_uncertain
-					break = yes
-				}
-				
-				set_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag
 			}
 			10 = {
 				modifier = {
@@ -6087,11 +5877,6 @@ character_event = {
 			clr_character_flag = EVTDESC_RIP_11045_has_typhus_flag_certain
 			clr_character_flag = EVTDESC_RIP_11045_has_typhus_flag_sure
 			clr_character_flag = EVTDESC_RIP_11045_has_typhus_flag_uncertain
-			clr_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag
-			clr_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_horse
-			clr_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_certain
-			clr_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_sure
-			clr_character_flag = EVTDESC_RIP_11045_has_bubonic_plague_flag_uncertain
 			clr_character_flag = EVTDESC_RIP_11045_has_measles_flag
 			clr_character_flag = EVTDESC_RIP_11045_has_measles_flag_horse
 			clr_character_flag = EVTDESC_RIP_11045_has_measles_flag_certain

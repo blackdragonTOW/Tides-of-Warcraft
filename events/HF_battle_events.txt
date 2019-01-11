@@ -555,7 +555,8 @@ character_event = {
 			50 = {
 				trigger = {
 					has_dlc = "The Old Gods"
-					TOW_can_become_berserker = yes
+					NOT = { trait = berserker }
+					TOW_background_has_berserker = yes
 					is_alive = yes
 					OR = {
 						NOT = { age = 50 }
@@ -2396,7 +2397,7 @@ character_event = {
 	option = {
 		name = EVTOPTL96500 # War elephants
 		trigger = {
-			TOW_character_uses_war_elephants = yes
+			TOW_background_uses_war_elephants = yes
 			NOT = { trait = war_elephant_leader }
 		}
 		add_trait = war_elephant_leader

@@ -429,7 +429,7 @@ character_event = {
 								}
 								NOT = {
 									AND = {
-										religion = jain
+										TOW_religion_is_pacifist = yes
 										trait = zealous
 									}
 								}
@@ -451,7 +451,7 @@ character_event = {
 							}
 							NOT = {
 								AND = {
-									religion = jain
+									TOW_religion_is_pacifist = yes
 									trait = zealous
 								}
 							}
@@ -7651,7 +7651,7 @@ character_event = {
 			factor = 70
 		}
 		if = {
-			limit = { religion = jain }
+			limit = { TOW_religion_is_pacifist = yes }
 			piety = -15
 		}
 		prestige = 30
@@ -7717,7 +7717,7 @@ character_event = {
 			factor = 40
 		}
 		if = {
-			limit = { religion = jain }
+			limit = { TOW_religion_is_pacifist = yes }
 			piety = -15
 		}
 		FROM = {

@@ -23,9 +23,9 @@ character_event = {
 	trigger = {
 		has_dlc = "Zeus"
 		OR = {
-			NOT = {	religion_group = muslim }
+			TOW_religion_forbidden_alcohol = no
 			AND = {
-				religion_group = muslim
+				TOW_religion_forbidden_alcohol = yes
 				trait = decadent
 			}
 		}

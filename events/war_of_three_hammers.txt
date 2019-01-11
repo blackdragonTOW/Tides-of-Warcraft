@@ -9,7 +9,7 @@ character_event = {
 	
 	trigger = {
 		has_landed_title = e_khaz_modan
-		trait = AK_trait_dwarf
+		trait = race_dwarf
 		NOR = {
 			dynasty = 100803
 			dynasty = 100802
@@ -470,8 +470,8 @@ narrative_event = {
 			any_playable_ruler = {
 				limit = {
 					OR = {
-						trait = AK_trait_dwarf
-						trait = gnome
+						trait = race_dwarf
+						trait = race_gnome
 					}
 					NOR = {
 						character = event_target:3h_bronzebeard
@@ -583,8 +583,8 @@ character_event = {
 		any_playable_ruler = {
 			limit = {
 				OR = {
-					trait = AK_trait_dwarf
-					trait = gnome
+					trait = race_dwarf
+					trait = race_gnome
 				}
 			}
 			narrative_event = { id = threehammers.9 }
@@ -621,7 +621,7 @@ narrative_event = {
 	trigger = {
 		k_ironforge = {
 			holder_scope = {
-				trait = AK_trait_dwarf
+				trait = race_dwarf
 			}
 		}
 		has_global_flag = 3hammer_start
@@ -683,8 +683,8 @@ narrative_event = {
 		any_playable_ruler = {
 			limit = {
 				OR = {
-					trait = AK_trait_dwarf
-					trait = gnome
+					trait = race_dwarf
+					trait = race_gnome
 				}
 				NOR = {
 					character = event_target:3h_bronzebeard
@@ -983,8 +983,8 @@ narrative_event = {
 				ai = no
 				NOT = { character = ROOT }
 				OR = {
-					trait = AK_trait_dwarf
-					trait = gnome
+					trait = race_dwarf
+					trait = race_gnome
 				}
 			}
 			narrative_event = { id = threehammers.18 }
@@ -1042,9 +1042,9 @@ narrative_event = {
 		war = no
 		culture = wildhammer
 		NOR = {
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 		has_global_flag = 3h_grim_batol_cursed
 		higher_tier_than = DUKE
@@ -1255,7 +1255,7 @@ narrative_event = {
 			religion = pyromancy
 			dynasty = none
 			random_traits = yes
-			trait = fire_elemental
+			trait = race_fire_elemental
 			flag = race_assigned
 		}
 		new_character = {
@@ -1344,8 +1344,8 @@ character_event = {
 				martial = 21
 			}
 			random_traits = yes
-			trait = dragon_infinite
-			trait = dragon_dragon
+			trait = race_dragon_infinite
+			trait = race_dragon_dragon
 			flag = race_assigned
 		}
 		new_character = {

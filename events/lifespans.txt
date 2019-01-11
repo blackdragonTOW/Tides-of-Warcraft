@@ -14,14 +14,7 @@ character_event = {
 			trait = race_blood_elf
 			trait = race_wretched
 			trait = race_gnome
-			trait = race_dragon_red
-			trait = race_dragon_black
-			trait = race_dragon_blue
-			trait = race_dragon_bronze
-			trait = race_dragon_chromatic
-			trait = race_dragon_twilight
-			trait = race_dragon_infinite
-			trait = race_dragon_nightmare
+			trait = race_dragon
 			trait = race_troll_zandalari
 			trait = ogre_magi
 			trait = race_naga
@@ -32,9 +25,9 @@ character_event = {
 		}
 		NOT = { trait = felsworn }
 		#Not dragon aspect
-		NOT = { trait = undead_generic }
-		NOT = { trait = undead_forsaken }
-		NOT = { trait = undead_scourge }
+		NOT = { trait = race_undead_generic }
+		NOT = { trait = race_undead_forsaken }
+		NOT = { trait = race_undead_scourge }
 		health = 0
 		NOT = { health = 1 }
 	}
@@ -92,7 +85,7 @@ character_event = {
 				age = 50
 			}
 		}
-		NOT = { trait = race_felsworn }
+		NOT = { trait = felsworn }
 		#Not dragon aspect
 		NOT = { trait = race_undead_generic }
 		NOT = { trait = race_undead_forsaken }
@@ -104,7 +97,7 @@ character_event = {
 			limit = {
 				OR = {
 					trait = race_troll_zandalari
-					trait = race_ogre_magi
+					trait = ogre_magi
 					trait = race_gnome
 				}
 				age = 100

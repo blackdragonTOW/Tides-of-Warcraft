@@ -65,49 +65,6 @@ character_event = {
 					give_minor_title = title_guru
 					piety = 600
 					prestige = 150
-					if = {
-						limit = {
-							OR = {
-								religion = buddhist
-								religion = jain
-							}
-						}
-						random_list = {
-							60 = { add_trait = brahmin }
-							25 = { add_trait = vaishya }
-							15 = {} # Casteless
-						}
-					}
-					if = {
-						limit = {
-							religion = hindu
-							ROOT = {
-								ai = no
-								religion = hindu
-							}
-							year = 1150
-							NOT = { year = 1250 }
-							NOT = { has_global_flag = basava }
-						}
-						set_name = Basava
-						set_character_flag = is_basava
-						set_global_flag = basava
-						culture = marathi
-						add_trait = shaivist_hindu
-						add_trait = brahmin
-						add_trait = brave
-					}
-					if = {
-						limit = {
-							religion = hindu
-							NOT = { has_character_flag = basava }
-						}
-						random_list = {
-							85 = { add_trait = brahmin }
-							10 = { add_trait = vaishya }
-							5 = {} # Casteless
-						}
-					}
 					opinion = {
 						modifier = opinion_loyal_servant
 						who = ROOT
@@ -145,29 +102,6 @@ character_event = {
 					give_minor_title = title_guru
 					piety = 300
 					prestige = 750
-					if = {
-						limit = {
-							OR = {
-								religion = buddhist
-								religion = jain
-							}
-						}
-						random_list = {
-							60 = { add_trait = brahmin }
-							25 = { add_trait = vaishya }
-							15 = {} # Casteless
-						}
-					}
-					if = {
-						limit = {
-							religion = hindu
-						}
-						random_list = {
-							85 = { add_trait = brahmin }
-							10 = { add_trait = vaishya }
-							5 = {} # Casteless
-						}
-					}
 					opinion = {
 						modifier = opinion_loyal_servant
 						who = ROOT
@@ -257,15 +191,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
-
 
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -273,6 +201,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = drunkard
 	}
@@ -318,13 +247,11 @@ character_event = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
 		}
-		OR = {
-			religion = buddhist
-			religion = jain
-		}
+		TOW_religion_righteous = yes
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = hedonist
 	}
@@ -364,14 +291,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -379,6 +301,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = impaler
 	}
@@ -418,7 +341,7 @@ character_event = {
 		custom_tooltip = { text = sacrilege_tooltip }
 		hidden_tooltip = {
 			any_realm_character  = {
-				limit = { has_dharmic_religion_trigger = yes }
+				limit = { TOW_religion_righteous = yes }
 				opinion = {
 					who = ROOT
 					years = 2
@@ -426,7 +349,7 @@ character_event = {
 				}
 			}
 			any_playable_ruler  = {
-				limit = { has_dharmic_religion_trigger = yes }
+				limit = { TOW_religion_righteous = yes }
 				opinion = {
 					who = ROOT
 					years = 2
@@ -453,13 +376,11 @@ character_event = {
 	
 	trigger = {
 		has_dlc = "Rajas of India"
-		OR = {
-			religion = buddhist
-			religion = jain
-		}
+		TOW_religion_righteous = yes
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = lustful
 	}
@@ -502,13 +423,11 @@ character_event = {
 	
 	trigger = {
 		has_dlc = "Rajas of India"
-		OR = {
-			religion = buddhist
-			religion = jain
-		}
+		TOW_religion_righteous = yes
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = gluttonous
 	}
@@ -548,14 +467,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -563,6 +477,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = greedy
 	}
@@ -602,14 +517,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -617,6 +527,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = envious
 	}
@@ -656,14 +567,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -671,6 +577,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = wroth
 	}
@@ -710,7 +617,7 @@ character_event = {
 		custom_tooltip = { text = sacrilege_tooltip }
 		hidden_tooltip = {
 			any_realm_character  = {
-				limit = { has_dharmic_religion_trigger = yes }
+				limit = { TOW_religion_righteous = yes }
 				opinion = {
 					who = ROOT
 					years = 2
@@ -718,7 +625,7 @@ character_event = {
 				}
 			}
 			any_playable_ruler  = {
-				limit = { has_dharmic_religion_trigger = yes }
+				limit = { TOW_religion_righteous = yes }
 				opinion = {
 					who = ROOT
 					years = 2
@@ -742,14 +649,14 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		has_dharmic_religion_trigger = yes
+		TOW_religion_righteous = yes
 		has_dlc = "Rajas of India"
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = proud
 	}
@@ -789,7 +696,7 @@ character_event = {
 		custom_tooltip = { text = sacrilege_tooltip }
 		hidden_tooltip = {
 			any_realm_character  = {
-				limit = { has_dharmic_religion_trigger = yes }
+				limit = { TOW_religion_righteous = yess }
 				opinion = {
 					who = ROOT
 					years = 2
@@ -797,7 +704,7 @@ character_event = {
 				}
 			}
 			any_playable_ruler  = {
-				limit = { has_dharmic_religion_trigger = yes }
+				limit = { TOW_religion_righteous = yes }
 				opinion = {
 					who = ROOT
 					years = 2
@@ -823,14 +730,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -838,6 +740,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = arbitrary
 	}
@@ -878,14 +781,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -893,6 +791,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = cynical
 	}
@@ -933,14 +832,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -948,6 +842,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = cruel
 	}
@@ -988,13 +883,14 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion = jain
 	
 	trigger = {
+		TOW_religion_is_pacifist = yes
 		has_dlc = "Rajas of India"
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_is_pacifist = yes
 		}
 		trait = duelist
 	}
@@ -1034,13 +930,14 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion = jain
 	
 	trigger = {
 		has_dlc = "Rajas of India"
+		TOW_religion_is_pacifist = yes
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_is_pacifist = yes
 		}
 		OR = {
 			trait = hunter
@@ -1087,14 +984,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion_group = indian_group
 	
 	trigger = {
-		OR = {
-			has_dharmic_religion_trigger = yes
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_religion_righteous = yes
 		OR = {
 			has_dlc = "Rajas of India"
 			has_dlc = "Jade Dragon"
@@ -1102,6 +994,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		trait = paranoid
 	}
@@ -1304,9 +1197,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion = buddhist
 	
 	trigger = {
+		TOW_religion_righteous = yes
 		has_dlc = "Rajas of India"
 		OR = {
 			has_ambition = obj_buddhist_stop_drinking
@@ -1322,6 +1215,7 @@ character_event = {
 		any_courtier = {
 			has_minor_title = title_guru
 			NOT = { has_character_flag = fake_guru }
+			TOW_religion_righteous = yes
 		}
 		NOT = { has_character_flag = guru_helped_ambition }
 	}
@@ -1480,113 +1374,6 @@ character_event = {
 }
 
 ###########################################
-# Guru criticizes caste system (Basava)   #
-###########################################
-
-character_event = {
-	id = RoI.3300
-
-	hide_window = yes
-	
-	ai= no
-	min_age = 16
-	only_capable = yes
-	prisoner = no
-	religion = hindu
-	
-	is_triggered_only = yes
-
-	trigger = {
-		has_dlc = "Rajas of India"
-		any_courtier = {
-			has_minor_title = title_guru
-			trait = genius
-		}
-		NOT = { has_global_flag = basava_advice }
-		NOT = { is_inaccessible_trigger = yes }
-	}
-	
-	immediate = {
-		if = {
-			limit = {
-				any_courtier = {
-					has_minor_title = title_guru
-					has_character_flag = is_basava
-				}
-			}
-			set_global_flag = basava_advice
-			random_courtier = {
-				limit = { has_minor_title = title_guru }
-				character_event = { id = RoI.3301 }
-			}
-		}
-		if = {
-			limit = {
-				any_courtier = {
-					has_minor_title = title_guru
-					NOT = { has_character_flag = is_basava }
-				}
-			}
-			random = {
-				chance = 10
-				set_global_flag = basava_advice
-				random_courtier = {
-					limit = { has_minor_title = title_guru }
-					character_event = { id = RoI.3301 }
-				}
-			}
-		}
-	}
-}
-	
-# Guru bounce event
-character_event = {
-	id = RoI.3301
-
-	hide_window = yes
-
-	is_triggered_only = yes
-	
-	immediate = {
-		character_event = { id = RoI.3302 }
-	}
-}
-
-# Guru criticizes
-character_event = {
-	id = RoI.3302
-	desc = EVTDESC_RoI_3302
-	picture = GFX_evt_throne_room
-	border = GFX_event_normal_frame_religion
-
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTA_RoI_3302
-		prestige = 30
-		any_courtier = {
-			limit = { has_minor_title = title_guru }
-			opinion = {
-				who = ROOT
-				modifier = opinion_disappointed
-			}
-		}
-	}
-	option = {
-		name = EVTOPTB_RoI_3302
-		piety = 30
-		any_courtier = {
-			limit = { has_minor_title = title_guru }
-			opinion = {
-				who = ROOT
-				modifier = opinion_pleased
-			}
-		}
-	}
-}
-
-###########################################
 # Guru meditation...                      #
 ###########################################
 
@@ -1600,9 +1387,9 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	min_age = 16
-	religion = buddhist
 	
 	trigger = {
+		TOW_religion_uses_meditation = yes
 		has_dlc = "Rajas of India"
 		OR = {
 			trait = stressed
@@ -1660,38 +1447,7 @@ narrative_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = EVTOPTA_RoI_3402
-		trigger = {
-			religion = hindu
-		}
-		if = {
-			limit = { trait = stressed }
-			remove_trait = stressed
-		}
-		if = {
-			limit = { trait = depressed }
-			remove_trait = depressed
-		}
-	}
-	option = {
-		name = EVTOPTB_RoI_3402
-		trigger = {
-			religion = buddhist
-		}
-		if = {
-			limit = { trait = stressed }
-			remove_trait = stressed
-		}
-		if = {
-			limit = { trait = depressed }
-			remove_trait = depressed
-		}
-	}
-	option = {
-		name = EVTOPTC_RoI_3402
-		trigger = {
-			religion = jain
-		}
+		name = EVTOPTA_RoI_3402 # TOW TODO : Localisation
 		if = {
 			limit = { trait = stressed }
 			remove_trait = stressed

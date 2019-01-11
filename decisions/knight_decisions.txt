@@ -4,11 +4,11 @@ decisions = {
 	brotherhood_of_the_horse = {
 		is_high_prio = yes
 		potential = {
-			trait = human
+			trait = race_human
 			NOT = {
-				trait = undead_scourge
-				trait = undead_forsaken
-				trait = undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_generic
 			}
 			prisoner = no
 			NOT = { trait = incapable }
@@ -55,11 +55,11 @@ decisions = {
 	ravenguard = {
 		is_high_prio = yes
 		potential = {
-			trait = human
+			trait = race_human
 			NOT = {
-				trait = undead_scourge
-				trait = undead_forsaken
-				trait = undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_generic
 			}
 			prisoner = no
 			NOT = { trait = incapable }
@@ -106,11 +106,11 @@ decisions = {
 	order_of_the_firstborn = {
 		is_high_prio = yes
 		potential = {
-			trait = human
+			trait = race_human
 			NOT = {
-				trait = undead_scourge
-				trait = undead_forsaken
-				trait = undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_generic
 			}
 			prisoner = no
 			NOT = { trait = incapable }
@@ -168,11 +168,11 @@ decisions = {
 	knights_of_the_north = {
 		is_high_prio = yes
 		potential = {
-			trait = human
+			trait = race_human
 			NOT = {
-				trait = undead_scourge
-				trait = undead_forsaken
-				trait = undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_generic
 			}
 			prisoner = no
 			NOT = { trait = incapable }
@@ -219,11 +219,11 @@ decisions = {
 	wolfpack = {
 		is_high_prio = yes
 		potential = {
-			trait = human
+			trait = race_human
 			NOT = {
-				trait = undead_scourge
-				trait = undead_forsaken
-				trait = undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_generic
 			}
 			prisoner = no
 			NOT = { trait = incapable }
@@ -276,11 +276,11 @@ targetted_decisions = {
 		filter = realm
 		ai_target_filter = realm
 		from_potential = {
-			trait = human
+			trait = race_human
 			NOT = {
-				trait = undead_scourge
-				trait = undead_forsaken
-				trait = undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_generic
 			}
 			prisoner = no
 			NOT = { trait = incapable }
@@ -296,7 +296,7 @@ targetted_decisions = {
 		}
 		potential = {
 			combat_rating = 1
-			trait = human
+			trait = race_human
 			is_adult = yes
 			prisoner = no
 			is_priest = no

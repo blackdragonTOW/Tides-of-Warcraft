@@ -105,7 +105,6 @@ TOW_initialize_character_race_from_culture = {
 		drakkari = { add_trait = race_troll_ice }
 		frostmane = { add_trait = race_troll_ice }
 		sandfury = { add_trait = race_troll_sand }
-		hakkari = { add_trait = race_troll_jungle }
 		smolderthorn = { add_trait = race_troll_forest }
 		shadowglen = { add_trait = race_troll_forest }
 		winterax = { add_trait = race_troll_ice }
@@ -147,7 +146,7 @@ TOW_initialize_character_race_from_culture = {
 
 TOW_update_character_race_from_liege = {
 	if = {
-		limit = { trait = orc }
+		limit = { trait = race_orc }
 	
 		if = {
 			limit = {
@@ -274,4 +273,8 @@ TOW_new_character_employed_effect = {
 	TOW_remove_class_traits = yes
 	TOW_initialize_character = yes
 	TOW_employed_remove_unwanted_traits_with_ET_employer = yes
+}
+
+TOW_set_newly_landed_character_government = {
+	set_government_type = feudal_government
 }

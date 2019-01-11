@@ -2776,23 +2776,13 @@ character_event = {
 			}
 			modifier = {
 				factor = 0.25
-				OR = {
-					culture_group = baltic
-					culture_group = finno_ugric  # The most stubborn pagans
-				}
+				TOW_background_hard_to_religiously_convert = yes
 			}
 			modifier = {
 				factor = 0.25
-				culture_group = east_slavic # Like alcohol
-				event_target:missionary_physician_target = {
-					religion_group = muslim
-				}
-			}
-			modifier = {
-				factor = 0.25
-				culture_group = north_germanic # Vikings do like their alcohol
-				event_target:missionary_physician_target = {
-					religion_group = muslim
+				TOW_background_likes_to_drink_a_lot = yes
+				FROM = {
+					TOW_religion_forbidden_alcohol = yes
 				}
 			}
 			modifier = {
@@ -7508,7 +7498,6 @@ character_event = {
 				OR = {
 					primary_title = { has_law = agnatic_succession }
 					primary_title = { has_law = succ_patrician_elective }
-					religion_group = muslim
 				}	
 			}
 			set_character_flag = text_girl_cant_inherit
@@ -7856,11 +7845,7 @@ character_event = {
 				value = off
 			}
 		}
-		OR = {
-			religion = manichean
-			religion = west_african_pagan_reformed
-			religion = west_african_pagan
-		}
+		TOW_religion_believes_in_reincarnation = yes
 		OR = {
 			father = {
 				ai = no
@@ -10541,8 +10526,9 @@ character_event = {
 			}
 		}
 		OR = {
-			religion_group = christian
-			any_realm_province = { any_neighbor_province = { owner = { religion_group = christian } } } 
+			always = no # TOW TODO : Define who is eligible for this
+			#religion_group = christian
+			#any_realm_province = { any_neighbor_province = { owner = { religion_group = christian } } } 
 		}
 		is_nomadic = no
 		NOT = { has_character_flag = chess_with_death }
@@ -10836,18 +10822,18 @@ character_event = {
 	#Go away! 
 	option = {
 		name = {
-			trigger = { religion_group = christian }
+			trigger = { TOW_religion_have_pilgrimage = yes }
 			text = EVTOPTC_RIP_30223_A
 		}
 		name = {
-			trigger = { NOT = { religion_group = christian } }
+			trigger = { TOW_religion_have_pilgrimage = no }
 			text = EVTOPTC_RIP_30223_B
 		}
 
 		custom_tooltip = { text = EVTOPTC_RIP_30223_TOOLTIP }
 
 		if = {
-			limit = { religion_group = christian }
+			limit = { TOW_religion_have_pilgrimage = yes }
 
 			piety = -50
 
@@ -11968,8 +11954,8 @@ character_event = {
 				random_traits = no
 				name = "Ramirez"
 				dynasty = none
-				religion = catholic
-				culture = scottish
+				religion = holy_light
+				culture = gilnean
 				female = no
 				age = 1500
 				immortal_age = 40
@@ -11999,7 +11985,7 @@ character_event = {
 				random_traits = no
 				name = "Uran"
 				dynasty = culture
-				religion = pagan
+				religion = old_ways
 				culture = random
 				female = no
 				age = 1800
@@ -12034,8 +12020,8 @@ character_event = {
 				random_traits = no
 				name = "Arthur"
 				dynasty = none
-				religion = catholic
-				culture = breton
+				religion = holy_light
+				culture = azerothian
 				female = no
 				age = 950
 				immortal_age = 30

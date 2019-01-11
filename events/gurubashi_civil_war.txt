@@ -22,15 +22,15 @@ character_event = {
 		}
 		NOR = {
 			culture = atalai
-			trait = troll_zandalari
+			trait = race_troll_zandalari
 			has_global_flag = gurubashiwar_start
 		}
 		OR = {
-			trait = troll_jungle
-			trait = troll_ice
-			trait = troll_forest
-			trait = troll_sand
-			trait = troll_dark
+			trait = race_troll_jungle
+			trait = race_troll_ice
+			trait = race_troll_forest
+			trait = race_troll_sand
+			trait = race_troll_dark
 		}
 		has_landed_title = e_gurubashi
 		has_global_flag = trollwars_bookmark
@@ -69,15 +69,15 @@ character_event = {
 		culture = atalai
 		has_global_flag = gurubashiwar_start
 		NOR = {
-			trait = troll_zandalari
+			trait = race_troll_zandalari
 			has_global_flag = gurubashiwar_rebel_win
 		}
 		OR = {
-			trait = troll_jungle
-			trait = troll_forest
-			trait = troll_ice
-			trait = troll_sand
-			trait = troll_dark
+			trait = race_troll_jungle
+			trait = race_troll_forest
+			trait = race_troll_ice
+			trait = race_troll_sand
+			trait = race_troll_dark
 		}
 	}
 	
@@ -134,14 +134,14 @@ character_event = {
 		top_liege = {
 			NOT = { character = ROOT }
 			has_landed_title = e_gurubashi
-			trait = troll_zandalari
+			trait = race_troll_zandalari
 		}
 		OR = {
-			trait = troll_jungle
-			trait = troll_forest
-			trait = troll_ice
-			trait = troll_sand
-			trait = troll_dark
+			trait = race_troll_jungle
+			trait = race_troll_forest
+			trait = race_troll_ice
+			trait = race_troll_sand
+			trait = race_troll_dark
 		}
 		OR = {
 			true_religion = hakkar
@@ -219,12 +219,12 @@ narrative_event = {
 			has_character_modifier = loa_hakkar
 		}
 		OR = {
-			trait = troll_jungle
-			trait = troll_ice
-			trait = troll_forest
-			trait = troll_sand
-			trait = troll_dark
-			trait = troll_zandalari
+			trait = race_troll_jungle
+			trait = race_troll_ice
+			trait = race_troll_forest
+			trait = race_troll_sand
+			trait = race_troll_dark
+			trait = race_troll_zandalari
 		}
 		higher_real_tier_than = COUNT
 	}
@@ -243,7 +243,7 @@ narrative_event = {
 			culture = zandalari
 			religion = loa
 			age = 33
-			trait = troll_zandalari
+			trait = race_troll_zandalari
 			trait = zealous
 			trait = proud
 			trait = content
@@ -329,12 +329,12 @@ narrative_event = {
 			limit = {
 				ai = no
 				OR = {
-					trait = troll_jungle
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_zandalari
+					trait = race_troll_jungle
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_sand
+					trait = race_troll_dark
+					trait = race_troll_zandalari
 				}
 				NOR = {
 					top_liege = {
@@ -644,12 +644,12 @@ narrative_event = {
 			limit = {
 				ai = no
 				OR = {
-					trait = troll_jungle
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_zandalari
+					trait = race_troll_jungle
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_sand
+					trait = race_troll_dark
+					trait = race_troll_zandalari
 				}
 				NOR = {
 					top_liege = {
@@ -692,11 +692,11 @@ narrative_event = {
 	trigger = {
 		culture = atalai
 		OR = {
-			trait = troll_jungle
-			trait = troll_forest
-			trait = troll_ice
-			trait = troll_sand
-			trait = troll_dark
+			trait = race_troll_jungle
+			trait = race_troll_forest
+			trait = race_troll_ice
+			trait = race_troll_sand
+			trait = race_troll_dark
 		}
 		OR = {
 			has_landed_title = c_atal_hakkar
@@ -770,8 +770,8 @@ narrative_event = {
 				learning = 15
 			}
 			female = no
-			trait = dragon_green
-			trait = dragon_wyrm
+			trait = race_dragon_green
+			trait = race_dragon_wyrm
 			trait = quick
 			trait = proud
 			trait = diligent
@@ -806,8 +806,8 @@ narrative_event = {
 					learning = 18
 				}
 				female = no
-				trait = dragon_green
-				trait = dragon_wyrm
+				trait = race_dragon_green
+				trait = race_dragon_wyrm
 				trait = genius
 				trait = proud
 				trait = diligent
@@ -854,16 +854,16 @@ character_event = {
 	
 	trigger = {
 		ROOT = {
-			trait = dragon_green
+			trait = race_dragon_green
 		}
 		FROM = {
 			culture = atalai
 			OR = {
-				trait = troll_jungle
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_sand
-				trait = troll_dark
+				trait = race_troll_jungle
+				trait = race_troll_forest
+				trait = race_troll_ice
+				trait = race_troll_sand
+				trait = race_troll_dark
 			}
 			OR = {
 				has_landed_title = c_atal_hakkar
@@ -901,12 +901,12 @@ character_event = {
 			limit = {
 				ai = no
 				OR = {
-					trait = troll_jungle
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_zandalari
+					trait = race_troll_jungle
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_sand
+					trait = race_troll_dark
+					trait = race_troll_zandalari
 				}
 			}
 			narrative_event = { id = gurubashiwar.18 }
@@ -938,16 +938,16 @@ character_event = {
 	
 	trigger = {
 		ROOT = {
-			trait = dragon_green
+			trait = race_dragon_green
 		}
 		FROM = {
 			culture = atalai
 			OR = {
-				trait = troll_jungle
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_sand
-				trait = troll_dark
+				trait = race_troll_jungle
+				trait = race_troll_forest
+				trait = race_troll_ice
+				trait = race_troll_sand
+				trait = race_troll_dark
 			}
 			OR = {
 				has_landed_title = c_atal_hakkar
@@ -968,12 +968,12 @@ character_event = {
 			limit = {
 				ai = no
 				OR = {
-					trait = troll_jungle
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_sand
-					trait = troll_dark
-					trait = troll_zandalari
+					trait = race_troll_jungle
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_sand
+					trait = race_troll_dark
+					trait = race_troll_zandalari
 				}
 			}
 			narrative_event = { id = gurubashiwar.20 }
@@ -1327,8 +1327,8 @@ character_event = {
 				martial = 19
 			}
 			random_traits = yes
-			trait = dragon_infinite
-			trait = dragon_dragon
+			trait = race_dragon_infinite
+			trait = race_dragon_dragon
 			flag = race_assigned
 		}
 		new_character = {
@@ -1494,8 +1494,8 @@ character_event = {
 				martial = 19
 			}
 			random_traits = yes
-			trait = dragon_infinite
-			trait = dragon_dragon
+			trait = race_dragon_infinite
+			trait = race_dragon_dragon
 			flag = race_assigned
 		}
 		new_character = {

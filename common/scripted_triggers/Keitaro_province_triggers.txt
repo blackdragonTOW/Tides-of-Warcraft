@@ -1,0 +1,20 @@
+Keitaro_is_province_nomad_agitated = {
+	has_province_modifier = nomad_agitation
+	any_province_holding = {
+		holding_type = tribal
+	}
+	NOR = {
+		AND = {
+			ROOT = { is_tribal = yes }
+			any_province_holding = {
+				holding_type = tribal
+				num_of_buildings = 4
+			}
+		}
+		ROOT = {
+			capital_scope = {
+				province = PREVPREV
+			}
+		}
+	}
+}

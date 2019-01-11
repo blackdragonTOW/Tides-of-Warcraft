@@ -22,7 +22,7 @@ narrative_event = {
 				ROOT = { has_landed_title = k_lordaeron }
 				ROOT = {
 					top_liege = {
-						trait = human
+						trait = race_human
 						has_landed_title = k_lordaeron
 					}
 				}
@@ -35,7 +35,7 @@ narrative_event = {
 				ROOT = { has_landed_title = k_stormwind }
 				ROOT = {
 					top_liege = {
-						trait = human
+						trait = race_human
 						has_landed_title = k_stormwind
 					}
 				}
@@ -78,7 +78,7 @@ narrative_event = {
 			}
 			has_character_flag = has_adv_class
 		}
-		trait = human
+		trait = race_human
 		religion = old_ways
 		has_global_flag = trollwars_bookmark
 		has_global_flag = trollwar_end
@@ -86,7 +86,7 @@ narrative_event = {
 			is_title_active = k_lordaeron
 			is_title_active = k_stormwind
 			any_playable_ruler = {
-				trait = human
+				trait = race_human
 				OR = {
 					real_tier = KING
 					real_tier = EMPEROR
@@ -115,7 +115,7 @@ narrative_event = {
 			top_liege = {
 				if = {
 					limit = {
-						trait = human
+						trait = race_human
 						religion = old_ways
 						NOR = { 
 							has_character_flag = conversion_chance_holy_light
@@ -127,7 +127,7 @@ narrative_event = {
 				any_realm_character = {
 					if = {
 						limit = {
-							trait = human
+							trait = race_human
 							religion = old_ways
 							NOR = { 
 								has_character_flag = conversion_chance_holy_light
@@ -186,7 +186,7 @@ character_event = {
 			}
 		}
 		has_global_flag = holy_light_founded
-		trait = human
+		trait = race_human
 		NOR = {
 			trait = zealous
 			has_character_flag = conversion_chance_holy_light
@@ -210,7 +210,7 @@ character_event = {
 			any_realm_character = {
 				if = {
 					limit = {
-						trait = human
+						trait = race_human
 						religion = old_ways
 						NOR = { 
 							has_character_flag = conversion_chance_holy_light
@@ -278,7 +278,7 @@ character_event = {
 			}
 		}
 		religion = old_ways
-		trait = human
+		trait = race_human
 	}
 	
 	immediate = {
@@ -298,7 +298,7 @@ character_event = {
 			any_realm_character = {
 				if = {
 					limit = {
-						trait = human
+						trait = race_human
 						religion = old_ways
 						NOR = { 
 							has_character_flag = conversion_chance_holy_light
@@ -414,7 +414,7 @@ character_event = {
 				religion = holy_light
 			}
 		}
-		trait = AK_trait_dwarf
+		trait = race_dwarf
 		culture = bronzebeard
 	}
 	
@@ -435,7 +435,7 @@ character_event = {
 			any_realm_character = {
 				if = {
 					limit = {
-						trait = AK_trait_dwarf
+						trait = race_dwarf
 						culture = bronzebeard
 						NOR = { 
 							has_character_flag = conversion_chance_holy_light
@@ -485,7 +485,7 @@ character_event = {
 			has_character_flag = conversion_chance_holy_light
 			religion = holy_light
 		}
-		trait = AK_trait_dwarf
+		trait = race_dwarf
 		culture = bronzebeard
 	}
 	
@@ -506,7 +506,7 @@ character_event = {
 			any_realm_character = {
 				if = {
 					limit = {
-						trait = AK_trait_dwarf
+						trait = race_dwarf
 						culture = bronzebeard
 						NOR = { 
 							has_character_flag = conversion_chance_holy_light

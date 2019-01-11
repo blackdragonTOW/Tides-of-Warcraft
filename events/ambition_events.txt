@@ -1490,12 +1490,6 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA94088
-		trigger = { NOT = { religion_group = muslim } }
-		change_learning = 1
-	}
-	option = {
-		name = EVTOPTA94091
-		trigger = { religion_group = muslim }
 		change_learning = 1
 	}
 }
@@ -1581,12 +1575,6 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA94088
-		trigger = { NOT = { religion_group = muslim } }
-		change_learning = 2
-	}
-	option = {
-		name = EVTOPTA94091
-		trigger = { religion_group = muslim }
 		change_learning = 2
 	}
 }
@@ -2709,7 +2697,6 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA94146
-		trigger = { NOT = { religion_group = muslim } }
 		custom_tooltip = {
 			text = hurry_dungeons
 			hidden_tooltip = {
@@ -2790,7 +2777,6 @@ character_event = {
 	
 	option = { # Meldrick
 		name = EVTOPTA94150
-		trigger = { NOT = { religion_group = muslim } }
 		character_event = { id = 94151 tooltip = EVTTOOLTIP94151 }
 	}
 }
@@ -2889,7 +2875,6 @@ character_event = {
 				}
 			}
 		}
-		trigger = { NOT = { religion_group = muslim } }
 	}
 }
 

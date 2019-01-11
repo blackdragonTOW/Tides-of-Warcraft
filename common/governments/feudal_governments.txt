@@ -83,12 +83,7 @@ feudal_governments = {
 				has_global_flag = dalaran_start
 			}
 			culture = dalaranian
-			OR = {
-				trait = arcanist
-				trait = mage
-				trait = alchemist
-				trait = techmage
-			}
+			trait = mage
 			OR = {
 				OR = {
 					has_landed_title = c_dalaran
@@ -105,7 +100,7 @@ feudal_governments = {
 				}
 			}
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -128,19 +123,11 @@ feudal_governments = {
 		frame_suffix = "_dragonflight"
 		potential = {
 			OR = {
-				OR = {
-					trait = dragon_red
-					trait = dragon_black
-					trait = dragon_blue
-					trait = dragon_bronze
-					trait = dragon_green
-					trait = dragon_infinite
-					trait = dragon_nightmare
-				}
+				trait = race_dragon
 				culture_group = dragon
 			}
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -179,11 +166,11 @@ feudal_governments = {
 				NOT = { has_global_flag = troll_wars_bookmark }
 			}
 			OR = {
-				trait = gnome
+				trait = race_gnome
 				culture = gnomish
 			}
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -212,7 +199,7 @@ feudal_governments = {
 			has_landed_title = d_tyrs_guard
 			has_landed_title = d_blood_knights
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -239,7 +226,7 @@ feudal_governments = {
 			has_landed_title = d_brotherhood_of_the_horse
 			has_landed_title = d_sunfury
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -264,7 +251,7 @@ feudal_governments = {
 			potential = {
 				culture_group = demonic
 				NOR = { 
-					trait = undead_scourge
+					trait = race_undead_scourge
 					culture = scourge
 				}
 			}
@@ -292,13 +279,13 @@ feudal_governments = {
 		}
 		potential = {
 			OR = {
-				trait = faceless
+				trait = race_faceless
 				culture = nraqi
-				trait = voidwalker
+				trait = race_voidwalker
 				culture = voidwalker
 			}
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -327,7 +314,7 @@ feudal_governments = {
 		frame_suffix = "_naga"
 		potential = {
 			OR = {
-				trait = naga
+				trait = race_naga
 				culture = naga
 			}
 		}
@@ -356,7 +343,7 @@ feudal_governments = {
 		potential = {
 			OR = {
 				OR = {
-					trait = troll_zandalari
+					trait = race_troll_zandalari
 					culture = zandalari
 				}
 				AND = {
@@ -365,7 +352,7 @@ feudal_governments = {
 				}
 			}
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -392,13 +379,13 @@ feudal_governments = {
 		frame_suffix = "_troll_bcd"
 		potential = {
 			NOR = {
-				trait = troll_zandalari
+				trait = race_troll_zandalari
 				culture = zandalari
 			}
 			culture_group = troll
 			lower_real_tier_than = KING
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -434,9 +421,9 @@ feudal_governments = {
 		frame_suffix = "_helf"
 		potential = {
 			OR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
+				trait = race_high_elf
+				trait = race_blood_elf
+				trait = race_wretched
 				culture = high_elven
 				culture = blood_elven
 				culture = wretched
@@ -464,7 +451,7 @@ feudal_governments = {
 		}
 		potential = {
 			OR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -489,7 +476,7 @@ feudal_governments = {
 		}
 		potential = {
 			OR = {
-				trait = orc
+				trait = race_orc
 				culture_group = orcish
 			}
 		}
@@ -520,7 +507,7 @@ feudal_governments = {
 			higher_tier_than = DUKE
 			prestige = 1500
 			NOR = { 
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -548,11 +535,11 @@ feudal_governments = {
 		potential = {
 			NOT = { is_government_potential = ogre_empire_government }
 			OR = {
-				trait = ogre
+				trait = race_ogre
 				culture_group = ogre
 			}
 			NOR = {
-				trait = undead_scourge
+				trait = race_undead_scourge
 				culture = scourge
 			}
 		}
@@ -585,7 +572,7 @@ feudal_governments = {
 		}
 		potential = {
 			OR = { 
-				trait = undead_forsaken
+				trait = race_undead_forsaken
 				culture = forsaken
 			}
 		}

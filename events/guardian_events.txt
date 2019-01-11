@@ -163,10 +163,7 @@ character_event = {
 	option = {
 		name = EVTOPTD2000 # Pray God will save her..
 		trigger = {
-			OR = {
-				religion_group = christian
-				religion_group = muslim
-			}
+			TOW_religion_practices_prayer = yes
 			NOT = { trait = cynical }
 		}
 		ai_chance = {
@@ -513,7 +510,7 @@ character_event = {
 		name = EVTOPTD2020 # God will save him from Hell
 		trigger = {
 			NOT = { trait = cynical }
-			religion_group = christian
+			TOW_religion_has_hell = yes
 		}
 		ai_chance = {
 			factor = 2
@@ -3520,26 +3517,9 @@ character_event = {
 		}
 		FROM = {
 			remove_trait = cynical
-			if = {
-				limit = {
-					NOT = {
-						religion_group = muslim
-					}
-				}
-				hidden_tooltip = {
-					character_event = {
-						id = 1731
-					}
-				}
-			}
-			if = {
-				limit = {
-					religion_group = muslim
-				}
-				hidden_tooltip = {
-					character_event = {
-						id = 1733
-					}
+			hidden_tooltip = {
+				character_event = {
+					id = 1731 # TOW Todo : Event localisation
 				}
 			}
 		}
@@ -3746,7 +3726,7 @@ character_event = {
 				NOT = {
 					AND = {
 						is_female = yes
-						religion_group = muslim
+						gender_equality_trigger_1 = no
 					}
 				}
 				has_guardian = no
@@ -3969,14 +3949,10 @@ character_event = {
 		}
 	}
 	
+	# TOW TODO : Localisation
 	option = {
 		name = EVTOPTA38100 # Ask the guardian about God
-		trigger = {
-			NOT = {
-				religion_group = muslim
-			}
-		}
-		ai_chance = { factor = 100}
+		ai_chance = { factor = 100 }
 		guardian = {
 			character_event = {
 				id = 38101
@@ -3990,21 +3966,6 @@ character_event = {
 		name = EVTOPTB38100 # Go play with my friends
 		ai_chance = { factor = 0}
 		piety = -5
-	}
-	option = {
-		name = EVTOPTC38100 # Ask the guardian about Allah
-		trigger = {
-			religion_group = muslim
-		}
-		ai_chance = { factor = 100}
-		guardian = {
-			character_event = {
-				id = 38101
-				days = 2
-				tooltip = EVTTOOLTIPA38101
-			}
-		}
-		piety = 5
 	}
 }
 
@@ -4442,7 +4403,7 @@ character_event = {
 	option = {
 		name = EVTOPTD38203 # Let the monks purge sin from the child
 		trigger = {
-			religion_group = christian
+			TOW_religion_uses_sins = yes
 		}
 		ai_chance = { 
 			factor = 10
@@ -4541,11 +4502,7 @@ character_event = {
 	option = {
 		name = EVTOPTA38205 # Mom is an angel now
 		trigger = {
-			OR = {
-				religion_group = christian
-				religion_group = muslim
-				religion_group = jewish_group
-			}
+			TOW_religion_has_angels = yes
 		}
 		ai_chance = { 
 			factor = 10
@@ -4988,31 +4945,11 @@ character_event = {
 			50 = {	FROM = { add_trait = arbitrary	hidden_tooltip = { ROOT = { character_event = { id = 38166}} character_event = { id = 38266} }}}
 		}
 	}
+	# TOW TODO : Localisation
 	option = {
 		name = EVTOPTC38211 # It's all part of God's plan
 		trigger = {
-			religion_group = christian
-		}
-		ai_chance = { 
-			factor = 10
-			modifier = {
-				factor = 2
-				trait = honest
-			}
-			modifier = {
-				factor = 8
-				trait = zealous
-			}			
-		}		
-		random_list = {
-			70 = {	FROM = { add_trait = honest	hidden_tooltip = { ROOT = { character_event = { id = 38162}} character_event = { id = 38262 } }}}		
-			30 = {	FROM = { add_trait = proud	hidden_tooltip = { ROOT = { character_event = { id = 38161}} character_event = { id = 38261} }}}
-		}
-	}
-	option = {
-		name = EVTOPTD38211 # It's all part of Allah's plan
-		trigger = {
-			religion_group = muslim
+			TOW_religion_omnipotent_god = yes
 		}
 		ai_chance = { 
 			factor = 10
@@ -5154,9 +5091,7 @@ character_event = {
 			40 = {
 				if = {
 					limit = {
-						NOT = {
-							religion_group = muslim
-						}
+						TOW_religion_uses_chastity = yes
 					}
 					FROM = {
 						add_trait = lustful
@@ -5209,9 +5144,7 @@ character_event = {
 			40 = {
 				if = {
 					limit = {
-						NOT = {
-							religion_group = muslim
-						}
+						TOW_religion_uses_chastity = yes
 					}
 					FROM = { 
 						add_trait = chaste
@@ -5496,9 +5429,7 @@ character_event = {
 			50 = {
 				if = {
 					limit = {
-						NOT = {
-							religion_group = muslim
-						}
+						TOW_religion_uses_chastity = yes
 					}
 					FROM = { 
 						add_trait = chaste
@@ -6308,43 +6239,7 @@ character_event = {
 	option = {
 		name = EVTOPTC38227 #Money is for god
 		trigger = {
-			religion_group = christian
-		}
-		FROM = {
-			random_list = {
-				75 = {
-					add_trait = zealous
-					hidden_tooltip = {
-						ROOT = {
-							character_event = {
-								id = 38169 #Notify Child is zealous
-							}
-						}
-						character_event = {
-							id = 38269 #Notify Zealous
-						}
-					}
-				}
-				25 = {
-					add_trait = charitable
-					hidden_tooltip = {
-						ROOT = {
-							character_event = {
-								id = 38173 #Notify Child is charitable
-							}
-						}
-						character_event = {
-							id = 38273 #Notify Charitable
-						}
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = EVTOPTD38227 #Money is for god
-		trigger = {
-			religion_group = muslim
+			TOW_religion_practices_charity = yes
 		}
 		FROM = {
 			random_list = {
@@ -6484,9 +6379,7 @@ character_event = {
 	option = {
 		name = EVTOPTA38229 #This will turn him into a great knight!
 		trigger = {
-			NOT = {
-				religion_group = muslim
-			}
+			TOW_religion_has_knights = yes
 		}
 		if = {
 			limit = {
@@ -6654,7 +6547,7 @@ character_event = {
 	option = {
 		name = EVTOPTC38229 #This will turn him into a great swordsmaster!
 		trigger = {
-			religion_group = muslim
+			TOW_religion_has_knights = no
 		}
 		if = {
 			limit = {
@@ -7186,7 +7079,7 @@ character_event = {
 	option = {
 		name = EVTOPTA38233 #Make the child fast to atone for its sins
 		trigger = {
-			religion_group = christian
+			TOW_religion_uses_sins = yes
 		}
 		ai_chance = {
 			factor = 1
@@ -7279,53 +7172,7 @@ character_event = {
 	option = {
 		name = EVTOPTC38233 #Only God decides over life and death
 		trigger = {
-			religion_group = christian
-		}
-		FROM = {
-			random = {
-				chance = 60
-			
-				death = {
-					death_reason = death_trait
-				}
-				if = {
-					limit = {
-						father = {
-							is_alive = yes
-						}
-					}
-					father = {
-						opinion = {
-							modifier = opinion_killed_close_kin
-							who = ROOT
-							years = 5
-						}
-					}
-				}
-				if = {
-					limit = {
-						father_even_if_dead = {
-							is_alive = no
-						}
-						mother = {
-							is_alive = yes
-						}
-					}
-					mother = {
-						opinion = {
-							modifier = opinion_killed_close_kin
-							who = ROOT
-							years = 5
-						}
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = EVTOPTD38233 #Only Allah decides over life and death
-		trigger = {
-			religion_group = muslim
+			TOW_religion_omnipotent_god = yes
 		}
 		FROM = {
 			random = {
@@ -7371,7 +7218,7 @@ character_event = {
 	option = {
 		name = EVTOPTE38233 #Do nothing
 		trigger = {
-			religion_group = muslim
+			TOW_religion_uses_sins = no
 		}
 		ai_chance = {
 			factor = 1
@@ -7435,7 +7282,7 @@ character_event = {
 	option = {
 		name = EVTOPTA38234 #Make the child fast to atone for its sins
 		trigger = {
-			religion_group = christian
+			TOW_religion_uses_sins = yes
 		}
 		ai_chance = {
 			factor = 10

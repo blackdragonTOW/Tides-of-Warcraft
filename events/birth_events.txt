@@ -2998,10 +2998,6 @@ character_event = {
 			hidden_tooltip = {
 				character_event = { id = 306 } # The child gets the father's dynasty, but is not legitimized.
 			}
-			if = {
-				limit = { trait = born_in_the_purple }
-				remove_trait = born_in_the_purple
-			}
 			mother = {
 				show_scope_change = no
 				tooltip = { opinion = { who = ROOT modifier = acknowledged_child years = 10 } }
@@ -3055,18 +3051,6 @@ character_event = {
 			show_scope_change = no
 			hidden_tooltip = {
 				character_event = { id = 309 } #  The child founds a new bastard dynasty
-			}
-			if = {
-				limit = { trait = born_in_the_purple }
-				remove_trait = born_in_the_purple
-			}
-			if = {
-				limit = { trait = saoshyant_descendant }
-				remove_trait = saoshyant_descendant
-			}
-			if = {
-				limit = { trait = sayyid }
-				remove_trait = sayyid
 			}
 			mother = {
 				show_scope_change = no
@@ -4189,30 +4173,5 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		if = {
-			limit = { mother = { has_character_flag = orgy_impregnated } }
-			mother = { clr_character_flag = orgy_impregnated }
-			if = {
-				limit = {
-					mother = {
-						OR = {
-							ai = no
-							has_game_rule = {
-								name = supernatural_events
-								value = unrestricted
-							}
-						}
-					}
-					NOT = {
-						has_game_rule = {
-							name = supernatural_events
-							value = off
-						}
-					}
-					random = 99 # 1% chance
-				}
-				character_event = { id = SoA.3001 years = 2 }
-			}
-		}
 	}
 }

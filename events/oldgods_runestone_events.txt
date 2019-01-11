@@ -582,26 +582,6 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTV_TOG_501
-		tooltip_info = zealous
-		trigger = {
-			trait = zealous
-			OR = {
-				religion = norse_pagan
-				religion = norse_pagan_reformed
-			}
-			NOT = {
-				trait = lunatic
-				is_dumb_trigger = yes
-			}
-		}
-
-		custom_tooltip = {
-			text = runestone_carved
-			hidden_tooltip = { narrative_event = { id = TOG.569 days = 60 random = 10 } }
-		}
-	}
-	option = {
 		name = EVTOPTX_TOG_501
 		tooltip_info = cruel
 		trigger = {
@@ -615,24 +595,6 @@ character_event = {
 			text = runestone_carved
 			hidden_tooltip = { narrative_event = { id = TOG.571 days = 60 random = 10 } }
 		}
-	}
-	option = {
-		name = EVTOPTZ_TOG_501
-		tooltip_info = zealous
-		trigger = {
-			trait = zealous
-			religion_group = christian
-			NOT = {
-				trait = lunatic
-				is_dumb_trigger = yes
-			}
-		}
-		
-		custom_tooltip = {
-			text = runestone_carved
-			hidden_tooltip = { narrative_event = { id = TOG.570 days = 60 random = 10 } }
-		}
-			
 	}
 }
 
@@ -2093,100 +2055,6 @@ narrative_event = {
 			limit = { ai = no }
 			chronicle = {
 				entry = CHRONICLE_RUNESTONE_JUST
-				picture = GFX_evt_runestone_raising_oldgods
-			}
-		}
-	}
-}
-
-# Zealous (Norse Pagan)
-narrative_event = {
-	id = TOG.569
-	title = EVTNAME_TOG_550
-	desc = {
-		trigger = {
-			mother_even_if_dead = { always = yes }
-			father_even_if_dead = { always = yes }
-		}
-		text = EVTDESC_TOG_569
-	}
-	desc = {
-		trigger = {
-			NOT = {
-				AND = {
-					mother_even_if_dead = { always = yes }
-					father_even_if_dead = { always = yes }
-				}
-			}
-		}
-		text = EVTDESC_TOG_569B
-	}
-	picture = GFX_evt_runestone_raising_oldgods
-	border = GFX_event_narrative_frame_diplomacy
-	
-	is_triggered_only = yes
-	
-	hide_from = yes
-	
-	option = {
-		name = EVTOPTA_TOG_550
-		prestige = 200
-		piety = 100
-		add_character_modifier = {
-			name = raised_runestone
-			duration = 730
-		}
-		if = {
-			limit = { ai = no }
-			chronicle = {
-				entry = CHRONICLE_RUNESTONE_ZEALOUS_NORSE
-				picture = GFX_evt_runestone_raising_oldgods
-			}
-		}
-	}
-}
-
-# Zealous (Christian)
-narrative_event = {
-	id = TOG.570
-	title = EVTNAME_TOG_550
-	desc = {
-		trigger = {
-			mother_even_if_dead = { always = yes }
-			father_even_if_dead = { always = yes }
-		}
-		text = EVTDESC_TOG_570
-	}
-	desc = {
-		trigger = {
-			NOT = {
-				AND = {
-					mother_even_if_dead = { always = yes }
-					father_even_if_dead = { always = yes }
-				}
-			}
-		}
-		text = EVTDESC_TOG_570B
-	}
-	picture = GFX_evt_runestone_raising_oldgods
-	border = GFX_event_narrative_frame_diplomacy
-	
-	is_triggered_only = yes
-	
-	hide_from = yes
-	
-	option = {
-		name = EVTOPTA_TOG_550
-		prestige = 200
-		piety = 100
-		add_character_modifier = {
-			name = raised_runestone
-			duration = 730
-		}
-		if = {
-			limit = { ai = no }
-			chronicle = {
-				entry = CHRONICLE_RUNESTONE_ZEALOUS_CHRISTIAN
 				picture = GFX_evt_runestone_raising_oldgods
 			}
 		}

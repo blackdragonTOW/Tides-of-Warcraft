@@ -36,7 +36,7 @@ narrative_event = {
 			culture = zandalari
 			religion = loa
 			age = 47
-			trait = troll_zandalari
+			trait = race_troll_zandalari
 			trait = zealous
 			trait = diligent
 			trait = scholar
@@ -396,7 +396,7 @@ character_event = {
 					trait = imbecile
 					trait = slow
 				}
-				trait = human
+				trait = race_human
 			}
 			character_event = { id = trollwars.11 }
 		}
@@ -526,13 +526,13 @@ character_event = {
 			has_landed_title = e_amani
 			NOT = {	has_global_flag = trollwar_end }
 			has_global_flag = trollwar_start
-			trait = troll_forest
+			trait = race_troll_forest
 		}
 		any_war = { using_cb = invasion }
 		has_landed_title = k_silvermoon
 		NOT = {	has_global_flag = trollwar_end }
 		has_global_flag = trollwar_start
-		trait = high_elf
+		trait = race_high_elf
 	}
 	
 	immediate = {
@@ -563,13 +563,13 @@ character_event = {
 			has_landed_title = e_amani
 			NOT = {	has_global_flag = trollwar_end }
 			has_global_flag = trollwar_start
-			trait = troll_forest
+			trait = race_troll_forest
 		}
 		any_war = { using_cb = invasion }
 		has_landed_title = k_silvermoon
 		NOT = {	has_global_flag = trollwar_end }
 		has_global_flag = trollwar_start
-		trait = high_elf
+		trait = race_high_elf
 	}
 	
 	immediate = {
@@ -710,7 +710,7 @@ character_event = {
 		has_global_flag = trollwar_start
 		has_global_flag = trollwar_end
 		has_global_flag = trollwar_elf_defeat
-		trait = human
+		trait = race_human
 		has_landed_title = e_arathor
 	}
 	
@@ -738,7 +738,7 @@ character_event = {
 			has_global_flag = trollwar_humans_join
 		}
 		has_global_flag = trollwar_start
-		trait = high_elf
+		trait = race_high_elf
 		has_landed_title = k_silvermoon
 	}
 	
@@ -776,7 +776,7 @@ character_event = {
 			has_global_flag = trollwar_humans_join
 		}
 		has_global_flag = trollwar_start
-		trait = human
+		trait = race_human
 		has_landed_title = e_arathor
 	}
 	
@@ -796,7 +796,7 @@ character_event = {
 	
 	trigger = {
 		has_global_flag = trollwars_bookmark
-		NOT = { trait = human }
+		NOT = { trait = race_human }
 		has_landed_title = e_arathor
 	}
 	
@@ -828,12 +828,12 @@ character_event = {
 	trigger = {
 		has_global_flag = trollwars_bookmark
 		NOR = {
-			trait = troll_forest
-			trait = troll_jungle
-			trait = troll_sand
-			trait = troll_dark
-			trait = troll_ice
-			trait = troll_zandalari
+			trait = race_troll_forest
+			trait = race_troll_jungle
+			trait = race_troll_sand
+			trait = race_troll_dark
+			trait = race_troll_ice
+			trait = race_troll_zandalari
 		}
 		has_landed_title = e_amani
 	}
@@ -896,7 +896,7 @@ character_event = {
 	trigger = {
 		real_tier = DUKE
 		has_global_flag = trollwar_end
-		trait = human
+		trait = race_human
 		NOR = {
 			is_title_active = k_dalaran
 			has_claim = k_alterac
@@ -968,7 +968,7 @@ character_event = {
 	trigger = {
 		real_tier = DUKE
 		has_global_flag = trollwar_end
-		trait = human
+		trait = race_human
 		NOR = {
 			is_title_active = k_gilneas
 			has_claim = k_alterac
@@ -1040,7 +1040,7 @@ character_event = {
 	trigger = {
 		real_tier = DUKE
 		has_global_flag = trollwar_end
-		trait = human
+		trait = race_human
 		NOR = {
 			is_title_active = k_kul_tiras
 			has_claim = k_alterac
@@ -1112,7 +1112,7 @@ character_event = {
 	trigger = {
 		real_tier = DUKE
 		has_global_flag = trollwar_end
-		trait = human
+		trait = race_human
 		NOR = {
 			is_title_active = k_lordaeron
 			has_claim = k_alterac
@@ -1188,7 +1188,7 @@ character_event = {
 	trigger = {
 		real_tier = DUKE
 		has_global_flag = trollwar_end
-		trait = human
+		trait = race_human
 		NOR = {
 			is_title_active = k_stormwind
 			has_claim = k_alterac
@@ -1249,7 +1249,7 @@ character_event = {
 	
 	trigger = {
 		has_landed_title = e_arathor
-		trait = human
+		trait = race_human
 		has_global_flag = trollwar_end
 		NOR = {
 			any_realm_province = {
@@ -1348,8 +1348,8 @@ character_event = {
 				martial = 21
 			}
 			random_traits = yes
-			trait = dragon_infinite
-			trait = dragon_dragon
+			trait = race_dragon_infinite
+			trait = race_dragon_dragon
 			flag = race_assigned
 		}
 		new_character = {
@@ -1478,7 +1478,7 @@ character_event = {
 		any_realm_lord = {
 			limit = {
 				real_tier = KING
-				trait = human
+				trait = race_human
 				NOT = { opinion = { who = ROOT value = 0 } }
 			}
 			character_event = { id = trollwars.50 }
@@ -1643,7 +1643,7 @@ province_event = {
 		culture = arathi
 		has_global_flag = troll_wars_bookmark
 		holder_scope = {
-			trait = human
+			trait = race_human
 		}
 		county = {
 			de_jure_liege = k_lordaeron
@@ -1684,7 +1684,7 @@ province_event = {
 			holder_scope = {
 				culture = arathi
 				NOT = { has_landed_title = e_arathor }
-				trait = human
+				trait = race_human
 				capital_holding = {
 					de_jure_liege = k_lordaeron
 				}
@@ -1696,7 +1696,7 @@ province_event = {
 			any_courtier = {
 				limit = {
 					is_ruler = no
-					trait = human
+					trait = race_human
 					culture = arathi
 				}
 				culture = lordaeronian
@@ -1712,7 +1712,7 @@ province_event = {
 				holder_scope = {
 					culture = arathi
 					NOT = { has_landed_title = e_arathor }
-					trait = human
+					trait = race_human
 					capital_holding = {
 						de_jure_liege = k_lordaeron
 					}
@@ -1734,7 +1734,7 @@ province_event = {
 		culture = arathi
 		has_global_flag = troll_wars_bookmark
 		holder_scope = {
-			trait = human
+			trait = race_human
 		}
 		county = {
 			de_jure_liege = k_stormwind
@@ -1775,7 +1775,7 @@ province_event = {
 			holder_scope = {
 				culture = arathi
 				NOT = { has_landed_title = e_arathor }
-				trait = human
+				trait = race_human
 				capital_holding = {
 					de_jure_liege = k_stormwind
 				}
@@ -1787,7 +1787,7 @@ province_event = {
 			any_courtier = {
 				limit = {
 					is_ruler = no
-					trait = human
+					trait = race_human
 					culture = arathi
 				}
 				culture = azerothian
@@ -1803,7 +1803,7 @@ province_event = {
 				holder_scope = {
 					culture = arathi
 					NOT = { has_landed_title = e_arathor }
-					trait = human
+					trait = race_human
 					capital_holding = {
 						de_jure_liege = k_stormwind
 					}
@@ -1825,7 +1825,7 @@ province_event = {
 		culture = arathi
 		has_global_flag = troll_wars_bookmark
 		holder_scope = {
-			trait = human
+			trait = race_human
 		}
 		county = {
 			de_jure_liege = k_dalaran
@@ -1866,7 +1866,7 @@ province_event = {
 			holder_scope = {
 				culture = arathi
 				NOT = { has_landed_title = e_arathor }
-				trait = human
+				trait = race_human
 				capital_holding = {
 					de_jure_liege = k_dalaran
 				}
@@ -1878,7 +1878,7 @@ province_event = {
 			any_courtier = {
 				limit = {
 					is_ruler = no
-					trait = human
+					trait = race_human
 					culture = arathi
 				}
 				culture = dalaranian
@@ -1894,7 +1894,7 @@ province_event = {
 				holder_scope = {
 					culture = arathi
 					NOT = { has_landed_title = e_arathor }
-					trait = human
+					trait = race_human
 					capital_holding = {
 						de_jure_liege = k_dalaran
 					}
@@ -1916,7 +1916,7 @@ province_event = {
 		culture = arathi
 		has_global_flag = troll_wars_bookmark
 		holder_scope = {
-			trait = human
+			trait = race_human
 		}
 		county = {
 			de_jure_liege = k_gilneas
@@ -1957,7 +1957,7 @@ province_event = {
 			holder_scope = {
 				culture = arathi
 				NOT = { has_landed_title = e_arathor }
-				trait = human
+				trait = race_human
 				capital_holding = {
 					de_jure_liege = k_lordaeron
 				}
@@ -1969,7 +1969,7 @@ province_event = {
 			any_courtier = {
 				limit = {
 					is_ruler = no
-					trait = human
+					trait = race_human
 					culture = arathi
 				}
 				culture = gilnean
@@ -1985,7 +1985,7 @@ province_event = {
 				holder_scope = {
 					culture = gilnean
 					NOT = { has_landed_title = e_arathor }
-					trait = human
+					trait = race_human
 					capital_holding = {
 						de_jure_liege = k_gilneas
 					}
@@ -2007,7 +2007,7 @@ province_event = {
 		culture = arathi
 		has_global_flag = troll_wars_bookmark
 		holder_scope = {
-			trait = human
+			trait = race_human
 		}
 		county = {
 			de_jure_liege = k_kul_tiras
@@ -2048,7 +2048,7 @@ province_event = {
 			holder_scope = {
 				culture = arathi
 				NOT = { has_landed_title = e_arathor }
-				trait = human
+				trait = race_human
 				capital_holding = {
 					de_jure_liege = k_kul_tiras
 				}
@@ -2060,7 +2060,7 @@ province_event = {
 			any_courtier = {
 				limit = {
 					is_ruler = no
-					trait = human
+					trait = race_human
 					culture = arathi
 				}
 				culture = tirasian
@@ -2076,7 +2076,7 @@ province_event = {
 				holder_scope = {
 					culture = arathi
 					NOT = { has_landed_title = e_arathor }
-					trait = human
+					trait = race_human
 					capital_holding = {
 						de_jure_liege = k_kul_tiras
 					}
@@ -2098,7 +2098,7 @@ province_event = {
 		culture = arathi
 		has_global_flag = troll_wars_bookmark
 		holder_scope = {
-			trait = human
+			trait = race_human
 		}
 		county = {
 			de_jure_liege = k_alterac
@@ -2139,7 +2139,7 @@ province_event = {
 			holder_scope = {
 				culture = arathi
 				NOT = { has_landed_title = e_arathor }
-				trait = human
+				trait = race_human
 				capital_holding = {
 					de_jure_liege = k_alterac
 				}
@@ -2151,7 +2151,7 @@ province_event = {
 			any_courtier = {
 				limit = {
 					is_ruler = no
-					trait = human
+					trait = race_human
 					culture = arathi
 				}
 				culture = alteraci
@@ -2167,7 +2167,7 @@ province_event = {
 				holder_scope = {
 					culture = arathi
 					NOT = { has_landed_title = e_arathor }
-					trait = human
+					trait = race_human
 					capital_holding = {
 						de_jure_liege = k_alterac
 					}
@@ -2197,8 +2197,8 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = blood_elf
-			trait = high_elf
+			trait = race_blood_elf
+			trait = race_high_elf
 		}
 		NOT = { has_global_flag = refused_farstriders }
 		NOT = { has_global_flag = farstriders_active }
@@ -2210,8 +2210,8 @@ character_event = {
 		any_liege = {
 			has_landed_title = k_silvermoon
 			OR = {
-				trait = blood_elf
-				trait = high_elf
+				trait = race_blood_elf
+				trait = race_high_elf
 			}
 		}
 		stewardship = 10

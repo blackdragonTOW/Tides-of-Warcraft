@@ -27,7 +27,7 @@ character_event = {
 	trigger = {
 		has_focus = focus_hunting
 		in_command = no
-		NOT = { religion = jain }
+		TOW_religion_is_pacifist = no
 		NOT = { has_character_flag = do_not_disturb }
 		NOT = { has_character_flag = epic_hunt }
 	}
@@ -1772,7 +1772,7 @@ character_event = {
 		NOT = { has_character_modifier = pet_hunting_dog }
 		NOT = { has_character_flag = offered_puppy }
 		NOT = { has_character_flag = had_hunting_dog }
-		NOT = { religion = jain }
+		TOW_religion_is_pacifist = no
 	}
 
 	immediate = {

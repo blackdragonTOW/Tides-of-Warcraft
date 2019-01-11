@@ -179,7 +179,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -192,7 +192,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -223,7 +223,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -236,7 +236,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -282,7 +282,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -295,7 +295,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -326,7 +326,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -339,7 +339,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -384,7 +384,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -397,7 +397,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -427,7 +427,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -440,7 +440,7 @@ spawn_wretched_army_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -477,7 +477,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -490,7 +490,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -520,7 +520,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -533,140 +533,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
-						trait = tough_soldier
-						flag = race_assigned
-					}
-				}
-			}
-			new_character = {
-				set_graphical_culture = wretched
-				spawn_unit = {
-					province = ROOT
-					home = ROOT
-					owner = PREV
-					scaled_by_biggest_garrison = 1.0
-					troops = {
-						archers = { 12 12 }
-						light_infantry = { 20 20 }
-						mages = { 1 1 }
-					}
-					attrition = 1.0
-					disband_on_peace = yes
-				}
-			}
-			random_list = {
-				1 = {
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 45
-						trait = wretched
-						trait = tough_soldier
-						flag = race_assigned
-					}
-				}
-				1 = {
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = yes
-						age = 45
-						trait = wretched
-						trait = tough_soldier
-						flag = race_assigned
-					}
-				}
-			}
-			new_character = {
-				set_graphical_culture = wretched
-				spawn_unit = {
-					province = ROOT
-					home = ROOT
-					owner = PREV
-					scaled_by_biggest_garrison = 1.0
-					troops = {
-						archers = { 12 12 }
-						light_infantry = { 20 20 }
-						mages = { 1 1 }
-					}
-					attrition = 1.0
-					disband_on_peace = yes
-				}
-			}
-		}
-		33 = {
-			random_list = {
-				1 = {
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 45
-						trait = wretched
-						trait = tough_soldier
-						flag = race_assigned
-					}
-				}
-				1 = {
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = yes
-						age = 45
-						trait = wretched
-						trait = tough_soldier
-						flag = race_assigned
-					}
-				}
-			}
-			new_character = {
-				set_graphical_culture = wretched
-				spawn_unit = {
-					province = ROOT
-					home = ROOT
-					owner = PREV
-					scaled_by_biggest_garrison = 1.0
-					troops = {
-						archers = { 12 12 }
-						light_infantry = { 20 20 }
-						mages = { 1 1 }
-					}
-					attrition = 1.0
-				}
-			}
-			random_list = {
-				1 = {
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 45
-						trait = wretched
-						trait = tough_soldier
-						flag = race_assigned
-					}
-				}
-				1 = {
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = yes
-						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -697,7 +564,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -710,7 +577,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -743,7 +610,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -756,7 +623,140 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = race_wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = race_wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = race_wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = race_wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+			}
+			new_character = {
+				set_graphical_culture = wretched
+				spawn_unit = {
+					province = ROOT
+					home = ROOT
+					owner = PREV
+					scaled_by_biggest_garrison = 1.0
+					troops = {
+						archers = { 12 12 }
+						light_infantry = { 20 20 }
+						mages = { 1 1 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+				}
+			}
+		}
+		33 = {
+			random_list = {
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 45
+						trait = race_wretched
+						trait = tough_soldier
+						flag = race_assigned
+					}
+				}
+				1 = {
+					create_character = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = yes
+						age = 45
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -785,7 +785,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -798,7 +798,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -828,7 +828,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = no
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}
@@ -841,7 +841,7 @@ spawn_wretched_reinforcements_effect = {
 						culture = THIS
 						female = yes
 						age = 45
-						trait = wretched
+						trait = race_wretched
 						trait = tough_soldier
 						flag = race_assigned
 					}

@@ -121,9 +121,9 @@ character_event = {
 			OR = {
 				AND = {
 					OR = {
-						trait = high_elf
-						trait = blood_elf
-						trait = wretched
+						trait = race_high_elf
+						trait = race_blood_elf
+						trait = race_wretched
 					}
 					OR = {
 						religion = demonology
@@ -195,10 +195,10 @@ character_event = {
 			}
 			AND = {
 				OR = {
-					trait = eredar
-					trait = dreadlord
-					trait = succubus
-					trait = pit_lord
+					trait = race_eredar
+					trait = race_dreadlord
+					trait = race_succubus
+					trait = race_pit_lord
 					trait = felsworn
 					trait = arcanist
 					trait = mage
@@ -217,10 +217,10 @@ character_event = {
 				OR = {
 					trait = necrolyte
 					trait = warlock
-					trait = eredar
-					trait = dreadlord
-					trait = succubus
-					trait = pit_lord
+					trait = race_eredar
+					trait = race_dreadlord
+					trait = race_succubus
+					trait = race_pit_lord
 					true_religion = burning_legion
 				}
 			}
@@ -252,10 +252,10 @@ character_event = {
 		modifier = {
 			factor = 3
 			OR = {
-				trait = dragon_whelp
-				trait = dragon_drake
-				trait = dragon_dragon
-				trait = dragon_wyrm
+				trait = race_dragon_whelp
+				trait = race_dragon_drake
+				trait = race_dragon_dragon
+				trait = race_dragon_wyrm
 			}
 		}
 		modifier = {
@@ -322,9 +322,9 @@ character_event = {
 			factor = 0.5
 			has_global_flag = sunwell_embraced_fel
 			OR = {
-				trait = high_elf
-				trait = blood_elf
-				trait = wretched
+				trait = race_high_elf
+				trait = race_blood_elf
+				trait = race_wretched
 			}
 			OR = {
 				religion = demonology
@@ -336,14 +336,14 @@ character_event = {
 	trigger = {
 		NOR = {
 			trait = demon_hunter
-			trait = eredar
-			trait = dreadlord
-			trait = succubus
-			trait = pit_lord
-			trait = faceless
-			trait = undead_scourge
-			trait = undead_generic
-			trait = undead_forsaken
+			trait = race_eredar
+			trait = race_dreadlord
+			trait = race_succubus
+			trait = race_pit_lord
+			trait = race_faceless
+			trait = race_undead_scourge
+			trait = race_undead_generic
+			trait = race_undead_forsaken
 		}
 		OR = {
 			trait = warlock
@@ -358,9 +358,9 @@ character_event = {
 					religion = burning_legion
 				}
 				OR = {
-					trait = blood_elf
-					trait = high_elf
-					trait = wretched
+					trait = race_blood_elf
+					trait = race_high_elf
+					trait = race_wretched
 				}
 			}
 		}
@@ -497,14 +497,14 @@ character_event = {
 	trigger = {
 		NOR = {
 			trait = demon_hunter
-			trait = eredar
-			trait = dreadlord
-			trait = succubus
-			trait = pit_lord
-			trait = faceless
-			trait = undead_scourge
-			trait = undead_generic
-			trait = undead_forsaken
+			trait = race_eredar
+			trait = race_dreadlord
+			trait = race_succubus
+			trait = race_pit_lord
+			trait = race_faceless
+			trait = race_undead_scourge
+			trait = race_undead_generic
+			trait = race_undead_forsaken
 		}
 		OR = {
 			AND = {
@@ -1513,13 +1513,13 @@ character_event = {
 			true_religion = lich_king
 		}
 		NOT = {
-			trait = faceless
-			trait = eredar
-			trait = dreadlord
-			trait = pit_lord
-			trait = succubus
+			trait = race_faceless
+			trait = race_eredar
+			trait = race_dreadlord
+			trait = race_pit_lord
+			trait = race_succubus
 			trait = felsworn
-			trait = undead_scourge
+			trait = race_undead_scourge
 		}
 		NOT = { has_character_flag = rejected_legion }
 	}
@@ -1700,7 +1700,7 @@ province_event = {
 					culture = eredar
 					religion = burning_legion
 					dynasty = random
-					trait = eredar
+					trait = race_eredar
 					flag = race_assigned
 					random_traits = yes
 				}
@@ -1724,7 +1724,7 @@ province_event = {
 					religion = burning_legion
 					dynasty = random
 					female = no
-					trait = doomlord
+					trait = race_doomlord
 					flag = race_assigned
 					random_traits = yes
 				}
@@ -1748,7 +1748,7 @@ province_event = {
 					religion = burning_legion
 					dynasty = random
 					female = no
-					trait = fel_lord
+					trait = race_fel_lord
 					flag = race_assigned
 					random_traits = yes
 				}
@@ -1772,7 +1772,7 @@ province_event = {
 					religion = burning_legion
 					dynasty = random
 					female = no
-					trait = pit_lord
+					trait = race_pit_lord
 					flag = race_assigned
 					random_traits = yes
 				}
@@ -1796,7 +1796,7 @@ province_event = {
 					religion = burning_legion
 					dynasty = random
 					female = yes
-					trait = shivarra
+					trait = race_shivarra
 					flag = race_assigned
 					random_traits = yes
 				}
@@ -1820,7 +1820,7 @@ province_event = {
 					religion = burning_legion
 					dynasty = random
 					female = no
-					trait = dreadlord
+					trait = race_dreadlord
 					flag = race_assigned
 					random_traits = yes
 				}

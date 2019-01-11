@@ -1424,11 +1424,13 @@ block_general_event_trigger = {
 gender_equality_trigger_4 = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				has_game_rule = {
 					name = gender
 					value = all
 				}
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
 			}
 		}
 		OR = {
@@ -1447,11 +1449,13 @@ gender_equality_trigger_4 = {
 gender_equality_trigger_3 = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				has_game_rule = {
 					name = gender
 					value = all
 				}
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
 			}
 		}
 		OR = {
@@ -1482,11 +1486,13 @@ gender_equality_trigger_3 = {
 gender_equality_trigger_1 = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				has_game_rule = {
 					name = gender
 					value = all
 				}
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
 			}
 		}
 		OR = {
@@ -1521,11 +1527,13 @@ gender_equality_trigger_1 = {
 gender_equality_trigger = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				has_game_rule = {
 					name = gender
 					value = all
 				}
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
 			}
 		}
 		OR = {
@@ -1645,24 +1653,8 @@ female_can_hold_minor_commander_title_trigger = {
 
 has_minor_deity_trigger = {
 	OR = {
-		has_character_modifier = follower_of_perun
-		has_character_modifier = follower_of_veles
-		has_character_modifier = follower_of_jarilo
-		has_character_modifier = follower_of_morana
-		has_character_modifier = follower_of_ayyur
-		has_character_modifier = follower_of_anansi
-		has_character_modifier = follower_of_dan
-		has_character_modifier = follower_of_bida
-		has_character_modifier = follower_of_tsumburbura
-		has_character_modifier = follower_of_dongo
-		has_character_modifier = follower_of_ukko
-		has_character_modifier = follower_of_akka
-		has_character_modifier = follower_of_taipo_and_mielikki 
-		has_character_modifier = follower_of_lempo
-		has_character_modifier = follower_of_dievas
-		has_character_modifier = follower_of_velnias
-		has_character_modifier = follower_of_perkunas
-		has_character_modifier = follower_of_zemyna
+		# TOW TODO : Minor deities?
+		#has_character_modifier = follower_of_perun
 	}
 }
 
@@ -1787,43 +1779,6 @@ is_murder_quest_target_of_root_trigger = {
 	ROOT = {
 		has_quest = quest_the_assassins_assassination
 		quest_target = { character = PREVPREV }
-	}
-}
-
-assassins_appropriate_target_trigger = {
-	is_within_diplo_range = ROOT
-	is_adult = yes
-	is_quest_target = no
-
-	OR = {
-		is_ruler = no
-		AND = {
-			ROOT = {
-				society_rank = {
-					rank == 3
-					society = the_assassins
-				}
-			}
-			primary_title = { higher_real_tier_than = COUNT }
-		}
-		AND = {
-			ROOT = {
-				society_rank = {
-					rank == 2
-					society = the_assassins
-				}
-			}
-			primary_title = { lower_real_tier_than = EMPEROR }
-		}
-		AND = {
-			ROOT = {
-				society_rank = {
-					rank == 1
-					society = the_assassins
-				}
-			}
-			primary_title = { lower_real_tier_than = DUKE }
-		}
 	}
 }
 
@@ -2065,6 +2020,27 @@ is_openly_of_roots_secret_religion_trigger = {
 	religion = { target = ROOT target_type = secret }
 }
 
+has_sympathy_for_true_religion_of_prev_trigger = { 
+	OR = {
+		always = no # TOW TODO : sympathies
+		#AND = {
+		#	trait = sympathy_christendom
+		#	PREV = { true_religion_group_christian_trigger = yes }
+		#}
+	}
+}
+
+has_sympathy_for_true_religion_of_root_trigger = { 
+	OR = {
+		always = no # TOW TODO : sympathies
+		#AND = {
+		#	trait = sympathy_christendom
+		#	ROOT = { true_religion_group_christian_trigger = yes }
+		#}
+	}
+}
+
+
 ok_sr_induction_mission_target_trigger = {
 	is_adult = yes
 	NOT = { secret_religion = ROOT }
@@ -2078,6 +2054,27 @@ ok_sr_induction_mission_target_trigger = {
 		has_sympathy_for_true_religion_of_root_trigger = yes
 	}
 }
+
+ok_sr_sympathy_mission_target_trigger = {
+	has_secret_religion_trait_trigger = no
+	ROOT = {
+		NOT = { secret_religion = { target_type = public target = PREV } }
+		NOR = {
+			#AND = {
+			#	true_religion_group = christian
+			#	PREV = { trait = sympathy_christendom }
+			#}
+		}
+	}
+	ROOT = { PREV = { is_openly_of_prevs_secret_religion_trigger = no } }
+	ROOT = { PREV = { has_sympathy_for_true_religion_of_prev_trigger = no } }
+	prisoner = no
+	is_adult = yes
+	NOT = { trait = incapable }
+	is_inaccessible_trigger = no
+	NOT = { has_character_modifier = secret_religion_sympathy_timer }
+}
+
 has_prevs_secret_religion_truly_trigger = {
 	secret_religion = { target = PREV target_type = true }
 }
@@ -2814,53 +2811,53 @@ has_unsafe_secret_religion = {
 	always = yes
 }
 
-#to check type of ingredient... (if more are added, they need to go in here to work with the current system)
-is_ingredient_herb_trigger = {
-	OR = {
-		artifact_type = ingredient_herb1
-		artifact_type = ingredient_herb2
-		artifact_type = ingredient_herb3
-		artifact_type = ingredient_herb4
-		artifact_type = ingredient_herb5
-		artifact_type = ingredient_herb6
-		artifact_type = ingredient_herb7
-		artifact_type = ingredient_herb8
-		artifact_type = ingredient_herb9
-	}
-}
-
-is_ingredient_animal_part_trigger = {
-	OR = {
-		artifact_type = ingredient_animal1
-		artifact_type = ingredient_animal2
-		artifact_type = ingredient_animal3
-		artifact_type = ingredient_animal4
-		artifact_type = ingredient_animal5
-		artifact_type = ingredient_animal6
-		artifact_type = ingredient_animal7
-		artifact_type = ingredient_animal8
-		artifact_type = ingredient_animal9
-	}
-}
-
-is_ingredient_powder_trigger = {
-	OR = {
-		artifact_type = ingredient_metal_exotic1
-		artifact_type = ingredient_metal_exotic5
-		artifact_type = ingredient_metal_exotic6
-		artifact_type = ingredient_metal_exotic7
-		artifact_type = ingredient_metal_exotic8
-		artifact_type = ingredient_metal_exotic9
-	}
-}
-
-is_ingredient_liquid_trigger = {
-	OR = {
-		artifact_type = ingredient_metal_exotic2
-		artifact_type = ingredient_metal_exotic3
-		artifact_type = ingredient_metal_exotic4
-	}
-}
+##to check type of ingredient... (if more are added, they need to go in here to work with the current system)
+#is_ingredient_herb_trigger = {
+#	OR = {
+#		artifact_type = ingredient_herb1
+#		artifact_type = ingredient_herb2
+#		artifact_type = ingredient_herb3
+#		artifact_type = ingredient_herb4
+#		artifact_type = ingredient_herb5
+#		artifact_type = ingredient_herb6
+#		artifact_type = ingredient_herb7
+#		artifact_type = ingredient_herb8
+#		artifact_type = ingredient_herb9
+#	}
+#}
+#
+#is_ingredient_animal_part_trigger = {
+#	OR = {
+#		artifact_type = ingredient_animal1
+#		artifact_type = ingredient_animal2
+#		artifact_type = ingredient_animal3
+#		artifact_type = ingredient_animal4
+#		artifact_type = ingredient_animal5
+#		artifact_type = ingredient_animal6
+#		artifact_type = ingredient_animal7
+#		artifact_type = ingredient_animal8
+#		artifact_type = ingredient_animal9
+#	}
+#}
+#
+#is_ingredient_powder_trigger = {
+#	OR = {
+#		artifact_type = ingredient_metal_exotic1
+#		artifact_type = ingredient_metal_exotic5
+#		artifact_type = ingredient_metal_exotic6
+#		artifact_type = ingredient_metal_exotic7
+#		artifact_type = ingredient_metal_exotic8
+#		artifact_type = ingredient_metal_exotic9
+#	}
+#}
+#
+#is_ingredient_liquid_trigger = {
+#	OR = {
+#		artifact_type = ingredient_metal_exotic2
+#		artifact_type = ingredient_metal_exotic3
+#		artifact_type = ingredient_metal_exotic4
+#	}
+#}
 
 #to check which ingredient TO BE selected (via scripted effects)...
 has_a_herb_ingredient_trigger = {
@@ -3130,11 +3127,8 @@ is_any_kinslayer_trigger = {
 	}
 }
 
-courtier_from_china_trigger = {
-	custom_tooltip = {
-		text = courtier_from_china_trigger_tt
-		has_character_flag = originated_from_chinese_court
-	}
+has_unsafe_religion = {
+	NOT = { is_nomadic = yes }
 }
 
 using_unimportant_cb = {
@@ -3677,18 +3671,8 @@ needs_coronation_trigger = {
 
 ruler_has_dedicated_temple_trigger = {
 	OR = {
-		has_character_modifier = dedicated_to_zeus
-		has_character_modifier = dedicated_to_poseidon
-		has_character_modifier = dedicated_to_hades
-		has_character_modifier = dedicated_to_hermes
-		has_character_modifier = dedicated_to_demeter
-		has_character_modifier = dedicated_to_athena
-		has_character_modifier = dedicated_to_apollo
-		has_character_modifier = dedicated_to_arthemis
-		has_character_modifier = dedicated_to_ares
-		has_character_modifier = dedicated_to_aphrodite
-		has_character_modifier = dedicated_to_ephaestus
-		has_character_modifier = dedicated_to_hestia
+		# TOW TODO : Dedication ?
+		#has_character_modifier = dedicated_to_zeus
 	}
 }
 
@@ -4128,6 +4112,8 @@ this_is_warrior_culture_trigger = { #Not really about culture - Used in AI votin
 		has_religion_feature = religion_warlike
 		is_tribal = yes
 		is_nomadic = yes
+		TOW_background_is_adventurer = yes
+		TOW_background_has_berserker = yes
 	}
 }
 
@@ -4660,10 +4646,10 @@ has_any_leadership_trait_trigger = {
 		trait = siege_leader
 		trait = trickster
 		trait = unyielding_leader
-		trait = logistics_expert
-		trait = master_of_flame
-		trait = sapper
-		trait = levy_coordinator
+		#trait = logistics_expert
+		#trait = master_of_flame
+		#trait = sapper
+		#trait = levy_coordinator
 		trait = war_elephant_leader
 		trait = winter_soldier
 	}
@@ -4671,61 +4657,13 @@ has_any_leadership_trait_trigger = {
 
 has_any_astrology_trait_trigger = {
 	OR = {
-		trait = zodiac_aquarius
-		trait = zodiac_aries
-		trait = zodiac_cancer
-		trait = zodiac_capricorn
-		trait = zodiac_gemini
-		trait = zodiac_leo
-		trait = zodiac_libra
-		trait = zodiac_pisces
-		trait = zodiac_sagittarius
-		trait = zodiac_scorpio
-		trait = zodiac_taurus
-		trait = zodiac_virgo
+		#trait = zodiac_aquarius
 	}
 }
 
 dlc_religion_check_trigger = {
 	always = yes
 }
-
-reconquista_check_trigger = {
-	any_war = {
-		OR = {
-			using_cb = reconquista_leon
-			using_cb = reconquista_castille
-			using_cb = reconquista_aragon
-			using_cb = reconquista_galicia
-			using_cb = reconquista_beja
-			using_cb = reconquista_granada
-			using_cb = reconquista_cordoba
-			using_cb = reconquista_valencia
-			using_cb = reconquista_navarra
-			using_cb = reconquista_balearic
-		}
-	}
-}
-
-not_reconquista_check_trigger = {
-	NOT = {
-		any_war = {
-			OR = {
-				using_cb = reconquista_leon
-				using_cb = reconquista_castille
-				using_cb = reconquista_aragon
-				using_cb = reconquista_galicia
-				using_cb = reconquista_beja
-				using_cb = reconquista_granada
-				using_cb = reconquista_cordoba
-				using_cb = reconquista_valencia
-				using_cb = reconquista_navarra
-				using_cb = reconquista_balearic
-			}
-		}
-	}
-}
-
 
 this_has_execution_reason_opinion_trigger = {
 	OR = { 

@@ -1,3 +1,63 @@
+## Features ##
+
+TOW_religion_practices_ritual_sacrifice = {
+	OR = {
+		has_religion_feature = religion_ritual_sacrifice
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_worships_ancestors = {
+	OR = {
+		has_religion_feature = religion_beatification
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_is_adventuring = {
+	OR = {
+		has_religion_feature = religion_adventuring
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_practices_astrology = {
+	OR = {
+		has_religion_feature = religion_astrology
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_is_dogmatic = {
+	OR = {
+		has_religion_feature = religion_dogmatic
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_is_proselytizing = {
+	OR = {
+		has_religion_feature = religion_proselytizing
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_is_cosmopolitan = {
+	OR = {
+		has_religion_feature = religion_cosmopolitan
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_is_incestuous = {
+	OR = {
+		has_religion_feature = religion_holy_family
+		always = no # TOW TODO : To Define
+	}
+}
+
+##############
+
 TOW_religion_cares_about_piety = {
 	NOT = { religion_group = fel_group }
 	NOT = { religion_group = draconic_group }
@@ -22,7 +82,23 @@ TOW_religion_practices_charity = {
 	always = no # TOW TODO : To Define
 }
 
-TOW_religion_fears_god = {
+TOW_religion_omnipotent_god = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_should_be_humble_before_god = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_has_angels = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_has_hell = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_practices_prayer = {
 	always = no # TOW TODO : To Define
 }
 
@@ -34,27 +110,12 @@ TOW_religion_practices_sky_burial = {
 	religion = aeromancy
 }
 
-TOW_religion_practices_ritual_sacrifice = {
-	OR = {
-		has_religion_feature = religion_ritual_sacrifice
-		always = no # TOW TODO : To Define
-	}
+# Was christians
+TOW_religion_uses_convent = {
+	always = no # TOW TODO : To Define
 }
 
-TOW_religion_worships_ancestors = {
-	OR = {
-		has_religion_feature = religion_beatification
-		always = no # TOW TODO : To Define
-	}
-}
-
-TOW_religion_practices_astrology = {
-	OR = {
-		has_religion_feature = religion_astrology
-		always = no # TOW TODO : To Define
-	}
-}
-
+# Was christians
 TOW_religion_churching_women_after_birth = {
 	always = no # TOW TODO : To Define
 }
@@ -64,12 +125,142 @@ TOW_religion_is_dead = {
 	always = no # TOW TODO : To Define
 }
 
+# Was christians - Could probably be a background trigger
 TOW_religion_has_knights = {
 	OR = {
 		religion_group = light_group
 	}
 }
 
+TOW_religion_has_heresy = {
+	always = no # TOW TODO : To Define
+}
+
 TOW_religion_has_multiple_heresies = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christian, muslim, jewish, and indian
+TOW_religion_have_pilgrimage = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_uses_virtues = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_uses_sins = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_practices_sin_confession = {
+	TOW_religion_uses_sins = yes
+	always = no # TOW TODO : To Define
+}
+
+# Was everybody except muslim - Might be "always = yes"
+TOW_religion_uses_chastity = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_priests_obligated_celibacy = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_has_celibacy = {
+	always = no # TOW TODO : To Define
+}
+
+# Was jain - For hunting and fighting
+TOW_religion_is_pacifist = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_has_excommunication = {
+	always = no # TOW TODO : To Define
+}
+
+# Was catholic/fraticelli
+TOW_religion_can_have_antipopes = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_pope_titles_are_unclaimable = {
+	always = no # TOW TODO : To Define
+}
+
+# Was catholic - Has to have a religious head
+TOW_religion_marriage_annulment = {
+	always = no # TOW TODO : To Define
+}
+
+# Was muslims
+TOW_religion_forbidden_alcohol = {
+	always = no # TOW TODO : To Define
+}
+
+# Was everybody except muslim
+TOW_religion_royal_aid_duty = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_clergy_has_authority = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_does_not_tolerate_homosexuality = {
+	always = no # TOW TODO : To Define
+}
+
+# Was catholics and fraticelli
+TOW_religion_rel_head_wants_full_authority = {
+	always = no # TOW TODO : To Define
+}
+
+# Was tengri and aztec
+TOW_religion_is_aggressive = {
+	always = no # TOW TODO : To Define
+}
+
+# Was christian - Should probably be panda
+TOW_religion_has_monks = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_believes_in_reincarnation = {
+	always = no # TOW TODO : To Define
+}
+
+# Was dharmic religions and bon - Wants to have virtues and dislikes bad traits (like "sins")
+TOW_religion_righteous = {
+	always = no # TOW TODO : To Define
+}
+
+# Was buddhist
+TOW_religion_uses_meditation = {
+	always = no # TOW TODO : To Define
+}
+
+# Was everybody but muslims and iconoclast
+TOW_religion_is_iconophile = {
+	always = no # TOW TODO : To Define
+}
+
+# To be adapted in azeroth, was everybody but buddhist and zun
+TOW_religion_cares_about_geocentrism = {
+	always = no # TOW TODO : To Define
+}
+
+# Was catholic & fraticelli
+TOW_religion_uses_new_crusade = {
 	always = no # TOW TODO : To Define
 }

@@ -1802,38 +1802,8 @@ character_event = {
 		event_target:soldier_target = {
 			prestige = 50
 		}
-		trigger = {
-			NOR = {
-				has_character_modifier = good_battle_omen
-				has_character_modifier = bad_battle_omen
-			}
-		}
-	}
-	option = {
-		name = 261_OPTA
-
-		event_target:soldier_target = {
-			prestige = 50
-		}
-		upgrade_seer_modifier_effect = yes
-		trigger = {
-			has_dlc = "Mystics"
-			has_character_modifier = good_battle_omen
-		}
-	}
-	option = {
-		name = 261_OPTB
-		event_target:soldier_target = {
-			prestige = 50
-		}
-		downgrade_seer_modifier_effect = yes
-		trigger = {
-			has_dlc = "Mystics"
-			has_character_modifier = bad_battle_omen
-		}
 	}
 	after = {
-		remove_scrying_omen_modifiers_effect = yes
 	}
 }
 
@@ -1950,10 +1920,6 @@ character_event = {
 		days = 1
 		bad_soldier_outcome_score = yes
 		title_tier_reduction_score = yes
-		modifier = {
-			FROM = { trait = norse_leader }
-			factor = 1.5
-		}
 		
 		modifier = {
 			factor = 2 # if the enemy leader has a particular bloodline

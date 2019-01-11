@@ -76,10 +76,10 @@ character_event = {
 			}
 			modifier = {
 				factor = 0.3
-				religion = jain
+				TOW_religion_is_pacifist = yes
 			}
 			modifier = {
-				religion_group = christian
+				TOW_religion_clergy_has_authority = yes
 				is_priest = yes
 				factor = 0
 			}
@@ -3553,13 +3553,7 @@ character_event = {
 			NOT = { trait = cavalry_leader }
 			AND = {
 				NOT = { trait = war_elephant_leader }
-				OR = {
-					culture_group = indo_aryan_group
-					culture_group = dravidian_group
-					any_demesne_province = {
-						terrain = jungle
-					}
-				}
+				TOW_background_uses_war_elephants = yes
 			}
 		}
 	}
@@ -3653,13 +3647,7 @@ character_event = {
 		}
 		trigger = {
 			NOT = { trait = war_elephant_leader }
-			OR = {
-				culture_group = indo_aryan_group
-				culture_group = dravidian_group
-				any_demesne_province = {
-					terrain = jungle
-				}
-			}
+			TOW_background_uses_war_elephants = yes
 		}
 		
 		add_trait = war_elephant_leader
@@ -3698,13 +3686,7 @@ character_event = {
 			}
 			AND = {
 				NOT = { trait = winter_soldier }
-				OR = {
-					culture_group = north_germanic
-					culture_group = baltic
-					culture_group = east_slavic
-					culture_group = west_slavic
-					culture_group = finno_ugric
-				}
+				TOW_background_used_to_winter = yes
 			}
 		}
 	}
@@ -3774,11 +3756,7 @@ character_event = {
 			modifier = {
 				factor = 2
 				OR = {
-					culture_group = north_germanic
-					culture_group = baltic
-					culture_group = east_slavic
-					culture_group = west_slavic
-					culture_group = finno_ugric
+					TOW_background_used_to_rough_terrain = yes
 					is_tribal = yes
 				}
 			}
@@ -3818,13 +3796,7 @@ character_event = {
 		}
 		trigger = {
 			NOT = { trait = winter_soldier }
-			OR = {
-				culture_group = north_germanic
-				culture_group = baltic
-				culture_group = east_slavic
-				culture_group = west_slavic
-				culture_group = finno_ugric
-			}
+			TOW_background_used_to_winter = yes
 		}
 		add_trait = winter_soldier
 	}
@@ -4052,18 +4024,7 @@ character_event = {
 		add_trait = organizer
 	}
 	option = { # Holy Warrior
-		name = { 
-			text = EVTOPTD_WOL_11304
-			trigger = {
-				NOT = { religion_group = muslim }
-			}
-		}
-		name = {
-			text = EVTOPTD_WOL_11304_MUSLIM
-			trigger = {
-				religion_group = muslim
-			}
-		}
+		name = EVTOPTD_WOL_11304
 		ai_chance = {
 			factor = 1000
 		}

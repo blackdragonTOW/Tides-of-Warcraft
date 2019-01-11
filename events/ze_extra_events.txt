@@ -1688,15 +1688,7 @@ character_event = {
 				AND = {
 					is_female = yes
 					ROOT = {
-						OR = {
-							religion = cathar
-							religion = messalian
-							primary_title = { has_law = status_of_women_4 }
-							has_game_rule = {
-								name = gender
-								value = all
-							}
-						}
+						gender_equality_trigger = yes
 					}
 				}
 			}
@@ -1727,15 +1719,7 @@ character_event = {
 					AND = {
 						is_female = yes
 						ROOT = { 
-							OR = { 
-								religion = cathar
-								religion = messalian
-								primary_title = { has_law = status_of_women_4 }
-								has_game_rule = {
-									name = gender
-									value = all
-								}
-							} 
+							gender_equality_trigger = yes
 						}
 					}
 				}
@@ -1816,28 +1800,7 @@ character_event = {
 				months = 1200
 			}
 			reverse_add_favor = ROOT
-			hidden_tooltip = {
-				if = {
-					limit = {
-						religion_group = muslim
-					}
-					set_government_type = muslim_government
-				}
-				else_if = {
-					limit = {
-						culture_group = tibetan_group
-						OR = {
-							religion = bon
-							religion = bon_reformed
-							religion = buddhist
-						}
-					}
-					set_government_type = theocratic_feudal_government
-				}
-				else = {
-					set_government_type = feudal_government
-				}
-			}
+			TOW_set_newly_landed_character_government = yes
 			grant_title = event_target:target_friend_land
 		}
 		custom_tooltip = {

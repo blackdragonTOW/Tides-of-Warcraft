@@ -27,7 +27,7 @@ targetted_decisions = {
 			has_dlc = "Legacy of Rome"
 			is_playable = yes
 			NOT = { trait = kind }
-			NOT = { trait = draenei }
+			NOT = { trait = race_draenei }
 		}
 	
 		potential = {
@@ -36,26 +36,18 @@ targetted_decisions = {
 			is_female = no
 			NOT = { trait = eunuch }
 			NOR = {
-				trait = undead_forsaken
-				trait = undead_generic
-				trait = undead_scourge
-				trait = dragon_red
-				trait = dragon_black
-				trait = dragon_blue
-				trait = dragon_bronze
-				trait = dragon_green
-				trait = dragon_chromatic
-				trait = dragon_twilight
-				trait = dragon_infinite
-				trait = dragon_nightmare
-				trait = faceless
-				trait = eredar
-				trait = succubus
-				trait = dreadlord
-				trait = pit_lord
-				trait = fel_lord
-				trait = doomlord
-				trait = shivarra
+				trait = race_undead_forsaken
+				trait = race_undead_generic
+				trait = race_undead_scourge
+				trait = race_dragon
+				trait = race_faceless
+				trait = race_eredar
+				trait = race_succubus
+				trait = race_dreadlord
+				trait = race_pit_lord
+				trait = race_fel_lord
+				trait = race_doomlord
+				trait = race_shivarra
 			}
 		}
 		allow = {
@@ -204,7 +196,7 @@ targetted_decisions = {
 			has_dlc = "Legacy of Rome"
 			is_playable = yes
 			NOT = { trait = kind }
-			NOT = { trait = draenei }
+			NOT = { trait = race_draenei }
 		}
 	
 		potential = {
@@ -212,10 +204,10 @@ targetted_decisions = {
 			prisoner = yes
 			NOT = { trait = blinded }
 			NOR = {
-				trait = undead_forsaken
-				trait = undead_generic
-				trait = undead_scourge
-				trait = faceless
+				trait = race_undead_forsaken
+				trait = race_undead_generic
+				trait = race_undead_scourge
+				trait = race_faceless
 			}
 		}
 		allow = {

@@ -307,7 +307,7 @@ character_event = {
 		
 		if = {
 			limit = {
-				religion_group = christian
+				TOW_religion_priests_obligated_celibacy = yes
 				OR = {
 					AND = {
 						is_ruler = yes
@@ -443,8 +443,7 @@ character_event = {
 					if = {
 						limit = {
 							is_close_relative = PREV
-							NOT = { religion = messalian }
-							NOT = { religion = zoroastrian }
+							TOW_religion_is_incestuous = no
 						}
 						add_character_modifier = {
 							name = incestuous_adulteress
@@ -455,8 +454,7 @@ character_event = {
 						limit = {
 							OR = {
 								NOT = { is_close_relative = PREV }
-								religion = messalian
-								religion = zoroastrian
+								TOW_religion_is_incestuous = yes
 							}
 						}
 						add_character_modifier = {
@@ -541,8 +539,7 @@ character_event = {
 					if = {
 						limit = {
 							is_close_relative = PREV
-							NOT = { religion = messalian }
-							NOT = { religion = zoroastrian }
+							TOW_religion_is_incestuous = no
 						}
 						add_character_modifier = {
 							name = incestuous_adulterer
@@ -554,8 +551,7 @@ character_event = {
 							is_married = yes
 							OR = {
 								NOT = { is_close_relative = PREV }
-								religion = messalian
-								religion = zoroastrian
+								TOW_religion_is_incestuous = yes
 							}
 						}
 						if = {
@@ -2203,18 +2199,7 @@ diploresponse_event = {
 		ai = no
 	}
 
-	desc = {
-		text = EVTDESC236
-		trigger = {
-			religion_group = christian
-		}
-	}
-	desc = {
-		text = EVTDESC236_NC
-		trigger = {
-			NOT = { religion_group = christian }
-		}
-	}
+	desc = EVTDESC236_NC
 
 	option = {
 		name = "OK"
@@ -2802,14 +2787,11 @@ character_event = {
 			}
 		}
 		NOR = { 
-			religion_group = muslim 
+			TOW_religion_royal_aid_duty = no
 			has_character_flag = recieved_royal_marriage_aid_duty
 		}
 		OR = {
-			AND = {
-				NOT = { has_religion_feature = religion_holy_family }
-				NOT = { has_religion_feature = religion_feature_zun }
-			}
+			TOW_religion_is_incestuous = no
 			NOT = { new_character = { is_close_relative = FROM } }
 		}
 		OR = {
@@ -3784,10 +3766,7 @@ narrative_event = {
 			if = {
 				limit = { 
 					ROOT = {
-						OR = { 
-							has_religion_feature = religion_equal 
-							has_religion_feature = religion_feature_bon
-						}
+						has_religion_feature = religion_equal 
 					}
 				}
 				ROOT = { 
@@ -3911,10 +3890,7 @@ narrative_event = {
 		if = {
 			limit = { #Offer chance to switch the vassals' succession laws.
 				ROOT = {
-					OR = { 
-						has_religion_feature = religion_equal 
-						has_religion_feature = religion_feature_bon
-					}
+					has_religion_feature = religion_equal 
 				}
 			}
 			custom_tooltip = { text = tooltip_HF23016_A }
@@ -4015,10 +3991,6 @@ narrative_event = {
 		}
 		ai_chance = {
 			factor = 50
-			modifier = {
-				factor = 0
-				has_landed_title = d_jomsvikings
-			}
 			post_reformation_ruler_conversion_score = yes
 		}
 		tooltip = { religion = THIS }

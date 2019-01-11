@@ -194,16 +194,12 @@ apply_any_applicable_harsh_penalties_effect = {
 	                    gender_equality_trigger = yes
 	                    TOW_is_uncivilized_religion_trigger = yes
 	                    is_nomadic = yes
-	                    religion = buddhist
-	                    religion = bogomilist
 	                }
 	                event_target:combatant_1 = { #Same as "FROM" in this case
 	                    OR = {
 	                        gender_equality_trigger = yes
 	                        TOW_is_uncivilized_religion_trigger = yes
 	                        is_nomadic = yes
-	                        religion = buddhist
-	                        religion = bogomilist
 	                    }
 	                }
 	            }
@@ -233,16 +229,12 @@ apply_any_applicable_harsh_penalties_effect = {
 	                    gender_equality_trigger = yes
 	                    TOW_is_uncivilized_religion_trigger = yes
 	                    is_nomadic = yes
-	                    religion = buddhist
-	                    religion = bogomilist
 	                }
 	                event_target:combatant_1 = { #Same as "FROM" in this case
 	                    OR = {
 	                        gender_equality_trigger = yes
 	                        TOW_is_uncivilized_religion_trigger = yes
 	                        is_nomadic = yes
-	                        religion = buddhist
-	                        religion = bogomilist
 	                    }
 	                }
 	            }
@@ -448,7 +440,7 @@ evaluate_extra_duel_result_score_effect = { # [SPECIAL CIRCUMSTANCES - OPTIONAL]
 	# 1. BONUSES ADDED:	adds to the score...
 	################################################################
 	if = {
-		limit = { religion_group = pagan }
+		limit = { TOW_is_uncivilized_religion_trigger = yes }
 		change_variable = {
 			which = duel_result_score #(50 + X) - Y
 			value = 3
@@ -519,7 +511,7 @@ evaluate_extra_duel_result_score_effect = { # [SPECIAL CIRCUMSTANCES - OPTIONAL]
 		}
 	}
 	if = {
-		limit = { event_target:combatant_2 = { religion_group = pagan } }
+		limit = { event_target:combatant_2 = { TOW_is_uncivilized_religion_trigger = yes } }
 		subtract_variable = {
 			which = duel_result_score #(50 + X) - Y
 			value = 3
@@ -635,10 +627,7 @@ evaluate_extra_duel_result_score_effect = { # [SPECIAL CIRCUMSTANCES - OPTIONAL]
 			event_target:combatant_2 = {
 				NOT = { is_lover = ROOT }
 				OR = {
-					ROOT = { has_religion_feature = religion_feature_zun }
-					ROOT = { has_religion_feature = religion_holy_family }
-					ROOT = { religion = messalian }
-					ROOT = { religion = zoroastrian }
+					ROOT = { TOW_religion_is_incestuous = yes }
 					NOT = { is_close_relative = ROOT }
 				}
 				possibly_romantically_interested_in_each_other_trigger = yes

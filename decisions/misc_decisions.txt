@@ -77,7 +77,7 @@ decisions = {
 	
 	reform_arathor = {
 		potential = {
-			trait = human
+			trait = race_human
 			NOT = { is_title_active = e_arathor }
 			real_tier = KING
 			independent = yes
@@ -130,7 +130,7 @@ decisions = {
 	
 	join_tyrs_guard = {
 		potential = {
-			trait = human
+			trait = race_human
 			is_ruler = no
 			religion = old_ways
 			NOT = { trait = cynical }
@@ -143,7 +143,7 @@ decisions = {
 		}
 		allow = { # This is AI only stuff
 			NOT = { has_character_flag = denied_tyrs_guard }
-			trait = human
+			trait = race_human
 			is_ruler = no
 			religion = old_ways
 			NOT = { trait = cynical }
@@ -838,8 +838,8 @@ decisions = {
 			OR = {
 				AND = {
 					OR = {
-						trait = human
-						trait = AK_trait_dwarf
+						trait = race_human
+						trait = race_dwarf
 					}
 					OR = {
 						#whatever condition I set for regular paladins existing
@@ -1205,10 +1205,10 @@ decisions = {
 	celebrate_hallows_end = {
 		potential = {
 			OR = {
-				trait = human
+				trait = race_human
 				culture = forsaken
 			}
-			NOT = { trait = undead_scourge }
+			NOT = { trait = race_undead_scourge }
 			is_ruler = yes
 			is_landed = yes
 			independent = yes
@@ -1265,10 +1265,10 @@ decisions = {
 						is_ruler = yes
 						OR = {
 							AND = {
-								trait = human
+								trait = race_human
 								NOT = { culture = forsaken }
 								ROOT = {
-									trait = human
+									trait = race_human
 									NOT = { culture = forsaken }
 								}
 							}
@@ -1365,11 +1365,11 @@ targetted_decisions = {
 		filter = home_court
 		ai_target_filter = home_court
 		from_potential = {
-			trait = human
+			trait = race_human
 			NOR = {
-				trait = undead_generic
-				trait = undead_scourge
-				trait = undead_forsaken
+				trait = race_undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
 			}
 			is_landed = yes
 			NOT = { trait = distrusts_magic }
@@ -1609,11 +1609,11 @@ targetted_decisions = {
 		filter = home_court
 		ai_target_filter = home_court
 		from_potential = {
-			trait = human
+			trait = race_human
 			NOR = {
-				trait = undead_generic
-				trait = undead_scourge
-				trait = undead_forsaken
+				trait = race_undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
 			}
 			is_landed = yes
 			OR = {
@@ -1972,11 +1972,11 @@ targetted_decisions = {
 		from_potential = {
 			war = no
 			independent = yes
-			trait = human
+			trait = race_human
 			NOR = {
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 		potential = {
@@ -1989,10 +1989,10 @@ targetted_decisions = {
 				}
 				any_attacker = {
 					OR = {
-						NOT = { trait = human }
-						trait = undead_scourge
-						trait = undead_forsaken
-						trait = undead_generic
+						NOT = { trait = race_human }
+						trait = race_undead_scourge
+						trait = race_undead_forsaken
+						trait = race_undead_generic
 					}
 					is_primary_war_attacker = yes
 					NOT = { character = ROOT }

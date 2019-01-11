@@ -10,13 +10,13 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = high_elf
-			trait = blood_elf
-			trait = wretched
+			trait = race_high_elf
+			trait = race_blood_elf
+			trait = race_wretched
 		}
 		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 		is_landed = yes
 		OR = {
@@ -29,13 +29,13 @@ character_event = {
 			any_liege = {
 				has_landed_title = k_silvermoon
 				OR = {
-					trait = high_elf
-					trait = blood_elf
-					trait = wretched
+					trait = race_high_elf
+					trait = race_blood_elf
+					trait = race_wretched
 				}
 				NOR = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 					religion = burning_legion
 					religion = old_gods
 					religion = twilights_hammer
@@ -73,13 +73,13 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = high_elf
-			trait = blood_elf
-			trait = wretched
+			trait = race_high_elf
+			trait = race_blood_elf
+			trait = race_wretched
 		}
 		OR = {
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 			is_landed = no
 		}
 		has_character_modifier = realm_magic_counter
