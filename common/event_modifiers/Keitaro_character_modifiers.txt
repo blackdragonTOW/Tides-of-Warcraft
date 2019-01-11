@@ -60,3 +60,62 @@
 
 Keitaro_has_recently_fomented_a_rebellion = {
 }
+
+##########################
+# Adventure modifiers
+##########################
+
+Keitaro_sent_troops_to_adventurer = {
+	icon = 31
+
+	is_visible = { 
+		character = FROM
+	}
+	global_levy_size = -0.1
+	levy_reinforce_rate = -0.1
+}
+
+Keitaro_adventurer_puny_army = {
+	icon = 13
+	monthly_character_prestige = 0.1
+}
+
+Keitaro_adventurer_weak_army = {
+	icon = 13
+	monthly_character_prestige = 0.25
+}
+
+Keitaro_adventurer_medium_army = {
+	icon = 13
+	monthly_character_prestige = 0.5
+}
+
+Keitaro_adventurer_powerful_army = {
+	icon = 13
+	monthly_character_prestige = 1
+}
+
+Keitaro_adventurer_very_powerful_army = {
+	icon = 13
+	monthly_character_prestige = 2
+}
+
+Keitaro_jolly = {
+	health = 0.2
+	icon = 39
+}
+
+Keitaro_happy = {
+	health = 0.4
+	icon = 39
+}
+
+Keitaro_grumpy = {
+	health = -0.25
+	icon = 40
+}
+
+Keitaro_unhappy = {
+	health = -0.5
+	icon = 40
+}

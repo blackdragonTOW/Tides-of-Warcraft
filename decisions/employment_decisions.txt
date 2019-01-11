@@ -105,18 +105,7 @@ decisions = {
 				hidden_tooltip = {
 					if = {
 						limit = {
-							has_dharmic_religion_trigger = yes
-						}
-						add_trait = kshatriya
-						character_event = { id = RoI.30121 }
-					}
-					if = {
-						limit = {
-							OR = {
-								religion = hellenic_pagan
-								religion = hellenic_pagan_reformed
-								has_religion_feature = religion_astrology
-							}
+							TOW_religion_practices_astrology = yes
 						}
 						hidden_tooltip = { add_western_zodiac_trait_effect = yes }
 					}

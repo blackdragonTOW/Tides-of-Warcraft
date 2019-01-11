@@ -4,32 +4,6 @@ defined_text = {
 	
 	text = {
 		trigger = {
-			religion = catholic
-			any_war = {
-				OR = {
-					using_cb = crusade
-					using_cb = new_crusade
-				}
-			}
-		}
-		localisation_key = string_rp_crusading
-	}
-	
-	text = {
-		trigger = {
-			NOT = { religion = catholic }
-			any_war = {
-				OR = {
-					using_cb = crusade
-					using_cb = new_crusade
-				}
-			}
-		}
-		localisation_key = string_rp_ghw
-	}
-	
-	text = {
-		trigger = {
 			prisoner = yes
 		}
 		localisation_key = string_rp_prison
@@ -102,13 +76,6 @@ defined_text = {
 	
 	text = {
 		trigger = {
-			trait = has_bubonic_plague
-		}
-		localisation_key = string_rp_plague
-	}
-	
-	text = {
-		trigger = {
 			culture = horse
 		}
 		localisation_key = string_rp_horse
@@ -153,51 +120,10 @@ defined_text = {
 	
 	text = {
 		trigger = {
-			trait = kow_tow_travels
-		}
-		localisation_key = string_rp_kow_tow
-	}
-	
-	text = {
-		trigger = {
 			has_character_modifier = writing_a_book
 			
 		}
 		localisation_key = string_rp_book
-	}
-	
-	text = {
-		trigger = {
-			religion = zoroastrian
-			OR = {
-				any_consort = {
-					is_parent_of = ROOT
-				}
-				any_spouse = {
-					is_parent_of = ROOT
-				}
-				any_consort = {
-					sibling = ROOT
-				}
-				any_spouse = {
-					sibling = ROOT
-				}
-				any_consort = {
-					is_child_of = ROOT
-				}
-				any_spouse = {
-					is_child_of = ROOT
-				}
-			} 
-		}
-		localisation_key = string_rp_sacred_xwedodah
-	}
-	
-	text = {
-		trigger = {
-			has_landed_title = e_roman_empire
-		}
-		localisation_key = string_rp_rome
 	}
 	
 	text = {

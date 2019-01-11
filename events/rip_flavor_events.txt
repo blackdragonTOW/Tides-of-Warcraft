@@ -10576,104 +10576,98 @@ character_event = {
 		set_character_flag = chess_with_death
 		
 
-		if = {
-			limit = { religion_group = christian }
-			random_list = {
-				50 = {
-					create_character = {
-						random_traits = no
-						age = 32
-						dynasty = none
-						female = yes
-						trait = mastermind_theologian
-						trait = nun
-						trait = chaste
-						trait = shrewd
-						trait = gamer
-						trait = patient
-						trait = fatigue
-						trait = on_pilgrimage 
-						attributes = {
-							martial = 5
-						}
+		random_list = {
+			50 = {
+				create_character = {
+					random_traits = no
+					age = 32
+					dynasty = none
+					female = yes
+					trait = mastermind_theologian
+					trait = chaste
+					trait = shrewd
+					trait = gamer
+					trait = patient
+					trait = fatigue
+					trait = on_pilgrimage 
+					attributes = {
+						martial = 5
 					}
-					new_character = { save_event_target_as = death }
 				}
-				50 = {
-					create_character = {
-						random_traits = no
-						age = 32
-						dynasty = none
-						female = no
-						trait = mastermind_theologian
-						trait = monk
-						trait = chaste
-						trait = shrewd
-						trait = gamer
-						trait = patient
-						trait = fatigue 
-						trait = on_pilgrimage
-						attributes = {
-							martial = 5
-						}
+				new_character = { save_event_target_as = death }
+			}
+			50 = {
+				create_character = {
+					random_traits = no
+					age = 32
+					dynasty = none
+					female = no
+					trait = mastermind_theologian
+					trait = chaste
+					trait = shrewd
+					trait = gamer
+					trait = patient
+					trait = fatigue 
+					trait = on_pilgrimage
+					attributes = {
+						martial = 5
 					}
-					new_character = { save_event_target_as = death }
 				}
-			}			
-		}
-		if = {
-			limit = { NOT = { religion_group = christian } }
-			random_list = {
-				50 = {
-					create_character = {
-						random_traits = no
-						age = 32
-						dynasty = none
-						female = yes
-						name = Eugenia
-						culture = italian
-						race = italian
-						religion = catholic
-						trait = mastermind_theologian
-						trait = nun
-						trait = chaste
-						trait = shrewd
-						trait = gamer
-						trait = patient
-						trait = fatigue 
-						trait = on_pilgrimage
-						attributes = {
-							martial = 5
-						}
-					}
-					new_character = { save_event_target_as = death }
-				}
-				50 = {
-					create_character = {
-						random_traits = no
-						age = 32
-						dynasty = none
-						female = no
-						name = Augusto
-						culture = italian
-						race = italian
-						religion = catholic
-						trait = mastermind_theologian
-						trait = monk
-						trait = chaste
-						trait = shrewd
-						trait = gamer
-						trait = patient
-						trait = fatigue 
-						trait = on_pilgrimage
-						attributes = {
-							martial = 5
-						}
-					}
-					new_character = { save_event_target_as = death }
-				}
-			}			
-		}
+				new_character = { save_event_target_as = death }
+			}
+		}		
+		# TOW TODO : Define "death" characters	
+		#if = {
+		#	limit = { NOT = { religion_group = christian } }
+		#	random_list = {
+		#		50 = {
+		#			create_character = {
+		#				random_traits = no
+		#				age = 32
+		#				dynasty = none
+		#				female = yes
+		#				name = Eugenia
+		#				culture = italian
+		#				race = italian
+		#				religion = catholic
+		#				trait = mastermind_theologian
+		#				trait = chaste
+		#				trait = shrewd
+		#				trait = gamer
+		#				trait = patient
+		#				trait = fatigue 
+		#				trait = on_pilgrimage
+		#				attributes = {
+		#					martial = 5
+		#				}
+		#			}
+		#			new_character = { save_event_target_as = death }
+		#		}
+		#		50 = {
+		#			create_character = {
+		#				random_traits = no
+		#				age = 32
+		#				dynasty = none
+		#				female = no
+		#				name = Augusto
+		#				culture = italian
+		#				race = italian
+		#				religion = catholic
+		#				trait = mastermind_theologian
+		#				trait = chaste
+		#				trait = shrewd
+		#				trait = gamer
+		#				trait = patient
+		#				trait = fatigue 
+		#				trait = on_pilgrimage
+		#				attributes = {
+		#					martial = 5
+		#				}
+		#			}
+		#			new_character = { save_event_target_as = death }
+		#		}
+		#	}			
+		#}
 
 		set_character_flag = chess_30222	
 		event_target:death = {
@@ -10815,11 +10809,12 @@ character_event = {
 		name = EVTOPTA_RIP_30223
 		custom_tooltip = { text = EVTOPTA_RIP_30223_TOOLTIP }
 
-		if = {
-			limit = { NOT = { religion_group = christian } }
-			remove_trait_zealous_effect = yes
-			add_trait = sympathy_christendom
-		}
+		# TOW Todo : Change catholic in this event for another religion
+		#if = {
+		#	limit = { NOT = { religion_group = christian } }
+		#	remove_trait_zealous_effect = yes
+		#	add_trait = sympathy_christendom
+		#}
 
 		set_character_flag = invited_death
 		set_character_flag = chess_30224
@@ -10913,8 +10908,6 @@ narrative_event = {
 		FROM = { 
 			remove_trait = fatigue 
 			remove_trait = on_pilgrimage
-			remove_trait = nun
-			remove_trait = monk
 		}
 		if = { 
 			limit = {
@@ -11836,22 +11829,21 @@ narrative_event = {
 					has_character_flag = immortal_rival_highlander
 					has_character_flag = immortal_rival_evildude
 					has_character_flag = immortal_rival_goodguy
-					has_character_flag = immortal_rival_shieldmaiden
 					has_character_flag = immortal_rival_horse
 				}
 			}
 			random_list = {
-				100 = {
+				130 = {
 					set_character_flag = immortal_rival_highlander
 				}
-				100 = {
+				130 = {
 					modifier = {
 						factor = 2
 						is_virtous = yes
 					}
 					set_character_flag = immortal_rival_evildude
 				}
-				100 = {
+				130 = {
 					modifier = {
 						factor = 2
 						is_wicked = yes
@@ -11867,17 +11859,6 @@ narrative_event = {
 						}
 					}
 					set_character_flag = immortal_rival_goodguy
-				}
-				100 = {
-					set_character_flag = immortal_rival_shieldmaiden					
-					modifier = {
-						factor = 2
-						combat_rating = 30
-					}
-					modifier = {
-						factor = 1.5
-						combat_rating = 40
-					}
 				}
 				25 = {
 					modifier = {
@@ -11916,12 +11897,6 @@ narrative_event = {
 			has_character_flag = immortal_rival_goodguy 
 		}
 		text = RIP.30300.d.goodguy
-	}
-	desc = {
-		trigger = { 
-			has_character_flag = immortal_rival_shieldmaiden 
-		}
-		text = RIP.30300.d.shieldmaiden
 	}
 	desc = {
 		trigger = { 
@@ -12086,40 +12061,6 @@ character_event = {
 		}
 		if = {
 			limit = {
-				has_character_flag = immortal_rival_shieldmaiden
-			}
-			create_character = {
-				random_traits = no
-				name = "Torhild"
-				dynasty = none
-				religion = norse_pagan
-				culture = norse
-				female = yes
-				age = 1300
-				immortal_age = 18
-				attributes = {
-					martial = 15
-					diplomacy = 8
-					stewardship = 8
-					intrigue = 10
-					learning = 12
-				}
-				health = 6
-				fertility = 0.8
-				trait = tough_soldier
-				trait = lustful
-				trait = immortal
-				trait = kind
-				trait = honest
-				trait = robust
-				trait = brave
-				trait = sea_queen
-				trait = hunter
-				historical = yes
-			}
-		}
-		if = {
-			limit = {
 				has_character_flag = immortal_rival_horse
 			}
 			create_character = {
@@ -12267,12 +12208,6 @@ character_event = {
 			has_character_flag = immortal_rival_goodguy 
 		}
 		text = RIP.30301.d.goodguy
-	}
-	desc = {
-		trigger = { 
-			has_character_flag = immortal_rival_shieldmaiden 
-		}
-		text = RIP.30301.d.shieldmaiden
 	}
 	desc = {
 		trigger = { 
@@ -13245,7 +13180,6 @@ character_event = { # flag clear
 		clr_character_flag = immortal_rival_highlander
 		clr_character_flag = immortal_rival_evildude
 		clr_character_flag = immortal_rival_goodguy
-		clr_character_flag = immortal_rival_shieldmaiden
 		clr_character_flag = immortal_rival_horse		
 	}
 }

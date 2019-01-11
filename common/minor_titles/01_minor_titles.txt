@@ -73,11 +73,7 @@ title_dalaran_six = {
 	
 	allowed_to_hold = {
 		is_adult = yes
-		OR = {
-			trait = mage
-			trait = alchemist
-			trait = techmage
-		}
+		trait = mage
 		NOT = { trait = incapable }
 		liege = {
 			has_landed_title = c_dalaran

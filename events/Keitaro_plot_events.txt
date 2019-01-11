@@ -1670,9 +1670,11 @@ character_event = {
 							tier = baron
 							AND = {
 								tier = count
-								capital_holding = {
-									owner = {
-										character = ROOT
+								location = {
+									capital_holding = {
+										owner = {
+											character = ROOT
+										}
 									}
 								}
 							}
@@ -1692,17 +1694,21 @@ character_event = {
 					if = {
 						limit = {
 							tier = count
-							capital_holding = {
-								owner = {
-									character = ROOT
+							location = {
+								capital_holding = {
+									owner = {
+										character = ROOT
+									}
 								}
 							}
 						}
 
-						capital_holding = {
-							add_holding_modifier = {
-								name = Keitaro_remove_levy_30
-								duration = 1
+						location = {
+							capital_holding = {
+								add_holding_modifier = {
+									name = Keitaro_remove_levy_30
+									duration = 1
+								}
 							}
 						}
 					}
@@ -1808,8 +1814,10 @@ character_event = {
 					}
 				}
 			}
-			capital_scope = {
-				save_event_target_as = root_capital
+			event_target:plot_leader = {
+				capital_scope = {
+					save_event_target_as = root_capital
+				}
 			}
 			
 			spawn_unit = {

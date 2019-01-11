@@ -196,10 +196,6 @@ character_event = {
 							trait = zealous
 							AND = { 
 								trait = erudite 
-								NOR = { 
-									religion = hellenic_pagan
-									religion = hellenic_pagan_reformed
-								}
 								ROOT = { TOW_is_uncivilized_religion_trigger = yes }
 							}
 							AND = { 
@@ -2256,14 +2252,6 @@ character_event = {
 				modifier = { #Context
 					factor = 0
 					FROM = { NOT = { TOW_is_uncivilized_religion_trigger = yes } }
-				}
-				modifier = { #Context
-					factor = 0
-					FROM = { religion = hellenic_pagan }
-				}
-				modifier = { #Context
-					factor = 0
-					FROM = { religion = hellenic_pagan_reformed }
 				}
 				modifier = { #Try to pick opposite traits if any are available
 					factor = 1.5

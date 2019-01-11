@@ -22,7 +22,7 @@ character_event = {
 			has_religion_feature = religion_equal
 			has_religion_feature = religion_feature_bon
 		}
-		bad_priest_light_group = no
+		NOT = { trait = bad_priest_light_group }
 	}
 	
 	hide_window = yes
@@ -805,7 +805,7 @@ character_event = {
 			primary_title = { has_law = status_of_women_3 }
 			primary_title = { has_law = status_of_women_4 }
 		} 
-		bad_priest_light_group = no
+		NOT = { trait = bad_priest_light_group }
 
 		any_realm_character = {	
 			is_close_relative = ROOT
@@ -1257,7 +1257,7 @@ character_event = {
 			has_religion_feature = religion_equal
 			has_religion_feature = religion_feature_bon
 		} 
-		bad_priest_light_group = no
+		NOT = { trait = bad_priest_light_group }
 
 		any_vassal = {	
 			is_landed = yes

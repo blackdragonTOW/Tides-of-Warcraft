@@ -1907,12 +1907,7 @@
 			factor = 0
 			NOR = {
 				has_job_title = job_marshal
-				primary_title = {
-					OR = {
-						title = d_sunfury
-						# Add military orders here
-					}
-				}
+				TOW_is_primary_title_military_order = yes
 				has_minor_title = title_commander
 				trait = warrior
 				trait = paladin
@@ -1930,12 +1925,7 @@
 			factor = 0.2
 			OR = {
 				has_job_title = job_marshal
-				primary_title = {
-					OR = {
-						title = d_sunfury
-						# Add military orders here
-					}
-				}
+				TOW_is_primary_title_military_order = yes
 				has_minor_title = title_commander
 			}
 		}

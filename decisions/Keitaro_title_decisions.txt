@@ -1,0 +1,412 @@
+title_decisions = {
+
+	## Create new Vassal
+	Keitaro_title_create_new_vassal = {
+		ai = no
+		only_rulers = yes
+		ai_target_filter = owned
+		filter = owned
+
+		diplomacy_icon = GFX_Keitaro_create_vassal_diplomacy
+		
+		from_potential = {
+			is_playable = yes
+			higher_real_tier_than = COUNT
+		}
+
+		potential = {
+			tier = COUNT
+			owner = { character = FROM }
+		}
+
+		allow = {
+			location = {
+				capital_holding = {
+					OR = {
+						holding_type = castle
+						holding_type = city
+						holding_type = temple
+						holding_type = tribal
+					}
+				}
+			}
+			custom_tooltip = {
+				text = province_not_capital_tooltip
+				hidden_tooltip = {
+					FROM = {
+						capital_scope = {
+					    	county = {
+					    		NOT = { title = ROOT }
+					    	}
+					  	}
+					}
+				}
+			}
+		}
+
+		effect = {
+			FROM = {
+				primary_title = {
+					FROM = {
+						if = {
+							limit = { gender_equality_trigger = no }
+							create_character = {
+								random_traits = yes
+								dynasty = random
+								female = no
+								employer = PREVPREV
+							}
+						}
+						if = {
+							limit = { gender_equality_trigger = yes }
+							create_character = {
+								random_traits = yes
+								dynasty = random
+								employer = PREVPREV
+							}
+						}
+						
+						new_character = {
+							Keitaro_remove_bad_traits = yes
+							grant_title = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	Keitaro_title_pillage_all_settlements = {
+		ai = no
+		only_rulers = yes
+		ai_target_filter = owned
+		filter = owned
+
+		diplomacy_icon = GFX_Keitaro_raider_diplomacy
+
+		from_potential = {
+			is_playable = yes
+			OR = {
+				is_nomadic = yes
+				AND = {
+					is_tribal = yes
+					independent = yes
+				}
+			}
+			has_dlc = "Horse Lords"
+		}
+
+		potential = {
+			tier = COUNT
+			owner = { character = FROM }
+
+			location = {
+				any_province_holding = {
+					Keitaro_holding_can_be_pillaged_by_from = yes
+				}
+			}
+		}
+
+		allow = {
+			location = {
+				any_province_holding = {
+					Keitaro_holding_can_be_pillaged_by_from_tooltip = yes
+
+					Keitaro_holding_can_be_pillaged_allow = yes
+				}
+			}
+		}
+
+		effect = {
+			location = {
+				any_province_holding = {
+					limit = {
+						Keitaro_holding_can_be_pillaged_by_from_tooltip = yes
+					
+						Keitaro_holding_can_be_pillaged_allow = yes
+					}
+
+					FROM = { save_event_target_as = pillager }
+					Keitaro_pillage_holding = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	Keitaro_title_stop_pillage_all_settlements = {
+		ai = no
+		only_rulers = yes
+		ai_target_filter = owned
+		filter = owned
+
+		diplomacy_icon = GFX_Keitaro_raider_diplomacy
+		
+		from_potential = {
+			is_playable = yes
+			OR = {
+				is_nomadic = yes
+				AND = {
+					is_tribal = yes
+					independent = yes
+				}
+			}
+			has_dlc = "Horse Lords"
+		}
+
+		potential = {
+			tier = COUNT
+			owner = { character = FROM }
+			location = {
+				any_province_holding = {
+					Keitaro_holding_can_stop_pillage_by_from = yes
+				}
+			}
+		}
+
+		allow = {
+			location = {
+				any_province_holding = {
+					Keitaro_holding_can_stop_pillage_by_from_allow = yes
+				}
+			}
+		}
+
+		effect = {
+			location = {
+				any_province_holding = {
+					limit = {
+						Keitaro_holding_can_stop_pillage_by_from = yes
+					}
+
+					custom_tooltip = {
+						text = KEITARO_TOOLTIP_STOP_PILLAGING
+						hidden_tooltip = {
+							add_holding_modifier = {
+								modifier = stop_burning_land
+								hidden = yes
+								years = 1
+							}
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	## Grant title to smallest clan
+	Keitaro_title_grant_title_to_smallest_clan = {
+		ai = no
+		only_rulers = yes
+		ai_target_filter = owned
+		filter = owned
+
+		diplomacy_icon = GFX_Keitaro_create_vassal_diplomacy
+
+		from_potential = {
+			is_playable = yes
+			is_nomadic = yes
+			tier = emperor
+		}
+
+		potential = {
+			tier = COUNT
+			owner = { character = FROM }
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = province_not_capital_tooltip
+				hidden_tooltip = {
+					FROM = {
+						capital_scope = {
+							county = {
+					    		NOT = { title = ROOT }
+					    	}
+					  	}
+					}
+				}
+			}
+			FROM = {
+				any_vassal = {
+					is_nomadic = yes
+					tier = king
+					clan_title = { always = yes }
+				}
+			}
+		}
+
+		effect = {
+			hidden_tooltip = {
+				FROM = {
+					set_variable = { which = global_Keitaro_smallest_clan_land_count value = -1 }
+					set_variable = { which = global_Keitaro_smallest_clan_std_land_count value = -1 }
+					any_vassal = {
+						limit = {
+							is_nomadic = yes
+							tier = king
+							clan_title = { always = yes }
+						}
+						set_variable = { which = Keitaro_clan_standard_land_count value = 0 }
+						set_variable = { which = Keitaro_clan_nomadic_land_count value = 0 }
+						any_demesne_title = {
+							limit = {
+								tier = count
+								location = { Keitaro_is_county_nomadic = yes }
+							}
+							PREV = { change_variable = { which = Keitaro_clan_nomadic_land_count value = 1 } }
+						}
+						any_demesne_title = {
+							limit = {
+								tier = count
+								location = { NOT = { Keitaro_is_county_nomadic = yes } }
+							}
+							PREV = { change_variable = { which = Keitaro_clan_standard_land_count value = 1 } }
+						}
+
+						
+						if = {
+							limit = {
+								OR = {
+									is_variable_equal = { which = global_Keitaro_smallest_clan_land_count value = -1 }
+									NOT = { check_variable = { which = Keitaro_clan_nomadic_land_count which = global_Keitaro_smallest_clan_land_count } }
+									AND = {
+										is_variable_equal = { which = Keitaro_clan_nomadic_land_count which = global_Keitaro_smallest_clan_land_count }
+										NOT = { check_variable = { which = Keitaro_clan_standard_land_count which = global_Keitaro_smallest_clan_std_land_count } }
+									}
+								}
+							}
+							set_variable = { which = global_Keitaro_smallest_clan_land_count which = Keitaro_clan_nomadic_land_count }
+							set_variable = { which = global_Keitaro_smallest_clan_std_land_count which = Keitaro_clan_standard_land_count }
+							save_event_target_as = smallest_clan_holder
+						}
+						
+					}
+				}
+			}
+			event_target:smallest_clan_holder = {
+				grant_title = ROOT
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	Keitaro_ask_claimed_title_from_liege = {
+		ai = no
+		only_rulers = yes
+		ai_target_filter = realm_owned
+		filter = realm_owned
+
+		diplomacy_icon = GFX_Keitaro_claim_diplomacy
+		
+		## Decision taker potential
+		from_potential = {
+			is_ruler = yes
+			is_adult = yes
+			in_revolt = no
+		}
+
+		## Target title potential
+		potential = {
+			ROOT = {
+				NOT = { tier = emperor }
+
+				OR = {
+					FROM = { has_ambition = obj_gain_any_title }
+					claimed_by = FROM
+					AND = {
+						has_dlc = "Conclave"
+						holder_scope = { owes_favor_to = FROM }
+					}
+				}
+				temporary = no
+			}
+			holder_scope = {
+				is_adult = yes
+				in_revolt = no
+				demesne_size = 2
+				is_liege_of = FROM
+			}
+		}
+
+		allow = {
+			ROOT = {
+				can_be_given_away = yes
+				OR = {
+					FROM = { has_ambition = obj_gain_any_title }
+					claimed_by = FROM
+					conditional_tooltip = {
+						trigger = { has_dlc = "Conclave" }
+						holder_scope = { owes_favor_to = FROM }
+					}
+				}
+				holder_scope = {
+					NOT = {
+						has_opinion_modifier = {
+							who = FROM
+							modifier = Keitaro_opinion_ask_claimed_title_from_liege
+						}
+					}
+					prisoner = no
+					is_inaccessible_trigger = no
+				}
+			}
+			FROM = {
+				prestige >= 60
+				prisoner = no
+				is_inaccessible_trigger = no
+			}
+		}
+
+		effect = {
+			FROM = {
+				prestige = -60
+				save_event_target_as = asker
+			}
+			ROOT = {
+				save_event_target_as = title
+				holder_scope = {
+					save_event_target_as = holder
+				}
+			}
+
+			custom_tooltip = {
+				text = EVTTOOLTIP_Keitaro_ask_claimed_title_from_liege
+				hidden_tooltip = {
+					event_target:asker = {
+						event_target:holder = {
+							opinion = {
+								modifier = Keitaro_opinion_ask_claimed_title_from_liege
+								who = event_target:asker
+								years = 5
+							}
+							letter_event = {
+								id = Keitaro_Decisions.7
+								days = 1
+								random = 3
+							}
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

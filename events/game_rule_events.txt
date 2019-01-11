@@ -15,7 +15,6 @@ character_event = {
 	is_triggered_only = yes
 	
 	only_playable = yes
-	war = no
 	
 	trigger = {
 		is_merchant_republic = no
@@ -31,6 +30,7 @@ character_event = {
 					}
 				}
 			}
+			is_contested = no
 		}
 		has_game_rule = {
 			name = de_jure_requirement
@@ -52,6 +52,7 @@ character_event = {
 						}
 					}
 				}
+				is_contested = no
 			}
 			save_event_target_as = title_to_destroy
 		}
@@ -119,55 +120,79 @@ character_event = {
 		in_revolt = no
 		independent = no
 	}
+
+	immediate = {
+		if = {
+			limit = {
+				ai = yes
+			}
+			clr_character_flag = Keitaro_random_remain
+			clr_character_flag = Keitaro_random_indep
+			random_list = {
+				1 = { set_character_flag = Keitaro_random_remain }
+				1 = { set_character_flag = Keitaro_random_indep }
+			}
+		}
+		
+	}
 	
 	option = {
 		name = EVTOPTA_GR_11 # Remain a vassal
 		ai_chance = {
 			factor = 100
-			modifier = {
-				factor = 2
-				opinion = {
-					who = FROM
-					value = 25
-				}
-			}
-			modifier = {
-				factor = 2
-				opinion = {
-					who = FROM
-					value = 50
-				}
-			}
-			modifier = {
-				factor = 2
-				opinion = {
-					who = FROM
-					value = 75
-				}
-			}
-			modifier = {
-				factor = 2
-				opinion = {
-					who = FROM
-					value = 100
-				}
-			}
-			modifier = {
-				factor = 2
-				liege = {
-					NOT = {
-						realm_size = 50
-					}
-				}
-			}
-			modifier = {
-				factor = 3
-				is_nomadic = yes
-			}
-			modifier = {
-				factor = 4
-				trait = content
-			}
+			modifier = { factor = 1.2	opinion = { who = FROM value = 10 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 20 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 30 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 40 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 50 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 60 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 70 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 80 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 90 } }
+			modifier = { factor = 1.2	opinion = { who = FROM value = 100 } }
+
+			modifier = { factor = 1.1	NOT = { relative_power_to_liege = 0.9 } }
+			modifier = { factor = 1.2	NOT = { relative_power_to_liege = 0.8 } }
+			modifier = { factor = 1.2	NOT = { relative_power_to_liege = 0.7 } }
+			modifier = { factor = 1.2	NOT = { relative_power_to_liege = 0.6 } }
+			modifier = { factor = 1.3	NOT = { relative_power_to_liege = 0.5 } }
+			modifier = { factor = 1.4	NOT = { relative_power_to_liege = 0.4 } }
+			modifier = { factor = 1.5	NOT = { relative_power_to_liege = 0.3 } }
+			modifier = { factor = 1.6	NOT = { relative_power_to_liege = 0.2 } }
+			modifier = { factor = 2		NOT = { relative_power_to_liege = 0.1 } }
+			modifier = { factor = 3		NOT = { relative_power_to_liege = 0.01 } }
+
+			modifier = { factor = 1.1	ai_honor = 10 }
+			modifier = { factor = 1.1	ai_honor = 20 }
+			modifier = { factor = 1.1	ai_honor = 30 }
+			modifier = { factor = 1.1	ai_honor = 40 }
+			modifier = { factor = 1.1	ai_honor = 50 }
+			modifier = { factor = 1.1	ai_honor = 60 }
+			modifier = { factor = 1.1	ai_honor = 70 }
+			modifier = { factor = 1.1	ai_honor = 80 }
+			modifier = { factor = 1.1	ai_honor = 90 }
+			modifier = { factor = 1.1	ai_honor = 100 }
+			
+			modifier = { factor = 1.1	NOT = { ai_rationality = -10 } has_character_flag = Keitaro_random_remain }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -20 } has_character_flag = Keitaro_random_remain }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -30 } has_character_flag = Keitaro_random_remain }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -40 } has_character_flag = Keitaro_random_remain }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -50 } has_character_flag = Keitaro_random_remain }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -60 } has_character_flag = Keitaro_random_remain }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -70 } has_character_flag = Keitaro_random_remain }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -80 } has_character_flag = Keitaro_random_remain }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -90 } has_character_flag = Keitaro_random_remain }
+
+			modifier = { factor = 1.5	trait = craven }
+			modifier = { factor = 1.25	trait = slothful }
+			modifier = { factor = 1.25	trait = stressed }
+			modifier = { factor = 3		trait = content }
+
+			modifier = { factor = 1.1	event_target:nomadic_heir = { culture_group = ROOT } }
+			modifier = { factor = 1.25	event_target:nomadic_heir = { culture = ROOT } }
+
+			modifier = { factor = 3		is_nomadic = yes }
+			modifier = { factor = 1.5	is_tribal = yes }
 		}
 	}
 	option = {
@@ -184,54 +209,100 @@ character_event = {
 				}
 			}
 			modifier = {
-				factor = 2
+				factor = 5
 				clan = yes
 				OR = {
 					has_feud_with = FROM
 					is_rival = FROM
 				}
 			}
+
+			modifier = { factor = 10		Keitaro_is_liege_tyrant = yes }
+			
+
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -10 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -20 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -30 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -40 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -50 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -60 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -70 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -80 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -90 } } }
+			modifier = { factor = 1.2	NOT = { opinion = { who = FROM value = -100 } } }
+
+			modifier = { factor = 1.1	relative_power_to_liege = 1.25 }
+			modifier = { factor = 1.15	relative_power_to_liege = 1.5 }
+			modifier = { factor = 1.15	relative_power_to_liege = 1.75 }
+			modifier = { factor = 1.15	relative_power_to_liege = 2.0 }
+			modifier = { factor = 1.25	relative_power_to_liege = 2.25 }
+			modifier = { factor = 1.25	relative_power_to_liege = 2.5 }
+			modifier = { factor = 1.25	relative_power_to_liege = 2.75 }
+			modifier = { factor = 1.5	relative_power_to_liege = 3.0 }
+			modifier = { factor = 1.5	relative_power_to_liege = 3.25 }
+			modifier = { factor = 1.5	relative_power_to_liege = 3.5 }
+			modifier = { factor = 2.0	relative_power_to_liege = 3.75 }
+			modifier = { factor = 2.5	relative_power_to_liege = 4.0 }
+
+			modifier = { factor = 3		trait = ambitious }
+			modifier = { factor = 1.5	trait = proud }
+			modifier = { factor = 1.25	trait = brave }
+
 			modifier = {
 				factor = 2
-				NOT = {
-					opinion = {
-						who = FROM
-						value = -25
-					}
+				ai_zeal = 50
+				event_target:nomadic_heir = {
+					Keitaro_root_dislikes_religion = yes
 				}
 			}
-			modifier = {
-				factor = 2
-				NOT = {
-					opinion = {
-						who = FROM
-						value = -50
-					}
-				}
-			}
-			modifier = {
-				factor = 2
-				NOT = {
-					opinion = {
-						who = FROM
-						value = -75
-					}
-				}
-			}
-			modifier = {
-				factor = 2
-				NOT = {
-					opinion = {
-						who = FROM
-						value = -100
-					}
-				}
-			}
-			modifier = {
-				factor = 2
-				trait = ambitious
-			}
+
+			modifier = { factor = 1.05	FROM = { capital_scope = { distance = { who = ROOT value = 200 } } } }
+			modifier = { factor = 1.05	FROM = { capital_scope = { distance = { who = ROOT value = 250 } } } }
+			modifier = { factor = 1.05	FROM = { capital_scope = { distance = { who = ROOT value = 300 } } } }
+			modifier = { factor = 1.05	FROM = { capital_scope = { distance = { who = ROOT value = 350 } } } }
+			modifier = { factor = 1.05	FROM = { capital_scope = { distance = { who = ROOT value = 400 } } } }
+			modifier = { factor = 1.05	FROM = { capital_scope = { distance = { who = ROOT value = 450 } } } }
+			modifier = { factor = 1.1	FROM = { capital_scope = { distance = { who = ROOT value = 500 } } } }
+			modifier = { factor = 1.1	FROM = { capital_scope = { distance = { who = ROOT value = 550 } } } }
+			modifier = { factor = 1.1	FROM = { capital_scope = { distance = { who = ROOT value = 600 } } } }
+			modifier = { factor = 1.1	FROM = { capital_scope = { distance = { who = ROOT value = 650 } } } }
+			modifier = { factor = 1.15	FROM = { capital_scope = { distance = { who = ROOT value = 700 } } } }
+			modifier = { factor = 1.15	FROM = { capital_scope = { distance = { who = ROOT value = 750 } } } }
+			modifier = { factor = 1.15	FROM = { capital_scope = { distance = { who = ROOT value = 800 } } } }
+			modifier = { factor = 1.15	FROM = { capital_scope = { distance = { who = ROOT value = 850 } } } }
+			modifier = { factor = 1.15	FROM = { capital_scope = { distance = { who = ROOT value = 900 } } } }
+			modifier = { factor = 1.15	FROM = { capital_scope = { distance = { who = ROOT value = 950 } } } }
+			modifier = { factor = 1.2	FROM = { capital_scope = { distance = { who = ROOT value = 1000 } } } }
+			modifier = { factor = 1.3	FROM = { capital_scope = { distance = { who = ROOT value = 1100 } } } }
+			modifier = { factor = 1.4	FROM = { capital_scope = { distance = { who = ROOT value = 1200 } } } }
+			modifier = { factor = 1.5	FROM = { capital_scope = { distance = { who = ROOT value = 1300 } } } }
+			modifier = { factor = 1.6	FROM = { capital_scope = { distance = { who = ROOT value = 1400 } } } }
+			modifier = { factor = 1.7	FROM = { capital_scope = { distance = { who = ROOT value = 1500 } } } }
+			
+
+			modifier = { factor = 1.1	NOT = { ai_rationality = -10 } has_character_flag = Keitaro_random_indep }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -20 } has_character_flag = Keitaro_random_indep }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -30 } has_character_flag = Keitaro_random_indep }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -40 } has_character_flag = Keitaro_random_indep }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -50 } has_character_flag = Keitaro_random_indep }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -60 } has_character_flag = Keitaro_random_indep }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -70 } has_character_flag = Keitaro_random_indep }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -80 } has_character_flag = Keitaro_random_indep }
+			modifier = { factor = 1.1	NOT = { ai_rationality = -90 } has_character_flag = Keitaro_random_indep }
+
+			modifier = { factor = 1.1	NOT = { ai_honor = -10 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -20 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -30 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -40 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -50 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -60 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -70 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -80 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -90 } }
+			modifier = { factor = 1.1	NOT = { ai_honor = -100 } }
 		}
+
+		if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : [Root.GetTitledName] broke free from the rule of [nomadic_heir.GetTitledName], who inherited from [From.GetTitledName]" }
 		
 		hidden_tooltip = {
 			event_target:nomadic_heir = { character_event = { id = GR.12 days = 1 } }

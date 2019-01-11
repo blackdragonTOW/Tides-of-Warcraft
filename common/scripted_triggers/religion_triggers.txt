@@ -9,3 +9,67 @@ TOW_religion_cares_about_piety = {
 TOW_religion_organizes_fertility_festival = {
 	always = no # TOW TODO : To Define
 }
+
+TOW_religion_dislikes_abortion = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_dislikes_lefthanded = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_practices_charity = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_fears_god = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_forbids_hunting = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_practices_sky_burial = {
+	religion = aeromancy
+}
+
+TOW_religion_practices_ritual_sacrifice = {
+	OR = {
+		has_religion_feature = religion_ritual_sacrifice
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_worships_ancestors = {
+	OR = {
+		has_religion_feature = religion_beatification
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_practices_astrology = {
+	OR = {
+		has_religion_feature = religion_astrology
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_churching_women_after_birth = {
+	always = no # TOW TODO : To Define
+}
+
+# Replacing tests for hellenic and regular pagan, could be dynamic ?
+TOW_religion_is_dead = {
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_has_knights = {
+	OR = {
+		religion_group = light_group
+	}
+}
+
+TOW_religion_has_multiple_heresies = {
+	always = no # TOW TODO : To Define
+}

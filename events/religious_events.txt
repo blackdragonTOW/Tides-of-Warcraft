@@ -1554,28 +1554,7 @@ character_event = {
 			# Always allow them if you already like that religion
 			modifier = {
 				factor = 0
-				FROM = { religion_group = christian }
-				trait = sympathy_christendom
-			}
-			modifier = {
-				factor = 0
-				FROM = { religion_group = muslim }
-				trait = sympathy_islam
-			}
-			modifier = {
-				factor = 0
-				FROM = { religion_group = jewish_group }
-				trait = sympathy_judaism
-			}
-			modifier = {
-				factor = 0
-				FROM = { religion_group = zoroastrian_group }
-				trait = sympathy_zoroastrianism
-			}
-			modifier = {
-				factor = 0
-				FROM = { religion_group = indian_group }
-				trait = sympathy_indian
+				FROM = { TOW_character_prev_is_sympathetic_to_me_religion = yes }
 			}
 		}
 		
@@ -1874,28 +1853,7 @@ character_event = {
 			}
 			modifier = {
 				factor = 3
-				FROM = { religion_group = christian }
-				trait = sympathy_christendom
-			}
-			modifier = {
-				factor = 3
-				FROM = { religion_group = muslim }
-				trait = sympathy_islam
-			}
-			modifier = {
-				factor = 3
-				FROM = { religion_group = jewish_group }
-				trait = sympathy_judaism
-			}
-			modifier = {
-				factor = 3
-				FROM = { religion_group = zoroastrian_group }
-				trait = sympathy_zoroastrianism
-			}
-			modifier = {
-				factor = 3
-				FROM = { religion_group = indian_group }
-				trait = sympathy_indian
+				FROM = { TOW_character_prev_is_sympathetic_to_me_religion = yes }
 			}
 			
 			# Personal
@@ -2891,42 +2849,7 @@ character_event = {
 				age = 12
 			}
 		}
-		if = {
-			limit = {
-				religion_group = christian
-			}
-			add_trait = sympathy_christendom
-		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			add_trait = sympathy_islam
-		}
-		if = {
-			limit = {
-				TOW_is_uncivilized_religion_trigger = yes
-			}
-			add_trait = sympathy_pagans
-		}
-		if = {
-			limit = {
-				religion_group = zoroastrian_group
-			}
-			add_trait = sympathy_zoroastrianism
-		}
-		if = {
-			limit = {
-				religion_group = jewish_group
-			}
-			add_trait = sympathy_judaism
-		}
-		if = {
-			limit = {
-				religion_group = indian_group
-			}
-			add_trait = sympathy_indian
-		}
+		TOW_character_add_sympathy_trait_towards_my_religion = yes
 
 		clr_religion_char_flag_effect = yes #Must clear all old flags to avoid double traits
 		add_religion_char_flag_effect = yes

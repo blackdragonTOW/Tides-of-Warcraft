@@ -27,7 +27,6 @@ character_event = {
 			character_disease_trigger = no
 			is_inaccessible_or_incapable_trigger = no
 			in_command = no
-			NOT = { trait = dancing_plague }
 		}
 	}
 
@@ -176,7 +175,6 @@ character_event = {
 				modifier = { factor = 1.25 learning = 16 }
 				modifier = { factor = 1.25 learning = 18 }
 				modifier = { factor = 1.25 learning = 20 }
-				modifier = { factor = 1.25 learning = 20 }
 				set_variable = { which = local_possibilities_count value = 4 }
 			}
 		}
@@ -214,13 +212,11 @@ character_event = {
 				}
 				10 = {
 					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_song }
-					modifier = { factor = 0.1 trait = deaf }
 					modifier = { factor = 2 trait = gregarious }
 					set_character_flag = Keitaro_jester_choice_song
 				}
 				10 = {
 					modifier = { factor = 0 has_character_flag = Keitaro_jester_choice_music }
-					modifier = { factor = 0.1 trait = deaf }
 					modifier = { factor = 2 trait = gregarious }
 					set_character_flag = Keitaro_jester_choice_music
 				}
@@ -970,19 +966,6 @@ character_event = {
 			}
 			random = { chance = 20 add_trait = proud }
 		}
-		if = {
-			limit = {
-				NOT = { trait = deaf }
-				age = 50
-				FROM = {
-					OR = {
-						has_character_flag = Keitaro_jester_choice_song
-						has_character_flag = Keitaro_jester_choice_music
-					}
-				}
-			}
-			random = { chance = 5 add_trait = deaf }
-		}
 		add_character_modifier = { name = Keitaro_unhappy duration = 120 }
 	}
 
@@ -1028,19 +1011,6 @@ character_event = {
 				}
 			}
 			random = { chance = 20 add_trait = proud }
-		}
-		if = {
-			limit = {
-				NOT = { trait = deaf }
-				age = 50
-				FROM = {
-					OR = {
-						has_character_flag = Keitaro_jester_choice_song
-						has_character_flag = Keitaro_jester_choice_music
-					}
-				}
-			}
-			random = { chance = 5 add_trait = deaf }
 		}
 
 		add_character_modifier = { name = Keitaro_unhappy duration = 120 }
@@ -1331,7 +1301,6 @@ character_event = {
 			character_disease_trigger = no
 			is_inaccessible_or_incapable_trigger = no
 			in_command = no
-			NOT = { trait = dancing_plague }
 		}
 
 		OR = {

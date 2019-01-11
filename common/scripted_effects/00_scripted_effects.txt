@@ -9411,11 +9411,7 @@ random_list = {
 		modifier = { 
 			factor = 3
 			trait = cancer
-		} 
-		modifier = { 
-			factor = 4
-			trait = dancing_plague
-		} 
+		}
 		modifier = { 
 			factor = 1.25
 			trait = scurvy
@@ -9765,10 +9761,6 @@ random_list = {
 		modifier = { 
 			factor = 3
 			trait = cancer
-		} 
-		modifier = { 
-			factor = 4
-			trait = dancing_plague
 		} 
 		modifier = { 
 			factor = 1.25
@@ -13712,18 +13704,7 @@ spawn_debutante_effect = {
 		hidden_tooltip = {
 			if = {
 				limit = {
-					has_dharmic_religion_trigger = yes
-				}
-				add_trait = kshatriya
-				character_event = { id = RoI.30121 }
-			}
-			if = {
-				limit = {
-					OR = {
-						religion = hellenic_pagan
-						religion = hellenic_pagan_reformed
-						has_religion_feature = religion_astrology
-					}
+					TOW_religion_practices_astrology = yes
 				}
 				hidden_tooltip = { add_western_zodiac_trait_effect = yes }
 			}
@@ -15861,54 +15842,14 @@ stable_attribute_improvement_effect = {
 }
 
 add_sympathy_for_religion_effect = {
-	if = {
-		limit = {
-			religion_group = christian
-		}
-		ROOT = {
-			add_trait = sympathy_christendom
-		}
-	}
-	else_if = {
-		limit = {
-			religion_group = indian_group
-		}
-		ROOT = {
-			add_trait = sympathy_indian
-		}
-	}
-	else_if = {
-		limit = {
-			religion_group = muslim
-		}
-		ROOT = {
-			add_trait = sympathy_islam
-		}
-	}
-	else_if = {
-		limit = {
-			religion_group = jewish_group
-		}
-		ROOT = {
-			add_trait = sympathy_judaism
-		}
-	}
-	else_if = {
-		limit = {
-			TOW_is_uncivilized_religion_trigger = yes
-		}
-		ROOT = {
-			add_trait = sympathy_pagans
-		}
-	}
-	else_if = {
-		limit = {
-			religion_group = zoroastrian_group
-		}
-		ROOT = {
-			add_trait = sympathy_zoroastrianism
-		}
-	}
+	#if = {
+	#	limit = {
+	#		religion_group = christian
+	#	}
+	#	ROOT = {
+	#		add_trait = sympathy_christendom
+	#	}
+	#}
 }
 
 add_random_commander_trait_effect = {

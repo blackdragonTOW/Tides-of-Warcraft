@@ -205,19 +205,19 @@ faction_succ_seniority = {
 			factor = 0
 			NOT = { would_be_heir_under_law = { who = FROM law = seniority } }
 
-#			heir_under_seniority_law = {
-#				OR = {
-#					ROOT = { current_heir = { character = PREV } } 
-#					FROM = {
-#						opinion_diff = {
-#							first = LIEGE
-#							second = PREV
-#							value = -25 # I don't like the pretender enough
-#							as_if_liege = yes
-#						}
-#					}
-#				}
-#			}
+			#heir_under_seniority_law = {
+				#OR = {
+					#ROOT = { current_heir = { character = PREV } } 
+					#FROM = {
+						#opinion_diff = {
+							#first = LIEGE
+							#second = PREV
+							#value = -25 # I don't like the pretender enough
+							#as_if_liege = yes
+						#}
+					#}
+				#}
+			#}
 
 		}
 		
@@ -842,17 +842,7 @@ faction_succ_primogeniture = {
 		NOR = {
 			AND = {
 				government = dragonflight_government
-				NOR = {
-					trait = dragon_red
-					trait = dragon_black
-					trait = dragon_blue
-					trait = dragon_bronze
-					trait = dragon_green
-					trait = dragon_chromatic
-					trait = dragon_twilight
-					trait = dragon_infinite
-					trait = dragon_nightmare
-				}
+				NOT = { trait = dragon }
 			}
 			government = kirin_tor_government
 			government = guardian_government
@@ -5318,7 +5308,7 @@ faction_claimant = {
 			}
 			OR = {
 				is_female = yes
-				bad_priest_light_group = yes
+				trait = bad_priest_light_group
 				AND = { 
 					NOT = { ROOT = { succ_law_title = { has_law = enatic_succession } } }
 					NOT = { has_religion_feature = religion_matriarchal }

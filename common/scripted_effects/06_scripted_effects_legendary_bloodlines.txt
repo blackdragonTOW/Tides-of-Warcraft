@@ -1083,13 +1083,6 @@ spawn_old_duelist_effect = {
 		hidden_tooltip = {
 			if = {
 				limit = {
-					has_dharmic_religion_trigger = yes
-				}
-				add_trait = kshatriya
-				character_event = { id = RoI.30121 }
-			}
-			if = {
-				limit = {
 					has_religion_feature = religion_no_leader
 					TOW_is_uncivilized_religion_trigger = yes
 				}
@@ -1331,13 +1324,6 @@ spawn_giant_duelist_effect = {
 			}
 		}
 		hidden_tooltip = {
-			if = {
-				limit = {
-					has_dharmic_religion_trigger = yes
-				}
-				add_trait = kshatriya
-				character_event = { id = RoI.30121 }
-			}
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader
@@ -1653,13 +1639,6 @@ spawn_creature_champion_effect = {
 			}
 		}
 		hidden_tooltip = {
-			if = {
-				limit = {
-					has_dharmic_religion_trigger = yes
-				}
-				add_trait = kshatriya
-				character_event = { id = RoI.30121 }
-			}
 			if = {
 				limit = {
 					has_religion_feature = religion_no_leader

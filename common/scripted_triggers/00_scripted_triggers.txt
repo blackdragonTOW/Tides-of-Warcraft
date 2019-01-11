@@ -371,7 +371,6 @@ has_disease_trigger = {
 		trait = cancer
 		trait = pneumonic
 
-		trait = dancing_plague
 		trait = scurvy
 		trait = ill
 		trait = leper
@@ -495,7 +494,6 @@ has_fertile_trait_trigger = {
 		trait = strong
 		trait = hedonist
 		trait = lustful
-		trait = dancing_plague
 	}
 }
 
@@ -1605,20 +1603,7 @@ female_can_hold_minor_title_trigger = {
 					}
 				}
 			}
-			primary_title = {
-				OR = {
-					has_law = status_of_women_4 
-					has_law = status_of_women_3 
-				}
-			}
-			liege = {
-				primary_title = {
-					OR = {
-						has_law = status_of_women_4
-						has_law = status_of_women_3
-					}
-				}
-			}
+			gender_equality_trigger_1 = yes
 		}
 	}
 }
@@ -1653,14 +1638,7 @@ female_can_hold_minor_commander_title_trigger = {
 					}
 				}
 			}
-			primary_title = {
-				has_law = status_of_women_4 
-			}
-			liege = {
-				primary_title = {
-					has_law = status_of_women_4
-				}
-			}
+			gender_equality_trigger_1 = yes
 		}
 	}
 }
@@ -2025,15 +2003,9 @@ is_monastic_member_trigger = {
 is_ascetic_trigger = {
 	custom_tooltip = {
 		text = is_ascetic_tooltip
+		always = no # TOW TODO : To Define
 		OR = {
 			trait = monk
-			trait = nun
-			trait = muni
-			trait = aryika
-			trait = bhikkhu
-			trait = bhikkhuni
-			trait = sanyasi
-			trait = sanyasini
 		}
 	}
 }
@@ -4243,7 +4215,6 @@ can_enter_festival_physical_competitions_trigger = {
 		AND = {
 			is_female = yes
 			OR = { 
-				trait = shieldmaiden
 				has_religion_feature = religion_matriarchal 
 				has_character_flag = special_marshal
 				is_member_of_any_warrior_lodge_trigger = yes
@@ -4519,13 +4490,9 @@ has_at_least_3_traits_opposite_prev_trigger = {
 }
 
 has_any_sympathy_trait_trigger = { 
+	always = no
 	OR = {
-		trait = sympathy_christendom
-		trait = sympathy_islam
-		trait = sympathy_pagans
-		trait = sympathy_zoroastrianism
-		trait = sympathy_judaism
-		trait = sympathy_indian
+		#trait = sympathy_christendom
 	}
 }
 

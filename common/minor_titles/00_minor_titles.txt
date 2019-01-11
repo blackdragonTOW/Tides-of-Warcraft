@@ -198,12 +198,10 @@ title_commander = {
 		}
 		liege = { character = FROM }
 		OR = {
-			AND = {
-				bad_priest_light_group = yes
-				is_adult = yes
-			}
-			has_character_flag = special_marshal
+			male_can_hold_minor_title_trigger = yes
+			female_can_hold_minor_commander_title_trigger = yes
 		}
+		is_adult = yes
 		
 		prisoner = no
 		NOT = { trait = incapable }
@@ -213,6 +211,9 @@ title_commander = {
 		Keitaro_can_have_a_job = yes
 	}
 	
+	allowed_to_grant = {
+	}
+
 	gain_effect = {
 	}
 	lose_effect = {
@@ -226,6 +227,7 @@ title_commander = {
 #######################################
 
 title_court_jester = {
+	attribute = diplomacy
 	dignity = 0.01
 	realm_in_name = yes
 	grant_limit = 1
@@ -392,7 +394,11 @@ title_master_of_the_hunt = {
 			primary_title = { temporary = yes } 
 		}
 		is_adult = yes
-		bad_priest_light_group = yes
+		OR = {
+			is_female = no
+			liege = { gender_equality_trigger = yes }
+			trait = bad_priest_light_group
+		}
 		NOT = { has_character_flag = guru }
 		NOT = { trait = incapable } 
 		Keitaro_can_have_a_job = yes
@@ -975,7 +981,11 @@ title_champion = {
 			primary_title = { temporary = yes } 
 		}
 		is_adult = yes
-		bad_priest_light_group = yes
+		OR = {
+			is_female = no
+			liege = { gender_equality_trigger = yes }
+			trait = bad_priest_light_group
+		}
 		NOT = { trait = incapable } 
 		Keitaro_can_have_a_job = yes
 	}
@@ -1296,19 +1306,7 @@ title_court_physician = {
 			trait = race_doomlord
 			trait = race_fel_lord
 			trait = race_shivarra
-<<<<<<< HEAD
-			trait = race_dragon_black
-			trait = race_dragon_blue
-			trait = race_dragon_bronze
-			trait = race_dragon_chromatic
-			trait = race_dragon_green
-			trait = race_dragon_infinite
-			trait = race_dragon_nightmare
-			trait = race_dragon_red
-			trait = race_dragon_twilight
-=======
 			trait = race_dragon
->>>>>>> A lot of fixes.
 			trait = race_undead_generic
 			trait = race_undead_scourge
 			trait = race_undead_forsaken

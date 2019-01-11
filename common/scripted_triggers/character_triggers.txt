@@ -16,7 +16,7 @@ TOW_character_can_be_councillor = {
 			is_female = yes 
 			liege = { NOT = { has_religion_feature = religion_patriarchal } } #Patriarchal religions can only hire males. 
 			OR = {
-				liege = { gender_equality_trigger = yes }
+				gender_equality_trigger = yes
 				liege = {
 					OR = {
 						dynasty = PREV
@@ -42,7 +42,7 @@ TOW_character_can_be_spymaster = {
 			liege = { NOT = { has_religion_feature = religion_patriarchal } } #Patriarchal religions can only hire males. 
 			OR = {
 				liege = { is_child_of = PREV }
-				liege = { gender_equality_trigger_1 = yes }
+				gender_equality_trigger_1 = yes
 				liege = { spouse = { character = PREVPREV } }
 				liege = {
 					OR = {
@@ -56,4 +56,54 @@ TOW_character_can_be_spymaster = {
 			} 
 		}
 	}
+}
+
+TOW_is_primary_title_military_order = {
+	primary_title = {
+		OR = {
+			#title = d_sunfury
+			# Add military orders here
+		}
+	}
+}
+
+TOW_can_become_berserker = {
+	NOT = { trait = berserker }
+	always = no # TOW TODO : To Define
+}
+
+TOW_character_uses_war_elephants = {
+	always = no # TOW TODO : To Define
+}
+
+# THIS is sympathetic to PREV
+TOW_character_is_sympathetic_to_prevs_religion = {
+	always = no # TOW TODO : To Define
+	#OR = {
+	#	AND = {
+	#		trait = sympathy_christendom
+	#		PREV = { religion_group = christian }
+	#	} 
+	#}
+}
+
+# PREV is sympathetic to THIS
+TOW_character_prev_is_sympathetic_to_me_religion = {
+	always = no # TOW TODO : To Define
+	#OR = {
+	#	AND = {
+	#		PREV = { trait = sympathy_christendom }
+	#		religion_group = christian 
+	#	} 
+	#}
+}
+
+TOW_character_is_sympathetic_to_another_religion_of_prev = {
+	always = no # TOW TODO : To Define
+	#OR = {
+	#	AND = {
+	#		trait = sympathy_christendom
+	#		PREV = { NOT = { religion_group = christian } }
+	#	} 
+	#}
 }

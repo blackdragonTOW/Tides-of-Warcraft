@@ -38,30 +38,10 @@ character_event = {
 			government = elemental_government
 			government = guardian_government
 		}
-
-		OR = {
-			is_female = no
-			liege = { bad_priest_light_group = yes }
-			liege = { has_law = true_cognatic_succession }
-			NOR = {
-				trait = race_ogre
-				trait = race_troll_sand
-				trait = race_troll_forest
-				trait = race_troll_jungle
-				trait = race_troll_ice
-				trait = race_troll_dark
-			}
-			has_game_rule = {
-				name = gender
-				value = all
-			}
-		}
 		
 		is_ruler = no
 
 		NOT = { any_spouse = { is_ruler = yes } }
-		
-#		year = 867
 		
 		any_claim = {
 			has_holder = yes
@@ -97,6 +77,18 @@ character_event = {
 						non_interference = PREV
 					}
 				}
+				# Gender Tolerance
+				OR = {
+					AND = {
+						ROOT = { is_female = no }
+						NOT = { has_religion_feature = religion_matriarchal }
+					}
+					AND = {
+						ROOT = { is_female = yes }
+						gender_equality_trigger = yes
+						NOT = { has_religion_feature = religion_patriarchal }
+					}
+				}
 			}
 			OR = {
 				tier = KING
@@ -110,6 +102,8 @@ character_event = {
 			}
 		}
 		
+		Keitaro_is_landless_claimant_adventurer_valid = yes
+
 		diplomacy = 7
 		
 		health = 4
@@ -117,6 +111,7 @@ character_event = {
 		NOT = { trait = craven }
 		
 		NOT = { has_character_modifier = planning_claimant_adventure }
+		NOT = { has_character_flag = Keitaro_preparing_adventure }
 	}
 	
 	mean_time_to_happen = {
@@ -170,6 +165,34 @@ character_event = {
 			trait = kind
 		}
 		modifier = {
+			factor = 0.9
+			is_smart_trigger = yes
+		}
+		modifier = {
+			factor = 0.8
+			trait = genius
+		}
+		modifier = {
+			factor = 0.95
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 1.2
+			is_dumb_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			is_weak_trigger = yes
+		}
+		modifier = {
+			factor = 1.5
+			character_disease_trigger = yes
+		}
+		modifier = {
+			factor = 0.02
+			check_variable = { which = "Keitaro_adventure_manpower" value = 60 } # I already started a good adventure that didn't end !
+		}
+		modifier = {
 			factor = 50
 			has_game_rule = {
 				name = adventurers
@@ -216,6 +239,7 @@ character_event = {
 			}
 			
 			holder_scope = {
+				save_event_target_as = adventure_target
 				reverse_opinion = {
 					who = ROOT
 					years = 3
@@ -250,7 +274,11 @@ character_event = {
 		end_inaccessibility_effect = yes #removes in hiding or in_seclusion
 		
 		set_character_flag = do_not_disturb
-		
+		set_character_flag = Keitaro_preparing_adventure
+		set_character_flag = Keitaro_prepared_adventure
+		set_variable = { which = "Keitaro_adventure_manpower" value = 0 }
+		set_variable = { which = "Keitaro_adventure_realm_asked" value = 0 }
+		if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Adventure : [Root.GetBestName] starts adventure" }
 		character_event = { id = TOG.1215 days = 730 }
 	}
 	
@@ -292,71 +320,85 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		is_ruler = no
-		NOT = { any_spouse = { is_ruler = yes } }
-		
-		any_claim = {
-			has_holder = yes
-			holder_scope = {
-				NOT = {
-					defending_against_claimant = {
-						character = ROOT
-						title = PREV
-					}
-				}
-				independent = yes # Only do this vs independent rulers
-				NAND = {
-					government = nomadic_government
+		Keitaro_is_landless_claimant_adventurer_valid = yes
+
+		event_target:adventure_target = {
+			is_alive = yes
+			is_ruler = yes
+
+			NOT = {
+				any_demesne_title = {
+					claimed_by = ROOT
 					OR = {
-						clan_title = {
-							title = PREVPREV
-						}
-						primary_title = {
-							title = PREVPREV
+						tier = KING
+						holder_scope = { tier = PREV }
+					}
+					holder_scope = {
+						defending_against_claimant = {
+							character = ROOT
+							title = PREV
 						}
 					}
 				}
-				reverse_has_opinion_modifier = {
-					who = ROOT
-					modifier = opinion_claimant_adventure_target
-				}
+			}
+
+			independent = yes # Only do this vs independent rulers
+			NAND = {
+				government = nomadic_government
 				OR = {
-					# Don't target my liege unless I am ambitious
-					NOT = { is_vassal_or_below = ROOT }
-					ROOT = { trait = ambitious }
-				}
-				OR = {
-					is_merchant_republic = no
-					NOT = {
-						capital_holding = {
-							de_jure_liege_or_above = PREVPREV
-						}
+					clan_title = {
+						title = PREVPREV
+					}
+					primary_title = {
+						title = PREVPREV
 					}
 				}
-				ROOT = {
-					NOR = {
-						obedient = PREV
-						non_interference = PREV
-					}
-				}
+			}
+			reverse_has_opinion_modifier = {
+				who = ROOT
+				modifier = opinion_claimant_adventure_target
 			}
 			OR = {
-				tier = KING
-				holder_scope = { tier = PREV }
+				is_merchant_republic = no
+				NOT = {
+					capital_holding = {
+						de_jure_liege_or_above = PREVPREV
+					}
+				}
 			}
-		}
-		
-		NOT = { # Somewhat clunky way of checking that the character does not stand to inherit any titles
-			any_heir_title = {
-				always = yes
+			ROOT = {
+				NOR = {
+					obedient = PREV
+					non_interference = PREV
+				}
+			}
+			any_demesne_title = {
+				claimed_by = ROOT
+				OR = {
+					tier = KING
+					holder_scope = { tier = PREV }
+				}
 			}
 		}
 	}
 	
 	immediate = {
-		
-		wealth = 500
 		clr_character_flag = do_not_disturb
+
+		Keitaro_adventurers_manpower_factors = yes
+
+		## Didn't gather enough people, just abandon
+		if = {
+			limit = {
+				NOT = { check_variable = { which = Keitaro_adventure_manpower value = 40 } }
+			}
+			if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Adventure : [Root.GetBestName] gave up, he had only [Root.Keitaro_adventure_manpower.GetValue]% of the target's manpower." }
+
+			break = yes
+		}
+
+		prestige = 100
+        add_trait = adventurer
 		
 		liege = {
 			character_event = {
@@ -367,271 +409,40 @@ character_event = {
 		
 		liege = {
 			capital_scope = {
+				save_event_target_as = starting_province
+			}
+		}
+
+		set_defacto_liege = ROOT
+		create_title = {
+			tier = DUKE
+			landless = yes
+			temporary = yes
+			adventurer = yes
+			culture = ROOT
+			name = "CLAIMANT_ADVENTURE"
+			holder = ROOT
+		}
+		
+		event_target:starting_province = {
+			event_target:adventure_target = {
 				ROOT = {
-					set_defacto_liege = ROOT
-					create_title = {
-						tier = DUKE
-						landless = yes
-						temporary = yes
-						adventurer = yes
-						culture = ROOT
-						name = "CLAIMANT_ADVENTURE"
-						holder = ROOT
-					}
-					
-					random_claim = {
-						limit = {
-							has_holder = yes
-							holder_scope = {
-								independent = yes # Only do this vs independent rulers
-								reverse_has_opinion_modifier = {
-									who = ROOT
-									modifier = opinion_claimant_adventure_target
-								}
-								OR = {
-									# Don't target my liege unless I am ambitious
-									NOT = { is_vassal_or_below = ROOT }
-									ROOT = { trait = ambitious }
-								}
-								OR = {
-									is_merchant_republic = no
-									NOT = {
-										capital_holding = {
-											de_jure_liege_or_above = PREVPREV
-										}
-									}
-								}
-							}
-							OR = {
-								tier = KING
-								holder_scope = { tier = PREV }
-							}
-						}
-						holder_scope = {
-							ROOT = {
-								set_character_flag = claimant_adventurer
-								random_list = {
-									34 = {
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											#leader = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.125
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-									}
-									33 = {
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											#leader = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.1
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-									}
-									33 = {
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											#leader = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-										spawn_unit = {
-											province = PREVPREVPREVPREV
-											home = PREVPREVPREVPREV
-											owner = THIS
-											match_character = PREV
-											match_mult = 0.075
-											match_min = 300
-											match_max = 5000
-											attrition = 0.25
-											earmark = claimant_adventure
-										}
-									}
-								}
-							}
-						}
-					}
+					Keitaro_adventurers_spawn_unit_with_manpower = yes
 				}
 			}
 		}
-		
-		# I no longer have a valid claim on the target
-		if = {
-			limit = {
-				NOT = { has_character_flag = claimant_adventurer }
+
+		event_target:adventure_target = {
+			random_demesne_title = {
+				limit = {
+					claimed_by = ROOT
+					OR = {
+						tier = KING
+						holder_scope = { tier = PREV }
+					}
+				}
+				save_event_target_as = adventure_target_title
 			}
-			break = yes
 		}
 		
 		# Create some decent commander characters
@@ -657,7 +468,6 @@ character_event = {
 			religion = ROOT
 			culture = ROOT
 			female = no
-			age = 33
 		}
 		create_random_soldier = {
 			random_traits = yes
@@ -665,59 +475,22 @@ character_event = {
 			religion = ROOT
 			culture = ROOT
 			female = no
-			age = 29
 		}
-		
+
+
 		# Create a fleet, just to be sure
-		spawn_fleet = {
-			province = closest # closest sea zone
-			owner = ROOT
-			disband_on_peace = yes
-			troops =
-			{
-				galleys = { 150 150 }
-			}
-			earmark = claimant_adventure
-		}
+		Keitaro_adventurers_spawn_fleet_with_manpower = yes
+
+		export_to_variable = { which = "local_Keitaro_TMP" value = treasury }
+		if = { limit = { has_global_flag = Keitaro_PRINT_DEBUG } log = " -- KEITARO DEBUG -- : Adventure : [Root.GetBestName] declares war on [adventure_target.GetTitledName] for the [adventure_target_title.GetFullName] from the province [starting_province.GetName], [Root.GetSheHe] has [Root.Keitaro_adventure_manpower.GetValue]% of the target's manpower, [Root.GetSheHe] asked help from [Root.Keitaro_adventure_realm_asked.GetValue] realms and [Root.GetSheHe] has [Root.local_Keitaro_TMP.GetValue] money." }
+
+		set_character_flag = claimant_adventurer
 		
-		random_claim = {
-			limit = {
-				has_holder = yes
-				holder_scope = {
-					independent = yes # Only do this vs independent rulers
-					NAND = {
-						government = nomadic_government
-						OR = {
-							clan_title = {
-								title = PREVPREV
-							}
-							primary_title = {
-								title = PREVPREV
-							}
-						}
-					}
-					reverse_has_opinion_modifier = {
-						who = ROOT
-						modifier = opinion_claimant_adventure_target
-					}
-					OR = {
-						# Don't target my liege unless I am ambitious
-						NOT = { is_vassal_or_below = ROOT }
-						ROOT = { trait = ambitious }
-					}
-					OR = {
-						is_merchant_republic = no
-						NOT = {
-							capital_holding = {
-								de_jure_liege_or_above = PREVPREV
-							}
-						}
-					}
-				}
-				OR = {
-					tier = KING
-					holder_scope = { tier = PREV }
-				}
+		event_target:adventure_target = {
+			reverse_war = {
+				target = ROOT
+				casus_belli = claim
+				thirdparty_title = event_target:adventure_target_title
 			}
 			
 #			log = "TOG.1202: [Root.GetBestName] starts claim adventure for [This.GetName]"
@@ -739,6 +512,10 @@ character_event = {
 	option = {
 		name = OK
 	}
+
+	after = {
+		Keitaro_clear_landless_claimant_adventure = yes
+	}
 }
 
 character_event = {
@@ -754,9 +531,6 @@ character_event = {
 	}
 	
 	immediate = {
-		FROM = {
-			add_trait = adventurer
-		}
 		any_liege = {
 			character_event = {
 				id = TOG.1204
@@ -816,26 +590,6 @@ character_event = {
 		is_ruler = no
 		NOT = { any_spouse = { is_ruler = yes } }
 
-		OR = {
-			is_female = no
-			liege = { has_law = status_of_women_4 }
-			liege = { has_law = true_cognatic_succession }
-			NOR = {
-				trait = race_ogre
-				trait = race_troll_sand
-				trait = race_troll_forest
-				trait = race_troll_jungle
-				trait = race_troll_ice
-				trait = race_troll_dark
-			}
-			has_game_rule = {
-				name = gender
-				value = all
-			}
-		}
-		
-#		year = 867
-		
 		diplomacy = 7
 		martial = 9
 		health = 4
@@ -868,6 +622,18 @@ character_event = {
 							capital_holding = {
 								de_jure_liege_or_above = PREVPREV
 							}
+						}
+					}
+					# Gender Tolerance
+					OR = {
+						AND = {
+							ROOT = { is_female = no }
+							NOT = { has_religion_feature = religion_matriarchal }
+						}
+						AND = {
+							ROOT = { is_female = yes }
+							gender_equality_trigger = yes
+							NOT = { has_religion_feature = religion_patriarchal }
 						}
 					}
 				}
@@ -980,6 +746,30 @@ character_event = {
 			}
 		}
 		modifier = {
+			factor = 0.9
+			is_smart_trigger = yes
+		}
+		modifier = {
+			factor = 0.8
+			trait = genius
+		}
+		modifier = {
+			factor = 0.95
+			is_strong_trigger = yes
+		}
+		modifier = {
+			factor = 1.2
+			is_dumb_trigger = yes
+		}
+		modifier = {
+			factor = 1.1
+			is_weak_trigger = yes
+		}
+		modifier = {
+			factor = 1.5
+			character_disease_trigger = yes
+		}
+		modifier = {
 			factor = 50
 			has_game_rule = {
 				name = adventurers
@@ -1070,7 +860,6 @@ character_event = {
 		}
 		end_inaccessibility_effect = yes #removes in hiding or in_seclusion
 		
-		set_character_flag = do_not_disturb
 		character_event = { id = TOG.1215 days = 730 }
 	}
 	
@@ -1255,7 +1044,7 @@ character_event = {
 								match_max = 10000
 								attrition = 0.25
 							}
-							unsafe_war = {
+							war = {
 								target = PREVPREV
 								casus_belli = duchy_adventure
 								thirdparty_title = PREV
@@ -1289,17 +1078,14 @@ character_event = {
 			age = 25
 		}
 		
-		if  = {
-			
-			# Create a fleet, just to be sure
-			spawn_fleet = {
-				province = closest # closest sea zone
-				owner = ROOT
-				disband_on_peace = yes
-				troops =
-				{
-					galleys = { 200 200 }
-				}
+		# Create a fleet, just to be sure
+		spawn_fleet = {
+			province = closest # closest sea zone
+			owner = ROOT
+			disband_on_peace = yes
+			troops =
+			{
+				galleys = { 200 200 }
 			}
 		}
 	}

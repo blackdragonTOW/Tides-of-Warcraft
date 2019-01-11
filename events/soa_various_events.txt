@@ -897,13 +897,6 @@ character_event = {
 		
 	   	transfer_crown_on_abdication_effect = yes
 		abdicate = yes
-
-		if = {
-			limit = {
-				religion_group = christian
-			}				
-			add_trait = nun
-		}
 	}
 	
 	option = {
@@ -2137,14 +2130,7 @@ character_event = {
 				
 				if = {
 					limit = { has_dlc = "Mystics" }
-					join_society = the_satanists
-				}
-				
-				if = {
-					limit = {
-						religion_group = christian
-					}
-					add_trait = nun
+					#join_society = the_satanists
 				}
 				
 				FROM = {
