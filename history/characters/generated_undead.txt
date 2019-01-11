@@ -1,70 +1,242 @@
 ## Generated character file (code by Keitaro_Ura) ##
 
-3449 = { # Ruler of c_darkglen - 10022.5.30
-	name = Llane
-	dynasty = 191 # dynasty191
+2381 = { # Ruler of c_blackwood - 10022.5.19
+	name = Alicia
+	female = yes
+	dynasty = 112 # dynasty112
 	culture = scourge
 	religion = lich_king
 	trait = race_undead_scourge
 	trait = race_human
-	9995.4.15 = {
+	9978.7.4 = {
 		birth = yes
 	}
-	7701.5.31 = {
-		add_spouse = 3450 # Alicia
+	12595.8.28 = {
+		add_matrilineal_spouse = 2382 # Terenas
 	}
-	22864.3.4 = {
+	22829.6.4 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-3450 = {
+2382 = {
+	name = Terenas
+	culture = scourge
+	religion = lich_king
+	trait = race_undead_scourge
+	trait = race_human
+	12579.8.21 = {
+		birth = yes
+	}
+	25430.8.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2931 = { # Ruler of c_caer_darrow - 10023.4.1
+	name = Alexandros
+	dynasty = 147 # dynasty147
+	culture = scourge
+	religion = lich_king
+	trait = race_undead_scourge
+	trait = race_human
+	9988.8.26 = {
+		birth = yes
+	}
+	10192.9.6 = {
+		add_spouse = 2932 # Karter
+	}
+	22878.6.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2932 = {
+	name = Karter
+	female = yes
+	culture = scourge
+	religion = lich_king
+	trait = race_undead_scourge
+	trait = race_human
+	10176.2.21 = {
+		birth = yes
+	}
+	23066.10.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4625 = { # Ruler of c_eastlands - 10022.8.4
+	name = Bernard
+	dynasty = 259 # dynasty259
+	culture = scourge
+	religion = lich_king
+	trait = race_undead_scourge
+	trait = race_human
+	9977.2.15 = {
+		birth = yes
+	}
+	7966.3.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 4626 # Rema
+		}
+	}
+	9993.2.15 = {
+		add_spouse = 4626 # Rema
+	}
+	22854.9.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4626 = {
+	name = Rema
+	female = yes
+	culture = scourge
+	religion = lich_king
+	trait = race_undead_scourge
+	trait = race_human
+	7950.12.4 = {
+		birth = yes
+	}
+	20827.3.24 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10043 = { # Ruler of c_skitterock - 10022.4.23
+	name = Danielle
+	female = yes
+	dynasty = 653 # dynasty653
+	culture = scourge
+	religion = lich_king
+	trait = race_undead_scourge
+	trait = race_human
+	10019.6.12 = {
+		birth = yes
+	}
+	12965.1.18 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10044 # Gakin
+		}
+	}
+	12965.1.25 = {
+		add_matrilineal_spouse = 10044 # Gakin
+	}
+	22914.9.25 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10044 = {
+	name = Gakin
+	culture = scourge
+	religion = lich_king
+	trait = race_undead_scourge
+	trait = race_human
+	12949.1.25 = {
+		birth = yes
+	}
+	25844.10.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11689 = { # Ruler of c_the_sepulcher - 10024.7.11
+	name = John
+	dynasty = 776 # dynasty776
+	culture = forsaken
+	religion = forgotten_shadow
+	trait = race_undead_forsaken
+	trait = race_human
+	10004.7.22 = {
+		birth = yes
+	}
+	11653.6.20 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11690 # Maybell
+		}
+	}
+	11653.11.12 = {
+		add_spouse = 11690 # Maybell
+	}
+	22878.3.16 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11690 = {
+	name = Maybell
+	female = yes
+	culture = forsaken
+	religion = forgotten_shadow
+	trait = race_undead_forsaken
+	trait = race_human
+	11637.11.12 = {
+		birth = yes
+	}
+	24511.9.4 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12885 = { # Ruler of c_western_stratwood - 10022.8.8
+	name = Gakin
+	dynasty = 866 # dynasty866
+	culture = scourge
+	religion = lich_king
+	trait = race_undead_scourge
+	trait = race_human
+	9988.2.16 = {
+		birth = yes
+	}
+	9968.5.12 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12886 # Alicia
+		}
+	}
+	10004.2.16 = {
+		add_spouse = 12886 # Alicia
+	}
+	22871.7.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12886 = {
 	name = Alicia
 	female = yes
 	culture = scourge
 	religion = lich_king
 	trait = race_undead_scourge
 	trait = race_human
-	7685.2.5 = {
+	9952.6.23 = {
 		birth = yes
 	}
-	20554.9.24 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11043 = { # Ruler of c_the_fertile_expanse - 10022.8.2
-	name = Alyssa
-	female = yes
-	dynasty = 753 # dynasty753
-	culture = scourge
-	religion = lich_king
-	trait = race_undead_scourge
-	trait = race_human
-	9983.9.12 = {
-		birth = yes
-	}
-	11261.4.11 = {
-		add_matrilineal_spouse = 11044 # Gakin
-	}
-	22855.12.16 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11044 = {
-	name = Gakin
-	culture = scourge
-	religion = lich_king
-	trait = race_undead_scourge
-	trait = race_human
-	11245.10.20 = {
-		birth = yes
-	}
-	24117.3.18 = {
+	22835.3.3 = {
 		death = {
 			death_reason = death_natural
 		}

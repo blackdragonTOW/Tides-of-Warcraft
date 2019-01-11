@@ -1,1126 +1,1317 @@
 ## Generated character file (code by Keitaro_Ura) ##
 
-1657 = { # Ruler of c_azurebreeze_coast - 7120.9.23
-	name = Roldemar
-	dynasty = 62 # dynasty62
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6762.5.18 = {
-		birth = yes
-	}
-	6705.2.20 = {
-		add_spouse = 1658 # Vevnna
-	}
-	8104.3.14 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-1658 = {
-	name = Vevnna
+1787 = { # Ruler of c_azurebreeze_coast - 7134.8.24
+	name = Sareyn
 	female = yes
+	dynasty = 66 # dynasty66
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6689.7.7 = {
+	7062.3.4 = {
 		birth = yes
 	}
-	8031.6.27 = {
+	6872.4.30 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 1788 # Duyash
+		}
+	}
+	7078.3.4 = {
+		add_matrilineal_spouse = 1788 # Duyash
+	}
+	8376.11.2 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-1659 = { # Ruler of c_azurebreeze_coast - 8104.9.16
-	name = Drenna
-	female = yes
-	dynasty = 62 # dynasty62
-	culture = high_elven
-	religion = arcane
-	father = 1657 # Roldemar
-	mother = 1658 # Vevnna
-	trait = race_high_elf
-	6778.5.18 = {
-		birth = yes
-	}
-	7211.7.12 = {
-		add_matrilineal_spouse = 1660 # Lethvalin
-	}
-	8604.2.9 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-1660 = {
-	name = Lethvalin
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	7195.6.29 = {
-		birth = yes
-	}
-	9021.7.22 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-1661 = { # Ruler of c_azurebreeze_coast - 9670.1.13
+1788 = {
 	name = Duyash
-	dynasty = 63 # dynasty63
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9075.2.11 = {
+	6856.11.17 = {
 		birth = yes
 	}
-	9390.12.23 = {
-		add_spouse = 1662 # Valindria
-	}
-	10543.7.7 = {
+	8170.12.7 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-1662 = {
-	name = Valindria
+1789 = { # Ruler of c_azurebreeze_coast - 8376.12.16
+	name = Narina
+	female = yes
+	dynasty = 66 # dynasty66
+	culture = high_elven
+	religion = arcane
+	father = 1788 # Duyash
+	mother = 1787 # Sareyn
+	trait = race_high_elf
+	7078.3.4 = {
+		birth = yes
+	}
+	7333.4.12 = {
+		add_matrilineal_spouse = 1790 # Lethecus
+	}
+	8900.12.19 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1790 = {
+	name = Lethecus
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	7317.1.23 = {
+		birth = yes
+	}
+	9139.12.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1791 = { # Ruler of c_azurebreeze_coast - 9670.6.7
+	name = Alestus
+	dynasty = 67 # dynasty67
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8698.3.10 = {
+		birth = yes
+	}
+	8404.2.17 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 1792 # Aniduria
+		}
+	}
+	8714.3.10 = {
+		add_spouse = 1792 # Aniduria
+	}
+	10143.2.5 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1792 = {
+	name = Aniduria
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9374.11.29 = {
+	8388.3.21 = {
 		birth = yes
 	}
-	10842.11.22 = {
+	9833.2.4 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-3525 = { # Ruler of c_dawnstar_spire - 7158.9.7
-	name = Vor'el
-	dynasty = 198 # dynasty198
+3707 = { # Ruler of c_dawnstar_spire - 7145.4.5
+	name = Arathel
+	female = yes
+	dynasty = 200 # dynasty200
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6544.11.10 = {
+	6447.10.10 = {
 		birth = yes
 	}
-	6644.4.11 = {
-		add_spouse = 3526 # Mar'nah
+	6417.5.18 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 3708 # Ilthuril
+		}
 	}
-	7774.3.13 = {
+	6463.10.10 = {
+		add_matrilineal_spouse = 3708 # Ilthuril
+	}
+	7851.11.19 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-3526 = {
-	name = Mar'nah
+3708 = {
+	name = Ilthuril
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6401.4.2 = {
+		birth = yes
+	}
+	7805.1.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3709 = { # Ruler of c_dawnstar_spire - 7851.9.30
+	name = Gelanthis
+	dynasty = 200 # dynasty200
+	culture = high_elven
+	religion = arcane
+	father = 3708 # Ilthuril
+	mother = 3707 # Arathel
+	trait = race_high_elf
+	7515.5.20 = {
+		birth = yes
+	}
+	7409.7.26 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 3710 # Kyrenna
+		}
+	}
+	7531.5.20 = {
+		add_spouse = 3710 # Kyrenna
+	}
+	9109.2.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3710 = {
+	name = Kyrenna
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6628.3.11 = {
+	7393.5.22 = {
 		birth = yes
 	}
-	7858.5.15 = {
+	8987.8.4 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-3527 = { # Ruler of c_dawnstar_spire - 7774.12.24
-	name = Ivrenne
+3711 = { # Ruler of c_dawnstar_spire - 9670.6.1
+	name = Endorah
 	female = yes
-	dynasty = 198 # dynasty198
+	dynasty = 201 # dynasty201
 	culture = high_elven
 	religion = arcane
-	father = 3525 # Vor'el
-	mother = 3526 # Mar'nah
 	trait = race_high_elf
-	6924.8.25 = {
+	8180.5.3 = {
 		birth = yes
 	}
-	6951.8.4 = {
-		add_matrilineal_spouse = 3528 # Torian
+	8087.8.9 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 3712 # Endernor
+		}
 	}
-	8269.6.20 = {
+	8196.5.3 = {
+		add_matrilineal_spouse = 3712 # Endernor
+	}
+	9765.3.15 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-3528 = {
-	name = Torian
+3712 = {
+	name = Endernor
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6935.1.1 = {
+	8071.4.2 = {
 		birth = yes
 	}
-	8280.8.8 = {
+	9656.4.4 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-3529 = { # Ruler of c_dawnstar_spire - 9670.7.17
-	name = Kalarin
-	dynasty = 199 # dynasty199
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8390.2.27 = {
-		birth = yes
-	}
-	8760.4.3 = {
-		add_spouse = 3530 # Carinda
-	}
-	10252.1.14 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-3530 = {
-	name = Carinda
+3713 = { # Ruler of c_dawnstar_spire - 9765.7.28
+	name = Sedana
 	female = yes
+	dynasty = 201 # dynasty201
 	culture = high_elven
 	religion = arcane
+	father = 3712 # Endernor
+	mother = 3711 # Endorah
 	trait = race_high_elf
-	8744.3.17 = {
+	9127.8.25 = {
 		birth = yes
 	}
-	10606.10.21 = {
+	9446.8.13 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 3714 # Geron
+		}
+	}
+	9446.11.6 = {
+		add_matrilineal_spouse = 3714 # Geron
+	}
+	10649.2.27 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4013 = { # Ruler of c_duskwither_spire - 7153.1.30
-	name = Tiorus
-	dynasty = 231 # dynasty231
+3714 = {
+	name = Geron
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6423.9.28 = {
+	9430.11.6 = {
 		birth = yes
 	}
-	6187.6.25 = {
-		add_spouse = 4014 # Daenice
-	}
-	8282.5.28 = {
+	10952.11.23 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4014 = {
-	name = Daenice
-	female = yes
+4235 = { # Ruler of c_duskwither_spire - 7159.9.9
+	name = Alieshor
+	dynasty = 234 # dynasty234
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6171.3.16 = {
+	6223.7.15 = {
 		birth = yes
 	}
-	8030.1.14 = {
+	5990.10.28 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 4236 # Alanna
+		}
+	}
+	6239.7.15 = {
+		add_spouse = 4236 # Alanna
+	}
+	8194.6.11 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4015 = { # Ruler of c_duskwither_spire - 8282.6.12
-	name = Teresa
-	female = yes
-	dynasty = 231 # dynasty231
-	culture = high_elven
-	religion = arcane
-	father = 4013 # Tiorus
-	mother = 4014 # Daenice
-	trait = race_high_elf
-	7964.10.19 = {
-		birth = yes
-	}
-	7990.10.31 = {
-		add_matrilineal_spouse = 4016 # Jaronis
-	}
-	9165.3.17 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-4016 = {
-	name = Jaronis
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	7974.5.25 = {
-		birth = yes
-	}
-	9175.3.19 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-4017 = { # Ruler of c_duskwither_spire - 9670.5.28
-	name = Alamaro
-	dynasty = 232 # dynasty232
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9059.8.30 = {
-		birth = yes
-	}
-	9094.5.24 = {
-		add_spouse = 4018 # Kinamisa
-	}
-	10635.10.12 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-4018 = {
-	name = Kinamisa
+4236 = {
+	name = Alanna
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9078.7.29 = {
+	5974.2.22 = {
 		birth = yes
 	}
-	10654.12.3 = {
+	7945.12.24 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4693 = { # Ruler of c_fairbreeze - 7158.8.16
-	name = Solanna
-	female = yes
-	dynasty = 279 # dynasty279
+4237 = { # Ruler of c_duskwither_spire - 8194.10.22
+	name = Arille
+	dynasty = 234 # dynasty234
 	culture = high_elven
 	religion = arcane
+	father = 4235 # Alieshor
+	mother = 4236 # Alanna
 	trait = race_high_elf
-	6556.1.16 = {
+	7877.2.20 = {
 		birth = yes
 	}
-	6739.4.18 = {
-		add_matrilineal_spouse = 4694 # Taleris
+	8058.10.29 = {
+		add_spouse = 4238 # Olirea
 	}
-	8487.12.26 = {
+	9026.5.8 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4694 = {
-	name = Taleris
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6723.7.24 = {
-		birth = yes
-	}
-	8654.4.26 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-4695 = { # Ruler of c_fairbreeze - 8487.12.7
-	name = Erodin
-	dynasty = 279 # dynasty279
-	culture = high_elven
-	religion = arcane
-	father = 4694 # Taleris
-	mother = 4693 # Solanna
-	trait = race_high_elf
-	7201.5.28 = {
-		birth = yes
-	}
-	6870.5.6 = {
-		add_spouse = 4696 # Lyna
-	}
-	8764.2.27 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-4696 = {
-	name = Lyna
+4238 = {
+	name = Olirea
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6854.4.21 = {
+	8042.9.20 = {
 		birth = yes
 	}
-	8417.9.11 = {
+	9191.6.30 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4697 = { # Ruler of c_fairbreeze - 9670.1.26
-	name = Volali
+4239 = { # Ruler of c_duskwither_spire - 9670.11.24
+	name = Laurith
+	female = yes
+	dynasty = 235 # dynasty235
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9218.12.12 = {
+		birth = yes
+	}
+	9442.5.9 = {
+		add_matrilineal_spouse = 4240 # Adurin
+	}
+	10857.12.11 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4240 = {
+	name = Adurin
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9426.3.4 = {
+		birth = yes
+	}
+	11065.4.24 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4947 = { # Ruler of c_fairbreeze - 7151.8.8
+	name = Isirami
 	female = yes
 	dynasty = 280 # dynasty280
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9320.8.5 = {
+	6593.10.13 = {
 		birth = yes
 	}
-	9360.10.26 = {
-		add_matrilineal_spouse = 4698 # Winthren
+	6550.8.24 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 4948 # Dulial
+		}
 	}
-	10491.7.9 = {
+	6609.10.13 = {
+		add_matrilineal_spouse = 4948 # Dulial
+	}
+	8072.5.8 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4698 = {
-	name = Winthren
+4948 = {
+	name = Dulial
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9344.11.13 = {
+	6534.2.9 = {
 		birth = yes
 	}
-	10515.1.20 = {
+	8013.2.25 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4747 = { # Ruler of c_farstrider_enclave - 9792.8.18
-	name = Oninath
-	dynasty = 286 # dynasty286
+4949 = { # Ruler of c_fairbreeze - 8072.11.14
+	name = Roldemar
+	dynasty = 280 # dynasty280
 	culture = high_elven
 	religion = arcane
+	father = 4948 # Dulial
+	mother = 4947 # Isirami
 	trait = race_high_elf
-	9711.11.16 = {
+	7416.4.27 = {
 		birth = yes
 	}
-	9848.12.8 = {
-		add_spouse = 4748 # Lisrthe
+	7007.10.3 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 4950 # Cyssa
+		}
 	}
-	10876.1.27 = {
+	7432.4.27 = {
+		add_spouse = 4950 # Cyssa
+	}
+	9365.12.21 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4748 = {
-	name = Lisrthe
+4950 = {
+	name = Cyssa
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9832.4.7 = {
+	6991.6.16 = {
 		birth = yes
 	}
-	10997.10.28 = {
+	8940.10.23 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-5195 = { # Ruler of c_goldenmist - 7122.4.6
-	name = Baeric
-	dynasty = 317 # dynasty317
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6642.3.11 = {
-		birth = yes
-	}
-	6226.5.17 = {
-		add_spouse = 5196 # Malynea
-	}
-	8457.7.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-5196 = {
-	name = Malynea
+4951 = { # Ruler of c_fairbreeze - 9670.12.21
+	name = Fyalenn
 	female = yes
+	dynasty = 281 # dynasty281
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6210.2.3 = {
+	9124.12.24 = {
 		birth = yes
 	}
-	8025.1.14 = {
+	8901.5.28 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 4952 # Mathaleron
+		}
+	}
+	9140.12.24 = {
+		add_matrilineal_spouse = 4952 # Mathaleron
+	}
+	10816.3.23 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-5197 = { # Ruler of c_goldenmist - 8457.2.26
-	name = Deryan
-	dynasty = 317 # dynasty317
+4952 = {
+	name = Mathaleron
 	culture = high_elven
 	religion = arcane
-	father = 5195 # Baeric
-	mother = 5196 # Malynea
 	trait = race_high_elf
-	7487.6.15 = {
+	8885.12.5 = {
 		birth = yes
 	}
-	7137.9.22 = {
-		add_spouse = 5198 # Hannovia
-	}
-	9286.3.23 = {
+	10577.2.20 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-5198 = {
-	name = Hannovia
+4987 = { # Ruler of c_faldirs_cove - 10024.2.8
+	name = La-La
 	female = yes
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	7121.3.17 = {
-		birth = yes
-	}
-	8920.1.27 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-5199 = { # Ruler of c_goldenmist - 9670.11.4
-	name = Ileda
-	female = yes
-	dynasty = 318 # dynasty318
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8668.8.6 = {
-		birth = yes
-	}
-	8455.5.5 = {
-		add_matrilineal_spouse = 5200 # Nalthanis
-	}
-	10470.1.12 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-5200 = {
-	name = Nalthanis
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8439.11.20 = {
-		birth = yes
-	}
-	10241.7.31 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-6097 = { # Ruler of c_highbank - 10002.1.9
-	name = Scilla
-	female = yes
-	dynasty = 381 # dynasty381
+	dynasty = 285 # dynasty285
 	culture = naga
 	religion = azshara
-	trait = race_elf
-	9992.7.17 = {
+	trait = race_naga
+	9994.4.1 = {
 		birth = yes
 	}
-	9751.4.8 = {
-		add_matrilineal_spouse = 6098 # Rajesh
+	9860.2.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 4988 # Heth'kess
+		}
 	}
-	11659.9.26 = {
+	10010.4.1 = {
+		add_matrilineal_spouse = 4988 # Heth'kess
+	}
+	11211.1.5 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-6098 = {
-	name = Rajesh
+4988 = {
+	name = Heth'kess
 	culture = naga
 	religion = azshara
-	trait = race_elf
-	9735.9.8 = {
+	trait = race_naga
+	9844.10.15 = {
 		birth = yes
 	}
-	11402.9.13 = {
+	11061.3.4 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-7437 = { # Ruler of c_magisters_terrace - 7140.6.5
-	name = Biribi
+5009 = { # Ruler of c_farstrider_enclave - 9810.12.21
+	name = Quelama
 	female = yes
-	dynasty = 478 # dynasty478
+	dynasty = 288 # dynasty288
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6648.6.11 = {
+	9743.4.18 = {
 		birth = yes
 	}
-	6534.9.25 = {
-		add_matrilineal_spouse = 7438 # Dathris
+	9586.1.7 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5010 # Embela
+		}
 	}
-	7884.1.13 = {
+	9759.4.18 = {
+		add_matrilineal_spouse = 5010 # Embela
+	}
+	11528.7.5 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-7438 = {
-	name = Dathris
+5010 = {
+	name = Embela
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6518.8.15 = {
+	9570.10.23 = {
 		birth = yes
 	}
-	7754.4.19 = {
+	11355.3.7 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-7439 = { # Ruler of c_magisters_terrace - 7884.8.30
-	name = Torvos
-	dynasty = 478 # dynasty478
-	culture = high_elven
-	religion = arcane
-	father = 7438 # Dathris
-	mother = 7437 # Biribi
-	trait = race_high_elf
-	7310.7.27 = {
-		birth = yes
-	}
-	7230.1.6 = {
-		add_spouse = 7440 # Aemara
-	}
-	8413.6.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-7440 = {
-	name = Aemara
+5475 = { # Ruler of c_goldenmist - 7152.12.6
+	name = Deynna
 	female = yes
+	dynasty = 319 # dynasty319
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	7214.10.18 = {
+	6522.12.30 = {
 		birth = yes
 	}
-	8317.4.21 = {
+	6566.5.16 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5476 # Lethecus
+		}
+	}
+	6566.7.16 = {
+		add_matrilineal_spouse = 5476 # Lethecus
+	}
+	8210.9.27 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-7441 = { # Ruler of c_magisters_terrace - 9670.12.22
-	name = Sylann
+5476 = {
+	name = Lethecus
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6550.7.16 = {
+		birth = yes
+	}
+	8238.1.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5477 = { # Ruler of c_goldenmist - 8210.9.25
+	name = Haelenai
 	female = yes
-	dynasty = 479 # dynasty479
+	dynasty = 319 # dynasty319
 	culture = high_elven
 	religion = arcane
+	father = 5476 # Lethecus
+	mother = 5475 # Deynna
 	trait = race_high_elf
-	8965.6.11 = {
+	7684.8.15 = {
 		birth = yes
 	}
-	8983.12.6 = {
-		add_matrilineal_spouse = 7442 # Savan
+	7585.7.11 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5478 # Fallesh
+		}
 	}
-	10721.12.29 = {
+	7700.8.15 = {
+		add_matrilineal_spouse = 5478 # Fallesh
+	}
+	8806.3.2 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-7442 = {
-	name = Savan
+5478 = {
+	name = Fallesh
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8967.6.18 = {
+	7569.7.17 = {
 		birth = yes
 	}
-	10723.8.21 = {
+	8691.7.17 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-8189 = { # Ruler of c_north_sanctum - 7159.10.4
-	name = Darlia
-	female = yes
-	dynasty = 537 # dynasty537
+5479 = { # Ruler of c_goldenmist - 9670.3.11
+	name = Darenis
+	dynasty = 320 # dynasty320
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6517.7.11 = {
+	9218.5.21 = {
 		birth = yes
 	}
-	6763.4.2 = {
-		add_matrilineal_spouse = 8190 # Andellion
+	9186.7.14 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5480 # Viera
+		}
 	}
-	8500.5.22 = {
+	9234.5.21 = {
+		add_spouse = 5480 # Viera
+	}
+	10286.2.18 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-8190 = {
-	name = Andellion
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6747.8.28 = {
-		birth = yes
-	}
-	8730.11.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8191 = { # Ruler of c_north_sanctum - 8500.9.13
-	name = Garridel
-	female = yes
-	dynasty = 537 # dynasty537
-	culture = high_elven
-	religion = arcane
-	father = 8190 # Andellion
-	mother = 8189 # Darlia
-	trait = race_high_elf
-	7706.9.26 = {
-		birth = yes
-	}
-	8028.7.25 = {
-		add_matrilineal_spouse = 8192 # Halis
-	}
-	9296.11.24 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8192 = {
-	name = Halis
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8012.7.25 = {
-		birth = yes
-	}
-	9602.5.12 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8193 = { # Ruler of c_north_sanctum - 9670.6.25
-	name = Zaedana
-	female = yes
-	dynasty = 538 # dynasty538
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8998.7.24 = {
-		birth = yes
-	}
-	8647.3.25 = {
-		add_matrilineal_spouse = 8194 # Alamma
-	}
-	10845.9.15 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8194 = {
-	name = Alamma
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8631.10.26 = {
-		birth = yes
-	}
-	10478.5.31 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8673 = { # Ruler of c_quel_danil - 9748.12.16
-	name = Tyri
-	female = yes
-	dynasty = 566 # dynasty566
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9681.4.8 = {
-		birth = yes
-	}
-	9800.9.15 = {
-		add_matrilineal_spouse = 8674 # Cacame
-	}
-	11447.1.19 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8674 = {
-	name = Cacame
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9784.7.2 = {
-		birth = yes
-	}
-	11550.7.10 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8699 = { # Ruler of c_quel_lithien - 9784.5.29
-	name = Miluria
-	female = yes
-	dynasty = 569 # dynasty569
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9725.3.6 = {
-		birth = yes
-	}
-	9296.4.3 = {
-		add_matrilineal_spouse = 8700 # Ryathen
-	}
-	11661.12.12 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8700 = {
-	name = Ryathen
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9280.3.14 = {
-		birth = yes
-	}
-	11216.9.2 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8719 = { # Ruler of c_rangers_rest - 9700.9.18
-	name = Kalinda
-	female = yes
-	dynasty = 572 # dynasty572
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9686.4.27 = {
-		birth = yes
-	}
-	9863.12.11 = {
-		add_matrilineal_spouse = 8720 # Fanoraithe
-	}
-	11469.5.2 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8720 = {
-	name = Fanoraithe
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9847.7.18 = {
-		birth = yes
-	}
-	11630.10.16 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-9145 = { # Ruler of c_sanctum_of_the_sun - 9789.6.1
-	name = Miluria
-	female = yes
-	dynasty = 606 # dynasty606
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9709.1.19 = {
-		birth = yes
-	}
-	9977.8.17 = {
-		add_matrilineal_spouse = 9146 # Bemarrin
-	}
-	10887.12.28 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-9146 = {
-	name = Bemarrin
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9961.11.17 = {
-		birth = yes
-	}
-	11139.9.9 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-9709 = { # Ruler of c_silvermoon - 7121.11.16
-	name = Sedina
-	female = yes
-	dynasty = 645 # dynasty645
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6711.9.17 = {
-		birth = yes
-	}
-	6939.11.6 = {
-		add_matrilineal_spouse = 9710 # Metopious
-	}
-	8179.6.13 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-9710 = {
-	name = Metopious
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6923.11.25 = {
-		birth = yes
-	}
-	8391.6.14 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-9711 = { # Ruler of c_silvermoon - 8179.6.24
-	name = Quithas
-	dynasty = 645 # dynasty645
-	culture = high_elven
-	religion = arcane
-	father = 9710 # Metopious
-	mother = 9709 # Sedina
-	trait = race_high_elf
-	7648.10.17 = {
-		birth = yes
-	}
-	7379.4.28 = {
-		add_spouse = 9712 # Eralan
-	}
-	9462.5.2 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-9712 = {
-	name = Eralan
+5480 = {
+	name = Viera
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	7363.5.10 = {
+	9170.7.29 = {
 		birth = yes
 	}
-	9177.6.7 = {
+	10238.10.13 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-9713 = { # Ruler of c_silvermoon - 9670.8.3
-	name = Talionia
+6419 = { # Ruler of c_highbank - 10009.10.31
+	name = Idra'jatar
+	dynasty = 382 # dynasty382
+	culture = naga
+	religion = azshara
+	trait = race_naga
+	9993.1.7 = {
+		birth = yes
+	}
+	10285.2.9 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 6420 # Thespia
+		}
+	}
+	10285.5.11 = {
+		add_spouse = 6420 # Thespia
+	}
+	11116.9.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+6420 = {
+	name = Thespia
 	female = yes
-	dynasty = 646 # dynasty646
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9222.2.21 = {
+	culture = naga
+	religion = azshara
+	trait = race_naga
+	10269.5.11 = {
 		birth = yes
 	}
-	9253.4.3 = {
-		add_matrilineal_spouse = 9714 # Kaendris
-	}
-	10351.10.25 = {
+	11392.8.12 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-9714 = {
-	name = Kaendris
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9237.3.30 = {
-		birth = yes
-	}
-	10366.12.15 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10113 = { # Ruler of c_stillwhisper_grove - 7122.1.15
-	name = Ayren
-	dynasty = 675 # dynasty675
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6284.12.24 = {
-		birth = yes
-	}
-	6194.1.17 = {
-		add_spouse = 10114 # Zandine
-	}
-	7863.1.14 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10114 = {
-	name = Zandine
-	female = yes
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6178.5.9 = {
-		birth = yes
-	}
-	7757.10.15 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10115 = { # Ruler of c_stillwhisper_grove - 7863.2.27
+7725 = { # Ruler of c_magisters_terrace - 7156.1.24
 	name = Aldrae
-	dynasty = 675 # dynasty675
+	dynasty = 482 # dynasty482
 	culture = high_elven
 	religion = arcane
-	father = 10113 # Ayren
-	mother = 10114 # Zandine
 	trait = race_high_elf
-	7337.4.22 = {
+	6836.10.27 = {
 		birth = yes
 	}
-	7295.5.7 = {
-		add_spouse = 10116 # Felannia
+	7043.12.13 = {
+		add_spouse = 7726 # Jovia
 	}
-	8461.5.9 = {
+	8094.5.10 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10116 = {
-	name = Felannia
+7726 = {
+	name = Jovia
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	7279.6.5 = {
+	7027.9.18 = {
 		birth = yes
 	}
-	8403.5.19 = {
+	8285.3.13 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10117 = { # Ruler of c_stillwhisper_grove - 9670.3.11
-	name = Yribria
+7727 = { # Ruler of c_magisters_terrace - 8094.4.10
+	name = Celana
 	female = yes
-	dynasty = 676 # dynasty676
+	dynasty = 482 # dynasty482
 	culture = high_elven
 	religion = arcane
+	father = 7725 # Aldrae
+	mother = 7726 # Jovia
 	trait = race_high_elf
-	8499.1.23 = {
+	7799.10.11 = {
 		birth = yes
 	}
-	8372.10.12 = {
-		add_matrilineal_spouse = 10118 # Darahir
+	7903.8.15 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 7728 # Darahir
+		}
 	}
-	10304.9.17 = {
+	7903.9.1 = {
+		add_matrilineal_spouse = 7728 # Darahir
+	}
+	9168.9.10 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10118 = {
+7728 = {
 	name = Darahir
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8356.7.4 = {
+	7887.9.1 = {
 		birth = yes
 	}
-	10161.8.25 = {
+	9256.5.7 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10441 = { # Ruler of c_suncrown - 7128.5.22
-	name = Vynna
+7729 = { # Ruler of c_magisters_terrace - 9670.7.25
+	name = Raelis
 	female = yes
-	dynasty = 701 # dynasty701
+	dynasty = 483 # dynasty483
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6531.3.9 = {
+	9056.3.28 = {
 		birth = yes
 	}
-	6235.4.2 = {
+	8966.1.24 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 7730 # Mathreyn
+		}
+	}
+	9072.3.28 = {
+		add_matrilineal_spouse = 7730 # Mathreyn
+	}
+	10330.5.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+7730 = {
+	name = Mathreyn
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8950.5.14 = {
+		birth = yes
+	}
+	10224.10.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8555 = { # Ruler of c_north_sanctum - 7150.3.23
+	name = Ros'eleth
+	female = yes
+	dynasty = 541 # dynasty541
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6087.2.18 = {
+		birth = yes
+	}
+	6427.7.9 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 8556 # Degolien
+		}
+	}
+	6427.10.8 = {
+		add_matrilineal_spouse = 8556 # Degolien
+	}
+	7506.8.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8556 = {
+	name = Degolien
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6411.10.8 = {
+		birth = yes
+	}
+	7830.3.9 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8557 = { # Ruler of c_north_sanctum - 7506.11.6
+	name = Kelisendra
+	female = yes
+	dynasty = 541 # dynasty541
+	culture = high_elven
+	religion = arcane
+	father = 8556 # Degolien
+	mother = 8555 # Ros'eleth
+	trait = race_high_elf
+	7134.6.22 = {
+		birth = yes
+	}
+	7028.2.12 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 8558 # Paelarin
+		}
+	}
+	7150.6.22 = {
+		add_matrilineal_spouse = 8558 # Paelarin
+	}
+	8942.9.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8558 = {
+	name = Paelarin
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	7012.1.5 = {
+		birth = yes
+	}
+	8820.3.5 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8559 = { # Ruler of c_north_sanctum - 9670.1.19
+	name = Celana
+	female = yes
+	dynasty = 542 # dynasty542
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8262.6.16 = {
+		birth = yes
+	}
+	8528.5.19 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 8560 # Jesthenis
+		}
+	}
+	8528.11.15 = {
+		add_matrilineal_spouse = 8560 # Jesthenis
+	}
+	10107.7.25 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8560 = {
+	name = Jesthenis
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8512.11.15 = {
+		birth = yes
+	}
+	10357.10.12 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9003 = { # Ruler of c_quel_danil - 9729.6.15
+	name = Arille
+	dynasty = 569 # dynasty569
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9655.7.30 = {
+		birth = yes
+	}
+	9744.5.19 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 9004 # Vyrin
+		}
+	}
+	9744.10.12 = {
+		add_spouse = 9004 # Vyrin
+	}
+	10759.12.17 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9004 = {
+	name = Vyrin
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9728.10.12 = {
+		birth = yes
+	}
+	10832.5.13 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9015 = { # Ruler of c_quel_lithien - 9791.2.12
+	name = Helios
+	dynasty = 572 # dynasty572
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9719.1.11 = {
+		birth = yes
+	}
+	9838.5.2 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 9016 # Elsharin
+		}
+	}
+	9838.9.12 = {
+		add_spouse = 9016 # Elsharin
+	}
+	10799.5.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9016 = {
+	name = Elsharin
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9822.9.12 = {
+		birth = yes
+	}
+	10902.5.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9031 = { # Ruler of c_rangers_rest - 9717.3.1
+	name = Veronia
+	female = yes
+	dynasty = 575 # dynasty575
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9699.4.29 = {
+		birth = yes
+	}
+	10006.1.3 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 9032 # Bithrus
+		}
+	}
+	10006.6.8 = {
+		add_matrilineal_spouse = 9032 # Bithrus
+	}
+	11146.2.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9032 = {
+	name = Bithrus
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9990.6.8 = {
+		birth = yes
+	}
+	11437.9.16 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9441 = { # Ruler of c_sanctum_of_the_sun - 9779.2.26
+	name = Rathin
+	dynasty = 608 # dynasty608
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9719.4.25 = {
+		birth = yes
+	}
+	9800.4.3 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 9442 # Phaelista
+		}
+	}
+	9800.10.18 = {
+		add_spouse = 9442 # Phaelista
+	}
+	11001.10.24 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9442 = {
+	name = Phaelista
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9784.10.18 = {
+		birth = yes
+	}
+	11066.2.21 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10007 = { # Ruler of c_silvermoon - 7133.9.8
+	name = Fanoraithe
+	dynasty = 648 # dynasty648
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6537.10.7 = {
+		birth = yes
+	}
+	6666.7.15 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10008 # Veronia
+		}
+	}
+	6666.12.25 = {
+		add_spouse = 10008 # Veronia
+	}
+	7856.12.16 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10008 = {
+	name = Veronia
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6650.12.25 = {
+		birth = yes
+	}
+	7969.11.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10009 = { # Ruler of c_silvermoon - 7856.11.19
+	name = Camberon
+	dynasty = 648 # dynasty648
+	culture = high_elven
+	religion = arcane
+	father = 10007 # Fanoraithe
+	mother = 10008 # Veronia
+	trait = race_high_elf
+	7204.5.1 = {
+		birth = yes
+	}
+	7276.2.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10010 # Janeda
+		}
+	}
+	7276.8.20 = {
+		add_spouse = 10010 # Janeda
+	}
+	8843.8.31 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10010 = {
+	name = Janeda
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	7260.8.20 = {
+		birth = yes
+	}
+	8899.1.12 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10011 = { # Ruler of c_silvermoon - 9670.10.27
+	name = Adelene
+	female = yes
+	dynasty = 649 # dynasty649
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8968.1.15 = {
+		birth = yes
+	}
+	9202.11.28 = {
+		add_matrilineal_spouse = 10012 # Perascamin
+	}
+	10710.8.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10012 = {
+	name = Perascamin
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9186.9.29 = {
+		birth = yes
+	}
+	10928.2.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10441 = { # Ruler of c_stillwhisper_grove - 7157.8.20
+	name = Terellia
+	female = yes
+	dynasty = 679 # dynasty679
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6489.2.23 = {
+		birth = yes
+	}
+	6218.5.27 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10442 # Veredis
+		}
+	}
+	6505.2.23 = {
 		add_matrilineal_spouse = 10442 # Veredis
 	}
-	8224.5.8 = {
+	7719.12.4 = {
 		death = {
 			death_reason = death_natural
 		}
@@ -1131,1185 +1322,1655 @@
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6219.1.1 = {
+	6202.2.16 = {
 		birth = yes
 	}
-	7912.12.22 = {
+	7432.10.15 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10443 = { # Ruler of c_suncrown - 8224.7.24
-	name = Lyrlia
+10443 = { # Ruler of c_stillwhisper_grove - 7719.9.11
+	name = Darthalia
 	female = yes
-	dynasty = 701 # dynasty701
+	dynasty = 679 # dynasty679
 	culture = high_elven
 	religion = arcane
 	father = 10442 # Veredis
-	mother = 10441 # Vynna
+	mother = 10441 # Terellia
 	trait = race_high_elf
-	7884.7.23 = {
+	6987.9.9 = {
 		birth = yes
 	}
-	8229.5.30 = {
-		add_matrilineal_spouse = 10444 # Geranis
+	6997.8.12 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10444 # Valaden
+		}
 	}
-	9401.2.12 = {
+	7003.9.9 = {
+		add_matrilineal_spouse = 10444 # Valaden
+	}
+	8904.4.1 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
 10444 = {
-	name = Geranis
+	name = Valaden
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8213.10.25 = {
+	6981.8.22 = {
 		birth = yes
 	}
-	9730.2.16 = {
+	8898.12.29 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10445 = { # Ruler of c_suncrown - 9670.3.4
-	name = Yurial
-	dynasty = 702 # dynasty702
+10445 = { # Ruler of c_stillwhisper_grove - 9670.4.3
+	name = Lyrlia
+	female = yes
+	dynasty = 680 # dynasty680
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9163.8.9 = {
+	8028.2.15 = {
 		birth = yes
 	}
-	9566.8.5 = {
-		add_spouse = 10446 # Larynna
+	8293.2.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10446 # Ordimbral
+		}
 	}
-	11019.9.12 = {
+	8293.5.21 = {
+		add_matrilineal_spouse = 10446 # Ordimbral
+	}
+	9968.6.24 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
 10446 = {
-	name = Larynna
+	name = Ordimbral
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8277.5.21 = {
+		birth = yes
+	}
+	10217.9.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10447 = { # Ruler of c_stillwhisper_grove - 9968.1.4
+	name = Garek
+	dynasty = 680 # dynasty680
+	culture = high_elven
+	religion = arcane
+	father = 10446 # Ordimbral
+	mother = 10445 # Lyrlia
+	trait = race_high_elf
+	9440.1.1 = {
+		birth = yes
+	}
+	9538.3.7 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10448 # Yula
+		}
+	}
+	9538.10.17 = {
+		add_spouse = 10448 # Yula
+	}
+	10735.4.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10448 = {
+	name = Yula
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9550.1.1 = {
+	9522.10.17 = {
 		birth = yes
 	}
-	11406.7.26 = {
+	10817.7.23 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10541 = { # Ruler of c_sunsail_anchorage - 7126.2.17
-	name = Deynna
+10845 = { # Ruler of c_suncrown - 7133.5.27
+	name = Viera
 	female = yes
-	dynasty = 708 # dynasty708
+	dynasty = 706 # dynasty706
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6448.5.8 = {
+	6803.1.6 = {
 		birth = yes
 	}
-	6099.4.20 = {
-		add_matrilineal_spouse = 10542 # Brasael
+	6644.8.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10846 # Andellion
+		}
 	}
-	8271.3.31 = {
+	6819.1.6 = {
+		add_matrilineal_spouse = 10846 # Andellion
+	}
+	7808.3.29 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10542 = {
-	name = Brasael
+10846 = {
+	name = Andellion
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6083.1.23 = {
+	6628.3.6 = {
 		birth = yes
 	}
-	7906.4.12 = {
+	7633.7.10 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10543 = { # Ruler of c_sunsail_anchorage - 8271.3.3
-	name = Asric
-	dynasty = 708 # dynasty708
-	culture = high_elven
-	religion = arcane
-	father = 10542 # Brasael
-	mother = 10541 # Deynna
-	trait = race_high_elf
-	7182.5.10 = {
-		birth = yes
-	}
-	6959.6.15 = {
-		add_spouse = 10544 # Valwyn
-	}
-	9078.12.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10544 = {
-	name = Valwyn
+10847 = { # Ruler of c_suncrown - 7808.6.28
+	name = Arynna
 	female = yes
+	dynasty = 706 # dynasty706
 	culture = high_elven
 	religion = arcane
+	father = 10846 # Andellion
+	mother = 10845 # Viera
 	trait = race_high_elf
-	6943.4.19 = {
+	6940.10.16 = {
 		birth = yes
 	}
-	8839.1.15 = {
+	7212.12.23 = {
+		add_matrilineal_spouse = 10848 # Baeric
+	}
+	8122.10.29 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10545 = { # Ruler of c_sunsail_anchorage - 9670.2.27
-	name = Aledis
-	dynasty = 709 # dynasty709
+10848 = {
+	name = Baeric
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9061.3.3 = {
+	7196.5.19 = {
 		birth = yes
 	}
-	8754.7.19 = {
-		add_spouse = 10546 # Zaralda
-	}
-	10559.8.16 = {
+	8378.9.21 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10546 = {
-	name = Zaralda
-	female = yes
+10849 = { # Ruler of c_suncrown - 9670.12.19
+	name = Virim
+	dynasty = 707 # dynasty707
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8738.9.15 = {
+	8770.6.3 = {
 		birth = yes
 	}
-	10236.3.14 = {
+	8916.2.18 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10850 # Felannia
+		}
+	}
+	8916.10.14 = {
+		add_spouse = 10850 # Felannia
+	}
+	10673.6.14 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10547 = { # Ruler of c_sunstrider_isle - 7133.11.28
-	name = Tannaria
-	female = yes
-	dynasty = 710 # dynasty710
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6319.8.14 = {
-		birth = yes
-	}
-	6384.7.8 = {
-		add_matrilineal_spouse = 10548 # Isian
-	}
-	8175.5.19 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10548 = {
-	name = Isian
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6368.1.10 = {
-		birth = yes
-	}
-	8224.2.1 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10549 = { # Ruler of c_sunstrider_isle - 8175.9.7
-	name = Jaronis
-	dynasty = 710 # dynasty710
-	culture = high_elven
-	religion = arcane
-	father = 10548 # Isian
-	mother = 10547 # Tannaria
-	trait = race_high_elf
-	7679.1.18 = {
-		birth = yes
-	}
-	7926.10.15 = {
-		add_spouse = 10550 # Andrissa
-	}
-	8801.9.4 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10550 = {
-	name = Andrissa
+10850 = {
+	name = Felannia
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	7910.6.10 = {
+	8900.10.14 = {
 		birth = yes
 	}
-	9032.12.30 = {
+	10803.3.4 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10551 = { # Ruler of c_sunstrider_isle - 9670.6.2
-	name = Aleinia
-	female = yes
-	dynasty = 711 # dynasty711
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8378.2.14 = {
-		birth = yes
-	}
-	8087.1.29 = {
-		add_matrilineal_spouse = 10552 # Duyash
-	}
-	10081.11.8 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10552 = {
-	name = Duyash
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8071.3.22 = {
-		birth = yes
-	}
-	9774.5.7 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10553 = { # Ruler of c_suns_reach - 7160.4.6
-	name = Lotheolan
-	dynasty = 712 # dynasty712
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6739.6.7 = {
-		birth = yes
-	}
-	7017.6.9 = {
-		add_spouse = 10554 # Vesara
-	}
-	7872.4.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10554 = {
-	name = Vesara
-	female = yes
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	7001.1.20 = {
-		birth = yes
-	}
-	8134.4.13 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10555 = { # Ruler of c_suns_reach - 7872.6.25
-	name = Feranin
-	dynasty = 712 # dynasty712
-	culture = high_elven
-	religion = arcane
-	father = 10553 # Lotheolan
-	mother = 10554 # Vesara
-	trait = race_high_elf
-	7017.1.20 = {
-		birth = yes
-	}
-	7277.7.6 = {
-		add_spouse = 10556 # Leryda
-	}
-	8782.7.26 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10556 = {
-	name = Leryda
-	female = yes
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	7261.3.7 = {
-		birth = yes
-	}
-	9026.5.17 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10557 = { # Ruler of c_suns_reach - 9670.12.18
-	name = Julia
+10921 = { # Ruler of c_sunsail_anchorage - 7152.5.22
+	name = Jainthess
 	female = yes
 	dynasty = 713 # dynasty713
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8722.10.21 = {
+	6670.12.28 = {
 		birth = yes
 	}
-	8914.6.10 = {
-		add_matrilineal_spouse = 10558 # Veredis
+	6872.2.4 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10922 # Vandril
+		}
 	}
-	10089.7.12 = {
+	6872.4.7 = {
+		add_matrilineal_spouse = 10922 # Vandril
+	}
+	7899.8.10 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10558 = {
-	name = Veredis
+10922 = {
+	name = Vandril
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8898.6.29 = {
+	6856.4.7 = {
 		birth = yes
 	}
-	10265.8.25 = {
+	8085.4.16 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10559 = { # Ruler of c_sunwell_plateau - 7125.12.21
-	name = Elara
+10923 = { # Ruler of c_sunsail_anchorage - 7899.5.28
+	name = Elendri
 	female = yes
+	dynasty = 713 # dynasty713
+	culture = high_elven
+	religion = arcane
+	father = 10922 # Vandril
+	mother = 10921 # Jainthess
+	trait = race_high_elf
+	7169.7.12 = {
+		birth = yes
+	}
+	7316.2.9 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10924 # Kelerun
+		}
+	}
+	7316.10.5 = {
+		add_matrilineal_spouse = 10924 # Kelerun
+	}
+	8864.4.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10924 = {
+	name = Kelerun
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	7300.10.5 = {
+		birth = yes
+	}
+	8995.6.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10925 = { # Ruler of c_sunsail_anchorage - 9670.5.7
+	name = Thalodien
 	dynasty = 714 # dynasty714
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6613.3.8 = {
+	8977.4.16 = {
 		birth = yes
 	}
-	6834.5.9 = {
-		add_matrilineal_spouse = 10560 # Sathren
+	9178.10.5 = {
+		add_spouse = 10926 # Valine
 	}
-	7676.9.6 = {
+	10666.9.12 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10560 = {
-	name = Sathren
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6818.8.22 = {
-		birth = yes
-	}
-	7881.9.7 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10561 = { # Ruler of c_sunwell_plateau - 7676.12.7
-	name = Zandine
+10926 = {
+	name = Valine
 	female = yes
-	dynasty = 714 # dynasty714
 	culture = high_elven
 	religion = arcane
-	father = 10560 # Sathren
-	mother = 10559 # Elara
 	trait = race_high_elf
-	6834.8.22 = {
+	9162.7.16 = {
 		birth = yes
 	}
-	7301.5.26 = {
-		add_matrilineal_spouse = 10562 # Tyrith
-	}
-	8795.7.7 = {
+	10851.1.6 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10562 = {
-	name = Tyrith
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	7285.1.20 = {
-		birth = yes
-	}
-	9246.9.4 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10563 = { # Ruler of c_sunwell_plateau - 9670.12.4
-	name = Amorlin
+10927 = { # Ruler of c_sunstrider_isle - 7147.7.2
+	name = Danwe
+	female = yes
 	dynasty = 715 # dynasty715
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8841.7.23 = {
+	6971.12.24 = {
 		birth = yes
 	}
-	8749.12.25 = {
-		add_spouse = 10564 # Lilatha
+	6840.12.18 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10928 # Jenath
+		}
 	}
-	10074.12.13 = {
+	6987.12.24 = {
+		add_matrilineal_spouse = 10928 # Jenath
+	}
+	8022.1.6 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10564 = {
-	name = Lilatha
-	female = yes
+10928 = {
+	name = Jenath
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8733.5.1 = {
+	6824.8.16 = {
 		birth = yes
 	}
-	9966.4.10 = {
+	7875.8.20 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-10623 = { # Ruler of c_thalassian_heights - 7125.5.25
-	name = Seraphina
-	female = yes
-	dynasty = 722 # dynasty722
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6987.12.9 = {
-		birth = yes
-	}
-	6810.1.17 = {
-		add_matrilineal_spouse = 10624 # Menerin
-	}
-	8186.10.15 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10624 = {
-	name = Menerin
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6794.8.18 = {
-		birth = yes
-	}
-	7993.1.11 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10625 = { # Ruler of c_thalassian_heights - 8186.2.10
-	name = Kylene
-	female = yes
-	dynasty = 722 # dynasty722
-	culture = high_elven
-	religion = arcane
-	father = 10624 # Menerin
-	mother = 10623 # Seraphina
-	trait = race_high_elf
-	7003.12.9 = {
-		birth = yes
-	}
-	6986.6.10 = {
-		add_matrilineal_spouse = 10626 # Mehlar
-	}
-	8927.4.27 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10626 = {
-	name = Mehlar
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6970.8.30 = {
-		birth = yes
-	}
-	8894.12.27 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10627 = { # Ruler of c_thalassian_heights - 9670.5.4
-	name = Valine
-	female = yes
-	dynasty = 723 # dynasty723
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8690.2.15 = {
-		birth = yes
-	}
-	8468.12.5 = {
-		add_matrilineal_spouse = 10628 # Paelarin
-	}
-	10157.12.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10628 = {
-	name = Paelarin
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	8452.9.15 = {
-		birth = yes
-	}
-	9919.10.14 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10643 = { # Ruler of c_thalassian_pass - 9782.4.17
-	name = Taleris
-	dynasty = 726 # dynasty726
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9701.8.12 = {
-		birth = yes
-	}
-	9664.2.1 = {
-		add_spouse = 10644 # Ileda
-	}
-	11582.5.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10644 = {
-	name = Ileda
-	female = yes
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9648.6.1 = {
-		birth = yes
-	}
-	11529.1.7 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10667 = { # Ruler of c_thas_alah - 9783.11.26
-	name = Vesara
-	female = yes
-	dynasty = 729 # dynasty729
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9699.6.8 = {
-		birth = yes
-	}
-	9697.1.1 = {
-		add_matrilineal_spouse = 10668 # Gilthares
-	}
-	10709.9.14 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-10668 = {
-	name = Gilthares
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9681.9.8 = {
-		birth = yes
-	}
-	10691.10.27 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11229 = { # Ruler of c_the_scorched_grove - 7155.8.10
-	name = Haelenai
-	female = yes
-	dynasty = 765 # dynasty765
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6710.10.18 = {
-		birth = yes
-	}
-	6437.3.24 = {
-		add_matrilineal_spouse = 11230 # Degolien
-	}
-	8237.5.30 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11230 = {
-	name = Degolien
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6421.6.6 = {
-		birth = yes
-	}
-	7948.5.15 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11231 = { # Ruler of c_the_scorched_grove - 8237.2.5
+10929 = { # Ruler of c_sunstrider_isle - 8022.12.1
 	name = Talionia
 	female = yes
-	dynasty = 765 # dynasty765
+	dynasty = 715 # dynasty715
 	culture = high_elven
 	religion = arcane
-	father = 11230 # Degolien
-	mother = 11229 # Haelenai
+	father = 10928 # Jenath
+	mother = 10927 # Danwe
 	trait = race_high_elf
-	6861.8.16 = {
+	7360.1.7 = {
 		birth = yes
 	}
-	6968.4.27 = {
-		add_matrilineal_spouse = 11232 # Asric
+	7619.1.12 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10930 # Tyelis
+		}
 	}
-	8736.12.3 = {
+	7619.6.7 = {
+		add_matrilineal_spouse = 10930 # Tyelis
+	}
+	8599.10.9 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11232 = {
-	name = Asric
+10930 = {
+	name = Tyelis
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6952.1.31 = {
+	7603.6.7 = {
 		birth = yes
 	}
-	8827.11.12 = {
+	8842.11.11 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11233 = { # Ruler of c_the_scorched_grove - 9670.10.11
-	name = Darill
-	dynasty = 766 # dynasty766
+10931 = { # Ruler of c_sunstrider_isle - 9670.6.30
+	name = Surdiel
+	dynasty = 716 # dynasty716
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8948.8.9 = {
+	8528.3.19 = {
 		birth = yes
 	}
-	9048.3.24 = {
-		add_spouse = 11234 # Deynna
+	8561.12.18 = {
+		add_spouse = 10932 # Aresella
 	}
-	10255.5.20 = {
+	10195.5.17 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11234 = {
-	name = Deynna
+10932 = {
+	name = Aresella
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9032.9.7 = {
+	8545.1.12 = {
 		birth = yes
 	}
-	10339.5.29 = {
+	10212.6.15 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11767 = { # Ruler of c_tor_watha - 7152.8.24
-	name = Sylann
+10933 = { # Ruler of c_suns_reach - 7142.6.5
+	name = Sallina
 	female = yes
-	dynasty = 803 # dynasty803
+	dynasty = 717 # dynasty717
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6720.4.30 = {
+	6064.8.27 = {
 		birth = yes
 	}
-	6576.9.12 = {
-		add_matrilineal_spouse = 11768 # Gilthares
+	6213.10.17 = {
+		add_matrilineal_spouse = 10934 # Zelan
 	}
-	8318.1.2 = {
+	7883.8.13 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11768 = {
-	name = Gilthares
+10934 = {
+	name = Zelan
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	6560.5.15 = {
+	6197.3.6 = {
 		birth = yes
 	}
-	8158.6.19 = {
+	8016.1.23 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11769 = { # Ruler of c_tor_watha - 8318.9.15
-	name = Darthalia
+10935 = { # Ruler of c_suns_reach - 7883.2.6
+	name = Vesara
 	female = yes
-	dynasty = 803 # dynasty803
+	dynasty = 717 # dynasty717
 	culture = high_elven
 	religion = arcane
-	father = 11768 # Gilthares
-	mother = 11767 # Sylann
+	father = 10934 # Zelan
+	mother = 10933 # Sallina
 	trait = race_high_elf
-	7588.11.11 = {
+	6474.8.27 = {
 		birth = yes
 	}
-	7131.9.20 = {
-		add_matrilineal_spouse = 11770 # Haelthol
+	6205.9.27 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10936 # Adurin
+		}
 	}
-	9488.4.7 = {
+	6490.8.27 = {
+		add_matrilineal_spouse = 10936 # Adurin
+	}
+	8361.8.12 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11770 = {
-	name = Haelthol
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	7115.4.28 = {
-		birth = yes
-	}
-	9015.6.2 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11771 = { # Ruler of c_tor_watha - 9670.6.2
-	name = Fanoraithe
-	dynasty = 804 # dynasty804
+10936 = {
+	name = Adurin
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8766.3.31 = {
+	6189.9.12 = {
 		birth = yes
 	}
-	8869.9.26 = {
-		add_spouse = 11772 # Zildjia
-	}
-	10554.11.26 = {
+	8076.7.3 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11772 = {
-	name = Zildjia
-	female = yes
+10937 = { # Ruler of c_suns_reach - 9670.11.3
+	name = Aegalas
+	dynasty = 718 # dynasty718
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	8853.12.3 = {
+	9192.10.18 = {
 		birth = yes
 	}
-	10641.7.24 = {
+	9650.9.17 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10938 # Viera
+		}
+	}
+	9650.10.15 = {
+		add_spouse = 10938 # Viera
+	}
+	11018.7.29 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-11797 = { # Ruler of c_tranquillien - 9800.7.18
-	name = Sathiel
-	female = yes
-	dynasty = 807 # dynasty807
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9746.5.28 = {
-		birth = yes
-	}
-	9989.6.22 = {
-		add_matrilineal_spouse = 11798 # Darenis
-	}
-	11631.7.27 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11798 = {
-	name = Darenis
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9973.3.28 = {
-		birth = yes
-	}
-	11858.3.14 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11977 = { # Ruler of c_twilight_shore - 10003.11.14
-	name = Sithizi
-	dynasty = 820 # dynasty820
-	culture = naga
-	religion = azshara
-	trait = race_elf
-	9990.11.10 = {
-		birth = yes
-	}
-	9570.2.3 = {
-		add_spouse = 11978 # Morgala
-	}
-	11947.3.30 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11978 = {
-	name = Morgala
-	female = yes
-	culture = naga
-	religion = azshara
-	trait = race_elf
-	9554.2.1 = {
-		birth = yes
-	}
-	11511.4.19 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12135 = { # Ruler of c_underlight_hills - 9808.3.5
-	name = Solanian
-	dynasty = 833 # dynasty833
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9740.5.28 = {
-		birth = yes
-	}
-	9337.4.8 = {
-		add_spouse = 12136 # Ysuria
-	}
-	11613.5.7 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12136 = {
-	name = Ysuria
+10938 = {
+	name = Viera
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9321.12.18 = {
+	9634.10.15 = {
 		birth = yes
 	}
-	11194.7.10 = {
+	11460.7.21 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12579 = { # Ruler of c_west_sanctum - 7134.4.20
-	name = Martik
-	dynasty = 865 # dynasty865
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6380.8.1 = {
-		birth = yes
-	}
-	6222.1.28 = {
-		add_spouse = 12580 # Dalinna
-	}
-	7450.2.7 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12580 = {
-	name = Dalinna
-	female = yes
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	6206.11.22 = {
-		birth = yes
-	}
-	7276.5.11 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12581 = { # Ruler of c_west_sanctum - 7450.2.17
-	name = Marniel
-	female = yes
-	dynasty = 865 # dynasty865
-	culture = high_elven
-	religion = arcane
-	father = 12579 # Martik
-	mother = 12580 # Dalinna
-	trait = race_high_elf
-	7006.2.7 = {
-		birth = yes
-	}
-	7134.4.13 = {
-		add_matrilineal_spouse = 12582 # Vor'el
-	}
-	8584.8.4 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12582 = {
-	name = Vor'el
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	7118.3.3 = {
-		birth = yes
-	}
-	8696.10.1 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12583 = { # Ruler of c_west_sanctum - 9670.6.16
-	name = Taela
-	female = yes
-	dynasty = 866 # dynasty866
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9448.10.29 = {
-		birth = yes
-	}
-	9681.6.5 = {
-		add_matrilineal_spouse = 12584 # Firael
-	}
-	10655.5.12 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12584 = {
-	name = Firael
-	culture = high_elven
-	religion = arcane
-	trait = race_high_elf
-	9665.3.15 = {
-		birth = yes
-	}
-	10872.12.4 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12817 = { # Ruler of c_windrunner_coast - 9799.1.27
+10939 = { # Ruler of c_sunwell_plateau - 7147.3.8
 	name = Yula
 	female = yes
-	dynasty = 881 # dynasty881
+	dynasty = 719 # dynasty719
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9720.6.20 = {
+	6287.4.17 = {
 		birth = yes
 	}
-	9469.9.13 = {
-		add_matrilineal_spouse = 12818 # Calesthris
+	6040.3.8 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10940 # Andorel
+		}
 	}
-	11543.10.13 = {
+	6303.4.17 = {
+		add_matrilineal_spouse = 10940 # Andorel
+	}
+	7935.2.14 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12818 = {
-	name = Calesthris
+10940 = {
+	name = Andorel
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9453.10.1 = {
+	6024.2.13 = {
 		birth = yes
 	}
-	11276.6.18 = {
+	7672.3.21 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12963 = { # Ruler of c_zeb_watha - 7121.12.4
-	name = Paniar
-	dynasty = 893 # dynasty893
+10941 = { # Ruler of c_sunwell_plateau - 7935.4.7
+	name = Shatharia
+	female = yes
+	dynasty = 719 # dynasty719
 	culture = high_elven
 	religion = arcane
+	father = 10940 # Andorel
+	mother = 10939 # Yula
 	trait = race_high_elf
-	6302.5.30 = {
+	7547.6.16 = {
 		birth = yes
 	}
-	6565.7.26 = {
-		add_spouse = 12964 # Cyssa
+	7998.2.25 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10942 # Kariel
+		}
 	}
-	7616.2.14 = {
+	7998.5.26 = {
+		add_matrilineal_spouse = 10942 # Kariel
+	}
+	9382.7.18 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12964 = {
+10942 = {
+	name = Kariel
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	7982.5.26 = {
+		birth = yes
+	}
+	9817.10.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10943 = { # Ruler of c_sunwell_plateau - 9670.3.12
+	name = Gilveradin
+	dynasty = 720 # dynasty720
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8052.1.31 = {
+		birth = yes
+	}
+	8136.10.23 = {
+		add_spouse = 10944 # Aleinia
+	}
+	9832.10.10 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10944 = {
+	name = Aleinia
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8120.3.2 = {
+		birth = yes
+	}
+	9900.12.13 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10945 = { # Ruler of c_sunwell_plateau - 9832.12.5
 	name = Cyssa
 	female = yes
+	dynasty = 720 # dynasty720
 	culture = high_elven
 	religion = arcane
+	father = 10943 # Gilveradin
+	mother = 10944 # Aleinia
 	trait = race_high_elf
-	6549.2.12 = {
+	9031.2.22 = {
 		birth = yes
 	}
-	7863.2.12 = {
+	9051.11.5 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10946 # Sleyin
+		}
+	}
+	9051.12.1 = {
+		add_matrilineal_spouse = 10946 # Sleyin
+	}
+	10277.9.11 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12965 = { # Ruler of c_zeb_watha - 7616.7.22
-	name = Sathren
-	dynasty = 893 # dynasty893
+10946 = {
+	name = Sleyin
 	culture = high_elven
 	religion = arcane
-	father = 12963 # Paniar
-	mother = 12964 # Cyssa
 	trait = race_high_elf
-	6858.4.13 = {
+	9035.12.1 = {
 		birth = yes
 	}
-	7023.6.8 = {
-		add_spouse = 12966 # Darlia
-	}
-	8157.4.1 = {
+	10281.6.3 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12966 = {
-	name = Darlia
+11069 = { # Ruler of c_thalassian_heights - 7131.3.1
+	name = Gelanthis
+	dynasty = 727 # dynasty727
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6650.5.17 = {
+		birth = yes
+	}
+	6636.1.31 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11070 # Arathel
+		}
+	}
+	6666.5.17 = {
+		add_spouse = 11070 # Arathel
+	}
+	7706.4.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11070 = {
+	name = Arathel
 	female = yes
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	7007.8.20 = {
+	6620.2.10 = {
 		birth = yes
 	}
-	8306.7.31 = {
+	7676.9.16 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12967 = { # Ruler of c_zeb_watha - 9670.7.15
-	name = Innalia
+11071 = { # Ruler of c_thalassian_heights - 7706.12.5
+	name = Elosai
 	female = yes
-	dynasty = 894 # dynasty894
+	dynasty = 727 # dynasty727
 	culture = high_elven
 	religion = arcane
+	father = 11069 # Gelanthis
+	mother = 11070 # Arathel
 	trait = race_high_elf
-	9076.12.27 = {
+	7226.5.31 = {
 		birth = yes
 	}
-	9341.8.10 = {
-		add_matrilineal_spouse = 12968 # Metopious
+	7062.10.5 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11072 # Eriden
+		}
 	}
-	10191.5.28 = {
+	7242.5.31 = {
+		add_matrilineal_spouse = 11072 # Eriden
+	}
+	8387.1.7 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12968 = {
-	name = Metopious
+11072 = {
+	name = Eriden
 	culture = high_elven
 	religion = arcane
 	trait = race_high_elf
-	9325.12.7 = {
+	7046.2.3 = {
 		birth = yes
 	}
-	10440.1.31 = {
+	8207.9.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11073 = { # Ruler of c_thalassian_heights - 9670.6.22
+	name = Aredyn
+	dynasty = 728 # dynasty728
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9256.1.11 = {
+		birth = yes
+	}
+	9047.9.21 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11074 # Zaedana
+		}
+	}
+	9272.1.11 = {
+		add_spouse = 11074 # Zaedana
+	}
+	10860.7.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11074 = {
+	name = Zaedana
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9031.3.16 = {
+		birth = yes
+	}
+	10635.1.24 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11099 = { # Ruler of c_thalassian_pass - 9817.5.26
+	name = Tana
+	female = yes
+	dynasty = 731 # dynasty731
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9738.9.17 = {
+		birth = yes
+	}
+	9936.9.6 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11100 # Delindel
+		}
+	}
+	9936.11.10 = {
+		add_matrilineal_spouse = 11100 # Delindel
+	}
+	11098.8.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11100 = {
+	name = Delindel
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9920.11.10 = {
+		birth = yes
+	}
+	11280.3.11 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11113 = { # Ruler of c_thas_alah - 9771.12.22
+	name = Mahir
+	dynasty = 734 # dynasty734
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9699.5.23 = {
+		birth = yes
+	}
+	9555.4.13 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11114 # Isirami
+		}
+	}
+	9715.5.23 = {
+		add_spouse = 11114 # Isirami
+	}
+	10914.6.21 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11114 = {
+	name = Isirami
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9539.12.27 = {
+		birth = yes
+	}
+	10754.6.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11645 = { # Ruler of c_the_scorched_grove - 7126.10.26
+	name = Paldesse
+	female = yes
+	dynasty = 771 # dynasty771
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6188.7.17 = {
+		birth = yes
+	}
+	6082.2.15 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11646 # Alamma
+		}
+	}
+	6204.7.17 = {
+		add_matrilineal_spouse = 11646 # Alamma
+	}
+	7819.8.5 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11646 = {
+	name = Alamma
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6066.3.8 = {
+		birth = yes
+	}
+	7697.4.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11647 = { # Ruler of c_the_scorched_grove - 7819.2.15
+	name = Velan
+	dynasty = 771 # dynasty771
+	culture = high_elven
+	religion = arcane
+	father = 11646 # Alamma
+	mother = 11645 # Paldesse
+	trait = race_high_elf
+	6709.10.30 = {
+		birth = yes
+	}
+	6553.7.26 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11648 # Aniduria
+		}
+	}
+	6725.10.30 = {
+		add_spouse = 11648 # Aniduria
+	}
+	8327.10.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11648 = {
+	name = Aniduria
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6537.6.12 = {
+		birth = yes
+	}
+	8155.3.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11649 = { # Ruler of c_the_scorched_grove - 9670.5.2
+	name = Feynna
+	female = yes
+	dynasty = 772 # dynasty772
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8520.5.30 = {
+		birth = yes
+	}
+	8323.5.11 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11650 # Jenath
+		}
+	}
+	8536.5.30 = {
+		add_matrilineal_spouse = 11650 # Jenath
+	}
+	9966.8.21 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11650 = {
+	name = Jenath
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8307.10.25 = {
+		birth = yes
+	}
+	9753.9.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11651 = { # Ruler of c_the_scorched_grove - 9966.8.17
+	name = Lanudal
+	dynasty = 772 # dynasty772
+	culture = high_elven
+	religion = arcane
+	father = 11650 # Jenath
+	mother = 11649 # Feynna
+	trait = race_high_elf
+	9844.11.14 = {
+		birth = yes
+	}
+	10116.6.16 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 11652 # Tannaria
+		}
+	}
+	10116.11.20 = {
+		add_spouse = 11652 # Tannaria
+	}
+	11641.3.31 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+11652 = {
+	name = Tannaria
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	10100.11.20 = {
+		birth = yes
+	}
+	11897.10.16 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12151 = { # Ruler of c_tor_watha - 7139.7.13
+	name = Isirami
+	female = yes
+	dynasty = 810 # dynasty810
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	5881.12.26 = {
+		birth = yes
+	}
+	5966.10.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12152 # Baeric
+		}
+	}
+	5966.10.29 = {
+		add_matrilineal_spouse = 12152 # Baeric
+	}
+	7241.8.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12152 = {
+	name = Baeric
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	5950.10.29 = {
+		birth = yes
+	}
+	7310.10.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12153 = { # Ruler of c_tor_watha - 7241.12.23
+	name = Theris
+	dynasty = 810 # dynasty810
+	culture = high_elven
+	religion = arcane
+	father = 12152 # Baeric
+	mother = 12151 # Isirami
+	trait = race_high_elf
+	6725.6.13 = {
+		birth = yes
+	}
+	7040.5.9 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12154 # Ceera
+		}
+	}
+	7040.10.31 = {
+		add_spouse = 12154 # Ceera
+	}
+	8034.10.31 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12154 = {
+	name = Ceera
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	7024.10.31 = {
+		birth = yes
+	}
+	8333.8.9 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12155 = { # Ruler of c_tor_watha - 9670.3.15
+	name = Surdiel
+	dynasty = 811 # dynasty811
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9481.10.12 = {
+		birth = yes
+	}
+	9601.7.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12156 # Hannovia
+		}
+	}
+	9601.9.18 = {
+		add_spouse = 12156 # Hannovia
+	}
+	10922.10.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12156 = {
+	name = Hannovia
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9585.9.18 = {
+		birth = yes
+	}
+	11026.5.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12177 = { # Ruler of c_tranquillien - 9812.4.24
+	name = Alamaro
+	dynasty = 814 # dynasty814
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9740.9.28 = {
+		birth = yes
+	}
+	9892.9.2 = {
+		add_spouse = 12178 # Arathel
+	}
+	11113.12.17 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12178 = {
+	name = Arathel
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9876.6.27 = {
+		birth = yes
+	}
+	11249.5.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12367 = { # Ruler of c_twilight_shore - 10013.2.2
+	name = Silthera
+	female = yes
+	dynasty = 826 # dynasty826
+	culture = naga
+	religion = azshara
+	trait = race_naga
+	9993.2.28 = {
+		birth = yes
+	}
+	9812.2.20 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12368 # Kassarus
+		}
+	}
+	10009.2.28 = {
+		add_matrilineal_spouse = 12368 # Kassarus
+	}
+	11800.11.21 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12368 = {
+	name = Kassarus
+	culture = naga
+	religion = azshara
+	trait = race_naga
+	9796.12.23 = {
+		birth = yes
+	}
+	11603.6.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12509 = { # Ruler of c_underlight_hills - 9800.4.21
+	name = Aresella
+	female = yes
+	dynasty = 839 # dynasty839
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9718.8.10 = {
+		birth = yes
+	}
+	9859.10.23 = {
+		add_matrilineal_spouse = 12510 # Thalodien
+	}
+	11243.5.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12510 = {
+	name = Thalodien
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9843.8.9 = {
+		birth = yes
+	}
+	11368.10.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12953 = { # Ruler of c_west_sanctum - 7129.4.3
+	name = Saltheril
+	dynasty = 873 # dynasty873
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6573.9.22 = {
+		birth = yes
+	}
+	6989.4.22 = {
+		add_spouse = 12954 # Ivrenne
+	}
+	8552.2.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12954 = {
+	name = Ivrenne
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6973.1.22 = {
+		birth = yes
+	}
+	8952.8.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12955 = { # Ruler of c_west_sanctum - 8552.9.2
+	name = Andellion
+	dynasty = 873 # dynasty873
+	culture = high_elven
+	religion = arcane
+	father = 12953 # Saltheril
+	mother = 12954 # Ivrenne
+	trait = race_high_elf
+	8021.3.31 = {
+		birth = yes
+	}
+	8018.8.11 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12956 # Zathanna
+		}
+	}
+	8037.3.31 = {
+		add_spouse = 12956 # Zathanna
+	}
+	9471.7.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12956 = {
+	name = Zathanna
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8002.9.16 = {
+		birth = yes
+	}
+	9452.10.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12957 = { # Ruler of c_west_sanctum - 9670.2.27
+	name = Ardalan
+	dynasty = 874 # dynasty874
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9432.1.25 = {
+		birth = yes
+	}
+	9438.8.12 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12958 # Ros'eleth
+		}
+	}
+	9448.1.25 = {
+		add_spouse = 12958 # Ros'eleth
+	}
+	10590.9.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12958 = {
+	name = Ros'eleth
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9422.5.10 = {
+		birth = yes
+	}
+	10580.1.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+13113 = { # Ruler of c_windrunner_coast - 9778.2.15
+	name = Aemara
+	female = yes
+	dynasty = 889 # dynasty889
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9692.6.15 = {
+		birth = yes
+	}
+	9404.1.23 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 13114 # Deryan
+		}
+	}
+	9708.6.15 = {
+		add_matrilineal_spouse = 13114 # Deryan
+	}
+	10973.6.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+13114 = {
+	name = Deryan
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9388.11.16 = {
+		birth = yes
+	}
+	10669.10.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+13233 = { # Ruler of c_zeb_watha - 7140.5.8
+	name = Sylastor
+	dynasty = 901 # dynasty901
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6516.9.22 = {
+		birth = yes
+	}
+	6913.1.12 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 13234 # Alorya
+		}
+	}
+	6913.10.6 = {
+		add_spouse = 13234 # Alorya
+	}
+	8215.3.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+13234 = {
+	name = Alorya
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	6897.10.6 = {
+		birth = yes
+	}
+	8596.10.16 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+13235 = { # Ruler of c_zeb_watha - 8215.12.3
+	name = Krenn'an
+	dynasty = 901 # dynasty901
+	culture = high_elven
+	religion = arcane
+	father = 13233 # Sylastor
+	mother = 13234 # Alorya
+	trait = race_high_elf
+	7583.3.6 = {
+		birth = yes
+	}
+	7438.12.29 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 13236 # Karynna
+		}
+	}
+	7599.3.6 = {
+		add_spouse = 13236 # Karynna
+	}
+	8796.8.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+13236 = {
+	name = Karynna
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	7422.4.30 = {
+		birth = yes
+	}
+	8635.1.18 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+13237 = { # Ruler of c_zeb_watha - 9670.4.14
+	name = Lynalis
+	female = yes
+	dynasty = 902 # dynasty902
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	9023.1.1 = {
+		birth = yes
+	}
+	8965.9.8 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 13238 # Melinan
+		}
+	}
+	9039.1.1 = {
+		add_matrilineal_spouse = 13238 # Melinan
+	}
+	10341.2.11 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+13238 = {
+	name = Melinan
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	8949.10.17 = {
+		birth = yes
+	}
+	10267.2.6 = {
 		death = {
 			death_reason = death_natural
 		}
