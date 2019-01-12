@@ -1683,7 +1683,7 @@ obj_become_king = {
 		
 		modifier = {
 			factor = 0
-			TOW_is_uncivilized_religion_trigger = no
+			TOW_religion_is_uncivilized_trigger = no
 			NOT = { trait = ambitious }
 		}
 		modifier = {
@@ -1707,7 +1707,7 @@ obj_become_king = {
 			OR = {
 				independent = yes
 				AND = {
-					TOW_is_uncivilized_religion_trigger = yes
+					TOW_religion_is_uncivilized_trigger = yes
 					is_reformed_religion = no
 				}
 			}

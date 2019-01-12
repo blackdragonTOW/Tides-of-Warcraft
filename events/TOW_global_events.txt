@@ -12,12 +12,42 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = { has_global_flag = TOW_global_events_called }
+		is_save_game = no
+		1 = { holder_scope = { character = ROOT } }
 	}
 	immediate = {
-		set_global_flag = TOW_global_events_called
-
 		log = " -- Tides Of Warcraft -- : Global events called."
 
+		#################################
+		# Initialization of holy orders #
+		#################################
+		holy_light = { save_persistent_event_target = { name = holy_order_first scope = d_knights_of_the_silver_hand } }
+		d_knights_of_the_silver_hand = {
+			set_variable = { which = holy_order_count value = 1 } # UPDATE THIS VALUE IF COUNT IS MODIFIED
+			save_persistent_event_target = { name = religion scope = holy_light }
+			#save_persistent_event_target = { name = holy_order_next scope = d_example_holy_order } # If more needed, chain them
+		}
+		#d_example_holy_order = {
+		#	save_persistent_event_target = { name = religion scope = holy_light }
+		#	save_persistent_event_target = { name = holy_order_next scope = d_example_holy_order_2 } # If more needed, chain them
+		#}
+		
+		old_ways = { save_persistent_event_target = { name = holy_order_first scope = d_tyrs_guard } }
+		d_tyrs_guard = {
+			set_variable = { which = holy_order_count value = 1 } # UPDATE THIS VALUE IF COUNT IS MODIFIED
+			save_persistent_event_target = { name = religion scope = old_ways }
+		}
+		
+		arcane = { save_persistent_event_target = { name = holy_order_first scope = d_blood_knights } }
+		d_blood_knights = {
+			set_variable = { which = holy_order_count value = 1 } # UPDATE THIS VALUE IF COUNT IS MODIFIED
+			save_persistent_event_target = { name = religion scope = arcane }
+		}
+
+		####################################
+		# Initialization of warrior lodges #
+		####################################
+		#holy_light = { save_persistent_event_target = { name = warrior_lodge scope = TBD } }
+		#warrior_lodge = { set_flag = has_tattoos }
 	}
 }

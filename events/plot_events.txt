@@ -3018,7 +3018,7 @@ letter_event = {
 				higher_tier_than = BARON
 				FROM = {
 					OR = { # If the old liege can use the subjugation CB, give no claims
-						NOT = { TOW_is_uncivilized_religion_trigger = yes }
+						NOT = { TOW_religion_is_uncivilized_trigger = yes }
 						NOT = { culture_group = ROOT }
 					}
 				}
@@ -3315,7 +3315,7 @@ letter_event = {
 				higher_tier_than = BARON
 				FROM = {
 					OR = { # If the old liege can use the subjugation CB, give no claims
-						NOT = { TOW_is_uncivilized_religion_trigger = yes }
+						NOT = { TOW_religion_is_uncivilized_trigger = yes }
 						NOT = { culture_group = ROOT }
 					}
 				}
@@ -20155,8 +20155,6 @@ character_event = {
 			if = {
 				limit = { 
 					NOR =  { 
-						title = e_hre 
-						has_title_flag = alternate_hre
 						has_law = succ_feudal_elective 
 						has_law = succ_byzantine_elective
 					} 

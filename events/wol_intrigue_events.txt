@@ -1032,7 +1032,7 @@ character_event = {
 							AND = {
 								liege = { religion_group = PREV }
 								NOT = { liege = { religion = PREV } }
-								NOT = { TOW_is_uncivilized_religion_trigger = yes }
+								NOT = { TOW_religion_is_uncivilized_trigger = yes }
 								NOT = { TOW_religion_has_heresy = yes }
 							}
 						}
@@ -1048,7 +1048,7 @@ character_event = {
 							NOT = { liege = { religion_group = PREV } }
 							AND = {
 								NOT = { liege = { religion = PREV } }
-								TOW_is_uncivilized_religion_trigger = yes
+								TOW_religion_is_uncivilized_trigger = yes
 							}
 						}
 					}
@@ -1162,9 +1162,6 @@ character_event = {
 				modifier = opinion_spy_blackmailed
 			}
 		}
-
-		# Mudslinger achievement check event
-		hidden_tooltip = { character_event = { id = 719 } }
 	}
 	
 	option = { # Expose and denounce!
@@ -1286,9 +1283,6 @@ character_event = {
 		clr_character_flag = charge_slanderer
 		clr_character_flag = charge_secret_society
 		clr_character_flag = charge_witch
-
-		# Mudslinger achievement check event
-		hidden_tooltip = { character_event = { id = 719 } }
 	}
 	
 	option = {
@@ -2386,9 +2380,6 @@ character_event = {
 				years = 5
 			}
 		}
-		
-		# Mudslinger achievement check event
-		hidden_tooltip = { character_event = { id = 719 } }
 		
 #		log = "WoL.2100: [Root.GetTitledName] spreads vicious rumors about [target_spy_on.GetTitledName]!"
 		

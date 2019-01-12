@@ -518,7 +518,7 @@ character_event = {
 						limit = { same_sex = PREV }
 						if = {
 							limit = {
-								TOW_is_uncivilized_religion_trigger = yes
+								TOW_religion_is_uncivilized_trigger = yes
 							}
 							add_character_modifier = {
 								name = known_sodomite_pagan
@@ -527,7 +527,7 @@ character_event = {
 						}
 						if = {
 							limit = {
-								NOT = { TOW_is_uncivilized_religion_trigger = yes }
+								NOT = { TOW_religion_is_uncivilized_trigger = yes }
 							}
 							add_character_modifier = {
 								name = known_sodomite
@@ -556,7 +556,7 @@ character_event = {
 						}
 						if = {
 							limit = {
-								NOT = { TOW_is_uncivilized_religion_trigger = yes }
+								NOT = { TOW_religion_is_uncivilized_trigger = yes }
 							}
 							add_character_modifier = {
 								name = adulterer

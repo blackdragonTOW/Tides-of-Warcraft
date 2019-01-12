@@ -353,6 +353,7 @@ character_event = {
 				OR = { 
 					event_target:scoped_father = { higher_tier_than = event_target:scoped_mother }
 					event_target:scoped_father = { 
+						TOW_religion_practices_baptism = yes
 						real_tier = event_target:scoped_mother 
 						is_married_matrilineally = no
 					}
@@ -365,6 +366,7 @@ character_event = {
 				OR = { 
 					event_target:scoped_mother = { higher_tier_than = event_target:scoped_father }
 					event_target:scoped_mother = { 
+						TOW_religion_practices_baptism = yes
 						real_tier = event_target:scoped_father 
 						is_married_matrilineally = yes
 					}
@@ -4135,7 +4137,7 @@ character_event = {
 		trigger = { 
 			OR = { 
 				is_reformed_religion = yes 
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 			}
 			NOT = { FROM = { has_character_flag = pregnancy_priest_comfort } }
 			NOT = { FROM = { has_character_flag = pregnancy_shaman_comfort } }
@@ -4157,7 +4159,7 @@ character_event = {
 		hidden_tooltip = { FROM = { character_event = { id = HFP.20510 } } } #Notify woman
 		trigger = { 
 			is_reformed_religion = no 
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			NOT = { FROM = { has_character_flag = pregnancy_shaman_comfort } }
 			NOT = { FROM = { has_character_flag = pregnancy_priest_comfort } }
 		}
@@ -5089,7 +5091,7 @@ character_event = {
 			is_ruler = yes
 			OR = { 
 				is_reformed_religion = yes 
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 			}
 		}
 		set_character_flag = pregnancy_priest_comfort
@@ -5109,7 +5111,7 @@ character_event = {
 		trigger = { 
 			is_ruler = yes
 			is_reformed_religion = no 
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			NOT = { has_character_flag = pregnancy_shaman_comfort } #Already taken from the spouse/regent
 			NOT = { has_character_flag = pregnancy_priest_comfort }
 		}
@@ -7835,7 +7837,7 @@ character_event = {
 			50 = {
 				trigger = { 
 					is_ruler = yes
-					TOW_is_uncivilized_religion_trigger = yes
+					TOW_religion_is_uncivilized_trigger = yes
 					OR = { 
 						is_tribal = yes
 						is_nomadic = yes
@@ -8850,7 +8852,7 @@ character_event = {
 	trigger = { 
 		trait = pregnant
 		NOT = { trait = troubled_pregnancy } 
-		TOW_is_uncivilized_religion_trigger = yes
+		TOW_religion_is_uncivilized_trigger = yes
 	}
 
 	is_triggered_only = yes

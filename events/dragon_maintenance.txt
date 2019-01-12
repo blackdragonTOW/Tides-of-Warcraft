@@ -14,60 +14,60 @@ character_event = {
 		OR = {
 			AND = {
 				NOT = { age = 20 }
-				NOT = { trait = race_dragon_whelp }
+				NOT = { trait = dragon_whelp }
 			}
 			AND = {
 				age = 20
 				NOT = { age = 200 }
-				NOT = { trait = race_dragon_drake }
+				NOT = { trait = dragon_drake }
 			}
 			AND = {
 				age = 200
 				NOT = { age = 1000 }
-				NOT = { trait = race_dragon_dragon }
+				NOT = { trait = dragon_dragon }
 			}
 			AND = {
 				age = 1000
-				NOT = { trait = race_dragon_wyrm }
+				NOT = { trait = dragon_wyrm }
 			}
 		}
 	}
 	
 	immediate = {
 		remove_educations = yes
-		remove_trait = race_dragon_whelp
-		remove_trait = race_dragon_drake
-		remove_trait = race_dragon_dragon
-		remove_trait = race_dragon_wyrm
+		remove_trait = dragon_whelp
+		remove_trait = dragon_drake
+		remove_trait = dragon_dragon
+		remove_trait = dragon_wyrm
 		if = {
 			limit = {
 				NOT = { age = 20 }
-				NOT = { trait = race_dragon_whelp }
+				NOT = { trait = dragon_whelp }
 			}
-			add_trait = race_dragon_whelp
+			add_trait = dragon_whelp
 		}
 		if = {
 			limit = {
 				age = 20
 				NOT = { age = 200 }
-				NOT = { trait = race_dragon_drake }
+				NOT = { trait = dragon_drake }
 			}
-			add_trait = race_dragon_drake
+			add_trait = dragon_drake
 		}
 		if = {
 			limit = {
 				age = 200
 				NOT = { age = 1000 }
-				NOT = { trait = race_dragon_dragon }
+				NOT = { trait = dragon_dragon }
 			}
-			add_trait = race_dragon_dragon
+			add_trait = dragon_dragon
 		}
 		if = {
 			limit = {
 				age = 1000
-				NOT = { trait = race_dragon_wyrm }
+				NOT = { trait = dragon_wyrm }
 			}
-			add_trait = race_dragon_wyrm
+			add_trait = dragon_wyrm
 		}
 	}
 }
@@ -183,10 +183,10 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = race_dragon_whelp
-			trait = race_dragon_drake
-			trait = race_dragon_dragon
-			trait = race_dragon_wyrm
+			trait = dragon_whelp
+			trait = dragon_drake
+			trait = dragon_dragon
+			trait = dragon_wyrm
 		}
 		NOT = {
 			trait = race_dragon
@@ -194,10 +194,10 @@ character_event = {
 	}
 	
 	immediate = {
-		remove_trait = race_dragon_whelp
-		remove_trait = race_dragon_drake
-		remove_trait = race_dragon_dragon
-		remove_trait = race_dragon_wyrm
+		remove_trait = dragon_whelp
+		remove_trait = dragon_drake
+		remove_trait = dragon_dragon
+		remove_trait = dragon_wyrm
 		random_list = {
 			15 = {
 				random_list = {

@@ -2,13 +2,13 @@
 pledge_crusade_trigger = {
 	#age = 16
 	NOT = { trait = incapable }
-	custom_tooltip = {
-		text = recent_crusade_unpledge_TT
+	#custom_tooltip = {
+	#	text = recent_crusade_unpledge_TT
 
-		NOT = {
-			has_character_modifier = recently_unpledged_to_crusade_cooldown
-		}
-	}
+	#	NOT = {
+	#		has_character_modifier = recently_unpledged_to_crusade_cooldown
+	#	}
+	#}
 	#custom_tooltip = {
 	#	text = crusade_no_antipope_TT
 	#
@@ -24,11 +24,6 @@ pledge_crusade_trigger = {
 			war_with = ROOT
 		}
 	}
-	custom_tooltip = {
-		text = pledge_crusade_alternate_crusades
-
-		check_if_alternate_crusades_trigger = yes
-	}
 }
 
 # Referenced by the "Leave Crusade" button in the Crusade view for Crusades using the new Crusade system
@@ -37,7 +32,6 @@ unpledge_crusade_trigger = {
 	conditional_tooltip = {
 		trigger = {
 			has_character_flag = forced_to_crusade
-			check_if_not_fourth_crusade_trigger = yes
 		}
 
 		custom_tooltip = { 
@@ -52,7 +46,6 @@ unpledge_crusade_trigger = {
 			NOT = {
 				has_character_flag = forced_to_crusade
 			}
-			check_if_not_fourth_crusade_trigger = yes
 		}
 
 		custom_tooltip = {
@@ -68,13 +61,12 @@ unpledge_crusade_trigger = {
 			NOT = {
 				has_character_flag = forced_to_crusade
 			}
-			check_if_not_fourth_crusade_trigger = yes	
 		}
 		custom_tooltip = {
 			text = recent_crusade_pledge_TT
 
 			NOT = {
-				has_character_modifier = recently_pledged_to_crusade_cooldown
+				#has_character_modifier = recently_pledged_to_crusade_cooldown
 			}
 		}
 	}
@@ -86,35 +78,23 @@ defender_pledge_crusade_trigger = {
 		text = defense_pledge_crusade_target_TT_2
 
 		OR = {
-			catholic = {
-				crusade_target_char = {
-					is_within_diplo_range = ROOT
-				}
-			}
-			fraticelli = {
-				crusade_target_char = {
-					is_within_diplo_range = ROOT
-				}
-			}
+			#catholic = {
+			#	crusade_target_char = {
+			#		is_within_diplo_range = ROOT
+			#	}
+			#}
 		}
 	}
 
 	custom_tooltip = {
 		text = defense_pledge_crusade_target_TT
-		catholic = {
-			NOT = {
-				crusade_target_char = {
-					character = PREVPREV
-				}
-			} 
-		}
-		fraticelli = {
-			NOT = {
-				crusade_target_char = {
-					character = PREVPREV
-				}
-			}
-		}
+		#catholic = {
+		#	NOT = {
+		#		crusade_target_char = {
+		#			character = PREVPREV
+		#		}
+		#	} 
+		#}
 	}
 }
 

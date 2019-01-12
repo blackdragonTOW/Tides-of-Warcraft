@@ -73,8 +73,6 @@ character_event = {
 	option = {
 		name = EVTOPTA6000
 		add_trait = syphilitic
-		blessing_removes_disease_effect = yes
-		deaths_gift_removes_disease_effect = yes
 	}
 }
 
@@ -328,7 +326,6 @@ character_event = {
 			factor = 333 # 12 years on average
 			OR = {
 				trait = syphilitic
-				trait = has_aztec_disease
 			}
 		}
 		modifier = {
@@ -356,7 +353,6 @@ character_event = {
 				trait = has_typhoid_fever
 				trait = has_typhus
 				trait = syphilitic
-				trait = has_aztec_disease
 			}
 		}
 		modifier = {
@@ -486,7 +482,6 @@ character_event = {
 		NOT = {
 			OR = {
 				trait = syphilitic
-				trait = has_aztec_disease
 			}
 		}
 	}
@@ -749,8 +744,6 @@ character_event = {
 	option = {
 		name = EVTOPTA6060
 		add_trait = ill
-		blessing_removes_disease_effect = yes
-		deaths_gift_removes_disease_effect = yes
 	}
 }
 
@@ -996,8 +989,6 @@ character_event = {
 	option = {
 		name = EVTOPTA6070
 		add_trait = pneumonic
-		blessing_removes_disease_effect = yes
-		deaths_gift_removes_disease_effect = yes
 	}
 }
 
@@ -1198,8 +1189,6 @@ character_event = {
 				}
 			}
 			add_trait = ill
-			blessing_removes_disease_effect = yes
-			deaths_gift_removes_disease_effect = yes
 		}
 		if = {
 			limit = {

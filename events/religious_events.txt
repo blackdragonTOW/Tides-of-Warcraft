@@ -1755,13 +1755,13 @@ character_event = {
 			modifier = {
 				factor = 0.2
 				NOR = {
-					TOW_religion_is_aggressive = yes
+					TOW_religion_is_warlike = yes
 					any_realm_province = {
 						any_neighbor_province = {
 							owner = {
 								top_liege = {
 									NAND = {
-										TOW_is_uncivilized_religion_trigger = yes
+										TOW_religion_is_uncivilized_trigger = yes
 										is_reformed_religion = no
 									}
 									any_realm_province = { TECH_RECRUITMENT = 4 } # More cocky when pagan homeland attrition effect is active against neighbors
@@ -2002,13 +2002,13 @@ character_event = {
 			modifier = {
 				factor = 0.2
 				NOR = {
-					TOW_religion_is_aggressive = yes
+					TOW_religion_is_warlike = yes
 					any_realm_province = {
 						any_neighbor_province = {
 							owner = {
 								top_liege = {
 									NAND = {
-										TOW_is_uncivilized_religion_trigger = yes
+										TOW_religion_is_uncivilized_trigger = yes
 										is_reformed_religion = no
 									}
 									any_realm_province = { TECH_RECRUITMENT = 4 } # More cocky when pagan homeland attrition effect is active against neighbors
@@ -2101,7 +2101,7 @@ character_event = {
 			limit = { 
 				has_dlc = "Holy Fury"
 				is_tribal = yes
-				TOW_is_uncivilized_religion_trigger = yes
+				TOW_religion_is_uncivilized_trigger = yes
 				NOT = { trait = incapable }
 				higher_tier_than = COUNT
 				NOT = { is_reformed_religion = yes }
@@ -2117,7 +2117,7 @@ character_event = {
 						NOT = { pays_tribute_to = ROOT }
 						NOT = { has_character_flag = flag_sponsoring_baptism }
 						OR = {
-							NOT = { TOW_is_uncivilized_religion_trigger = yes }
+							NOT = { TOW_religion_is_uncivilized_trigger = yes }
 							is_reformed_religion = yes
 						}
 					}
@@ -2130,30 +2130,30 @@ character_event = {
 		
 		
 	else = {
-		if = {
-			limit = {
-				trait = cynical
-				NOT = { trait = zealous }
-				age = 12
-			}
-			random = {
-				chance = 60
-				add_trait = sympathy_pagans
-			}
-		}
-		if = {
-			limit = {
-				NOR = {
-					trait = cynical
-					trait = zealous
-				}
-				age = 12
-			}
-			random = {
-				chance = 50
-				add_trait = sympathy_pagans
-			}
-		}		
+		#if = {
+		#	limit = {
+		#		trait = cynical
+		#		NOT = { trait = zealous }
+		#		age = 12
+		#	}
+		#	random = {
+		#		chance = 60
+		#		add_trait = sympathy_pagans
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		NOR = {
+		#			trait = cynical
+		#			trait = zealous
+		#		}
+		#		age = 12
+		#	}
+		#	random = {
+		#		chance = 50
+		#		add_trait = sympathy_pagans
+		#	}
+		#}		
 		
 		religion = FROM
 		prestige = -500
@@ -2368,30 +2368,30 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		if = {
-			limit = {
-				trait = cynical
-				NOT = { trait = zealous }
-				age = 12
-			}
-			random = {
-				chance = 60
-				add_trait = sympathy_pagans
-			}
-		}
-		if = {
-			limit = {
-				NOT = { 
-					trait = cynical 
-					trait = zealous 
-				}
-				age = 12
-			}
-			random = {
-				chance = 50
-				add_trait = sympathy_pagans
-			}
-		}
+		#if = {
+		#	limit = {
+		#		trait = cynical
+		#		NOT = { trait = zealous }
+		#		age = 12
+		#	}
+		#	random = {
+		#		chance = 60
+		#		add_trait = sympathy_pagans
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		NOT = { 
+		#			trait = cynical 
+		#			trait = zealous 
+		#		}
+		#		age = 12
+		#	}
+		#	random = {
+		#		chance = 50
+		#		add_trait = sympathy_pagans
+		#	}
+		#}
 		religion = FROM
 		liege = {
 			character_event = { id = 39602 }

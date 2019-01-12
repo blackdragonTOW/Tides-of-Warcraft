@@ -633,7 +633,12 @@ decisions = {
 			is_playable = yes
 			has_character_flag = sky_burial
 			NOT = { has_character_flag = performed_sky_burial }
-			religion = aeromancy
+			OR = {
+				TOW_religion_practices_sky_burial = yes
+				any_owned_bloodline = {
+					has_bloodline_flag = bloodline_sky_burial
+				}
+			}
 		}
 		allow = {
 			is_adult = yes
@@ -647,7 +652,7 @@ decisions = {
 		effect = {
 			custom_tooltip = { text = sky_burial_custom_tooltip }
 			hidden_tooltip = {
-				character_event = { id = HL.8005 }
+				character_event = { id = HLF.8005 }
 				clr_character_flag = sky_burial
 				set_character_flag = performed_sky_burial
 			}
@@ -666,7 +671,7 @@ decisions = {
 		ai_check_interval = 12
 		potential = {
 			is_playable = yes
-			trait = race_human
+			TOW_background_rider_horse = yes
 			NOR = {
 				trait = race_undead_forsaken
 				trait = race_undead_scourge

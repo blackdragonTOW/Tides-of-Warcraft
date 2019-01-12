@@ -4307,8 +4307,6 @@ faction_independence = {
 			}
 		}
 		
-		NOT = { has_landed_title = k_orthodox }
-		
 		NOT = { has_character_modifier = faction_independence_ultimatum_timer }
 		mercenary = no
 	}
@@ -4424,12 +4422,12 @@ faction_independence = {
 						NOT = { distance = { who = ROOT distance = 200 } }
 						ROOT = {
 							OR = {
-								NOT = { TOW_is_uncivilized_religion_trigger = yes }
+								NOT = { TOW_religion_is_uncivilized_trigger = yes }
 								is_reformed_religion = yes
 							}
 						}
 						OR = {
-							NOT = { ROOT = { TOW_is_uncivilized_religion_trigger = yes } }
+							NOT = { ROOT = { TOW_religion_is_uncivilized_trigger = yes } }
 							ROOT = { is_reformed_religion = yes }
 						}
 					}
@@ -4454,7 +4452,7 @@ faction_independence = {
 			factor = 0
 			lower_tier_than = KING
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 				is_reformed_religion = yes
 			}
 			liege = {
@@ -4517,7 +4515,7 @@ faction_independence = {
 		modifier = {
 			factor = 0.1
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 				is_reformed_religion = yes
 			}
 			liege = {
@@ -4548,7 +4546,7 @@ faction_independence = {
 		
 		modifier = {
 			factor = 2.0
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			is_reformed_religion = no
 		}
 		
@@ -4713,7 +4711,6 @@ faction_independence = {
 				trait = incapable
 				is_adult = no
 				is_landed = no
-				has_landed_title = k_orthodox
 				preparing_invasion = yes
 			}
 		}
@@ -4735,7 +4732,7 @@ faction_independence = {
 						NOT = { distance = { who = ROOT distance = 200 } }
 						ROOT = {
 							OR = {
-								NOT = { TOW_is_uncivilized_religion_trigger = yes }
+								NOT = { TOW_religion_is_uncivilized_trigger = yes }
 								is_reformed_religion = yes
 							}
 						}
@@ -4758,7 +4755,7 @@ faction_independence = {
 			factor = 0
 			lower_tier_than = KING
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 				is_reformed_religion = yes
 			}
 			liege = {
@@ -4904,7 +4901,7 @@ faction_independence = {
 		modifier = {
 			factor = 0.1
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 				is_reformed_religion = yes
 			}
 			liege = {
@@ -4962,7 +4959,7 @@ faction_independence = {
 		
 		modifier = {
 			factor = 2.0
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			is_reformed_religion = no
 		}
 		

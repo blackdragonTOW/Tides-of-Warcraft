@@ -2560,9 +2560,9 @@ character_event = {
 				is_landless_type_title = no
 			}
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 				AND = {
-					TOW_is_uncivilized_religion_trigger = yes
+					TOW_religion_is_uncivilized_trigger = yes
 					is_reformed_religion = yes
 				}
 			}
@@ -2603,9 +2603,9 @@ character_event = {
 					is_landless_type_title = no
 				}
 				OR = {
-					NOT = { TOW_is_uncivilized_religion_trigger = yes }
+					NOT = { TOW_religion_is_uncivilized_trigger = yes }
 					AND = {
-						TOW_is_uncivilized_religion_trigger = yes
+						TOW_religion_is_uncivilized_trigger = yes
 						is_reformed_religion = yes
 					}
 				}
@@ -2793,7 +2793,7 @@ character_event = {
 			modifier = {
 				factor = 0
 				NOT = {
-					TOW_is_uncivilized_religion_trigger = yes
+					TOW_religion_is_uncivilized_trigger = yes
 				}
 			}
 		}
@@ -2805,12 +2805,12 @@ character_event = {
 				years = 10
 			}
 		}
-		if = {
-			limit = {
-				TOW_is_uncivilized_religion_trigger = yes
-			}
-			add_trait = sympathy_pagans
-		}
+		#if = {
+		#	limit = {
+		#		TOW_religion_is_uncivilized_trigger = yes
+		#	}
+		#	add_trait = sympathy_pagans
+		#}
 		religion = event_target:missionary_physician_target
 		prestige = -500
 		piety = 250
@@ -7807,6 +7807,80 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = RIP.29802
+	desc = EVTDESC_RIP_29802
+	picture = GFX_evt_into_the_dungeon
+	hide_from = yes
+
+	ai = no
+
+
+	trigger = {
+		NOR = { 
+			trait = reincarnation
+			trait = incapable
+			prisoner = yes
+			is_inaccessible_trigger = yes
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_RIP_29802
+		custom_tooltip = {
+			text = EVTOPTA_RIP_29802_TOOLTIP
+		}
+		hidden_tooltip = {
+			random_list = {
+				50 = {
+					#get possessed, reincarnation trait
+					character_event = { id = RIP.29803 days = 10 }
+				}
+				50 = {
+					#find some money
+					character_event = { id = RIP.29804 days = 10 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_RIP_29802
+		custom_tooltip = {
+			text = EVTOPTB_RIP_29802_TOOLTIP
+		}
+		prestige = 50
+	}
+}
+
+#get reincarnation, and possessed
+character_event = {
+	id = RIP.29803
+	desc = EVTDESC_RIP_29803
+	picture = GFX_evt_into_the_dungeon
+
+	ai = no
+
+	trigger = {
+		NOR = { 
+			trait = reincarnation
+			trait = incapable
+			prisoner = yes
+			is_inaccessible_trigger = yes
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = { #what is happening to meeeeeee
+		name = EVTOPTA_RIP_29803
+		add_trait = lunatic
+		add_trait = reincarnation
+	}
+}
+
 #found valuables
 character_event = {
 	id = RIP.29804
@@ -7846,7 +7920,9 @@ character_event = {
 				value = off
 			}
 		}
-		TOW_religion_believes_in_reincarnation = yes
+		OR = {
+			TOW_religion_believes_in_reincarnation = yes
+		}
 		OR = {
 			father = {
 				ai = no
@@ -8022,6 +8098,7 @@ character_event = {
 		}
 	}
 }
+
 
 #######################################
 # LIEGE INTERFERES IN VASSAL WARS
@@ -12080,7 +12157,6 @@ character_event = {
 				trait = stubborn
 				trait = schemer
 				trait = cynical
-				trait = ares_own
 				trait = horse
 				historical = yes
 			}

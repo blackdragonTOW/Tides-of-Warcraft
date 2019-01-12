@@ -426,7 +426,7 @@ character_event = {
 					has_character_flag = flag_character_being_swayed
 					has_character_flag = flag_character_being_antagonized
 					AND = {
-						TOW_is_uncivilized_religion_trigger = yes
+						TOW_religion_is_uncivilized_trigger = yes
 						NOT = { religion = ROOT }
 						ROOT = { trait = zealous }
 					}

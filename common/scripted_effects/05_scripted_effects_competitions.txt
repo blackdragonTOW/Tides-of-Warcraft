@@ -9282,10 +9282,6 @@ set_flyting_patience_effect = {
 				change_variable = { which = "flything_patience" value = -2 }
 			}
 			if = {
-				limit = { trait = possessed }
-				change_variable = { which = "flything_patience" value = -2 }
-			}
-			if = {
 				limit = { trait = inbred }
 				change_variable = { which = "flything_patience" value = -2 }
 			}
@@ -9397,10 +9393,6 @@ set_flyting_patience_effect = {
 				}
 				if = {
 					limit = { trait = lunatic }
-					change_variable = { which = "flything_patience" value = -2 }
-				}
-				if = {
-					limit = { trait = possessed }
 					change_variable = { which = "flything_patience" value = -2 }
 				}
 				if = {

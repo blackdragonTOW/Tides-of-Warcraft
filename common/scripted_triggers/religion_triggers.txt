@@ -1,5 +1,12 @@
 ## Features ##
 
+TOW_religion_practices_haruspicy = {
+	OR = {
+		has_religion_feature = religion_haruspicy
+		always = no # TOW TODO : To Define
+	}
+}
+
 TOW_religion_practices_ritual_sacrifice = {
 	OR = {
 		has_religion_feature = religion_ritual_sacrifice
@@ -56,11 +63,61 @@ TOW_religion_is_incestuous = {
 	}
 }
 
+# Was jain - For hunting and fighting
+TOW_religion_is_pacifist = {
+	OR = {
+		has_religion_feature = religion_peaceful
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_is_stable = {
+	OR = {
+		has_religion_feature = religion_stable
+		always = no # TOW TODO : To Define
+	}
+}
+
+# Was tengri and aztec
+TOW_religion_is_warlike = {
+	OR = {
+		has_religion_feature = religion_warlike
+		always = no # TOW TODO : To Define
+	}
+}
+
+# Was west_african
+TOW_religion_is_animistic = {
+	OR = {
+		has_religion_feature = religion_animistic
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_has_pagan_branches = {
+	OR = {
+		has_religion_feature = religion_no_leader
+		always = no # TOW TODO : To Define
+	}
+}
+
+TOW_religion_is_seafaring = {
+	OR = {
+		has_religion_feature = religion_seafaring
+		always = no # TOW TODO : To Define
+	}
+}
+
 ##############
+
+# Replaces general condition "religion_group = pagan_group"
+TOW_religion_is_uncivilized_trigger = {
+	always = no # TOW TODO : To Define
+}
 
 TOW_religion_cares_about_piety = {
 	NOT = { religion_group = fel_group }
-	NOT = { religion_group = draconic_group }
+	NOT = { religion = wyrmcult }
 	NOT = { religion_group = arcane_group }
 	NOT = { religion_group = void_group }
 	NOT = { religion_group = unaligned_group }
@@ -161,6 +218,12 @@ TOW_religion_practices_sin_confession = {
 	always = no # TOW TODO : To Define
 }
 
+# Was christians
+TOW_religion_practices_baptism = {
+	TOW_religion_uses_sins = yes
+	always = no # TOW TODO : To Define
+}
+
 # Was everybody except muslim - Might be "always = yes"
 TOW_religion_uses_chastity = {
 	always = no # TOW TODO : To Define
@@ -173,11 +236,6 @@ TOW_religion_priests_obligated_celibacy = {
 
 # Was christians
 TOW_religion_has_celibacy = {
-	always = no # TOW TODO : To Define
-}
-
-# Was jain - For hunting and fighting
-TOW_religion_is_pacifist = {
 	always = no # TOW TODO : To Define
 }
 
@@ -226,12 +284,12 @@ TOW_religion_rel_head_wants_full_authority = {
 	always = no # TOW TODO : To Define
 }
 
-# Was tengri and aztec
-TOW_religion_is_aggressive = {
+# Was catholics and fraticelli
+TOW_religion_has_coronations = {
 	always = no # TOW TODO : To Define
 }
 
-# Was christian - Should probably be panda
+# Was christian and indian - Should probably be panda
 TOW_religion_has_monks = {
 	always = no # TOW TODO : To Define
 }
@@ -263,4 +321,34 @@ TOW_religion_cares_about_geocentrism = {
 # Was catholic & fraticelli
 TOW_religion_uses_new_crusade = {
 	always = no # TOW TODO : To Define
+}
+
+# Was christians
+TOW_religion_has_saints = {
+	TOW_religion_worships_ancestors = yes
+	always = no # TOW TODO : To Define
+}
+
+TOW_religion_rel_head_beatification = {
+	TOW_religion_rel_head_wants_full_authority = yes
+    TOW_religion_worships_ancestors = yes
+}
+
+####
+
+TOW_religion_has_currently_a_rel_head = {
+	religion_head = { 
+		is_alive = yes 
+		NOT = { block_general_event_trigger = yes }
+	}
+}
+
+TOW_religion_rightful_rel_head_is_pope = {
+	religion_head = { 
+		PREV = {
+			rightful_religious_head_scope = {
+				character = PREVPREV
+			}
+		}
+	}
 }

@@ -1893,6 +1893,120 @@ is_malnourished = {
 	ai_zeal = -20
 }
 
+baptized_by_pope = {
+	opposites =  {
+		baptized_by_patriarch
+		baptized_by_bishop
+		baptized_by_satan
+	}
+	
+	monthly_character_prestige = 0.05
+	monthly_character_piety = 0.1
+	christian_opinion = 5
+
+	religious = yes
+	customizer = no
+	random = no
+}
+
+baptized_by_bishop = {
+	opposites =  {
+		baptized_by_patriarch
+		baptized_by_pope
+		baptized_by_satan
+	}
+	
+	monthly_character_piety = 0.05
+	church_opinion = 5
+
+	religious = yes
+	customizer = no
+	random = no
+}
+
+pagan_branch_1 = {
+	opposites = {
+		pagan_branch_2
+		pagan_branch_3
+		pagan_branch_4
+	}
+	religious_branch = pagan_reformation
+
+	christian_opinion = 10
+	muslim_opinion = 10
+	indian_group_opinion = 10
+	jewish_group_opinion = 10
+	zoroastrian_group_opinion = 10
+	same_opinion_if_same_religion = 5
+	opposite_opinion = -5
+	
+	ai_zeal = -30
+
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+
+pagan_branch_2 = {
+	opposites = {
+		pagan_branch_1
+		pagan_branch_3
+		pagan_branch_4
+	}
+	religious_branch = pagan_reformation
+
+	church_opinion = 10
+	monthly_character_piety = 0.25
+	opposite_opinion = -5
+	
+	ai_zeal = 30
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+
+pagan_branch_3 = {
+	opposites = {
+		pagan_branch_2
+		pagan_branch_1
+		pagan_branch_4
+	}
+	religious_branch = pagan_reformation
+
+	monthly_character_prestige = 0.3
+	combat_rating = 10
+	opposite_opinion = -5
+	
+	ai_ambition = 20
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+
+pagan_branch_4 = {
+	opposites = {
+		pagan_branch_2
+		pagan_branch_3
+		pagan_branch_1
+	}
+	religious_branch = pagan_reformation
+
+	dynasty_opinion = 10
+	fertility = 0.1
+	opposite_opinion = -5
+	
+	ai_honor = 10
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
 #Freckles from thinner to thicker:
 #freckles_3
 #freckles_2
@@ -1957,6 +2071,23 @@ freckles_5 = { #Inherited via script - Very Thick
 	female_insult_adj = INSULT_CURSED
 }
 
+saint = {
+	random = no
+	customizer = no
+	church_opinion = 100
+}
+
+beatified = {
+	random = no
+	customizer = no
+	church_opinion = 25
+}
+blessed_ancestor = {
+	random = no
+	customizer = no
+	pagan_group_opinion = 50
+}
+
 i_used_to_be_a_player = {
 	customizer = no
 	hidden = yes
@@ -1965,6 +2096,54 @@ child_of_consort_male = {
 	diplomacy = -1
 
 	customizer = no
+}
+crowned_by_priest_rd = { #Only for Ruler Designer
+	opposites =  {
+		crowned_by_bishop_rd
+		crowned_by_pope_rd
+	}
+	potential = {
+		TOW_religion_has_coronations = yes
+	}
+	
+	monthly_character_prestige = 0.05
+	monthly_character_piety = 0.1
+	
+	customizer = yes
+	random = no
+}
+crowned_by_bishop_rd = {
+	opposites =  {
+		crowned_by_priest_rd
+		crowned_by_pope_rd
+	}
+	potential = {
+		TOW_religion_has_coronations = yes
+	}
+	church_opinion = 5
+	
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.25
+	
+	customizer = yes
+	random = no
+}
+crowned_by_pope_rd = {
+	opposites =  {
+		crowned_by_priest_rd
+		crowned_by_bishop_rd
+	}
+	potential = {
+		TOW_religion_has_coronations = yes
+	}
+	church_opinion = 10
+	vassal_opinion = 5
+
+	monthly_character_prestige = 0.5
+	monthly_character_piety = 0.5
+	
+	customizer = yes
+	random = no
 }
 pirate = {
 	potential = {

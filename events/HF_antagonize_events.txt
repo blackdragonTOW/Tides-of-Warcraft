@@ -196,7 +196,7 @@ character_event = {
 							trait = zealous
 							AND = { 
 								trait = erudite 
-								ROOT = { TOW_is_uncivilized_religion_trigger = yes }
+								ROOT = { TOW_religion_is_uncivilized_trigger = yes }
 							}
 							AND = { 
 								trait = cynical 
@@ -2251,7 +2251,7 @@ character_event = {
 				}	
 				modifier = { #Context
 					factor = 0
-					FROM = { NOT = { TOW_is_uncivilized_religion_trigger = yes } }
+					FROM = { NOT = { TOW_religion_is_uncivilized_trigger = yes } }
 				}
 				modifier = { #Try to pick opposite traits if any are available
 					factor = 1.5
@@ -4715,9 +4715,6 @@ character_event = {
 			add_trait = food_poisoning
 			set_character_flag = manifest_food_poisoning
 			add_disease_level_effect = yes
-			blessing_removes_disease_effect = yes
-			deaths_gift_removes_disease_effect = yes
-			scrying_omen_fulfilled_by_gaining_disease_effect = yes
 		}
 		if = { 
 			limit = { NOT = { has_dlc = "Reapers" } } 

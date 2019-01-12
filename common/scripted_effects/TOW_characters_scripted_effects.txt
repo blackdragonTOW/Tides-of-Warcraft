@@ -4,6 +4,7 @@
 TOW_initialize_character = {
 	TOW_initialize_character_race_from_culture = yes
 	TOW_update_character_race_from_liege = yes
+	TOW_initialize_character_religious_features = yes
 	TOW_initialize_character_portraits_features = yes
 }
 
@@ -133,7 +134,7 @@ TOW_initialize_character_race_from_culture = {
 		inquisitor = { add_trait = race_inquisitor }
 		observer = { add_trait = race_observer }
 		draenei = { add_trait = race_draenei }
-		broken = { add_trait = race_broken }
+		#broken = { add_trait = race_broken }
 		lost_one = { add_trait = race_lost_one }
 		nraqi = { add_trait = race_faceless }
 		voidwalker = { add_trait = race_voidwalker }
@@ -227,6 +228,36 @@ TOW_initialize_character_portraits_features = {
 	}
 }
 
+TOW_initialize_character_religious_features = {
+	hidden_tooltip = {
+		if = {
+			limit = {
+				TOW_religion_practices_astrology = yes
+			}
+			add_western_zodiac_trait_effect = yes
+		}
+		if = {
+			limit = {
+				TOW_religion_has_pagan_branches = yes
+			}
+			random_list = {  
+				5 = {
+					add_trait = pagan_branch_1
+				}
+				25 = {
+					add_trait = pagan_branch_2
+				}
+				25 = {
+					add_trait = pagan_branch_3
+				}
+				25 = {
+					add_trait = pagan_branch_4
+				}
+			}
+		}
+	}
+}
+
 TOW_remove_class_traits = {
 	remove_trait = mage
 	remove_trait = warlock
@@ -248,16 +279,10 @@ TOW_employed_remove_unwanted_traits_with_ET_employer = {
 	if = {
 		limit = { event_target:employer = { accepts_warlock = no } }
 		remove_trait = warlock
-		remove_trait = necrolyte
 	}
 	if = {
 		limit = { event_target:employer = { accepts_necromancer = no } }
 		remove_trait = necromancer
-		remove_trait = necrolyte
-	}
-	if = {
-		limit = { event_target:employer = { accepts_assassin = no } }
-		remove_trait = assassin
 	}
 	if = {
 		limit = { event_target:employer = { accepts_rogue = no } }
@@ -277,4 +302,14 @@ TOW_new_character_employed_effect = {
 
 TOW_set_newly_landed_character_government = {
 	set_government_type = feudal_government
+}
+
+join_prev_society = {
+	PREV = {
+		society = {
+			save_event_target_as = join_prev_society_join_prev_society
+		}
+	}
+	join_society = event_target:join_prev_society_join_prev_society
+	clear_event_target = join_prev_society_join_prev_society
 }

@@ -44,3 +44,47 @@ diploresponse_event = { # 1.B: new holder of title gets exception flag, if the t
 		FROM = { set_character_flag = was_granted_title_voluntarily }
     }
 }
+
+### To handle loss of titles:
+character_event = { # 1. new holder of title (ROOT) sends event to old holder (FROMFROM), if they are still alive (sent from on_new_holder, on_new_holder_inheritance and on_new_holder_usurpation)
+    id = MNM.1216
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        FROMFROM = { is_alive = yes }
+    }
+
+    immediate = {
+        save_event_target_as = new_holder_target
+        FROMFROM = { save_event_target_as = old_holder_target }
+        character_event = { id = MNM.1218 days = 1 }
+    }
+}
+
+diploresponse_event = { # 1.B: new holder of title gets exception flag, if the title was granted voluntarily (sent from GRANT_LANDED_TITLE_INTERACTION_ACCEPT_EVENT)
+    id = MNM.1217
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+        FROM = { set_character_flag = was_granted_title_voluntarily }
+    }
+}
+
+character_event = { # 2: gating event, to send event or clearing flag for the new holder
+    id = MNM.1218
+    is_triggered_only = yes
+    hide_window = yes
+
+    immediate = {
+        #if = {
+        #    limit = { NOT = { has_character_flag = was_granted_title_voluntarily } }
+        #    event_target:old_holder_target = { character_event = { id = MNM.1219 days = 3 } }
+        #}
+        if = {
+            limit = { has_character_flag = was_granted_title_voluntarily }
+            clr_character_flag = was_granted_title_voluntarily
+        }
+    }
+}

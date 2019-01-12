@@ -6947,7 +6947,7 @@ character_event = {
 		text = EVTDESCHFA23910
 		trigger = { 
 			NOT = { 
-				TOW_is_uncivilized_religion_trigger = yes 
+				TOW_religion_is_uncivilized_trigger = yes 
 				is_reformed_religion = no
 			}
 		}
@@ -6956,7 +6956,7 @@ character_event = {
 	desc = { 
 		text = EVTDESCHFC23910
 		trigger = { 
-			TOW_is_uncivilized_religion_trigger = yes 
+			TOW_religion_is_uncivilized_trigger = yes 
 			is_reformed_religion = no
 		}
 		picture = GFX_evt_irminsul_shrine
@@ -7043,7 +7043,7 @@ character_event = {
 		if = {
 			limit = {		
 				NOT = { 
-					TOW_is_uncivilized_religion_trigger = yes 
+					TOW_religion_is_uncivilized_trigger = yes 
 					is_reformed_religion = no
 				}
 				check_variable = { which = "tribal_festival_divine_favor" value = 1 }
@@ -7054,7 +7054,7 @@ character_event = {
 		if = {
 			limit = {		
 				NOT = { 
-					TOW_is_uncivilized_religion_trigger = yes 
+					TOW_religion_is_uncivilized_trigger = yes 
 					is_reformed_religion = no
 				}
 				check_variable = { which = "tribal_festival_divine_favor" value = 2 }
@@ -7065,7 +7065,7 @@ character_event = {
 		if = {
 			limit = {		
 				NOT = { 
-					TOW_is_uncivilized_religion_trigger = yes 
+					TOW_religion_is_uncivilized_trigger = yes 
 					is_reformed_religion = no
 				}
 				check_variable = { which = "tribal_festival_divine_favor" value = 4 }
@@ -7076,7 +7076,7 @@ character_event = {
 		if = {
 			limit = {		
 				NOT = { 
-					TOW_is_uncivilized_religion_trigger = yes 
+					TOW_religion_is_uncivilized_trigger = yes 
 					is_reformed_religion = no
 				}
 				check_variable = { which = "tribal_festival_divine_favor" value = 6 }
@@ -7087,7 +7087,7 @@ character_event = {
 		#And Moral Authority for unreformed pagans.
 		if = {
 			limit = {		
-				TOW_is_uncivilized_religion_trigger = yes 
+				TOW_religion_is_uncivilized_trigger = yes 
 				is_reformed_religion = no
 				check_variable = { which = "tribal_festival_divine_favor" value = 1 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 2 } }
@@ -7099,7 +7099,7 @@ character_event = {
 		}
 		if = {
 			limit = {		
-				TOW_is_uncivilized_religion_trigger = yes 
+				TOW_religion_is_uncivilized_trigger = yes 
 				is_reformed_religion = no
 				check_variable = { which = "tribal_festival_divine_favor" value = 2 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 4 } }
@@ -7111,7 +7111,7 @@ character_event = {
 		}
 		if = {
 			limit = {		
-				TOW_is_uncivilized_religion_trigger = yes 
+				TOW_religion_is_uncivilized_trigger = yes 
 				is_reformed_religion = no
 				check_variable = { which = "tribal_festival_divine_favor" value = 4 }
 				NOT = { check_variable = { which = "tribal_festival_divine_favor" value = 6 } }
@@ -7123,7 +7123,7 @@ character_event = {
 		}
 		if = {
 			limit = {	
-				TOW_is_uncivilized_religion_trigger = yes 
+				TOW_religion_is_uncivilized_trigger = yes 
 				is_reformed_religion = no
 				check_variable = { which = "tribal_festival_divine_favor" value = 6 }
 			}
@@ -7163,7 +7163,7 @@ character_event = {
 		trigger = { 
 			FROM = { 
 				NOT = { 
-					TOW_is_uncivilized_religion_trigger = yes 
+					TOW_religion_is_uncivilized_trigger = yes 
 					is_reformed_religion = no
 				}
 			}
@@ -7174,7 +7174,7 @@ character_event = {
 		text = EVTDESCHFC23911
 		trigger = { 
 			FROM = { 
-				TOW_is_uncivilized_religion_trigger = yes 
+				TOW_religion_is_uncivilized_trigger = yes 
 				is_reformed_religion = no
 			}
 		}

@@ -192,19 +192,19 @@ apply_any_applicable_harsh_penalties_effect = {
 	                OR = {
 	                    trait = brave #She is brave
 	                    gender_equality_trigger = yes
-	                    TOW_is_uncivilized_religion_trigger = yes
+	                    TOW_religion_is_uncivilized_trigger = yes
 	                    is_nomadic = yes
 	                }
 	                event_target:combatant_1 = { #Same as "FROM" in this case
 	                    OR = {
 	                        gender_equality_trigger = yes
-	                        TOW_is_uncivilized_religion_trigger = yes
+	                        TOW_religion_is_uncivilized_trigger = yes
 	                        is_nomadic = yes
 	                    }
 	                }
 	            }
 	            is_priest = yes #They are a priest
-	            NOT = { event_target:combatant_1 = { TOW_is_uncivilized_religion_trigger = yes } } #Attacker is NOT pagan
+	            NOT = { event_target:combatant_1 = { TOW_religion_is_uncivilized_trigger = yes } } #Attacker is NOT pagan
 			}
 			custom_tooltip = { text = dueling_inappropriate_target_tt }
 			# Instead of blocking the action completely...
@@ -227,13 +227,13 @@ apply_any_applicable_harsh_penalties_effect = {
 	                OR = {
 	                    trait = brave #She is brave
 	                    gender_equality_trigger = yes
-	                    TOW_is_uncivilized_religion_trigger = yes
+	                    TOW_religion_is_uncivilized_trigger = yes
 	                    is_nomadic = yes
 	                }
 	                event_target:combatant_1 = { #Same as "FROM" in this case
 	                    OR = {
 	                        gender_equality_trigger = yes
-	                        TOW_is_uncivilized_religion_trigger = yes
+	                        TOW_religion_is_uncivilized_trigger = yes
 	                        is_nomadic = yes
 	                    }
 	                }
@@ -253,7 +253,7 @@ apply_any_applicable_harsh_penalties_effect = {
 			limit = {
 				is_member_of_any_warrior_lodge_trigger = no #They are not a warrior
 	            is_priest = yes #They are a priest
-	            NOT = { event_target:combatant_1 = { TOW_is_uncivilized_religion_trigger = yes } } #Attacker is NOT pagan
+	            NOT = { event_target:combatant_1 = { TOW_religion_is_uncivilized_trigger = yes } } #Attacker is NOT pagan
 			}
 			custom_tooltip = { text = dueling_inappropriate_target_tt }
 			event_target:combatant_1 = {
@@ -440,7 +440,7 @@ evaluate_extra_duel_result_score_effect = { # [SPECIAL CIRCUMSTANCES - OPTIONAL]
 	# 1. BONUSES ADDED:	adds to the score...
 	################################################################
 	if = {
-		limit = { TOW_is_uncivilized_religion_trigger = yes }
+		limit = { TOW_religion_is_uncivilized_trigger = yes }
 		change_variable = {
 			which = duel_result_score #(50 + X) - Y
 			value = 3
@@ -511,7 +511,7 @@ evaluate_extra_duel_result_score_effect = { # [SPECIAL CIRCUMSTANCES - OPTIONAL]
 		}
 	}
 	if = {
-		limit = { event_target:combatant_2 = { TOW_is_uncivilized_religion_trigger = yes } }
+		limit = { event_target:combatant_2 = { TOW_religion_is_uncivilized_trigger = yes } }
 		subtract_variable = {
 			which = duel_result_score #(50 + X) - Y
 			value = 3
@@ -2141,7 +2141,6 @@ apply_generic_duel_victory_effect = {
 			modifier = recent_duel_victory
 			months = 12 #also clears upon new duel!
 		}
-		hidden_effect = { character_event = { id = 720 } } # Bring it On achievement check event
 	}
 }
 
