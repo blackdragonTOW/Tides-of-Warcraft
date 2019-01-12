@@ -1537,6 +1537,7 @@ character_event = { # Meet Wandering Wise Man
 				flag = ai_flag_refuse_conversion
 			}
 			new_character = {
+				TOW_initialize_character = yes
 				set_character_flag = no_court_invites
 				remove_trait = dull
 				remove_trait = slow
@@ -2061,6 +2062,7 @@ character_event = { # Attempted Murder
 					trait = ugly
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					remove_trait = fair
 					add_scarred_high_effect = yes
 					save_event_target_as = attempted_murderer
