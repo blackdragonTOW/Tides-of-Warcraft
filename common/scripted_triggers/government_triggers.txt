@@ -1,11 +1,23 @@
-# Replaces general condition "religion_group = pagan_group"
-TOW_is_uncivilized_religion_trigger = {
-	always = no # TOW TODO : To Define
+# Replaces general condition "is_feudal"
+TOW_is_feudal = {
+	is_feudal = yes
+	NOR = {
+		government = troll_ke_government
+		government = troll_bcd_government
+		government = ogre_tribe_government
+		government = helf_government
+		government = noble_republic_government
+	}
 }
 
 # Replaces general condition "is_tribal"
 TOW_is_tribal = {
-	always = no # TOW TODO : To Define
+	OR = {
+		is_tribal = yes
+		government = troll_ke_government
+		government = troll_bcd_government
+		government = ogre_tribe_government
+	}
 }
 
 TOW_government_is_uncivilized = {
@@ -17,7 +29,11 @@ TOW_government_is_uncivilized = {
 
 # Replaces general condition "is_republic"
 TOW_is_republic = {
-	always = no # TOW TODO : To Define
+	OR = {
+		is_republic = yes
+		government = helf_government
+		government = noble_republic_government
+	}
 }
 
 # ROOT is character
@@ -53,30 +69,6 @@ TOW_has_access_to_city = {
 				controlled_by = PREVPREV
 			}
 		}
-	}
-}
-
-
-TOW_cares_about_land_for_heir = {
-	NOR = {
-		trait = race_undead_scourge
-		trait = race_undead_forsaken
-		trait = race_undead_generic
-		trait = race_faceless
-		trait = race_eredar
-		trait = race_shivarra
-		trait = race_succubus
-		trait = race_dreadlord
-		trait = race_pit_lord
-		trait = race_doomlord
-		trait = race_fel_lord
-		trait = race_dragon
-		government = kirin_tor_government
-		government = technocracy_government
-		government = templar_order_government
-		government = militant_order_government
-		government = demon_government
-		government = faceless_government
 	}
 }
 

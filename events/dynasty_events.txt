@@ -624,29 +624,90 @@ character_event = {
 		name = EVTOPTA66110 #go to war!
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 2
-				FROM = { diplomacy = 14 }
-			}
-			modifier = {
-				factor = 2
-				FROM = { martial = 14 }
-			}
-			modifier = {
-				factor = 2
-				FROM = { intrigue = 14 }
-			}
+
+			modifier = { factor = 1.05 FROM = { diplomacy = 8 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 9 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 10 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 11 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 12 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 13 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 14 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 16 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 17 } }
+			modifier = { factor = 1.05 FROM = { diplomacy = 18 } }
+
 			modifier = {
 				factor = 1.5
-				opinion = { who = FROM value =  25 }
+				FROM = { martial = 16 }
+			}
+
+			modifier = { factor = 1.05 FROM = { intrigue = 8 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 9 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 10 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 11 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 12 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 13 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 14 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 16 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 17 } }
+			modifier = { factor = 1.05 FROM = { intrigue = 18 } }
+
+			modifier = { factor = 1.1 opinion = { who = FROM value = 10 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 20 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 30 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 40 } }
+			modifier = { factor = 1.1 opinion = { who = FROM value = 50 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 60 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 70 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 80 } }
+			modifier = { factor = 1.15 opinion = { who = FROM value = 90 } }
+
+			modifier = { factor = 0.9 NOT = { opinion = { who = FROM value = -9 } } }
+			modifier = { factor = 0.9 NOT = { opinion = { who = FROM value = -19 } } }
+			modifier = { factor = 0.9 NOT = { opinion = { who = FROM value = -29 } } }
+			modifier = { factor = 0.9 NOT = { opinion = { who = FROM value = -39 } } }
+			modifier = { factor = 0.9 NOT = { opinion = { who = FROM value = -49 } } }
+			modifier = { factor = 0.85 NOT = { opinion = { who = FROM value = -59 } } }
+			modifier = { factor = 0.85 NOT = { opinion = { who = FROM value = -69 } } }
+			modifier = { factor = 0.85 NOT = { opinion = { who = FROM value = -79 } } }
+			modifier = { factor = 0.85 NOT = { opinion = { who = FROM value = -89 } } }
+
+			modifier = { factor = 2 is_friend = FROM }
+			modifier = { factor = 2.5 is_lover = FROM }
+			modifier = { factor = 10 FROM = { is_heir = ROOT } }
+			modifier = { factor = 3 FROM = { is_child_of = ROOT } }
+			
+			modifier = { factor = 0 is_foe = FROM }
+
+			modifier = {
+				factor = 0
+				ai_rationality = 75
+				NOT = { relative_power = { who = FROM power = 1.1 } }
 			}
 			modifier = {
-				factor = 2
-				opinion = { who = FROM value =  50 }
+				factor = 0
+				ai_rationality = 50
+				NOT = { relative_power = { who = FROM power = 1.0 } }
 			}
 			modifier = {
-				factor = 3
-				opinion = { who = FROM value =  75 }
+				factor = 0
+				ai_rationality = 0
+				NOT = { relative_power = { who = FROM power = 0.8 } }
+			}
+			modifier = {
+				factor = 0
+				ai_rationality = -25
+				NOT = { relative_power = { who = FROM power = 0.7 } }
+			}
+			modifier = {
+				factor = 0
+				ai_rationality = -50
+				NOT = { relative_power = { who = FROM power = 0.4 } }
+			}
+			modifier = {
+				factor = 0
+				ai_rationality = -99
+				NOT = { relative_power = { who = FROM power = 0.1 } }
 			}
 		}
 		event_target:claimant_claim = {

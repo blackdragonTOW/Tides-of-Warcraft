@@ -76,11 +76,11 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.6
-			has_religion_feature = religion_proselytizing
+			TOW_religion_is_proselytizing = yes
 		}
 		modifier = {
 			factor = 2.5
-			has_religion_feature = religion_cosmopolitan
+			TOW_religion_is_cosmopolitan = yes
 		}
 		modifier = {
 			factor = 0.75
@@ -223,51 +223,13 @@ character_event = {
 		}
 		
 		modifier = {
-			factor = 0.6
-			religion = hindu
-	    	any_owned_bloodline = {
-    			has_bloodline_flag = bloodline_faster_hindu
-    		}
-		}
-		
-		# Hindus and Buddhists have a hard time converting other Indian religions
-		modifier = {
 			factor = 3.0
 			has_job_action = action_inquisition
-			OR = {
-				religion = hindu
-				religion = buddhist
-			}
-			location = {
-				religion_group = indian_group
-				NOT = {
-					religion = taoist
-				}
-			}
-		}
-		# Jains, Taoists and Bön have a hard time converting ALL non-pagans
-		modifier = {
-			factor = 3.0
-			has_job_action = action_inquisition
-			OR = {
-				religion = jain
-				religion = taoist
-				religion = bon
-				religion = bon_reformed
-			}
-			location = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
-			}
-		}
-		
-		modifier = {
-			factor = 3.0
-			has_job_action = action_inquisition
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			is_reformed_religion = no
 			location = {
 				OR = {
-					NOT = { TOW_is_uncivilized_religion_trigger = yes }
+					NOT = { TOW_religion_is_uncivilized_trigger = yes }
 					is_reformed_religion = yes
 				}
 			}
@@ -427,11 +389,11 @@ character_event = {
 	
 		modifier = {
 			factor = 0.75
-			has_religion_feature = religion_proselytizing
+			TOW_religion_is_proselytizing = yes
 		}
 		modifier = {
 			factor = 2.75
-			has_religion_feature = religion_cosmopolitan
+			TOW_religion_is_cosmopolitan = yes
 		}
 		modifier = {
 			factor = 1.25
@@ -483,7 +445,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 3.0
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			is_reformed_religion = no
 		}
 	}
@@ -652,15 +614,15 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.75
-			has_religion_feature = religion_dogmatic
+			TOW_religion_is_dogmatic = yes
 		}
 		modifier = {
 			factor = 1.25
-			has_religion_feature = religion_proselytizing
+			TOW_religion_is_proselytizing = yes
 		}
 		modifier = {
 			factor = 2.75
-			has_religion_feature = religion_cosmopolitan
+			TOW_religion_is_cosmopolitan = yes
 		}
 	
 		modifier = {
@@ -761,11 +723,8 @@ character_event = {
 	}
 	
 	option = {
-		name = "EVTOPTA20021"
+		name = "EVTOPTA20021" # TOW TODO : Localisation
 		trigger = {
-			NOT = {
-				religion_group = muslim
-			}
 			NOT = {
 				trait = wroth
 			}
@@ -782,20 +741,6 @@ character_event = {
 		}
 		add_trait = wounded
 		add_trait = zealous
-		liege = { letter_event = { id = 20022 tooltip = "EVTTOOLTIP20022" } }
-	}
-	option = {
-		name = "EVTOPTC20021"
-		trigger = {
-			religion_group = muslim
-			NOT = {
-				AND = {
-					trait = wroth
-					NOT = { trait = humble }
-				}
-			}
-		}
-		add_trait = wounded
 		liege = { letter_event = { id = 20022 tooltip = "EVTTOOLTIP20022" } }
 	}
 }
@@ -854,9 +799,8 @@ character_event = {
 		NOT = { has_character_modifier = in_seclusion }
 		NOT = { has_character_modifier = bedridden_illness }
 		NOT = { trait = incapable }
-		NOT = { has_religion_feature = religion_cosmopolitan }
-		NOT = { TOW_is_uncivilized_religion_trigger = yes }
-		NOT = { religion_group = indian_group }
+		TOW_religion_is_cosmopolitan = no
+		NOT = { TOW_religion_is_uncivilized_trigger = yes }
 		trait = zealous
 		location = {
 			any_province_lord = {
@@ -879,7 +823,7 @@ character_event = {
 	
 		modifier = {
 			factor = 1.5
-			has_religion_feature = religion_dogmatic
+			TOW_religion_is_dogmatic = yes
 		}
 		modifier = {
 			factor = 1.25
@@ -972,21 +916,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA20030"
-		trigger = {
-			NOT = {
-				religion_group = muslim
-			}
-		}
-		FROM = {
-			liege = { letter_event = { id = 20032 tooltip = "EVTTOOLTIP20032" } }
-		}
-	}
-	option = {
-		name = "EVTOPTB20030"
-		trigger = {
-			religion_group = muslim
-		}
+		name = "EVTOPTA20030" # TOW TODO : Localisation
 		FROM = {
 			liege = { letter_event = { id = 20032 tooltip = "EVTTOOLTIP20032" } }
 		}
@@ -1069,19 +999,7 @@ letter_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "EVTOPTA20033"
-		trigger = {
-			NOT = {
-				religion_group = muslim
-			}
-		}
-		piety = 5
-	}
-	option = {
-		name = "EVTOPTB20033"
-		trigger = {
-			religion_group = muslim
-		}
+		name = "EVTOPTA20033" # TOW TODO : Localisation
 		piety = 5
 	}
 }
@@ -1158,7 +1076,7 @@ character_event = {
 		NOT = { has_character_modifier = in_seclusion }
 		NOT = { has_character_modifier = bedridden_illness }
 		NOT = { trait = incapable }
-		NOT = { has_religion_feature = religion_cosmopolitan }
+		TOW_religion_is_cosmopolitan = no
 		location = {
 			NOT = { religion = ROOT }
 			NOT = { has_province_modifier = religious_tension }
@@ -1170,7 +1088,7 @@ character_event = {
 	
 		modifier = {
 			factor = 1.25
-			has_religion_feature = religion_dogmatic
+			TOW_religion_is_dogmatic = yes
 		}
 		modifier = {
 			factor = 0.75
@@ -1323,7 +1241,7 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				TOW_is_uncivilized_religion_trigger = yes
+				TOW_religion_is_uncivilized_trigger = yes
 				NOT = { same_realm = ROOT }
 				NOT = { has_character_flag = flag_converting_baptism }
 				NOT = { has_character_modifier = baptism_request_cooldown }
@@ -1372,7 +1290,7 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				TOW_is_uncivilized_religion_trigger = yes
+				TOW_religion_is_uncivilized_trigger = yes
 				is_reformed_religion = no
 				NOT = { same_realm = ROOT }
 				controls_religion = no
@@ -1388,7 +1306,7 @@ character_event = {
 	
 		modifier = {
 			factor = 1.5
-			has_religion_feature = religion_proselytizing
+			TOW_religion_is_proselytizing = yes
 		}
 		modifier = {
 			factor = 1.25
@@ -1508,7 +1426,7 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				TOW_is_uncivilized_religion_trigger = yes
+				TOW_religion_is_uncivilized_trigger = yes
 				is_reformed_religion = no
 				NOT = { same_realm = ROOT }
 			}
@@ -1520,7 +1438,7 @@ character_event = {
 	
 		modifier = {
 			factor = 1.5
-			has_religion_feature = religion_proselytizing
+			TOW_religion_is_proselytizing = yes
 		}
 		modifier = {
 			factor = 1.25
@@ -1584,7 +1502,7 @@ character_event = {
 							at_location = ROOT
 							NOT = { trait = incapable }
 							ai = yes
-							TOW_is_uncivilized_religion_trigger = yes
+							TOW_religion_is_uncivilized_trigger = yes
 						}
 						character_event = { id = 39610 days = 1 }
 					}
@@ -1617,7 +1535,7 @@ character_event = {
 				NOT = { character = ROOT }
 				NOT = { is_liege_of = ROOT }
 				NOT = { religion = ROOT }
-				TOW_is_uncivilized_religion_trigger = yes
+				TOW_religion_is_uncivilized_trigger = yes
 				NOT = { same_realm = ROOT }
 			}
 		}
@@ -1852,7 +1770,6 @@ character_event = {
 		NOT = { has_character_modifier = in_seclusion }
 		NOT = { has_character_modifier = bedridden_illness }
 		NOT = { trait = incapable }
-		NOT = { religion_group = indian_group }
 		religion_head = {
 			NOT = { character = liege }
 		}
@@ -2009,11 +1926,11 @@ character_event = {
 		}
 		modifier = {
 			factor = 2
-			has_religion_feature = religion_dogmatic
+			TOW_religion_is_dogmatic = yes
 		}
 		modifier = {
 			factor = 0.75
-			has_religion_feature = religion_cosmopolitan
+			TOW_religion_is_cosmopolitan = yes
 		}
 		modifier = {
 			factor = 1.25
@@ -2124,22 +2041,13 @@ character_event = {
 		NOT = { has_character_modifier = in_seclusion }
 		NOT = { has_character_modifier = bedridden_illness }
 		NOT = { trait = incapable }
-		NOT = { religion_group = indian_group }
-		NOT = { has_religion_feature = religion_cosmopolitan }
+		TOW_religion_is_cosmopolitan = no
 		is_heretic = no
 		has_secret_religion = no
-		OR = {
-			religion_group = christian
-			religion_group = muslim
-			religion_group = jewish_group
-		}
+		TOW_religion_has_heresy = yes
 		liege = {
 			is_heretic = no
-			OR = {
-				religion_group = christian
-				religion_group = muslim
-				religion_group = jewish_group
-			}
+			TOW_religion_has_heresy = yes
 		}
 		NOT = {
 			religion_head = { character = ROOT }
@@ -2151,7 +2059,7 @@ character_event = {
 		
 		modifier = {
 			factor = 2
-			has_religion_feature = religion_dogmatic
+			TOW_religion_is_dogmatic = yes
 		}
 		modifier = {
 			factor = 1.25

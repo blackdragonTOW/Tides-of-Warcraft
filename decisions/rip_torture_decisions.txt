@@ -957,18 +957,18 @@ targetted_decisions = {
 						trait = cannibal_trait
 					}
 				}
-				trait = gnoll
-				trait = trogg
-				trait = troll_jungle
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_dark
-				trait = troll_sand
-				trait = troll_zandalari
-				trait = ogre
-				trait = undead_forsaken
-				trait = undead_generic
-				trait = undead_scourge
+				trait = race_gnoll
+				trait = race_trogg
+				trait = race_troll_jungle
+				trait = race_troll_forest
+				trait = race_troll_ice
+				trait = race_troll_dark
+				trait = race_troll_sand
+				trait = race_troll_zandalari
+				trait = race_ogre
+				trait = race_undead_forsaken
+				trait = race_undead_generic
+				trait = race_undead_scourge
 			}
 		}
 
@@ -1020,9 +1020,9 @@ targetted_decisions = {
 								factor = 0
 								OR = {
 									FROM = {
-										trait = undead_forsaken
-										trait = undead_generic
-										trait = undead_scourge
+										trait = race_undead_forsaken
+										trait = race_undead_generic
+										trait = race_undead_scourge
 									}
 								}
 							}
@@ -1103,18 +1103,18 @@ targetted_decisions = {
 				if = {
 					limit = {
 						NOR = {
-							trait = gnoll
-							trait = trogg
-							trait = troll_jungle
-							trait = troll_forest
-							trait = troll_ice
-							trait = troll_dark
-							trait = troll_sand
-							trait = troll_zandalari
-							trait = ogre
-							trait = undead_forsaken
-							trait = undead_generic
-							trait = undead_scourge
+							trait = race_gnoll
+							trait = race_trogg
+							trait = race_troll_jungle
+							trait = race_troll_forest
+							trait = race_troll_ice
+							trait = race_troll_dark
+							trait = race_troll_sand
+							trait = race_troll_zandalari
+							trait = race_ogre
+							trait = race_undead_forsaken
+							trait = race_undead_generic
+							trait = race_undead_scourge
 						}
 						NOT = { has_character_modifier = crazy_cannibal }
 					}

@@ -24,9 +24,6 @@ province_event = {
 	trigger = {
 		is_heretic = no
 		has_heresies = yes
-		NOT = { province_id = 333 } # Rome
-		NOT = { province_id = 497 } # Thrace
-		NOT = { province_id = 719 } # Mecca
 	}
 	
 	mean_time_to_happen = {
@@ -184,7 +181,6 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	only_rulers = yes
-	religion_group = christian
 	lacks_dlc = "Sons of Abraham"
 	
 	trigger = {
@@ -196,7 +192,6 @@ character_event = {
 			
 			any_courtier = {
 				is_heretic = yes
-				religion_group = christian
 				prisoner = no
 				is_councillor = yes
 			}
@@ -1250,15 +1245,11 @@ character_event = {
 	prisoner = no
 	only_men = yes
 	only_playable = yes
-	religion_group = christian
 	war = no
 	
 	trigger = {
 		controls_religion = yes
-		OR = {
-			religion = catholic
-			religion = fraticelli
-		}
+		TOW_religion_rel_head_wants_full_authority = yes
 	
 		religion_authority = 0.30
 		prestige = 20
@@ -1438,14 +1429,10 @@ character_event = {
 	only_men = yes
 	only_playable = yes	
 	war = no
-	religion_group = christian
 	
 	trigger = {
 		controls_religion = yes
-		OR = {
-			religion = catholic
-			religion = fraticelli
-		}
+		TOW_religion_rel_head_wants_full_authority = yes
 	
 		any_vassal = {
 			tier = baron
@@ -1554,28 +1541,7 @@ character_event = {
 			# Always allow them if you already like that religion
 			modifier = {
 				factor = 0
-				FROM = { religion_group = christian }
-				trait = sympathy_christendom
-			}
-			modifier = {
-				factor = 0
-				FROM = { religion_group = muslim }
-				trait = sympathy_islam
-			}
-			modifier = {
-				factor = 0
-				FROM = { religion_group = jewish_group }
-				trait = sympathy_judaism
-			}
-			modifier = {
-				factor = 0
-				FROM = { religion_group = zoroastrian_group }
-				trait = sympathy_zoroastrianism
-			}
-			modifier = {
-				factor = 0
-				FROM = { religion_group = indian_group }
-				trait = sympathy_indian
+				FROM = { TOW_character_prev_is_sympathetic_to_me_religion = yes }
 			}
 		}
 		
@@ -1717,25 +1683,13 @@ character_event = {
 			}
 			modifier = {
 				factor = 0.2
-				OR = {
-					culture = old_saxon
-					culture_group = baltic
-					culture_group = finno_ugric  # The most stubborn pagans
-				}
-				
+				TOW_background_hard_to_religiously_convert = yes
 			}
 			modifier = {
 				factor = 0.2
-				culture_group = east_slavic # Like alcohol
+				TOW_background_likes_to_drink_a_lot = yes
 				FROM = {
-					religion_group = muslim
-				}
-			}
-			modifier = {
-				factor = 0.2
-				culture_group = north_germanic # Vikings do like their alcohol
-				FROM = {
-					religion_group = muslim
+					TOW_religion_forbidden_alcohol = yes
 				}
 			}
 			
@@ -1801,14 +1755,13 @@ character_event = {
 			modifier = {
 				factor = 0.2
 				NOR = {
-					religion = tengri_pagan
-					religion = aztec
+					TOW_religion_is_warlike = yes
 					any_realm_province = {
 						any_neighbor_province = {
 							owner = {
 								top_liege = {
 									NAND = {
-										TOW_is_uncivilized_religion_trigger = yes
+										TOW_religion_is_uncivilized_trigger = yes
 										is_reformed_religion = no
 									}
 									any_realm_province = { TECH_RECRUITMENT = 4 } # More cocky when pagan homeland attrition effect is active against neighbors
@@ -1874,28 +1827,7 @@ character_event = {
 			}
 			modifier = {
 				factor = 3
-				FROM = { religion_group = christian }
-				trait = sympathy_christendom
-			}
-			modifier = {
-				factor = 3
-				FROM = { religion_group = muslim }
-				trait = sympathy_islam
-			}
-			modifier = {
-				factor = 3
-				FROM = { religion_group = jewish_group }
-				trait = sympathy_judaism
-			}
-			modifier = {
-				factor = 3
-				FROM = { religion_group = zoroastrian_group }
-				trait = sympathy_zoroastrianism
-			}
-			modifier = {
-				factor = 3
-				FROM = { religion_group = indian_group }
-				trait = sympathy_indian
+				FROM = { TOW_character_prev_is_sympathetic_to_me_religion = yes }
 			}
 			
 			# Personal
@@ -1994,33 +1926,14 @@ character_event = {
 			}
 			modifier = {
 				factor = 0.2
-				OR = {
-					culture_group = baltic
-					culture_group = finno_ugric  # The most stubborn pagans
-				}
-				
+				TOW_background_hard_to_religiously_convert = yes
 			}
 			modifier = {
 				factor = 0.2
-				culture_group = east_slavic # Like alcohol
+				TOW_background_likes_to_drink_a_lot = yes
 				FROM = {
-					religion_group = muslim
+					TOW_religion_forbidden_alcohol = yes
 				}
-			}
-			modifier = {
-				factor = 0.2
-				culture_group = north_germanic # Vikings do like their alcohol
-				FROM = {
-					religion_group = muslim
-				}
-			}
-			modifier = {
-				factor = 0.2
-				religion = bon
-			}
-			modifier = {
-				factor = 0.2
-				religion = bon_reformed
 			}
 			
 			# Pragmatism
@@ -2089,14 +2002,13 @@ character_event = {
 			modifier = {
 				factor = 0.2
 				NOR = {
-					religion = tengri_pagan
-					religion = aztec
+					TOW_religion_is_warlike = yes
 					any_realm_province = {
 						any_neighbor_province = {
 							owner = {
 								top_liege = {
 									NAND = {
-										TOW_is_uncivilized_religion_trigger = yes
+										TOW_religion_is_uncivilized_trigger = yes
 										is_reformed_religion = no
 									}
 									any_realm_province = { TECH_RECRUITMENT = 4 } # More cocky when pagan homeland attrition effect is active against neighbors
@@ -2189,7 +2101,7 @@ character_event = {
 			limit = { 
 				has_dlc = "Holy Fury"
 				is_tribal = yes
-				TOW_is_uncivilized_religion_trigger = yes
+				TOW_religion_is_uncivilized_trigger = yes
 				NOT = { trait = incapable }
 				higher_tier_than = COUNT
 				NOT = { is_reformed_religion = yes }
@@ -2205,7 +2117,7 @@ character_event = {
 						NOT = { pays_tribute_to = ROOT }
 						NOT = { has_character_flag = flag_sponsoring_baptism }
 						OR = {
-							NOT = { TOW_is_uncivilized_religion_trigger = yes }
+							NOT = { TOW_religion_is_uncivilized_trigger = yes }
 							is_reformed_religion = yes
 						}
 					}
@@ -2218,30 +2130,30 @@ character_event = {
 		
 		
 	else = {
-		if = {
-			limit = {
-				trait = cynical
-				NOT = { trait = zealous }
-				age = 12
-			}
-			random = {
-				chance = 60
-				add_trait = sympathy_pagans
-			}
-		}
-		if = {
-			limit = {
-				NOR = {
-					trait = cynical
-					trait = zealous
-				}
-				age = 12
-			}
-			random = {
-				chance = 50
-				add_trait = sympathy_pagans
-			}
-		}		
+		#if = {
+		#	limit = {
+		#		trait = cynical
+		#		NOT = { trait = zealous }
+		#		age = 12
+		#	}
+		#	random = {
+		#		chance = 60
+		#		add_trait = sympathy_pagans
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		NOR = {
+		#			trait = cynical
+		#			trait = zealous
+		#		}
+		#		age = 12
+		#	}
+		#	random = {
+		#		chance = 50
+		#		add_trait = sympathy_pagans
+		#	}
+		#}		
 		
 		religion = FROM
 		prestige = -500
@@ -2273,6 +2185,7 @@ character_event = {
 			}
 		}
 		new_character = {
+			TOW_initialize_character = yes 
 			give_job_title = job_spiritual
 			save_event_target_as = convert_lord_spiritual
 		}
@@ -2388,24 +2301,13 @@ letter_event = {
 			}
 			modifier = {
 				factor = 0.2
-				OR = {
-					culture = old_saxon
-					culture_group = baltic
-					culture_group = finno_ugric  # The most stubborn pagans
-				}
+				TOW_background_hard_to_religiously_convert = yes
 			}
 			modifier = {
 				factor = 0.2
-				culture_group = east_slavic # Like alcohol
+				TOW_background_likes_to_drink_a_lot = yes
 				FROM = {
-					religion_group = muslim
-				}
-			}
-			modifier = {
-				factor = 0.2
-				culture_group = north_germanic # Vikings do like their alcohol
-				FROM = {
-					religion_group = muslim
+					TOW_religion_forbidden_alcohol = yes
 				}
 			}
 		}
@@ -2432,6 +2334,7 @@ letter_event = {
 			}
 		}
 		new_character = {
+			TOW_initialize_character = yes 
 			give_job_title = job_spiritual
 		}
 	}
@@ -2465,30 +2368,30 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		if = {
-			limit = {
-				trait = cynical
-				NOT = { trait = zealous }
-				age = 12
-			}
-			random = {
-				chance = 60
-				add_trait = sympathy_pagans
-			}
-		}
-		if = {
-			limit = {
-				NOT = { 
-					trait = cynical 
-					trait = zealous 
-				}
-				age = 12
-			}
-			random = {
-				chance = 50
-				add_trait = sympathy_pagans
-			}
-		}
+		#if = {
+		#	limit = {
+		#		trait = cynical
+		#		NOT = { trait = zealous }
+		#		age = 12
+		#	}
+		#	random = {
+		#		chance = 60
+		#		add_trait = sympathy_pagans
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		NOT = { 
+		#			trait = cynical 
+		#			trait = zealous 
+		#		}
+		#		age = 12
+		#	}
+		#	random = {
+		#		chance = 50
+		#		add_trait = sympathy_pagans
+		#	}
+		#}
 		religion = FROM
 		liege = {
 			character_event = { id = 39602 }
@@ -2863,12 +2766,6 @@ character_event = {
 		religion = FROMFROM
 		if = {
 			limit = {
-				religion_group = indian_group
-			}
-			character_event = { id = RoI.120 } # Assign Indian religion branch
-		}
-		if = {
-			limit = {
 				character = FROM
 			}
 			character_event = { id = MNM.3949 days = 3 random = 10 }
@@ -2891,52 +2788,11 @@ character_event = {
 				age = 12
 			}
 		}
-		if = {
-			limit = {
-				religion_group = christian
-			}
-			add_trait = sympathy_christendom
-		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			add_trait = sympathy_islam
-		}
-		if = {
-			limit = {
-				TOW_is_uncivilized_religion_trigger = yes
-			}
-			add_trait = sympathy_pagans
-		}
-		if = {
-			limit = {
-				religion_group = zoroastrian_group
-			}
-			add_trait = sympathy_zoroastrianism
-		}
-		if = {
-			limit = {
-				religion_group = jewish_group
-			}
-			add_trait = sympathy_judaism
-		}
-		if = {
-			limit = {
-				religion_group = indian_group
-			}
-			add_trait = sympathy_indian
-		}
+		TOW_character_add_sympathy_trait_towards_my_religion = yes
 
 		clr_religion_char_flag_effect = yes #Must clear all old flags to avoid double traits
 		add_religion_char_flag_effect = yes
 		religion = FROMFROM
-		if = {
-			limit = {
-				religion_group = indian_group
-			}
-			character_event = { id = RoI.120 } # Assign Indian religion branch
-		}
 		if = {
 			limit = {
 				character = FROM

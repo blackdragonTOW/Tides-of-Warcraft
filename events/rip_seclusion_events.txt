@@ -693,18 +693,6 @@ character_event = {
 				death_reason = death_execution_eaten_unknown
 				killer = ROOT
 			}
-			hidden_tooltip = {
-				if = {
-					limit = {
-						OR = { 
-							religion = bon 
-							religion = bon_reformed
-						}
-						ROOT = { ai = no }
-					}
-					ROOT = { set_character_flag = achievement_bon_appetit }
-				}
-			}
 		}
 		change_variable = { which = remaining_food value = 1 }
 		if = {
@@ -1061,28 +1049,6 @@ character_event = {
 				factor = 2
 				trait = craven
 			}
-		}
-		if = {
-			limit = {
-				event_target:sick_courtier = {
-					OR = {
-						has_character_flag = got_bubonic_plague
-						has_character_flag = manifest_bubonic_plague
-						trait = has_bubonic_plague
-					}
-				}
-				ai = no
-			}
-			set_character_flag = achievement_close_call
-		}
-		if = {
-			limit = {
-				event_target:sick_courtier = {
-					NOT = { has_character_flag = got_bubonic_plague }
-				}
-				ai = no
-			}
-			set_character_flag = achievement_an_honest_mistake
 		}
 		event_target:sick_courtier = {
 			remove_character_modifier = in_seclusion
@@ -1857,16 +1823,6 @@ character_event = {
 				trait = paranoid
 			}
 		}
-		if = {
-			limit = {
-				event_target:plague_victim = {
-					trait = has_bubonic_plague
-				}
-				ai = no
-				NOT = { has_character_flag = achievement_close_call }
-			}
-			set_character_flag = achievement_close_call
-		}
 		event_target:plague_victim = {
 			remove_character_modifier = in_seclusion
 			opinion = {
@@ -1932,16 +1888,6 @@ character_event = {
 				factor = 5
 				NOT = { opinion = { who = event_target:epidemic_victim value = 0 } }
 			}
-		}
-		if = {
-			limit = {
-				event_target:epidemic_victim = {
-					trait = has_bubonic_plague
-				}
-				ai = no
-				NOT = { has_character_flag = achievement_close_call }
-			}
-			set_character_flag = achievement_close_call
 		}
 		event_target:epidemic_victim = {
 			remove_character_modifier = in_seclusion
@@ -2130,6 +2076,7 @@ character_event = {
 			}
 		}
 		new_character = {
+			TOW_initialize_character = yes
 			add_trait = lustful
 			add_trait = fair
 			remove_trait = chaste
@@ -2589,6 +2536,7 @@ character_event = {
 					health = 7
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					save_event_target_as = captured_sneaker
 					remove_trait = homosexual
 				}
@@ -2617,6 +2565,7 @@ character_event = {
 					health = 7
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					save_event_target_as = captured_sneaker
 					remove_trait = homosexual
 				}
@@ -2643,6 +2592,7 @@ character_event = {
 					health = 7
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					save_event_target_as = captured_sneaker
 					remove_trait = homosexual
 				}
@@ -2670,6 +2620,7 @@ character_event = {
 					health = 7
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					save_event_target_as = captured_sneaker
 					remove_trait = homosexual
 				}
@@ -2697,6 +2648,7 @@ character_event = {
 					health = 7
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					save_event_target_as = captured_sneaker
 					remove_trait = homosexual
 				}
@@ -3859,6 +3811,7 @@ character_event = {
 					health = 7
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					will_not_marry_effect = yes
 					add_character_modifier = {
 						name = in_seclusion
@@ -3892,6 +3845,7 @@ character_event = {
 					health = 7
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					will_not_marry_effect = yes
 					add_character_modifier = {
 						name = in_seclusion
@@ -5315,7 +5269,6 @@ character_event = {
 									trait = has_tuberculosis
 									trait = has_typhoid_fever
 									trait = has_typhus
-									trait = has_bubonic_plague
 									trait = has_measles
 									trait = has_small_pox
 								}
@@ -5477,25 +5430,6 @@ character_event = {
 					}
 				}
 				character_event = { id = RIP.12012 }
-			}
-			# Courtier has the plague
-			100 = {
-				modifier = {
-					factor = 0
-					NAND = {
-						host = { character = ROOT }
-						location = {
-							disease = bubonic_plague
-						}
-						any_courtier = {
-							at_location = ROOT
-							has_character_modifier = in_seclusion
-							NOT = { is_friend = ROOT }
-							trait = has_bubonic_plague
-						}
-					}
-				}
-				character_event = { id = RIP.12013 }
 			}
 			# Child has a peasant lover outside of seclusion
 			20 = {

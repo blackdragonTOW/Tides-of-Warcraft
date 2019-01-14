@@ -4,6 +4,7 @@
 TOW_initialize_character = {
 	TOW_initialize_character_race_from_culture = yes
 	TOW_update_character_race_from_liege = yes
+	TOW_initialize_character_religious_features = yes
 	TOW_initialize_character_portraits_features = yes
 }
 
@@ -14,10 +15,9 @@ TOW_initialize_character_race_from_culture = {
 		limit = {
 			has_character_flag = race_assigned
 		}
-		log = "Tides Of Warcraft -- Warning : Trying to assign a race on a character ([This.GetTitledName]) who already has the race_assigned flag !"
+		log = " -- TOW -- Warning: Trying to assign a race on a character ([This.GetTitledName]) who already has the race_assigned flag !"
 	}
 
-	set_character_flag = race_assigned
 	trigger_switch = {
 		on_trigger = culture_group
 		
@@ -38,21 +38,52 @@ TOW_initialize_character_race_from_culture = {
 						culture = twilights_hammer
 					}
 					set_graphical_culture = bleeding_hollow # doesn't matter
+					add_trait = race_gorc
+				}
+				if = {
+					limit = { graphical_culture = rorcgfx }
+					add_trait = race_rorc
+				}
+				if = {
+					limit = { graphical_culture = borcgfx }
+					add_trait = race_borc
+				}
+				if = {
+					limit = { graphical_culture = morcgfx }
+					add_trait = race_morc
+				}
+				if = {
+					limit = { graphical_culture = dorcgfx }
+					add_trait = race_dorc
+				}
+				if = {
+					limit = { graphical_culture = worcgfx }
+					add_trait = race_worc
+				}
+				if = {
+					limit = { graphical_culture = gorcgfx }
+					add_trait = race_gorc
 				}
 			}
 			else = {
 				add_trait = race_pale_orc
 			}
 		}
-		dwarf = { add_trait = race_dwarf }
+		dwarf = {
+			add_trait = race_dwarf
+			if = {
+				limit = { graphical_culture = blackdwarfgfx }
+				add_trait = race_blackdwarf
+			}
+		}
 		gnome = { add_trait = race_gnome }
 		goblin = { add_trait = race_goblin }
 		ogre = { add_trait = race_ogre }
 		murloc = { add_trait = race_murloc }
 		gnoll = { add_trait = race_gnoll }
-		naga = { add_trait = race_naga }
 		kobold = { add_trait = race_kobold }
 		trogg = { add_trait = race_trogg }
+		vrykul = { add_trait = race_vrykul }
 	}
 	trigger_switch = {
 		on_trigger = culture
@@ -60,6 +91,7 @@ TOW_initialize_character_race_from_culture = {
 		high_elven = { add_trait = race_high_elf }
 		blood_elven = { add_trait = race_blood_elf }
 		night_elven = { add_trait = race_night_elf }
+		naga = { add_trait = race_naga }
 		felblood = {
 			add_trait = race_blood_elf
 			set_graphical_culture = felblood
@@ -71,15 +103,15 @@ TOW_initialize_character_race_from_culture = {
 			set_graphical_culture = race_wretched
 			culture = blood_elven
 		}
-		red_dragonflight = { add_trait = race_dragon }
-		blue_dragonflight = { add_trait = race_dragon }
-		bronze_dragonflight = { add_trait = race_dragon }
-		green_dragonflight = { add_trait = race_dragon }
-		black_dragonflight = { add_trait = race_dragon }
+		red_dragonflight = { add_trait = race_dragon add_trait = race_reddragon }
+		blue_dragonflight = { add_trait = race_dragon add_trait = race_bluedragon }
+		bronze_dragonflight = { add_trait = race_dragon add_trait = race_bronzedragon }
+		green_dragonflight = { add_trait = race_dragon add_trait = race_greendragon }
+		black_dragonflight = { add_trait = race_dragon add_trait = race_blackdragon }
 		chromatic_dragonflight = { add_trait = race_dragon }
 		twilight_dragonflight = { add_trait = race_dragon }
-		infinite_dragonflight = { add_trait = race_dragon }
-		nightmare_dragonflight = { add_trait = race_dragon }
+		infinite_dragonflight = { add_trait = race_dragon add_trait = race_infinitedragon }
+		nightmare_dragonflight = { add_trait = race_dragon add_trait = race_nightdragon }
 		scourge = {
 			add_trait = race_human
 			add_trait = race_undead_scourge
@@ -105,7 +137,6 @@ TOW_initialize_character_race_from_culture = {
 		drakkari = { add_trait = race_troll_ice }
 		frostmane = { add_trait = race_troll_ice }
 		sandfury = { add_trait = race_troll_sand }
-		hakkari = { add_trait = race_troll_jungle }
 		smolderthorn = { add_trait = race_troll_forest }
 		shadowglen = { add_trait = race_troll_forest }
 		winterax = { add_trait = race_troll_ice }
@@ -134,7 +165,7 @@ TOW_initialize_character_race_from_culture = {
 		inquisitor = { add_trait = race_inquisitor }
 		observer = { add_trait = race_observer }
 		draenei = { add_trait = race_draenei }
-		broken = { add_trait = race_broken }
+		#broken = { add_trait = race_broken }
 		lost_one = { add_trait = race_lost_one }
 		nraqi = { add_trait = race_faceless }
 		voidwalker = { add_trait = race_voidwalker }
@@ -143,11 +174,19 @@ TOW_initialize_character_race_from_culture = {
 		fire_elemental = { add_trait = race_fire_elemental }
 		water_elemental = { add_trait = race_water_elemental }
 	}
+
+	if = {
+		limit = {
+			TOW_has_race = no
+		}
+		log = " -- TOW -- : TOW_initialize_character_race_from_culture failed. Character: [This.GetID] ([This.GetBestName]). Culture: [This.Culture.GetName]."
+	}
+	set_character_flag = race_assigned
 }
 
 TOW_update_character_race_from_liege = {
 	if = {
-		limit = { trait = orc }
+		limit = { trait = race_orc }
 	
 		if = {
 			limit = {
@@ -228,6 +267,36 @@ TOW_initialize_character_portraits_features = {
 	}
 }
 
+TOW_initialize_character_religious_features = {
+	hidden_tooltip = {
+		if = {
+			limit = {
+				TOW_religion_practices_astrology = yes
+			}
+			add_western_zodiac_trait_effect = yes
+		}
+		if = {
+			limit = {
+				TOW_religion_has_pagan_branches = yes
+			}
+			random_list = {  
+				5 = {
+					add_trait = pagan_branch_1
+				}
+				25 = {
+					add_trait = pagan_branch_2
+				}
+				25 = {
+					add_trait = pagan_branch_3
+				}
+				25 = {
+					add_trait = pagan_branch_4
+				}
+			}
+		}
+	}
+}
+
 TOW_remove_class_traits = {
 	remove_trait = mage
 	remove_trait = warlock
@@ -249,16 +318,10 @@ TOW_employed_remove_unwanted_traits_with_ET_employer = {
 	if = {
 		limit = { event_target:employer = { accepts_warlock = no } }
 		remove_trait = warlock
-		remove_trait = necrolyte
 	}
 	if = {
 		limit = { event_target:employer = { accepts_necromancer = no } }
 		remove_trait = necromancer
-		remove_trait = necrolyte
-	}
-	if = {
-		limit = { event_target:employer = { accepts_assassin = no } }
-		remove_trait = assassin
 	}
 	if = {
 		limit = { event_target:employer = { accepts_rogue = no } }
@@ -274,4 +337,18 @@ TOW_new_character_employed_effect = {
 	TOW_remove_class_traits = yes
 	TOW_initialize_character = yes
 	TOW_employed_remove_unwanted_traits_with_ET_employer = yes
+}
+
+TOW_set_newly_landed_character_government = {
+	set_government_type = feudal_government
+}
+
+join_prev_society = {
+	PREV = {
+		society = {
+			save_event_target_as = join_prev_society_join_prev_society
+		}
+	}
+	join_society = event_target:join_prev_society_join_prev_society
+	clear_event_target = join_prev_society_join_prev_society
 }

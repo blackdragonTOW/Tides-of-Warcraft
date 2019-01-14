@@ -10,6 +10,351 @@
 namespace = TOG
 namespace = TGF
 
+### Berserker Events
+
+# Character becomes a Berserker in battle
+character_event = {
+	id = TOG.3000
+	desc = EVTDESC_TOG_3000
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		TOW_background_has_berserker = yes
+		is_alive = yes
+		NOT = { trait = berserker }
+		OR = {
+			NOT = { age = 50 }
+			immortal = yes
+		}
+		OR = {
+			trait = wroth
+			trait = aggressive_leader
+		}
+	}
+
+	immediate = {
+		disallow_new_battle_events_effect = yes #to keep the tombola from spamming you...
+	}
+	
+	option = {
+		name = EVTOPTA_TOG_3000
+		if = {
+			limit = { trait = craven }
+			remove_trait = craven
+		}
+		add_trait = berserker
+		add_blood_splatter_effect = yes
+		allow_new_battle_events_effect = yes
+	}
+}
+
+# Berserker is Maimed in battle
+character_event = {
+	id = TOG.3001
+	desc = EVTDESC_TOG_3001
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = berserker
+		NOT = { trait = maimed }
+		NOT = { trait = one_legged }
+		is_alive = yes
+	}
+
+	immediate = {
+		disallow_new_battle_events_effect = yes #to keep the tombola from spamming you...
+	}
+				
+	option = {
+		name = EVTOPTA_TOG_3001
+		add_blood_splatter_effect = yes
+		if = {
+			limit = {
+				NOT = {
+					has_dlc = "Reapers"
+				}
+			}
+			add_trait = maimed
+			hidden_tooltip = {
+				character_event = { id = 38281 }
+			}
+		}
+		if = {
+			limit = {
+				has_dlc = "Reapers"
+			}
+			add_trait = one_legged
+			add_trait = severely_injured
+			hidden_tooltip = {
+				character_event = { id = RIP.11503 } #Notify one-legged
+				resolve_severely_injured_effect = yes
+			}
+		}
+		allow_new_battle_events_effect = yes
+	}
+}
+
+# Berserker is Wounded in battle
+character_event = {
+	id = TOG.3002
+	desc = EVTDESC_TOG_3002
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = berserker
+		NOT = { trait = wounded }
+		NOT = { is_maimed_trigger = yes }
+		is_alive = yes
+	}
+
+	immediate = {
+		disallow_new_battle_events_effect = yes #to keep the tombola from spamming you...
+	}
+	
+	option = {
+		name = EVTOPTA_TOG_3001
+		add_trait = wounded
+		add_blood_splatter_effect = yes
+		allow_new_battle_events_effect = yes
+	}
+}
+
+# Berserker is Killed in battle
+character_event = {
+	id = TOG.3003
+	desc = EVTDESC_TOG_3003
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = berserker
+	}
+	
+	immediate = {
+		disallow_new_battle_events_effect = yes #to keep the tombola from spamming you...
+		liege = {
+			if = {
+				limit = { NOT = { character = ROOT } }
+				character_event = { id = HFP.11002 } # (Opponent (liege) is informed that their commander has been killed)
+			}
+		}
+		FROMFROM = {
+			if = {
+				limit = { NOT = { is_vassal_or_below = ROOT } }
+				set_character_flag = temp_battle_kill_242
+				character_event = { id = HFP.11003 }
+			}
+		}
+#		FROM = { Outcommented because arcane magic script??
+#			if = {
+#				limit = { 
+#					NOR = { 
+#						has_character_flag = temp_battle_kill_242
+#						is_vassal_or_below = ROOT
+#					}
+#				}
+#				character_event = { id = HFP.11003 }
+#			}
+#		}
+		FROMFROM = {
+			clr_character_flag = temp_battle_kill_242
+		}
+		if = {
+			limit = {
+				OR = {
+					is_liege_or_above = FROM
+					FROM = { character = ROOT }
+					NOT = { FROM = { always = yes } }
+				}
+			}
+			death = {
+				death_reason = death_battle
+			}
+			break = yes
+		}
+		death = {
+			death_reason = death_battle
+			killer = FROM
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_TOG_3003
+	}
+}
+
+# Berserker kills scores of enemies in battle
+character_event = {
+	id = TOG.3004
+	desc = EVTDESC_TOG_3004
+	picture = GFX_evt_viking_battle_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = berserker
+	}
+
+	immediate = {
+		disallow_new_battle_events_effect = yes #to keep the tombola from spamming you...
+	}
+	
+	option = {
+		name = EVTOPTA_TOG_3004
+		add_blood_splatter_effect = yes
+		prestige = 200
+		change_martial = 1
+		allow_new_battle_events_effect = yes
+	}
+}
+
+# Too old to be Berserker
+character_event = {
+	id = TOG.3005
+	desc = EVTDESC_TOG_3005
+	picture = GFX_evt_viking_throneroom_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	min_age = 50
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		trait = berserker
+		immortal = no
+		OR = { #Either you must have been a *regular* berserker (no flag), or a special one (gained via a Warrior Lodge) for more than ten years...
+			NOT = { has_character_flag = special_berserker }
+			had_character_flag = { flag = special_berserker days = 3650 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_TOG_3005
+		remove_trait = berserker
+		clr_character_flag = special_berserker
+	}
+}
+
+# Berserker goes berserk against Courtier
+character_event = {
+	id = TOG.3006
+	desc = EVTDESC_TOG_3006
+	picture = GFX_evt_viking_throneroom_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_TOG_3006
+		add_blood_splatter_effect = yes
+		random_list = {
+			50 = {
+				character_event = { id = TOG.3007 days = 1 tooltip = EVTTOOLTIP_TOG_3007 }
+			}
+			50 = {
+				character_event = { id = TOG.3008 days = 1 tooltip = EVTTOOLTIP_TOG_3008 }
+			}
+		}
+	}
+}
+
+# Courtier beaten
+character_event = {
+	id = TOG.3007
+	desc = EVTDESC_TOG_3007
+	picture = GFX_evt_viking_throneroom_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_TOG_3007
+		FROMFROM = {
+			add_trait = wounded
+			opinion = {
+				modifier = opinion_went_berserk
+				who = ROOT
+			}
+		}
+	}
+}
+
+# Courtier spared
+character_event = {
+	id = TOG.3008
+	desc = EVTDESC_TOG_3008
+	picture = GFX_evt_viking_throneroom_oldgods
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	hide_from = yes
+	
+	option = {
+		name = EVTOPTA_TOG_3008
+		piety = 20
+	}
+}
+
+# Berserker goes berserk against Courtier (Hidden AI)
+character_event = {
+	id = TOG.3009
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	ai = yes
+	min_age = 16
+	only_men = yes
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		has_dlc = "The Old Gods"
+		host = { 
+			character = liege
+			prisoner = no
+			trait = berserker
+			NOT = { 
+				trait = incapable
+				opinion = { who = ROOT value = 10 }
+			}
+			NOT = { is_inaccessible_trigger = yes }
+		}
+		NOT = { trait = berserker }
+		is_primary_heir = no
+		is_pretender = no
+	}
+	
+	immediate = {
+		add_blood_splatter_effect = yes
+		liege = {
+			character_event = { id = TOG.3006 }
+		}
+	}
+}
+
+
 ### Looting Events
 
 # +2 Axe

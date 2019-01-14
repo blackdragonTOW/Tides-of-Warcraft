@@ -1450,6 +1450,7 @@ liberate_religion = { # New6
 									flag = is_religious_liberation_ruler
 								}
 								new_character = {
+									TOW_initialize_character = yes
 									remove_trait = cynical
 									add_trait = zealous
 									wealth = 500
@@ -1497,6 +1498,7 @@ liberate_religion = { # New6
 									flag = is_religious_liberation_ruler
 								}
 								new_character = {
+									TOW_initialize_character = yes
 									remove_trait = cynical
 									add_trait = zealous
 									wealth = 500
@@ -3223,10 +3225,6 @@ truebelievers_bid_for_independence = {
 				}
 			}
 		}
-
-		hidden_tooltip = {
-			check_if_reconquista_finished_effect = yes
-		}
 	}
 
 	on_fail = {
@@ -3805,6 +3803,7 @@ matriarchal_deposition_war = {
 								}
 							}
 							new_character = {
+								TOW_initialize_character = yes
 								remove_trait = cynical
 								wealth = 250
 								prestige = 300
@@ -3835,7 +3834,6 @@ matriarchal_deposition_war = {
 								NOR = {
 									has_religion_feature = religion_patriarchal
 									has_religion_feature = religion_equal
-									has_religion_feature = religion_feature_bon
 								}
 							}
 						}
@@ -4269,6 +4267,7 @@ patriarchal_deposition_war = {
 								}
 							}
 							new_character = {
+								TOW_initialize_character = yes
 								remove_trait = cynical
 								wealth = 250
 								prestige = 300
@@ -4299,7 +4298,6 @@ patriarchal_deposition_war = {
 								NOR = {
 									has_religion_feature = religion_matriarchal
 									has_religion_feature = religion_equal
-									has_religion_feature = religion_feature_bon
 								}
 							}
 						}

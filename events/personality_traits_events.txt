@@ -23,9 +23,7 @@ character_event = {
 		NOT = {
 			personality_traits = 5
 		}
-		NOT = {
-			religion_group = muslim
-		}
+		TOW_religion_uses_chastity = yes
 		NOT = {
 			trait = chaste
 		}
@@ -2832,7 +2830,6 @@ character_event = {
 	picture = "GFX_evt_bishop"
 	
 	min_age = 16
-	religion_group = christian
 	
 	is_triggered_only = yes
 	
@@ -3054,9 +3051,7 @@ character_event = {
 		NOT = {
 			personality_traits = 5
 		}
-		NOT = {
-			religion_group = muslim
-		}
+		TOW_religion_uses_chastity = yes
 		NOT = {
 			trait = chaste
 		}
@@ -3649,9 +3644,7 @@ character_event = {
 		NOT = {
 			personality_traits = 5
 		}
-		NOT = {
-			religion_group = muslim
-		}
+		TOW_religion_uses_chastity = yes
 		NOT = {
 			trait = chaste
 		}
@@ -3857,9 +3850,7 @@ character_event = {
 		NOT = {
 			personality_traits = 5
 		}
-		NOT = {
-			religion_group = muslim
-		}
+		TOW_religion_uses_chastity = yes
 		NOT = {
 			trait = chaste
 		}
@@ -5048,131 +5039,5 @@ character_event = {
 	option = {
 		name = "EVTOPTA1058"
 		remove_trait = trusting
-	}
-}
-
-### Lustful Muslim ###
-character_event = {
-	id = 1060
-	desc = "EVTDESC1060"
-	picture = "GFX_evt_lovers"
-	
-	min_age = 16
-	only_capable = yes
-	religion_group = muslim
-	
-	is_triggered_only = yes
-	
-	trigger = {
-		NOT = {
-			personality_traits = 5
-		}
-		NOT = {
-			trait = lustful
-		}
-		NOT = {
-			trait = homosexual
-		}
-	}
-	
-	weight_multiplier = {
-		days = 1
-		
-		modifier = {
-			factor = 1.7
-			trait = greedy
-		}
-		modifier = {
-			factor = 1.7
-			trait = hedonist
-		}
-		modifier = {
-			factor = 1.7
-			trait = gluttonous
-		}
-		modifier = {
-			factor = 0.5
-			trait = temperate
-		}
-	}
-
-	option = {
-		name = "EVTOPTA1060"
-		if = {
-			limit = {
-				trait = honest
-				NOT = {
-					trait = slothful
-				}
-			}
-			random = {
-				chance = 70
-				
-				add_trait = lustful
-				hidden_tooltip = {
-					character_event = {
-						id = 38272 #Notify Lustful
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				trait = slothful
-				NOT = {
-					trait = honest
-				}
-			}
-			random = {
-				chance = 20
-				
-				add_trait = lustful
-				hidden_tooltip = {
-					character_event = {
-						id = 38272 #Notify Lustful
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					trait = honest
-				}
-				NOT = {
-					trait = slothful
-				}
-			}
-			random = {
-				chance = 45
-				
-				add_trait = lustful
-				hidden_tooltip = {
-					character_event = {
-						id = 38272 #Notify Lustful
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				trait = honest
-				trait = slothful
-			}
-			random = {
-				chance = 45
-				
-				add_trait = lustful
-				hidden_tooltip = {
-					character_event = {
-						id = 38272 #Notify Lustful
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = "EVTOPTB1060"
-		piety = 10
 	}
 }

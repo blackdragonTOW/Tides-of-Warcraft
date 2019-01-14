@@ -148,14 +148,15 @@ character_event = {
 		}
 	}
 	
-	option = {
-		name = "EVTOPTB5001"
-		character_event = { 
-			id = 5003
-			days = 30
-			tooltip = "EVTTOOLTIP5003"
-		}
-	}
+	# TOW TODO : Mystic alternative
+	#option = {
+	#	name = "EVTOPTB5001"
+	#	character_event = { 
+	#		id = 5003
+	#		days = 30
+	#		tooltip = "EVTTOOLTIP5003"
+	#	}
+	#}
 }
 
 #Mysterious man revealed
@@ -304,27 +305,10 @@ character_event = {
 	
 	option = {
 		name = "EVTOPTB5021"
-		if = {
-			limit = {
-				NOT = {
-					religion_group = muslim
-				}
-			}
-			character_event = { 
-				id = 5023
-				days = 30
-				tooltip = "EVTTOOLTIP5023"
-			}
-		}
-		if = {
-			limit = {
-				religion_group = muslim
-			}
-			character_event = { 
-				id = 5026
-				days = 30
-				tooltip = "EVTTOOLTIP5023" #Muslim Impaler
-			}
+		character_event = { 
+			id = 5023
+			days = 30
+			tooltip = "EVTTOOLTIP5023"
 		}
 	}
 }
@@ -407,7 +391,7 @@ character_event = {
 	option = {
 		name = "EVTOPTA5023"
 		trigger = {
-			NOT = { religion = jain }
+			TOW_religion_is_pacifist = no
 		}
 		prestige = 20
 		clr_character_flag = red_rose
@@ -571,9 +555,6 @@ character_event = {
 		}
 		NOT = {
 			lifestyle_traits = 1
-		}
-		NOT = {
-			religion_group = muslim
 		}
 		any_courtier = {
 			has_lover = no
@@ -1034,7 +1015,7 @@ character_event = {
 	
 	trigger = {
 		in_command = no
-		NOT = { religion = jain }
+		TOW_religion_is_pacifist = no
 		NOT = {
 			lifestyle_traits = 1
 		}
@@ -1139,21 +1120,7 @@ character_event = {
 #Hunting - Really fun!
 character_event = {
 	id = 5042
-	desc = {
-		text = "EVTDESC5042"
-		trigger = {
-			NOT = {
-				religion_group = muslim
-			}
-		}
-	}
-
-	desc = {
-		text = "EVTDESC5047"
-		trigger = {
-			religion_group = muslim
-		}
-	}
+	desc = "EVTDESC5042"
 		
 	picture = "GFX_evt_hunt"
 	
@@ -1338,7 +1305,7 @@ character_event = {
 	prisoner = no
 
 	trigger = {
-		NOT = { religion = jain }
+		TOW_religion_is_pacifist = no
 		in_command = no
 		NOT = {
 			has_character_flag = LE_ST
@@ -1644,10 +1611,10 @@ character_event = {
 	min_age = 25
 	capable_only = yes
 	prisoner = no
-	religion_group = christian
 	lacks_dlc = "Way of Life"
 	
 	trigger = {
+		TOW_religion_has_celibacy = yes
 		NOT = {
 			lifestyle_traits = 1
 		}

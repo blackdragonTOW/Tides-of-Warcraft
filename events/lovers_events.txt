@@ -22,13 +22,7 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			religion_group = muslim
-		}
 		spouse = {
-			NOT = {
-				religion_group = muslim
-			}
 			in_command = no
 			war = no
 			is_abroad = no
@@ -833,7 +827,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = {
-							religion_group = muslim
+							TOW_religion_uses_chastity = yes
 						}
 					}
 					add_trait = chaste
@@ -845,7 +839,7 @@ character_event = {
 				}
 				if = {
 					limit = {
-						religion_group = muslim
+						TOW_religion_uses_chastity = no
 					}
 					add_trait = cynical
 					hidden_tooltip = {
@@ -1053,11 +1047,11 @@ character_event = {
 			20 = {
 				modifier = {
 					factor = 1.25
-					NOT = { religion_group = christian }
+					TOW_religion_uses_chastity = no
 				}
 				if = {
 					limit = {
-						religion_group = christian
+						TOW_religion_uses_chastity = yes
 					}
 					add_trait = chaste
 					hidden_tooltip = {
@@ -1068,7 +1062,7 @@ character_event = {
 				}
 				if = {
 					limit = {
-						NOT = { religion_group = christian }
+						TOW_religion_uses_chastity = no
 					}
 					piety = 5
 				}
@@ -1084,7 +1078,7 @@ character_event = {
 			5 = {
 				modifier = {
 					factor = 0
-					NOT = { religion_group = christian }
+					TOW_religion_has_celibacy = no
 				}
 				add_trait = celibate
 				hidden_tooltip = {
@@ -2023,7 +2017,7 @@ character_event = {
 		name = "EVTOPTB64060" #Wine will cure my pains
 		trigger = {
 			OR = {
-				NOT = { religion_group = muslim }
+				TOW_religion_forbidden_alcohol = no
 				trait = cynical
 			}
 		}
@@ -2277,9 +2271,7 @@ character_event = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					religion_group = muslim
-				}
+				TOW_religion_uses_chastity = yes
 			}
 			random = {
 				chance = 25
@@ -2562,16 +2554,16 @@ character_event = {
 	only_men = yes
 	capable_only = yes
 	only_rulers = yes
-	religion_group = christian
 	lacks_dlc = "Way of Life"
 	is_married = yes
 	
 	trigger = {
+		TOW_religion_uses_convent = yes
 		spouse = {
 			is_alive = yes
 			is_abroad = no
 			prisoner = no
-			religion_group = christian
+			TOW_religion_uses_convent = yes
 			NOT = { trait = incapable }
 		}
 		fertility = 0.5
@@ -2921,9 +2913,7 @@ character_event = {
 	option = {
 		name = "EVTOPTA64090" #Ask for God's help with our childless marriage
 		trigger = {
-			NOT = {	religion = buddhist }
-			NOT = {	religion = jain }
-			NOT = {	religion_group = muslim }
+			TOW_religion_omnipotent_god = yes
 		}
 		random_list = {
 			70 = {
@@ -2958,26 +2948,6 @@ character_event = {
 			}
 			10 = {
 				health = -2
-			}
-		}
-	}
-	option = {
-		name = "EVTOPTC64090" #Ask for Allah's help with our childless marriage
-		trigger = {
-			religion_group = muslim
-		}
-		random_list = {
-			70 = {
-			}
-			20 = {
-				spouse = {
-					fertility = 0.2
-				}
-			}
-			10 = {
-				spouse = {
-					fertility = 0.1
-				}
 			}
 		}
 	}
@@ -3590,9 +3560,7 @@ character_event = {
 			50 = {
 				if = {
 					limit = {
-						NOT = {
-							religion_group = muslim
-						}
+						TOW_religion_uses_chastity = yes
 					}
 					add_trait = chaste
 					hidden_tooltip = {
@@ -3601,10 +3569,7 @@ character_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						religion_group = muslim
-					}
+				else = {
 					piety = 5
 				}
 			}
@@ -4087,12 +4052,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = "EVTOPTB64140"
-		trigger = {
-			NOT = {
-				religion_group = muslim
-			}
-		}
+		name = "EVTOPTB64140" # TOW TODO : Localisation
 		random_list = {
 			50 = {
 			}
@@ -4107,9 +4067,7 @@ character_event = {
 			25 = {
 				if = {
 					limit = {
-						NOT = {
-							religion_group = muslim
-						}
+						TOW_religion_uses_chastity = yes
 					}
 					add_trait = chaste
 					hidden_tooltip = {
@@ -4118,10 +4076,7 @@ character_event = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						religion_group = muslim
-					}
+				else = {
 					piety = 5
 				}
 			}
@@ -4136,45 +4091,6 @@ character_event = {
 			character_event = {
 				id = 64045
 				tooltip = "EVTTOOLTIP64045" 
-			}
-		}
-	}
-	option = {
-		name = "EVTOPTD64140"
-		trigger = {
-			religion_group = muslim
-		}
-		random_list = {
-			50 = {
-			}
-			25 = {
-				add_trait = zealous
-				hidden_tooltip = {
-					character_event = {
-						id = 38269 #Notify Zealous
-					}
-				}
-			}
-			25 = {
-				if = {
-					limit = {
-						NOT = {
-							religion_group = muslim
-						}
-					}
-					add_trait = chaste
-					hidden_tooltip = {
-						character_event = {
-							id = 38274 #Notify Chaste
-						}
-					}
-				}
-				if = {
-					limit = {
-						religion_group = muslim
-					}
-					piety = 5
-				}
 			}
 		}
 	}

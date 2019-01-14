@@ -29,30 +29,25 @@ character_event = {
 			}
 			prisoner = no
 		}
-		OR = {
-			religion_group = christian
-			religion_group = muslim
-			religion_group = zoroastrian_group
-		}
+		TOW_background_has_access_to_goblin_bankers = yes
 		prisoner = no
 		is_nomadic = no
 		is_adult = yes
 		NOR = { 
 			trait = incapable
 			is_inaccessible_trigger = yes
-			religion_group = jewish_group
-			has_character_modifier = borrowed_from_jews
-			has_character_modifier = expelled_jewish
+			has_character_modifier = borrowed_from_goblins
+			has_character_modifier = expelled_goblins
 			has_character_flag = ZE.3000_flag
 		}
-		top_liege = { NOT = { has_character_modifier = expelled_jewish } }
+		top_liege = { NOT = { has_character_modifier = expelled_goblins } }
 	}
 
 
 	immediate = {
 		set_character_flag = ZE.3000_flag
 		add_character_modifier = {
-			name = borrowed_from_jews
+			name = borrowed_from_goblins
 			duration = -1
 			inherit = yes
 		}

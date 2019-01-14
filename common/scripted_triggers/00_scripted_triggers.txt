@@ -371,7 +371,6 @@ has_disease_trigger = {
 		trait = cancer
 		trait = pneumonic
 
-		trait = dancing_plague
 		trait = scurvy
 		trait = ill
 		trait = leper
@@ -495,7 +494,6 @@ has_fertile_trait_trigger = {
 		trait = strong
 		trait = hedonist
 		trait = lustful
-		trait = dancing_plague
 	}
 }
 
@@ -704,6 +702,21 @@ has_any_lifestyle_trait = {
 
 
 ##RELIGION##
+
+has_crusade_trait_trigger = {
+	always = no
+	# TOW TODO : Crusade traits if any
+	#OR = {
+	#	AND = {
+	#		OR = {
+	#			religion = norse_pagan
+	#			religion = norse_pagan_reformed
+	#		}
+	#		trait = valhalla_bound
+	#	}
+	#}
+}
+
 
 has_secret_religion_trait_trigger = {
 	custom_tooltip = {
@@ -1062,7 +1075,7 @@ can_be_councilmember_emperor_trigger = {
 					OR = { 
 						liege = { has_religion_feature = religion_matriarchal } 
 						liege = { has_religion_feature = religion_equal } 
-						liege = { has_religion_feature = religion_feature_bon } 
+						liege = { } 
 					} 
 				}
 				AND = {
@@ -1318,7 +1331,6 @@ death_murder_unknown_trigger = {
 		death_reason = death_murder_unknown_lightning
 		death_reason = death_murder_unknown_combustion
 		death_reason = death_murder_unknown_crows
-		death_reason = death_murder_unknown_possessed_fall
 	}	
 }
 
@@ -1426,11 +1438,13 @@ block_general_event_trigger = {
 gender_equality_trigger_4 = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				has_game_rule = {
 					name = gender
 					value = all
 				}
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
 			}
 		}
 		OR = {
@@ -1449,11 +1463,13 @@ gender_equality_trigger_4 = {
 gender_equality_trigger_3 = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				has_game_rule = {
 					name = gender
 					value = all
 				}
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
 			}
 		}
 		OR = {
@@ -1484,11 +1500,13 @@ gender_equality_trigger_3 = {
 gender_equality_trigger_1 = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				has_game_rule = {
 					name = gender
 					value = all
 				}
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
 			}
 		}
 		OR = {
@@ -1523,11 +1541,13 @@ gender_equality_trigger_1 = {
 gender_equality_trigger = {
 	trigger_if = {
 		limit = {
-			NOT = {
+			NOR = {
 				has_game_rule = {
 					name = gender
 					value = all
 				}
+				has_religion_feature = religion_matriarchal
+				has_religion_feature = religion_equal
 			}
 		}
 		OR = {
@@ -1605,20 +1625,7 @@ female_can_hold_minor_title_trigger = {
 					}
 				}
 			}
-			primary_title = {
-				OR = {
-					has_law = status_of_women_4 
-					has_law = status_of_women_3 
-				}
-			}
-			liege = {
-				primary_title = {
-					OR = {
-						has_law = status_of_women_4
-						has_law = status_of_women_3
-					}
-				}
-			}
+			gender_equality_trigger_1 = yes
 		}
 	}
 }
@@ -1653,38 +1660,15 @@ female_can_hold_minor_commander_title_trigger = {
 					}
 				}
 			}
-			primary_title = {
-				has_law = status_of_women_4 
-			}
-			liege = {
-				primary_title = {
-					has_law = status_of_women_4
-				}
-			}
+			gender_equality_trigger_1 = yes
 		}
 	}
 }
 
 has_minor_deity_trigger = {
 	OR = {
-		has_character_modifier = follower_of_perun
-		has_character_modifier = follower_of_veles
-		has_character_modifier = follower_of_jarilo
-		has_character_modifier = follower_of_morana
-		has_character_modifier = follower_of_ayyur
-		has_character_modifier = follower_of_anansi
-		has_character_modifier = follower_of_dan
-		has_character_modifier = follower_of_bida
-		has_character_modifier = follower_of_tsumburbura
-		has_character_modifier = follower_of_dongo
-		has_character_modifier = follower_of_ukko
-		has_character_modifier = follower_of_akka
-		has_character_modifier = follower_of_taipo_and_mielikki 
-		has_character_modifier = follower_of_lempo
-		has_character_modifier = follower_of_dievas
-		has_character_modifier = follower_of_velnias
-		has_character_modifier = follower_of_perkunas
-		has_character_modifier = follower_of_zemyna
+		# TOW TODO : Minor deities?
+		#has_character_modifier = follower_of_perun
 	}
 }
 
@@ -1809,43 +1793,6 @@ is_murder_quest_target_of_root_trigger = {
 	ROOT = {
 		has_quest = quest_the_assassins_assassination
 		quest_target = { character = PREVPREV }
-	}
-}
-
-assassins_appropriate_target_trigger = {
-	is_within_diplo_range = ROOT
-	is_adult = yes
-	is_quest_target = no
-
-	OR = {
-		is_ruler = no
-		AND = {
-			ROOT = {
-				society_rank = {
-					rank == 3
-					society = the_assassins
-				}
-			}
-			primary_title = { higher_real_tier_than = COUNT }
-		}
-		AND = {
-			ROOT = {
-				society_rank = {
-					rank == 2
-					society = the_assassins
-				}
-			}
-			primary_title = { lower_real_tier_than = EMPEROR }
-		}
-		AND = {
-			ROOT = {
-				society_rank = {
-					rank == 1
-					society = the_assassins
-				}
-			}
-			primary_title = { lower_real_tier_than = DUKE }
-		}
 	}
 }
 
@@ -2025,15 +1972,9 @@ is_monastic_member_trigger = {
 is_ascetic_trigger = {
 	custom_tooltip = {
 		text = is_ascetic_tooltip
+		always = no # TOW TODO : To Define
 		OR = {
 			trait = monk
-			trait = nun
-			trait = muni
-			trait = aryika
-			trait = bhikkhu
-			trait = bhikkhuni
-			trait = sanyasi
-			trait = sanyasini
 		}
 	}
 }
@@ -2093,6 +2034,27 @@ is_openly_of_roots_secret_religion_trigger = {
 	religion = { target = ROOT target_type = secret }
 }
 
+has_sympathy_for_true_religion_of_prev_trigger = { 
+	OR = {
+		always = no # TOW TODO : sympathies
+		#AND = {
+		#	trait = sympathy_christendom
+		#	PREV = { true_religion_group_christian_trigger = yes }
+		#}
+	}
+}
+
+has_sympathy_for_true_religion_of_root_trigger = { 
+	OR = {
+		always = no # TOW TODO : sympathies
+		#AND = {
+		#	trait = sympathy_christendom
+		#	ROOT = { true_religion_group_christian_trigger = yes }
+		#}
+	}
+}
+
+
 ok_sr_induction_mission_target_trigger = {
 	is_adult = yes
 	NOT = { secret_religion = ROOT }
@@ -2106,6 +2068,27 @@ ok_sr_induction_mission_target_trigger = {
 		has_sympathy_for_true_religion_of_root_trigger = yes
 	}
 }
+
+ok_sr_sympathy_mission_target_trigger = {
+	has_secret_religion_trait_trigger = no
+	ROOT = {
+		NOT = { secret_religion = { target_type = public target = PREV } }
+		NOR = {
+			#AND = {
+			#	true_religion_group = christian
+			#	PREV = { trait = sympathy_christendom }
+			#}
+		}
+	}
+	ROOT = { PREV = { is_openly_of_prevs_secret_religion_trigger = no } }
+	ROOT = { PREV = { has_sympathy_for_true_religion_of_prev_trigger = no } }
+	prisoner = no
+	is_adult = yes
+	NOT = { trait = incapable }
+	is_inaccessible_trigger = no
+	NOT = { has_character_modifier = secret_religion_sympathy_timer }
+}
+
 has_prevs_secret_religion_truly_trigger = {
 	secret_religion = { target = PREV target_type = true }
 }
@@ -2842,283 +2825,6 @@ has_unsafe_secret_religion = {
 	always = yes
 }
 
-#to check type of ingredient... (if more are added, they need to go in here to work with the current system)
-is_ingredient_herb_trigger = {
-	OR = {
-		artifact_type = ingredient_herb1
-		artifact_type = ingredient_herb2
-		artifact_type = ingredient_herb3
-		artifact_type = ingredient_herb4
-		artifact_type = ingredient_herb5
-		artifact_type = ingredient_herb6
-		artifact_type = ingredient_herb7
-		artifact_type = ingredient_herb8
-		artifact_type = ingredient_herb9
-	}
-}
-
-is_ingredient_animal_part_trigger = {
-	OR = {
-		artifact_type = ingredient_animal1
-		artifact_type = ingredient_animal2
-		artifact_type = ingredient_animal3
-		artifact_type = ingredient_animal4
-		artifact_type = ingredient_animal5
-		artifact_type = ingredient_animal6
-		artifact_type = ingredient_animal7
-		artifact_type = ingredient_animal8
-		artifact_type = ingredient_animal9
-	}
-}
-
-is_ingredient_powder_trigger = {
-	OR = {
-		artifact_type = ingredient_metal_exotic1
-		artifact_type = ingredient_metal_exotic5
-		artifact_type = ingredient_metal_exotic6
-		artifact_type = ingredient_metal_exotic7
-		artifact_type = ingredient_metal_exotic8
-		artifact_type = ingredient_metal_exotic9
-	}
-}
-
-is_ingredient_liquid_trigger = {
-	OR = {
-		artifact_type = ingredient_metal_exotic2
-		artifact_type = ingredient_metal_exotic3
-		artifact_type = ingredient_metal_exotic4
-	}
-}
-
-#to check which ingredient TO BE selected (via scripted effects)...
-has_a_herb_ingredient_trigger = {
-	any_artifact = {
-		is_ingredient_herb_trigger = yes
-	}
-}
-
-has_an_animal_part_ingredient_trigger = {
-	any_artifact = {
-		is_ingredient_animal_part_trigger = yes
-	}
-}
-
-has_a_powder_ingredient_trigger = {
-	any_artifact = {
-		is_ingredient_powder_trigger = yes
-	}
-}
-
-has_a_liquid_ingredient_trigger = {
-	any_artifact = {
-		is_ingredient_liquid_trigger = yes
-	}
-}
-
-#to check if HAS selected (via scripted effects) an ingredient...
-has_selected_herb_ingredient_1_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_1
-		is_ingredient_herb_trigger = yes
-	}
-}
-
-has_selected_animal_part_ingredient_1_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_1
-		is_ingredient_animal_part_trigger = yes
-	}
-}
-
-has_selected_powder_ingredient_1_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_1
-		is_ingredient_powder_trigger = yes
-	}
-}
-
-has_selected_liquid_ingredient_1_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_1
-		is_ingredient_liquid_trigger = yes
-	}
-}
-
-has_selected_herb_ingredient_2_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_2
-		is_ingredient_herb_trigger = yes
-	}
-}
-
-has_selected_animal_part_ingredient_2_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_2
-		is_ingredient_animal_part_trigger = yes
-	}
-}
-
-has_selected_powder_ingredient_2_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_2
-		is_ingredient_powder_trigger = yes
-	}
-}
-
-has_selected_liquid_ingredient_2_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_2
-		is_ingredient_liquid_trigger = yes
-	}
-}
-
-has_selected_ingredient_1_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_1
-	}
-}
-
-has_selected_ingredient_2_trigger = {
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_2
-	}
-}
-
-selected_ingredient_is_sleep_inducing_trigger = {
-	any_artifact = {
-		OR = {
-			has_artifact_flag = selected_ingredient_1
-			has_artifact_flag = selected_ingredient_2
-		}
-		OR = {
-			artifact_type = ingredient_herb7
-			artifact_type = ingredient_herb3
-			artifact_type = ingredient_herb9			
-		}
-	}
-}
-
-selected_ingredient_is_antipyretic_trigger = {
-	any_artifact = {
-		OR = {
-			has_artifact_flag = selected_ingredient_1
-			has_artifact_flag = selected_ingredient_2
-		}
-		OR = {
-			artifact_type = ingredient_herb1
-			artifact_type = ingredient_herb2
-			artifact_type = ingredient_herb4
-			artifact_type = ingredient_herb5
-			artifact_type = ingredient_herb8
-			artifact_type = ingredient_metal_exotic6
-		}
-	}
-}
-
-selected_ingredient_is_perceived_healthy_trigger = {
-	any_artifact = {
-		OR = {
-			has_artifact_flag = selected_ingredient_1
-			has_artifact_flag = selected_ingredient_2
-		}
-		OR = {
-			AND = {
-				is_ingredient_herb_trigger = yes
-				NOT = { artifact_type = ingredient_herb3 } #Mandrake
-			}
-			artifact_type = ingredient_metal_exotic8 #Mercury
-			artifact_type = ingredient_metal_exotic8 #Iron
-			artifact_type = ingredient_metal_exotic6 #Gold
-
-			artifact_type = ingredient_animal2 #Kidney
-			artifact_type = ingredient_animal7 #Heart
-			artifact_type = ingredient_animal8 #Liver
-			artifact_type = ingredient_animal9 #Intestines
-		}
-	}
-}
-
-selected_ingredient_is_unhealthy_trigger = {
-	any_artifact = {
-		OR = {
-			has_artifact_flag = selected_ingredient_1
-			has_artifact_flag = selected_ingredient_2
-		}
-		OR = {
-			artifact_type = ingredient_herb3 #Mandrake
-			artifact_type = ingredient_metal_exotic8 #Mercury
-			artifact_type = ingredient_metal_exotic8 #Iron
-			is_ingredient_animal_part_trigger = yes
-		}
-	}
-}
-
-selected_ingredient_1_and_2_are_same = {
-	#Checks whether the ingredients selected are same type, such as two Hibiscus (if so, returns true)...
-	any_artifact = {
-		has_artifact_flag = selected_ingredient_1
-		ROOT = {
-			any_artifact = {
-				has_artifact_flag = selected_ingredient_2
-				is_artifact_same_type_as = PREVPREV
-			}
-		}
-	}
-}
-
-ingredient_is_sleep_inducing_trigger = {
-	OR = {
-		artifact_type = ingredient_herb7
-		artifact_type = ingredient_herb3
-		artifact_type = ingredient_herb9
-	}
-}
-
-ingredient_is_antipyretic_trigger = {
-	OR = {
-		artifact_type = ingredient_herb1
-		artifact_type = ingredient_herb2
-		artifact_type = ingredient_herb4
-		artifact_type = ingredient_herb5
-		artifact_type = ingredient_herb8
-		artifact_type = ingredient_metal_exotic6
-	}
-}
-
-ingredient_is_perceived_healthy_trigger = {
-	OR = {
-		AND = {
-			is_ingredient_herb_trigger = yes
-			NOT = { artifact_type = ingredient_herb3 } #Mandrake
-		}
-		artifact_type = ingredient_metal_exotic8 #Mercury
-		artifact_type = ingredient_metal_exotic8 #Iron
-		artifact_type = ingredient_metal_exotic6 #Gold
-
-		artifact_type = ingredient_animal2 #Kidney
-		artifact_type = ingredient_animal7 #Heart
-		artifact_type = ingredient_animal8 #Liver
-		artifact_type = ingredient_animal9 #Intestines
-	}
-}
-
-ingredient_is_unhealthy_trigger = {
-	OR = {
-		artifact_type = ingredient_herb3 #Mandrake
-		artifact_type = ingredient_metal_exotic8 #Mercury
-		artifact_type = ingredient_metal_exotic8 #Iron
-		AND = {
-			is_ingredient_animal_part_trigger = yes
-			NOR = {
-				artifact_type = ingredient_animal2 #Kidney
-				artifact_type = ingredient_animal7 #Heart
-				artifact_type = ingredient_animal8 #Liver
-				artifact_type = ingredient_animal9 #Intestines
-			}
-		}
-	}
-}
-
 same_true_religion_as_from_trigger = {
 	true_religion = FROM
 }
@@ -3158,11 +2864,8 @@ is_any_kinslayer_trigger = {
 	}
 }
 
-courtier_from_china_trigger = {
-	custom_tooltip = {
-		text = courtier_from_china_trigger_tt
-		has_character_flag = originated_from_chinese_court
-	}
+has_unsafe_religion = {
+	NOT = { is_nomadic = yes }
 }
 
 using_unimportant_cb = {
@@ -3193,12 +2896,12 @@ death_no_trace_trigger = {
 proselytize_convert_independent_trigger = {
 	owner = {
 		OR = {
-			FROM = { TOW_is_uncivilized_religion_trigger = no } 
+			FROM = { TOW_religion_is_uncivilized_trigger = no } 
 			FROM = { has_religion_feature = religion_proselytizing }
 		}
 		independent = yes
 		NOT = { religion = FROM }
-		TOW_is_uncivilized_religion_trigger = yes
+		TOW_religion_is_uncivilized_trigger = yes
 		is_reformed_religion = no
 		capital_scope = {
 			province = ROOT
@@ -3556,7 +3259,7 @@ pagan_baptism_trigger = {
 	custom_tooltip = {
 		text = TT_UNREFORMED_PAGAN
 		hidden_tooltip = {
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			NOT = { is_reformed_religion = yes }
 			#NOT = { religion = bon }
 		}
@@ -3705,18 +3408,8 @@ needs_coronation_trigger = {
 
 ruler_has_dedicated_temple_trigger = {
 	OR = {
-		has_character_modifier = dedicated_to_zeus
-		has_character_modifier = dedicated_to_poseidon
-		has_character_modifier = dedicated_to_hades
-		has_character_modifier = dedicated_to_hermes
-		has_character_modifier = dedicated_to_demeter
-		has_character_modifier = dedicated_to_athena
-		has_character_modifier = dedicated_to_apollo
-		has_character_modifier = dedicated_to_arthemis
-		has_character_modifier = dedicated_to_ares
-		has_character_modifier = dedicated_to_aphrodite
-		has_character_modifier = dedicated_to_ephaestus
-		has_character_modifier = dedicated_to_hestia
+		# TOW TODO : Dedication ?
+		#has_character_modifier = dedicated_to_zeus
 	}
 }
 
@@ -4156,6 +3849,8 @@ this_is_warrior_culture_trigger = { #Not really about culture - Used in AI votin
 		has_religion_feature = religion_warlike
 		is_tribal = yes
 		is_nomadic = yes
+		TOW_background_is_adventurer = yes
+		TOW_background_has_berserker = yes
 	}
 }
 
@@ -4243,7 +3938,6 @@ can_enter_festival_physical_competitions_trigger = {
 		AND = {
 			is_female = yes
 			OR = { 
-				trait = shieldmaiden
 				has_religion_feature = religion_matriarchal 
 				has_character_flag = special_marshal
 				is_member_of_any_warrior_lodge_trigger = yes
@@ -4519,13 +4213,9 @@ has_at_least_3_traits_opposite_prev_trigger = {
 }
 
 has_any_sympathy_trait_trigger = { 
+	always = no
 	OR = {
-		trait = sympathy_christendom
-		trait = sympathy_islam
-		trait = sympathy_pagans
-		trait = sympathy_zoroastrianism
-		trait = sympathy_judaism
-		trait = sympathy_indian
+		#trait = sympathy_christendom
 	}
 }
 
@@ -4693,10 +4383,10 @@ has_any_leadership_trait_trigger = {
 		trait = siege_leader
 		trait = trickster
 		trait = unyielding_leader
-		trait = logistics_expert
-		trait = master_of_flame
-		trait = sapper
-		trait = levy_coordinator
+		#trait = logistics_expert
+		#trait = master_of_flame
+		#trait = sapper
+		#trait = levy_coordinator
 		trait = war_elephant_leader
 		trait = winter_soldier
 	}
@@ -4704,61 +4394,13 @@ has_any_leadership_trait_trigger = {
 
 has_any_astrology_trait_trigger = {
 	OR = {
-		trait = zodiac_aquarius
-		trait = zodiac_aries
-		trait = zodiac_cancer
-		trait = zodiac_capricorn
-		trait = zodiac_gemini
-		trait = zodiac_leo
-		trait = zodiac_libra
-		trait = zodiac_pisces
-		trait = zodiac_sagittarius
-		trait = zodiac_scorpio
-		trait = zodiac_taurus
-		trait = zodiac_virgo
+		#trait = zodiac_aquarius
 	}
 }
 
 dlc_religion_check_trigger = {
 	always = yes
 }
-
-reconquista_check_trigger = {
-	any_war = {
-		OR = {
-			using_cb = reconquista_leon
-			using_cb = reconquista_castille
-			using_cb = reconquista_aragon
-			using_cb = reconquista_galicia
-			using_cb = reconquista_beja
-			using_cb = reconquista_granada
-			using_cb = reconquista_cordoba
-			using_cb = reconquista_valencia
-			using_cb = reconquista_navarra
-			using_cb = reconquista_balearic
-		}
-	}
-}
-
-not_reconquista_check_trigger = {
-	NOT = {
-		any_war = {
-			OR = {
-				using_cb = reconquista_leon
-				using_cb = reconquista_castille
-				using_cb = reconquista_aragon
-				using_cb = reconquista_galicia
-				using_cb = reconquista_beja
-				using_cb = reconquista_granada
-				using_cb = reconquista_cordoba
-				using_cb = reconquista_valencia
-				using_cb = reconquista_navarra
-				using_cb = reconquista_balearic
-			}
-		}
-	}
-}
-
 
 this_has_execution_reason_opinion_trigger = {
 	OR = { 

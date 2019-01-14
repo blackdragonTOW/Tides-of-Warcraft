@@ -10179,13 +10179,13 @@ defined_text = {
 
 	text = {
 		trigger = {
-			religion_group = christian
+			religion_group = light_group
 		}
 		localisation_key = string_saint_in_heaven
 	}
 	text = {
 		trigger = {
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 		}
 		localisation_key = string_blessed_ancestor
 	}
@@ -10196,13 +10196,13 @@ defined_text = {
 
 	text = {
 		trigger = {
-			religion_group = christian
+			religion_group = light_group
 		}
 		localisation_key = string_saint_view_title_christian
 	}
 	text = {
 		trigger = {
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 		}
 		localisation_key = string_saint_view_title_pagan
 	}
@@ -10248,45 +10248,6 @@ defined_text = {
 
 	fallback_text = {
 		localisation_key = string_basque_feature_no_HF
-	}
-}
-
-defined_text = {
-	name = GetBornInPurpleDesc
-	text = {
-		trigger = {
-			is_alternate_start = no
-		}
-		localisation_key = string_born_in_the_purple_desc
-	}
-	text = {
-		trigger = {
-			is_alternate_start = yes
-		}
-		localisation_key = string_born_in_the_purple_altstart_desc
-	}
-
-	fallback_text = {
-		localisation_key = string_born_in_the_purple_desc
-	}
-}
-defined_text = {
-	name = GetRestoreRomanEmpireDesc
-	text = {
-		trigger = {
-			is_alternate_start = no
-		}
-		localisation_key = string_restore_roman_empire_desc
-	}
-	text = {
-		trigger = {
-			is_alternate_start = yes
-		}
-		localisation_key = string_restore_roman_empire_altstart_desc
-	}
-
-	fallback_text = {
-		localisation_key = string_restore_roman_empire_desc
 	}
 }
 

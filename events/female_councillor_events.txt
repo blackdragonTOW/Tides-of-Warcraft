@@ -20,9 +20,8 @@ character_event = {
 			has_religion_feature = religion_matriarchal
 			has_religion_feature = religion_patriarchal
 			has_religion_feature = religion_equal
-			has_religion_feature = religion_feature_bon
 		}
-		bad_priest_light_group = no
+		NOT = { trait = bad_priest_light_group }
 	}
 	
 	hide_window = yes
@@ -62,6 +61,7 @@ character_event = {
 					random_traits = yes
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					set_character_flag = female_councillor_chancellor
 					character_event = { id = 77778 }
 
@@ -144,6 +144,7 @@ character_event = {
 					random_traits = yes
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					set_character_flag = female_councillor_marshal
 					character_event = { id = 77778 }
 
@@ -227,6 +228,7 @@ character_event = {
 					random_traits = yes
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					set_character_flag = female_councillor_treasurer
 					character_event = { id = 77778 }
 
@@ -303,7 +305,8 @@ character_event = {
 					trait = intricate_webweaver
 					random_traits = yes
 				}
-				new_character = {	
+				new_character = {
+					TOW_initialize_character = yes	
 					set_character_flag = female_councillor_spymaster
 					character_event = { id = 77778 }
 
@@ -463,7 +466,7 @@ character_event = {
 					female = no
 					age = 37
 				}
-				new_character = { add_spouse_matrilineal = FROM }
+				new_character = { TOW_initialize_character = yes add_spouse_matrilineal = FROM }
 			}
 		}
 	}
@@ -565,7 +568,7 @@ character_event = {
 					female = no
 					age = 37
 				}
-				new_character = { add_spouse_matrilineal = FROM }
+				new_character = { TOW_initialize_character = yes add_spouse_matrilineal = FROM }
 			}	
 		}
 	}
@@ -672,7 +675,7 @@ character_event = {
 					female = no
 					age = 42
 				}
-				new_character = { add_spouse_matrilineal = FROM }
+				new_character = { TOW_initialize_character = yes add_spouse_matrilineal = FROM }
 			}	
 		}
 	}
@@ -765,7 +768,7 @@ character_event = {
 					female = no
 					age = 29
 				}
-				new_character = { add_spouse_matrilineal = FROM }
+				new_character = { TOW_initialize_character = yes add_spouse_matrilineal = FROM }
 			}	
 		}
 	}
@@ -801,11 +804,10 @@ character_event = {
 			has_religion_feature = religion_matriarchal
 			has_religion_feature = religion_patriarchal
 			has_religion_feature = religion_equal
-			has_religion_feature = religion_feature_bon
 			primary_title = { has_law = status_of_women_3 }
 			primary_title = { has_law = status_of_women_4 }
 		} 
-		bad_priest_light_group = no
+		NOT = { trait = bad_priest_light_group }
 
 		any_realm_character = {	
 			is_close_relative = ROOT
@@ -875,8 +877,8 @@ character_event = {
 							ROOT = { primary_title = { has_law = status_of_women_2 } }
 							ROOT = { primary_title = { has_law = status_of_women_1 } }
 							AND = {
-								ROOT = { TOW_is_uncivilized_religion_trigger = yes }
-								TOW_is_uncivilized_religion_trigger = yes
+								ROOT = { TOW_religion_is_uncivilized_trigger = yes }
+								TOW_religion_is_uncivilized_trigger = yes
 							}
 							any_spouse = { character = ROOT }
 							any_child = { character = ROOT }
@@ -938,8 +940,8 @@ character_event = {
 						FROM = { primary_title = { has_law = status_of_women_2 } } 
 						FROM = { primary_title = { has_law = status_of_women_1 } } 
 						AND = {
-							FROM = { TOW_is_uncivilized_religion_trigger = yes }
-							TOW_is_uncivilized_religion_trigger = yes
+							FROM = { TOW_religion_is_uncivilized_trigger = yes }
+							TOW_religion_is_uncivilized_trigger = yes
 						}
 					}
 				}
@@ -1255,9 +1257,8 @@ character_event = {
 			has_religion_feature = religion_matriarchal
 			has_religion_feature = religion_patriarchal
 			has_religion_feature = religion_equal
-			has_religion_feature = religion_feature_bon
 		} 
-		bad_priest_light_group = no
+		NOT = { trait = bad_priest_light_group }
 
 		any_vassal = {	
 			is_landed = yes
@@ -1363,8 +1364,8 @@ character_event = {
 							ROOT = { primary_title = { has_law = status_of_women_2 } }
 							ROOT = { primary_title = { has_law = status_of_women_1 } }
 							AND = {
-								ROOT = { TOW_is_uncivilized_religion_trigger = yes }
-								TOW_is_uncivilized_religion_trigger = yes
+								ROOT = { TOW_religion_is_uncivilized_trigger = yes }
+								TOW_religion_is_uncivilized_trigger = yes
 							}
 							any_spouse = { character = ROOT }
 							any_child = { character = ROOT }
@@ -1444,8 +1445,8 @@ character_event = {
 				FROM = { primary_title = { has_law = status_of_women_2 } }
 				FROM = { primary_title = { has_law = status_of_women_1 } } 
 				AND = {
-					FROM = { TOW_is_uncivilized_religion_trigger = yes }
-					TOW_is_uncivilized_religion_trigger = yes
+					FROM = { TOW_religion_is_uncivilized_trigger = yes }
+					TOW_religion_is_uncivilized_trigger = yes
 				}
 			}			
 		}

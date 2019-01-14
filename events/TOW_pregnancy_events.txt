@@ -1,0 +1,310 @@
+namespace = TOW
+
+# Reserved : TOW.101 to TOW.150
+
+#on_pregnancy: Deciding to keep the pregnancy or not
+character_event = {
+
+	id = TOW.101
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		TOW_race_can_have_children = yes
+	}
+	
+	immediate = {
+		# Check menopause
+		# Menopause age is minimum menopause age, it will be increased by health
+		if = {
+			limit = { TOW_race_has_slightly_lower_lifespan = yes }
+			set_variable = { which = local_TOW_menopause_age value = 30 }
+		}
+		else_if = {
+			limit = { TOW_race_has_regular_lifespan = yes }
+			set_variable = { which = local_TOW_menopause_age value = 40 }
+		}
+		else_if = {
+			limit = { TOW_is_long_lived_race = yes }
+			set_variable = { which = local_TOW_menopause_age value = 175 }
+		}
+		else_if = {
+			limit = { TOW_is_very_long_lived_race = yes }
+			set_variable = { which = local_TOW_menopause_age value = 750 }
+		}
+		else_if = {
+			limit = { TOW_is_immortal_race = yes }
+		}
+		else = {
+			log = " -- TOW -- : TOW.101: No menopause age found for a mother ([This.GetBestName]). Race : [This.TOW_GetRace]."
+			TOW_initialize_character_race_from_culture = yes
+			if = {
+				limit = { TOW_race_has_slightly_lower_lifespan = yes }
+				set_variable = { which = local_TOW_menopause_age value = 30 }
+			}
+			else_if = {
+				limit = { TOW_race_has_regular_lifespan = yes }
+				set_variable = { which = local_TOW_menopause_age value = 40 }
+			}
+			else_if = {
+				limit = { TOW_is_long_lived_race = yes }
+				set_variable = { which = local_TOW_menopause_age value = 175 }
+			}
+			else_if = {
+				limit = { TOW_is_very_long_lived_race = yes }
+				set_variable = { which = local_TOW_menopause_age value = 750 }
+			}
+			else = {
+				break = yes
+			}
+		}
+		# Increase with health
+		if = {
+			limit = { TOW_is_immortal_race = no }
+
+			# Menopause Age = local_TOW_menopause_age * ( 1.0 + health / 30.0 )
+			export_to_variable = { which = local_health value = health }
+			divide_variable = { which = local_health value = 30.0 }
+			change_variable = { which = local_health value = 1.0 }
+			multiply_variable = { which = local_TOW_menopause_age which = local_health }
+		}
+
+		if = {
+			limit = {
+				TOW_has_race_trait = yes
+				OR = {
+					TOW_is_immortal_race = yes
+					age < local_TOW_menopause_age
+				}
+				OR = {
+					AND = {
+						trait = race_human
+						father_of_unborn = { trait = race_human }
+					}
+					AND = {
+						trait = race_orc
+						father_of_unborn = { trait = race_orc }
+					}
+					AND = {
+						trait = race_dwarf
+						father_of_unborn = { trait = race_dwarf }
+					}
+					AND = {
+						TOW_race_is_troll = yes
+						father_of_unborn = { TOW_race_is_troll = yes }
+					}
+					AND = {
+						trait = race_gnome
+						father_of_unborn = { trait = race_gnome }
+					}
+					AND = {
+						trait = race_goblin
+						father_of_unborn = { trait = race_goblin }
+					}
+					AND = {
+						OR = {
+							trait = race_high_elf
+							trait = race_blood_elf
+							trait = race_wretched
+							trait = race_half_elf
+						}
+						father_of_unborn = {
+							OR = {
+								trait = race_high_elf
+								trait = race_blood_elf
+								trait = race_wretched
+								trait = race_half_elf
+							}
+						}
+					}
+					AND = {
+						trait = race_night_elf
+						father_of_unborn = { trait = race_night_elf }
+					}
+					AND = {
+						trait = race_dragon
+						father_of_unborn = { trait = race_dragon }
+					}
+					AND = {
+						trait = race_ogre
+						father_of_unborn = { trait = race_ogre }
+					}
+					AND = {
+						trait = race_murloc
+						father_of_unborn = { trait = race_murloc }
+					}
+					AND = {
+						trait = race_gnoll
+						father_of_unborn = { trait = race_gnoll }
+					}
+					AND = {
+						trait = race_naga
+						father_of_unborn = { trait = race_naga }
+					}
+					AND = {
+						trait = race_trogg
+						father_of_unborn = { trait = race_trogg }
+					}
+					AND = {
+						trait = race_kobold
+						father_of_unborn = { trait = race_kobold }
+					}
+					AND = {
+						TOW_race_is_draenei = yes
+						father_of_unborn = { TOW_race_is_draenei = yes }
+					}
+					## Cross race
+					AND = {
+						trait = race_human
+						father_of_unborn = { TOW_race_pregnancy_is_human_compatible = yes }
+					}
+					AND = {
+						TOW_race_pregnancy_is_human_compatible = yes
+						father_of_unborn = { trait = race_human }
+					}
+					AND = {
+						trait = race_orc
+						father_of_unborn = { TOW_race_pregnancy_is_orc_compatible = yes }
+					}
+					AND = {
+						TOW_race_pregnancy_is_orc_compatible = yes
+						father_of_unborn = { trait = race_orc }
+					}
+					## Halves
+					AND = {
+						trait = race_half_ogre
+						father_of_unborn = { trait = race_half_ogre }
+					}
+					AND = {
+						trait = race_half_draenei
+						father_of_unborn = { trait = race_half_draenei }
+					}
+					AND = {
+						trait = race_half_elf
+						father_of_unborn = { trait = race_half_elf }
+					}
+					AND = {
+						trait = race_half_ogre
+						father_of_unborn = { trait = race_half_ogre }
+					}
+				}
+			}
+
+			#log = " -- TOW -- Pregnancy for character [This.GetBestName] ! Menopause age : [This.local_TOW_menopause_age.GetValue]. Health factor : [This.local_health.GetValue]. Race : [This.TOW_GetRace]."
+
+			if = {
+				limit = { # Trigger from event
+					NOT = { trait = pregnant }
+					is_consort = no
+					father_of_unborn = {
+						OR = {
+							AND = { #The father is alive and a spouse
+								is_alive = yes
+								any_spouse = { character = ROOT }
+							}
+							AND = { #The father is dead and a spouse
+								is_alive = no
+								ROOT = {
+									any_spouse_even_if_dead = {
+										character = PREVPREV
+									}
+								}
+							}
+							any_consort = {
+								character = ROOT
+								is_senior_consort_party = yes
+							}
+						}
+					}
+				}
+				character_event = { id = 400 } # Pregnancy in matrimony
+			}
+
+			if = {
+				limit = { # Trigger from event
+					NOT = { trait = pregnant }
+					is_consort = no
+					father_of_unborn = {
+						NOR = {
+							any_spouse = {
+								character = ROOT
+							}	
+							any_consort = {
+								character = ROOT
+								is_senior_consort_party = yes
+							}				
+						}
+					}
+				}
+				character_event = { id = 401 } # Pregnancy out of wedlock
+			}
+
+			if = {
+				limit = { # Trigger from event
+					NOT = { trait = pregnant }
+					father_of_unborn = {
+						NOT = {
+							any_spouse = {
+								character = ROOT
+							}			
+						}
+					}
+				}
+				character_event = { id = 402 } # Pregnancy in matrimony, with another father!
+			}
+
+			if = {
+				limit = { # Trigger from event
+					NOT = { trait = pregnant }
+					father_of_unborn = {
+						ROOT = {
+							is_consort = PREV
+						}
+					}
+				}
+				character_event = { id = 410 } # Pregnancy as consort
+			}
+
+			if = {
+				limit = { # Trigger from event
+					NOT = { trait = pregnant }
+					is_consort = yes
+					NOT = {
+						father_of_unborn = {
+							ROOT = {
+								is_consort = PREV
+							}
+						}
+					}
+				}
+				character_event = { id = 412 } # Pregnancy as consort, with another father!
+			}
+
+			if = {
+				limit = { # Trigger from event
+					always = yes
+				}
+				character_event = { id = HFP.20401 } # Hidden event to set clock for regency during final months.
+			}
+
+			if = {
+				limit = { # Trigger from event
+					OR = {
+						has_game_rule = {
+							name = pregnancy_flavor
+							value = on
+						}
+						has_game_rule = {
+							name = pregnancy_flavor
+							value = limited
+						}
+					}
+				}
+				character_event = { id = HFP.20556 } # Umbrella event for positive pregnancy flavor.
+			}
+		}
+		else = {
+			cancel_pregnancy = yes
+		}
+	}
+}

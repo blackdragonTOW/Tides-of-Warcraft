@@ -3,8 +3,6 @@ dragon_whelp = {
 		NOT = { age = 20 }
 		trait = race_dragon
 	}
-	attribute = diplomacy
-	education = yes
 	fertility = -10
 	
 	diplomacy = 1
@@ -20,8 +18,6 @@ dragon_drake = {
 		NOT = { age = 200 }
 		trait = race_dragon
 	}
-	attribute = diplomacy
-	education = yes
 	fertility = -0.3
 	
 	diplomacy = 5
@@ -29,7 +25,7 @@ dragon_drake = {
 	stewardship = 5
 	intrigue = 5
 	learning = 5
-	combat_rating = 2
+	combat_rating = 20
 }
 
 dragon_dragon = {
@@ -38,15 +34,13 @@ dragon_dragon = {
 		NOT = { age = 500 }
 		trait = race_dragon
 	}
-	attribute = diplomacy
-	education = yes
 	
 	diplomacy = 10
 	martial = 10
 	stewardship = 10
 	intrigue = 10
 	learning = 10
-	combat_rating = 4
+	combat_rating = 40
 }
 
 dragon_wyrm = {
@@ -55,15 +49,13 @@ dragon_wyrm = {
 		NOT = { age = 1000 }
 		trait = race_dragon
 	}
-	attribute = diplomacy
-	education = yes
 	
 	diplomacy = 20
 	martial = 20
 	stewardship = 20
 	intrigue = 20
 	learning = 20
-	combat_rating = 8
+	combat_rating = 80
 }
 
 elemental_elemental = {
@@ -81,8 +73,6 @@ elemental_elemental = {
 			has_landed_title = e_abyssal_maw
 		}
 	}
-	attribute = diplomacy
-	education = yes
 	
 	diplomacy = 2
 	martial = 2
@@ -90,7 +80,7 @@ elemental_elemental = {
 	intrigue = 2
 	learning = 2
 	
-	combat_rating = 2
+	combat_rating = 20
 }
 
 elemental_lord = {
@@ -108,8 +98,6 @@ elemental_lord = {
 			has_landed_title = e_abyssal_maw
 		}
 	}
-	attribute = diplomacy
-	education = yes
 	
 	diplomacy = 10
 	martial = 10
@@ -117,5 +105,5 @@ elemental_lord = {
 	intrigue = 10
 	learning = 10
 	
-	combat_rating = 5
+	combat_rating = 50
 }

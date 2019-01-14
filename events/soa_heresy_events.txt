@@ -291,7 +291,7 @@ character_event = {
 	trigger = {
 		has_dlc = "Sons of Abraham"
 		
-		NOT = { TOW_is_uncivilized_religion_trigger = yes }
+		NOT = { TOW_religion_is_uncivilized_trigger = yes }
 
 		is_heretic = no # Heretics, already people of strong conviction, never change religion spontaneously
 
@@ -309,7 +309,7 @@ character_event = {
 			
 		
 		location = {
-			NOT = { TOW_is_uncivilized_religion_trigger = yes }
+			NOT = { TOW_religion_is_uncivilized_trigger = yes }
 			religion_group = ROOT
 			NOT = { religion = ROOT }
 			OR = {

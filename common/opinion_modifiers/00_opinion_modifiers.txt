@@ -868,6 +868,7 @@ opinion_imprisoned_child = {
 opinion_executed_child = {
 	opinion = -75
 	months = 120
+	prison_reason = yes
 }
 
 # All direct vassals get this when the liege puts down a major vassal revolt ('major_revolt = yes' in the CB type)
@@ -3505,11 +3506,6 @@ opinion_inept_dancer = {
 	years = 3
 }
 
-opinion_loyal_shieldmaiden = {
-	opinion = 15
-	months = 60
-}
-
 opinion_gave_me_pet = {
 	opinion = 15
 	months = 60
@@ -3531,11 +3527,6 @@ opinion_unjust_execution = {
 opinion_replaced_bad_ruler = {
 	opinion = 10
 	months = 24
-}
-
-opinion_shieldmaiden = {
-	opinion = 10
-	years = 30
 }
 
 opinion_fulfilled_demands = {
@@ -4076,6 +4067,8 @@ opinion_mother_goddess = {
 opinion_killed_wife = {
 	opinion = -80
 	years = 50
+
+	prison_reason = yes
 }
 
 opinion_godfather = {

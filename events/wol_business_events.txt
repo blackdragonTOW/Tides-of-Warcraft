@@ -651,25 +651,20 @@ character_event = {
 		name = { # A dozen of strong horses
 			text = EVTOPTA_WOL_10114_HORSES
 			trigger = { 
-				OR = {
-					religion_group = christian
-					religion_group = zoroastrian_group
-					religion_group = jewish_group
-					religion = taoist
-				}
+				TOW_background_rider_horse = yes
 			}
 		}
 		name = { # A dozen of sturdy camels
 			text = EVTOPTA_WOL_10114_CAMELS
-			trigger = { religion_group = muslim }
+			trigger = { TOW_background_rider_camel = yes }
 		}
 		name = { # An elephant
 			text = EVTOPTA_WOL_10114_ELEPHANT
-			trigger = { has_dharmic_religion_trigger = yes }
+			trigger = { TOW_background_uses_war_elephants = yes }
 		}
 		name = { # A dozen of tough warriors
 			text = EVTOPTA_WOL_10114_WARRIORS
-			trigger = { TOW_is_uncivilized_religion_trigger = yes }
+			trigger = { TOW_religion_is_uncivilized_trigger = yes }
 		}
 		wealth = -30
 		FROM = {
@@ -1589,6 +1584,7 @@ character_event = {
 				}
 			}
 			new_character = {
+				TOW_initialize_character = yes
 				set_defacto_liege = ROOT
 				save_event_target_as = stonemason
 			}
@@ -1628,6 +1624,7 @@ character_event = {
 				}
 			}
 			new_character = {
+				TOW_initialize_character = yes
 				set_defacto_liege = ROOT
 				save_event_target_as = stonemason
 				set_character_flag = is_street_mason
@@ -1954,12 +1951,7 @@ character_event = {
 	immediate = {
 		if = { 
 			limit = {
-				NOT = {
-					OR = {
-						religion_group = indian_group
-						TOW_is_uncivilized_religion_trigger = yes
-					}
-				}
+				TOW_religion_should_be_humble_before_god = yes
 				any_vassal = {
 					ai = yes
 					is_priest = yes
@@ -3030,12 +3022,7 @@ character_event = {
 	
 	option = {
 		trigger = {
-			NOT = {
-				OR = {
-					religion_group = muslim
-					religion = iconoclast
-				}
-			}
+			TOW_religion_is_iconophile = yes
 		}
 		name = EVTOPTB_WOL_10302
 		set_character_flag = maze_statues
@@ -3090,7 +3077,7 @@ character_event = {
 		trigger = {
 			OR = {
 				trait = decadent
-				NOT = { religion_group = muslim }
+				uses_decadence = no
 			}
 		}
 		name = EVTOPTB_WOL_10303

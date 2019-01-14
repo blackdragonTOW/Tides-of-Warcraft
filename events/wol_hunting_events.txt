@@ -27,7 +27,7 @@ character_event = {
 	trigger = {
 		has_focus = focus_hunting
 		in_command = no
-		NOT = { religion = jain }
+		TOW_religion_is_pacifist = no
 		NOT = { has_character_flag = do_not_disturb }
 		NOT = { has_character_flag = epic_hunt }
 	}
@@ -870,6 +870,7 @@ character_event = {
 			}
 		}
 		new_character = {
+			TOW_initialize_character = yes
 			hidden_tooltip = { add_random_education_trait = martial }
 			give_nickname = nick_the_hunter
 		}
@@ -1734,6 +1735,7 @@ character_event = {
 			}
 		}
 		new_character = {
+			TOW_initialize_character = yes
 			give_nickname = nick_of_the_wilds
 			if = {
 				limit = { ROOT = { trait = homosexual } }
@@ -1772,7 +1774,7 @@ character_event = {
 		NOT = { has_character_modifier = pet_hunting_dog }
 		NOT = { has_character_flag = offered_puppy }
 		NOT = { has_character_flag = had_hunting_dog }
-		NOT = { religion = jain }
+		TOW_religion_is_pacifist = no
 	}
 
 	immediate = {
@@ -2830,17 +2832,6 @@ character_event = {
 	#}
 	after = {
 		hidden_effect = {
-			if = {
-				limit = {
-					has_dlc = "Mystics"
-					OR = {
-						has_character_modifier = good_relationship_omen
-						has_character_modifier = bad_relationship_omen
-					}
-				}
-				set_character_flag = dog_death_omen
-				character_event = { id = MNM.1213 days = 35 random = 30 } # Scrying vision come true
-			}
 			send_new_dog_event_effect = yes # Will only work for certain bloodlines...
 		}
 	}

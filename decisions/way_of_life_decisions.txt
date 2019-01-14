@@ -141,23 +141,15 @@ targetted_decisions = {
 			is_within_diplo_range = FROM
 			NOR ={
 				NOR = {
-					trait = dreadlord
-					trait = fel_lord
-					trait = pit_lord
-					trait = doomlord
-					trait = shivarra
-					trait = dragon_red
-					trait = dragon_black
-					trait = dragon_blue
-					trait = dragon_bronze
-					trait = dragon_green
-					trait = dragon_chromatic
-					trait = dragon_twilight
-					trait = dragon_infinite
-					trait = dragon_nightmare
-					trait = undead_generic
-					trait = undead_forsaken
-					trait = undead_scourge
+					trait = race_dreadlord
+					trait = race_fel_lord
+					trait = race_pit_lord
+					trait = race_doomlord
+					trait = race_shivarra
+					trait = race_dragon
+					trait = race_undead_generic
+					trait = race_undead_forsaken
+					trait = race_undead_scourge
 				}
 			}
 		}
@@ -813,7 +805,7 @@ targetted_decisions = {
 #					is_female = yes
 #					OR = {
 #						trait = brave
-#						TOW_is_uncivilized_religion_trigger = yes
+#						TOW_religion_is_uncivilized_trigger = yes
 #						is_nomadic = yes
 #						religion = buddhist
 #						religion = bogomilist
@@ -860,7 +852,7 @@ targetted_decisions = {
 #							OR = {
 #								trait = brave
 #								gender_equality_trigger = yes
-#								TOW_is_uncivilized_religion_trigger = yes
+#								TOW_religion_is_uncivilized_trigger = yes
 #								is_nomadic = yes
 #								religion = buddhist
 #								religion = bogomilist
@@ -868,7 +860,7 @@ targetted_decisions = {
 #							FROM = {
 #								OR = {
 #									gender_equality_trigger = yes
-#									TOW_is_uncivilized_religion_trigger = yes
+#									TOW_religion_is_uncivilized_trigger = yes
 #									is_nomadic = yes
 #									religion = buddhist
 #									religion = bogomilist
@@ -963,7 +955,7 @@ targetted_decisions = {
 #									OR = {
 #										trait = brave
 #										gender_equality_trigger = yes
-#										TOW_is_uncivilized_religion_trigger = yes
+#										TOW_religion_is_uncivilized_trigger = yes
 #										is_nomadic = yes
 #										religion = buddhist
 #										religion = bogomilist
@@ -971,7 +963,7 @@ targetted_decisions = {
 #									FROM = {
 #										OR = {
 #											gender_equality_trigger = yes
-#											TOW_is_uncivilized_religion_trigger = yes
+#											TOW_religion_is_uncivilized_trigger = yes
 #											is_nomadic = yes
 #											religion = buddhist
 #											religion = bogomilist
@@ -982,7 +974,7 @@ targetted_decisions = {
 #							### Not priest or challenger religion is pagan
 #							OR = {
 #								is_priest = no
-#								FROM = { TOW_is_uncivilized_religion_trigger = yes }
+#								FROM = { TOW_religion_is_uncivilized_trigger = yes }
 #							}
 							#
 #						}

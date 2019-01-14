@@ -1,11 +1,19 @@
 TOW_has_race = {
 	OR = {
+		has_character_flag = race_assigned
+		TOW_has_race_trait = yes
+	}
+}
+
+TOW_has_race_trait = {
+	OR = {
 		trait = race_human
 		trait = race_orc
 		trait = race_dwarf
 		trait = race_high_elf
 		trait = race_blood_elf
 		trait = race_wretched
+		trait = race_night_elf
 		trait = race_gnome
 		trait = race_goblin
 		trait = race_dragon
@@ -44,6 +52,10 @@ TOW_has_race = {
 		trait = race_fire_elemental
 		trait = race_earth_elemental
 		trait = race_water_elemental
+		trait = race_half_elf
+		trait = race_half_ogre
+		trait = race_half_draenei
+		trait = race_vrykul
 	}
 }
 
@@ -83,40 +95,6 @@ TOW_is_demon_race = {
 	}
 }
 
-TOW_is_long_lived_race = {
-	OR = {
-		trait = race_dwarf
-		trait = race_high_elf
-		trait = race_blood_elf
-		trait = race_wretched
-		trait = race_gnome
-		trait = race_dragon
-		trait = race_naga
-		trait = race_eredar
-		trait = race_dreadlord
-		trait = race_succubus
-		trait = race_pit_lord
-		trait = race_fel_lord
-		trait = race_doomlord
-		trait = race_shivarra
-		trait = race_antaen
-		trait = race_aranasi
-		trait = race_inquisitor
-		trait = race_mo_arg
-		trait = race_observer
-		trait = race_air_elemental
-		trait = race_fire_elemental
-		trait = race_earth_elemental
-		trait = race_water_elemental
-		trait = race_voidwalker
-		trait = race_faceless
-		trait = race_draenei
-		trait = race_broken
-		trait = race_lost_one
-		trait = race_hakkar
-	}
-}
-
 TOW_race_can_employ = {
 	NOR = {
 		trait = race_eredar
@@ -137,12 +115,43 @@ TOW_race_can_employ = {
 	}
 }
 
+
 TOW_race_is_elf = {
 	OR = {
 		trait = race_high_elf
 		trait = race_blood_elf
 		trait = race_night_elf
 		trait = race_wretched
+	}
+}
+
+TOW_race_pregnancy_is_human_compatible = {
+	OR = {
+		trait = race_high_elf
+		trait = race_blood_elf
+		trait = race_wretched
+		trait = race_half_elf
+		#all other elves later
+	}
+}
+
+TOW_race_pregnancy_is_orc_compatible = {
+	OR = {
+		trait = race_ogre
+		trait = race_draenei
+		trait = race_broken
+		trait = race_lost_one
+		trait = race_half_ogre
+		trait = race_half_draenei
+	}
+}
+
+TOW_race_is_draenei = {
+	OR = {
+		trait = race_draenei
+		trait = race_broken
+		trait = race_half_draenei
+		trait = race_lost_one
 	}
 }
 
@@ -157,21 +166,56 @@ TOW_race_is_troll = {
 	}
 }
 
-TOW_race_has_regular_lifespan = {
-	OR = {
-		trait = race_human
-		trait = race_orc
-		trait = race_ogre
-		trait = race_goblin
-	}
-}
-
-TOW_race_has_slightly_lower_lifespan = {
+TOW_race_has_slightly_lower_lifespan = { # 50 years
 	OR = {
 		trait = race_kobold
 		trait = race_gnoll
 		trait = race_murloc
 		trait = race_trogg
+	}
+}
+TOW_race_has_regular_lifespan = { # 80 years
+	OR = {
+		trait = race_human
+		trait = race_orc
+		trait = race_ogre
+		trait = race_goblin
+		trait = race_half_elf
+		trait = race_half_ogre
+		TOW_race_is_troll = yes
+		trait = race_vrykul
+	}
+}
+
+TOW_is_long_lived_race = { # 250 years
+	OR = {
+		trait = race_dwarf
+		TOW_race_is_elf = yes
+		trait = race_gnome
+	}
+}
+
+TOW_is_very_long_lived_race = { # 1000 years
+	OR = {
+		trait = race_naga
+		trait = race_half_draenei
+	}
+}
+
+TOW_is_immortal_race = {
+	OR = {
+		trait = race_dragon
+		TOW_is_demon_race = yes
+		trait = race_air_elemental
+		trait = race_fire_elemental
+		trait = race_earth_elemental
+		trait = race_water_elemental
+		trait = race_voidwalker
+		trait = race_faceless
+		trait = race_draenei
+		trait = race_broken
+		trait = race_lost_one
+		trait = race_hakkar
 	}
 }
 
@@ -180,4 +224,9 @@ TOW_race_has_similar_to_regular_lifespan = {
 		TOW_race_has_regular_lifespan = yes
 		TOW_race_has_slightly_lower_lifespan = yes
 	}
+}
+
+TOW_race_can_have_children = {
+	TOW_is_undead = no
+	TOW_is_demon_race = no
 }

@@ -1791,10 +1791,10 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								if = {
 									limit = {
 										NOR = {
-											trait = orc
-											trait = gnoll
+											trait = race_orc
+											trait = race_gnoll
 											AND = {
-												trait = human
+												trait = race_human
 												OR = {
 													has_global_flag = trollwars_bookmark
 													NOT = { has_global_flag = trollwar_humans_join }
@@ -1807,10 +1807,10 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								if = {
 									limit = {
 										OR = {
-											trait = orc
-											trait = gnoll
+											trait = race_orc
+											trait = race_gnoll
 											AND = {
-												trait = human
+												trait = race_human
 												OR = {
 													has_global_flag = trollwars_bookmark
 													NOT = { has_global_flag = trollwar_humans_join }
@@ -2179,10 +2179,10 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 										if = {
 											limit = {
 												NOR = {
-													trait = orc
-													trait = gnoll
+													trait = race_orc
+													trait = race_gnoll
 													AND = {
-														trait = human
+														trait = race_human
 														OR = {
 															has_global_flag = trollwars_bookmark
 															NOT = { has_global_flag = trollwar_humans_join }
@@ -2195,10 +2195,10 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 										if = {
 											limit = {
 												OR = {
-													trait = orc
-													trait = gnoll
+													trait = race_orc
+													trait = race_gnoll
 													AND = {
-														trait = human
+														trait = race_human
 														OR = {
 															has_global_flag = trollwars_bookmark
 															NOT = { has_global_flag = trollwar_humans_join }
@@ -2561,9 +2561,9 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								if = {
 									limit = {
 										NOR = {
-											trait = orc
+											trait = race_orc
 											AND = {
-												trait = human
+												trait = race_human
 												OR = {
 													has_global_flag = trollwars_bookmark
 													NOT = { has_global_flag = trollwar_humans_join }
@@ -2577,9 +2577,9 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								if = {
 									limit = {
 										OR = {
-											trait = orc
+											trait = race_orc
 											AND = {
-												trait = human
+												trait = race_human
 												OR = {
 													has_global_flag = trollwars_bookmark
 													NOT = { has_global_flag = trollwar_humans_join }
@@ -2592,7 +2592,7 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								}
 								if = {
 									limit = {
-										trait = human
+										trait = race_human
 										OR = {
 											has_global_flag = trollwars_bookmark
 											NOT = { has_global_flag = trollwar_humans_join }
@@ -2603,7 +2603,7 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								}
 								if = {
 									limit = {
-										trait = human
+										trait = race_human
 										OR = {
 											has_global_flag = trollwars_bookmark
 											NOT = { has_global_flag = trollwar_humans_join }
@@ -2700,9 +2700,9 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								if = {
 									limit = {
 										NOR = {
-											trait = orc
+											trait = race_orc
 											AND = {
-												trait = human
+												trait = race_human
 												OR = {
 													has_global_flag = trollwars_bookmark
 													NOT = { has_global_flag = trollwar_humans_join }
@@ -2716,9 +2716,9 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								if = {
 									limit = {
 										OR = {
-											trait = orc
+											trait = race_orc
 											AND = {
-												trait = human
+												trait = race_human
 												OR = {
 													has_global_flag = trollwars_bookmark
 													NOT = { has_global_flag = trollwar_humans_join }
@@ -2731,7 +2731,7 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								}
 								if = {
 									limit = {
-										trait = human
+										trait = race_human
 										OR = {
 											has_global_flag = trollwars_bookmark
 											NOT = { has_global_flag = trollwar_humans_join }
@@ -2742,7 +2742,7 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 								}
 								if = {
 									limit = {
-										trait = human
+										trait = race_human
 										OR = {
 											has_global_flag = trollwars_bookmark
 											NOT = { has_global_flag = trollwar_humans_join }
@@ -3959,10 +3959,10 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 										if = {
 											limit = {
 												NOR = {
-													trait = orc
-													trait = gnoll
+													trait = race_orc
+													trait = race_gnoll
 													AND = {
-														trait = human
+														trait = race_human
 														OR = {
 															has_global_flag = trollwars_bookmark
 															NOT = { has_global_flag = trollwar_humans_join }
@@ -3975,10 +3975,10 @@ character_event = { # this is for on_new_holder (for auto-generated new barons) 
 										if = {
 											limit = {
 												OR = {
-													trait = orc
-													trait = gnoll
+													trait = race_orc
+													trait = race_gnoll
 													AND = {
-														trait = human
+														trait = race_human
 														OR = {
 															has_global_flag = trollwars_bookmark
 															NOT = { has_global_flag = trollwar_humans_join }

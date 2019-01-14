@@ -89,29 +89,10 @@ character_event = {
 				OR = { 
 					trait = cynical
 					NOT = { religion = FROM }
-					event_target:potential_antagonized = { 
-						trait = sympathy_christendom
-						ROOT = { NOT = { religion_group = christian } }
-					}
-					event_target:potential_antagonized = { 
-						trait = sympathy_islam
-						ROOT = { NOT = { religion_group = muslim } }
-					}
-					event_target:potential_antagonized = { 
-						trait = sympathy_pagans
-						ROOT = { NOT = { TOW_is_uncivilized_religion_trigger = yes } }
-					}
-					event_target:potential_antagonized = { 
-						trait = sympathy_zoroastrianism
-						ROOT = { NOT = { religion_group = zoroastrian_group } }
-					}
-					event_target:potential_antagonized = { 
-						trait = sympathy_judaism
-						ROOT = { NOT = { religion_group = jewish_group } }
-					}
-					event_target:potential_antagonized = { 
-						trait = sympathy_indian
-						ROOT = { NOT = { religion_group = indian_group } }
+					ROOT = {
+						event_target:potential_antagonized = { 
+							TOW_character_is_sympathetic_to_another_religion_of_prev = yes
+						}
 					}
 				}
 			}
@@ -435,30 +416,7 @@ character_event = {
 				}
 				OR = {
 					religion_group = ROOT
-					AND = {
-						ROOT = { trait = sympathy_christendom }
-						religion_group = christian
-					}
-					AND = {
-						ROOT = { trait = sympathy_islam }
-						religion_group = muslim
-					}
-					AND = {
-						ROOT = { trait = sympathy_pagans }
-						TOW_is_uncivilized_religion_trigger = yes
-					}
-					AND = {
-						ROOT = { trait = sympathy_zoroastrianism }
-						religion_group = zoroastrian_group
-					}
-					AND = {
-						ROOT = { trait = sympathy_judaism }
-						religion_group = jewish_group
-					}
-					AND = {
-						ROOT = { trait = sympathy_indian }
-						religion_group = indian_group
-					}
+					ROOT = { TOW_character_is_sympathetic_to_prevs_religion = yes }
 				}
 				NOR = {
 					has_opinion_modifier = { who = FROM modifier = opinion_rebuked_appeaser_cooldown }
@@ -468,7 +426,7 @@ character_event = {
 					has_character_flag = flag_character_being_swayed
 					has_character_flag = flag_character_being_antagonized
 					AND = {
-						TOW_is_uncivilized_religion_trigger = yes
+						TOW_religion_is_uncivilized_trigger = yes
 						NOT = { religion = ROOT }
 						ROOT = { trait = zealous }
 					}
@@ -6985,32 +6943,7 @@ character_event = {
 		if = { 
 			limit = { 
 				NOT = { religion_group = FROM } 
-				OR = { 
-					AND = { 
-						FROM = { religion_group = christian }
-						NOT = { trait = sympathy_christendom } 
-					} 
-					AND = { 
-						FROM = { religion_group = muslim }
-						NOT = { trait = sympathy_islam } 
-					} 
-					AND = { 
-						FROM = { religion_group = zoroastrian_group }
-						NOT = { trait = sympathy_zoroastrianism } 
-					} 
-					AND = { 
-						FROM = { TOW_is_uncivilized_religion_trigger = yes }
-						NOT = { trait = sympathy_pagans } 
-					} 
-					AND = { 
-						FROM = { religion_group = jewish_group }
-						NOT = { trait = sympathy_judaism } 
-					} 
-					AND = { 
-						FROM = { religion_group = indian_group }
-						NOT = { trait = sympathy_indian } 
-					} 
-				}
+				FROM = { TOW_character_prev_is_sympathetic_to_me_religion = no }
 			} 
 			custom_tooltip = { text = tooltip_21076_sympathy } 
 		} 
@@ -7118,60 +7051,15 @@ character_event = {
 				years = 5
 			}
 		}
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_christendom }
-				FROM = { religion_group = christian }
-				FROM = { has_character_flag = flag_appease_kind_religion }
-			} 
-			random = { chance = 30 add_trait = sympathy_christendom }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_islam }
-				FROM = { religion_group = muslim }
-				FROM = { has_character_flag = flag_appease_kind_religion }
-			} 
-			random = { chance = 30 add_trait = sympathy_islam }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_pagans }
-				FROM = { TOW_is_uncivilized_religion_trigger = yes }
-				FROM = { has_character_flag = flag_appease_kind_religion }
-			} 
-			random = { chance = 30 add_trait = sympathy_pagans }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_zoroastrianism }
-				FROM = { religion_group = zoroastrian_group }
-				FROM = { has_character_flag = flag_appease_kind_religion }
-			} 
-			random = { chance = 30 add_trait = sympathy_zoroastrianism }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_judaism }
-				FROM = { religion_group = jewish_group }
-				FROM = { has_character_flag = flag_appease_kind_religion }
-			} 
-			random = { chance = 30 add_trait = sympathy_judaism }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_indian }
-				FROM = { religion_group = indian_group }
-				FROM = { has_character_flag = flag_appease_kind_religion }
-			} 
-			random = { chance = 30 add_trait = sympathy_indian }
-		} 
+		#if = { 
+		#	limit = { 
+		#		NOT = { religion_group = FROM } 
+		#		NOT = { trait = sympathy_christendom }
+		#		FROM = { religion_group = christian }
+		#		FROM = { has_character_flag = flag_appease_kind_religion }
+		#	} 
+		#	random = { chance = 30 add_trait = sympathy_christendom }
+		#} 
 		hidden_tooltip = { FROM = { character_event = { id = HF.21078 days = 10 } } }
 		ai_chance = { 
 			factor = 50 
@@ -7359,54 +7247,14 @@ character_event = {
 				}
 			}
 		}
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_christendom }
-				FROM = { religion_group = christian }
-			} 
-			random = { chance = 30 add_trait = sympathy_christendom }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_islam }
-				FROM = { religion_group = muslim }
-			} 
-			random = { chance = 30 add_trait = sympathy_islam }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_pagans }
-				FROM = { TOW_is_uncivilized_religion_trigger = yes }
-			} 
-			random = { chance = 30 add_trait = sympathy_pagans }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_zoroastrianism }
-				FROM = { religion_group = zoroastrian_group }
-			} 
-			random = { chance = 30 add_trait = sympathy_zoroastrianism }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_judaism }
-				FROM = { religion_group = jewish_group }
-			} 
-			random = { chance = 30 add_trait = sympathy_judaism }
-		} 
-		if = { 
-			limit = { 
-				NOT = { religion_group = FROM } 
-				NOT = { trait = sympathy_indian }
-				FROM = { religion_group = indian_group }
-			} 
-			random = { chance = 30 add_trait = sympathy_indian }
-		}
+		#if = { 
+		#	limit = { 
+		#		NOT = { religion_group = FROM } 
+		#		NOT = { trait = sympathy_christendom }
+		#		FROM = { religion_group = christian }
+		#	} 
+		#	random = { chance = 30 add_trait = sympathy_christendom }
+		#} 
 		clr_character_flag = flag_appease_kind_approach
 		clr_character_flag = flag_appease_kind_health
 		clr_character_flag = flag_appease_kind_religion

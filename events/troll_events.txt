@@ -86,17 +86,17 @@ character_event = {
 		
 	trigger = {
 		OR = {
-			trait = troll_zandalari
-			trait = troll_jungle
-			trait = troll_forest
-			trait = troll_ice
-			trait = troll_sand
-			trait = troll_dark
+			trait = race_troll_zandalari
+			trait = race_troll_jungle
+			trait = race_troll_forest
+			trait = race_troll_ice
+			trait = race_troll_sand
+			trait = race_troll_dark
 		}
 		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
-			trait = undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
+			trait = race_undead_generic
 		}
 		OR = {
 			trait = wounded
@@ -234,20 +234,20 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = troll_dark
-			trait = troll_zandalari
-			trait = troll_sand
-			trait = troll_forest
-			trait = troll_ice
-			trait = troll_jungle
+			trait = race_troll_dark
+			trait = race_troll_zandalari
+			trait = race_troll_sand
+			trait = race_troll_forest
+			trait = race_troll_ice
+			trait = race_troll_jungle
 			mother_even_if_dead = {
 				OR = {
-					trait = troll_dark
-					trait = troll_zandalari
-					trait = troll_sand
-					trait = troll_forest
-					trait = troll_ice
-					trait = troll_jungle
+					trait = race_troll_dark
+					trait = race_troll_zandalari
+					trait = race_troll_sand
+					trait = race_troll_forest
+					trait = race_troll_ice
+					trait = race_troll_jungle
 				}
 			}
 		}
@@ -376,7 +376,7 @@ character_event = {
 	}
 	
 	trigger = {
-		trait = troll_zandalari
+		trait = race_troll_zandalari
 		religion = loa
 		NOT = { culture = zandalari }
 	}

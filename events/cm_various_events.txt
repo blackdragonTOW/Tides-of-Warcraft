@@ -63,6 +63,7 @@ character_event = {
 			}
 		}
 		new_character = {
+			TOW_initialize_character = yes
 			set_character_flag = hero_knight
 			opinion = {
 				modifier = opinion_loyal_servant
@@ -101,7 +102,7 @@ character_event = {
 			age = 9
 			OR = {
 				is_female = no
-				ROOT = { bad_priest_light_group = yes }
+				ROOT = { trait = bad_priest_light_group }
 			}
 			guardian = {
 				has_character_flag = hero_knight
@@ -117,7 +118,7 @@ character_event = {
 				age = 9
 				OR = {
 					is_female = no
-					ROOT = { bad_priest_light_group = yes }
+					ROOT = { trait = bad_priest_light_group }
 				}
 				guardian = {
 					has_character_flag = hero_knight

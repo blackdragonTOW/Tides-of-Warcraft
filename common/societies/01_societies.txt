@@ -11,7 +11,7 @@ magisters = {
 	devil_worshipper = no
 	non_interference = {
 		NOT = {
-			FROM = { rival = ROOT }
+			FROM = { is_rival = ROOT }
 		}
 	}
 	
@@ -152,10 +152,6 @@ magisters = {
 		has_trait = {
 			value = 1
 			trait = mage
-		}
-		has_trait = {
-			value = 0.5
-			trait = arcanist
 		}
 	}
 	

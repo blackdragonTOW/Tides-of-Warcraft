@@ -22,20 +22,20 @@ focus_rulership = {
 		NOT = { trait = incapable }
 		prisoner = no
 		NOR = {
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			trait = faceless
-			trait = voidwalker
-			trait = gnoll
-			trait = murloc
-			trait = kobold
-			trait = trogg
-			trait = lost_one
+			trait = race_eredar
+			trait = race_succubus
+			trait = race_dreadlord
+			trait = race_fel_lord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_shivarra
+			trait = race_faceless
+			trait = race_voidwalker
+			trait = race_gnoll
+			trait = race_murloc
+			trait = race_kobold
+			trait = race_trogg
+			trait = race_lost_one
 		}
 	}
 	
@@ -109,30 +109,22 @@ focus_business = {
 		NOT = { trait = incapable }
 		prisoner = no
 		NOR = {
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			trait = faceless
-			trait = voidwalker
-			trait = gnoll
-			trait = murloc
-			trait = kobold
-			trait = trogg
-			trait = lost_one
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_chromatic
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = dragon_red
-			trait = dragon_twilight
-			trait = undead_scourge
+			trait = race_eredar
+			trait = race_succubus
+			trait = race_dreadlord
+			trait = race_fel_lord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_shivarra
+			trait = race_faceless
+			trait = race_voidwalker
+			trait = race_gnoll
+			trait = race_murloc
+			trait = race_kobold
+			trait = race_trogg
+			trait = race_lost_one
+			trait = race_dragon
+			trait = race_undead_scourge
 		}
 	}
 	
@@ -209,24 +201,16 @@ focus_seduction = {
 		NOT = { is_ascetic_trigger = yes }
 		NOT = { trait = eunuch }
 		NOR = {
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = faceless
-			trait = voidwalker
-			trait = dragon_red
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_chromatic
-			trait = dragon_twilight
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = undead_generic
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_dreadlord
+			trait = race_fel_lord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_faceless
+			trait = race_voidwalker
+			trait = race_dragon
+			trait = race_undead_generic
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 	}
 	
@@ -378,11 +362,11 @@ focus_intrigue = {
 		NOT = { trait = incapable }
 		prisoner = no
 		NOR = {
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = trogg
-			trait = voidwalker
+			trait = race_fel_lord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_trogg
+			trait = race_voidwalker
 		}
 	}
 	
@@ -582,7 +566,7 @@ focus_war = {
 		modifier = {
 			factor = 0.1
 			is_female = no
-			has_religion_feature = religion_matriarchal
+			ROOT = { has_religion_feature = religion_matriarchal }
 		}
 		
 		modifier = {
@@ -667,29 +651,21 @@ focus_carousing = {
 		NOT = { trait = incapable }
 		prisoner = no
 		NOR = {
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			trait = faceless
-			trait = voidwalker
-			trait = gnoll
-			trait = murloc
-			trait = kobold
-			trait = trogg
-			trait = lost_one
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_chromatic
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = dragon_red
-			trait = dragon_twilight
+			trait = race_eredar
+			trait = race_succubus
+			trait = race_dreadlord
+			trait = race_fel_lord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_shivarra
+			trait = race_faceless
+			trait = race_voidwalker
+			trait = race_gnoll
+			trait = race_murloc
+			trait = race_kobold
+			trait = race_trogg
+			trait = race_lost_one
+			trait = race_dragon
 		}
 	}
 	
@@ -760,25 +736,17 @@ focus_family = {
 		NOT = { trait = incapable }
 		prisoner = no
 		NOR = {
-			trait = eredar
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = shivarra
-			trait = faceless
-			trait = voidwalker
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_chromatic
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = dragon_red
-			trait = dragon_twilight
-			trait = undead_scourge
+			trait = race_eredar
+			trait = race_succubus
+			trait = race_dreadlord
+			trait = race_fel_lord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_shivarra
+			trait = race_faceless
+			trait = race_voidwalker
+			trait = race_dragon
+			trait = race_undead_scourge
 		}
 	}
 	
@@ -887,17 +855,17 @@ focus_scholarship = {
 		is_adult = yes
 		NOT = { trait = incapable }
 		NOR = {
-			trait = succubus
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = faceless
-			trait = voidwalker
-			trait = gnoll
-			trait = murloc
-			trait = kobold
-			trait = trogg
-			trait = lost_one
+			trait = race_succubus
+			trait = race_fel_lord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_faceless
+			trait = race_voidwalker
+			trait = race_gnoll
+			trait = race_murloc
+			trait = race_kobold
+			trait = race_trogg
+			trait = race_lost_one
 		}
 	}
 	
@@ -988,22 +956,14 @@ focus_theology = {
 		is_adult = yes
 		NOT = { trait = incapable }
 		NOR = {
-			trait = succubus
-			trait = dreadlord
-			trait = fel_lord
-			trait = pit_lord
-			trait = doomlord
-			trait = faceless
-			trait = voidwalker
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_chromatic
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = dragon_red
-			trait = dragon_twilight
+			trait = race_succubus
+			trait = race_dreadlord
+			trait = race_fel_lord
+			trait = race_pit_lord
+			trait = race_doomlord
+			trait = race_faceless
+			trait = race_voidwalker
+			trait = race_dragon
 			religion_group = arcane_group
 			religion = demonology
 			religion = mercantilism

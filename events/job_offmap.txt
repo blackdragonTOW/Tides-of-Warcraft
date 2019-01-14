@@ -1388,6 +1388,7 @@ character_event = {
 			}
 		}
 		new_character = {
+			TOW_initialize_character = yes
 			remove_trait = weak
 			remove_trait = slow
 			remove_trait = imbecile
@@ -1448,15 +1449,6 @@ character_event = {
 				}
 				5 = { 
 					add_trait = shrewd
-				}
-			}
-			hidden_tooltip = {
-				if = {
-					limit = {
-						has_dharmic_religion_trigger = yes
-					}
-					add_trait = kshatriya
-					character_event = { id = RoI.30121 }
 				}
 			}
 			save_event_target_as = found_commander

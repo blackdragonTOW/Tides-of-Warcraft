@@ -10,13 +10,13 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = high_elf
-			trait = blood_elf
-			trait = wretched
+			trait = race_high_elf
+			trait = race_blood_elf
+			trait = race_wretched
 		}
 		NOR = {
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 		}
 		is_landed = yes
 		OR = {
@@ -29,13 +29,13 @@ character_event = {
 			any_liege = {
 				has_landed_title = k_silvermoon
 				OR = {
-					trait = high_elf
-					trait = blood_elf
-					trait = wretched
+					trait = race_high_elf
+					trait = race_blood_elf
+					trait = race_wretched
 				}
 				NOR = {
-					trait = undead_scourge
-					trait = undead_forsaken
+					trait = race_undead_scourge
+					trait = race_undead_forsaken
 					religion = burning_legion
 					religion = old_gods
 					religion = twilights_hammer
@@ -73,13 +73,13 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = high_elf
-			trait = blood_elf
-			trait = wretched
+			trait = race_high_elf
+			trait = race_blood_elf
+			trait = race_wretched
 		}
 		OR = {
-			trait = undead_scourge
-			trait = undead_forsaken
+			trait = race_undead_scourge
+			trait = race_undead_forsaken
 			is_landed = no
 		}
 		has_character_modifier = realm_magic_counter
@@ -136,59 +136,61 @@ character_event = {
 				lower_tier_than = DUKE
 			}
 			ROOT = { subtract_variable = { which = realm_mana value = 50 } }
-			any_province_holding = {
-				limit = {
-					owner = { character = ROOT }
-					OR = {
-						has_building = ca_battlemage_barracks_1
-						has_building = ct_battlemage_barracks_1
-						has_building = tp_battlemage_barracks_1
+			location = {
+				any_province_holding = {
+					limit = {
+						owner = { character = ROOT }
+						OR = {
+							has_building = ca_battlemage_barracks_1
+							has_building = ct_battlemage_barracks_1
+							has_building = tp_battlemage_barracks_1
+						}
 					}
+					ROOT = { subtract_variable = { which = realm_mana value = 5 } }
 				}
-				ROOT = { subtract_variable = { which = realm_mana value = 5 } }
-			}
-			any_province_holding = {
-				limit = {
-					owner = { character = ROOT }
-					OR = {
-						has_building = ca_battlemage_barracks_2
-						has_building = ct_battlemage_barracks_2
-						has_building = tp_battlemage_barracks_2
+				any_province_holding = {
+					limit = {
+						owner = { character = ROOT }
+						OR = {
+							has_building = ca_battlemage_barracks_2
+							has_building = ct_battlemage_barracks_2
+							has_building = tp_battlemage_barracks_2
+						}
 					}
+					ROOT = { subtract_variable = { which = realm_mana value = 10 } }
 				}
-				ROOT = { subtract_variable = { which = realm_mana value = 10 } }
-			}
-			any_province_holding = {
-				limit = {
-					owner = { character = ROOT }
-					OR = {
-						has_building = ca_battlemage_barracks_3
-						has_building = ca_battlemage_barracks_4
-						has_building = ct_battlemage_barracks_3
-						has_building = ct_battlemage_barracks_4
-						has_building = tp_battlemage_barracks_3
-						has_building = tp_battlemage_barracks_4
+				any_province_holding = {
+					limit = {
+						owner = { character = ROOT }
+						OR = {
+							has_building = ca_battlemage_barracks_3
+							has_building = ca_battlemage_barracks_4
+							has_building = ct_battlemage_barracks_3
+							has_building = ct_battlemage_barracks_4
+							has_building = tp_battlemage_barracks_3
+							has_building = tp_battlemage_barracks_4
+						}
 					}
+					ROOT = { subtract_variable = { which = realm_mana value = 15 } }
 				}
-				ROOT = { subtract_variable = { which = realm_mana value = 15 } }
-			}
-			any_province_holding = {
-				limit = {
-					owner = { character = ROOT }
-					OR = {
-						has_building = ct_construct_market_1
+				any_province_holding = {
+					limit = {
+						owner = { character = ROOT }
+						OR = {
+							has_building = ct_construct_market_1
+						}
 					}
+					ROOT = { subtract_variable = { which = realm_mana value = 5 } }
 				}
-				ROOT = { subtract_variable = { which = realm_mana value = 5 } }
-			}
-			any_province_holding = {
-				limit = {
-					owner = { character = ROOT }
-					OR = {
-						has_building = ct_construct_market_2
+				any_province_holding = {
+					limit = {
+						owner = { character = ROOT }
+						OR = {
+							has_building = ct_construct_market_2
+						}
 					}
+					ROOT = { subtract_variable = { which = realm_mana value = 10 } }
 				}
-				ROOT = { subtract_variable = { which = realm_mana value = 10 } }
 			}
 		}
 	}

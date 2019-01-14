@@ -564,7 +564,6 @@ character_event = {
 	
 	min_age = 6
 	max_age = 16
-	religion_group = christian
 	lacks_dlc = "Conclave"
 
 	is_triggered_only = yes
@@ -4300,12 +4299,12 @@ character_event = {
 	
 	min_age = 6
 	max_age = 11
-	religion_group = light_group
 	lacks_dlc = "Conclave"
 
 	is_triggered_only = yes
 	
 	trigger = {
+		TOW_religion_is_dogmatic = yes
 		has_guardian = yes
 		NOT = { trait = zealous }
 		NOT = { trait = cynical }
@@ -4446,8 +4445,8 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
+		TOW_religion_omnipotent_god = yes
 		has_guardian = yes
-		#religion_group = christian
 		NOT = { trait = zealous }
 		NOT = { trait = cynical }
 		NOT = { personality_traits = 5 }
@@ -4789,19 +4788,19 @@ character_event = {
 	
 	min_age = 11
 	max_age = 16
-	religion = holy_light
 	lacks_dlc = "Conclave"
 
 	is_triggered_only = yes
 	
 	trigger = {
+		TOW_religion_is_dogmatic = yes
 		has_guardian = yes
 		NOT = { trait = cynical }
 		guardian = {
-			religion = holy_light
+			religion = ROOT
 			OR = {
-				any_current_enemy = { religion = holy_light }
-				any_liege = { any_current_enemy = { religion = holy_light } } 
+				any_current_enemy = { religion = ROOT }
+				any_liege = { any_current_enemy = { religion = ROOT } } 
 			}
 		}
 		NOT = { personality_traits = 5 }
@@ -4899,12 +4898,12 @@ character_event = {
 	
 	min_age = 11
 	max_age = 16
-	religion_group = light_group
 	lacks_dlc = "Conclave"
 
 	is_triggered_only = yes
 	
 	trigger = {
+		TOW_religion_clergy_has_authority = yes
 		has_guardian = yes
 		NOT = { trait = zealous }
 		NOT = { trait = cynical }
@@ -5421,16 +5420,7 @@ character_event = {
 	
 	trigger = {
 		has_guardian = yes
-		OR = {
-			religion_group = light_group
-			religion = loa
-			religion = hakkar
-			religion = elune
-			religion = forgotten_shadow
-			religion = forgotten_shadow_reformed
-			religion = old_ways
-			religion = old_ways_reformed
-		}
+		TOW_religion_omnipotent_god = yes
 		NOT = { trait = cynical }
 		NOT = { trait = craven }
 		NOT = { trait = brave }
@@ -5554,10 +5544,6 @@ character_event = {
 	
 	weight_multiplier = {
 		days = 1
-		modifier = {
-			religion = cathar
-			factor = 3
-		}
 		modifier = {
 			trait = clubfooted
 			factor = 0.8

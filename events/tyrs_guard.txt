@@ -21,9 +21,9 @@ character_event = {
 		c_northern_tirisfal_mountains = { # Check if the name ever gets changed on the file level.
 			holder_scope = {
 				OR = {
-					trait = human
+					trait = race_human
 					any_liege = {
-						trait = human
+						trait = race_human
 						NOT = { religion = old_gods }
 						NOT = { religion = twilights_hammer }
 						NOT = { religion = cult_of_the_infinite }
@@ -37,9 +37,9 @@ character_event = {
 		c_southern_tirisfal_mountains = { # Check if the name ever gets changed on the file level.
 			holder_scope = {
 				OR = {
-					trait = human
+					trait = race_human
 					any_liege = {
-						trait = human
+						trait = race_human
 						NOT = { religion = old_gods }
 						NOT = { religion = twilights_hammer }
 						NOT = { religion = cult_of_the_infinite }
@@ -67,12 +67,13 @@ character_event = {
 			trait = brave
 			trait = zealous
 			trait = warrior
-			trait = human
+			trait = race_human
 			flag = race_assigned
 			culture = arathi
 			religion = old_ways
 		}
 		new_character = {
+			TOW_initialize_character = yes
 			d_tyrs_guard = {
 				grant_title = PREV
 			}
@@ -125,7 +126,7 @@ narrative_event = {
 		is_title_active = e_arathor
 		e_arathor = {
 			holder_scope = {
-				trait = human
+				trait = race_human
 				NOT = { religion = old_gods }
 				NOT = { religion = twilights_hammer }
 			}
@@ -570,7 +571,7 @@ narrative_event = {
 			employer = THIS
 			trait = cruel
 			trait = wroth
-			trait = faceless
+			trait = race_faceless
 			trait = cthrax
 			trait = brilliant_strategist
 			trait = strong
@@ -588,6 +589,7 @@ narrative_event = {
 			historical = yes
 		}
 		new_character = {
+			TOW_initialize_character = yes
 			give_nickname = nick_the_corruptor
 			create_title = {
 				tier = DUKE

@@ -1,0 +1,19 @@
+# TOW TODO : Sympathy
+
+TOW_character_prev_add_sympathy_trait_towards_me = {
+	#if = {
+	#	limit = {
+	#		religion_group = christian
+	#	}
+	#	PREV = { show_scope_change = no add_trait = sympathy_christendom }
+	#}
+}
+
+TOW_character_add_sympathy_trait_towards_my_religion = {
+	#if = {
+	#	limit = {
+	#		religion_group = christian
+	#	}
+	#	add_trait = sympathy_christendom
+	#}
+}

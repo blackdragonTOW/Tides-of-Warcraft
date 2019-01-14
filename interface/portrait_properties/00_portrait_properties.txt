@@ -55,7 +55,7 @@
 		}
 	}
 
-	3 = { # forest
+	3 = { # forest window
 		factor = 10
 		modifier = {
 			factor = 0
@@ -63,10 +63,10 @@
 			NOT = { location = { terrain = woods } }
 		}
 		modifier = {
-			factor = 5
+			factor = 0
 			OR = {
 				in_command = yes
-				TOW_government_is_uncivilized = yes
+				TOW_has_access_to_castle = no
 			}
 		}
 	}
@@ -426,10 +426,13 @@
 		modifier = {
 			factor = 0
 			
-			139 = { # Silvermoon
-				ROOT = { 
-					location = {
-						NOT = { province = PREVPREV }
+			OR = {
+				TOW_has_access_to_city = no
+				5 = { # Silvermoon
+					ROOT = { 
+						location = {
+							NOT = { province = PREVPREV }
+						}
 					}
 				}
 			}
@@ -440,21 +443,33 @@
 		factor = 100
 		modifier = {
 			factor = 0
-			15 = { # Dalaran
-				ROOT = { 
-					location = {
-						NOT = { province = PREVPREV }
+
+			OR = {
+				TOW_has_access_to_city = no
+				84 = { # Dalaran
+					ROOT = { 
+						location = {
+							NOT = { province = PREVPREV }
+						}
 					}
 				}
 			}
 		}
 	}
 
-	22 = { # Teldrassil
+	22 = { # forest
 		factor = 1
 		modifier = {
 			factor = 0
-			NOT = { trait = race_night_elf }
+			NOT = { location = { terrain = forest } }
+			NOT = { location = { terrain = woods } }
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				in_command = yes
+				TOW_government_is_uncivilized = yes
+			}
 		}
 	}
 
@@ -1907,16 +1922,12 @@
 			factor = 0
 			NOR = {
 				has_job_title = job_marshal
-				primary_title = {
-					OR = {
-						title = d_sunfury
-						# Add military orders here
-					}
-				}
+				holy_order = yes
 				has_minor_title = title_commander
 				trait = warrior
 				trait = paladin
 				trait = death_knight
+				mercenary = yes
 			}
 		}
 		modifier = {
@@ -1930,12 +1941,7 @@
 			factor = 0.2
 			OR = {
 				has_job_title = job_marshal
-				primary_title = {
-					OR = {
-						title = d_sunfury
-						# Add military orders here
-					}
-				}
+				holy_order = yes
 				has_minor_title = title_commander
 			}
 		}
@@ -2147,7 +2153,7 @@
 		factor = 100
 		modifier = {
 			factor = 0
-			age >= 6
+			age < 6
 		}
  	}
 
@@ -2155,7 +2161,7 @@
 		factor = 100
 		modifier = {
 			factor = 0
-			age < 6
+			age >= 6
 		}
   	}
 }

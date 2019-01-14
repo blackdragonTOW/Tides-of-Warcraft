@@ -524,7 +524,7 @@ action_inquisition = {
 		num_of_settlements = 1
 		NAND = {
 			FROM = { job_spiritual = { has_character_modifier = spiritual_refused_pagans } }  # See Event ZE.5040
-			owner = { AND = { TOW_is_uncivilized_religion_trigger = yes NOT = { religion = FROM } } }
+			owner = { AND = { TOW_religion_is_uncivilized_trigger = yes NOT = { religion = FROM } } }
 		}
 		OR = {
 			proselytize_convert_independent_trigger = yes

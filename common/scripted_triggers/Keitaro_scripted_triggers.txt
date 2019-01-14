@@ -2,6 +2,7 @@
 
 #Religion
 #Keitaro_root_dislikes_religion		ROOT character dislikes religion
+#Keitaro_from_dislikes_religion		FROM character dislikes religion
 #Keitaro_prev_dislikes_religion		PREV character dislikes religion
 
 #County
@@ -15,18 +16,32 @@
 ##Religion###
 
 Keitaro_root_dislikes_religion = {
-	ROOT = {
-		PREV = {
-			Keitaro_prev_dislikes_religion = yes
+	AND = {
+		OR = {
+			NOT = { religion_group = { target_type = secret target = ROOT } }
+			is_heresy_of = ROOT
+			is_parent_religion = ROOT
+		}
+	}
+}
+
+Keitaro_from_dislikes_religion = {
+	AND = {
+		OR = {
+			NOT = { religion_group = { target_type = secret target = FROM } }
+			is_heresy_of = FROM
+			is_parent_religion = FROM
 		}
 	}
 }
 
 Keitaro_prev_dislikes_religion = {
-	OR = {
-		NOT = { religion_group = { target_type = secret target = PREV } }
-		is_heresy_of = PREV
-		is_parent_religion = PREV
+	AND = {
+		OR = {
+			NOT = { religion_group = { target_type = secret target = PREV } }
+			is_heresy_of = PREV
+			is_parent_religion = PREV
+		}
 	}
 }
 

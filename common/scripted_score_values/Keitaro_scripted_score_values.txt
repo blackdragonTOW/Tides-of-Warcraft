@@ -1,0 +1,41 @@
+# Can be utilized in ai_chance, ai_will_do, random list weighting and anything that utilizes the triggered modifiers to calculate a value.
+
+Keitaro_jester_selection_score = { # (Keitaro_MT.6)
+	modifier = { factor = 0.9 NOT = { diplomacy = 1 } }
+	modifier = { factor = 0.9 NOT = { diplomacy = 2 } }
+	modifier = { factor = 0.9 NOT = { diplomacy = 3 } }
+	modifier = { factor = 0.9 NOT = { diplomacy = 4 } }
+	modifier = { factor = 0.9 NOT = { diplomacy = 5 } }
+	modifier = { factor = 0.9 NOT = { diplomacy = 6 } }
+	modifier = { factor = 0.9 NOT = { diplomacy = 7 } }
+	modifier = { factor = 0.9 NOT = { diplomacy = 8 } }
+	modifier = { factor = 1.1 diplomacy = 9 }
+	modifier = { factor = 1.1 diplomacy = 10 }
+	modifier = { factor = 1.1 diplomacy = 11 }
+	modifier = { factor = 1.1 diplomacy = 12 }
+	modifier = { factor = 1.1 diplomacy = 13 }
+	modifier = { factor = 1.1 diplomacy = 14 }
+	modifier = { factor = 1.1 diplomacy = 15 }
+	modifier = { factor = 1.1 diplomacy = 16 }
+	modifier = { factor = 1.1 diplomacy = 17 }
+	modifier = { factor = 1.1 diplomacy = 18 }
+	modifier = { factor = 1.1 diplomacy = 19 }
+	modifier = { factor = 1.1 diplomacy = 20 }
+	modifier = { factor = 1.1 diplomacy = 21 }
+	modifier = { factor = 1.1 diplomacy = 22 }
+	modifier = { factor = 1.1 diplomacy = 23 }
+	modifier = { factor = 1.1 diplomacy = 24 }
+	modifier = { factor = 1.1 diplomacy = 25 }
+	modifier = { factor = 1.1 diplomacy = 26 }
+	modifier = { factor = 1.1 diplomacy = 27 }
+	modifier = { factor = 1.1 diplomacy = 28 }
+	modifier = { factor = 1.1 diplomacy = 29 }
+	modifier = { factor = 1.1 diplomacy = 30 }
+
+	modifier = { factor = 0.75 dynasty = ROOT }
+	modifier = { factor = 1.25 trait = kind }
+	modifier = { factor = 1.2 relationship_with_root_trigger = no }
+	modifier = { factor = 0 root_has_terrible_opinion_modifier_of_this_trigger = yes }
+	modifier = { factor = 0 this_has_terrible_opinion_modifier_of_root_trigger = yes }
+	modifier = { factor = 0 is_foe = ROOT }
+}

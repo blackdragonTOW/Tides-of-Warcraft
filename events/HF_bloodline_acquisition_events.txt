@@ -41,12 +41,7 @@ character_event = { # Extra chance for player children to become Children of Des
 					has_religion_feature = religion_patriarchal
 					liege = {
 						has_law = agnatic_succession
-					}
-					AND = { # Non-randomized muslims usually prohibit women from ruling
-						religion_group = muslim
-						NOT = {
-							has_alternate_start_parameter = { key = religion_names value = random }
-						}
+						gender_equality_trigger = yes
 					}
 				}
 			}
@@ -186,12 +181,7 @@ character_event = { # Child becomes Child of Destiny
 					has_religion_feature = religion_patriarchal
 					liege = {
 						has_law = agnatic_succession
-					}
-					AND = { # Non-randomized muslims usually prohibit women from ruling
-						religion_group = muslim
-						NOT = {
-							has_alternate_start_parameter = { key = religion_names value = random }
-						}
+						gender_equality_trigger = yes
 					}
 				}
 			}
@@ -1242,11 +1232,8 @@ character_event = { # Vision from Highgod
 		
 		if = {
 			limit = {
-				NOR = {
-					religion_group = indian_group
-					TOW_is_uncivilized_religion_trigger = yes
-					religion_group = zoroastrian_group
-				}
+				TOW_religion_omnipotent_god = yes
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 			}
 			add_character_modifier = {
 				name = annoyed_religious
@@ -1550,6 +1537,7 @@ character_event = { # Meet Wandering Wise Man
 				flag = ai_flag_refuse_conversion
 			}
 			new_character = {
+				TOW_initialize_character = yes
 				set_character_flag = no_court_invites
 				remove_trait = dull
 				remove_trait = slow
@@ -1557,20 +1545,6 @@ character_event = { # Meet Wandering Wise Man
 				remove_trait = quick
 				remove_trait = lustful
 				give_nickname = nick_the_wise
-				if = {
-					limit = {
-						religion_group = muslim
-					}
-					remove_trait = scholar
-					add_trait = mutazilite
-				}
-				if = {
-					limit = {
-						has_dharmic_religion_trigger = yes
-					}
-					add_trait = brahmin
-					character_event = { id = RoI.30121 }
-				}
 				save_event_target_as = wise_man_target
 			}
 		}
@@ -2088,6 +2062,7 @@ character_event = { # Attempted Murder
 					trait = ugly
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					remove_trait = fair
 					add_scarred_high_effect = yes
 					save_event_target_as = attempted_murderer

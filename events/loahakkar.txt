@@ -15,12 +15,12 @@ character_event = {
 		}
 		NOT = { trait = race_hakkar }
 		OR = {
-			trait = troll_dark
-			trait = troll_zandalari
-			trait = troll_sand
-			trait = troll_forest
-			trait = troll_ice
-			trait = troll_jungle
+			trait = race_troll_dark
+			trait = race_troll_zandalari
+			trait = race_troll_sand
+			trait = race_troll_forest
+			trait = race_troll_ice
+			trait = race_troll_jungle
 		}
 	}
 	
@@ -64,8 +64,8 @@ character_event = {
 	option = {
 		trigger = {
 			OR = {
-				trait = troll_jungle
-				trait = troll_zandalari
+				trait = race_troll_jungle
+				trait = race_troll_zandalari
 			}
 		}
 		name = EVTOPTLOAH.3a # Jungle troll Loa
@@ -75,8 +75,8 @@ character_event = {
 	option = {
 		trigger = {
 			OR = {
-				trait = troll_forest
-				trait = troll_zandalari
+				trait = race_troll_forest
+				trait = race_troll_zandalari
 			}
 		}
 		name = EVTOPTLOAH.3b # Forest troll Loa
@@ -86,8 +86,8 @@ character_event = {
 	option = {
 		trigger = {
 			OR = {
-				trait = troll_ice
-				trait = troll_zandalari
+				trait = race_troll_ice
+				trait = race_troll_zandalari
 			}
 		}
 		name = EVTOPTLOAH.3c # Ice troll Loa
@@ -96,7 +96,7 @@ character_event = {
 	
 	option = {
 		trigger = {
-			trait = troll_zandalari
+			trait = race_troll_zandalari
 		}
 		name = OPTIONS_MORE
 		character_event = { id = loah.4 }
@@ -104,7 +104,7 @@ character_event = {
 	
 	option = {
 		trigger = {
-			trait = troll_sand
+			trait = race_troll_sand
 		}
 		name = EVTOPTLOAH.3d # Sand troll Loa
 		character_event = { id = loah.18 }
@@ -112,7 +112,7 @@ character_event = {
 	
 	option = {
 		trigger = {
-			trait = troll_dark
+			trait = race_troll_dark
 		}
 		name = EVTOPTLOAH.3e # Dark troll Loa
 		character_event = { id = loah.200 }
@@ -1403,12 +1403,12 @@ character_event = {
 		religion_authority = 0.2
 		religion = loa
 		OR = {
-			trait = troll_sand
-			trait = troll_dark
-			trait = troll_zandalari
-			trait = troll_ice
-			trait = troll_forest
-			trait = troll_jungle
+			trait = race_troll_sand
+			trait = race_troll_dark
+			trait = race_troll_zandalari
+			trait = race_troll_ice
+			trait = race_troll_forest
+			trait = race_troll_jungle
 		}
 		culture_group = troll
 		NOT = {
@@ -1431,7 +1431,7 @@ character_event = {
 			attributes = {
 				learning = 16
 			}
-			trait = troll_zandalari
+			trait = race_troll_zandalari
 			trait = witch_doctor
 			religion = loa
 			culture = zandalari
@@ -1500,12 +1500,12 @@ narrative_event = {
 		religion = loa
 		culture_group = troll
 		OR = {
-			trait = troll_sand
-			trait = troll_dark
-			trait = troll_zandalari
-			trait = troll_ice
-			trait = troll_forest
-			trait = troll_jungle
+			trait = race_troll_sand
+			trait = race_troll_dark
+			trait = race_troll_zandalari
+			trait = race_troll_ice
+			trait = race_troll_forest
+			trait = race_troll_jungle
 		}
 	}
 	
@@ -1560,12 +1560,12 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			trait = troll_sand
-			trait = troll_dark
-			trait = troll_zandalari
-			trait = troll_ice
-			trait = troll_forest
-			trait = troll_jungle
+			trait = race_troll_sand
+			trait = race_troll_dark
+			trait = race_troll_zandalari
+			trait = race_troll_ice
+			trait = race_troll_forest
+			trait = race_troll_jungle
 		}
 		culture_group = troll
 		NOT = { has_character_flag = zandalar_endorsed }
@@ -1589,13 +1589,14 @@ character_event = {
 					attributes = {
 						martial = 15
 					}
-					trait = troll_zandalari
+					trait = race_troll_zandalari
 					religion = loa
 					culture = zandalari
 					random_traits = yes
 					flag = race_assigned
 				}
 				new_character = {
+					TOW_initialize_character = yes
 					ROOT = {
 						random_realm_province = {
 							PREVPREV = {

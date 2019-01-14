@@ -1143,20 +1143,14 @@ character_event = {
 		text = EVTDESCHFPA30032
 		trigger = {
 			NOT = { trait = lefthanded }
-			NOR = { 
-				religion_group = christian
-				religion_group = muslim 
-			}
+			TOW_religion_dislikes_lefthanded = no
 		}
 	}
 	desc = {
 		text = EVTDESCHFPB30032
 		trigger = {
 			NOT = { trait = lefthanded }
-			OR = { 
-				religion_group = christian
-				religion_group = muslim 
-			}
+			TOW_religion_dislikes_lefthanded = yes
 		}
 	}
 	desc = {
@@ -1184,10 +1178,7 @@ character_event = {
 	option = { #Teach of how ungodly it is.
 		name = EVTOPTAHFP30032
 		trigger = { 
-			OR = { 
-				religion_group = christian
-				religion_group = muslim 
-			}
+			TOW_religion_dislikes_lefthanded = yes
 		}
 		custom_tooltip = { text = tooltip_HFP30032_A }
 		FROM = { set_character_flag = flag_lefthanded_learning }
@@ -1480,8 +1471,8 @@ character_event = { #Meteorite falls
 		is_adult = yes
 		
 		ROOT = {
-			government = feudal_government
-			religion_group = christian
+			TOW_is_feudal = yes
+			TOW_religion_practices_charity = yes
 		}
 		
 		NOT = {

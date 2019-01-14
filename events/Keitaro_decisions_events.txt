@@ -1,0 +1,541 @@
+namespace = Keitaro_Decisions
+
+#reserved: Keitaro_Decisions.1 to Keitaro_Decisions.7
+
+#######################################
+# DECISIONS EVENTS
+#######################################
+
+### Asked for money in exchange of a favor
+letter_event = {
+	id = Keitaro_Decisions.1
+	desc = EVTDESC_Keitaro_Decisions_1
+
+	border = GFX_event_letter_frame_economy
+
+	is_friendly = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA_Keitaro_Decisions_1"  # Accept
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				trait = charitable # Use other option
+			}
+			modifier = {
+				factor = 0
+				trait = greedy # Use other option
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 0 }
+			}
+			modifier = {
+				factor = 0
+				is_foe = FROMFROM
+			}
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 10 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 20 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 30 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 40 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 50 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 60 } }
+			modifier = { factor = 1.3 opinion = { who = FROMFROM value = 70 } }
+			modifier = { factor = 1.4 opinion = { who = FROMFROM value = 80 } }
+			modifier = { factor = 1.5 opinion = { who = FROMFROM value = 90 } }
+			modifier = { factor = 1.6 opinion = { who = FROMFROM value = 100 } }
+		}
+		if = {
+			limit = {
+				is_landed = yes
+			}
+			hidden_tooltip = {
+				export_to_variable = { which = local_Keitaro_money_count value = treasury }
+				set_variable = { which = local_Keitaro_money_count_spent which = local_Keitaro_money_count }
+			}
+			transfer_scaled_wealth = { to = FROMFROM value = 0.8 min = 10 }
+			hidden_tooltip = {
+				export_to_variable = { which = local_Keitaro_money_count value = treasury }
+				subtract_variable = { which = local_Keitaro_money_count_spent which = local_Keitaro_money_count }
+			}
+		}
+		if = {
+			limit = {
+				is_landed = no
+			}
+			wealth = -10
+			FROMFROM = { wealth = 10 }
+			set_variable = { which = local_Keitaro_money_count_spent value = 10 }
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				letter_event = { id = Keitaro_Decisions.2 days = 2 random = 3 }
+			}
+		}
+		reverse_remove_favor = FROMFROM
+	}
+	option = {
+		name = "EVTOPTB_Keitaro_Decisions_1"  # Decline
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				diplomacy = 14 # Use other option
+			}
+			modifier = {
+				factor = 0.05
+				is_friend = FROMFROM
+			}
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -9 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -19 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -29 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -39 } } }
+			modifier = { factor = 1.2 NOT = { opinion = { who = FROMFROM value = -49 } } }
+			modifier = { factor = 1.3 NOT = { opinion = { who = FROMFROM value = -59 } } }
+			modifier = { factor = 1.4 NOT = { opinion = { who = FROMFROM value = -69 } } }
+			modifier = { factor = 1.5 NOT = { opinion = { who = FROMFROM value = -79 } } }
+			modifier = { factor = 1.6 NOT = { opinion = { who = FROMFROM value = -89 } } }
+			modifier = { factor = 1.7 NOT = { opinion = { who = FROMFROM value = -99 } } }
+		}
+		custom_tooltip = {
+			text = EVTTOOLTIP_Keitaro_Decisions_1_OPTB
+			hidden_tooltip = {
+				FROMFROM = {
+					letter_event = { id = Keitaro_Decisions.3 days = 2 random = 3 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				trait = charitable
+			}
+			random = {
+				chance = 70
+				remove_trait = charitable
+			}
+		}
+		if = {
+			limit = {
+				NOT = { trait = charitable }
+			}
+			random = {
+				chance = 10
+				add_trait = greedy
+			}
+		}
+		
+	}
+	option = {
+		name = "EVTOPTC_Keitaro_Decisions_1"  # Give more
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { wealth = 0 }
+			}
+			modifier = {
+				factor = 0
+				is_foe = FROMFROM
+			}
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 10 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 20 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 30 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 40 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 50 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 60 } }
+			modifier = { factor = 1.3 opinion = { who = FROMFROM value = 70 } }
+			modifier = { factor = 1.4 opinion = { who = FROMFROM value = 80 } }
+			modifier = { factor = 1.5 opinion = { who = FROMFROM value = 90 } }
+			modifier = { factor = 1.6 opinion = { who = FROMFROM value = 100 } }
+		}
+		trigger = { trait = charitable }
+		if = {
+			limit = {
+				is_landed = yes
+			}
+			hidden_tooltip = {
+				export_to_variable = { which = local_Keitaro_money_count value = treasury }
+				set_variable = { which = local_Keitaro_money_count_spent which = local_Keitaro_money_count }
+			}
+			transfer_scaled_wealth = { to = FROMFROM value = 1.0 min = 12.5 }
+			hidden_tooltip = {
+				export_to_variable = { which = local_Keitaro_money_count value = treasury }
+				subtract_variable = { which = local_Keitaro_money_count_spent which = local_Keitaro_money_count }
+			}
+		}
+		if = {
+			limit = {
+				is_landed = no
+			}
+			wealth = -12.5
+			FROMFROM = { wealth = 12.5 }
+			set_variable = { which = local_Keitaro_money_count_spent value = 12.5 }
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				letter_event = { id = Keitaro_Decisions.4 days = 2 random = 3 }
+			}
+		}
+		reverse_remove_favor = FROMFROM
+		tooltip_info = charitable
+	}
+	option = {
+		name = "EVTOPTD_Keitaro_Decisions_1"  # Give less
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { wealth = 0 }
+			}
+			modifier = {
+				factor = 0
+				is_foe = FROMFROM
+			}
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 10 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 20 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 30 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 40 } }
+			modifier = { factor = 1.1 opinion = { who = FROMFROM value = 50 } }
+			modifier = { factor = 1.2 opinion = { who = FROMFROM value = 60 } }
+			modifier = { factor = 1.3 opinion = { who = FROMFROM value = 70 } }
+			modifier = { factor = 1.4 opinion = { who = FROMFROM value = 80 } }
+			modifier = { factor = 1.5 opinion = { who = FROMFROM value = 90 } }
+			modifier = { factor = 1.6 opinion = { who = FROMFROM value = 100 } }
+		}
+		trigger = { trait = greedy }
+		if = {
+			limit = {
+				is_landed = yes
+			}
+			hidden_tooltip = {
+				export_to_variable = { which = local_Keitaro_money_count value = treasury }
+				set_variable = { which = local_Keitaro_money_count_spent which = local_Keitaro_money_count }
+			}
+			transfer_scaled_wealth = { to = FROMFROM value = 0.6 min = 7.5 }
+			hidden_tooltip = {
+				export_to_variable = { which = local_Keitaro_money_count value = treasury }
+				subtract_variable = { which = local_Keitaro_money_count_spent which = local_Keitaro_money_count }
+			}
+		}
+		if = {
+			limit = {
+				is_landed = no
+			}
+			wealth = -7.5
+			FROMFROM = { wealth = 7.5 }
+			set_variable = { which = local_Keitaro_money_count_spent value = 7.5 }
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				letter_event = { id = Keitaro_Decisions.5 days = 2 random = 3 }
+			}
+		}
+		reverse_remove_favor = FROMFROM
+		tooltip_info = greedy
+	}
+	option = {
+		name = "EVTOPTE_Keitaro_Decisions_1"  # Decline diplomatically
+		trigger = { diplomacy = 14 }
+		ai_chance = {
+			factor = 50
+
+			modifier = {
+				factor = 0.05
+				is_friend = FROMFROM
+			}
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -9 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -19 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -29 } } }
+			modifier = { factor = 1.1 NOT = { opinion = { who = FROMFROM value = -39 } } }
+			modifier = { factor = 1.2 NOT = { opinion = { who = FROMFROM value = -49 } } }
+			modifier = { factor = 1.3 NOT = { opinion = { who = FROMFROM value = -59 } } }
+			modifier = { factor = 1.4 NOT = { opinion = { who = FROMFROM value = -69 } } }
+			modifier = { factor = 1.5 NOT = { opinion = { who = FROMFROM value = -79 } } }
+			modifier = { factor = 1.6 NOT = { opinion = { who = FROMFROM value = -89 } } }
+			modifier = { factor = 1.7 NOT = { opinion = { who = FROMFROM value = -99 } } }
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				letter_event = { id = Keitaro_Decisions.6 days = 2 random = 3 }
+			}
+		}
+		tooltip_info = diplomacy
+	}
+
+}
+
+### Accepted
+letter_event = {
+	id = Keitaro_Decisions.2
+	desc = EVTDESC_Keitaro_Decisions_2
+	border = GFX_event_letter_frame_economy
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT_Keitaro_Decisions_2"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}
+
+
+### Declined
+letter_event = {
+	id = Keitaro_Decisions.3
+	desc = EVTDESC_Keitaro_Decisions_3
+	border = GFX_event_letter_frame_economy
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT_Keitaro_Decisions_3"  # Ok
+		ai_chance = { factor = 1 }	
+		opinion = {
+			modifier = Keitaro_opinion_declined_favor_money
+			who = FROMFROM
+			months = 30
+		}
+	}
+}
+
+### Gave More
+letter_event = {
+	id = Keitaro_Decisions.4
+	desc = EVTDESC_Keitaro_Decisions_4
+	border = GFX_event_letter_frame_economy
+
+	is_triggered_only = yes
+
+	immediate = {
+		opinion = {
+			modifier = Keitaro_opinion_charitable_gave_more_favor_money
+			who = FROM
+			months = 18
+		}
+	}
+	
+	option = {
+		name = "EVTOPT_Keitaro_Decisions_4"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}
+
+### Gave Less
+letter_event = {
+	id = Keitaro_Decisions.5
+	desc = EVTDESC_Keitaro_Decisions_5
+	border = GFX_event_letter_frame_economy
+
+	is_triggered_only = yes
+
+	immediate = {
+		opinion = {
+			modifier = Keitaro_opinion_greedy_gave_less_favor_money
+			who = FROM
+			months = 18
+		}
+	}
+
+	option = {
+		name = "EVTOPT_Keitaro_Decisions_5"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}
+
+### Declined diplomatically
+letter_event = {
+	id = Keitaro_Decisions.6
+	desc = EVTDESC_Keitaro_Decisions_6
+	border = GFX_event_letter_frame_economy
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT_Keitaro_Decisions_6"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}
+
+### Asked for a title from vassal with either a claim, a favor or the ambition to gain a title
+letter_event = {
+	id = Keitaro_Decisions.7
+	desc = EVTDESC_Keitaro_Decisions_7
+
+	border = GFX_event_letter_frame_diplomacy
+
+	is_friendly = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA_Keitaro_Decisions_7"  # Accept
+		ai_chance = {
+			factor = 4
+
+			modifier = { factor = 2.25 owes_favor_to = event_target:asker }
+			modifier = { factor = 2.75 event_target:asker = { has_strong_claim = event_target:title } }
+			modifier = { factor = 1.75 event_target:asker = { has_weak_claim = event_target:title } }
+			modifier = { factor = 1.05 ai_honor >= 10 }
+			modifier = { factor = 1.05 ai_honor >= 20 }
+			modifier = { factor = 1.05 ai_honor >= 30 }
+			modifier = { factor = 1.05 ai_honor >= 40 }
+			modifier = { factor = 1.05 ai_honor >= 50 }
+			modifier = { factor = 1.05 ai_honor >= 60 }
+			modifier = { factor = 1.05 ai_honor >= 70 }
+			modifier = { factor = 1.05 ai_honor >= 80 }
+			modifier = { factor = 1.05 ai_honor >= 90 }
+			modifier = { factor = 1.10 ai_honor >= 100 }
+			modifier = { factor = 2 trait = kind }
+			modifier = { factor = 2 trait = charitable }
+			modifier = { factor = 2 trait = just }
+			modifier = { factor = 1.5 trait = trusting }
+			modifier = { factor = 0.75 trait = paranoid }
+			modifier = { factor = 0.5 trait = envious }
+			modifier = { factor = 0.5 trait = greedy }
+			modifier = { factor = 0.2 trait = ambitious }
+			modifier = { factor = 1.10 opinion = { who = event_target:asker value >= 10 } }
+			modifier = { factor = 1.10 opinion = { who = event_target:asker value >= 20 } }
+			modifier = { factor = 1.10 opinion = { who = event_target:asker value >= 30 } }
+			modifier = { factor = 1.10 opinion = { who = event_target:asker value >= 40 } }
+			modifier = { factor = 1.10 opinion = { who = event_target:asker value >= 50 } }
+			modifier = { factor = 1.15 opinion = { who = event_target:asker value >= 60 } }
+			modifier = { factor = 1.15 opinion = { who = event_target:asker value >= 70 } }
+			modifier = { factor = 1.15 opinion = { who = event_target:asker value >= 80 } }
+			modifier = { factor = 1.15 opinion = { who = event_target:asker value >= 90 } }
+			modifier = { factor = 1.20 opinion = { who = event_target:asker value >= 100 } }
+
+			modifier = { factor = 1.50 demesne_size_compared_to_limit > 1 }
+			modifier = { factor = 0.75 demesne_size_compared_to_limit < 0.5 }
+			modifier = { factor = 0.8 demesne_size < 4 }
+
+			modifier = { factor = 0.25 event_target:asker = { Keitaro_root_dislikes_religion = yes } }
+
+			modifier = { factor = 0 is_foe = event_target:asker }
+			modifier = { factor = 2 is_friend = event_target:asker }
+			modifier = { factor = 3 is_lover = event_target:asker }
+
+			modifier = { factor = 0.1 event_target:title = { tier = duke } }
+			modifier = { factor = 0.01 event_target:title = { tier = king } }
+			modifier = { factor = 1.25 event_target:title = { tier = baron } }
+		}
+
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+			}
+			if = {
+				limit = {
+					owes_favor_to = event_target:asker
+				}
+				reverse_remove_favor = event_target:asker
+			}
+			else_if = {
+				limit = {
+					NOT = { holds_favor_on = event_target:asker }
+				}
+				add_favor = event_target:asker
+			}
+		}
+
+		event_target:title = {
+			gain_title = event_target:asker
+		}
+
+		event_target:asker = {
+			opinion = {
+				modifier = Keitaro_opinion_ask_claimed_title_from_liege_grateful
+				who = event_target:holder
+				years = 10
+			}
+		}
+
+		hidden_tooltip = {
+			event_target:asker = {
+				letter_event = { id = Keitaro_Decisions.8 days = 2 random = 3 }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTB_Keitaro_Decisions_7"  # Decline
+		ai_chance = {
+			factor = 12
+
+			modifier = { factor = 1.10 ai_greed >= 10 }
+			modifier = { factor = 1.10 ai_greed >= 20 }
+			modifier = { factor = 1.10 ai_greed >= 30 }
+			modifier = { factor = 1.10 ai_greed >= 40 }
+			modifier = { factor = 1.10 ai_greed >= 50 }
+			modifier = { factor = 1.10 ai_greed >= 60 }
+			modifier = { factor = 1.10 ai_greed >= 70 }
+			modifier = { factor = 1.10 ai_greed >= 80 }
+			modifier = { factor = 1.10 ai_greed >= 90 }
+
+			modifier = { factor = 2 NOT = { event_target:title = { claimed_by = event_target:asker } } }
+			modifier = { factor = 1.10 opinion = { who = event_target:asker value <= 0 } }
+			modifier = { factor = 1.10 opinion = { who = event_target:asker value <= -10 } }
+			modifier = { factor = 1.15 opinion = { who = event_target:asker value <= -20 } }
+			modifier = { factor = 1.15 opinion = { who = event_target:asker value <= -30 } }
+			modifier = { factor = 1.15 opinion = { who = event_target:asker value <= -40 } }
+			modifier = { factor = 1.20 opinion = { who = event_target:asker value <= -50 } }
+			modifier = { factor = 1.20 opinion = { who = event_target:asker value <= -60 } }
+			modifier = { factor = 1.25 opinion = { who = event_target:asker value <= -70 } }
+			modifier = { factor = 1.25 opinion = { who = event_target:asker value <= -80 } }
+			modifier = { factor = 1.30 opinion = { who = event_target:asker value <= -90 } }
+		}
+
+		if = {
+			limit = {
+				diplomacy < 16
+			}
+			event_target:asker = {
+				opinion = {
+					modifier = opinion_disappointed
+					who = event_target:holder
+					years = 1
+				}
+			}
+		}
+
+		hidden_tooltip = {
+			event_target:asker = {
+				letter_event = { id = Keitaro_Decisions.9 days = 2 random = 3 }
+			}
+		}
+	}
+}
+
+### Keitaro_Decisions.7 : Accepted
+letter_event = {
+	id = Keitaro_Decisions.8
+	desc = EVTDESC_Keitaro_Decisions_8
+	border = GFX_event_letter_frame_economy
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT_Keitaro_Decisions_8"  # Ok
+		ai_chance = { factor = 1 }
+
+		tooltip = {
+			event_target:title = {
+				gain_title = event_target:asker
+			}
+		}
+	}
+}
+
+### Keitaro_Decisions.7 : Declined
+letter_event = {
+	id = Keitaro_Decisions.9
+	desc = EVTDESC_Keitaro_Decisions_9
+	border = GFX_event_letter_frame_economy
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT_Keitaro_Decisions_9"  # Ok
+		ai_chance = { factor = 1 }
+	}
+}

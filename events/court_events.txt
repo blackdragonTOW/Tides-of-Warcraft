@@ -536,6 +536,7 @@ character_event = {
 				trait = bastard
 			}
 			new_character = {
+				TOW_initialize_character = yes
 				set_father = prev
 				dynasty = father
 			}
@@ -559,20 +560,19 @@ character_event = {
 		name = EVTOPTD73006 #Send him to confess his sins
 		trigger = {
 			OR = {
-				religion_group = christian
-				religion_group = muslim
+				TOW_religion_practices_sin_confession = yes
 			}
 		}
 		event_target:knocked_up_maid = {
 			if = {
 				limit = {
-					religion_group = christian
+					TOW_religion_uses_chastity = yes
 				}
 				add_trait = chaste
 			}
 			if = {
 				limit = {
-					religion_group = muslim
+					TOW_religion_uses_chastity = no
 				}
 				piety = -10
 			}
@@ -645,7 +645,7 @@ character_event = {
 	option = {
 		name = EVTOPTB73007 #Let's go to the church instead, darling
 		trigger = {
-			religion_group = christian
+			TOW_religion_is_dogmatic = yes
 		}
 		if = {
 			limit = { trait = cynical }
@@ -828,6 +828,7 @@ character_event = {
 			female = no
 		}
 		new_character = {
+			TOW_initialize_character = yes
 			ROOT = {
 				random_current_enemy = {
 					limit = {

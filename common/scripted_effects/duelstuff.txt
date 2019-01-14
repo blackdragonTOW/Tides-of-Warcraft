@@ -193,20 +193,20 @@ initiative = {
 	if = {
 		limit = {
 			OR = {
-				trait = human
-				trait = gnome
+				trait = race_human
+				trait = race_gnome
 				#trait = night_elf
 				#trait = worgen
-				trait = troll_sand
-				trait = troll_dark
-				trait = troll_forest
-				trait = troll_ice
-				trait = troll_jungle
-				trait = troll_zandalari
-				trait = goblin
-				trait = murloc
-				trait = succubus
-				trait = air_elemental
+				trait = race_troll_sand
+				trait = race_troll_dark
+				trait = race_troll_forest
+				trait = race_troll_ice
+				trait = race_troll_jungle
+				trait = race_troll_zandalari
+				trait = race_goblin
+				trait = race_murloc
+				trait = race_succubus
+				trait = race_air_elemental
 			}
 		}
 		change_variable = { which = initiative value = 1 }
@@ -414,16 +414,16 @@ attack = {
 			FROM = {
 				OR = {
 					trait = felsworn
-					trait = voidwalker
-					trait = undead_generic
-					trait = undead_forsaken
-					trait = undead_scourge
-					trait = eredar
-					trait = succubus
-					trait = shivarra
-					trait = fel_lord
-					trait = doomlord
-					trait = pit_lord
+					trait = race_voidwalker
+					trait = race_undead_generic
+					trait = race_undead_forsaken
+					trait = race_undead_scourge
+					trait = race_eredar
+					trait = race_succubus
+					trait = race_shivarra
+					trait = race_fel_lord
+					trait = race_doomlord
+					trait = race_pit_lord
 				}
 			}
 		}
@@ -438,12 +438,12 @@ attack = {
 			FROM = {
 				OR = {
 					trait = felsworn
-					trait = eredar
-					trait = succubus
-					trait = shivarra
-					trait = fel_lord
-					trait = doomlord
-					trait = pit_lord
+					trait = race_eredar
+					trait = race_succubus
+					trait = race_shivarra
+					trait = race_fel_lord
+					trait = race_doomlord
+					trait = race_pit_lord
 				}
 			}
 		}
@@ -560,22 +560,22 @@ defence = {
 	}
 	if = {
 		limit = {
-			trait = AK_trait_dwarf
+			trait = race_dwarf
 		}
 		change_variable = { which = defence value = 1 }
 	}
 	if = {
 		limit = {
 			OR = {
-				trait = ogre
-				trait = earth_elemental
+				trait = race_ogre
+				trait = race_earth_elemental
 				AND = {
-					trait = faceless
+					trait = race_faceless
 					NOT = { trait = cthrax }
 				}
-				trait = dreadlord
-				trait = shivarra
-				trait = voidwalker
+				trait = race_dreadlord
+				trait = race_shivarra
+				trait = race_voidwalker
 			}
 		}
 		change_variable = { which = defence value = 2 }
@@ -583,21 +583,13 @@ defence = {
 	if = {
 		limit = {
 			OR = {
-				trait = pit_lord
-				trait = fel_lord
-				trait = doomlord
-				trait = dragon_black
-				trait = dragon_blue
-				trait = dragon_bronze
-				trait = dragon_green
-				trait = dragon_red
-				trait = dragon_chromatic
-				trait = dragon_infinite
-				trait = dragon_nightmare
-				trait = dragon_twilight
+				trait = race_pit_lord
+				trait = race_fel_lord
+				trait = race_doomlord
+				trait = race_dragon
 				trait = race_hakkar
 				AND = {
-					trait = faceless
+					trait = race_faceless
 					trait = cthrax
 				}
 			}
@@ -607,9 +599,9 @@ defence = {
 	if = {
 		limit = {
 			OR = {
-				trait = undead_scourge
-				trait = undead_forsaken
-				trait = undead_generic
+				trait = race_undead_scourge
+				trait = race_undead_forsaken
+				trait = race_undead_generic
 			}
 		}
 		change_variable = { which = defence value = 1 }
@@ -620,20 +612,20 @@ hp = {
 	if = {
 		limit = {
 			OR = {
-				trait = AK_trait_dwarf
+				trait = race_dwarf
 				AND = {
-					trait = faceless
+					trait = race_faceless
 					NOT = { trait = cthrax }
 				}
-				trait = voidwalker
-				trait = dreadlord
-				trait = shivarra
-				trait = earth_elemental
-				trait = ogre
+				trait = race_voidwalker
+				trait = race_dreadlord
+				trait = race_shivarra
+				trait = race_earth_elemental
+				trait = race_ogre
 				trait = felsworn
-				trait = undead_generic
-				trait = undead_forsaken
-				trait = undead_scourge
+				trait = race_undead_generic
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
 			}
 		}
 		change_variable = { which = hp value = 1 }
@@ -641,21 +633,13 @@ hp = {
 	if = {
 		limit = {
 			OR = {
-				trait = dragon_black
-				trait = dragon_blue
-				trait = dragon_bronze
-				trait = dragon_green
-				trait = dragon_red
-				trait = dragon_chromatic
-				trait = dragon_infinite
-				trait = dragon_nightmare
-				trait = dragon_twilight
-				trait = pit_lord
-				trait = fel_lord
-				trait = doomlord
+				trait = race_dragon
+				trait = race_pit_lord
+				trait = race_fel_lord
+				trait = race_doomlord
 				trait = race_hakkar
 				AND = {
-					trait = faceless
+					trait = race_faceless
 					trait = cthrax
 				}
 			}

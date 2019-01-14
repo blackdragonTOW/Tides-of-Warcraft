@@ -44,14 +44,7 @@ character_event = {
 		NOT = { trait = craven }
 		NOT = { trait = decadent }
 		OR = {
-			AND = {
-				any_liege = {
-					government = nomadic_government
-				}
-				culture_group = altaic
-			}
-			religion = norse_pagan
-			religion = norse_pagan_reformed
+			TOW_background_is_adventurer = yes
 			AND = {
 				trait = ambitious
 				martial = 15

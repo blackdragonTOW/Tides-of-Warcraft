@@ -10,15 +10,7 @@ character_event = {
 	}
 	
 	trigger = {
-		OR = {
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_infinite
-			trait = dragon_nightmare
-			trait = dragon_red
-		}
+		trait = race_dragon
 		OR = {
 			AND = {
 				NOT = { age = 20 }
@@ -90,94 +82,94 @@ character_event = {
 	
 	trigger = {
 		OR = {
-			AND = {
-				trait = dragon_green
-				NOT = { dynasty = 101005 }
-			}
-			AND = {
-				trait = dragon_black
-				NOT = { dynasty = 101006 }
-			}
-			AND = {
-				trait = dragon_bronze
-				NOT = { dynasty = 101007 }
-			}
-			AND = {
-				trait = dragon_blue
-				NOT = { dynasty = 101008 }
-			}
-			AND = {
-				trait = dragon_red
-				NOT = { dynasty = 101009 }
-			}
-			AND = {
-				trait = dragon_infinite
-				NOT = { dynasty = 101010 }
-			}
-			AND = {
-				trait = dragon_nightmare
-				NOT = { dynasty = 101011 }
-			}
+			#AND = {
+			#	trait = race_dragon_green
+			#	NOT = { dynasty = 101005 }
+			#}
+			#AND = {
+			#	trait = race_dragon_black
+			#	NOT = { dynasty = 101006 }
+			#}
+			#AND = {
+			#	trait = race_dragon_bronze
+			#	NOT = { dynasty = 101007 }
+			#}
+			#AND = {
+			#	trait = race_dragon_blue
+			#	NOT = { dynasty = 101008 }
+			#}
+			#AND = {
+			#	trait = race_dragon_red
+			#	NOT = { dynasty = 101009 }
+			#}
+			#AND = {
+			#	trait = race_dragon_infinite
+			#	NOT = { dynasty = 101010 }
+			#}
+			#AND = {
+			#	trait = race_dragon_nightmare
+			#	NOT = { dynasty = 101011 }
+			#}
 		}
 	}
 	
 	immediate = {
-		if = {
-			limit = {
-				trait = dragon_green
-				NOT = { dynasty = 101005 }
-			}
-			dynasty = 101005
-			recalc_succession = yes
-		}
-		if = {
-			limit = {
-				trait = dragon_black
-				NOT = { dynasty = 101006 }
-			}
-			dynasty = 101006
-			recalc_succession = yes
-		}
-		if = {
-			limit = {
-				trait = dragon_bronze
-				NOT = { dynasty = 101007 }
-			}
-			dynasty = 101007
-			recalc_succession = yes
-		}
-		if = {
-			limit = {
-				trait = dragon_blue
-				NOT = { dynasty = 101008 }
-			}
-			dynasty = 101008
-			recalc_succession = yes
-		}
-		if = {
-			limit = {
-				trait = dragon_red
-				NOT = { dynasty = 101009 }
-			}
-			dynasty = 101009
-			recalc_succession = yes
-		}
-		if = {
-			limit = {
-				trait = dragon_infinite
-				NOT = { dynasty = 101010 }
-			}
-			dynasty = 101010
-			recalc_succession = yes
-		}
-		if = {
-			limit = {
-				trait = dragon_nightmare
-				NOT = { dynasty = 101011 }
-			}
-			dynasty = 101011
-			recalc_succession = yes
-		}
+		#if = {
+		#	limit = {
+		#		trait = race_dragon_green
+		#		NOT = { dynasty = 101005 }
+		#	}
+		#	dynasty = 101005
+		#	recalc_succession = yes
+		#}
+		#if = {
+		#	limit = {
+		#		trait = race_dragon_black
+		#		NOT = { dynasty = 101006 }
+		#	}
+		#	dynasty = 101006
+		#	recalc_succession = yes
+		#}
+		#if = {
+		#	limit = {
+		#		trait = race_dragon_bronze
+		#		NOT = { dynasty = 101007 }
+		#	}
+		#	dynasty = 101007
+		#	recalc_succession = yes
+		#}
+		#if = {
+		#	limit = {
+		#		trait = race_dragon_blue
+		#		NOT = { dynasty = 101008 }
+		#	}
+		#	dynasty = 101008
+		#	recalc_succession = yes
+		#}
+		#if = {
+		#	limit = {
+		#		trait = race_dragon_red
+		#		NOT = { dynasty = 101009 }
+		#	}
+		#	dynasty = 101009
+		#	recalc_succession = yes
+		#}
+		#if = {
+		#	limit = {
+		#		trait = race_dragon_infinite
+		#		NOT = { dynasty = 101010 }
+		#	}
+		#	dynasty = 101010
+		#	recalc_succession = yes
+		#}
+		#if = {
+		#	limit = {
+		#		trait = race_dragon_nightmare
+		#		NOT = { dynasty = 101011 }
+		#	}
+		#	dynasty = 101011
+		#	recalc_succession = yes
+		#}
 	}
 }
 
@@ -196,14 +188,8 @@ character_event = {
 			trait = dragon_dragon
 			trait = dragon_wyrm
 		}
-		NOR = {
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_red
-			trait = dragon_infinite
-			trait = dragon_nightmare
+		NOT = {
+			trait = race_dragon
 		}
 	}
 	
@@ -302,15 +288,7 @@ character_event = {
 	}
 	
 	trigger = {
-		OR = {
-			trait = dragon_black
-			trait = dragon_blue
-			trait = dragon_bronze
-			trait = dragon_green
-			trait = dragon_red
-			trait = dragon_infinite
-			trait = dragon_nightmare
-		}
+		trait = race_dragon
 		NOT = { government = dragonflight_government }
 	}
 	

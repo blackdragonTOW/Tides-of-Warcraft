@@ -17,19 +17,7 @@ TRIBAL_PIETY_RET_1 = {
 	second_amount = 50
 	
 	potential = {
-		is_tribal = yes
-		OR = {
-			religion = baltic_pagan_reformed
-			religion = baltic_pagan
-			religion = finnish_pagan_reformed
-			religion = finnish_pagan
-			religion = slavic_pagan_reformed
-			religion = slavic_pagan
-			religion = west_african_pagan_reformed
-			religion = west_african_pagan
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_is_tribal = yes
 	}
 	
 	hire_cost = 75
@@ -52,19 +40,7 @@ TRIBAL_PIETY_RET_2 = {
 	second_amount = 75
 	
 	potential = {
-		is_tribal = yes
-		OR = {
-			religion = baltic_pagan_reformed
-			religion = baltic_pagan
-			religion = finnish_pagan_reformed
-			religion = finnish_pagan
-			religion = slavic_pagan_reformed
-			religion = slavic_pagan
-			religion = west_african_pagan_reformed
-			religion = west_african_pagan
-			religion = bon
-			religion = bon_reformed
-		}
+		TOW_is_tribal = yes
 	}
 	
 	hire_cost = 50
@@ -83,7 +59,7 @@ TRIBAL_RET_1 = {
 	first_amount = 150
 	
 	potential = {
-		is_tribal = yes
+		TOW_is_tribal = yes
 	}
 	
 	hire_cost = 25
@@ -106,7 +82,7 @@ TRIBAL_RET_2 = {
 	second_amount = 50
 	
 	potential = {
-		is_tribal = yes
+		TOW_is_tribal = yes
 	}
 	
 	hire_cost = 50
@@ -131,7 +107,7 @@ TRIBAL_RET_3 = {
 	second_amount = 50
 	
 	potential = {
-		is_tribal = yes
+		TOW_is_tribal = yes
 	}
 	
 	hire_cost = 75
@@ -156,7 +132,7 @@ TRIBAL_RET_4 = {
 	second_amount = 50
 	
 	potential = {
-		is_tribal = yes
+		TOW_is_tribal = yes
 	}
 	
 	hire_cost = 75
@@ -183,15 +159,7 @@ TRIBAL_RET_5 = {
 	special_troops = horse_archers
 	
 	potential = {
-		is_tribal = yes
-		OR = {
-			culture_group = altaic
-			culture = alan
-			culture = hungarian
-		}
-		NOT = {
-			culture = jurchen
-		}
+		TOW_is_tribal = yes
 	}
 	
 	hire_cost = 75

@@ -36,7 +36,7 @@ character_event = {
 	desc = {
 		trigger = {
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes } # Scriptures
+				NOT = { TOW_religion_is_uncivilized_trigger = yes } # Scriptures
 				is_reformed_religion = yes
 			}
 		}
@@ -44,7 +44,7 @@ character_event = {
 	}
 	desc = {
 		trigger = {
-			TOW_is_uncivilized_religion_trigger = yes # Stories
+			TOW_religion_is_uncivilized_trigger = yes # Stories
 			is_reformed_religion = no
 		}
 		text = EVTDESC_WoL_7000_unref_pagan
@@ -58,7 +58,7 @@ character_event = {
 		name = EVTOPTA_WoL_7000 # Yes, study scriptures
 		trigger = {
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 				is_reformed_religion = yes
 			}
 		}
@@ -68,7 +68,7 @@ character_event = {
 	option = {
 		name = EVTOPTB_WoL_7000 # Yes, listen to stories
 		trigger = {
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			is_reformed_religion = no
 		}
 		piety = 20
@@ -97,7 +97,7 @@ character_event = {
 	desc = {
 		trigger = {
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes } # Scriptures
+				NOT = { TOW_religion_is_uncivilized_trigger = yes } # Scriptures
 				is_reformed_religion = yes
 			}
 		}
@@ -105,7 +105,7 @@ character_event = {
 	}
 	desc = {
 		trigger = {
-			TOW_is_uncivilized_religion_trigger = yes # Stories
+			TOW_religion_is_uncivilized_trigger = yes # Stories
 			is_reformed_religion = no
 		}
 		text = EVTDESC_WoL_7001_unref_pagan
@@ -115,7 +115,7 @@ character_event = {
 		name = EVTOPTA_WoL_7001 # Scriptures
 		trigger = {
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 				is_reformed_religion = yes
 			}
 		}
@@ -154,7 +154,7 @@ character_event = {
 	option = {
 		name = EVTOPTB_WoL_7001 # Stories
 		trigger = {
-			TOW_is_uncivilized_religion_trigger = yes # Stories
+			TOW_religion_is_uncivilized_trigger = yes # Stories
 			is_reformed_religion = no
 		}
 		piety = 20
@@ -284,10 +284,7 @@ character_event = {
 	trigger = {
 		has_focus = focus_theology
 		in_command = no
-		NOT = { religion_group = christian }
-		NOT = { religion_group = muslim }
-		NOT = { religion_group = jewish_group }
-		NOT = { religion_group = indian_group }
+		TOW_religion_have_pilgrimage = no
 		NOT = { is_inaccessible_trigger = yes }
 		NOT = { has_character_flag = do_not_disturb }
 		NOT = { has_character_flag = wol_theology_visited_holy_site }
@@ -489,12 +486,7 @@ character_event = {
 		has_focus = focus_theology
 		is_priest = no
 		NOT = { trait = zealous }
-		NOT = { trait = sympathy_christendom }
-		NOT = { trait = sympathy_islam }
-		NOT = { trait = sympathy_pagans }
-		NOT = { trait = sympathy_zoroastrianism }
-		NOT = { trait = sympathy_judaism }
-		NOT = { trait = sympathy_indian }
+		has_any_sympathy_trait_trigger = no
 		NOT = { has_character_flag = wol_theology_view_other_religions }
 		any_realm_character = {
 			NOT = { religion_group = ROOT }
@@ -547,15 +539,7 @@ character_event = {
 		}
 		FROM = {
 			show_scope_change = no
-			trigger_switch = {
-				on_trigger = religion_group
-				christian = { ROOT = { add_trait = sympathy_christendom } }
-				muslim = { ROOT = { add_trait = sympathy_islam } }
-				pagan_group = { ROOT = { add_trait = sympathy_pagans } }
-				zoroastrian_group = { ROOT = { add_trait = sympathy_zoroastrianism } }
-				jewish_group = { ROOT = { add_trait = sympathy_judaism } }
-				indian_group = { ROOT = { add_trait = sympathy_indian } }
-			}
+			ROOT = { add_sympathy_for_prevs_true_religion_effect = yes }
 		}
 	}
 	option = {
@@ -584,7 +568,7 @@ character_event = {
 		text = EVTDESC_WoL_7050
 		trigger = {
 			OR = {
-				NOT = { TOW_is_uncivilized_religion_trigger = yes }
+				NOT = { TOW_religion_is_uncivilized_trigger = yes }
 				is_reformed_religion = yes
 				has_alternate_start_parameter = {
 					key = religion_names
@@ -597,7 +581,7 @@ character_event = {
 	desc = {
 		text = EVTDESC_WoL_7050_PAGAN
 		trigger = {
-			TOW_is_uncivilized_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 			is_reformed_religion = no
 			NOT = {
 				has_alternate_start_parameter = {
@@ -693,12 +677,7 @@ character_event = {
 		has_focus = focus_theology
 		is_heretic = no
 		trait = zealous
-		OR = {
-			religion_group = christian
-			religion_group = muslim
-			religion_group = zoroastrian_group
-			religion_group = jewish_group
-		}
+		TOW_religion_has_heresy = yes
 		NOT = { has_character_flag = wol_theology_heretic }
 	}
 	
@@ -806,21 +785,14 @@ character_event = {
 				10 = {
 					modifier = {
 						factor = 0
-						NOT = { religion_group = christian }
-					}
-					give_nickname = nick_the_apostle
-				}
-				10 = {
-					modifier = {
-						factor = 0
-						NOT = { religion_group = christian }
+						TOW_religion_practices_sin_confession = no
 					}
 					give_nickname = nick_the_confessor
 				}
 				10 = {
 					modifier = {
 						factor = 0
-						NOT = { religion_group = christian }
+						NOT = { TOW_religion_omnipotent_god = yes }
 					}
 					give_nickname = nick_the_blessed
 				}
@@ -886,24 +858,14 @@ character_event = {
 	desc = {
 		text = EVTDESC_WoL_7080
 		trigger = {
-			NOR = {
-				TOW_is_uncivilized_religion_trigger = yes
-				religion_group = muslim
-				has_dharmic_religion_trigger = yes
+			NOT = {
+				TOW_religion_is_uncivilized_trigger = yes
 			}
 		}
 	}
 	desc = {
 		text = EVTDESC_WoL_7080_PAGAN
-		trigger = { TOW_is_uncivilized_religion_trigger = yes }
-	}
-	desc = {
-		text = EVTDESC_WoL_7080_MUSLIM
-		trigger = { religion_group = muslim }
-	}
-	desc = {
-		text = EVTDESC_WoL_7080_INDIAN
-		trigger = { has_dharmic_religion_trigger = yes }
+		trigger = { TOW_religion_is_uncivilized_trigger = yes }
 	}
 
 	trigger = {
@@ -1019,8 +981,7 @@ character_event = {
 		trigger = {
 			NOR = {
 				trait = lunatic
-				TOW_is_uncivilized_religion_trigger = yes
-				has_dharmic_religion_trigger = yes
+				TOW_religion_is_uncivilized_trigger = yes
 			}
 		}
 	}
@@ -1030,16 +991,7 @@ character_event = {
 			NOT = {
 				trait = lunatic				
 			}
-			TOW_is_uncivilized_religion_trigger = yes
-		}
-	}
-	desc = {
-		text = EVTDESC_WoL_7091_INDIAN
-		trigger = {
-			NOT = {
-				trait = lunatic				
-			}
-			has_dharmic_religion_trigger = yes
+			TOW_religion_is_uncivilized_trigger = yes
 		}
 	}
 	desc = {
@@ -1051,7 +1003,6 @@ character_event = {
 
 	trigger = {
 		NOT = { trait = on_pilgrimage }
-		NOT = { trait = on_hajj }
 	}
 	
 	option = {
@@ -1162,7 +1113,7 @@ character_event = {
 		}
 		trigger = {
 			trait = lustful
-			religion_group = christian
+			TOW_religion_uses_sins = yes
 		}
 		remove_trait = lustful
 		piety = 100
@@ -1248,10 +1199,7 @@ character_event = {
 		name = EVTOPT_WoL_7091_CHASTE
 		trigger = {
 			trait = chaste
-			NOR = {
-				religion_group = christian
-				has_dharmic_religion_trigger = yes
-			}
+			TOW_religion_uses_virtues = yes
 		}
 		ai_chance = {
 			factor = 100

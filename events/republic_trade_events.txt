@@ -1457,6 +1457,7 @@ character_event = {
 				culture = FROM
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 			clr_character_flag = getting_married
@@ -1484,6 +1485,7 @@ character_event = {
 				culture = FROM
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 			clr_character_flag = getting_married
@@ -1511,6 +1513,7 @@ character_event = {
 				culture = FROM
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 			clr_character_flag = getting_married
@@ -1592,6 +1595,7 @@ character_event = {
 				culture = FROM
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 			clr_character_flag = getting_married
@@ -1620,6 +1624,7 @@ character_event = {
 				trait = fair
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 			clr_character_flag = getting_married
@@ -1648,6 +1653,7 @@ character_event = {
 				trait = ugly
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 			wealth = 100
@@ -1713,6 +1719,7 @@ character_event = {
 				culture = FROM
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 		}
@@ -1777,6 +1784,7 @@ character_event = {
 				culture = FROM
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 		}
@@ -1803,10 +1811,8 @@ character_event = {
 		is_priest = no
 		NOT = { trait = chaste }
 		can_marry = yes
-		NOT = { culture = manden }
 		liege = {
 			NOT = { any_child = { character = ROOT } }
-			NOT = { culture = manden }
 			is_patrician = yes
 			dynasty = ROOT
 		}
@@ -1843,6 +1849,7 @@ character_event = {
 				culture = manden
 			}
 			new_character = {
+				TOW_initialize_character = yes 
 				add_spouse = PREV
 			}
 		}

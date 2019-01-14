@@ -29,7 +29,7 @@ character_event = {
 			independent = yes
 			higher_tier_than = DUKE
 		}
-		NOT = { TOW_is_uncivilized_religion_trigger = yes }
+		NOT = { TOW_religion_is_uncivilized_trigger = yes }
 		job_spiritual = {
 			ai = yes
 			trait = zealous
@@ -48,11 +48,7 @@ character_event = {
 				religion = ROOT
 				has_opinion_modifier = { who = ROOT modifier = opinion_sent_preacher }
 			}
-			TOW_is_uncivilized_religion_trigger = yes
-			OR = {
-				NOT = { religion = aztec }
-				year = 1350
-			}
+			TOW_religion_is_uncivilized_trigger = yes
 			is_reformed_religion = no
 			controls_religion = no
 			ROOT = {
@@ -91,11 +87,7 @@ character_event = {
 					religion = ROOT
 					has_opinion_modifier = { who = ROOT modifier = opinion_sent_preacher }
 				}
-				TOW_is_uncivilized_religion_trigger = yes
-				OR = {
-					NOT = { religion = aztec }
-					year = 1350
-				}
+				TOW_religion_is_uncivilized_trigger = yes
 				is_reformed_religion = no
 				controls_religion = no
 				ROOT = {
@@ -245,12 +237,7 @@ character_event = {
 			location = { NOT = { religion_group = ROOT } }
 			OR = {
 				trait = cynical
-				trait = sympathy_christendom
-				trait = sympathy_islam
-				trait = sympathy_pagans
-				trait = sympathy_zoroastrianism
-				trait = sympathy_judaism
-				trait = sympathy_indian
+				has_any_sympathy_trait_trigger = yes
 			}
 		}
 	}
@@ -273,15 +260,7 @@ character_event = {
 			set_character_flag = spiritual_reverse_convert_ze_5020
 			location = {
 				save_event_target_as = ze_5020_province
-				trigger_switch = {
-					on_trigger = religion_group
-					christian 			= { PREV = { add_trait = sympathy_christendom } }
-					muslim 				= { PREV = { add_trait = sympathy_islam } }
-					pagan_group 		= { PREV = { add_trait = sympathy_pagans } }
-					zoroastrian_group 	= { PREV = { add_trait = sympathy_zoroastrianism } }
-					jewish_group 		= { PREV = { add_trait = sympathy_judaism } }
-					indian_group 		= { PREV = { add_trait = sympathy_indian } }
-				}
+				TOW_character_prev_add_sympathy_trait_towards_me = yes
 			}
 		}
 		random_courtier = {
@@ -561,10 +540,10 @@ letter_event = {
 	
 	trigger = {
 		has_dlc = "Zeus"
-		NOT = { TOW_is_uncivilized_religion_trigger = yes }
+		NOT = { TOW_religion_is_uncivilized_trigger = yes }
 		job_spiritual = {
 			has_job_action = action_inquisition
-			location = { owner = { TOW_is_uncivilized_religion_trigger = yes } }
+			location = { owner = { TOW_religion_is_uncivilized_trigger = yes } }
 			OR = {
 				trait = craven
 				trait = cynical
