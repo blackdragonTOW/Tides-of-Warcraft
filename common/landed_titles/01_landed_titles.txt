@@ -11193,3 +11193,217 @@ e_azeroth = {
 		}
 	}
 }
+
+e_zul_gurub = {
+	color = { 255 85 0 }
+	color2 = { 255 255 255 }
+	capital = 389 # Zul'Gurub
+	culture = gurubashi
+	
+	k_zul_gurub = {
+		color = { 233 78 0 }
+		color2 = { 255 255 255 }
+		capital = 389 # Zul'Gurub
+		culture = gurubashi
+		
+		d_zul_gurub = {
+			color = { 209 70 0 }
+			color2 = { 255 255 255 }
+			culture = gurubashi
+			capital = 389 # Zul'Gurub
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 389 province_id = 395 province_id = 396 province_id = 397 } }
+				}
+			}
+			
+			c_zul_gurub = { # 389
+				color = { 125 198 79 }
+				color2 = { 255 255 255 }
+				
+				b_altar_of_the_blood_god = {
+				}
+				b_the_coil = {
+				}
+				b_the_devils_terrace = {
+				}
+				b_temple_of_bethekk = {
+				}
+				b_hakkari_grounds = {
+				}
+				b_altar_of_hireek = {
+				}
+				b_naze_of_shirvallah = {
+				}
+			}
+			
+			c_snakethicket = { # 395
+				color = { 74 187 218 }
+				color2 = { 255 255 255 }
+				
+				b_rebel_camp = {
+				}
+				b_yagodir = {
+				}
+				b_zahzeb = {
+				}
+				b_zalsan = {
+				}
+				b_zulmaran = {
+				}
+				b_rac_jaf = {
+				}
+				b_kanyalar = {
+				}
+			}
+			c_silvershard = { # 396
+				color = { 173 99 116 }
+				color2 = { 255 255 255 }
+				
+				ziata_jai = {
+					azerothian = "Kurzen's Compound"
+					stromic = "Kurzen's Compound"
+					dalaranian = "Kurzen's Compound"
+					lordaeronian = "Kurzen's Compound"
+					gilnean = "Kurzen's Compound"
+					tirasian = "Kurzen's Compound"
+					alteraci = "Kurzen's Compound"
+					arathi = "Kurzen's Compound"
+					hillsbradan = "Kurzen's Compound"
+					silverpiner = "Kurzen's Compound"
+					tirisfalen = "Kurzen's Compound"
+					bronzebeard = "Kurzen's Compound"
+					wildhammer = "Kurzen's Compound"
+					dark_iron = "Kurzen's Compound"
+					high_elven = "Kurzen's Compound"
+					blood_elven = "Kurzen's Compound"
+					night_elven = "Kurzen's Compound"
+					naga = "Kurzen's Compound"
+					gnomish = "Kurzen's Compound"
+					draenei = "Kurzen's Compound"
+					sorrowstep = "Kurzen's Compound"
+					kurenai = "Kurzen's Compound"
+					murkblood = "Kurzen's Compound"
+					dreghood = "Kurzen's Compound"
+					greyheart = "Kurzen's Compound"
+					wrekt = "Kurzen's Compound"
+					ashtongue = "Kurzen's Compound"
+					lost_one = "Kurzen's Compound"
+				}
+				b_baliarko = {
+				}
+				b_guljuni = {
+				}
+				b_joggzen = {
+				}
+				b_sula_kree = {
+				}
+				b_ek_rin = {
+				}
+				b_voorehe = {
+				}
+			}
+			
+			c_bambala = { # 397
+				color = { 102 181 142 }
+				color2 = { 255 255 255 }
+				
+				b_bambala = {
+				}
+				b_moj_xil = {
+				}
+				b_meziljin = {
+				}
+				b_zulkazbar = {
+				}
+				b_jayu = {
+				}
+				b_paikzahn = {
+				}
+				b_trezz = {
+				}
+			}
+		}
+		
+		d_northern_jungle = {
+			color = { 222 93 28 }
+			color2 = { 255 255 255 }
+			culture = bloodscalp
+			capital = 391 # Zul'Kunda
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 390 province_id = 391 province_id = 392 province_id = 393 province_id = 394 } }
+				}
+			}
+			
+			c_yojamba_isle = { # 390
+				color = { 187 125 156 }
+				color2 = { 255 255 255 }
+				
+				b_yojamba = {
+				}
+				b_mezilkaz = {
+				}
+				b_zulaunya = {
+				}
+				b_paikolo = {
+				}
+				b_trezshid = {
+				}
+				b_jaryava = {
+				}
+				b_vulzamo = {
+				}
+			}
+			
+			c_zul_kunda = { # 391
+				color = { 111 167 113 }
+				color2 = { 255 255 255 }
+				
+				b_zul_kunda = {
+				}
+				b_vulzkhi = {
+				}
+				b_tekrami = {
+				}
+				b_kadhib = {
+				}
+				b_rakanis = {
+				}
+				b_uvalo = {
+				}
+				b_donq = {
+				}
+			}
+			
+			c_grom_gol = { # 392
+				color = { 196 68 162 }
+				color2 = { 255 255 255 }
+				
+				b_grom_gol = {
+				}
+				b_mizjah = {
+				}
+				b_voordol = {
+				}
+				b_jadaf = {
+				}
+				b_tumbalacatu = {
+				}
+				b_voklok = {
+				}
+				b_tuval = {
+				}
+			}
+			
+			c_zuuldaia = { # 393
+				color = { 77 184 20 }
+				color2 = { 255 255 255 }
+			}
+		}
+	}
+}
