@@ -383,7 +383,34 @@ spriteTypes = {
 	}
 
 	CoatOfArmsType = {
-		name = "coa_plain_elune"
+		name = "coa_undead"
+		frame = "gfx\\coats_of_arms\\frame_undead.tga"
+		mask = "gfx\\interface\\seal_mask_CoA.tga"
+		seal_overlay = "gfx\\interface\\seal_overlay_CoA.dds"
+		effect = "gfx/FX/coa_shield.lua"
+				
+		layer = {
+			mask = "gfx\\coats_of_arms\\plain.tga"
+			center = { x= 0 y = 0 }
+			scale = 1
+		}
+	}
+	CoatOfArmsType = {
+		name = "coa_undead_unit"
+		frame = "gfx\\coats_of_arms\\unit_banner_overlay_undead.tga"
+		mask = "gfx\\interface\\seal_mask_CoA.tga"
+		seal_overlay = "gfx\\interface\\seal_overlay_CoA.dds"
+		effect = "gfx/FX/coa_shield.lua"
+				
+		layer = {
+			mask = "gfx\\coats_of_arms\\unit_banner_mask_undead.tga"
+			center = { x= 0 y = 0 }
+			scale = 1
+		}
+	}
+
+	CoatOfArmsType = {
+		name = "coa_elune"
 		frame = "gfx\\coats_of_arms\\frame_elune.tga"
 		mask = "gfx\\interface\\seal_mask_CoA.tga"
 		seal_overlay = "gfx\\interface\\seal_overlay_CoA.dds"
@@ -396,7 +423,7 @@ spriteTypes = {
 		}
 	}
 	CoatOfArmsType = {
-		name = "coa_plain_elune_unit"
+		name = "coa_elune_unit"
 		frame = "gfx\\coats_of_arms\\unit_banner_overlay_round.tga"
 		mask = "gfx\\interface\\seal_mask_CoA.tga"
 		seal_overlay = "gfx\\interface\\seal_overlay_CoA.dds"
