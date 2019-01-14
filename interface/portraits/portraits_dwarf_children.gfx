@@ -42,7 +42,10 @@ spriteTypes = {
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_dwarf
-				NOT = { portrait_gfx_culture = blackdwarfgfx }
+				NOR = {
+					portrait_has_trait = race_blackdwarf
+					portrait_gfx_culture = blackdwarfgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -119,7 +122,10 @@ spriteTypes = {
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_dwarf
-				portrait_gfx_culture = blackdwarfgfx
+				OR = {
+					portrait_has_trait = race_blackdwarf
+					portrait_gfx_culture = blackdwarfgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -185,7 +191,10 @@ spriteTypes = {
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_dwarf
-				NOT = { portrait_gfx_culture = blackdwarfgfx }
+				NOR = {
+					portrait_has_trait = race_blackdwarf
+					portrait_gfx_culture = blackdwarfgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken

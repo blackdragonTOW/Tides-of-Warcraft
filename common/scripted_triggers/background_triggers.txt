@@ -51,28 +51,47 @@ TOW_background_cares_about_land_for_heir = {
 }
 
 TOW_background_likes_to_drink_a_lot = { # I'm specifying "a lot", because, you know...
-	always = no # TOW TODO : To Define
+	culture_group = dwarf
 }
 
 # Was baltic and finno-ugric
 TOW_background_hard_to_religiously_convert = {
-	always = no # TOW TODO : To Define
+	OR = {
+		culture_group = goblin
+		culture_group = gnome
+		culture_group = dragon
+		culture_group = void
+	}
 }
 
 TOW_background_can_have_guru = {
-	always = no # TOW TODO : To Define
+	OR = {
+		culture_group = troll
+	}
 }
 
 # Horses, wolves, anything
 TOW_background_rider = {
-	always = no # TOW TODO : To Define
+	OR = {
+		TOW_background_rider_horse = yes
+		TOW_background_rider_camel = yes
+		TOW_background_rider_wolf = yes
+		TOW_background_rider_tiger = yes
+	}
 }
 
 TOW_background_rider_horse = {
-	# TOW TODO : To Define
 	trait = race_human
 }
 
 TOW_background_rider_camel = {
 	always = no # TOW TODO : To Define
+}
+
+TOW_background_rider_wolf = {
+	trait = race_orc
+}
+
+TOW_background_rider_tiger = {
+	trait = race_night_elf
 }

@@ -193,23 +193,25 @@ title_commander = {
 	revoke_allowed = no # Handled by diplomatic interaction
 	
 	allowed_to_hold = {
-		NOT = { 
-			primary_title = { temporary = yes } 
+		ROOT = {
+			NOT = {
+				primary_title = { temporary = yes } 
+			}
+			liege = { character = FROM }
+			OR = {
+				male_can_hold_minor_title_trigger = yes
+				female_can_hold_minor_commander_title_trigger = yes
+				has_character_flag = special_marshal
+			}
+			is_adult = yes
+			
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
+			NOT = { has_character_flag = guru }
+			NOT = { has_character_modifier = refusing_to_lead }
+			Keitaro_can_have_a_job = yes
 		}
-		liege = { character = FROM }
-		OR = {
-			male_can_hold_minor_title_trigger = yes
-			female_can_hold_minor_commander_title_trigger = yes
-			has_character_flag = special_marshal
-		}
-		is_adult = yes
-		
-		prisoner = no
-		NOT = { trait = incapable }
-		NOT = { is_inaccessible_trigger = yes }
-		NOT = { has_character_flag = guru }
-		NOT = { has_character_modifier = refusing_to_lead }
-		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {
@@ -240,21 +242,23 @@ title_court_jester = {
 	is_unique = yes
 	
 	allowed_to_hold = {
-		NOT = { 
-			primary_title = { temporary = yes } 
+		ROOT = {
+			NOT = {
+				primary_title = { temporary = yes } 
+			}
+			is_adult = yes
+			NOT = { has_character_flag = guru }
+			is_ruler = no
+			dynasty = none
+			FROM = {
+				NOT = { spouse = { character = ROOT } }
+			}
+			OR = {
+				male_can_hold_minor_title_trigger = yes
+				female_can_hold_minor_title_trigger = yes
+			}
+			Keitaro_can_have_a_job = yes
 		}
-		is_adult = yes
-		NOT = { has_character_flag = guru }
-		is_ruler = no
-		dynasty = none
-		FROM = {
-			NOT = { spouse = { character = ROOT } }
-		}
-		OR = { 
-			male_can_hold_minor_title_trigger = yes
-			female_can_hold_minor_title_trigger = yes
-		}
-		Keitaro_can_have_a_job = yes
 	}
 	
 	allowed_to_grant = {

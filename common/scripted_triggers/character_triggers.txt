@@ -10,11 +10,11 @@ TOW_character_can_be_councillor = {
 	OR = {
 		AND = { # Male councillor
 			is_female = no
-			NOT = { liege = { has_religion_feature = religion_matriarchal } } #Matriarchal religions can only hire females. 
+			liege = { TOW_religion_is_matriarchal = no } #Matriarchal religions can only hire females. 
 		}
 		AND = { # Female councillor
 			is_female = yes 
-			NOT = { liege = { has_religion_feature = religion_patriarchal } } #Patriarchal religions can only hire males. 
+			liege = { TOW_religion_is_patriarchal = no } #Matriarchal religions can only hire females. 
 			OR = {
 				gender_equality_trigger = yes
 				liege = {
@@ -35,11 +35,11 @@ TOW_character_can_be_spymaster = {
 	OR = {
 		AND = { # Male councillor
 			is_female = no
-			NOT = { liege = { has_religion_feature = religion_matriarchal } } #Matriarchal religions can only hire females. 
+			liege = { TOW_religion_is_matriarchal = no } #Matriarchal religions can only hire females. 
 		}
 		AND = { # Female councillor
 			is_female = yes 
-			NOT = { liege = { has_religion_feature = religion_patriarchal } } #Patriarchal religions can only hire males. 
+			liege = { TOW_religion_is_patriarchal = no } #Matriarchal religions can only hire females. 
 			OR = {
 				liege = { is_child_of = PREV }
 				gender_equality_trigger_1 = yes
@@ -54,15 +54,6 @@ TOW_character_can_be_spymaster = {
 				}
 				is_landed = yes
 			} 
-		}
-	}
-}
-
-TOW_is_primary_title_military_order = {
-	primary_title = {
-		OR = {
-			#title = d_sunfury
-			# Add military orders here
 		}
 	}
 }
@@ -116,6 +107,7 @@ TOW_character_is_antipope = {
 }
 
 TOW_character_is_bad_priest = {
+	# TOW TODO : To Define
 	OR = {
 		trait = bad_priest_light_group
 	}
@@ -124,5 +116,47 @@ TOW_character_is_bad_priest = {
 TOW_character_does_not_have_a_tattoo = {
 	NOR = {
 		
+	}
+}
+
+TOW_character_is_very_old = {
+	OR = {
+		AND = {
+			TOW_race_has_slightly_lower_lifespan = yes
+			age = 45
+		}
+		AND = {
+			TOW_race_has_regular_lifespan = yes
+			age = 75
+		}
+		AND = {
+			TOW_is_long_lived_race = yes
+			age = 220
+		}
+		AND = {
+			TOW_is_very_long_lived_race = yes
+			age = 900
+		}
+	}
+}
+
+TOW_character_female_is_menopaused = {
+	OR = {
+		AND = {
+			TOW_race_has_slightly_lower_lifespan = yes
+			age = 40
+		}
+		AND = {
+			TOW_race_has_regular_lifespan = yes
+			age = 50
+		}
+		AND = {
+			TOW_is_long_lived_race = yes
+			age = 200
+		}
+		AND = {
+			TOW_is_very_long_lived_race = yes
+			age = 800
+		}
 	}
 }

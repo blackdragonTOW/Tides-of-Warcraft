@@ -3,116 +3,148 @@
 TOW_religion_practices_haruspicy = {
 	OR = {
 		has_religion_feature = religion_haruspicy
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_practices_ritual_sacrifice = {
 	OR = {
 		has_religion_feature = religion_ritual_sacrifice
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_worships_ancestors = {
 	OR = {
+		religion_group = light_group # Saints
+		religion_group = elemental_group
+		religion = old_ways
+		religion = old_ways_reformed
 		has_religion_feature = religion_beatification
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_is_adventuring = {
 	OR = {
 		has_religion_feature = religion_adventuring
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_practices_astrology = {
 	OR = {
 		has_religion_feature = religion_astrology
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_is_dogmatic = {
 	OR = {
+		religion_group = light_group
 		has_religion_feature = religion_dogmatic
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_is_proselytizing = {
 	OR = {
+		religion_group = light_group
+		religion = twilights_hammer
 		has_religion_feature = religion_proselytizing
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_is_cosmopolitan = {
 	OR = {
+		religion = druidism
+		religion = druidism_reformed
+		religion = elune
 		has_religion_feature = religion_cosmopolitan
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_is_incestuous = {
 	OR = {
 		has_religion_feature = religion_holy_family
-		always = no # TOW TODO : To Define
 	}
 }
 
 # Was jain - For hunting and fighting
 TOW_religion_is_pacifist = {
 	OR = {
+		religion = druidism
+		religion = druidism_reformed
 		has_religion_feature = religion_peaceful
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_is_stable = {
 	OR = {
 		has_religion_feature = religion_stable
-		always = no # TOW TODO : To Define
 	}
 }
 
 # Was tengri and aztec
 TOW_religion_is_warlike = {
 	OR = {
+		religion = loa
+		religion = hakkar
+		religion_group = fel_group
+		religion_group = void_group
 		has_religion_feature = religion_warlike
-		always = no # TOW TODO : To Define
 	}
 }
 
 # Was west_african
 TOW_religion_is_animistic = {
 	OR = {
+		religion = shamanism
+		religion = shamanism_reformed
 		has_religion_feature = religion_animistic
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_has_pagan_branches = {
 	OR = {
 		has_religion_feature = religion_no_leader
-		always = no # TOW TODO : To Define
 	}
 }
 
 TOW_religion_is_seafaring = {
 	OR = {
+		religion = hydromancy
 		has_religion_feature = religion_seafaring
-		always = no # TOW TODO : To Define
 	}
 }
+
+TOW_religion_is_matriarchal = {
+	OR = {
+		has_religion_feature = religion_matriarchal
+	}
+}
+
+
+TOW_religion_is_patriarchal = {
+	OR = {
+		has_religion_feature = religion_patriarchal
+	}
+}
+
+TOW_religion_is_equal = {
+	OR = {
+		has_religion_feature = religion_equal
+	}
+}
+
 
 ##############
 
 # Replaces general condition "religion_group = pagan_group"
 TOW_religion_is_uncivilized_trigger = {
-	always = no # TOW TODO : To Define
+	OR = {
+		religion_group = elemental_group
+		religion = old_ways
+		religion = old_ways_reformed
+	}
+	OR = {
+		TOW_is_tribal = yes
+		is_nomadic = yes
+	}
 }
 
 TOW_religion_cares_about_piety = {
@@ -124,43 +156,57 @@ TOW_religion_cares_about_piety = {
 }
 
 TOW_religion_organizes_fertility_festival = {
-	always = no # TOW TODO : To Define
+	OR = {
+		religion = shamanism
+		religion = shamanism_reformed
+		religion = druidism
+		religion = druidism_reformed
+	}
 }
 
 TOW_religion_dislikes_abortion = {
-	always = no # TOW TODO : To Define
+	OR = {
+		religion_group = light_group
+		religion = shamanism
+		religion = shamanism_reformed
+		religion = druidism
+		religion = druidism_reformed
+	}
 }
 
 TOW_religion_dislikes_lefthanded = {
-	always = no # TOW TODO : To Define
+	culture_group = gnoll # What
 }
 
 TOW_religion_practices_charity = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 TOW_religion_omnipotent_god = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 TOW_religion_should_be_humble_before_god = {
-	always = no # TOW TODO : To Define
+	OR = {
+		religion_group = light_group
+		religion = shamanism
+		religion = shamanism_reformed
+		religion = druidism
+		religion = druidism_reformed
+		religion = wyrmcult
+	}
 }
 
 TOW_religion_has_angels = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 TOW_religion_has_hell = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 TOW_religion_practices_prayer = {
-	always = no # TOW TODO : To Define
-}
-
-TOW_religion_forbids_hunting = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 TOW_religion_practices_sky_burial = {
@@ -169,7 +215,7 @@ TOW_religion_practices_sky_burial = {
 
 # Was christians
 TOW_religion_uses_convent = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christians
@@ -184,64 +230,67 @@ TOW_religion_is_dead = {
 
 # Was christians - Could probably be a background trigger
 TOW_religion_has_knights = {
-	OR = {
-		religion_group = light_group
-	}
+	religion_group = light_group
 }
 
 TOW_religion_has_heresy = {
-	always = no # TOW TODO : To Define
+	OR = {
+		religion = loa
+		religion = hakkar
+		religion_group = light_group
+		is_reformed_religion = yes
+	}
 }
 
 TOW_religion_has_multiple_heresies = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christian, muslim, jewish, and indian
 TOW_religion_have_pilgrimage = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christians
 TOW_religion_uses_virtues = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christians
 TOW_religion_uses_sins = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christians
 TOW_religion_practices_sin_confession = {
+	religion_group = light_group
 	TOW_religion_uses_sins = yes
-	always = no # TOW TODO : To Define
 }
 
 # Was christians
 TOW_religion_practices_baptism = {
+	religion_group = light_group
 	TOW_religion_uses_sins = yes
-	always = no # TOW TODO : To Define
 }
 
 # Was everybody except muslim - Might be "always = yes"
 TOW_religion_uses_chastity = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christians
 TOW_religion_priests_obligated_celibacy = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christians
 TOW_religion_has_celibacy = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christians
 TOW_religion_has_excommunication = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was catholic/fraticelli
@@ -251,12 +300,12 @@ TOW_religion_can_have_antipopes = {
 
 # Was christians
 TOW_religion_pope_titles_are_unclaimable = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was catholic - Has to have a religious head
 TOW_religion_marriage_annulment = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was muslims
@@ -266,12 +315,22 @@ TOW_religion_forbidden_alcohol = {
 
 # Was everybody except muslim
 TOW_religion_royal_aid_duty = {
-	always = no # TOW TODO : To Define
+	OR = {
+		religion = elune
+		religion = arcane
+		religion_group = light_group
+		is_reformed_religion = yes
+	}
 }
 
 # Was christians
 TOW_religion_clergy_has_authority = {
-	always = no # TOW TODO : To Define
+	OR = {
+		religion_group = void_group
+		religion_group = fel_group
+		religion_group = light_group
+		is_reformed_religion = yes
+	}
 }
 
 # Was christians
@@ -281,12 +340,20 @@ TOW_religion_does_not_tolerate_homosexuality = {
 
 # Was catholics and fraticelli
 TOW_religion_rel_head_wants_full_authority = {
-	always = no # TOW TODO : To Define
+	OR = {
+		religion_group = void_group
+		religion_group = fel_group
+	}
 }
 
 # Was catholics and fraticelli
 TOW_religion_has_coronations = {
-	always = no # TOW TODO : To Define
+	TOW_religion_is_uncivilized_trigger = no
+	OR = {
+		religion = arcane
+		religion = elune
+		religion_group = light_group
+	}
 }
 
 # Was christian and indian - Should probably be panda
@@ -300,17 +367,21 @@ TOW_religion_believes_in_reincarnation = {
 
 # Was dharmic religions and bon - Wants to have virtues and dislikes bad traits (like "sins")
 TOW_religion_righteous = {
-	always = no # TOW TODO : To Define
+	OR = {
+		trait = paladin
+		trait = priest
+		trait = monk
+	}
 }
 
 # Was buddhist
 TOW_religion_uses_meditation = {
-	always = no # TOW TODO : To Define
+	trait = monk
 }
 
 # Was everybody but muslims and iconoclast
 TOW_religion_is_iconophile = {
-	always = no # TOW TODO : To Define
+	always = yes
 }
 
 # To be adapted in azeroth, was everybody but buddhist and zun
@@ -320,18 +391,19 @@ TOW_religion_cares_about_geocentrism = {
 
 # Was catholic & fraticelli
 TOW_religion_uses_new_crusade = {
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 # Was christians
 TOW_religion_has_saints = {
 	TOW_religion_worships_ancestors = yes
-	always = no # TOW TODO : To Define
+	religion_group = light_group
 }
 
 TOW_religion_rel_head_beatification = {
 	TOW_religion_rel_head_wants_full_authority = yes
     TOW_religion_worships_ancestors = yes
+	religion_group = light_group
 }
 
 ####

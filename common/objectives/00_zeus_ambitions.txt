@@ -539,6 +539,7 @@ obj_groom_an_heir = {
 		higher_tier_than = BARON
 		holy_order = no
 		mercenary = no
+		TOW_race_can_have_children = yes
 		TOW_background_cares_about_land_for_heir = yes
 	}
 	
@@ -589,10 +590,10 @@ obj_groom_an_heir = {
 				}
 			}
 			AND = {
-				age = 45
+				TOW_character_female_is_menopaused = yes
 				is_female = yes
 			}
-			age = 75
+			TOW_character_is_very_old = yes
 		}
 	}
 	chance = {
@@ -616,11 +617,11 @@ obj_groom_an_heir = {
 		}
 		modifier = {
 			factor = 5
-			age = 30
+			age = 25
 		}
 		modifier = {
 			factor = 5
-			age = 45
+			age = 40
 		}
 		modifier = {
 			factor = 5

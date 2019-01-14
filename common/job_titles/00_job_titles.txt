@@ -115,8 +115,10 @@ job_marshal = {
 	monthly_prestige = 0.75
 	
 	allow = {
-		can_be_marshal_trigger = yes
-		Keitaro_can_have_a_job = yes
+		ROOT = {
+			can_be_marshal_trigger = yes
+			Keitaro_can_have_a_job = yes
+		}
 	}
 	dismiss_trigger = {
 		FROM = {
@@ -210,8 +212,10 @@ job_treasurer = {
 	monthly_prestige = 0.75
 	
 	allow = {
-		can_be_treasurer_trigger = yes
-		Keitaro_can_have_a_job = yes
+		ROOT = { 
+			can_be_treasurer_trigger = yes
+			Keitaro_can_have_a_job = yes
+		}
 	}
 	dismiss_trigger = {
 		FROM = {
@@ -305,8 +309,10 @@ job_spymaster = {
 	monthly_salary = 0.1
 	
 	allow = {
-		can_be_spymaster_trigger = yes
-		Keitaro_can_have_a_job = yes
+		ROOT = {
+			can_be_spymaster_trigger = yes
+			Keitaro_can_have_a_job = yes
+		}
 	}
 	dismiss_trigger = {
 		FROM = {
@@ -400,8 +406,10 @@ job_spiritual = {
 	monthly_piety = 0.5
 	
 	allow = {
-		can_be_spiritual_trigger = yes
-		Keitaro_can_have_a_job = yes
+		ROOT = {
+			can_be_spiritual_trigger = yes
+			Keitaro_can_have_a_job = yes
+		}
 	}
 	dismiss_trigger = {
 		FROM = {

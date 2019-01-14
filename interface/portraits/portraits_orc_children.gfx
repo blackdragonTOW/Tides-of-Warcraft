@@ -43,6 +43,12 @@ spriteTypes = {
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
 				NOR = {
+					portrait_has_trait = race_borc
+					portrait_has_trait = race_rorc
+					portrait_has_trait = race_morc
+					portrait_has_trait = race_dorc
+					portrait_has_trait = race_worc
+					portrait_has_trait = race_gorc
 					portrait_gfx_culture = borcgfx
 					portrait_gfx_culture = rorcgfx
 					portrait_gfx_culture = morcgfx
@@ -115,7 +121,10 @@ spriteTypes = {
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = borcgfx
+				OR = {
+					portrait_has_trait = race_borc
+					portrait_gfx_culture = borcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -172,7 +181,10 @@ spriteTypes = {
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = rorcgfx
+				OR = {
+					portrait_has_trait = race_rorc
+					portrait_gfx_culture = rorcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -230,7 +242,10 @@ spriteTypes = {
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = morcgfx
+				OR = {
+					portrait_has_trait = race_morc
+					portrait_gfx_culture = morcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -287,7 +302,10 @@ spriteTypes = {
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = dorcgfx
+				OR = {
+					portrait_has_trait = race_dorc
+					portrait_gfx_culture = dorcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -346,7 +364,10 @@ spriteTypes = {
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = worcgfx
+				OR = {
+					portrait_has_trait = race_worc
+					portrait_gfx_culture = worcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -417,8 +438,16 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_orc
-				portrait_gfx_culture = gorcgfx
+				OR = {
+					AND = {
+						portrait_has_trait = race_orc
+						OR = {
+							portrait_has_trait = race_gorc
+							portrait_gfx_culture = gorcgfx
+						}
+					}
+					portrait_has_trait = race_pale_orc
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -497,6 +526,12 @@ spriteTypes = {
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
 				NOR = {
+					portrait_has_trait = race_borc
+					portrait_has_trait = race_rorc
+					portrait_has_trait = race_morc
+					portrait_has_trait = race_dorc
+					portrait_has_trait = race_worc
+					portrait_has_trait = race_gorc
 					portrait_gfx_culture = borcgfx
 					portrait_gfx_culture = rorcgfx
 					portrait_gfx_culture = morcgfx
@@ -569,7 +604,10 @@ spriteTypes = {
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = borcgfx
+				OR = {
+					portrait_has_trait = race_borc
+					portrait_gfx_culture = borcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -626,7 +664,10 @@ spriteTypes = {
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = rorcgfx
+				OR = {
+					portrait_has_trait = race_rorc
+					portrait_gfx_culture = rorcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -684,7 +725,10 @@ spriteTypes = {
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = morcgfx
+				OR = {
+					portrait_has_trait = race_morc
+					portrait_gfx_culture = morcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -741,7 +785,10 @@ spriteTypes = {
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = dorcgfx
+				OR = {
+					portrait_has_trait = race_dorc
+					portrait_gfx_culture = dorcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -800,7 +847,10 @@ spriteTypes = {
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
 				portrait_has_trait = race_orc
-				portrait_gfx_culture = worcgfx
+				OR = {
+					portrait_has_trait = race_worc
+					portrait_gfx_culture = worcgfx
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -855,8 +905,16 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_orc
-				portrait_gfx_culture = gorcgfx
+				OR = {
+					AND = {
+						portrait_has_trait = race_orc
+						OR = {
+							portrait_has_trait = race_gorc
+							portrait_gfx_culture = gorcgfx
+						}
+					}
+					portrait_has_trait = race_pale_orc
+				}
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken

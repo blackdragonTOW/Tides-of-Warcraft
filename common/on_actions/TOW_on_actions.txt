@@ -2,6 +2,8 @@
 on_startup = {
 	events = {
 		TOW.1 # Global intialization
+		TOW.55 # Assigning race trait
+		TOW.56 # Assign race to ruler designed chars
 	}
 }
 
@@ -11,5 +13,41 @@ on_startup = {
 on_combat_pulse = {
 	random_events = {
 		#100 = miscevt.1
+	}
+}
+
+#character (at 2 months)
+on_pregnancy = {
+	events = {
+ 		TOW.101 # Deciding to keep the pregnancy or not
+ 	}
+}
+
+# character
+on_birth = {
+	events = {
+		TOW.51 # Assigning race trait depending on parents
+	}
+}
+
+# Sent to employers of both spouses - ROOT is employer. FROM is employers "employee". new_character is the other spouse.
+on_marriage = {
+	events = {
+		TOW.54 # Assigning race trait for AI generated spouses
+ 	}
+ }
+
+#character
+on_yearly_pulse = {
+	events = {
+		TOW.52 # Assigning race trait
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder = {
+	events = {
+		TOW.52 # Assigning race trait
+		TOW.53 # Assigning race trait for courtiers
 	}
 }

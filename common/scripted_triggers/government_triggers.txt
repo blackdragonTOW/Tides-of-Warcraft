@@ -1,11 +1,23 @@
 # Replaces general condition "is_feudal"
 TOW_is_feudal = {
 	is_feudal = yes
+	NOR = {
+		government = troll_ke_government
+		government = troll_bcd_government
+		government = ogre_tribe_government
+		government = helf_government
+		government = noble_republic_government
+	}
 }
 
 # Replaces general condition "is_tribal"
 TOW_is_tribal = {
-	always = no # TOW TODO : To Define
+	OR = {
+		is_tribal = yes
+		government = troll_ke_government
+		government = troll_bcd_government
+		government = ogre_tribe_government
+	}
 }
 
 TOW_government_is_uncivilized = {
@@ -17,7 +29,11 @@ TOW_government_is_uncivilized = {
 
 # Replaces general condition "is_republic"
 TOW_is_republic = {
-	always = no # TOW TODO : To Define
+	OR = {
+		is_republic = yes
+		government = helf_government
+		government = noble_republic_government
+	}
 }
 
 # ROOT is character

@@ -409,6 +409,7 @@ targetted_decisions = {
 		diplomacy_icon = GFX_Keitaro_religion_diplomacy
 		
 		potential = {
+			NOT = { religion = FROM }
 			OR = {
 				spouse = {
 					character = FROM
