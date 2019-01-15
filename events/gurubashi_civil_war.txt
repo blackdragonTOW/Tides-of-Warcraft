@@ -781,7 +781,7 @@ narrative_event = {
 			historical = yes			
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			wealth = 100
 			create_title = {
 				tier = DUKE
@@ -818,7 +818,7 @@ narrative_event = {
 				historical = yes
 			}
 			new_character = {
-				TOW_initialize_character = yes
+				TOW_initialize_adult_character = yes
 				add_friend = PREV
 			}
 			spawn_unit = {
@@ -1046,7 +1046,7 @@ narrative_event = {
 			trait = impaler
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			set_character_flag = race_assigned
 			save_event_target_as = hakkar
 		}
@@ -1073,7 +1073,7 @@ narrative_event = {
 			death = { death_reason = death_execution }
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			if = {
 				limit = {
 					ROOT = {
@@ -1116,7 +1116,7 @@ narrative_event = {
 		}
 		name = EVTOPTGURUB.21.b # Someone will submit. And it won't be me.
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			imprison = ROOT
 		}
 		set_global_flag = hakkar_godbreaker
@@ -1337,7 +1337,7 @@ character_event = {
 			flag = race_assigned
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			save_event_target_as = gurubashiwar_infinite_leader
 			create_title = {
 				tier = DUKE
@@ -1505,7 +1505,7 @@ character_event = {
 			flag = race_assigned
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			save_event_target_as = gurubashiwar_infinite_leader
 			create_title = {
 				tier = DUKE

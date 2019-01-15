@@ -303,6 +303,8 @@ feudal_governments = {
 			TEMPLE
 		}
 		allowed_holdings = {
+			CASTLE
+			TEMPLE
 			FORT
 			HOSPITAL
 		}
@@ -411,6 +413,8 @@ feudal_governments = {
 			TEMPLE
 		}
 		allowed_holdings = {
+			CITY
+			TEMPLE
 			FORT
 			HOSPITAL
 		}
@@ -427,6 +431,12 @@ feudal_governments = {
 				culture = high_elven
 				culture = blood_elven
 				culture = wretched
+			}
+			NOR = {
+				trait = race_undead_forsaken
+				trait = race_undead_scourge
+				culture = scourge
+				culture = forsaken
 			}
 		}
 		allow_looting = no
@@ -471,6 +481,8 @@ feudal_governments = {
 			TRIBAL
 		}
 		allowed_holdings = {
+			CASTLE
+			TRIBAL
 			FORT
 			HOSPITAL
 		}
@@ -496,6 +508,7 @@ feudal_governments = {
 			CASTLE
 		}
 		allowed_holdings = {
+			CASTLE
 			TRIBAL
 			FORT
 			HOSPITAL
@@ -525,6 +538,9 @@ feudal_governments = {
 	
 	ogre_tribe_government = {
 		preferred_holdings = {
+			TRIBAL
+		}
+		allowed_holdings = {
 			TRIBAL
 		}
 		allowed_holdings_culture = {

@@ -1450,7 +1450,7 @@ liberate_religion = { # New6
 									flag = is_religious_liberation_ruler
 								}
 								new_character = {
-									TOW_initialize_character = yes
+									TOW_initialize_adult_character = yes
 									remove_trait = cynical
 									add_trait = zealous
 									wealth = 500
@@ -1498,7 +1498,7 @@ liberate_religion = { # New6
 									flag = is_religious_liberation_ruler
 								}
 								new_character = {
-									TOW_initialize_character = yes
+									TOW_initialize_adult_character = yes
 									remove_trait = cynical
 									add_trait = zealous
 									wealth = 500
@@ -3598,7 +3598,7 @@ matriarchal_deposition_war = {
 			higher_real_tier_than = DUKE
 			has_religion_feature = religion_warlike
 			is_female = yes
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 			is_landed = yes
 			is_nomadic = no
 			mercenary = no
@@ -3624,7 +3624,7 @@ matriarchal_deposition_war = {
 			higher_real_tier_than = DUKE
 			has_religion_feature = religion_warlike
 			is_female = yes
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 			FROM = { is_female = no independent = yes }
 			NOT = { same_realm = FROM }
 		}
@@ -3691,14 +3691,14 @@ matriarchal_deposition_war = {
 							any_dynasty_member = {
 								is_female = yes
 								NOT = { trait = incapable }
-								NOT = { has_religion_feature = religion_patriarchal }
+								TOW_religion_is_patriarchal = no
 							}
 						}
 						random_dynasty_member = {
 							limit = {
 								is_female = yes
 								NOT = { trait = incapable }
-								NOT = { has_religion_feature = religion_patriarchal }
+								TOW_religion_is_patriarchal = no
 							}
 							preferred_limit = {
 								is_child_of = PREV
@@ -3740,14 +3740,14 @@ matriarchal_deposition_war = {
 							any_vassal = {
 								is_female = yes
 								NOT = { trait = incapable }
-								NOT = { has_religion_feature = religion_patriarchal }
+								TOW_religion_is_patriarchal = no
 							}
 						}
 						random_vassal = {
 							limit = {
 								is_female = yes
 								NOT = { trait = incapable }
-								NOT = { has_religion_feature = religion_patriarchal }
+								TOW_religion_is_patriarchal = no
 							}
 							preferred_limit = {
 								religion = ROOT
@@ -3766,7 +3766,7 @@ matriarchal_deposition_war = {
 							}
 							preferred_limit = {
 								is_adult = yes
-								has_religion_feature = religion_matriarchal
+								TOW_religion_is_matriarchal = yes
 							}
 							preferred_limit = {
 								is_adult = yes
@@ -3803,7 +3803,7 @@ matriarchal_deposition_war = {
 								}
 							}
 							new_character = {
-								TOW_initialize_character = yes
+								TOW_initialize_adult_character = yes
 								remove_trait = cynical
 								wealth = 250
 								prestige = 300
@@ -3828,12 +3828,12 @@ matriarchal_deposition_war = {
 					if = {
 						limit = {
 							ROOT = {
-								has_religion_feature = religion_matriarchal
+								TOW_religion_is_matriarchal = yes
 							}
 							event_target:new_swapped_ruler = {
 								NOR = {
-									has_religion_feature = religion_patriarchal
-									has_religion_feature = religion_equal
+									TOW_religion_is_patriarchal = yes
+									TOW_religion_is_equal = yes
 								}
 							}
 						}
@@ -3970,7 +3970,7 @@ matriarchal_deposition_war = {
 		}
 		FROM = { 
 			if = {
-				limit = { NOT = { has_religion_feature = religion_matriarchal } }
+				limit = { TOW_religion_is_matriarchal = no }
 				religion_authority = {
 					modifier = won_holy_war
 					years = 20
@@ -4027,13 +4027,13 @@ matriarchal_deposition_war = {
 		}
 		modifier = { 
 			factor = 5
-			ROOT = { has_religion_feature = religion_patriarchal }
-			FROM = { has_religion_feature = religion_matriarchal }
+			ROOT = { TOW_religion_is_patriarchal = yes }
+			FROM = { TOW_religion_is_matriarchal = yes }
 		}
 		modifier = { 
 			factor = 5
-			ROOT = { has_religion_feature = religion_matriarchal }
-			FROM = { has_religion_feature = religion_patriarchal }
+			ROOT = { TOW_religion_is_matriarchal = yes }
+			FROM = { TOW_religion_is_patriarchal = yes }
 		}
 	}
 }
@@ -4062,7 +4062,7 @@ patriarchal_deposition_war = {
 			higher_real_tier_than = DUKE
 			has_religion_feature = religion_warlike
 			is_female = no
-			has_religion_feature = religion_patriarchal
+			TOW_religion_is_patriarchal = yes
 			FROM = { is_female = yes independent = yes }
 			is_landed = yes
 			is_nomadic = no
@@ -4087,7 +4087,7 @@ patriarchal_deposition_war = {
 			higher_real_tier_than = DUKE
 			has_religion_feature = religion_warlike
 			is_female = no
-			has_religion_feature = religion_patriarchal
+			TOW_religion_is_patriarchal = yes
 			NOT = { same_realm = FROM }
 		}
 		FROM = {
@@ -4155,14 +4155,14 @@ patriarchal_deposition_war = {
 							any_dynasty_member = {
 								is_female = no
 								NOT = { trait = incapable }
-								NOT = { has_religion_feature = religion_matriarchal }
+								TOW_religion_is_matriarchal = no
 							}
 						}
 						random_dynasty_member = {
 							limit = {
 								is_female = no
 								NOT = { trait = incapable }
-								NOT = { has_religion_feature = religion_matriarchal }
+								TOW_religion_is_matriarchal = no
 							}
 							preferred_limit = {
 								is_child_of = PREV
@@ -4204,14 +4204,14 @@ patriarchal_deposition_war = {
 							any_vassal = {
 								is_female = no
 								NOT = { trait = incapable }
-								NOT = { has_religion_feature = religion_matriarchal }
+								TOW_religion_is_matriarchal = no
 							}
 						}
 						random_vassal = {
 							limit = {
 								is_female = no
 								NOT = { trait = incapable }
-								NOT = { has_religion_feature = religion_matriarchal }
+								TOW_religion_is_matriarchal = no
 							}
 							preferred_limit = {
 								religion = ROOT
@@ -4230,7 +4230,7 @@ patriarchal_deposition_war = {
 							}
 							preferred_limit = {
 								is_adult = yes
-								has_religion_feature = religion_patriarchal
+								TOW_religion_is_patriarchal = yes
 							}
 							preferred_limit = {
 								is_adult = yes
@@ -4267,7 +4267,7 @@ patriarchal_deposition_war = {
 								}
 							}
 							new_character = {
-								TOW_initialize_character = yes
+								TOW_initialize_adult_character = yes
 								remove_trait = cynical
 								wealth = 250
 								prestige = 300
@@ -4292,12 +4292,12 @@ patriarchal_deposition_war = {
 					if = {
 						limit = {
 							ROOT = {
-								has_religion_feature = religion_patriarchal
+								TOW_religion_is_patriarchal = yes
 							}
 							event_target:new_swapped_ruler = {
 								NOR = {
-									has_religion_feature = religion_matriarchal
-									has_religion_feature = religion_equal
+									TOW_religion_is_matriarchal = yes
+									TOW_religion_is_equal = yes
 								}
 							}
 						}
@@ -4434,7 +4434,7 @@ patriarchal_deposition_war = {
 		}
 		FROM = { 
 			if = {
-				limit = { NOT = { has_religion_feature = religion_patriarchal } }
+				limit = { TOW_religion_is_patriarchal = no }
 				religion_authority = {
 					modifier = won_holy_war
 					years = 20
@@ -4491,13 +4491,13 @@ patriarchal_deposition_war = {
 		}
 		modifier = { 
 			factor = 5
-			ROOT = { has_religion_feature = religion_patriarchal }
-			FROM = { has_religion_feature = religion_matriarchal }
+			ROOT = { TOW_religion_is_patriarchal = yes }
+			FROM = { TOW_religion_is_matriarchal = yes }
 		}
 		modifier = { 
 			factor = 5
-			ROOT = { has_religion_feature = religion_matriarchal }
-			FROM = { has_religion_feature = religion_patriarchal }
+			ROOT = { TOW_religion_is_matriarchal = yes }
+			FROM = { TOW_religion_is_patriarchal = yes }
 		}
 	}
 }

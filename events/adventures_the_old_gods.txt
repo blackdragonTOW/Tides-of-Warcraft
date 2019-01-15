@@ -81,12 +81,12 @@ character_event = {
 				OR = {
 					AND = {
 						ROOT = { is_female = no }
-						NOT = { has_religion_feature = religion_matriarchal }
+						TOW_religion_is_matriarchal = no
 					}
 					AND = {
 						ROOT = { is_female = yes }
 						gender_equality_trigger = yes
-						NOT = { has_religion_feature = religion_patriarchal }
+						TOW_religion_is_patriarchal = no
 					}
 				}
 			}
@@ -621,12 +621,12 @@ character_event = {
 					OR = {
 						AND = {
 							ROOT = { is_female = no }
-							NOT = { has_religion_feature = religion_matriarchal }
+							TOW_religion_is_matriarchal = no
 						}
 						AND = {
 							ROOT = { is_female = yes }
 							gender_equality_trigger = yes
-							NOT = { has_religion_feature = religion_patriarchal }
+							TOW_religion_is_patriarchal = no
 						}
 					}
 				}

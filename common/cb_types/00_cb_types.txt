@@ -67,9 +67,9 @@ claim = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						NOT = { trait = bad_priest_light_group }
+						ROOT = { TOW_character_is_bad_priest = no }
 						ROOT = { is_female = no }
-						holder_scope ={ is_female = yes }
+						holder_scope = { is_female = yes }
 					}
 					is_contested = yes # Is already being contested in some form of Claim or Succession War
 				}
@@ -325,7 +325,7 @@ other_claim = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						NOT = { trait = bad_priest_light_group }
+						ROOT = { TOW_character_is_bad_priest = no }
 						ROOT = { is_female = no }
 						holder_scope = { is_female = yes }
 					}

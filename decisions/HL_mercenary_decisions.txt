@@ -47,11 +47,11 @@ targetted_decisions = {
 			OR = {
 				AND = { 
 					is_female = no 
-					FROM = { NOT = { has_religion_feature = religion_matriarchal } }
+					FROM = { TOW_religion_is_matriarchal = no }
 				}
 				AND = { 
 					is_female = yes 
-					FROM = { has_religion_feature = religion_matriarchal }
+					FROM = { TOW_religion_is_matriarchal = yes }
 				}
 				FROM = { primary_title = { has_law = status_of_women_4 } }
 			}

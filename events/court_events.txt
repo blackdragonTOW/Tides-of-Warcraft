@@ -536,7 +536,7 @@ character_event = {
 				trait = bastard
 			}
 			new_character = {
-				TOW_initialize_character = yes
+				TOW_initialize_character_race_from_mother = yes
 				set_father = prev
 				dynasty = father
 			}
@@ -828,7 +828,7 @@ character_event = {
 			female = no
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			ROOT = {
 				random_current_enemy = {
 					limit = {

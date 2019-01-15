@@ -870,7 +870,7 @@ character_event = {
 			}
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			hidden_tooltip = { add_random_education_trait = martial }
 			give_nickname = nick_the_hunter
 		}
@@ -1735,7 +1735,7 @@ character_event = {
 			}
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			give_nickname = nick_of_the_wilds
 			if = {
 				limit = { ROOT = { trait = homosexual } }

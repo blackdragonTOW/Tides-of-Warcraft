@@ -961,12 +961,12 @@ can_be_spiritual_trigger = {
 			OR = {
 				is_female = no
 				religion_allows_female_temple_holders = yes
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			}
 			OR = {
 				is_female = yes
 				religion_allows_male_temple_holders = yes
-				has_religion_feature = religion_patriarchal
+				TOW_religion_is_patriarchal = yes
 			}
 		}
 		has_character_flag = special_spiritual
@@ -1024,11 +1024,11 @@ can_be_councilmember_king_trigger = {
 		OR = {
 			AND = { #Patriarchal religions can only hire males. Matriarchal religions can only hire females.
 				is_female = no 
-				NOT = { liege = { has_religion_feature = religion_matriarchal } } 
+				NOT = { liege = { TOW_religion_is_matriarchal = yes } } 
 			}
 			AND = {
 				is_female = yes 
-				NOT = { liege = { has_religion_feature = religion_patriarchal } } 
+				NOT = { liege = { TOW_religion_is_patriarchal = yes } } 
 			}
 			AND = {
 				is_female = yes
@@ -1068,13 +1068,13 @@ can_be_councilmember_emperor_trigger = {
 			OR = {
 				AND = { #Patriarchal religions can only hire males. Matriarchal religions can only hire females.
 					is_female = no 
-					NOT = { liege = { has_religion_feature = religion_matriarchal } } 
+					NOT = { liege = { TOW_religion_is_matriarchal = yes } } 
 				}
 				AND = {
 					is_female = yes 
 					OR = { 
-						liege = { has_religion_feature = religion_matriarchal } 
-						liege = { has_religion_feature = religion_equal } 
+						liege = { TOW_religion_is_matriarchal = yes } 
+						liege = { TOW_religion_is_equal = yes } 
 						liege = { } 
 					} 
 				}
@@ -1443,8 +1443,8 @@ gender_equality_trigger_4 = {
 					name = gender
 					value = all
 				}
-				has_religion_feature = religion_matriarchal
-				has_religion_feature = religion_equal
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
 			}
 		}
 		OR = {
@@ -1468,8 +1468,8 @@ gender_equality_trigger_3 = {
 					name = gender
 					value = all
 				}
-				has_religion_feature = religion_matriarchal
-				has_religion_feature = religion_equal
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
 			}
 		}
 		OR = {
@@ -1505,8 +1505,8 @@ gender_equality_trigger_1 = {
 					name = gender
 					value = all
 				}
-				has_religion_feature = religion_matriarchal
-				has_religion_feature = religion_equal
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
 			}
 		}
 		OR = {
@@ -1546,8 +1546,8 @@ gender_equality_trigger = {
 					name = gender
 					value = all
 				}
-				has_religion_feature = religion_matriarchal
-				has_religion_feature = religion_equal
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
 			}
 		}
 		OR = {
@@ -1591,9 +1591,9 @@ male_can_hold_minor_title_trigger = {
 		custom_tooltip = {
 			text = tooltip_not_matriarchal_liege_religion_feature
 			NOR = {
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 				liege = {
-					has_religion_feature = religion_matriarchal
+					TOW_religion_is_matriarchal = yes
 				}
 			}
 		}
@@ -1616,12 +1616,12 @@ female_can_hold_minor_title_trigger = {
 				text = tooltip_feminist_liege_religion_feature
 				AND = {
 					OR = {
-						has_religion_feature = religion_equal
-						has_religion_feature = religion_matriarchal
+						TOW_religion_is_equal = yes
+						TOW_religion_is_matriarchal = yes
 					}
 					liege = {
-						has_religion_feature = religion_equal
-						has_religion_feature = religion_matriarchal
+						TOW_religion_is_equal = yes
+						TOW_religion_is_matriarchal = yes
 					}
 				}
 			}
@@ -1651,12 +1651,12 @@ female_can_hold_minor_commander_title_trigger = {
 				text = tooltip_feminist_liege_religion_feature
 				AND = {
 					OR = {
-						has_religion_feature = religion_equal
-						has_religion_feature = religion_matriarchal
+						TOW_religion_is_equal = yes
+						TOW_religion_is_matriarchal = yes
 					}
 					liege = {
-						has_religion_feature = religion_equal
-						has_religion_feature = religion_matriarchal
+						TOW_religion_is_equal = yes
+						TOW_religion_is_matriarchal = yes
 					}
 				}
 			}
@@ -3930,7 +3930,7 @@ can_enter_festival_physical_competitions_trigger = {
 		AND = {
 			is_female = no
 			OR = { 
-				NOT = { has_religion_feature = religion_matriarchal }
+				TOW_religion_is_matriarchal = no
 				is_member_of_any_warrior_lodge_trigger = yes
 				has_character_flag = special_marshal
 			}
@@ -3938,7 +3938,7 @@ can_enter_festival_physical_competitions_trigger = {
 		AND = {
 			is_female = yes
 			OR = { 
-				has_religion_feature = religion_matriarchal 
+				TOW_religion_is_matriarchal = yes 
 				has_character_flag = special_marshal
 				is_member_of_any_warrior_lodge_trigger = yes
 			}

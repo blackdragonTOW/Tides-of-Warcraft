@@ -32,7 +32,7 @@ decisions = {
 			prestige = -10
 
 			if = { 
-				limit = { has_religion_feature = religion_matriarchal }
+				limit = { TOW_religion_is_matriarchal = yes }
 				create_random_soldier = {
 					random_traits = yes
 					dynasty = random
@@ -47,7 +47,7 @@ decisions = {
 				}
 			}
 			if = { 
-				limit = { NOT = { has_religion_feature = religion_matriarchal } }
+				limit = { TOW_religion_is_matriarchal = no }
 				create_random_soldier = {
 					random_traits = yes
 					dynasty = random
@@ -122,7 +122,7 @@ decisions = {
 
 		potential = {
 			TOW_race_can_employ = yes
-			NOT = { has_religion_feature = religion_matriarchal }
+			TOW_religion_is_matriarchal = no
 		}
 		allow = {
 			conditional_tooltip = {
@@ -148,7 +148,7 @@ decisions = {
 			}
 			piety = -10
 			if = {
-				limit = { has_religion_feature = religion_matriarchal }
+				limit = { TOW_religion_is_matriarchal = yes }
 				create_random_priest = {
 					random_traits = yes
 					dynasty = random
@@ -245,7 +245,7 @@ decisions = {
 				wealth = -12
 			}
 			if = {
-				limit = { has_religion_feature = religion_matriarchal }
+				limit = { TOW_religion_is_matriarchal = yes }
 				create_random_steward = {
 					random_traits = yes
 					dynasty = random
@@ -341,7 +341,7 @@ decisions = {
 				wealth = -10
 			}
 			if = {
-				limit = { has_religion_feature = religion_matriarchal }
+				limit = { TOW_religion_is_matriarchal = yes }
 				create_random_diplomat = {
 					random_traits = yes
 					dynasty = random
@@ -438,7 +438,7 @@ decisions = {
 				wealth = -10
 			}
 			if = {
-				limit = { has_religion_feature = religion_matriarchal }
+				limit = { TOW_religion_is_matriarchal = yes }
 				create_random_intriguer = {
 					random_traits = yes
 					dynasty = random
@@ -515,7 +515,7 @@ decisions = {
 		potential = {
 			TOW_race_can_employ = yes
 			NOT = {
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			}
 		}
 		allow = {
@@ -527,7 +527,7 @@ decisions = {
 		effect = {
 			wealth = -4
 			if = {
-				limit = { has_religion_feature = religion_matriarchal }
+				limit = { TOW_religion_is_matriarchal = yes }
 				create_character = {
 					random_traits = yes
 					dynasty = actually_culture

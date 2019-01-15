@@ -2627,7 +2627,7 @@ character_event = {
 				flag = is_court_physician
 			}
 			new_character = {
-				TOW_initialize_character = yes 
+				TOW_initialize_adult_character = yes 
 				remove_trait = cynical
 				remove_trait = poet
 				remove_trait = socializer
@@ -10658,7 +10658,7 @@ character_event = {
 						martial = 5
 					}
 				}
-				new_character = { TOW_initialize_character = yes  save_event_target_as = death }
+				new_character = { TOW_initialize_adult_character = yes  save_event_target_as = death }
 			}
 			50 = {
 				create_character = {
@@ -10677,7 +10677,7 @@ character_event = {
 						martial = 5
 					}
 				}
-				new_character = { TOW_initialize_character = yes  save_event_target_as = death }
+				new_character = { TOW_initialize_adult_character = yes  save_event_target_as = death }
 			}
 		}		
 		# TOW TODO : Define "death" characters	
@@ -10705,7 +10705,7 @@ character_event = {
 		#					martial = 5
 		#				}
 		#			}
-		#			new_character = { TOW_initialize_character = yes  save_event_target_as = death }
+		#			new_character = { TOW_initialize_adult_character = yes  save_event_target_as = death }
 		#		}
 		#		50 = {
 		#			create_character = {
@@ -10728,7 +10728,7 @@ character_event = {
 		#					martial = 5
 		#				}
 		#			}
-		#			new_character = { TOW_initialize_character = yes  save_event_target_as = death }
+		#			new_character = { TOW_initialize_adult_character = yes  save_event_target_as = death }
 		#		}
 		#	}			
 		#}
@@ -12088,7 +12088,7 @@ character_event = {
 				trait = envious
 				historical = yes
 			}
-			new_character = { TOW_initialize_character = yes  add_scarred_high_effect = yes }
+			new_character = { TOW_initialize_adult_character = yes  add_scarred_high_effect = yes }
 		}
 		if = {
 			limit = {
@@ -12162,7 +12162,7 @@ character_event = {
 			}
 		}
 		new_character = {
-			TOW_initialize_character = yes 
+			TOW_initialize_adult_character = yes 
 			add_rival = ROOT
 			diplomatic_immunity = yes
 			save_event_target_as = immortal_rival

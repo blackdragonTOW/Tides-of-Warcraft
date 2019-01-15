@@ -1080,7 +1080,7 @@ character_event = {
 			if = { 
 				limit = { 
 					is_married = yes 
-					NOT = { has_religion_feature = religion_matriarchal } 
+					TOW_religion_is_matriarchal = no 
 					spouse = { 
 						NOR = {
 							trait = slow
@@ -1103,7 +1103,7 @@ character_event = {
 			}
 			modifier = { 
 				factor = 5
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			}
 			modifier = { 
 				factor = 3
@@ -6309,8 +6309,8 @@ character_event = {
 				}
 			}
 			new_character = {
-				TOW_initialize_character = yes
 				set_mother = ROOT
+				TOW_initialize_character_race_from_mother = yes
 				random = { 
 					chance = 5
 					add_trait = clubfooted

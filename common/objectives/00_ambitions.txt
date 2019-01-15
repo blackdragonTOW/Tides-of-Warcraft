@@ -480,9 +480,11 @@ obj_become_spiritual = {
 	}
 	
 	allow = {
-		is_councillor = no
-		can_be_spiritual_trigger = yes
-		NOT = { has_dlc = "Zeus" }
+		ROOT = {
+			is_councillor = no
+			can_be_spiritual_trigger = yes
+			NOT = { has_dlc = "Zeus" }
+		}
 	}
 	chance = {
 		factor = 100
@@ -552,7 +554,7 @@ obj_become_spiritual = {
 				is_councillor = yes
 				NOT = { has_job_title = job_spiritual }
 			}
-			can_be_spiritual_trigger = no
+			ROOT = { can_be_spiritual_trigger = no }
 		}
 	}
 	abort_effect = {
@@ -1014,7 +1016,7 @@ obj_have_a_daughter = {
 			ai = no
 			is_female = yes
 			num_of_children = 2
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		}
 		NOT = { trait = celibate }
 		NOT = { trait = incapable }
@@ -1076,7 +1078,7 @@ obj_have_a_son = {
 		OR = {
 			ai = no
 			is_female = no
-			has_religion_feature = religion_patriarchal
+			TOW_religion_is_patriarchal = yes
 			# Have at least two daughters
 			any_child = {
 				is_female = yes

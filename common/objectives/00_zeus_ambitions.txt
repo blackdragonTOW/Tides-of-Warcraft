@@ -137,12 +137,12 @@ obj_land_for_son = {
 		independent = no
 		is_nomadic = no
 		NOT = { 
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		}
 		liege = {
 			is_nomadic = no
 			NOT = { 
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			}
 		}
 		TOW_background_cares_about_land_for_heir = yes
@@ -259,14 +259,14 @@ obj_land_for_daughter = {
 		independent = no
 		is_nomadic = no
 		OR = { 
-			has_religion_feature = religion_matriarchal
-			has_religion_feature = religion_equal
+			TOW_religion_is_matriarchal = yes
+			TOW_religion_is_equal = yes
 		}
 		liege = {
 			is_nomadic = no
 			OR = { 
-				has_religion_feature = religion_matriarchal
-				has_religion_feature = religion_equal
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
 			}
 		}
 		TOW_background_cares_about_land_for_heir = yes

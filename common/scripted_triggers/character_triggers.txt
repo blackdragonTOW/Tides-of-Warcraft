@@ -95,12 +95,8 @@ TOW_character_is_antipope = {
 	religion_head = {
 		NOT = { character = PREV }
 		primary_title = {
-			ROOT = {
-				top_liege = {
-					PREVPREVPREV = { # ROOT
-						has_claim = PREVPREVPREV # primary_title
-					}
-				}
+			PREVPREV = { # THIS
+				has_claim = PREV # primary_title
 			}
 		}
 	}
