@@ -3190,7 +3190,7 @@ province_event = {
 						employer = e_rebels
 					}
 					new_character = {
-						TOW_initialize_character = yes 
+						TOW_initialize_adult_character = yes 
 						spawn_unit = {
 							province = PREV
 							home = PREV
@@ -3214,7 +3214,7 @@ province_event = {
 						employer = e_rebels
 					}
 					new_character = {
-						TOW_initialize_character = yes 
+						TOW_initialize_adult_character = yes 
 						spawn_unit = {
 							province = PREV
 							home = PREV
@@ -3238,7 +3238,7 @@ province_event = {
 						employer = e_rebels
 					}
 					new_character = {
-						TOW_initialize_character = yes 
+						TOW_initialize_adult_character = yes 
 						spawn_unit = {
 							province = PREV
 							home = PREV
@@ -3549,7 +3549,7 @@ narrative_event = {
 		if = {
 			limit = { #Switch to matriarchy.
 				ROOT = { 
-					has_religion_feature = religion_matriarchal 
+					TOW_religion_is_matriarchal = yes 
 					NOR = {  
 						is_merchant_republic = yes
 						is_republic = yes
@@ -3586,7 +3586,7 @@ narrative_event = {
 			limit = { #Switch to equality.
 				ROOT = { 
 					OR = { 
-						has_religion_feature = religion_equal
+						TOW_religion_is_equal = yes
 					}
 					NOR = {  
 						is_merchant_republic = yes
@@ -3611,7 +3611,7 @@ narrative_event = {
 		}
 		if = {
 			limit = { #Switch to patriarchy.
-				ROOT = { has_religion_feature = religion_patriarchal }
+				ROOT = { TOW_religion_is_patriarchal = yes }
 			}
 			ROOT = { 
 				any_demesne_title = { 
@@ -3727,7 +3727,7 @@ narrative_event = {
 		hidden_tooltip = {
 			if = {
 				limit = { 
-					ROOT = { has_religion_feature = religion_matriarchal }
+					ROOT = { TOW_religion_is_matriarchal = yes }
 				}
 				ROOT = { 
 					any_demesne_title = { 
@@ -3747,7 +3747,7 @@ narrative_event = {
 			}
 			if = {
 				limit = { 
-					ROOT = { has_religion_feature = religion_patriarchal }
+					ROOT = { TOW_religion_is_patriarchal = yes }
 				}
 				ROOT = { 
 					any_demesne_title = { 
@@ -3768,7 +3768,7 @@ narrative_event = {
 			if = {
 				limit = { 
 					ROOT = {
-						has_religion_feature = religion_equal 
+						TOW_religion_is_equal = yes 
 					}
 				}
 				ROOT = { 
@@ -3790,7 +3790,7 @@ narrative_event = {
 			ROOT = {
 				if = {
 					limit = { 
-						has_religion_feature = religion_matriarchal 
+						TOW_religion_is_matriarchal = yes 
 					}
 					any_close_relative = { 
 					limit = { is_female = no }
@@ -3811,7 +3811,7 @@ narrative_event = {
 				}
 				if = {
 					limit = { 
-						has_religion_feature = religion_patriarchal 
+						TOW_religion_is_patriarchal = yes 
 					}
 					any_close_relative = { 
 						limit = { is_female = yes }
@@ -3849,7 +3849,7 @@ narrative_event = {
 		}
 		if = {
 			limit = { #Offer chance to switch the vassals' succession laws.
-				ROOT = { has_religion_feature = religion_matriarchal }
+				ROOT = { TOW_religion_is_matriarchal = yes }
 			}
 			custom_tooltip = { text = tooltip_HF23014_A }
 			hidden_tooltip = { 
@@ -3870,7 +3870,7 @@ narrative_event = {
 		}
 		if = {
 			limit = { #Offer chance to switch the vassals' succession laws.
-				ROOT = { has_religion_feature = religion_patriarchal }
+				ROOT = { TOW_religion_is_patriarchal = yes }
 			}
 			custom_tooltip = { text = tooltip_HF23015_A }
 			hidden_tooltip = { 
@@ -3892,7 +3892,7 @@ narrative_event = {
 		if = {
 			limit = { #Offer chance to switch the vassals' succession laws.
 				ROOT = {
-					has_religion_feature = religion_equal 
+					TOW_religion_is_equal = yes 
 				}
 			}
 			custom_tooltip = { text = tooltip_HF23016_A }

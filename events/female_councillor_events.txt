@@ -17,9 +17,9 @@ character_event = {
 	trigger = {
 		NOR = {
 			is_inaccessible_trigger = yes 
-			has_religion_feature = religion_matriarchal
-			has_religion_feature = religion_patriarchal
-			has_religion_feature = religion_equal
+			TOW_religion_is_matriarchal = yes
+			TOW_religion_is_patriarchal = yes
+			TOW_religion_is_equal = yes
 		}
 		NOT = { trait = bad_priest_light_group }
 	}
@@ -61,7 +61,7 @@ character_event = {
 					random_traits = yes
 				}
 				new_character = {
-					TOW_initialize_character = yes
+					TOW_initialize_adult_character = yes
 					set_character_flag = female_councillor_chancellor
 					character_event = { id = 77778 }
 
@@ -144,7 +144,7 @@ character_event = {
 					random_traits = yes
 				}
 				new_character = {
-					TOW_initialize_character = yes
+					TOW_initialize_adult_character = yes
 					set_character_flag = female_councillor_marshal
 					character_event = { id = 77778 }
 
@@ -228,7 +228,7 @@ character_event = {
 					random_traits = yes
 				}
 				new_character = {
-					TOW_initialize_character = yes
+					TOW_initialize_adult_character = yes
 					set_character_flag = female_councillor_treasurer
 					character_event = { id = 77778 }
 
@@ -306,7 +306,7 @@ character_event = {
 					random_traits = yes
 				}
 				new_character = {
-					TOW_initialize_character = yes	
+					TOW_initialize_adult_character = yes	
 					set_character_flag = female_councillor_spymaster
 					character_event = { id = 77778 }
 
@@ -466,7 +466,7 @@ character_event = {
 					female = no
 					age = 37
 				}
-				new_character = { TOW_initialize_character = yes add_spouse_matrilineal = FROM }
+				new_character = { TOW_initialize_adult_character = yes add_spouse_matrilineal = FROM }
 			}
 		}
 	}
@@ -568,7 +568,7 @@ character_event = {
 					female = no
 					age = 37
 				}
-				new_character = { TOW_initialize_character = yes add_spouse_matrilineal = FROM }
+				new_character = { TOW_initialize_adult_character = yes add_spouse_matrilineal = FROM }
 			}	
 		}
 	}
@@ -675,7 +675,7 @@ character_event = {
 					female = no
 					age = 42
 				}
-				new_character = { TOW_initialize_character = yes add_spouse_matrilineal = FROM }
+				new_character = { TOW_initialize_adult_character = yes add_spouse_matrilineal = FROM }
 			}	
 		}
 	}
@@ -768,7 +768,7 @@ character_event = {
 					female = no
 					age = 29
 				}
-				new_character = { TOW_initialize_character = yes add_spouse_matrilineal = FROM }
+				new_character = { TOW_initialize_adult_character = yes add_spouse_matrilineal = FROM }
 			}	
 		}
 	}
@@ -801,9 +801,9 @@ character_event = {
 
 	trigger = {
 		NOR = { 
-			has_religion_feature = religion_matriarchal
-			has_religion_feature = religion_patriarchal
-			has_religion_feature = religion_equal
+			TOW_religion_is_matriarchal = yes
+			TOW_religion_is_patriarchal = yes
+			TOW_religion_is_equal = yes
 			primary_title = { has_law = status_of_women_3 }
 			primary_title = { has_law = status_of_women_4 }
 		} 
@@ -1254,9 +1254,9 @@ character_event = {
 		NOR = { 
 			primary_title = { has_law = status_of_women_3 }
 			primary_title = { has_law = status_of_women_4 }
-			has_religion_feature = religion_matriarchal
-			has_religion_feature = religion_patriarchal
-			has_religion_feature = religion_equal
+			TOW_religion_is_matriarchal = yes
+			TOW_religion_is_patriarchal = yes
+			TOW_religion_is_equal = yes
 		} 
 		NOT = { trait = bad_priest_light_group }
 

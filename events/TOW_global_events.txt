@@ -20,6 +20,9 @@ character_event = {
 	immediate = {
 		log = " -- TOW -- : Global events called."
 
+		# Repeating event to prevent illegal pregnancies from AI
+		1 = { province_event = { id = TOW.103 days = 180 } } # Every 6 months to always catch pregnant women
+
 		#################################
 		# Initialization of holy orders #
 		#################################

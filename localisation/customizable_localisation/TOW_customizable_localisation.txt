@@ -1,4 +1,48 @@
 defined_text = {
+	name = TOW_GetFullRace
+
+	text = {
+		localisation_key = TOW_GetFullRace
+	}
+}
+
+defined_text = {
+	name = TOW_SpaceIfUndead
+
+	text = {
+		trigger = { TOW_is_undead = yes }
+		localisation_key = " "
+	}
+
+	fallback_text = {
+		localisation_key = ""
+	}
+}
+
+defined_text = {
+	name = TOW_GetUndeadRace
+
+	text = {
+		trigger = { trait = race_undead_generic }
+		localisation_key = race_undead_generic
+	}
+
+	text = {
+		trigger = { trait = race_undead_forsaken }
+		localisation_key = race_undead_forsaken
+	}
+
+	text = {
+		trigger = { trait = race_undead_scourge }
+		localisation_key = race_undead_scourge
+	}
+
+	fallback_text = {
+		localisation_key = ""
+	}
+}
+
+defined_text = {
 	name = TOW_GetRace
 
 	text = {

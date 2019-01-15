@@ -1930,13 +1930,13 @@ character_event = {
 		OR = {
 			AND = {
 				is_female = no
-				NOT = { liege = { has_religion_feature = religion_matriarchal } }
+				NOT = { liege = { TOW_religion_is_matriarchal = yes } }
 			}
 			AND = {
 				is_female = yes
 				OR = { 
-					liege = { has_religion_feature = religion_equal } 
-					liege = { has_religion_feature = religion_matriarchal }
+					liege = { TOW_religion_is_equal = yes } 
+					liege = { TOW_religion_is_matriarchal = yes }
 					liege = { has_law = status_of_women_4 } 
 				}
 			}

@@ -16,14 +16,14 @@ character_event = {
 	desc = EVTDESC37000
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		} 
 		picture = GFX_evt_daughter_asking_mother
 	}
 	picture = { 
 		trigger = { 
 			NOT = { 
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_son_asking_father
@@ -95,14 +95,14 @@ character_event = {
 	desc = EVTDESC37001
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		} 
 		picture = GFX_evt_daughter_asking_mother
 	}
 	picture = { 
 		trigger = { 
 			NOT = { 
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_son_asking_father
@@ -174,14 +174,14 @@ character_event = {
 	desc = EVTDESC37002
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		} 
 		picture = GFX_evt_daughter_asking_mother
 	}
 	picture = { 
 		trigger = { 
 			NOT = { 
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_son_asking_father
@@ -326,14 +326,14 @@ character_event = {
 	desc = EVTDESC37005
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		} 
 		picture = GFX_evt_daughter_asking_mother
 	}
 	picture = { 
 		trigger = { 
 			NOT = { 
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_son_asking_father
@@ -372,14 +372,14 @@ character_event = {
 	desc = EVTDESC37006
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		} 
 		picture = GFX_evt_daughter_asking_mother
 	}
 	picture = { 
 		trigger = { 
 			NOT = { 
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_son_asking_father
@@ -870,7 +870,7 @@ character_event = {
 		
 		# Create some decent commander characters
 		if = {
-			limit = { NOT = { has_religion_feature = religion_matriarchal } }
+			limit = { TOW_religion_is_matriarchal = no }
 			create_random_soldier = {
 				random_traits = yes
 				dynasty = none
@@ -905,7 +905,7 @@ character_event = {
 			}
 		}
 		if = {
-			limit = { has_religion_feature = religion_matriarchal }
+			limit = { TOW_religion_is_matriarchal = yes }
 			create_random_soldier = {
 				random_traits = yes
 				dynasty = none
@@ -1194,7 +1194,7 @@ character_event = {
 			factor = 0.25
 			is_female = no
 			trait = lustful
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		}
 		modifier = {
 			factor = 0.5

@@ -36,7 +36,7 @@ character_event = {
 			limit = { TOW_is_immortal_race = yes }
 		}
 		else = {
-			log = " -- TOW -- : TOW.101: No menopause age found for a mother ([This.GetBestName]). Race : [This.TOW_GetRace]."
+			log = " -- TOW -- : TOW.101: No menopause age found for a mother ([This.GetBestName]). Race : [This.TOW_GetFullRace]."
 			TOW_initialize_character_race_from_culture = yes
 			if = {
 				limit = { TOW_race_has_slightly_lower_lifespan = yes }
@@ -55,7 +55,7 @@ character_event = {
 				set_variable = { which = local_TOW_menopause_age value = 750 }
 			}
 			else = {
-				break = yes
+				set_variable = { which = local_TOW_menopause_age value = 100000 }
 			}
 		}
 		# Increase with health
@@ -190,7 +190,8 @@ character_event = {
 				}
 			}
 
-			#log = " -- TOW -- Pregnancy for character [This.GetBestName] ! Menopause age : [This.local_TOW_menopause_age.GetValue]. Health factor : [This.local_health.GetValue]. Race : [This.TOW_GetRace]."
+			set_character_flag = TOW_pregnancy_allowed
+			#log = " -- TOW -- Pregnancy for character [This.GetBestName] ! Menopause age : [This.local_TOW_menopause_age.GetValue]. Health factor : [This.local_health.GetValue]. Race : [This.TOW_GetFullRace]."
 
 			if = {
 				limit = { # Trigger from event
@@ -282,13 +283,14 @@ character_event = {
 
 			if = {
 				limit = { # Trigger from event
-					always = yes
+					NOT = { has_character_flag = TOW103_already_pregnant }
 				}
 				character_event = { id = HFP.20401 } # Hidden event to set clock for regency during final months.
 			}
 
 			if = {
 				limit = { # Trigger from event
+					NOT = { has_character_flag = TOW103_already_pregnant }
 					OR = {
 						has_game_rule = {
 							name = pregnancy_flavor
@@ -304,7 +306,136 @@ character_event = {
 			}
 		}
 		else = {
-			cancel_pregnancy = yes
+			set_character_flag = TOW_pregnancy_cancelled
+			#log = " -- TOW -- : TOW.101: Pregnancy cancelled for ([This.GetBestName]). Race : [This.TOW_GetFullRace]."
+
+			if = {
+				limit = {
+					is_pregnant = yes
+				}
+				#log = " -- TOW -- : TOW.101: Removed kid for ([This.GetBestName]). Race : [This.TOW_GetFullRace]."
+				cancel_pregnancy = yes
+			}
 		}
+	}
+}
+
+
+#on_birth: Deciding to keep the baby or not
+character_event = {
+	id = TOW.102
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		mother = {
+			if = {
+				limit = {
+					has_character_flag = TOW_pregnancy_allowed
+				}
+				#log = " -- TOW -- : TOW.102: Pregnancy allowed ([This.GetBestName]). Race : [This.TOW_GetFullRace]."
+				clr_character_flag = TOW_pregnancy_allowed
+				if = { # Have a second flag for twin to avoid "else" case
+					limit = {
+						ROOT = { trait = twin }
+					}
+					set_character_flag = TOW_pregnancy_allowed_twin
+				}
+			}
+			else_if = {
+				limit = {
+					has_character_flag = TOW_pregnancy_cancelled
+				}
+				log = " -- TOW -- : TOW.102: Pregnancy cancelled but still On Birth ([This.GetBestName])!! Race : [This.TOW_GetFullRace]."
+				clr_character_flag = TOW_pregnancy_cancelled
+				if = { # Have a second flag for twin to avoid "else" case
+					limit = {
+						ROOT = { trait = twin }
+					}
+					set_character_flag = TOW_pregnancy_cancelled_twin
+				}
+			}
+			else_if = {
+				limit = {
+					has_character_flag = TOW_pregnancy_allowed_twin
+				}
+				#log = " -- TOW -- : TOW.102: (Twin) Pregnancy allowed ([This.GetBestName]). Race : [This.TOW_GetFullRace]."
+				clr_character_flag = TOW_pregnancy_allowed_twin
+			}
+			else_if = {
+				limit = {
+					has_character_flag = TOW_pregnancy_cancelled_twin
+				}
+				log = " -- TOW -- : TOW.102: (Twin) Pregnancy cancelled but still On Birth ([This.GetBestName])!! Race : [This.TOW_GetFullRace]."
+				clr_character_flag = TOW_pregnancy_cancelled_twin
+			}
+			else = {
+				log = " -- TOW -- : TOW.102: On Birth without going through TOW.101 ([This.GetBestName])! Race : [This.TOW_GetFullRace]."
+			}
+
+			if = {
+				limit = {
+					TOW_race_can_have_children = no
+				}
+				log = " -- TOW -- : TOW.102: Having a kid without being able to ! ([This.GetBestName] - R: [This.TOW_GetFullRace])"
+				ROOT = { death = { death_reason = death_tow_stillbirth } }
+				break = yes
+			}
+			else_if = {
+				limit = {
+					TOW_has_race_trait = no
+				}
+				log = " -- TOW -- : TOW.102: Having a kid without having race trait ! ([This.GetBestName] - R: [This.TOW_GetFullRace])"
+				ROOT = { death = { death_reason = death_tow_stillbirth } }
+				break = yes
+			}
+		}
+	}
+}
+
+
+#on_birth: Repeating event for 
+province_event = {
+	id = TOW.103
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#log = " -- TOW -- : TOW.103 called."
+		any_character = {
+			limit = {
+				is_female = yes
+				is_pregnant = yes
+				NOT = { has_character_flag = TOW_pregnancy_allowed }
+			}
+			if = {
+				limit = {
+					OR = {
+						TOW_race_can_have_children = no
+						TOW_has_race_trait = no
+					}
+				}
+				#log = " -- TOW -- : TOW.103: Sneaky impossible pregnancy cancelled for [This.GetBestName] - Race: [This.TOW_GetFullRace]. ABORTION !"
+				cancel_pregnancy = yes
+			}
+			else = {
+				#log = " -- TOW -- : TOW.103: Sneaky pregnancy caught for [This.GetBestName] - Race: [This.TOW_GetFullRace]. Correcting."
+
+				# This flag is to prevent flavor events and regency at the end because we don't know when the pregnancy is ending
+				set_character_flag = TOW103_already_pregnant
+
+				character_event = { id = TOW.101 }
+				if = {
+					limit = {
+						is_pregnant = no
+					}
+					#log = " -- TOW -- : TOW.103: ABORTED !"
+				}
+
+				clr_character_flag = TOW103_already_pregnant
+			}
+		}
+
+		ROOT = { province_event = { id = TOW.103 days = 180 } } # Every 6 months to always catch pregnant women
 	}
 }

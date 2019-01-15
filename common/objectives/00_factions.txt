@@ -5266,7 +5266,7 @@ faction_claimant = {
 				is_female = no
 				AND = { 
 					NOT = { ROOT = { succ_law_title = { has_law = agnatic_succession } } }
-					NOT = { has_religion_feature = religion_patriarchal }
+					TOW_religion_is_patriarchal = no
 				}
 			}
 			OR = {
@@ -5274,7 +5274,7 @@ faction_claimant = {
 				trait = bad_priest_light_group
 				AND = { 
 					NOT = { ROOT = { succ_law_title = { has_law = enatic_succession } } }
-					NOT = { has_religion_feature = religion_matriarchal }
+					TOW_religion_is_matriarchal = no
 				}
 			}
 			
@@ -5447,14 +5447,14 @@ faction_claimant = {
 		#If claimaint's sex is incompatible with religious dogma.
 		modifier = {
 			factor = 0
-			has_religion_feature = religion_patriarchal
+			TOW_religion_is_patriarchal = yes
 			new_character = {
 				is_female = yes
 			}
 		}
 		modifier = {
 			factor = 0
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 			new_character = {
 				is_female = no
 			}
@@ -5462,7 +5462,7 @@ faction_claimant = {
 		#Or if vassal is under the yoke of the wrong kind of liege.
 		modifier = {
 			factor = 3
-			has_religion_feature = religion_patriarchal
+			TOW_religion_is_patriarchal = yes
 			FROM = {
 				is_female = yes
 			}
@@ -5472,7 +5472,7 @@ faction_claimant = {
 		}
 		modifier = {
 			factor = 3
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 			FROM = {
 				is_female = no
 			}
@@ -5682,8 +5682,8 @@ faction_claimant = {
 			NAND = {
 				has_dlc = "Zeus"
 				OR = {
-					has_religion_feature = religion_matriarchal
-					has_religion_feature = religion_equal
+					TOW_religion_is_matriarchal = yes
+					TOW_religion_is_equal = yes
 					has_law = status_of_women_4
 					has_game_rule = {
 						name = gender
@@ -6145,8 +6145,8 @@ faction_claimant = {
 				has_dlc = "Zeus"
 				OR = {
 					has_law = status_of_women_4
-					has_religion_feature = religion_equal
-					has_religion_feature = religion_matriarchal
+					TOW_religion_is_equal = yes
+					TOW_religion_is_matriarchal = yes
 					has_game_rule = {
 						name = gender
 						value = all

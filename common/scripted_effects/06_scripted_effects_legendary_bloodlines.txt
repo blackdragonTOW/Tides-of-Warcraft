@@ -824,7 +824,7 @@ send_new_dog_event_effect = {
 
 spawn_old_duelist_effect = {
 	if = { 
-		limit = { has_religion_feature = religion_matriarchal }
+		limit = { TOW_religion_is_matriarchal = yes }
 		create_random_soldier = {
 			random_traits = yes
 			dynasty = actually_culture
@@ -840,7 +840,7 @@ spawn_old_duelist_effect = {
 		}
 	}
 	if = { 
-		limit = { NOT = { has_religion_feature = religion_matriarchal } }
+		limit = { TOW_religion_is_matriarchal = no }
 		create_random_soldier = {
 			random_traits = yes
 			dynasty = actually_culture
@@ -856,7 +856,7 @@ spawn_old_duelist_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_character = yes
+		TOW_initialize_adult_character = yes
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile
@@ -1094,7 +1094,7 @@ spawn_old_duelist_effect = {
 }
 spawn_giant_duelist_effect = {
 	if = { 
-		limit = { has_religion_feature = religion_matriarchal }
+		limit = { TOW_religion_is_matriarchal = yes }
 		create_random_soldier = {
 			random_traits = yes
 			dynasty = actually_culture
@@ -1109,7 +1109,7 @@ spawn_giant_duelist_effect = {
 		}
 	}
 	if = { 
-		limit = { NOT = { has_religion_feature = religion_matriarchal } }
+		limit = { TOW_religion_is_matriarchal = no }
 		create_random_soldier = {
 			random_traits = yes
 			dynasty = actually_culture
@@ -1124,7 +1124,7 @@ spawn_giant_duelist_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_character = yes
+		TOW_initialize_adult_character = yes
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile
@@ -1311,7 +1311,7 @@ spawn_giant_duelist_effect = {
 
 spawn_creature_champion_effect = {
 	if = { 
-		limit = { has_religion_feature = religion_matriarchal }
+		limit = { TOW_religion_is_matriarchal = yes }
 		create_random_soldier = {
 			random_traits = yes
 			culture = bear
@@ -1327,7 +1327,7 @@ spawn_creature_champion_effect = {
 		}
 	}
 	if = { 
-		limit = { NOT = { has_religion_feature = religion_matriarchal } }
+		limit = { TOW_religion_is_matriarchal = no }
 		create_random_soldier = {
 			random_traits = yes
 			culture = bear
@@ -1344,7 +1344,7 @@ spawn_creature_champion_effect = {
 	}
 	new_character = {
 		set_graphical_culture = event_target:target_ruler
-		TOW_initialize_character = yes
+		TOW_initialize_adult_character = yes
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile

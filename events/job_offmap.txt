@@ -1366,7 +1366,7 @@ character_event = {
 		}
 		else_if = {
 			limit = {
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 			}
 			create_random_soldier = {
 				random_traits = yes
@@ -1388,7 +1388,7 @@ character_event = {
 			}
 		}
 		new_character = {
-			TOW_initialize_character = yes
+			TOW_initialize_adult_character = yes
 			remove_trait = weak
 			remove_trait = slow
 			remove_trait = imbecile

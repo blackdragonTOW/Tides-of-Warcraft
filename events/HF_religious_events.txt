@@ -1889,7 +1889,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		# Uneeded since TOW_initialize_character does the job
+		# Uneeded since TOW_initialize_adult_character does the job
 		#add_western_zodiac_trait_effect = yes #Updated effect.
 	}
 }
@@ -2713,9 +2713,9 @@ character_event = {
 	trigger = {
 		ROOT = {
 			OR = { 
-				has_religion_feature = religion_patriarchal
-				has_religion_feature = religion_equal
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_patriarchal = yes
+				TOW_religion_is_equal = yes
+				TOW_religion_is_matriarchal = yes
 			}
 		}
 	}
@@ -2725,7 +2725,7 @@ character_event = {
 		if = {
 			limit = { 
 				ROOT = { 
-					has_religion_feature = religion_matriarchal 
+					TOW_religion_is_matriarchal = yes 
 					NOR = {  
 						#is_merchant_republic = yes
 						is_republic = yes
@@ -2767,7 +2767,7 @@ character_event = {
 		}
 		if = {
 			limit = { 
-				ROOT = { has_religion_feature = religion_patriarchal }
+				ROOT = { TOW_religion_is_patriarchal = yes }
 			}
 			ROOT = { 
 				any_demesne_title = { 
@@ -2806,7 +2806,7 @@ character_event = {
 			limit = { 
 				ROOT = {
 					OR = { 
-						has_religion_feature = religion_equal
+						TOW_religion_is_equal = yes
 					}
 					NOR = {  
 						#is_merchant_republic = yes
@@ -2835,12 +2835,12 @@ character_event = {
 				limit = { 
 					FROM = {
 						NOR = { 
-							has_religion_feature = religion_equal
-							has_religion_feature = religion_patriarchal
-							has_religion_feature = religion_matriarchal
+							TOW_religion_is_equal = yes
+							TOW_religion_is_patriarchal = yes
+							TOW_religion_is_matriarchal = yes
 						}
 					}
-					ROOT = { has_religion_feature = religion_matriarchal }
+					ROOT = { TOW_religion_is_matriarchal = yes }
 				}
 				any_close_relative = { 
 					limit = { is_female = no }
@@ -2863,12 +2863,12 @@ character_event = {
 				limit = { 
 					FROM = {
 						NOR = { 
-							has_religion_feature = religion_equal
-							has_religion_feature = religion_matriarchal
-							has_religion_feature = religion_patriarchal
+							TOW_religion_is_equal = yes
+							TOW_religion_is_matriarchal = yes
+							TOW_religion_is_patriarchal = yes
 						}
 					}
-					ROOT = { has_religion_feature = religion_patriarchal }
+					ROOT = { TOW_religion_is_patriarchal = yes }
 				}
 				any_close_relative = { 
 					limit = { is_female = yes }
@@ -2889,11 +2889,11 @@ character_event = {
 			}
 			if = {
 				limit = { 
-					FROM = { has_religion_feature = religion_patriarchal }
+					FROM = { TOW_religion_is_patriarchal = yes }
 					ROOT = { 
 						OR = { 
-							has_religion_feature = religion_equal
-							has_religion_feature = religion_matriarchal
+							TOW_religion_is_equal = yes
+							TOW_religion_is_matriarchal = yes
 						}
 					}
 				}
@@ -2916,40 +2916,12 @@ character_event = {
 			}
 			if = {
 				limit = { 
-					FROM = { has_religion_feature = religion_matriarchal }
+					FROM = { TOW_religion_is_matriarchal = yes }
 					ROOT = { 
 						OR = { 
-							has_religion_feature = religion_equal
-							has_religion_feature = religion_patriarchal
+							TOW_religion_is_equal = yes
+							TOW_religion_is_patriarchal = yes
 						}
-					}
-				}
-				any_close_relative = { 
-					limit = { is_female = yes }
-					opinion = { 
-						who = ROOT 
-						modifier = bad_succ_law_change
-						years = 100
-					}
-				}
-				any_close_relative = { 
-					limit = { is_female = no }
-					opinion = { 
-						who = ROOT 
-						modifier = good_succ_law_change
-						years = 100
-					}
-				}
-			}
-			if = {
-				limit = { 
-					FROM = { 
-						OR = { 
-							has_religion_feature = religion_equal
-						}
-					}
-					ROOT = { 
-						has_religion_feature = religion_patriarchal
 					}
 				}
 				any_close_relative = { 
@@ -2973,11 +2945,39 @@ character_event = {
 				limit = { 
 					FROM = { 
 						OR = { 
-							has_religion_feature = religion_equal
+							TOW_religion_is_equal = yes
 						}
 					}
 					ROOT = { 
-						has_religion_feature = religion_matriarchal
+						TOW_religion_is_patriarchal = yes
+					}
+				}
+				any_close_relative = { 
+					limit = { is_female = yes }
+					opinion = { 
+						who = ROOT 
+						modifier = bad_succ_law_change
+						years = 100
+					}
+				}
+				any_close_relative = { 
+					limit = { is_female = no }
+					opinion = { 
+						who = ROOT 
+						modifier = good_succ_law_change
+						years = 100
+					}
+				}
+			}
+			if = {
+				limit = { 
+					FROM = { 
+						OR = { 
+							TOW_religion_is_equal = yes
+						}
+					}
+					ROOT = { 
+						TOW_religion_is_matriarchal = yes
 					}
 				}
 				any_close_relative = { 
@@ -3010,9 +3010,9 @@ character_event = {
 		is_save_game = no
 
 		OR = { 
-			has_religion_feature = religion_patriarchal
-			has_religion_feature = religion_equal
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_patriarchal = yes
+			TOW_religion_is_equal = yes
+			TOW_religion_is_matriarchal = yes
 		}
 	}
 	is_triggered_only = yes
@@ -3020,7 +3020,7 @@ character_event = {
 	immediate = { 
 		if = {
 			limit = { 
-				ROOT = { has_religion_feature = religion_matriarchal }
+				ROOT = { TOW_religion_is_matriarchal = yes }
 			}
 			ROOT = { 
 				any_demesne_title = { 
@@ -3056,7 +3056,7 @@ character_event = {
 		}
 		if = {
 			limit = { 
-				ROOT = { has_religion_feature = religion_patriarchal }
+				ROOT = { TOW_religion_is_patriarchal = yes }
 			}
 			ROOT = { 
 				any_demesne_title = { 
@@ -3094,7 +3094,7 @@ character_event = {
 			limit = { 
 				ROOT = {
 					OR = { 
-						has_religion_feature = religion_equal
+						TOW_religion_is_equal = yes
 					}
 				}
 			}
@@ -3932,7 +3932,7 @@ character_event = {
 		FROM = { owner = { save_event_target_as = scoped_province_owner } }
 		random_list = { #Decide mercenary leader's sex.
 			70 = {  
-				trigger = { FROM = { owner = { NOT = { has_religion_feature = religion_matriarchal } } } }	
+				trigger = { FROM = { owner = { TOW_religion_is_matriarchal = no } } }	
 				create_random_soldier = {
 					random_traits = yes
 					dynasty = random
@@ -3966,8 +3966,8 @@ character_event = {
 									name = gender
 									value = all
 								}
-								has_religion_feature = religion_matriarchal 
-								has_religion_feature = religion_equal 
+								TOW_religion_is_matriarchal = yes 
+								TOW_religion_is_equal = yes 
 							}
 						} 
 					} 
@@ -4639,20 +4639,20 @@ character_event = {
 			OR = {  #check doctrines
 				AND = { 
 					is_female = yes 
-					FROM = { owner = { has_religion_feature = religion_matriarchal } }
+					FROM = { owner = { TOW_religion_is_matriarchal = yes } }
 				}
 				AND = { 
 					is_female = no 
-					FROM = { owner = { NOT = { has_religion_feature = religion_matriarchal } } }
+					FROM = { owner = { TOW_religion_is_matriarchal = no } }
 				}
-				FROM = { owner = { has_religion_feature = religion_equal } }
+				FROM = { owner = { TOW_religion_is_equal = yes } }
 				FROM = { owner = { } }
 				FROM = { 
 					owner = { 
 						TOW_religion_is_uncivilized_trigger = yes
 						is_reformed_religion = no 
-						NOT = { has_religion_feature = religion_patriarchal } #Random World Checks.
-						NOT = { has_religion_feature = religion_matriarchal }
+						TOW_religion_is_patriarchal = no #Random World Checks.
+						TOW_religion_is_matriarchal = no
 					} 
 				}
 			} 
@@ -4694,13 +4694,13 @@ character_event = {
 			OR = {  #check doctrines
 				AND = { 
 					is_female = yes 
-					FROM = { NOT = { owner = { has_religion_feature = religion_matriarchal } } }
+					FROM = { NOT = { owner = { TOW_religion_is_matriarchal = yes } } }
 				}
 				AND = { 
 					is_female = no 
-					FROM = { owner = { has_religion_feature = religion_matriarchal } }
+					FROM = { owner = { TOW_religion_is_matriarchal = yes } }
 				}
-				FROM = { owner = { has_religion_feature = religion_equal } }
+				FROM = { owner = { TOW_religion_is_equal = yes } }
 				FROM = { owner = { } }
 			} 
 		} 
@@ -9181,20 +9181,20 @@ character_event = {
 		NOT = { ROOT = { character = FROMFROM } }
 		OR = { 
 			AND = { 
-				ROOT = { has_religion_feature = religion_patriarchal }
-				FROMFROM = { has_religion_feature = religion_patriarchal }
+				ROOT = { TOW_religion_is_patriarchal = yes }
+				FROMFROM = { TOW_religion_is_patriarchal = yes }
 			}
 			AND = { 
 				ROOT = { 
-					has_religion_feature = religion_equal 
+					TOW_religion_is_equal = yes 
 				} 
 				FROMFROM = { 
-					has_religion_feature = religion_equal 
+					TOW_religion_is_equal = yes 
 				}
 			}
 			AND = { 
-				ROOT = { has_religion_feature = religion_matriarchal }
-				FROMFROM = { has_religion_feature = religion_matriarchal }
+				ROOT = { TOW_religion_is_matriarchal = yes }
+				FROMFROM = { TOW_religion_is_matriarchal = yes }
 			}
 		}
 	}
@@ -9215,7 +9215,7 @@ character_event = {
 		if = {
 			limit = { 
 				ROOT = { 
-					has_religion_feature = religion_matriarchal 
+					TOW_religion_is_matriarchal = yes 
 					NOR = {  
 						#is_merchant_republic = yes
 						is_republic = yes
@@ -9252,7 +9252,7 @@ character_event = {
 		}
 		if = {
 			limit = { 
-				ROOT = { has_religion_feature = religion_patriarchal }
+				ROOT = { TOW_religion_is_patriarchal = yes }
 			}
 			FROMFROM = { 
 				add_law = {
@@ -9285,7 +9285,7 @@ character_event = {
 		if = {
 			limit = { 
 				ROOT = {
-					has_religion_feature = religion_equal 
+					TOW_religion_is_equal = yes 
 					NOR = {  
 						#is_merchant_republic = yes
 						is_republic = yes
@@ -9769,7 +9769,7 @@ character_event = {
 	picture = { 
 		trigger = { 
 			OR = {
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 				AND = {
 					event_target:scoped_improvement_target = { character = ROOT is_female = yes }
 					primary_title = { has_law = status_of_women_4 }
@@ -9780,7 +9780,7 @@ character_event = {
 	}
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_patriarchal
+			TOW_religion_is_patriarchal = yes
 		} 
 		picture = GFX_evt_tengri_throneroom_oldgods
 	}
@@ -9788,8 +9788,8 @@ character_event = {
 		trigger = { 
 			has_dlc = "Reapers"
 			NOR = { 
-				has_religion_feature = religion_patriarchal
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_patriarchal = yes
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_prospering_province
@@ -9798,8 +9798,8 @@ character_event = {
 		trigger = { 
 			NOR = { 
 				has_dlc = "Reapers"
-				has_religion_feature = religion_patriarchal
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_patriarchal = yes
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_magnificent_castle
@@ -9848,8 +9848,8 @@ character_event = {
 					event_target:scoped_improvement_ruler = { 
 						OR = { 
 							has_religion_feature = religion_meritocratic
-							has_religion_feature = religion_matriarchal
-							has_religion_feature = religion_patriarchal
+							TOW_religion_is_matriarchal = yes
+							TOW_religion_is_patriarchal = yes
 						} 
 					}
 				}
@@ -9871,8 +9871,8 @@ character_event = {
 					event_target:scoped_improvement_ruler = { 
 						OR = { 
 							has_religion_feature = religion_meritocratic
-							has_religion_feature = religion_matriarchal
-							has_religion_feature = religion_patriarchal
+							TOW_religion_is_matriarchal = yes
+							TOW_religion_is_patriarchal = yes
 						} 
 					}
 				}
@@ -9898,8 +9898,8 @@ character_event = {
 								event_target:scoped_improvement_ruler = { 
 									OR = { 
 										has_religion_feature = religion_meritocratic
-										has_religion_feature = religion_matriarchal
-										has_religion_feature = religion_patriarchal
+										TOW_religion_is_matriarchal = yes
+										TOW_religion_is_patriarchal = yes
 									} 
 								}
 							}
@@ -9917,8 +9917,8 @@ character_event = {
 								event_target:scoped_improvement_ruler = { 
 									OR = { 
 										has_religion_feature = religion_meritocratic
-										has_religion_feature = religion_matriarchal
-										has_religion_feature = religion_patriarchal
+										TOW_religion_is_matriarchal = yes
+										TOW_religion_is_patriarchal = yes
 									} 
 								}
 							}
@@ -9944,8 +9944,8 @@ character_event = {
 							event_target:scoped_improvement_ruler = { 
 								OR = { 
 									has_religion_feature = religion_meritocratic
-									has_religion_feature = religion_matriarchal
-									has_religion_feature = religion_patriarchal
+									TOW_religion_is_matriarchal = yes
+									TOW_religion_is_patriarchal = yes
 								} 
 							}
 						}
@@ -9963,8 +9963,8 @@ character_event = {
 							event_target:scoped_improvement_ruler = { 
 								OR = { 
 									has_religion_feature = religion_meritocratic
-									has_religion_feature = religion_matriarchal
-									has_religion_feature = religion_patriarchal
+									TOW_religion_is_matriarchal = yes
+									TOW_religion_is_patriarchal = yes
 								} 
 							}
 						}
@@ -10058,8 +10058,8 @@ character_event = {
 				event_target:scoped_improvement_ruler = { 
 					OR = { 
 						has_religion_feature = religion_meritocratic
-						has_religion_feature = religion_matriarchal
-						has_religion_feature = religion_patriarchal
+						TOW_religion_is_matriarchal = yes
+						TOW_religion_is_patriarchal = yes
 					} 
 				}
 			}
@@ -10103,8 +10103,8 @@ character_event = {
 					event_target:scoped_improvement_ruler = { 
 						OR = { 
 							has_religion_feature = religion_meritocratic
-							has_religion_feature = religion_matriarchal
-							has_religion_feature = religion_patriarchal
+							TOW_religion_is_matriarchal = yes
+							TOW_religion_is_patriarchal = yes
 						} 
 					}
 				}
@@ -10126,8 +10126,8 @@ character_event = {
 					event_target:scoped_improvement_ruler = { 
 						OR = { 
 							has_religion_feature = religion_meritocratic
-							has_religion_feature = religion_matriarchal
-							has_religion_feature = religion_patriarchal
+							TOW_religion_is_matriarchal = yes
+							TOW_religion_is_patriarchal = yes
 						} 
 					}
 				}
@@ -10153,8 +10153,8 @@ character_event = {
 								event_target:scoped_improvement_ruler = { 
 									OR = { 
 										has_religion_feature = religion_meritocratic
-										has_religion_feature = religion_matriarchal
-										has_religion_feature = religion_patriarchal
+										TOW_religion_is_matriarchal = yes
+										TOW_religion_is_patriarchal = yes
 									} 
 								}
 							}
@@ -10172,8 +10172,8 @@ character_event = {
 								event_target:scoped_improvement_ruler = { 
 									OR = { 
 										has_religion_feature = religion_meritocratic
-										has_religion_feature = religion_matriarchal
-										has_religion_feature = religion_patriarchal
+										TOW_religion_is_matriarchal = yes
+										TOW_religion_is_patriarchal = yes
 									} 
 								}
 							}
@@ -10199,8 +10199,8 @@ character_event = {
 							event_target:scoped_improvement_ruler = { 
 								OR = { 
 									has_religion_feature = religion_meritocratic
-									has_religion_feature = religion_matriarchal
-									has_religion_feature = religion_patriarchal
+									TOW_religion_is_matriarchal = yes
+									TOW_religion_is_patriarchal = yes
 								} 
 							}
 						}
@@ -10218,8 +10218,8 @@ character_event = {
 							event_target:scoped_improvement_ruler = { 
 								OR = { 
 									has_religion_feature = religion_meritocratic
-									has_religion_feature = religion_matriarchal
-									has_religion_feature = religion_patriarchal
+									TOW_religion_is_matriarchal = yes
+									TOW_religion_is_patriarchal = yes
 								} 
 							}
 						}
@@ -10353,7 +10353,7 @@ character_event = {
 	picture = { 
 		trigger = { 
 			OR = {
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_matriarchal = yes
 				AND = {
 					event_target:scoped_improvement_target = { character = event_target:scoped_improvement_ruler is_female = yes }
 					primary_title = { has_law = status_of_women_4 }
@@ -10364,7 +10364,7 @@ character_event = {
 	}
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_patriarchal
+			TOW_religion_is_patriarchal = yes
 		} 
 		picture = GFX_evt_tengri_throneroom_oldgods
 	}
@@ -10372,8 +10372,8 @@ character_event = {
 		trigger = { 
 			has_dlc = "Reapers"
 			NOR = { 
-				has_religion_feature = religion_patriarchal
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_patriarchal = yes
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_prospering_province
@@ -10382,8 +10382,8 @@ character_event = {
 		trigger = { 
 			NOR = { 
 				has_dlc = "Reapers"
-				has_religion_feature = religion_patriarchal
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_patriarchal = yes
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_magnificent_castle
@@ -11419,21 +11419,21 @@ narrative_event = {
 	desc = EVTDESCHF24058
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_matriarchal
+			TOW_religion_is_matriarchal = yes
 		} 
 		picture = GFX_evt_matriarchy_throne_room
 	}
 	picture = { 
 		trigger = { 
-			has_religion_feature = religion_patriarchal
+			TOW_religion_is_patriarchal = yes
 		} 
 		picture = GFX_evt_tengri_throneroom_oldgods
 	}
 	picture = { 
 		trigger = { 
 			NOR = { 
-				has_religion_feature = religion_patriarchal
-				has_religion_feature = religion_matriarchal
+				TOW_religion_is_patriarchal = yes
+				TOW_religion_is_matriarchal = yes
 			} 
 		} 
 		picture = GFX_evt_throne_room

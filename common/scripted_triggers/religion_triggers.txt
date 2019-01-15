@@ -2,13 +2,13 @@
 
 TOW_religion_practices_haruspicy = {
 	OR = {
-		has_religion_feature = religion_haruspicy
+		religion_scope = { has_flag = feature_haruspicy }
 	}
 }
 
 TOW_religion_practices_ritual_sacrifice = {
 	OR = {
-		has_religion_feature = religion_ritual_sacrifice
+		religion_scope = { has_flag = feature_ritual_sacrifice }
 	}
 }
 
@@ -18,26 +18,26 @@ TOW_religion_worships_ancestors = {
 		religion_group = elemental_group
 		religion = old_ways
 		religion = old_ways_reformed
-		has_religion_feature = religion_beatification
+		religion_scope = { has_flag = feature_beatification }
 	}
 }
 
 TOW_religion_is_adventuring = {
 	OR = {
-		has_religion_feature = religion_adventuring
+		religion_scope = { has_flag = feature_adventuring }
 	}
 }
 
 TOW_religion_practices_astrology = {
 	OR = {
-		has_religion_feature = religion_astrology
+		religion_scope = { has_flag = feature_astrology }
 	}
 }
 
 TOW_religion_is_dogmatic = {
 	OR = {
 		religion_group = light_group
-		has_religion_feature = religion_dogmatic
+		religion_scope = { has_flag = feature_dogmatic }
 	}
 }
 
@@ -45,7 +45,7 @@ TOW_religion_is_proselytizing = {
 	OR = {
 		religion_group = light_group
 		religion = twilights_hammer
-		has_religion_feature = religion_proselytizing
+		religion_scope = { has_flag = feature_proselytizing }
 	}
 }
 
@@ -54,13 +54,13 @@ TOW_religion_is_cosmopolitan = {
 		religion = druidism
 		religion = druidism_reformed
 		religion = elune
-		has_religion_feature = religion_cosmopolitan
+		religion_scope = { has_flag = feature_cosmopolitan }
 	}
 }
 
 TOW_religion_is_incestuous = {
 	OR = {
-		has_religion_feature = religion_holy_family
+		religion_scope = { has_flag = feature_holy_family }
 	}
 }
 
@@ -69,13 +69,13 @@ TOW_religion_is_pacifist = {
 	OR = {
 		religion = druidism
 		religion = druidism_reformed
-		has_religion_feature = religion_peaceful
+		religion_scope = { has_flag = feature_peaceful }
 	}
 }
 
 TOW_religion_is_stable = {
 	OR = {
-		has_religion_feature = religion_stable
+		religion_scope = { has_flag = feature_stable }
 	}
 }
 
@@ -86,7 +86,7 @@ TOW_religion_is_warlike = {
 		religion = hakkar
 		religion_group = fel_group
 		religion_group = void_group
-		has_religion_feature = religion_warlike
+		religion_scope = { has_flag = feature_warlike }
 	}
 }
 
@@ -95,39 +95,39 @@ TOW_religion_is_animistic = {
 	OR = {
 		religion = shamanism
 		religion = shamanism_reformed
-		has_religion_feature = religion_animistic
+		religion_scope = { has_flag = feature_animistic }
 	}
 }
 
 TOW_religion_has_pagan_branches = {
 	OR = {
-		has_religion_feature = religion_no_leader
+		religion_scope = { has_flag = feature_no_leader }
 	}
 }
 
 TOW_religion_is_seafaring = {
 	OR = {
 		religion = hydromancy
-		has_religion_feature = religion_seafaring
+		religion_scope = { has_flag = feature_seafaring }
 	}
 }
 
 TOW_religion_is_matriarchal = {
 	OR = {
-		has_religion_feature = religion_matriarchal
+		religion_scope = { has_flag = feature_matriarchal }
 	}
 }
 
 
 TOW_religion_is_patriarchal = {
 	OR = {
-		has_religion_feature = religion_patriarchal
+		religion_scope = { has_flag = feature_patriarchal }
 	}
 }
 
 TOW_religion_is_equal = {
 	OR = {
-		has_religion_feature = religion_equal
+		religion_scope = { has_flag = feature_equal }
 	}
 }
 
