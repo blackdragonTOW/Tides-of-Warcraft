@@ -41,7 +41,10 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_orc
+				OR = {
+					portrait_has_trait = race_orc
+					portrait_has_trait = race_half_draenei
+				}
 				NOR = {
 					portrait_has_trait = race_borc
 					portrait_has_trait = race_rorc
@@ -241,7 +244,10 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_orc
+				OR = {
+					portrait_has_trait = race_half_ogre
+					portrait_has_trait = race_orc
+				}
 				OR = {
 					portrait_has_trait = race_morc
 					portrait_gfx_culture = morcgfx
@@ -524,7 +530,10 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_orc
+				OR = {
+					portrait_has_trait = race_orc
+					portrait_has_trait = race_half_draenei
+				}
 				NOR = {
 					portrait_has_trait = race_borc
 					portrait_has_trait = race_rorc
@@ -724,7 +733,10 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_orc
+				OR = {
+					portrait_has_trait = race_half_ogre
+					portrait_has_trait = race_orc
+				}
 				OR = {
 					portrait_has_trait = race_morc
 					portrait_gfx_culture = morcgfx
