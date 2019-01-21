@@ -12055,4 +12055,676 @@ e_zul_gurub = {
 			}
 		}
 	}
+	
+	k_atal_hakkar = {
+		color = { 29 107 65 }
+		color2 = { 255 255 255 }
+		capital = 364 # Atal'Hakkar
+		culture = atalai
+		
+		d_stonard = {
+			color = { 22 121 68 }
+			color2 = { 255 255 255 }
+			culture = blackrock
+			capital = 369 # Stonard
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 365 province_id = 369 province_id = 370 } }
+				}
+			}
+			
+			c_misty_valley = { # 365
+				color = { 218 147 105 }
+				color2 = { 255 255 255 }
+				
+				b_splintertree_junction = {
+				}
+				b_purespring_cavern = {
+				}
+				b_mire_lords_court = {
+				}
+				b_madmire = {
+				}
+				b_roguelight = {
+				}
+				b_deadshield = {
+				}
+				b_arrowtown = {
+				}
+			}
+			
+			c_stonard = { # 369
+				color = { 193 173 68 }
+				color2 = { 255 255 255 }
+				
+				b_stonard = {
+				}
+				b_caveshade = {
+				}
+				b_mightside = {
+				}
+				b_hollowglen = {
+				}
+				b_pondpost = {
+				}
+				b_fallward = {
+				}
+				b_kilhill = {
+				}
+			}
+			
+			c_kyross = { # 370
+				color = { 218 147 145 }
+				color2 = { 255 255 255 }
+				
+				b_kyross = {
+				}
+				b_bloodmire = {
+				}
+				b_shadowwater = {
+				}
+				b_dirtborn = {
+				}
+				b_dirthand = {
+				}
+				b_bleakpond = {
+				}
+				b_murkpoint = {
+				}
+			}
+		}
+		
+		d_the_northern_swamp = {
+			color = { 14 105 57 }
+			color2 = { 255 255 255 }
+			culture = sorrowstep
+			capital = 366 # The Shifting Mire
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 366 province_id = 367 province_id = 368 } }
+				}
+			}
+			
+			c_the_shifting_mire = { # 366
+				color = { 113 57 153 }
+				color2 = { 255 255 255 }
+				
+				b_the_harborage = {
+				}
+				b_gloomfall = {
+				}
+				b_dirtspell = {
+				}
+				b_flatmire = {
+				}
+				b_grimepass = {
+				}
+				b_eastrest = {
+				}
+				b_bleakward = {
+				}
+			}
+			
+			c_the_fallow_mire = { # 367
+				color = { 198 193 77 }
+				color2 = { 255 255 255 }
+				
+				b_fallow_sanctuary = {
+				}
+				b_mutemoor = {
+				}
+				b_misthost = {
+				}
+				b_grimharbor = {
+				}
+				b_faytide = {
+				}
+				b_losthome = {
+				}
+				b_dampgrave = {
+				}
+			}
+			
+			c_rotshore = { # 368
+				color = { 116 71 136 }
+				color2 = { 255 255 255 }
+				
+				b_bogpaddle = {
+				}
+				b_deepshade = {
+				}
+				b_madgrave = {
+				}
+				b_nightcall = {
+				}
+				b_sinkwallow = {
+				}
+				b_dryingrock = {
+				}
+				b_shroudwharf = {
+				}
+			}
+		}
+		
+		d_atal_hakkar = {
+			color = { 14 105 57 }
+			color2 = { 255 255 255 }
+			culture = atalai
+			capital = 364 # Atal'Hakkar
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 364 province_id = 372 province_id = 374 } }
+				}
+			}
+			
+			c_atal_hakkar = { # 364
+				color = { 198 96 96 }
+				color2 = { 255 255 255 }
+				
+				b_sanctum_of_the_fallen_god = {
+					holy_site = hakkar
+				}
+				b_lair_of_the_chosen = {
+				}
+				b_broken_hall = {
+				}
+				b_den_of_the_caller = {
+				}
+				b_hall_of_bones = {
+				}
+				b_hall_of_masks = {
+				}
+				b_chamber_of_the_dreamer = {
+				}
+			}
+			
+			c_sorrowmurk = { # 372
+				color = { 187 176 162 }
+				color2 = { 255 255 255 }
+				
+				b_quickrock = {
+				}
+				b_direview = {
+				}
+				b_sunfell = {
+				}
+				b_oldmire = {
+				}
+				b_serpentside = {
+				}
+				b_madwyrm = {
+				}
+				b_rageshield = {
+				}
+			}
+			
+			c_blackmurk = { # 374
+				color = { 79 215 94 }
+				color2 = { 255 255 255 }
+				
+				b_neverbreach = {
+				}
+				b_dankwood = {
+				}
+				b_sorrowfell = {
+				}
+				b_bogcrest = {
+				}
+				b_wingtide = {
+				}
+				b_scalebane = {
+				}
+				b_thorndream = {
+				}
+			}
+		}
+		
+		d_swampshore = {
+			color = { 6 90 45 }
+			color2 = { 255 255 255 }
+			culture = murloc
+			capital = 371 # Stagalbog
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 371 province_id = 373 province_id = 375 } }
+				}
+			}
+			
+			c_stagalbog = { # 371
+				color = { 102 176 162 }
+				color2 = { 255 255 255 }
+				
+				b_stagalbog_cave = {
+				}
+				b_bogbrew_camp = {
+				}
+				b_earthpost = {
+				}
+				b_boulderhelm = {
+				}
+				b_starburn = {
+				}
+				b_smoothtide = {
+				}
+				b_clearshear = {
+				}
+			}
+			
+			c_misty_reed_strand = { # 373
+				color = { 191 114 210 }
+				color2 = { 255 255 255 }
+				
+				b_misty_reed_post = {
+				}
+				b_dewguard = {
+				}
+				b_hollowshell = {
+				}
+				b_mudgarde = {
+				}
+				b_silentmud = {
+				}
+				b_glimmerfield = {
+				}
+				b_littlewood = {
+				}
+			}
+			
+			c_lonely_isle = { # 375
+				color = { 167 79 105 }
+				color2 = { 255 255 255 }
+				
+				b_sorrowstrand = {
+				}
+				b_brineside = {
+				}
+				b_newward = {
+				}
+				b_bleakbeach = {
+				}
+				b_gillhome = {
+				}
+				b_godsforgot = {
+				}
+				b_offshore = {
+				}
+			}
+		}
+	}
+	
+	k_black_morass = {
+		color = { 147 135 164 }
+		color2 = { 255 255 255 }
+		capital = 377 # The Dark Portal
+		culture = dreadmaul
+		
+		d_rockard = {
+			color = { 125 113 141 }
+			color2 = { 255 255 255 }
+			culture = blackrock
+			capital = 379 # Dreadmaul Hold
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 376 province_id = 378 province_id = 379 province_id = 388 } }
+				}
+			}
+		
+			c_nethergarde = { # 376
+				color = { 176 179 150 }
+				color2 = { 255 255 255 }
+				
+				b_nethergarde = {
+				}
+				b_garrison_armory = {
+				}
+				b_nethergarde_mines = {
+				}
+				b_demonbane = {
+				}
+				b_eastscar = {
+				}
+				b_portalwatch = {
+				}
+				b_southmaw = {
+				}
+			}
+		
+			c_demonclaw = { # 378
+				color = { 193 102 113 }
+				color2 = { 255 255 255 }
+				
+				b_dreadmaul_post = {
+				}
+				b_redsand = {
+				}
+				b_felheart = {
+				}
+				b_forlornhope = {
+				}
+				b_doomcall = {
+				}
+				b_firerain = {
+				}
+				b_chaosmark = {
+				}
+			}
+		
+			c_dreadmaul_hold = { # 379
+				color = { 102 184 215 }
+				color2 = { 255 255 255 }
+				
+				frostwolf = "Rockard"
+				blackrock = "Rockard"
+				bleeding_hollow = "Rockard"
+				shattered_hand = "Rockard"
+				shadowmoon = "Rockard"
+				thunderlord = "Rockard"
+				lightnings_blade = "Rockard"
+				dragonmaw = "Rockard"
+				bladewind = "Rockard"
+				warsong = "Rockard"
+				redwalker = "Rockard"
+				burning_blade = "Rockard"
+				whiteclaw = "Rockard"
+				twilights_hammer = "Rockard"
+				dark_scar = "Rockard"
+				bonechewer = "Rockard"
+				laughing_skull = "Rockard"
+				flowerpicker = "Rockard"
+				mok_nathal = "Rockard"
+				mag_har = "Rockard"
+				fel_orc = "Rockard"
+				
+				b_dreadmaul_hold = {
+					frostwolf = "Rockard"
+					blackrock = "Rockard"
+					bleeding_hollow = "Rockard"
+					shattered_hand = "Rockard"
+					shadowmoon = "Rockard"
+					thunderlord = "Rockard"
+					lightnings_blade = "Rockard"
+					dragonmaw = "Rockard"
+					bladewind = "Rockard"
+					warsong = "Rockard"
+					redwalker = "Rockard"
+					burning_blade = "Rockard"
+					whiteclaw = "Rockard"
+					twilights_hammer = "Rockard"
+					dark_scar = "Rockard"
+					bonechewer = "Rockard"
+					laughing_skull = "Rockard"
+					flowerpicker = "Rockard"
+					mok_nathal = "Rockard"
+					mag_har = "Rockard"
+					fel_orc = "Rockard"
+				}
+				b_okril_lon_hold = {
+				}
+				b_dreadmaul_furnace = {
+				}
+				b_smashcrush = {
+				}
+				b_oldhorde = {
+				}
+				b_demonkeep = {
+				}
+				b_spikefort = {
+				}
+			}
+		
+			c_tainted_waste = { # 388
+				color = { 207 113 164 }
+				color2 = { 255 255 255 }
+				
+				b_darkspell = {
+				}
+				b_feldeath = {
+				}
+				b_doomed_post = {
+				}
+				b_fiendpoint = {
+				}
+				b_deadeye = {
+				}
+				b_rotgrin = {
+				}
+				b_crackhand = {
+				}
+			}
+		}
+		
+		d_the_dark_portal = {
+			color = { 122 107 141 }
+			color2 = { 255 255 255 }
+			culture = blackrock
+			capital = 377 # The Dark Portal
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 377 province_id = 380 province_id = 382 } }
+				}
+			}
+			
+			c_the_dark_portal = { # 377
+				color = { 116 164 159 }
+				color2 = { 255 255 255 }
+				
+				b_the_dark_portal = {
+					holy_site = burning_legion
+					holy_site = demonology
+				}
+				b_scorched_crater = {
+				}
+				b_stairs_of_fate = {
+				}
+				b_guardians_fall = {
+				}
+				b_worldrift = {
+				}
+				b_gatekeep = {
+				}
+				b_breachpoint = {
+				}
+			}
+			
+			c_rise_of_the_defiler = { # 380
+				color = { 224 108 108 }
+				color2 = { 255 255 255 }
+				
+				b_rise_of_the_defiler = {
+				}
+				b_stormhollow = {
+				}
+				b_deadwatch = {
+				}
+				b_deadsun = {
+				}
+				b_hollowcross = {
+				}
+				b_ragefort = {
+				}
+				b_rustwall = {
+				}
+			}
+			
+			c_serpents_coil = { # 382
+				color = { 213 111 119 }
+				color2 = { 255 255 255 }
+				
+				b_serpents_coil = {
+				}
+				b_seat_of_the_traitor = {
+				}
+				b_swornfiend = {
+				}
+				b_shadowspawn = {
+				}
+				b_felcloack = {
+				}
+				b_doomsands = {
+				}
+				b_endbrought = {
+				}
+			}
+		}
+		
+		d_the_tainted_scar = {
+			color = { 99 87 115 }
+			color2 = { 255 255 255 }
+			culture = demonic
+			capital = 384 # The Tainted Scar
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 381 province_id = 384 province_id = 386 } }
+				}
+			}
+			
+			c_burning_ledge = { # 381
+				color = { 48 159 162 }
+				color2 = { 255 255 255 }
+				
+				b_altar_of_storms_s = {
+				}
+				b_shadows_dance = {
+				}
+				b_grimdawn = {
+				}
+				b_duskdeath = {
+				}
+				b_redsummit = {
+				}
+				b_falsekeep = {
+				}
+				b_honorbreak = {
+				}
+			}
+			
+			c_the_tainted_scar = { # 384
+				color = { 94 187 136 }
+				color2 = { 255 255 255 }
+				
+				b_doomlords_throne = {
+				}
+				b_decreipt_altar = {
+				}
+				b_felmaw = {
+				}
+				b_demonskull = {
+				}
+				b_ghostrider = {
+				}
+				b_stormcrag = {
+				}
+				b_lostdream = {
+				}
+			}
+			
+			c_the_tainted_forest = { # 386
+				color = { 198 105 128 }
+				color2 = { 255 255 255 }
+				
+				b_surwich = {
+				}
+				b_maldraz = {
+				}
+				b_redacre = {
+				}
+				b_oldhollow = {
+				}
+				b_crowrock = {
+				}
+				b_smokemaw = {
+				}
+				b_ghostbreak = {
+				}
+			}
+		}
+		
+		d_red_shore = {
+			color = { 79 67 95 }
+			color2 = { 255 255 255 }
+			culture = demonic
+			capital = 385 # The Red Raches
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 383 province_id = 385 province_id = 387 } }
+				}
+			}
+			
+			c_shattershore = { # 383
+				color = { 147 65 173 }
+				color2 = { 255 255 255 }
+				
+				b_shattered_beachhead = {
+				}
+				b_the_shattered_front = {
+				}
+				b_shattered_landing = {
+				}
+				b_ebonvein = {
+				}
+				b_redham = {
+				}
+				b_felwave = {
+				}
+				b_cragshore = {
+				}
+			}
+			
+			c_the_red_reaches = { # 385
+				color = { 155 184 77 }
+				color2 = { 255 255 255 }
+				
+				b_bloodwash_cavern = {
+				}
+				b_bloodwash_fighting_pits = {
+				}
+				b_bloodwash_shrine = {
+				}
+				b_rockpool_village = {
+				}
+				b_farshore = {
+				}
+				b_felmist = {
+				}
+				b_ebonwater = {
+				}
+			}
+			
+			c_the_vile_coast = { # 387
+				color = { 88 167 68 }
+				color2 = { 255 255 255 }
+				
+				b_sunveil_excursion = {
+				}
+				b_gloomburgh = {
+				}
+				b_heatborn = {
+				}
+				b_mudrun = {
+				}
+				b_madfang = {
+				}
+				b_ragebarrow = {
+				}
+				b_sleekhorn = {
+				}
+			}
+		}
+	}
 }

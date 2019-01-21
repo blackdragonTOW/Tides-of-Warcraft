@@ -433,7 +433,7 @@ orcish = {
 		baron_titles_hidden = yes
 		count_titles_hidden = yes
 		horde = yes		
-		
+	
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
 		pat_grf_name_chance = 30
 		mat_grf_name_chance = 10
@@ -3550,6 +3550,40 @@ ogre = {
 		
 		allow_looting = yes
 	}
+	bloodfist = {
+		graphical_cultures = { ogregfx westerngfx }
+		
+		color = { 0.45 0.34 0.20 }
+		
+		male_names = { Blackheart Blindeye Bo'kar Bro'Gaz Brogg Brognat Burth Cho'Rush Chok'sul Chu'a'lor Cyclok Do'gol Dorgok Draz'Zilb Dullgrom Ear-Biter Emilgund Emogg Fengus Foulbelly Gahk 
+		Glommus Gnosh Gor Gor'marok Gor'tesh Gordok Gorefist Gorgon'och Gorr'Dim Grel'borg Grimnok Grok Grubnosh Gurn Hahk'Zor Hamhock Jho'nass Jorb Kiggler Kor'gresh Kormok Kovork Krak Kreeg 
+		Krom'Grul Kromcrush Krosh Lard Lo'Grosh Logok Lolo Lump Magronos Mai'Zoth Mal'druk Maulgar Mingo Mizzle Mog'dorg Mogor Mojo Mok'Morokk Mol'dar Molok Muckrake Mudcrush Mug'thol 
+		Ogg'marr Ograbisi Ok'thor Olm Omgorn Omokk Or'Kalar Rhahk'Zor Roloch Ruul Sah'rhee Skarr Slip'kik Targ Tharg Tho'grun Torkus Trogma Unkor Urok Vim'gol Warbringer Warosh Zorbo Zulrg Zzarc'Vul
+		}
+		female_names = { Blackheart Blindeye Bo'kar Bro'Gaz Brogg Brognat Burth Cho'Rush Chok'sul Chu'a'lor Cyclok Do'gol Dorgok Draz'Zilb Dullgrom Ear-Biter Emilgund Emogg Fengus Foulbelly Gahk 
+		Glommus Gnosh Gor Gor'marok Gor'tesh Gordok Gorefist Gorgon'och Gorr'Dim Grel'borg Grimnok Grok Grubnosh Gurn Hahk'Zor Hamhock Jho'nass Jorb Kiggler Kor'gresh Kormok Kovork Krak Kreeg 
+		Krom'Grul Kromcrush Krosh Lard Lo'Grosh Logok Lolo Lump Magronos Mai'Zoth Mal'druk Maulgar Mingo Mizzle Mog'dorg Mogor Mojo Mok'Morokk Mol'dar Molok Muckrake Mudcrush Mug'thol 
+		Ogg'marr Ograbisi Ok'thor Olm Omgorn Omokk Or'Kalar Rhahk'Zor Roloch Ruul Sah'rhee Skarr Slip'kik Targ Tharg Tho'grun Torkus Trogma Unkor Urok Vim'gol Warbringer Warosh Zorbo Zulrg Zzarc'Vul
+		}
+		dynasty_title_names = yes 
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+		allow_looting = yes
+	}
 }	
 
 vrykul = {
@@ -3709,7 +3743,7 @@ trogg = {
 demonic = {
 	graphical_cultures = { westerngfx }
 	
-	demonic = { # Used exclusively for provinces!
+	demonic = { # The others in the group are for portrait-setting
 		graphical_cultures = { westerngfx }
 		
 		color = { 0.31 0.29 0.33 }
@@ -4069,152 +4103,14 @@ draenei = {
 		
 		allow_looting = no
 	}
-	sorrowstep = { # Swamp of Sorrows broken, headcannon'd a name because "Broken Exiles" is insufficient.
+	broken = {
 		graphical_cultures = { westerngfx }
 		
 		color = { 0.11 0.69 0.46 }
 		
 		male_names = { TEMP }
 		female_names = { TEMP }
-		dynasty_title_names = no
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 25
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
-
-		modifier = default_culture_modifier
-
-		
-		allow_looting = yes
-	}
-	kurenai = {
-		graphical_cultures = { westerngfx }
-		
-		color = { 0.11 0.69 0.46 }
-		
-		male_names = { TEMP }
-		female_names = { TEMP }
-		dynasty_title_names = no
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 25
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
-
-		modifier = default_culture_modifier
-
-		
-		allow_looting = yes
-	}
-	murkblood = {
-		graphical_cultures = { westerngfx }
-		
-		color = { 0.11 0.69 0.46 }
-		
-		male_names = { TEMP }
-		female_names = { TEMP }
-		dynasty_title_names = no
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 25
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
-
-		modifier = default_culture_modifier
-
-		
-		allow_looting = yes
-	}
-	dreghood = {
-		graphical_cultures = { westerngfx }
-		
-		color = { 0.11 0.69 0.46 }
-		
-		male_names = { TEMP }
-		female_names = { TEMP }
-		dynasty_title_names = no
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 25
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
-
-		modifier = default_culture_modifier
-
-		
-		allow_looting = yes
-	}
-	greyheart = {
-		graphical_cultures = { westerngfx }
-		
-		color = { 0.11 0.69 0.46 }
-		
-		male_names = { TEMP }
-		female_names = { TEMP }
-		dynasty_title_names = no
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 25
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
-
-		modifier = default_culture_modifier
-
-		
-		allow_looting = yes
-	}
-	wrekt = {
-		graphical_cultures = { westerngfx }
-		
-		color = { 0.11 0.69 0.46 }
-		
-		male_names = { TEMP }
-		female_names = { TEMP }
-		dynasty_title_names = no
-		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
-		pat_grf_name_chance = 30
-		mat_grf_name_chance = 10
-		father_name_chance = 25
-		
-		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
-		pat_grm_name_chance = 20
-		mat_grm_name_chance = 40
-		mother_name_chance = 5
-
-		modifier = default_culture_modifier
-
-		
-		allow_looting = yes
-	}
-	ashtongue = {
-		graphical_cultures = { westerngfx }
-		
-		color = { 0.11 0.69 0.46 }
-		
-		male_names = { TEMP }
-		female_names = { TEMP }
-		dynasty_title_names = no
+		dynasty_title_names = yes 
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
 		pat_grf_name_chance = 30
 		mat_grf_name_chance = 10
@@ -4237,7 +4133,7 @@ draenei = {
 		
 		male_names = { TEMP }
 		female_names = { TEMP }
-		dynasty_title_names = no
+		dynasty_title_names = yes 
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
 		pat_grf_name_chance = 30
 		mat_grf_name_chance = 10
