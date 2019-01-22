@@ -1,347 +1,392 @@
 ## Generated character file (code by Keitaro_Ura) ##
 
-1149 = { # Ruler of c_agmonds_end - 10006.6.27
+1113 = { # Ruler of c_agmonds_end - 10011.1.18
+	name = Hamhock
+	female = yes
+	dynasty = 23 # dynasty23
+	culture = dustbelcher
+	religion = demonology
+	trait = race_ogre
+	9981.9.11 = {
+		birth = yes
+	}
+	9996.9.3 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 1114 # Targ
+		}
+	}
+	9997.9.11 = {
+		add_matrilineal_spouse = 1114 # Targ
+	}
+	10036.6.19 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1114 = {
+	name = Targ
+	culture = dustbelcher
+	religion = demonology
+	trait = race_ogre
+	9980.3.6 = {
+		birth = yes
+	}
+	10035.3.25 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1711 = { # Ruler of c_apocryphans_rest - 10007.7.2
+	name = Grel'borg
+	dynasty = 63 # dynasty63
+	culture = spirestone
+	religion = demonology
+	trait = race_ogre
+	9984.12.21 = {
+		birth = yes
+	}
+	9986.3.7 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 1712 # Bo'kar
+		}
+	}
+	10000.12.21 = {
+		add_spouse = 1712 # Bo'kar
+	}
+	10053.10.26 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1712 = {
+	name = Bo'kar
+	female = yes
+	culture = spirestone
+	religion = demonology
+	trait = race_ogre
+	9970.7.2 = {
+		birth = yes
+	}
+	10039.5.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1753 = { # Ruler of c_armstrong_downs - 10013.1.21
+	name = Torkus
+	female = yes
+	dynasty = 67 # dynasty67
+	culture = splinterfist
+	religion = demonology
+	trait = race_ogre
+	9987.1.30 = {
+		birth = yes
+	}
+	10011.11.12 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 1754 # Ok'thor
+		}
+	}
+	10011.12.30 = {
+		add_matrilineal_spouse = 1754 # Ok'thor
+	}
+	10042.5.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1754 = {
+	name = Ok'thor
+	culture = splinterfist
+	religion = demonology
+	trait = race_ogre
+	9995.12.30 = {
+		birth = yes
+	}
+	10050.2.26 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2767 = { # Ruler of c_black_crag - 10013.4.2
+	name = Blackheart
+	female = yes
+	dynasty = 142 # dynasty142
+	culture = mo_grosh
+	religion = twilights_hammer
+	trait = race_ogre
+	9994.1.24 = {
+		birth = yes
+	}
+	10002.4.18 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 2768 # Torkus
+		}
+	}
+	10010.1.24 = {
+		add_matrilineal_spouse = 2768 # Torkus
+	}
+	10064.12.27 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2768 = {
+	name = Torkus
+	culture = mo_grosh
+	religion = twilights_hammer
+	trait = race_ogre
+	9986.1.8 = {
+		birth = yes
+	}
+	10056.2.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4435 = { # Ruler of c_deadmans_crossing - 10012.12.22
+	name = Maulgar
+	dynasty = 251 # dynasty251
+	culture = deadwind
+	religion = demonology
+	trait = race_ogre
+	9996.5.31 = {
+		birth = yes
+	}
+	10009.6.12 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 4436 # Lo'Grosh
+		}
+	}
+	10012.5.31 = {
+		add_spouse = 4436 # Lo'Grosh
+	}
+	10058.2.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4436 = {
+	name = Lo'Grosh
+	female = yes
+	culture = deadwind
+	religion = demonology
+	trait = race_ogre
+	9993.6.15 = {
+		birth = yes
+	}
+	10055.8.26 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4507 = { # Ruler of c_deadwind_ravine - 10006.2.5
+	name = Mug'thol
+	dynasty = 254 # dynasty254
+	culture = deadwind
+	religion = demonology
+	trait = race_ogre
+	9986.12.1 = {
+		birth = yes
+	}
+	10005.9.7 = {
+		add_spouse = 4508 # Ogg'marr
+	}
+	10050.8.5 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4508 = {
+	name = Ogg'marr
+	female = yes
+	culture = deadwind
+	religion = demonology
+	trait = race_ogre
+	9989.2.24 = {
+		birth = yes
+	}
+	10053.2.17 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5303 = { # Ruler of c_dustbelch - 10005.8.14
+	name = Jorb
+	female = yes
+	dynasty = 306 # dynasty306
+	culture = dustbelcher
+	religion = demonology
+	trait = race_ogre
+	9980.8.29 = {
+		birth = yes
+	}
+	10004.6.23 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5304 # Sah'rhee
+		}
+	}
+	10004.12.8 = {
+		add_matrilineal_spouse = 5304 # Sah'rhee
+	}
+	10038.1.24 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5304 = {
+	name = Sah'rhee
+	culture = dustbelcher
+	religion = demonology
+	trait = race_ogre
+	9988.12.8 = {
+		birth = yes
+	}
+	10046.12.5 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5693 = { # Ruler of c_eastpeak - 10013.7.21
+	name = Muckrake
+	female = yes
+	dynasty = 330 # dynasty330
+	culture = mo_grosh
+	religion = twilights_hammer
+	trait = race_ogre
+	9999.11.29 = {
+		birth = yes
+	}
+	10028.10.22 = {
+		add_matrilineal_spouse = 5694 # Burth
+	}
+	10056.2.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5694 = {
+	name = Burth
+	culture = mo_grosh
+	religion = twilights_hammer
+	trait = race_ogre
+	10012.9.26 = {
+		birth = yes
+	}
+	10069.7.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5871 = { # Ruler of c_elementium_cliffs - 10019.10.7
+	name = Mug'thol
+	dynasty = 342 # dynasty342
+	culture = bloodeye
+	religion = twilights_hammer
+	trait = race_ogre
+	9987.3.15 = {
+		birth = yes
+	}
+	10015.1.23 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5872 # Warbringer
+		}
+	}
+	10015.2.7 = {
+		add_spouse = 5872 # Warbringer
+	}
+	10042.6.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5872 = {
 	name = Warbringer
 	female = yes
-	dynasty = 21 # dynasty21
-	culture = dustbelcher
-	religion = demonology
-	trait = race_ogre
-	9973.10.5 = {
-		birth = yes
-	}
-	9989.9.5 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 1150 # Hahk'Zor
-		}
-	}
-	9989.10.5 = {
-		add_matrilineal_spouse = 1150 # Hahk'Zor
-	}
-	10024.10.23 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-1150 = {
-	name = Hahk'Zor
-	culture = dustbelcher
-	religion = demonology
-	trait = race_ogre
-	9973.8.30 = {
-		birth = yes
-	}
-	10024.1.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-1151 = { # Ruler of c_agmonds_end - 10024.2.22
-	name = Kromcrush
-	female = yes
-	dynasty = 21 # dynasty21
-	culture = dustbelcher
-	religion = demonology
-	father = 1150 # Hahk'Zor
-	mother = 1149 # Warbringer
-	trait = race_ogre
-	9996.9.16 = {
-		birth = yes
-	}
-	10003.7.22 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 1152 # Bro'Gaz
-		}
-	}
-	10012.9.16 = {
-		add_matrilineal_spouse = 1152 # Bro'Gaz
-	}
-	10048.1.11 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-1152 = {
-	name = Bro'Gaz
-	culture = dustbelcher
-	religion = demonology
-	trait = race_ogre
-	9987.11.9 = {
-		birth = yes
-	}
-	10039.3.20 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-1755 = { # Ruler of c_apocryphans_rest - 10006.6.25
-	name = Logok
-	female = yes
-	dynasty = 62 # dynasty62
-	culture = spirestone
-	religion = demonology
-	trait = race_ogre
-	9991.10.30 = {
-		birth = yes
-	}
-	10002.12.5 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 1756 # Ruul
-		}
-	}
-	10007.10.30 = {
-		add_matrilineal_spouse = 1756 # Ruul
-	}
-	10053.4.6 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-1756 = {
-	name = Ruul
-	culture = spirestone
-	religion = demonology
-	trait = race_ogre
-	9986.8.18 = {
-		birth = yes
-	}
-	10048.10.4 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-2437 = { # Ruler of c_black_crag - 10013.5.10
-	name = Do'gol
-	dynasty = 115 # dynasty115
-	culture = mo_grosh
+	culture = bloodeye
 	religion = twilights_hammer
 	trait = race_ogre
-	9978.9.15 = {
+	9999.2.7 = {
 		birth = yes
 	}
-	10008.10.17 = {
-		add_spouse = 2438 # Mog'dorg
-	}
-	10037.8.27 = {
+	10054.11.28 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-2438 = {
-	name = Mog'dorg
+5981 = { # Ruler of c_everdell - 10009.6.20
+	name = Jho'nass
 	female = yes
-	culture = mo_grosh
-	religion = twilights_hammer
-	trait = race_ogre
-	9992.6.19 = {
-		birth = yes
-	}
-	10051.2.21 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-5361 = { # Ruler of c_fuselight - 10005.12.12
-	name = Unkor
-	female = yes
-	dynasty = 309 # dynasty309
-	culture = dustbelcher
+	dynasty = 352 # dynasty352
+	culture = stonemaul
 	religion = demonology
 	trait = race_ogre
-	9990.11.25 = {
+	9974.8.26 = {
 		birth = yes
 	}
-	10004.6.26 = {
+	10005.7.3 = {
 		effect = {
 			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
 				break = yes
 			}
-			add_betrothal = 5362 # Lard
+			add_betrothal = 5982 # Maulgar
 		}
 	}
-	10006.11.25 = {
-		add_matrilineal_spouse = 5362 # Lard
+	10005.12.24 = {
+		add_matrilineal_spouse = 5982 # Maulgar
 	}
-	10056.2.24 = {
+	10039.10.9 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-5362 = {
-	name = Lard
-	culture = dustbelcher
+5982 = {
+	name = Maulgar
+	culture = stonemaul
 	religion = demonology
 	trait = race_ogre
-	9988.1.13 = {
+	9989.12.24 = {
 		birth = yes
-	}
-	10054.3.7 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-5443 = { # Ruler of c_glopguts_hollow - 10006.2.18
-	name = Muckrake
-	dynasty = 315 # dynasty315
-	culture = glopgut
-	religion = demonology
-	trait = race_ogre
-	9986.9.15 = {
-		birth = yes
-	}
-	9988.2.20 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 5444 # Mingo
-		}
-	}
-	10002.9.15 = {
-		add_spouse = 5444 # Mingo
-	}
-	10044.7.12 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-5444 = {
-	name = Mingo
-	female = yes
-	culture = glopgut
-	religion = demonology
-	trait = race_ogre
-	9972.11.16 = {
-		birth = yes
-	}
-	10030.3.23 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-7451 = { # Ruler of c_lochside - 10020.8.1
-	name = Mizzle
-	female = yes
-	dynasty = 461 # dynasty461
-	culture = mo_grosh
-	religion = twilights_hammer
-	trait = race_ogre
-	9995.1.28 = {
-		birth = yes
-	}
-	10005.11.30 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 7452 # Targ
-		}
-	}
-	10011.1.28 = {
-		add_matrilineal_spouse = 7452 # Targ
-	}
-	10047.2.2 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-7452 = {
-	name = Targ
-	culture = mo_grosh
-	religion = twilights_hammer
-	trait = race_ogre
-	9989.11.22 = {
-		birth = yes
-	}
-	10041.5.7 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8021 = { # Ruler of c_mirage_flats - 10009.8.11
-	name = Zulrg
-	female = yes
-	dynasty = 502 # dynasty502
-	culture = dustbelcher
-	religion = demonology
-	trait = race_ogre
-	9993.11.15 = {
-		birth = yes
-	}
-	10018.7.19 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 8022 # Ruul
-		}
-	}
-	10018.10.8 = {
-		add_matrilineal_spouse = 8022 # Ruul
-	}
-	10049.3.19 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-8022 = {
-	name = Ruul
-	culture = dustbelcher
-	religion = demonology
-	trait = race_ogre
-	10002.10.8 = {
-		birth = yes
-	}
-	10058.8.7 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-11779 = { # Ruler of c_the_twilight_breach - 10007.8.24
-	name = Grok
-	female = yes
-	dynasty = 783 # dynasty783
-	culture = glopgut
-	religion = demonology
-	trait = race_ogre
-	10002.6.27 = {
-		birth = yes
-	}
-	10015.4.14 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 11780 # Glommus
-		}
-	}
-	10018.6.27 = {
-		add_matrilineal_spouse = 11780 # Glommus
 	}
 	10054.7.5 = {
 		death = {
@@ -349,56 +394,905 @@
 		}
 	}
 }
-11780 = {
-	name = Glommus
-	culture = glopgut
+6059 = { # Ruler of c_everstill_fields - 10017.3.11
+	name = Warosh
+	dynasty = 358 # dynasty358
+	culture = boulderfist
 	religion = demonology
 	trait = race_ogre
-	9999.1.10 = {
+	9999.9.5 = {
 		birth = yes
 	}
-	10051.12.21 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12557 = { # Ruler of c_valley_of_fangs - 10015.3.3
-	name = Gorefist
-	dynasty = 843 # dynasty843
-	culture = dustbelcher
-	religion = demonology
-	trait = race_ogre
-	10003.7.19 = {
-		birth = yes
-	}
-	10027.2.17 = {
+	10026.1.4 = {
 		effect = {
 			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
 				break = yes
 			}
-			add_betrothal = 12558 # Chok'sul
+			add_betrothal = 6060 # Gurn
 		}
 	}
-	10027.4.6 = {
-		add_spouse = 12558 # Chok'sul
+	10026.9.18 = {
+		add_spouse = 6060 # Gurn
 	}
-	10067.2.19 = {
+	10054.12.10 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12558 = {
-	name = Chok'sul
+6060 = {
+	name = Gurn
 	female = yes
+	culture = boulderfist
+	religion = demonology
+	trait = race_ogre
+	10010.9.18 = {
+		birth = yes
+	}
+	10065.6.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8231 = { # Ruler of c_honorfield - 10012.7.21
+	name = Warbringer
+	dynasty = 511 # dynasty511
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	9997.8.27 = {
+		birth = yes
+	}
+	10002.4.21 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 8232 # Grel'borg
+		}
+	}
+	10013.8.27 = {
+		add_spouse = 8232 # Grel'borg
+	}
+	10064.8.24 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8232 = {
+	name = Grel'borg
+	female = yes
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	9986.2.26 = {
+		birth = yes
+	}
+	10053.6.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8741 = { # Ruler of c_jangolode - 10015.5.15
+	name = Zorbo
+	dynasty = 545 # dynasty545
+	culture = gordunni
+	religion = demonology
+	trait = race_ogre
+	9988.12.18 = {
+		birth = yes
+	}
+	9994.7.19 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 8742 # Blindeye
+		}
+	}
+	10004.12.18 = {
+		add_spouse = 8742 # Blindeye
+	}
+	10046.5.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+8742 = {
+	name = Blindeye
+	female = yes
+	culture = gordunni
+	religion = demonology
+	trait = race_ogre
+	9978.1.4 = {
+		birth = yes
+	}
+	10036.3.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9045 = { # Ruler of c_lakeshire - 10012.10.16
+	name = Blindeye
+	female = yes
+	dynasty = 569 # dynasty569
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	9965.1.7 = {
+		birth = yes
+	}
+	9993.4.11 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 9046 # Jorb
+		}
+	}
+	9993.6.24 = {
+		add_matrilineal_spouse = 9046 # Jorb
+	}
+	10017.1.26 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9046 = {
+	name = Jorb
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	9977.6.24 = {
+		birth = yes
+	}
+	10029.7.21 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9047 = { # Ruler of c_lakeshire - 10017.2.11
+	name = Slip'kik
+	female = yes
+	dynasty = 569 # dynasty569
+	culture = stonemaul
+	religion = demonology
+	father = 9046 # Jorb
+	mother = 9045 # Blindeye
+	trait = race_ogre
+	9981.1.7 = {
+		birth = yes
+	}
+	9990.8.1 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 9048 # Gor'marok
+		}
+	}
+	9997.1.7 = {
+		add_matrilineal_spouse = 9048 # Gor'marok
+	}
+	10051.7.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9048 = {
+	name = Gor'marok
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	9974.8.2 = {
+		birth = yes
+	}
+	10044.4.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9411 = { # Ruler of c_lochside - 10018.11.17
+	name = Mal'druk
+	dynasty = 600 # dynasty600
+	culture = mo_grosh
+	religion = twilights_hammer
+	trait = race_ogre
+	9992.7.22 = {
+		birth = yes
+	}
+	10006.3.15 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 9412 # Tho'grun
+		}
+	}
+	10008.7.22 = {
+		add_spouse = 9412 # Tho'grun
+	}
+	10062.3.27 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+9412 = {
+	name = Tho'grun
+	female = yes
+	culture = mo_grosh
+	religion = twilights_hammer
+	trait = race_ogre
+	9990.7.24 = {
+		birth = yes
+	}
+	10060.12.24 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10191 = { # Ruler of c_mirage_flats - 10009.11.11
+	name = Jho'nass
+	female = yes
+	dynasty = 651 # dynasty651
 	culture = dustbelcher
 	religion = demonology
 	trait = race_ogre
-	10011.4.6 = {
+	9979.2.24 = {
 		birth = yes
 	}
-	10075.9.20 = {
+	9986.3.23 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 10192 # Mogor
+		}
+	}
+	9995.2.24 = {
+		add_matrilineal_spouse = 10192 # Mogor
+	}
+	10048.10.31 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10192 = {
+	name = Mogor
+	culture = dustbelcher
+	religion = demonology
+	trait = race_ogre
+	9970.7.17 = {
+		birth = yes
+	}
+	10039.8.10 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12067 = { # Ruler of c_redridge_canyons - 10014.8.12
+	name = Roloch
+	dynasty = 773 # dynasty773
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	10000.1.21 = {
+		birth = yes
+	}
+	10016.4.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12068 # Torkus
+		}
+	}
+	10016.9.10 = {
+		add_spouse = 12068 # Torkus
+	}
+	10064.11.13 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12068 = {
+	name = Torkus
+	female = yes
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	10000.9.10 = {
+		birth = yes
+	}
+	10064.9.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12111 = { # Ruler of c_red_cavery - 10023.10.2
+	name = Cho'Rush
+	dynasty = 777 # dynasty777
+	culture = crushridge
+	religion = demonology
+	trait = race_ogre
+	9997.12.11 = {
+		birth = yes
+	}
+	10022.8.2 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12112 # Tho'grun
+		}
+	}
+	10022.10.7 = {
+		add_spouse = 12112 # Tho'grun
+	}
+	10061.5.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12112 = {
+	name = Tho'grun
+	female = yes
+	culture = crushridge
+	religion = demonology
+	trait = race_ogre
+	10006.10.7 = {
+		birth = yes
+	}
+	10070.10.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12645 = { # Ruler of c_saddleplain - 10007.12.13
+	name = Muckrake
+	female = yes
+	dynasty = 807 # dynasty807
+	culture = gordunni
+	religion = demonology
+	trait = race_ogre
+	9983.7.17 = {
+		birth = yes
+	}
+	9997.3.11 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 12646 # Gorefist
+		}
+	}
+	9999.7.17 = {
+		add_matrilineal_spouse = 12646 # Gorefist
+	}
+	10042.8.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+12646 = {
+	name = Gorefist
+	culture = gordunni
+	religion = demonology
+	trait = race_ogre
+	9981.8.20 = {
+		birth = yes
+	}
+	10040.12.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14049 = { # Ruler of c_southvale - 10010.8.10
+	name = Bo'kar
+	female = yes
+	dynasty = 905 # dynasty905
+	culture = splinterfist
+	religion = demonology
+	trait = race_ogre
+	9987.10.27 = {
+		birth = yes
+	}
+	9999.10.17 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 14050 # Gor
+		}
+	}
+	10003.10.27 = {
+		add_matrilineal_spouse = 14050 # Gor
+	}
+	10055.6.27 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14050 = {
+	name = Gor
+	culture = splinterfist
+	religion = demonology
+	trait = race_ogre
+	9983.11.26 = {
+		birth = yes
+	}
+	10051.8.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14335 = { # Ruler of c_stonard - 10018.10.6
+	name = Kiggler
+	female = yes
+	dynasty = 923 # dynasty923
+	culture = dreadmaul
+	religion = demonology
+	trait = race_ogre
+	10000.5.8 = {
+		birth = yes
+	}
+	10020.6.1 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 14336 # Grimnok
+		}
+	}
+	10020.9.18 = {
+		add_matrilineal_spouse = 14336 # Grimnok
+	}
+	10060.4.17 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14336 = {
+	name = Grimnok
+	culture = dreadmaul
+	religion = demonology
+	trait = race_ogre
+	10004.9.18 = {
+		birth = yes
+	}
+	10064.7.18 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14481 = { # Ruler of c_stonewatch - 10007.7.7
+	name = Gorr'Dim
+	female = yes
+	dynasty = 932 # dynasty932
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	9982.1.18 = {
+		birth = yes
+	}
+	9990.1.17 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 14482 # Burth
+		}
+	}
+	9998.1.18 = {
+		add_matrilineal_spouse = 14482 # Burth
+	}
+	10034.12.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14482 = {
+	name = Burth
+	culture = stonemaul
+	religion = demonology
+	trait = race_ogre
+	9974.2.17 = {
+		birth = yes
+	}
+	10026.1.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+15209 = { # Ruler of c_terror_wing_path - 10017.6.7
+	name = Kreeg
+	female = yes
+	dynasty = 987 # dynasty987
+	culture = firegut
+	religion = demonology
+	trait = race_ogre
+	9992.9.30 = {
+		birth = yes
+	}
+	9996.2.26 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 15210 # Slip'kik
+		}
+	}
+	10008.9.30 = {
+		add_matrilineal_spouse = 15210 # Slip'kik
+	}
+	10060.1.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+15210 = {
+	name = Slip'kik
+	culture = firegut
+	religion = demonology
+	trait = race_ogre
+	9980.8.22 = {
+		birth = yes
+	}
+	10048.10.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+15729 = { # Ruler of c_the_dustbowl - 10009.2.24
+	name = Mingo
+	female = yes
+	dynasty = 1028 # dynasty1028
+	culture = spirestone
+	religion = demonology
+	trait = race_ogre
+	9983.8.6 = {
+		birth = yes
+	}
+	9996.1.13 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 15730 # Sah'rhee
+		}
+	}
+	9999.8.6 = {
+		add_matrilineal_spouse = 15730 # Sah'rhee
+	}
+	10051.9.10 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+15730 = {
+	name = Sah'rhee
+	culture = spirestone
+	religion = demonology
+	trait = race_ogre
+	9980.1.24 = {
+		birth = yes
+	}
+	10048.2.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+16131 = { # Ruler of c_the_mournland - 10021.2.7
+	name = Dorgok
+	female = yes
+	dynasty = 1050 # dynasty1050
+	culture = firegut
+	religion = demonology
+	trait = race_ogre
+	9990.9.18 = {
+		birth = yes
+	}
+	9994.7.21 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 16132 # Grubnosh
+		}
+	}
+	10006.9.18 = {
+		add_matrilineal_spouse = 16132 # Grubnosh
+	}
+	10040.8.26 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+16132 = {
+	name = Grubnosh
+	culture = firegut
+	religion = demonology
+	trait = race_ogre
+	9978.2.14 = {
+		birth = yes
+	}
+	10028.2.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+16609 = { # Ruler of c_the_twilight_breach - 10013.7.8
+	name = Chu'a'lor
+	female = yes
+	dynasty = 1081 # dynasty1081
+	culture = glopgut
+	religion = demonology
+	trait = race_ogre
+	9967.12.2 = {
+		birth = yes
+	}
+	9979.2.15 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 16610 # Jho'nass
+		}
+	}
+	9983.12.2 = {
+		add_matrilineal_spouse = 16610 # Jho'nass
+	}
+	10028.3.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+16610 = {
+	name = Jho'nass
+	culture = glopgut
+	religion = demonology
+	trait = race_ogre
+	9963.5.23 = {
+		birth = yes
+	}
+	10024.2.13 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+16883 = { # Ruler of c_three_corners - 10016.1.18
+	name = Gorefist
+	female = yes
+	dynasty = 1095 # dynasty1095
+	culture = boulderfist
+	religion = demonology
+	trait = race_ogre
+	9995.3.28 = {
+		birth = yes
+	}
+	10008.1.11 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 16884 # Glommus
+		}
+	}
+	10011.3.28 = {
+		add_matrilineal_spouse = 16884 # Glommus
+	}
+	10054.7.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+16884 = {
+	name = Glommus
+	culture = boulderfist
+	religion = demonology
+	trait = race_ogre
+	9992.1.2 = {
+		birth = yes
+	}
+	10051.9.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17701 = { # Ruler of c_valley_of_ashes - 10010.9.23
+	name = Warosh
+	dynasty = 1159 # dynasty1159
+	culture = firegut
+	religion = demonology
+	trait = race_ogre
+	9974.2.15 = {
+		birth = yes
+	}
+	9980.10.4 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 17702 # Unkor
+		}
+	}
+	9990.2.15 = {
+		add_spouse = 17702 # Unkor
+	}
+	10039.2.21 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17702 = {
+	name = Unkor
+	female = yes
+	culture = firegut
+	religion = demonology
+	trait = race_ogre
+	9964.5.30 = {
+		birth = yes
+	}
+	10029.6.10 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17751 = { # Ruler of c_valley_of_fangs - 10019.7.4
+	name = Zzarc'Vul
+	female = yes
+	dynasty = 1163 # dynasty1163
+	culture = dustbelcher
+	religion = demonology
+	trait = race_ogre
+	10000.8.16 = {
+		birth = yes
+	}
+	10003.10.20 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 17752 # Do'gol
+		}
+	}
+	10016.8.16 = {
+		add_matrilineal_spouse = 17752 # Do'gol
+	}
+	10066.11.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17752 = {
+	name = Do'gol
+	culture = dustbelcher
+	religion = demonology
+	trait = race_ogre
+	9987.5.28 = {
+		birth = yes
+	}
+	10053.5.27 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+18635 = { # Ruler of c_wolfswood - 10006.9.15
+	name = Roloch
+	dynasty = 1232 # dynasty1232
+	culture = mosh_ogg
+	religion = demonology
+	trait = race_ogre
+	9978.11.15 = {
+		birth = yes
+	}
+	9991.12.11 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 18636 # Gnosh
+		}
+	}
+	9994.11.15 = {
+		add_spouse = 18636 # Gnosh
+	}
+	10028.1.17 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+18636 = {
+	name = Gnosh
+	female = yes
+	culture = mosh_ogg
+	religion = demonology
+	trait = race_ogre
+	9975.10.11 = {
+		birth = yes
+	}
+	10025.10.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19373 = { # Ruler of c_mistglade - 10005.9.17
+	name = Jho'nass
+	dynasty = 1278 # dynasty1278
+	culture = deadwind
+	religion = demonology
+	trait = race_ogre
+	9978.6.24 = {
+		birth = yes
+	}
+	9986.6.28 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 19374 # Krak
+		}
+	}
+	9994.6.24 = {
+		add_spouse = 19374 # Krak
+	}
+	10029.9.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19374 = {
+	name = Krak
+	female = yes
+	culture = deadwind
+	religion = demonology
+	trait = race_ogre
+	9970.7.13 = {
+		birth = yes
+	}
+	10021.1.1 = {
 		death = {
 			death_reason = death_natural
 		}
