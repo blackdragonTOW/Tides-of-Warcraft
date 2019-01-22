@@ -38,24 +38,14 @@ character_event = {
 		modifier = {
 			factor = 1.5
 			NOR = {
-				trait = arcanist
 				trait = mage
 				trait = warlock
-				trait = necrolyte
 				trait = necromancer
 			}
 		}
 		modifier = {
-			factor = 1.1
-			trait = arcanist
-		}
-		modifier = {
 			factor = 0.7
 			trait = warlock
-		}
-		modifier = {
-			factor = 0.9
-			trait = necrolyte
 		}
 		modifier = {
 			factor = 0.8
@@ -200,10 +190,8 @@ character_event = {
 					trait = race_succubus
 					trait = race_pit_lord
 					trait = felsworn
-					trait = arcanist
 					trait = mage
 					trait = warlock
-					trait = necrolyte
 					trait = necromancer
 				}
 				prisoner = no
@@ -215,7 +203,6 @@ character_event = {
 		if = {
 			limit = {
 				OR = {
-					trait = necrolyte
 					trait = warlock
 					trait = race_eredar
 					trait = race_dreadlord
@@ -230,7 +217,6 @@ character_event = {
 		if = {
 			limit = {
 				OR = {
-					trait = arcanist
 					trait = mage
 					trait = necromancer
 				}
@@ -347,7 +333,6 @@ character_event = {
 		}
 		OR = {
 			trait = warlock
-			trait = necrolyte
 			location = {
 				check_variable = { which = prov_corruption value = 5 }
 			}
