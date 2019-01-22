@@ -3514,7 +3514,7 @@ narrative_event = {
 	immediate = {
 		if = {
 			limit = { #Modifier not applied correctly by pagan reformation screen.
-				ROOT = { has_religion_feature = religion_cosmopolitan }
+				ROOT = { TOW_religion_is_cosmopolitan = yes }
 			}
 			ROOT = { 	
 				religion_authority = {
@@ -3534,7 +3534,7 @@ narrative_event = {
 		}
 		if = {
 			limit = { #Modifier not applied correctly by pagan reformation screen.
-				ROOT = { has_religion_feature = religion_dogmatic }
+				ROOT = { TOW_religion_is_dogmatic = yes }
 			}
 			ROOT = { 	
 				religion_authority = {
@@ -3641,7 +3641,7 @@ narrative_event = {
 		}
 		if = {
 			limit = { #Switch to astrology.
-				ROOT = { has_religion_feature = religion_astrology }
+				ROOT = { TOW_religion_practices_astrology = yes }
 			}
 			ROOT = { 
 				add_western_zodiac_trait_effect = yes 
@@ -3682,7 +3682,7 @@ narrative_event = {
 		#	limit = { 
 		#		OR = {
 		#			NOT = { has_dlc = "Holy Fury" } 
-		#			has_religion_feature = religion_temporal_head 
+		#			TOW_religion_has_temporal_head = yes 
 		#		} 
 		#		religion = norse_pagan_reformed 
 		#
@@ -3695,8 +3695,8 @@ narrative_event = {
 			limit = { 
 				has_dlc = "Holy Fury" 
 				OR = {
-					has_religion_feature = religion_theocratic_head
-					has_religion_feature = religion_autocephaly 
+					TOW_religion_has_theocratic_head = yes
+					TOW_religion_has_autocephaly = yes 
 				} 
 
 			}
@@ -3840,7 +3840,7 @@ narrative_event = {
 		}
 		if = {
 			limit = { #Offer chance to switch the vassals' succession laws.
-				ROOT = { has_religion_feature = religion_no_leader }
+				ROOT = { TOW_religion_has_no_leader = yes }
 				ai = yes
 			}		
 			hidden_tooltip = {  

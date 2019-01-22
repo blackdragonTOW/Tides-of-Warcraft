@@ -586,7 +586,7 @@ character_event = {
 			manpower = -150
 		}
 		if = { 
-			limit = { NOR = { TOW_religion_is_uncivilized_trigger = yes has_religion_feature = religion_ritual_sacrifice } }
+			limit = { NOR = { TOW_religion_is_uncivilized_trigger = yes TOW_religion_practices_ritual_sacrifice = yes } }
 			tiered_high_piety_negative_effect = yes 
 		}
 		add_blood_splatter_effect = yes

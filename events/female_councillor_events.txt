@@ -20,8 +20,8 @@ character_event = {
 			TOW_religion_is_matriarchal = yes
 			TOW_religion_is_patriarchal = yes
 			TOW_religion_is_equal = yes
+			has_at_least_status_of_women_2_law = yes
 		}
-		NOT = { trait = bad_priest_light_group }
 	}
 	
 	hide_window = yes
@@ -31,13 +31,8 @@ character_event = {
 			#Chancellor
 			25 = {
 				modifier = {
-					factor = 5
-					has_dlc = "Conclave"
-					NOR = {
-						has_law = status_of_women_2
-						has_law = status_of_women_3
-						has_law = status_of_women_4
-					}
+					factor = 0
+					has_at_least_status_of_women_2_law = yes
 				}
 				modifier = {
 					factor = 0
@@ -113,12 +108,8 @@ character_event = {
 			#Marshal
 			25 = {
 				modifier = {
-					factor = 5
-					has_dlc = "Conclave"
-					NOR = {
-						has_law = status_of_women_3
-						has_law = status_of_women_4
-					}
+					factor = 0
+					has_at_least_status_of_women_3_law = yes
 				}
 
 				modifier = {
@@ -198,13 +189,8 @@ character_event = {
 			#Steward
 			25 = {
 				modifier = {
-					factor = 5
-					has_dlc = "Conclave"
-					NOR = {
-						has_law = status_of_women_2
-						has_law = status_of_women_3
-						has_law = status_of_women_4
-					}
+					factor = 0
+					has_at_least_status_of_women_2_law = yes
 				}
 				modifier = {
 					factor = 0
@@ -275,14 +261,8 @@ character_event = {
 			#Spymaster
 			25 = {
 				modifier = {
-					factor = 5
-					has_dlc = "Conclave"
-					NOR = {
-						has_law = status_of_women_1
-						has_law = status_of_women_2
-						has_law = status_of_women_3
-						has_law = status_of_women_4
-					}
+					factor = 0
+					has_at_least_status_of_women_4_law = yes
 				}
 				modifier = {
 					factor = 0
@@ -804,10 +784,8 @@ character_event = {
 			TOW_religion_is_matriarchal = yes
 			TOW_religion_is_patriarchal = yes
 			TOW_religion_is_equal = yes
-			primary_title = { has_law = status_of_women_3 }
-			primary_title = { has_law = status_of_women_4 }
-		} 
-		NOT = { trait = bad_priest_light_group }
+			has_at_least_status_of_women_3_law = yes
+		}
 
 		any_realm_character = {	
 			is_close_relative = ROOT
@@ -1252,13 +1230,11 @@ character_event = {
 
 	trigger = {
 		NOR = { 
-			primary_title = { has_law = status_of_women_3 }
-			primary_title = { has_law = status_of_women_4 }
+			has_at_least_status_of_women_3_law = yes
 			TOW_religion_is_matriarchal = yes
 			TOW_religion_is_patriarchal = yes
 			TOW_religion_is_equal = yes
 		} 
-		NOT = { trait = bad_priest_light_group }
 
 		any_vassal = {	
 			is_landed = yes

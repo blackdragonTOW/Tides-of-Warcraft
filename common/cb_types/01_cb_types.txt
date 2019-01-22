@@ -3368,8 +3368,8 @@ flower_war_cb = {
 	can_use = {
 		ROOT = {
 			has_dlc = "Holy Fury"
-			has_religion_feature = religion_ritual_sacrifice
-			NOT = { has_religion_feature = religion_peaceful } #Aztecs could reform as Peaceful.
+			TOW_religion_practices_ritual_sacrifice = yes
+			TOW_religion_is_pacifist = no #Aztecs could reform as Peaceful.
 			NOT = { same_realm = FROM }
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
@@ -3391,7 +3391,7 @@ flower_war_cb = {
 	}
 	is_valid = {
 		ROOT = { 
-			has_religion_feature = religion_ritual_sacrifice
+			TOW_religion_practices_ritual_sacrifice = yes
 			trait = bloodthirsty_gods_3 
 		}
 	}
@@ -3596,7 +3596,7 @@ matriarchal_deposition_war = {
 		has_dlc = "Holy Fury"
 		ROOT = {
 			higher_real_tier_than = DUKE
-			has_religion_feature = religion_warlike
+			TOW_religion_is_warlike = yes
 			is_female = yes
 			TOW_religion_is_matriarchal = yes
 			is_landed = yes
@@ -3622,7 +3622,7 @@ matriarchal_deposition_war = {
 	is_valid = {
 		ROOT = {
 			higher_real_tier_than = DUKE
-			has_religion_feature = religion_warlike
+			TOW_religion_is_warlike = yes
 			is_female = yes
 			TOW_religion_is_matriarchal = yes
 			FROM = { is_female = no independent = yes }
@@ -4060,7 +4060,7 @@ patriarchal_deposition_war = {
 		has_dlc = "Holy Fury"
 		ROOT = {
 			higher_real_tier_than = DUKE
-			has_religion_feature = religion_warlike
+			TOW_religion_is_warlike = yes
 			is_female = no
 			TOW_religion_is_patriarchal = yes
 			FROM = { is_female = yes independent = yes }
@@ -4085,7 +4085,7 @@ patriarchal_deposition_war = {
 	is_valid = {
 		ROOT = {
 			higher_real_tier_than = DUKE
-			has_religion_feature = religion_warlike
+			TOW_religion_is_warlike = yes
 			is_female = no
 			TOW_religion_is_patriarchal = yes
 			NOT = { same_realm = FROM }

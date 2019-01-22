@@ -17,16 +17,24 @@ laws = {
 			factor = 0
 			additive_modifier = {
 				value = 10
-				holder_scope = { 
-					OR = {
-						trait = race_ogre
-						culture_group = ogre
-					}
+				holder_scope = { culture_group = ogre }
+				NOR = {
+					has_game_rule = { name = gender_ogre value = all }
+					has_game_rule = { name = gender value = all }
 				}
+			}
+			additive_modifier = {
+				value = 10
+				holder_scope = { trait = race_hakkar }
 			}
 		}
 		allow = {
 			has_law = status_of_women_1
+			NAND = {
+				has_game_rule = { name = gender_night_elf value = restricted }
+				holder_scope = { culture = night_elven }
+			}
+			NOT = { has_game_rule = { name = gender value = default } } # Gender All starts at max level and cannot move
 		}
 		potential = {
 			has_dlc = "Zeus"
@@ -119,24 +127,34 @@ laws = {
 	}
 	status_of_women_1 = {
 		group = status_of_women
-		default_selection = {
-			factor = 0
-			additive_modifier = {
-				value = 10
-				holder_scope = { 
-					TOW_race_is_troll = yes
-				}
-			}
-		}
 		allow = {
 			OR = {
-				has_law = status_of_women_0
-				has_law = status_of_women_2
+				AND = {
+					has_law = status_of_women_0
+					NAND = {
+						has_game_rule = { name = gender_night_elf value = restricted }
+						holder_scope = { culture = night_elven }
+					}
+				}
+				AND = {
+					has_law = status_of_women_2
+					NOR = {
+						AND = {
+							has_game_rule = { name = gender_troll value = restricted }
+							holder_scope = { culture_group = troll }
+						}
+						AND = {
+							has_game_rule = { name = gender_ogre value = restricted }
+							holder_scope = { culture_group = ogre }
+						}
+						holder_scope = { trait = race_hakkar }
+					}
+				}
 			}
+			NOT = { has_game_rule = { name = gender value = default } } # Gender All starts at max level and cannot move
 		}
 		potential = {
 			has_dlc = "Zeus"
-			holder_scope = { NOT = { trait = race_hakkar } }
 		}
 		revoke_allowed = {
 			always = no
@@ -217,15 +235,54 @@ laws = {
 	}
 	status_of_women_2 = {
 		group = status_of_women
+		default_selection = {
+			factor = 0
+			additive_modifier = {
+				value = 10
+				holder_scope = { culture_group = troll }
+				NOR = {
+					has_game_rule = { name = gender_troll value = all }
+					has_game_rule = { name = gender value = all }
+				}
+
+			}
+			additive_modifier = {
+				value = 10
+				holder_scope = { culture_group = orcish }
+				NOR = {
+					has_game_rule = { name = gender_orc value = all }
+					has_game_rule = { name = gender value = all }
+				}
+			}
+		}
 		allow = {
 			OR = {
-				has_law = status_of_women_1
-				has_law = status_of_women_3
+				AND = {
+					has_law = status_of_women_1
+					NAND = {
+						has_game_rule = { name = gender_night_elf value = restricted }
+						holder_scope = { culture = night_elven }
+					}
+				}
+				AND = {
+					has_law = status_of_women_3
+					NOR = {
+						AND = {
+							has_game_rule = { name = gender_orc value = restricted }
+							holder_scope = { culture_group = orcish }
+						}
+						AND = {
+							has_game_rule = { name = gender_ogre value = restricted }
+							holder_scope = { culture_group = ogre }
+						}
+						holder_scope = { trait = race_hakkar }
+					}
+				}
 			}
+			NOT = { has_game_rule = { name = gender value = default } } # Gender All starts at max level and cannot move
 		}
 		potential = {
 			has_dlc = "Zeus"
-			holder_scope = { NOT = { trait = race_hakkar } }
 		}
 		revoke_allowed = {
 			always = no
@@ -301,13 +358,32 @@ laws = {
 		group = status_of_women
 		allow = {
 			OR = {
-				has_law = status_of_women_2
-				has_law = status_of_women_4
+				AND = {
+					has_law = status_of_women_2
+					NAND = {
+						has_game_rule = { name = gender_night_elf value = restricted }
+						holder_scope = { culture = night_elven }
+					}
+				}
+				AND = {
+					has_law = status_of_women_4
+					NOR = {
+						AND = {
+							has_game_rule = { name = gender_troll value = restricted }
+							holder_scope = { culture_group = troll }
+						}
+						AND = {
+							has_game_rule = { name = gender_ogre value = restricted }
+							holder_scope = { culture_group = ogre }
+						}
+						holder_scope = { trait = race_hakkar }
+					}
+				}
 			}
+			NOT = { has_game_rule = { name = gender value = default } } # Gender All starts at max level and cannot move
 		}
 		potential = {
 			has_dlc = "Zeus"
-			holder_scope = { NOT = { trait = race_hakkar } }
 		}
 		revoke_allowed = {
 			always = no
@@ -387,10 +463,20 @@ laws = {
 		default = yes
 		allow = {
 			has_law = status_of_women_3
+			NOR = {
+				AND = {
+					has_game_rule = { name = gender_troll value = restricted }
+					holder_scope = { culture_group = troll }
+				}
+				AND = {
+					has_game_rule = { name = gender_ogre value = restricted }
+					holder_scope = { culture_group = ogre }
+				}
+				holder_scope = { trait = race_hakkar }
+			}
 		}
 		potential = {
 			has_dlc = "Zeus"
-			holder_scope = { NOT = { trait = race_hakkar } }
 		}
 		revoke_allowed = {
 			always = no
