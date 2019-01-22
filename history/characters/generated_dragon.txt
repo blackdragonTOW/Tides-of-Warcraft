@@ -1,386 +1,871 @@
 ## Generated character file (code by Keitaro_Ura) ##
 
-1835 = { # Ruler of c_atal_hakkar - 9728.1.11
+1935 = { # Ruler of c_atal_hakkar - 9700.1.1
+	name = Chogira
+	female = yes
+	dynasty = 91 # dynasty91
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	9651.12.17 = {
+		birth = yes
+	}
+	10022.1.1 = {
+		religion = hakkar
+	}
+	11500.1.20 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 1936 # Lethon
+		}
+	}
+	11500.1.28 = {
+		add_matrilineal_spouse = 1936 # Lethon
+	}
+	22513.8.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1936 = {
+	name = Lethon
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	10022.1.1 = {
+		religion = hakkar
+	}
+	11484.1.28 = {
+		birth = yes
+	}
+	24346.4.17 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2651 = { # Ruler of c_blackmurk - 9700.1.1
+	name = Qamryra
+	female = yes
+	dynasty = 151 # dynasty151
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	9652.5.30 = {
+		birth = yes
+	}
+	7385.7.4 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 2652 # Itharius
+		}
+	}
+	9668.5.30 = {
+		add_matrilineal_spouse = 2652 # Itharius
+	}
+	22540.9.27 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2652 = {
+	name = Itharius
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	7369.4.21 = {
+		birth = yes
+	}
+	20257.8.24 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4325 = { # Ruler of c_crestfall - 10018.1.1
+	name = Kandrostrasz
+	dynasty = 266 # dynasty266
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	9989.11.8 = {
+		birth = yes
+	}
+	10022.1.1 = {
+		religion = hydromancy
+	}
+	11458.10.4 = {
+		add_spouse = 4326 # Cielstrasza
+	}
+	22889.1.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+4326 = {
+	name = Cielstrasza
+	female = yes
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	10022.1.1 = {
+		religion = hydromancy
+	}
+	11442.8.19 = {
+		birth = yes
+	}
+	24342.4.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5187 = { # Ruler of c_draco_dar - 10022.1.1
+	name = Darkblaze
+	dynasty = 330 # dynasty330
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	9955.12.22 = {
+		birth = yes
+	}
+	8543.9.28 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5188 # Sherethia
+		}
+	}
+	9971.12.22 = {
+		add_spouse = 5188 # Sherethia
+	}
+	22824.5.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5188 = {
+	name = Sherethia
+	female = yes
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	8527.12.20 = {
+		birth = yes
+	}
+	21396.1.31 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5223 = { # Ruler of c_dragonmaw_pass - 10018.1.1
+	name = Setrastrasza
+	female = yes
+	dynasty = 336 # dynasty336
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	9977.8.21 = {
+		birth = yes
+	}
+	7724.12.28 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5224 # Vargastrasz
+		}
+	}
+	9993.8.21 = {
+		add_matrilineal_spouse = 5224 # Vargastrasz
+	}
+	22845.4.18 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5224 = {
+	name = Vargastrasz
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	7708.7.28 = {
+		birth = yes
+	}
+	20576.8.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5491 = { # Ruler of c_dreaming_woods - 7130.4.1
+	name = Guvrinthus
+	dynasty = 357 # dynasty357
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	7050.7.12 = {
+		birth = yes
+	}
+	6062.12.23 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 5492 # Siphantra
+		}
+	}
+	7066.7.12 = {
+		add_spouse = 5492 # Siphantra
+	}
+	10025.1.1 = {
+		religion = yogg_saron
+	}
+	19935.8.21 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+5492 = {
 	name = Siphantra
 	female = yes
-	dynasty = 76 # dynasty76
 	culture = green_dragonflight
 	religion = wyrmcult
 	trait = race_dragon
-	9726.7.5 = {
+	6046.2.27 = {
 		birth = yes
 	}
-	10366.3.14 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 1836 # Cyrdidus
-		}
+	10025.1.1 = {
+		religion = yogg_saron
 	}
-	10366.5.24 = {
-		add_matrilineal_spouse = 1836 # Cyrdidus
-	}
-	22583.5.2 = {
+	18931.10.1 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-1836 = {
-	name = Cyrdidus
-	culture = green_dragonflight
-	religion = wyrmcult
+5493 = { # Ruler of c_dreaming_woods - 10025.1.1
+	name = Lethon
+	dynasty = 358 # dynasty358
+	culture = nightmare_dragonflight
+	religion = yogg_saron
 	trait = race_dragon
-	10350.5.24 = {
+	9984.10.14 = {
 		birth = yes
 	}
-	23207.5.25 = {
+	10701.7.27 = {
+		add_spouse = 5494 # Vethsera
+	}
+	22872.3.6 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-2551 = { # Ruler of c_blackmurk - 9706.9.18
-	name = Zolbysus
-	dynasty = 122 # dynasty122
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	9689.5.20 = {
-		birth = yes
-	}
-	10631.10.18 = {
-		add_spouse = 2552 # Dirgossyra
-	}
-	22573.12.30 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-2552 = {
-	name = Dirgossyra
+5494 = {
+	name = Vethsera
 	female = yes
-	culture = green_dragonflight
-	religion = wyrmcult
+	culture = nightmare_dragonflight
+	religion = yogg_saron
 	trait = race_dragon
-	10615.9.11 = {
+	10685.1.19 = {
 		birth = yes
 	}
-	23499.7.29 = {
+	23573.1.18 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-4903 = { # Ruler of c_dreaming_woods - 7145.3.27
-	name = Zasseora
+7999 = { # Ruler of c_grim_batol - 10018.1.1
+	name = Anorstrasza
 	female = yes
-	dynasty = 280 # dynasty280
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	7094.1.6 = {
-		birth = yes
-	}
-	5289.10.30 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 4904 # Rozzarus
-		}
-	}
-	7110.1.6 = {
-		add_matrilineal_spouse = 4904 # Rozzarus
-	}
-	19961.9.3 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-4904 = {
-	name = Rozzarus
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	5273.10.19 = {
-		birth = yes
-	}
-	18140.5.17 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-9173 = { # Ruler of c_lethlor_ravine - 7143.6.2
-	name = Marlielia
-	female = yes
-	dynasty = 579 # dynasty579
-	culture = black_dragonflight
-	religion = blackwyrm_cult
-	trait = race_dragon
-	7065.3.14 = {
-		birth = yes
-	}
-	6859.9.2 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 9174 # Jorisacri
-		}
-	}
-	7081.3.14 = {
-		add_matrilineal_spouse = 9174 # Jorisacri
-	}
-	19926.6.2 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-9174 = {
-	name = Jorisacri
-	culture = black_dragonflight
-	religion = blackwyrm_cult
-	trait = race_dragon
-	6843.7.22 = {
-		birth = yes
-	}
-	19704.2.23 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-13049 = { # Ruler of c_searing_peak - 7133.6.17
-	name = Egostrasza
-	female = yes
-	dynasty = 836 # dynasty836
+	dynasty = 558 # dynasty558
 	culture = red_dragonflight
 	religion = wyrmcult
 	trait = race_dragon
-	7124.3.18 = {
+	9972.1.23 = {
 		birth = yes
 	}
-	10197.11.2 = {
-		add_matrilineal_spouse = 13050 # Ceristrasz
-	}
-	19991.1.26 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-13050 = {
-	name = Ceristrasz
-	culture = red_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	10181.10.11 = {
-		birth = yes
-	}
-	23048.4.12 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-13153 = { # Ruler of c_seradane - 7160.2.22
-	name = Pennotra
-	female = yes
-	dynasty = 843 # dynasty843
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	7123.8.30 = {
-		birth = yes
-	}
-	7324.5.20 = {
+	8110.7.7 = {
 		effect = {
 			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
 				break = yes
 			}
-			add_betrothal = 13154 # Lethecus
+			add_betrothal = 8000 # Belnistrasz
 		}
 	}
-	7324.9.3 = {
-		add_matrilineal_spouse = 13154 # Lethecus
+	9988.1.23 = {
+		add_matrilineal_spouse = 8000 # Belnistrasz
 	}
-	19984.11.18 = {
+	22852.12.30 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-13154 = {
-	name = Lethecus
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	7308.9.3 = {
-		birth = yes
-	}
-	20169.7.27 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-13837 = { # Ruler of c_sorrowmurk - 9720.5.17
-	name = Zolbysus
-	dynasty = 890 # dynasty890
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	9692.3.28 = {
-		birth = yes
-	}
-	8400.5.25 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 13838 # Asselra
-		}
-	}
-	9708.3.28 = {
-		add_spouse = 13838 # Asselra
-	}
-	22577.4.8 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-13838 = {
-	name = Asselra
-	female = yes
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	8384.3.13 = {
-		birth = yes
-	}
-	21269.8.21 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-16133 = { # Ruler of c_the_obsidian_forest - 7135.3.16
-	name = Tederastrasz
-	dynasty = 1051 # dynasty1051
-	culture = red_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	7111.9.10 = {
-		birth = yes
-	}
-	7057.2.1 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 16134 # Aindrustrasza
-		}
-	}
-	7127.9.10 = {
-		add_spouse = 16134 # Aindrustrasza
-	}
-	19990.11.13 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-16134 = {
-	name = Aindrustrasza
-	female = yes
-	culture = red_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	7041.4.14 = {
-		birth = yes
-	}
-	19920.3.9 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-17381 = { # Ruler of c_twilight_grove - 7146.6.18
-	name = Rozzarus
-	dynasty = 1135 # dynasty1135
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	7077.3.19 = {
-		birth = yes
-	}
-	5784.5.24 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 17382 # Bykayra
-		}
-	}
-	7093.3.19 = {
-		add_spouse = 17382 # Bykayra
-	}
-	19951.3.29 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-17382 = {
-	name = Bykayra
-	female = yes
-	culture = green_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	5768.5.8 = {
-		birth = yes
-	}
-	18642.11.27 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-17843 = { # Ruler of c_vermilion_redoubt - 7134.4.9
-	name = Kroistrasza
-	female = yes
-	dynasty = 1173 # dynasty1173
-	culture = red_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	7077.9.2 = {
-		birth = yes
-	}
-	9044.10.24 = {
-		add_matrilineal_spouse = 17844 # Belnistrasz
-	}
-	19954.9.11 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-17844 = {
+8000 = {
 	name = Belnistrasz
 	culture = red_dragonflight
 	religion = wyrmcult
 	trait = race_dragon
-	9028.4.24 = {
+	8094.5.10 = {
 		birth = yes
 	}
-	21905.6.29 = {
+	20974.2.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10131 = { # Ruler of c_lethlor_ravine - 7138.4.1
+	name = Chommian
+	dynasty = 733 # dynasty733
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	7105.5.15 = {
+		birth = yes
+	}
+	7503.6.8 = {
+		add_spouse = 10132 # Seldarria
+	}
+	19970.2.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+10132 = {
+	name = Seldarria
+	female = yes
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	7487.2.13 = {
+		birth = yes
+	}
+	20352.4.13 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14436 = { # Ruler of c_searing_peak - 7124.4.1
+	name = Kandrostrasz
+	dynasty = 1069 # dynasty1069
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	7064.3.19 = {
+		birth = yes
+	}
+	9350.12.6 = {
+		add_spouse = 14437 # Rhaestrasza
+	}
+	10005.1.1 = {
+		religion = demonology
+	}
+	19949.7.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14437 = {
+	name = Rhaestrasza
+	female = yes
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	9334.3.6 = {
+		birth = yes
+	}
+	10005.1.1 = {
+		religion = demonology
+	}
+	22219.7.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14538 = { # Ruler of c_seradane - 7149.4.1
+	name = Qadra
+	female = yes
+	dynasty = 1080 # dynasty1080
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	7077.1.9 = {
+		birth = yes
+	}
+	5023.7.4 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 14539 # Gaghus
+		}
+	}
+	7093.1.9 = {
+		add_matrilineal_spouse = 14539 # Gaghus
+	}
+	10025.1.1 = {
+		religion = yogg_saron
+	}
+	19928.12.25 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14539 = {
+	name = Gaghus
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	5007.6.17 = {
+		birth = yes
+	}
+	10025.1.1 = {
+		religion = yogg_saron
+	}
+	17858.1.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14540 = { # Ruler of c_seradane - 10025.1.1
+	name = Thessera
+	female = yes
+	dynasty = 1081 # dynasty1081
+	culture = nightmare_dragonflight
+	religion = yogg_saron
+	trait = race_dragon
+	9964.9.27 = {
+		birth = yes
+	}
+	7959.11.19 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 14541 # Taerar
+		}
+	}
+	9980.9.27 = {
+		add_matrilineal_spouse = 14541 # Taerar
+	}
+	22840.1.25 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14541 = {
+	name = Taerar
+	culture = nightmare_dragonflight
+	religion = yogg_saron
+	trait = race_dragon
+	7943.8.9 = {
+		birth = yes
+	}
+	20819.7.19 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+15308 = { # Ruler of c_sorrowmurk - 9700.1.1
+	name = Griandorus
+	dynasty = 1133 # dynasty1133
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	9629.11.17 = {
+		birth = yes
+	}
+	10536.1.22 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 15309 # Bivnara
+		}
+	}
+	10536.3.1 = {
+		add_spouse = 15309 # Bivnara
+	}
+	22492.11.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+15309 = {
+	name = Bivnara
+	female = yes
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	10520.3.1 = {
+		birth = yes
+	}
+	23383.5.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+16814 = { # Ruler of c_terror_wing_path - 10022.1.1
+	name = Dorverthia
+	female = yes
+	dynasty = 1271 # dynasty1271
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	9970.10.22 = {
+		birth = yes
+	}
+	8646.10.9 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 16815 # Kendeintian
+		}
+	}
+	9986.10.22 = {
+		add_matrilineal_spouse = 16815 # Kendeintian
+	}
+	22848.10.21 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+16815 = {
+	name = Kendeintian
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	8630.8.17 = {
+		birth = yes
+	}
+	21508.8.31 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17949 = { # Ruler of c_the_mournland - 10022.1.1
+	name = Razormaw
+	dynasty = 1361 # dynasty1361
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	9951.11.7 = {
+		birth = yes
+	}
+	10906.1.4 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 17950 # Obsidia
+		}
+	}
+	10906.9.11 = {
+		add_spouse = 17950 # Obsidia
+	}
+	22830.3.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17950 = {
+	name = Obsidia
+	female = yes
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	10890.9.11 = {
+		birth = yes
+	}
+	23769.2.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17951 = { # Ruler of c_the_obsidian_forest - 7155.4.1
+	name = Tederastrasz
+	dynasty = 1362 # dynasty1362
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	7080.12.1 = {
+		birth = yes
+	}
+	3880.10.26 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 17952 # Mipanstrasza
+		}
+	}
+	7096.12.1 = {
+		add_spouse = 17952 # Mipanstrasza
+	}
+	10018.1.1 = {
+		religion = blackwyrm_cult
+	}
+	19967.5.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17952 = {
+	name = Mipanstrasza
+	female = yes
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	3864.1.25 = {
+		birth = yes
+	}
+	10018.1.1 = {
+		religion = blackwyrm_cult
+	}
+	16751.7.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17953 = { # Ruler of c_the_obsidian_forest - 10018.1.1
+	name = Nefarian
+	dynasty = 1363 # dynasty1363
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	10013.1.14 = {
+		birth = yes
+	}
+	7575.4.9 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 17954 # Lurmolia
+		}
+	}
+	10029.1.14 = {
+		add_spouse = 17954 # Lurmolia
+	}
+	22864.2.12 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+17954 = {
+	name = Lurmolia
+	female = yes
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	7559.4.25 = {
+		birth = yes
+	}
+	20410.12.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19247 = { # Ruler of c_twilight_grove - 7127.4.1
+	name = Ysondre
+	female = yes
+	dynasty = 1472 # dynasty1472
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	7108.2.25 = {
+		birth = yes
+	}
+	6541.8.9 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 19248 # Emeriss
+		}
+	}
+	7124.2.25 = {
+		add_matrilineal_spouse = 19248 # Emeriss
+	}
+	10025.1.1 = {
+		religion = yogg_saron
+	}
+	19982.8.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19248 = {
+	name = Emeriss
+	culture = green_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	6525.7.20 = {
+		birth = yes
+	}
+	10025.1.1 = {
+		religion = yogg_saron
+	}
+	19399.12.12 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19249 = { # Ruler of c_twilight_grove - 10025.1.1
+	name = Verdisa
+	female = yes
+	dynasty = 1473 # dynasty1473
+	culture = nightmare_dragonflight
+	religion = yogg_saron
+	trait = race_dragon
+	10025.1.1 = {
+		birth = yes
+	}
+	8972.7.5 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 19250 # Lethecus
+		}
+	}
+	10041.1.1 = {
+		add_matrilineal_spouse = 19250 # Lethecus
+	}
+	22899.5.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19250 = {
+	name = Lethecus
+	culture = nightmare_dragonflight
+	religion = yogg_saron
+	trait = race_dragon
+	8956.8.29 = {
+		birth = yes
+	}
+	21830.8.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19649 = { # Ruler of c_valley_of_ashes - 10022.1.1
+	name = Sairsia
+	female = yes
+	dynasty = 1506 # dynasty1506
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	9993.5.2 = {
+		birth = yes
+	}
+	7091.6.21 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 19650 # Zozzian
+		}
+	}
+	10009.5.2 = {
+		add_matrilineal_spouse = 19650 # Zozzian
+	}
+	22849.4.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19650 = {
+	name = Zozzian
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	trait = race_dragon
+	7075.10.30 = {
+		birth = yes
+	}
+	19931.8.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19813 = { # Ruler of c_vermilion_redoubt - 7145.4.1
+	name = Naldrestrasza
+	female = yes
+	dynasty = 1521 # dynasty1521
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	7125.8.11 = {
+		birth = yes
+	}
+	6764.1.15 = {
+		effect = {
+			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 19814 # Belnistrasz
+		}
+	}
+	7141.8.11 = {
+		add_matrilineal_spouse = 19814 # Belnistrasz
+	}
+	19979.2.26 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+19814 = {
+	name = Belnistrasz
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	6748.10.9 = {
+		birth = yes
+	}
+	19602.3.11 = {
 		death = {
 			death_reason = death_natural
 		}
