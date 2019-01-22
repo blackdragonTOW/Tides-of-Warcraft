@@ -17,11 +17,11 @@ character_event = {
 		death_no_trace_trigger = no
 		prestige = 1000 
 		is_adult = yes
-		has_religion_feature = religion_beatification
+		TOW_religion_worships_ancestors = yes
         OR = {
-            has_religion_feature = religion_temporal_head
-            has_religion_feature = religion_theocratic_head
-            has_religion_feature = religion_autocephaly
+            TOW_religion_has_temporal_head = yes
+            TOW_religion_has_theocratic_head = yes
+            TOW_religion_has_autocephaly = yes
         }
 	}
 

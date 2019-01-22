@@ -42,7 +42,7 @@ TOW_character_can_be_spymaster = {
 			liege = { TOW_religion_is_patriarchal = no } #Matriarchal religions can only hire females. 
 			OR = {
 				liege = { is_child_of = PREV }
-				gender_equality_trigger_1 = yes
+				has_at_least_status_of_women_1_law = yes
 				liege = { spouse = { character = PREVPREV } }
 				liege = {
 					OR = {
@@ -99,13 +99,6 @@ TOW_character_is_antipope = {
 				has_claim = PREV # primary_title
 			}
 		}
-	}
-}
-
-TOW_character_is_bad_priest = {
-	# TOW TODO : To Define
-	OR = {
-		trait = bad_priest_light_group
 	}
 }
 

@@ -88,7 +88,7 @@ character_event = {
             limit = {
                 is_theocracy = yes
                 religion = event_target:saint_person
-                TOW_character_is_bad_priest = no
+                has_bad_priest_trait_trigger = no
                 is_landed = yes
             }
             random = {
@@ -175,7 +175,7 @@ province_event = {
 	                limit = {
 	                    is_theocracy = yes
 	                    religion = event_target:saint_person
-	                    TOW_character_is_bad_priest = no
+	                    has_bad_priest_trait_trigger = no
                         is_landed = yes
 	                }
 	                character_event = { id = HF.40003 }
@@ -382,7 +382,7 @@ character_event = {
                 OR = {
                     has_global_flag = qa_testing
                     event_target:saint_person = {
-                        has_religion_feature = religion_beatification
+                        TOW_religion_worships_ancestors = yes
                     }
                 }
             }
@@ -412,7 +412,7 @@ province_event = {
         event_target:saint_person = {
             OR = {
                 trait = beatified
-                has_religion_feature = religion_beatification
+                TOW_religion_worships_ancestors = yes
             }
             NOT = {
                 has_character_flag = blessed_ancestor_prestige
@@ -1425,7 +1425,7 @@ province_event = {
                 limit = {
                     is_theocracy = yes
                     religion = event_target:saint_person
-                    TOW_character_is_bad_priest = no
+                    has_bad_priest_trait_trigger = no
                     NOR = {
                     	event_target:saint_person = {
                     		trait = beatified
@@ -1886,7 +1886,7 @@ character_event = {
         TOW_religion_rel_head_wants_full_authority = yes
         death_no_trace_trigger = no
     	religion_head = {
-			TOW_character_is_bad_priest = yes
+			has_bad_priest_trait_trigger = yes
             independent = yes
             opinion = {
                 who = ROOT

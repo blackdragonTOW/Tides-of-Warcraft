@@ -2381,7 +2381,7 @@ feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -2396,7 +2396,7 @@ feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -3397,7 +3397,7 @@ tanistry = {
 			FROMFROM = {
 				has_law = status_of_women_0
 			}
-			gender_equality_trigger_1 = no
+			has_at_least_status_of_women_1_law = no
 			FROM = {
 				is_female = yes
 			}
@@ -3419,7 +3419,7 @@ tanistry = {
 			FROMFROM = {
 				has_law = status_of_women_2
 			}
-			gender_equality_trigger_3 = no
+			has_at_least_status_of_women_3_law = no
 			FROM = {
 				is_female = yes
 			}
@@ -3430,7 +3430,7 @@ tanistry = {
 			FROMFROM = {
 				has_law = status_of_women_3
 			}
-			gender_equality_trigger_4 = no
+			has_at_least_status_of_women_4_law = no
 			FROM = {
 				is_female = yes
 			}
@@ -5344,7 +5344,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			religion = FROM
 			NOR = { 
-				has_religion_feature = religion_cosmopolitan
+				TOW_religion_is_cosmopolitan = yes
 				pacifist = yes
 				trait = cynical
 			}
@@ -5358,7 +5358,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			religion = FROM
 			OR = { 
-				has_religion_feature = religion_cosmopolitan
+				TOW_religion_is_cosmopolitan = yes
 				pacifist = yes
 				trait = cynical
 			}
@@ -5384,7 +5384,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -5399,7 +5399,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -6638,7 +6638,7 @@ elective_gavelkind = {
 		additive_modifier = { #Dogmatics will hardly ever pick an infidel.
 			value = -50
 			localisation_key = tooltip_feudal_elector_vote_heathen_dogmatic
-			has_religion_feature = religion_dogmatic
+			TOW_religion_is_dogmatic = yes
 			FROM = { NOT = { religion = ROOT } }
 		}
 
@@ -8386,7 +8386,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			religion = FROM
 			NOR = { 
-				has_religion_feature = religion_cosmopolitan
+				TOW_religion_is_cosmopolitan = yes
 				pacifist = yes
 				trait = cynical
 			}
@@ -8400,7 +8400,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			religion = FROM
 			OR = { 
-				has_religion_feature = religion_cosmopolitan
+				TOW_religion_is_cosmopolitan = yes
 				pacifist = yes
 				trait = cynical
 			}
@@ -8426,7 +8426,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -8441,7 +8441,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -9506,7 +9506,7 @@ eldership_rules = {
 		}
 		additive_modifier = {
 			value = -3
-			NOT = { FROMFROM = { holder_scope = { has_religion_feature = religion_cosmopolitan } } }
+			NOT = { FROMFROM = { holder_scope = { TOW_religion_is_cosmopolitan = yes } } }
 			NOT = { FROMFROM = { holder_scope = { religion = ROOT } } }
 			FROMFROM = { holder_scope = { religion_group = ROOT } }
 		}
@@ -9516,7 +9516,7 @@ eldership_rules = {
 		}
 		additive_modifier = {
 			value = -5
-			NOT = { FROMFROM = { holder_scope = { has_religion_feature = religion_cosmopolitan } } }
+			NOT = { FROMFROM = { holder_scope = { TOW_religion_is_cosmopolitan = yes } } }
 			NOT = { FROMFROM = { holder_scope = { religion_group = ROOT } } }
 		}
 		additive_modifier = {
@@ -9790,7 +9790,7 @@ eldership_rules = {
 		additive_modifier = { #Dogmatics will hardly ever pick an infidel.
 			value = -50
 			localisation_key = tooltip_feudal_elector_vote_heathen_dogmatic
-			has_religion_feature = religion_dogmatic
+			TOW_religion_is_dogmatic = yes
 			FROM = { NOT = { religion = ROOT } }
 			FROMFROM = { 
 				holder_scope = { character = ROOT } 
@@ -11654,7 +11654,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			religion = FROM
 			NOR = { 
-				has_religion_feature = religion_cosmopolitan
+				TOW_religion_is_cosmopolitan = yes
 				pacifist = yes
 				trait = cynical
 			}
@@ -11671,7 +11671,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			religion = FROM
 			OR = { 
-				has_religion_feature = religion_cosmopolitan
+				TOW_religion_is_cosmopolitan = yes
 				pacifist = yes
 				trait = cynical
 			}
@@ -11703,7 +11703,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -11721,7 +11721,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -12706,7 +12706,7 @@ eldership_rules = {
 		additive_modifier = { #Dogmatics will hardly ever pick an infidel.
 			value = -50
 			localisation_key = tooltip_feudal_elector_vote_heathen_dogmatic
-			has_religion_feature = religion_dogmatic
+			TOW_religion_is_dogmatic = yes
 			FROM = { NOT = { religion = ROOT } }
 			has_elector_stance = { stance = elder_pleased title = FROMFROM }
 		}
@@ -14369,7 +14369,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			religion = FROM
 			NOR = { 
-				has_religion_feature = religion_cosmopolitan
+				TOW_religion_is_cosmopolitan = yes
 				pacifist = yes
 				trait = cynical
 			}
@@ -14384,7 +14384,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			religion = FROM
 			OR = { 
-				has_religion_feature = religion_cosmopolitan
+				TOW_religion_is_cosmopolitan = yes
 				pacifist = yes
 				trait = cynical
 			}
@@ -14412,7 +14412,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 
@@ -14428,7 +14428,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				this_is_warrior_culture_trigger = yes
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_seafaring = yes
 			}
 			FROM = { 
 				OR = { 

@@ -5,6 +5,9 @@ religion_nature = {
 	
 	religion_peaceful = {
 		picture = GFX_religion_feature_peaceful
+		potential = {
+			FROM = { TOW_religion_is_pacifist = no }
+		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_pacifist }
 			custom_tooltip = { text = tooltip_religion_feature_peace_piety }
@@ -23,6 +26,13 @@ religion_nature = {
 				set_convert_same_group = 0
 				set_ai_aggression = 0.1
 			}
+			set_flag = feature_peaceful
+			if = { limit = { has_flag = feature_warlike } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_warlike clr_flag = feature_warlike } }
+			if = { limit = { has_flag = feature_syncretic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_syncretic clr_flag = feature_syncretic } }
+			if = { limit = { has_flag = feature_defensive } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_defensive clr_flag = feature_defensive } }
+			if = { limit = { has_flag = feature_proselytizing } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_proselytizing clr_flag = feature_proselytizing } }
+			if = { limit = { has_flag = feature_dogmatic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_dogmatic clr_flag = feature_dogmatic } }
+			if = { limit = { has_flag = feature_cosmopolitan } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_cosmopolitan clr_flag = feature_cosmopolitan } }
 		}
 		ai_will_do = {
 			factor = 100
@@ -34,6 +44,9 @@ religion_nature = {
 	}
 	religion_warlike = {
 		picture = GFX_religion_feature_warlike
+		potential = {
+			FROM = { TOW_religion_is_warlike = no }
+		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_war_levies }
 			custom_tooltip = { text = tooltip_religion_feature_crusade }
@@ -51,6 +64,13 @@ religion_nature = {
 				set_convert_same_group = 1
 				set_ai_aggression = 2.0
 			}
+			set_flag = feature_warlike
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
+			if = { limit = { has_flag = feature_syncretic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_syncretic clr_flag = feature_syncretic } }
+			if = { limit = { has_flag = feature_defensive } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_defensive clr_flag = feature_defensive } }
+			if = { limit = { has_flag = feature_proselytizing } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_proselytizing clr_flag = feature_proselytizing } }
+			if = { limit = { has_flag = feature_dogmatic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_dogmatic clr_flag = feature_dogmatic } }
+			if = { limit = { has_flag = feature_cosmopolitan } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_cosmopolitan clr_flag = feature_cosmopolitan } }
 		}
 		ai_will_do = {
 			factor = 100
@@ -100,6 +120,9 @@ religion_nature = {
 	}
 	religion_defensive = {
 		picture = GFX_religion_feature_defensive
+		potential = {
+			FROM = { TOW_religion_is_defensive = no }
+		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_defensive }
 			custom_tooltip = { text = tooltip_religion_feature_hard_conversion }
@@ -137,7 +160,14 @@ religion_nature = {
 					
 					key = "DEF_RELIGION_HOME_TERRITORY"
 				}
+				set_flag = feature_defensive
 			}
+			if = { limit = { has_flag = feature_warlike } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_warlike clr_flag = feature_warlike } }
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
+			if = { limit = { has_flag = feature_syncretic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_syncretic clr_flag = feature_syncretic } }
+			if = { limit = { has_flag = feature_proselytizing } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_proselytizing clr_flag = feature_proselytizing } }
+			if = { limit = { has_flag = feature_dogmatic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_dogmatic clr_flag = feature_dogmatic } }
+			if = { limit = { has_flag = feature_cosmopolitan } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_cosmopolitan clr_flag = feature_cosmopolitan } }
 		}
 		ai_will_do = {
 			factor = 100
@@ -180,6 +210,9 @@ religion_nature = {
 	}
 	religion_proselytizing = {
 		picture = GFX_religion_feature_proselytizing
+		potential = {
+			FROM = { TOW_religion_is_proselytizing = no }
+		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_proselytizing }
 			custom_tooltip = { text = tooltip_religion_feature_crusade }
@@ -196,6 +229,13 @@ religion_nature = {
 				set_convert_same_group = 2
 				set_ai_aggression = 1.0
 			}
+			set_flag = feature_proselytizing
+			if = { limit = { has_flag = feature_warlike } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_warlike clr_flag = feature_warlike } }
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
+			if = { limit = { has_flag = feature_syncretic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_syncretic clr_flag = feature_syncretic } }
+			if = { limit = { has_flag = feature_defensive } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_defensive clr_flag = feature_defensive } }
+			if = { limit = { has_flag = feature_dogmatic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_dogmatic clr_flag = feature_dogmatic } }
+			if = { limit = { has_flag = feature_cosmopolitan } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_cosmopolitan clr_flag = feature_cosmopolitan } }
 		}
 		ai_will_do = {
 			factor = 80
@@ -245,6 +285,9 @@ religion_nature = {
 	}
 	religion_dogmatic = {
 		picture = GFX_religion_feature_dogmatic
+		potential = {
+			FROM = { TOW_religion_is_dogmatic = no }
+		}
 		trigger = {
 			NOR = {
 				has_selected_religion_feature = religion_syncretic
@@ -268,6 +311,13 @@ religion_nature = {
 				set_convert_same_group = 2
 				set_ai_aggression = 1.5
 			}
+			set_flag = feature_dogmatic
+			if = { limit = { has_flag = feature_warlike } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_warlike clr_flag = feature_warlike } }
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
+			if = { limit = { has_flag = feature_syncretic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_syncretic clr_flag = feature_syncretic } }
+			if = { limit = { has_flag = feature_defensive } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_defensive clr_flag = feature_defensive } }
+			if = { limit = { has_flag = feature_proselytizing } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_proselytizing clr_flag = feature_proselytizing } }
+			if = { limit = { has_flag = feature_cosmopolitan } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_cosmopolitan clr_flag = feature_cosmopolitan } }
 		}
 		ai_will_do = {
 			factor = 50
@@ -307,6 +357,9 @@ religion_nature = {
 	}
 	religion_cosmopolitan = {
 		picture = GFX_religion_feature_cosmopolitan
+		potential = {
+			FROM = { TOW_religion_is_cosmopolitan = no }
+		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_cosmopolitan_2 }
 			custom_tooltip = { text = tooltip_religion_feature_crusade }
@@ -324,6 +377,13 @@ religion_nature = {
 				set_convert_same_group = 0
 				set_ai_aggression = 0.5
 			}
+			set_flag = feature_cosmopolitan
+			if = { limit = { has_flag = feature_warlike } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_warlike clr_flag = feature_warlike } }
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
+			if = { limit = { has_flag = feature_syncretic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_syncretic clr_flag = feature_syncretic } }
+			if = { limit = { has_flag = feature_defensive } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_defensive clr_flag = feature_defensive } }
+			if = { limit = { has_flag = feature_proselytizing } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_proselytizing clr_flag = feature_proselytizing } }
+			if = { limit = { has_flag = feature_dogmatic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_dogmatic clr_flag = feature_dogmatic } }
 		}
 		ai_will_do = {
 			factor = 50
@@ -387,6 +447,9 @@ religion_doctrine = {
 
 	religion_holy_family = {
 		picture = GFX_religion_feature_holy_family
+		potential = {
+			FROM = { TOW_religion_is_incestuous = no }
+		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_incest }
 			custom_tooltip = { text = tooltip_religion_feature_holy_family }
@@ -397,6 +460,7 @@ religion_doctrine = {
 				set_cousin_marriage = yes
 				set_pc_marriage = yes
 			}
+			set_flag = feature_holy_family
 		}
 		ai_will_do = {
 			factor = 1
@@ -404,10 +468,23 @@ religion_doctrine = {
 	}
 	religion_harems = {
 		picture = GFX_religion_feature_harems
+		potential = {
+			FROM = { TOW_religion_has_harems = no }
+		}
 		trigger = {
-			NOR = { 
-				has_selected_religion_feature = religion_matriarchal #Incompatible
-			} 
+			OR = {
+				NOR = {
+					has_selected_religion_feature = religion_matriarchal #Incompatible
+					FROM = { TOW_religion_is_matriarchal = yes }
+				}
+				AND = { # Change of type
+					OR = {
+						has_selected_religion_feature = religion_patriarchal
+						has_selected_religion_feature = religion_equal
+					}
+					FROM = { TOW_religion_is_matriarchal = yes }
+				}
+			}
 		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_harems }
@@ -415,14 +492,31 @@ religion_doctrine = {
 				set_max_consorts = 0
 				set_max_wives = 4
 			}
+			set_flag = feature_harems
+			if = { limit = { has_flag = feature_equal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_equal clr_flag = feature_equal } }
+			if = { limit = { has_flag = feature_patriarchal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_patriarchal clr_flag = feature_patriarchal } }
 		}
 	}
 	religion_meritocratic = {
 		picture = GFX_religion_feature_meritocratic
+		potential = {
+			FROM = { TOW_religion_is_meritocratic = no }
+		}
 		trigger = {
-			NOR = { 
-				has_selected_religion_feature = religion_patriarchal # Incompatible
-				has_selected_religion_feature = religion_matriarchal # Incompatible
+			OR = {
+				NOR = { 
+					has_selected_religion_feature = religion_patriarchal # Incompatible
+					has_selected_religion_feature = religion_matriarchal # Incompatible
+					FROM = { TOW_religion_is_matriarchal = yes }
+					FROM = { TOW_religion_is_patriarchal = yes }
+				}
+				AND = { # Change of type
+					has_selected_religion_feature = religion_equal
+					OR = {
+						FROM = { TOW_religion_is_matriarchal = yes }
+						FROM = { TOW_religion_is_patriarchal = yes }
+					}
+				}
 			}
 		}
 		effect = {
@@ -430,6 +524,9 @@ religion_doctrine = {
 			hidden_tooltip = {
 				set_heir_designation = yes
 			}
+			set_flag = feature_meritocratic
+			if = { limit = { has_flag = feature_matriarchal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_matriarchal clr_flag = feature_matriarchal } }
+			if = { limit = { has_flag = feature_patriarchal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_patriarchal clr_flag = feature_patriarchal } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -437,12 +534,16 @@ religion_doctrine = {
 	}
 	religion_stable = {
 		picture = GFX_religion_feature_stable
+		potential = {
+			FROM = { TOW_religion_is_stable = no }
+		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_stable }
 			custom_tooltip = { text = tooltip_religion_feature_meliorism } 
 			hidden_tooltip = { 
 				set_short_reign_opinion_year_mult = 0
 			}
+			set_flag = feature_stable
 		}
 		ai_will_do = {
 			factor = 1
@@ -450,14 +551,19 @@ religion_doctrine = {
 	}
 	religion_jizya = {
 		picture = GFX_religion_feature_jizya
+		potential = {
+			FROM = { TOW_religion_practices_jizya = no }
+		}
 		trigger = {
-			has_selected_religion_feature = religion_syncretic
+			NOT = { has_selected_religion_feature = religion_syncretic }
 		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_jizya }
 			hidden_tooltip = { 
 				set_jizya_tax = yes
 			}
+			set_flag = feature_jizya
+			if = { limit = { has_flag = feature_syncretic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_syncretic clr_flag = feature_syncretic } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -465,6 +571,9 @@ religion_doctrine = {
 	}
 	religion_monastic = {
 		picture = GFX_religion_feature_monastic
+		potential = {
+			FROM = { TOW_religion_is_monastic = no }
+		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_monastic }
 			custom_tooltip = { text = tooltip_religion_feature_learning_boost }
@@ -478,6 +587,7 @@ religion_doctrine = {
 				learning = 2
 				key = "MONASTIC_ATTR_RELIGION"
 			}
+			set_flag = feature_monastic
 		}
 		ai_will_do = {
 			factor = 1
@@ -485,6 +595,9 @@ religion_doctrine = {
 	}
 	religion_syncretic = { #Gives option for each ruler to pick one of the sympathy_for_traits via decision.
 		picture = GFX_religion_feature_syncretic
+		potential = {
+			FROM = { TOW_religion_is_syncretic = no }
+		}
 		trigger = {
 			NOR = {
 				has_selected_religion_feature = religion_jizya
@@ -493,6 +606,9 @@ religion_doctrine = {
 		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_syncretic }
+			set_flag = feature_syncretic
+			if = { limit = { has_flag = feature_jizya } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_jizya clr_flag = feature_jizya } }
+			if = { limit = { has_flag = feature_dogmatic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_dogmatic clr_flag = feature_dogmatic } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -501,10 +617,12 @@ religion_doctrine = {
 	religion_haruspicy = { #Gives option to divinate the future before waging a war.
 		picture = GFX_religion_feature_haruspicy
 		potential = {
+			FROM = { TOW_religion_practices_haruspicy = no }
 		}
 
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_haruspicy }
+			set_flag = feature_haruspicy
 		}
 		ai_will_do = {
 			factor = 1
@@ -513,11 +631,13 @@ religion_doctrine = {
 	religion_astrology = {
 		picture = GFX_religion_feature_astrology
 		potential = {
+			FROM = { TOW_religion_practices_astrology = no }
 		}
 
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_astrology }
-			custom_tooltip = { text = tooltip_religion_feature_hermetics }
+			#custom_tooltip = { text = tooltip_religion_feature_hermetics } # Disabled until hermetics are replaced
+			set_flag = feature_astrology
 		}
 		ai_will_do = {
 			factor = 1
@@ -526,6 +646,9 @@ religion_doctrine = {
 	}
 	religion_patriarchal = {
 		picture = GFX_religion_feature_patriarchal
+		potential = {
+			FROM = { TOW_religion_is_patriarchal = no }
+		}
 		trigger = {
 			NOR = {
 				has_selected_religion_feature = religion_matriarchal
@@ -547,6 +670,9 @@ religion_doctrine = {
 				set_men_can_take_consorts = yes
 				#FROM = { any_demesne_title = { add_law = agnatic_succession add_law = status_of_women_0 } }
 			}
+			set_flag = feature_patriarchal
+			if = { limit = { has_flag = feature_matriarchal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_matriarchal clr_flag = feature_matriarchal } }
+			if = { limit = { has_flag = feature_equal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_patriarchal clr_flag = feature_equal } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -568,6 +694,9 @@ religion_doctrine = {
 	}
 	religion_equal = {
 		picture = GFX_religion_feature_equal
+		potential = {
+			FROM = { TOW_religion_is_equal = no }
+		}
 		trigger = {
 			NOR = {
 				has_selected_religion_feature = religion_matriarchal
@@ -593,6 +722,9 @@ religion_doctrine = {
 				set_male_temple_holders = yes
 				#FROM = { any_demesne_title = { add_law = status_of_women_4 } } 
 			}
+			set_flag = feature_equal
+			if = { limit = { has_flag = feature_matriarchal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_matriarchal clr_flag = feature_matriarchal } }
+			if = { limit = { has_flag = feature_patriarchal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_patriarchal clr_flag = feature_patriarchal } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -615,6 +747,9 @@ religion_doctrine = {
 	}
 	religion_matriarchal = {
 		picture = GFX_religion_feature_matriarchal
+		potential = {
+			FROM = { TOW_religion_is_matriarchal = no }
+		}
 		trigger = {
 			NOR = {
 				has_selected_religion_feature = religion_patriarchal
@@ -642,6 +777,9 @@ religion_doctrine = {
 				set_male_temple_holders = no
 			}
 			#hidden_tooltip = { FROM = { any_demesne_title = { add_law = enatic_succession add_law = status_of_women_4 } } }
+			set_flag = feature_matriarchal
+			if = { limit = { has_flag = feature_patriarchal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_patriarchal clr_flag = feature_patriarchal } }
+			if = { limit = { has_flag = feature_equal } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_patriarchal clr_flag = feature_equal } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -662,6 +800,9 @@ religion_doctrine = {
 	}
 	religion_ritual_sacrifice = {
 		picture = GFX_religion_feature_ritual_sacrifice
+		potential = {
+			FROM = { TOW_religion_practices_ritual_sacrifice = no }
+		}
 		trigger = {
 			NOR = {
 				has_selected_religion_feature = religion_peaceful
@@ -671,6 +812,9 @@ religion_doctrine = {
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_aztec_sacrifices }
 			custom_tooltip = { text = tooltip_religion_feature_bloodthirsty_mechanics }
+			set_flag = feature_ritual_sacrifice
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
+			if = { limit = { has_flag = feature_proselytizing } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_proselytizing clr_flag = feature_proselytizing } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -688,6 +832,9 @@ religion_doctrine = {
 	}
 	religion_adventuring = {
 		picture = GFX_religion_feature_adventuring
+		potential = {
+			FROM = { TOW_religion_is_adventuring = no }
+		}
 		trigger = {
 			NOT = {
 				has_selected_religion_feature = religion_peaceful
@@ -697,6 +844,8 @@ religion_doctrine = {
 			custom_tooltip = { text = tooltip_religion_feature_adventuring }
 			custom_tooltip = { text = tooltip_religion_feature_pirating }
 			hidden_tooltip = { enable_prepared_invasion = ROOT }
+			set_flag = feature_adventuring
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -704,6 +853,9 @@ religion_doctrine = {
 	}
 	religion_seafaring = {
 		picture = GFX_religion_feature_seafaring
+		potential = {
+			FROM = { TOW_religion_is_seafaring = no }
+		}
 		trigger = {
 			NOT = {
 				has_selected_religion_feature = religion_peaceful
@@ -729,6 +881,8 @@ religion_doctrine = {
 					set_allow_looting = yes
 				}
 			}
+			set_flag = feature_seafaring
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -755,6 +909,9 @@ religion_doctrine = {
 	}
 	religion_relentless = {
 		picture = GFX_religion_feature_relentless
+		potential = {
+			FROM = { TOW_religion_is_relentless = no }
+		}
 		trigger = {
 			NOR = {
 				has_selected_religion_feature = religion_peaceful
@@ -779,6 +936,9 @@ religion_doctrine = {
 					key = "RELENTLESS_RELIGION"
 				}
 			}
+			set_flag = feature_relentless
+			if = { limit = { has_flag = feature_peaceful } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_peaceful clr_flag = feature_peaceful } }
+			if = { limit = { has_flag = feature_defensive } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_defensive clr_flag = feature_defensive } }
 		}
 		ai_will_do = {
 			factor = 1
@@ -787,6 +947,7 @@ religion_doctrine = {
 	religion_animistic = {
 		picture = GFX_religion_feature_animistic
 		potential = {
+			FROM = { TOW_religion_is_animistic = no }
 		}
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_land_morale }
@@ -797,6 +958,7 @@ religion_doctrine = {
 					key = "ANIMISTIC_RELIGION"
 				}
 			}
+			set_flag = feature_animistic
 		}
 		ai_will_do = {
 			factor = 1
@@ -804,6 +966,9 @@ religion_doctrine = {
 	}
 	religion_beatification = {
 		picture = GFX_religion_feature_beatification
+		potential = {
+			FROM = { TOW_religion_worships_ancestors = no }
+		}
 		trigger = {
 			NOT = {
 				has_selected_religion_feature = religion_no_leader
@@ -812,6 +977,7 @@ religion_doctrine = {
 		effect = {
 			custom_tooltip = { text = tooltip_religion_feature_beatification }
 			custom_tooltip = { text = tooltip_religion_feature_eldership }
+			set_flag = feature_beatification
 		}
 		ai_will_do = {
 			factor = 1
@@ -840,6 +1006,7 @@ religion_leadership = {
 				set_can_grant_claim = no
 				make_reformer_head_of_religion = yes
 			}
+			set_flag = feature_leadership
 		}
 		ai_will_do = {
 			factor = 50
@@ -858,6 +1025,7 @@ religion_leadership = {
 				set_can_grant_invasion_cb = yes
 				set_can_grant_claim = yes
 			}
+			set_flag = feature_theocratic_head
 		}
 		ai_will_do = {
 			factor = 50
@@ -877,6 +1045,7 @@ religion_leadership = {
 				set_can_grant_invasion_cb = yes
 				set_can_grant_claim = yes
 			}
+			set_flag = feature_autocephaly
 		}
 		ai_will_do = {
 			factor = 50
@@ -917,6 +1086,9 @@ religion_leadership = {
 					key = "MONASTIC_AUTONOMOUS_ATTR_RELIGION"
 				}
 			}
+			set_flag = feature_no_leader
+			if = { limit = { has_flag = feature_dogmatic } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_dogmatic clr_flag = feature_dogmatic } }
+			if = { limit = { has_flag = feature_beatification } custom_tooltip = { text = tooltip_TOW_remove_religion_feature_beatification clr_flag = feature_beatification } }
 		}
 		ai_will_do = {
 			factor = 50

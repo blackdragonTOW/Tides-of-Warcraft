@@ -1,0 +1,141 @@
+has_at_least_status_of_women_4_law = {
+	trigger_if = {
+		limit = {
+			NOR = {
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
+			}
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				primary_title = { has_law = status_of_women_4 }
+			}
+			AND = {
+				is_ruler = no
+				liege = { primary_title = { has_law = status_of_women_4 } }
+			}
+		}
+	}
+}
+
+has_at_least_status_of_women_3_law = {
+	trigger_if = {
+		limit = {
+			NOR = {
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
+			}
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				primary_title = {
+					OR = {
+						has_law = status_of_women_4
+						has_law = status_of_women_3
+					}
+				}
+			}
+			AND = {
+				is_ruler = no
+				liege = {
+					primary_title = {
+						OR = {
+							has_law = status_of_women_4
+							has_law = status_of_women_3
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+has_at_least_status_of_women_2_law = {
+	trigger_if = {
+		limit = {
+			NOR = {
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
+			}
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				primary_title = {
+					OR = {
+						has_law = status_of_women_4
+						has_law = status_of_women_3
+						has_law = status_of_women_2
+					}
+				}
+			}
+			AND = {
+				is_ruler = no
+				liege = {
+					primary_title = {
+						OR = {
+							has_law = status_of_women_4
+							has_law = status_of_women_3
+							has_law = status_of_women_2
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+has_at_least_status_of_women_1_law = {
+	trigger_if = {
+		limit = {
+			NOR = {
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+				TOW_religion_is_matriarchal = yes
+				TOW_religion_is_equal = yes
+			}
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				primary_title = {
+					OR = {
+						has_law = status_of_women_4
+						has_law = status_of_women_3
+						has_law = status_of_women_2
+						has_law = status_of_women_1
+					}
+				}
+			}
+			AND = {
+				is_ruler = no
+				liege = {
+					primary_title = {
+						OR = {
+							has_law = status_of_women_4
+							has_law = status_of_women_3
+							has_law = status_of_women_2
+							has_law = status_of_women_1
+						}
+					}
+				}
+			}
+		}
+	}
+}

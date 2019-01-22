@@ -5271,7 +5271,7 @@ faction_claimant = {
 			}
 			OR = {
 				is_female = yes
-				trait = bad_priest_light_group
+				has_bad_priest_trait_trigger = yes
 				AND = { 
 					NOT = { ROOT = { succ_law_title = { has_law = enatic_succession } } }
 					TOW_religion_is_matriarchal = no

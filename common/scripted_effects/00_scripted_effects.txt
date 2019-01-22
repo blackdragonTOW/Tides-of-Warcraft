@@ -8843,7 +8843,7 @@ random_coronation_events_effect = {
 						NOT = { event_target:coronation_ruler = { character = PREV } }
 						OR = { 
 							trait = cynical
-							TOW_character_is_bad_priest = yes
+							has_bad_priest_trait_trigger = yes
 						}
 					}
 				}
@@ -8860,7 +8860,7 @@ random_coronation_events_effect = {
 						NOT = { event_target:coronation_ruler = { character = PREV } }
 						OR = { 
 							trait = cynical
-							TOW_character_is_bad_priest = yes
+							has_bad_priest_trait_trigger = yes
 						}
 					}
 					lower_tier_than = DUKE
@@ -8877,7 +8877,7 @@ random_coronation_events_effect = {
 					NOT = { event_target:coronation_ruler = { character = PREV } }
 					OR = { 
 						trait = cynical
-						TOW_character_is_bad_priest = yes
+						has_bad_priest_trait_trigger = yes
 					}
 				}
 				preferred_limit = { 
@@ -8912,7 +8912,7 @@ random_coronation_events_effect = {
 						NOT = { event_target:coronation_ruler = { character = PREV } }
 						OR = { 
 							trait = cynical
-							TOW_character_is_bad_priest = yes
+							has_bad_priest_trait_trigger = yes
 						}
 					}
 				}
@@ -8926,7 +8926,7 @@ random_coronation_events_effect = {
 					NOT = { event_target:coronation_priest = { character = PREV } }
 					OR = { 
 						trait = cynical
-						TOW_character_is_bad_priest = yes
+						has_bad_priest_trait_trigger = yes
 					}
 				}
 				character_event = { id = HF.20342 } # Cynic/wicked foreign guest offends the coronation_priest.
@@ -14318,7 +14318,7 @@ stable_attribute_improvement_effect = {
 					20 = { #Education improvement.
 						trigger = { #Education Improvement only unlocked by synergy.
 							OR = { 
-								has_religion_feature = religion_meritocratic
+								TOW_religion_is_meritocratic = yes
 								TOW_religion_is_matriarchal = yes
 								TOW_religion_is_patriarchal = yes
 							}
@@ -14445,7 +14445,7 @@ stable_attribute_improvement_effect = {
 					20 = { #Education improvement.
 						trigger = { #Education Improvement only unlocked by synergy.
 							OR = { 
-								has_religion_feature = religion_meritocratic
+								TOW_religion_is_meritocratic = yes
 								TOW_religion_is_matriarchal = yes
 								TOW_religion_is_patriarchal = yes
 							}
@@ -14641,7 +14641,7 @@ stable_attribute_improvement_effect = {
 					20 = { #Education improvement.
 						trigger = { #Education Improvement only unlocked by synergy.
 							OR = { 
-								has_religion_feature = religion_meritocratic
+								TOW_religion_is_meritocratic = yes
 								TOW_religion_is_matriarchal = yes
 								TOW_religion_is_patriarchal = yes
 							}
@@ -14836,7 +14836,7 @@ stable_attribute_improvement_effect = {
 					20 = { #Education improvement.
 						trigger = { #Education Improvement only unlocked by synergy.
 							OR = { 
-								has_religion_feature = religion_meritocratic
+								TOW_religion_is_meritocratic = yes
 								TOW_religion_is_matriarchal = yes
 								TOW_religion_is_patriarchal = yes
 							}
@@ -15031,7 +15031,7 @@ stable_attribute_improvement_effect = {
 					20 = { #Education improvement.
 						trigger = { #Education Improvement only unlocked by synergy.
 							OR = { 
-								has_religion_feature = religion_meritocratic
+								TOW_religion_is_meritocratic = yes
 								TOW_religion_is_matriarchal = yes
 								TOW_religion_is_patriarchal = yes
 							}
@@ -15044,7 +15044,7 @@ stable_attribute_improvement_effect = {
 						modifier = { 
 							factor = 1.5
 							event_target:scoped_improvement_ruler = { 
-								has_religion_feature = religion_meritocratic #More pressure.
+								TOW_religion_is_meritocratic = yes #More pressure.
 							}
 						}
 						modifier = { 
