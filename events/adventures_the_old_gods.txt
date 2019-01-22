@@ -267,6 +267,9 @@ character_event = {
 		
 		set_character_flag = do_not_disturb
 		set_character_flag = no_court_invites
+		set_character_flag = ai_flag_refuse_marriage
+		set_character_flag = ai_flag_refuse_concubinage
+		set_character_flag = cannot_marry
 		set_character_flag = Keitaro_preparing_adventure
 		set_character_flag = Keitaro_prepared_adventure
 		set_variable = { which = "Keitaro_adventure_manpower" value = 0 }
@@ -377,6 +380,10 @@ character_event = {
 	
 	immediate = {
 		clr_character_flag = do_not_disturb
+		clr_character_flag = no_court_invites
+		clr_character_flag = ai_flag_refuse_marriage
+		clr_character_flag = ai_flag_refuse_concubinage
+		clr_character_flag = cannot_marry
 
 		Keitaro_adventurers_manpower_factors = yes
 
@@ -939,6 +946,10 @@ character_event = {
 	immediate = {
 		wealth = 500
 		clr_character_flag = do_not_disturb
+		clr_character_flag = no_court_invites
+		clr_character_flag = ai_flag_refuse_marriage
+		clr_character_flag = ai_flag_refuse_concubinage
+		clr_character_flag = cannot_marry
 		
 		liege = {
 			character_event = {
@@ -1137,5 +1148,9 @@ character_event = {
 	
 	immediate = {
 		clr_character_flag = do_not_disturb
+		clr_character_flag = no_court_invites
+		clr_character_flag = ai_flag_refuse_marriage
+		clr_character_flag = ai_flag_refuse_concubinage
+		clr_character_flag = cannot_marry
 	}
 }
