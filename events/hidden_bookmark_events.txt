@@ -12,84 +12,64 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		#Set the Bookmark global flags.
-		if = {
-			limit = {
-				year = 7100
-				NOT = { year = 9770 }
-			}
-			set_global_flag = trollwars_bookmark
-		}
-		if = {
-			limit = {
-				year = 9770
-				NOT = { year = 10000 }
-			}
-			set_global_flag = threehammers_bookmark
-		}
-		if = {
-			limit = {
-				year = 10000
-				NOT = { year = 10005 }
-			}
-			set_global_flag = firstwar_bookmark
-		}
-		if = {
-			limit = {
-				year = 10005
-				NOT = { year = 10018 }
-			}
-			set_global_flag = secondwar_bookmark
-		}
-		if = {
-			limit = {
-				year = 10018
-				NOT = { year = 10022 }
-			}
-			set_global_flag = thirdwar_bookmark
-		}
-		if = {
-			limit = {
-				year = 10022
-				NOT = { year = 10025 }
-			}
-			set_global_flag = frozenthrone_bookmark
-		}
-		if = {
-			limit = {
-				year = 10025
-			}
-			set_global_flag = wow_bookmark
-		}
 		#Specific variables
 		##DOOM
 		set_variable = { which = global_doom value = 0 }
 		#Deal with titles
 		#Add province modifiers
 		#Kill specific characters (usually generic scourge ones that don't have any business being around before their time)
+		##Also for eliminating characters that leave the map (such as the Darkspears)
 		if = {
 			limit = {
-				NOT = { has_global_flag = wow_bookmark }
+				NOT = { year = 10003 }
 			}
-			
-		}
-		if = {
-			limit = {
-				NOT = { has_global_flag = frozenthrone_bookmark }
-			}
-		}
-		#Destroy settlements based on the start date
-		if = {
-			limit = {
-				has_global_flag = threehammers_bookmark
+			c_29 = { # Mai'Zoth Mosh'Ogg
+				death = { death_reason = death_missing }
 			}
 		}
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = frozenthrone_bookmark
-					has_global_flag = wow_bookmark
-				}
+				year = 10015
+			}
+			c_23 = { # Sen'jin Darkspear
+				death = { death_reason = death_missing }
+			}
+			c_24 = { # Vol'jin Darkspear
+				death = { death_reason = death_missing }
+			}
+			c_26 = { # Gadrin Eniku
+				death = { death_reason = death_missing }
+			}
+			c_27 = { # Zalazane Yyha
+				death = { death_reason = death_missing }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { year = 10021 }
+			}
+			c_11 = { # Garr Salthoof
+				death = { death_reason = death_missing }
+			}
+			c_12 = { # Severance Wavetail
+				death = { death_reason = death_missing }
+			}
+			c_13 = { # Abrogaz Seahorn
+				death = { death_reason = death_missing }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { year = 10023 }
+			}
+			c_22 = { # Sakrasis Thirass
+				death = { death_reason = death_missing }
+			}
+		}
+		#Destroy settlements based on the date
+		if = {
+			limit = {
+				always = no
 			}
 			b_sunstone = {
 				destroy_settlement = THIS
