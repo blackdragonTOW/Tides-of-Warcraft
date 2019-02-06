@@ -21,6 +21,7 @@ warlock = {
 	learning = 3
 	is_visible = {
 		OR = {
+			FROM = { character = ROOT }
 			FROM = { has_character_flag = warlock_discovered }
 			AND = {
 				OR = {
@@ -48,6 +49,7 @@ necromancer = {
 	learning = 3
 	is_visible = {
 		OR = {
+			FROM = { character = ROOT }
 			FROM = { has_character_flag = necromancer_discovered }
 			AND = {
 				OR = {
@@ -90,6 +92,7 @@ rogue = {
 	intrigue = 3
 	is_visible = {
 		OR = {
+			FROM = { character = ROOT }
 			FROM = { has_character_flag = rogue_discovered }
 			AND = {
 				OR = {
