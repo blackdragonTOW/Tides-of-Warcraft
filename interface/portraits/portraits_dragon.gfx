@@ -10,26 +10,52 @@ spriteTypes = {
 		name = "PORTRAIT_nightdragongfx_male"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_nightdragon_male_clothes_behind:p3:c0"
+			"GFX_nightdragon_male_headgear_behind:p5:c1"
 			"GFX_nightdragon_male_base:p2"
+			"GFX_nightdragon_male_hair_behind:p1:h:y"
+			"GFX_nightdragon_male_beard_behind:p4:h:y"
+			"GFX_nightdragon_male_neck:d0"
+			"GFX_nightdragon_male_cheeks:d4"
+			"GFX_nightdragon_male_eyes:d6"
+			"GFX_nightdragon_male_eyes2:d6"
+			"GFX_nightdragon_male_clothes:p3:c2"
+			"GFX_nightdragon_male_headgear_mid:p5:c3"
+			"GFX_nightdragon_male_ear:d7"			
+		   	"GFX_nightdragon_male_hair:p1:h:y"
+			"GFX_nightdragon_male_nose:d3"
+			"GFX_nightdragon_male_clothes_infront:p3:c4"
+			"GFX_nightdragon_male_headgear:p5:c5"
+			"GFX_nightdragon_male_chin:p4"
+			"GFX_nightdragon_male_mouth:d2"
+			"GFX_nightdragon_male_beard:d1:h"
+			"GFX_nightdragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_nightdragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -40,26 +66,52 @@ spriteTypes = {
 		name = "PORTRAIT_nightdragongfx_male1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_nightdragon_male_clothes_behind:p3:c0"
+			"GFX_nightdragon_male_headgear_behind:p5:c1"
 			"GFX_nightdragon_male_base:p2"
+			"GFX_nightdragon_male_hair_behind:p1:h"
+			"GFX_nightdragon_male_beard_behind:p4:h"
+			"GFX_nightdragon_male_neck:d0"
+			"GFX_nightdragon_male_cheeks:d4"
+			"GFX_nightdragon_male_eyes:d6"
+			"GFX_nightdragon_male_eyes2:d6"
+			"GFX_nightdragon_male_clothes:p3:c2"
+			"GFX_nightdragon_male_headgear_mid:p5:c3"
+			"GFX_nightdragon_male_ear:d7"			
+		   	"GFX_nightdragon_male_hair:p1:h"
+			"GFX_nightdragon_male_nose:d3"
+			"GFX_nightdragon_male_clothes_infront:p3:c4"
+			"GFX_nightdragon_male_headgear:p5:c5"
+			"GFX_nightdragon_male_chin:p4"
+			"GFX_nightdragon_male_mouth:d2"
+			"GFX_nightdragon_male_beard:d1:h"
+			"GFX_nightdragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_nightdragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -70,26 +122,51 @@ spriteTypes = {
 		name = "PORTRAIT_nightdragongfx_male2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_nightdragon_male_clothes_behind:p3:c0"
+			"GFX_nightdragon_male_headgear_behind:p5:c1"
 			"GFX_nightdragon_male_base:p2"
+			"GFX_nightdragon_male_hair_behind:p1:h"
+			"GFX_nightdragon_male_beard_behind:p4:h"
+			"GFX_nightdragon_male_neck:d0"
+			"GFX_nightdragon_male_cheeks:d4"
+			"GFX_nightdragon_male_eyes:d6"
+			"GFX_nightdragon_male_eyes2:d6"
+			"GFX_nightdragon_male_clothes:p3:c2"
+			"GFX_nightdragon_male_headgear_mid:p5:c3"
+			"GFX_nightdragon_male_ear:d7"			
+		   	"GFX_nightdragon_male_hair:p1:h"
+			"GFX_nightdragon_male_nose:d3"
+			"GFX_nightdragon_male_clothes_infront:p3:c4"
+			"GFX_nightdragon_male_headgear:p5:c5"
+			"GFX_nightdragon_male_chin:p4"
+			"GFX_nightdragon_male_mouth:d2"
+			"GFX_nightdragon_male_beard:d1:h"
+			"GFX_nightdragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_nightdragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -107,27 +184,66 @@ spriteTypes = {
 		name = "PORTRAIT_nightdragongfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_nightdragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_nightdragon_female_clothes_behind:p3:c0"              #1
+			"GFX_nightdragon_female_headgear_behind:p5:c1"             #2
+			"GFX_nightdragon_female_hair_behind:p1:h"             #3
+			"GFX_nightdragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_nightdragon_female_base:p2"                        #4
+			"GFX_nightdragon_female_clothes:p3:c2"                  #12
+			"GFX_nightdragon_female_neck:d0"                        #5
+			"GFX_nightdragon_female_nose:d3"                        #9
+			"GFX_nightdragon_female_eyes:d6"                        #10
+			"GFX_nightdragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_nightdragon_female_hair:p1:h"                    #15
+			"GFX_nightdragon_female_hair_uncolored:p1"            #16
+			"GFX_nightdragon_female_cheeks:d4"               		#6
+			"GFX_nightdragon_female_chin:d1"                        #7
+			"GFX_nightdragon_female_mouth:d2"                       #8
+			"GFX_nightdragon_female_ear:d7"                         #13
+			"GFX_nightdragon_female_headgear_mid:p5:c3"             #14
+			"GFX_nightdragon_female_hair_front:p1:h"                    #15
+			"GFX_nightdragon_female_hair_uncolored_front:p1"                    #15
+			"GFX_nightdragon_female_clothes_infront:p3:c4"
+			"GFX_nightdragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -137,27 +253,63 @@ spriteTypes = {
 		name = "PORTRAIT_nightdragongfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_nightdragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_nightdragon_female_clothes_behind:p3:c0"              #1
+			"GFX_nightdragon_female_headgear_behind:p5:c1"             #2
+			"GFX_nightdragon_female_hair_behind:p1:h:y"             #3
+			"GFX_nightdragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_nightdragon_female_base:p2"                        #4
+			"GFX_nightdragon_female_cheeks:d4"               #6
+			"GFX_nightdragon_female_neck:d0"                        #5
+			"GFX_nightdragon_female_chin:d1"                        #7
+			"GFX_nightdragon_female_mouth:d2:o72x48"                       #8
+			"GFX_nightdragon_female_nose:d3:o80x65"                        #9
+			"GFX_nightdragon_female_eyes:d6"                        #10
+			"GFX_nightdragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_nightdragon_female_clothes:p3:c2"                  #12
+			"GFX_nightdragon_female_ear:d7"                         #13
+			"GFX_nightdragon_female_headgear_mid:p5:c3"             #14
+			"GFX_nightdragon_female_hair:p1:y"                    #15
+			"GFX_nightdragon_female_clothes_infront:p3:c4"
+			"GFX_nightdragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -167,27 +319,64 @@ spriteTypes = {
 		name = "PORTRAIT_nightdragongfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_nightdragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_nightdragon_female_clothes_behind:p3:c0"              #1
+			"GFX_nightdragon_female_headgear_behind:p5:c1"             #2
+			"GFX_nightdragon_female_hair_behind:p1:h:y"             #3
+			"GFX_nightdragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_nightdragon_female_base:p2"                        #4
+			"GFX_nightdragon_female_cheeks:d4"               #6
+			"GFX_nightdragon_female_neck:d0"                        #5
+			"GFX_nightdragon_female_chin:d1"                        #7
+			"GFX_nightdragon_female_mouth:d2:o72x48"                       #8
+			"GFX_nightdragon_female_nose:d3:o80x65"                        #9
+			"GFX_nightdragon_female_eyes:d6"                        #10
+			"GFX_nightdragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_nightdragon_female_clothes:p3:c2"                  #12
+			"GFX_nightdragon_female_ear:d7"                         #13
+			"GFX_nightdragon_female_headgear_mid:p5:c3"             #14
+			"GFX_nightdragon_female_hair:p1:y"                    #15
+			"GFX_nightdragon_female_clothes_infront:p3:c4"
+			"GFX_nightdragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
+		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -202,26 +391,52 @@ spriteTypes = {
 		name = "PORTRAIT_infinitedragongfx_male"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_infinitedragon_male_clothes_behind:p3:c0"
+			"GFX_infinitedragon_male_headgear_behind:p5:c1"
 			"GFX_infinitedragon_male_base:p2"
+			"GFX_infinitedragon_male_hair_behind:p1:h:y"
+			"GFX_infinitedragon_male_beard_behind:p4:h:y"
+			"GFX_infinitedragon_male_neck:d0"
+			"GFX_infinitedragon_male_cheeks:d4"
+			"GFX_infinitedragon_male_eyes:d6"
+			"GFX_infinitedragon_male_eyes2:d6"
+			"GFX_infinitedragon_male_clothes:p3:c2"
+			"GFX_infinitedragon_male_headgear_mid:p5:c3"
+			"GFX_infinitedragon_male_ear:d7"			
+		   	"GFX_infinitedragon_male_hair:p1:h:y"
+			"GFX_infinitedragon_male_nose:d3"
+			"GFX_infinitedragon_male_clothes_infront:p3:c4"
+			"GFX_infinitedragon_male_headgear:p5:c5"
+			"GFX_infinitedragon_male_chin:p4"
+			"GFX_infinitedragon_male_mouth:d2"
+			"GFX_infinitedragon_male_beard:d1:h"
+			"GFX_infinitedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_infinitedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -232,26 +447,52 @@ spriteTypes = {
 		name = "PORTRAIT_infinitedragongfx_male1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_infinitedragon_male_clothes_behind:p3:c0"
+			"GFX_infinitedragon_male_headgear_behind:p5:c1"
 			"GFX_infinitedragon_male_base:p2"
+			"GFX_infinitedragon_male_hair_behind:p1:h"
+			"GFX_infinitedragon_male_beard_behind:p4:h"
+			"GFX_infinitedragon_male_neck:d0"
+			"GFX_infinitedragon_male_cheeks:d4"
+			"GFX_infinitedragon_male_eyes:d6"
+			"GFX_infinitedragon_male_eyes2:d6"
+			"GFX_infinitedragon_male_clothes:p3:c2"
+			"GFX_infinitedragon_male_headgear_mid:p5:c3"
+			"GFX_infinitedragon_male_ear:d7"			
+		   	"GFX_infinitedragon_male_hair:p1:h"
+			"GFX_infinitedragon_male_nose:d3"
+			"GFX_infinitedragon_male_clothes_infront:p3:c4"
+			"GFX_infinitedragon_male_headgear:p5:c5"
+			"GFX_infinitedragon_male_chin:p4"
+			"GFX_infinitedragon_male_mouth:d2"
+			"GFX_infinitedragon_male_beard:d1:h"
+			"GFX_infinitedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_infinitedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -262,26 +503,51 @@ spriteTypes = {
 		name = "PORTRAIT_infinitedragongfx_male2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_infinitedragon_male_clothes_behind:p3:c0"
+			"GFX_infinitedragon_male_headgear_behind:p5:c1"
 			"GFX_infinitedragon_male_base:p2"
+			"GFX_infinitedragon_male_hair_behind:p1:h"
+			"GFX_infinitedragon_male_beard_behind:p4:h"
+			"GFX_infinitedragon_male_neck:d0"
+			"GFX_infinitedragon_male_cheeks:d4"
+			"GFX_infinitedragon_male_eyes:d6"
+			"GFX_infinitedragon_male_eyes2:d6"
+			"GFX_infinitedragon_male_clothes:p3:c2"
+			"GFX_infinitedragon_male_headgear_mid:p5:c3"
+			"GFX_infinitedragon_male_ear:d7"			
+		   	"GFX_infinitedragon_male_hair:p1:h"
+			"GFX_infinitedragon_male_nose:d3"
+			"GFX_infinitedragon_male_clothes_infront:p3:c4"
+			"GFX_infinitedragon_male_headgear:p5:c5"
+			"GFX_infinitedragon_male_chin:p4"
+			"GFX_infinitedragon_male_mouth:d2"
+			"GFX_infinitedragon_male_beard:d1:h"
+			"GFX_infinitedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_infinitedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -299,27 +565,66 @@ spriteTypes = {
 		name = "PORTRAIT_infinitedragongfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_infinitedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_infinitedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_infinitedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_infinitedragon_female_hair_behind:p1:h"             #3
+			"GFX_infinitedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_infinitedragon_female_base:p2"                        #4
+			"GFX_infinitedragon_female_clothes:p3:c2"                  #12
+			"GFX_infinitedragon_female_neck:d0"                        #5
+			"GFX_infinitedragon_female_nose:d3"                        #9
+			"GFX_infinitedragon_female_eyes:d6"                        #10
+			"GFX_infinitedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_infinitedragon_female_hair:p1:h"                    #15
+			"GFX_infinitedragon_female_hair_uncolored:p1"            #16
+			"GFX_infinitedragon_female_cheeks:d4"               		#6
+			"GFX_infinitedragon_female_chin:d1"                        #7
+			"GFX_infinitedragon_female_mouth:d2"                       #8
+			"GFX_infinitedragon_female_ear:d7"                         #13
+			"GFX_infinitedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_infinitedragon_female_hair_front:p1:h"                    #15
+			"GFX_infinitedragon_female_hair_uncolored_front:p1"                    #15
+			"GFX_infinitedragon_female_clothes_infront:p3:c4"
+			"GFX_infinitedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -329,27 +634,63 @@ spriteTypes = {
 		name = "PORTRAIT_infinitedragongfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_infinitedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_infinitedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_infinitedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_infinitedragon_female_hair_behind:p1:h:y"             #3
+			"GFX_infinitedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_infinitedragon_female_base:p2"                        #4
+			"GFX_infinitedragon_female_cheeks:d4"               #6
+			"GFX_infinitedragon_female_neck:d0"                        #5
+			"GFX_infinitedragon_female_chin:d1"                        #7
+			"GFX_infinitedragon_female_mouth:d2:o72x48"                       #8
+			"GFX_infinitedragon_female_nose:d3:o80x65"                        #9
+			"GFX_infinitedragon_female_eyes:d6"                        #10
+			"GFX_infinitedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_infinitedragon_female_clothes:p3:c2"                  #12
+			"GFX_infinitedragon_female_ear:d7"                         #13
+			"GFX_infinitedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_infinitedragon_female_hair:p1:y"                    #15
+			"GFX_infinitedragon_female_clothes_infront:p3:c4"
+			"GFX_infinitedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -359,27 +700,64 @@ spriteTypes = {
 		name = "PORTRAIT_infinitedragongfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_infinitedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_infinitedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_infinitedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_infinitedragon_female_hair_behind:p1:h:y"             #3
+			"GFX_infinitedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_infinitedragon_female_base:p2"                        #4
+			"GFX_infinitedragon_female_cheeks:d4"               #6
+			"GFX_infinitedragon_female_neck:d0"                        #5
+			"GFX_infinitedragon_female_chin:d1"                        #7
+			"GFX_infinitedragon_female_mouth:d2:o72x48"                       #8
+			"GFX_infinitedragon_female_nose:d3:o80x65"                        #9
+			"GFX_infinitedragon_female_eyes:d6"                        #10
+			"GFX_infinitedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_infinitedragon_female_clothes:p3:c2"                  #12
+			"GFX_infinitedragon_female_ear:d7"                         #13
+			"GFX_infinitedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_infinitedragon_female_hair:p1:y"                    #15
+			"GFX_infinitedragon_female_clothes_infront:p3:c4"
+			"GFX_infinitedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
+		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -394,26 +772,52 @@ spriteTypes = {
 		name = "PORTRAIT_greendragongfx_male"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_greendragon_male_clothes_behind:p3:c0"
+			"GFX_greendragon_male_headgear_behind:p5:c1"
 			"GFX_greendragon_male_base:p2"
+			"GFX_greendragon_male_hair_behind:p1:h:y"
+			"GFX_greendragon_male_beard_behind:p4:h:y"
+			"GFX_greendragon_male_neck:d0"
+			"GFX_greendragon_male_cheeks:d4"
+			"GFX_greendragon_male_eyes:d6"
+			"GFX_greendragon_male_eyes2:d6"
+			"GFX_greendragon_male_clothes:p3:c2"
+			"GFX_greendragon_male_headgear_mid:p5:c3"
+			"GFX_greendragon_male_ear:d7"			
+		   	"GFX_greendragon_male_hair:p1:h:y"
+			"GFX_greendragon_male_nose:d3"
+			"GFX_greendragon_male_clothes_infront:p3:c4"
+			"GFX_greendragon_male_headgear:p5:c5"
+			"GFX_greendragon_male_chin:p4"
+			"GFX_greendragon_male_mouth:d2"
+			"GFX_greendragon_male_beard:d1:h"
+			"GFX_greendragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_greendragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -424,26 +828,52 @@ spriteTypes = {
 		name = "PORTRAIT_greendragongfx_male1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_greendragon_male_clothes_behind:p3:c0"
+			"GFX_greendragon_male_headgear_behind:p5:c1"
 			"GFX_greendragon_male_base:p2"
+			"GFX_greendragon_male_hair_behind:p1:h"
+			"GFX_greendragon_male_beard_behind:p4:h"
+			"GFX_greendragon_male_neck:d0"
+			"GFX_greendragon_male_cheeks:d4"
+			"GFX_greendragon_male_eyes:d6"
+			"GFX_greendragon_male_eyes2:d6"
+			"GFX_greendragon_male_clothes:p3:c2"
+			"GFX_greendragon_male_headgear_mid:p5:c3"
+			"GFX_greendragon_male_ear:d7"			
+		   	"GFX_greendragon_male_hair:p1:h"
+			"GFX_greendragon_male_nose:d3"
+			"GFX_greendragon_male_clothes_infront:p3:c4"
+			"GFX_greendragon_male_headgear:p5:c5"
+			"GFX_greendragon_male_chin:p4"
+			"GFX_greendragon_male_mouth:d2"
+			"GFX_greendragon_male_beard:d1:h"
+			"GFX_greendragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_greendragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -454,26 +884,51 @@ spriteTypes = {
 		name = "PORTRAIT_greendragongfx_male2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_greendragon_male_clothes_behind:p3:c0"
+			"GFX_greendragon_male_headgear_behind:p5:c1"
 			"GFX_greendragon_male_base:p2"
+			"GFX_greendragon_male_hair_behind:p1:h"
+			"GFX_greendragon_male_beard_behind:p4:h"
+			"GFX_greendragon_male_neck:d0"
+			"GFX_greendragon_male_cheeks:d4"
+			"GFX_greendragon_male_eyes:d6"
+			"GFX_greendragon_male_eyes2:d6"
+			"GFX_greendragon_male_clothes:p3:c2"
+			"GFX_greendragon_male_headgear_mid:p5:c3"
+			"GFX_greendragon_male_ear:d7"			
+		   	"GFX_greendragon_male_hair:p1:h"
+			"GFX_greendragon_male_nose:d3"
+			"GFX_greendragon_male_clothes_infront:p3:c4"
+			"GFX_greendragon_male_headgear:p5:c5"
+			"GFX_greendragon_male_chin:p4"
+			"GFX_greendragon_male_mouth:d2"
+			"GFX_greendragon_male_beard:d1:h"
+			"GFX_greendragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_greendragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -491,27 +946,66 @@ spriteTypes = {
 		name = "PORTRAIT_greendragongfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_greendragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_greendragon_female_clothes_behind:p3:c0"              #1
+			"GFX_greendragon_female_headgear_behind:p5:c1"             #2
+			"GFX_greendragon_female_hair_behind:p1:h"             #3
+			"GFX_greendragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_greendragon_female_base:p2"                        #4
+			"GFX_greendragon_female_clothes:p3:c2"                  #12
+			"GFX_greendragon_female_neck:d0"                        #5
+			"GFX_greendragon_female_nose:d3"                        #9
+			"GFX_greendragon_female_eyes:d6"                        #10
+			"GFX_greendragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_greendragon_female_hair:p1:h"                    #15
+			"GFX_greendragon_female_hair_uncolored:p1"            #16
+			"GFX_greendragon_female_cheeks:d4"               		#6
+			"GFX_greendragon_female_chin:d1"                        #7
+			"GFX_greendragon_female_mouth:d2"                       #8
+			"GFX_greendragon_female_ear:d7"                         #13
+			"GFX_greendragon_female_headgear_mid:p5:c3"             #14
+			"GFX_greendragon_female_hair_front:p1:h"                    #15
+			"GFX_greendragon_female_hair_uncolored_front:p1"                    #15
+			"GFX_greendragon_female_clothes_infront:p3:c4"
+			"GFX_greendragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -521,27 +1015,63 @@ spriteTypes = {
 		name = "PORTRAIT_greendragongfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_greendragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_greendragon_female_clothes_behind:p3:c0"              #1
+			"GFX_greendragon_female_headgear_behind:p5:c1"             #2
+			"GFX_greendragon_female_hair_behind:p1:h:y"             #3
+			"GFX_greendragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_greendragon_female_base:p2"                        #4
+			"GFX_greendragon_female_cheeks:d4"               #6
+			"GFX_greendragon_female_neck:d0"                        #5
+			"GFX_greendragon_female_chin:d1"                        #7
+			"GFX_greendragon_female_mouth:d2:o72x48"                       #8
+			"GFX_greendragon_female_nose:d3:o80x65"                        #9
+			"GFX_greendragon_female_eyes:d6"                        #10
+			"GFX_greendragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_greendragon_female_clothes:p3:c2"                  #12
+			"GFX_greendragon_female_ear:d7"                         #13
+			"GFX_greendragon_female_headgear_mid:p5:c3"             #14
+			"GFX_greendragon_female_hair:p1:y"                    #15
+			"GFX_greendragon_female_clothes_infront:p3:c4"
+			"GFX_greendragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -551,27 +1081,64 @@ spriteTypes = {
 		name = "PORTRAIT_greendragongfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_greendragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_greendragon_female_clothes_behind:p3:c0"              #1
+			"GFX_greendragon_female_headgear_behind:p5:c1"             #2
+			"GFX_greendragon_female_hair_behind:p1:h:y"             #3
+			"GFX_greendragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_greendragon_female_base:p2"                        #4
+			"GFX_greendragon_female_cheeks:d4"               #6
+			"GFX_greendragon_female_neck:d0"                        #5
+			"GFX_greendragon_female_chin:d1"                        #7
+			"GFX_greendragon_female_mouth:d2:o72x48"                       #8
+			"GFX_greendragon_female_nose:d3:o80x65"                        #9
+			"GFX_greendragon_female_eyes:d6"                        #10
+			"GFX_greendragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_greendragon_female_clothes:p3:c2"                  #12
+			"GFX_greendragon_female_ear:d7"                         #13
+			"GFX_greendragon_female_headgear_mid:p5:c3"             #14
+			"GFX_greendragon_female_hair:p1:y"                    #15
+			"GFX_greendragon_female_clothes_infront:p3:c4"
+			"GFX_greendragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
-	
+
+		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -586,26 +1153,52 @@ spriteTypes = {
 		name = "PORTRAIT_bronzedragongfx_male"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_bronzedragon_male_clothes_behind:p3:c0"
+			"GFX_bronzedragon_male_headgear_behind:p5:c1"
 			"GFX_bronzedragon_male_base:p2"
+			"GFX_bronzedragon_male_hair_behind:p1:h:y"
+			"GFX_bronzedragon_male_beard_behind:p4:h:y"
+			"GFX_bronzedragon_male_neck:d0"
+			"GFX_bronzedragon_male_cheeks:d4"
+			"GFX_bronzedragon_male_eyes:d6"
+			"GFX_bronzedragon_male_eyes2:d6"
+			"GFX_bronzedragon_male_clothes:p3:c2"
+			"GFX_bronzedragon_male_headgear_mid:p5:c3"
+			"GFX_bronzedragon_male_ear:d7"			
+		   	"GFX_bronzedragon_male_hair:p1:h:y"
+			"GFX_bronzedragon_male_nose:d3"
+			"GFX_bronzedragon_male_clothes_infront:p3:c4"
+			"GFX_bronzedragon_male_headgear:p5:c5"
+			"GFX_bronzedragon_male_chin:p4"
+			"GFX_bronzedragon_male_mouth:d2"
+			"GFX_bronzedragon_male_beard:d1:h"
+			"GFX_bronzedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_bronzedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -616,26 +1209,53 @@ spriteTypes = {
 		name = "PORTRAIT_bronzedragongfx_male1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_bronzedragon_male_clothes_behind:p3:c0"
+			"GFX_bronzedragon_male_headgear_behind:p5:c1"
 			"GFX_bronzedragon_male_base:p2"
+			"GFX_bronzedragon_male_hair_behind:p1:h"
+			"GFX_bronzedragon_male_beard_behind:p4:h"
+			"GFX_bronzedragon_male_clothes_infront:p3:c4"
+			"GFX_bronzedragon_male_neck:d0"
+			"GFX_bronzedragon_male_cheeks:d4"
+			"GFX_bronzedragon_male_eyes:d6"
+			"GFX_bronzedragon_male_eyes2:d6"
+			"GFX_bronzedragon_male_clothes:p3:c2"
+			"GFX_bronzedragon_male_headgear_mid:p5:c3"
+			"GFX_bronzedragon_male_ear:d7"			
+		   	"GFX_bronzedragon_male_hair:p1:h"
+			"GFX_bronzedragon_male_nose:d3"
+			"GFX_bronzedragon_male_clothes_infront:p3:c4"
+			"GFX_bronzedragon_male_headgear:p5:c5"
+			"GFX_bronzedragon_male_chin:p4"
+			"GFX_bronzedragon_male_mouth:d2"
+			"GFX_bronzedragon_male_beard:d1:h"
+			"GFX_bronzedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_bronzedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -646,26 +1266,52 @@ spriteTypes = {
 		name = "PORTRAIT_bronzedragongfx_male2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_bronzedragon_male_clothes_behind:p3:c0"
+			"GFX_bronzedragon_male_headgear_behind:p5:c1"
 			"GFX_bronzedragon_male_base:p2"
+			"GFX_bronzedragon_male_hair_behind:p1:h"
+			"GFX_bronzedragon_male_beard_behind:p4:h"
+			"GFX_bronzedragon_male_clothes_infront:p3:c4"
+			"GFX_bronzedragon_male_neck:d0"
+			"GFX_bronzedragon_male_cheeks:d4"
+			"GFX_bronzedragon_male_eyes:d6"
+			"GFX_bronzedragon_male_eyes2:d6"
+			"GFX_bronzedragon_male_clothes:p3:c2"
+			"GFX_bronzedragon_male_headgear_mid:p5:c3"
+			"GFX_bronzedragon_male_ear:d7"			
+		   	"GFX_bronzedragon_male_hair:p1:h"
+			"GFX_bronzedragon_male_nose:d3"
+			"GFX_bronzedragon_male_clothes_infront:p3:c4"
+			"GFX_bronzedragon_male_headgear:p5:c5"
+			"GFX_bronzedragon_male_chin:p4"
+			"GFX_bronzedragon_male_mouth:d2"
+			"GFX_bronzedragon_male_beard:d1:h"
+			"GFX_bronzedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_bronzedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -683,27 +1329,66 @@ spriteTypes = {
 		name = "PORTRAIT_bronzedragongfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_bronzedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_bronzedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_bronzedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_bronzedragon_female_hair_behind:p1:h"             #3
+			"GFX_bronzedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_bronzedragon_female_base:p2"                        #4
+			"GFX_bronzedragon_female_clothes:p3:c2"                  #12
+			"GFX_bronzedragon_female_neck:d0"                        #5
+			"GFX_bronzedragon_female_nose:d3"                        #9
+			"GFX_bronzedragon_female_eyes:d6"                        #10
+			"GFX_bronzedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_bronzedragon_female_hair:p1:h"                    #15
+			"GFX_bronzedragon_female_hair_uncolored:p1"            #16
+			"GFX_bronzedragon_female_cheeks:d4"               		#6
+			"GFX_bronzedragon_female_chin:d1"                        #7
+			"GFX_bronzedragon_female_mouth:d2"                       #8
+			"GFX_bronzedragon_female_ear:d7"                         #13
+			"GFX_bronzedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_bronzedragon_female_hair_front:p1:h"                    #15
+			"GFX_bronzedragon_female_hair_uncolored_front:p1"                    #15
+			"GFX_bronzedragon_female_clothes_infront:p3:c4"
+			"GFX_bronzedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -713,27 +1398,63 @@ spriteTypes = {
 		name = "PORTRAIT_bronzedragongfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_bronzedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_bronzedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_bronzedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_bronzedragon_female_hair_behind:p1:h:y"             #3
+			"GFX_bronzedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_bronzedragon_female_base:p2"                        #4
+			"GFX_bronzedragon_female_cheeks:d4"               #6
+			"GFX_bronzedragon_female_neck:d0"                        #5
+			"GFX_bronzedragon_female_chin:d1"                        #7
+			"GFX_bronzedragon_female_mouth:d2:o72x48"                       #8
+			"GFX_bronzedragon_female_nose:d3:o80x65"                        #9
+			"GFX_bronzedragon_female_eyes:d6"                        #10
+			"GFX_bronzedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_bronzedragon_female_clothes:p3:c2"                  #12
+			"GFX_bronzedragon_female_ear:d7"                         #13
+			"GFX_bronzedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_bronzedragon_female_hair:p1:y"                    #15
+			"GFX_bronzedragon_female_clothes_infront:p3:c4"
+			"GFX_bronzedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -743,27 +1464,64 @@ spriteTypes = {
 		name = "PORTRAIT_bronzedragongfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_bronzedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_bronzedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_bronzedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_bronzedragon_female_hair_behind:p1:h:y"             #3
+			"GFX_bronzedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_bronzedragon_female_base:p2"                        #4
+			"GFX_bronzedragon_female_cheeks:d4"               #6
+			"GFX_bronzedragon_female_neck:d0"                        #5
+			"GFX_bronzedragon_female_chin:d1"                        #7
+			"GFX_bronzedragon_female_mouth:d2:o72x48"                       #8
+			"GFX_bronzedragon_female_nose:d3:o80x65"                        #9
+			"GFX_bronzedragon_female_eyes:d6"                        #10
+			"GFX_bronzedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_bronzedragon_female_clothes:p3:c2"                  #12
+			"GFX_bronzedragon_female_ear:d7"                         #13
+			"GFX_bronzedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_bronzedragon_female_hair:p1:y"                    #15
+			"GFX_bronzedragon_female_clothes_infront:p3:c4"
+			"GFX_bronzedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
+		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -778,26 +1536,52 @@ spriteTypes = {
 		name = "PORTRAIT_blackdragongfx_male"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_blackdragon_male_clothes_behind:p3:c0"
+			"GFX_blackdragon_male_headgear_behind:p5:c1"
 			"GFX_blackdragon_male_base:p2"
+			"GFX_blackdragon_male_hair_behind:p1:h:y"
+			"GFX_blackdragon_male_beard_behind:p4:h:y"
+			"GFX_blackdragon_male_neck:d0"
+			"GFX_blackdragon_male_cheeks:d4"
+			"GFX_blackdragon_male_eyes:d6"
+			"GFX_blackdragon_male_eyes2:d6"
+			"GFX_blackdragon_male_clothes:p3:c2"
+			"GFX_blackdragon_male_headgear_mid:p5:c3"
+			"GFX_blackdragon_male_ear:d7"			
+		   	"GFX_blackdragon_male_hair:p1:h:y"
+			"GFX_blackdragon_male_nose:d3"
+			"GFX_blackdragon_male_clothes_infront:p3:c4"
+			"GFX_blackdragon_male_headgear:p5:c5"
+			"GFX_blackdragon_male_chin:p4"
+			"GFX_blackdragon_male_mouth:d2"
+			"GFX_blackdragon_male_beard:d1:h"
+			"GFX_blackdragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_blackdragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -808,26 +1592,52 @@ spriteTypes = {
 		name = "PORTRAIT_blackdragongfx_male1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_blackdragon_male_clothes_behind:p3:c0"
+			"GFX_blackdragon_male_headgear_behind:p5:c1"
 			"GFX_blackdragon_male_base:p2"
+			"GFX_blackdragon_male_hair_behind:p1:h"
+			"GFX_blackdragon_male_beard_behind:p4:h"
+			"GFX_blackdragon_male_neck:d0"
+			"GFX_blackdragon_male_cheeks:d4"
+			"GFX_blackdragon_male_eyes:d6"
+			"GFX_blackdragon_male_eyes2:d6"
+			"GFX_blackdragon_male_clothes:p3:c2"
+			"GFX_blackdragon_male_headgear_mid:p5:c3"
+			"GFX_blackdragon_male_ear:d7"			
+		   	"GFX_blackdragon_male_hair:p1:h"
+			"GFX_blackdragon_male_nose:d3"
+			"GFX_blackdragon_male_clothes_infront:p3:c4"
+			"GFX_blackdragon_male_headgear:p5:c5"
+			"GFX_blackdragon_male_chin:p4"
+			"GFX_blackdragon_male_mouth:d2"
+			"GFX_blackdragon_male_beard:d1:h"
+			"GFX_blackdragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_blackdragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -838,26 +1648,51 @@ spriteTypes = {
 		name = "PORTRAIT_blackdragongfx_male2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_blackdragon_male_clothes_behind:p3:c0"
+			"GFX_blackdragon_male_headgear_behind:p5:c1"
 			"GFX_blackdragon_male_base:p2"
+			"GFX_blackdragon_male_hair_behind:p1:h"
+			"GFX_blackdragon_male_beard_behind:p4:h"
+			"GFX_blackdragon_male_neck:d0"
+			"GFX_blackdragon_male_cheeks:d4"
+			"GFX_blackdragon_male_eyes:d6"
+			"GFX_blackdragon_male_eyes2:d6"
+			"GFX_blackdragon_male_clothes:p3:c2"
+			"GFX_blackdragon_male_headgear_mid:p5:c3"
+			"GFX_blackdragon_male_ear:d7"			
+		   	"GFX_blackdragon_male_hair:p1:h"
+			"GFX_blackdragon_male_nose:d3"
+			"GFX_blackdragon_male_clothes_infront:p3:c4"
+			"GFX_blackdragon_male_headgear:p5:c5"
+			"GFX_blackdragon_male_chin:p4"
+			"GFX_blackdragon_male_mouth:d2"
+			"GFX_blackdragon_male_beard:d1:h"
+			"GFX_blackdragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_blackdragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -875,27 +1710,66 @@ spriteTypes = {
 		name = "PORTRAIT_blackdragongfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_blackdragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_blackdragon_female_clothes_behind:p3:c0"              #1
+			"GFX_blackdragon_female_headgear_behind:p5:c1"             #2
+			"GFX_blackdragon_female_hair_behind:p1:h"             #3
+			"GFX_blackdragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_blackdragon_female_base:p2"                        #4
+			"GFX_blackdragon_female_clothes:p3:c2"                  #12
+			"GFX_blackdragon_female_neck:d0"                        #5
+			"GFX_blackdragon_female_nose:d3"                        #9
+			"GFX_blackdragon_female_eyes:d6"                        #10
+			"GFX_blackdragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_blackdragon_female_hair:p1:h"                    #15
+			"GFX_blackdragon_female_hair_uncolored:p1"            #16
+			"GFX_blackdragon_female_cheeks:d4"               		#6
+			"GFX_blackdragon_female_chin:d1"                        #7
+			"GFX_blackdragon_female_mouth:d2"                       #8
+			"GFX_blackdragon_female_ear:d7"                         #13
+			"GFX_blackdragon_female_headgear_mid:p5:c3"             #14
+			"GFX_blackdragon_female_hair_front:p1:h"                    #15
+			"GFX_blackdragon_female_hair_uncolored_front:p1"                    #15
+			"GFX_blackdragon_female_clothes_infront:p3:c4"
+			"GFX_blackdragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -905,27 +1779,63 @@ spriteTypes = {
 		name = "PORTRAIT_blackdragongfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_blackdragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_blackdragon_female_clothes_behind:p3:c0"              #1
+			"GFX_blackdragon_female_headgear_behind:p5:c1"             #2
+			"GFX_blackdragon_female_hair_behind:p1:h:y"             #3
+			"GFX_blackdragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_blackdragon_female_base:p2"                        #4
+			"GFX_blackdragon_female_cheeks:d4"               #6
+			"GFX_blackdragon_female_neck:d0"                        #5
+			"GFX_blackdragon_female_chin:d1"                        #7
+			"GFX_blackdragon_female_mouth:d2:o72x48"                       #8
+			"GFX_blackdragon_female_nose:d3:o80x65"                        #9
+			"GFX_blackdragon_female_eyes:d6"                        #10
+			"GFX_blackdragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_blackdragon_female_clothes:p3:c2"                  #12
+			"GFX_blackdragon_female_ear:d7"                         #13
+			"GFX_blackdragon_female_headgear_mid:p5:c3"             #14
+			"GFX_blackdragon_female_hair:p1:y"                    #15
+			"GFX_blackdragon_female_clothes_infront:p3:c4"
+			"GFX_blackdragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -935,27 +1845,64 @@ spriteTypes = {
 		name = "PORTRAIT_blackdragongfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_blackdragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_blackdragon_female_clothes_behind:p3:c0"              #1
+			"GFX_blackdragon_female_headgear_behind:p5:c1"             #2
+			"GFX_blackdragon_female_hair_behind:p1:h:y"             #3
+			"GFX_blackdragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_blackdragon_female_base:p2"                        #4
+			"GFX_blackdragon_female_cheeks:d4"               #6
+			"GFX_blackdragon_female_neck:d0"                        #5
+			"GFX_blackdragon_female_chin:d1"                        #7
+			"GFX_blackdragon_female_mouth:d2:o72x48"                       #8
+			"GFX_blackdragon_female_nose:d3:o80x65"                        #9
+			"GFX_blackdragon_female_eyes:d6"                        #10
+			"GFX_blackdragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_blackdragon_female_clothes:p3:c2"                  #12
+			"GFX_blackdragon_female_ear:d7"                         #13
+			"GFX_blackdragon_female_headgear_mid:p5:c3"             #14
+			"GFX_blackdragon_female_hair:p1:y"                    #15
+			"GFX_blackdragon_female_clothes_infront:p3:c4"
+			"GFX_blackdragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
+		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -970,26 +1917,43 @@ spriteTypes = {
 		name = "PORTRAIT_reddragongfx_male"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_reddragon_male_base:p2"
+			"GFX_dragon_base:p2"
+			"GFX_dragon_beard_behind:p4:y"
+			"GFX_dragon_neck_below:d0"
+			"GFX_dragon_neck_above:d0:h"
+			"GFX_dragon_eyes:d6:h"
+			"GFX_dragon_eyes_above:d6"
+			"GFX_dragon_eyes2:d6"			
+		   	"GFX_dragon_hair:p1:y"
+			"GFX_dragon_hair_above:p1"
+			"GFX_dragon_mouth:d2"
+			"GFX_dragon_beard:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_dragon_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+
+			{ 10 10 5 } { 235 0 0 } { 255 255 255 }
+			{ 0 0 0 } { 0 250 0 } { 255 255 255 }
+			{ 15 8 0 } { 0 0 255 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1000,26 +1964,52 @@ spriteTypes = {
 		name = "PORTRAIT_reddragongfx_male1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_reddragon_male_clothes_behind:p3:c0"
+			"GFX_reddragon_male_headgear_behind:p5:c1"
 			"GFX_reddragon_male_base:p2"
+			"GFX_reddragon_male_hair_behind:p1:h"
+			"GFX_reddragon_male_beard_behind:p4:h"
+			"GFX_reddragon_male_neck:d0"
+			"GFX_reddragon_male_cheeks:d4"
+			"GFX_reddragon_male_eyes:d6"
+			"GFX_reddragon_male_eyes2:d6"
+			"GFX_reddragon_male_clothes:p3:c2"
+			"GFX_reddragon_male_headgear_mid:p5:c3"
+			"GFX_reddragon_male_ear:d7"			
+		   	"GFX_reddragon_male_hair:p1:h"
+			"GFX_reddragon_male_nose:d3"
+			"GFX_reddragon_male_clothes_infront:p3:c4"
+			"GFX_reddragon_male_headgear:p5:c5"
+			"GFX_reddragon_male_chin:p4"
+			"GFX_reddragon_male_mouth:d2"
+			"GFX_reddragon_male_beard:d1:h"
+			"GFX_reddragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_reddragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1030,26 +2020,51 @@ spriteTypes = {
 		name = "PORTRAIT_reddragongfx_male2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_reddragon_male_clothes_behind:p3:c0"
+			"GFX_reddragon_male_headgear_behind:p5:c1"
 			"GFX_reddragon_male_base:p2"
+			"GFX_reddragon_male_hair_behind:p1:h"
+			"GFX_reddragon_male_beard_behind:p4:h"
+			"GFX_reddragon_male_neck:d0"
+			"GFX_reddragon_male_cheeks:d4"
+			"GFX_reddragon_male_eyes:d6"
+			"GFX_reddragon_male_eyes2:d6"
+			"GFX_reddragon_male_clothes:p3:c2"
+			"GFX_reddragon_male_headgear_mid:p5:c3"
+			"GFX_reddragon_male_ear:d7"			
+		   	"GFX_reddragon_male_hair:p1:h"
+			"GFX_reddragon_male_nose:d3"
+			"GFX_reddragon_male_clothes_infront:p3:c4"
+			"GFX_reddragon_male_headgear:p5:c5"
+			"GFX_reddragon_male_chin:p4"
+			"GFX_reddragon_male_mouth:d2"
+			"GFX_reddragon_male_beard:d1:h"
+			"GFX_reddragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_reddragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1067,27 +2082,66 @@ spriteTypes = {
 		name = "PORTRAIT_reddragongfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_reddragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_reddragon_female_clothes_behind:p3:c0"              #1
+			"GFX_reddragon_female_headgear_behind:p5:c1"             #2
+			"GFX_reddragon_female_hair_behind:p1:h"             #3
+			"GFX_reddragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_reddragon_female_base:p2"                        #4
+			"GFX_reddragon_female_clothes:p3:c2"                  #12
+			"GFX_reddragon_female_neck:d0"                        #5
+			"GFX_reddragon_female_nose:d3"                        #9
+			"GFX_reddragon_female_eyes:d6"                        #10
+			"GFX_reddragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_reddragon_female_hair:p1:h"                    #15
+			"GFX_reddragon_female_hair_uncolored:p1"            #16
+			"GFX_reddragon_female_cheeks:d4"               		#6
+			"GFX_reddragon_female_chin:d1"                        #7
+			"GFX_reddragon_female_mouth:d2"                       #8
+			"GFX_reddragon_female_ear:d7"                         #13
+			"GFX_reddragon_female_headgear_mid:p5:c3"             #14
+			"GFX_reddragon_female_hair_front:p1:h"                    #15
+			"GFX_reddragon_female_hair_uncolored_front:p1"                    #15
+			"GFX_reddragon_female_clothes_infront:p3:c4"
+			"GFX_reddragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -1097,27 +2151,63 @@ spriteTypes = {
 		name = "PORTRAIT_reddragongfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_reddragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_reddragon_female_clothes_behind:p3:c0"              #1
+			"GFX_reddragon_female_headgear_behind:p5:c1"             #2
+			"GFX_reddragon_female_hair_behind:p1:h:y"             #3
+			"GFX_reddragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_reddragon_female_base:p2"                        #4
+			"GFX_reddragon_female_cheeks:d4"               #6
+			"GFX_reddragon_female_neck:d0"                        #5
+			"GFX_reddragon_female_chin:d1"                        #7
+			"GFX_reddragon_female_mouth:d2:o72x48"                       #8
+			"GFX_reddragon_female_nose:d3:o80x65"                        #9
+			"GFX_reddragon_female_eyes:d6"                        #10
+			"GFX_reddragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_reddragon_female_clothes:p3:c2"                  #12
+			"GFX_reddragon_female_ear:d7"                         #13
+			"GFX_reddragon_female_headgear_mid:p5:c3"             #14
+			"GFX_reddragon_female_hair:p1:y"                    #15
+			"GFX_reddragon_female_clothes_infront:p3:c4"
+			"GFX_reddragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -1127,27 +2217,64 @@ spriteTypes = {
 		name = "PORTRAIT_reddragongfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_reddragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_reddragon_female_clothes_behind:p3:c0"              #1
+			"GFX_reddragon_female_headgear_behind:p5:c1"             #2
+			"GFX_reddragon_female_hair_behind:p1:h:y"             #3
+			"GFX_reddragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_reddragon_female_base:p2"                        #4
+			"GFX_reddragon_female_cheeks:d4"               #6
+			"GFX_reddragon_female_neck:d0"                        #5
+			"GFX_reddragon_female_chin:d1"                        #7
+			"GFX_reddragon_female_mouth:d2:o72x48"                       #8
+			"GFX_reddragon_female_nose:d3:o80x65"                        #9
+			"GFX_reddragon_female_eyes:d6"                        #10
+			"GFX_reddragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_reddragon_female_clothes:p3:c2"                  #12
+			"GFX_reddragon_female_ear:d7"                         #13
+			"GFX_reddragon_female_headgear_mid:p5:c3"             #14
+			"GFX_reddragon_female_hair:p1:y"                    #15
+			"GFX_reddragon_female_clothes_infront:p3:c4"
+			"GFX_reddragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
+		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -1162,26 +2289,52 @@ spriteTypes = {
 		name = "PORTRAIT_bluedragongfx_male"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_bluedragon_male_clothes_behind:p3:c0"
+			"GFX_bluedragon_male_headgear_behind:p5:c1"
 			"GFX_bluedragon_male_base:p2"
+			"GFX_bluedragon_male_hair_behind:p1:h:y"
+			"GFX_bluedragon_male_beard_behind:p4:h:y"
+			"GFX_bluedragon_male_neck:d0"
+			"GFX_bluedragon_male_cheeks:d4"
+			"GFX_bluedragon_male_eyes:d6"
+			"GFX_bluedragon_male_eyes2:d6"
+			"GFX_bluedragon_male_clothes:p3:c2"
+			"GFX_bluedragon_male_headgear_mid:p5:c3"
+			"GFX_bluedragon_male_ear:d7"			
+		   	"GFX_bluedragon_male_hair:p1:h:y"
+			"GFX_bluedragon_male_nose:d3"
+			"GFX_bluedragon_male_clothes_infront:p3:c4"
+			"GFX_bluedragon_male_headgear:p5:c5"
+			"GFX_bluedragon_male_chin:p4"
+			"GFX_bluedragon_male_mouth:d2"
+			"GFX_bluedragon_male_beard:d1:h"
+			"GFX_bluedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_bluedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+
+			{ 10 10 5 } { 235 220 100 } { 255 255 255 }
+			{ 0 0 0 } { 60 60 60 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 100 4 4 } { 241 81 8 } { 255 255 255 }
+			{ 25 0 30 } { 250 65 48 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1192,26 +2345,52 @@ spriteTypes = {
 		name = "PORTRAIT_bluedragongfx_male1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_bluedragon_male_clothes_behind:p3:c0"
+			"GFX_bluedragon_male_headgear_behind:p5:c1"
 			"GFX_bluedragon_male_base:p2"
+			"GFX_bluedragon_male_hair_behind:p1:h"
+			"GFX_bluedragon_male_beard_behind:p4:h"
+			"GFX_bluedragon_male_neck:d0"
+			"GFX_bluedragon_male_cheeks:d4"
+			"GFX_bluedragon_male_eyes:d6"
+			"GFX_bluedragon_male_eyes2:d6"
+			"GFX_bluedragon_male_clothes:p3:c2"
+			"GFX_bluedragon_male_headgear_mid:p5:c3"
+			"GFX_bluedragon_male_ear:d7"			
+		   	"GFX_bluedragon_male_hair:p1:h"
+			"GFX_bluedragon_male_nose:d3"
+			"GFX_bluedragon_male_clothes_infront:p3:c4"
+			"GFX_bluedragon_male_headgear:p5:c5"
+			"GFX_bluedragon_male_chin:p4"
+			"GFX_bluedragon_male_mouth:d2"
+			"GFX_bluedragon_male_beard:d1:h"
+			"GFX_bluedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_bluedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 3 2 1 } { 190 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 255 104 22 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1222,26 +2401,51 @@ spriteTypes = {
 		name = "PORTRAIT_bluedragongfx_male2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
+			"GFX_bluedragon_male_clothes_behind:p3:c0"
+			"GFX_bluedragon_male_headgear_behind:p5:c1"
 			"GFX_bluedragon_male_base:p2"
+			"GFX_bluedragon_male_hair_behind:p1:h"
+			"GFX_bluedragon_male_beard_behind:p4:h"
+			"GFX_bluedragon_male_neck:d0"
+			"GFX_bluedragon_male_cheeks:d4"
+			"GFX_bluedragon_male_eyes:d6"
+			"GFX_bluedragon_male_eyes2:d6"
+			"GFX_bluedragon_male_clothes:p3:c2"
+			"GFX_bluedragon_male_headgear_mid:p5:c3"
+			"GFX_bluedragon_male_ear:d7"			
+		   	"GFX_bluedragon_male_hair:p1:h"
+			"GFX_bluedragon_male_nose:d3"
+			"GFX_bluedragon_male_clothes_infront:p3:c4"
+			"GFX_bluedragon_male_headgear:p5:c5"
+			"GFX_bluedragon_male_chin:p4"
+			"GFX_bluedragon_male_mouth:d2"
+			"GFX_bluedragon_male_beard:d1:h"
+			"GFX_bluedragon_male_beard_over:d1"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
+			"GFX_bluedragon_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
 		}
 		
 		headgear_that_hides_hair = { }
@@ -1259,27 +2463,66 @@ spriteTypes = {
 		name = "PORTRAIT_bluedragongfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_bluedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_bluedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_bluedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_bluedragon_female_hair_behind:p1:h"             #3
+			"GFX_bluedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_bluedragon_female_base:p2"                        #4
+			"GFX_bluedragon_female_clothes:p3:c2"                  #12
+			"GFX_bluedragon_female_neck:d0"                        #5
+			"GFX_bluedragon_female_nose:d3"                        #9
+			"GFX_bluedragon_female_eyes:d6"                        #10
+			"GFX_bluedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_bluedragon_female_hair:p1:h"                    #15
+			"GFX_bluedragon_female_hair_uncolored:p1"            #16
+			"GFX_bluedragon_female_cheeks:d4"               		#6
+			"GFX_bluedragon_female_chin:d1"                        #7
+			"GFX_bluedragon_female_mouth:d2"                       #8
+			"GFX_bluedragon_female_ear:d7"                         #13
+			"GFX_bluedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_bluedragon_female_hair_front:p1:h"                    #15
+			"GFX_bluedragon_female_hair_uncolored_front:p1"                    #15
+			"GFX_bluedragon_female_clothes_infront:p3:c4"
+			"GFX_bluedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 15 12 8 } { 236 200 115 } { 255 255 255 }
+			{ 5 5 5 } { 65 65 65 } { 255 255 255 }
+			{ 12 10 5 } { 186 145 78 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 15 9 5 } { 150 90 55 } { 255 255 255 }
+			{ 17 8 4 } { 178 80 41 } { 255 255 255 }
+			{ 7 5 3 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -1289,27 +2532,63 @@ spriteTypes = {
 		name = "PORTRAIT_bluedragongfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_bluedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_bluedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_bluedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_bluedragon_female_hair_behind:p1:h:y"             #3
+			"GFX_bluedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_bluedragon_female_base:p2"                        #4
+			"GFX_bluedragon_female_cheeks:d4"               #6
+			"GFX_bluedragon_female_neck:d0"                        #5
+			"GFX_bluedragon_female_chin:d1"                        #7
+			"GFX_bluedragon_female_mouth:d2:o72x48"                       #8
+			"GFX_bluedragon_female_nose:d3:o80x65"                        #9
+			"GFX_bluedragon_female_eyes:d6"                        #10
+			"GFX_bluedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_bluedragon_female_clothes:p3:c2"                  #12
+			"GFX_bluedragon_female_ear:d7"                         #13
+			"GFX_bluedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_bluedragon_female_hair:p1:y"                    #15
+			"GFX_bluedragon_female_clothes_infront:p3:c4"
+			"GFX_bluedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
@@ -1319,27 +2598,64 @@ spriteTypes = {
 		name = "PORTRAIT_bluedragongfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
-			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_bluedragon_female_base:p2"
-			"GFX_character_scars:p7:y"
-			"GFX_character_reddots:p8"
-			"GFX_character_boils:p9"
+			"GFX_bluedragon_female_clothes_behind:p3:c0"              #1
+			"GFX_bluedragon_female_headgear_behind:p5:c1"             #2
+			"GFX_bluedragon_female_hair_behind:p1:h:y"             #3
+			"GFX_bluedragon_female_hair_uncolored_behind:p1"             #3
+			"GFX_bluedragon_female_base:p2"                        #4
+			"GFX_bluedragon_female_cheeks:d4"               #6
+			"GFX_bluedragon_female_neck:d0"                        #5
+			"GFX_bluedragon_female_chin:d1"                        #7
+			"GFX_bluedragon_female_mouth:d2:o72x48"                       #8
+			"GFX_bluedragon_female_nose:d3:o80x65"                        #9
+			"GFX_bluedragon_female_eyes:d6"                        #10
+			"GFX_bluedragon_female_eyes2:d6:e"			            #11
+			"GFX_character_scars:p7:y"                            #16
+			"GFX_character_reddots:p8"                          #17
+			"GFX_character_boils:p9"                            #18
 			"GFX_character_blinded_eyes:p10"
-			"GFX_character_eyepatch:p13:y:o32x63"
-			"GFX_character_mask:p12:y:o40x45"
-			"GFX_character_imprisoned:p6"
+			"GFX_bluedragon_female_clothes:p3:c2"                  #12
+			"GFX_bluedragon_female_ear:d7"                         #13
+			"GFX_bluedragon_female_headgear_mid:p5:c3"             #14
+			"GFX_bluedragon_female_hair:p1:y"                    #15
+			"GFX_bluedragon_female_clothes_infront:p3:c4"
+			"GFX_bluedragon_female_headgear:p5:c5"                 #20
+			"GFX_character_imprisoned:p6"                       #21
 			"GFX_player_overlay:p11"
 		}
 
+		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 2 2 2 } { 2 2 2 } { 2 2 2 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
 		}
+
 		eye_color_index = 9
 		eye_color = {
-			{ 2 2 2 }
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193}
+			{ 65 78 160}
+			{ 160 160 210}
+			{ 140 60 164}
+			{ 167 46 124}
+			{ 200 95 200}
 		}
+		
 		
 		headgear_that_hides_hair = { }
 	}
