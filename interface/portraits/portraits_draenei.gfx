@@ -1,9 +1,6 @@
 # hair, mouth, chin, nose, eyes, cheek, ear, neck
 spriteTypes = {
 	
-# hair, mouth, chin, nose, eyes, cheek, ear, neck
-spriteTypes = {
-	
 	### Draenei MALE ####
 	
 	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
@@ -522,7 +519,7 @@ spriteTypes = {
 	
 
 
-### Broken FEMALE ####
+	### Broken FEMALE ####
 
 
 	# broken female
@@ -532,7 +529,7 @@ spriteTypes = {
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_broken_female_base"
+			"GFX_broken_female_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -569,7 +566,7 @@ spriteTypes = {
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_broken_female_base"
+			"GFX_broken_female_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -606,7 +603,7 @@ spriteTypes = {
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_broken_female_base"
+			"GFX_broken_female_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -636,19 +633,18 @@ spriteTypes = {
 		
 		headgear_that_hides_hair = { }
 	}
-}
+
 	### Lost MALE ####
 	
 	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
 	
-	# lost Male
 	portraitType = {
-		name = "PORTRAIT_lostgfx_male"
+		name = "PORTRAIT_lost_draeneigfx_male"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_lost_male_base"
+			"GFX_lost_draenei_male_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -680,12 +676,12 @@ spriteTypes = {
 	
 	# middle age
 	portraitType = {
-		name = "PORTRAIT_lostgfx_male1"
+		name = "PORTRAIT_lost_draeneigfx_male1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_lost_male_base"
+			"GFX_lost_draenei_male_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -718,12 +714,12 @@ spriteTypes = {
 	
 	# old age
 	portraitType = {
-		name = "PORTRAIT_lostgfx_male2"
+		name = "PORTRAIT_lost_draeneigfx_male2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_lost_male_base"
+			"GFX_lost_draenei_male_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -757,17 +753,13 @@ spriteTypes = {
 
 ### lost FEMALE ####
 
-
-	# lost Female
-
-	# lost female
 	portraitType = {
-		name = "PORTRAIT_lostgfx_female"
+		name = "PORTRAIT_lost_draeneigfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_lost_female_base"
+			"GFX_lost_draenei_female_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -799,12 +791,12 @@ spriteTypes = {
 
 	# lost female midage
 	portraitType = {
-		name = "PORTRAIT_lostgfx_female1"
+		name = "PORTRAIT_lost_draeneigfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_lost_female_base"
+			"GFX_lost_draenei_female_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -836,12 +828,12 @@ spriteTypes = {
 
 	# lost female oldage
 	portraitType = {
-		name = "PORTRAIT_lostgfx_female2"
+		name = "PORTRAIT_lost_draeneigfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_lost_female_base"
+			"GFX_lost_draenei_female_base:p2"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
@@ -871,8 +863,5 @@ spriteTypes = {
 		
 		headgear_that_hides_hair = { }
 	}
-
-
-
 
 }
