@@ -39,7 +39,7 @@
 	name = "Gorek"
 	dynasty = 2 # Ironpatch
 	culture = warsong
-	religion = hydromancy
+	religion = burning_legion
 	dna="0ebc00c0ffh"
 	properties="rd000000000000j000"
 	martial = 7
@@ -49,8 +49,14 @@
 	9979.2.12 = {
 		birth = yes
 	}
-	10005.1.1 = {
+	10003.6.12 = {
+		religion = demonology
+	}
+	10005.7.1 = {
 		add_trait = one_eyed
+	}
+	10019.7.13 = { 
+		religion = hydromancy
 	}
 	10040.12.20 = {
 		death = {
@@ -779,6 +785,188 @@
 	10028.6.1 = {
 		death = {
 			death_reason = death_battle
+		}
+	}
+}
+
+30 = {
+	name = "Conrad"
+	dynasty = 28 # Kurzen
+	culture = azerothian
+	religion = holy_light
+	dna="0b0l0jb0a00"
+	properties="ll00d0000000000000"
+	martial = 7
+	trait = race_human
+	9969.6.12 = {
+		birth = yes
+	}
+	9985.6.12 = {
+		add_trait = tough_soldier
+		add_trait = wroth
+	}
+	10024.7.30 = {
+		effect = {
+			add_pressed_claim = c_snakethicket
+			add_pressed_claim = c_silvershard
+			spawn_unit = {
+				province = 357 # Southvale
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_infantry = { 767 767 }
+					heavy_infantry = { 666 666 }
+					pikemen = { 122 122 }
+					light_cavalry = { 175 175 }
+					knights = { 84 84 }
+					archers = { 339 339 }
+				}
+				attrition = 1.0
+				can_toggle_looting = no
+				reinforces = no
+			}
+		}
+	}
+	10024.9.6 = {
+		disband_event_forces = yes
+	}
+	10024.10.18 = {
+		add_trait = lunatic
+		add_trait = cruel
+		religion = demonology
+	}
+	10027.5.19 = {
+		death = {
+			death_reason = death_execution_hanging
+			killer = 31 # Jerod
+		}
+	}
+}
+
+31 = {
+	name = "Jerod"
+	dynasty = 29 # Esquivel
+	culture = azerothian
+	religion = holy_light
+	dna="000dadb0ah0"
+	properties="0d0000000000000000"
+	martial = 6
+	trait = race_human
+	9996.3.24 = {
+		birth = yes
+	}
+	10012.3.24 = {
+		add_trait = tough_soldier
+	}
+	10024.7.30 = {
+		employer = 30 # Conrad
+	}
+	10024.10.18 = {
+		add_trait = lunatic
+		add_trait = cruel
+		religion = demonology
+	}
+	10028.4.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+32 = {
+	name = "Bob"
+	dynasty = 30 # Doren
+	culture = azerothian
+	religion = holy_light
+	dna="0a0e0ia0bg0"
+	properties="ob00d0000000000000"
+	martial = 6
+	trait = race_human
+	9985.7.2 = {
+		birth = yes
+	}
+	10001.7.2 = {
+		add_trait = tough_soldier
+		add_trait = just
+	}
+	10024.7.30 = {
+		employer = 30 # Conrad
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+33 = {
+	name = "Gan'zulah"
+	dynasty = 31 # Bloodscalp
+	culture = bloodscalp
+	religion = hakkar
+	dna="lall0aagbb0"
+	properties="ek0000000000000000"
+	trait = race_troll_jungle
+	9988.3.30 = {
+		birth = yes
+	}
+	10026.5.18 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+34 = {
+	name = "Nazzilok"
+	dynasty = 32 # Ji'wok
+	culture = bloodscalp
+	religion = hakkar
+	dna="ic0a000abaa"
+	properties="ae0000000000000000"
+	learning = 7
+	trait = race_troll_jungle
+	9979.3.22 = {
+		birth = yes
+	}
+	9995.3.22 = {
+		add_trait = martial_cleric
+		add_trait = priest
+		give_nickname = nick_the_dire
+		employer = 33 # Gan'zulah
+	}
+	10026.5.18 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+35 = {
+	name = "Aggro'gosh"
+	dynasty = 35 # Fireroar
+	culture = bleeding_hollow
+	religion = burning_legion
+	dna="0c0a000abaa"
+	properties="ab00i0000000000000"
+	martial = 6
+	trait = race_orc
+	9980.5.2 = {
+		birth = yes
+	}
+	9996.5.2 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
+	10003.6.12 = {
+		religion = demonology
+	}
+	10018.4.27 = {
+		religion = shamanism
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
 		}
 	}
 }
