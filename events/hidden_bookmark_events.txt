@@ -16,56 +16,11 @@ character_event = {
 		##DOOM
 		set_variable = { which = global_doom value = 0 }
 		#Deal with titles
+		
 		#Add province modifiers
+		
 		#Kill specific characters (usually generic scourge ones that don't have any business being around before their time)
-		##Also for eliminating characters that leave the map (such as the Darkspears)
-		if = {
-			limit = {
-				NOT = { year = 10003 }
-			}
-			c_29 = { # Mai'Zoth Mosh'Ogg
-				death = { death_reason = death_missing }
-			}
-		}
-		if = {
-			limit = {
-				year = 10015
-			}
-			c_23 = { # Sen'jin Darkspear
-				death = { death_reason = death_missing }
-			}
-			c_24 = { # Vol'jin Darkspear
-				death = { death_reason = death_missing }
-			}
-			c_26 = { # Gadrin Eniku
-				death = { death_reason = death_missing }
-			}
-			c_27 = { # Zalazane Yyha
-				death = { death_reason = death_missing }
-			}
-		}
-		if = {
-			limit = {
-				NOT = { year = 10021 }
-			}
-			c_11 = { # Garr Salthoof
-				death = { death_reason = death_missing }
-			}
-			c_12 = { # Severance Wavetail
-				death = { death_reason = death_missing }
-			}
-			c_13 = { # Abrogaz Seahorn
-				death = { death_reason = death_missing }
-			}
-		}
-		if = {
-			limit = {
-				NOT = { year = 10023 }
-			}
-			c_22 = { # Sakrasis Thirass
-				death = { death_reason = death_missing }
-			}
-		}
+		
 		#Destroy settlements based on the date
 		if = {
 			limit = {
@@ -75,6 +30,5 @@ character_event = {
 				destroy_settlement = THIS
 			}
 		}
-		#Add buildings ## Due to us going past year 10k, buildings added through history won't appear (unless it was fixed)
 	}
 }
