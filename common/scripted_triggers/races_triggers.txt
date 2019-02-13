@@ -56,6 +56,7 @@ TOW_has_race_trait = {
 		trait = race_half_ogre
 		trait = race_half_draenei
 		trait = race_vrykul
+		trait = race_tauren
 	}
 }
 
@@ -171,7 +172,7 @@ TOW_race_has_slightly_lower_lifespan = { # 50 years
 		trait = race_kobold
 		trait = race_gnoll
 		trait = race_murloc
-		trait = race_trogg
+		
 	}
 }
 TOW_race_has_regular_lifespan = { # 80 years
@@ -184,12 +185,14 @@ TOW_race_has_regular_lifespan = { # 80 years
 		trait = race_half_ogre
 		TOW_race_is_troll = yes
 		trait = race_vrykul
+		trait = race_tauren
 	}
 }
 
 TOW_is_long_lived_race = { # 250 years
 	OR = {
 		trait = race_dwarf
+		trait = race_trogg
 		TOW_race_is_elf = yes
 		trait = race_gnome
 	}
