@@ -389,7 +389,7 @@ human = {
 }
 
 orcish = {
-	graphical_cultures = { orcgfx westerngfx }
+	graphical_cultures = { orcgfx dorcgfx worcgfx gorcgfx morcgfx borcgfx westerngfx }
 	
 	frostwolf = {
 		graphical_cultures = { orcgfx westerngfx}
@@ -4789,5 +4789,231 @@ tauren = {
 		modifier = default_culture_modifier
 		
 		allow_looting = no
+	}
+}
+
+worgen = {
+	graphical_cultures = { humangfx westerngfx }
+	
+	shadowfang = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.30 0.16 0.67 }
+		
+		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
+		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
+		Huglar Ignaeus Inigo Isaac Isildor Ivar Jack Jaime Jarel Jarim Jasper Joachim Jocryn John Jorad Jorgen Jorum Kassan Keldric Kendor Khadgar Kirk Kurtis Landan Landazar Leeroy Leoric Liam Llane Logan Lordain Luc Lucio Lucan Marcus Mark
+		Martin Marwyn Mathias Maxwell Mazen Metz Milton Morgan Nathanos Newton Nielas Omar Osric Othmar Ozzy Quixote Raynor Reginald Renato Renault Reno Rhonin Robert Saidan Salanar Salvador Samir Scott Seoman Sigvald Simon Solaire Stephen Strahad 
+		Tandred Taylor Teneb Terenas Thassarian Thomas Thoradin Thoras Thornby Thule Tim Tirion Tobias Turalyon Tyrathan Ulvus Uther Varian Victor Vincent Vishas Wayne Weldon Wendell Wilhelm Winston Xerxes Zardeth Zazzerpan
+		}
+		female_names = { Aerith Adele Adria Alexandra Alicia Allison Alma Althea Alyssa Amelia Amy Anetta Anveena Ardwyn Ariena Avette Bae Bernice Bonnie Breanna Brigitte Cadence Calia Carla Catherine Cersei Charys Clarise Coda Corina Crystal
+		Danielle Darcy Dawn Demisette Dominique Donni Drusilla Edna Elaine Elly Elone Emma Erika Erma Eva Fam Farah Felicia Gloria Gwen Hanah Helene Helga Herla Hope Iara Ilsa Ingrid Iris Isis Jaina Jalane Jennea Jessara Jillian Josetta Julia
+		Kahlee Karen Karlee Karter Katie Katrana Kelly Keryn Kimberly Kitta Kyra Lara Laurena Leesha Leah Leia Lilith Lina Lisbeth Loren Lorna Lydia Lyria Magatha Malissa Mara Maya Marda Maria Maris Martie Maybell Mercy Mayda Melinda Melody Mia
+		Michelle Milly Morgan Myriam Nalice Natalie Nikova Olena Olivia Pamela Penny Prya Rachel Rebecca Rema Samantha Sansa Sapphire Sarah Selina Shaina Sheri Sloan Sophie Stephanie Tabetah Taretha Taria Tess Theresa Therese Tiffin Tina Ursula
+		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
+		}
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		dynasty_title_names = yes 
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+	}
+	
+	bloodfang = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.30 0.14 0.74 }
+		
+		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
+		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
+		Huglar Ignaeus Inigo Isaac Isildor Ivar Jack Jaime Jarel Jarim Jasper Joachim Jocryn John Jorad Jorgen Jorum Kassan Keldric Kendor Khadgar Kirk Kurtis Landan Landazar Leeroy Leoric Liam Llane Logan Lordain Luc Lucio Lucan Marcus Mark
+		Martin Marwyn Mathias Maxwell Mazen Metz Milton Morgan Nathanos Newton Nielas Omar Osric Othmar Ozzy Quixote Raynor Reginald Renato Renault Reno Rhonin Robert Saidan Salanar Salvador Samir Scott Seoman Sigvald Simon Solaire Stephen Strahad 
+		Tandred Taylor Teneb Terenas Thassarian Thomas Thoradin Thoras Thornby Thule Tim Tirion Tobias Turalyon Tyrathan Ulvus Uther Varian Victor Vincent Vishas Wayne Weldon Wendell Wilhelm Winston Xerxes Zardeth Zazzerpan
+		}
+		female_names = { Aerith Adele Adria Alexandra Alicia Allison Alma Althea Alyssa Amelia Amy Anetta Anveena Ardwyn Ariena Avette Bae Bernice Bonnie Breanna Brigitte Cadence Calia Carla Catherine Cersei Charys Clarise Coda Corina Crystal
+		Danielle Darcy Dawn Demisette Dominique Donni Drusilla Edna Elaine Elly Elone Emma Erika Erma Eva Fam Farah Felicia Gloria Gwen Hanah Helene Helga Herla Hope Iara Ilsa Ingrid Iris Isis Jaina Jalane Jennea Jessara Jillian Josetta Julia
+		Kahlee Karen Karlee Karter Katie Katrana Kelly Keryn Kimberly Kitta Kyra Lara Laurena Leesha Leah Leia Lilith Lina Lisbeth Loren Lorna Lydia Lyria Magatha Malissa Mara Maya Marda Maria Maris Martie Maybell Mercy Mayda Melinda Melody Mia
+		Michelle Milly Morgan Myriam Nalice Natalie Nikova Olena Olivia Pamela Penny Prya Rachel Rebecca Rema Samantha Sansa Sapphire Sarah Selina Shaina Sheri Sloan Sophie Stephanie Tabetah Taretha Taria Tess Theresa Therese Tiffin Tina Ursula
+		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
+		}
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		dynasty_title_names = yes 
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+	}
+	
+	moonrage = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.25 0.10 0.65 }
+		
+		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
+		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
+		Huglar Ignaeus Inigo Isaac Isildor Ivar Jack Jaime Jarel Jarim Jasper Joachim Jocryn John Jorad Jorgen Jorum Kassan Keldric Kendor Khadgar Kirk Kurtis Landan Landazar Leeroy Leoric Liam Llane Logan Lordain Luc Lucio Lucan Marcus Mark
+		Martin Marwyn Mathias Maxwell Mazen Metz Milton Morgan Nathanos Newton Nielas Omar Osric Othmar Ozzy Quixote Raynor Reginald Renato Renault Reno Rhonin Robert Saidan Salanar Salvador Samir Scott Seoman Sigvald Simon Solaire Stephen Strahad 
+		Tandred Taylor Teneb Terenas Thassarian Thomas Thoradin Thoras Thornby Thule Tim Tirion Tobias Turalyon Tyrathan Ulvus Uther Varian Victor Vincent Vishas Wayne Weldon Wendell Wilhelm Winston Xerxes Zardeth Zazzerpan
+		}
+		female_names = { Aerith Adele Adria Alexandra Alicia Allison Alma Althea Alyssa Amelia Amy Anetta Anveena Ardwyn Ariena Avette Bae Bernice Bonnie Breanna Brigitte Cadence Calia Carla Catherine Cersei Charys Clarise Coda Corina Crystal
+		Danielle Darcy Dawn Demisette Dominique Donni Drusilla Edna Elaine Elly Elone Emma Erika Erma Eva Fam Farah Felicia Gloria Gwen Hanah Helene Helga Herla Hope Iara Ilsa Ingrid Iris Isis Jaina Jalane Jennea Jessara Jillian Josetta Julia
+		Kahlee Karen Karlee Karter Katie Katrana Kelly Keryn Kimberly Kitta Kyra Lara Laurena Leesha Leah Leia Lilith Lina Lisbeth Loren Lorna Lydia Lyria Magatha Malissa Mara Maya Marda Maria Maris Martie Maybell Mercy Mayda Melinda Melody Mia
+		Michelle Milly Morgan Myriam Nalice Natalie Nikova Olena Olivia Pamela Penny Prya Rachel Rebecca Rema Samantha Sansa Sapphire Sarah Selina Shaina Sheri Sloan Sophie Stephanie Tabetah Taretha Taria Tess Theresa Therese Tiffin Tina Ursula
+		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
+		}
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		dynasty_title_names = yes 
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+	}
+	
+	nightbane = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.21 0.10 0.52 }
+		
+		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
+		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
+		Huglar Ignaeus Inigo Isaac Isildor Ivar Jack Jaime Jarel Jarim Jasper Joachim Jocryn John Jorad Jorgen Jorum Kassan Keldric Kendor Khadgar Kirk Kurtis Landan Landazar Leeroy Leoric Liam Llane Logan Lordain Luc Lucio Lucan Marcus Mark
+		Martin Marwyn Mathias Maxwell Mazen Metz Milton Morgan Nathanos Newton Nielas Omar Osric Othmar Ozzy Quixote Raynor Reginald Renato Renault Reno Rhonin Robert Saidan Salanar Salvador Samir Scott Seoman Sigvald Simon Solaire Stephen Strahad 
+		Tandred Taylor Teneb Terenas Thassarian Thomas Thoradin Thoras Thornby Thule Tim Tirion Tobias Turalyon Tyrathan Ulvus Uther Varian Victor Vincent Vishas Wayne Weldon Wendell Wilhelm Winston Xerxes Zardeth Zazzerpan
+		}
+		female_names = { Aerith Adele Adria Alexandra Alicia Allison Alma Althea Alyssa Amelia Amy Anetta Anveena Ardwyn Ariena Avette Bae Bernice Bonnie Breanna Brigitte Cadence Calia Carla Catherine Cersei Charys Clarise Coda Corina Crystal
+		Danielle Darcy Dawn Demisette Dominique Donni Drusilla Edna Elaine Elly Elone Emma Erika Erma Eva Fam Farah Felicia Gloria Gwen Hanah Helene Helga Herla Hope Iara Ilsa Ingrid Iris Isis Jaina Jalane Jennea Jessara Jillian Josetta Julia
+		Kahlee Karen Karlee Karter Katie Katrana Kelly Keryn Kimberly Kitta Kyra Lara Laurena Leesha Leah Leia Lilith Lina Lisbeth Loren Lorna Lydia Lyria Magatha Malissa Mara Maya Marda Maria Maris Martie Maybell Mercy Mayda Melinda Melody Mia
+		Michelle Milly Morgan Myriam Nalice Natalie Nikova Olena Olivia Pamela Penny Prya Rachel Rebecca Rema Samantha Sansa Sapphire Sarah Selina Shaina Sheri Sloan Sophie Stephanie Tabetah Taretha Taria Tess Theresa Therese Tiffin Tina Ursula
+		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
+		}
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		dynasty_title_names = yes 
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+	}
+	
+	wolfheart = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.34 0.22 0.67 }
+		
+		male_names = { Aaron Adair Aedelas Agustus Aiden Aldric Aldwin Alexandros Allan Alonsus Ander Anduin Angus Antonidas Archaon Aristan Arnold Arthas Arugal Ballador Barathen Basaleph Benedictus Bernard Bolvar Budd Camerick Cloud Collin
+		Conan Connor Daelin Danath Darian Darion Daval Deckard Donny Duncan Dungar Duthorian Edwin Elling Ello Evan Evert Fahrad Falkhaan Falric Fordred Gakin Galen Ganon Gavinrad Genn Geralt Gerik Grayson Halford Han Harlan Heigan Herod Hugarin
+		Huglar Ignaeus Inigo Isaac Isildor Ivar Jack Jaime Jarel Jarim Jasper Joachim Jocryn John Jorad Jorgen Jorum Kassan Keldric Kendor Khadgar Kirk Kurtis Landan Landazar Leeroy Leoric Liam Llane Logan Lordain Luc Lucio Lucan Marcus Mark
+		Martin Marwyn Mathias Maxwell Mazen Metz Milton Morgan Nathanos Newton Nielas Omar Osric Othmar Ozzy Quixote Raynor Reginald Renato Renault Reno Rhonin Robert Saidan Salanar Salvador Samir Scott Seoman Sigvald Simon Solaire Stephen Strahad 
+		Tandred Taylor Teneb Terenas Thassarian Thomas Thoradin Thoras Thornby Thule Tim Tirion Tobias Turalyon Tyrathan Ulvus Uther Varian Victor Vincent Vishas Wayne Weldon Wendell Wilhelm Winston Xerxes Zardeth Zazzerpan
+		}
+		female_names = { Aerith Adele Adria Alexandra Alicia Allison Alma Althea Alyssa Amelia Amy Anetta Anveena Ardwyn Ariena Avette Bae Bernice Bonnie Breanna Brigitte Cadence Calia Carla Catherine Cersei Charys Clarise Coda Corina Crystal
+		Danielle Darcy Dawn Demisette Dominique Donni Drusilla Edna Elaine Elly Elone Emma Erika Erma Eva Fam Farah Felicia Gloria Gwen Hanah Helene Helga Herla Hope Iara Ilsa Ingrid Iris Isis Jaina Jalane Jennea Jessara Jillian Josetta Julia
+		Kahlee Karen Karlee Karter Katie Katrana Kelly Keryn Kimberly Kitta Kyra Lara Laurena Leesha Leah Leia Lilith Lina Lisbeth Loren Lorna Lydia Lyria Magatha Malissa Mara Maya Marda Maria Maris Martie Maybell Mercy Mayda Melinda Melody Mia
+		Michelle Milly Morgan Myriam Nalice Natalie Nikova Olena Olivia Pamela Penny Prya Rachel Rebecca Rema Samantha Sansa Sapphire Sarah Selina Shaina Sheri Sloan Sophie Stephanie Tabetah Taretha Taria Tess Theresa Therese Tiffin Tina Ursula
+		Valery Vall Vanessa Vara Varia Verah Vikki Triss Willa Wilma Wynne Xena Yeniffer Ysabel Ysra Zarya Zena Zeta
+		}
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		dynasty_title_names = yes 
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
+	}
+	
+	terrowulf = {
+		graphical_cultures = { humangfx westerngfx }
+		
+		color = { 0.39 0.24 0.81 }
+		
+		male_names = { Alassin Aldris Alegorn Alenndaar Amerun Andiss Androl Andrus Anishar Anren Antarius Argos Ashelan Asterion Athridas Balthule Baristolth Baritanas Barithras Benjari 
+		Bhaldaran Bolyun Brannock Brannol Cahill Caynrus Cazarez Cerellean Chardryn Corand Corithras Crildor Cymbre Cyridan Cyroen Dalmond Dannelor Dargon Darnall Darnath Daros Dazalar 
+		Deldren Denalan Denatharion Dendrite Dewin Doldaen Dorda'en Dorion Dyhara Elestren Erelas Erion Evenar Fahran Faldreas Faldron Falfindel Falorn Faralorn Farden Fayin Fayran Fedryen 
+		Fhyn Firodren Fiskal Frahun Fyldan Fyldren Fylerian Gaerolas Gaiven Garryeth Gershala Gilshalan Ginro Glorandiir Golhine Golothas Grondal Harklane Harlon Harlown Heldan Helendis 
+		Ildrin Ilthalaine Iverron Jadenvis Jalin Jandunel Jannok Jareth Jarrodenus Jartsam Jenal Kaerbrus Kal Kaldon Kalin Kalldan Kayneth Keldamyr Keldas Kerlonian Khardan Kharedon Kieran 
+		Laird Lairn Lanolis Lanus Lardan Lathorius Latronicus Layo Lenedil Leoren Lethyn Loganaar Logannas Loramus Lylandor Maelir Maethor Maldryn Malorne Maluressian Malvor Mar'alith 
+		Mardant Mardrack Mathiel Mathrengyl Maygen Melithar Morthis Mydrannul Mythidan Mythrin'dir Naljan Nantar Naohain Naram Narestel Narret Natheril Nenduil Oben Oltarin Omnuron Orendil 
+		Pelturas Porthannius Quintis Rabine Radnaal Raedon Rellian Rivern Royce Saenorion Saramer Sarin Seiren Selgorm Shaedlass Shalannius Shalomon Shalumon Sheldras Shelgrayn Suralais 
+		Taladan Talaelar Taldan Taldris Talen Tallonkai Tanaide Tandann Tarelvir Telonis Teloren Telurinon Tenaron Terenthis Teronis Thaelrid Thamarian Thanthaldis Tharnariun Thel'danis 
+		Theridran Thundris Timeon Tola'thion Tolon Tomarrek Toreth Troyas Turian Ulthir Vaean Vahlarriel Valadar Valdaron Varas Varlan Vesprystus Volcor Voloren Wynd Xai'ander Yldan Zamael 
+		Zannok Zarrin Zybarus
+		}
+		female_names = { A'moora Aayndia Aelerya Aeolynn Aethalas Aili Ainethil Alaindia Alanna Alanndarian Alathea Aldia Allyndia Aluwyn Alyissia Amara Amarante Amythiel Anadyia Angelas 
+		Aquinne Arathandris Arias'ta Ariyell Arthorn Arynia Astaia Astarii Aurel Aurine Avana Ayanna Ayla Aynasha Brinna Calandrath Caoileann Caryssia Caylais Caylee Chylina Cylania Cyndra 
+		Daelyshia Daeolyn Dalia Dalinda Dalria Danlyia Darianna Daryn Dellylah Dendrythis Dinorae Dirania Dulciea Ealyshia Eladriel Elanaria Eldraeith Elfarran Elissa Elizil Ellaercia 
+		Ellandrieth Elynna Eridan Faelyssa Faralia Fariel Freja Fyrenna Galandria Geenia Gracina Gwennyth Gylnda Idriana Illianna Illiyana Illusia Illyanie Ilyenia Isara Issara Jadi Jaeana 
+		Jaelysia Jalin Janna Jeen'ra Jeena Jelena Jenai Jer'kai Jessir Jocaste Kaela Kania Keina Kella Kimlya Kindal Kinelory Kirea Kylanna Kyleen Kyndri Kyra Kyria Laina Lalina Landria 
+		Larandia Lariia Lauriel Laurna Leesa'oh Lelanai Levia Liladris Lilyssia Limiah Llana Lorelae Lotherias Luciel Lylandris Lynore Lyrai Lyranne Lyshaerya Lysheana Maestra Maethrua 
+		Maevin Magwin Maliynn Marin Marli Mavralyn Me'lynn Melea Meliri Melyria Merelyssa Meri Milla Mirala Mishellena Mishta My'lanna Mylini Myre Myriam Nadyia Nalesette Namha Narianna 
+		Nayura Nessa Ninsianna Nishera Noko Nyoma Onaeya Palena Raene Ranela Ranshalla Rayne Relwyn Rendow Rina Risera Rorelien Saelienne Salirn Sarinei Savanne Saynna Sebelia Selarin 
+		Seriadne Shaldyn Shanda Shandria Shaussiy Shay Shindrell Shyela Shylamiir Shylenai Shyria Sildanair Silva Silvaria Sindra Sindrayl Solais Su'ura Sylannia Sylista Sylvanna Syral 
+		Syurana Syurna Tajarri Talendria Tannysa Thayreen Thenysil Thyn'tel Thyssiana Tiyani Toron Trianna Tysha Ullanna Vassandra Velene Vinasia Visera Vivianna Xerintha Xylinnia 
+		Yessendra Ysiel Ysondre
+		}
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		dynasty_title_names = yes 
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+		
 	}
 }

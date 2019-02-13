@@ -83,6 +83,22 @@ TOW_initialize_character_race_from_culture = {
 		kobold = { add_trait = race_kobold }
 		trogg = { add_trait = race_trogg }
 		vrykul = { add_trait = race_vrykul }
+		tauren = { add_trait = race_tauren }
+		worgen = {
+			add_trait = race_worgen
+			if = {
+				limit = {
+					NOT = { culture = terrowulf }
+				}
+				add_trait = race_human
+			}
+			if = {
+				limit = {
+					culture = terrowulf
+				}
+				add_trait = race_night_elf
+			}
+		}
 	}
 	trigger_switch = {
 		on_trigger = culture
@@ -133,6 +149,8 @@ TOW_initialize_character_race_from_culture = {
 		gurubashi = { add_trait = race_troll_jungle }
 		shatterspear = { add_trait = race_troll_jungle }
 		skullsplitter = { add_trait = race_troll_jungle }
+		zulian = { add_trait = race_troll_jungle }
+		razzashi = { add_trait = race_troll_jungle }
 		drakkari = { add_trait = race_troll_ice }
 		frostmane = { add_trait = race_troll_ice }
 		sandfury = { add_trait = race_troll_sand }
@@ -559,6 +577,18 @@ TOW_initialize_character_race_from_parents = {
 		}
 		set_character_flag = race_assigned
 		add_trait = race_pale_orc
+	}
+	if = {
+		limit = {
+			mother = {
+				trait = race_tauren
+			}
+			true_father = {
+				trait = race_tauren
+			}
+		}
+		set_character_flag = race_assigned
+		add_trait = race_tauren
 	}
 	if = {
 		limit = {
@@ -2135,6 +2165,46 @@ TOW_initialize_character_race_from_parents = {
 					set_graphical_culture = blood_elven
 				}
 			}
+		}
+	}
+	#Worgen handling
+	##If both parents are worgen
+	if = {
+		limit = {
+			mother = {
+				trait = race_worgen
+			}
+			true_father = {
+				trait = race_worgen
+			}
+		}
+		add_trait = race_worgen
+	}
+	##If only one of them is a furry
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					mother = {
+						trait = race_worgen
+					}
+					true_father = {
+						NOT = { trait = race_worgen }
+					}
+				}
+				AND = {
+					mother = {
+						NOT = { trait = race_worgen }
+					}
+					true_father = {
+						trait = race_worgen
+					}
+				}
+			}
+		}
+		random = {
+			chance = 50
+			add_trait = race_worgen
 		}
 	}
 	# In case the flag hasn't been assigned

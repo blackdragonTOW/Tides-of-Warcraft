@@ -153,6 +153,10 @@ character_event = {
 						TOW_race_is_draenei = yes
 						father_of_unborn = { TOW_race_is_draenei = yes }
 					}
+					AND = {
+						trait = race_tauren
+						father_of_unborn = { trait = race_tauren }
+					}
 					## Cross race
 					AND = {
 						trait = race_human
