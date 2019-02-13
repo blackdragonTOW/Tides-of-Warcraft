@@ -1,6 +1,6 @@
 name = "Tides of Warcraft"
-path = "mod/Tides of Warcraft"
-user_dir = "Tides of Warcraft"
+path = "mod/Tides-of-Warcraft"
+user_dir = "Tides-of-Warcraft"
 replace_path = "history"
 replace_path = "history/characters"
 replace_path = "history/offmap_powers"
