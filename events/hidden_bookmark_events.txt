@@ -235,6 +235,43 @@ character_event = {
 						}
 					}
 					AND = {
+						OR = {
+							trait = race_orc
+							trait = race_half_draenei
+							trait = race_half_ogre
+						}
+						OR = {
+							culture = warsong
+							AND = {
+								culture = shadowmoon
+								NOT = { has_character_flag = stormreaver }
+							}
+							culture = thunderlord
+							culture = lightnings_blade
+							AND = {
+								culture = bladewind
+								NOT = { character = 69 } # Garona check
+							}
+							culture = redwalker
+							culture = whiteclaw
+							culture = dark_scar
+							culture = bonechewer
+							culture = laughing_skull
+							culture = flowerpicker
+							AND = {
+								culture = mok_nathal
+								#NOT = { character =  } # Rexxar check 
+							}
+						}
+						NOR = {
+							has_global_flag = bm_lord_of_the_clans
+							has_global_flag = bm_scourge_of_lordaeron
+							has_global_flag = bm_path_of_the_damned
+							has_global_flag = bm_hunt_for_the_betrayer
+							has_global_flag = bm_drums_of_war
+						}
+					}
+					AND = {
 						trait = race_pale_orc
 						NOT = { has_global_flag = bm_tides_of_darkness }
 					}
