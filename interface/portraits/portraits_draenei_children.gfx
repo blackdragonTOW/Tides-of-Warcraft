@@ -1,15 +1,39 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_gnoll_male_child_base"
-		texturefile = "gfx\\characters\\gnoll_male\\child\\gnoll_male_child_base.dds"
+		name = "GFX_draenei_male_child_base"
+		texturefile = "gfx\\characters\\draenei_male\\child\\draenei_male_child_base.dds"
 		noOfFrames = 1
 		norefcount = yes
 		can_be_lowres = yes
 	}
 
 	spriteType = {
-		name = "GFX_gnoll_male_child_eyes2"
-		texturefile = "gfx\\characters\\gnoll_male\\child\\gnoll_male_child_eyes2.dds"
+		name = "GFX_draenei_male_child_base_uncolored"
+		texturefile = "gfx\\characters\\draenei_male\\child\\draenei_male_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_draenei_male_child_neck"
+		texturefile = "gfx\\characters\\draenei_male\\child\\draenei_male_child_neck.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_draenei_male_child_clothes"
+		texturefile = "gfx\\characters\\draenei_male\\child\\draenei_male_child_clothes.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_draenei_male_child_hair"
+		texturefile = "gfx\\characters\\draenei_male\\child\\draenei_male_child_hair.dds"
 		noOfFrames = 1
 		norefcount = yes
 		can_be_lowres = yes
@@ -17,7 +41,7 @@ spriteTypes = {
 
 	portraitType = {
 		effectFile = "gfx/FX/portrait_e2h.lua"
-		name = "PORTRAIT_gnollgfx_male_child"
+		name = "PORTRAIT_draeneigfx_male_child"
 		
 		weight = {
 			additive_modifier = {
@@ -25,7 +49,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = no
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_gnoll
+				portrait_has_trait = race_draenei
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -38,51 +62,83 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
-			"GFX_gnoll_male_child_base:p2"
-			"GFX_gnoll_male_child_eyes2:d6:e"
+			"GFX_draenei_male_child_neck:d0"
+			"GFX_draenei_male_child_base:p2:h"
+			"GFX_draenei_male_child_base_uncolored:p2"
+			"GFX_draenei_male_child_clothes:d0"
+			"GFX_draenei_male_child_hair:p1:e:y"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_male_border:d3"
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin Color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
-			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
-			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
-			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
-			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
-			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
-			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+			{ 16 18 29 } { 142 162 195 } { 211 232 252 }
+			{ 10 12 15 } { 141 158 181 } { 219 236 247 }
+			{ 13 13 27 } { 130 132 167 } { 216 225 249 }
+			{ 6 7 8 } { 162 171 192 } { 225 236 249 }
+			{ 6 5 6 } { 102 84 95 } { 207 191 193 }
+			{ 10 10 10 } { 173 173 184 } { 233 237 241 }
+			{ 7 7 9 } { 138 131 165 } { 209 209 226 }
+			{ 7 8 8 } { 144 161 170 } { 208 224 228 }
+			{ 3 3 4 } { 104 121 148 } { 190 201 245 }
+			{ 6 7 8 } { 131 146 177 } { 195 223 247 }
+			{ 7 9 9 } { 139 172 186 } { 215 241 241 }
+			{ 9 8 10 } { 161 158 186 } { 244 236 252 }
 		}
 
+		## Hair Color
 		eye_color_index = 9
 		eye_color = {
-			{ 65 78 120 }
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
 		}
 		
 		allow_property_values = { }
 	}
 
 	spriteType = {
-		name = "GFX_gnoll_female_child_base"
-		texturefile = "gfx\\characters\\gnoll_female\\child\\gnoll_female_child_base.dds"
+		name = "GFX_draenei_female_child_base"
+		texturefile = "gfx\\characters\\draenei_female\\child\\draenei_female_child_base.dds"
 		noOfFrames = 1
 		norefcount = yes
 		can_be_lowres = yes
 	}
 
 	spriteType = {
-		name = "GFX_gnoll_female_child_eyes2"
-		texturefile = "gfx\\characters\\gnoll_female\\child\\gnoll_female_child_eyes2.dds"
+		name = "GFX_draenei_female_child_base_uncolored"
+		texturefile = "gfx\\characters\\draenei_female\\child\\draenei_female_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_draenei_female_child_hair"
+		texturefile = "gfx\\characters\\draenei_female\\child\\draenei_female_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_draenei_female_child_clothes"
+		texturefile = "gfx\\characters\\draenei_female\\child\\draenei_female_child_clothes.dds"
 		noOfFrames = 1
 		norefcount = yes
 		can_be_lowres = yes
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait_e2h.lua"
-		name = "PORTRAIT_gnollgfx_female_child"
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_draeneigfx_female_child"
 		
 		weight = {
 			additive_modifier = {
@@ -90,7 +146,7 @@ spriteTypes = {
 				portrait_age <= child
 				portrait_is_female = yes
 				NOT = { portrait_clothing = yes }
-				portrait_has_trait = race_gnoll
+				portrait_has_trait = race_draenei
 				NOR = {
 					portrait_has_trait = race_undead_generic
 					portrait_has_trait = race_undead_forsaken
@@ -103,27 +159,42 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
-			"GFX_gnoll_male_child_base:p2"
-			"GFX_gnoll_male_child_eyes2:d6:e"
+			"GFX_draenei_female_child_base:p2:h"
+			"GFX_draenei_female_child_base_uncolored:p2"
+			"GFX_draenei_female_child_clothes:d0"
+			"GFX_draenei_female_child_hair:p1:e:y"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin Color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
-			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
-			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
-			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
-			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
-			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
-			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+			{ 16 18 29 } { 142 162 195 } { 211 232 252 }
+			{ 10 12 15 } { 141 158 181 } { 219 236 247 }
+			{ 13 13 27 } { 130 132 167 } { 216 225 249 }
+			{ 6 7 8 } { 162 171 192 } { 225 236 249 }
+			{ 6 5 6 } { 102 84 95 } { 207 191 193 }
+			{ 10 10 10 } { 173 173 184 } { 233 237 241 }
+			{ 7 7 9 } { 138 131 165 } { 209 209 226 }
+			{ 7 8 8 } { 144 161 170 } { 208 224 228 }
+			{ 3 3 4 } { 104 121 148 } { 190 201 245 }
+			{ 6 7 8 } { 131 146 177 } { 195 223 247 }
+			{ 7 9 9 } { 139 172 186 } { 215 241 241 }
+			{ 9 8 10 } { 161 158 186 } { 244 236 252 }
 		}
 
+		## Hair Color
 		eye_color_index = 9
 		eye_color = {
-			{ 160 160 230 }
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
 		}
 		
 		allow_property_values = { }
