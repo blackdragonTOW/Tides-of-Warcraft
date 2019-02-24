@@ -1,114 +1,3 @@
-# PLACEHOLDER
-culture = {
-	religion = {
-		#"arcane"
-		"wyrmcult"
-		"old_ways"
-		#"old_ways_reformed"
-		"shamanism"
-		"shamanism_reformed"
-		#"geomancy"
-		#"aeromancy"
-		#"hydromancy"
-		#"pyromancy"
-		"burning_legion"
-		"demonology"
-		"demonology_reformed"
-		#"lich_king"
-		#"holy_light"
-		#"scarlet"
-		#"argent"
-		"mercantilism"
-		#"forgotten_shadow"
-		#"forgotten_shadow_reformed"
-		"nzoth"
-		"cthun"
-		"yogg_saron"
-		"yshaarj"
-		"twilights_hammer"
-		"blackwyrm_cult"
-		#"azshara"
-		#"loa"
-		#"hakkar"
-		"druidism"
-		"druidism_reformed"
-		#"elune"
-	}
-	
-	templates = { 
-		"coa_plain:1"
-		"coa_party_per_fess:2"
-		"coa_party_per_pale:2"
-		"coa_party_per_cross:4"
-		"coa_party_triangle:3"
-	}
-
-	color = {
-		{ 255 231 93 }	#0  	Or (Gold)
-		{ 245 245 245 } #1   	Argent (White )
-		{ 48 92 164 } 	#2   	Azure ( Blue)
-		{ 201 43 43 } 	#3   	Gules (Red)
-		{ 131 192 114 } #4   	Vert (Light Green)
-		{ 20 20 20 }	#5   	Sable (Black)
-		{ 129 24 164 }	#6   	Purple
-		{ 113 0 0 }		#7   	Sanguine (Blood Red)
-		{ 205 87 10 }	#8   	Tenné (Tawny aka orange)
-		{ 133 194 226 }	#9		Bleu-Celeste (Sky Blue)
-		{ 128 0 40 }	#10  	Murrey (Mulberry) Burgundy
-		{ 17 53 13 }	#11  	Dark green
-		{ 51 33 20 }	#12  	Brown
-		{ 50 173 192 }	#13  	Turqouise
-		{ 1 182 108 }	#14  	Teal
-	}
-	
-	rebel_colors = { 3 5 7 }
-
-	banned_colors = 
-	{ 
-		{ 0 1 }						#0		
-		{ 0 1 9}					#1		
-		{ 2 3 4 6 7 8 9 12 14 }		#2		
-		{ 2 3 4 7 9 10  }			#3		
-		{ 2 4 6 7 9 10 13 14}		#4		
-		{ 5 10 14 15}				#5		
-		{ 2 4 6 10 11 12 }			#6		
-		{ 2 3 4 7 8 10 13 }			#7		
-		{ 2 4 6 7 8 9 }				#8		
-		{ 2 3 4 8 9 10 11 13 }		#9		
-		{ 3 4 5 6 7 9 10 }			#10		
-		{ 6 9 11 }					#11
-		{ 6 12 }					#12
-		{ 4 7 9 13 14 }				#13
-		{ 2 4 13 14 }				#14
-	}
-	
-	emblem = {
-		file = "gfx\\coats_of_arms\\emblem_empty.tga"
-		noOfFrames = 1
-	}
-
-	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
-	textures = {
-		texture = {
-			file = "gfx\\coats_of_arms\\pattern_basic.tga"
-			size = { x = 10 y = 3 }
-			noOfFrames = 23
-			color = 2
-			emblem = no
-		}
-
-		texture = {
-			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
-			size = { x = 10 y = 2 }
-			noOfFrames = 19
-			color = 2
-			emblem = no
-		}
-		
-		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
-	}
-}
-
 culture = {
 	religion = {
 		"holy_light"
@@ -499,36 +388,41 @@ culture = {
 	}
 
 	color = {
-		{ 48 92 164 } 	#0   	Azure ( Blue)
-		{ 201 43 43 } 	#1   	Gules (Red)
-		{ 131 192 114 } #2   	Vert (Light Green)
-		{ 20 20 20 }	#3   	Sable (Black)
-		{ 113 0 0 }		#4   	Sanguine (Blood Red)
-		{ 205 87 10 }	#5   	Tenné (Tawny aka orange)
-		{ 133 194 226 }	#6		Bleu-Celeste (Sky Blue)
-		{ 15 15 204 }	#7  	Deep Blue
-		{ 50 153 162 }	#8		Turquoise
-		{ 255 182 108 }	#9  	Light Orange
+		{ 255 231 93 }	#0  	Or (Gold)
+		{ 245 245 245 } #1   	Argent (White )
+		{ 48 92 164 } 	#2   	Azure ( Blue)
+		{ 201 43 43 } 	#3   	Gules (Red)
+		{ 131 192 114 } #4   	Vert (Light Green)
+		{ 20 20 20 }	#5   	Sable (Black)
+		{ 164 129 24 }	#6   	
+		{ 113 0 0 }		#7   	Sanguine (Blood Red)
+		{ 205 87 10 }	#8   	Tenné (Tawny aka orange)
+		{ 133 194 133 }	#9		
+		{ 128 90 40 }	#10  	
+		{ 15 15 204 }	# 11  	Deep Blue
+		{ 50 153 62 }	# 12	Turquoise
+		{ 100 182 8 }	#14  	
 	}
 	
-	rebel_colors = { 1 3 4 }
+	rebel_colors = { 3 5 7 }
 
 	banned_colors = 
-	{
-		{ 0 1 }				#0
-		{ 0 1 9 }			#1
-		{ 2 3 4 5 6 7 8 9 } #2
-		{ 2 3 4 7 9 }		#3
-		{ 2 4 6 7 9 }		#4
-		{ 5 4 }				#5
-		{ 2 4 6 }			#6
-		{ 2 3 4 7 8 }		#7
-		{ 2 4 6 7 8 9 }		#8
-		{ 2 3 4 8 9 }		#9
-		{ 3 4 5 6 7 9 }		#10
-		{ 6 9 }				#11
-		{ 4 7 9 }			#12
-		{ 2 4 }				#13
+	{ 
+		{ 0 1 }						#0
+		{ 0 1 9 }					#1
+		{ 2 3 4 5 6 7 8 9 12 14 }	#2
+		{ 2 3 4 7 9 10  }			#3
+		{ 2 4 6 7 9 10 13 14}		#4
+		{ 5 4 10 14 15}				#5
+		{ 2 4 6 10 11 12 }			#6
+		{ 2 3 4 7 8 10 13 }			#7
+		{ 2 4 6 7 8 9 }				#8
+		{ 2 3 4 8 9 10 11 13 }		#9
+		{ 3 4 5 6 7 9 10 }			#10
+		{ 6 9 11 }					#11
+		{ 6 12 }					#12
+		{ 4 7 9 13 14 }				#13
+		{ 2 4 13 14 }				#14
 	}
 	
 	emblem = {
@@ -607,7 +501,7 @@ culture = {
 		{ 128 0 40 }	#10  	Murrey (Mulberry) Burgundy
 		{ 15 15 204 }	# 11  	Deep Blue
 		{ 50 153 162 }	# 12	Turquoise
-		{ 1 182 108 }	#14  	Teal
+		{ 0 182 108 }	#13  	Teal
 	}
 	
 	rebel_colors = { 3 5 7 }
@@ -616,9 +510,9 @@ culture = {
 	{ 
 		{ 0 1 }						#0
 		{ 0 1 9 }					#1
-		{ 2 3 4 5 6 7 8 9 12 14 }	#2
+		{ 2 3 4 5 6 7 8 9 12 13 }	#2
 		{ 2 3 4 7 9 10  }			#3
-		{ 2 4 6 7 9 10 13 14}		#4
+		{ 2 4 6 7 9 10 13 }			#4
 		{ 5 4 10 14 15}				#5
 		{ 2 4 6 10 11 12 }			#6
 		{ 2 3 4 7 8 10 13 }			#7
@@ -627,8 +521,8 @@ culture = {
 		{ 3 4 5 6 7 9 10 }			#10
 		{ 6 9 11 }					#11
 		{ 6 12 }					#12
-		{ 4 7 9 13 14 }				#13
-		{ 2 4 13 14 }				#14
+		{ 4 7 9 13  }				#13
+		{ 2 4 13 }				#14
 	}
 	
 	emblem = {
@@ -835,7 +729,7 @@ culture = {
 		texture = {
 			file = "gfx\\coats_of_arms\\pattern_geomancy.tga"
 			size = { x = 10 y = 1 }
-			noOfFrames = 5
+			noOfFrames = 3
 			color = 2
 			emblem = no
 		}
@@ -882,23 +776,6 @@ culture = {
 
 	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
 	textures = {
-		texture = {
-			file = "gfx\\coats_of_arms\\pattern_basic.tga"
-			size = { x = 10 y = 3 }
-			noOfFrames = 23
-			color = 2
-			emblem = no
-			random = no # Do not use for random CoAs
-		}
-
-		texture = {
-			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
-			size = { x = 10 y = 2 }
-			noOfFrames = 19
-			color = 2
-			emblem = no
-			random = no # Do not use for random CoAs
-		}
 
 		texture = {
 			file = "gfx\\coats_of_arms\\pattern_primitive.tga"
@@ -1160,6 +1037,534 @@ culture = {
 			file = "gfx\\coats_of_arms\\pattern_elune.tga"
 			size = { x = 10 y = 3 }
 			noOfFrames = 22
+			color = 2
+			emblem = no
+		}
+		
+		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	}
+}
+
+culture = {
+	religion = {
+		"burning_legion"
+		"demonology"
+		"demonology_reformed"
+	}
+	
+	templates = { 
+		"coa_plain_muslim:1"
+	}
+
+	color = {
+		{ 201 43 43 } 	#0   	Gules (Red)
+		{ 20 20 20 }	#1   	Sable (Black)
+		{ 113 0 0 }		#2   	Sanguine (Blood Red)
+		{ 245 245 0 } 	#3   	Yellow
+		{ 200 231 20 } 	#4   	Green Yellow
+		{ 62 10 103 } 	#5		Dark Purple
+		{ 28 103 0 } 	#6		Dark Green
+		{ 123 28 114 } 	#7		Dark Magenta
+		{ 140 221 30 } #8		Light Green Yellow
+		{ 72 72 14 } 	#9		Greyish Dark Yellow
+		{ 160 200 40 } #10		Light Green Yellow
+	}
+	
+	rebel_colors = { 0 1 2 }
+	
+	banned_colors = 
+	{ 
+		{ 0 1 2 3 4 5 6 7 8 9 10 } 	#0   	Gules (Red)
+		{ 1 0 2 5 9 }					#1   	Sable (Black)
+		{ 2 0 1 5 6 7 }				#2   	Sanguine (Blood Red)
+		{ 3 0 4 8 10 } 					#3   	Yellow
+		{ 4 0 3 8 10 } 					#4   	Green Yellow
+		{ 5 0 1 2 6 7 9 } 				#5		Dark Purple
+		{ 6 0 2 5 7 9 } 				#6		Dark Green
+		{ 7 0 2 5 6 9 } 				#7		Dark Magenta
+		{ 8 0 3 4 10 } 					#8		Light Green Yellow
+		{ 9 0 1 2 3 4 5 6 7 } 		#9		Greyish Dark Yellow
+		{ 10 0 3 4 8 } 				#10		Light Green Yellow
+	}
+	
+	emblem = {
+		file = "gfx\\coats_of_arms\\emblem_empty.tga"
+		noOfFrames = 1
+	}
+
+	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	textures = {
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_demon.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 11
+			color = 2
+			emblem = no
+		}
+		
+		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	}
+}
+
+culture = {
+	religion = {
+		"shamanism"
+		"shamanism_reformed"
+	}
+	
+	templates = { 
+		"coa_plain_pagan:1"
+	}
+
+	color = {
+		{ 255 231 93 }	#0  	Or (Gold)
+		{ 245 245 245 } #1   	Argent (White )
+		{ 48 92 164 } 	#2   	Azure ( Blue)
+		{ 201 43 43 } 	#3   	Gules (Red)
+		{ 131 192 114 } #4   	Vert (Light Green)
+		{ 20 20 20 }	#5   	Sable (Black)
+		{ 164 129 24 }	#6   	
+		{ 113 0 0 }		#7   	Sanguine (Blood Red)
+		{ 205 87 10 }	#8   	Tenné (Tawny aka orange)
+		{ 133 194 133 }	#9		
+		{ 128 90 40 }	#10  	
+		{ 15 15 204 }	# 11  	Deep Blue
+		{ 50 153 62 }	# 12	Turquoise
+		{ 100 182 8 }	#14  	
+	}
+	
+	rebel_colors = { 3 5 7 }
+
+	banned_colors = 
+	{ 
+		{ 0 1 }						#0
+		{ 0 1 9 }					#1
+		{ 2 3 4 5 6 7 8 9 12 14 }	#2
+		{ 2 3 4 7 9 10  }			#3
+		{ 2 4 6 7 9 10 13 14}		#4
+		{ 5 4 10 14 15}				#5
+		{ 2 4 6 10 11 12 }			#6
+		{ 2 3 4 7 8 10 13 }			#7
+		{ 2 4 6 7 8 9 }				#8
+		{ 2 3 4 8 9 10 11 13 }		#9
+		{ 3 4 5 6 7 9 10 }			#10
+		{ 6 9 11 }					#11
+		{ 6 12 }					#12
+		{ 4 7 9 13 14 }				#13
+		{ 2 4 13 14 }				#14
+	}
+	
+	emblem = {
+		file = "gfx\\coats_of_arms\\emblem_empty.tga"
+		noOfFrames = 1
+	}
+
+	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	textures = {
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic.tga"
+			size = { x = 10 y = 3 }
+			noOfFrames = 23
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 19
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_primitive.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 11
+			color = 2
+			emblem = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_nature.tga"
+			size = { x = 10 y = 1 }
+			noOfFrames = 6
+			color = 2
+			emblem = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_aeromancy.tga"
+			size = { x = 10 y = 1 }
+			noOfFrames = 6
+			color = 2
+			emblem = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_geomancy.tga"
+			size = { x = 10 y = 1 }
+			noOfFrames = 3
+			color = 2
+			emblem = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_pyromancy.tga"
+			size = { x = 10 y = 1 }
+			noOfFrames = 9
+			color = 2
+			emblem = no
+		}
+		
+		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	}
+}
+
+culture = {
+	religion = {
+		"druidism"
+		"druidism_reformed"
+	}
+	
+	templates = { 
+		"coa_plain_pagan:1"
+	}
+
+	color = {
+		{ 255 231 93 }	#0  	Or (Gold)
+		{ 245 245 245 } #1   	Argent (White )
+		{ 48 92 164 } 	#2   	Azure ( Blue)
+		{ 201 43 43 } 	#3   	Gules (Red)
+		{ 131 192 114 } #4   	Vert (Light Green)
+		{ 20 20 20 }	#5   	Sable (Black)
+		{ 164 129 24 }	#6   	
+		{ 113 0 0 }		#7   	Sanguine (Blood Red)
+		{ 205 87 10 }	#8   	Tenné (Tawny aka orange)
+		{ 133 194 133 }	#9		
+		{ 128 90 40 }	#10  	
+		{ 15 15 204 }	# 11  	Deep Blue
+		{ 50 153 62 }	# 12	Turquoise
+		{ 100 182 8 }	#14  	
+	}
+	
+	rebel_colors = { 3 5 7 }
+
+	banned_colors = 
+	{ 
+		{ 0 1 }						#0
+		{ 0 1 9 }					#1
+		{ 2 3 4 5 6 7 8 9 12 14 }	#2
+		{ 2 3 4 7 9 10  }			#3
+		{ 2 4 6 7 9 10 13 14}		#4
+		{ 5 4 10 14 15}				#5
+		{ 2 4 6 10 11 12 }			#6
+		{ 2 3 4 7 8 10 13 }			#7
+		{ 2 4 6 7 8 9 }				#8
+		{ 2 3 4 8 9 10 11 13 }		#9
+		{ 3 4 5 6 7 9 10 }			#10
+		{ 6 9 11 }					#11
+		{ 6 12 }					#12
+		{ 4 7 9 13 14 }				#13
+		{ 2 4 13 14 }				#14
+	}
+	
+	emblem = {
+		file = "gfx\\coats_of_arms\\emblem_empty.tga"
+		noOfFrames = 1
+	}
+
+	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	textures = {
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic.tga"
+			size = { x = 10 y = 3 }
+			noOfFrames = 23
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 19
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_primitive.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 11
+			color = 2
+			emblem = no
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_nature.tga"
+			size = { x = 10 y = 1 }
+			noOfFrames = 6
+			color = 2
+			emblem = no
+		}
+		
+		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	}
+}
+
+culture = {
+	religion = {
+		"nzoth"
+		"cthun"
+		"yogg_saron"
+		"yshaarj"
+		"twilights_hammer"
+	}
+	
+	templates = { 
+		"coa_void:1"
+	}
+
+	color = {
+		{ 255 231 93 }	#0  	Or (Gold)
+		{ 245 160 245 } #1   	Argent (White )
+		{ 48 92 164 } 	#2   	Azure ( Blue)
+		{ 201 43 43 } 	#3   	Gules (Red)
+		{ 131 192 114 } #4   	Vert (Light Green)
+		{ 20 20 20 }	#5   	Sable (Black)
+		{ 164 129 24 }	#6   	
+		{ 113 0 0 }		#7   	Sanguine (Blood Red)
+		{ 205 87 10 }	#8   	Tenné (Tawny aka orange)
+		{ 133 10 133 }	#9		
+		{ 128 10 40 }	#10  	
+		{ 15 15 204 }	# 11  	Deep Blue
+		{ 50 153 62 }	# 12	Turquoise
+		{ 40 0 60 }	#14  	
+	}
+	
+	rebel_colors = { 3 5 7 }
+
+	banned_colors = 
+	{ 
+		{ 0 1 }						#0
+		{ 0 1 9 }					#1
+		{ 2 3 4 5 6 7 8 9 12 14 }	#2
+		{ 2 3 4 7 9 10  }			#3
+		{ 2 4 6 7 9 10 13 14}		#4
+		{ 5 4 10 14 15}				#5
+		{ 2 4 6 10 11 12 }			#6
+		{ 2 3 4 7 8 10 13 }			#7
+		{ 2 4 6 7 8 9 }				#8
+		{ 2 3 4 8 9 10 11 13 }		#9
+		{ 3 4 5 6 7 9 10 }			#10
+		{ 6 9 11 }					#11
+		{ 6 12 }					#12
+		{ 4 7 9 13 14 }				#13
+		{ 2 4 13 14 }				#14
+	}
+	
+	emblem = {
+		file = "gfx\\coats_of_arms\\emblem_empty.tga"
+		noOfFrames = 1
+	}
+
+	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	textures = {
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic.tga"
+			size = { x = 10 y = 3 }
+			noOfFrames = 23
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 19
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_void.tga"
+			size = { x = 1 y = 1 }
+			noOfFrames = 1
+			color = 3
+			emblem = no
+		}
+		
+		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	}
+}
+
+culture = {
+	religion = {
+		"wyrmcult"
+		"blackwyrm_cult"
+	}
+	
+	templates = { 
+		"coa_plain_pagan:1"
+	}
+
+	color = {
+		{ 255 231 93 }	#0  	Or (Gold)
+		{ 245 245 245 } #1   	Argent (White )
+		{ 48 92 164 } 	#2   	Azure ( Blue)
+		{ 201 43 43 } 	#3   	Gules (Red)
+		{ 131 192 114 } #4   	Vert (Light Green)
+		{ 20 20 20 }	#5   	Sable (Black)
+		{ 164 129 24 }	#6   	
+		{ 113 0 0 }		#7   	Sanguine (Blood Red)
+		{ 205 87 10 }	#8   	Tenné (Tawny aka orange)
+		{ 133 194 133 }	#9		
+		{ 128 90 40 }	#10  	
+		{ 15 15 204 }	# 11  	Deep Blue
+		{ 50 153 62 }	# 12	Turquoise
+		{ 100 182 8 }	#14  	
+	}
+	
+	rebel_colors = { 3 5 7 }
+
+	banned_colors = 
+	{ 
+		{ 0 1 }						#0
+		{ 0 1 9 }					#1
+		{ 2 3 4 5 6 7 8 9 12 14 }	#2
+		{ 2 3 4 7 9 10  }			#3
+		{ 2 4 6 7 9 10 13 14}		#4
+		{ 5 4 10 14 15}				#5
+		{ 2 4 6 10 11 12 }			#6
+		{ 2 3 4 7 8 10 13 }			#7
+		{ 2 4 6 7 8 9 }				#8
+		{ 2 3 4 8 9 10 11 13 }		#9
+		{ 3 4 5 6 7 9 10 }			#10
+		{ 6 9 11 }					#11
+		{ 6 12 }					#12
+		{ 4 7 9 13 14 }				#13
+		{ 2 4 13 14 }				#14
+	}
+	
+	emblem = {
+		file = "gfx\\coats_of_arms\\emblem_empty.tga"
+		noOfFrames = 1
+	}
+
+	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	textures = {
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic.tga"
+			size = { x = 10 y = 3 }
+			noOfFrames = 23
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 19
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_wyrmcult.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 11
+			color = 2
+			emblem = no
+		}
+		
+		# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	}
+}
+
+culture = {
+	religion = {
+		"mercantilism"
+	}
+	
+	templates = { 
+		"coa_plain_pagan:1"
+	}
+
+	color = {
+		{ 255 231 93 }	#0  	Or (Gold)
+		{ 245 245 245 } #1   	Argent (White )
+		{ 48 92 164 } 	#2   	Azure ( Blue)
+		{ 201 43 43 } 	#3   	Gules (Red)
+		{ 131 192 114 } #4   	Vert (Light Green)
+		{ 20 20 20 }	#5   	Sable (Black)
+		{ 164 129 24 }	#6   	
+		{ 113 0 0 }		#7   	Sanguine (Blood Red)
+		{ 205 87 10 }	#8   	Tenné (Tawny aka orange)
+		{ 133 194 133 }	#9		
+		{ 128 90 40 }	#10  	
+		{ 15 15 204 }	# 11  	Deep Blue
+		{ 50 153 62 }	# 12	Turquoise
+		{ 100 182 8 }	#14  	
+	}
+	
+	rebel_colors = { 3 5 7 }
+
+	banned_colors = 
+	{ 
+		{ 0 1 }						#0
+		{ 0 1 9 }					#1
+		{ 2 3 4 5 6 7 8 9 12 14 }	#2
+		{ 2 3 4 7 9 10  }			#3
+		{ 2 4 6 7 9 10 13 14}		#4
+		{ 5 4 10 14 15}				#5
+		{ 2 4 6 10 11 12 }			#6
+		{ 2 3 4 7 8 10 13 }			#7
+		{ 2 4 6 7 8 9 }				#8
+		{ 2 3 4 8 9 10 11 13 }		#9
+		{ 3 4 5 6 7 9 10 }			#10
+		{ 6 9 11 }					#11
+		{ 6 12 }					#12
+		{ 4 7 9 13 14 }				#13
+		{ 2 4 13 14 }				#14
+	}
+	
+	emblem = {
+		file = "gfx\\coats_of_arms\\emblem_empty.tga"
+		noOfFrames = 1
+	}
+
+	# WHEN ADDING NEW, ALWAYS ADD AT THE END !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11111
+	textures = {
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic.tga"
+			size = { x = 10 y = 3 }
+			noOfFrames = 23
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_basic_2.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 19
+			color = 2
+			emblem = no
+			random = no # Do not use for random CoAs
+		}
+
+		texture = {
+			file = "gfx\\coats_of_arms\\pattern_mercantilism.tga"
+			size = { x = 10 y = 2 }
+			noOfFrames = 11
 			color = 2
 			emblem = no
 		}
