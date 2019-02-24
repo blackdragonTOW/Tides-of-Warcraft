@@ -1,0 +1,160 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_satyr_male_child_base"
+		texturefile = "gfx\\characters\\satyr_male\\child\\satyr_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_satyr_male_child_base_uncolored"
+		texturefile = "gfx\\characters\\satyr_male\\child\\satyr_male_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_satyr_male_child_eyes2"
+		texturefile = "gfx\\characters\\satyr_male\\child\\satyr_male_child_eyes2.dds"
+		noOfFrames = 2
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		name = "PORTRAIT_satyrgfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_night_elf
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_night_elf_male_child_neck:d0"
+			"GFX_satyr_male_child_base:p2:h"
+			"GFX_satyr_male_child_base_uncolored:p2"
+			"GFX_night_elf_male_child_clothes:d0"
+			"GFX_night_elf_male_child_hair:p1:e:y"
+			"GFX_satyr_male_child_eyes2:d5"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 142 135 128 } { 200 200 196 }
+			{ 2 17 15 } { 159 197 200 } { 215 234 234 }
+			{ 10 5 0 } { 209 183 130 } { 237 228 197 }
+			{ 10 8 8 } { 200 160 159 } { 237 220 220 }
+			{ 7 7 10 } { 183 189 239 } { 223 223 248 }
+			{ 10 9 8 } { 213 194 165 } { 246 236 227 }
+			{ 7 3 2 } { 182 78 67 } { 239 202 188 }
+		}
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 161 17 15 }
+			{ 124 104 8 }
+			{ 8 147 192 }
+			{ 179 94 30 }
+			{ 101 25 113 }
+			{ 131 75 151 }
+			{ 88 62 37 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_satyr_female_child_base"
+		texturefile = "gfx\\characters\\satyr_female\\child\\satyr_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_satyr_female_child_eyes2"
+		texturefile = "gfx\\characters\\satyr_female\\child\\satyr_female_child_eyes2.dds"
+		noOfFrames = 2
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_satyrgfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_night_elf
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_satyr_female_child_base:p2:h"
+			"GFX_night_elf_female_child_base_uncolored:p2"
+			"GFX_night_elf_female_child_clothes:d0"
+			"GFX_child_female_hair:p1:e:y"
+			"GFX_satyr_female_child_eyes2:d5"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 142 135 128 } { 200 200 196 }
+			{ 2 17 15 } { 159 197 200 } { 215 234 234 }
+			{ 10 5 0 } { 209 183 130 } { 237 228 197 }
+			{ 10 8 8 } { 200 160 159 } { 237 220 220 }
+			{ 7 7 10 } { 183 189 239 } { 223 223 248 }
+			{ 10 9 8 } { 213 194 165 } { 246 236 227 }
+			{ 7 3 2 } { 182 78 67 } { 239 202 188 }
+		}
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 161 17 15 }
+			{ 124 104 8 }
+			{ 8 147 192 }
+			{ 179 94 30 }
+			{ 101 25 113 }
+			{ 131 75 151 }
+			{ 88 62 37 }
+		}
+		
+		allow_property_values = { }
+	}
+}

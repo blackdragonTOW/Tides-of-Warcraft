@@ -1,6 +1,203 @@
 # hair, mouth, chin, nose, eyes, cheek, ear, neck
 spriteTypes = {
 	
+	### Draenei MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# draenei Male
+	portraitType = {
+		name = "PORTRAIT_draeneigfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_draenei_male_base:p2:h"
+			"GFX_draenei_male_hair_behind:p1:e:y"
+			"GFX_draenei_male_heads:d10:h"
+			"GFX_draenei_male_jaw:d0:h"
+			"GFX_draenei_male_nose:d3:h"
+			"GFX_draenei_male_cheeks:d4:h"
+			"GFX_draenei_male_chin:d1:h"
+			"GFX_draenei_male_chin_uncolored:d1"
+			"GFX_draenei_male_forehead:d5:h"
+			"GFX_draenei_male_shade:p8"
+			"GFX_draenei_male_eyes:d6:h"
+			"GFX_draenei_male_eyes_uncolored:d6"
+			"GFX_draenei_male_ear:d7:h"
+			"GFX_draenei_male_mouth:d2:h"
+			"GFX_draenei_male_hair:p1:e:y"
+		   	"GFX_draenei_male_hair_uncolored:p1:y"
+			"GFX_draenei_male_beard:p4:e:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_draenei_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 16 18 29 } { 142 162 195 } { 211 232 252 }
+			{ 10 12 15 } { 141 158 181 } { 219 236 247 }
+			{ 13 13 27 } { 130 132 167 } { 216 225 249 }
+			{ 6 7 8 } { 162 171 192 } { 225 236 249 }
+			{ 6 5 6 } { 102 84 95 } { 207 191 193 }
+			{ 10 10 10 } { 173 173 184 } { 233 237 241 }
+			{ 7 7 9 } { 138 131 165 } { 209 209 226 }
+			{ 7 8 8 } { 144 161 170 } { 208 224 228 }
+			{ 3 3 4 } { 104 121 148 } { 190 201 245 }
+			{ 6 7 8 } { 131 146 177 } { 195 223 247 }
+			{ 7 9 9 } { 139 172 186 } { 215 241 241 }
+			{ 9 8 10 } { 161 158 186 } { 244 236 252 }
+		}
+
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_draeneigfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_draenei_male_base:p2:h"
+			"GFX_draenei_male_hair_behind:p1:e:y"
+			"GFX_draenei_male_heads:d10:h"
+			"GFX_draenei_male_jaw:d0:h"
+			"GFX_draenei_male_nose:d3:h"
+			"GFX_draenei_male_cheeks:d4:h"
+			"GFX_draenei_male_chin:d1:h"
+			"GFX_draenei_male_chin_uncolored:d1"
+			"GFX_draenei_male_forehead:d5:h"
+			"GFX_draenei_male_shade:p8"
+			"GFX_draenei_male_eyes:d6:h"
+			"GFX_draenei_male_eyes_uncolored:d6"
+			"GFX_draenei_male_ear:d7:h"
+			"GFX_draenei_male_mouth:d2:h"
+			"GFX_draenei_male_hair:p1:e:y"
+		   	"GFX_draenei_male_hair_uncolored:p1:y"
+			"GFX_draenei_male_beard:p4:e:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_draenei_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 16 18 29 } { 142 162 195 } { 211 232 252 }
+			{ 10 12 15 } { 141 158 181 } { 219 236 247 }
+			{ 13 13 27 } { 130 132 167 } { 216 225 249 }
+			{ 6 7 8 } { 162 171 192 } { 225 236 249 }
+			{ 6 5 6 } { 102 84 95 } { 207 191 193 }
+			{ 10 10 10 } { 173 173 184 } { 233 237 241 }
+			{ 7 7 9 } { 138 131 165 } { 209 209 226 }
+			{ 7 8 8 } { 144 161 170 } { 208 224 228 }
+			{ 3 3 4 } { 104 121 148 } { 190 201 245 }
+			{ 6 7 8 } { 131 146 177 } { 195 223 247 }
+			{ 7 9 9 } { 139 172 186 } { 215 241 241 }
+			{ 9 8 10 } { 161 158 186 } { 244 236 252 }
+		}
+
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_draeneigfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_draenei_male_base:p2:h"
+			"GFX_draenei_male_hair_behind:p1:e:y"
+			"GFX_draenei_male_heads:d10:h"
+			"GFX_draenei_male_jaw:d0:h"
+			"GFX_draenei_male_nose:d3:h"
+			"GFX_draenei_male_cheeks:d4:h"
+			"GFX_draenei_male_chin:d1:h"
+			"GFX_draenei_male_chin_uncolored:d1"
+			"GFX_draenei_male_forehead:d5:h"
+			"GFX_draenei_male_shade:p8"
+			"GFX_draenei_male_eyes:d6:h"
+			"GFX_draenei_male_eyes_uncolored:d6"
+			"GFX_draenei_male_ear:d7:h"
+			"GFX_draenei_male_mouth:d2:h"
+			"GFX_draenei_male_hair:p1:e:y"
+		   	"GFX_draenei_male_hair_uncolored:p1:y"
+			"GFX_draenei_male_beard:p4:e:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_draenei_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 16 18 29 } { 142 162 195 } { 211 232 252 }
+			{ 10 12 15 } { 141 158 181 } { 219 236 247 }
+			{ 13 13 27 } { 130 132 167 } { 216 225 249 }
+			{ 6 7 8 } { 162 171 192 } { 225 236 249 }
+			{ 6 5 6 } { 102 84 95 } { 207 191 193 }
+			{ 10 10 10 } { 173 173 184 } { 233 237 241 }
+			{ 7 7 9 } { 138 131 165 } { 209 209 226 }
+			{ 7 8 8 } { 144 161 170 } { 208 224 228 }
+			{ 3 3 4 } { 104 121 148 } { 190 201 245 }
+			{ 6 7 8 } { 131 146 177 } { 195 223 247 }
+			{ 7 9 9 } { 139 172 186 } { 215 241 241 }
+			{ 9 8 10 } { 161 158 186 } { 244 236 252 }
+		}
+
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
 	### Draenei FEMALE ####
 	
 	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
@@ -20,6 +217,7 @@ spriteTypes = {
 			"GFX_draenei_female_cheeks:d4:h"
 			"GFX_draenei_female_chin:d1:h"
 		   	"GFX_draenei_female_hair_mid:p1:e:y"
+			"GFX_draenei_female_eyebrows:d10:h"
 			"GFX_draenei_female_eyes:d6:h"
 			"GFX_draenei_female_nose:d3:h"
 			"GFX_draenei_female_mouth:d2:h"
@@ -90,6 +288,7 @@ spriteTypes = {
 			"GFX_draenei_female_cheeks:d4:h"
 			"GFX_draenei_female_chin:d1:h"
 		   	"GFX_draenei_female_hair_mid:p1:e:y"
+			"GFX_draenei_female_eyebrows:d10:h"
 			"GFX_draenei_female_eyes:d6:h"
 			"GFX_draenei_female_nose:d3:h"
 			"GFX_draenei_female_mouth:d2:h"
@@ -160,6 +359,7 @@ spriteTypes = {
 			"GFX_draenei_female_cheeks:d4:h"
 			"GFX_draenei_female_chin:d1:h"
 		   	"GFX_draenei_female_hair_mid:p1:e:y"
+			"GFX_draenei_female_eyebrows:d10:h"
 			"GFX_draenei_female_eyes:d6:h"
 			"GFX_draenei_female_nose:d3:h"
 			"GFX_draenei_female_mouth:d2:h"
@@ -214,4 +414,498 @@ spriteTypes = {
 		
 		headgear_that_hides_hair = { }
 	}
+
+	### Broken MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# broken Male
+	portraitType = {
+		name = "PORTRAIT_brokengfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_broken_male_base:p2"
+		   	"GFX_broken_male_hair:p1:y"
+			"GFX_broken_male_nose:d3"
+			"GFX_broken_male_eyes:d6"
+			"GFX_broken_male_forehead:d5"
+			"GFX_broken_male_ears:d7"
+			"GFX_broken_male_mouth:d2"
+			"GFX_broken_male_clothes:p3"
+			"GFX_broken_male_chin:d1"
+			"GFX_broken_male_beard:p4:y"
+			"GFX_broken_male_beard_over:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_broken_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 11 6 3 } { 115 60 30 } { 255 255 255 }
+			{ 14 3 3 } { 140 80 30 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 117 246 220 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_brokengfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_broken_male_base:p2"
+		   	"GFX_broken_male_hair:p1:y"
+			"GFX_broken_male_nose:d3"
+			"GFX_broken_male_eyes:d6"
+			"GFX_broken_male_forehead:d5"
+			"GFX_broken_male_ears:d7"
+			"GFX_broken_male_mouth:d2"
+			"GFX_broken_male_clothes:p3"
+			"GFX_broken_male_chin:d1"
+			"GFX_broken_male_beard:p4:y"
+			"GFX_broken_male_beard_over:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_broken_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_brokengfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_broken_male_base:p2"
+		   	"GFX_broken_male_hair:p1:y"
+			"GFX_broken_male_nose:d3"
+			"GFX_broken_male_eyes:d6"
+			"GFX_broken_male_forehead:d5"
+			"GFX_broken_male_ears:d7"
+			"GFX_broken_male_mouth:d2"
+			"GFX_broken_male_clothes:p3"
+			"GFX_broken_male_chin:d1"
+			"GFX_broken_male_beard:p4:y"
+			"GFX_broken_male_beard_over:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_broken_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+	### Broken FEMALE ####
+
+
+	# broken female
+	portraitType = {
+		name = "PORTRAIT_brokengfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_broken_female_base:p2"
+			"GFX_broken_female_clothes:p3"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_broken_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# broken female midage
+	portraitType = {
+		name = "PORTRAIT_brokengfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_broken_female_base:p2"
+			"GFX_broken_female_clothes:p3"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_broken_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# broken female oldage
+	portraitType = {
+		name = "PORTRAIT_brokengfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_broken_female_base:p2"
+			"GFX_broken_female_clothes:p3"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_broken_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+		
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	### Lost MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	portraitType = {
+		name = "PORTRAIT_lostdraeneigfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_lost_draenei_male_base:p2"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_lost_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 11 6 3 } { 115 60 30 } { 255 255 255 }
+			{ 14 3 3 } { 140 80 30 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_lostdraeneigfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_lost_draenei_male_base:p2"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_lost_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+		
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_lostdraeneigfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_lost_draenei_male_base:p2"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_lost_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### lost FEMALE ####
+
+	portraitType = {
+		name = "PORTRAIT_lostdraeneigfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_lost_draenei_female_base:p2"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_lost_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# lost female midage
+	portraitType = {
+		name = "PORTRAIT_lostdraeneigfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_lost_draenei_female_base:p2"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_lost_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# lost female oldage
+	portraitType = {
+		name = "PORTRAIT_lostdraeneigfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_lost_draenei_female_base:p2"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_lost_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
 }

@@ -64,6 +64,14 @@ spriteTypes = {
 		allow_property_values = { }
 	}
 
+	spriteType = {
+		name = "GFX_gnoll_female_child_base"
+		texturefile = "gfx\\characters\\gnoll_female\\child\\gnoll_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
 	portraitType = {
 		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_gnollgfx_female_child"
@@ -87,7 +95,7 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
-			"GFX_gnoll_male_child_base:p2"
+			"GFX_gnoll_female_child_base:p2"
 			"GFX_gnoll_male_child_eyes2:d6:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"
@@ -107,7 +115,7 @@ spriteTypes = {
 
 		eye_color_index = 9
 		eye_color = {
-			{ 160 160 230 }
+			{ 110 180 110 }
 		}
 		
 		allow_property_values = { }
