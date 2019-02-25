@@ -3188,7 +3188,7 @@
 	}
 	10003.8.2 = {
 		religion = demonology
-		add_trait = undead_generic
+		add_trait = race_undead_generic
 	}
 	10100.1.1 = {
 		death = {
@@ -3212,7 +3212,7 @@
 		add_trait = deceitful
 	}
 	10003.8.2 = { # It should by way earlier, but gameplay reasons require this
-		add_trait = undead_generic
+		add_trait = race_undead_generic
 		add_trait = death_knight
 		religion = demonology
 		employer = 115 # Attumen
@@ -3238,7 +3238,7 @@
 		add_trait = tough_soldier
 	}
 	10003.8.2 = { # It should by way earlier, but gameplay reasons require this
-		add_trait = undead_generic
+		add_trait = race_undead_generic
 		add_trait = death_knight
 		religion = demonology
 		give_nickname = nick_the_huntsman
@@ -3297,6 +3297,488 @@
 	properties="sk00000000000000000"
 	trait = race_ogre
 	9969.6.22 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+118 = {
+	name = "Stalvan"
+	dynasty = 89 # Mistmantle
+	culture = azerothian
+	religion = holy_light
+	dna="000d0a00ef0"
+	properties="se00c0000000000000"
+	learning = 8
+	trait = race_human
+	9981.8.21 = {
+		birth = yes
+	}
+	100020.5.12 = {
+		add_trait = lunatic
+		add_trait = cruel
+		add_trait = race_undead_generic
+		religion = forgotten_shadow
+	}
+	100025.9.15 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+119 = {
+	name = "Zraedus"
+	dynasty = 90 # Deathmark
+	culture = forsaken
+	religion = forgotten_shadow
+	dna="0c0k0e00em0"
+	properties="el00e0000000000000"
+	secret_religion = burning_legion
+	intrigue = 5
+	trait = race_human
+	trait = race_undead_forsaken
+	trait = rogue
+	trait = flamboyant_schemer
+	trait = deceitful
+	9977.1.28 = {
+		birth = yes
+	}
+	10027.6.4 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+120 = {
+	name = "Faustin"
+	culture = forsaken
+	religion = forgotten_shadow
+	dna="0c0bcib00e0"
+	properties="ek00f0000000000000"
+	secret_religion = burning_legion
+	learning = 5
+	trait = race_human
+	trait = race_undead_forsaken
+	trait = alchemist
+	trait = martial_cleric
+	9980.8.2 = {
+		birth = yes
+	}
+	10025.1.30 = {
+		employer = 119 # Zraedus
+	}
+	10027.6.4 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+121 = {
+	name = "Ello"
+	dynasty = 91 # Ebonlocke
+	culture = azerothian
+	religion = holy_light
+	dna="0b00agc0ac0"
+	properties="cb00c0000000000000"
+	trait = race_human
+	father = 125 # Tom
+	9966.3.17 = {
+		birth = yes
+	}
+	10022.9.16 = {
+		effect = {
+			set_secret_religion = burning_legion
+		}
+	}
+	10032.2.15 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+122 = {
+	name = "Althea"
+	dynasty = 91 # Ebonlocke
+	culture = azerothian
+	religion = holy_light
+	female = yes
+	dna="0b00agc0ac0"
+	properties="cb00c0000000000000"
+	martial = 6
+	trait = race_human
+	father = 121 # Ello
+	9999.4.18 = {
+		birth = yes
+	}
+	10015.4.18 = {
+		add_trait = tough_soldier
+		employer = 121 # Ello
+		give_job_titlte = job_marshal
+	}
+	10022.9.16 = {
+		effect = {
+			set_secret_religion = burning_legion
+		}
+	}
+	10032.2.15 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+123 = {
+	name = "Keira"
+	dynasty = 92 # Berrybuck
+	female = yes
+	culture = azerothian
+	religion = holy_light
+	dna="0bin00aebd0"
+	properties="cr0000000000000000"
+	trait = race_human
+	9950.6.10 = {
+		birth = yes
+	}
+	9998.7.26 = {
+		death = {
+			death_reason = death_murder
+			killer = 112 # Medivh
+		}
+	}
+}
+
+124 = {
+	name = "John"
+	dynasty = 92 # Berrybuck
+	culture = azerothian
+	religion = holy_light
+	dna="0b0000a0bd0"
+	properties="ca0000000000000000"
+	diplomacy = 7
+	trait = race_human
+	mother = 123 # Keira
+	9973.9.27 = {
+		birth = yes
+	}
+	10006.11.3 = {
+		employer = 121 # Ello
+	}
+	10022.9.16 = {
+		effect = {
+			set_secret_religion = burning_legion
+		}
+	}
+	10032.2.15 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+125 = {
+	name = "Tom"
+	dynasty = 91
+	culture = azerothian
+	religion = holy_light
+	dna="0a0c0hb0af0"
+	properties="wk0000000000000000"
+	trait = race_human
+	9940.6.17 = {
+		birth = yes
+	}
+	9998.7.26 = {
+		death = {
+			death_reason = death_murder
+			killer = 112 # Medivh
+		}
+	}
+}
+
+126 = {
+	name = "Virgil"
+	dynasty = 91 # Ebonlocke
+	culture = azerothian
+	religion = holy_light
+	dna="0a0c0c00ad0"
+	properties="jg00h0000000000000"
+	trait = race_human
+	father = 125 # Tom
+	9968.9.19 = {
+		birth = yes
+	}
+	10002.5.1 = {
+		death = { death_reason = death_battle }
+	}
+}
+
+127 = {
+	name = "Kanrethad"
+	dynasty = 91 # Ebonlocke
+	culture = azerothian
+	religion = holy_light
+	dna="0a0gb000bk0"
+	properties="be00c0000000000000"
+	diplomacy = 5
+	martial = 1
+	stewardship = 2
+	intrigue = 5
+	learning = 8
+	trait = race_human
+	disallow_random_traits = yes
+	father =  126 # Virgil
+	9995.8.23 = {
+		birth = yes
+	}
+	10011.8.23 = {
+		add_trait = mastermind_theologian
+		add_trait = erudite
+		add_trait = shrewd
+		add_trait = ambitious
+		add_trait = cynical
+		add_trait = shy
+	}
+	10022.7.13 = {
+		add_trait = warlock
+		set_secret_religion = demonology
+	}
+	10025.1.13 = {
+		add_trait = tow_adventurer
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+128 = {
+	name = "Dorothea"
+	dynasty = 93 # Millstipe
+	culture = azerothian
+	religion = holy_light
+	female = yes
+	dna="00bne0egcl0"
+	properties="gu0000000000000000"
+	trait = race_human
+	9948.3.10 = {
+		birth = yes
+		employer = 125 # Tom
+	}
+	9998.7.26 = {
+		death = {
+			death_reason = death_murder
+			killer = 112 # Medivh
+		}
+	}
+}
+
+129 = {
+	name = "Robert"
+	dynasty = 93 # Millstipe
+	culture = azerothian
+	religion = holy_light
+	dna="0000a0a0cl0"
+	properties="gl00d0000000000000"
+	trait = race_human
+	mother = 128 # Dorothea
+	9970.6.12 = {
+		birth = yes
+	}
+	10006.11.3 = {
+		employer = 121 # Ello
+	}
+	10022.9.16 = {
+		effect = {
+			set_secret_religion = burning_legion
+		}
+	}
+	10032.2.15 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+130 = {
+	name = "Fenros"
+	dynasty = 94 # Packrunner
+	culture = nightbane
+	religion = druidism
+	#DNA goes here!
+	trait = race_human
+	trait = race_worgen
+	9990.4.1 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+131 = {
+	name = "Emeriss"
+	dynasty = 74 # Green Dragonflight
+	culture = green_dragonflight
+	religion = wyrmcult
+	#Add later
+	diplomacy = 6
+	martial = 7
+	stewardship = 8
+	intrigue = 4
+	learning = 7
+	trait = race_dragon
+	trait = dragon_wyrm
+	1.1.1 = {
+		birth = yes
+	}
+	9989.6.10 = {
+		effect = {
+			set_graphical_culture = nightmare_dragonflight
+		}
+		religion = yogg_saron
+		dynasty = 75 # Nightmare Dragonflight
+	}
+	10032.6.14 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+132 = {
+	name = "Nefaru"
+	dynasty = 95 # Nightbane
+	female = yes
+	culture = nightbane
+	religion = druidism
+	#DNA goes here
+	trait = race_human
+	trait = race_worgen
+	9985.1.29 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+133 = {
+	name = "Abercrombie"
+	dynasty = 96 # Fullwell
+	culture = azerothian
+	religion = holy_light
+	dna="000baab0ba0"
+	properties="aa00a0000000000000"
+	learning = 8
+	trait = race_human
+	9985.1.19 = {
+		birth = yes
+	}
+	10001.1.19 = {
+		add_trait = scholarly_theologian
+		add_trait = alchemist
+	}
+	10013.7.20 = {
+		add_spouse = 134 # Eliza
+	}
+	10021.10.12 = {
+		add_trait = lunatic
+		add_trait = necromancer
+		religion = forgotten_shadow
+		give_nickname = nick_the_embalmer
+	}
+	10028.7.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+134 = {
+	name = "Eliza"
+	culture = azerothian
+	religion = holy_light
+	trait = race_human
+	9984.12.7 = {
+		birth = yes
+	}
+	10021.10.12 = {
+		add_trait = race_undead_generic
+		add_trait = lunatic
+		religion = forgotten_shadow
+	}
+	10028.7.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+135 = {
+	name = "Zzarc'Vul"
+	dynasty = 97 # Splinter Fist
+	culture = splinterfist
+	religion = demonology
+	dna="ibej0ehaa0b"
+	properties="rb00g0000000000000"
+	trait = race_ogre
+	trait = tough_soldier
+	trait = groomed
+	9960.8.10 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+136 = {
+	name = "Morbent"
+	dynasty = 98 # Felcleave
+	culture = azerothian
+	religion = holy_light
+	dna="0b0m0g00cm0"
+	properties="me00b0000000000000"
+	learning = 8
+	trait = race_human
+	9976.8.12 = {
+		birth = yes
+	}
+	10021.5.4 = {
+		add_trait = necromancer
+		add_trait = cruel
+		religion = demonology
+	}
+	10025.7.15 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+137 = {
+	name = "Sven"
+	dynasty = 99 # Yorgen
+	culture = azerothian
+	religion = holy_light
+	dna="0a0jacb0bb0"
+	properties="qf00d0000000000000"
+	trait = race_human
+	9990.3.10 = {
 		birth = yes
 	}
 	10100.1.1 = {
