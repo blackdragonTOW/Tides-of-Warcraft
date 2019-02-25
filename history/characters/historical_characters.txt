@@ -2985,3 +2985,323 @@
 		}
 	}
 }
+
+107 = {
+	name = "Sataiel"
+	dynasty = 80 # Kiina
+	female = yes
+	culture = demonic
+	religion = burning_legion
+	dna="0bbf0edcac0"
+	properties="qm0000000000000000"
+	trait = race_eredar
+	1.1.1 = {
+		birth = yes
+		give_nickname = nick_deadwind_harvester
+		effect = {
+			give_artifact = ulthalesh
+		}
+	}
+	8784.10.2 = {
+		religion = demonology
+	}
+	8823.6.18 = {
+		death = {
+			death_reason = death_duel
+			killer = 109 # Scavell
+		}
+	}
+}
+
+108 = {
+	name = "Alodi"
+	dynasty = 83 # Vael
+	culture = tirisfalen
+	religion = arcane
+	dna="0a0g0g00bb0"
+	properties="di00i0000000000000"
+	learning = 9
+	trait = race_half_elf
+	trait = mage
+	2590.3.25 = {
+		birth = yes
+		effect = {
+			give_artifact = ebonchill
+		}
+	}
+	2610.5.18 = {
+		add_trait = guardian
+	}
+	2710.5.18 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+109 = {
+	name = "Scavell"
+	dynasty = 84 # Hazel
+	culture = dalaranian
+	religion = arcane
+	dna="000dad00dj0"
+	properties="jc00a0000000000000"
+	learning = 9
+	trait = race_human
+	trait = mage
+	trait = guardian
+	8692.3.2 = {
+		birth = yes
+	}
+	9024.6.11 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+110 = {
+	name = "Aegwynn"
+	dynasty = 81 # Ishtar
+	female = yes
+	culture = lordaeronian
+	religion = arcane
+	dna="000da000bj0"
+	properties="jc0000000000000000"
+	diplomacy = 3
+	martial = 2
+	stewardship = 5
+	intrigue = 4
+	learning = 10
+	trait = race_human
+	trait = mage
+	trait = mastermind_theologian
+	trait = erudite
+	trait = proud
+	trait = fair
+	trait = genius
+	trait = stubborn
+	disallow_random_traits = yes
+	8989.4.13 = {
+		birth = yes
+	}
+	9024.6.11 = {
+		add_trait = guardian
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+111 = {
+	name = "Nielas"
+	dynasty = 82 # Aran
+	culture = azerothian
+	religion = holy_light
+	dna="000da000bj0"
+	properties="jc0000000000000000"
+	trait = race_human
+	9922.1.19 = {
+		birth = yes
+	}
+	9938.1.19 = {
+		add_trait = mage
+		add_trait = scholarly_theologian
+	}
+	#Make him court mage of SW at some point
+	9969.7.9 = {
+		death = {
+			death_reason = death_accident
+		}
+	}
+}
+
+112 = {
+	name = "Medivh"
+	dynasty = 82 # Aran
+	culture = azerothian
+	religion = holy_light
+	dna="0c0a0c00db0"
+	properties="jd00c0000000000000"
+	trait = race_human
+	disallow_random_traits = yes
+	father = 113 # Nielas
+	mother = 112 # Aegwynn
+	9955.7.9 = {
+		birth = yes
+	}
+	9969.7.9 = {
+		add_trait = incapable
+	}
+	9979.7.9 = {
+		effect = {
+			remove_trait = incapable
+		}
+		add_trait = mage
+		add_trait = guardian
+		add_trait = mastermind_theologian
+		add_trait = possessed
+		add_trait = erudite
+		add_trait = proud
+		#add_friend =  # Anduin
+		#add_friend =  # Llane
+	}
+	9988.5.22 = {
+		religion = arcane
+		add_friend = 113 # Moroes
+	}
+	9995.3.19 = {
+		add_trait = cruel
+		effect = {
+			set_secret_religion = demonology
+		}
+		add_trait = warlock
+	}
+	10000.12.5 = {
+		effect = {
+			set_secret_religion = burning_legion
+		}
+	}
+	10003.8.2 = {
+		religion = burning_legion
+		death = {
+			death_reason = death_duel
+			#killer = # Khadgar
+		}
+	}
+}
+
+113 = {
+	name = "Moroes"
+	culture = azerothian
+	religion = arcane
+	dna="000jbc00ak0"
+	properties="fa00i0000000000000"
+	stewardship = 7
+	trait = race_human
+	9969.10.2 = {
+		birth = yes
+	}
+	9988.5.22 = {
+		employer = 112 # Medivh
+	}
+	9998.7.26 = {
+		add_trait = lunatic
+	}
+	10003.8.2 = {
+		religion = demonology
+		add_trait = undead_generic
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+114 = {
+	name = "Ariden"
+	dynasty = 85 # Darkroad
+	culture = azerothian
+	religion = holy_light
+	dna="000hcfa0ca0"
+	properties="pi00f0000000000000"
+	trait = race_human
+	9965.1.12 = {
+		birth = yes
+	}
+	9981.1.12 = {
+		add_trait = deceitful
+	}
+	10003.8.2 = { # It should by way earlier, but gameplay reasons require this
+		add_trait = undead_generic
+		add_trait = death_knight
+		religion = demonology
+		employer = 115 # Attumen
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+115 = {
+	name = "Attumen"
+	dying = 86 # Firepath
+	culture = azerothian
+	religion = holy_light
+	martial = 6
+	trait = race_human
+	9962.8.29 = {
+		birth = yes
+	}
+	9978.8.29 = {
+		add_trait = tough_soldier
+	}
+	10003.8.2 = { # It should by way earlier, but gameplay reasons require this
+		add_trait = undead_generic
+		add_trait = death_knight
+		religion = demonology
+		give_nickname = nick_the_huntsman
+		effect = {
+			give_artifact = midnight
+		}
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+116 = {
+	name = "Terestian"
+	dynasty = 87 # Illhoof
+	culture = satyr
+	religion = burning_legion
+	dna="0a0be0cbfcb"
+	properties="pk0000000000000000"
+	diplomacy = 3
+	martial = 5
+	stewardship = 4
+	intrigue = 7
+	learning = 8
+	trait = race_satyr
+	trait = intricate_webweaver
+	trait = warlock
+	trait = proud
+	trait = greedy
+	trait = envious
+	trait = cruel
+	trait = impaler
+	trait = paranoid
+	disallow_random_traits = yes
+	1.1.1 = {
+		birth = yes
+		effect = {
+			give_artifact = stranglestaff
+		}
+	}
+	10026.8.17 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+117 = {
+	name = "Kolbine"
+	dynasty = 88 # Deadwind
+	culture = deadwind
+	religion = demonology
+	dna="00bddah0gf0"
+	properties="sk00000000000000000"
+	trait = race_ogre
+	9969.6.22 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
