@@ -233,3 +233,12 @@ TOW_race_can_have_children = {
 	TOW_is_undead = no
 	TOW_is_demon_race = no
 }
+
+TOW_is_creep_race = {
+	OR = {
+		trait = race_murloc
+		trait = race_gnoll
+		trait = race_kobold
+		trait = race_trogg
+	}
+}

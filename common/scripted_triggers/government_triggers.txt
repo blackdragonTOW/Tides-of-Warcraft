@@ -36,6 +36,33 @@ TOW_is_republic = {
 	}
 }
 
+TOW_is_creep_realm = {
+	AND = {
+		OR = {
+			AND = {
+				has_dlc = "Horse Lords"
+				is_nomadic = yes
+			}
+			AND = {
+				NOT = { has_dlc = "Horse Lords" }
+				is_tribal = yes
+			}
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				TOW_is_creep_race = yes
+			}
+			AND = {
+				is_ruler = no
+				liege = {
+					TOW_is_creep_race = yes
+				}
+			}
+		}
+	}
+}
+
 # ROOT is character
 TOW_has_access_to_castle = {
 	location = {
