@@ -1,9 +1,12 @@
-
 TOW_String_colony;Colony;;;;;;;;;;;;;x
 
-
+## Modifiers
 TOW_colony;[Location.TOW_GetColonyProgress];;;;;;;;;;;;;x
-TOW_colony_desc;There is a colony developing in this province. It grows progressively but is exposed to incidents and exterior attacks. If not interrupted or destroyed, it will eventually establish itself as a new holding. DEBUG PROGRESS : [Location.TOW_colony_progress.GetValue];;;;;;;;;;;;;x
+TOW_colony_desc;There is a colony developing in this province. It grows progressively but is exposed to incidents and exterior attacks. If not interrupted or destroyed, it will eventually establish itself as a new holding. DEBUG PROGRESS : [Location.TOW_colony_progress.GetValue]\nCreeps : [Location.TOW_creep_level.GetValue]\nMurlocs : [Location.TOW_creep_level_murloc.GetValue]\nKobolds : [Location.TOW_creep_level_kobold.GetValue]\nTroggs : [Location.TOW_creep_level_trogg.GetValue]\nGnolls : [Location.TOW_creep_level_gnoll.GetValue];;;;;;;;;;;;;x
+TOW_abandoned_colony;Has Abandoned a Colony;;;;;;;;;;;;;x
+TOW_abandoned_colony_desc;This character has abandoned the development of a colony, angering the people who worked hard there. This is truly not the way of a caring ruler.;;;;;;;;;;;;;x
+
+## Events
 
 TOW_Colony_Progress_1;Early Colony;;;;;;;;;;;;;x
 TOW_Colony_Progress_2;Small Colony;;;;;;;;;;;;;x
@@ -33,3 +36,12 @@ TOW_Colony_Tooltip_Start;A colony is being built in the [From.GetFullName].;;;;;
 TOW_Colony_Tooltip_Destroyed;The colony in the [From.GetFullName] is destroyed.;;;;;;;;;;;;;x
 TOW_Colony_Tooltip_Progress_Reduced;The colony in [From.GetName] experiences a setback.;;;;;;;;;;;;;x
 TOW_Colony_Tooltip_Progress_Increased;The colony in [From.GetName] progresses substantially.;;;;;;;;;;;;;x
+
+TOW_Colony_Tooltip_Abandoned;The colony in the [Root.Location.GetFullName] is abandoned.;;;;;;;;;;;;;x
+
+## Decisions
+
+abandon_colony_province;Abandon Colony;;;;;;;;;;;;;x
+abandon_colony_province_desc;Abandon the colony in the §Y[Root.Location.GetFullName]§!, stopping its development entirely and leaving it into the hands of neighbouring creatures. This will anger the people of our realm.;;;;;;;;;;;;;x
+abandon_colony;Abandon Colony;;;;;;;;;;;;;x
+abandon_colony_desc;Abandon the colony in the §Y[Root.Location.GetFullName]§!, stopping its development entirely and leaving it into the hands of neighbouring creatures. This will anger the people of our realm.;;;;;;;;;;;;;x

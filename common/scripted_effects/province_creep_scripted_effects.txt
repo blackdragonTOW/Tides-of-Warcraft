@@ -79,6 +79,37 @@ TOW_province_add_creeps_3 = {
     TOW_province_update_creeps_modifiers = yes
 }
 
+TOW_prev_province_remove_same_race_creeps = {
+    trigger_switch = {
+        on_trigger = trait
+        race_murloc = {
+            PREV = { 
+                subtract_variable = { which = TOW_creep_level which = TOW_creep_level_murloc }
+                set_variable = { which = TOW_creep_level_murloc value = 0 }
+            }
+        }
+        race_kobold = {
+            PREV = { 
+                subtract_variable = { which = TOW_creep_level which = TOW_creep_level_kobold }
+                set_variable = { which = TOW_creep_level_kobold value = 0 }
+            }
+        }
+        race_trogg = {
+            PREV = { 
+                subtract_variable = { which = TOW_creep_level which = TOW_creep_level_trogg }
+                set_variable = { which = TOW_creep_level_trogg value = 0 }
+            }
+        }
+        race_gnoll = {
+            PREV = { 
+                subtract_variable = { which = TOW_creep_level which = TOW_creep_level_gnoll }
+                set_variable = { which = TOW_creep_level_gnoll value = 0 }
+            }
+        }
+    }
+    PREV = { TOW_province_update_creeps_modifiers = yes }
+}
+
 TOW_province_update_creeps_modifiers = {
     if = {
         limit = { check_variable = { which = TOW_creep_level_murloc value == 1 } }

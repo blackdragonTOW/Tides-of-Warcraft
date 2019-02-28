@@ -23,42 +23,7 @@ decisions = {
 
 			wealth = 25
 			NOT = { realm_levies = 6000 }
-			OR = {
-				AND = {
-					year = 700
-					NOT = { year = 900 }
-					NOT = { realm_levies = 5500 }
-				}
-				AND = {
-					year = 900
-					NOT = { year = 1000 }
-					NOT = { realm_levies = 6100 }
-				}
-				AND = {
-					year = 1000
-					NOT = { year = 1100 }
-					NOT = { realm_levies = 6500 }
-				}
-				AND = {
-					year = 1100
-					NOT = { year = 1150 }
-					NOT = { realm_levies = 6800 }
-				}
-				AND = {
-					year = 1150
-					NOT = { year = 1200 }
-					NOT = { realm_levies = 7100 }
-				}
-				AND = {
-					year = 1200
-					NOT = { year = 1250 }
-					NOT = { realm_levies = 8500 }
-				}
-				AND = {
-					year = 1250
-					NOT = { realm_levies = 9800 }
-				}
-			}
+			NOT = { government = nomadic_government }
 		}
 		
 		effect = {

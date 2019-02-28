@@ -1,0 +1,126 @@
+# Settlement decisions are possible vs _all_ settlements and are shown in the Settlement Diplomacy View, not the Intrigue View. The taker is in the FROM scope.
+#
+# filter = [capital/owned/vassal_owned/sub_realm_owned/realm_owned/dynasty_owned/all]
+# ai_target_filter = [capital/owned/vassal_owned/sub_realm_owned/realm_owned/dynasty_owned/all] (which settlements for which the AI evaluates the decision.)
+#	owned: all settlements owned by the AI
+#	vassal_owned: all settlements owned by direct vassal rulers of the AI's employer
+#	sub_realm_owned: all settlements below the AI's employer
+#	realm_owned: all settlements in the same top realm as the AI
+#	dynasty_owned: all settlements owned by members of the same dynasty
+#	all: all settlements (Avoid if possible. VERY CPU-HEAVY!)
+#	
+
+settlement_decisions = {
+	abandon_colony = {
+		only_playable = yes
+		filter = owned
+		ai_target_filter = owned
+		is_high_prio = no
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_remove_title_diplomacy
+		
+		from_potential = {
+			is_playable = yes
+			TOW_is_creep_realm = no
+			higher_tier_than = BARON
+			num_of_count_titles = 2
+		}
+		
+		potential = {
+			holding_type = tribal
+			is_capital = yes
+			TOW_holding_is_colony = yes
+			location = {
+				holder_scope = { character = FROM }
+				TOW_province_has_colony = yes
+			}
+		}
+		allow = {
+			is_contested = no
+			has_siege = no
+			is_occupied = no
+			county = {
+				is_contested = no
+				has_siege = no
+				is_occupied = no
+			}
+		}
+		effect = {
+			# Add global revolt risk
+            owner = {
+	            prestige = -100
+	            add_character_modifier = { name = TOW_abandoned_colony years = 5 stacking = yes }
+            }
+			custom_tooltip = {
+				text = TOW_Colony_Tooltip_Abandoned
+				location = {
+	            	set_variable = { which = TOW_colony_progress value = -1 }
+					TOW_province_colony_check_destroy = yes
+	            }
+	        }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
+
+title_decisions = {
+	abandon_colony_province = {
+		only_playable = yes
+		filter = owned
+		ai_target_filter = owned
+		ai_check_interval = 12
+
+		diplomacy_icon = GFX_Keitaro_remove_title_diplomacy
+		
+		from_potential = {
+			is_playable = yes
+			TOW_is_creep_realm = no
+			higher_tier_than = BARON
+			num_of_count_titles = 2
+		}
+		
+		potential = {
+			tier = COUNT
+			holder_scope = { character = FROM }
+			location = {
+				capital_holding = {
+					holding_type = tribal
+					TOW_holding_is_colony = yes
+				}
+				TOW_province_has_colony = yes
+			}
+		}
+		allow = {
+			location = {
+				is_contested = no
+				has_siege = no
+				is_occupied = no
+				capital_holding = {
+					is_contested = no
+					has_siege = no
+					is_occupied = no
+				}
+			}
+		}
+		effect = {
+        	owner = {
+	            prestige = -100
+	            add_character_modifier = { name = TOW_abandoned_colony years = 5 stacking = yes }
+            }
+			custom_tooltip = {
+				text = TOW_Colony_Tooltip_Abandoned
+				location = {
+	            	set_variable = { which = TOW_colony_progress value = -1 }
+					TOW_province_colony_check_destroy = yes
+				}
+	        }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

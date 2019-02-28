@@ -50,7 +50,7 @@ province_event = {
    	immediate = {
    		if = {
    			limit = { 
-   				has_province_modifier = TOW_colony
+   				TOW_province_has_colony = yes
    			}
    			owner = { save_event_target_as = owner }
 			province_event = { id = TOW_Colony.3 months = 1 }
@@ -58,62 +58,109 @@ province_event = {
 				limit = {
 					is_occupied = no
 				}
-				set_variable = { which = local_colony_progress_increase value = 0 }
 
-				# Flat bonus
-				random_list = {
-					1 = { }
-					1 = { change_variable = { which = local_colony_progress_increase value = 1 } }
-					1 = { change_variable = { which = local_colony_progress_increase value = 2 } }
-				}
-
-				# Colony count increase - The less colonies there are, the faster they progress
-				event_target:owner = {
-					set_variable = { which = local_colony_count value = 0 }
-					any_demesne_province = {
-						limit = { any_province_holding = { TOW_holding_is_colony = yes } }
-						event_target:owner = { change_variable = { which = local_colony_count value = 1 } }
-					}
-				}
+				set_variable = { which = TOW_colony_cost value = 0.15 } # Base cost
+				if = { limit = { capital_holding = { has_building = cln_fortifications_1 } } change_variable = { which = TOW_colony_cost value = 0.1 } }
+				if = { limit = { capital_holding = { has_building = cln_fortifications_2 } } change_variable = { which = TOW_colony_cost value = 0.1 } }
+				if = { limit = { capital_holding = { has_building = cln_fortifications_3 } } change_variable = { which = TOW_colony_cost value = 0.1 } }
+				if = { limit = { capital_holding = { has_building = cln_fortifications_4 } } change_variable = { which = TOW_colony_cost value = 0.1 } }
+				if = { limit = { capital_holding = { has_building = cln_fortifications_5 } } change_variable = { which = TOW_colony_cost value = 0.1 } }
+				if = { limit = { capital_holding = { has_building = cln_supply_settlements_1 } } change_variable = { which = TOW_colony_cost value = 0.15 } }
+				if = { limit = { capital_holding = { has_building = cln_supply_settlements_2 } } change_variable = { which = TOW_colony_cost value = 0.15 } }
+				if = { limit = { capital_holding = { has_building = cln_supply_settlements_3 } } change_variable = { which = TOW_colony_cost value = 0.15 } }
+				if = { limit = { capital_holding = { has_building = cln_supply_settlements_4 } } change_variable = { which = TOW_colony_cost value = 0.15 } }
+				if = { limit = { capital_holding = { has_building = cln_supply_settlements_5 } } change_variable = { which = TOW_colony_cost value = 0.15 } }
+				if = { limit = { capital_holding = { has_building = cln_tax_post_1 } } subtract_variable = { which = TOW_colony_cost value = 0.15 } }
+				if = { limit = { capital_holding = { has_building = cln_tax_post_2 } } subtract_variable = { which = TOW_colony_cost value = 0.20 } }
+				if = { limit = { capital_holding = { has_building = cln_tax_post_3 } } subtract_variable = { which = TOW_colony_cost value = 0.25 } }
+				if = { limit = { capital_holding = { has_building = cln_tax_post_4 } } subtract_variable = { which = TOW_colony_cost value = 0.30 } }
+				if = { limit = { capital_holding = { has_building = cln_tax_post_5 } } subtract_variable = { which = TOW_colony_cost value = 0.35 } }
+				if = { limit = { capital_holding = { has_building = cln_port_1 } } change_variable = { which = TOW_colony_cost value = 0.1 } }
+				if = { limit = { capital_holding = { has_building = cln_port_2 } } change_variable = { which = TOW_colony_cost value = 0.1 } }
+				if = { limit = { capital_holding = { has_building = cln_port_3 } } change_variable = { which = TOW_colony_cost value = 0.15 } }
+				if = { limit = { capital_holding = { has_building = cln_port_4 } } change_variable = { which = TOW_colony_cost value = 0.15 } }
+				if = { limit = { capital_holding = { has_building = cln_port_5 } } change_variable = { which = TOW_colony_cost value = 0.2 } }
+				event_target:owner = { set_variable = { which = TOW_colony_cost which = PREV } }
 				if = {
-					limit = { event_target:owner = { check_variable = { which = local_colony_count value == 1 } } }
-					change_variable = { which = local_colony_progress_increase value = 3 }
-				}
-				else_if = {
-					limit = { event_target:owner = { check_variable = { which = local_colony_count value == 2 } } }
-					change_variable = { which = local_colony_progress_increase value = 2 }
-				}
-				else_if = {
-					limit = { event_target:owner = { check_variable = { which = local_colony_count value < 5 } } }
-					change_variable = { which = local_colony_progress_increase value = 1 }
-				}
+					limit = { event_target:owner = { wealth > TOW_colony_cost } }				
 
-				# Administer realm bonus
-				if = {
-					limit = { event_target:owner = { job_treasurer = { has_job_action = action_administer_realm } } }
 					event_target:owner = {
-						job_treasurer = {
-							ROOT = { export_to_variable = { which = local_stewardship_bonus value = stewardship who = PREV } }
+						multiply_variable = { which = TOW_colony_cost value = -1 }
+						treasury = TOW_colony_cost
+					}
+					set_variable = { which = local_colony_progress_increase value = 0 }
+
+					# Flat bonus
+					random_list = {
+						1 = { }
+						1 = { change_variable = { which = local_colony_progress_increase value = 1 } }
+						1 = { change_variable = { which = local_colony_progress_increase value = 2 } }
+					}
+
+					# Colony count increase - The less colonies there are, the faster they progress
+					event_target:owner = {
+						set_variable = { which = local_colony_count value = 0 }
+						any_demesne_province = {
+							limit = { any_province_holding = { TOW_holding_is_colony = yes } }
+							event_target:owner = { change_variable = { which = local_colony_count value = 1 } }
 						}
 					}
-					divide_variable = { which = local_stewardship_bonus value = 100 }
-					change_variable = { which = local_colony_progress_increase which = local_stewardship_bonus }
-				}
-				# Oversee Construction bonus
-				else_if = {
-					limit = { event_target:owner = { job_treasurer = { has_job_action = action_oversee_construction location = { province = ROOT } } } }
-					event_target:owner = {
-						job_treasurer = {
-							ROOT = { export_to_variable = { which = local_stewardship_bonus value = stewardship who = PREV } }
-						}
+					if = {
+						limit = { event_target:owner = { check_variable = { which = local_colony_count value == 1 } } }
+						change_variable = { which = local_colony_progress_increase value = 3 }
 					}
-					divide_variable = { which = local_stewardship_bonus value = 100 }
-					change_variable = { which = local_stewardship_bonus value = 1 }
-					multiply_variable = { which = local_colony_progress_increase which = local_stewardship_bonus }
-				}
+					else_if = {
+						limit = { event_target:owner = { check_variable = { which = local_colony_count value == 2 } } }
+						change_variable = { which = local_colony_progress_increase value = 2 }
+					}
+					else_if = {
+						limit = { event_target:owner = { check_variable = { which = local_colony_count value < 5 } } }
+						change_variable = { which = local_colony_progress_increase value = 1 }
+					}
 
-				### Add progress
-				change_variable = { which = TOW_colony_progress which = local_colony_progress_increase }
+					# Administer realm bonus
+					if = {
+						limit = { event_target:owner = { job_treasurer = { has_job_action = action_administer_realm } } }
+						event_target:owner = {
+							job_treasurer = {
+								ROOT = { export_to_variable = { which = local_stewardship_bonus value = stewardship who = PREV } }
+							}
+						}
+						divide_variable = { which = local_stewardship_bonus value = 100 }
+						change_variable = { which = local_colony_progress_increase which = local_stewardship_bonus }
+					}
+					# Oversee Construction bonus
+					else_if = {
+						limit = { event_target:owner = { job_treasurer = { has_job_action = action_oversee_construction location = { province = ROOT } } } }
+						event_target:owner = {
+							job_treasurer = {
+								ROOT = { export_to_variable = { which = local_stewardship_bonus value = stewardship who = PREV } }
+							}
+						}
+						divide_variable = { which = local_stewardship_bonus value = 100 }
+						change_variable = { which = local_stewardship_bonus value = 1 }
+						multiply_variable = { which = local_colony_progress_increase which = local_stewardship_bonus }
+					}
+
+					## Buildings progress
+					if = { limit = { capital_holding = { has_building = cln_supply_settlements_1 } } change_variable = { which = TOW_colony_progress value = 0.25 } }
+					if = { limit = { capital_holding = { has_building = cln_supply_settlements_2 } } change_variable = { which = TOW_colony_progress value = 0.25 } }
+					if = { limit = { capital_holding = { has_building = cln_supply_settlements_3 } } change_variable = { which = TOW_colony_progress value = 0.25 } }
+					if = { limit = { capital_holding = { has_building = cln_supply_settlements_4 } } change_variable = { which = TOW_colony_progress value = 0.25 } }
+					if = { limit = { capital_holding = { has_building = cln_supply_settlements_5 } } change_variable = { which = TOW_colony_progress value = 0.25 } }
+					if = { limit = { capital_holding = { has_building = cln_tax_post_1 } } subtract_variable = { which = TOW_colony_progress value = 0.15 } }
+					if = { limit = { capital_holding = { has_building = cln_tax_post_2 } } subtract_variable = { which = TOW_colony_progress value = 0.15 } }
+					if = { limit = { capital_holding = { has_building = cln_tax_post_3 } } subtract_variable = { which = TOW_colony_progress value = 0.15 } }
+					if = { limit = { capital_holding = { has_building = cln_tax_post_4 } } subtract_variable = { which = TOW_colony_progress value = 0.15 } }
+					if = { limit = { capital_holding = { has_building = cln_tax_post_5 } } subtract_variable = { which = TOW_colony_progress value = 0.15 } }
+
+					## Add prosperity
+					change_variable = { which = TOW_colony_progress which = prosperity_value }
+					set_variable = { which = prosperity_value value = 0 }
+
+					### Add progress
+					change_variable = { which = TOW_colony_progress which = local_colony_progress_increase }
+				}
 			}
 
 			if = { # Colony finished
@@ -121,7 +168,7 @@ province_event = {
 					OR = {
 						AND = {
 							TOW_is_tribal = no
-							check_variable = { which = TOW_colony_progress value >= 2000 }
+							check_variable = { which = TOW_colony_progress value >= 1000 }
 						}
 						AND = {
 							TOW_is_tribal = yes
@@ -146,11 +193,12 @@ province_event = {
 					limit = { event_target:owner = { is_theocracy = yes } }
 	    			capital_holding = { convert_to = temple }
 				}
+				capital_holding = { refill_holding_levy = yes }
 				event_target:owner = { character_event = { id = TOW_Colony.4 } }
 			}
 			else = { # Tombola
 				random_list = {
-					500 = { # Nothing happens
+					1000 = { # Nothing happens
 					}
 					
 					10 = { # Random Incident happens
@@ -301,7 +349,7 @@ character_event = {
     }
 
     option = {
-    	name = OK
+    	name = CURSES
     	custom_tooltip = {
     		text = TOW_Colony_Tooltip_Progress_Reduced
     	}
@@ -320,7 +368,7 @@ character_event = {
     }
 
     option = {
-    	name = OK
+    	name = CURSES
     	custom_tooltip = {
     		text = TOW_Colony_Tooltip_Progress_Reduced
     	}
@@ -354,7 +402,10 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
-   		location = { has_province_modifier = TOW_colony }
+   		location = { 
+   			TOW_province_has_colony = yes
+   			capital_holding = { has_siege = yes TOW_holding_is_colony = yes }
+   		}
 	}
 
     immediate = {
@@ -379,7 +430,7 @@ character_event = {
 	hide_window = yes
 
    	trigger = {
-   		FROM = { location = { has_province_modifier = TOW_colony } }
+   		FROM = { location = { TOW_province_has_colony = yes } }
 	}
 
     immediate = {

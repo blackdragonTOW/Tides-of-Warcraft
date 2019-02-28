@@ -1,54 +1,60 @@
 TOW_province_fully_settled = {
 	Keitaro_is_province_nomad_agitated = no
-	NOT = { has_province_modifier = TOW_colony }
+	TOW_province_has_colony = no
 }
 
-TOW_prev_province_has_same_race_presence_modifier = {
+TOW_province_has_colony = {
+	has_province_modifier = TOW_colony
+}
+
+# Requires a lost_province event_target
+TOW_lost_province_has_same_race_presence_modifier = {
 	OR = {
 		AND = {
 			trait = race_murloc
-			PREV = { check_variable = { which = TOW_creep_level_murloc value > 0 } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_murloc value > 0 } }
 		}
 		AND = {
 			trait = race_trogg
-			PREV = { check_variable = { which = TOW_creep_level_trogg value > 0 } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_trogg value > 0 } }
 		}
 		AND = {
 			trait = race_kobold
-			PREV = { check_variable = { which = TOW_creep_level_kobold value > 0 } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_kobold value > 0 } }
 		}
 		AND = {
 			trait = race_gnoll
-			PREV = { check_variable = { which = TOW_creep_level_gnoll value > 0 } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_gnoll value > 0 } }
 		}
 	}
 }
 
-TOW_prev_province_has_same_race_majority_presence_modifier = {
+# Requires a lost_province event_target
+TOW_lost_province_has_same_race_majority_presence_modifier = {
 	OR = {
 		AND = {
 			trait = race_murloc
-			PREV = { check_variable = { which = TOW_creep_level_murloc which > TOW_creep_level_trogg } }
-			PREV = { check_variable = { which = TOW_creep_level_murloc which > TOW_creep_level_kobold } }
-			PREV = { check_variable = { which = TOW_creep_level_murloc which > TOW_creep_level_gnoll } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_murloc which > TOW_creep_level_trogg } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_murloc which > TOW_creep_level_kobold } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_murloc which > TOW_creep_level_gnoll } }
 		}
 		AND = {
 			trait = race_trogg
-			PREV = { check_variable = { which = TOW_creep_level_trogg which > TOW_creep_level_murloc } }
-			PREV = { check_variable = { which = TOW_creep_level_trogg which > TOW_creep_level_kobold } }
-			PREV = { check_variable = { which = TOW_creep_level_trogg which > TOW_creep_level_gnoll } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_trogg which > TOW_creep_level_murloc } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_trogg which > TOW_creep_level_kobold } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_trogg which > TOW_creep_level_gnoll } }
 		}
 		AND = {
 			trait = race_kobold
-			PREV = { check_variable = { which = TOW_creep_level_kobold which > TOW_creep_level_trogg } }
-			PREV = { check_variable = { which = TOW_creep_level_kobold which > TOW_creep_level_murloc } }
-			PREV = { check_variable = { which = TOW_creep_level_kobold which > TOW_creep_level_gnoll } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_kobold which > TOW_creep_level_trogg } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_kobold which > TOW_creep_level_murloc } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_kobold which > TOW_creep_level_gnoll } }
 		}
 		AND = {
 			trait = race_gnoll
-			PREV = { check_variable = { which = TOW_creep_level_gnoll which > TOW_creep_level_trogg } }
-			PREV = { check_variable = { which = TOW_creep_level_gnoll which > TOW_creep_level_kobold } }
-			PREV = { check_variable = { which = TOW_creep_level_gnoll which > TOW_creep_level_murloc } 
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_gnoll which > TOW_creep_level_trogg } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_gnoll which > TOW_creep_level_kobold } }
+			event_target:lost_province = { check_variable = { which = TOW_creep_level_gnoll which > TOW_creep_level_murloc } 
 		}
 	}
 }
