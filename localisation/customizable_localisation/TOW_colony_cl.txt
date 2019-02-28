@@ -1,0 +1,47 @@
+defined_text = {
+	name = TOW_GetColonyProgress
+
+	text = {
+		trigger = { check_variable = { which = TOW_colony_progress value < 200 } }
+		localisation_key = TOW_Colony_Progress_1
+	}
+
+	text = {
+		trigger = { check_variable = { which = TOW_colony_progress value >= 200 } check_variable = { which = TOW_colony_progress value < 400 } }
+		localisation_key = TOW_Colony_Progress_2
+	}
+
+	text = {
+		trigger = { check_variable = { which = TOW_colony_progress value >= 400 } check_variable = { which = TOW_colony_progress value < 600 } }
+		localisation_key = TOW_Colony_Progress_3
+	}
+
+	text = {
+		trigger = { check_variable = { which = TOW_colony_progress value >= 600 } check_variable = { which = TOW_colony_progress value < 800 } }
+		localisation_key = TOW_Colony_Progress_4
+	}
+
+	text = {
+		trigger = { check_variable = { which = TOW_colony_progress value >= 800 } }
+		localisation_key = TOW_Colony_Progress_5
+	}
+
+}
+
+defined_text = {
+	name = TOW_GetColonyEVT6
+
+	text = { localisation_key = TOW_Colony_EVT6_1 }
+}
+
+defined_text = {
+	name = TOW_GetColonyEVT7
+
+	text = { localisation_key = TOW_Colony_EVT7_1 }
+}
+
+defined_text = {
+	name = TOW_GetColonyEVT8
+
+	text = { localisation_key = TOW_Colony_EVT8_1 }
+}

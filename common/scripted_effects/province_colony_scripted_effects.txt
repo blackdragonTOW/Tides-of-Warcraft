@@ -1,0 +1,101 @@
+TOW_province_pillaged_colony_effect = {
+    if = {
+        limit = {
+            TOW_has_colony = yes
+        }
+        subtract_variable = { which = TOW_colony_progress value = 200 }
+        TOW_province_colony_check_destroy = yes
+    }
+    else = { log = " -- TOW -- : Error, trying to apply TOW_province_pillaged_colony_effect on province without colony!" }
+}
+
+TOW_province_pillaged_colony_strong_effect = {
+    if = {
+        limit = {
+            TOW_has_colony = yes
+        }
+        subtract_variable = { which = TOW_colony_progress value = 400 }
+        TOW_province_colony_check_destroy = yes
+    }
+    else = { log = " -- TOW -- : Error, trying to apply TOW_province_pillaged_colony_strong_effect on province without colony!" }
+}
+
+TOW_province_pillaged_colony_huge_effect = {
+    if = {
+        limit = {
+            TOW_has_colony = yes
+        }
+        subtract_variable = { which = TOW_colony_progress value = 600 }
+        TOW_province_colony_check_destroy = yes
+    }
+    else = { log = " -- TOW -- : Error, trying to apply TOW_province_pillaged_colony_huge_effect on province without colony!" }
+}
+
+TOW_province_remove_colony = {
+    if = {
+        limit = {
+            TOW_has_colony = yes
+        }
+        remove_province_modifier = TOW_colony
+        set_variable = { which = TOW_colony_progress value = 0 }
+    }
+    else = { log = " -- TOW -- : Error, trying to apply TOW_province_remove_colony on province without colony!" }
+}
+
+TOW_province_colony_check_destroy = {
+    if = {
+        limit = {
+            TOW_has_colony = yes
+            check_variable = { which = TOW_colony_progress value < 0 }
+        }
+        TOW_province_remove_colony = yes
+        save_event_target_as = lost_province
+        owner = { save_event_target_as = former_owner }
+        random_neighbor_province = {
+            limit = {
+                top_liege = { 
+                    TOW_is_creep_realm = yes
+                    TOW_prev_province_has_same_race_presence_modifier = yes
+                }
+            }
+            preferred_limit = { top_liege = { TOW_prev_province_has_same_race_majority_presence_modifier = yes } }
+            top_liege = { save_event_target_as = new_creep_ruler }
+            log = "Selected new ruler for destroyed colony [new_creep_ruler.GetFullName]"
+        }
+        if = {
+            limit = { NOT = { event_target:new_nomad_ruler = { is_alive = yes } } }
+            save_event_target_as = employer
+            Keitaro_create_random_courtier_gender_equality = yes
+            new_character = {
+                religion = event_target:lost_province
+                culture = event_target:lost_province
+                TOW_initialize_adult_character = yes
+                save_event_target_as = new_creep_ruler
+                log = "Created new ruler for destroyed colony [new_creep_ruler.GetFullName]"
+            }
+        }
+        county = {
+            usurp_title_only = { target = event_target:new_creep_ruler type = invasion }
+        }
+        any_province_holding = {
+            limit = { TOW_holding_is_colony = yes }
+            destroy_settlement = THIS
+        }
+        if = {
+            limit = { has_dlc = "Horse Lords" }
+            event_target:new_creep_ruler = {
+                set_government_type = nomadic_government
+            }
+        }
+        else = {
+            build_holding = { type = tribal holder = event_target:new_creep_ruler }
+            event_target:new_creep_ruler = {
+                set_government_type = tribal_government
+            }
+            
+        }
+        event_target:former_owner = {
+            character_event = { id = TOW_Colony.5 }
+        }
+    }
+}

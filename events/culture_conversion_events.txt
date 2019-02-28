@@ -11,6 +11,7 @@ province_event = {
 	picture = GFX_evt_culture_change
 	
 	trigger = {
+		NOT = { has_province_modifier = TOW_colony }
 		owner = {
 			top_liege = {
 				culture = PREV
@@ -230,6 +231,7 @@ province_event = {
 	picture = GFX_evt_culture_change
 	
 	trigger = {
+		NOT = { has_province_modifier = TOW_colony }
 		
 		OR = {
 			port = yes

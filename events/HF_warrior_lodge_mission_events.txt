@@ -681,9 +681,17 @@ character_event = {
 			}
 			scaled_wealth = { value = 1.0 min = 100 max = 250 }
 		}
-		hidden_tooltip = {
-			destroy_random_building = FROM
-			destroy_random_building = FROM
+		if = {
+			limit = {
+				TOW_holding_is_colony = no
+			}
+			hidden_tooltip = {
+				destroy_random_building = FROM
+				destroy_random_building = FROM
+			}
+		}
+		else = {
+			location = { TOW_province_pillaged_colony_effect = yes }
 		}
 	}
 }

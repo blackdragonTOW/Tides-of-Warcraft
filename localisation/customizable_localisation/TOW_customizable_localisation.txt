@@ -289,3 +289,19 @@ defined_text = {
 		localisation_key = TOW_UNKNOWN_RACE
 	}
 }
+
+defined_text = {
+	name = TOW_GetTribeName
+
+	text = {
+		trigger = {
+			is_capital = yes
+			location = { has_province_modifier = TOW_colony }
+		}
+		localisation_key = TOW_String_colony
+	}
+
+	fallback_text = {
+		localisation_key = TOW_String_tribe
+	}
+}

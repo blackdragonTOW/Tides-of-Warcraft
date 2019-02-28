@@ -1,0 +1,402 @@
+namespace = TOW_Colony
+
+## Colony created event
+province_event = {
+    id = TOW_Colony.1
+    is_triggered_only = yes
+	hide_window = yes
+
+    immediate = {
+		add_province_modifier = { name = TOW_colony duration = -1 }
+		set_variable = { which = TOW_colony_progress value = 20 } # Base progress
+
+		# Colony Building creation
+		province_event = { id = TOW_Colony.2 days = 1 random = 6 }
+		# Maintenance/Tombola
+		province_event = { id = TOW_Colony.3 months = 1 }
+    }
+}
+
+## Colony building creation
+province_event = {
+    id = TOW_Colony.2
+    desc = EVTDESC_TOW_Colony_2	
+	picture = GFX_evt_construction_site
+	border = GFX_event_normal_frame_economy
+    is_triggered_only = yes
+
+    immediate = {
+		build_holding = { type = tribal holder = event_target:owner } # Colony Holding
+    	capital_holding = {
+			remove_holding_modifier = new_administration
+			set_title_flag = TOW_colony
+			add_building = cln_main_1
+		}
+		culture = FROMFROMFROM
+    	religion = FROMFROMFROM
+    }
+
+    option = {
+    	name = OK
+    }
+}
+
+## Colony maintenance/tombola event
+province_event = {
+    id = TOW_Colony.3
+    is_triggered_only = yes
+	hide_window = yes
+
+   	immediate = {
+   		if = {
+   			limit = { 
+   				has_province_modifier = TOW_colony
+   			}
+   			owner = { save_event_target_as = owner }
+			province_event = { id = TOW_Colony.3 months = 1 }
+			if = {
+				limit = {
+					is_occupied = no
+				}
+				set_variable = { which = local_colony_progress_increase value = 0 }
+
+				# Flat bonus
+				random_list = {
+					1 = { }
+					1 = { change_variable = { which = local_colony_progress_increase value = 1 } }
+					1 = { change_variable = { which = local_colony_progress_increase value = 2 } }
+				}
+
+				# Colony count increase - The less colonies there are, the faster they progress
+				event_target:owner = {
+					set_variable = { which = local_colony_count value = 0 }
+					any_demesne_province = {
+						limit = { any_province_holding = { TOW_holding_is_colony = yes } }
+						event_target:owner = { change_variable = { which = local_colony_count value = 1 } }
+					}
+				}
+				if = {
+					limit = { event_target:owner = { check_variable = { which = local_colony_count value == 1 } } }
+					change_variable = { which = local_colony_progress_increase value = 3 }
+				}
+				else_if = {
+					limit = { event_target:owner = { check_variable = { which = local_colony_count value == 2 } } }
+					change_variable = { which = local_colony_progress_increase value = 2 }
+				}
+				else_if = {
+					limit = { event_target:owner = { check_variable = { which = local_colony_count value < 5 } } }
+					change_variable = { which = local_colony_progress_increase value = 1 }
+				}
+
+				# Administer realm bonus
+				if = {
+					limit = { event_target:owner = { job_treasurer = { has_job_action = action_administer_realm } } }
+					event_target:owner = {
+						job_treasurer = {
+							ROOT = { export_to_variable = { which = local_stewardship_bonus value = stewardship who = PREV } }
+						}
+					}
+					divide_variable = { which = local_stewardship_bonus value = 100 }
+					change_variable = { which = local_colony_progress_increase which = local_stewardship_bonus }
+				}
+				# Oversee Construction bonus
+				else_if = {
+					limit = { event_target:owner = { job_treasurer = { has_job_action = action_oversee_construction location = { province = ROOT } } } }
+					event_target:owner = {
+						job_treasurer = {
+							ROOT = { export_to_variable = { which = local_stewardship_bonus value = stewardship who = PREV } }
+						}
+					}
+					divide_variable = { which = local_stewardship_bonus value = 100 }
+					change_variable = { which = local_stewardship_bonus value = 1 }
+					multiply_variable = { which = local_colony_progress_increase which = local_stewardship_bonus }
+				}
+
+				### Add progress
+				change_variable = { which = TOW_colony_progress which = local_colony_progress_increase }
+			}
+
+			if = { # Colony finished
+				limit = {
+					OR = {
+						AND = {
+							TOW_is_tribal = no
+							check_variable = { which = TOW_colony_progress value >= 2000 }
+						}
+						AND = {
+							TOW_is_tribal = yes
+							check_variable = { which = TOW_colony_progress value >= 300 }
+						}
+					}
+				}
+				TOW_province_remove_colony = yes
+				if = {
+					limit = { event_target:owner = { TOW_is_feudal = yes } }
+	    			capital_holding = { convert_to = castle }
+				}
+				else_if = {
+					limit = { event_target:owner = { TOW_is_tribal = yes } }
+	    			capital_holding = { convert_to = tribal }
+				}
+				else_if = {
+					limit = { event_target:owner = { TOW_is_republic = yes } }
+	    			capital_holding = { convert_to = city }
+				}
+				else_if = {
+					limit = { event_target:owner = { is_theocracy = yes } }
+	    			capital_holding = { convert_to = temple }
+				}
+				event_target:owner = { character_event = { id = TOW_Colony.4 } }
+			}
+			else = { # Tombola
+				random_list = {
+					500 = { # Nothing happens
+					}
+					
+					10 = { # Random Incident happens
+						modifier = { factor = 0 check_variable = { which = TOW_colony_progress value < 40 } }
+						modifier = { factor = 0.8 is_variable_equal = { which = TOW_creep_level value = 1 } }
+						modifier = { factor = 0.9 event_target:owner = { stewardship = 12 } }
+						modifier = { factor = 0.9 event_target:owner = { stewardship = 16 } }
+						modifier = { factor = 0.9 event_target:owner = { stewardship = 20 } }
+						modifier = { factor = 0.9 event_target:owner = { has_focus = focus_rulership } }
+						random_list = {
+							1 = { subtract_variable = { which = TOW_colony_progress value = 20 } }
+							1 = { subtract_variable = { which = TOW_colony_progress value = 25 } }
+							1 = { subtract_variable = { which = TOW_colony_progress value = 30 } }
+						}
+						TOW_province_colony_check_destroy = yes
+						event_target:owner = { character_event = { id = TOW_Colony.6 } }
+					}
+					10 = { # Creeps Incident happens
+						modifier = { factor = 0 check_variable = { which = TOW_colony_progress value < 50 } }
+						modifier = { factor = 0 is_variable_equal = { which = TOW_creep_level value = 0 } }
+						modifier = { factor = 1.25 is_variable_equal = { which = TOW_creep_level value = 2 } }
+						modifier = { factor = 1.5 is_variable_equal = { which = TOW_creep_level value = 3 } }
+						modifier = { factor = 1.75 is_variable_equal = { which = TOW_creep_level value = 4 } }
+						modifier = { factor = 2.00 is_variable_equal = { which = TOW_creep_level value = 5 } }
+						modifier = { factor = 2.25 is_variable_equal = { which = TOW_creep_level value = 6 } }
+						modifier = { factor = 2.5 is_variable_equal = { which = TOW_creep_level value = 7 } }
+						modifier = { factor = 2.75 is_variable_equal = { which = TOW_creep_level value = 8 } }
+						modifier = { factor = 3 is_variable_equal = { which = TOW_creep_level value = 9 } }
+						modifier = { factor = 3.5 is_variable_equal = { which = TOW_creep_level value = 10 } }
+						modifier = { factor = 0.9 event_target:owner = { stewardship = 12 } }
+						modifier = { factor = 0.9 event_target:owner = { stewardship = 16 } }
+						modifier = { factor = 0.9 event_target:owner = { stewardship = 20 } }
+						modifier = { factor = 0.9 event_target:owner = { has_focus = focus_rulership } }
+						random_list = {
+							1 = { subtract_variable = { which = TOW_colony_progress value = 35 } }
+							1 = { subtract_variable = { which = TOW_colony_progress value = 40 } }
+							1 = { subtract_variable = { which = TOW_colony_progress value = 45 } }
+						}
+						TOW_province_colony_check_destroy = yes
+						event_target:owner = { character_event = { id = TOW_Colony.7 } }
+					}
+					5 = {  # Influx of people
+						random_list = {
+							1 = { change_variable = { which = TOW_colony_progress value = 30 } }
+							1 = { change_variable = { which = TOW_colony_progress value = 35 } }
+							1 = { change_variable = { which = TOW_colony_progress value = 40 } }
+							1 = { change_variable = { which = TOW_colony_progress value = 45 } }
+							1 = { change_variable = { which = TOW_colony_progress value = 50 } }
+							1 = { change_variable = { which = TOW_colony_progress value = 55 } }
+							1 = { change_variable = { which = TOW_colony_progress value = 60 } }
+						}
+						event_target:owner = { character_event = { id = TOW_Colony.8 } }
+					}
+				}
+			}
+   		}
+   		
+   	}
+}
+
+## Colony finished notification
+character_event = {
+    id = TOW_Colony.4
+	picture = GFX_evt_magnificent_castle
+    desc = {
+		trigger = { TOW_is_feudal = yes }
+		text = EVTDESC_TOW_Colony_4_1
+		picture = GFX_evt_magnificent_castle
+	}
+	desc = {
+		trigger = { TOW_is_republic = yes port = no }
+		text = EVTDESC_TOW_Colony_4_2
+		picture = GFX_evt_city
+	}
+	desc = {
+		trigger = { TOW_is_republic = yes port = yes }
+		text = EVTDESC_TOW_Colony_4_3
+		picture = GFX_evt_busy_trading_dock_republic
+	}
+	desc = {
+		trigger = { is_theocracy = yes }
+		text = EVTDESC_TOW_Colony_4_4
+		picture = GFX_evt_stone_church
+	}
+	desc = {
+		trigger = { TOW_is_tribal = yes }
+		text = EVTDESC_TOW_Colony_4_5
+		picture = GFX_evt_tribal_lands
+	}
+	border = GFX_event_normal_frame_economy
+    is_triggered_only = yes
+
+    immediate = {
+    }
+
+    option = {
+    	name = OK
+    	tooltip = {
+    		if = {
+				limit = { event_target:owner = { TOW_is_feudal = yes } }
+    			capital_holding = { convert_to = castle }
+			}
+			else_if = {
+				limit = { event_target:owner = { TOW_is_tribal = yes } }
+    			capital_holding = { convert_to = tribal }
+			}
+			else_if = {
+				limit = { event_target:owner = { TOW_is_republic = yes } }
+    			capital_holding = { convert_to = city }
+			}
+			else_if = {
+				limit = { event_target:owner = { is_theocracy = yes } }
+    			capital_holding = { convert_to = temple }
+			}
+    	}
+    }
+}
+
+## Colony destroyed notification
+## Should be called only by "TOW_province_colony_check_destroy"
+character_event = {
+    id = TOW_Colony.5
+    desc = EVTDESC_TOW_Colony_5
+	picture = GFX_evt_china_famine
+	border = GFX_event_normal_frame_economy
+    is_triggered_only = yes
+
+    immediate = {
+    }
+
+    option = {
+    	name = OK
+    	custom_tooltip = {
+    		text = TOW_Colony_Tooltip_Destroyed
+    	}
+    }
+}
+
+## Colony has an incident
+character_event = {
+    id = TOW_Colony.6
+    desc = EVTDESC_TOW_Colony_6
+	picture = GFX_evt_burning_house
+	border = GFX_event_normal_frame_economy
+    is_triggered_only = yes
+
+    immediate = {
+    }
+
+    option = {
+    	name = OK
+    	custom_tooltip = {
+    		text = TOW_Colony_Tooltip_Progress_Reduced
+    	}
+    }
+}
+
+## Colony has a creep incident
+character_event = {
+    id = TOW_Colony.7
+    desc = EVTDESC_TOW_Colony_7
+	picture = GFX_evt_died_battle
+	border = GFX_event_normal_frame_economy
+    is_triggered_only = yes
+
+    immediate = {
+    }
+
+    option = {
+    	name = OK
+    	custom_tooltip = {
+    		text = TOW_Colony_Tooltip_Progress_Reduced
+    	}
+    }
+}
+
+## Colony has a boost
+character_event = {
+    id = TOW_Colony.8
+    desc = EVTDESC_TOW_Colony_8
+	picture = GFX_evt_merchant_caravan
+	border = GFX_event_normal_frame_economy
+    is_triggered_only = yes
+
+    immediate = {
+    }
+
+    option = {
+    	name = OK
+    	custom_tooltip = {
+    		text = TOW_Colony_Tooltip_Progress_Increased
+    	}
+    }
+}
+
+
+## Colony Siege Pulse
+character_event = {
+    id = TOW_Colony.9
+    is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+   		location = { has_province_modifier = TOW_colony }
+	}
+
+    immediate = {
+    	location = {
+			random_list = {
+				1 = { subtract_variable = { which = TOW_colony_progress value = 3 } }
+				1 = { subtract_variable = { which = TOW_colony_progress value = 4 } }
+				1 = { subtract_variable = { which = TOW_colony_progress value = 5 } }
+				1 = { subtract_variable = { which = TOW_colony_progress value = 6 } }
+				1 = { subtract_variable = { which = TOW_colony_progress value = 7 } }
+				1 = { subtract_variable = { which = TOW_colony_progress value = 8 } }
+			}
+			TOW_province_colony_check_destroy = yes
+    	}
+    }
+}
+
+## Colony Siege lost - Looted
+character_event = {
+    id = TOW_Colony.10
+    is_triggered_only = yes
+	hide_window = yes
+
+   	trigger = {
+   		FROM = { location = { has_province_modifier = TOW_colony } }
+	}
+
+    immediate = {
+    	if = {
+    		limit = {
+    			FROM = { # Don't loot retaken holdings
+	    			NOR = {
+	    				owner = { character = ROOT }
+	    				is_liege_or_above = ROOT
+	    			}
+    			}
+    		}
+	    	FROM = {
+		    	location = {
+					TOW_province_pillaged_colony_effect = yes
+		    	}
+	    	}
+    	}
+    }
+}

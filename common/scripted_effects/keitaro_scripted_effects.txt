@@ -92,18 +92,31 @@ Keitaro_pillage_holding = {
 	custom_tooltip = {
 		text = "PILLAGE_DESTROY_BUILDINGS"
 		hidden_tooltip = {
+			
 			random_list = {
 				25 = {
-					destroy_random_building = THIS
+					if = {
+						limit = { TOW_holding_is_colony = no }
+						destroy_random_building = THIS
+					}
+					else = { location = { TOW_province_pillaged_colony_effect = yes } }
 				}
 				60 = {
-					destroy_random_building = THIS
-					destroy_random_building = THIS
+					if = {
+						limit = { TOW_holding_is_colony = no }
+						destroy_random_building = THIS
+						destroy_random_building = THIS
+					}
+					else = { location = { TOW_province_pillaged_colony_strong_effect = yes } }
 				}
 				15 = {
-					destroy_random_building = THIS
-					destroy_random_building = THIS
-					destroy_random_building = THIS
+					if = {
+						limit = { TOW_holding_is_colony = no }
+						destroy_random_building = THIS
+						destroy_random_building = THIS
+						destroy_random_building = THIS
+					}
+					else = { location = { TOW_province_pillaged_colony_huge_effect = yes } }
 				}
 			}
 			add_holding_modifier = {

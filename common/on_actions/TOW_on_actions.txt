@@ -52,3 +52,17 @@ on_new_holder = {
 		TOW.53 # Assigning race trait for courtiers
 	}
 }
+
+#on siege pulse
+on_siege_pulse = {
+	events = {
+		TOW_Colony.9 # Colony progression decreased
+	}
+}
+
+# Fires for the owner of the winning unit (ROOT). The taken Holding title is in FROM.
+on_siege_over_winner = {
+	events = {
+		TOW_Colony.10 # Colony looted
+	}
+}
