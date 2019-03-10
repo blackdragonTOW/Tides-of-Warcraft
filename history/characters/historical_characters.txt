@@ -161,7 +161,7 @@
 		add_trait = race_undead_forsaken
 		religion = hydromancy
 	}
-	10025.8.2 = {
+	10025.3.12 = {
 		death = {
 			death_reason = death_battle
 		}
@@ -317,7 +317,7 @@
 	10021.12.3 = {
 		employer = 6 # Jerias Bloodvein
 	}
-	10025.8.2 = {
+	10025.3.12 = {
 		death = {
 			death_reason = death_battle
 		}
@@ -3784,6 +3784,354 @@
 	10100.1.1 = {
 		death = {
 			death_reason = death_natural
+		}
+	}
+}
+
+138 = {
+	name = "Edwin"
+	dynasty = 100 # VanCleef
+	culture = azerothian
+	religion = holy_light
+	dna="000hcla0fg0"
+	properties="ce00f0000000000000"
+	diplomacy = 5
+	martial = 5
+	stewardship = 8
+	intrigue = 7
+	learning = 2
+	trait = race_human
+	disallow_random_traits = yes
+	9987.3.19 = {
+		birth = yes
+	}
+	10003.3.19 = {
+		add_trait = fortune_builder
+		add_trait = shrewd
+		add_trait = proud
+		add_trait = diligent
+		add_trait = honest
+		add_trait = cynical
+		add_trait = stubborn
+	}
+	10017.2.17 = {
+		add_trait = rogue
+		add_trait = peasant_leader
+	}
+	10025.4.20 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+139 = {
+	name = "Vanessa"
+	dynasty = 100 # VanCleef
+	female = yes
+	culture = azerothian
+	religion = holy_light
+	dna="000hc0a0fg0"
+	properties="cl0000000000000000"
+	trait = race_human
+	father = 138 # Edwin
+	10011.3.25 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+140 = {
+	name = "Rahk'Zor"
+	culture = stonemaul
+	religion = demonology
+	dna="0aej0hcc00b"
+	properties="l000f0000000000000"
+	martial = 6
+	trait = race_ogre
+	trait = tough_soldier
+	9969.6.18 = {
+		birth = yes
+	}
+	10021.2.17 = {
+		employer = 138 # Edwin
+	}
+	10025.3.12 = {
+		death = {
+			death_reason = death_battle
+			killer = 6 # Jerias
+		}
+	}
+}
+
+141 = {
+	name = "Johnson"
+	culture = azerothian
+	religion = holy_light
+	dna="0kah00hg0ac"
+	properties="gc00g0000000000000"
+	trait = race_human
+	9990.5.19 = {
+		birth = yes
+	}
+	10021.2.17 = {
+		add_trait = peasant_leader
+		give_nickname = nick_the_miner
+		employer = 138 # Edwin
+	}
+	10025.4.20 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+142 = {
+	name = "Sneed"
+	culture = goblin
+	religion = mercantilism
+	dna="0cfbaagd0g0"
+	properties="ac0000000000000000"
+	learning = 6
+	intrigue = 7
+	trait = race_goblin
+	9989.4.6 = {
+		birth = yes
+	}
+	10005.4.6 = {
+		add_trait = engineer
+		add_trait = rogue
+	}
+	10025.3.12 = {
+		death = {
+			death_reason = death_battle
+			killer = 6 # Jerias
+		}
+	}
+}
+
+143 = {
+	name = "Gilnid"
+	culture = goblin
+	religion = mercantilism
+	dna="0ja0ebajbi0"
+	properties="kb0000000000000000"
+	learning = 6
+	trait = race_goblin
+	9987.9.28 = {
+		birth = yes
+	}
+	10003.9.28 = {
+		add_trait = engineer
+	}
+	10025.3.12 = {
+		death = {
+			death_reason = death_battle
+			killer = 6 # Jerias # Ok, not him, but I'm not adding a minor character just for kill credit
+		}
+	}
+}
+
+144 = {
+	name = "Fazza"
+	culture = goblin
+	religion = mercantilism
+	dna="00dje0bgcd0"
+	properties="tn0000000000000000"
+	martial = 6
+	trait = race_goblin
+	9991.5.19 = {
+		birth = yes
+	}
+	10007.5.19 = {
+		add_trait = tough_soldier
+	}
+	10025.4.20 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+145 = {
+	name = "Smite"
+	culture = ragetotem
+	religion = hydromancy
+	#DNA goes here!
+	martial = 7
+	trait = race_tauren
+	9974.7.12 = {
+		birth = yes
+	}
+	9990.7.12 = {
+		add_trait = tough_soldier
+	}
+	10021.2.17 = {
+		employer = 144 # Fazza
+	}
+	10025.4.20 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+146 = {
+	name = "Cookie"
+	culture = murloc
+	religion = hydromancy
+	trait = race_murloc
+	10000.6.1 = {
+		birth = yes
+	}
+	10021.2.17 = {
+		employer = 144 # Fazza
+	}
+	10028.6.19 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+147 = {
+	name = "Klaven"
+	dynasty = 101 # Mortwake
+	culture = azerothian
+	religion = holy_light
+	dna="0c0iba000l0"
+	properties="m000d0000000000000"
+	diplomacy = 1
+	martial = 4
+	stewardship = 2
+	intrigue = 7
+	learning = 5
+	trait = race_human
+	disallow_random_traits = yes
+	9990.6.11 = {
+		birth = yes
+	}
+	10006.6.11 = {
+		add_trait = intricate_webweaver
+		add_trait = rogue
+		add_trait = alchemist
+		add_trait = greedy
+		add_trait = cruel
+		add_trait = cynical
+		add_trait = deceitful
+	}
+	10025.4.10 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+148 = {
+	name = "John"
+	dynasty = 102 # Saldean
+	culture = azerothian
+	religion = holy_light
+	dna="0b0jchc0bb0"
+	properties="sl00c0000000000000"
+	trait = race_human
+	9990.3.18 = {
+		birth = yes
+	}
+	10020.6.10 = {
+		add_spouse = 149 # Salma
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+149 = {
+	name = "Salma"
+	female = yes
+	culture = azerothian
+	religion = holy_light
+	dna="0b0jc0c0bb0"
+	properties="sa0000000000000000"
+	trait = race_human
+	9989.7.12 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+150 = {
+	name = "Gryan"
+	dynasty = 103 # Stoutmantle
+	culture = lordaeronian
+	religion = holy_light
+	dna="000e0da0cj0"
+	properties="0g00a0000000000000"
+	trait = race_human
+	9969.8.12 = {
+		birth = yes
+	}
+	10085.8.12 = {
+		add_trait = tough_soldier
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+151 = {
+	name = "Sumner"
+	dynasty = 104 # Trask
+	culture = azerothian
+	religion = holy_light
+	dna="0a0iagb0dg0"
+	properties="mc0000000000000000"
+	trait = race_human
+	9991.5.10 = {
+		birth = yes
+	}
+	10007.5.10 = {
+		add_trait = misguided_warrior
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+152 = {
+	name = "Hogger"
+	dynasty = 105 # Riverpaw
+	culture = gnoll
+	religion = pyromancy
+	martial = 8
+	trait = race_gnoll
+	trait = strong
+	9990.5.19 = {
+		birth = yes
+	}
+	10006.5.19 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+		add_trait = cruel
+		add_trait = wroth
+	}
+	10028.6.2 = {
+		death = {
+			death_reason = death_duel
 		}
 	}
 }
