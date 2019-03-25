@@ -285,10 +285,69 @@ character_event = {
 		#Destroy settlements based on the date
 		if = {
 			limit = {
-				always = no
+				has_global_flag = bm_tides_of_darkness
+			}
+			b_stonefield_estate = {
+				destroy_settlement = THIS
+			}
+			b_cathedral_of_the_light = {
+				destroy_settlement = THIS
+			}
+			b_old_town = {
+				destroy_settlement = THIS
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = bm_hunt_for_the_betrayer
+					has_global_flag = bm_drums_of_war
+				}
 			}
 			b_sunstone = {
 				destroy_settlement = THIS
+			}
+		}
+		# Here because tributaries are DLC-locked
+		if = {
+			limit = {
+				NOT = { has_dlc = "Horse Lords" }
+				NOT = { has_dlc = "Jade Dragon" }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = bm_tides_of_darkness
+						has_global_flag = bm_lord_of_the_clans
+						has_global_flag = bm_scourge_of_lordaeron
+					}
+				}
+				k_stormwind = {
+					set_defacto_liege = e_alliance
+				}
+			}
+		}
+		#This is here to handle a few very specific characters with "special needs".
+		if = {
+			limit = {
+				has_global_flag = bm_drums_of_war
+			}
+			c_169 = { # Varian
+				death = {
+					death_reason = death_missing
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = bm_tides_of_darkness
+				}
+			}
+			c_173 = { # "Daval Prestor"
+				death = {
+					death_reason = death_missing
+				}
 			}
 		}
 	}

@@ -1445,7 +1445,7 @@
 	10003.9.4 = {
 		religion = demonology
 		effect = {
-			set_secret_religion = burning_legion
+			secret_religion = burning_legion
 		}
 	}
 	10021.6.7 = {
@@ -1659,7 +1659,7 @@
 		effect = {
 			give_artifact = doomhammer
 			give_artifact = orgrims_plate
-			set_secret_religion = demonology
+			secret_religion = demonology
 		}
 		#add_friend =  # Durotan
 		employer = 52 # Blackhand
@@ -2416,7 +2416,7 @@
 		trait = humble
 		trait = just
 		trait = erudite
-		#Also place him in the employ of Medivh
+		employer = 112 # Medivh
 	}
 	10008.9.17 = {
 		death = {
@@ -3106,7 +3106,10 @@
 		add_trait = mage
 		add_trait = scholarly_theologian
 	}
-	#Make him court mage of SW at some point
+	9945.3.10 = {
+		employer = 163 # Barathen
+		give_job_titlte = job_spiritual
+	}
 	9969.7.9 = {
 		death = {
 			death_reason = death_accident
@@ -3141,8 +3144,9 @@
 		add_trait = possessed
 		add_trait = erudite
 		add_trait = proud
-		#add_friend =  # Anduin
-		#add_friend =  # Llane
+		add_friend = 172 # Anduin
+		add_friend = 167 # Llane
+		employer = 163 # Barathen
 	}
 	9988.5.22 = {
 		religion = arcane
@@ -3151,20 +3155,20 @@
 	9995.3.19 = {
 		add_trait = cruel
 		effect = {
-			set_secret_religion = demonology
+			secret_religion = demonology
 		}
 		add_trait = warlock
 	}
 	10000.12.5 = {
 		effect = {
-			set_secret_religion = burning_legion
+			secret_religion = burning_legion
 		}
 	}
 	10003.8.2 = {
 		religion = burning_legion
 		death = {
 			death_reason = death_duel
-			#killer = # Khadgar
+			killer = 84 # Khadgar
 		}
 	}
 }
@@ -3394,7 +3398,7 @@
 	}
 	10022.9.16 = {
 		effect = {
-			set_secret_religion = burning_legion
+			secret_religion = burning_legion
 		}
 	}
 	10032.2.15 = {
@@ -3425,7 +3429,7 @@
 	}
 	10022.9.16 = {
 		effect = {
-			set_secret_religion = burning_legion
+			secret_religion = burning_legion
 		}
 	}
 	10032.2.15 = {
@@ -3473,7 +3477,7 @@
 	}
 	10022.9.16 = {
 		effect = {
-			set_secret_religion = burning_legion
+			secret_religion = burning_legion
 		}
 	}
 	10032.2.15 = {
@@ -3547,7 +3551,7 @@
 	}
 	10022.7.13 = {
 		add_trait = warlock
-		set_secret_religion = demonology
+		secret_religion = demonology
 	}
 	10025.1.13 = {
 		add_trait = tow_adventurer
@@ -3597,7 +3601,7 @@
 	}
 	10022.9.16 = {
 		effect = {
-			set_secret_religion = burning_legion
+			secret_religion = burning_legion
 		}
 	}
 	10032.2.15 = {
@@ -4132,6 +4136,719 @@
 	10028.6.2 = {
 		death = {
 			death_reason = death_duel
+		}
+	}
+}
+
+153 = {
+	name = "Mike"
+	dynasty = 106 # Maclure
+	culture = azerothian
+	religion = holy_light
+	dna="0c0faca0bh0"
+	properties="v000h0000000000000"
+	trait = race_human
+	9984.6.19 = {
+		birth = yes
+	}
+	9998.4.12 = {
+		add_rival = 158 # Marie
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+154 = { # It's never stated what is Joshua's relation to the rest of the family.
+	name = "Joshua"
+	dynasty = 106 # Maclure
+	culture = azerothian
+	religion = holy_light
+	dna="0b0aakc0be0"
+	properties="0b00g0000000000000"
+	trait = race_human
+	10001.4.13 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+155 = {
+	name = "Maybell"
+	dynasty = 106 # Maclure
+	female = yes
+	culture = azerothian
+	religion = holy_light
+	dna="0b0aa0c0be0"
+	properties="0e0000000000000000"
+	trait = race_human
+	father = 153 # Mike
+	10005.10.7 = {
+		birth = yes
+	}
+	10023.5.19 = {
+		add_lover = 160 # Tommy Joe
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+156 = {
+	name = "Billy"
+	dynasty = 106 # Maclure
+	culture = azerothian
+	religion = holy_light
+	dna="0b0lc000cf0"
+	properties="sj00h0000000000000"
+	trait = race_human
+	father = 153 # Mike
+	10010.8.30 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+157 = {
+	name = "Mildred"
+	dynasty = 107 # Stonefield
+	culture = azerothian
+	religion = holy_light
+	dna="0ckre0kgdk0"
+	properties="0p0000000000000000"
+	trait = race_human
+	9956.8.12 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+158 = {
+	name = "Marie"
+	dynasty = 107 # Stonefield
+	culture = azerothian
+	religion = holy_light
+	female = yes
+	dna="0ckre0kgdk0"
+	properties="0o0000000000000000"
+	trait = race_human
+	mother = 157 # Mildred
+	9983.12.18 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+159 = {
+	name = "Bernice"
+	dynasty = 107 # Stonefield
+	culture = azerothian
+	religion = holy_light
+	female = yes
+	dna="0cmkd0kadj0"
+	properties="jm0000000000000000"
+	trait = race_human
+	mother = 157 # Mildred
+	9984.10.3 = {
+		birth = yes
+	}
+	10004.7.12 = {
+		add_spouse = 160 # Thomas
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+160 = {
+	name = "Thomas"
+	culture = azerothian
+	religion = holy_light
+	dna="0c0bckb0bf0"
+	properties="0d00d0000000000000"
+	trait = race_human
+	mother = 158 # Marie
+	9980.6.15 = {
+		birth = yes
+	}
+	10020.6.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+161 = {
+	name = "Homer"
+	dynasty = 107 # Stonefield
+	culture = azerothian
+	religion = holy_light
+	dna="0c0da0c0dk0"
+	properties="0e00h0000000000000"
+	trait = race_human
+	9991.3.12 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+162 = {
+	name = "Tommy Joe"
+	dynasty = 107 # Stonefield
+	culture = azerothian
+	religion = holy_light
+	dna="000i0gb0000"
+	properties="mc0000000000000000"
+	trait = race_human
+	father = 160 # Thomas
+	10005.1.13 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+163 = {
+	name = "Molthor"
+	dynasty = 108 # Sahal
+	culture = zandalari
+	religion = loa
+	dna="0gee00kdbb0"
+	properties="w00000000000000000"
+	diplomacy = 5
+	martial = 8
+	trait = race_troll_zandalari
+	9978.1.23 = {
+		birth = yes
+	}
+	9994.1.23 = {
+		add_trait = skilled_tactician
+		add_trait = warrior
+	}
+	10030.9.12 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+164 = {
+	name = "Landan"
+	dynasty = 109 # Wrynn
+	culture = azerothian
+	religion = holy_light
+	dna="0b0lceb0ai0"
+	properties="db00i0000000000000"
+	trait = race_human
+	9875.11.1 = {
+		birth = yes
+	}
+	9921.4.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+165 = {
+	name = "Barathen"
+	dynasty = 109 # Wrynn
+	culture = azerothian
+	religion = holy_light
+	dna="000gcjb0fl0"
+	properties="ak00h0000000000000"
+	martial = 7
+	stewardship = 5
+	trait = race_human
+	father = 164 # Landan
+	9905.9.14 = {
+		birth = yes
+	}
+	9921.9.14 = {
+		add_trait = skilled_tactician
+		add_trait = brave
+	}
+	9925.10.28 = {
+		give_nickname = nick_adamant
+		add_spouse = 166 # Varia
+	}
+	9982.8.24 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+166 = {
+	name = "Varia"
+	dynasty = 110 # Tellen
+	female = yes
+	culture = azerothian
+	religion = holy_light
+	dna="0cayb0aacg0"
+	properties="qk0000000000000000"
+	trait = race_human
+	9912.5.19 = {
+		birth = yes
+	}
+	10001.2.11 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+167 = {
+	name = "Llane"
+	dynasty = 109 # Wrynn
+	culture = azerothian
+	religion = holy_light
+	dna="0c0gbba0af0"
+	properties="sg00a0000000000000"
+	trait = race_human
+	father = 165 # Barathen
+	mother = 166 # Varia
+	9960.4.7 = {
+		birth = yes
+	}
+	9976.4.7 = {
+		add_trait = skilled_tactician
+		add_trait = warrior
+		add_trait = brave
+		add_friend = 172 # Anduin
+	}
+	9982.9.15 = {
+		add_spouse = 168 # Taria
+	}
+	10003.6.18 = {
+		death = {
+			death_reason = death_murder
+			killer = 69 # Garona
+		}
+	}
+}
+
+168 = {
+	name = "Taria"
+	dynasty = 111 # Istram
+	female = yes
+	culture = azerothian
+	religion = holy_light
+	dna="0b0a00haak0"
+	properties="bv0000000000000000"
+	trait = race_human
+	9969.2.19 = {
+		birth = yes
+	}
+	10003.9.11 = {
+		death = {
+			death_reason = death_accident
+		}
+	}
+}
+
+169 = {
+	name = "Varian"
+	dynasty = 109 # Wrynn
+	culture = azerothian
+	religion = holy_light
+	dna="0b0a00haak0"
+	properties="bv0000000000000000"
+	diplomacy = 5
+	martial = 8
+	stewardship = 4
+	intrigue = 3
+	learning = 2
+	trait = race_human
+	trait = strong
+	disallow_random_traits = yes
+	father = 167 # Llane
+	mother = 168 # Taria
+	9993.10.18 = {
+		birth = yes
+	}
+	10009.10.18 = {
+		add_trait = warrior
+		add_trait = brilliant_strategist
+		add_trait = proud
+		add_trait = wroth
+		add_trait = brave
+		add_trait = honest
+	}
+	10012.4.28 = {
+		add_spouse = 170 # Tiffin
+	}
+	10020.1.30 = {
+		add_trait = depressed
+	}
+	10022.3.23 = {
+		effect = {
+			remove_trait = depressed
+		}
+	}
+	10032.2.19 = {
+		death = {
+			death_reason = death_battle
+			#Make Alt!Gul'dan later and assign here
+		}
+	}
+}
+
+170 = {
+	name = "Tiffin"
+	dynasty = 112 # Ellerian
+	culture = azerothian
+	religion = holy_light
+	female = yes
+	dna="0c0na0mfbb0"
+	properties="ou0000000000000000"
+	trait = race_human
+	9995.2.23 = {
+		birth = yes
+	}
+	10020.1.30 = {
+		death = {
+			death_reason = death_murder
+		}
+	}
+}
+
+171 = {
+	name = "Anduin Llane"
+	dynasty = 109 # Wrynn
+	culture = azerothian
+	religion = holy_light
+	dna="0c00a0a0bb0"
+	properties="ob0000000000000000"
+	diplomacy = 8
+	martial = 3
+	stewardship = 5
+	intrigue = 5
+	learning = 9
+	trait = race_human
+	disallow_random_traits = yes
+	father = 169 # Varian
+	mother = 170 # Tiffin
+	10014.5.13 = {
+		birth = yes
+	}
+	10030.5.13 = {
+		add_trait = mastermind_theologian
+		add_trait = shrewd
+		add_trait = groomed
+		add_trait = chaste
+		add_trait = patient
+		add_trait = kind
+		add_trait = humble
+		add_trait = content
+		add_trait = honest
+		add_trait = trusting
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+172 = {
+	name = "Anduin"
+	dynasty = 113 # Lothar
+	culture = azerothian
+	religion = holy_light
+	dna="0a0m0lc0000"
+	properties="sd00a0000000000000"
+	diplomacy = 3
+	martial = 10
+	stewardship = 5
+	intrigue = 4
+	learning = 3
+	trait = race_human
+	trait = strong
+	disallow_random_traits = yes
+	9949.5.19 = {
+		birth = yes
+		add_to_bloodline = arathi_blood
+		employer = 163 # Barathen
+	}
+	9965.5.19 = {
+		add_trait = brilliant_strategist
+		add_trait = diligent
+		add_trait = temperate
+		add_trait = wroth
+		add_trait = proud
+		add_trait = content
+		add_trait = brave
+		add_trait = honest
+		add_trait = trusting
+		effect = {
+			give_artifact = the_steel_sentinel
+			give_artifact = ashkandi
+		}
+	}
+	9982.8.24 = {
+		employer = 164 # Llane
+		give_job_titlte = job_marshal
+	}
+	10003.7.5 = {
+		give_nickname = nick_the_lion_of_azeroth
+		effect = {
+			remove_trait = trusting
+		}
+		employer = 167 # Varian
+		give_job_titlte = job_marshal
+		give_minor_title = title_regent
+	}
+	10006.11.3 = {
+		death = {
+			death_reason = death_duel
+			killer = 57 # Orgrim
+		}
+	}
+}
+
+173 = {
+	name = "Daval"
+	dynasty = 114 # Prestor
+	culture = lordaeronian
+	religion = holy_light
+	dna="000cbc00fh0"
+	properties="ng00d0000000000000"
+	diplomacy = 9
+	martial = 7
+	stewardship = 7
+	intrigue = 10
+	learning = 7
+	#Yes, he is supposed to be ludicrously good
+	trait = race_human
+	triat = elusive_shadow
+	triat = genius
+	triat = fair
+	triat = diligent
+	triat = proud
+	triat = brave
+	triat = gregarious
+	triat = ambitious
+	disallow_random_traits = yes
+	9962.4.15 = {
+		birth = yes
+		effect = {
+			secret_religion = blackwyrm_cult
+		}
+	}
+	10005.1.20 = {
+		#Set as in the court of Teneras
+	}
+	10008.3.27 = {
+		death = {
+			death_reason = death_missing
+		}
+	}
+}
+
+174 = {
+	name = "Katrana"
+	dynasty = 114 # Prestor
+	female = yes
+	culture = lordaeronian
+	religion = holy_light
+	dna="000cbc00fh0"
+	properties="ng00d0000000000000"
+	diplomacy = 8
+	martial = 5
+	stewardship = 8
+	intrigue = 9
+	learning = 7
+	trait = race_human
+	triat = elusive_shadow
+	triat = genius
+	triat = fair
+	triat = diligent
+	triat = proud
+	triat = brave
+	triat = gregarious
+	triat = ambitious
+	disallow_random_traits = yes
+	father = 173 # Daval
+	9987.1.19 = {
+		birth = yes
+	}
+	10006.11.3 = {
+		employer = 169 # Varian
+	}
+	10026.9.18 = {
+		death = {
+			death_reason = death_missing
+		}
+	}
+}
+
+175 = {
+	name = "Lloyd"
+	dynasty = 115 # Thelwater
+	culture = azerothian
+	religion = holy_light
+	dna="0a0jbda0dd0"
+	properties="bi00h0000000000000"
+	martial = 6
+	trait = race_human
+	9988.4.12 = {
+		birth = yes
+	}
+	10004.4.12 = {
+		add_trait = tough_soldier
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+176 = {
+	name = "Benedictus"
+	dynasty = 116
+	culture = lordaeronian
+	religion = holy_light
+	dna="0b0f0cc0fn0"
+	properties="ib00a0000000000000"
+	diplomacy = 5
+	martial = 2
+	stewardship = 4
+	intrigue = 6
+	learning = 9
+	trait = race_human
+	disallow_random_traits = yes
+	9963.5.17 = {
+		birth = yes
+	}
+	9979.5.17 = {
+		#Set Faol as a friend
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = erudite
+		add_trait = theologian
+		add_trait = patient
+		add_trait = ambitious
+		add_trait = zealous
+	}
+	10016.9.12 = {
+		effect = {
+			secret_religion = twilights_hammer
+		}
+	}
+	10028.8.25 = {
+		death = {
+			death_reason = death_duel
+		}
+	}
+}
+
+177 = {
+	name = "Andromath"
+	dynasty = 117 # Turin
+	culture = lordaeronian
+	religion = arcane
+	dna="0b0m0g00ec0"
+	properties="kc00a0000000000000"
+	learning = 8
+	trait = race_human
+	9974.8.30 = {
+		birth = yes
+	}
+	9990.8.30 = {
+		add_trait = wizard
+		add_trait = scholarly_theologian
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+178 = {
+	name = "Mathias"
+	dynasty = 118 # Shaw
+	culture = azerothian
+	religion = holy_light
+	dna="000lcgb0eh0"
+	properties="cc00b0000000000000"
+	diplomacy = 4
+	martial = 6
+	stewardship = 4
+	intrigue = 9
+	learning = 3
+	trait = race_human
+	disallow_random_traits = yes
+	9995.3.14 = {
+		birth = yes
+	}
+	10011.3.14 = {
+		add_trait = intricate_webweaver
+		add_trait = rogue
+		add_trait = shrewd
+		add_trait = patient
+		add_trait = temperate
+		add_trait = humble
+		add_trait = content
+		add_trait = cynical
+		add_trait = brave
+		employer = 169 # Varian
+		give_job_titlte = job_spymaster
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+179 = {
+	name = "Bolvar"
+	dynasty = 119 # Fordragon
+	culture = azerothian
+	religion = holy_light
+	dna="0b0h0fa0000"
+	properties="cj00d0000000000000"
+	trait = race_human
+	disallow_random_traits = yes
+	9986.3.28 = {
+		birth = yes
+	}
+	10002.3.28 = {
+		add_trait = brilliant_strategist
+		add_trait = warrior
+		add_trait = robust
+		add_trait = humble
+		add_trait = diligent
+		add_trait = patient
+		add_trait = content
+		add_trait = brave
+		add_trait = just
+		employer = 169 # Varian
+	}
+	10017.4.12 = {
+		give_job_titlte = job_marshal
+	}
+	10025.1.5 = {
+		give_minor_title = title_regent
+	}
+	#I'll do Wrath stuff later
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
 		}
 	}
 }

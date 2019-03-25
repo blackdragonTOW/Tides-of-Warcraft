@@ -533,11 +533,13 @@ the_kingslayers = {
 	indestructible = yes
 	intrigue = 2
 	combat_rating = 10
+	slot = weapon
 }
 
 arcanite_reaper = {
 	quality = 4
 	combat_rating = 10
+	slot = weapon
 }
 
 twilight_canticle = {
@@ -555,12 +557,32 @@ midnight = {
 	quality = 5
 	indestructible = yes
 	combat_rating = 15
+	slot = companion
 }
 
 stranglestaff = {
-	stacking no
+	stacking = no
 	intrigue = 1
 	learning = 2
 	indestructible
 	quality = 4
+	slot = weapon
+}
+
+the_steel_sentinel = {
+	stacking = no
+	monthly_character_prestige = 0.25
+	quality = 5
+	indestructible = yes
+	combat_rating = 10
+	slot = torso
+}
+
+ashkandi = {
+	stacking = no
+	monthly_character_prestige = 0.25
+	quality = 5
+	indestructible = yes
+	combat_rating = 15
+	slot = weapon
 }
