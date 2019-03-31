@@ -1801,7 +1801,7 @@
 }
 
 63 = {
-	name = "Vor"
+	name = "Ghazkull"
 	dynasty = 52 # Bleeding Hollow
 	culture = bleeding_hollow
 	religion = burning_legion
@@ -1819,7 +1819,7 @@
 }
 
 64 = {
-	name = "Sargas"
+	name = "Gorgutz"
 	dynasty = 52 # Bleeding Hollow
 	culture = bleeding_hollow
 	religion = burning_legion
@@ -2035,6 +2035,11 @@
 		dynasty = 58 # Twilight's Hammer
 		effect = {
 			give_artifact = twilight_canticle
+			c_northshire = {
+				ROOT = {
+					capital = PREV
+				}
+			}
 		}
 	}
 	10006.6.6 = {
@@ -4846,6 +4851,156 @@
 		give_minor_title = title_regent
 	}
 	#I'll do Wrath stuff later
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+180 = {
+	name = "Naz'jar"
+	dynasty = 120 # Azsh'ir
+	female = yes
+	culture = naga
+	religion = azshara
+	dna="db0dcih0fg0"
+	properties="k00000000000000000"
+	diplomacy = 5
+	martial = 2
+	stewardship = 3
+	intrigue = 5
+	learning = 8
+	trait = race_naga
+	trait = priest
+	trait = scholarly_theologian
+	2430.8.7 = {
+		birth = yes
+	}
+	10028.5.16 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+181 = {
+	name = "Anetta"
+	dynasty = 121 # Southton
+	female = yes
+	culture = azerothian
+	religion = holy_light
+	dna="0ciwb00fbh0"
+	properties="0f0000000000000000"
+	learning = 7
+	trait = race_human
+	9987.2.19 = {
+		birth = yes
+	}
+	10003.2.19 = {
+		add_trait = martial_cleric
+		add_trait = priest
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+182 = {
+	name = "Remington"
+	dynasty = 122 # Ridgewell
+	culture = azerothian
+	religion = holy_light
+	dna="0b0j0la0ck0"
+	properties="gf00b0000000000000"
+	trait = race_human
+	9975.3.28 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+183 = {
+	name = "Yolo"
+	dynasty = 123 # Blingbuck
+	culture = goblin
+	religion = mercantilism
+	trait = race_goblin
+	9981.4.22 = {
+		birth = yes
+	}
+	10028.9.12 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+184 = {
+	name = "Theocritus"
+	dynasty = 124 # Azora
+	culture = dalaranian
+	religion = arcane
+	dna="0b0jcfb0ek0"
+	properties="nd00c0000000000000"
+	learning = 8
+	trait = race_human
+	9963.12.11 = {
+		birth = yes
+	}
+	9979.12.11 = {
+		add_trait = scholarly_theologian
+		add_trait = mage
+	}
+	10021.10.13 = {
+		#add_rival = 0 Morganth
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+185 = {
+	name = "Morgan"
+	dynasty = 125 # Talbot
+	culture = azerothian
+	religion = holy_light
+	dna="0a0acac0ee0"
+	properties="jg00d0000000000000"
+	trait = race_human
+	9987.10.22 = {
+		birth = yes
+	}
+	10028.9.7 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+186 = {
+	name = "Jesse"
+	dynasty = 126 # McCree
+	culture = azerothian
+	religion = holy_light
+	dna="000icg00ck0"
+	properties="cb00f0000000000000"
+	trait = race_human
+	9982.6.18 = {
+		birth = yes
+	}
+	9998.6.18 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
 	10100.1.1 = {
 		death = {
 			death_reason = death_natural
