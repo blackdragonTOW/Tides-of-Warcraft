@@ -18,13 +18,29 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_troll_male_child_eyes2"
 		texturefile = "gfx\\characters\\troll_male\\child\\troll_male_child_eyes2.dds"
-		noOfFrames = 13
+		noOfFrames = 14
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_troll_male_child_eyes_uncolored"
+		texturefile = "gfx\\characters\\troll_male\\child\\troll_male_child_eyes_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_troll_male_child_hair"
+		texturefile = "gfx\\characters\\troll_male\\child\\troll_male_child_hair.dds"
+		noOfFrames = 1
 		norefcount = yes
 		can_be_lowres = yes
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_gtrollgfx_male_child"
 		
 		weight = {
@@ -46,10 +62,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_eyes_uncolored:d6"
 			"GFX_troll_male_child_base:p2:h"
 			"GFX_troll_male_child_base_uncolored:p2"
-			"GFX_child_male_clothes:d0"
-			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_hair:p2:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_male_border:d3"
 			"GFX_player_overlay:p11"
@@ -83,7 +100,7 @@ spriteTypes = {
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_btrollgfx_male_child"
 		
 		weight = {
@@ -105,10 +122,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_eyes_uncolored:d6"
 			"GFX_troll_male_child_base:p2:h"
 			"GFX_troll_male_child_base_uncolored:p2"
-			"GFX_child_male_clothes:d0"
-			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_hair:p2:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_male_border:d3"
 			"GFX_player_overlay:p11"
@@ -139,8 +157,32 @@ spriteTypes = {
 		allow_property_values = { }
 	}
 
+	spriteType = {
+		name = "GFX_ztroll_male_child_base"
+		texturefile = "gfx\\characters\\troll_male\\child\\ztroll_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ztroll_male_child_base_uncolored"
+		texturefile = "gfx\\characters\\troll_male\\child\\ztroll_male_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ztroll_male_child_eyes"
+		texturefile = "gfx\\characters\\troll_male\\child\\ztroll_male_child_eyes.dds"
+		noOfFrames = 5
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_ztrollgfx_male_child"
 		
 		weight = {
@@ -162,10 +204,10 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
-			"GFX_troll_male_child_base:p2:h"
-			"GFX_troll_male_child_base_uncolored:p2"
-			"GFX_child_male_clothes:d0"
-			"GFX_troll_male_child_eyes2:d10"
+			"GFX_ztroll_male_child_base:p2:h"
+			"GFX_ztroll_male_child_base_uncolored:p2"
+			"GFX_ztroll_male_child_eyes:d10"
+			"GFX_troll_male_child_hair:p2:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_male_border:d3"
 			"GFX_player_overlay:p11"
@@ -200,7 +242,7 @@ spriteTypes = {
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_itrollgfx_male_child"
 		
 		weight = {
@@ -222,10 +264,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_eyes_uncolored:d6"
 			"GFX_troll_male_child_base:p2:h"
 			"GFX_troll_male_child_base_uncolored:p2"
-			"GFX_child_male_clothes:d0"
-			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_hair:p2:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_male_border:d3"
 			"GFX_player_overlay:p11"
@@ -258,7 +301,7 @@ spriteTypes = {
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_dtrollgfx_male_child"
 		
 		weight = {
@@ -280,10 +323,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_eyes_uncolored:d6"
 			"GFX_troll_male_child_base:p2:h"
 			"GFX_troll_male_child_base_uncolored:p2"
-			"GFX_child_male_clothes:d0"
-			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_hair:p2:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_male_border:d3"
 			"GFX_player_overlay:p11"
@@ -314,7 +358,7 @@ spriteTypes = {
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_strollgfx_male_child"
 		
 		weight = {
@@ -336,10 +380,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_eyes_uncolored:d6"
 			"GFX_troll_male_child_base:p2:h"
 			"GFX_troll_male_child_base_uncolored:p2"
-			"GFX_child_male_clothes:d0"
-			"GFX_troll_male_child_eyes2:d10"
+			"GFX_troll_male_child_hair:p2:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_male_border:d3"
 			"GFX_player_overlay:p11"
@@ -385,15 +430,31 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_troll_female_child_hair"
+		texturefile = "gfx\\characters\\troll_female\\child\\troll_female_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
 		name = "GFX_troll_female_child_eyes2"
 		texturefile = "gfx\\characters\\troll_female\\child\\troll_female_child_eyes2.dds"
+		noOfFrames = 14
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_troll_female_child_eyes"
+		texturefile = "gfx\\characters\\troll_female\\child\\troll_female_child_eyes.dds"
 		noOfFrames = 1
 		norefcount = yes
 		can_be_lowres = yes
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_gtrollgfx_female_child"
 		
 		weight = {
@@ -415,10 +476,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_female_child_eyes2:d10"
+			"GFX_troll_female_child_eyes:d6"
 			"GFX_troll_female_child_base:p2:h"
-			"GFX_troll_female_child_eyes2:d6:e"
 			"GFX_troll_female_child_base_uncolored:p2"
-			"GFX_child_female_clothes:d0"
+			"GFX_troll_female_child_hair:p1:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"
 			"GFX_player_overlay:p11"
@@ -435,7 +497,7 @@ spriteTypes = {
 		}
 
 		# Copied from troll_female_eyes2.dds
-		eye_color_index = 10
+		eye_color_index = 9
 		eye_color = {
 			{ 0 0 255 }
 			{ 255 0 0 }
@@ -456,7 +518,7 @@ spriteTypes = {
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_btrollgfx_female_child"
 		
 		weight = {
@@ -478,10 +540,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_female_child_eyes2:d10"
+			"GFX_troll_female_child_eyes:d6"
 			"GFX_troll_female_child_base:p2:h"
-			"GFX_troll_female_child_eyes2:d6:e"
 			"GFX_troll_female_child_base_uncolored:p2"
-			"GFX_child_female_clothes:d0"
+			"GFX_troll_female_child_hair:p1:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"
 			"GFX_player_overlay:p11"
@@ -496,7 +559,7 @@ spriteTypes = {
 		}
 
 		# Copied from troll_female_eyes2.dds
-		eye_color_index = 10
+		eye_color_index = 9
 		eye_color = {
 			{ 0 0 255 }
 			{ 255 0 0 }
@@ -516,8 +579,32 @@ spriteTypes = {
 		allow_property_values = { }
 	}
 
+	spriteType = {
+		name = "GFX_ztroll_female_child_base"
+		texturefile = "gfx\\characters\\troll_female\\child\\ztroll_female_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ztroll_female_child_base_uncolored"
+		texturefile = "gfx\\characters\\troll_female\\child\\ztroll_female_child_base_uncolored.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_ztroll_female_child_eyes"
+		texturefile = "gfx\\characters\\troll_female\\child\\ztroll_female_child_eyes.dds"
+		noOfFrames = 5
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_ztrollgfx_female_child"
 		
 		weight = {
@@ -539,10 +626,10 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
-			"GFX_troll_female_child_base:p2:h"
-			"GFX_troll_female_child_eyes2:d6:e"
-			"GFX_troll_female_child_base_uncolored:p2"
-			"GFX_child_female_clothes:d0"
+			"GFX_ztroll_female_child_base:p2:h"
+			"GFX_ztroll_female_child_base_uncolored:p2"
+			"GFX_ztroll_female_child_eyes:d6"
+			"GFX_troll_female_child_hair:p1:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"
 			"GFX_player_overlay:p11"
@@ -560,7 +647,7 @@ spriteTypes = {
 		}
 
 		# Copied from troll_female_eyes2.dds
-		eye_color_index = 10
+		eye_color_index = 9
 		eye_color = {
 			{ 0 0 255 }
 			{ 255 0 0 }
@@ -581,7 +668,7 @@ spriteTypes = {
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_itrollgfx_female_child"
 		
 		weight = {
@@ -603,10 +690,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_female_child_eyes2:d10"
+			"GFX_troll_female_child_eyes:d6"
 			"GFX_troll_female_child_base:p2:h"
-			"GFX_troll_female_child_eyes2:d6:e"
 			"GFX_troll_female_child_base_uncolored:p2"
-			"GFX_child_female_clothes:d0"
+			"GFX_troll_female_child_hair:p1:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"
 			"GFX_player_overlay:p11"
@@ -622,7 +710,7 @@ spriteTypes = {
 		}
 
 		# Copied from troll_female_eyes2.dds
-		eye_color_index = 10
+		eye_color_index = 9
 		eye_color = {
 			{ 0 0 255 }
 			{ 255 0 0 }
@@ -643,7 +731,7 @@ spriteTypes = {
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_dtrollgfx_female_child"
 		
 		weight = {
@@ -665,10 +753,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_female_child_eyes2:d10"
+			"GFX_troll_female_child_eyes:d6"
 			"GFX_troll_female_child_base:p2:h"
-			"GFX_troll_female_child_eyes2:d6:e"
 			"GFX_troll_female_child_base_uncolored:p2"
-			"GFX_child_female_clothes:d0"
+			"GFX_troll_female_child_hair:p1:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"
 			"GFX_player_overlay:p11"
@@ -682,7 +771,7 @@ spriteTypes = {
 		}
 
 		# Copied from troll_female_eyes2.dds
-		eye_color_index = 10
+		eye_color_index = 9
 		eye_color = {
 			{ 0 0 255 }
 			{ 255 0 0 }
@@ -703,7 +792,7 @@ spriteTypes = {
 	}
 
 	portraitType = {
-		effectFile = "gfx/FX/portrait.lua"
+		effectFile = "gfx/FX/portrait_e2h.lua"
 		name = "PORTRAIT_strollgfx_female_child"
 		
 		weight = {
@@ -725,10 +814,11 @@ spriteTypes = {
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_child_background:p15"
+			"GFX_troll_female_child_eyes2:d10"
+			"GFX_troll_female_child_eyes:d6"
 			"GFX_troll_female_child_base:p2:h"
-			"GFX_troll_female_child_eyes2:d6:e"
 			"GFX_troll_female_child_base_uncolored:p2"
-			"GFX_child_female_clothes:d0"
+			"GFX_troll_female_child_hair:p1:e"
 			"GFX_character_imprisoned:p6"
 			"GFX_child_female_border:d3"
 			"GFX_player_overlay:p11"
@@ -741,7 +831,7 @@ spriteTypes = {
 		}
 
 		# Copied from troll_female_eyes2.dds
-		eye_color_index = 10
+		eye_color_index = 9
 		eye_color = {
 			{ 0 0 255 }
 			{ 255 0 0 }
