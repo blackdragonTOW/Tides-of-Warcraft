@@ -1541,6 +1541,11 @@
 		add_trait = one_eyed
 		religion = blackwyrm_cult
 	}
+	10021.11.9 = {
+		effect = {
+			add_pressed_claim = k_redridge_range # Should ensure conflict
+		}
+	}
 	10028.5.14 = {
 		death = {
 			death_reason = death_battle
@@ -4384,8 +4389,10 @@
 		add_trait = skilled_tactician
 		add_trait = brave
 	}
-	9925.10.28 = {
+	9925.7.12 = {
 		give_nickname = nick_adamant
+	}
+	9925.10.28 = {
 		add_spouse = 166 # Varia
 	}
 	9982.8.24 = {
@@ -4637,14 +4644,14 @@
 	learning = 7
 	#Yes, he is supposed to be ludicrously good
 	trait = race_human
-	triat = elusive_shadow
-	triat = genius
-	triat = fair
-	triat = diligent
-	triat = proud
-	triat = brave
-	triat = gregarious
-	triat = ambitious
+	trait = elusive_shadow
+	trait = genius
+	trait = fair
+	trait = diligent
+	trait = proud
+	trait = brave
+	trait = gregarious
+	trait = ambitious
 	disallow_random_traits = yes
 	9962.4.15 = {
 		birth = yes
@@ -4676,14 +4683,14 @@
 	intrigue = 9
 	learning = 7
 	trait = race_human
-	triat = elusive_shadow
-	triat = genius
-	triat = fair
-	triat = diligent
-	triat = proud
-	triat = brave
-	triat = gregarious
-	triat = ambitious
+	trait = elusive_shadow
+	trait = genius
+	trait = fair
+	trait = diligent
+	trait = proud
+	trait = brave
+	trait = gregarious
+	trait = ambitious
 	disallow_random_traits = yes
 	father = 173 # Daval
 	9987.1.19 = {
@@ -4959,7 +4966,7 @@
 		add_trait = mage
 	}
 	10021.10.13 = {
-		#add_rival = 0 Morganth
+		add_rival = 193 # Morganth
 	}
 	10100.1.1 = {
 		death = {
@@ -5004,6 +5011,255 @@
 	10100.1.1 = {
 		death = {
 			death_reason = death_natural
+		}
+	}
+}
+
+187 = {
+	name = "Solomon"
+	dynasty = 127 # Valbury
+	culture = azerothian
+	religion = holy_light
+	dna="0c0bafa0dd0"
+	properties="ua00d0000000000000"
+	trait = race_human
+	9978.3.19 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+188 = {
+	name = "Kor'gall"
+	dynasty = 128 # Stonemaul
+	culture = stonemaul
+	religion = demonology
+	martial = 8
+	trait = race_ogre
+	trait = strong
+	trait = cruel
+	9967.3.17 = {
+		birth = yes
+		effect = {
+			give_artifact = serathil
+		}
+	}
+	10022.8.19 = {
+		death = {
+			death_reason = death_duel
+			killer = 189 # Rexxar
+		}
+	}
+}
+
+189 = {
+	name = "Rexxar"
+	dynasty = 129 # Mok'nathal
+	culture = mok_nathal
+	religion = burning_legion
+	dna="00fa00ie0ec"
+	properties="xc00i0000000000000"
+	diplomacy = 3
+	martial = 7
+	stewardship = 6
+	intrigue = 4
+	learning = 3
+	trait = race_half_ogre
+	trait = strong
+	trait = tough_soldier
+	trait = hunter
+	trait = ranger
+	trait = patient
+	trait = humble
+	trait = stubborn
+	trait = brave
+	trait = honest
+	disallow_random_traits = yes
+	9980.5.19 = {
+		birth = yes
+		effect = {
+			secret_religion = shamanism
+		}
+	}
+	10000.1.1 = {
+		employer = 52 # Blackhand
+	}
+	10003.9.4 = {
+		employer = 57 # Orgrim
+		religion = demonology
+		effect = { # Just to be safe
+			secret_religion = shamanism
+		}
+	}
+	#Place him under Grom later
+	10018.2.25 = {
+		religion = shamanism
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+190 = {
+	name = "Garfang"
+	dynasty = 130 # Redridge
+	culture = gnoll
+	religion = aeromancy
+	martial = 8
+	trait = race_gnoll
+	trait = strong
+	9895.12.11 = {
+		birth = yes
+	}
+	9911.12.11 = {
+		add_trait = brilliant_strategist
+	}
+	9925.7.12 = {
+		death = {
+			death_reason = death_battle
+			killer = 163 # Barathen
+		}
+	}
+}
+
+191 = {
+	name = "Yowler"
+	dynasty = 130 # Redridge
+	culture = gnoll
+	religion = aeromancy
+	trait = race_gnoll
+	9990.2.15 = {
+		birth = yes
+	}
+	10021.10.13 = {
+		religion = twilights_hammer
+	}
+	10025.6.19 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+192 = {
+	name = "Fangore"
+	dynasty = 131 # Shadowhide
+	culture = gnoll
+	religion = aeromancy
+	martial = 8
+	trait = race_gnoll
+	9991.5.2 = {
+		birth = yes
+	}
+	10007.5.2 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
+	10021.10.13 = {
+		religion = twilights_hammer
+		employer = 193 # Morganth
+		give_job_titlte = job_marshal
+	}
+	10025.7.4 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+193 = {
+	name = "Morganth"
+	dynasty = 132 # Ilgalar
+	culture = dalaranian
+	religion = arcane
+	dna="0b0bacb0am0"
+	properties="ij00b0000000000000"
+	learning = 8
+	trait = race_human
+	9963.12.11 = {
+		birth = yes
+	}
+	9979.12.11 = {
+		add_trait = scholarly_theologian
+		add_trait = mage
+	}
+	10021.10.13 = {
+		religion = twilights_hammer
+		effect = {
+			remove_trait = mage
+		}
+		add_trait = warlock
+		add_trait = cruel
+		add_trait = paranoid
+	}
+	10021.11.9 = {
+		effect = {
+			add_pressed_claim = k_redridge_range # Should ensure conflict
+		}
+	}
+	10025.7.4 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+194 = {
+	name = "Gath'Ilzogg"
+	dynasty = 133 # Blazefang
+	culture = blackrock
+	religion = burning_legion
+	dna="0a0c00jda0a"
+	properties="ed0000000000000000"
+	martial = 7
+	trait = race_orc
+	9977.3.16 = {
+		birth = yes
+	}
+	9993.3.16 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+		add_trait = cruel
+		add_trait = wroth
+	}
+	10003.9.4 = {
+		religion = demonology
+	}
+	10008.11.15 = {
+		religion = blackwyrm_cult
+	}
+	10026.2.27 = {
+		add_trait = race_undead_generic
+		add_trait = death_knight
+		effect = {
+			remove_trait = warrior
+		}
+	}
+	10028.4.19 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+195 = {
+	name = "Orastrasz"
+	dynasty = 134 # Red Dragonflight
+	culture = red_dragonflight
+	religion = wyrmcult
+	trait = race_dragon
+	1.1.1 = {
+		birth = yes
+	}
+	10003.10.9 = {
+		death = {
+			death_reason = death_battle
 		}
 	}
 }
