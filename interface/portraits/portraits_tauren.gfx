@@ -1,7 +1,7 @@
 # hair, mouth, chin, nose, eyes, cheek, ear, neck
 spriteTypes = {
 	
-	### gnoll MALE ####
+	### tauren MALE ####
 	
 	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
 	
@@ -64,32 +64,132 @@ spriteTypes = {
 			"GFX_character_background:p0"
 			"GFX_tauren_male_base:p2"
 			"GFX_tauren_male_eyes2:d10"
-			"GFX_tauren_male_skin:d4:h"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
 			"GFX_tauren_male_eyes:d6:h"	
-			"GFX_tauren_male_hair:p1:y"	
+			"GFX_tauren_male_hair:p1:y:e"	
 			"GFX_tauren_male_ears:d7:h"	
-			"GFX_tauren_male_beard:p4"	
+			"GFX_tauren_male_beard:e:p4"	
 			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
 			"GFX_tauren_male_nosering:p14"	
 			"GFX_tauren_male_horns:d5"	
-			"GFX_tauren_male_horns_over:d5"	
-			"GFX_tauren_male_mouth:d2"	
+			"GFX_tauren_male_horns_over:d5"		
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
 			"GFX_tauren_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
-
-
-
 		}
 
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
 		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_taurengfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_horns:d5"	
+			"GFX_tauren_male_horns_over:d5"		
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### tauren FEMALE ####
+
+
+	# tauren Female
+
+	# tauren female
+	portraitType = {
+		name = "PORTRAIT_taurengfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"			
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
 			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
-			{ 10 10 10 } { 50 50 50 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
 			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
 			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
 			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
@@ -106,37 +206,77 @@ spriteTypes = {
 		
 		headgear_that_hides_hair = { }
 	}
-	
-	# old age
+
+	# tauren female midage
 	portraitType = {
-		name = "PORTRAIT_taurengfx_male2"
+		name = "PORTRAIT_taurengfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
 			"GFX_tauren_male_base:p2"
-			"GFX_tauren_male_eyes2:d10"
-			"GFX_tauren_male_skin:d4:h"
-			"GFX_tauren_male_eyes:d6:h"	
-			"GFX_tauren_male_hair:p1:y"	
-			"GFX_tauren_male_ears:d7:h"	
-			"GFX_tauren_male_beard:p4"	
-			"GFX_tauren_male_beard_over:p4"	
-			"GFX_tauren_male_nosering:p14"	
-			"GFX_tauren_male_horns:d5"	
-			"GFX_tauren_male_horns_over:d5"	
-			"GFX_tauren_male_mouth:d2"	
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
 			"GFX_tauren_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
-
-
-
 		}
 
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# tauren female oldage
+	portraitType = {
+		name = "PORTRAIT_taurengfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"			
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
 			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
@@ -157,34 +297,189 @@ spriteTypes = {
 		
 		headgear_that_hides_hair = { }
 	}
+
+
+
+	# Grimtotem Male
+	portraitType = {
+		name = "PORTRAIT_grimtotemgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_warpaint:p5"
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_horns:d5"	
+			"GFX_tauren_male_horns_over:d5"		
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_grimtotemgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_warpaint:p5"
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_horns:d5"	
+			"GFX_tauren_male_horns_over:d5"		
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_grimtotemgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_warpaint:p5"
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_horns:d5"	
+			"GFX_tauren_male_horns_over:d5"		
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
 	
 
 
-### gnoll FEMALE ####
+### tauren FEMALE ####
 
 
-	# gnoll Female
+	# tauren Female
 
-	# gnoll female
+	# tauren female
 	portraitType = {
-		name = "PORTRAIT_gnollgfx_female"
+		name = "PORTRAIT_taurengfx_female"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_gnoll_male_base:p2"
-			"GFX_gnoll_male_neck:d0"
-		   	"GFX_gnoll_male_hair:p1:y"
-			"GFX_gnoll_male_nose:d3"
-			"GFX_gnoll_male_cheeks:d4"
-			"GFX_gnoll_male_eyes:d6"
-			"GFX_gnoll_male_ear:d7"			
-			"GFX_gnoll_male_mouth:d2"
-			"GFX_gnoll_male_beard:p4:y"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"			
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_gnoll_male_blinded_eyes:p10"
+			"GFX_tauren_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
@@ -210,26 +505,26 @@ spriteTypes = {
 		headgear_that_hides_hair = { }
 	}
 
-	# gnoll female midage
+	# tauren female midage
 	portraitType = {
-		name = "PORTRAIT_gnollgfx_female1"
+		name = "PORTRAIT_taurengfx_female1"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_gnoll_male_base:p2"
-			"GFX_gnoll_male_neck:d0"
-		   	"GFX_gnoll_male_hair:p1:y"
-			"GFX_gnoll_male_nose:d3"
-			"GFX_gnoll_male_cheeks:d4"
-			"GFX_gnoll_male_eyes:d6"
-			"GFX_gnoll_male_ear:d7"
-			"GFX_gnoll_male_mouth:d2"
-			"GFX_gnoll_male_beard:p4:y"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_gnoll_male_blinded_eyes:p10"
+			"GFX_tauren_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
@@ -255,26 +550,612 @@ spriteTypes = {
 		headgear_that_hides_hair = { }
 	}
 
-	# gnoll female oldage
+	# tauren female oldage
 	portraitType = {
-		name = "PORTRAIT_gnollgfx_female2"
+		name = "PORTRAIT_taurengfx_female2"
 		effectFile = "gfx/FX/portrait.lua"
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_gnoll_male_base:p2"
-			"GFX_gnoll_male_neck:d0"
-		   	"GFX_gnoll_male_hair:p1:y"
-			"GFX_gnoll_male_nose:d3"
-			"GFX_gnoll_male_cheeks:d4"
-			"GFX_gnoll_male_eyes:d6"
-			"GFX_gnoll_male_ear:d7"			
-			"GFX_gnoll_male_mouth:d2"
-			"GFX_gnoll_male_beard:p4:y"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"			
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
 			"GFX_character_scars:p7:y"
 			"GFX_character_reddots:p8"
 			"GFX_character_boils:p9"
-			"GFX_gnoll_male_blinded_eyes:p10"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# Highmountain Male
+	portraitType = {
+		name = "PORTRAIT_highmountaingfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_warpaint:p5"
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_highmountain:d5"			
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_highmountaingfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_warpaint:p5"
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_highmountain:d5"	
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_highmountaingfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_warpaint:p5"
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_highmountain:d5"	
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### tauren FEMALE ####
+
+
+	# tauren Female
+
+	# tauren female
+	portraitType = {
+		name = "PORTRAIT_highmountaingfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"			
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# tauren female midage
+	portraitType = {
+		name = "PORTRAIT_highmountaingfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# tauren female oldage
+	portraitType = {
+		name = "PORTRAIT_highmountaingfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"			
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 10 10 10 } {  200 200 200 } { 255 255 255 }
+			{ 15 8 0 } { 214 210 195 } { 255 255 255 }
+			{ 10 10 10 } { 143 134 127 } { 255 255 255 }
+			{ 30 22 18 } { 174 161 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+			{ 30 22 18 } { 180 170 151 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# Taunka Male
+	portraitType = {
+		name = "PORTRAIT_taunkagfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_horns:d5"	
+			"GFX_tauren_male_horns_over:d5"		
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_taunkagfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_horns:d5"	
+			"GFX_tauren_male_horns_over:d5"		
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_taunkagfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_eyes2:d10"
+			"GFX_tauren_male_skin:d10:h"
+			"GFX_tauren_male_skin_over:d4:h"
+			"GFX_tauren_male_eyes:d6:h"	
+			"GFX_tauren_male_hair:p1:y:e"	
+			"GFX_tauren_male_ears:d7:h"	
+			"GFX_tauren_male_beard:e:p4"	
+			"GFX_tauren_male_beard_over:p4"	
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_nosering:p14"	
+			"GFX_tauren_male_horns:d5"	
+			"GFX_tauren_male_horns_over:d5"		
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 1 1 1 } { 55 55 55 } { 245 245 245 }
+			{ 1 1 1 } {  85 45 25 } { 200 185 145 }
+			{ 1 1 1 } { 75 75 75 } { 205 205 205 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 10 12 10 } { 130 80 45 } { 205 185 145 }
+			{ 30 22 18 } { 128 120 121 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 205 185 155 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 205 175 145}
+			{ 125 125 125 }
+			{ 184 183 186 }
+			{ 164 125 106 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### taunka FEMALE ####
+
+
+	# taunka Female
+
+	# taunka female
+	portraitType = {
+		name = "PORTRAIT_taunkagfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"			
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# taunka female midage
+	portraitType = {
+		name = "PORTRAIT_taunkagfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 36 35 29 } { 196 172 91 } { 255 255 255 }
+			{ 10 10 10 } {  50 50 50 } { 255 255 255 }
+			{ 15 8 0 } { 176 155 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 30 22 18 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 78 54 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 58 109 193}
+			{ 120 74 46 }
+			{ 34 103 36 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# taunka female oldage
+	portraitType = {
+		name = "PORTRAIT_taunkagfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_tauren_male_base:p2"
+			"GFX_tauren_male_neck:d0"
+		   	"GFX_tauren_male_hair:p1:y"
+			"GFX_tauren_male_nose:d3"
+			"GFX_tauren_male_cheeks:d4"
+			"GFX_tauren_male_eyes:d6"
+			"GFX_tauren_male_ear:d7"			
+			"GFX_tauren_male_mouth:d2"
+			"GFX_tauren_male_beard:p4:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_tauren_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
