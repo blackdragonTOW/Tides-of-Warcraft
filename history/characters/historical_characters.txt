@@ -1488,14 +1488,40 @@
 		give_nickname = nick_the_destroyer
 		effect = {
 			give_artifact = the_black_hand
+		}
+	}
+	10000.6.3 = {
+		effect = {
 			c_the_dark_portal = {
 				ROOT = {
 					capital = PREV
 				}
 			}
+			spawn_unit = {
+				province = 377 # The Dark Portal
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_infantry = { 788 788 }
+					heavy_infantry = { 543 543 }
+					pikemen = { 312 312 }
+					light_cavalry = { 355 355 }
+					knights = { 236 236 }
+					archers = { 533 533 }
+					mages = { 111 111 }
+					war_beasts = { 245 245 }
+				}
+				attrition = 1.0
+				maintenance_multiplier = 0.5
+				reinforces = no
+				earmark = wc1_horde
+			}
 		}
 	}
 	10003.9.4 = {
+		effect = {
+			disband_event_forces = wc1_horde
+		}
 		death = {
 			death_reason = death_duel
 			killer = 57 # Orgrim
@@ -1531,8 +1557,34 @@
 		give_nickname = nick_blackhand
 		effect = { give_artifact = blachand_doomsaw }
 	}
+	10000.6.3 = {
+		effect = {
+			spawn_unit = {
+				province = 379 # Dreadmaul Hold
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_infantry = { 623 623 }
+					heavy_infantry = { 488 $88 }
+					pikemen = { 247 247 }
+					light_cavalry = { 289 289 }
+					knights = { 178 178 }
+					archers = { 482 482 }
+					mages = { 71 71 }
+					war_beasts = { 200 200 }
+				}
+				attrition = 1.0
+				maintenance_multiplier = 0.5
+				reinforces = no
+				earmark = wc1_horde
+			}
+		}
+	}
 	10003.9.4 = {
 		religion = demonology
+		effect = {
+			disband_event_forces = wc1_horde
+		}
 	}
 	10007.3.15 = {
 		dynasty = 48 # Blackrock
@@ -1713,10 +1765,33 @@
 		give_nickname = nick_deadeye
 		effect = {
 			give_artifact = bite_of_the_bleeding_hollow
+		}
+	}
+	10000.6.3 = {
+		effect = {
 			c_nethergarde = {
 				ROOT = {
 					capital = PREV
 				}
+			}
+			spawn_unit = {
+				province = 376 # Nethergarde
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_infantry = { 623 623 }
+					heavy_infantry = { 488 $88 }
+					pikemen = { 247 247 }
+					light_cavalry = { 289 289 }
+					knights = { 178 178 }
+					archers = { 482 482 }
+					mages = { 71 71 }
+					war_beasts = { 200 200 }
+				}
+				attrition = 1.0
+				maintenance_multiplier = 0.5
+				reinforces = no
+				earmark = wc1_horde
 			}
 		}
 	}
@@ -1725,6 +1800,9 @@
 	}
 	10003.9.4 = {
 		religion = demonology
+		effect = {
+			disband_event_forces = wc1_horde
+		}
 	}
 	10008.9.7 = {
 		death = {
@@ -2644,6 +2722,7 @@
 			set_graphical_culture = nightmare_dragonflight
 		}
 		religion = yogg_saron
+		culture = nightmare_dragonflight
 		dynasty = 75 # Nightmare Dragonflight
 	}
 	10025.7.14 = {
@@ -3660,6 +3739,7 @@
 			set_graphical_culture = nightmare_dragonflight
 		}
 		religion = yogg_saron
+		culture = nightmare_dragonflight
 		dynasty = 75 # Nightmare Dragonflight
 	}
 	10032.6.14 = {
@@ -5262,4 +5342,83 @@
 			death_reason = death_battle
 		}
 	}
+}
+
+196 = {
+	name = "Morgan"
+	dynasty = 135 # Morgan
+	female = yes
+	culture = azerothian
+	religion = holy_light
+	dna="0bbab0ifal0"
+	properties="hl0000000000000000"
+	martial = 7
+	trait = race_human
+	9994.3.2 = {
+		birth = yes
+	}
+	10010.3.2 = {
+		add_trait = skilled_tactician
+		add_trait = warrior
+		add_trait = brave
+		add_trait = wroth
+		effect = {
+			add_pressed_claim = k_thaurissan
+			spawn_unit = {
+				province = 293 # Morgan's Vigil
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_infantry = { 455 455 }
+					heavy_infantry = { 233 233 }
+					pikemen = { 120 120 }
+					light_cavalry = { 210 210 }
+					knights = { 89 89 }
+					archers = { 222 222 }
+					mages = { 46 46 }
+				}
+				attrition = 1.0
+				maintenance_multiplier = 0.5
+				reinforces = no
+			}
+		}
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+197 = {
+	name = "Deathwing"
+	dynasty = 137 # Black Dragonflight
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	diplomacy = 10
+	martial = 15
+	stewardship = 12
+	intrigue = 15
+	learning = 14
+	trait = race_dragon
+	trait = cruel
+	trait = lunatic
+	trait = scarred_high
+	trait = robust
+	trait = shrewd
+	trait = greedy
+	trait = wroth
+	trait = envious
+	trait = proud
+	trait = ambitious
+	trait = brave
+	trait = deceitful
+	trait = paranoid
+	1.1.1 = {
+		birth = yes
+		effect = {
+			give_nickname = nick_the_destroyer
+		}
+	}
+	
 }

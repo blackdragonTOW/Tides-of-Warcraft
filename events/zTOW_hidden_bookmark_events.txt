@@ -1,5 +1,7 @@
 namespace = bookmarksetup
 
+#The "z" in front of the name is to try to have it go last when it comes to modded files.
+
 #This is to prevent stuff like holy light foundation and other such events from firing in startdates where they already happened.
 
 #Also sets modifiers and flags to specific provinces.
@@ -330,7 +332,25 @@ character_event = {
 				}
 			}
 		}
-		#This is here to handle a few very specific characters with "special needs".
+		if = {
+			limit = {
+				NOT = { has_dlc = "Horse Lords" }
+				NOT = { has_dlc = "Jade Dragon" }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = bm_lord_of_the_clans
+						has_global_flag = bm_scourge_of_lordaeron
+						has_global_flag = bm_path_of_the_damned
+						has_global_flag = bm_hunt_for_the_betrayer
+						has_global_flag = bm_drums_of_war
+					}
+				}
+				c_
+			}
+		}
+		#This is here to handle a few very specific characters that need special handling.
 		if = {
 			limit = {
 				has_global_flag = bm_drums_of_war
