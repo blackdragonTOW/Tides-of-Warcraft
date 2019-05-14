@@ -1,0 +1,855 @@
+namespace = TOW_Creeps
+
+## Spawn creep modifier
+character_event = {
+    id = TOW_Creeps.1
+    is_triggered_only = yes
+	hide_window = yes
+	only_playable = yes
+
+	trigger = {
+		higher_tier_than = baron
+	}
+
+    immediate = {
+    	any_demesne_province = {
+    		# Select which type of creep
+    		random_list = {
+    			1 = { # Gnoll
+    				modifier = {
+    					factor = 0
+    					OR = {
+	    					check_variable = { which = TOW_creep_level_gnoll value >= 5 }
+    						ROOT = { trait = race_gnoll }
+    						NOR = {
+    							terrain = forest
+    							terrain = plains
+    							terrain = farmlands
+    							terrain = steppe
+    						}
+    					}
+    				}
+    				set_province_flag = local_TOW_creep_spawn_gnoll
+    			}
+    			1 = { # Kobold
+    				modifier = {
+    					factor = 0
+    					OR = {
+	    					check_variable = { which = TOW_creep_level_kobold value >= 5 }
+    						ROOT = { trait = race_kobold }
+    						NOR = {
+    							terrain = hills
+    							terrain = mountain
+    							terrain = desert
+    						}
+    					}
+    				}
+    				set_province_flag = local_TOW_creep_spawn_kobold
+    			}
+    			1 = { # Murloc
+    				modifier = {
+    					factor = 0
+    					OR = {
+	    					check_variable = { which = TOW_creep_level_murloc value >= 5 }
+    						ROOT = { trait = race_murloc }
+    						NOR = {
+    							port = yes
+    							terrain = swamp
+    						}
+    					}
+    				}
+    				set_province_flag = local_TOW_creep_spawn_murloc
+    			}
+    			1 = { # Trogg
+    				modifier = {
+    					factor = 0
+    					OR = {
+	    					check_variable = { which = TOW_creep_level_trogg value >= 5 }
+    						ROOT = { trait = race_trogg }
+    						NOR = {
+    							terrain = hills
+    							terrain = mountain
+    							terrain = desert
+    						}
+    					}
+    				}
+    				set_province_flag = local_TOW_creep_spawn_trogg
+    			}
+    		}
+
+    		# Formula : base% * ( 1 - ( 0.05 + creep_level * 0.048 ) * creep_level )
+	    	set_variable = { which = local_TOW_creep_level value = 1 }
+	    	set_variable = { which = local_TOW_creep_level_2 value = 0.048 }
+	    	multiply_variable = { which = local_TOW_creep_level_2 which = TOW_creep_level }
+	    	change_variable = { which = local_TOW_creep_level_2 value = 0.05 }
+	    	multiply_variable = { which = local_TOW_creep_level_2 which = TOW_creep_level }
+	    	subtract_variable = { which = local_TOW_creep_level which = local_TOW_creep_level_2 }
+
+	    	set_variable = { which = TOW_local_creep_probability value = 15 }
+	    	if = {
+	    		limit = { # Already present culture increases chance
+	    			OR = {
+	    				AND = { has_province_flag = local_TOW_creep_spawn_gnoll culture = gnoll }
+	    				AND = { has_province_flag = local_TOW_creep_spawn_kobold culture = kobold }
+	    				AND = { has_province_flag = local_TOW_creep_spawn_murloc culture = murloc }
+	    				AND = { has_province_flag = local_TOW_creep_spawn_trogg culture = trogg }
+	    			}
+	    		}
+	    		change_variable = { which = TOW_local_creep_probability value = 5 }
+	    	}
+	    	if = {
+	    		limit = { ROOT = { TOW_is_creep_realm = yes } }
+	    		change_variable = { which = TOW_local_creep_probability value = 3 }
+	    	}
+	    	else_if = {
+	    		limit = { ROOT = { TOW_government_is_uncivilized = yes } }
+	    		change_variable = { which = TOW_local_creep_probability value = 3 }
+	    	}
+	    	multiply_variable = { which = TOW_local_creep_probability which = local_TOW_creep_level }
+	    	TOW_generate_random_number_1_100 = yes
+
+	    	if = {
+				limit = {
+					check_variable = { which = local_TOW_rand which < TOW_local_creep_probability }
+				}
+	    		set_variable = { which = local_TOW_creep_spawn_amount value = 1 }
+	    		TOW_province_add_spawned_creeps_flag = yes
+				TOW_province_add_creeps_by_flag_and_variable = yes
+				province_event = { id = TOW_Creeps.2 }
+				any_liege = { province_event = { id = TOW_Creeps.2 } }
+			}
+		}
+    }
+}
+
+
+## Creeps appearing notification
+province_event = {
+    id = TOW_Creeps.2
+	picture = GFX_evt_tow_gnoll
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_gnoll }
+		picture = GFX_evt_tow_gnoll
+		text = EVTDESC_TOW_Creeps_2
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_kobold }
+		picture = GFX_evt_tow_kobold
+		text = EVTDESC_TOW_Creeps_2
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_murloc }
+		picture = GFX_evt_tow_murloc
+		text = EVTDESC_TOW_Creeps_2
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_trogg }
+		picture = GFX_evt_tow_trogg
+		text = EVTDESC_TOW_Creeps_2
+	}
+	border = GFX_event_normal_frame_war
+    is_triggered_only = yes
+    #notification = yes
+
+    immediate = {
+    }
+
+    option = {
+    	name = CURSES
+    }
+
+    after = {
+    	# clear
+    	clr_province_flag = local_TOW_creep_event_gnoll
+    	clr_province_flag = local_TOW_creep_event_kobold
+    	clr_province_flag = local_TOW_creep_event_murloc
+    	clr_province_flag = local_TOW_creep_event_trogg
+    }
+}
+
+## on_new_holder Creep presence cleanup
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+character_event = {
+	id = TOW_Creeps.3
+    is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		FROM = {
+			tier = COUNT
+			location = {
+				check_variable = { which = TOW_creep_level value > 0 }
+			}
+		}
+	}
+
+	immediate = {
+		log = "new holder creep"
+		FROM = {
+			location = {
+				log = "level [This.TOW_creep_level.GetValue]"
+				ROOT = {
+					if = {
+						limit = { TOW_is_creep_race = yes }
+						TOW_prev_province_remove_same_race_creeps = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+## Creep presence tombola
+province_event = {
+    id = TOW_Creeps.4
+    is_triggered_only = yes
+	hide_window = yes
+	only_playable = yes
+
+	immediate = {
+		if = {
+			limit = {
+				check_variable = { which = TOW_creep_level value > 0 }
+				has_province_flag = TOP_creep_presence
+			}
+			# Select what will happen in the province
+			random_list = {
+				400 = {
+					modifier = { factor = 1.25 check_variable = { which = TOW_creep_level value == 1 } }
+				} # Nothing happens
+				40 = { # Province looted by creeps
+					modifier = { factor = 0.1 TOW_province_has_colony = yes check_variable = { which = TOW_colony_progress value <= 200 } }
+					modifier = { factor = 1.5 check_variable = { which = TOW_creep_level value > 5 } }
+					modifier = { factor = 1.5 check_variable = { which = TOW_creep_level value > 8 } }
+					set_variable = { which = local_TOW_check_creep_level_min value = 0 }
+					TOW_province_select_weighted_creep_for_event = yes
+					province_event = { id = TOW_Creeps.5 }
+				}
+				30 = { # Creeps fight amongst themselves
+					modifier = { factor = 1.2 check_variable = { which = TOW_creep_level value == 5 } }
+					modifier = { factor = 1.4 check_variable = { which = TOW_creep_level value == 6 } }
+					modifier = { factor = 1.6 check_variable = { which = TOW_creep_level value == 7 } }
+					modifier = { factor = 1.8 check_variable = { which = TOW_creep_level value == 8 } }
+					modifier = { factor = 2.0 check_variable = { which = TOW_creep_level value == 9 } }
+					modifier = { factor = 3.0 check_variable = { which = TOW_creep_level value == 10 } }
+					modifier = {
+						factor = 0
+						NOR = {
+							AND = {
+								check_variable = { which = TOW_creep_level_gnoll value > 0 }
+								OR = {
+									check_variable = { which = TOW_creep_level_kobold value > 0 }
+									check_variable = { which = TOW_creep_level_murloc value > 0 }
+									check_variable = { which = TOW_creep_level_trogg value > 0 }
+								}
+							}
+							AND = {
+								check_variable = { which = TOW_creep_level_kobold value > 0 }
+								OR = {
+									check_variable = { which = TOW_creep_level_gnoll value > 0 }
+									check_variable = { which = TOW_creep_level_murloc value > 0 }
+									check_variable = { which = TOW_creep_level_trogg value > 0 }
+								}
+							}
+							AND = {
+								check_variable = { which = TOW_creep_level_murloc value > 0 }
+								OR = {
+									check_variable = { which = TOW_creep_level_gnoll value > 0 }
+									check_variable = { which = TOW_creep_level_kobold value > 0 }
+									check_variable = { which = TOW_creep_level_trogg value > 0 }
+								}
+							}
+							AND = {
+								check_variable = { which = TOW_creep_level_trogg value > 0 }
+								OR = {
+									check_variable = { which = TOW_creep_level_gnoll value > 0 }
+									check_variable = { which = TOW_creep_level_murloc value > 0 }
+									check_variable = { which = TOW_creep_level_kobold value > 0 }
+								}
+							}
+						}
+					}
+					set_variable = { which = local_TOW_check_creep_level_min value = 0 }
+					TOW_province_select_weighted_creep_for_event = yes
+					province_event = { id = TOW_Creeps.6 }
+				}
+				20 = { # Creeps choose a leader
+					modifier = {
+						factor = 0
+						NOR = {
+							check_variable = { which = TOW_creep_level_gnoll value > 3 }
+							check_variable = { which = TOW_creep_level_murloc value > 3 }
+							check_variable = { which = TOW_creep_level_kobold value > 3 }
+							check_variable = { which = TOW_creep_level_trogg value > 3 }
+						}
+					}
+					modifier = {
+						factor = 0
+						num_of_empty_holdings == 0
+					}
+					set_variable = { which = local_TOW_check_creep_level_min value = 4 }
+					TOW_province_select_weighted_creep_for_event = yes
+					province_event = { id = TOW_Creeps.7 }
+				}
+				15 = { # Adventurers step up
+					modifier = {
+						factor = 0
+						check_variable = { which = TOW_creep_level value <= 1 }
+					}
+					set_variable = { which = local_TOW_check_creep_level_min value = 0 }
+					TOW_province_select_weighted_creep_for_event = yes
+					province_event = { id = TOW_Creeps.8 }
+				}
+			}
+			province_event = { id = TOW_Creeps.4 days = 60 }
+		}
+		else_if = {
+			limit = {
+				has_province_flag = TOP_creep_presence
+			}
+			clr_province_flag = TOP_creep_presence
+		}
+	}
+}
+
+## Province looted by creeps
+province_event = {
+    id = TOW_Creeps.5
+	picture = GFX_evt_tow_gnoll
+    desc = {
+		trigger = { ROOT = { has_province_flag = local_TOW_creep_event_gnoll } }
+		picture = GFX_evt_tow_gnoll
+		text = EVTDESC_TOW_Creeps_5
+	}
+	desc = {
+		trigger = { ROOT = { has_province_flag = local_TOW_creep_event_kobold } }
+		picture = GFX_evt_tow_kobold
+		text = EVTDESC_TOW_Creeps_5
+	}
+	desc = {
+		trigger = { ROOT = { has_province_flag = local_TOW_creep_event_murloc } }
+		picture = GFX_evt_tow_murloc
+		text = EVTDESC_TOW_Creeps_5
+	}
+	desc = {
+		trigger = { ROOT = { has_province_flag = local_TOW_creep_event_trogg } }
+		picture = GFX_evt_tow_trogg
+		text = EVTDESC_TOW_Creeps_5
+	}
+	border = GFX_event_normal_frame_war
+    is_triggered_only = yes
+    hide_from = yes
+
+	immediate = {
+		ROOT = {
+	    	random_province_holding = {
+	    		add_holding_modifier = { modifier = looted_modifier years = 1 }
+	    		if = {
+	    			limit = { num_of_buildings = 1 }
+	    			destroy_random_building = yes
+	    			# Colony - check destroyed main building
+	    			if = {
+						limit = { TOW_holding_is_colony = yes NOT = { has_building = cln_main_1 } }
+						if = { limit = { num_of_buildings = 1 } destroy_random_building = yes }
+						add_building = cln_main_1
+	    			}
+	    		}
+	    		# Colony
+				if = {
+					limit = { TOW_holding_is_colony = yes }
+					location = { TOW_province_pillaged_colony_effect = yes }
+				}
+	    		save_event_target_as = pillaged_holding
+	    		
+	    		owner = {
+	    			export_to_variable = {
+		    			which = TOW_Creeps_5_gold
+		    			value = holding_tax_value
+		    			who = PREV
+		    		}
+		    		multiply_variable = { which = TOW_Creeps_5_gold value = 5 }
+		    		if = {
+		    			limit = { ROOT = { has_province_flag = local_TOW_creep_event_gnoll } }
+		    			set_variable = { which = TOW_creep_level_gnoll which = ROOT }
+		    			divide_variable = { which = TOW_Creeps_5_gold which = TOW_creep_level_gnoll }
+		    			set_variable = { which = TOW_creep_level_gnoll value = 0 }
+		    		}
+		    		else_if = {
+		    			limit = { ROOT = { has_province_flag = local_TOW_creep_event_kobold } }
+		    			set_variable = { which = TOW_creep_level_kobold which = ROOT }
+		    			divide_variable = { which = TOW_Creeps_5_gold which = TOW_creep_level_kobold }
+		    			set_variable = { which = TOW_creep_level_kobold value = 0 }
+		    		}
+		    		else_if = {
+		    			limit = { ROOT = { has_province_flag = local_TOW_creep_event_murloc } }
+		    			set_variable = { which = TOW_creep_level_murloc which = ROOT }
+		    			divide_variable = { which = TOW_Creeps_5_gold which = TOW_creep_level_murloc }
+		    			set_variable = { which = TOW_creep_level_murloc value = 0 }
+		    		}
+		    		else_if = {
+		    			limit = { ROOT = { has_province_flag = local_TOW_creep_event_trogg } }
+		    			set_variable = { which = TOW_creep_level_trogg which = ROOT }
+		    			divide_variable = { which = TOW_Creeps_5_gold which = TOW_creep_level_trogg }
+		    			set_variable = { which = TOW_creep_level_trogg value = 0 }
+		    		}
+		    		multiply_variable = { which = TOW_Creeps_5_gold value = -1 }
+		    		subtract_variable = { which = TOW_Creeps_5_gold value = 2 }
+	    			wealth = TOW_Creeps_5_gold
+	    		}
+	    	}
+	    	save_event_target_as = province
+    	}
+    }
+
+    option = {
+    	name = CURSES
+    	custom_tooltip = {
+    		text = TOW_Creeps_5_Pillaged_Tooltip
+    	}
+    	tooltip = {
+    		owner = {
+    			show_scope_change = no
+    			wealth = TOW_Creeps_5_gold
+    		}
+    	}
+    }
+
+    after = {
+		# clear
+    	clr_province_flag = local_TOW_creep_event_gnoll
+    	clr_province_flag = local_TOW_creep_event_kobold
+    	clr_province_flag = local_TOW_creep_event_murloc
+    	clr_province_flag = local_TOW_creep_event_trogg
+    }
+}
+
+## Creeps fight amongst themselves
+province_event = {
+    id = TOW_Creeps.6
+	picture = GFX_evt_tow_gnoll
+	desc = EVTDESC_TOW_Creeps_6
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_gnoll }
+		picture = GFX_evt_tow_gnoll
+		text = EVTDESC_TOW_Creeps_6
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_kobold }
+		picture = GFX_evt_tow_kobold
+		text = EVTDESC_TOW_Creeps_6
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_murloc }
+		picture = GFX_evt_tow_murloc
+		text = EVTDESC_TOW_Creeps_6
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_trogg }
+		picture = GFX_evt_tow_trogg
+		text = EVTDESC_TOW_Creeps_6
+	}
+	border = GFX_event_normal_frame_war
+    is_triggered_only = yes
+
+    immediate = {
+    	if = {
+    		limit = { has_province_flag = local_TOW_creep_event_gnoll }
+    		set_variable = { which = local_TOW_creep_level_1 which = TOW_creep_level_gnoll }
+    	}
+    	else_if = {
+    		limit = { has_province_flag = local_TOW_creep_event_kobold }
+    		set_variable = { which = local_TOW_creep_level_1 which = TOW_creep_level_kobold }
+    	}
+    	else_if = {
+    		limit = { has_province_flag = local_TOW_creep_event_murloc }
+    		set_variable = { which = local_TOW_creep_level_1 which = TOW_creep_level_murloc }
+    	}
+    	else_if = {
+    		limit = { has_province_flag = local_TOW_creep_event_trogg }
+    		set_variable = { which = local_TOW_creep_level_1 which = TOW_creep_level_trogg }
+    	}
+    	# Select second creeps
+    	random_list = {
+    		1 = {
+    			modifier = { factor = 0 has_province_flag = local_TOW_creep_event_gnoll }
+    			modifier = { factor = 0 check_variable = { which = TOW_creep_level_gnoll value == 0 } }
+    			modifier = { factor = 2 check_variable = { which = TOW_creep_level_gnoll value == 2 } }
+    			modifier = { factor = 3 check_variable = { which = TOW_creep_level_gnoll value == 3 } }
+    			modifier = { factor = 4 check_variable = { which = TOW_creep_level_gnoll value == 4 } }
+    			modifier = { factor = 5 check_variable = { which = TOW_creep_level_gnoll value == 5 } }
+    			set_province_flag = local_TOW_creep_event_2_gnoll
+    			set_variable = { which = local_TOW_creep_level_2 which = TOW_creep_level_gnoll }
+    		}
+    		1 = {
+    			modifier = { factor = 0 has_province_flag = local_TOW_creep_event_kobold }
+    			modifier = { factor = 0 check_variable = { which = TOW_creep_level_kobold value == 0 } }
+    			modifier = { factor = 2 check_variable = { which = TOW_creep_level_kobold value == 2 } }
+    			modifier = { factor = 3 check_variable = { which = TOW_creep_level_kobold value == 3 } }
+    			modifier = { factor = 4 check_variable = { which = TOW_creep_level_kobold value == 4 } }
+    			modifier = { factor = 5 check_variable = { which = TOW_creep_level_kobold value == 5 } }
+    			set_province_flag = local_TOW_creep_event_2_kobold
+    			set_variable = { which = local_TOW_creep_level_2 which = TOW_creep_level_kobold }
+    		}
+    		1 = {
+    			modifier = { factor = 0 has_province_flag = local_TOW_creep_event_murloc }
+    			modifier = { factor = 0 check_variable = { which = TOW_creep_level_murloc value == 0 } }
+    			modifier = { factor = 2 check_variable = { which = TOW_creep_level_murloc value == 2 } }
+    			modifier = { factor = 3 check_variable = { which = TOW_creep_level_murloc value == 3 } }
+    			modifier = { factor = 4 check_variable = { which = TOW_creep_level_murloc value == 4 } }
+    			modifier = { factor = 5 check_variable = { which = TOW_creep_level_murloc value == 5 } }
+    			set_province_flag = local_TOW_creep_event_2_murloc
+    			set_variable = { which = local_TOW_creep_level_2 which = TOW_creep_level_murloc }
+    		}
+    		1 = {
+    			modifier = { factor = 0 has_province_flag = local_TOW_creep_event_trogg }
+    			modifier = { factor = 0 check_variable = { which = TOW_creep_level_trogg value == 0 } }
+    			modifier = { factor = 2 check_variable = { which = TOW_creep_level_trogg value == 2 } }
+    			modifier = { factor = 3 check_variable = { which = TOW_creep_level_trogg value == 3 } }
+    			modifier = { factor = 4 check_variable = { which = TOW_creep_level_trogg value == 4 } }
+    			modifier = { factor = 5 check_variable = { which = TOW_creep_level_trogg value == 5 } }
+    			set_province_flag = local_TOW_creep_event_2_trogg
+    			set_variable = { which = local_TOW_creep_level_2 which = TOW_creep_level_trogg }
+    		}
+    	}
+
+		random_list = {
+			1 = {
+				modifier = { factor = 2 check_variable = { which = local_TOW_creep_level_1 value == 2 } }
+				modifier = { factor = 3 check_variable = { which = local_TOW_creep_level_1 value == 3 } }
+				modifier = { factor = 4 check_variable = { which = local_TOW_creep_level_1 value == 4 } }
+				modifier = { factor = 5 check_variable = { which = local_TOW_creep_level_1 value == 5 } }
+				set_province_flag = local_TOW_Creeps_6_winner_1
+			}
+			1 = {
+				modifier = { factor = 2 check_variable = { which = local_TOW_creep_level_2 value == 2 } }
+				modifier = { factor = 3 check_variable = { which = local_TOW_creep_level_2 value == 3 } }
+				modifier = { factor = 4 check_variable = { which = local_TOW_creep_level_2 value == 4 } }
+				modifier = { factor = 5 check_variable = { which = local_TOW_creep_level_2 value == 5 } }
+				set_province_flag = local_TOW_Creeps_6_winner_2
+			}
+			2 = { set_province_flag = local_TOW_Creeps_6_winner_none }
+		}
+
+		random_list = {
+			5 = { set_variable = { which = local_TOW_creep_remove_amount value = 1 } }
+			2 = { set_variable = { which = local_TOW_creep_remove_amount value = 2 } }
+			1 = { set_variable = { which = local_TOW_creep_remove_amount value = 3 } }
+		}
+		if = {
+			limit = {
+				has_province_flag = local_TOW_Creeps_6_winner_1
+			}
+			if = {
+	    		limit = { has_province_flag = local_TOW_creep_event_2_gnoll }
+				set_province_flag = local_TOW_creep_remove_gnoll
+				TOW_province_remove_creeps_by_flag_and_variable = yes
+	    	}
+	    	else_if = {
+	    		limit = { has_province_flag = local_TOW_creep_event_2_kobold }
+				set_province_flag = local_TOW_creep_remove_kobold
+				TOW_province_remove_creeps_by_flag_and_variable = yes
+	    	}
+	    	else_if = {
+	    		limit = { has_province_flag = local_TOW_creep_event_2_murloc }
+				set_province_flag = local_TOW_creep_remove_murloc
+				TOW_province_remove_creeps_by_flag_and_variable = yes
+	    	}
+	    	else_if = {
+	    		limit = { has_province_flag = local_TOW_creep_event_2_trogg }
+				set_province_flag = local_TOW_creep_remove_trogg
+				TOW_province_remove_creeps_by_flag_and_variable = yes
+	    	}
+		}
+		else_if = {
+			limit = {
+				has_province_flag = local_TOW_Creeps_6_winner_2
+			}
+			if = {
+	    		limit = { has_province_flag = local_TOW_creep_event_gnoll }
+				set_province_flag = local_TOW_creep_remove_gnoll
+				TOW_province_remove_creeps_by_flag_and_variable = yes
+	    	}
+	    	else_if = {
+	    		limit = { has_province_flag = local_TOW_creep_event_kobold }
+				set_province_flag = local_TOW_creep_remove_kobold
+				TOW_province_remove_creeps_by_flag_and_variable = yes
+	    	}
+	    	else_if = {
+	    		limit = { has_province_flag = local_TOW_creep_event_murloc }
+				set_province_flag = local_TOW_creep_remove_murloc
+				TOW_province_remove_creeps_by_flag_and_variable = yes
+	    	}
+	    	else_if = {
+	    		limit = { has_province_flag = local_TOW_creep_event_trogg }
+				set_province_flag = local_TOW_creep_remove_trogg
+				TOW_province_remove_creeps_by_flag_and_variable = yes
+	    	}
+		}
+    }
+
+    option = {
+    	name = OK
+    }
+
+    after = {
+		# clear
+    	clr_province_flag = local_TOW_creep_event_gnoll
+    	clr_province_flag = local_TOW_creep_event_kobold
+    	clr_province_flag = local_TOW_creep_event_murloc
+    	clr_province_flag = local_TOW_creep_event_trogg
+    	clr_province_flag = local_TOW_creep_event_2_gnoll
+    	clr_province_flag = local_TOW_creep_event_2_kobold
+    	clr_province_flag = local_TOW_creep_event_2_murloc
+    	clr_province_flag = local_TOW_creep_event_2_trogg
+    	clr_province_flag = local_TOW_Creeps_6_winner_1
+    	clr_province_flag = local_TOW_Creeps_6_winner_2
+    	clr_province_flag = local_TOW_Creeps_6_winner_none
+
+    }
+}
+
+## Creeps choose a leader
+province_event = {
+    id = TOW_Creeps.7
+	picture = GFX_evt_tow_gnoll
+	desc = EVTDESC_TOW_Creeps_7
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_gnoll }
+		picture = GFX_evt_tow_gnoll
+		text = EVTDESC_TOW_Creeps_7
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_kobold }
+		picture = GFX_evt_tow_kobold
+		text = EVTDESC_TOW_Creeps_7
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_murloc }
+		picture = GFX_evt_tow_murloc
+		text = EVTDESC_TOW_Creeps_7
+	}
+	desc = {
+		trigger = { has_province_flag = local_TOW_creep_event_trogg }
+		picture = GFX_evt_tow_trogg
+		text = EVTDESC_TOW_Creeps_7
+	}
+	border = GFX_event_normal_frame_war
+    is_triggered_only = yes
+
+    immediate = {
+ 		set_global_flag = TOW_character_spawn_no_initialization
+	
+		if = {
+			limit = { ROOT = { has_province_flag = local_TOW_creep_event_gnoll } }
+			create_character = {
+				dynasty = random
+				religion = pyromancy
+				culture = gnoll
+				female = no
+				random_traits = yes
+			}
+			new_character = {
+				set_variable = { which = TOW_creep_level_gnoll which = ROOT }
+				set_variable = { which = local_soldiers which = TOW_creep_level_gnoll }
+				set_variable = { which = TOW_creep_level_gnoll value = 0 }
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_province_flag = local_TOW_creep_event_kobold } }
+			create_character = {
+				dynasty = random
+				religion = geomancy
+				culture = kobold
+				female = no
+				random_traits = yes
+			}
+			new_character = {
+				set_variable = { which = TOW_creep_level_kobold which = ROOT }
+				set_variable = { which = local_soldiers which = TOW_creep_level_kobold }
+				set_variable = { which = TOW_creep_level_kobold value = 0 }
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_province_flag = local_TOW_creep_event_murloc } }
+			create_character = {
+				dynasty = random
+				religion = hydromancy
+				culture = murloc
+				female = no
+				random_traits = yes
+			}
+			new_character = {
+				set_variable = { which = TOW_creep_level_murloc which = ROOT }
+				set_variable = { which = local_soldiers which = TOW_creep_level_murloc }
+				set_variable = { which = TOW_creep_level_murloc value = 0 }
+			}
+		}
+		else_if = {
+			limit = { ROOT = { has_province_flag = local_TOW_creep_event_trogg } }
+			create_character = {
+				dynasty = random
+				religion = pyromancy
+				culture = trogg
+				female = no
+				random_traits = yes
+			}
+			new_character = {
+				set_variable = { which = TOW_creep_level_trogg which = ROOT }
+				set_variable = { which = local_soldiers which = TOW_creep_level_trogg }
+				set_variable = { which = TOW_creep_level_trogg value = 0 }
+			}
+		}
+		new_character = {
+			if = { limit = { ROOT = { religion_group = elemental_group } religion = ROOT } }
+			if = { limit = { gender_equality_trigger = yes } random = { chance = 50 set_gender = female } }
+			TOW_initialize_adult_character = yes
+			remove_trait = weak
+			remove_trait = slow
+			remove_trait = imbecile
+			remove_trait = dull
+			Keitaro_remove_lifestyle_traits = yes
+
+			random = {
+				chance = 40
+				remove_education_effect = yes
+				random_list = {
+					5 = { add_trait = misguided_warrior }
+					10 = { add_trait = tough_soldier }
+					15 = { add_trait = skilled_tactician }
+					10 = { add_trait = brilliant_strategist }
+				}
+			}
+			random_list = {
+				1 = { change_martial = 1 }
+				1 = { change_martial = 2 }
+				1 = { change_martial = 3 }
+				1 = { change_martial = 4 }
+				1 = { change_martial = 5 }
+				1 = { change_martial = 6 }
+			}
+			random_list = {
+				1 = { change_diplomacy = 1 }
+				1 = { change_diplomacy = 2 }
+				1 = { change_diplomacy = 3 }
+			}
+			random_list = { # Flavor Randomization
+				35 = { 
+					# Nothing
+				}
+				15 = { change_martial = 2 }
+				10 = { add_trait = robust }
+				10 = { add_trait = duelist }
+				10 = { add_trait = hunter }
+				5 = { add_trait = strategist }
+				5 = { change_martial = 4 }
+				5 = { 
+					if = {
+						limit = {
+							has_dlc = "Reapers"
+						}
+						add_trait = one_eyed
+					}
+				}
+				5 = { add_trait = shrewd }
+				3 = { add_trait = giant }
+			}
+			save_event_target_as = leader
+			prestige = 100
+			wealth = 50
+		}
+		build_holding = {
+			type = tribal
+			holder = event_target:leader
+		}
+		any_province_holding = {
+			limit = {
+				holding_type = tribal
+				holder_scope = { character = event_target:leader }
+			}
+			set_title_flag = TOW_insurrection_settlement
+			refill_holding_levy = yes
+		}
+		event_target:leader = {
+			TOW_prev_province_remove_same_race_creeps = yes
+			while = {
+				limit = { check_variable = { which = local_soldiers value > 0 } }
+				count = 10
+				spawn_unit = {
+					owner = event_target:leader
+					province = ROOT
+					home = ROOT
+					troops = {
+						light_infantry = { 150 150 }
+					}
+					attrition = 1.0
+					disband_on_peace = yes
+					maintenance_multiplier = 0.01
+				}
+				subtract_variable = { which = local_soldiers value = 1 }
+			}
+		}
+		ROOT = {
+			holder_scope = {
+				top_liege = {
+					save_event_target_as = owner
+				}
+			}
+		}
+		county = {
+			save_event_target_as = title
+		}
+		event_target:leader = {
+			unsafe_war = {
+				target = event_target:owner
+				casus_belli = creeps_insurrection
+				thirdparty_title = event_target:title
+				tier = COUNT
+			}
+		}
+    }
+
+    #portrait = event_target:leader
+
+    option = {
+    	name = CURSES
+    }
+
+    after = {
+		# clear
+    	clr_province_flag = local_TOW_creep_event_gnoll
+    	clr_province_flag = local_TOW_creep_event_kobold
+    	clr_province_flag = local_TOW_creep_event_murloc
+    	clr_province_flag = local_TOW_creep_event_trogg
+    }
+}
+
+## Adventurer step up
+province_event = {
+    id = TOW_Creeps.8
+	picture = GFX_evt_rider_adventure
+	desc = EVTDESC_TOW_Creeps_8
+	border = GFX_event_normal_frame_war
+    is_triggered_only = yes
+
+    immediate = {
+    	owner = { TOW_get_random_adventurer = yes }
+    }
+
+    portrait = event_target:random_adventurer
+
+    option = {
+    	name = OK
+    	event_target:random_adventurer = {
+    		show_scope_change = no
+    		TOW_adventurer_starts_adventure = yes
+    	}
+    }
+
+    after = {
+		# clear
+    	clr_province_flag = local_TOW_creep_event_gnoll
+    	clr_province_flag = local_TOW_creep_event_kobold
+    	clr_province_flag = local_TOW_creep_event_murloc
+    	clr_province_flag = local_TOW_creep_event_trogg
+    }
+}

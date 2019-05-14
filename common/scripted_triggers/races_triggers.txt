@@ -299,3 +299,25 @@ TOW_is_same_race_as_prev = {
 		AND = { trait = race_tauren PREV = { trait = race_tauren } }
 	}
 }
+
+TOW_is_adventurer_race = {
+	OR = {
+		trait = race_human
+		trait = race_orc
+		trait = race_dwarf
+		trait = race_high_elf
+		trait = race_blood_elf
+		trait = race_night_elf
+		trait = race_gnome
+		trait = race_goblin
+		trait = race_troll_forest
+		trait = race_troll_ice
+		trait = race_troll_dark
+		trait = race_troll_jungle
+		trait = race_draenei
+		trait = race_half_elf
+		trait = race_half_ogre
+		trait = race_half_draenei
+		trait = race_tauren
+	}
+}

@@ -39,14 +39,8 @@ TOW_is_republic = {
 TOW_is_creep_realm = {
 	AND = {
 		OR = {
-			AND = {
-				has_dlc = "Horse Lords"
-				is_nomadic = yes
-			}
-			AND = {
-				NOT = { has_dlc = "Horse Lords" }
-				is_tribal = yes
-			}
+			is_nomadic = yes
+			is_tribal = yes
 		}
 		OR = {
 			AND = {

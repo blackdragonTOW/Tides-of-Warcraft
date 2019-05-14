@@ -121,9 +121,6 @@ TOW_province_colony_check_destroy = {
         county = {
             usurp_title_only = { target = event_target:new_creep_ruler type = invasion }
         }
-        event_target:new_creep_ruler = { 
-            TOW_prev_province_remove_same_race_creeps = yes
-        }
         if = {
             limit = { NOT = { has_dlc = "Horse Lords" } }
             build_holding = { type = tribal holder = event_target:new_creep_ruler }

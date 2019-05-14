@@ -6798,28 +6798,32 @@ dejure_barony_claim = {
 	}
 	
 	can_use_gui = {
-		OR = {
-			NOT = { trait = race_gnome }
-			AND = {
-				trait = race_gnome
-				OR = {
-					trait = race_undead_forsaken
-					prestige = 50
+		FROM = {
+			OR = {
+				NOT = { trait = race_gnome }
+				AND = {
+					trait = race_gnome
+					OR = {
+						trait = race_undead_forsaken
+						prestige = 50
+					}
 				}
 			}
 		}
 	}
 
 	on_add = {
-		if = {
-			limit = {
-				trait = race_gnome
-				NOT = {
-					trait = race_undead_scourge
-					trait = race_undead_forsaken
+		FROM = {
+			if = {
+				limit = {
+					trait = race_gnome
+					NOT = {
+						trait = race_undead_scourge
+						trait = race_undead_forsaken
+					}
 				}
+				prestige = -50
 			}
-			prestige = -50
 		}
 	}
 	

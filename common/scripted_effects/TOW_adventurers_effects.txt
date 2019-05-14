@@ -1,0 +1,55 @@
+TOW_create_random_adventurer = {
+	Keitaro_create_random_courtier_gender_equality = yes
+	new_character = {
+		random_list = {
+			9 = {
+				modifier = {
+					factor = 0
+					PREV = { TOW_is_adventurer_race = no }
+				}
+				culture = PREV
+				set_graphical_culture = PREV
+				religion = PREV
+			}
+			1 = {
+				TOW_character_set_random_adventurer_culture = yes
+				TOW_character_set_cultural_religion = yes
+			}
+		}
+		TOW_initialize_adult_character = yes
+		TOW_add_ai_refusal_flags = yes
+		add_trait = tow_adventurer
+	}
+}
+
+TOW_get_random_adventurer = {
+	clear_event_target = random_adventurer
+	random_courtier = {
+		limit = {
+			trait = tow_adventurer
+			NOR = {
+				is_pregnant = yes
+				trait = pregnant
+			}
+			is_inaccessible_trigger = no
+			has_severe_disability_trigger = no
+			TOW_has_incapacitating_condition = no
+		}
+		save_event_target_as = random_adventurer
+	}
+	if = {
+		limit = { NOT = { event_target:random_adventurer = { is_alive = yes } } }
+		TOW_create_random_adventurer = yes
+		new_character = { save_event_target_as = random_adventurer }
+	}
+}
+
+TOW_adventurer_starts_adventure = {
+	custom_tooltip = {
+		text = OK
+		hidden_tooltip = {
+			set_character_flag = TOW_adventurer_busy
+			# TODO
+		}
+	}
+}

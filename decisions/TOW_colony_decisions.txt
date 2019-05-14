@@ -42,7 +42,8 @@ settlement_decisions = {
 			is_occupied = no
 			county = {
 				is_contested = no
-				has_siege = no
+			}
+			location = {
 				is_occupied = no
 			}
 		}
@@ -95,9 +96,8 @@ title_decisions = {
 			}
 		}
 		allow = {
+			is_contested = no
 			location = {
-				is_contested = no
-				has_siege = no
 				is_occupied = no
 				capital_holding = {
 					is_contested = no
