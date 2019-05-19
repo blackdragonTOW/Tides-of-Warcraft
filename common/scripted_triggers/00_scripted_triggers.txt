@@ -1139,7 +1139,7 @@ physician_bad_trigger = {
 physician_good_trigger = { 
 	OR = {
 		is_learned_trigger = yes
-	} 
+	}
 }
 
 is_inaccessible_trigger = { #Remember to write this "is_inaccessible_trigger = no" when scripting, or the tooltip will be messed up (it reads "Is NOT in Hiding, in Seclusion, or out traveling")
@@ -1157,6 +1157,7 @@ is_inaccessible_trigger = { #Remember to write this "is_inaccessible_trigger = n
 				has_character_modifier = in_meditation
 				has_character_modifier = doing_penance
 				has_character_modifier = out_traveling
+				TOW_is_adventurer_busy = yes
 			}
 		}
 	}
@@ -3711,7 +3712,7 @@ this_is_warrior_culture_trigger = { #Not really about culture - Used in AI votin
 		TOW_religion_is_warlike = yes
 		is_tribal = yes
 		is_nomadic = yes
-		TOW_background_is_adventurer = yes
+		TOW_background_is_invader = yes
 		TOW_background_has_berserker = yes
 	}
 }

@@ -1,0 +1,371 @@
+tribal = {	
+	cln_main_1 = {
+		desc = cln_main_1_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		gold_cost = 0
+		build_time = 1
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 100 # Not supposed to happen
+
+		tax_income = -0.5
+		garrison_size = 5
+		levy_size = -10
+		monthly_character_wealth = -0.15
+	}
+
+	cln_fortifications_1 = {
+		desc = cln_fortifications_1_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		gold_cost = 25
+		build_time = 120
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 60
+
+		garrison_size = 0.1
+		fort_level = 0.5
+		monthly_character_wealth = -0.1
+	}
+	
+	cln_fortifications_2 = {
+		desc = cln_fortifications_2_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		upgrades_from = cln_fortifications_1
+		gold_cost = 30
+		build_time = 160
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 55
+
+		garrison_size = 0.1
+		fort_level = 0.5
+		monthly_character_wealth = -0.1
+
+		convert_to_city = ct_wall_1
+		convert_to_castle = ca_wall_1
+		convert_to_temple = tp_wall_1
+		convert_to_tribal = tb_hillfort_1
+		
+	}
+
+	cln_fortifications_3 = {
+		desc = cln_fortifications_3_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
+		upgrades_from = cln_fortifications_2
+		gold_cost = 35
+		build_time = 200
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 50
+
+		garrison_size = 0.1
+		fort_level = 0.5
+		monthly_character_wealth = -0.1
+
+		convert_to_city = ct_wall_1
+		convert_to_castle = ca_wall_1
+		convert_to_temple = tp_wall_1
+		convert_to_tribal = tb_hillfort_1
+	}
+
+	cln_fortifications_4 = {
+		desc = cln_fortifications_4_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+		upgrades_from = cln_fortifications_3
+		gold_cost = 40
+		build_time = 240
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 45
+
+		garrison_size = 0.1
+		fort_level = 0.5
+		monthly_character_wealth = -0.1
+
+		convert_to_city = ct_wall_2
+		convert_to_castle = ca_wall_2
+		convert_to_temple = tp_wall_2
+		convert_to_tribal = tb_hillfort_2
+	}
+
+	cln_fortifications_5 = {
+		desc = cln_fortifications_5_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+		upgrades_from = cln_fortifications_4
+		gold_cost = 45
+		build_time = 280
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 40
+
+		garrison_size = 0.1
+		fort_level = 0.5
+		monthly_character_wealth = -0.1
+
+		convert_to_city = ct_wall_2
+		convert_to_castle = ca_wall_2
+		convert_to_temple = tp_wall_2
+		convert_to_tribal = tb_hillfort_3
+	}
+
+	cln_tax_post_1 = {
+		desc = cln_tax_post_1_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		gold_cost = 25
+		build_time = 120
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 60
+
+		monthly_character_wealth = 0.15
+	}
+	
+	cln_tax_post_2 = {
+		desc = cln_tax_post_2_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_TRADE_PRACTICES = 1 }
+		upgrades_from = cln_tax_post_1
+		gold_cost = 30
+		build_time = 160
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 55
+
+		monthly_character_wealth = 0.20
+
+		convert_to_city = ct_marketplace_1
+		convert_to_castle = ca_town_1
+		convert_to_temple = tp_town_1
+		convert_to_tribal = tb_market_town_1
+	}
+
+	cln_tax_post_3 = {
+		desc = cln_tax_post_3_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_TRADE_PRACTICES = 2 }
+		upgrades_from = cln_tax_post_2
+		gold_cost = 35
+		build_time = 200
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 50
+
+		monthly_character_wealth = 0.25
+
+		convert_to_city = ct_marketplace_1
+		convert_to_castle = ca_town_1
+		convert_to_temple = tp_town_1
+		convert_to_tribal = tb_market_town_1
+	}
+
+	cln_tax_post_4 = {
+		desc = cln_tax_post_4_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_TRADE_PRACTICES = 3 }
+		upgrades_from = cln_tax_post_3
+		gold_cost = 40
+		build_time = 240
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 45
+
+		monthly_character_wealth = 0.30
+
+		convert_to_city = ct_marketplace_2
+		convert_to_castle = ca_town_2
+		convert_to_temple = tp_town_2
+		convert_to_tribal = tb_market_town_2
+	}
+
+	cln_tax_post_5 = {
+		desc = cln_tax_post_5_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+		upgrades_from = cln_tax_post_4
+		gold_cost = 45
+		build_time = 280
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 40
+
+		monthly_character_wealth = 0.35
+
+		convert_to_city = ct_marketplace_2
+		convert_to_castle = ca_town_2
+		convert_to_temple = tp_town_2
+		convert_to_tribal = tb_market_town_3
+	}
+
+	cln_supply_settlements_1 = {
+		desc = cln_supply_settlements_1_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		gold_cost = 25
+		build_time = 120
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 60
+
+		monthly_character_wealth = -0.15
+		garrison_size = 0.25
+	}
+	
+	cln_supply_settlements_2 = {
+		desc = cln_supply_settlements_2_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_CITY_CONSTRUCTION = 1 }
+		upgrades_from = cln_supply_settlements_1
+		gold_cost = 30
+		build_time = 160
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 55
+
+		monthly_character_wealth = -0.15
+		garrison_size = 0.25
+
+		convert_to_city = ct_training_grounds_1
+		convert_to_castle = ca_keep_1
+		convert_to_temple = tp_monastery_1
+		convert_to_tribal = tb_training_grounds_1
+	}
+
+	cln_supply_settlements_3 = {
+		desc = cln_supply_settlements_3_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_CITY_CONSTRUCTION = 1 }
+		upgrades_from = cln_supply_settlements_2
+		gold_cost = 35
+		build_time = 200
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 50
+
+		monthly_character_wealth = -0.15
+		garrison_size = 0.25
+
+		convert_to_city = ct_training_grounds_1
+		convert_to_castle = ca_keep_1
+		convert_to_temple = tp_monastery_1
+		convert_to_tribal = tb_training_grounds_1
+	}
+
+	cln_supply_settlements_4 = {
+		desc = cln_supply_settlements_4_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_CITY_CONSTRUCTION = 2 }
+		upgrades_from = cln_supply_settlements_3
+		gold_cost = 40
+		build_time = 240
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 45
+
+		monthly_character_wealth = -0.15
+		garrison_size = 0.25
+
+		convert_to_city = ct_training_grounds_2
+		convert_to_castle = ca_keep_2
+		convert_to_temple = tp_monastery_2
+		convert_to_tribal = tb_training_grounds_2
+	}
+
+	cln_supply_settlements_5 = {
+		desc = cln_supply_settlements_5_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		trigger = { TECH_CITY_CONSTRUCTION = 3 }
+		upgrades_from = cln_supply_settlements_4
+		gold_cost = 45
+		build_time = 280
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 40
+
+		monthly_character_wealth = -0.15
+		garrison_size = 0.25
+
+		convert_to_city = ct_training_grounds_2
+		convert_to_castle = ca_keep_2
+		convert_to_temple = tp_monastery_2
+		convert_to_tribal = tb_training_grounds_3
+	}
+
+	cln_port_1 = {
+		desc = cln_port_1_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		port = yes
+		gold_cost = 25
+		build_time = 120
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 60
+
+		monthly_character_wealth = -0.1
+	}
+	
+	cln_port_2 = {
+		desc = cln_port_2_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		port = yes
+		trigger = { TECH_NAVAL = 1 }
+		upgrades_from = cln_port_1
+		gold_cost = 30
+		build_time = 160
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 55
+
+		monthly_character_wealth = -0.1
+
+		convert_to_city = ct_shipyard_1
+		convert_to_castle = ca_shipyard_1
+		convert_to_temple = tp_shipyard_1
+		convert_to_tribal = tb_shipyard_1
+	}
+
+	cln_port_3 = {
+		desc = cln_port_3_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		port = yes
+		trigger = { TECH_NAVAL = 1 }
+		upgrades_from = cln_port_2
+		gold_cost = 35
+		build_time = 200
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 50
+
+		monthly_character_wealth = -0.15
+
+		convert_to_city = ct_port_1
+		convert_to_city = ct_shipyard_1
+		convert_to_castle = ca_shipyard_1
+		convert_to_temple = tp_shipyard_1
+		convert_to_tribal = tb_shipyard_1
+	}
+
+	cln_port_4 = {
+		desc = cln_port_4_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		port = yes
+		trigger = { TECH_NAVAL = 2 }
+		upgrades_from = cln_port_3
+		gold_cost = 40
+		build_time = 240
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 45
+
+		monthly_character_wealth = -0.15
+
+		convert_to_city = ct_port_1
+		convert_to_city = ct_shipyard_2
+		convert_to_castle = ca_shipyard_2
+		convert_to_temple = tp_shipyard_2
+		convert_to_tribal = tb_shipyard_2
+	}
+
+	cln_port_5 = {
+		desc = cln_port_5_desc
+		potential = { has_game_started = yes FROMFROM = { TOW_holding_is_colony = yes } }
+		port = yes
+		trigger = { TECH_NAVAL = 3 }
+		upgrades_from = cln_port_4
+		gold_cost = 45
+		build_time = 280
+		extra_tech_building_start = 10.0
+		ai_creation_factor = 40
+
+		monthly_character_wealth = -0.2
+
+		convert_to_city = ct_port_2
+		convert_to_city = ct_shipyard_2
+		convert_to_castle = ca_shipyard_2
+		convert_to_temple = tp_shipyard_2
+		convert_to_tribal = tb_shipyard_3
+	}
+}

@@ -1,0 +1,33 @@
+TOW_conquered_province_total_effect = {
+	remove_province_modifier = sold_off_land
+    remove_province_modifier = thieves_guild
+    remove_province_modifier = incompetent_rule
+    remove_province_modifier = smugglers_ring
+    remove_province_modifier = highway_robber_band
+    remove_province_modifier = excessive_bureaucracy
+    remove_province_modifier = peasant_unrest
+    remove_province_modifier = nomad_agitation
+    any_province_holding = {
+        TOW_conquered_holding_effect = yes
+    }
+}
+
+TOW_conquered_province_effect = {
+	remove_province_modifier = sold_off_land
+    remove_province_modifier = thieves_guild
+    remove_province_modifier = incompetent_rule
+    remove_province_modifier = smugglers_ring
+    remove_province_modifier = highway_robber_band
+    remove_province_modifier = excessive_bureaucracy
+    remove_province_modifier = peasant_unrest
+    remove_province_modifier = nomad_agitation
+    capital_holding = {
+        TOW_conquered_holding_effect = yes
+    }
+}
+
+TOW_conquered_holding_effect = {
+	remove_holding_modifier = new_administration
+    remove_holding_modifier = recently_conquered
+    refill_holding_levy = yes
+}

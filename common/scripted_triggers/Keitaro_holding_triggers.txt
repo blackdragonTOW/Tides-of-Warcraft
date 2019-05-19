@@ -1,5 +1,6 @@
 Keitaro_holding_can_be_pillaged_by_from_tooltip = {
 	NOT = { holding_type = nomad }
+	TOW_holding_is_colony = no
 	OR = {
 		NOT = { holding_type = tribal }
 		FROM = { is_tribal = no }
@@ -28,6 +29,7 @@ Keitaro_holding_can_be_pillaged_by_from_tooltip = {
 
 Keitaro_holding_can_be_pillaged_by_from = {
 	NOT = { holding_type = nomad }
+	TOW_holding_is_colony = no
 	OR = {
 		NOT = { holding_type = tribal }
 		FROM = { is_tribal = no }
@@ -58,6 +60,7 @@ Keitaro_holding_can_be_pillaged_allow = {
 			NOT = { has_holding_modifier = stop_burning_land }
 		}
 	}
+	TOW_holding_is_colony = no
 }
 
 Keitaro_holding_can_stop_pillage_by_from = {

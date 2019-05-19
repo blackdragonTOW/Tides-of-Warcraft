@@ -2535,3 +2535,182 @@ TOW_new_character_employed_effect = {
 TOW_set_newly_landed_character_government = {
 	set_government_type = feudal_government
 }
+
+TOW_character_set_random_adventurer_culture = {
+	random_list = {
+		1 = {
+			random_list = {
+				1 = { culture = azerothian }
+				1 = { culture = stromic }
+				1 = { culture = dalaranian }
+				1 = { culture = lordaeronian }
+				1 = { culture = gilnean }
+				1 = { culture = tirasian }
+				1 = { culture = alteraci }
+				1 = { culture = arathi }
+				1 = { culture = tirisfalen }
+				1 = { culture = hillsbradan }
+				1 = { culture = silverpiner }
+			}
+		}
+
+		1 = {
+			random_list = {
+				1 = { culture = frostwolf }
+				1 = { culture = blackrock }
+				1 = { culture = bleeding_hollow }
+				1 = { culture = shattered_hand }
+				1 = { culture = shadowmoon }
+				1 = { culture = thunderlord }
+				1 = { culture = lightnings_blade }
+				1 = { culture = dragonmaw }
+				1 = { culture = bladewind }
+				1 = { culture = warsong }
+				1 = { culture = redwalker }
+				1 = { culture = burning_blade }
+				1 = { culture = whiteclaw }
+				1 = { culture = twilights_hammer }
+				1 = { culture = dark_scar }
+				1 = { culture = bonechewer }
+				1 = { culture = laughing_skull }
+				1 = { culture = flowerpicker }
+				1 = { culture = mok_nathal }
+				1 = { culture = mag_har }
+			}
+		}
+
+		1 = {
+			random_list = {
+				1 = { culture = bronzebeard }
+				1 = { culture = dark_iron }
+				1 = { culture = wildhammer }
+			}
+		}
+
+		1 = {
+			random_list = {
+				1 = { culture = high_elven }
+				1 = { culture = blood_elven }
+				1 = { culture = night_elven }
+			}
+		}
+
+		1 = {
+			random_list = {
+				1 = { culture = gnomish }
+			}
+		}
+
+		1 = {
+			random_list = {
+				1 = { culture = goblin }
+			}
+		}
+
+		1 = {
+			random_list = {
+				1 = { culture = amani }
+				1 = { culture = atalai }
+				1 = { culture = razorbranch }
+				1 = { culture = firetree }
+				1 = { culture = mossflayer }
+				1 = { culture = revantusk }
+				1 = { culture = vilebranch }
+				1 = { culture = shadowpine }
+				1 = { culture = witherbark }
+				1 = { culture = bloodscalp }
+				1 = { culture = darkspear }
+				1 = { culture = gurubashi }
+				1 = { culture = shatterspear }
+				1 = { culture = skullsplitter }
+				1 = { culture = drakkari }
+				1 = { culture = frostmane }
+				1 = { culture = smolderthorn }
+				1 = { culture = shadowglen }
+				1 = { culture = winterax }
+				1 = { culture = winterfang }
+				1 = { culture = shadowtooth }
+				1 = { culture = zulian }
+				1 = { culture = razzashi }
+			}
+		}
+
+		1 = {
+			random_list = {
+				1 = { culture = draenei }
+			}
+		}
+
+		1 = {
+			random_list = {
+				1 = { culture = bloodhoof }
+				1 = { culture = cloudsong }
+				1 = { culture = dawnchaser }
+				1 = { culture = dawnstrider }
+				1 = { culture = hawkwind }
+				1 = { culture = farwanderer }
+				1 = { culture = grimtotem }
+				1 = { culture = ironhoof }
+				1 = { culture = ragetotem }
+				1 = { culture = runetotem }
+				1 = { culture = skychaser }
+				1 = { culture = steelrage }
+				1 = { culture = stonehoof }
+				1 = { culture = stonespire }
+				1 = { culture = thunderhorn }
+				1 = { culture = wildmane }
+				1 = { culture = winterhoof }
+			}
+		}
+	}
+}
+
+TOW_character_set_cultural_religion = {
+	trigger_switch = {
+		on_trigger = culture_group
+		
+		human = { religion = holy_light }
+		orcish = { religion = shamanism }
+		dwarf = { religion = shamanism }
+		gnome = { religion = arcane }
+		goblin = { religion = mercantilism }
+		dragon = { religion = wyrmcult }
+		troll = { religion = loa }
+		ogre = { religion = demonology }
+		murloc = { religion = hydromancy }
+		gnoll = { religion = pyromancy }
+		kobold = { religion = geomancy }
+		trogg = { religion = pyromancy }
+		demonic = { religion = burning_legion }
+		void = { religion = forgotten_shadow }
+		tauren = { religion = shamanism }
+		worgen = { religion = druidism }
+	}
+
+	trigger_switch = {
+		on_trigger = culture
+
+		high_elven = { religion = arcane }
+		blood_elven = { religion = arcane }
+		wretched = { religion = arcane }
+		felblood = { religion = burning_legion }
+		night_elven = { religion = elune }
+		naga = { religion = azshara }
+		high_elven = { religion = arcane }
+
+		scourge = { religion = lich_king }
+		forsaken = { religion = arcane }
+
+		drust = { religion = druidism }
+
+		draenei = { religion = holy_light }
+		broken = { religion = holy_light }
+		lost_one = { religion = holy_light }
+
+		air_elemental = { religion = aeromancy }
+		earth_elemental = { religion = geomancy }
+		fire_elemental = { religion = pyromancy }
+		water_elemental = { religion = hydromancy }
+		
+	}
+}

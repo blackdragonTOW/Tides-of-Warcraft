@@ -1,0 +1,51 @@
+TOW_String_colony;Colony;;;;;;;;;;;;;x
+
+## Modifiers
+TOW_colony;[Location.TOW_GetColonyProgress];;;;;;;;;;;;;x
+TOW_colony_desc;There is a colony developing in this province. It grows progressively but is exposed to incidents and exterior attacks. If not interrupted or destroyed, it will eventually establish itself as a new holding. DEBUG PROGRESS : [Location.TOW_colony_progress.GetValue]\nCreeps : [Location.TOW_creep_level.GetValue]\nMurlocs : [Location.TOW_creep_level_murloc.GetValue]\nKobolds : [Location.TOW_creep_level_kobold.GetValue]\nTroggs : [Location.TOW_creep_level_trogg.GetValue]\nGnolls : [Location.TOW_creep_level_gnoll.GetValue];;;;;;;;;;;;;x
+TOW_abandoned_colony;Has Abandoned a Colony;;;;;;;;;;;;;x
+TOW_abandoned_colony_desc;This character has abandoned the development of a colony, angering the people who worked hard there. This is truly not the way of a caring ruler.;;;;;;;;;;;;;x
+
+## Events
+
+TOW_Colony_Progress_1;Early Colony;;;;;;;;;;;;;x
+TOW_Colony_Progress_2;Small Colony;;;;;;;;;;;;;x
+TOW_Colony_Progress_3;Medium Colony;;;;;;;;;;;;;x
+TOW_Colony_Progress_4;Large Colony;;;;;;;;;;;;;x
+TOW_Colony_Progress_5;Bustling Colony;;;;;;;;;;;;;x
+
+EVTDESC_TOW_Colony_2;A new colony has been founded in [From.GetName]. Plenty of people are motivated to build settlements in its [From.GetLocationTerrain]. We hope to see it flourish and prosper.;;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_4_1;The colony situated in [From.GetName] developed into a castle.;;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_4_2;The colony situated in [From.GetName] developed into a city.;;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_4_3;The colony situated in [From.GetName] developed into a port city.;;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_4_4;The colony situated in [From.GetName] developed into a church.;;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_4_5;The colony situated in [From.GetName] developed into a tribe.;;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_5;Our colony in [From.GetName] was unfortunately unsustainable and was abandoned. Maybe this was too ambitious...;;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_6;[TOW_GetColonyEVT6];;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_7;[TOW_GetColonyEVT7];;;;;;;;;;;;;x
+EVTDESC_TOW_Colony_8;[TOW_GetColonyEVT8];;;;;;;;;;;;;x
+
+TOW_Colony_EVT6_1;A builder made a terrible mistake that made an entire house collapse in the colony of [From.Location.GetName]!;;;;;;;;;;;;;x
+
+TOW_Colony_EVT7_1;The [From.Location.TOW_GetRandomWeightedCreeps]s in [From.Location.GetName] attacked our colony!;;;;;;;;;;;;;x
+
+TOW_Colony_EVT8_1;An influx of workers, merchants and builders was heading towards our colony in [From.GetName]! This will surely increase the expansion of the colony there.;;;;;;;;;;;;;x
+
+## Tooltips
+
+TOW_Colony_colonize_cb_colony_created;A colony is created in the §Y[This.GetFullName]§!.;;;;;;;;;;;;;x
+
+TOW_Colony_Tooltip_IsColony;Is a colony;;;;;;;;;;;;;x
+TOW_Colony_Tooltip_Start;A colony is being built in the §Y[From.GetFullName]§!.;;;;;;;;;;;;;x
+TOW_Colony_Tooltip_Destroyed;The colony in the §Y[From.GetFullName]§! is destroyed.;;;;;;;;;;;;;x
+TOW_Colony_Tooltip_Progress_Reduced;The colony in §Y[From.GetName]§! experiences a setback.;;;;;;;;;;;;;x
+TOW_Colony_Tooltip_Progress_Increased;The colony in §Y[From.GetName]§! progresses substantially.;;;;;;;;;;;;;x
+
+TOW_Colony_Tooltip_Abandoned;The colony in the [Root.Location.County.GetFullName] is abandoned.;;;;;;;;;;;;;x
+
+## Decisions
+
+abandon_colony_province;Abandon Colony;;;;;;;;;;;;;x
+abandon_colony_province_desc;Abandon the colony in the §Y[Root.GetFullName]§!, stopping its development entirely and leaving it into the hands of neighbouring creatures. This will anger the people of our realm.;;;;;;;;;;;;;x
+abandon_colony;Abandon Colony;;;;;;;;;;;;;x
+abandon_colony_desc;Abandon the colony in the §Y[Root.Location.County.GetFullName]§!, stopping its development entirely and leaving it into the hands of neighbouring creatures. This will anger the people of our realm.;;;;;;;;;;;;;x
