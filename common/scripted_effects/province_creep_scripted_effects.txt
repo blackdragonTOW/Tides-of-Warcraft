@@ -138,6 +138,19 @@ TOW_province_remove_creeps_by_flag_and_variable = {
     TOW_province_update_creeps_modifiers = yes
 }
 
+# Needs to have a creep_race_character event_target
+TOW_province_add_creeps_amount = {
+    event_target:creep_race_character = {
+        trigger_switch = {
+            on_trigger = trait
+            race_murloc = { PREV = { set_province_flag = local_TOW_creep_spawn_murloc } }
+            race_kobold = { PREV = { set_province_flag = local_TOW_creep_spawn_kobold } }
+            race_trogg = { PREV = { set_province_flag = local_TOW_creep_spawn_trogg } }
+            race_gnoll = { PREV = { set_province_flag = local_TOW_creep_spawn_gnoll } }
+        }
+    }
+    TOW_province_add_creeps_by_flag_and_variable = yes
+}
 
 # Needs to have a creep_race_character event_target
 TOW_province_add_creeps_3 = {

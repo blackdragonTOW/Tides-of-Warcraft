@@ -195,6 +195,8 @@ province_event = {
 	    			capital_holding = { convert_to = temple }
 				}
 				capital_holding = { refill_holding_levy = yes }
+				culture = event_target:owner
+				religion = event_target:owner
 				event_target:owner = { character_event = { id = TOW_Colony.4 } }
 			}
 			else = { # Tombola

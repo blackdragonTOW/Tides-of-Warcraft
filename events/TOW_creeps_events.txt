@@ -218,6 +218,7 @@ province_event = {
 					modifier = { factor = 1.25 check_variable = { which = TOW_creep_level value == 1 } }
 				} # Nothing happens
 				40 = { # Province looted by creeps
+					modifier = { factor = 0 NOT = { num_of_settlements = 1 } }
 					modifier = { factor = 0.1 TOW_province_has_colony = yes check_variable = { which = TOW_colony_progress value <= 200 } }
 					modifier = { factor = 1.5 check_variable = { which = TOW_creep_level value > 5 } }
 					modifier = { factor = 1.5 check_variable = { which = TOW_creep_level value > 8 } }
@@ -295,6 +296,10 @@ province_event = {
 					modifier = {
 						factor = 0
 						check_variable = { which = TOW_creep_level value <= 1 }
+					}
+					modifier = {
+						factor = 0
+						owner = { TOW_is_creep_realm = yes }
 					}
 					set_variable = { which = local_TOW_check_creep_level_min value = 0 }
 					TOW_province_select_weighted_creep_for_event = yes
