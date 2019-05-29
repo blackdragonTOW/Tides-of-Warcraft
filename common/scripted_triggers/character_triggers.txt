@@ -149,3 +149,23 @@ TOW_character_female_is_menopaused = {
 		}
 	}
 }
+
+TOW_has_incapacitating_condition = {
+	OR = {
+		trait = has_tuberculosis
+		trait = has_typhoid_fever
+		trait = has_typhus
+		trait = has_measles
+		trait = flu
+		trait = dysentery
+		trait = gout
+		trait = food_poisoning
+		trait = rabies
+		trait = pneumonic
+		trait = scurvy
+		trait = leper
+		trait = severely_injured
+		has_character_modifier = severe_illness
+		has_character_modifier = bedridden_illness
+	}
+}

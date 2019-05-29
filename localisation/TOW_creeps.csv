@@ -1,0 +1,48 @@
+## Modifiers
+
+TOW_gnoll_presence_1;Very Small [gnoll.GetName] Presence;;;;;;;;;;;;;x
+TOW_gnoll_presence_2;Small [gnoll.GetName] Presence;;;;;;;;;;;;;x
+TOW_gnoll_presence_3;Medium [gnoll.GetName] Presence;;;;;;;;;;;;;x
+TOW_gnoll_presence_4;Large [gnoll.GetName] Presence;;;;;;;;;;;;;x
+TOW_gnoll_presence_5;Very Large [gnoll.GetName] Presence;;;;;;;;;;;;;x
+TOW_kobold_presence_1;Very Small [kobold.GetName] Presence;;;;;;;;;;;;;x
+TOW_kobold_presence_2;Small [kobold.GetName] Presence;;;;;;;;;;;;;x
+TOW_kobold_presence_3;Medium [kobold.GetName] Presence;;;;;;;;;;;;;x
+TOW_kobold_presence_4;Large [kobold.GetName] Presence;;;;;;;;;;;;;x
+TOW_kobold_presence_5;Very Large [kobold.GetName] Presence;;;;;;;;;;;;;x
+TOW_murloc_presence_1;Very Small [murloc.GetName] Presence;;;;;;;;;;;;;x
+TOW_murloc_presence_2;Small [murloc.GetName] Presence;;;;;;;;;;;;;x
+TOW_murloc_presence_3;Medium [murloc.GetName] Presence;;;;;;;;;;;;;x
+TOW_murloc_presence_4;Large [murloc.GetName] Presence;;;;;;;;;;;;;x
+TOW_murloc_presence_5;Very Large [murloc.GetName] Presence;;;;;;;;;;;;;x
+TOW_trogg_presence_1;Very Small [trogg.GetName] Presence;;;;;;;;;;;;;x
+TOW_trogg_presence_2;Small [trogg.GetName] Presence;;;;;;;;;;;;;x
+TOW_trogg_presence_3;Medium [trogg.GetName] Presence;;;;;;;;;;;;;x
+TOW_trogg_presence_4;Large [trogg.GetName] Presence;;;;;;;;;;;;;x
+TOW_trogg_presence_5;Very Large [trogg.GetName] Presence;;;;;;;;;;;;;x
+
+## Events
+
+EVTDESC_TOW_Creeps_2;A group of [Root.TOW_GetEventCreepsName]s have appeared in the province of [Root.GetName]. They are threatening our realm and hampering our merchants!;;;;;;;;;;;;;x
+EVTDESC_TOW_Creeps_5;The [Root.TOW_GetEventCreepsName]s have pillaged [pillaged_holding.GetBaseName] in the county of [Root.GetName]!;;;;;;;;;;;;;x
+TOW_Creeps_5_Pillaged_Tooltip;§Y[pillaged_holding.GetFullName]§! is pillaged by [province.TOW_GetEventCreepsName]s;;;;;;;;;;;;;x
+EVTDESC_TOW_Creeps_6;Word has it that a fight occured in [Root.GetName]. It involved [Root.TOW_GetEventCreepsName]s and [Root.TOW_GetEventCreeps2Name]s, squabbling until a battle started between their tribes. [Root.TOW_GetWinningEventCreepsText];;;;;;;;;;;;;x
+EVTDESC_TOW_Creeps_7;The [Root.TOW_GetEventCreepsName]s in the province of [Root.GetName] have a new leader, the powerful [leader.GetTitledFirstNameWithNick]. They have settled in a tribe in the county. They are contesting our rule in the province and are attacking us for its control!;;;;;;;;;;;;;x
+EVTDESC_TOW_Creeps_8;The adventurer [random_adventurer.GetTitledName] is going on an adventure to deal with the [Root.TOW_GetEventCreepsName]s in [Root.GetName]. We hope [random_adventurer.GetSheHe] succeeds in [random_adventurer.GetHerHis] endeavors.;;;;;;;;;;;;;x
+
+EVTDESC_TOW_Creeps_6_Victorious;It appears that the [Root.TOW_GetWinningEventCreepsName] tribe overwhelmed their opponent and found themselves victorious.;;;;;;;;;;;;;x
+EVTDESC_TOW_Creeps_6_No_Winner;No tribe came on top during this battle, both sides losing an unsubstantial amount of soldiers and getting tired. They ended up walking back to their respective homes.;;;;;;;;;;;;;x
+
+## CBs
+
+CB_NAME_COLONIZE_CREEPS;Colonize [Title.GetBaseName];;;;;;;;;;;;;x
+cb_colonize_creeps_desc;Colonize a county to gain its control, however, remnants of creeps settlements will stay in the conquered province. The county will become a colony that will grow slowly at a monthly cost.;;;;;;;;;;;;;x
+WAR_NAME_COLONIZE_CREEPS;Colonization of $SECOND$;;;;;;;;;;;;;x
+
+CB_NAME_CREEPS_INSURRECTION;Insurrection for [Title.GetBaseName];;;;;;;;;;;;;x
+creeps_insurrection_desc;Launch an insurrection to conquer the county.;;;;;;;;;;;;;x
+WAR_NAME_CREEPS_TRIBE_INSURRECTION;Insurrection for $SECOND$;;;;;;;;;;;;;x
+
+nomad_conquest_desc;Creeps can conquer counties of other creeps for a small cost in prestige. If used on a ruler with the same race, its clan will be vassalized. Otherwise, the county will be taken under your rule.;;;;;;;;;;;;;x
+CB_NAME_NOMAD_CONQUEST;Conquest for [Title.GetBaseName];;;;;;;;;;;;;x
+WAR_NAME_NOMAD_CONQUEST;$ORDER$$FIRST_ADJ$-$SECOND_ADJ$ Conquest over $OTHER_TITLE$;
