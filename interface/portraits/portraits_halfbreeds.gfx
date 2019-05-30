@@ -1,0 +1,647 @@
+# hair, mouth, chin, nose, eyes, cheek, ear, neck
+spriteTypes = {
+	
+	### halfelf MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# half elf-human Male
+	portraitType = {
+		name = "PORTRAIT_halfelfgfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_human_male_hair_behind:p1:h:y"
+			"GFX_halfelf_male_eyes:d6"
+			"GFX_halfelf_male_base:p2"
+			"GFX_human_male_chin:d1"
+			"GFX_human_male_cheeks:d4"
+			"GFX_human_male_nose:d3"
+			"GFX_character_freckles:p17"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_human_male_clothes:p14"
+			"GFX_human_male_blinded_eyes:p10"
+			"GFX_character_eyepatch:p13:y:o32x63"
+			"GFX_human_male_hair_details:p1:y"
+		   	"GFX_human_male_hair:p1:h:y"
+			"GFX_halfelf_male_ears:d7"
+			"GFX_halfelf_male_eyebrows:h:y:p14"
+			"GFX_character_mask:p12:y:o40x45"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_halfelfgfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_human_male_hair_behind:p1:h:y"
+			"GFX_halfelf_male_eyes:d6"
+			"GFX_halfelf_male_base:p2"
+			"GFX_human_male_chin:d1"
+			"GFX_human_male_cheeks:d4"
+			"GFX_human_male_nose:d3"
+			"GFX_character_freckles:p17"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_human_male_clothes:p14"
+			"GFX_human_male_blinded_eyes:p10"
+			"GFX_character_eyepatch:p13:y:o32x63"
+			"GFX_human_male_hair_details:p1:y"
+		   	"GFX_human_male_hair:p1:h:y"
+			"GFX_halfelf_male_ears:d7"
+			"GFX_halfelf_male_eyebrows:h:y:p14"
+			"GFX_character_mask:p12:y:o40x45"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_halfelfgfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_human_male_hair_behind:p1:h:y"
+			"GFX_halfelf_male_eyes:d6"
+			"GFX_halfelf_male_base:p2"
+			"GFX_human_male_chin:d1"
+			"GFX_human_male_cheeks:d4"
+			"GFX_human_male_nose:d3"
+			"GFX_character_freckles:p17"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_human_male_clothes:p14"
+			"GFX_human_male_blinded_eyes:p10"
+			"GFX_character_eyepatch:p13:y:o32x63"
+			"GFX_human_male_hair_details:p1:y"
+		   	"GFX_human_male_hair:p1:h:y"
+			"GFX_halfelf_male_ears:d7"
+			"GFX_halfelf_male_eyebrows:h:y:p14"
+			"GFX_character_mask:p12:y:o40x45"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 5 5 5 } { 65 60 60 } { 255 255 255 }
+			{ 35 25 8 } { 226 167 85 } { 255 255 255 }
+			{ 30 25 10 } { 196 150 108 } { 255 255 255 }
+			{ 25 15 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 16 11 } { 178 80 41 } { 255 255 255 }
+			{ 20 12 8 } { 88 64 37 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 83 76 45 }
+			{ 120 74 46 }
+			{ 170 104 46 }
+			{ 176 60 0 }
+			{ 169 116 0 }
+			{ 96 143 22 }
+			{ 34 143 36 }
+			{ 107 101 65 }
+			{ 66 121 102 }
+			{ 58 109 193 }
+			{ 65 78 160 }
+			{ 160 160 210 }
+			{ 140 60 164 }
+			{ 167 66 124 }
+			{ 200 95 200 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### halfelf FEMALE ####
+
+	# halfelf female
+	portraitType = {
+		name = "PORTRAIT_halfelfgfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:d5"
+			"GFX_character_background:p0"
+			"GFX_trogg_female_ear_behind:d7"
+			"GFX_trogg_female_base:p2"
+			"GFX_trogg_female_cheeks:d4"
+			"GFX_trogg_female_body_hair:d5:h:y"
+			"GFX_trogg_female_clothes:p14"
+		   	"GFX_trogg_female_boils:d0"
+			"GFX_trogg_female_eyes:d6"
+			"GFX_trogg_female_beard:p4:h:y"
+		   	"GFX_trogg_female_hair:p1:h:y"
+			"GFX_trogg_female_ear:d7"
+			"GFX_trogg_female_mouth:d2"
+			"GFX_trogg_female_nose:d3"
+		   	"GFX_trogg_female_eyebrows:d10:h:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 8 7 } { 150 110 80 } { 255 255 255 }
+			{ 15 8 0 } { 156 125 118 } { 255 255 255 }
+			{ 10 10 10 } { 155 115 86 } { 255 255 255 }
+			{ 30 22 18 } { 160 120 85 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# halfelf female midage
+	portraitType = {
+		name = "PORTRAIT_halfelfgfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:d5"
+			"GFX_character_background:p0"
+			"GFX_trogg_female_ear_behind:d7"
+			"GFX_trogg_female_base:p2"
+			"GFX_trogg_female_cheeks:d4"
+			"GFX_trogg_female_body_hair:d5:h:y"
+			"GFX_trogg_female_clothes:p14"
+		   	"GFX_trogg_female_boils:d0"
+			"GFX_trogg_female_eyes:d6"
+			"GFX_trogg_female_beard:p4:h:y"
+		   	"GFX_trogg_female_hair:p1:h:y"
+			"GFX_trogg_female_ear:d7"
+			"GFX_trogg_female_mouth:d2"
+			"GFX_trogg_female_nose:d3"
+		   	"GFX_trogg_female_eyebrows:d10:h:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 8 7 } { 150 110 80 } { 255 255 255 }
+			{ 15 8 0 } { 156 125 118 } { 255 255 255 }
+			{ 10 10 10 } { 155 115 86 } { 255 255 255 }
+			{ 30 22 18 } { 160 120 85 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# halfelf female oldage
+	portraitType = {
+		name = "PORTRAIT_halfelfgfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:d5"
+			"GFX_character_background:p0"
+			"GFX_trogg_female_ear_behind:d7"
+			"GFX_trogg_female_base:p2"
+			"GFX_trogg_female_cheeks:d4"
+			"GFX_trogg_female_body_hair:d5:h:y"
+			"GFX_trogg_female_clothes:p14"
+		   	"GFX_trogg_female_boils:d0"
+			"GFX_trogg_female_eyes:d6"
+			"GFX_trogg_female_beard:p4:h:y"
+		   	"GFX_trogg_female_hair:p1:h:y"
+			"GFX_trogg_female_ear:d7"
+			"GFX_trogg_female_mouth:d2"
+			"GFX_trogg_female_nose:d3"
+		   	"GFX_trogg_female_eyebrows:d10:h:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+		
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 8 7 } { 150 110 80 } { 255 255 255 }
+			{ 15 8 0 } { 156 125 118 } { 255 255 255 }
+			{ 10 10 10 } { 155 115 86 } { 255 255 255 }
+			{ 30 22 18 } { 160 120 85 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+
+
+	### orc-draenei MALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# orc-draenei Male
+	portraitType = {
+		name = "PORTRAIT_orcdraeneigfx_male"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_orc_male_base:p2:h"
+			"GFX_orc_male_clothes:p14"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orcdraenei_male_eyes:p15"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
+			"GFX_orc_male_headgear_mid:p14"
+			"GFX_orc_male_chin:d1:h"
+			"GFX_orc_male_chin_uncolored:d1"
+			"GFX_orcdraenei_male_chin:d5:h"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_orc_male_hair:p1:e:y"
+		   	"GFX_orc_male_hair_detail:p1:y"
+			"GFX_orcdraenei_male_forehead:d4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
+			"GFX_orc_male_beard_detail:p4:y"
+			"GFX_orc_male_mouth:d2"
+			"GFX_orc_male_blinded_eyes:p10"
+			"GFX_orc_male_clothes_infront:p14"
+			"GFX_orc_male_headgear:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		headgear_that_hides_hair = { 1 2 3 4 5 6 7 8 9 10 11 0 12 }
+	}
+	
+	# middle age
+	portraitType = {
+		name = "PORTRAIT_orcdraeneigfx_male1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_orc_male_base:p2:h"
+			"GFX_orc_male_clothes:p14"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orcdraenei_male_eyes:p15"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
+			"GFX_orc_male_headgear_mid:p14"
+			"GFX_orc_male_chin:d1:h"
+			"GFX_orc_male_chin_uncolored:d1"
+			"GFX_orcdraenei_male_chin:d5:h"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_orc_male_hair:p1:e:y"
+		   	"GFX_orc_male_hair_detail:p1:y"
+			"GFX_orcdraenei_male_forehead:d4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
+			"GFX_orc_male_beard_detail:p4:y"
+			"GFX_orc_male_mouth:d2"
+			"GFX_orc_male_blinded_eyes:p10"
+			"GFX_orc_male_clothes_infront:p14"
+			"GFX_orc_male_headgear:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+	# old age
+	portraitType = {
+		name = "PORTRAIT_orcdraeneigfx_male2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_orc_male_base:p2:h"
+			"GFX_orc_male_clothes:p14"
+			"GFX_orc_male_head:p2:h"
+			"GFX_orc_male_eyes2:d10"
+			"GFX_orc_male_eyes:d6:h"
+			"GFX_orc_male_eyes_uncolored:d6"
+			"GFX_orcdraenei_male_eyes:p15"
+			"GFX_orc_male_nose:d3:h"
+			"GFX_orc_male_ear:d7:h"
+			"GFX_orc_male_headgear_mid:p14"
+			"GFX_orc_male_chin:d1:h"
+			"GFX_orc_male_chin_uncolored:d1"
+			"GFX_orcdraenei_male_chin:d5:h"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_orc_male_hair:p1:e:y"
+		   	"GFX_orc_male_hair_detail:p1:y"
+			"GFX_orcdraenei_male_forehead:d4:h:y"
+			"GFX_orc_male_beard:p4:e:y"
+			"GFX_orc_male_beard_detail:p4:y"
+			"GFX_orc_male_mouth:d2"
+			"GFX_orc_male_blinded_eyes:p10"
+			"GFX_orc_male_clothes_infront:p14"
+			"GFX_orc_male_headgear:p14"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+			{ 0 20 4 } { 88 121 96 } { 187 222 175 }
+		}
+
+		## Hair color
+		eye_color_index = 9
+		eye_color = {
+			{ 71 70 104 }
+			{ 86 42 23 }
+			{ 80 19 24 }
+			{ 128 60 100 }
+			{ 153 87 162 }
+			{ 112 103 104 }
+			{ 151 136 104 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+	
+
+
+### orc-draenei FEMALE ####
+
+	portraitType = {
+		name = "PORTRAIT_orcdraeneigfx_female"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:d5"
+			"GFX_character_background:p0"
+			"GFX_trogg_female_ear_behind:d7"
+			"GFX_trogg_female_base:p2"
+			"GFX_trogg_female_cheeks:d4"
+			"GFX_trogg_female_body_hair:d5:h:y"
+			"GFX_trogg_female_clothes:p14"
+		   	"GFX_trogg_female_boils:d0"
+			"GFX_trogg_female_eyes:d6"
+			"GFX_trogg_female_beard:p4:h:y"
+		   	"GFX_trogg_female_hair:p1:h:y"
+			"GFX_trogg_female_ear:d7"
+			"GFX_trogg_female_mouth:d2"
+			"GFX_trogg_female_nose:d3"
+		   	"GFX_trogg_female_eyebrows:d10:h:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 8 7 } { 150 110 80 } { 255 255 255 }
+			{ 15 8 0 } { 156 125 118 } { 255 255 255 }
+			{ 10 10 10 } { 155 115 86 } { 255 255 255 }
+			{ 30 22 18 } { 160 120 85 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# orc-draenei female midage
+	portraitType = {
+		name = "PORTRAIT_orcdraeneigfx_female1"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:d5"
+			"GFX_character_background:p0"
+			"GFX_trogg_female_ear_behind:d7"
+			"GFX_trogg_female_base:p2"
+			"GFX_trogg_female_cheeks:d4"
+			"GFX_trogg_female_body_hair:d5:h:y"
+			"GFX_trogg_female_clothes:p14"
+		   	"GFX_trogg_female_boils:d0"
+			"GFX_trogg_female_eyes:d6"
+			"GFX_trogg_female_beard:p4:h:y"
+		   	"GFX_trogg_female_hair:p1:h:y"
+			"GFX_trogg_female_ear:d7"
+			"GFX_trogg_female_mouth:d2"
+			"GFX_trogg_female_nose:d3"
+		   	"GFX_trogg_female_eyebrows:d10:h:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 8 7 } { 150 110 80 } { 255 255 255 }
+			{ 15 8 0 } { 156 125 118 } { 255 255 255 }
+			{ 10 10 10 } { 155 115 86 } { 255 255 255 }
+			{ 30 22 18 } { 160 120 85 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# orc-draenei female oldage
+	portraitType = {
+		name = "PORTRAIT_orcdraeneigfx_female2"
+		effectFile = "gfx/FX/portrait.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:d5"
+			"GFX_character_background:p0"
+			"GFX_trogg_female_ear_behind:d7"
+			"GFX_trogg_female_base:p2"
+			"GFX_trogg_female_cheeks:d4"
+			"GFX_trogg_female_body_hair:d5:h:y"
+			"GFX_trogg_female_clothes:p14"
+		   	"GFX_trogg_female_boils:d0"
+			"GFX_trogg_female_eyes:d6"
+			"GFX_trogg_female_beard:p4:h:y"
+		   	"GFX_trogg_female_hair:p1:h:y"
+			"GFX_trogg_female_ear:d7"
+			"GFX_trogg_female_mouth:d2"
+			"GFX_trogg_female_nose:d3"
+		   	"GFX_trogg_female_eyebrows:d10:h:y"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+		
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 8 7 } { 150 110 80 } { 255 255 255 }
+			{ 15 8 0 } { 156 125 118 } { 255 255 255 }
+			{ 10 10 10 } { 155 115 86 } { 255 255 255 }
+			{ 30 22 18 } { 160 120 85 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+}
