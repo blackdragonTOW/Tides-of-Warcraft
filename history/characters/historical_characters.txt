@@ -5420,5 +5420,40 @@
 			give_nickname = nick_the_destroyer
 		}
 	}
-	
+	100000.1.1 = { # Will set up the proper death later
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+198 = {
+	name = "Nefarian"
+	dynasty = 137 # Black Dragonflight
+	culture = black_dragonflight
+	religion = blackwyrm_cult
+	diplomacy = 8
+	martial = 10
+	stewardship = 9
+	intrigue = 9
+	learning = 13 # He did make a bunch of creatures and an entire dragonflight
+	trait = race_dragon
+	trait = cruel
+	trait = shrewd
+	trait = groomed
+	trait = patient
+	trait = envious
+	trait = proud
+	trait = ambitious
+	trait = arbitrary
+	trait = deceitful
+	trait = erudite
+	1.1.1 = {
+		birth = yes
+	}
+	10000.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
 }
