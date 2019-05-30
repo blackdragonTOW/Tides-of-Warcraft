@@ -1,5 +1,7 @@
 namespace = bookmarksetup
 
+#The "z" in front of the name is to try to have it go last when it comes to modded files.
+
 #This is to prevent stuff like holy light foundation and other such events from firing in startdates where they already happened.
 
 #Also sets modifiers and flags to specific provinces.
@@ -59,8 +61,8 @@ character_event = {
 		}
 		if = {
 			limit = {
-				year = 9925
-				NOT = { year = 9926 }
+				year = 9924
+				NOT = { year = 9925 }
 			}
 			set_global_flag = bm_gnoll_war
 		}
@@ -235,6 +237,43 @@ character_event = {
 						}
 					}
 					AND = {
+						OR = {
+							trait = race_orc
+							trait = race_half_draenei
+							trait = race_half_ogre
+						}
+						OR = {
+							culture = warsong
+							AND = {
+								culture = shadowmoon
+								NOT = { has_character_flag = stormreaver }
+							}
+							culture = thunderlord
+							culture = lightnings_blade
+							AND = {
+								culture = bladewind
+								NOT = { character = 69 } # Garona check
+							}
+							culture = redwalker
+							culture = whiteclaw
+							culture = dark_scar
+							culture = bonechewer
+							culture = laughing_skull
+							culture = flowerpicker
+							AND = {
+								culture = mok_nathal
+								#NOT = { character =  } # Rexxar check 
+							}
+						}
+						NOR = {
+							has_global_flag = bm_lord_of_the_clans
+							has_global_flag = bm_scourge_of_lordaeron
+							has_global_flag = bm_path_of_the_damned
+							has_global_flag = bm_hunt_for_the_betrayer
+							has_global_flag = bm_drums_of_war
+						}
+					}
+					AND = {
 						trait = race_pale_orc
 						NOT = { has_global_flag = bm_tides_of_darkness }
 					}
@@ -248,10 +287,90 @@ character_event = {
 		#Destroy settlements based on the date
 		if = {
 			limit = {
-				always = no
+				has_global_flag = bm_tides_of_darkness
+			}
+			b_stonefield_estate = {
+				destroy_settlement = THIS
+			}
+			b_cathedral_of_the_light = {
+				destroy_settlement = THIS
+			}
+			b_old_town = {
+				destroy_settlement = THIS
+			}
+			b_sunnyglade = {
+				destroy_settlement = THIS
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = bm_hunt_for_the_betrayer
+					has_global_flag = bm_drums_of_war
+				}
 			}
 			b_sunstone = {
 				destroy_settlement = THIS
+			}
+		}
+		# Here because tributaries are DLC-locked
+		if = {
+			limit = {
+				NOT = { has_dlc = "Horse Lords" }
+				NOT = { has_dlc = "Jade Dragon" }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = bm_tides_of_darkness
+						has_global_flag = bm_lord_of_the_clans
+						has_global_flag = bm_scourge_of_lordaeron
+					}
+				}
+				k_stormwind = {
+					set_defacto_liege = e_alliance
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_dlc = "Horse Lords" }
+				NOT = { has_dlc = "Jade Dragon" }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = bm_lord_of_the_clans
+						has_global_flag = bm_scourge_of_lordaeron
+						has_global_flag = bm_path_of_the_damned
+						has_global_flag = bm_hunt_for_the_betrayer
+						has_global_flag = bm_drums_of_war
+					}
+				}
+				c_
+			}
+		}
+		#This is here to handle a few very specific characters that need special handling.
+		if = {
+			limit = {
+				has_global_flag = bm_drums_of_war
+			}
+			c_169 = { # Varian
+				death = {
+					death_reason = death_missing
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = bm_tides_of_darkness
+				}
+			}
+			c_173 = { # "Daval Prestor"
+				death = {
+					death_reason = death_missing
+				}
 			}
 		}
 	}
