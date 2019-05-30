@@ -1,0 +1,149 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_trogg_male_child_base"
+		texturefile = "gfx\\characters\\trogg_male\\child\\trogg_male_child_base.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_male_child_hair"
+		texturefile = "gfx\\characters\\trogg_male\\child\\trogg_male_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_male_child_eyebrows"
+		texturefile = "gfx\\characters\\trogg_male\\child\\trogg_male_child_eyebrows.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_male_child_ear"
+		texturefile = "gfx\\characters\\trogg_male\\child\\trogg_male_child_ear.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_trogg_male_child_ear_behind"
+		texturefile = "gfx\\characters\\trogg_male\\child\\trogg_male_child_ear_behind.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_trogggfx_male_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_trogg
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_trogg_male_child_ear_behind:d7"
+			"GFX_trogg_male_child_base:p2"
+			"GFX_trogg_male_child_hair:p1:h:y"
+			"GFX_trogg_male_child_eyebrows:p1:h:y"
+			"GFX_trogg_male_child_ear:d7"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_male_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 8 7 } { 90 80 70 } { 255 255 255 }
+			{ 15 8 0 } { 156 145 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 9 8 7 } { 120 110 100 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_trogg_female_child_hair"
+		texturefile = "gfx\\characters\\trogg_female\\child\\trogg_female_child_hair.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_trogggfx_female_child"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_age <= child
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_trogg
+				NOR = {
+					portrait_has_trait = race_undead_generic
+					portrait_has_trait = race_undead_forsaken
+					portrait_has_trait = race_undead_scourge
+				}
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_child_background:p15"
+			"GFX_trogg_male_child_ear_behind:d7"
+			"GFX_trogg_male_child_base:p2"
+			"GFX_trogg_female_child_hair:p1:h:y"
+			"GFX_trogg_male_child_eyebrows:p1:h:y"
+			"GFX_trogg_male_child_ear:d7"
+			"GFX_character_imprisoned:p6"
+			"GFX_child_female_border:d3"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 9 8 7 } { 90 80 70 } { 255 255 255 }
+			{ 15 8 0 } { 156 145 108 } { 255 255 255 }
+			{ 10 10 10 } { 125 85 56 } { 255 255 255 }
+			{ 30 22 18 } { 150 90 55 } { 255 255 255 }
+			{ 9 8 7 } { 120 110 100 } { 255 255 255 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+}
