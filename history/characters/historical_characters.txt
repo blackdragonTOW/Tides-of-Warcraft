@@ -5428,6 +5428,192 @@
 }
 
 198 = {
+	historical = yes
+	name = Anasterian
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	trait = mage
+	trait = warrior
+	diplomacy = 10
+
+	dna="0ca0h0a0b00"
+	properties="ll"
+
+	1.1.1 = {
+		birth = yes
+	}
+	10021.2.14 = {
+		death = {
+			death_reason = death_battle
+		#	killer = # ARTHAS
+		}
+	}
+}
+
+199 = {
+	historical = yes
+	name = Dath'Remar
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+
+	dna="0eacf0c0e00"
+	properties="ap"
+
+	1.1.1 = {
+		birth = yes
+	}
+	5012.2.14 = {
+		death = yes
+	}
+}
+
+200 = {
+	historical = yes
+	name = Kael'thas
+	dynasty = 136 # Sunstrider
+	culture = blood_elven
+	religion = arcane
+	father = 199 # Dath'Remar
+	trait = race_high_elf
+	trait = mage
+
+	dna="0cbib0e0000"
+	properties="rn00c000000000a000"
+
+	2000.4.2 = {
+		birth = yes
+	}
+
+	10021.2.16 = {
+		effect = {
+			add_trait = travelling
+		}
+	}
+}
+
+201 = {
+	historical = yes
+	name = Lor'themar
+	dynasty = 138 # Theron
+	culture = blood_elven
+	religion = arcane
+	trait = race_high_elf
+	trait = one_eyed
+
+	dna="0dhee0g0d00"
+	properties="0f00h00000000ka000"
+
+	3000.4.2 = {
+		birth = yes
+	}
+	7110.10.11 = {
+		employer = 198 # Anasterian Sunstrider
+	}
+	10021.2.15 = {
+		employer = 200 # Kael'thas Sunstrider
+		effect = {
+			give_minor_title = title_appointed_regent
+		}
+	}
+}
+
+202 = {
+	historical = yes
+	name = Sylvanas
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+
+	diplomacy = 6
+	martial = 10
+	stewardship = 4
+	intrigue = 14
+	learning = 5
+
+	trait = elusive_shadow
+	trait = race_high_elf
+	trait = shrewd
+	trait = ranger
+	trait = brave
+	trait = cynical
+	trait = patient
+	trait = proud
+	trait = ambitious
+
+	trait = flanker
+	trait = organizer
+	
+	dna="00hcd0g00b0"
+
+	2000.3.4 = {
+		birth = yes
+	}
+	10021.2.10 = {
+		add_trait = race_undead_forsaken
+	}
+}
+
+203 = {
+	historical = yes
+	name = Jintha
+	dynasty = 140 # Jintha
+	culture = amani
+	religion = loa
+
+	martial = 11
+
+	trait = brilliant_strategist
+	trait = race_troll_forest
+	trait = sturdy
+	trait = warrior
+	trait = brave
+	trait = wroth
+	trait = scarred
+	trait = duelist
+	trait = stubborn
+	
+	dna="fdbf0ahfccb"
+	properties="qh"
+
+	7173.1.14 = {
+		birth = yes
+	}
+	7205.10.22 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+204 = {
+	historical = yes
+	name = Talanas
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+
+	2000.3.4 = {
+		birth = yes
+	}
+}
+
+205 = {
+	historical = yes
+	name = Lireesa
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+
+	2000.3.4 = {
+		birth = yes
+	}
+}
+
+206 = {
 	name = "Nefarian"
 	dynasty = 137 # Black Dragonflight
 	culture = black_dragonflight
