@@ -1,324 +1,892 @@
 ## Generated character file (code by Keitaro_Ura) ##
 
-12155 = { # Ruler of c_gnomeregan - 9700.1.1
-	name = Evanie
+23887 = { # Ruler of c_gnomeregan - 8293.5.6
+	name = Gimrizz
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8173.6.4 = {
+		birth = yes
+	}
+	8160.3.11 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23888 # Curgle
+		}
+	}
+	8189.6.4 = {
+		add_spouse = 23888 # Curgle
+	}
+	8303.10.31 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23888 = {
+	name = Curgle
 	female = yes
-	dynasty = 100509 # dynasty100509
 	culture = gnomish
 	religion = arcane
 	trait = race_gnome
-	9670.12.27 = {
+	8144.3.19 = {
 		birth = yes
 	}
-	9687.11.30 = {
-		add_matrilineal_spouse = 12156 # Nickwinkle
-	}
-	9751.1.1 = {
+	8274.9.20 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12156 = {
-	name = Nickwinkle
+23889 = { # Ruler of c_gnomeregan - 8303.10.28
+	name = Nilyan
+	female = yes
+	dynasty = 100660 # dynasty100660
 	culture = gnomish
 	religion = arcane
+	father = 23887 # Gimrizz
+	mother = 23888 # Curgle
 	trait = race_gnome
-	9671.6.24 = {
+	8219.12.12 = {
 		birth = yes
 	}
-	9752.2.21 = {
+	8255.7.12 = {
+		add_matrilineal_spouse = 23890 # Slicky
+	}
+	8353.11.15 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12157 = { # Ruler of c_gnomeregan - 9751.11.8
+23890 = {
+	name = Slicky
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8239.2.7 = {
+		birth = yes
+	}
+	8373.6.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23891 = { # Ruler of c_gnomeregan - 8353.11.6
+	name = Gwoniver
+	female = yes
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23890 # Slicky
+	mother = 23889 # Nilyan
+	trait = race_gnome
+	8266.3.3 = {
+		birth = yes
+	}
+	8266.9.12 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23892 # Meroippi
+		}
+	}
+	8282.3.3 = {
+		add_matrilineal_spouse = 23892 # Meroippi
+	}
+	8406.9.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23892 = {
+	name = Meroippi
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8250.12.4 = {
+		birth = yes
+	}
+	8390.3.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23893 = { # Ruler of c_gnomeregan - 8406.11.18
+	name = Juskala
+	female = yes
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23892 # Meroippi
+	mother = 23891 # Gwoniver
+	trait = race_gnome
+	8353.6.21 = {
+		birth = yes
+	}
+	8386.8.27 = {
+		add_matrilineal_spouse = 23894 # Gibbit
+	}
+	8445.7.19 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23894 = {
+	name = Gibbit
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8370.3.9 = {
+		birth = yes
+	}
+	8462.7.18 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23895 = { # Ruler of c_gnomeregan - 8445.11.6
+	name = Datalore
+	female = yes
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23894 # Gibbit
+	mother = 23893 # Juskala
+	trait = race_gnome
+	8369.6.21 = {
+		birth = yes
+	}
+	8373.6.8 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23896 # Vaercyn
+		}
+	}
+	8385.6.21 = {
+		add_matrilineal_spouse = 23896 # Vaercyn
+	}
+	8480.5.25 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23896 = {
+	name = Vaercyn
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8357.12.17 = {
+		birth = yes
+	}
+	8468.5.5 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23897 = { # Ruler of c_gnomeregan - 8480.3.3
+	name = Gidge
+	female = yes
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23896 # Vaercyn
+	mother = 23895 # Datalore
+	trait = race_gnome
+	8400.7.2 = {
+		birth = yes
+	}
+	8401.3.9 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23898 # Tynnus
+		}
+	}
+	8416.7.2 = {
+		add_matrilineal_spouse = 23898 # Tynnus
+	}
+	8539.5.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23898 = {
+	name = Tynnus
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8385.5.2 = {
+		birth = yes
+	}
+	8524.2.9 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23899 = { # Ruler of c_gnomeregan - 8539.7.18
+	name = Inzi
+	female = yes
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23898 # Tynnus
+	mother = 23897 # Gidge
+	trait = race_gnome
+	8508.9.18 = {
+		birth = yes
+	}
+	8543.3.11 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23900 # Laran
+		}
+	}
+	8543.7.17 = {
+		add_matrilineal_spouse = 23900 # Laran
+	}
+	8599.11.13 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23900 = {
+	name = Laran
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8527.7.17 = {
+		birth = yes
+	}
+	8618.9.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23901 = { # Ruler of c_gnomeregan - 8599.2.1
+	name = Gnombus
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23900 # Laran
+	mother = 23899 # Inzi
+	trait = race_gnome
+	8563.3.18 = {
+		birth = yes
+	}
+	8590.10.13 = {
+		add_spouse = 23902 # Wren
+	}
+	8680.6.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23902 = {
+	name = Wren
+	female = yes
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8574.8.29 = {
+		birth = yes
+	}
+	8691.6.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23903 = { # Ruler of c_gnomeregan - 8680.12.30
+	name = Wink
+	female = yes
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23901 # Gnombus
+	mother = 23902 # Wren
+	trait = race_gnome
+	8615.4.15 = {
+		birth = yes
+	}
+	8639.6.27 = {
+		add_matrilineal_spouse = 23904 # Finbus
+	}
+	8757.3.27 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23904 = {
+	name = Finbus
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8623.1.23 = {
+		birth = yes
+	}
+	8765.4.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23905 = { # Ruler of c_gnomeregan - 8757.6.3
+	name = Sock
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23904 # Finbus
+	mother = 23903 # Wink
+	trait = race_gnome
+	8685.9.21 = {
+		birth = yes
+	}
+	8721.5.29 = {
+		add_spouse = 23906 # Babs
+	}
+	8801.2.17 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23906 = {
+	name = Babs
+	female = yes
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8705.5.22 = {
+		birth = yes
+	}
+	8821.10.31 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23907 = { # Ruler of c_gnomeregan - 8801.6.21
+	name = Tally
+	female = yes
+	dynasty = 100660 # dynasty100660
+	culture = gnomish
+	religion = arcane
+	father = 23905 # Sock
+	mother = 23906 # Babs
+	trait = race_gnome
+	8721.5.22 = {
+		birth = yes
+	}
+	8711.11.27 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23908 # Abner
+		}
+	}
+	8737.5.22 = {
+		add_matrilineal_spouse = 23908 # Abner
+	}
+	8860.1.17 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23908 = {
+	name = Abner
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	8695.2.10 = {
+		birth = yes
+	}
+	8834.4.9 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23909 = { # Ruler of c_gnomeregan - 9366.1.17
+	name = Jubie
+	female = yes
+	dynasty = 100661 # dynasty100661
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9352.8.3 = {
+		birth = yes
+	}
+	9364.6.15 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23910 # Rizz
+		}
+	}
+	9368.8.3 = {
+		add_matrilineal_spouse = 23910 # Rizz
+	}
+	9502.9.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23910 = {
+	name = Rizz
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9348.7.23 = {
+		birth = yes
+	}
+	9498.5.29 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23911 = { # Ruler of c_gnomeregan - 9502.2.13
 	name = Rip
-	dynasty = 100509 # dynasty100509
+	dynasty = 100661 # dynasty100661
 	culture = gnomish
 	religion = arcane
-	father = 12156 # Nickwinkle
-	mother = 12155 # Evanie
+	father = 23910 # Rizz
+	mother = 23909 # Jubie
 	trait = race_gnome
-	9691.3.22 = {
+	9430.11.2 = {
 		birth = yes
 	}
-	9711.6.12 = {
-		add_spouse = 12158 # Tinky
+	9426.1.17 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23912 # Tinky
+		}
 	}
-	9782.3.6 = {
+	9446.11.2 = {
+		add_spouse = 23912 # Tinky
+	}
+	9515.7.30 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12158 = {
+23912 = {
 	name = Tinky
 	female = yes
 	culture = gnomish
 	religion = arcane
 	trait = race_gnome
-	9695.3.5 = {
+	9410.2.10 = {
 		birth = yes
 	}
-	9786.4.4 = {
+	9495.11.11 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12159 = { # Ruler of c_gnomeregan - 9782.9.28
-	name = Curgle
-	female = yes
-	dynasty = 100509 # dynasty100509
+23913 = { # Ruler of c_gnomeregan - 9515.8.9
+	name = Bilbilfaz
+	dynasty = 100661 # dynasty100661
 	culture = gnomish
 	religion = arcane
-	father = 12157 # Rip
-	mother = 12158 # Tinky
+	father = 23911 # Rip
+	mother = 23912 # Tinky
 	trait = race_gnome
-	9726.1.29 = {
+	9454.7.22 = {
 		birth = yes
 	}
-	9730.3.5 = {
+	9463.4.5 = {
 		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
 				break = yes
 			}
-			add_betrothal = 12160 # Gaxim
+			add_betrothal = 23914 # Cill
 		}
 	}
-	9742.1.29 = {
-		add_matrilineal_spouse = 12160 # Gaxim
+	9470.7.22 = {
+		add_spouse = 23914 # Cill
 	}
-	9822.9.26 = {
+	9550.6.22 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12160 = {
-	name = Gaxim
-	culture = gnomish
-	religion = arcane
-	trait = race_gnome
-	9714.4.11 = {
-		birth = yes
-	}
-	9810.8.24 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12161 = { # Ruler of c_gnomeregan - 9822.8.16
-	name = Gribble
-	female = yes
-	dynasty = 100509 # dynasty100509
-	culture = gnomish
-	religion = arcane
-	father = 12160 # Gaxim
-	mother = 12159 # Curgle
-	trait = race_gnome
-	9776.3.6 = {
-		birth = yes
-	}
-	9782.6.18 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 12162 # Owyinyc
-		}
-	}
-	9792.3.6 = {
-		add_matrilineal_spouse = 12162 # Owyinyc
-	}
-	9897.4.5 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12162 = {
-	name = Owyinyc
-	culture = gnomish
-	religion = arcane
-	trait = race_gnome
-	9766.2.12 = {
-		birth = yes
-	}
-	9887.9.21 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12163 = { # Ruler of c_gnomeregan - 9897.7.29
-	name = Talvash
-	dynasty = 100509 # dynasty100509
-	culture = gnomish
-	religion = arcane
-	father = 12162 # Owyinyc
-	mother = 12161 # Gribble
-	trait = race_gnome
-	9835.10.8 = {
-		birth = yes
-	}
-	9864.2.22 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 12164 # Lissyphus
-		}
-	}
-	9864.5.13 = {
-		add_spouse = 12164 # Lissyphus
-	}
-	9915.11.2 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12164 = {
-	name = Lissyphus
+23914 = {
+	name = Cill
 	female = yes
 	culture = gnomish
 	religion = arcane
 	trait = race_gnome
-	9848.5.13 = {
+	9447.8.27 = {
 		birth = yes
 	}
-	9928.9.26 = {
+	9543.10.21 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12165 = { # Ruler of c_gnomeregan - 9915.4.19
-	name = Briniver
+23915 = { # Ruler of c_gnomeregan - 9550.6.30
+	name = Beggra
 	female = yes
-	dynasty = 100509 # dynasty100509
+	dynasty = 100661 # dynasty100661
 	culture = gnomish
 	religion = arcane
-	father = 12163 # Talvash
-	mother = 12164 # Lissyphus
+	father = 23913 # Bilbilfaz
+	mother = 23914 # Cill
 	trait = race_gnome
-	9873.8.9 = {
+	9476.8.20 = {
 		birth = yes
 	}
-	9864.5.26 = {
+	9522.10.27 = {
 		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
 				break = yes
 			}
-			add_betrothal = 12166 # Dinnyn
+			add_betrothal = 23916 # Owyrraent
 		}
 	}
-	9889.8.9 = {
-		add_matrilineal_spouse = 12166 # Dinnyn
+	9522.11.17 = {
+		add_matrilineal_spouse = 23916 # Owyrraent
 	}
-	10006.10.22 = {
+	9598.8.2 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12166 = {
+23916 = {
+	name = Owyrraent
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9506.11.17 = {
+		birth = yes
+	}
+	9628.12.10 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23917 = { # Ruler of c_gnomeregan - 9598.6.30
+	name = Gnombus
+	dynasty = 100661 # dynasty100661
+	culture = gnomish
+	religion = arcane
+	father = 23916 # Owyrraent
+	mother = 23915 # Beggra
+	trait = race_gnome
+	9498.4.18 = {
+		birth = yes
+	}
+	9542.11.5 = {
+		add_spouse = 23918 # Brylyan
+	}
+	9641.4.12 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23918 = {
+	name = Brylyan
+	female = yes
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9526.9.13 = {
+		birth = yes
+	}
+	9669.10.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23919 = { # Ruler of c_gnomeregan - 9641.7.7
+	name = Meangwen
+	female = yes
+	dynasty = 100661 # dynasty100661
+	culture = gnomish
+	religion = arcane
+	father = 23917 # Gnombus
+	mother = 23918 # Brylyan
+	trait = race_gnome
+	9623.4.2 = {
+		birth = yes
+	}
+	9607.1.18 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23920 # Dedry
+		}
+	}
+	9639.4.2 = {
+		add_matrilineal_spouse = 23920 # Dedry
+	}
+	9764.3.18 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23920 = {
+	name = Dedry
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9591.3.22 = {
+		birth = yes
+	}
+	9732.3.11 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23921 = { # Ruler of c_gnomeregan - 9764.2.24
+	name = Arly
+	female = yes
+	dynasty = 100661 # dynasty100661
+	culture = gnomish
+	religion = arcane
+	father = 23920 # Dedry
+	mother = 23919 # Meangwen
+	trait = race_gnome
+	9694.12.14 = {
+		birth = yes
+	}
+	9698.9.3 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23922 # Kibli
+		}
+	}
+	9710.12.14 = {
+		add_matrilineal_spouse = 23922 # Kibli
+	}
+	9822.7.30 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23922 = {
+	name = Kibli
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9682.5.22 = {
+		birth = yes
+	}
+	9810.1.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23923 = { # Ruler of c_gnomeregan - 9822.6.9
+	name = Caraedoc
+	dynasty = 100661 # dynasty100661
+	culture = gnomish
+	religion = arcane
+	father = 23922 # Kibli
+	mother = 23921 # Arly
+	trait = race_gnome
+	9786.2.4 = {
+		birth = yes
+	}
+	9833.8.30 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23924 # Lalla
+		}
+	}
+	9833.12.28 = {
+		add_spouse = 23924 # Lalla
+	}
+	9911.6.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23924 = {
+	name = Lalla
+	female = yes
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9817.12.28 = {
+		birth = yes
+	}
+	9942.4.6 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23925 = { # Ruler of c_gnomeregan - 9911.3.18
+	name = Deana
+	female = yes
+	dynasty = 100661 # dynasty100661
+	culture = gnomish
+	religion = arcane
+	father = 23923 # Caraedoc
+	mother = 23924 # Lalla
+	trait = race_gnome
+	9854.4.7 = {
+		birth = yes
+	}
+	9874.3.30 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 23926 # Ric
+		}
+	}
+	9874.5.21 = {
+		add_matrilineal_spouse = 23926 # Ric
+	}
+	9973.6.8 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23926 = {
+	name = Ric
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9858.5.21 = {
+		birth = yes
+	}
+	9977.7.16 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+23927 = { # Ruler of c_gnomeregan - 9973.12.30
 	name = Dinnyn
+	dynasty = 100661 # dynasty100661
 	culture = gnomish
 	religion = arcane
+	father = 23926 # Ric
+	mother = 23925 # Deana
 	trait = race_gnome
-	9848.5.15 = {
+	9899.9.25 = {
 		birth = yes
 	}
-	9981.8.9 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-12167 = { # Ruler of c_gnomeregan - 10006.9.6
-	name = Yswnoic
-	female = yes
-	dynasty = 100509 # dynasty100509
-	culture = gnomish
-	religion = arcane
-	father = 12166 # Dinnyn
-	mother = 12165 # Briniver
-	trait = race_gnome
-	9953.8.19 = {
-		birth = yes
-	}
-	9990.9.2 = {
+	9891.4.1 = {
 		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
 				break = yes
 			}
-			add_betrothal = 12168 # Lotwil
+			add_betrothal = 23928 # Gwent
 		}
 	}
-	9990.11.5 = {
-		add_matrilineal_spouse = 12168 # Lotwil
+	9915.9.25 = {
+		add_spouse = 23928 # Gwent
 	}
-	10047.2.13 = {
+	10035.12.8 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-12168 = {
-	name = Lotwil
-	culture = gnomish
-	religion = arcane
-	trait = race_gnome
-	9974.11.5 = {
-		birth = yes
-	}
-	10068.10.28 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-14273 = { # Ruler of c_iron_caves - 10022.1.1
-	name = Finbus
-	dynasty = 100658 # dynasty100658
-	culture = gnomish
-	religion = arcane
-	trait = race_gnome
-	9896.2.14 = {
-		birth = yes
-	}
-	9909.8.10 = {
-		effect = {
-			spouse = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
-				break = yes
-			}
-			add_betrothal = 14274 # Trixy
-		}
-	}
-	9912.2.14 = {
-		add_spouse = 14274 # Trixy
-	}
-	10042.12.31 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-14274 = {
-	name = Trixy
+23928 = {
+	name = Gwent
 	female = yes
 	culture = gnomish
 	religion = arcane
 	trait = race_gnome
-	9893.11.28 = {
+	9875.9.22 = {
 		birth = yes
 	}
-	10039.8.4 = {
+	10011.8.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+27687 = { # Ruler of c_iron_caves - 10022.1.1
+	name = Sin
+	dynasty = 100846 # dynasty100846
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9948.6.21 = {
+		birth = yes
+	}
+	9978.1.2 = {
+		effect = {
+			spouse_even_if_dead = { # This is to prevent betrothal from applying after the marriage since the commands are applied at game start.
+				break = yes
+			}
+			add_betrothal = 27688 # Cill
+		}
+	}
+	9978.6.30 = {
+		add_spouse = 27688 # Cill
+	}
+	10045.7.7 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+27688 = {
+	name = Cill
+	female = yes
+	culture = gnomish
+	religion = arcane
+	trait = race_gnome
+	9962.6.30 = {
+		birth = yes
+	}
+	10059.6.13 = {
 		death = {
 			death_reason = death_natural
 		}
