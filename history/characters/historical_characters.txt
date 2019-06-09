@@ -383,7 +383,7 @@
 	}
 	10021.12.10 = {
 		employer = 13 # Revilgaz Blackwater
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 	}
 	10100.1.1 = {
 		death = {
@@ -407,7 +407,9 @@
 	}
 	#Put him in Dalaran's court
 	10017.5.27 = {
-		give_minor_title = title_dalaran_six
+		effect = {
+			give_minor_title = title_dalaran_six
+		}
 	}
 	#Have him in the employ of Garithos after Dalaran falls?
 	10100.1.1 = {
@@ -704,7 +706,9 @@
 	9972.4.23 = {
 		add_trait = mastermind_theologian
 		add_trait = priest
-		add_friend = 23 # Sen'jin
+		effect = {
+			add_friend = 23 # Sen'jin
+		}
 	}
 	10100.1.1 = {
 		death = {
@@ -731,7 +735,9 @@
 		birth = yes
 	}
 	9998.11.3 = {
-		add_friend = 24 # Vol'jin
+		effect = {
+			add_friend = 24 # Vol'jin
+		}
 		add_trait = priest
 		add_trait = scholarly_theologian
 		add_trait = shrewd
@@ -744,8 +750,8 @@
 		effect = {
 			remove_trait = priest
 			remove_friend = 24 # Vol'jin
+			add_rival = 24 # Vol'jin
 		}
-		add_rival = 24 # Vol'jin
 		add_trait = necromancer
 		add_trait = cruel
 		add_trait = deceitful
@@ -949,7 +955,7 @@
 		add_trait = priest
 		give_nickname = nick_the_dire
 		employer = 33 # Gan'zulah
-		give_job_titlte = job_spiritual
+		give_job_title = job_spiritual
 	}
 	10026.5.18 = {
 		death = {
@@ -1183,7 +1189,7 @@
 		add_trait = zealous
 	}
 	10020.5.7 = {
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 		effect = { give_artifact = war_raptor }
 	}
 	10028.3.19 = {
@@ -1281,7 +1287,7 @@
 		birth = yes
 	}
 	10021.4.6 = {
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 	}
 	10100.1.1 = {
 		death = {
@@ -1302,7 +1308,7 @@
 		give_nickname = nick_the_defiler
 	}
 	10021.4.6 = {
-		give_job_titlte = job_spymaster
+		give_job_title = job_spymaster
 	}
 	10100.1.1 = {
 		death = {
@@ -1565,7 +1571,7 @@
 				leader = ROOT
 				troops = {
 					light_infantry = { 623 623 }
-					heavy_infantry = { 488 $88 }
+					heavy_infantry = { 488 488 }
 					pikemen = { 247 247 }
 					light_cavalry = { 289 289 }
 					knights = { 178 178 }
@@ -1780,7 +1786,7 @@
 				leader = ROOT
 				troops = {
 					light_infantry = { 623 623 }
-					heavy_infantry = { 488 $88 }
+					heavy_infantry = { 488 488 }
 					pikemen = { 247 247 }
 					light_cavalry = { 289 289 }
 					knights = { 178 178 }
@@ -2283,7 +2289,7 @@
 77 = {
 	name = "Rok"
 	dynasty = 59 # Saurfang
-	culture = blackrok
+	culture = blackrock
 	religion = burning_legion
 	dna="0ae000aabab"
 	properties="sc00g0000000000000"
@@ -2552,11 +2558,11 @@
 	}
 	10006.8.11 = {
 		employer = 84 # Khadgar
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 	}
 	10008.9.17 = {
 		employer = 85 # Thas'ranan
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 	}
 	10100.1.1 = {
 		death = {
@@ -3197,7 +3203,7 @@
 	}
 	9945.3.10 = {
 		employer = 163 # Barathen
-		give_job_titlte = job_spiritual
+		give_job_title = job_spiritual
 	}
 	9969.7.9 = {
 		death = {
@@ -3514,7 +3520,7 @@
 	10015.4.18 = {
 		add_trait = tough_soldier
 		employer = 121 # Ello
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 	}
 	10022.9.16 = {
 		effect = {
@@ -4691,7 +4697,7 @@
 	}
 	9982.8.24 = {
 		employer = 164 # Llane
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 	}
 	10003.7.5 = {
 		give_nickname = nick_the_lion_of_azeroth
@@ -4699,7 +4705,7 @@
 			remove_trait = trusting
 		}
 		employer = 167 # Varian
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 		give_minor_title = title_regent
 	}
 	10006.11.3 = {
@@ -4898,7 +4904,7 @@
 		add_trait = cynical
 		add_trait = brave
 		employer = 169 # Varian
-		give_job_titlte = job_spymaster
+		give_job_title = job_spymaster
 	}
 	10100.1.1 = {
 		death = {
@@ -4932,7 +4938,7 @@
 		employer = 169 # Varian
 	}
 	10017.4.12 = {
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 	}
 	10025.1.5 = {
 		give_minor_title = title_regent
@@ -5244,7 +5250,7 @@
 	10021.10.13 = {
 		religion = twilights_hammer
 		employer = 193 # Morganth
-		give_job_titlte = job_marshal
+		give_job_title = job_marshal
 	}
 	10025.7.4 = {
 		death = {
@@ -5457,3 +5463,66 @@
 		}
 	}
 }
+
+199 = {
+	name = "Var'gazul" #Last known emperor of Gurubashi at the time
+	dynasty = 34 #Gurubashi
+	culture = gurubashi
+	religion = loa
+	trait = race_troll_jungle
+	trait = ambitious #It is said he had great ambition, but also that all of them eventualy failed
+	8470.3.6 = { #We don't know so I made him a reasonable age
+		birth = yes
+	}
+	8534.5.11 = {
+		death = {
+			death_reason = death_battle #We don't know, but it makes sense
+		}
+	}
+}
+
+200 = {
+	name = "Min'loth"
+	culture = gurubashi
+	religion = hydromancy
+	learning = 9 #He was an exellent witch doctor
+	trait = race_troll_jungle
+	8463.7.22 = { 
+		birth = yes
+	}
+	8479.7.22 = {
+		add_trait = scholarly_theologian
+	}
+	8534.1.1 = {
+		death = {
+			death_reason = death_accident #If you can call taking on a kraken whose wrath you might have brought upon yourself an accident
+		}
+	}
+}
+
+201 = {
+	name = "Gri'lek"
+	culture = darkspear
+	religion = loa
+	martial 7
+	trait = race_troll_jungle
+	trait = warrior
+	8479.10.4 = {
+		birth = yes
+	}
+	8495.10.4 = {
+		add_trait = tough_soldier
+	}
+	8534.5.11 = {
+		add_trait = one_handed
+		effect = {
+			give_nickname = nick_the_wanderer
+		}
+	}
+	8559.10.4 ={
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+	
