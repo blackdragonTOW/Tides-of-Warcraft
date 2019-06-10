@@ -2501,7 +2501,7 @@
 	9999.5.18 = {
 		trait = mastermind_theologian
 		trait = mage
-		trait = frail
+		trait = feeble
 		trait = genius
 		trait = groomed
 		trait = diligent
@@ -2909,8 +2909,8 @@
 	name = "Hukku"
 	culture = atalai
 	religion = hakkar
-	dna="0fbj0dab000"
-	properties="nf0000000000000000"
+	dna = "0fbj0dab000"
+	properties = "nf0000000000000000"
 	martial = 6
 	trait = race_troll_jungle
 	9965.3.12 = {
@@ -2935,8 +2935,8 @@
 	name = "Loro"
 	culture = atalai
 	religion = hakkar
-	dna="ibdg00cc0c0"
-	properties="ce0000000000000000"
+	dna = "ibdg00cc0c0"
+	properties = "ce0000000000000000"
 	intrigue = 6
 	trait = race_troll_jungle
 	9966.8.21 = {
@@ -2961,8 +2961,8 @@
 	name = "Mijan"
 	culture = atalai
 	religion = hakkar
-	dna="a00l0bg00h0"
-	properties="ed0000000000000000"
+	dna = "a00l0bg00h0"
+	properties = "ed0000000000000000"
 	learning = 6
 	trait = race_troll_jungle
 	9966.3.11 = {
@@ -2987,8 +2987,8 @@
 	name = "Zolo"
 	culture = atalai
 	religion = hakkar
-	dna="laai0a0e0c0"
-	properties="aa0000000000000000"
+	dna = "laai0a0e0c0"
+	properties = "aa0000000000000000"
 	learning = 6
 	trait = race_troll_jungle
 	9965.9.23 = {
@@ -3013,8 +3013,8 @@
 	name = "Zul'Lor"
 	culture = atalai
 	religion = hakkar
-	dna="cgbk0ae0ac0"
-	properties="pg0000000000000000"
+	dna = "cgbk0ae0ac0"
+	properties = "pg0000000000000000"
 	martial = 6
 	trait = race_troll_jungle
 	9964.5.15 = {
@@ -3062,8 +3062,8 @@
 	name = "Atal'alarion"
 	culture = atalai
 	religion = hakkar
-	dna="gaaf0bdf0e0"
-	properties="wb0000000000000000
+	dna = "gaaf0bdf0e0"
+	properties = "wb0000000000000000
 	trait = race_troll_jungle
 	trait = dire_troll
 	9981.4.2 = {
@@ -3232,20 +3232,22 @@
 	9979.7.9 = {
 		effect = {
 			remove_trait = incapable
+			add_friend = 172 # Anduin
+			add_friend = 167 # Llane
 		}
 		add_trait = mage
 		add_trait = guardian
 		add_trait = mastermind_theologian
-		add_trait = possessed
+		add_trait = possessed #not the correct name for the trait
 		add_trait = erudite
 		add_trait = proud
-		add_friend = 172 # Anduin
-		add_friend = 167 # Llane
 		employer = 163 # Barathen
 	}
 	9988.5.22 = {
 		religion = arcane
-		add_friend = 113 # Moroes
+		effect = {
+			add_friend = 113 # Moroes
+		}
 	}
 	9995.3.19 = {
 		add_trait = cruel
@@ -3325,7 +3327,7 @@
 
 115 = {
 	name = "Attumen"
-	dying = 86 # Firepath
+	dynasty = 86 # Firepath
 	culture = azerothian
 	religion = holy_light
 	martial = 6
@@ -4248,7 +4250,9 @@
 		birth = yes
 	}
 	9998.4.12 = {
-		add_rival = 158 # Marie
+		effect = {
+			add_rival = 158 # Marie
+		}
 	}
 	10100.1.1 = {
 		death = { death_reason = death_natural }
@@ -4285,7 +4289,9 @@
 		birth = yes
 	}
 	10023.5.19 = {
-		add_lover = 160 # Tommy Joe
+		effect = {
+			add_lover = 160 # Tommy Joe
+		}
 	}
 	10100.1.1 = {
 		death = { death_reason = death_natural }
