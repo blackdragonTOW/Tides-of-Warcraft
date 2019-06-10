@@ -1658,12 +1658,17 @@
 	11 = { # eyepatch 11 - scarred eye 1
 		factor = 1
 		modifier = {
+			factor = 100
+			character = 201 # Lor'themar Theron
+		}
+		modifier = {
 			factor = 0
 			NOT = { trait = one_eyed }
 		}
 		modifier = {
 			factor = 0
 			trait = shy
+			NOT = { character = 201 } # Lor'themar Theron
 		}
 		modifier = {
 			factor = 4
