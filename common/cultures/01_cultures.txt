@@ -1054,7 +1054,30 @@ dwarf = {
 		mother_name_chance = 5
 
 		modifier = default_culture_modifier
-	}	
+	}
+	
+	earthen = {
+		graphical_cultures = { earthengfx westerngfx }
+		
+		color = { 0.71 0.70 0.15 }
+		
+		male_names = { Adlin Agnar Aldren Andorin Ashlan Azar Bahrum Bailor Baird Baldruc Balir Balthus Barim Barnil Barrus Beldruk Belgrum Belm Bengus Berkan Boran Bragh Brak Brandur Brann Brom Bromiir Bronk Brugar Brundall Bruuk Burdrak Carrick Cayden Clate Claude Corig Craw Dargh Daryl Dashel Deeg Dolkin Dolman Doran Dorfus Dorgan Dorin Dorius Drac Drakk Drovnar Durgen Durnan Egan Einar Emrul Ephram Farstad Flynn Fraggar Frast Furen Galvan Gamili Garel Gazin Gelman Geogram Gerrig Ghak Glordrum Glorin Goli Golnir Golorn Gordun Gothor Granis Grawn Gregan Greishan Gremlock Grenil Grif Grimand Grimnur Grlin Gruham Grumbol Grumnus Grundel Grundy Gryth Guthrum Haggerdin Harggan Harick Harkor Harlon Hegnar Henze Hjoldir Hogral Huldar Hulfdan Hurley Iaini Ironus Jannos Jaron Jarven Jern Jondor Jormund Kadrell Karm Karnik Kazan Keeg Keegan Keeland Kelomir Kelstrum Kelv Kennen Kersok Killium Kreg Kreldig Krom Kurdran Lachlan Lagnus Loslor Mackay Magellas Magmar Magnus Mangorn Marek Maxan Mehr Melnan Miran Morhan Muiredon Muren Murndan Narj Narm Naveen Nillen Olmin Olthran Oralius Orlond Ormer Ormyr Paxton Raegar Ragnar Rann Ransin Regnus Rejold Rhag Rockgar Roetten Rohan Rork Rotimer Rutner Rybrad Ryedol Salvador Senir Sigrun Skolmin Sloan Sognar Sten Stumner Talin Tarm Tarrel Thadius Thalgus Thalos Thamner Tharek Thargold Theldurin Thelman Theodrus Therum Thordun Thorfin Thorius Thrawn Thulfram Thurgrum Tognus Toldren Tormek Tormus Truk Tundra Turuk Tymor Ulbrek Ulfir Ultham Valgar Vastag Veron Vrok Wagner Warg Whelgar Wilder Wilhelm Xandar Xiggs Yarr Yorg Yorus
+		}
+		female_names = { Abigail Aidan Aimee Anri Aprika Baerla Belia Bera Bethaine Bonnie Braenna Bren Brenwyn Bretta Briatha Bronwyn Brooke Brula Bryllia Cailin Calypso Cannary Cassa Cecily Celidh Celie Chelie Ciara Coira Crinn Daera Dagna Dalana Darna Deedree Deirdre Disha Donova Edana Edris Eeryven Einris Elda Elisa Elise Ella Ellie Enohar Falda Fanny Fedli Felinda Fenella Felyae Flurga Galda Gerdra Gerdur Glenda Glynna Gortys Grenda Grenhild Gretta Grunda Gunda Gwen Gwendolyn Gwenna Gwina Gwynevere Haley Hegrid Helga Hester Hilda Hollee Honni Ilsa Ingrid Ingrys Irena Irene Jenova Jonivera Kaita Kaira Kali Keegana Keely Khaelyn Khara Krill Laida Lainda Laire Lanie Lina Lorin Lyesa Mae Maeva Maeve Magdala Magram Mahega Marga Mari Marleth Mary Matilda Merrin Miranda Miriam Mistina Mizzy Modgud Moira Molin Murta Mylra Myra Neve Nioma Nissa Poranna Raena Reyna Rosina Rudra Ryona Salle Sara Seona Shaina Shelby Sida Siflaed Soleil Tiza Urist Varana Vidra Wenna Winifred Yanni Yarlyn 
+		}	
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+	}
 }
 	
 elf = {
