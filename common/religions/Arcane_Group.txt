@@ -261,4 +261,42 @@ arcane_group = {
 		religious_clothing_head = 0 # Placeholder
 		religious_clothing_priest = 0 # Placeholder
 	}
+	
+	pantheon = {
+		graphical_culture = norsegfx
+		interface_skin = { pagan_interface }
+		
+		icon = 26
+		color = { 0.22 0.75 0.34 }
+		
+		scripture_name = THE_ORDERING
+		high_god_name = GOD_THE_PANTHEON
+		god_names = { GOD_TYR GOD_TITANS GOD_AMANTHUL GOD_EONAR GOD_NORGANNON GOD_GOLGANNETH GOD_KHAZGOROTH GOD_AGGRAMAR }
+		evil_god_names = { GOD_SARGERAS GOD_BURNING_LEGION GOD_VOID_LORDS GOD_OLD_GODS }
+		
+		join_crusade_if_bordering_hostile = yes
+		
+		ai_convert_same_group = 0
+		ai_convert_other_group = 0
+		priests_can_marry = yes
+		priest_title = PRIESTNAME_SHAPER
+		priests_can_inherit = yes
+		feminist = yes
+		male_temple_holders = yes
+		female_temple_holders = yes
+		uses_decadence = yes
+		
+		intermarry = mercantilism
+		intermarry = argent
+		intermarry = druidism
+		intermarry = druidism_reformed
+		intermarry = wyrmcult
+		intermarry = arcane
+	#	intermarry = sunwell
+		intermarry = old_ways
+		intermarry = old_ways_reformed
+		
+		religious_clothing_head = 0 # Placeholder
+		religious_clothing_priest = 0 # Placeholder
+	}
 }
