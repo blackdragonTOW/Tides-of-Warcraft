@@ -1,3 +1,5 @@
+## When a new race is added, don't forget to edit "TOW_has_race_trait", the lifespan triggers and "TOW_is_same_race_as_prev"
+
 TOW_has_race = {
 	OR = {
 		has_character_flag = race_assigned
@@ -233,4 +235,90 @@ TOW_race_has_similar_to_regular_lifespan = {
 TOW_race_can_have_children = {
 	TOW_is_undead = no
 	TOW_is_demon_race = no
+}
+
+TOW_is_creep_race = {
+	OR = {
+		trait = race_murloc
+		trait = race_gnoll
+		trait = race_kobold
+		trait = race_trogg
+	}
+}
+
+TOW_is_same_race_as_prev = {
+	OR = {
+		AND = { trait = race_human PREV = { trait = race_human } }
+		AND = { trait = race_orc PREV = { trait = race_orc } }
+		AND = { trait = race_dwarf PREV = { trait = race_dwarf } }
+		AND = { trait = race_high_elf PREV = { trait = race_high_elf } }
+		AND = { trait = race_blood_elf PREV = { trait = race_blood_elf } }
+		AND = { trait = race_wretched PREV = { trait = race_wretched } }
+		AND = { trait = race_night_elf PREV = { trait = race_night_elf } }
+		AND = { trait = race_gnome PREV = { trait = race_gnome } }
+		AND = { trait = race_goblin PREV = { trait = race_goblin } }
+		AND = { trait = race_dragon PREV = { trait = race_dragon } }
+		AND = { trait = race_troll_forest PREV = { trait = race_troll_forest } }
+		AND = { trait = race_troll_ice PREV = { trait = race_troll_ice } }
+		AND = { trait = race_troll_dark PREV = { trait = race_troll_dark } }
+		AND = { trait = race_troll_jungle PREV = { trait = race_troll_jungle } }
+		AND = { trait = race_troll_sand PREV = { trait = race_troll_sand } }
+		AND = { trait = race_troll_zandalari PREV = { trait = race_troll_zandalari } }
+		AND = { trait = race_ogre PREV = { trait = race_ogre } }
+		AND = { trait = race_murloc PREV = { trait = race_murloc } }
+		AND = { trait = race_gnoll PREV = { trait = race_gnoll } }
+		AND = { trait = race_naga PREV = { trait = race_naga } }
+		AND = { trait = race_kobold PREV = { trait = race_kobold } }
+		AND = { trait = race_trogg PREV = { trait = race_trogg } }
+		AND = { trait = race_hakkar PREV = { trait = race_hakkar } }
+		AND = { trait = race_faceless PREV = { trait = race_faceless } }
+		AND = { trait = race_eredar PREV = { trait = race_eredar } }
+		AND = { trait = race_dreadlord PREV = { trait = race_dreadlord } }
+		AND = { trait = race_succubus PREV = { trait = race_succubus } }
+		AND = { trait = race_pit_lord PREV = { trait = race_pit_lord } }
+		AND = { trait = race_fel_lord PREV = { trait = race_fel_lord } }
+		AND = { trait = race_doomlord PREV = { trait = race_doomlord } }
+		AND = { trait = race_shivarra PREV = { trait = race_shivarra } }
+		AND = { trait = race_antaen PREV = { trait = race_antaen } }
+		AND = { trait = race_aranasi PREV = { trait = race_aranasi } }
+		AND = { trait = race_inquisitor PREV = { trait = race_inquisitor } }
+		AND = { trait = race_mo_arg PREV = { trait = race_mo_arg } }
+		AND = { trait = race_observer PREV = { trait = race_observer } }
+		AND = { trait = race_draenei PREV = { trait = race_draenei } }
+		AND = { trait = race_broken PREV = { trait = race_broken } }
+		AND = { trait = race_lost_one PREV = { trait = race_lost_one } }
+		AND = { trait = race_voidwalker PREV = { trait = race_voidwalker } }
+		AND = { trait = race_pale_orc PREV = { trait = race_pale_orc } }
+		AND = { trait = race_air_elemental PREV = { trait = race_air_elemental } }
+		AND = { trait = race_fire_elemental PREV = { trait = race_fire_elemental } }
+		AND = { trait = race_earth_elemental PREV = { trait = race_earth_elemental } }
+		AND = { trait = race_water_elemental PREV = { trait = race_water_elemental } }
+		AND = { trait = race_half_elf PREV = { trait = race_half_elf } }
+		AND = { trait = race_half_ogre PREV = { trait = race_half_ogre } }
+		AND = { trait = race_half_draenei PREV = { trait = race_half_draenei } }
+		AND = { trait = race_vrykul PREV = { trait = race_vrykul } }
+		AND = { trait = race_tauren PREV = { trait = race_tauren } }
+	}
+}
+
+TOW_is_adventurer_race = {
+	OR = {
+		trait = race_human
+		trait = race_orc
+		trait = race_dwarf
+		trait = race_high_elf
+		trait = race_blood_elf
+		trait = race_night_elf
+		trait = race_gnome
+		trait = race_goblin
+		trait = race_troll_forest
+		trait = race_troll_ice
+		trait = race_troll_dark
+		trait = race_troll_jungle
+		trait = race_draenei
+		trait = race_half_elf
+		trait = race_half_ogre
+		trait = race_half_draenei
+		trait = race_tauren
+	}
 }

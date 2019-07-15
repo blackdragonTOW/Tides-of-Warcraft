@@ -1,0 +1,129 @@
+defined_text = {
+	name = TOW_GetEventCreepsName
+
+	text = {
+		trigger = { has_province_flag = local_TOW_creep_event_gnoll }
+		localisation_key = race_gnoll
+	}
+
+	text = {
+		trigger = { has_province_flag = local_TOW_creep_event_kobold }
+		localisation_key = race_kobold
+	}
+
+	text = {
+		trigger = { has_province_flag = local_TOW_creep_event_murloc }
+		localisation_key = race_murloc
+	}
+
+	text = {
+		trigger = { has_province_flag = local_TOW_creep_event_trogg }
+		localisation_key = race_trogg
+	}
+}
+
+defined_text = {
+	name = TOW_GetEventCreeps2Name
+
+	text = {
+		trigger = { has_province_flag = local_TOW_creep_event_2_gnoll }
+		localisation_key = race_gnoll
+	}
+
+	text = {
+		trigger = { has_province_flag = local_TOW_creep_event_2_kobold }
+		localisation_key = race_kobold
+	}
+
+	text = {
+		trigger = { has_province_flag = local_TOW_creep_event_2_murloc }
+		localisation_key = race_murloc
+	}
+
+	text = {
+		trigger = { has_province_flag = local_TOW_creep_event_2_trogg }
+		localisation_key = race_trogg
+	}
+}
+
+defined_text = {
+	name = TOW_GetWinningEventCreepsText
+
+	text = {
+		trigger = { has_province_flag = local_TOW_Creeps_6_winner_none }
+		localisation_key = EVTDESC_TOW_Creeps_6_No_Winner
+	}
+	
+	text = {
+		trigger = { NOT = { has_province_flag = local_TOW_Creeps_6_winner_none } }
+		localisation_key = EVTDESC_TOW_Creeps_6_Victorious
+	}
+}
+
+defined_text = {
+	name = TOW_GetWinningEventCreepsName
+
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					has_province_flag = local_TOW_Creeps_6_winner_1
+					has_province_flag = local_TOW_creep_event_gnoll
+				}
+				AND = {
+					has_province_flag = local_TOW_Creeps_6_winner_2
+					has_province_flag = local_TOW_creep_event_2_gnoll
+				}
+			}
+		}
+		localisation_key = race_gnoll
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					has_province_flag = local_TOW_Creeps_6_winner_1
+					has_province_flag = local_TOW_creep_event_kobold
+				}
+				AND = {
+					has_province_flag = local_TOW_Creeps_6_winner_2
+					has_province_flag = local_TOW_creep_event_2_kobold
+				}
+			}
+		}
+		localisation_key = race_kobold
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					has_province_flag = local_TOW_Creeps_6_winner_1
+					has_province_flag = local_TOW_creep_event_murloc
+				}
+				AND = {
+					has_province_flag = local_TOW_Creeps_6_winner_2
+					has_province_flag = local_TOW_creep_event_2_murloc
+				}
+			}
+		}
+		localisation_key = race_murloc
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					has_province_flag = local_TOW_Creeps_6_winner_1
+					has_province_flag = local_TOW_creep_event_trogg
+				}
+				AND = {
+					has_province_flag = local_TOW_Creeps_6_winner_2
+					has_province_flag = local_TOW_creep_event_2_trogg
+				}
+			}
+		}
+		localisation_key = race_trogg
+	}
+}

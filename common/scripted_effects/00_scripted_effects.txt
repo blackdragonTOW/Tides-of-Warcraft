@@ -7275,7 +7275,11 @@ spawn_good_commander_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_adult_character = yes
+		if = {
+			limit = { has_global_flag = TOW_character_spawn_no_initialization }
+			clr_global_flag = TOW_character_spawn_no_initialization
+		}
+		else = { TOW_initialize_adult_character = yes }
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile
@@ -7357,7 +7361,11 @@ spawn_great_commander_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_adult_character = yes
+		if = {
+			limit = { has_global_flag = TOW_character_spawn_no_initialization }
+			clr_global_flag = TOW_character_spawn_no_initialization
+		}
+		else = { TOW_initialize_adult_character = yes }
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile
@@ -7491,7 +7499,11 @@ spawn_fantastic_commander_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_adult_character = yes
+		if = {
+			limit = { has_global_flag = TOW_character_spawn_no_initialization }
+			clr_global_flag = TOW_character_spawn_no_initialization
+		}
+		else = { TOW_initialize_adult_character = yes }
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile
@@ -7747,7 +7759,11 @@ spawn_fantastic_diplomat_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_adult_character = yes
+		if = {
+			limit = { has_global_flag = TOW_character_spawn_no_initialization }
+			clr_global_flag = TOW_character_spawn_no_initialization
+		}
+		else = { TOW_initialize_adult_character = yes }
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile
@@ -7826,7 +7842,11 @@ spawn_fantastic_scholar_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_adult_character = yes
+		if = {
+			limit = { has_global_flag = TOW_character_spawn_no_initialization }
+			clr_global_flag = TOW_character_spawn_no_initialization
+		}
+		else = { TOW_initialize_adult_character = yes }
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile
@@ -7934,7 +7954,11 @@ spawn_elder_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_adult_character = yes
+		if = {
+			limit = { has_global_flag = TOW_character_spawn_no_initialization }
+			clr_global_flag = TOW_character_spawn_no_initialization
+		}
+		else = { TOW_initialize_adult_character = yes }
 		remove_trait = weak
 		remove_trait = slow
 		remove_trait = imbecile
@@ -13510,7 +13534,11 @@ spawn_debutante_effect = {
 		}
 	}
 	new_character = {
-		TOW_initialize_adult_character = yes
+		if = {
+			limit = { has_global_flag = TOW_character_spawn_no_initialization }
+			clr_global_flag = TOW_character_spawn_no_initialization
+		}
+		else = { TOW_initialize_adult_character = yes }
 		set_character_flag = debutante
 		save_event_target_as = invited_character
 	}

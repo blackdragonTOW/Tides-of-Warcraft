@@ -14,8 +14,8 @@ TOW_is_feudal = {
 TOW_is_tribal = {
 	OR = {
 		is_tribal = yes
-		government = troll_ke_government
-		government = troll_bcd_government
+		#government = troll_ke_government
+		#government = troll_bcd_government
 		government = ogre_tribe_government
 	}
 }
@@ -23,7 +23,7 @@ TOW_is_tribal = {
 TOW_government_is_uncivilized = {
 	OR = {
 		TOW_is_tribal = yes
-		is_nomadic = yes
+		TOW_is_creep_realm = yes
 	}
 }
 
@@ -33,6 +33,27 @@ TOW_is_republic = {
 		is_republic = yes
 		government = helf_government
 		government = noble_republic_government
+	}
+}
+
+TOW_is_creep_realm = {
+	AND = {
+		OR = {
+			is_nomadic = yes
+			is_tribal = yes
+		}
+		OR = {
+			AND = {
+				is_ruler = yes
+				TOW_is_creep_race = yes
+			}
+			AND = {
+				is_ruler = no
+				liege = {
+					TOW_is_creep_race = yes
+				}
+			}
+		}
 	}
 }
 

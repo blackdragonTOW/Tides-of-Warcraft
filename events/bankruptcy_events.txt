@@ -537,7 +537,13 @@ character_event = {
 			limit = {
 				tier = baron
 			}
-			destroy_random_building = yes	
+			if = {
+				limit = { TOW_holding_is_colony = no }
+				destroy_random_building = yes	
+			}
+			else = {
+				location = { TOW_province_pillaged_colony_effect = yes }
+			}
 		}
 		wealth = -100
 	}
