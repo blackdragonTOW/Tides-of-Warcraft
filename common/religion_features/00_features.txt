@@ -983,6 +983,17 @@ religion_doctrine = {
 			factor = 1
 		}
 	}
+	religion_feature_pyramids = {
+		picture = GFX_religion_feature_pyramids
+		potential = {
+			has_game_started = yes
+			TOW_race_is_troll = no
+		}
+		effect = {
+			custom_tooltip = { text = tooltip_religion_feature_pyramids }
+			set_flag = feature_pyramids
+		}
+	}
 }
 
 religion_leadership = {

@@ -208,12 +208,23 @@ TOW_religion_is_relentless = {
 		religion_scope = { has_flag = feature_relentless }
 	}
 }
+
+TOW_religion_has_pyramids = {
+	OR = {
+		TOW_race_is_troll = yes
+		religion_scope = { has_flag = feature_pyramids }
+	}
+}
+
 ##############
 
 # Replaces general condition "religion_group = pagan_group"
 TOW_religion_is_uncivilized_trigger = {
 	OR = {
-		religion_group = elemental_group
+		AND = {
+			religion_group = elemental_group
+			is_reformed_religion = no
+		}
 		religion = old_ways
 	}
 	OR = {
