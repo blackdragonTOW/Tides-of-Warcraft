@@ -11,10 +11,8 @@ decisions = {
 				trait = race_dwarf
 				trait = race_goblin
 			}
+			TOW_is_undead = no
 			NOR = {
-				trait = race_undead_scourge
-				trait = race_undead_forsaken
-				trait = race_undead_generic
 				has_character_modifier = holding_large_feast
 				has_character_modifier = large_feast_timer
 				has_character_modifier = fabulous_feast
@@ -117,11 +115,7 @@ decisions = {
 			OR = {
 				trait = race_human
 			}
-			NOR = {
-				trait = race_undead_generic
-				trait = race_undead_forsaken
-				trait = race_undead_scourge
-			}
+			TOW_is_undead = no
 			prisoner = no
 			NOT = {
 				has_character_modifier = holding_summer_fair
@@ -359,13 +353,8 @@ decisions = {
 			is_playable = yes
 			age = 16
 			prisoner = no
-			trait = race_human
-			religion = old_ways
-			NOT = {
-				trait = race_undead_generic
-				trait = race_undead_forsaken
-				trait = race_undead_scourge
-			}
+			TOW_religion_has_runestones = yes
+			TOW_is_undead = no
 			NOT = {	has_character_flag = commissioned_runestone }
 		}
 		allow = {
@@ -503,13 +492,8 @@ decisions = {
 			is_landed = yes
 			is_adult = yes
 			prisoner = no
-			trait = race_human
-			religion = old_ways
-			NOT = {
-				trait = race_undead_forsaken
-				trait = race_undead_scourge
-				trait = race_undead_generic
-			}
+			TOW_religion_worships_ancestors = yes
+			TOW_is_undead = no
 		}
 
 		allow = {
@@ -672,11 +656,7 @@ decisions = {
 		potential = {
 			is_playable = yes
 			TOW_background_rider_horse = yes
-			NOR = {
-				trait = race_undead_forsaken
-				trait = race_undead_scourge
-				trait = race_undead_generic
-			}
+			TOW_is_undead = no
 			NOT = { has_character_modifier = nomad_warhorse }
 		}
 		allow = {
