@@ -1,0 +1,61 @@
+1001 = {
+	name = "Var'gazul" #Last known emperor of Gurubashi at the time
+	dynasty = 34 #Gurubashi
+	culture = gurubashi
+	religion = loa
+	trait = race_troll_jungle
+	trait = ambitious #It is said he had great ambition, but also that all of them eventualy failed
+	8470.3.6 = { #We don't know so I made him a reasonable age
+		birth = yes
+	}
+	8534.5.11 = {
+		death = {
+			death_reason = death_battle #We don't know, but it makes sense
+		}
+	}
+}
+
+1002 = {
+	name = "Min'loth"
+	culture = gurubashi
+	religion = hydromancy
+	learning = 13 #He was an exellent witch doctor
+	trait = race_troll_jungle
+	8463.7.22 = { 
+		birth = yes
+	}
+	8479.7.22 = {
+		add_trait = scholarly_theologian
+	}
+	8534.1.1 = {
+		death = {
+			death_reason = death_accident #If you can call taking on a kraken whose wrath you might have brought upon yourself an accident
+		}
+	}
+}
+
+1003 = {
+	name = "Gri'lek"
+	culture = darkspear
+	religion = loa
+	martial 11 #reverd as a warrior hero by the darkspear
+	trait = race_troll_jungle
+	trait = warrior
+	8479.10.4 = {
+		birth = yes
+	}
+	8495.10.4 = {
+		add_trait = tough_soldier
+	}
+	8534.5.11 = {
+		add_trait = one_handed
+		effect = {
+			give_nickname = nick_the_wanderer
+		}
+	}
+	8559.10.4 ={
+		death = {
+			death_reason = death_natural #As far as we know
+		}
+	}
+}
