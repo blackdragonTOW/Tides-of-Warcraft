@@ -1,0 +1,110 @@
+targetted_decisions = {
+	hide_society_clothes = {
+		filter = self
+		ai_target_filter = self
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_court_diplomacy
+
+		potential = {
+			is_adult = yes
+			has_game_rule = {
+				name = society_clothes_display
+				value = editable
+			}
+			NOT = { trait = TOW_hide_society_clothes }
+		}
+		allow = {
+		}
+		effect = {
+			hidden_tooltip = { add_trait = TOW_hide_society_clothes }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	show_society_clothes = {
+		filter = self
+		ai_target_filter = self
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_court_diplomacy
+
+		potential = {
+			is_adult = yes
+			has_game_rule = {
+				name = society_clothes_display
+				value = editable
+			}
+			trait = TOW_hide_society_clothes
+		}
+		allow = {
+		}
+		effect = {
+			hidden_tooltip = { remove_trait = TOW_hide_society_clothes }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	hide_headgear = {
+		filter = self
+		ai_target_filter = self
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_court_diplomacy
+
+		potential = {
+			is_adult = yes
+			has_game_rule = {
+				name = headgear_display
+				value = editable
+			}
+			NOT = { has_character_flag = TOW_hide_headgear }
+		}
+		allow = {
+		}
+		effect = {
+			set_character_flag = TOW_hide_headgear
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	show_headgear = {
+		filter = self
+		ai_target_filter = self
+		ai = no
+
+		diplomacy_icon = GFX_Keitaro_court_diplomacy
+
+		potential = {
+			is_adult = yes
+			has_game_rule = {
+				name = headgear_display
+				value = editable
+			}
+			has_character_flag = TOW_hide_headgear
+		}
+		allow = {
+		}
+		effect = {
+			clr_character_flag = TOW_hide_headgear
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
