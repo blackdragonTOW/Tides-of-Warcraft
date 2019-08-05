@@ -5415,7 +5415,7 @@ viking_invasion = {
 }
 
 # Pagans can subjugate other pagans
-orcogre_subjugation = {
+pagan_subjugation = {
 	name = CB_NAME_PAGAN_SUBJUGATION
 	war_name = WAR_NAME_PAGAN_SUBJUGATION
 	sprite = 8
@@ -5433,6 +5433,10 @@ orcogre_subjugation = {
 				trait = race_orc
 				trait = race_ogre
 				trait = race_pale_orc
+				AND = {
+					trait = race_human
+					TOW_religion_is_uncivilized_trigger = yes
+				}
 			}
 			NOR = {
 				trait = race_undead_scourge

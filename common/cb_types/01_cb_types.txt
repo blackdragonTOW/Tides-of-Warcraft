@@ -1723,105 +1723,101 @@ unjust_conquest = { # New7
 	can_use_gui = {
 		ROOT = {
 			show_scope_change = no
-			conditional_tooltip = {
-				trigger = { 
-					tier = COUNT
-					religion = FROM
+			trigger_if = {
+				limit = { 
+					culture = stromic
+					FROM = { TOW_race_is_troll = yes }
 				}
-				piety = 100
-				scaled_wealth = { value = 3.0 min = 50 }
+				trigger_if = {
+					limit = { tier = COUNT }
+					scaled_wealth = { value = 0.5 min = 25 }
+				}
+				trigger_else_if = {
+					limit = { tier = DUKE }
+					scaled_wealth = { value = 1 min = 50 }
+				}
+				trigger_else_if = {
+					limit = { tier = KING }
+					scaled_wealth = { value = 2 min = 100 }
+				}
+				trigger_else_if = {
+					limit = { tier = EMPEROR }
+					scaled_wealth = { value = 3 min = 200 }
+				}
 			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = COUNT
+			trigger_else_if = {
+				limit = { religion = FROM }
+				trigger_if = {
+					limit = { tier = COUNT }
+					piety = 100
+					scaled_wealth = { value = 3.0 min = 50 }
+				}
+				trigger_else_if = {
+					limit = { tier = DUKE }
+					piety = 200
+					scaled_wealth = { value = 3.0 min = 100 }
+				}
+				trigger_else_if = {
+					limit = { tier = KING }
+					piety = 300
+					scaled_wealth = { value = 3.0 min = 200 }
+				}
+				trigger_else_if = {
+					limit = { tier = EMPEROR }
+					piety = 600
+					scaled_wealth = { value = 3.0 min = 400 }
+				}
+			}
+			trigger_else_if = {
+				limit = {
 					religion_group = FROM
 					NOT = { religion = FROM }
 				}
-				piety = 50
-				scaled_wealth = { value = 2.0 min = 50 }
+				trigger_if = {
+					limit = { tier = COUNT }
+					piety = 50
+					scaled_wealth = { value = 2.0 min = 50 }
+				}
+				trigger_else_if = {
+					limit = { tier = DUKE }
+					piety = 100
+					scaled_wealth = { value = 2.0 min = 100 }
+				}
+				trigger_else_if = {
+					limit = { tier = KING }
+					piety = 200
+					scaled_wealth = { value = 2.0 min = 200 }
+				}
+				trigger_else_if = {
+					limit = { tier = EMPEROR }
+					piety = 400
+					scaled_wealth = { value = 2.0 min = 400 }
+				}
 			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = COUNT
+			trigger_else_if = {
+				limit = {
 					NOT = { religion_group = FROM }
 				}
-				piety = 25
-				scaled_wealth = { value = 1.0 min = 50 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = DUKE
-					religion = FROM
+				trigger_if = {
+					limit = { tier = COUNT }
+					piety = 25
+					scaled_wealth = { value = 1.0 min = 50 }
 				}
-				piety = 200
-				scaled_wealth = { value = 3.0 min = 100 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = DUKE
-					religion_group = FROM
-					NOT = { religion = FROM }
+				trigger_else_if = {
+					limit = { tier = DUKE }
+					piety = 50
+					scaled_wealth = { value = 1.0 min = 100 }
 				}
-				piety = 100
-				scaled_wealth = { value = 2.0 min = 100 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = DUKE
-					NOT = { religion_group = FROM }
+				trigger_else_if = {
+					limit = { tier = KING }
+					piety = 100
+					scaled_wealth = { value = 1.0 min = 200 }
 				}
-				piety = 50
-				scaled_wealth = { value = 1.0 min = 100 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = KING
-					religion = FROM
+				trigger_else_if = {
+					limit = { tier = EMPEROR }
+					piety = 200
+					scaled_wealth = { value = 1.0 min = 400 }
 				}
-				piety = 300
-				scaled_wealth = { value = 3.0 min = 200 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = KING
-					religion_group = FROM
-					NOT = { religion = FROM }
-				}
-				piety = 200
-				scaled_wealth = { value = 2.0 min = 200 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = KING
-					NOT = { religion_group = FROM }
-				}
-				piety = 100
-				scaled_wealth = { value = 1.0 min = 200 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = EMPEROR
-					religion = FROM
-				}
-				piety = 600
-				scaled_wealth = { value = 3.0 min = 400 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = EMPEROR
-					religion_group = FROM
-					NOT = { religion = FROM }
-				}
-				piety = 400
-				scaled_wealth = { value = 2.0 min = 400 }
-			}
-			conditional_tooltip = {
-				trigger = { 
-					tier = EMPEROR
-					NOT = { religion_group = FROM }
-				}
-				piety = 200
-				scaled_wealth = { value = 1.0 min = 400 }
 			}
 		}
 	}
@@ -1830,107 +1826,100 @@ unjust_conquest = { # New7
 		ROOT = {
 			show_scope_change = no
 			if = {
-				limit = {
-					tier = COUNT
-					religion = FROM
+				limit = { 
+					culture = stromic
+					FROM = { TOW_race_is_troll = yes }
 				}
-				piety = -100
-				scaled_wealth = { value = -3.0 min = -100 }
+				if = {
+					limit = { tier = COUNT }
+					scaled_wealth = { value = -0.5 min = -25 }
+				}
+				else_if = {
+					limit = { tier = DUKE }
+					scaled_wealth = { value = -1 min = -50 }
+				}
+				else_if = {
+					limit = { tier = KING }
+					scaled_wealth = { value = -2 min = -100 }
+				}
+				else_if = {
+					limit = { tier = EMPEROR }
+					scaled_wealth = { value = -3 min = -200 }
+				}
 			}
-			if = {
+			else_if = {
+				limit = { religion = FROM }
+				if = {
+					limit = { tier = COUNT }
+					piety = -100
+					scaled_wealth = { value = -3.0 min = -50 }
+				}
+				else_if = {
+					limit = { tier = DUKE }
+					piety = -200
+					scaled_wealth = { value = -3.0 min = -100 }
+				}
+				else_if = {
+					limit = { tier = KING }
+					piety = -300
+					scaled_wealth = { value = -3.0 min = -200 }
+				}
+				else_if = {
+					limit = { tier = EMPEROR }
+					piety = -600
+					scaled_wealth = { value = -3.0 min = -400 }
+				}
+			}
+			else_if = {
 				limit = {
-					tier = COUNT
 					religion_group = FROM
 					NOT = { religion = FROM }
 				}
-				piety = -50
-				scaled_wealth = { value = -2.0 min = -100 }
+				if = {
+					limit = { tier = COUNT }
+					piety = -50
+					scaled_wealth = { value = -2.0 min = -50 }
+				}
+				else_if = {
+					limit = { tier = DUKE }
+					piety = -100
+					scaled_wealth = { value = -2.0 min = -100 }
+				}
+				else_if = {
+					limit = { tier = KING }
+					piety = -200
+					scaled_wealth = { value = -2.0 min = -200 }
+				}
+				else_if = {
+					limit = { tier = EMPEROR }
+					piety = -400
+					scaled_wealth = { value = -2.0 min = -400 }
+				}
 			}
-			if = {
+			else_if = {
 				limit = {
-					tier = COUNT
 					NOT = { religion_group = FROM }
 				}
-				piety = -25
-				scaled_wealth = { value = -1.0 min = -100 }
-			}
-			
-			if = {
-				limit = {
-					tier = DUKE
-					religion = FROM
+				if = {
+					limit = { tier = COUNT }
+					piety = -25
+					scaled_wealth = { value = -1.0 min = -50 }
 				}
-				piety = -200
-				scaled_wealth = { value = -3.0 min = -100 }
-			}
-			if = {
-				limit = {
-					tier = DUKE
-					religion_group = FROM
-					NOT = { religion = FROM }
+				else_if = {
+					limit = { tier = DUKE }
+					piety = -50
+					scaled_wealth = { value = -1.0 min = -100 }
 				}
-				piety = -100
-				scaled_wealth = { value = -2.0 min = -100 }
-			}
-			if = {
-				limit = {
-					tier = DUKE
-					NOT = { religion_group = FROM }
+				else_if = {
+					limit = { tier = KING }
+					piety = -100
+					scaled_wealth = { value = -1.0 min = -200 }
 				}
-				piety = -50
-				scaled_wealth = { value = -1.0 min = -100 }
-			}
-			
-			if = {
-				limit = {
-					tier = KING
-					religion = FROM
+				else_if = {
+					limit = { tier = EMPEROR }
+					piety = -200
+					scaled_wealth = { value = -1.0 min = -400 }
 				}
-				piety = -300
-				scaled_wealth = { value = -3.0 min = -100 }
-			}
-			if = {
-				limit = {
-					tier = KING
-					religion_group = FROM
-					NOT = { religion = FROM }
-				}
-				piety = -200
-				scaled_wealth = { value = -2.0 min = -100 }
-			}
-			if = {
-				limit = {
-					tier = KING
-					NOT = { religion_group = FROM }
-				}
-				piety = -100
-				scaled_wealth = { value = -1.0 min = -100 }
-			}
-			
-			if = {
-				limit = {
-					tier = EMPEROR
-					religion = FROM
-				}
-				piety = -600
-				scaled_wealth = { value = -3.0 min = -100 }
-			}
-			if = {
-				limit = {
-					tier = EMPEROR
-					religion_group = FROM
-					NOT = { religion = FROM }
-				}
-				piety = -400
-				scaled_wealth = { value = -2.0 min = -100 }
-			}
-			if = {
-				limit = {
-					tier = EMPEROR
-					NOT = { religion_group = FROM }
-				}
-				piety = -200
-				scaled_wealth = { value = -1.0 min = -100 }
 			}
 						
 			if = { # Opinion hit for same religion
@@ -2152,6 +2141,10 @@ unjust_conquest = { # New7
 	on_success_title = {
 		if = {
 			limit = {
+				NAND = {
+					ROOT = { culture = stromic }
+					FROM = { TOW_race_is_troll = yes }
+				}
 				holder_scope = {
 					tier = count
 					NOT = { num_of_count_titles = 2 }
@@ -2168,6 +2161,10 @@ unjust_conquest = { # New7
 			limit = {
 				holder_scope = {
 					OR = {
+						AND = {
+							ROOT = { culture = stromic }
+							FROM = { TOW_race_is_troll = yes }
+						}
 						higher_tier_than = count
 						num_of_count_titles = 2
 						NOT = { lower_tier_than = ROOT }

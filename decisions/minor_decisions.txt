@@ -233,10 +233,8 @@ decisions = {
 				has_bad_priest_trait_trigger = yes
 				is_female = no
 			}
-			NOT = {
-				culture_group = demonic
-				culture_group = void
-			}
+			TOW_is_demon_race = no
+			TOW_is_elemental_or_void = no
 			OR = {
 				AND = {
 					trait = druid
