@@ -183,527 +183,548 @@ character_event = {
 }
 
 # Syncretic rulers can pick a random sympathy.
-#character_event = {
-#	id = HF.23003
-#	desc = EVTDESCHF23003
-#	
-#	picture = GFX_evt_library
-#	border = GFX_event_normal_frame_religion
-#	
-#	is_triggered_only = yes
-#	
-#	option = { #Christianity
-#		name = {
-#			text = EVTOPTAHF23003
-#			trigger = {
-#				is_alternate_start = no
-#			}
-#		}
-#		name = {
-#			text = EVTOPTAHF23003_ALT
-#			trigger = {
-#				is_alternate_start = yes
-#			}
-#		}
-#		trigger = {
-#			NOT = { religion_group = christian } #Random World safety check.
-#		}
-#		add_trait = sympathy_christendom
-#		clr_character_flag = flag_picking_sympathy
-#		ai_chance = { 
-#			factor = 25 
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_judaism
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_judaism
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_judaism
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_demesne_province = { 
-#					religion_group = christian
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_courtier_or_vassal = { 
-#					religion_group = christian
-#				}
-#			}
-#		}
-#	}
-#	option = { #Islam
-#		name = {
-#			text = EVTOPTBHF23003
-#			trigger = {
-#				is_alternate_start = no
-#			}
-#		}
-#		name = {
-#			text = EVTOPTBHF23003_ALT
-#			trigger = {
-#				is_alternate_start = yes
-#			}
-#		}
-#		trigger = {
-#			NOT = { religion_group = muslim } #Random World safety check.
-#		}
-#		add_trait = sympathy_islam
-#		clr_character_flag = flag_picking_sympathy
-#		ai_chance = { 
-#			factor = 25 
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					OR = { 
-#						trait = sympathy_christendom
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_judaism
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					OR = { 
-#						trait = sympathy_christendom
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_judaism
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					OR = { 
-#						trait = sympathy_christendom
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_judaism
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_demesne_province = { 
-#					religion_group = muslim
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_courtier_or_vassal = { 
-#					religion_group = muslim
-#				}
-#			}
-#		}
-#	}
-#	option = { #Jews
-#		name = {
-#			text = EVTOPTCHF23003
-#			trigger = {
-#				is_alternate_start = no
-#			}
-#		}
-#		name = {
-#			text = EVTOPTCHF23003_ALT
-#			trigger = {
-#				is_alternate_start = yes
-#			}
-#		}
-#		trigger = {
-#			NOT = { religion_group = jewish_group } #Random World safety check.
-#		}
-#		add_trait = sympathy_judaism
-#		clr_character_flag = flag_picking_sympathy
-#		ai_chance = { 
-#			factor = 25 
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_christendom
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_christendom
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_zoroastrianism
-#						trait = sympathy_christendom
-#						trait = sympathy_indian 
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_demesne_province = { 
-#					religion_group = jewish_group
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_courtier_or_vassal = { 
-#					religion_group = jewish_group
-#				}
-#			}
-#		}
-#	}
-#	option = { #Others
-#		name = {
-#			text = EVTOPTDHF23003
-#			trigger = {
-#				is_alternate_start = no
-#			}
-#		}
-#		name = {
-#			text = EVTOPTDHF23003_ALT
-#			trigger = {
-#				is_alternate_start = yes
-#			}
-#		}
-#		hidden_tooltip = { character_event = { id = HF.23004 } }
-#		ai_chance = { 
-#			factor = 25 
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_judaism
-#						trait = sympathy_christendom
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_judaism
-#						trait = sympathy_christendom
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					OR = { 
-#						trait = sympathy_islam
-#						trait = sympathy_judaism
-#						trait = sympathy_christendom
-#					}
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_demesne_province = { 
-#					religion_group = indian_group
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_courtier_or_vassal = { 
-#					religion_group = indian_group
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_demesne_province = { 
-#					religion_group = zoroastrian_group
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_courtier_or_vassal = { 
-#					religion_group = zoroastrian_group
-#				}
-#			}
-#		}
-#	}
-#}
+character_event = {
+	id = HF.23003
+	desc = EVTDESCHF23003
+	
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = { #Light
+		name = {
+			text = EVTOPTAHF23003
+			trigger = {
+				is_alternate_start = no
+			}
+		}
+		name = {
+			text = EVTOPTAHF23003_ALT
+			trigger = {
+				is_alternate_start = yes
+			}
+		}
+		trigger = {
+			NOT = { religion_group = light_group } #Random World safety check.
+		}
+		add_trait = sympathy_light_group
+		clr_character_flag = flag_picking_sympathy
+		ai_chance = { 
+			factor = 25 
+			modifier = { 
+				factor = 0 
+				liege = { 
+					OR = { 
+						trait = sympathy_arcane_group
+						trait = sympathy_elemental_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					OR = { 
+						trait = sympathy_arcane_group
+						trait = sympathy_elemental_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					OR = { 
+						trait = sympathy_arcane_group
+						trait = sympathy_elemental_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = light_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = light_group
+				}
+			}
+		}
+	}
+	option = { #Elemental
+		name = {
+			text = EVTOPTBHF23003
+			trigger = {
+				is_alternate_start = no
+			}
+		}
+		name = {
+			text = EVTOPTBHF23003_ALT
+			trigger = {
+				is_alternate_start = yes
+			}
+		}
+		trigger = {
+			NOT = { religion_group = elemental_group } #Random World safety check.
+		}
+		add_trait = sympathy_elemental_group
+		clr_character_flag = flag_picking_sympathy
+		ai_chance = { 
+			factor = 25 
+			modifier = { 
+				factor = 0 
+				liege = { 
+					OR = { 
+						trait = sympathy_arcane_group
+						trait = sympathy_light_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					OR = { 
+						trait = sympathy_arcane_group
+						trait = sympathy_light_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					OR = { 
+						trait = sympathy_arcane_group
+						trait = sympathy_light_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = elemental_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = elemental_group
+				}
+			}
+		}
+	}
+	option = { #Arcane
+		name = {
+			text = EVTOPTCHF23003
+			trigger = {
+				is_alternate_start = no
+			}
+		}
+		name = {
+			text = EVTOPTCHF23003_ALT
+			trigger = {
+				is_alternate_start = yes
+			}
+		}
+		trigger = {
+			NOT = { religion_group = arcane_group } #Random World safety check.
+		}
+		add_trait = sympathy_arcane_group
+		clr_character_flag = flag_picking_sympathy
+		ai_chance = { 
+			factor = 25 
+			modifier = { 
+				factor = 0 
+				liege = { 
+					OR = { 
+						trait = sympathy_elemental_group
+						trait = sympathy_light_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					OR = { 
+						trait = sympathy_elemental_group
+						trait = sympathy_light_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					OR = { 
+						trait = sympathy_elemental_group
+						trait = sympathy_light_group
+						trait = sympathy_fel_group
+						trait = sympathy_void_group
+						trait = sympathy_wild_gods_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = arcane_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = arcane_group
+				}
+			}
+		}
+	}
+	option = { #Others
+		name = {
+			text = EVTOPTDHF23003
+			trigger = {
+				is_alternate_start = no
+			}
+		}
+		name = {
+			text = EVTOPTDHF23003_ALT
+			trigger = {
+				is_alternate_start = yes
+			}
+		}
+		hidden_tooltip = { character_event = { id = HF.23004 } }
+		ai_chance = { 
+			factor = 25 
+			modifier = { 
+				factor = 0 
+				liege = { 
+					OR = { 
+						trait = sympathy_elemental_group
+						trait = sympathy_light_group
+						trait = sympathy_arcane_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					OR = { 
+						trait = sympathy_elemental_group
+						trait = sympathy_light_group
+						trait = sympathy_arcane_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					OR = { 
+						trait = sympathy_elemental_group
+						trait = sympathy_light_group
+						trait = sympathy_arcane_group
+					}
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = fel_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = fel_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = void_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = void_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = wild_gods_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = wild_gods_group
+				}
+			}
+		}
+	}
+}
 
 #Second sympathy list
-#character_event = {
-#	id = HF.23004
-#	desc = EVTDESCHF23004
-#	
-#	picture = GFX_evt_library
-#	border = GFX_event_normal_frame_religion
-#	
-#	is_triggered_only = yes
-#	
-#	option = { #Zoroastrians
-#		name = {
-#			text = EVTOPTAHF23004
-#			trigger = {
-#				is_alternate_start = no
-#			}
-#		}
-#		name = {
-#			text = EVTOPTAHF23004_ALT
-#			trigger = {
-#				is_alternate_start = yes
-#			}
-#		}
-#		trigger = {
-#			NOT = { religion_group = zoroastrian_group } #Random World safety check.
-#		}
-#		add_trait = sympathy_zoroastrianism
-#		clr_character_flag = flag_picking_sympathy
-#		ai_chance = { 
-#			factor = 25 
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					trait = sympathy_indian 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					trait = sympathy_indian 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					trait = sympathy_indian 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					trait = sympathy_pagans 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					trait = sympathy_pagans 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					trait = sympathy_pagans 
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_demesne_province = { 
-#					religion_group = zoroastrian_group
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_courtier_or_vassal = { 
-#					religion_group = zoroastrian_group
-#				}
-#			}
-#		}
-#	}
-#	option = { #Indians
-#		name = {
-#			text = EVTOPTBHF23004
-#			trigger = {
-#				is_alternate_start = no
-#			}
-#		}
-#		name = {
-#			text = EVTOPTBHF23004_ALT
-#			trigger = {
-#				is_alternate_start = yes
-#			}
-#		}
-#		trigger = {
-#			NOT = { religion_group = indian_group } #Random World safety check.
-#		}
-#		add_trait = sympathy_indian
-#		clr_character_flag = flag_picking_sympathy
-#		ai_chance = { 
-#			factor = 25 
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					trait = sympathy_zoroastrianism 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					trait = sympathy_zoroastrianism 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					trait = sympathy_zoroastrianism 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					trait = sympathy_pagans 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					trait = sympathy_pagans 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					trait = sympathy_pagans 
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_demesne_province = { 
-#					religion_group = zoroastrian_group
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_courtier_or_vassal = { 
-#					religion_group = zoroastrian_group
-#				}
-#			}
-#		}
-#	}
-#	option = { #Pagans - Just for Random World.
-#		name = {
-#			text = EVTOPTCHF23004
-#			trigger = {
-#				is_alternate_start = no
-#			}
-#		}
-#		name = {
-#			text = EVTOPTCHF23004_ALT
-#			trigger = {
-#				is_alternate_start = yes
-#			}
-#		}
-#		trigger = {
-#			TOW_religion_is_uncivilized_trigger = no #Random World safety check.
-#		}
-#		add_trait = sympathy_pagans
-#		clr_character_flag = flag_picking_sympathy
-#		ai_chance = { 
-#			factor = 25 
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					trait = sympathy_zoroastrianism 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					trait = sympathy_zoroastrianism 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					trait = sympathy_zoroastrianism 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				liege = { 
-#					trait = sympathy_indian 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0 
-#				top_liege = { 
-#					trait = sympathy_indian 
-#				}
-#			}
-#			modifier = { 
-#				factor = 0.25
-#				spouse = { 
-#					trait = sympathy_indian 
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_demesne_province = { 
-#					TOW_religion_is_uncivilized_trigger = yes
-#				}
-#			}
-#			modifier = { 
-#				factor = 1.5
-#				any_courtier_or_vassal = { 
-#					TOW_religion_is_uncivilized_trigger = yes
-#				}
-#			}
-#		}
-#	}
-#	option = { #Return
-#		name = {
-#			text = EVTOPTDHF23004
-#			trigger = {
-#				is_alternate_start = no
-#			}
-#		}
-#		name = {
-#			text = EVTOPTDHF23004_ALT
-#			trigger = {
-#				is_alternate_start = yes
-#			}
-#		}
-#		hidden_tooltip = { character_event = { id = HF.23003 } }
-#		ai_chance = { factor = 0 }
-#	}
-#}
+character_event = {
+	id = HF.23004
+	desc = EVTDESCHF23004
+	
+	picture = GFX_evt_library
+	border = GFX_event_normal_frame_religion
+	
+	is_triggered_only = yes
+	
+	option = { #Fel
+		name = {
+			text = EVTOPTAHF23004
+			trigger = {
+				is_alternate_start = no
+			}
+		}
+		name = {
+			text = EVTOPTAHF23004_ALT
+			trigger = {
+				is_alternate_start = yes
+			}
+		}
+		trigger = {
+			NOT = { religion_group = fel_group } #Random World safety check.
+		}
+		add_trait = sympathy_fel_group
+		clr_character_flag = flag_picking_sympathy
+		ai_chance = { 
+			factor = 25 
+			modifier = { 
+				factor = 0 
+				liege = { 
+					trait = sympathy_void_group
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					trait = sympathy_void_group 
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					trait = sympathy_void_group 
+				}
+			}
+			modifier = { 
+				factor = 0 
+				liege = { 
+					trait = sympathy_wild_gods_group 
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					trait = sympathy_wild_gods_group 
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					trait = sympathy_wild_gods_group 
+				}
+			}
+			modifier = {
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = fel_group
+				}
+			}
+			modifier = {
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = fel_group
+				}
+			}
+		}
+	}
+	option = { #Void
+		name = {
+			text = EVTOPTBHF23004
+			trigger = {
+				is_alternate_start = no
+			}
+		}
+		name = {
+			text = EVTOPTBHF23004_ALT
+			trigger = {
+				is_alternate_start = yes
+			}
+		}
+		trigger = {
+			NOT = { religion_group = void_group } #Random World safety check.
+		}
+		add_trait = sympathy_void_group
+		clr_character_flag = flag_picking_sympathy
+		ai_chance = { 
+			factor = 25 
+			modifier = { 
+				factor = 0 
+				liege = { 
+					trait = sympathy_fel_group
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					trait = sympathy_fel_group 
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					trait = sympathy_fel_group 
+				}
+			}
+			modifier = { 
+				factor = 0 
+				liege = { 
+					trait = sympathy_wild_gods_group 
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					trait = sympathy_wild_gods_group 
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					trait = sympathy_wild_gods_group 
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = void_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = void_group
+				}
+			}
+		}
+	}
+	option = { # Wild Gods
+		name = {
+			text = EVTOPTCHF23004
+			trigger = {
+				is_alternate_start = no
+			}
+		}
+		name = {
+			text = EVTOPTCHF23004_ALT
+			trigger = {
+				is_alternate_start = yes
+			}
+		}
+		trigger = {
+			religion_group = wild_gods_group #Random World safety check.
+		}
+		add_trait = sympathy_wild_gods_group
+		clr_character_flag = flag_picking_sympathy
+		ai_chance = { 
+			factor = 25 
+			modifier = { 
+				factor = 0 
+				liege = { 
+					trait = sympathy_fel_group
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					trait = sympathy_fel_group 
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					trait = sympathy_fel_group 
+				}
+			}
+			modifier = { 
+				factor = 0 
+				liege = { 
+					trait = sympathy_void_group 
+				}
+			}
+			modifier = { 
+				factor = 0 
+				top_liege = { 
+					trait = sympathy_void_group 
+				}
+			}
+			modifier = { 
+				factor = 0.25
+				spouse = { 
+					trait = sympathy_void_group 
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_demesne_province = { 
+					religion_group = wild_gods_group
+				}
+			}
+			modifier = { 
+				factor = 1.5
+				any_courtier_or_vassal = { 
+					religion_group = wild_gods_group
+				}
+			}
+		}
+	}
+	option = { #Return
+		name = {
+			text = EVTOPTDHF23004
+			trigger = {
+				is_alternate_start = no
+			}
+		}
+		name = {
+			text = EVTOPTDHF23004_ALT
+			trigger = {
+				is_alternate_start = yes
+			}
+		}
+		hidden_tooltip = { character_event = { id = HF.23003 } }
+		ai_chance = { factor = 0 }
+	}
+}
 
 #############################################################
 

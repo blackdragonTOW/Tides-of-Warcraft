@@ -820,7 +820,12 @@ character_event = {
 			owner = {
 				trigger_switch = {
 					on_trigger = religion_group
-					#christian 			= { FROM = { add_trait = sympathy_christendom } }
+					light_group 			= { FROM = { add_trait = sympathy_light_group } }
+					arcane_group 			= { FROM = { add_trait = sympathy_arcane_group } }
+					elemental_group 		= { FROM = { add_trait = sympathy_elemental_group } }
+					fel_group 				= { FROM = { add_trait = sympathy_fel_group } }
+					void_group 				= { FROM = { add_trait = sympathy_void_group } }
+					wild_gods_group 		= { FROM = { add_trait = sympathy_light_group } }
 				}
 			}
 		}
@@ -952,7 +957,12 @@ character_event = {
 							}
 						}
 						ROOT = {
-							#if = { limit = { trait = sympathy_christendom } remove_trait = sympathy_christendom }
+							if = { limit = { trait = sympathy_light_group } remove_trait = sympathy_light_group }
+							if = { limit = { trait = sympathy_arcane_group } remove_trait = sympathy_arcane_group }
+							if = { limit = { trait = sympathy_elemental_group } remove_trait = sympathy_elemental_group }
+							if = { limit = { trait = sympathy_fel_group } remove_trait = sympathy_fel_group }
+							if = { limit = { trait = sympathy_void_group } remove_trait = sympathy_void_group }
+							if = { limit = { trait = sympathy_wild_gods_group } remove_trait = sympathy_wild_gods_group }
 						}
 						random_list = {
 							25 = {}
@@ -960,7 +970,12 @@ character_event = {
 								PREV = {
 									trigger_switch = {
 										on_trigger = religion_group
-										#christian 			= { ROOT = { add_trait = sympathy_christendom } }
+										light_group 			= { ROOT = { add_trait = sympathy_light_group } }
+										arcane_group 			= { ROOT = { add_trait = sympathy_arcane_group } }
+										elemental_group 		= { ROOT = { add_trait = sympathy_elemental_group } }
+										fel_group 				= { ROOT = { add_trait = sympathy_fel_group } }
+										void_group 				= { ROOT = { add_trait = sympathy_void_group } }
+										wild_gods_group 		= { ROOT = { add_trait = sympathy_light_group } }
 									}
 								}
 							}

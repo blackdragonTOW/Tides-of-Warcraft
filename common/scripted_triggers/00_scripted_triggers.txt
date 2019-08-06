@@ -1899,21 +1899,59 @@ is_openly_of_roots_secret_religion_trigger = {
 
 has_sympathy_for_true_religion_of_prev_trigger = { 
 	OR = {
-		always = no # TOW TODO : sympathies
-		#AND = {
-		#	trait = sympathy_christendom
-		#	PREV = { true_religion_group_christian_trigger = yes }
-		#}
+		AND = {
+			trait = sympathy_light_group
+			PREV = { true_religion_group = light_group }
+		}
+		AND = {
+			trait = sympathy_arcane_group
+			PREV = { true_religion_group = arcane_group }
+		}
+		AND = {
+			trait = sympathy_elemental_group
+			PREV = { true_religion_group = elemental_group }
+		}
+		AND = {
+			trait = sympathy_fel_group
+			PREV = { true_religion_group = fel_group }
+		}
+		AND = {
+			trait = sympathy_void_group
+			PREV = { true_religion_group = void_group }
+		}
+		AND = {
+			trait = sympathy_wild_gods_group
+			PREV = { true_religion_group = wild_gods_group }
+		}
 	}
 }
 
 has_sympathy_for_true_religion_of_root_trigger = { 
 	OR = {
-		always = no # TOW TODO : sympathies
-		#AND = {
-		#	trait = sympathy_christendom
-		#	ROOT = { true_religion_group_christian_trigger = yes }
-		#}
+		AND = {
+			trait = sympathy_light_group
+			ROOT = { true_religion_group = light_group }
+		}
+		AND = {
+			trait = sympathy_arcane_group
+			ROOT = { true_religion_group = arcane_group }
+		}
+		AND = {
+			trait = sympathy_elemental_group
+			ROOT = { true_religion_group = elemental_group }
+		}
+		AND = {
+			trait = sympathy_fel_group
+			ROOT = { true_religion_group = fel_group }
+		}
+		AND = {
+			trait = sympathy_void_group
+			ROOT = { true_religion_group = void_group }
+		}
+		AND = {
+			trait = sympathy_wild_gods_group
+			ROOT = { true_religion_group = wild_gods_group }
+		}
 	}
 }
 
@@ -1937,10 +1975,30 @@ ok_sr_sympathy_mission_target_trigger = {
 	ROOT = {
 		NOT = { secret_religion = { target_type = public target = PREV } }
 		NOR = {
-			#AND = {
-			#	true_religion_group = christian
-			#	PREV = { trait = sympathy_christendom }
-			#}
+			AND = {
+				true_religion_group = light_group
+				PREV = { trait = sympathy_light_group }
+			}
+			AND = {
+				true_religion_group = arcane_group
+				PREV = { trait = sympathy_arcane_group }
+			}
+			AND = {
+				true_religion_group = elemental_group
+				PREV = { trait = sympathy_elemental_group }
+			}
+			AND = {
+				true_religion_group = fel_group
+				PREV = { trait = sympathy_fel_group }
+			}
+			AND = {
+				true_religion_group = void_group
+				PREV = { trait = sympathy_void_group }
+			}
+			AND = {
+				true_religion_group = wild_gods_group
+				PREV = { trait = sympathy_wild_gods_group }
+			}
 		}
 	}
 	ROOT = { PREV = { is_openly_of_prevs_secret_religion_trigger = no } }
@@ -4076,9 +4134,13 @@ has_at_least_3_traits_opposite_prev_trigger = {
 }
 
 has_any_sympathy_trait_trigger = { 
-	always = no
 	OR = {
-		#trait = sympathy_christendom
+		trait = sympathy_light_group
+		trait = sympathy_arcane_group
+		trait = sympathy_elemental_group
+		trait = sympathy_fel_group
+		trait = sympathy_void_group
+		trait = sympathy_wild_gods_group
 	}
 }
 
@@ -4109,6 +4171,11 @@ preferred_gender_based_on_laws_trigger = {
 has_bad_priest_trait_trigger = {
 	OR = {
 		trait = bad_priest_light_group
+		trait = bad_priest_arcane_group
+		trait = bad_priest_elemental_group
+		trait = bad_priest_fel_group
+		trait = bad_priest_void_group
+		trait = bad_priest_wild_gods_group
 	}
 }
 
