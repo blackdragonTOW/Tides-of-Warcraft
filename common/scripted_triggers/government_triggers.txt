@@ -1,4 +1,4 @@
-# Replaces general condition "TOW_is_feudal"
+# Replaces general condition "is_feudal"
 TOW_is_feudal = {
 	is_feudal = yes
 	NOR = {
@@ -10,7 +10,7 @@ TOW_is_feudal = {
 	}
 }
 
-# Replaces general condition "TOW_is_tribal"
+# Replaces general condition "is_tribal"
 TOW_is_tribal = {
 	OR = {
 		is_tribal = yes
@@ -27,10 +27,10 @@ TOW_government_is_uncivilized = {
 	}
 }
 
-# Replaces general condition "TOW_is_republic"
+# Replaces general condition "is_republic"
 TOW_is_republic = {
 	OR = {
-		TOW_is_republic = yes
+		is_republic = yes
 		government = helf_government
 		government = noble_republic_government
 	}
