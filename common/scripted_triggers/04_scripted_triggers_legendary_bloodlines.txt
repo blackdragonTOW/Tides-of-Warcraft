@@ -60,13 +60,114 @@ has_killed_at_least_10_trigger = {
 ### ROOT is the holder. FROM is the bloodline ###
 ### This trigger should be used in bloodline defines themselves, in combination with set_bloodline_founder_religion_flag_effect ###
 religion_same_as_bloodline_founder_trigger = {
-	# TOW TODO : All religions
-	#trigger_if = {
-	#	limit = {
-	#		FROM = { has_bloodline_flag = requires_norse_pagan_religion }
-	#	}
-	#	ROOT = { show_scope_change = no religion_openly_norse_or_reformed_trigger = yes }
-	#}
+	trigger_if = {
+		FROM = { has_bloodline_flag = requires_arcane_religion }
+		ROOT = { show_scope_change = no religion = arcane }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_wyrmcult_religion }
+		ROOT = { show_scope_change = no religion = wyrmcult }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_old_ways_religion }
+		ROOT = { show_scope_change = no OR = { religion = old_ways religion = old_ways_reformed } }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_mercantilism_religion }
+		ROOT = { show_scope_change = no religion = mercantilism }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_shamanism_religion }
+		ROOT = { show_scope_change = no OR = { religion = shamanism religion = shamanism_reformed } }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_geomancy_religion }
+		ROOT = { show_scope_change = no religion = geomancy }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_aeromancy_religion }
+		ROOT = { show_scope_change = no religion = aeromancy }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_hydromancy_religion }
+		ROOT = { show_scope_change = no religion = hydromancy }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_pyromancy_religion }
+		ROOT = { show_scope_change = no religion = pyromancy }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_burning_legion_religion }
+		ROOT = { show_scope_change = no religion = burning_legion }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_demonology_religion }
+		ROOT = { show_scope_change = no OR = { religion = demonology religion = demonology_reformed } }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_lich_king_religion }
+		ROOT = { show_scope_change = no religion = lich_king }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_holy_light_religion }
+		ROOT = { show_scope_change = no religion = holy_light }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_scarlet_religion }
+		ROOT = { show_scope_change = no religion = scarlet }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_argent_religion }
+		ROOT = { show_scope_change = no religion = argent }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_forgotten_shadow_religion }
+		ROOT = { show_scope_change = no OR = { religion = forgotten_shadow religion = forgotten_shadow_reformed } }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_nzoth_religion }
+		ROOT = { show_scope_change = no religion = nzoth }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_cthun_religion }
+		ROOT = { show_scope_change = no religion = cthun }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_yogg_saron_religion }
+		ROOT = { show_scope_change = no religion = yogg_saron }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_yshaarj_religion }
+		ROOT = { show_scope_change = no religion = yshaarj }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_twilights_hammer_religion }
+		ROOT = { show_scope_change = no religion = twilights_hammer }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_blackwyrm_cult_religion }
+		ROOT = { show_scope_change = no religion = blackwyrm_cult }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_azshara_religion }
+		ROOT = { show_scope_change = no religion = azshara }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_loa_religion }
+		ROOT = { show_scope_change = no religion = loa }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_hakkar_religion }
+		ROOT = { show_scope_change = no religion = hakkar }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_druidism_religion }
+		ROOT = { show_scope_change = no OR = { religion = druidism religion = druidism_reformed } }
+	}
+	trigger_else_if = {
+		FROM = { has_bloodline_flag = requires_elune_religion }
+		ROOT = { show_scope_change = no religion = elune }
+	}
 }
 
 
