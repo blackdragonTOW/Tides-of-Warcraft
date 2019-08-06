@@ -2543,12 +2543,12 @@ tributary_permanent_cb = { # New8
 		if = {
 			limit = {
 				ROOT = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 				}
 			}
 			ROOT = {
 				any_vassal = {
-					limit = { is_tribal = yes }
+					limit = { TOW_is_tribal = yes }
 					opinion = {
 						who = PREV
 						modifier = won_tributary_war
@@ -2837,12 +2837,12 @@ tributary_nomad_cb = { # New9
 		if = {
 			limit = {
 				ROOT = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 				}
 			}
 			ROOT = {
 				any_vassal = {
-					limit = { is_tribal = yes }
+					limit = { TOW_is_tribal = yes }
 					opinion = {
 						who = PREV
 						modifier = won_tributary_war
@@ -3555,7 +3555,7 @@ flower_war_cb = {
 			factor = 0.1
 			has_dlc = "Holy Fury"
 			ROOT = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				OR = {
 					religion = holy_light
 				}
@@ -4006,7 +4006,7 @@ matriarchal_deposition_war = {
 			factor = 0.1
 			has_dlc = "Holy Fury"
 			ROOT = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				OR = {
 					religion = holy_light
 				}
@@ -4470,7 +4470,7 @@ patriarchal_deposition_war = {
 			factor = 0.1
 			has_dlc = "Holy Fury"
 			ROOT = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				OR = {
 					religion = holy_light
 				}

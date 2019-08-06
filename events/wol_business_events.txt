@@ -1653,7 +1653,7 @@ character_event = {
 				NOT = { trait = incapable }
 				prisoner = no
 				is_adult = yes
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			set_character_flag = selected
 			save_event_target_as = selected_1	
@@ -1664,7 +1664,7 @@ character_event = {
 				NOT = { trait = incapable }
 				prisoner = no
 				is_adult = yes
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			set_character_flag = selected
 			save_event_target_as = selected_2
@@ -1675,7 +1675,7 @@ character_event = {
 				NOT = { trait = incapable }
 				prisoner = no
 				is_adult = yes
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			set_character_flag = selected	
 			save_event_target_as = selected_3		
@@ -1686,7 +1686,7 @@ character_event = {
 				NOT = { trait = incapable }
 				prisoner = no
 				is_adult = yes
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			set_character_flag = selected
 			save_event_target_as = selected_4	
@@ -3426,7 +3426,7 @@ character_event = {
 			30 = {
 				modifier = {
 					OR = {
-						is_tribal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 						NOT = { has_character_modifier = trader }
 						lifestyle_traits = 1

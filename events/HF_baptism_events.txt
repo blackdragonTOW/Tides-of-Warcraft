@@ -4934,7 +4934,7 @@ character_event = {
 						trait = hedonist
 					}
 					modifier = { factor = 1.4
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 
 
@@ -5044,7 +5044,7 @@ character_event = {
 						trait = gamer
 					}
 					modifier = { factor = 1.4
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 
 
@@ -5165,7 +5165,7 @@ character_event = {
 						}
 					}
 					modifier = { factor = 1.4
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 
 
@@ -5271,7 +5271,7 @@ character_event = {
 						trait = scholar
 					}
 					modifier = { factor = 1.4
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 
 
@@ -7916,7 +7916,7 @@ character_event = {
 			10 = {  #Chance to gain technology.
 				trigger = { 
 					FROM = { 
-						is_tribal = yes
+						TOW_is_tribal = yes
 					} 
 				}
 				FROM = { character_event = { id = HF.20115 } }
@@ -7935,7 +7935,7 @@ character_event = {
 			} 
 			5 = {  #Chance to gain event troops.
 				trigger = { 
-					is_tribal = yes
+					TOW_is_tribal = yes
 					culture = FROM #Completely integrated.
 					FROM = { has_any_opinion_modifier = opinion_baptism_sponsor_target } #Sponsor still lives.
 

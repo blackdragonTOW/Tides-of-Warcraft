@@ -953,7 +953,7 @@ letter_event = {
 							any_demesne_title = {
 								can_be_given_away = yes
 								tier = count
-								is_feudal = yes
+								TOW_is_feudal = yes
 								location = {
 									is_capital = no
 								}
@@ -967,7 +967,7 @@ letter_event = {
 						any_demesne_title = {
 							can_be_given_away = yes
 							tier = count
-							is_feudal = yes
+							TOW_is_feudal = yes
 							count = 2
 							location = {
 								is_capital = no
@@ -981,7 +981,7 @@ letter_event = {
 						any_demesne_title = {
 							can_be_given_away = yes
 							tier = count
-							is_feudal = yes
+							TOW_is_feudal = yes
 							count = 5
 							location = {
 								is_capital = no
@@ -2278,7 +2278,7 @@ letter_event = {
 			limit = {
 				can_be_given_away = yes
 				tier = count
-				is_feudal = yes
+				TOW_is_feudal = yes
 				location = {
 					is_capital = no
 				}
@@ -11574,7 +11574,7 @@ character_event = {
 			limit = { 
 				age = 16
 				TOW_religion_has_coronations = yes
-				is_feudal = yes
+				TOW_is_feudal = yes
 				NOT = { government = order_government }
 				higher_real_tier_than = DUKE
 				NOT = { has_character_flag = is_charlemagne }
@@ -11767,7 +11767,7 @@ character_event = {
 
 	trigger = { 
 		has_dlc = "Holy Fury"
-		is_feudal = yes
+		TOW_is_feudal = yes
 		higher_real_tier_than = DUKE
 		ruled_years = 5
 		TOW_religion_has_coronations = yes
@@ -12808,7 +12808,7 @@ character_event = {
 	trigger = {
 		has_dlc = "Holy Fury"
 		TOW_religion_has_coronations = yes
-		is_feudal = yes 
+		TOW_is_feudal = yes 
 		independent = no
 		higher_real_tier_than = COUNT #Avoid spamming.
 		current_heir = { age = 12 } #At the very least
@@ -12850,7 +12850,7 @@ character_event = {
 	trigger = { 
 		independent = no
 		age = 12
-		is_feudal = yes 
+		TOW_is_feudal = yes 
 		TOW_religion_has_coronations = yes
 		liege = { 
 			religion = ROOT
@@ -13275,7 +13275,7 @@ character_event = {
 
 	trigger = { 
 		has_dlc = "Holy Fury"
-		is_feudal = yes
+		TOW_is_feudal = yes
 		is_adult = yes
 		is_vice_royalty = no
 		NOT = { government = order_government }

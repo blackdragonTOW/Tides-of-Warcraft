@@ -56,7 +56,7 @@ laws = {
 				NOT = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -71,7 +71,7 @@ laws = {
 				holder_scope = {
 					any_vassal = {
 						limit = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 						}
 						opinion = {
@@ -124,7 +124,7 @@ laws = {
 						has_law = tax_levy_law_feudal_0
 						holder_scope = {
 							OR = {
-								is_republic = yes
+								TOW_is_republic = yes
 								is_nomadic = yes
 							}
 						}
@@ -132,14 +132,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_feudal_2
 						holder_scope = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -159,7 +159,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -178,7 +178,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -233,7 +233,7 @@ laws = {
 						has_law = tax_levy_law_feudal_1
 						holder_scope = {
 							OR = {
-								is_republic = yes
+								TOW_is_republic = yes
 								is_nomadic = yes
 							}
 						}
@@ -241,14 +241,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_feudal_3
 						holder_scope = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -268,7 +268,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -287,7 +287,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -342,7 +342,7 @@ laws = {
 						has_law = tax_levy_law_feudal_2
 						holder_scope = {
 							OR = {
-								is_republic = yes
+								TOW_is_republic = yes
 								is_nomadic = yes
 							}
 						}
@@ -350,14 +350,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_feudal_4
 						holder_scope = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -377,7 +377,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -396,7 +396,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -452,7 +452,7 @@ laws = {
 						has_law = tax_levy_law_feudal_3
 						holder_scope = {
 							OR = {
-								is_republic = yes
+								TOW_is_republic = yes
 								is_nomadic = yes
 							}
 						}
@@ -460,14 +460,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_feudal_5
 						holder_scope = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -487,7 +487,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -506,7 +506,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -561,7 +561,7 @@ laws = {
 						has_law = tax_levy_law_feudal_4
 						holder_scope = {
 							OR = {
-								is_republic = yes
+								TOW_is_republic = yes
 								is_nomadic = yes
 							}
 						}
@@ -569,14 +569,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_feudal_6
 						holder_scope = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -596,7 +596,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -615,7 +615,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -670,7 +670,7 @@ laws = {
 						has_law = tax_levy_law_feudal_5
 						holder_scope = {
 							OR = {
-								is_republic = yes
+								TOW_is_republic = yes
 								is_nomadic = yes
 							}
 						}
@@ -678,14 +678,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_feudal_7
 						holder_scope = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -705,7 +705,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -724,7 +724,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -779,7 +779,7 @@ laws = {
 						has_law = tax_levy_law_feudal_6
 						holder_scope = {
 							OR = {
-								is_republic = yes
+								TOW_is_republic = yes
 								is_nomadic = yes
 							}
 						}
@@ -787,14 +787,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_feudal_8
 						holder_scope = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -814,7 +814,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -833,7 +833,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -882,7 +882,7 @@ laws = {
 				factor = 0
 				NOT = {	
 					holder_scope = {
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 				}
 			}
@@ -895,7 +895,7 @@ laws = {
 				holder_scope = {
 					any_vassal = {
 						limit = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 						}
@@ -944,7 +944,7 @@ laws = {
 				NOT = {
 					holder_scope = {
 						OR = {
-							is_feudal = yes
+							TOW_is_feudal = yes
 							is_nomadic = yes
 						}
 					}
@@ -959,7 +959,7 @@ laws = {
 				holder_scope = {
 					any_vassal = {
 						limit = {
-							is_republic = yes
+							TOW_is_republic = yes
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 						}
@@ -1013,7 +1013,7 @@ laws = {
 						has_law = tax_levy_law_republic_0
 						holder_scope = {
 							OR = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1021,14 +1021,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_republic_2
 						holder_scope = {
-							is_republic = yes
+							TOW_is_republic = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1048,7 +1048,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -1067,7 +1067,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -1122,7 +1122,7 @@ laws = {
 						has_law = tax_levy_law_republic_1
 						holder_scope = {
 							OR = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1130,14 +1130,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_republic_3
 						holder_scope = {
-							is_republic = yes
+							TOW_is_republic = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1157,7 +1157,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -1176,7 +1176,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -1231,7 +1231,7 @@ laws = {
 						has_law = tax_levy_law_republic_2
 						holder_scope = {
 							OR = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1239,14 +1239,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_republic_4
 						holder_scope = {
-							is_republic = yes
+							TOW_is_republic = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1266,7 +1266,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -1285,7 +1285,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -1341,7 +1341,7 @@ laws = {
 						has_law = tax_levy_law_republic_3
 						holder_scope = {
 							OR = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1349,14 +1349,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_republic_5
 						holder_scope = {
-							is_republic = yes
+							TOW_is_republic = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1376,7 +1376,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -1395,7 +1395,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -1450,7 +1450,7 @@ laws = {
 						has_law = tax_levy_law_republic_4
 						holder_scope = {
 							OR = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1458,14 +1458,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_republic_6
 						holder_scope = {
-							is_republic = yes
+							TOW_is_republic = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1485,7 +1485,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -1504,7 +1504,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -1559,7 +1559,7 @@ laws = {
 						has_law = tax_levy_law_republic_5
 						holder_scope = {
 							OR = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1567,14 +1567,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_republic_7
 						holder_scope = {
-							is_republic = yes
+							TOW_is_republic = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1594,7 +1594,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -1613,7 +1613,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -1668,7 +1668,7 @@ laws = {
 						has_law = tax_levy_law_republic_6
 						holder_scope = {
 							OR = {
-								is_feudal = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1676,14 +1676,14 @@ laws = {
 					AND = {
 						has_law = tax_levy_law_republic_8
 						holder_scope = {
-							is_republic = yes
+							TOW_is_republic = yes
 						}
 					}
 					NOT = {
 						holder_scope = {
 							OR = {
-								is_republic = yes
-								is_feudal = yes
+								TOW_is_republic = yes
+								TOW_is_feudal = yes
 								is_nomadic = yes
 							}
 						}
@@ -1703,7 +1703,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -1722,7 +1722,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_republic = yes
+								TOW_is_republic = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -1771,7 +1771,7 @@ laws = {
 				factor = 0
 				NOT = {
 					holder_scope = {
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 				}
 			}
@@ -1784,7 +1784,7 @@ laws = {
 				holder_scope = {
 					any_vassal = {
 						limit = {
-							is_republic = yes
+							TOW_is_republic = yes
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 						}
@@ -1833,7 +1833,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -1900,7 +1900,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -1992,7 +1992,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2084,7 +2084,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2177,7 +2177,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2245,7 +2245,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2337,7 +2337,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2429,7 +2429,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2571,7 +2571,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2586,7 +2586,7 @@ laws = {
 				holder_scope = {
 					any_vassal = {
 						limit = {
-							is_tribal = yes
+							TOW_is_tribal = yes
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 						}
@@ -2638,7 +2638,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2658,7 +2658,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -2677,7 +2677,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -2730,7 +2730,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2750,7 +2750,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -2769,7 +2769,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -2822,7 +2822,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2842,7 +2842,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -2861,7 +2861,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -2915,7 +2915,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -2983,7 +2983,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -3003,7 +3003,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -3022,7 +3022,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -3075,7 +3075,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -3095,7 +3095,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -3114,7 +3114,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -3167,7 +3167,7 @@ laws = {
 				NAND = {
 					holder_scope = {
 						OR = {
-							is_republic = yes
+							TOW_is_republic = yes
 							is_nomadic = yes
 						}
 					}
@@ -3187,7 +3187,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 							}
@@ -3206,7 +3206,7 @@ laws = {
 					holder_scope = {
 						any_vassal = {
 							limit = {
-								is_tribal = yes
+								TOW_is_tribal = yes
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							}
@@ -3260,7 +3260,7 @@ laws = {
 				holder_scope = {
 					any_vassal = {
 						limit = {
-							is_tribal = yes
+							TOW_is_tribal = yes
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_dislikes_new_obligation_law } }
 							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_likes_new_obligation_law } }
 						}

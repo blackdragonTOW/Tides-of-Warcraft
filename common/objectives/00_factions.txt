@@ -30,7 +30,7 @@ faction_succ_seniority = {
 			NOT = { has_dlc = "Zeus" }
 			is_voter = no
 			is_nomadic = yes
-			is_tribal = yes
+			TOW_is_tribal = yes
 			liege = { 
 				OR = {
 					is_council_content = no
@@ -42,10 +42,10 @@ faction_succ_seniority = {
 		NOT = { trait = incapable }
 		liege = {
 			is_vice_royalty = no
-			is_feudal = yes 
+			TOW_is_feudal = yes 
 			OR = {
 				year = 1350
-				primary_title = { is_tribal_type_title = no }
+				primary_title = { TOW_is_tribal_type_title = no }
 				NOT = { culture = ROOT }
 				NOT = { religion = ROOT }
 			}
@@ -157,7 +157,7 @@ faction_succ_seniority = {
 				NOT = { has_dlc = "Zeus"}
 				is_voter = no
 				is_nomadic = yes
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = { 
 					OR = {
 						is_council_content = no
@@ -442,7 +442,7 @@ faction_succ_seniority = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}
@@ -759,7 +759,7 @@ faction_succ_primogeniture = {
 			NOT = { has_dlc = "Zeus" }
 			is_voter = no
 			is_nomadic = yes
-			is_tribal = yes
+			TOW_is_tribal = yes
 			liege = { 
 				OR = {
 					is_council_content = no
@@ -771,10 +771,10 @@ faction_succ_primogeniture = {
 		NOT = { trait = incapable }
 		liege = { 
 			is_vice_royalty = no
-			is_feudal = yes 
+			TOW_is_feudal = yes 
 			OR = {
 				year = 1350
-				primary_title = { is_tribal_type_title = no }
+				primary_title = { TOW_is_tribal_type_title = no }
 				NOT = { culture = ROOT }
 				NOT = { religion = ROOT }
 			}
@@ -886,7 +886,7 @@ faction_succ_primogeniture = {
 				NOT = { has_dlc = "Zeus"}
 				is_voter = no
 				is_nomadic = yes
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = { 
 					OR = {
 						is_council_content = no
@@ -1155,7 +1155,7 @@ faction_succ_primogeniture = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}
@@ -1471,7 +1471,7 @@ faction_succ_gavelkind = {
 		OR = {
 			NOT = { has_dlc = "Zeus" }
 			is_voter = no
-			is_tribal = yes
+			TOW_is_tribal = yes
 			liege = {
 				OR = {
 					is_council_content = no
@@ -1482,10 +1482,10 @@ faction_succ_gavelkind = {
 		NOT = { trait = incapable }
 		liege = { 
 			is_vice_royalty = no
-			is_feudal = yes 
+			TOW_is_feudal = yes 
 			OR = {
 				year = 1350
-				primary_title = { is_tribal_type_title = no }
+				primary_title = { TOW_is_tribal_type_title = no }
 				NOT = { culture = ROOT }
 				NOT = { religion = ROOT }
 			}
@@ -1595,7 +1595,7 @@ faction_succ_gavelkind = {
 			OR = {
 				NOT = { has_dlc = "Zeus"}
 				is_voter = no
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = { 
 					OR = {
 						is_council_content = no
@@ -1977,7 +1977,7 @@ faction_succ_gavelkind = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}
@@ -2254,10 +2254,10 @@ faction_succ_feudal_elective = {
 				has_law = war_voting_power_1
 			}			
 			is_vice_royalty = no
-			is_feudal = yes 
+			TOW_is_feudal = yes 
 			OR = {
 				year = 1350
-				primary_title = { is_tribal_type_title = no }
+				primary_title = { TOW_is_tribal_type_title = no }
 				NOT = { culture = ROOT }
 				NOT = { religion = ROOT }
 			}
@@ -2408,7 +2408,7 @@ faction_succ_feudal_elective = {
 			OR = {
 				NOT = { has_dlc = "Zeus"}
 				is_voter = no
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = {
 					OR = {
 						is_council_content = no
@@ -2813,7 +2813,7 @@ faction_succ_feudal_elective = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}
@@ -3060,10 +3060,10 @@ faction_lower_crown_authority = {
 		primary_title = { holy_order = no }
 		NOT = { trait = incapable }
 		liege = { 
-			is_feudal = yes 
+			TOW_is_feudal = yes 
 			OR = {
 				year = 1350
-				primary_title = { is_tribal_type_title = no }
+				primary_title = { TOW_is_tribal_type_title = no }
 				NOT = { culture = ROOT }
 				NOT = { religion = ROOT }
 			}
@@ -3416,7 +3416,7 @@ faction_lower_crown_authority = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}
@@ -3645,7 +3645,7 @@ faction_lower_tribal_organization = {
 		primary_title = { holy_order = no }
 		NOT = { trait = incapable }
 		OR = {
-			is_tribal = yes
+			TOW_is_tribal = yes
 			AND = {
 				has_dlc = "Zeus"
 				OR = {
@@ -3662,7 +3662,7 @@ faction_lower_tribal_organization = {
 			}
 		}
 		liege = { 
-			is_tribal = yes 
+			TOW_is_tribal = yes 
 			NOT = {
 				any_demesne_title = {
 					temporary = yes
@@ -3713,7 +3713,7 @@ faction_lower_tribal_organization = {
 			NOT = { trait = incapable }
 			prisoner = no
 			OR = {
-				is_tribal = yes
+				TOW_is_tribal = yes
 				AND = {
 					has_dlc = "Zeus"
 					OR = {
@@ -4240,7 +4240,7 @@ faction_independence = {
 			NOT = { has_dlc = "Zeus" }
 			is_voter = no
 			is_nomadic = yes
-			is_tribal = yes
+			TOW_is_tribal = yes
 			liege = { 
 				OR = {
 					is_council_content = no
@@ -4255,8 +4255,8 @@ faction_independence = {
 		higher_tier_than = BARON
 		OR = {
 			ai = yes
-			is_feudal = yes
-			is_tribal = yes
+			TOW_is_feudal = yes
+			TOW_is_tribal = yes
 			is_nomadic = yes
 			higher_tier_than = COUNT
 		}
@@ -4341,7 +4341,7 @@ faction_independence = {
 				NOT = { has_dlc = "Zeus"}
 				is_voter = no
 				is_nomadic = yes
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = { 
 					OR = {
 						is_council_content = no
@@ -4853,7 +4853,7 @@ faction_independence = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}
@@ -5162,7 +5162,7 @@ faction_claimant = {
 			NOT = { has_dlc = "Zeus" }
 			is_voter = no
 			is_nomadic = yes
-			is_tribal = yes
+			TOW_is_tribal = yes
 			liege = { 
 				OR = {
 					is_council_content = no
@@ -5175,14 +5175,14 @@ faction_claimant = {
 		liege = {
 			is_vice_royalty = no
 			OR = {
-				is_feudal = yes
-				is_tribal = yes
+				TOW_is_feudal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 			OR = {
 				# Hordes should have less problems with this type of faction until ca 1350
 				year = 1350
-				primary_title = { is_tribal = no }
+				primary_title = { TOW_is_tribal = no }
 				NOT = { culture = ROOT }
 				NOT = { religion = ROOT }
 			}		
@@ -5329,7 +5329,7 @@ faction_claimant = {
 				NOT = { has_dlc = "Zeus"}
 				is_voter = no
 				is_nomadic = yes
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = { 
 					OR = {
 						is_council_content = no
@@ -6008,7 +6008,7 @@ faction_claimant = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}
@@ -6420,7 +6420,7 @@ faction_antiking = {
 			NOT = { has_dlc = "Zeus" }
 			is_voter = no
 			is_nomadic = yes
-			is_tribal = yes
+			TOW_is_tribal = yes
 			liege = { 
 				OR = {
 					is_council_content = no
@@ -6505,7 +6505,7 @@ faction_antiking = {
 				NOT = { has_dlc = "Zeus"}
 				is_voter = no
 				is_nomadic = yes
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = { 
 					OR = {
 						is_council_content = no
@@ -6927,7 +6927,7 @@ faction_overthrow = {
 			NOT = { has_dlc = "Zeus" }
 			is_voter = no
 			is_nomadic = yes
-			is_tribal = yes
+			TOW_is_tribal = yes
 			liege = { 
 				OR = {
 					is_council_content = no
@@ -6985,7 +6985,7 @@ faction_overthrow = {
 				NOT = { has_dlc = "Zeus"}
 				is_voter = no
 				is_nomadic = yes
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = { 
 					OR = {
 						is_council_content = no
@@ -7854,7 +7854,7 @@ faction_increase_council_power = {
 		primary_title = { holy_order = no }
 		OR = {
 			is_voter = no
-			is_tribal = yes
+			TOW_is_tribal = yes
 			liege = { 
 				OR = {
 					is_council_content = no
@@ -7869,7 +7869,7 @@ faction_increase_council_power = {
 			}
 			OR = {
 				year = 1350
-				primary_title = { is_tribal_type_title = no }
+				primary_title = { TOW_is_tribal_type_title = no }
 				NOT = { culture = ROOT }
 				NOT = { religion = ROOT }
 			}
@@ -7947,7 +7947,7 @@ faction_increase_council_power = {
 			NOT = { has_character_modifier = faction_council_power_ultimatum_timer }
 			OR = {
 				is_voter = no
-				is_tribal = yes
+				TOW_is_tribal = yes
 				liege = { 
 					OR = {
 						is_council_content = no
@@ -8251,7 +8251,7 @@ faction_increase_council_power = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}
@@ -8575,7 +8575,7 @@ faction_powerful_vassal_takeover = {
 		independent = no
 		is_landed = yes
 		is_adult = yes
-		is_feudal = yes
+		TOW_is_feudal = yes
 		primary_title = { holy_order = no }
 		OR = {
 			is_voter = no
@@ -8588,7 +8588,7 @@ faction_powerful_vassal_takeover = {
 		}
 		NOT = { trait = incapable }
 		liege = {
-			is_feudal = yes
+			TOW_is_feudal = yes
 			NOT = { controls_religion = yes }
 			NOT = {
 				any_demesne_title = {
@@ -8940,7 +8940,7 @@ faction_powerful_vassal_takeover = {
 			factor = 0
 			liege = { 
 				NOT = { year = 1350 }
-				primary_title = { is_tribal_type_title = yes }
+				primary_title = { TOW_is_tribal_type_title = yes }
 				culture = ROOT
 				religion = ROOT
 			}

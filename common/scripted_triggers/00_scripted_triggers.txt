@@ -975,7 +975,7 @@ can_be_spiritual_trigger = {
 	OR = {
 		is_theocracy = yes
 		AND = {
-			liege = { is_tribal = yes }
+			liege = { TOW_is_tribal = yes }
 			is_ruler = no
 		}
 		AND = {
@@ -3710,7 +3710,7 @@ this_is_warrior_culture_trigger = { #Not really about culture - Used in AI votin
 	NOT = { pacifist = yes }
 	OR = { 
 		TOW_religion_is_warlike = yes
-		is_tribal = yes
+		TOW_is_tribal = yes
 		is_nomadic = yes
 		TOW_background_is_invader = yes
 		TOW_background_has_berserker = yes
@@ -3719,7 +3719,7 @@ this_is_warrior_culture_trigger = { #Not really about culture - Used in AI votin
 
 this_is_diplomatic_culture_trigger = { #Not really about culture - Used in AI voting logic.
 	OR = {
-		is_feudal = yes
+		TOW_is_feudal = yes
 		is_patrician = yes
 		is_merchant_republic = yes
 	} 
@@ -4185,13 +4185,13 @@ parent_for_elective_succession_trigger = {
 			AND = {
 				is_ruler = yes
 				is_landed = yes
-				is_republic = no
+				TOW_is_republic = no
 				is_merchant_republic = no
 				is_theocracy = no
 			}
 			NOR = {
 				any_heir_title = {
-					is_republic = yes
+					TOW_is_republic = yes
 				}
 				any_heir_title = {
 					is_merchant_republic = yes
@@ -4219,7 +4219,7 @@ parent_for_elective_succession_trigger = {
 			trait = bastard
 			is_ascetic_trigger = yes
 			is_theocracy = yes
-			is_republic = yes
+			TOW_is_republic = yes
 			is_merchant_republic = yes
 		}
 	}

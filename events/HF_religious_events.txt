@@ -2728,7 +2728,7 @@ character_event = {
 					TOW_religion_is_matriarchal = yes 
 					NOR = {  
 						#is_merchant_republic = yes
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 				}
 			}
@@ -2749,8 +2749,8 @@ character_event = {
 							ROOT = { 
 								NOT = { has_law = succ_byzantine_elective }
 								OR = { 
-									is_feudal = yes 
-									is_tribal = yes
+									TOW_is_feudal = yes 
+									TOW_is_tribal = yes
 									is_nomadic = yes
 								}
 							}
@@ -2786,8 +2786,8 @@ character_event = {
 							ROOT = { 
 								NOT = { has_law = succ_byzantine_elective }
 								OR = { 
-									is_feudal = yes 
-									is_tribal = yes
+									TOW_is_feudal = yes 
+									TOW_is_tribal = yes
 									is_nomadic = yes
 								}
 							}
@@ -2810,7 +2810,7 @@ character_event = {
 					}
 					NOR = {  
 						#is_merchant_republic = yes
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 				}
 			}
@@ -3039,8 +3039,8 @@ character_event = {
 							ROOT = { 
 								NOT = { has_law = succ_byzantine_elective }
 								OR = { 
-									is_feudal = yes 
-									is_tribal = yes
+									TOW_is_feudal = yes 
+									TOW_is_tribal = yes
 									is_nomadic = yes
 								}
 							}
@@ -3075,8 +3075,8 @@ character_event = {
 							ROOT = { 
 								NOT = { has_law = succ_byzantine_elective }
 								OR = { 
-									is_feudal = yes 
-									is_tribal = yes
+									TOW_is_feudal = yes 
+									TOW_is_tribal = yes
 									is_nomadic = yes
 								}
 							}
@@ -3167,7 +3167,7 @@ character_event = {
 		this_is_sea_raider_trigger = yes
 		FROM = {
 			location = { capital_holding = { title = FROM } } #Do not reiterate the event after taking the capital holding.
-			is_tribal = no
+			TOW_is_tribal = no
 			is_nomadic = no
 		}
 	}
@@ -3378,7 +3378,7 @@ character_event = {
 		this_is_sea_raider_trigger = yes
 		FROM = {
 			location = { capital_holding = { title = FROM } } #Do not reiterate the event after taking the capital holding.
-			is_tribal = no
+			TOW_is_tribal = no
 			is_nomadic = no
 		}
 	}
@@ -3508,7 +3508,7 @@ character_event = {
 		FROM = {
 			location = { capital_holding = { title = FROM } } #Do not reiterate the event after taking the capital holding.
 			location = { num_of_settlements = 5 } #Only fires for big cities. 
-			is_tribal = no
+			TOW_is_tribal = no
 			is_nomadic = no
 			location = { port = yes } 		#Coastal provinces are what the Seaking should be terrorizing.
 		}
@@ -3907,7 +3907,7 @@ character_event = {
 		FROM = {
 			location = { capital_holding = { title = FROM } } #Do not reiterate the event after taking the capital holding.
 			location = { num_of_settlements = 4 } #Only fires for medium to big cities. 
-			is_tribal = no
+			TOW_is_tribal = no
 			is_nomadic = no
 			location = { port = yes } 		#Coastal provinces are what the Seaking should be terrorizing.
 		}
@@ -4584,7 +4584,7 @@ character_event = {
 		}
 		FROM = {
 			NOR = { 
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 				has_province_modifier = recent_pirate_infiltration_cooldown
 			}
@@ -9218,7 +9218,7 @@ character_event = {
 					TOW_religion_is_matriarchal = yes 
 					NOR = {  
 						#is_merchant_republic = yes
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 				}
 			}
@@ -9237,8 +9237,8 @@ character_event = {
 					limit = {  
 						NOT = { has_law = succ_byzantine_elective }
 						OR = { 
-							is_feudal = yes 
-							is_tribal = yes
+							TOW_is_feudal = yes 
+							TOW_is_tribal = yes
 							is_nomadic = yes
 						}
 					}
@@ -9269,8 +9269,8 @@ character_event = {
 					limit = { 
 						NOT = { has_law = succ_byzantine_elective }
 						OR = { 
-							is_feudal = yes 
-							is_tribal = yes
+							TOW_is_feudal = yes 
+							TOW_is_tribal = yes
 							is_nomadic = yes
 						}
 					}
@@ -9288,7 +9288,7 @@ character_event = {
 					TOW_religion_is_equal = yes 
 					NOR = {  
 						#is_merchant_republic = yes
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 				}
 			}

@@ -2907,8 +2907,8 @@ letter_event = {
 							higher_tier_than = PREVPREV
 							holder_scope = {
 								OR = {
-									is_feudal = yes
-									is_tribal = yes
+									TOW_is_feudal = yes
+									TOW_is_tribal = yes
 									is_nomadic = yes
 								}
 							}
@@ -2917,7 +2917,7 @@ letter_event = {
 									is_ruler = yes
 									OR = {
 										is_theocracy = yes
-										is_republic = yes
+										TOW_is_republic = yes
 									}
 								}
 							}
@@ -19706,7 +19706,7 @@ letter_event = {
 		most_popular_vassal = {
 			limit = {
 				higher_tier_than = BARON
-				is_feudal = yes
+				TOW_is_feudal = yes
 				prisoner = no
 				NOR = {
 					is_inaccessible_trigger = yes
