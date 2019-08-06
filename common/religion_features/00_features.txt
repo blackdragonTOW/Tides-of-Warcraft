@@ -1150,22 +1150,13 @@ religion_leadership = {
 				}
 				if = {
 					limit = {
-						always = no
-						OR = { 
-							#religion = orthodox 
-						} 
+						religion = holy_light 
 					}
 					set_autocephaly = yes
 				}
 				if = {
 					limit = {
-						always = no
-						OR = { 
-							#religion_group = christian
-						} 
-						NOR = {
-							#religion = cathar
-						}
+						religion_group = light_group
 					}
 					set_can_grant_divorce = yes
 				}
