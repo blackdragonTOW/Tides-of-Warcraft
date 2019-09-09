@@ -333,26 +333,6 @@ e_zul_aman = {
 				b_circle_of_masks = {
 				}
 			}
-			
-			c_tor_watha = { # 15
-				color = { 108 71 65 }
-				color2 = { 255 255 255 }
-				
-				b_tor_watha = {
-				}
-				b_old_fortress = {
-				}
-				b_cliffside_camp = {
-				}
-				b_fist_of_the_amani = {
-				}
-				b_old_wrath = {
-				}
-				b_forestrage = {
-				}
-				b_gatecrash = {
-				}
-			}
 		}
 		
 		d_sunsail_bay = {
@@ -706,10 +686,157 @@ e_zul_aman = {
 				b_nightlight = {
 				}
 			}
+			
+			c_nalorakks_cliffs = { # 27
+				color = { 96 54 207 }
+				color2 = { 255 255 255 }
+				
+				b_grove_of_the_bear = {
+				}
+				b_spiritstep_woods = {
+				}
+				b_altar_of_nalorakk = {
+				}
+				b_bearclaw_den = {
+				}
+				b_grizzlefury = {
+				}
+				b_hibernia = {
+				}
+				b_barkgouge = {
+				}
+			}
 		}
 		
 		d_thalassian_highlands = {
 			color = { 51 192 112 }
+			color2 = { 255 255 255 }
+			culture = amani
+			
+				amani = "Maisara"
+				atalai = "Maisara"
+				razorbranch = "Maisara"
+				firetree = "Maisara"
+				mossflayer = "Maisara"
+				revantusk = "Maisara"
+				vilebranch = "Maisara"
+				shadowpine = "Maisara"
+				witherbark = "Maisara"
+				bloodscalp = "Maisara"
+				darkspear = "Maisara"
+				gurubashi = "Maisara"
+				shatterspear = "Maisara"
+				skullsplitter = "Maisara"
+				drakkari = "Maisara"
+				frostmane = "Maisara"
+				sandfury = "Maisara"
+				smolderthorn = "Maisara"
+				shadowglen = "Maisara"
+				winterax = "Maisara"
+				winterfang = "Maisara"
+				shadowtooth = "Maisara"
+				zandalari = "Maisara" 
+				razzashi = "Maisara" 
+				zulian = "Maisara" 
+			
+			capital = 16 # Dawnstar Spire
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 16 province_id = 24 province_id = 419 } }
+				}
+			}
+			
+			c_thalassian_heights = { # 24
+				color = { 213 64 161 }
+				color2 = { 255 255 255 }
+				
+				amani = "Maisara Hills"
+				atalai = "Maisara Hills"
+				razorbranch = "Maisara Hills"
+				firetree = "Maisara Hills"
+				mossflayer = "Maisara Hills"
+				revantusk = "Maisara Hills"
+				vilebranch = "Maisara Hills"
+				shadowpine = "Maisara Hills"
+				witherbark = "Maisara Hills"
+				bloodscalp = "Maisara Hills"
+				darkspear = "Maisara Hills"
+				gurubashi = "Maisara Hills"
+				shatterspear = "Maisara Hills"
+				skullsplitter = "Maisara Hills"
+				drakkari = "Maisara Hills"
+				frostmane = "Maisara Hills"
+				sandfury = "Maisara Hills"
+				smolderthorn = "Maisara Hills"
+				shadowglen = "Maisara Hills"
+				winterax = "Maisara Hills"
+				winterfang = "Maisara Hills"
+				shadowtooth = "Maisara Hills"
+				zandalari = "Maisara Hills" 
+				razzashi = "Maisara Hills" 
+				zulian = "Maisara Hills" 
+				
+				b_striders_watch = {
+				}
+				b_stillrise = {
+				}
+				b_morloten = {
+				}
+				b_rodistair = {
+				}
+				b_buckingwing = {
+				}
+				b_villen = {
+				}
+				b_evelara = {
+				}
+			}
+			
+			c_tor_watha = { # 15
+				color = { 108 71 65 }
+				color2 = { 255 255 255 }
+				
+				b_tor_watha = {
+				}
+				b_old_fortress = {
+				}
+				b_cliffside_camp = {
+				}
+				b_fist_of_the_amani = {
+				}
+				b_old_wrath = {
+				}
+				b_forestrage = {
+				}
+				b_gatecrash = {
+				}
+			}
+			
+			c_spiritcatcher_shore = { # 26
+				color = { 162 60 96 }
+				color2 = { 255 255 255 }
+				
+				b_spiritcatcher_camp = {
+				}
+				b_grimeye = {
+				}
+				b_zim_wal = {
+				}
+				b_forlorn_altar = {
+				}
+				b_spearfish = {
+				}
+				b_beasthunt = {
+				}
+				b_burnfist = {
+				}
+			}
+		}
+		
+		d_elrendar = {
+			color = { 51 100 182 }
 			color2 = { 255 255 255 }
 			culture = amani
 			
@@ -790,26 +917,6 @@ e_zul_aman = {
 				b_riftgate = {
 				}
 				b_voideye = {
-				}
-			}
-			
-			c_thalassian_heights = { # 24
-				color = { 213 64 161 }
-				color2 = { 255 255 255 }
-				
-				b_striders_watch = {
-				}
-				b_stillrise = {
-				}
-				b_morloten = {
-				}
-				b_rodistair = {
-				}
-				b_buckingwing = {
-				}
-				b_villen = {
-				}
-				b_evelara = {
 				}
 			}
 			
@@ -920,7 +1027,7 @@ e_zul_aman = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 25 province_id = 26 province_id = 27 province_id = 458 } }
+					any_demesne_province = { OR = { province_id = 25 province_id = 667 province_id = 27 province_id = 458 } }
 				}
 			}
 			
@@ -945,46 +1052,6 @@ e_zul_aman = {
 				}
 			}
 			
-			c_spiritcatcher_shore = { # 26
-				color = { 162 60 96 }
-				color2 = { 255 255 255 }
-				
-				b_spiritcatcher_camp = {
-				}
-				b_grimeye = {
-				}
-				b_zim_wal = {
-				}
-				b_forlorn_altar = {
-				}
-				b_spearfish = {
-				}
-				b_beasthunt = {
-				}
-				b_burnfist = {
-				}
-			}
-			
-			c_nalorakks_cliffs = { # 27
-				color = { 96 54 207 }
-				color2 = { 255 255 255 }
-				
-				b_grove_of_the_bear = {
-				}
-				b_spiritstep_woods = {
-				}
-				b_altar_of_nalorakk = {
-				}
-				b_bearclaw_den = {
-				}
-				b_grizzlefury = {
-				}
-				b_hibernia = {
-				}
-				b_barkgouge = {
-				}
-			}
-			
 			c_amani_ridge = { # 458
 				color = { 71 221 179 }
 				color2 = { 255 255 255 }
@@ -1002,6 +1069,46 @@ e_zul_aman = {
 				b_sekus = {
 				}
 				b_greenston = {
+				}
+			}
+			
+			c_ula_tek = { # 470
+				color = { 93 200 160 }
+				color2 = { 255 255 255 }
+				
+				b_ula_tek = {
+				}
+				b_mosstusk_village = {
+				}
+				b_shrine_of_serpent = {
+				}
+				b_lost_pyramid = {
+				}
+				b_motten = {
+				}
+				b_serukus = {
+				}
+				b_greenst = {
+				}
+			}
+			
+			c_amanshi = { # 471
+				color = { 74 180 10 }
+				color2 = { 255 255 255 }
+				
+				b_amanshi = {
+				}
+				b_greenslab = {
+				}
+				b_akilzon_temple = {
+				}
+				b_jinthaza = {
+				}
+				b_pineneedle = {
+				}
+				b_arenshi = {
+				}
+				b_lowrock = {
 				}
 			}
 		}
@@ -6317,7 +6424,7 @@ e_grim_batol = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 201 province_id = 204 province_id = 205 } }
+					any_demesne_province = { OR = { province_id = 201 province_id = 204 province_id = 205 province_id = 669 } }
 				}
 			}
 			
@@ -6367,7 +6474,7 @@ e_grim_batol = {
 				
 				b_swiftgear_station = {
 				}
-				b_saltspray_glen = {
+				b_sundown_marsh = {
 				}
 				b_ironbeards_tomb = {
 				}
@@ -6378,6 +6485,26 @@ e_grim_batol = {
 				b_wetdelta = {
 				}
 				b_blueshadow = {
+				}
+			}
+			
+			c_saltspray_glen = { # 669
+				color = { 80 190 253 }
+				color2 = { 255 255 255 }
+				
+				b_saltspray = {
+				}
+				b_newgue = {
+				}
+				b_stambour_bog = {
+				}
+				b_dense_wetlands = {
+				}
+				b_gamterel = {
+				}
+				b_tossing_slough = {
+				}
+				b_kipgamau = {
 				}
 			}
 		}

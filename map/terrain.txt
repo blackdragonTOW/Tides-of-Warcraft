@@ -16,13 +16,14 @@ categories =  {
 		movement_cost = 1.0
 		is_water = yes
 		color = { 0 0 200 }
+		inland_Sea = yes
 	}
 
 	arctic = {
 		movement_cost = 1.2
 		max_attrition = 0.1
 		color = { 235 235 235 }
-		supply_limit = -1
+		supply_limit = 1
 		bottleneck_chance = 15
 	}
 
@@ -50,7 +51,7 @@ categories =  {
 		max_attrition = 0.025
 		color = { 135 70 0 }
 
-		supply_limit = 2
+		supply_limit = 3
 		bottleneck_chance = 15
 	}
 
@@ -58,7 +59,7 @@ categories =  {
 		movement_cost = 1.1
 		max_attrition = 0.025
 		color = { 165 205 108 }
-		supply_limit = 2.5
+		supply_limit = 3
 		bottleneck_chance = 10
 	}
 	
@@ -67,7 +68,7 @@ categories =  {
 		defence = 2
 		max_attrition = 0.1
 		color = { 117 108 119 }
-		supply_limit = 1
+		supply_limit = 2
 		bottleneck_chance = 35
 	}
 
@@ -81,19 +82,19 @@ categories =  {
 		movement_cost = 1.0
 		max_attrition = 0.05
 		color = { 211 201 184 }
-		supply_limit = 3
+		supply_limit = 4
 		bottleneck_chance = 5
 	}
 	
 	plains = {
 		movement_cost = 1.1
 		color = { 241 221 184 }
-		supply_limit = 3.5
+		supply_limit = 5
 		bottleneck_chance = 5
 	}
 
 	jungle = {
-		movement_cost = 2.5
+		movement_cost = 1.4
 		defence = 1.5
 		max_attrition = 0.1
 		color = { 40 180 149 }
@@ -106,7 +107,7 @@ categories =  {
 		max_attrition = 0.05
 		color = { 76 112 105 }
 
-		supply_limit = 1.25
+		supply_limit = 2
 		bottleneck_chance = 30
 	}
 	
@@ -115,7 +116,7 @@ categories =  {
 		max_attrition = 0.1
 		color = { 220 210 0 }
 	
-		supply_limit = -0.25
+		supply_limit = 1
 		bottleneck_chance = 5
 	}
 	
@@ -124,13 +125,13 @@ categories =  {
 		max_attrition = 0.05
 		color = { 200 128 0 }
 
-		supply_limit = 0.75
+		supply_limit = 2
 		bottleneck_chance = 5
 	}	
 }
 
-text_0	= { type = plains    color = { 	 0	 } priority = 	0	 }
-text_1	= { type = farmlands color = { 	1	 } priority = 	1	 }
+text_0	= { type = plains    color = { 	0	 } priority = 	0	 }
+text_1	= { type = plains    color = { 	1	 } priority = 	1	 }
 text_2	= { type = plains    color = { 	2	 } priority = 	2	 }
 text_3	= { type = desert    color = { 	3	 } priority = 	3	 }
 
@@ -144,10 +145,31 @@ text_9	= { type = mountain color = { 	9	 } priority = 	9	 }
 text_10	= { type = mountain color = { 	10	 } priority = 	10	 }
 text_11	= { type = mountain color = { 	11	 } priority = 	11	 }
 
-text_12	= { type = jungle color = { 	12	 } priority = 	12	 }
-text_13	= { type = coastal_desert color = { 	13	 } priority = 	13	 }
-text_14	= { type = coastal_desert color = { 	14	 } priority = 	14	 }
-text_15	= { type = coastal_desert color = { 	15	 } priority = 	15	 }
+text_12	= { type = forest    color = { 	12	 } priority = 	12	 }
+text_13	= { type = mountain  color = { 	13	 } priority = 	13	 }
+text_14	= { type = plains    color = { 	14	 } priority = 	14	 }
+text_15	= { type = plains    color = { 	15	 } priority = 	15	 }
 
-# Need to be here to identify forest
-text_16	= { type = forest color = { 	16	 } priority = 	16	 }
+
+text_16	= { type = mountain  color = { 	16	 } priority = 	16	 }
+text_17	= { type = mountain  color = { 	17	 } priority = 	17	 }
+text_18	= { type = desert    color = { 	18	 } priority = 	18	 }
+text_19	= { type = mountain  color = { 	19	 } priority = 	19	 }
+text_20	= { type = mountain  color = { 	20	 } priority = 	20	 }
+text_21	= { type = steppe    color = { 	21	 } priority = 	21	 }
+text_22	= { type = plains    color = { 	22	 } priority = 	22	 }
+text_23	= { type = jungle    color = { 	23	 } priority = 	23	 }
+text_24	= { type = mountain  color = { 	24	 } priority = 	24	 }
+text_25	= { type = mountain  color = { 	25	 } priority = 	25	 }
+text_26	= { type = mountain  color = { 	26	 } priority = 	26	 }
+text_27	= { type = desert    color = { 	27	 } priority = 	27	 }
+text_28	= { type = farmlands color = { 	28	 } priority = 	28	 }
+text_29	= { type = plains    color = { 	29	 } priority = 	29	 }
+text_30	= { type = mountain  color = { 	30	 } priority = 	30	 }
+text_31	= { type = desert    color = { 	31	 } priority = 	31	 }
+text_32	= { type = plains    color = { 	32	 } priority = 	32	 }
+text_33	= { type = plains    color = { 	33	 } priority = 	33	 }
+text_34	= { type = plains    color = { 	34	 } priority = 	34	 }
+text_35	= { type = plains    color = { 	35	 } priority = 	35	 }
+
+
