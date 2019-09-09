@@ -1,8 +1,43 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_eredar_male_base"
-		texturefile = "gfx\\characters\\demons\\eredar_male.dds"
+		name = "GFX_eredar_male_eyes"
+		texturefile = "gfx\\characters\\eredar_male\\eredar_male_eyes.dds"
 		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	spriteType = {
+		name = "GFX_eredar_male_cheek"
+		texturefile = "gfx\\characters\\eredar_male\\eredar_male_cheek.dds"
+		noOfFrames = 10
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	spriteType = {
+		name = "GFX_eredar_male_chin_uncolored"
+		texturefile = "gfx\\characters\\eredar_male\\eredar_male_chin_uncolored.dds"
+		noOfFrames = 5
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	spriteType = {
+		name = "GFX_eredar_male_jaw"
+		texturefile = "gfx\\characters\\eredar_male\\eredar_male_jaw.dds"
+		noOfFrames = 10
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	spriteType = {
+		name = "GFX_eredar_male_nose"
+		texturefile = "gfx\\characters\\eredar_male\\eredar_male_nose.dds"
+		noOfFrames = 10
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	spriteType = {
+		name = "GFX_eredar_male_forehead"
+		texturefile = "gfx\\characters\\eredar_male\\eredar_male_forehead.dds"
+		noOfFrames = 14
 		norefcount = yes
 		can_be_lowres = yes
 	}
@@ -23,19 +58,54 @@ spriteTypes = {
 		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
 			"GFX_empty:p3"
 			"GFX_character_background:p0"
-			"GFX_eredar_male_base:p2"
+			"GFX_draenei_male_base:p2:h"
+			"GFX_draenei_male_hair_behind:p1:e:y"
+			"GFX_draenei_male_heads:d10:h"
+			"GFX_draenei_male_jaw:d0:h"
+			"GFX_eredar_male_jaw:d0:h"
+			"GFX_draenei_male_nose:d3:h"
+			"GFX_eredar_male_nose:d3"
+			"GFX_draenei_male_cheek:d4:h"
+			"GFX_eredar_male_cheek:d4"
+			"GFX_draenei_male_chin:d1:h"
+			"GFX_eredar_male_chin_uncolored:d1"
+			"GFX_draenei_male_shade:p8"
+			"GFX_draenei_male_eyes:d6:h"
+			"GFX_draenei_male_eyes_uncolored:d6"
+			"GFX_eredar_male_eyes:p2"
+			"GFX_draenei_male_ear:d7:h"
+			"GFX_draenei_male_mouth:d2:h"
+			"GFX_draenei_male_hair:p1:e:y"
+		   	"GFX_draenei_male_hair_uncolored:p1:y"
+			"GFX_draenei_male_forehead:d5:h"
+			"GFX_eredar_male_forehead:d5"
+			"GFX_draenei_male_beard:p4:e:y"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_draenei_male_blinded_eyes:p10"
 			"GFX_character_imprisoned:p6"
 			"GFX_player_overlay:p11"
 		}
 
+		## Skin Color
 		hair_color_index = 8
 		hair_color = { # dark, base, highlight
-			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+			{ 6 2 0 } { 145 41 31 } { 230 117 94 }
+			{ 9 5 0 } { 170 86 22 } { 247 162 91 }
+			{ 5 4 5 } { 95 70 93 } { 231 211 223 }
 		}
 
+		## Hair Color
 		eye_color_index = 9
 		eye_color = {
-			{ 0 0 0 }
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
 		}
 		
 		allow_property_values = { }
