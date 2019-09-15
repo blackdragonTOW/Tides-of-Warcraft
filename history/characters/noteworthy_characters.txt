@@ -1344,3 +1344,316 @@
 		}
 	}
 }
+
+# Bronzebeard Clan
+
+70008 = {
+	name = Madoran # First Bronzebeard mountain king
+	dynasty = 13002 # Bronzebeard
+	culture = bronzebeard
+	religion = holy_light
+	dna="0i0i00bbgl0"
+	properties="sb00ec000000000000"
+	trait = race_dwarf
+	9452.12.27 = {
+		birth = yes
+	}
+	9468.12.27 = {
+	martial=11
+	diplomacy=10
+	intrigue=4
+	stewardship=9
+	learning=10
+	add_trait = fortune_builder
+	add_trait = warrior
+	add_trait = just
+	add_trait = brave
+	}
+	9804.1.1 = {
+     death = { death_reason = death_natural}
+	 
+	}
+}
+2051 = {
+	historical = yes
+	name = Bedirn
+	dynasty = 13002 # Bronzebeard
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+	father = 70008
+
+	9630.06.12 = {
+		birth = yes
+	}
+	9946.10.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+70005 = {
+	name = Magni
+	dynasty = 13002 # Bronzebeard
+	culture = bronzebeard
+	religion = holy_light
+	father = 2051
+    dna="0h0g00ddgb0"
+    properties="d000f00b0000000000"
+	trait = race_dwarf
+	9782.12.27 = {
+		birth = yes
+	}
+	9798.12.27 = {
+	martial=8
+	diplomacy=10
+	intrigue=3
+	stewardship=7
+	learning=9
+	add_trait = brilliant_strategist
+	add_trait = warrior
+	add_trait = kind
+	add_trait = patient
+	add_trait = just
+	add_trait = brave
+	}
+	9941.12.27 = {
+	    add_spouse = 70010	    
+	}
+	10014.4.15 = {
+	add_trait = explorer	#should be in explorers society whenever its created fix if its wrong date
+	}
+	10100.1.1 = {
+     death = { death_reason = death_natural}
+	 
+	}
+}
+
+# Muradin launces expedition to northrend, he should be killed the date that arthas get frostmourne. You can make Muradin die withouth a trace, but he is still alive and have a event getting him back to the game, there is something like this in guardians of azeroth mod
+
+70006 = {
+	name = Muradin
+	dynasty = 13002 # Bronzebeard
+	culture = bronzebeard
+	religion = holy_light
+	father = 2051
+	dna="0g0d00cf0k0"
+	properties="c000ib0c000000j000"
+	trait = race_dwarf
+	9798.12.27 = {
+		birth = yes
+	}
+	9814.12.27 = {
+	martial=11
+	diplomacy=7
+	intrigue=1
+	stewardship=8
+	learning=9
+	add_trait = brilliant_strategist
+	add_trait = warrior
+	add_trait = proud
+	add_trait = gregarious
+	add_trait = brave
+	add_trait = trusting
+	}
+	10014.4.15 = {
+	add_trait = explorer #should be in explorers society whenever its created fix if its wrong date
+	}
+	10100.1.1 = {
+     death = { death_reason = death_natural}
+	 
+	}
+}
+
+70007 = {
+	name = Brann
+	dynasty = 13002 # Bronzebeard
+	culture = bronzebeard
+	religion = holy_light
+	father = 2051
+	dna="0g0e00hbfi0"
+	properties="da00cb00000000o000"
+	trait = race_dwarf
+	9805.12.27 = {
+		birth = yes
+	}
+	9821.12.27 = {
+	martial=7
+	diplomacy=4
+	intrigue=3
+	stewardship=6
+	learning=7
+	add_trait = mastermind_theologian
+	add_trait = warrior
+	add_trait = brave
+	add_trait = diligent
+	add_trait = shrewd
+	}
+	10014.4.15 = {
+	add_trait = explorer #should be in explorers society whenever its created fix if its wrong date
+	}
+	10100.1.1 = {
+     death = { death_reason = death_natural}
+	 
+	}
+}
+70009 = {
+	name = Moira
+	female = yes
+	dynasty = 13002 # Bronzebeard
+	culture = bronzebeard
+	religion = holy_light
+	dna="0c0000dced0"
+	properties="xs0000000000000000"
+	trait = race_dwarf
+	father=70005	#Magni
+	mother=70010    #Eimear
+	
+	9952.12.27 = {
+		birth = yes
+	}
+	9968.12.27 = {
+	martial=2
+	diplomacy=6
+	intrigue=7
+	stewardship=5
+	learning=6
+	add_trait = scholarly_theologian
+	add_trait = priest
+	add_trait = proud
+	add_trait = deceitful
+	add_trait = brave
+	add_trait = wroth
+	add_trait = stubborn	
+	}
+	10100.1.1 = {
+     death = { death_reason = death_natural}
+	 
+	}
+}
+
+70010 = {
+	name = Eimear
+	female = yes
+	culture = bronzebeard
+	religion = holy_light
+	dna="00dea0gf0d0"
+	properties="ue000000000000a000"
+	trait = race_dwarf
+	9874.12.27 = {
+		birth = yes
+	}
+	9890.12.27 = {
+	martial=3
+	diplomacy=6
+	intrigue=3
+	stewardship=5
+	learning=6	
+	add_trait = kind
+	}
+	9943.1.1 = {
+		death = { death_reason = death_murdered
+		}
+	 
+	}
+}
+
+# Anvilmar Clan
+
+2053 = {
+	historical = yes
+	name = Modimus
+	dynasty = 13001 # Anvilmar
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+
+	9406.01.22 = {
+		birth = yes
+	}
+	9770.11.16 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2052 = {
+	historical = yes
+	name = Moldihr
+	dynasty = 13001 # Anvilmar
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+	father = 2053
+
+	9599.06.12 = {
+		birth = yes
+	}
+	9902.10.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2054 = {
+	historical = yes
+	name = Hjalmar
+	dynasty = 13001 # Anvilmar
+	culture = bronzebeard
+	religion = holy_light
+	dna="0h0c00becd0"
+	properties="vd00ij0b000000j000"
+	trait = race_dwarf
+	father = 2052
+	9801.12.27 = {
+		birth = yes
+	}
+	9887.12.27 = {
+	martial=9
+	diplomacy=6
+	intrigue=5
+	stewardship=7
+	learning=8
+	add_trait = charismatic_negotiator
+	add_trait = warrior
+	add_trait = shrewd
+	add_trait = patient
+	add_trait = kind
+	add_trait = brave
+	}
+	10024.3.18 = {
+     death = { death_reason = death_battle }
+	 
+	}
+}
+
+70013 = {
+	name = Thargas # Rules over anvilmar after hjalmar dies
+	dynasty = 13001 # Anvilmar
+	culture = bronzebeard
+	religion = holy_light
+	dna="0a0c000ldd0"
+	properties="ke00kj0a000000j000"
+	trait = race_dwarf
+	father = 2052
+	9854.12.27 = {
+		birth = yes
+	}
+	9900.12.27 = {
+	martial=8
+	diplomacy=3
+	intrigue=4
+	stewardship=3
+	learning=3
+	add_trait = skilled_tactician
+	add_trait = warrior
+	add_trait = wroth
+	add_trait = brave
+	add_trait = honest
+	add_trait = stubborn
+	}
+	10100.1.1 = {
+     death = { death_reason = death_natural}
+	 
+	}
+}
