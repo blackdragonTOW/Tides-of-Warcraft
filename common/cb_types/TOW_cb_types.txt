@@ -44,7 +44,7 @@ troll_invasion = {
 					}
 				}
 				has_landed_title = e_zandalar
-				has_landed_title = e_zul
+				has_landed_title = e_zul_aman
 				AND = {
 					tier = KING
 					prestige = 500
@@ -58,7 +58,7 @@ troll_invasion = {
 			limit = {
 				NOR = {
 					has_character_modifier = zandalar_endorsed
-				has_landed_title = e_zul
+				has_landed_title = e_zul_aman
 				}
 			}
 			prestige = -500
@@ -203,7 +203,7 @@ troll_subjugation = {
 						has_character_modifier = zandalar_endorsed
 					}
 				}
-				has_landed_title = e_zul
+				has_landed_title = e_zul_aman
 				prestige = 150
 			}
 			NOT = { has_character_modifier = launched_subjugation }
@@ -229,7 +229,7 @@ troll_subjugation = {
 			if = {
 				limit = {
 					NOT = { has_character_modifier = zandalar_endorsed }
-					NOT = { has_landed_title = e_zul }
+					NOT = { has_landed_title = e_zul_aman }
 				}
 				prestige = -500
 			}
