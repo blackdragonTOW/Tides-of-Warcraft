@@ -3737,20 +3737,100 @@ character_event = {
 			limit = { has_character_flag = curious_sympathy_religion }
 			random_list = {
 				10 = {
-					#set_character_flag = add_sympathy_christendom
-					#modifier = {
-					#	factor = 0
-					#	religion_group = christian
-					#}
-					#modifier = {
-					#	factor = 0
-					#	NOR = {
-					#		educator = { religion_group = christian }
-					#		location = { religion_group = christian } 
-					#		any_friend = { religion_group = christian }
-					#		any_sibling = { religion_group = christian } 
-					#	}
-					#}
+					set_character_flag = add_sympathy_light_group
+					modifier = {
+						factor = 0
+						religion_group = light_group
+					}
+					modifier = {
+						factor = 0
+						NOR = {
+							educator = { religion_group = light_group }
+							location = { religion_group = light_group } 
+							any_friend = { religion_group = light_group }
+							any_sibling = { religion_group = light_group } 
+						}
+					}
+				}
+				10 = {
+					set_character_flag = add_sympathy_arcane_group
+					modifier = {
+						factor = 0
+						religion_group = arcane_group
+					}
+					modifier = {
+						factor = 0
+						NOR = {
+							educator = { religion_group = arcane_group }
+							location = { religion_group = arcane_group } 
+							any_friend = { religion_group = arcane_group }
+							any_sibling = { religion_group = arcane_group } 
+						}
+					}
+				}
+				10 = {
+					set_character_flag = add_sympathy_elemental_group
+					modifier = {
+						factor = 0
+						religion_group = elemental_group
+					}
+					modifier = {
+						factor = 0
+						NOR = {
+							educator = { religion_group = elemental_group }
+							location = { religion_group = elemental_group } 
+							any_friend = { religion_group = elemental_group }
+							any_sibling = { religion_group = elemental_group } 
+						}
+					}
+				}
+				10 = {
+					set_character_flag = add_sympathy_fel_group
+					modifier = {
+						factor = 0
+						religion_group = fel_group
+					}
+					modifier = {
+						factor = 0
+						NOR = {
+							educator = { religion_group = fel_group }
+							location = { religion_group = fel_group } 
+							any_friend = { religion_group = fel_group }
+							any_sibling = { religion_group = fel_group } 
+						}
+					}
+				}
+				10 = {
+					set_character_flag = add_sympathy_void_group
+					modifier = {
+						factor = 0
+						religion_group = void_group
+					}
+					modifier = {
+						factor = 0
+						NOR = {
+							educator = { religion_group = void_group }
+							location = { religion_group = void_group } 
+							any_friend = { religion_group = void_group }
+							any_sibling = { religion_group = void_group } 
+						}
+					}
+				}
+				10 = {
+					set_character_flag = add_sympathy_wild_gods_group
+					modifier = {
+						factor = 0
+						religion_group = wild_gods_group
+					}
+					modifier = {
+						factor = 0
+						NOR = {
+							educator = { religion_group = wild_gods_group }
+							location = { religion_group = wild_gods_group } 
+							any_friend = { religion_group = wild_gods_group }
+							any_sibling = { religion_group = wild_gods_group } 
+						}
+					}
 				}
 			}
 		}
@@ -3864,12 +3944,42 @@ character_event = {
 		trigger = {
 			has_character_flag = curious_sympathy_religion
 		}
-		#if = {
-		#	limit = { has_character_flag = add_sympathy_christendom }
-		#	remove_trait = curious
-		#	add_trait = sympathy_christendom
-		#	clr_character_flag = add_sympathy_christendom
-		#}
+		if = {
+			limit = { has_character_flag = add_sympathy_light_group }
+			remove_trait = curious
+			add_trait = sympathy_light_group
+			clr_character_flag = add_sympathy_light_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_arcane_group }
+			remove_trait = curious
+			add_trait = sympathy_arcane_group
+			clr_character_flag = add_sympathy_arcane_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_elemental_group }
+			remove_trait = curious
+			add_trait = sympathy_elemental_group
+			clr_character_flag = add_sympathy_elemental_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_fel_group }
+			remove_trait = curious
+			add_trait = sympathy_fel_group
+			clr_character_flag = add_sympathy_fel_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_void_group }
+			remove_trait = curious
+			add_trait = sympathy_void_group
+			clr_character_flag = add_sympathy_void_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_wild_gods_group }
+			remove_trait = curious
+			add_trait = sympathy_wild_gods_group
+			clr_character_flag = add_sympathy_wild_gods_group
+		}
 		clr_character_flag = curious_sympathy_religion
 	}
 	option = {
@@ -3960,14 +4070,30 @@ character_event = {
 			limit = { FROM = { has_character_flag = curious_to_cynical } }
 			tooltip = { FROM = { remove_trait = curious add_trait = cynical } }
 		}
-		#if = {
-		#	limit = {
-		#		FROM = {
-		#			has_character_flag = add_sympathy_christendom
-		#		}
-		#	}
-		#	tooltip = { FROM = { remove_trait = curious add_trait = sympathy_christendom } }
-		#}
+		if = {
+			limit = { FROM = { has_character_flag = add_sympathy_light_group } }
+			tooltip = { FROM = { remove_trait = curious add_trait = sympathy_light_group } }
+		}
+		if = {
+			limit = { FROM = { has_character_flag = add_sympathy_arcane_group } }
+			tooltip = { FROM = { remove_trait = curious add_trait = sympathy_arcane_group } }
+		}
+		if = {
+			limit = { FROM = { has_character_flag = add_sympathy_elemental_group } }
+			tooltip = { FROM = { remove_trait = curious add_trait = sympathy_elemental_group } }
+		}
+		if = {
+			limit = { FROM = { has_character_flag = add_sympathy_fel_group } }
+			tooltip = { FROM = { remove_trait = curious add_trait = sympathy_fel_group } }
+		}
+		if = {
+			limit = { FROM = { has_character_flag = add_sympathy_void_group } }
+			tooltip = { FROM = { remove_trait = curious add_trait = sympathy_void_group } }
+		}
+		if = {
+			limit = { FROM = { has_character_flag = add_sympathy_wild_gods_group } }
+			tooltip = { FROM = { remove_trait = curious add_trait = sympathy_wild_gods_group } }
+		}
 		if = {
 			limit = {
 				FROM = {
@@ -4118,11 +4244,36 @@ character_event = {
 			has_character_flag = curious_sympathy_religion
 		}
 		remove_trait = curious
-		#if = {
-		#	limit = { has_character_flag = add_sympathy_christendom }
-		#	add_trait = sympathy_christendom
-		#	clr_character_flag = add_sympathy_christendom
-		#}
+		if = {
+			limit = { has_character_flag = add_sympathy_light_group }
+			add_trait = sympathy_light_group
+			clr_character_flag = add_sympathy_light_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_arcane_group }
+			add_trait = sympathy_arcane_group
+			clr_character_flag = add_sympathy_arcane_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_elemental_group }
+			add_trait = sympathy_elemental_group
+			clr_character_flag = add_sympathy_elemental_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_fel_group }
+			add_trait = sympathy_fel_group
+			clr_character_flag = add_sympathy_fel_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_void_group }
+			add_trait = sympathy_void_group
+			clr_character_flag = add_sympathy_void_group
+		}
+		if = {
+			limit = { has_character_flag = add_sympathy_wild_gods_group }
+			add_trait = sympathy_wild_gods_group
+			clr_character_flag = add_sympathy_wild_gods_group
+		}
 		clr_character_flag = curious_sympathy_religion
 	}
 	option = {

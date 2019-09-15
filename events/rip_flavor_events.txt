@@ -36,7 +36,7 @@ character_event = {
 		has_dlc = "Reapers"
 		NOR = { 
 			has_character_flag = stress_relief
-			is_tribal = yes
+			TOW_is_tribal = yes
 			is_nomadic = yes
 			trait = slothful
 		}
@@ -207,7 +207,7 @@ character_event = {
 		NOR = {
 			has_character_modifier = guide_dog
 			has_character_flag = denied_guide_dog
-			is_tribal = yes
+			TOW_is_tribal = yes
 			is_nomadic = yes
 		}
 		any_courtier_or_vassal = {
@@ -2531,7 +2531,7 @@ character_event = {
 		has_dlc = "Reapers"
 		higher_tier_than = BARON
 		OR = {
-			is_tribal = yes
+			TOW_is_tribal = yes
 			is_nomadic = yes
 		}
 		OR = {
@@ -2549,7 +2549,7 @@ character_event = {
 		any_independent_ruler = {
 			ai = yes
 			is_adult = yes
-			is_feudal = yes
+			TOW_is_feudal = yes
 			higher_tier_than = DUKE
 			NOT = { religion_group = ROOT }
 			is_within_diplo_range = ROOT
@@ -2592,7 +2592,7 @@ character_event = {
 			limit = {
 				ai = yes
 				is_adult = yes
-				is_feudal = yes
+				TOW_is_feudal = yes
 				higher_tier_than = DUKE
 				NOT = { religion_group = ROOT }
 				is_within_diplo_range = ROOT
@@ -2894,7 +2894,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_tribal = no
+		TOW_is_tribal = no
 		is_nomadic = no
 		higher_tier_than = COUNT
 		job_treasurer = {
@@ -3048,7 +3048,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_tribal = no
+		TOW_is_tribal = no
 		is_nomadic = no
 		higher_tier_than = COUNT
 		job_spiritual = {
@@ -3202,7 +3202,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_tribal = no
+		TOW_is_tribal = no
 		is_nomadic = no
 		higher_tier_than = COUNT
 		job_marshal = {
@@ -3356,7 +3356,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_tribal = no
+		TOW_is_tribal = no
 		is_nomadic = no
 		higher_tier_than = COUNT
 		job_spymaster = {
@@ -3510,7 +3510,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_tribal = no
+		TOW_is_tribal = no
 		is_nomadic = no
 		higher_tier_than = COUNT
 		job_chancellor = {
@@ -3664,7 +3664,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_tribal = no
+		TOW_is_tribal = no
 		is_nomadic = no
 		NOT = { is_inaccessible_trigger = yes }
 		higher_tier_than = COUNT
@@ -10873,7 +10873,7 @@ character_event = {
 		name = EVTOPTA_RIP_30223
 		custom_tooltip = { text = EVTOPTA_RIP_30223_TOOLTIP }
 
-		# TOW Todo : Change catholic in this event for another religion
+		# TOW Todo : Change catholic in this event for another religion, or not
 		#if = {
 		#	limit = { NOT = { religion_group = christian } }
 		#	remove_trait_zealous_effect = yes

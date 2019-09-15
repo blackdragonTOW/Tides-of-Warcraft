@@ -28,7 +28,7 @@ province_event = {
 			is_theocracy = yes
 		}
 		any_province_lord = {
-			is_republic = yes
+			TOW_is_republic = yes
 		}
 	}
 	
@@ -57,7 +57,7 @@ province_event = {
 		}
 		random_province_lord = {
 			limit = {
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			opinion = {
 				modifier = opinion_dislike
@@ -97,7 +97,7 @@ province_event = {
 			is_theocracy = yes
 		}
 		any_province_lord = {
-			is_republic = yes
+			TOW_is_republic = yes
 		}
 	}
 	
@@ -119,7 +119,7 @@ province_event = {
 		}
 		random_province_lord = {
 			limit = {
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			opinion = {
 				modifier = opinion_happy
@@ -132,7 +132,7 @@ province_event = {
 		name = EVTOPTB77001
 		random_province_lord = {
 			limit = {
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			opinion = {
 				modifier = opinion_dislike
@@ -157,7 +157,7 @@ province_event = {
 		any_province_lord = {
 			is_adult = yes
 			is_female = no
-			is_feudal = yes
+			TOW_is_feudal = yes
 			ROOT = {
 				owner = {
 					NOT = {
@@ -173,7 +173,7 @@ province_event = {
 			limit = {
 				is_adult = yes
 				is_female = no
-				is_feudal = yes
+				TOW_is_feudal = yes
 				ROOT = {
 					owner = {
 						NOT = {
@@ -224,7 +224,7 @@ province_event = {
 	
 	trigger = {
 		any_province_lord = {
-			is_republic = yes
+			TOW_is_republic = yes
 		}
 		NOT = {
 			has_province_modifier = peasants_forbidden_sale
@@ -243,7 +243,7 @@ province_event = {
 		}
 		random_province_lord = {
 			limit = {
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			opinion = {
 				modifier = opinion_happy
@@ -256,7 +256,7 @@ province_event = {
 		name = EVTOPTB77003
 		random_province_lord = {
 			limit = {
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			opinion = {
 				modifier = opinion_dislike
@@ -281,7 +281,7 @@ province_event = {
 		}
 		any_province_lord = {
 			is_adult = yes
-			is_feudal = yes
+			TOW_is_feudal = yes
 			is_female = no
 			NOT = { trait = incapable }
 		}
@@ -300,7 +300,7 @@ province_event = {
 		random_province_lord = {
 			limit = {
 				is_adult = yes
-				is_feudal = yes
+				TOW_is_feudal = yes
 				is_female = no
 				NOT = { trait = incapable }
 			}
@@ -406,7 +406,7 @@ province_event = {
 	
 	trigger = {
 		any_province_lord = {
-			is_feudal = yes
+			TOW_is_feudal = yes
 			ROOT = {
 				owner = {
 					NOT = {
@@ -416,7 +416,7 @@ province_event = {
 			}
 		}
 		any_province_lord = {
-			is_republic = yes
+			TOW_is_republic = yes
 		}
 	}
 	
@@ -432,7 +432,7 @@ province_event = {
 		}
 		random_province_lord = {
 			limit = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				ROOT = {
 					owner = {
 						NOT = {
@@ -452,7 +452,7 @@ province_event = {
 		name = EVTOPTB77006
 		random_province_lord = {
 			limit = {
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			opinion = {
 				modifier = opinion_dislike
@@ -477,10 +477,10 @@ province_event = {
 			TOW_religion_clergy_has_authority = yes
 		}
 		any_province_lord = {
-			is_feudal = yes
+			TOW_is_feudal = yes
 		}
 		any_province_lord = {
-			is_republic = yes
+			TOW_is_republic = yes
 		}
 		any_province_lord = {
 			is_theocracy = yes
@@ -517,13 +517,13 @@ province_event = {
 		trigger = {
 			owner = {
 				NOT = {
-					is_republic = yes
+					TOW_is_republic = yes
 				}
 			}
 		}
 		random_province_lord = {
 			limit = {
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			opinion ={
 				modifier = opinion_happy
@@ -537,13 +537,13 @@ province_event = {
 		trigger = {
 			owner = {
 				NOT = {
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}
 			}
 		}
 		random_province_lord = {
 			limit = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				ROOT = {
 					owner = {
 						NOT = {

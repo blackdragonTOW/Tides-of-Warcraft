@@ -60,34 +60,91 @@ TOW_character_can_be_spymaster = {
 
 # THIS is sympathetic to PREV
 TOW_character_is_sympathetic_to_prevs_religion = {
-	always = no # TOW TODO : To Define
-	#OR = {
-	#	AND = {
-	#		trait = sympathy_christendom
-	#		PREV = { religion_group = christian }
-	#	} 
-	#}
+	OR = {
+		AND = {
+			trait = sympathy_light_group
+			PREV = { religion_group = light_group }
+		}
+		AND = {
+			trait = sympathy_arcane_group
+			PREV = { religion_group = arcane_group }
+		}
+		AND = {
+			trait = sympathy_elemental_group
+			PREV = { religion_group = elemental_group }
+		}
+		AND = {
+			trait = sympathy_fel_group
+			PREV = { religion_group = fel_group }
+		}
+		AND = {
+			trait = sympathy_void_group
+			PREV = { religion_group = void_group }
+		}
+		AND = {
+			trait = sympathy_wild_gods_group
+			PREV = { religion_group = wild_gods_group }
+		}
+	}
 }
 
 # PREV is sympathetic to THIS
 TOW_character_prev_is_sympathetic_to_me_religion = {
-	always = no # TOW TODO : To Define
-	#OR = {
-	#	AND = {
-	#		PREV = { trait = sympathy_christendom }
-	#		religion_group = christian 
-	#	} 
-	#}
+	OR = {
+		AND = {
+			PREV = { trait = sympathy_light_group }
+			religion_group = light_group 
+		}
+		AND = {
+			PREV = { trait = sympathy_arcane_group }
+			religion_group = arcane_group 
+		}
+		AND = {
+			PREV = { trait = sympathy_elemental_group }
+			religion_group = elemental_group 
+		}
+		AND = {
+			PREV = { trait = sympathy_fel_group }
+			religion_group = fel_group 
+		}
+		AND = {
+			PREV = { trait = sympathy_void_group }
+			religion_group = void_group 
+		}
+		AND = {
+			PREV = { trait = sympathy_wild_gods_group }
+			religion_group = wild_gods_group 
+		}
+	}
 }
 
 TOW_character_is_sympathetic_to_another_religion_of_prev = {
-	always = no # TOW TODO : To Define
-	#OR = {
-	#	AND = {
-	#		trait = sympathy_christendom
-	#		PREV = { NOT = { religion_group = christian } }
-	#	} 
-	#}
+	OR = {
+		AND = {
+			trait = sympathy_light_group
+			PREV = { NOT = { religion_group = light_group } }
+		}
+		AND = {
+			trait = sympathy_arcane_group
+			PREV = { NOT = { religion_group = arcane_group } }
+		}
+		AND = {
+			trait = sympathy_elemental_group
+			PREV = { NOT = { religion_group = elemental_group } }
+		}
+		AND = {
+			trait = sympathy_fel_group
+			PREV = { NOT = { religion_group = fel_group } }
+		}
+		AND = {
+			trait = sympathy_void_group
+			PREV = { NOT = { religion_group = void_group } }
+		}
+		AND = {
+			trait = sympathy_wild_gods_group
+			PREV = { NOT = { religion_group = wild_gods_group } }
+		}
+	}
 }
 
 TOW_character_is_antipope = {

@@ -54,7 +54,7 @@ laws = {
 			has_law = execution_voting_power_0
 			has_law = war_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
@@ -64,7 +64,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_1
 				has_law	= tribal_organization_2
 				has_law	= tribal_organization_3
@@ -142,7 +142,7 @@ laws = {
 				value = 10			
 				year = 850
 				holder_scope = { 
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}	
 			}
 			additive_modifier = { 
@@ -150,8 +150,8 @@ laws = {
 				holder_scope = { 
 					OR = {
 						is_nomadic = yes	
-						is_tribal = yes	
-						is_republic = yes
+						TOW_is_tribal = yes	
+						TOW_is_republic = yes
 					}
 				}
 			}
@@ -160,7 +160,7 @@ laws = {
 		allow = {
 			has_law = law_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_1
 			}
 			NOT = { holder_scope = { has_character_flag = supports_royalists } }
@@ -169,7 +169,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_1
 				has_law	= tribal_organization_2
 				has_law	= tribal_organization_3
@@ -246,7 +246,7 @@ laws = {
 			has_law = imprison_voting_power_0
 			has_law = execution_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
@@ -256,7 +256,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_1
 				has_law	= tribal_organization_2
 				has_law	= tribal_organization_3
@@ -328,7 +328,7 @@ laws = {
 				value = 10			
 				year = 900
 				holder_scope = { 
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}	
 			}
 			additive_modifier = { 
@@ -343,7 +343,7 @@ laws = {
 			has_law = law_voting_power_1
 			has_law = war_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_1
 			}
 			NOT = { holder_scope = { has_character_flag = supports_royalists } }
@@ -352,7 +352,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_1
 				has_law	= tribal_organization_2
 				has_law	= tribal_organization_3
@@ -421,7 +421,7 @@ laws = {
 		allow = {
 			has_law = revoke_title_voting_power_1
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
@@ -431,7 +431,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_2
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
@@ -499,7 +499,7 @@ laws = {
 				value = 10			
 				year = 1100
 				holder_scope = {
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}	
 			}
 			additive_modifier = { 
@@ -515,7 +515,7 @@ laws = {
 			has_law = war_voting_power_1
 			has_law = revoke_title_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_2
 			}
 			NOT = { holder_scope = { has_character_flag = supports_royalists } }
@@ -524,7 +524,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_2
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
@@ -589,7 +589,7 @@ laws = {
 		allow = {
 			has_law = imprison_voting_power_1
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
@@ -599,7 +599,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
 			}
@@ -666,7 +666,7 @@ laws = {
 				value = 10			
 				year = 1000
 				holder_scope = {
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}	
 			}
 			additive_modifier = { 
@@ -682,7 +682,7 @@ laws = {
 			has_law = war_voting_power_1
 			has_law = imprison_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_3
 			}
 			NOT = { holder_scope = { has_character_flag = supports_royalists } }
@@ -691,7 +691,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
 			}
@@ -754,7 +754,7 @@ laws = {
 		allow = {
 			has_law = grant_title_voting_power_1
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
@@ -764,7 +764,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_2
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
@@ -832,7 +832,7 @@ laws = {
 				value = 10			
 				year = 1200
 				holder_scope = {
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}	
 			}
 			additive_modifier = { 
@@ -848,7 +848,7 @@ laws = {
 			has_law = war_voting_power_1
 			has_law = grant_title_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_2
 			}
 			NOT = { holder_scope = { has_character_flag = supports_royalists } }
@@ -857,7 +857,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_2
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
@@ -921,7 +921,7 @@ laws = {
 		allow = {
 			has_law = banish_voting_power_1
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
@@ -931,7 +931,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
 			}
@@ -999,7 +999,7 @@ laws = {
 				value = 10			
 				year = 1300
 				holder_scope = { 
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}	
 			}
 			additive_modifier = { 
@@ -1015,7 +1015,7 @@ laws = {
 			has_law = war_voting_power_1
 			has_law = banish_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_3
 			}
 			NOT = { holder_scope = { has_character_flag = supports_royalists } }
@@ -1024,7 +1024,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
 			}
@@ -1088,7 +1088,7 @@ laws = {
 		allow = {
 			has_law = execution_voting_power_1
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_4
 			}
 			NOT = { is_nomadic = yes }
@@ -1098,7 +1098,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
 			}
@@ -1165,7 +1165,7 @@ laws = {
 				value = 10			
 				year = 1200
 				holder_scope = {
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}	
 			}
 			additive_modifier = { 
@@ -1181,7 +1181,7 @@ laws = {
 			has_law = war_voting_power_1
 			has_law = execution_voting_power_0
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law = tribal_organization_3
 			}
 			NOT = { holder_scope = { has_character_flag = supports_royalists } }
@@ -1190,7 +1190,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = baron
 			OR = {
-				NOT = { holder_scope = { is_tribal = yes } }
+				NOT = { holder_scope = { TOW_is_tribal = yes } }
 				has_law	= tribal_organization_3
 				has_law = tribal_organization_4
 			}
@@ -1260,7 +1260,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = duke
 			holder_scope = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				NOT = { has_landed_title = k_silvermoon }
 			}
 		}
@@ -1327,7 +1327,7 @@ laws = {
 			has_dlc = "Zeus"
 			higher_tier_than = duke
 			holder_scope = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				NOT = { has_landed_title = k_silvermoon }
 			}
 		}

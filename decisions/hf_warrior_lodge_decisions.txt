@@ -316,7 +316,7 @@ targeted_decisions = {
 	        prisoner = no
     		has_dlc = "Holy Fury"
 
-    		is_tribal = yes
+    		TOW_is_tribal = yes
 
     		any_claim = {
    				always = yes
@@ -381,8 +381,8 @@ targeted_decisions = {
 	    	### For CLAIM duels ###
 	    	custom_tooltip = {
         		text = both_tribal_tt
-        		is_tribal = yes
-        		FROM = { is_tribal = yes }
+        		TOW_is_tribal = yes
+        		FROM = { TOW_is_tribal = yes }
         	}
 		    FROM = { has_strong_claim = PREV }
 
@@ -1451,7 +1451,7 @@ society_decisions = {
 			}
 			modifier = {
 				factor = 0.25 #Fearful to be challenged for leadership.
-				is_tribal = yes
+				TOW_is_tribal = yes
 				trait = paranoid
 			}
 			modifier = {
