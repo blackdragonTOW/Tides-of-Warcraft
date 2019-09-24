@@ -1108,13 +1108,8 @@
 	add_trait = kind
 	}
 	10021.1.1 = {
-	effect = { 
-	remove_friend = 70101  # remove friend sicco after sicco betrayed gelbin and took control over gnomeregan, Cant remove the mas friend dunno why, please fix and also if its wrong date
-	}	
-	10021.1.1 = {
-	    effect = {
-			add_pressed_claim = c_gnomeregan # lost gnomeregan and fled to tinkertown
-		}
+		effect = { 
+			remove_friend = 70101  # remove friend sicco after sicco betrayed gelbin and took control over gnomeregan, Cant remove the mas friend dunno why, please fix and also if its wrong date
 	}
 	10021.1.1 = {
 	    effect = {
@@ -1125,5 +1120,601 @@
 	10100.1.1 = {
      death = { death_reason = death_natural}
 	 
+		}
+	}
+}
+3050 = {
+	historical = yes
+	name = Gravius
+	dynasty = 50221 # Grimesilt
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9798.06.13 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3051 = {
+	historical = yes
+	name = Ukogg
+	dynasty = 50222 # Maltorius
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9824.04.21 = {
+		birth = yes
+	}
+	9898.04.21 = {
+		add_spouse = 3052
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3052 = {
+	historical = yes
+	name = Dymwa
+	female = yes
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9878.04.24 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3053 = {
+	historical = yes
+	name = Eanga
+	female = yes
+	dynasty = 50222 # Maltorius
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3051
+	mother = 3052
+
+	9982.11.11 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3054 = {
+	historical = yes
+	name = Orul
+	dynasty = 50223 # Dinwhisker
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9845.07.09 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3055 = {
+	historical = yes
+	name = Galgann
+	dynasty = 50224 # Firehammer
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9881.10.25 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3056 = {
+	historical = yes
+	name = Inand
+	dynasty = 50225 # Doomgrip
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9698.12.01 = {
+		birth = yes
+	}
+	9975.01.16 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3057 = {
+	historical = yes
+	name = Kourmoth
+	dynasty = 50225 # Doomgrip
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3056
+
+	9776.10.04 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3058 = {
+	historical = yes
+	name = Braenli
+	female = yes
+	dynasty = 50225 # Doomgrip
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3056
+
+	9906.04.12 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3059 = {
+	historical = yes
+	name = Fineous
+	dynasty = 50226 # Darkvire
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9758.02.21 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3060 = {
+	historical = yes
+	name = Fenella
+	female = yes
+	dynasty = 50226 # Darkvire
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3059
+
+	9965.03.01 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3061 = {
+	historical = yes
+	name = Hamdahr
+	dynasty = 50227 # Angerforge
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9587.06.29 = {
+		birth = yes
+	}
+	9970.08.23 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3062 = {
+	historical = yes
+	name = Khogrinn
+	dynasty = 50227 # Angerforge
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3061
+
+	9780.08.08 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3063 = {
+	historical = yes
+	name = Kasea
+	female = yes
+	dynasty = 50227 # Angerforge
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3062
+
+	9978.12.20 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3064 = {
+	historical = yes
+	name = Lahda
+	female = yes
+	dynasty = 50227 # Angerforge
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3061
+
+	9883.04.12 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3065 = {
+	historical = yes
+	name = Jynma
+	female = yes
+	dynasty = 50227 # Angerforge
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3061
+
+	9918.08.04 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3066 = {
+	historical = yes
+	name = Gygnos
+	dynasty = 50227 # Angerforge
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3061
+
+	9943.01.19 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3066 = {
+	historical = yes
+	name = Calamoth
+	dynasty = 50228 # Ashbeard
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9718.08.04 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3067 = {
+	historical = yes
+	name = Imwi
+	female = yes
+	dynasty = 50231 # Oilfist
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9700.06.03 = {
+		birth = yes
+	}
+	9879.03.19 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3068 = {
+	historical = yes
+	name = Dirmug
+	dynasty = 50231 # Oilfist
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	mother = 3067
+
+	9849.03.12 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3069 = {
+	historical = yes
+	name = Mouton
+	dynasty = 50232 # Flamestar
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9756.12.30 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3070 = {
+	historical = yes
+	name = Rylurm
+	dynasty = 50233 # Darkhammer
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9686.12.12 = {
+		birth = yes
+	}
+	9890.02.03 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3071 = {
+	historical = yes
+	name = Malyfous
+	dynasty = 50233 # Darkhammer
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3070
+
+	9786.12.12 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3072 = {
+	historical = yes
+	name = Mohgi
+	female = yes
+	dynasty = 50233 # Darkhammer
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3070
+
+	9667.10.12 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3073 = {
+	historical = yes
+	name = Durin
+	dynasty = 50233 # Darkhammer
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3070
+
+	9801.06.10 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3074 = {
+	historical = yes
+	name = Durin
+	dynasty = 50233 # Darkhammer
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3070
+
+	9801.06.10 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3075 = {
+	historical = yes
+	name = Kortas
+	dynasty = 50233 # Darkhammer
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3070
+
+	9813.11.06 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3076 = {
+	historical = yes
+	name = Lokhtos
+	dynasty = 50234 # Darkbargainer
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9863.5.21 = {
+		birth = yes
+	}
+	9899.03.12 = {
+		employer = 3068
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3077 = {
+	historical = yes
+	name = Terguth
+	dynasty = 50235 # Shadowforge
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9642.03.12 = {
+		birth = yes
+	}
+	9900.06.03 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3078 = {
+	historical = yes
+	name = Remba
+	female = yes
+	dynasty = 50235 # Shadowforge
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3077
+
+	9839.03.19 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3079 = {
+	historical = yes
+	name = Jonug
+	dynasty = 50236 # Rendan
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+
+	9827.04.23 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3080 = {
+	historical = yes
+	name = Ulor
+	dynasty = 50236 # Rendan
+	culture = dark_iron
+	religion = arcane
+	trait = race_dwarf
+	father = 3079
+
+	9941.05.02 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3081 = {
+	historical = yes
+	name = Aenle
+	dynasty = 50236 # Rendan
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 3079
+
+	9959.01.15 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
 	}
 }

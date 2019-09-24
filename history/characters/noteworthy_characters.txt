@@ -1,13 +1,21 @@
-#2000 - 2300
-# House Proudmoore
+## 2000 - 2300
+## House Proudmoore
 1507 = {
 	historical = yes
 	name = Hauke
+	dna="0a0f0fc0fj0"
+	properties="0e00h000000000p000"
 	dynasty = 1007 # Proudmoore
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
+	martial = 6
+	diplomacy = 5
+	intrigue = 4
+	stewardship = 4
+	learning = 5
 	trait = warrior
+	trait = zealous
 
 	9924.9.5 = {
 		birth = yes
@@ -21,20 +29,36 @@
 1508 = {
 	historical = yes
 	name = Daelin
+	dna="0c0cbfa0ai0"
+	properties="ej00e000000000m000"
 	dynasty = 1007 # Proudmoore
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
 	father = 1507
+	martial = 4
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 6
+	learning = 4
+	trait = skilled_tactician
 	trait = warrior
 	trait = brave
 	trait = wroth
+	trait = lustful
+	trait = zealous #He hated all the orcs, and the other horde races and wanted them ded more than any other, though he didn't hate anyone else so is there a trait for only horde hatred?
+	trait = cruel
+	trait = temperate
+	trait = proud
+	disallow_random_traits = yes
 	
-	dna="0b0ccea0di0"
-	properties="0h00c0000000000000"
-	
-	9967.4.22 = {
+	9963.4.22 = {
 		birth = yes
+	}
+	9987.1.1={
+		effect={
+			add_friend = 172
+		}
 	}
 	10026.6.9 = {
 		death = {
@@ -48,16 +72,23 @@
 	female = yes
 	culture = tirasian
 	religion = hydromancy
+	martial=3
+	diplomacy=3
+	intrigue=5
+	stewardship=6
+	learning=4
 	trait = underhanded_rogue
 	trait = race_human
 	trait = brave
 	trait = shrewd
 	trait = honest
+	trait = trusting
+	disallow_random_traits=yes
 	
 	dna="0bcee0c0bg0"
 	properties="0q0000000000000000"
 	
-	9972.10.25 = {
+	9967.10.25 = {
 		birth = yes
 	}
 		9985.10.28 = {
@@ -72,20 +103,34 @@
 1510 = {
 	historical = yes
 	name = Derek
+	dna="0b0bbba0bk0"
+	properties="ec00c000000000m000"
 	dynasty = 1007 # Proudmoore
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
 	father = 1508
 	mother = 1509
+	martial=8
+	diplomacy=4
+	intrigue=4
+	stewardship=6
+	learning=6
+	trait=tough_soldier
+	trait=gregarious
+	trait=kind
+	trait=humble
+	trait=temperate
+	trait=warrior
+	disallow_random_traits=yes
 	
-	dna="0b0dcfa0bg0"
-	properties="0c00c0000000000000"
 	
-	9988.1.30 = {
+	9986.1.30 = {
 		birth = yes
 	}
-	10050.6.9 = {
+	9969.01.04 = {
+	}
+	10006.7.11	 = {
 		death = {
 			death_reason = death_battle
 		}
@@ -100,6 +145,11 @@
 	religion = hydromancy
 	father = 1508
 	mother = 1509
+	martial=4
+	diplomacy=6
+	intrigue=4
+	stewardship=4
+	learning=8
 	trait = mastermind_theologian
 	trait = race_human
 	trait = ambitious
@@ -108,11 +158,20 @@
 	trait = scolar
 	trait = kind
 	trait = temperate
+	trait = fair
 	
 	dna="0admb0dbbi0"
 	
-	9992.6.2 = {
+	9997.6.2 = {
 		birth = yes
+	}
+	10017.6.2 = {
+	trait=mage
+	}
+	10010.1.1={
+		effect={
+			add_lover=1570 #######################################################################CONTINUE
+		}
 	}
 	10071.7.1 = {
 		death = {
@@ -123,12 +182,25 @@
 1512 = {
 	historical = yes
 	name = Tandred
+	dna="0c0j0ca0bi0"
+	properties="ae00c000000000m000"
 	dynasty = 1007 # Proudmoore
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
 	father = 1508
 	mother = 1509
+	martial=6
+	diplomacy=5
+	intrigue=4
+	stewardship=6
+	learning=4
+	trait=tough_soldier
+	trait=warrior
+	trait=brave
+	trait=proud
+	trait=patient
+	trait=wroth
 
 	9999.9.19 = {
 		birth = yes
@@ -147,8 +219,14 @@
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
-	trait = strong
+	martial=6
+	diplomacy=5
+	intrigue=4
+	stewardship=6
+	learning=4
+	trait=fortune_builder
 	trait = stubborn
+	trait = proud
 	
 	9946.7.23 = {
 		birth = yes
@@ -182,6 +260,8 @@
 1546 = {
 	historical = yes
 	name = Genn
+	dna="0c0h0fa0dj0"
+	properties="ge00b000000000m000"
 	dynasty = 1006 # Graymane
 	culture = gilnean
 	religion = holy_light
@@ -190,6 +270,17 @@
 	trait = stubborn
 	father = 1544
 	mother = 1545
+	martial=8
+	diplomacy=4
+	intrigue=6
+	stewardship=7
+	learning=4
+	trait=fortune_builder
+	trait=warrior
+	trait=stubborn
+	trait=proud
+	trait=robust
+	trait=deceitful
 	
 	9972.7.23 = {
 		birth = yes
@@ -207,6 +298,8 @@
 	historical = yes
 	name = Mia
 	female = yes
+	dna="0daee0jadj0"
+	properties="os000000000000m000"
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
@@ -225,13 +318,22 @@
 1548 = {
 	historical = yes
 	name = Liam
+	dna="000abgc0ba0"
+	properties="kk00g0000000000000"
 	dynasty = 1006 # Graymane
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
+	trait=underhanded_rogue
 	trait = strong
 	father = 1546
 	mother = 1547
+	martial=7
+	diplomacy=9
+	intrigue=4
+	stewardship=9
+	learning=6
+	trait=scout #he is supposed to be a hunter but there isn't any hunter trait class in the files
 	
 	9998.1.17 = {
 		birth = yes
@@ -245,6 +347,8 @@
 1549 = {
 	historical = yes
 	name = Tess
+	dna="00gy00lca00"
+	properties="q00000000000000000"
 	dynasty = 1006 # Graymane
 	female = yes
 	culture = gilnean
@@ -252,6 +356,8 @@
 	trait = race_human
 	father = 1546
 	mother = 1547
+	trait=flamboyant_schemer
+	trait=rogue
 	
 	10000.2.9 = {
 		birth = yes
@@ -301,12 +407,24 @@
 1567 = {
 	historical = yes
 	name = Terenas
+	dna="000c0k00ci0"
+	properties="pj00c000000000b000"
 	dynasty = 1004 # Menethil
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
+	martial=8
+	diplomacy=8
+	intrigue=4
+	stewardship=6
+	learning=4
+	trait=charismatic_negotiator
+	trait=just
+	trait=shrewd
+	trait=temperate
+	trait=gregarious
 	
-	9960.1.7 = {
+	9953.1.7 = {
 		birth = yes
 	}
 	9971.8.12 = {
@@ -322,6 +440,8 @@
 	historical = yes
 	name = Lianne
 	female = yes
+	dna="0a0r00bebd0"
+	properties="mm0000000000000000"
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
@@ -339,12 +459,21 @@
 	historical = yes
 	name = Calia
 	female = yes
+	dna="0acaa0k0bk0"
+	properties="pr0000000000000000"
 	dynasty = 1004 # Menethil
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 1567
 	mother = 1568
+	martial=4
+	diplomacy=6
+	intrigue=4
+	stewardship=6
+	learning=6
+	trait=martial_cleric
+	trait=priest
 	
 	9994.4.22 = {
 		birth = yes
@@ -358,15 +487,51 @@
 1570 = {
 	historical = yes
 	name = Arthas
+	dna="0a00ckb0bk0"
+	properties="pg000000000000c000"
 	dynasty = 1004 # Menethil
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 1567
 	mother = 1568
+	martial=8
+	diplomacy=7
+	intrigue=4
+	stewardship=7
+	learning=5
+	trait=skilled_tactician
+	trait=warrior
+	trait=brave
+	trait=wroth
+	trait=inspiring_leader
+	trait=strong
+	trait=paranoid
+	trait=stubborn
+	trait=proud
 	
-	9996.1.3 = {
+	9996.1.1 = {
 		birth = yes
+	}
+	10005.1.1={
+		effect={
+			add_friend = 1612 #Jarim Balnir
+		}
+	}
+	10008.1.1={
+		effect={
+			add_friend = 2036 #Uther
+		}
+	}
+	10009.1.1={
+		effect={
+			add_friend = 169 #Varian
+		}
+	}
+	###also add id muradin as friend year 10008
+
+	10015.1.1 = {
+	trait=paladin
 	}
 	10021.10.2 = {
 		death = {
@@ -587,13 +752,25 @@
 2012 = {
 	historical = yes
 	name = Aiden
+	dna="0b0b0ha0e00"
+	properties="db000000000000b000"
 	dynasty = 1008 # Perenolde
 	culture = alteraci
 	religion = holy_light
 	trait = race_human
 	father = 2016
+	martial=4
+	diplomacy=8
+	intrigue=3
+	stewardship=9
+	learning=5
+	trait=intricate_webweaver
+	trait=deceitful
+	trait=craven
+	trait=arbitrary
+	trait=cynical
 	
-	9956.5.29 = {
+	9961.5.29 = {
 		birth = yes
 	}
 	9989.2.3 = {
@@ -609,6 +786,8 @@
 	historical = yes
 	name = Isolde
 	female = yes
+	dna="00jhc0gb0a0"
+	properties="nj000000000000b000"
 	culture = alteraci
 	religion = holy_light
 	trait = race_human
@@ -645,14 +824,82 @@
 2015 = {
 	historical = yes
 	name = Aliden
+	dna="000b00a0fh0"
+	properties="ff00h000000000b000"
 	dynasty = 1008 # Perenolde
 	culture = alteraci
 	religion = holy_light
 	trait = race_human
 	father = 2012
 	mother = 2013
+	trait=warrior
 	
-	9993.12.2 = {
+	9985.12.2 = {
+		birth = yes
+	}
+	10100.4.4 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+2063 = {
+	historical = yes
+	name = Elten
+	dna="000d0lb0eb0"
+	properties="f000g000000000b000"
+	dynasty = 1008 # Perenolde
+	culture = alteraci
+	religion = holy_light
+	trait = race_human
+	father = 2012
+	mother = 2013
+	trait=warrior
+	
+	9988.12.2 = {
+		birth = yes
+	}
+	10100.4.4 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+2062 = {
+	historical = yes
+	name = Rodney
+	dna="000dcjb0bg0"
+	properties="fh00b000000000b000"
+	dynasty = 1008 # Perenolde
+	culture = alteraci
+	religion = holy_light
+	trait = race_human
+	father = 2012
+	mother = 2013
+	trait=warrior
+	
+	9989.12.2 = {
+		birth = yes
+	}
+	10100.4.4 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+2061 = {
+	historical = yes
+	name = Isiden
+	dynasty = 1008 # Perenolde
+	culture = alteraci
+	religion = holy_light
+	trait = race_human
+	father = 2017
+	
+	9984.12.2 = {
 		birth = yes
 	}
 	10100.4.4 = {
@@ -664,6 +911,8 @@
 2016 = {
 	historical = yes
 	name = Asselin
+	dna="000d0la0eh0"
+	properties="o000h000000000b000"
 	dynasty = 1008 # Perenolde
 	culture = alteraci
 	religion = holy_light
@@ -771,21 +1020,39 @@
 		}
 	}
 }
+
 # Lordaeron Empire
 2022 = {
 	historical = yes
 	name = Alonsus
+	dna="0b0cbda0bi0"
+	properties="ti00a0000000000000"
 	dynasty = 50141 # Faol
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
+	martial=3
+	diplomacy=5
+	intrigue=4
+	stewardship=8
+	learning=8
+	trait=priest
+	trait=mastermind_theologian
+	trait=charitable
+	trait=kind
+	trait=honest
+	trait=temperate
+	trait=zealous
+	trait=humble
+	trait=erudite
+	trait=just
 
-	9969.04.05 = {
+	9947.04.05 = {
 		birth = yes
 	}
-	10100.5.6 = {
+	10017.5.6 = {
 		death = {
-			death_reason = death_battle
+			death_reason = death_natural
 		}
 	}
 }
@@ -893,16 +1160,33 @@
 2028 = {
 	historical = yes
 	name = Tirion
+	dna="0000ce00ci0"
+	properties="og00b000000000h000"
 	dynasty = 50150 # Fordring
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-
-	9965.01.04 = {
+	martial=10
+	diplomacy=4
+	intrigue=4
+	stewardship=6
+	learning=8
+	trait=skilled_tactician
+	trait=honorable
+	trait=brave
+	trait=warrior
+	trait=charitable
+	trait=kind
+	trait=just
+	disallow_random_traits = yes
+	9974.01.04 = {
 		birth = yes
 	}
 	9984.10.25 = {
 		add_spouse = 2029
+	}
+	10006.1.1={
+	trait=paladin #founding of the silverhand
 	}
 	10100.5.6 = {
 		death = {
@@ -914,11 +1198,24 @@
 	historical = yes
 	name = Karandra
 	female = yes
+	dna="00fqe0gfbj0"
+	properties="ps000000000000r000"
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
+	martial=6
+	diplomacy=8
+	intrigue=5
+	stewardship=9
+	learning=5
+	trait=thrifty_clerk
+	trait=zealous
+	trait=chaste
+	trait=stubborn
+	trait=honest
+	disallow_random_traits = yes
 
-	9966.12.3 = {
+	9972.01.04 = {
 		birth = yes
 	}
 	10020.5.6 = {
@@ -930,15 +1227,31 @@
 2030 = {
 	historical = yes
 	name = Taelan
+	dna="0c0hae00bi0"
+	properties="ge00d000000000c000"
 	dynasty = 50150 # Fordring
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 2028 
 	mother = 2029
-
-	9987.12.02 = {
+	martial=9
+	diplomacy=2
+	intrigue=3
+	stewardship=5
+	learning=4
+	trait=skilled_tactician
+	trait=warrior
+	trait=just
+	trait=ambitious
+	trait=honest
+	trait=chaste
+	disallow_random_traits = yes
+	10000.01.04 = {
 		birth = yes
+	}
+	10021.01.01 = {
+	trait=paladin
 	}
 	10100.5.6 = {
 		death = {
@@ -957,28 +1270,41 @@
 	religion = holy_light
 	trait = race_human
 
-	9928.02.25 = {
+	9928.01.04 = {
 		birth = yes
 	}
-	9987.12.02 = {
+	9987.01.04 = {
 		death = {
 			death_reason = death_battle
 		}
 	}
 }
+
 2032 = {
 	historical = yes
-	name = Anthony
+	name = Reinwald
+	dna="0b0bcj000h0"
+	properties="ec00g0000000000000"
 	dynasty = 50157 # Marris
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 2031
+	martial=4
+	diplomacy=5
+	intrigue=7	
+	stewardship=4
+	learning=3
+	trait=tough_soldier
+	trait=warrior
+	trait=cruel
+	trait=cynical
+	trait=wroth
 
-	9952.01.09 = {
+	9952.01.04 = {
 		birth = yes
 	}
-	9983.01.09 = {
+	9979.01.09 = {
 		add_spouse = 2033
 	}
 	9999.12.02 = {
@@ -987,18 +1313,21 @@
 		}
 	}
 }
+
 2033 = {
 	historical = yes
 	name = Christine
 	female = yes
+	dna="0djlc0icef0"
+	properties="vf0000000000000000"
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 
-	9953.09.09 = {
+	9953.01.04 = {
 		birth = yes
 	}
-	10006.12.02 = {
+	10006.01.04 = {
 		death = {
 			death_reason = death_battle
 		}
@@ -1007,13 +1336,24 @@
 2034 = {
 	historical = yes
 	name = Raymond
+	dna="00000ha0dh0"
+	properties="eg00h0000000000000"
 	dynasty = 50157 # Marris
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 2031
+	martial=6
+	diplomacy=7
+	intrigue=4	
+	stewardship=6
+	learning=5
+	trait=proud
+	trait=underhanded_rogue
+	trait=charitable
+	trait=stubborn
 
-	9958.01.09 = {
+	9955.01.04 = {
 		birth = yes
 	}
 	10002.12.02 = {
@@ -1025,31 +1365,75 @@
 2035 = {
 	historical = yes
 	name = Nathanos
+	dna="0b0dafb0cg0"
+	properties="lb00b000000000g000"
 	dynasty = 50157 # Marris
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 2032
-
-	9985.01.09 = {
+	mother = 2033
+	martial=8
+	diplomacy=5
+	intrigue=5	
+	stewardship=2
+	learning=4
+	trait=brilliant_strategist
+	trait=flanker
+	trait=ranger
+	trait=cynical
+	trait=shrewd
+	trait=patient
+	trait=envious
+	trait=strategist
+	trait=temperate
+	disallow_random_traits = yes
+	9981.01.04 = {
 		birth = yes
 	}
-	10100.12.02 = {
+	10003.1.1={
+			effect={
+			add_lover=504 #Sylvanas
+		}
+	}
+	10022.3.1={
+	trait=race_undead_scourge 
+	}
+	10022.3.1 = {
+			effect = {
+			give_nickname = nick_the_Blightcaller
+		}
+	}
+	10100.5.6 = {
 		death = {
 			death_reason = death_battle
 		}
 	}
 }
-2036 = {
+2060 = {
 	historical = yes
 	name = Stephon
+	dna="0c0b0fb0eg0"
+	properties="le00c000000000g000"
 	dynasty = 50157 # Marris
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 2034 
+	martial=7
+	diplomacy=4
+	intrigue=3	
+	stewardship=6
+	learning=6
+	trait=tough_soldier
+	trait=warrior
+	trait=kind
+	trait=proud
+	trait=brave
+	trait=trusting
+	disallow_random_traits = yes
 
-	9993.01.09 = {
+	9996.01.04 = {
 		birth = yes
 	}
 	10100.12.02 = {
@@ -1059,18 +1443,43 @@
 	}
 }
 
-# Uther the Lightbringer
+# 	 the Lightbringer
 
 2036 = {
 	historical = yes
 	name = Uther
+	dna="0000caa0ej0"
+	properties="qi00a000000000c000"
 	dynasty = 50158 # Lightbringer
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
+	martial=11
+	diplomacy=6
+	intrigue=1	
+	stewardship=5
+	learning=7
+	trait=skilled_tactician
+	trait=honorable
+	trait=strong
+	trait=warrior
+	trait=kind
+	trait=zealous
+	trait=shrewd
+	trait=just
+	trait=chaste
+	trait=erudite
+	trait=patient
+	disallow_random_traits = yes
 
-	9978.09.07 = {
+	9955.01.04 = {
 		birth = yes
+	}
+	10006.1.1={
+		trait=paladin #founding of the silverhand
+	}
+	10007.01.04 = {
+			give_nickname = nick_the_lightbringer
 	}
 	10020.6.19 = {
 		death = {
@@ -1084,12 +1493,24 @@
 2037 = {
 	historical = yes
 	name = Liam
+	dna="0c0b0fb0bi0"
+	properties="vg00c000000000e000"
 	dynasty = 1002 # Trollbane
 	culture = stromic
 	religion = holy_light
 	trait = race_human
+	martial=5
+	diplomacy=5
+	intrigue=3	
+	stewardship=5
+	learning=5
+	trait=skilled_tactician
+	trait=warrior
+	trait=zealous
+	trait=honest
+	trait=diligent
 
-	9940.05.25 = {
+	9930.01.04 = {
 		birth = yes
 	}
 	9959.1.1 = {
@@ -1103,13 +1524,23 @@
 }
 2038 = {
 	historical = yes
-	name = Marsha
+	name = Liliane
 	female = yes
+	dna="0c0b0fb0bi0"
+	properties="vg00c000000000e000"
 	culture = stromic
 	religion = holy_light
 	trait = race_human
+	martial=8
+	diplomacy=6
+	intrigue=5	
+	stewardship=8
+	learning=6
+	trait=envious
+	trait=charitable
+	trait=humble
 
-	9942.02.23 = {
+	9933.01.04 = {
 		birth = yes
 	}
 	9993.2.16 = {
@@ -1121,22 +1552,49 @@
 2039 = {
 	historical = yes
 	name = Thoras
+	dna="000ccgb0bk0"
+	properties="vj00e000000000e000"
 	dynasty = 1002 # Trollbane
 	culture = stromic
 	religion = holy_light
 	trait = race_human
 	father = 2037
 	mother = 2038
+	martial=9
+	diplomacy=2
+	intrigue=1	
+	stewardship=3
+	learning=4
+	trait=warrior
+	trait=brilliant_strategist
+	trait=brave
+	trait=strong
+	trait=duelist
+	trait=honest
+	trait=trusting
+	trait=stubborn
+	disallow_random_traits = yes
 
-	9964.03.15 = {
+	9953.01.04 = {
 		birth = yes
+	}
+	9984.1.1={
+		effect={
+			add_friend = 1567 #Terenas
+		}
+	}
+	9996.1.1={
+		effect={
+			add_friend = 1508 #Daelin
+		}
 	}
 	9981.3.18 = {
 		add_spouse = 2040
 	}
 	10006.9.1 = {
 		death = {
-			death_reason = death_natural
+			death_reason=death_murder
+			killer=2043
 		}
 	}
 }
@@ -1147,8 +1605,19 @@
 	culture = stromic
 	religion = holy_light
 	trait = race_human
+	martial=7
+	diplomacy=7
+	intrigue=7	
+	stewardship=7
+	learning=7
+	trait=intricate_webweaver
+	trait=cynical
+	trait=honest
+	trait=wroth
+	trait=greedy
+	trait=craven
 
-	9961.11.3 = {
+	9956.01.04 = {
 		birth = yes
 	}
 	10015.2.16 = {
@@ -1167,8 +1636,17 @@
 	trait = race_human
 	father = 2037
 	mother = 2038
+	martial=7
+	diplomacy=7
+	intrigue=8	
+	stewardship=7
+	learning=7
+	trait=content
+	trait=brave
+	trait=humble
+	trait=thrifty_clerk
 
-	9971.8.24 = {
+	9955.01.04 = {
 		birth = yes
 	}
 	9989.3.18 = {
@@ -1183,14 +1661,28 @@
 2042 = {
 	historical = yes
 	name = Josias
+	dna="0b0ebbb0f00"
+	properties="dl00f000000000r000"
 	culture = stromic
 	religion = holy_light
 	trait = race_human
+	martial=7
+	diplomacy=7
+	intrigue=5	
+	stewardship=6
+	learning=7
+	trait=tough_soldier
+	trait=warrior
+	trait=gregarious
+	trait=zealous
+	trait=proud
+	trait=temperate
+	trait=patient
 
-	9970.2.13 = {
+	9959.01.04 = {
 		birth = yes
 	}
-	10010.2.16 = {
+	10010.01.04 = {
 		death = {
 			death_reason = death_natural
 		}
@@ -1199,15 +1691,32 @@
 2043 = {
 	historical = yes
 	name = Galen
+	dna="0c0jalc0c00"
+	properties="0e00b000000000r000"
 	dynasty = 1002 # Trollbane
 	culture = stromic
 	religion = holy_light
 	trait = race_human
 	father = 2039
 	mother = 2040
+	martial=5
+	diplomacy=8
+	intrigue=6	
+	stewardship=5
+	learning=4
+	trait=warrior
+	trait=cruel
+	trait=ambitious
+	trait=skilled_tactician
+	trait=greedy
+	trait=deceitful
+	trait=arbitrary
 
-	9983.08.09 = {
+	9973.01.04 = {
 		birth = yes
+	}
+	10006.9.1 = {
+	trait=kinslayer
 	}
 	10100.9.1 = {
 		death = {
@@ -1218,17 +1727,42 @@
 2044 = {
 	historical = yes
 	name = Danath
+	dna="000g0ka0dd0"
+	properties="p000a000000000r000"
 	dynasty = 1002 # Trollbane
 	culture = stromic
 	religion = holy_light
 	trait = race_human
 	father = 2042
 	mother = 2041
+	martial=8
+	diplomacy=8
+	intrigue=3	
+	stewardship=8
+	learning=6
+	trait=skilled_tactician
+	trait=warrior
+	trait=brave
+	trait=proud
+	trait=patient
+	trait=stubborn
+	disallow_random_traits = yes
 
-	9992.7.20 = {
+	9979.01.04 = {
 		birth = yes
 	}
-	10100.9.1 = {
+	9999.1.1={
+		effect={
+			add_friend = 84 #Khadgar
+		}
+	}
+	9999.1.1={
+		effect={
+			add_friend = 2050 #Khurdan
+			##############################################################SHOULD ALSO BE FRIEND WITH TURALYON BUT I DONT HAVE IID AND ALSO BE FRIEND WITH ALLERIA WINDRUNNER
+		}
+	}
+	10100.01.04 = {
 		death = {
 			death_reason = death_natural
 		}
@@ -1655,5 +2189,577 @@
 	10100.1.1 = {
      death = { death_reason = death_natural}
 	 
+	}
+}
+# Thaurissan Clan
+
+2055 = {
+	historical = yes
+	name = Sognar
+	dynasty = 13003 # Thaurissan
+	culture = dark_iron
+	religion = arcane
+	trait = race_dwarf
+
+	9480.08.08 = {
+		birth = yes
+	}
+	9546.08.08 = {
+		add_spouse = 2056
+	}
+	9772.2.5 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2056 = {
+	historical = yes
+	name = Modgud
+	female = yes
+	culture = dark_iron
+	religion = arcane
+	trait = race_dwarf
+
+	9478.12.20 = {
+		birth = yes
+	}
+	9772.1.5 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2057 = {
+	historical = yes
+	name = Malfuhr
+	dynasty = 13003 # Thaurissan
+	culture = dark_iron
+	religion = arcane
+	trait = race_dwarf
+	father = 2055
+	mother = 2056
+
+	9683.04.12 = {
+		birth = yes
+	}
+	9878.06.02 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2058 = {
+	historical = yes
+	name = Khogrond
+	dynasty = 13003 # Thaurissan
+	culture = dark_iron
+	religion = arcane
+	trait = race_dwarf
+	father = 2057
+
+	9834.12.09 = {
+		birth = yes
+	}
+	9980.03.02 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2059 = {
+	historical = yes
+	name = Dagran
+	dynasty = 13003 # Thaurissan
+	culture = dark_iron
+	religion = pyromancy
+	trait = race_dwarf
+	father = 2058
+
+	9942.09.07 = {
+		birth = yes
+	}
+	10003.09.07 = {
+		add_spouse = 70009
+	}
+	10100.03.02 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+# House Sunstrider
+
+502 = {
+	historical = yes
+	name = Dath'Remar
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+
+	dna="0eacf0c0e00"
+	properties="ap"
+
+	1.1.1 = {
+		birth = yes
+	}
+	5012.2.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2060 = {
+	historical = yes
+	name = Ala'thul
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	father = 502
+
+	2450.7.13 = {
+		birth = yes
+	}
+	6432.2.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2061 = {
+	historical = yes
+	name = Aelrise
+	female = yes
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	father = 2060
+
+	4937.7.13 = {
+		birth = yes
+	}
+	7032.2.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2062 = {
+	historical = yes
+	name = Eraniel
+	female = yes
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	father = 2060
+
+	5357.7.13 = {
+		birth = yes
+	}
+	8032.2.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+501 = {
+	historical = yes
+	name = Anasterian
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	trait = mage
+	trait = warrior
+	diplomacy = 10
+	mother = 2061
+
+	dna="0ca0h0a0b00"
+	properties="ll"
+
+	6420.10.7 = {
+		birth = yes
+	}
+	7023.7.11 = {
+		add_spouse = 2067
+	}
+	10021.2.14 = {
+		death = {
+			death_reason = death_battle
+		#	killer = # ARTHAS
+		}
+	}
+}
+2067 = {
+	historical = yes
+	name = Aelonia
+	female = yes
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+
+	6821.10.2 = {
+		birth = yes
+	}
+	9923.2.14 = {
+		death = {
+			death_reason = death_battle
+		#	killer = # ARTHAS
+		}
+	}
+}
+2063 = {
+	historical = yes
+	name = Lyandra
+	female = yes
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	mother = 2062
+
+	7832.10.2 = {
+		birth = yes
+	}
+	10100.2.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2064 = {
+	historical = yes
+	name = Nallorath
+	dynasty = 136 # Sunstrider
+	culture = high_elven
+	religion = arcane
+	trait = race_high_elf
+	father = 501
+
+	7123.7.11 = {
+		birth = yes
+	}
+	8985.2.14 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+508 = {
+	historical = yes
+	name = Kael'thas
+	dynasty = 136 # Sunstrider
+	culture = blood_elven
+	religion = arcane
+	father = 501
+
+	trait = race_high_elf
+	trait = mage
+
+	dna="0cbib0e0000"
+	properties="rn00c000000000a000"
+
+	8753.4.2 = {
+		birth = yes
+	}
+
+	10021.2.16 = {
+		effect = {
+			add_trait = travelling
+		}
+	}
+	10100.2.14 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+# Theron family
+
+2065 = {
+	historical = yes
+	name = Ith'deyn
+	dynasty = 138 # Theron
+	culture = blood_elven
+	religion = arcane
+	trait = race_high_elf
+
+	5330.3.30 = {
+		birth = yes
+	}
+	8436.5.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+503 = {
+	historical = yes
+	name = Lor'themar
+	dynasty = 138 # Theron
+	culture = blood_elven
+	religion = arcane
+	trait = race_high_elf
+	trait = one_eyed
+	father = 2065
+
+	dna="00e0g000b00"
+	properties="uf00d00000000aa000"
+
+	6930.3.30 = {
+		birth = yes
+	}
+	7110.10.11 = {
+		employer = 198 # Anasterian Sunstrider
+	}
+	10021.2.15 = {
+		employer = 508 # Kael'thas Sunstrider
+		effect = {
+			give_minor_title = title_appointed_regent
+		}
+	}
+}
+
+#House Windrunner
+
+506 = {
+	historical = yes
+	name = Talanas
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+
+	trait = race_high_elf
+
+	2317.3.4 = {
+		birth = yes
+	}
+	6711.5.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2066 = {
+	historical = yes
+	name = Velenrian
+	dynasty = 139 # Windrunner
+	culture = blood_elven
+	religion = arcane
+	trait = race_high_elf
+	father = 506
+
+	4185.3.30 = {
+		birth = yes
+	}
+	7736.5.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2067 = {
+	historical = yes
+	name = Kren'nir
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+	father = 2066
+
+	trait = race_high_elf
+
+	5391.6.30 = {
+		birth = yes
+	}
+	8752.9.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+507 = {
+	historical = yes
+	name = Lireesa
+	female = yes
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+	father = 2067
+
+	trait = race_high_elf
+
+	7783.6.30 = {
+		birth = yes
+	}
+	8429.1.2 = {
+		add_matrilineal_spouse = 2068
+	}
+	10005.5.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2068 = {
+	historical = yes
+	name = Farral
+	culture = high_elven
+	religion = arcane
+
+	trait = race_high_elf
+
+	7312.6.30 = {
+		birth = yes
+	}
+	9973.9.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2069 = {
+	historical = yes
+	name = Zaeria
+	female = yes
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+	father = 2067
+
+	trait = race_high_elf
+
+	7827.3.17 = {
+		birth = yes
+	}
+	9673.9.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2070 = {
+	historical = yes
+	name = Zendarin
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+	mother = 2069
+
+	trait = race_high_elf
+
+	8943.6.3 = {
+		birth = yes
+	}
+	10100.9.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2071 = {
+	historical = yes
+	name = Alleria
+	female = yes
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+	mother = 507
+	father = 2068
+
+	trait = race_high_elf
+
+	8633.7.10 = {
+		birth = yes
+	}
+	10100.9.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+504 = {
+	historical = yes
+	name = Sylvanas
+	female = yes
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+	mother = 507
+	father = 2068
+
+	diplomacy = 6
+	martial = 10
+	stewardship = 4
+	intrigue = 14
+	learning = 5
+
+	trait = elusive_shadow
+	trait = race_high_elf
+	trait = shrewd
+	trait = ranger
+	trait = brave
+	trait = cynical
+	trait = patient
+	trait = proud
+	trait = ambitious
+
+	trait = flanker
+	trait = organizer
+	
+	 dna="0bbia0c0b00"
+	 properties="ak"
+
+	8729.4.22 = {
+		birth = yes
+	}
+	10021.2.10 = {
+		add_trait = race_undead_forsaken
+	}
+}
+2072 = {
+	historical = yes
+	name = Vareesa
+	female = yes
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+	mother = 507
+	father = 2068
+
+	trait = race_high_elf
+
+	9230.10.29 = {
+		birth = yes
+	}
+	10100.9.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2073 = {
+	historical = yes
+	name = Lirath
+	dynasty = 139 # Windrunner
+	culture = high_elven
+	religion = arcane
+	mother = 507
+	father = 2068
+
+	trait = race_high_elf
+
+	9841.1.3 = {
+		birth = yes
+	}
+	10005.2.30 = {
+		death = {
+			death_reason = death_natural
+		}
 	}
 }
