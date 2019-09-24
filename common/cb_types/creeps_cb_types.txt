@@ -463,7 +463,7 @@ nomad_invasion = {
 							}
 							AND = {
 								ROOT = { is_nomadic = no }
-								is_tribal = yes
+								TOW_is_tribal = yes
 								OR = {
 									obedient = yes
 									trait = ambitious
@@ -1040,7 +1040,7 @@ nomad_invasion = {
 # 			OR = {
 # 				is_nomadic = yes # Nomads no population requirement
 # 				AND = {
-# 					is_tribal = yes
+# 					TOW_is_tribal = yes
 # 					ROOT = { population = 5000 } # Tribals need 5k
 # 				}
 # 				ROOT = { population = 15000 } # Everyone else needs 15k
@@ -1527,7 +1527,7 @@ nomad_humiliate_cb = {
 			FROM = {
 				OR = {
 					is_nomadic = yes
-					is_tribal = yes
+					TOW_is_tribal = yes
 				}
 			}
 		}

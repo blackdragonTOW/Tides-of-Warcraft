@@ -1259,8 +1259,8 @@ character_event = {
 			religion = ROOT
 			rightful_religious_head = ROOT
 			OR = {
-				is_feudal = yes
-				is_tribal = yes
+				TOW_is_feudal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 			any_vassal = {
@@ -1288,8 +1288,8 @@ character_event = {
 				religion = ROOT
 				rightful_religious_head = ROOT
 				OR = {
-					is_feudal = yes
-					is_tribal = yes
+					TOW_is_feudal = yes
+					TOW_is_tribal = yes
 					is_nomadic = yes
 				}
 				any_vassal = {
@@ -2100,7 +2100,7 @@ character_event = {
 		if = {
 			limit = { 
 				has_dlc = "Holy Fury"
-				is_tribal = yes
+				TOW_is_tribal = yes
 				TOW_religion_is_uncivilized_trigger = yes
 				NOT = { trait = incapable }
 				higher_tier_than = COUNT
@@ -2110,7 +2110,7 @@ character_event = {
 				FROM = {
 					liege = { 
 						independent = yes
-						is_tribal = no
+						TOW_is_tribal = no
 						is_nomadic = no
 						higher_tier_than = DUKE 
 						NOT = { religion = ROOT }

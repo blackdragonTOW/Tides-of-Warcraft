@@ -1608,13 +1608,117 @@ spawn_creature_champion_effect = {
 #### IMPORTANT: If religions are added: add new religion checks in new else-if limits and in the religion_same_as_bloodline_founder_trigger scripted trigger.
 set_bloodline_founder_religion_flag_effect = {
 	# TOW TODO : All religions
-	#if = {
-	#	limit = { religion_openly_norse_or_reformed_trigger = yes }
-	#	new_bloodline = { set_bloodline_flag = requires_norse_pagan_religion }
-	#}
-	#else = {
-	#	# Add new religions in new else-if limits.
-	#}
+	if = {
+		limit = { religion = arcane }
+		new_bloodline = { set_bloodline_flag = requires_arcane_religion }
+	}
+	else_if = {
+		limit = { religion = wyrmcult }
+		new_bloodline = { set_bloodline_flag = requires_wyrmcult_religion }
+	}
+	else_if = {
+		limit = { OR = { religion = old_ways religion = old_ways_reformed } }
+		new_bloodline = { set_bloodline_flag = requires_old_ways_religion }
+	}
+	else_if = {
+		limit = { religion = mercantilism }
+		new_bloodline = { set_bloodline_flag = requires_mercantilism_religion }
+	}
+	else_if = {
+		limit = { OR = { religion = shamanism religion = shamanism_reformed } }
+		new_bloodline = { set_bloodline_flag = requires_shamanism_religion }
+	}
+	else_if = {
+		limit = { religion = geomancy }
+		new_bloodline = { set_bloodline_flag = requires_geomancy_religion }
+	}
+	else_if = {
+		limit = { religion = aeromancy }
+		new_bloodline = { set_bloodline_flag = requires_aeromancy_religion }
+	}
+	else_if = {
+		limit = { religion = hydromancy }
+		new_bloodline = { set_bloodline_flag = requires_hydromancy_religion }
+	}
+	else_if = {
+		limit = { religion = pyromancy }
+		new_bloodline = { set_bloodline_flag = requires_pyromancy_religion }
+	}
+	else_if = {
+		limit = { religion = burning_legion }
+		new_bloodline = { set_bloodline_flag = requires_burning_legion_religion }
+	}
+	else_if = {
+		limit = { OR = { religion = demonology religion = demonology_reformed } }
+		new_bloodline = { set_bloodline_flag = requires_demonology_religion }
+	}
+	else_if = {
+		limit = { religion = lich_king }
+		new_bloodline = { set_bloodline_flag = requires_lich_king_religion }
+	}
+	else_if = {
+		limit = { religion = holy_light }
+		new_bloodline = { set_bloodline_flag = requires_holy_light_religion }
+	}
+	else_if = {
+		limit = { religion = scarlet }
+		new_bloodline = { set_bloodline_flag = requires_scarlet_religion }
+	}
+	else_if = {
+		limit = { religion = argent }
+		new_bloodline = { set_bloodline_flag = requires_argent_religion }
+	}
+	else_if = {
+		limit = { OR = { religion = forgotten_shadow religion = forgotten_shadow_reformed } }
+		new_bloodline = { set_bloodline_flag = requires_forgotten_shadow_religion }
+	}
+	else_if = {
+		limit = { religion = nzoth }
+		new_bloodline = { set_bloodline_flag = requires_nzoth_religion }
+	}
+	else_if = {
+		limit = { religion = cthun }
+		new_bloodline = { set_bloodline_flag = requires_cthun_religion }
+	}
+	else_if = {
+		limit = { religion = yogg_saron }
+		new_bloodline = { set_bloodline_flag = requires_yogg_saron_religion }
+	}
+	else_if = {
+		limit = { religion = yshaarj }
+		new_bloodline = { set_bloodline_flag = requires_yshaarj_religion }
+	}
+	else_if = {
+		limit = { religion = twilights_hammer }
+		new_bloodline = { set_bloodline_flag = requires_twilights_hammer_religion }
+	}
+	else_if = {
+		limit = { religion = blackwyrm_cult }
+		new_bloodline = { set_bloodline_flag = requires_blackwyrm_cult_religion }
+	}
+	else_if = {
+		limit = { religion = azshara }
+		new_bloodline = { set_bloodline_flag = requires_azshara_religion }
+	}
+	else_if = {
+		limit = { religion = loa }
+		new_bloodline = { set_bloodline_flag = requires_loa_religion }
+	}
+	else_if = {
+		limit = { religion = hakkar }
+		new_bloodline = { set_bloodline_flag = requires_hakkar_religion }
+	}
+	else_if = {
+		limit = { OR = { religion = druidism religion = druidism_reformed } }
+		new_bloodline = { set_bloodline_flag = requires_druidism_religion }
+	}
+	else_if = {
+		limit = { religion = elune }
+		new_bloodline = { set_bloodline_flag = requires_elune_religion }
+	}
+	else = {
+		# Add new religions in new else-if limits.
+	}
 }
 
 

@@ -6277,25 +6277,94 @@ print_scope_effect = {
 	log = "------------------------------"
 }
 
-# TOW TODO : Sympathy
 add_sympathy_for_prevs_true_religion_effect = {
-	#if = {
-	#	limit = { 
-	#		PREV = { true_religion_group_christian_trigger = yes } 
-	#		NOT = { religion_group = christian }
-	#	}
-	#	add_trait = sympathy_christendom
-	#}
+	if = {
+		limit = { 
+			PREV = { true_religion_group = light_group } 
+			NOT = { religion_group = light_group }
+		}
+		add_trait = sympathy_light_group
+	}
+	if = {
+		limit = { 
+			PREV = { true_religion_group = arcane_group } 
+			NOT = { religion_group = arcane_group }
+		}
+		add_trait = sympathy_arcane_group
+	}
+	if = {
+		limit = { 
+			PREV = { true_religion_group = elemental_group } 
+			NOT = { religion_group = elemental_group }
+		}
+		add_trait = sympathy_elemental_group
+	}
+	if = {
+		limit = { 
+			PREV = { true_religion_group = fel_group } 
+			NOT = { religion_group = fel_group }
+		}
+		add_trait = sympathy_fel_group
+	}
+	if = {
+		limit = { 
+			PREV = { true_religion_group = void_group } 
+			NOT = { religion_group = void_group }
+		}
+		add_trait = sympathy_void_group
+	}
+	if = {
+		limit = { 
+			PREV = { true_religion_group = wild_gods_group } 
+			NOT = { religion_group = wild_gods_group }
+		}
+		add_trait = sympathy_wild_gods_group
+	}
 }
 
 add_sympathy_for_prevs_open_religion_effect = {
-	#if = {
-	#	limit = { 
-	#		PREV = { religion_group = christian } 
-	#		NOT = { religion_group = christian }
-	#	}
-	#	add_trait = sympathy_christendom
-	#}
+	if = {
+		limit = { 
+			PREV = { religion_group = light_group } 
+			NOT = { religion_group = light_group }
+		}
+		add_trait = sympathy_light_group
+	}
+	if = {
+		limit = { 
+			PREV = { religion_group = arcane_group } 
+			NOT = { religion_group = arcane_group }
+		}
+		add_trait = sympathy_arcane_group
+	}
+	if = {
+		limit = { 
+			PREV = { religion_group = elemental_group } 
+			NOT = { religion_group = elemental_group }
+		}
+		add_trait = sympathy_elemental_group
+	}
+	if = {
+		limit = { 
+			PREV = { religion_group = fel_group } 
+			NOT = { religion_group = fel_group }
+		}
+		add_trait = sympathy_fel_group
+	}
+	if = {
+		limit = { 
+			PREV = { religion_group = void_group } 
+			NOT = { religion_group = void_group }
+		}
+		add_trait = sympathy_void_group
+	}
+	if = {
+		limit = { 
+			PREV = { religion_group = wild_gods_group } 
+			NOT = { religion_group = wild_gods_group }
+		}
+		add_trait = sympathy_wild_gods_group
+	}
 }
 
 add_trait_for_prevs_secret_religion_society_effect = {
@@ -13443,8 +13512,39 @@ apply_dogmatic_on_start_effect = {
 		modifier = dogmatic_religion
 		years = 1000
 	}
-	# TOW TODO : remove intermarry for all religions
-	#remove_intermarry = catholic
+	### ALL RELIGIONS MUST BE HERE ###
+	remove_intermarry = arcane
+	remove_intermarry = wyrmcult
+	remove_intermarry = old_ways
+	remove_intermarry = old_ways_reformed
+	remove_intermarry = mercantilism
+	remove_intermarry = shamanism
+	remove_intermarry = shamanism_reformed
+	remove_intermarry = geomancy
+	remove_intermarry = aeromancy
+	remove_intermarry = hydromancy
+	remove_intermarry = pyromancy
+	remove_intermarry = burning_legion
+	remove_intermarry = demonology
+	remove_intermarry = demonology_reformed
+	remove_intermarry = lich_king
+	remove_intermarry = holy_light
+	remove_intermarry = scarlet
+	remove_intermarry = argent
+	remove_intermarry = forgotten_shadow
+	remove_intermarry = forgotten_shadow_reformed
+	remove_intermarry = nzoth
+	remove_intermarry = cthun
+	remove_intermarry = yogg_saron
+	remove_intermarry = yshaarj
+	remove_intermarry = twilights_hammer
+	remove_intermarry = blackwyrm_cult
+	remove_intermarry = azshara
+	remove_intermarry = loa
+	remove_intermarry = hakkar
+	remove_intermarry = druidism
+	remove_intermarry = druidism_reformed
+	remove_intermarry = elune
 }
 
 bloodthirsty_tiered_traits_effect = {
@@ -15253,14 +15353,30 @@ stable_attribute_improvement_effect = {
 }
 
 add_sympathy_for_religion_effect = {
-	#if = {
-	#	limit = {
-	#		religion_group = christian
-	#	}
-	#	ROOT = {
-	#		add_trait = sympathy_christendom
-	#	}
-	#}
+	if = {
+		limit = { religion_group = light_group }
+		ROOT = { add_trait = sympathy_light_group }
+	}
+	if = {
+		limit = { religion_group = arcane_group }
+		ROOT = { add_trait = sympathy_arcane_group }
+	}
+	if = {
+		limit = { religion_group = elemental_group }
+		ROOT = { add_trait = sympathy_elemental_group }
+	}
+	if = {
+		limit = { religion_group = fel_group }
+		ROOT = { add_trait = sympathy_fel_group }
+	}
+	if = {
+		limit = { religion_group = void_group }
+		ROOT = { add_trait = sympathy_void_group }
+	}
+	if = {
+		limit = { religion_group = wild_gods_group }
+		ROOT = { add_trait = sympathy_wild_gods_group }
+	}
 }
 
 add_random_commander_trait_effect = {

@@ -1859,7 +1859,7 @@ character_event = {
 						is_rival = event_target:scoped_ruler
 						is_landed = yes
 						higher_real_tier_than = COUNT
-						is_republic = no
+						TOW_is_republic = no
 						reverse_opinion = {
 							who = ROOT
 							value = 20
@@ -1870,14 +1870,14 @@ character_event = {
 						is_rival = event_target:scoped_ruler
 						is_landed = yes
 						higher_real_tier_than = COUNT
-						is_republic = no
+						TOW_is_republic = no
 					}
 					preferred_limit = {
 						trait = ambitious
 						is_rival = event_target:scoped_ruler
 						is_landed = yes
 						higher_real_tier_than = BARON
-						is_republic = no
+						TOW_is_republic = no
 						reverse_opinion = {
 							who = ROOT
 							value = 20
@@ -1888,7 +1888,7 @@ character_event = {
 						is_rival = event_target:scoped_ruler
 						is_landed = yes
 						higher_real_tier_than = BARON
-						is_republic = no
+						TOW_is_republic = no
 					}
 					preferred_limit = { 
 						trait = ambitious
@@ -1906,7 +1906,7 @@ character_event = {
 							is_rival = event_target:scoped_ruler
 						}
 						is_landed = yes
-						is_republic = no
+						TOW_is_republic = no
 						reverse_opinion = {
 							who = ROOT
 							value = 20
@@ -1918,7 +1918,7 @@ character_event = {
 							is_rival = event_target:scoped_ruler
 						}
 						is_landed = yes
-						is_republic = no
+						TOW_is_republic = no
 					}
 					preferred_limit = {
 						OR = {
@@ -2517,7 +2517,7 @@ character_event = {
 
 	trigger = {
 		is_save_game = no
-		is_tribal = yes #Can be used by feudals, but only tribals should start with it.
+		TOW_is_tribal = yes #Can be used by feudals, but only tribals should start with it.
 		is_landed = yes
 		has_dlc = "Holy Fury"
 		primary_title = {

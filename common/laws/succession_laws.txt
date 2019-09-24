@@ -10,7 +10,7 @@ succession_laws = {
 	
 		potential = {
 			holder_scope = {
-				is_republic = no
+				TOW_is_republic = no
 				is_theocracy = no
 				is_merchant_republic = no
 				is_patrician = no
@@ -34,15 +34,15 @@ succession_laws = {
 			rebel = no
 			
 			OR = {
-				holder_scope = { is_feudal = yes }
-				holder_scope = { is_tribal = yes }
+				holder_scope = { TOW_is_feudal = yes }
+				holder_scope = { TOW_is_tribal = yes }
 			}
 			is_primary_type_title = no
 		}
 		allow = {
 			holder_scope = {
 				is_nomadic = no
-				is_republic = no
+				TOW_is_republic = no
 				is_theocracy = no
 				is_merchant_republic = no
 				is_patrician = no
@@ -67,7 +67,7 @@ succession_laws = {
 		potential = {
 			holder_scope = {
 				is_nomadic = no
-				is_republic = no
+				TOW_is_republic = no
 				is_theocracy = no
 				is_merchant_republic = no
 				is_patrician = no
@@ -90,8 +90,8 @@ succession_laws = {
 			rebel = no
 			
 			OR = {
-				holder_scope = { is_feudal = yes }
-				holder_scope = { is_tribal = yes }
+				holder_scope = { TOW_is_feudal = yes }
+				holder_scope = { TOW_is_tribal = yes }
 			}
 			is_primary_type_title = no
 			NAND = { 
@@ -137,7 +137,7 @@ succession_laws = {
                 }
 				
 				OR = {
-					is_republic = no
+					TOW_is_republic = no
 					is_patrician = yes
 				}
 				OR = {
@@ -157,9 +157,9 @@ succession_laws = {
 			OR = {
 				AND = {
 					tier = baron
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}
-				holder_scope = { is_feudal = yes }
+				holder_scope = { TOW_is_feudal = yes }
 				holder_scope = { is_patrician = yes }
 			}
 			
@@ -252,9 +252,9 @@ succession_laws = {
 					OR = {
 						AND = {
 							tier = baron
-							is_feudal = yes
+							TOW_is_feudal = yes
 						}
-						holder_scope = { is_feudal = yes }
+						holder_scope = { TOW_is_feudal = yes }
 					}
 				}
 			}
@@ -341,7 +341,7 @@ succession_laws = {
 			}
 			is_primary_type_title = no
 			NOT = { tier = baron }
-			holder_scope = { is_feudal = yes }
+			holder_scope = { TOW_is_feudal = yes }
 		}
 		allow = {
 			holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
@@ -394,15 +394,15 @@ succession_laws = {
 				}
 				AND = {
 					tier = baron
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}
-				holder_scope = { is_feudal = yes }
+				holder_scope = { TOW_is_feudal = yes }
 			}
 		}
 		allow = {
 			OR = {
-				holder_scope = { is_feudal = yes }
-				holder_scope = { is_tribal = yes }
+				holder_scope = { TOW_is_feudal = yes }
+				holder_scope = { TOW_is_tribal = yes }
 			}
 			holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
 			NAND = { 
@@ -454,9 +454,9 @@ succession_laws = {
 			OR = {
 				AND = {
 					tier = baron
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}
-				holder_scope = { is_feudal = yes }
+				holder_scope = { TOW_is_feudal = yes }
 			}
 		}
 		allow = {
@@ -531,7 +531,7 @@ succession_laws = {
 	succ_appointment = {
 		potential = {
 			holder_scope = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				independent = no
 				any_liege = {
 					holy_order = yes
@@ -560,7 +560,7 @@ succession_laws = {
 				AND = {
 					tier = baron
 					OR = {
-						is_republic = yes
+						TOW_is_republic = yes
 						AND = {
 							is_theocracy = yes
 						}
@@ -568,7 +568,7 @@ succession_laws = {
 				}
 				holder_scope = {
 					OR = {
-						is_republic = yes
+						TOW_is_republic = yes
 						AND = {
 							is_theocracy = yes
 						}
@@ -584,7 +584,7 @@ succession_laws = {
 				is_merchant_republic = no
 				OR = {
 					independent = yes
-					is_feudal = no
+					TOW_is_feudal = no
 					NOT = {
 						any_liege = {
 							holy_order = yes
@@ -624,7 +624,7 @@ succession_laws = {
 				is_merchant_republic = no
 				OR = {
 					independent = yes
-					is_feudal = no
+					TOW_is_feudal = no
 					NOT = {
 						any_liege = {
 							holy_order = yes

@@ -10,7 +10,7 @@ decisions = {
 			OR = {
 				is_nomadic = yes
 				AND = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 					independent = yes
 				}
 			}
@@ -109,7 +109,7 @@ decisions = {
 			OR = {
 				is_nomadic = yes
 				AND = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 					independent = yes
 				}
 			}
@@ -121,7 +121,7 @@ decisions = {
 					NOT = { holding_type = nomad }
 					OR = {
 						NOT = { holding_type = tribal }
-						ROOT = { is_tribal = no }
+						ROOT = { TOW_is_tribal = no }
 					}
 					OR = {
 						ROOT = { is_nomadic = yes }
@@ -155,7 +155,7 @@ decisions = {
 					NOT = { holding_type = nomad }
 					OR = {
 						NOT = { holding_type = tribal }
-						ROOT = { is_tribal = no }
+						ROOT = { TOW_is_tribal = no }
 					}
 					OR = {
 						ROOT = { is_nomadic = yes }
@@ -189,7 +189,7 @@ decisions = {
 						NOT = { holding_type = nomad }
 						OR = {
 							NOT = { holding_type = tribal }
-							ROOT = { is_tribal = no }
+							ROOT = { TOW_is_tribal = no }
 						}
 						OR = {
 							ROOT = { is_nomadic = yes }

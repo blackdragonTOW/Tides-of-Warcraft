@@ -382,7 +382,7 @@ targeted_decisions = {
 
 		from_potential = {
 			has_dlc = "Reapers"
-			is_feudal = yes
+			TOW_is_feudal = yes
 			is_vice_royalty = no
 			prisoner = no
 			NOT = { trait = incapable }
@@ -396,7 +396,7 @@ targeted_decisions = {
 			NOT = { has_law = succ_gavelkind }
 			NOT = { owes_favor_to = FROM }
 			NOT = { has_opinion_modifier = { who = FROM name = opinion_demanded_succ_law_change } }
-			is_feudal = yes
+			TOW_is_feudal = yes
 			mercenary = no
 			holy_order = no
 			is_vice_royalty = no
@@ -447,7 +447,7 @@ targeted_decisions = {
 		from_potential = {
 			has_dlc = "Reapers"
 			has_dlc = "Conclave"
-			is_feudal = yes
+			TOW_is_feudal = yes
 			is_vice_royalty = no
 			prisoner = no
 			NOT = { trait = incapable }
@@ -461,7 +461,7 @@ targeted_decisions = {
 			NOT = { has_law = succ_gavelkind }
 			owes_favor_to = FROM
 			NOT = { has_opinion_modifier = { who = FROM name = opinion_demanded_succ_law_change } }
-			is_feudal = yes
+			TOW_is_feudal = yes
 			mercenary = no
 			holy_order = no
 			is_vice_royalty = no
@@ -654,7 +654,7 @@ targeted_decisions = {
 			}
 			NOR = {
 				is_nomadic = yes
-				is_tribal = yes
+				TOW_is_tribal = yes
 			}
 		}
 		potential = {
@@ -872,7 +872,7 @@ decisions = {
 		potential = {
 			has_dlc = "Reapers"
 			NOR = {
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 				trait = race_undead_forsaken
 				trait = race_undead_generic
@@ -987,7 +987,7 @@ decisions = {
 				is_patrician = yes
 			}
 			NOR = {
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 				is_inaccessible_trigger = yes
 			}

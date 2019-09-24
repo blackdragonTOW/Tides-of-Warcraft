@@ -1087,19 +1087,19 @@ character_event = {
 		}
 		if = { 
 			limit = { 
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			change_variable = { which = physique_variable value = 1 }
 		}
 		if = { 
 			limit = { 
-				is_feudal = yes
+				TOW_is_feudal = yes
 			}
 			random = { chance = 20 change_variable = { which = physique_variable value = 1 } }
 		}
 		if = { 
 			limit = { 
-				is_tribal = yes
+				TOW_is_tribal = yes
 			}
 			random = { chance = 30 change_variable = { which = physique_variable value = -2 } }
 		}
@@ -1712,7 +1712,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
-			is_tribal = yes
+			TOW_is_tribal = yes
 		}
 		modifier = {
 			factor = 0.35
@@ -1721,7 +1721,7 @@ character_event = {
 		modifier = {
 			factor = 1.35
 			age = 40
-			is_tribal = no
+			TOW_is_tribal = no
 			is_nomadic = no
 		}
 		modifier = {
@@ -3768,7 +3768,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.25
-			is_tribal = yes
+			TOW_is_tribal = yes
 		}
 		modifier = {
 			factor = 1.5
@@ -5474,7 +5474,7 @@ character_event = {
 		picture = GFX_evt_pagan
 		trigger = { 
 			OR = { 
-				is_tribal = yes 
+				TOW_is_tribal = yes 
 				is_nomadic = yes 
 			} 
 			is_female = no
@@ -5485,7 +5485,7 @@ character_event = {
 		picture = GFX_evt_pagan
 		trigger = { 
 			OR = { 
-				is_tribal = yes 
+				TOW_is_tribal = yes 
 				is_nomadic = yes 
 			} 
 			is_female = yes
@@ -5496,7 +5496,7 @@ character_event = {
 		picture = GFX_evt_fancy_feast
 		trigger = { 
 			NOR = { 
-				is_tribal = yes 
+				TOW_is_tribal = yes 
 				is_nomadic = yes 
 			} 
 			is_female = no
@@ -5507,7 +5507,7 @@ character_event = {
 		picture = GFX_evt_fancy_feast
 		trigger = { 
 			NOR = { 
-				is_tribal = yes 
+				TOW_is_tribal = yes 
 				is_nomadic = yes 
 			} 
 			is_female = yes
@@ -5724,7 +5724,7 @@ character_event = {
 		text = EVTDESCAHFP20648
 		trigger = { 
 			OR = { 
-				is_tribal = yes 
+				TOW_is_tribal = yes 
 				is_nomadic = yes 
 			} 
 			is_female = no
@@ -5734,7 +5734,7 @@ character_event = {
 		text = EVTDESCBHFP20648
 		trigger = { 
 			OR = { 
-				is_tribal = yes 
+				TOW_is_tribal = yes 
 				is_nomadic = yes 
 			} 
 			is_female = yes
@@ -5744,7 +5744,7 @@ character_event = {
 		text = EVTDESCCHFP20648
 		trigger = { 
 			NOR = { 
-				is_tribal = yes 
+				TOW_is_tribal = yes 
 				is_nomadic = yes 
 			} 
 			is_female = no
@@ -5754,7 +5754,7 @@ character_event = {
 		text = EVTDESCDHFP20648
 		trigger = { 
 			NOR = { 
-				is_tribal = yes 
+				TOW_is_tribal = yes 
 				is_nomadic = yes 
 			} 
 			is_female = yes
@@ -6204,7 +6204,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.75
-			is_tribal = yes
+			TOW_is_tribal = yes
 		}
 		modifier = {
 			factor = 0.75
