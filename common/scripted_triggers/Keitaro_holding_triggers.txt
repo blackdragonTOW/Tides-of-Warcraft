@@ -3,7 +3,7 @@ Keitaro_holding_can_be_pillaged_by_from_tooltip = {
 	TOW_holding_is_colony = no
 	OR = {
 		NOT = { holding_type = tribal }
-		FROM = { is_tribal = no }
+		FROM = { TOW_is_tribal = no }
 	}
 	OR = {
 		FROM = { is_nomadic = yes }
@@ -32,7 +32,7 @@ Keitaro_holding_can_be_pillaged_by_from = {
 	TOW_holding_is_colony = no
 	OR = {
 		NOT = { holding_type = tribal }
-		FROM = { is_tribal = no }
+		FROM = { TOW_is_tribal = no }
 	}
 	OR = {
 		FROM = { is_nomadic = yes }
@@ -69,7 +69,7 @@ Keitaro_holding_can_stop_pillage_by_from = {
 	NOT = { holding_type = nomad }
 	OR = {
 		NOT = { holding_type = tribal }
-		FROM = { is_tribal = no }
+		FROM = { TOW_is_tribal = no }
 	}
 	OR = {
 		owner = { character = FROM }
@@ -93,6 +93,6 @@ Keitaro_holding_can_stop_pillage_by_from_allow = {
 	NOT = { holding_type = nomad }
 	OR = {
 		NOT = { holding_type = tribal }
-		FROM = { is_tribal = no }
+		FROM = { TOW_is_tribal = no }
 	}
 }

@@ -608,3 +608,1053 @@
 		}
 	}
 }
+2631 = {
+	historical = yes
+	name = Uz'di
+	female = yes
+	dynasty = 19006 # Revantusk
+	culture = revantusk
+	religion = loa
+	trait = race_troll
+	
+	9979.12.30 = {
+		birth = yes
+	}
+	9994.12.30 = {
+		add_matrilineal_spouse = 2632
+	}
+	10100.12.22= {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2632 = {
+	historical = yes
+	name = Hoxega
+	female = yes
+	dynasty = 50241 # Torntusk
+	culture = revantusk
+	religion = loa
+	trait = race_troll
+	
+	9969.3.17 = {
+		birth = yes
+	}
+	10100.12.22= {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2633 = {
+	historical = yes
+	name = Dranene
+	dynasty = 19016 # Frostmane
+	culture = frostmane
+	religion = loa
+	trait = race_troll
+	
+	9947.2.23 = {
+		birth = yes
+	}
+	9979.1.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2634 = {
+	historical = yes
+	name = Arctikus
+	dynasty = 19016 # Frostmane
+	culture = frostmane
+	religion = loa
+	trait = race_troll
+	father = 2633
+	
+	9967.12.25 = {
+		birth = yes
+	}
+	10100.1.3 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2635 = {
+	historical = yes
+	name = Tir'jon
+	dynasty = 19016 # Frostmane
+	culture = frostmane
+	religion = loa
+	trait = race_troll
+	father = 2633
+	
+	9973.6.20 = {
+		birth = yes
+	}
+	9998.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2636 = {
+	historical = yes
+	name = Grik'nir
+	dynasty = 19016 # Frostmane
+	culture = frostmane
+	religion = loa
+	trait = race_troll
+	father = 2635
+	
+	9996.6.20 = {
+		birth = yes
+	}
+	10100.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2637 = {
+	historical = yes
+	name = Battok
+	dynasty = 19016 # Frostmane
+	culture = frostmane
+	religion = loa
+	trait = race_troll
+	father = 2634
+	
+	9986.8.15 = {
+		birth = yes
+	}
+	10100.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2638 = {
+	historical = yes
+	name = Barafu
+	female = yes
+	dynasty = 19016 # Frostmane
+	culture = frostmane
+	religion = loa
+	trait = race_troll
+	
+	9984.2.27 = {
+		birth = yes
+	}
+	10100.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+21 = {
+	name = "Zanzil"
+	dynasty = 21 # Uvago
+	dna="cacj0bhb0ac"
+	properties="wb000000000000f000"
+	culture = gurubashi
+	religion = hakkar
+	diplomacy = 2
+	martial = 3
+	stewardship = 5
+	intrigue = 8
+	learning = 9
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9969.5.19 = {
+		birth = yes
+	}
+	9989.5.19 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = alchemist
+		add_trait = genius
+		add_trait = feeble
+		add_trait = envious
+		add_trait = proud
+		add_trait = cruel
+		add_trait = deceitful
+	}
+	10020.7.5 = {
+		give_nickname = nick_the_outcast
+	}
+	#Set him as the court priest of Jin'do the Godbreaker shortly before death
+	10028.7.24 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+36 = {
+	name = "Jok'non"
+	dynasty = 34 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="kfih0cdjach"
+	properties="fe0000000000000000"
+	trait = race_troll_jungle
+	9942.7.9 = {
+		birth = yes
+	}
+	9988.3.15 = {
+		death = {
+			death_reason = death_duel
+			#killer = # Medivh
+		}
+	}
+}
+37 = {
+	name = "Zan'non"
+	dynasty = 34 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="hc000cbj000"
+	properties="0h0000000000000000"
+	trait = race_troll_jungle
+	father = 36
+	9968.3.27 = {
+		birth = yes
+	}
+	9988.8.24 = {
+		death = {
+			death_reason = death_battle
+			#killer = # Medivh
+		}
+	}
+}
+38 = {
+	name = "Jin'do"
+	dynasty = 34 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="idab0a0gbdd"
+	properties="mi0000000000000000"
+	diplomacy = 5
+	martial = 2
+	stewardship = 4
+	intrigue = 4
+	learning = 7
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9989.8.18 = {
+		birth = yes
+	}
+	10005.8.18 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = feeble
+		add_trait = proud
+		add_trait = ambitious
+		add_trait = cruel
+		add_trait = zealous
+		add_trait = gregarious
+	}
+	10012.4.2 = {
+		give_nickname = nick_the_hexxer
+		effect = { give_artifact = twinblades_of_the_hakkari }
+	}
+	10028.3.19 = {
+		give_nickname = nick_the_godbreaker
+		add_trait = cynical
+		religion = loa
+		effect = {
+			remove_trait = zealous
+		}
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_sacrificed
+		}
+	}
+}
+39 = {
+	name = "Jeklik"
+	dynasty = 35 # Atolah
+	female = yes
+	culture = zandalari
+	religion = loa
+	dna="idab0a0gbdd"
+	properties="mi0000000000000000"
+	learning = 8
+	trait = race_troll_zandalari
+	9964.2.19 = {
+		birth = yes
+	}
+	9980.2.19 = {
+		add_trait = scholarly_theologian
+		add_trait = priest
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+40 = {
+	name = "Venoxis"
+	dynasty = 36 # Tumbalak
+	culture = zandalari
+	religion = loa
+	dna="0cke0dkechd"
+	properties="vl0000000000000000"
+	learning = 7
+	trait = race_troll_zandalari
+	9985.1.30 = {
+		birth = yes
+	}
+	10001.1.30 = {
+		add_trait = priest
+		add_trait = martial_cleric
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10028.3.19 = {
+		religion = loa
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+41 = {
+	name = "Mar'li"
+	dynasty = 37 # Spinna
+	female = yes
+	culture = gurubashi
+	religion = loa
+	dna="dc0cecc0aam"
+	properties="ae0000000000000000"
+	learning = 8
+	trait = race_troll_jungle
+	9990.12.4 = {
+		birth = yes
+	}
+	10006.12.4 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = zealous
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10028.3.19 = {
+		religion = loa
+	}
+	10028.7.29 = {
+		dynasty = 34 # Gurubashi
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+42 = {
+	name = "Mandokir"
+	dynasty = 34 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="0f0b0bfibad"
+	properties="pc0000000000000000"
+	martial = 8
+	trait = race_troll_jungle
+	father = 37
+	
+	9974.8.19 = {
+		birth = yes
+	}
+	9999.8.19 = {
+		add_spouse = 2648
+	}
+	10001.8.18 = {
+		add_trait = skilled_tactician
+		add_trait = berserker
+		add_trait = wroth
+		add_trait = zealous
+	}
+	10020.5.7 = {
+		give_job_title = job_marshal
+		effect = { give_artifact = war_raptor }
+	}
+	10028.3.19 = {
+		religion = loa
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+43 = {
+	name = "Thekal"
+	dynasty = 39 # Ravadu
+	culture = zandalari
+	religion = loa
+	dna="kfhi0dcaaag"
+	properties="tc0000000000000000"
+	learning = 8
+	trait = race_troll_zandalari
+	9987.6.10 = {
+		birth = yes
+	}
+	10003.6.10 = {
+		add_trait = priest
+		add_trait = scholarly_theologian
+		effect = { give_artifact = war_tiger }
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+44 = {
+	name = "Arlokk"
+	dynasty = 40 # Yek
+	female = yes
+	culture = zandalari
+	religion = loa
+	dna="ccd0cd0babc"
+	properties="rg0000000000000000"
+	learning = 7
+	trait = race_troll_zandalari
+	9963.10.9 = {
+		birth = yes
+	}
+	9979.10.9 = {
+		add_trait = martial_cleric
+		add_trait = priest
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+95 = {
+	name = "Jammal'an"
+	dynasty = 76 # Atal'ai
+	culture = atalai
+	religion = hakkar
+	dna="0hdc0cbabh0"
+	properties="kb0000000000000000"
+	diplomacy = 4
+	martial = 3
+	stewardship = 4
+	intrigue = 7
+	learning = 9
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9967.8.6 = {
+		birth = yes
+	}
+	9983.8.6 = {
+		trait = mastermind_theologian
+		trait = priest
+		trait = shrewd
+		trait = impaler
+		trait = patient
+		trait = gluttonous
+		trait = envious
+		trait = proud
+		trait = arbitrary
+		trait = cruel
+		trait = deceitful
+		trait = zealous
+	}
+	10028.5.17 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+96 = {
+	name = "Ogom"
+	dynasty = 77 # Jugah
+	culture = atalai
+	religion = hakkar
+	dna="j0kl00ebbb0"
+	properties="la0000000000000000"
+	martial = 6
+	trait = race_troll_jungle
+	9964.1.25 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	9980.1.25 = {
+		add_trait = misguided_warrior
+	}
+	9991.5.14 = {
+		add_trait = race_undead_generic
+	}
+	10028.5.17 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+97 = {
+	name = "Zekkis"
+	dynasty = 78 # Rhubah
+	culture = atalai
+	religion = hakkar
+	martial = 6
+	intrigue = 6
+	trait = race_troll_jungle
+	9999.8.13 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	10015.8.13 = {
+		trait = tough_soldier
+		trait = ranger
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+98 = {
+	name = "Kazkaz"
+	dynasty = 79 # Ahira
+	culture = atalai
+	religion = hakkar
+	dna="caaj0cgh0h0"
+	properties="0a0000000000000000"
+	learning = 7
+	trait = race_troll_jungle
+	9969.5.28 = {
+		birth = yes
+	}
+	9985.5.28 = {
+		add_trait = martial_cleric
+		add_trait = priest
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+99 = {
+	name = "Gasher"
+	culture = atalai
+	religion = hakkar
+	dna="a00d0aal0e0"
+	properties="wd0000000000000000"
+	martial = 6
+	trait = race_troll_jungle
+	9965.7.30 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	9981.7.30 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
+	9991.5.14 = {
+		add_trait = race_undead_generic
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+100 = {
+	name = "Hukku"
+	culture = atalai
+	religion = hakkar
+	dna = "0fbj0dab000"
+	properties = "nf0000000000000000"
+	martial = 6
+	trait = race_troll_jungle
+	9965.3.12 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	9981.3.12 = {
+		add_trait = martial_cleric
+		add_trait = warlock
+	}
+	9991.5.14 = {
+		add_trait = race_undead_generic
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+101 = {
+	name = "Loro"
+	culture = atalai
+	religion = hakkar
+	dna = "ibdg00cc0c0"
+	properties = "ce0000000000000000"
+	intrigue = 6
+	trait = race_troll_jungle
+	9966.8.21 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	9982.8.21 = {
+		add_trait = flamboyant_schemer
+		add_trait = rogue
+	}
+	9991.5.14 = {
+		add_trait = race_undead_generic
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+102 = {
+	name = "Mijan"
+	culture = atalai
+	religion = hakkar
+	dna = "a00l0bg00h0"
+	properties = "ed0000000000000000"
+	learning = 6
+	trait = race_troll_jungle
+	9966.3.11 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	9982.3.11 = {
+		add_trait = martial_cleric
+		add_trait = shaman
+	}
+	9991.5.14 = {
+		add_trait = race_undead_generic
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+103 = {
+	name = "Zolo"
+	culture = atalai
+	religion = hakkar
+	dna = "laai0a0e0c0"
+	properties = "aa0000000000000000"
+	learning = 6
+	trait = race_troll_jungle
+	9965.9.23 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	9981.9.23 = {
+		add_trait = martial_cleric
+		add_trait = shaman
+	}
+	9991.5.14 = {
+		add_trait = race_undead_generic
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+104 = {
+	name = "Zul'Lor"
+	culture = atalai
+	religion = hakkar
+	dna = "cgbk0ae0ac0"
+	properties = "pg0000000000000000"
+	martial = 6
+	trait = race_troll_jungle
+	9964.5.15 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	9980.5.15 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
+	9991.5.14 = {
+		add_trait = race_undead_generic
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+105 = {
+	name = "Veyzhak"
+	culture = atalai
+	religion = hakkar
+	dna="kbhd0dfbaa0"
+	properties="ub0000000000000000"
+	martial = 5
+	trait = race_troll_jungle
+	9993.6.10 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	10009.6.10 = {
+		trait = misguided_warrior
+		give_nickname = nick_the_cannibal
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+106 = {
+	name = "Atal'alarion"
+	culture = atalai
+	religion = hakkar
+	dna="gaaf0bdf0e0"
+	properties="wb0000000000000000"
+	trait = race_troll_jungle
+	trait = dire_troll
+	9981.4.2 = {
+		birth = yes
+		employer = 95 # Jammal'an
+	}
+	9997.4.2 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
+	10025.7.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+163 = {
+	name = "Molthor"
+	dynasty = 108 # Sahal
+	culture = zandalari
+	religion = loa
+	dna="0gee00kdbb0"
+	properties="w00000000000000000"
+	diplomacy = 5
+	martial = 8
+	trait = race_troll_zandalari
+	9978.1.23 = {
+		birth = yes
+	}
+	9994.1.23 = {
+		add_trait = skilled_tactician
+		add_trait = warrior
+	}
+	10030.9.12 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2640 = {
+	historical = yes
+	name = Moji'ko
+	dynasty = 50287 # Vinelasher
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	
+	9971.05.03 = {
+		birth = yes
+	}
+	10024.9.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2641 = {
+	historical = yes
+	name = Hajukka
+	dynasty = 31 # Bloodscalp
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	
+	9933.05.03 = {
+		birth = yes
+	}
+	9987.9.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2642 = {
+	historical = yes
+	name = Kil'zin
+	dynasty = 31 # Bloodscalp
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	father = 2641
+	
+	9961.05.03 = {
+		birth = yes
+	}
+	10013.9.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+33 = {
+	name = "Gan'zulah"
+	dynasty = 31 # Bloodscalp
+	culture = bloodscalp
+	religion = hakkar
+	dna="lall0aagbb0"
+	properties="ek0000000000000000"
+	trait = race_troll_jungle
+	father = 2642
+	
+	9988.3.30 = {
+		birth = yes
+	}
+	10026.5.18 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+34 = {
+	name = "Nazzilok"
+	dynasty = 32 # Ji'wok
+	culture = bloodscalp
+	religion = hakkar
+	dna="ic0a000abaa"
+	properties="ae0000000000000000"
+	learning = 7
+	trait = race_troll_jungle
+	father = 2641
+	
+	9969.3.22 = {
+		birth = yes
+	}
+	9995.3.22 = {
+		add_trait = martial_cleric
+		add_trait = priest
+		give_nickname = nick_the_dire
+		give_job_title = job_spiritual
+	}
+	10026.5.18 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2643 = {
+	historical = yes
+	name = Mag'taz
+	dynasty = 26 # Skullsplitter
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	
+	9948.09.05 = {
+		birth = yes
+	}
+	9984.9.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2644 = {
+	historical = yes
+	name = Jer'nail
+	dynasty = 26 # Skullsplitter
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	father = 2643
+	
+	9966.07.17 = {
+		birth = yes
+	}
+	10017.3.22 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+28 = {
+	name = "Ana'thek"
+	dynasty = 26 # Skullsplitter
+	culture = skullsplitter
+	religion = hakkar
+	dna="bdil0acgbfe"
+	properties="wf0000000000000000"
+	trait = race_troll_jungle
+	father = 2644
+	
+	9990.12.7 = {
+		birth = yes
+	}
+	10010.5.10 = {
+		give_nickname = nick_the_cruel
+	}
+	10028.5.23 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2645 = {
+	historical = yes
+	name = Mogh
+	dynasty = 26 # Skullsplitter
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	
+	9969.1.16 = {
+		birth = yes
+	}
+	10027.3.22 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2646 = {
+	historical = yes
+	name = Jishir
+	dynasty = 50288 # Shinbreaker
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	
+	9965.07.06 = {
+		birth = yes
+	}
+	10017.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2647 = {
+	historical = yes
+	name = Zan'je
+	dynasty = 18 # Razzashi
+	culture = razzashi
+	religion = loa
+	trait = race_troll_jungle
+	
+	9949.3.22 = {
+		birth = yes
+	}
+	10003.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+20 = {
+	name = "Unbagwa"
+	dynasty = 18 # Razzashi
+	culture = razzashi
+	religion = loa
+	learning = 7
+	trait = race_troll_jungle
+	
+	9983.1.28 = {
+		birth = yes
+	}
+	9999.1.28 = {
+		add_trait = martial_cleric
+		add_trait = priest
+	}
+	10015.4.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2648 = {
+	historical = yes
+	name = Rae'tsa
+	female = yes
+	dynasty = 18 # Razzashi
+	culture = razzashi
+	religion = loa
+	trait = race_troll_jungle
+	father = 2647
+	
+	9979.03.23 = {
+		birth = yes
+	}
+	10100.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2649 = {
+	historical = yes
+	name = Ron'rin
+	female = yes
+	dynasty = 19 # Zulian
+	culture = zulian
+	religion = loa
+	trait = race_troll_jungle
+	
+	9964.08.20 = {
+		birth = yes
+	}
+	10100.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2650 = {
+	historical = yes
+	name = Jes'rimon
+	female = yes
+	dynasty = 19013 # Shatterspear
+	culture = shatterspear
+	religion = loa
+	trait = race_troll_jungle
+	
+	9951.12.22 = {
+		birth = yes
+	}
+	10003.8.4 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}

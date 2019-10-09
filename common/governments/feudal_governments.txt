@@ -18,6 +18,33 @@ feudal_governments = {
 		}
 		potential = {
 			is_patrician = no
+				NOR = {
+					culture = amani
+					culture = atalai
+					culture = razorbranch
+					culture = firetree
+					culture = mossflayer
+					culture = revantusk
+					culture = vilebranch
+					culture = shadowpine
+					culture = witherbark
+					culture = bloodscalp
+					culture = darkspear
+					culture = gurubashi
+					culture = shatterspear
+					culture = skullsplitter
+					culture = drakkari
+					culture = frostmane
+					culture = sandfury					
+					culture = smolderthorn
+					culture = shadowglen
+					culture = winterax
+					culture = winterfang
+					culture = shadowtooth
+					culture = zandalari
+					culture = zulian
+					culture = razzashi
+				}
 		}
 		
 		color = { 91 133 207 }
@@ -29,6 +56,72 @@ feudal_governments = {
 		
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
+		}
+		capital_move_delay = 600
+		vassal_call_to_arms = {
+		}
+	}
+	zandali_tribe = {
+		preferred_holdings = { TRIBE }
+		allowed_holdings = {
+			CASTLE
+			TRIBE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		frame_suffix = "_feudal"
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+		}
+		potential = {
+			is_patrician = no
+			OR = {
+					culture = amani
+					culture = atalai
+					culture = razorbranch
+					culture = firetree
+					culture = mossflayer
+					culture = revantusk
+					culture = vilebranch
+					culture = shadowpine
+					culture = witherbark
+					culture = bloodscalp
+					culture = darkspear
+					culture = gurubashi
+					culture = shatterspear
+					culture = skullsplitter
+					culture = drakkari
+					culture = frostmane
+					culture = sandfury					
+					culture = smolderthorn
+					culture = shadowglen
+					culture = winterax
+					culture = winterfang
+					culture = shadowtooth
+					culture = zandalari
+					culture = zulian
+					culture = razzashi
+				}
+		}
+		
+		color = { 154 75 144 }
+		
+		dukes_called_kings = yes
+		barons_need_dynasty = no
+		have_gender_laws = yes
+
+		can_build_tribal = yes
+		can_build_castle = no
+		can_build_city = no
+		can_build_temple = no
+		can_create_kingdoms = no
+		
+		ignore_in_vassal_limit_calculation = {
 		}
 		capital_move_delay = 600
 		vassal_call_to_arms = {

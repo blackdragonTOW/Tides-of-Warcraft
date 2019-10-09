@@ -4644,13 +4644,13 @@ defined_text = {
 	text = {
 		localisation_key = String_capital_name
 		trigger = {
-			is_feudal = yes
+			TOW_is_feudal = yes
 		}
 	}
 	text = {
 		localisation_key = String_capital_location
 		trigger = {
-			NOT = { is_feudal = yes }
+			NOT = { TOW_is_feudal = yes }
 		}
 	}
 	fallback_text = {
@@ -4850,7 +4850,7 @@ defined_text = {
 	
 	text = {
 		trigger = {
-			is_tribal = yes
+			TOW_is_tribal = yes
 		}
 		localisation_key = string_longhouse
 	}
@@ -4862,7 +4862,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			is_tribal = no
+			TOW_is_tribal = no
 			is_nomadic = no
 		}
 		localisation_key = string_palace
@@ -9541,7 +9541,7 @@ defined_text = {
 	name = GetAlcohol
 
 	text = {
-		trigger = { is_tribal = yes }
+		trigger = { TOW_is_tribal = yes }
 		localisation_key = string_ale
 	}
 	text = {
@@ -9550,14 +9550,14 @@ defined_text = {
 	}
 	text = {
 		trigger = { 
-			is_tribal = no
+			TOW_is_tribal = no
 			is_nomadic = no
 		}
 		localisation_key = string_beer
 	}
 	text = {
 		trigger = { 
-			is_tribal = no
+			TOW_is_tribal = no
 			is_nomadic = no
 		}
 		localisation_key = string_wine

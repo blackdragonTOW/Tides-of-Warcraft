@@ -523,8 +523,8 @@ character_event = {
 			}
 			band_creator = {
 				OR = {
-					is_feudal = yes
-					is_republic = yes
+					TOW_is_feudal = yes
+					TOW_is_republic = yes
 				}
 				NOT = { is_rival = ROOT }
 				is_adult = yes
@@ -1662,7 +1662,7 @@ character_event = {
 		any_demesne_title = {
 			tier = COUNT 
 			can_be_given_away = yes 
-			is_feudal = yes
+			TOW_is_feudal = yes
 			NOT = {
 				location = {
 					is_capital = yes
@@ -1734,7 +1734,7 @@ character_event = {
 			limit = {
 				tier = COUNT 
 				can_be_given_away = yes 
-				is_feudal = yes
+				TOW_is_feudal = yes
 				NOT = {
 					location = {
 						is_capital = yes

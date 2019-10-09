@@ -3552,7 +3552,7 @@ narrative_event = {
 					TOW_religion_is_matriarchal = yes 
 					NOR = {  
 						is_merchant_republic = yes
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 				}
 			}
@@ -3590,7 +3590,7 @@ narrative_event = {
 					}
 					NOR = {  
 						is_merchant_republic = yes
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 				}
 			}
@@ -4634,7 +4634,7 @@ character_event = { # Fix adventurers turning Tribal land Feudal
 	
 	trigger = {
 		ai = yes
-		is_feudal = yes
+		TOW_is_feudal = yes
 	}
 
 	immediate = {

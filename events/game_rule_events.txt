@@ -192,7 +192,7 @@ character_event = {
 			modifier = { factor = 1.25	event_target:nomadic_heir = { culture = ROOT } }
 
 			modifier = { factor = 3		is_nomadic = yes }
-			modifier = { factor = 1.5	is_tribal = yes }
+			modifier = { factor = 1.5	TOW_is_tribal = yes }
 		}
 	}
 	option = {
@@ -399,7 +399,7 @@ character_event = {
 
 	immediate = {
 		any_title = {
-			limit = { owner = { is_republic = no } }
+			limit = { owner = { TOW_is_republic = no } }
 			add_law = {
 				law = true_cognatic_succession
 				cooldown = no
@@ -6805,9 +6805,9 @@ character_event = { # Generate 'Fake Family' for characters without any
     	holy_order = no
     	is_landed = yes
 		OR = {
-			is_feudal = yes
+			TOW_is_feudal = yes
 			is_nomadic = yes
-			is_tribal = yes
+			TOW_is_tribal = yes
 		}
 		NOR = {
 			government = confucian_bureaucracy

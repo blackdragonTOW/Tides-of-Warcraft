@@ -1,19 +1,77 @@
-# TOW TODO : Sympathy
-
 TOW_character_prev_add_sympathy_trait_towards_me = {
-	#if = {
-	#	limit = {
-	#		religion_group = christian
-	#	}
-	#	PREV = { show_scope_change = no add_trait = sympathy_christendom }
-	#}
+	if = {
+		limit = {
+			religion_group = light_group
+		}
+		PREV = { show_scope_change = no add_trait = sympathy_light_group }
+	}
+	if = {
+		limit = {
+			religion_group = arcane_group
+		}
+		PREV = { show_scope_change = no add_trait = sympathy_arcane_group }
+	}
+	if = {
+		limit = {
+			religion_group = elemental_group
+		}
+		PREV = { show_scope_change = no add_trait = sympathy_elemental_group }
+	}
+	if = {
+		limit = {
+			religion_group = fel_group
+		}
+		PREV = { show_scope_change = no add_trait = sympathy_fel_group }
+	}
+	if = {
+		limit = {
+			religion_group = void_group
+		}
+		PREV = { show_scope_change = no add_trait = sympathy_void_group }
+	}
+	if = {
+		limit = {
+			religion_group = wild_gods_group
+		}
+		PREV = { show_scope_change = no add_trait = sympathy_wild_gods_group }
+	}
 }
 
 TOW_character_add_sympathy_trait_towards_my_religion = {
-	#if = {
-	#	limit = {
-	#		religion_group = christian
-	#	}
-	#	add_trait = sympathy_christendom
-	#}
+	if = {
+		limit = {
+			religion_group = light_group
+		}
+		add_trait = sympathy_light_group
+	}
+	if = {
+		limit = {
+			religion_group = arcane_group
+		}
+		add_trait = sympathy_arcane_group
+	}
+	if = {
+		limit = {
+			religion_group = elemental_group
+		}
+		add_trait = sympathy_elemental_group
+	}
+	if = {
+		limit = {
+			religion_group = fel_group
+		}
+		add_trait = sympathy_fel_group
+	}
+	if = {
+		limit = {
+			religion_group = void_group
+		}
+		add_trait = sympathy_void_group
+	}
+	if = {
+		limit = {
+			religion_group = wild_gods_group
+		}
+		add_trait = sympathy_wild_gods_group
+	}
 }

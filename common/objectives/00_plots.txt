@@ -65,12 +65,12 @@ plot_gain_title = {
 		OR = {
 			FROM = {
 				OR = {
-					is_feudal = yes
-					is_tribal = yes
+					TOW_is_feudal = yes
+					TOW_is_tribal = yes
 				}
 			}
 			AND = {
-				FROM = { is_feudal = no }
+				FROM = { TOW_is_feudal = no }
 				lower_tier_than = KING
 			}
 		}
@@ -1556,8 +1556,8 @@ plot_gain_liege_title = {
 		prisoner = no
 		age = 16
 		OR = {
-			is_feudal = yes
-			is_tribal = yes
+			TOW_is_feudal = yes
+			TOW_is_tribal = yes
 		}
 		is_landed = yes
 		independent = no
@@ -1774,8 +1774,8 @@ plot_gain_fellow_vassal_title = {
 		prisoner = no
 		age = 16
 		OR = {
-			is_feudal = yes
-			is_tribal = yes
+			TOW_is_feudal = yes
+			TOW_is_tribal = yes
 		}
 		is_landed = yes
 		independent = no
@@ -1803,8 +1803,8 @@ plot_gain_fellow_vassal_title = {
 			NOT = { is_liege_of = FROM }
 			same_liege = FROM
 			OR = {
-				is_feudal = yes
-				is_tribal = yes
+				TOW_is_feudal = yes
+				TOW_is_tribal = yes
 			}
 			is_landed = yes
 			primary_title = { higher_tier_than = BARON }
