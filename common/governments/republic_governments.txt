@@ -147,5 +147,102 @@ republic_governments = {
 		
 		can_build_tribal = no
 	}
+	goblin_cartel = {
+		preferred_holdings = { CITY }
+		allowed_holdings = { 
+			TRADE_POST
+			CITY
+			CASTLE
+			FAMILY_PALACE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Accepts other republics
+			republic_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		frame_suffix = "_merchantrepublic"
+		title_prefix = "city_"
+		potential = {
+			#NOT = { is_government_potential = dragonflight_government }
+			#NOT = { is_government_potential = kirin_tor_government }
+			#NOT = { is_government_potential = guardian_government }
+			#NOT = { is_government_potential = technocracy_government }
+			#NOT = { is_government_potential = templar_order_government }
+			#NOT = { is_government_potential = militant_order_government }
+			#NOT = { is_government_potential = demon_government }
+			#NOT = { is_government_potential = faceless_government }
+			#NOT = { is_government_potential = naga_government }
+			#NOT = { is_government_potential = troll_bcd_government }
+			#NOT = { is_government_potential = troll_ke_government }
+			#NOT = { is_government_potential = orc_government }
+			#NOT = { is_government_potential = ogre_tribe_government }
+			#NOT = { is_government_potential = ogre_empire_government }
+			#NOT = { is_government_potential = scourge_government }
+			#NOT = { is_government_potential = forsaken_government }
+			#NOT = { is_government_potential = helf_government }
+			#NOT = { is_government_potential = feral_worgen_government }
+			NAND = {
+				controls_religion = yes
+			}
+			OR = {
+				AND = {
+					is_patrician = yes
+					OR = {
+						liege_before_war = {
+							NOT = { character = PREV }
+							is_merchant_republic = yes
+							NOT = {
+								liege_before_war = {
+									NOT = { character = PREV }
+									is_merchant_republic = yes
+								}
+							}
+						}
+						has_game_started = no
+					}
+				}
+				AND = {
+					OR = {
+						AND = {
+							has_game_started = yes
+							is_merchant_republic = yes
+						}
+						capital_scope = { port = yes }
+					}
+					higher_real_tier_than = count
+					any_demesne_province = {
+						always = yes
+					}
+					NOT = {
+						liege_before_war = {
+							NOT = { character = PREV }
+							is_merchant_republic = yes
+						}
+					}
+				}
+			}
+		}
+		
+		color = { 250 0 0 }
+		
+		merchant_republic = yes
+		
+		can_imprison_without_reason = no
+		can_revoke_without_reason = no
+		can_usurp_kingdoms_and_empires = no
+		have_gender_laws = no
+		can_grant_kingdoms_and_empires_to_other_government = yes
+		allows_matrilineal_marriage = no
+
+		can_build_tribal = no
+		
+		landed_inheritance = no
+	}
 	
 }
