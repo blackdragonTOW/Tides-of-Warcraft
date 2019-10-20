@@ -1,6 +1,7 @@
 #2000 - 2300
 # House Proudmoore
 1507 = {
+	historical = yes
 	name = Hauke
 	dna="0a0f0fc0fj0"
 	properties="0e00h000000000p000"
@@ -26,6 +27,7 @@
 	}
 }
 1508 = {
+	historical = yes
 	name = Daelin
 	dna="0c0cbfa0ai0"
 	properties="ej00e000000000m000"
@@ -1568,7 +1570,8 @@
 	10006.1.1={
 	trait=paladin #founding of the silverhand
 	}
-	10007.01.04 = {
+	10007.01.04 = 
+	effect = {
 	give_nickname = nick_the_Lightbringer
 	}
 	10020.6.19 = {
@@ -3319,8 +3322,8 @@
 # Blackrock clan
 
 52 = {
-	name = "Del'Tear"
-	dynasty = 6002 # Blackhand
+	name = "Blackhand"
+	dynasty = 48 # Blackrock
 	culture = blackrock
 	religion = burning_legion
 	dna = "00ic00hbc0g"
@@ -3390,7 +3393,7 @@
 
 53 = {
 	name = "Dal'Rend"
-	dynasty = 6002 # Blackhand
+	dynasty = 49 # Black Tooth Grin
 	culture = blackrock
 	religion = burning_legion
 	dna="0hb000bia0g"
@@ -3466,7 +3469,7 @@
 
 54 = {
 	name = "Maim"
-	dynasty = 6002 # Blackhand
+	dynasty = 49 # Black Tooth Grin
 	culture = blackrock
 	religion = burning_legion
 	dna="0eha00fiabg"
@@ -3521,7 +3524,6 @@
 	learning = 4
 	trait = race_orc
 	trait = warrior
-	trait = strong
 	trait = brilliant_strategist
 	trait = shrewd
 	trait = diligent
@@ -3533,8 +3535,9 @@
 	9967.3.21 = {
 		birth = yes
 		effect = {
-			add_artifact = doomhammer
-			add_artifact = orgrims_plate
+			give_artifact = doomhammer
+			give_artifact = orgrims_plate
+			secret_religion = demonology
 		}
 		#add_friend =  # Durotan
 		employer = 52 # Blackhand
@@ -3583,7 +3586,7 @@
 		birth = yes
 		give_nickname = nick_deadeye
 		effect = {
-			add_artifact = bite_of_the_bleeding_hollow
+			give_artifact = bite_of_the_bleeding_hollow
 		}
 	}
 	10000.6.3 = {
@@ -3837,36 +3840,6 @@
 	10006.6.6 = {
 		death = {
 			death_reason = death_missing # For now
-		}
-	}
-}
-2075 = {
-	name = "Alextrasza"
-	dynasty = 17802 # Red Dragonflight
-	culture = red_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	1.5.12 = {
-		birth = yes
-	}
-	10100.9.20 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-2076 = {
-	name = "Neferian"
-	dynasty = 17803 # Black Dragonflight
-	culture = black_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	200.5.12 = {
-		birth = yes
-	}
-	10100.9.20 = {
-		death = {
-			death_reason = death_natural
 		}
 	}
 }
