@@ -2,8 +2,8 @@ feudal_governments = {
 
 	feudal_government = {
 		preferred_holdings = { CASTLE }
-		allowed_holdings = { 
-			CASTLE 
+		allowed_holdings = {
+			CASTLE
 			FORT
 			HOSPITAL
 		}
@@ -18,42 +18,19 @@ feudal_governments = {
 		}
 		potential = {
 			is_patrician = no
-				NOR = {
-					culture = amani
-					culture = atalai
-					culture = razorbranch
-					culture = firetree
-					culture = mossflayer
-					culture = revantusk
-					culture = vilebranch
-					culture = shadowpine
-					culture = witherbark
-					culture = bloodscalp
-					culture = darkspear
-					culture = gurubashi
-					culture = shatterspear
-					culture = skullsplitter
-					culture = drakkari
-					culture = frostmane
-					culture = sandfury					
-					culture = smolderthorn
-					culture = shadowglen
-					culture = winterax
-					culture = winterfang
-					culture = shadowtooth
-					culture = zandalari
-					culture = zulian
-					culture = razzashi
-				}
+			NOR = {
+				is_government_potential = dalaranian_government
+				is_government_potential = zandali_tribe
+			}
 		}
-		
+
 		color = { 91 133 207 }
-		
+
 		dukes_called_kings = yes
 		barons_need_dynasty = yes
 
 		can_build_tribal = no
-		
+
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
@@ -81,36 +58,39 @@ feudal_governments = {
 		potential = {
 			is_patrician = no
 			OR = {
-					culture = amani
-					culture = atalai
-					culture = razorbranch
-					culture = firetree
-					culture = mossflayer
-					culture = revantusk
-					culture = vilebranch
-					culture = shadowpine
-					culture = witherbark
-					culture = bloodscalp
-					culture = darkspear
-					culture = gurubashi
-					culture = shatterspear
-					culture = skullsplitter
-					culture = drakkari
-					culture = frostmane
-					culture = sandfury					
-					culture = smolderthorn
-					culture = shadowglen
-					culture = winterax
-					culture = winterfang
-					culture = shadowtooth
-					culture = zandalari
-					culture = zulian
-					culture = razzashi
-				}
+				culture = amani
+				culture = atalai
+				culture = razorbranch
+				culture = firetree
+				culture = mossflayer
+				culture = revantusk
+				culture = vilebranch
+				culture = shadowpine
+				culture = witherbark
+				culture = bloodscalp
+				culture = darkspear
+				culture = gurubashi
+				culture = shatterspear
+				culture = skullsplitter
+				culture = drakkari
+				culture = frostmane
+				culture = sandfury
+				culture = smolderthorn
+				culture = shadowglen
+				culture = winterax
+				culture = winterfang
+				culture = shadowtooth
+				culture = zandalari
+				culture = zulian
+				culture = razzashi
+			}
+			NOR = {
+				is_government_potential = dalaranian_government
+			}
 		}
-		
+
 		color = { 154 75 144 }
-		
+
 		dukes_called_kings = yes
 		barons_need_dynasty = no
 		have_gender_laws = yes
@@ -120,9 +100,71 @@ feudal_governments = {
 		can_build_city = no
 		can_build_temple = no
 		can_create_kingdoms = no
-		
+
 		ignore_in_vassal_limit_calculation = {
 		}
+		capital_move_delay = 600
+		vassal_call_to_arms = {
+		}
+	}
+	dalaranian_government = {
+		allowed_holdings = {
+			CITY
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = {
+			CASTLE
+		}
+		allowed_holdings_religion = {
+			TEMPLE
+		}
+		frame_suffix = "_dalaranian"
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			nomadic_government
+			tribal_government
+		}
+		potential = {
+			# TOW TODO : Dalaran founding condition
+			year = 7300
+
+			culture = dalaranian
+			trait = mage
+			religion = arcane
+			OR = {
+				OR = {
+					has_landed_title = c_dalaran
+					has_landed_title = d_dalaran
+					has_landed_title = k_dalaran
+				}
+				any_liege = {
+					OR = {
+						has_landed_title = c_dalaran
+						has_landed_title = d_dalaran
+						has_landed_title = k_dalaran
+					}
+					is_government_potential = dalaranian_government
+				}
+			}
+			NOT = {
+				trait = race_undead_scourge
+			}
+		}
+
+		color = { 159 46 225 }
+
+		ignore_in_vassal_limit_calculation = {
+			dalaranian_government
+		}
+		allow_looting = no
+		allows_matrilineal_marriage = yes
+		can_revoke_without_reason = no
+		can_imprison_without_reason = no
+		can_build_tribal = no
+		barons_need_dynasty = yes
+		free_retract_vassalage = no
 		capital_move_delay = 600
 		vassal_call_to_arms = {
 		}
