@@ -188,7 +188,7 @@ has_unpleasant_personality_trigger = {
 has_impious_trait_trigger = {
 	OR = {
 		trait = cynical
-		trait = bad_priest_light_group
+		has_bad_priest_trait_trigger = yes
 		trait = hedonist
 		trait = lustful
 		trait = cannibal_trait
@@ -1435,146 +1435,8 @@ block_general_event_trigger = {
 	}
 }
 
-gender_equality_trigger_4 = {
-	trigger_if = {
-		limit = {
-			NOR = {
-				has_game_rule = {
-					name = gender
-					value = all
-				}
-				TOW_religion_is_matriarchal = yes
-				TOW_religion_is_equal = yes
-			}
-		}
-		OR = {
-			AND = {
-				is_ruler = yes
-				primary_title = { has_law = status_of_women_4 }
-			}
-			AND = {
-				is_ruler = no
-				liege = { primary_title = { has_law = status_of_women_4 } }
-			}
-		}
-	}
-}
-
-gender_equality_trigger_3 = {
-	trigger_if = {
-		limit = {
-			NOR = {
-				has_game_rule = {
-					name = gender
-					value = all
-				}
-				TOW_religion_is_matriarchal = yes
-				TOW_religion_is_equal = yes
-			}
-		}
-		OR = {
-			AND = {
-				is_ruler = yes
-				primary_title = {
-					OR = {
-						has_law = status_of_women_4
-						has_law = status_of_women_3
-					}
-				}
-			}
-			AND = {
-				is_ruler = no
-				liege = {
-					primary_title = {
-						OR = {
-							has_law = status_of_women_4
-							has_law = status_of_women_3
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-gender_equality_trigger_1 = {
-	trigger_if = {
-		limit = {
-			NOR = {
-				has_game_rule = {
-					name = gender
-					value = all
-				}
-				TOW_religion_is_matriarchal = yes
-				TOW_religion_is_equal = yes
-			}
-		}
-		OR = {
-			AND = {
-				is_ruler = yes
-				primary_title = {
-					OR = {
-						has_law = status_of_women_4
-						has_law = status_of_women_3
-						has_law = status_of_women_2
-						has_law = status_of_women_1
-					}
-				}
-			}
-			AND = {
-				is_ruler = no
-				liege = {
-					primary_title = {
-						OR = {
-							has_law = status_of_women_4
-							has_law = status_of_women_3
-							has_law = status_of_women_2
-							has_law = status_of_women_1
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-gender_equality_trigger = {
-	trigger_if = {
-		limit = {
-			NOR = {
-				has_game_rule = {
-					name = gender
-					value = all
-				}
-				TOW_religion_is_matriarchal = yes
-				TOW_religion_is_equal = yes
-			}
-		}
-		OR = {
-			AND = {
-				is_ruler = yes
-				primary_title = {
-					OR = {
-						has_law = status_of_women_4
-						has_law = status_of_women_3
-						has_law = status_of_women_2
-					}
-				}
-			}
-			AND = {
-				is_ruler = no
-				liege = {
-					primary_title = {
-						OR = {
-							has_law = status_of_women_4
-							has_law = status_of_women_3
-							has_law = status_of_women_2
-						}
-					}
-				}
-			}
-		}
-	}
+gender_equality_trigger = { # Is a woman considered for new courtiers, equal jobs as men and such
+	has_at_least_status_of_women_2_law = yes
 }
 
 male_can_hold_minor_title_trigger = {
@@ -1625,7 +1487,7 @@ female_can_hold_minor_title_trigger = {
 					}
 				}
 			}
-			gender_equality_trigger_1 = yes
+			has_at_least_status_of_women_1_law = yes
 		}
 	}
 }
@@ -1660,7 +1522,7 @@ female_can_hold_minor_commander_title_trigger = {
 					}
 				}
 			}
-			gender_equality_trigger_1 = yes
+			has_at_least_status_of_women_1_law = yes
 		}
 	}
 }
@@ -2897,7 +2759,7 @@ proselytize_convert_independent_trigger = {
 	owner = {
 		OR = {
 			FROM = { TOW_religion_is_uncivilized_trigger = no } 
-			FROM = { has_religion_feature = religion_proselytizing }
+			FROM = { TOW_religion_is_proselytizing = yes }
 		}
 		independent = yes
 		NOT = { religion = FROM }
@@ -3846,7 +3708,7 @@ has_scarred_trait_trigger = {
 this_is_warrior_culture_trigger = { #Not really about culture - Used in AI voting logic.
 	NOT = { pacifist = yes }
 	OR = { 
-		has_religion_feature = religion_warlike
+		TOW_religion_is_warlike = yes
 		is_tribal = yes
 		is_nomadic = yes
 		TOW_background_is_adventurer = yes

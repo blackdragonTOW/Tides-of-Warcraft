@@ -9,28 +9,12 @@ succession_laws = {
 		vassal_opinion = 5
 	
 		potential = {
-			NOT = { title = k_kul_tiras }
 			holder_scope = {
 				is_republic = no
 				is_theocracy = no
 				is_merchant_republic = no
 				is_patrician = no
 				is_nomadic = no
-				NOR = {
-					government = dragonflight_government
-					government = kirin_tor_government
-					government = guardian_government
-					government = technocracy_government
-					government = templar_order_government
-					government = militant_order_government
-					government = demon_government
-					government = faceless_government
-					government = naga_government
-					government = scourge_government
-					government = forsaken_government
-					government = helf_government
-					government = ogre_tribe_government
-				}
 				OR = {
 					independent = yes
 					NOT = {
@@ -81,28 +65,12 @@ succession_laws = {
 		dynasty_opinion = 5
 	
 		potential = {
-			NOT = { title = k_kul_tiras }
 			holder_scope = {
 				is_nomadic = no
 				is_republic = no
 				is_theocracy = no
 				is_merchant_republic = no
 				is_patrician = no
-				NOR = {
-					government = dragonflight_government
-					government = kirin_tor_government
-					government = guardian_government
-					government = technocracy_government
-					government = templar_order_government
-					government = militant_order_government
-					government = demon_government
-					government = faceless_government
-					government = naga_government
-					government = scourge_government
-					government = forsaken_government
-					government = helf_government
-					government = ogre_tribe_government
-				}
 				OR = {
 					independent = yes
 					NOT = {
@@ -146,7 +114,6 @@ succession_laws = {
 		dynasty_opinion = 5
 	
 		potential = {
-			NOT = { title = k_kul_tiras }
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -164,22 +131,6 @@ succession_laws = {
 				}
 				is_nomadic = no
 				is_theocracy = no
-				NOR = {
-					government = dragonflight_government
-					government = kirin_tor_government
-					government = guardian_government
-					AND = {
-						government = technocracy_government
-						higher_tier_than = COUNT
-					}
-					government = templar_order_government
-					government = militant_order_government
-					government = demon_government
-					government = faceless_government
-					government = scourge_government
-					government = forsaken_government
-					government = ogre_tribe_government
-				}
                 OR = {
 					
                     is_patrician = yes
@@ -270,27 +221,10 @@ succession_laws = {
 		child_opinion = -10
 		dynasty_opinion = -5
 		potential = {
-			NOT = { title = k_kul_tiras }
 			holder_scope = {
 				is_merchant_republic = no
 				is_patrician = no
 				is_nomadic = no
-				NOR = {
-					AND = {
-						government = dragonflight_government
-						NOT = { trait = race_dragon }
-					}
-					government = kirin_tor_government
-					government = guardian_government
-					government = technocracy_government
-					government = templar_order_government
-					government = militant_order_government
-					government = demon_government
-					government = faceless_government
-					government = scourge_government
-					government = forsaken_government
-					government = ogre_tribe_government
-				}
 			}
 			OR = {
 				holder_scope = { # Viceroyalties can always have primogeniture if not muslim
@@ -391,31 +325,6 @@ succession_laws = {
 				}
 				is_merchant_republic = no
 				is_patrician = no
-				NOR = {
-					AND = {
-						government = dragonflight_government
-						trait = race_dragon
-					}
-					AND = {
-						government = kirin_tor_government
-						OR = {
-							has_landed_title = k_dalaran
-							has_landed_title = d_dalaran
-							has_landed_title = c_dalaran
-						}
-					}
-					government = guardian_government
-					AND = {
-						government = technocracy_government
-						NOT = { higher_tier_than = COUNT }
-					}
-					government = templar_order_government
-					government = militant_order_government
-					government = demon_government
-					government = faceless_government
-					government = scourge_government
-					government = ogre_tribe_government
-				}
 				OR = {
 					independent = yes
 					NOT = {
@@ -463,7 +372,6 @@ succession_laws = {
 				}
 				is_merchant_republic = no
 				is_patrician = no
-				government = orc_government
 				OR = {
 					independent = yes
 					NOT = {
@@ -516,7 +424,6 @@ succession_laws = {
 		child_opinion = -10
 		dynasty_opinion = -5
 		potential = {
-			NOT = { title = k_kul_tiras }
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -527,19 +434,6 @@ succession_laws = {
 					}
 				}
 				is_nomadic = no
-				NOR = {
-					government = dragonflight_government
-					government = kirin_tor_government
-					government = guardian_government
-					government = technocracy_government
-					government = templar_order_government
-					government = militant_order_government
-					government = demon_government
-					government = faceless_government
-					government = scourge_government
-					government = forsaken_government
-					government = ogre_tribe_government
-				}
 				is_merchant_republic = no
 				is_patrician = no
 				OR = {
@@ -611,10 +505,7 @@ succession_laws = {
 #		child_opinion = 30
 #		dynasty_opinion = 10
 		potential = {
-			holder_scope = {
-				government = ogre_tribe_government
-				government = ogre_empire_government
-			}
+			always = no
 		}
 		effect = {
 			succession = turkish_succession
@@ -664,25 +555,6 @@ succession_laws = {
 		potential = {
 			temporary = no
 			OR = {
-				AND = {
-					holder_scope = {
-						government = kirin_tor_government
-						OR = {
-							has_landed_title = k_dalaran
-							has_landed_title = d_dalaran
-							has_landed_title = c_dalaran
-						}
-					}
-				}
-				holder_scope = {
-					OR = {
-						government = militant_order_government
-						government = templar_order_government
-						government = demon_government
-						government = faceless_government
-						government = guardian_government
-					}
-				}
 				is_primary_type_title = yes
 				holy_order = yes
 				AND = {

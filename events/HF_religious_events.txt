@@ -837,7 +837,7 @@ character_event = {
 			set_character_flag = flag_cheap_diviner #Prevents crit success, increases crit failure.
 		}
 		if = { 
-			limit = { has_religion_feature = religion_ritual_sacrifice }
+			limit = { TOW_religion_practices_ritual_sacrifice = yes }
 			random_courtier = { 
 				limit = {
 					NOR = {
@@ -871,7 +871,7 @@ character_event = {
 	option = { #Human - Ensure no Critical Fail - Unlocks Critical success - Only if also Bloodthirsty Gods.
 		name = EVTOPTZHF23007
 		trigger = { 
-			has_religion_feature = religion_ritual_sacrifice 
+			TOW_religion_practices_ritual_sacrifice = yes 
 			event_target:potential_victim = { is_alive = yes } 
 		}
 		if = { 
@@ -908,7 +908,7 @@ character_event = {
 	}
 	option = { #Great bull - Ensure no Critical Fail - Unlocks Critical success
 		name = EVTOPTAHF23007
-		trigger = { NOT = { has_religion_feature = religion_ritual_sacrifice } }
+		trigger = { TOW_religion_practices_ritual_sacrifice = no }
 		if = { 
 			limit = { ai = no }
 			scaled_wealth = { value = -1 min = -175 max = -500 } 
@@ -1656,7 +1656,7 @@ character_event = {
 		name = EVTOPTAHF23016
 		trigger = { 
 			NOT = { 
-				has_religion_feature = religion_dogmatic 
+				TOW_religion_is_dogmatic = yes 
 			} 
 		}
 		add_trait = pagan_branch_1
@@ -1664,7 +1664,7 @@ character_event = {
 			factor = 5 
 			modifier = { 
 				factor = 0.1
-				has_religion_feature = religion_jizya
+				TOW_religion_practices_jizya = yes
 			}
 		}
 	}
@@ -2591,7 +2591,7 @@ character_event = {
 	trigger = { 
 		is_adult = yes
 		TOW_religion_is_uncivilized_trigger = yes
-		has_religion_feature = religion_no_leader 
+		TOW_religion_has_no_leader = yes 
 		NOR = { 
 			trait = pagan_branch_1
 			trait = pagan_branch_2
@@ -2608,7 +2608,7 @@ character_event = {
 		name = EVTOPTAHF23016
 		trigger = { 
 			NOT = { 
-				has_religion_feature = religion_dogmatic 
+				TOW_religion_is_dogmatic = yes 
 			} 
 		}
 		add_trait = pagan_branch_1
@@ -2616,7 +2616,7 @@ character_event = {
 			factor = 5 
 			modifier = { 
 				factor = 0.1
-				has_religion_feature = religion_jizya
+				TOW_religion_practices_jizya = yes
 			}
 		}
 	}
@@ -3129,7 +3129,7 @@ character_event = {
 	immediate = {
 		# TOW TODO : Religions
 		#if = {
-		#	limit = { catholic = { has_religion_feature = religion_cosmopolitan } }
+		#	limit = { catholic = { TOW_religion_is_cosmopolitan = yes } }
 		#	random_playable_ruler = {
 		#		limit = { religion = catholic }
 		#		apply_cosmopolian_on_start_effect = yes
@@ -5586,7 +5586,7 @@ narrative_event = {
 			AND = {
 				TOW_religion_practices_haruspicy = yes
 				TOW_religion_practices_astrology = yes
-				has_religion_feature = religion_no_leader 
+				TOW_religion_has_no_leader = yes 
 			}
 		}
 	}
@@ -5905,7 +5905,7 @@ character_event = {
 	#				trigger = {
 	#					piety = 100
 	#					learning = 15
-	#					NOT = { has_religion_feature = religion_peaceful } #Incompatible with Bloodthirsty anyway, but, just in case...
+	#					TOW_religion_is_pacifist = no #Incompatible with Bloodthirsty anyway, but, just in case...
 	#				}
 	#				character_event = { id = HF.23422 } #Bonus action for Mystics - chance to increase MA.
 	#			}
@@ -9847,7 +9847,7 @@ character_event = {
 					event_target:scoped_improvement_target = { has_education_diplomacy_trigger = yes }
 					event_target:scoped_improvement_ruler = { 
 						OR = { 
-							has_religion_feature = religion_meritocratic
+							TOW_religion_is_meritocratic = yes
 							TOW_religion_is_matriarchal = yes
 							TOW_religion_is_patriarchal = yes
 						} 
@@ -9870,7 +9870,7 @@ character_event = {
 					event_target:scoped_improvement_target = { has_education_stewardship_trigger = yes }
 					event_target:scoped_improvement_ruler = { 
 						OR = { 
-							has_religion_feature = religion_meritocratic
+							TOW_religion_is_meritocratic = yes
 							TOW_religion_is_matriarchal = yes
 							TOW_religion_is_patriarchal = yes
 						} 
@@ -9897,7 +9897,7 @@ character_event = {
 								event_target:scoped_improvement_target = { has_education_diplomacy_trigger = yes }
 								event_target:scoped_improvement_ruler = { 
 									OR = { 
-										has_religion_feature = religion_meritocratic
+										TOW_religion_is_meritocratic = yes
 										TOW_religion_is_matriarchal = yes
 										TOW_religion_is_patriarchal = yes
 									} 
@@ -9916,7 +9916,7 @@ character_event = {
 								event_target:scoped_improvement_target = { has_education_stewardship_trigger = yes }
 								event_target:scoped_improvement_ruler = { 
 									OR = { 
-										has_religion_feature = religion_meritocratic
+										TOW_religion_is_meritocratic = yes
 										TOW_religion_is_matriarchal = yes
 										TOW_religion_is_patriarchal = yes
 									} 
@@ -9943,7 +9943,7 @@ character_event = {
 							event_target:scoped_improvement_target = { has_education_diplomacy_trigger = yes }
 							event_target:scoped_improvement_ruler = { 
 								OR = { 
-									has_religion_feature = religion_meritocratic
+									TOW_religion_is_meritocratic = yes
 									TOW_religion_is_matriarchal = yes
 									TOW_religion_is_patriarchal = yes
 								} 
@@ -9962,7 +9962,7 @@ character_event = {
 							event_target:scoped_improvement_target = { has_education_stewardship_trigger = yes }
 							event_target:scoped_improvement_ruler = { 
 								OR = { 
-									has_religion_feature = religion_meritocratic
+									TOW_religion_is_meritocratic = yes
 									TOW_religion_is_matriarchal = yes
 									TOW_religion_is_patriarchal = yes
 								} 
@@ -10057,7 +10057,7 @@ character_event = {
 				event_target:scoped_improvement_target = { has_education_martial_trigger = yes }
 				event_target:scoped_improvement_ruler = { 
 					OR = { 
-						has_religion_feature = religion_meritocratic
+						TOW_religion_is_meritocratic = yes
 						TOW_religion_is_matriarchal = yes
 						TOW_religion_is_patriarchal = yes
 					} 
@@ -10102,7 +10102,7 @@ character_event = {
 					event_target:scoped_improvement_target = { has_education_intrigue_trigger = yes }
 					event_target:scoped_improvement_ruler = { 
 						OR = { 
-							has_religion_feature = religion_meritocratic
+							TOW_religion_is_meritocratic = yes
 							TOW_religion_is_matriarchal = yes
 							TOW_religion_is_patriarchal = yes
 						} 
@@ -10125,7 +10125,7 @@ character_event = {
 					event_target:scoped_improvement_target = { has_education_learning_trigger = yes }
 					event_target:scoped_improvement_ruler = { 
 						OR = { 
-							has_religion_feature = religion_meritocratic
+							TOW_religion_is_meritocratic = yes
 							TOW_religion_is_matriarchal = yes
 							TOW_religion_is_patriarchal = yes
 						} 
@@ -10152,7 +10152,7 @@ character_event = {
 								event_target:scoped_improvement_target = { has_education_intrigue_trigger = yes }
 								event_target:scoped_improvement_ruler = { 
 									OR = { 
-										has_religion_feature = religion_meritocratic
+										TOW_religion_is_meritocratic = yes
 										TOW_religion_is_matriarchal = yes
 										TOW_religion_is_patriarchal = yes
 									} 
@@ -10171,7 +10171,7 @@ character_event = {
 								event_target:scoped_improvement_target = { has_education_learning_trigger = yes }
 								event_target:scoped_improvement_ruler = { 
 									OR = { 
-										has_religion_feature = religion_meritocratic
+										TOW_religion_is_meritocratic = yes
 										TOW_religion_is_matriarchal = yes
 										TOW_religion_is_patriarchal = yes
 									} 
@@ -10198,7 +10198,7 @@ character_event = {
 							event_target:scoped_improvement_target = { has_education_intrigue_trigger = yes }
 							event_target:scoped_improvement_ruler = { 
 								OR = { 
-									has_religion_feature = religion_meritocratic
+									TOW_religion_is_meritocratic = yes
 									TOW_religion_is_matriarchal = yes
 									TOW_religion_is_patriarchal = yes
 								} 
@@ -10217,7 +10217,7 @@ character_event = {
 							event_target:scoped_improvement_target = { has_education_learning_trigger = yes }
 							event_target:scoped_improvement_ruler = { 
 								OR = { 
-									has_religion_feature = religion_meritocratic
+									TOW_religion_is_meritocratic = yes
 									TOW_religion_is_matriarchal = yes
 									TOW_religion_is_patriarchal = yes
 								} 
@@ -11505,14 +11505,14 @@ character_event = {
 	picture = { 
 		trigger = { 
 			has_dlc = "Mystics"
-			has_religion_feature = religion_animistic 
+			TOW_religion_is_animistic = yes 
 		} 
 		picture = GFX_evt_magic_ritual
 	}
 	picture = { 
 		trigger = { 
 			NOT = { has_dlc = "Mystics" } 
-			has_religion_feature = religion_animistic 
+			TOW_religion_is_animistic = yes 
 		} 
 		picture = GFX_evt_tribal_shrine
 	}
@@ -11675,14 +11675,14 @@ character_event = {
 	picture = { 
 		trigger = { 
 			has_dlc = "Mystics"
-			has_religion_feature = religion_animistic 
+			TOW_religion_is_animistic = yes 
 		} 
 		picture = GFX_evt_magic_ritual
 	}
 	picture = { 
 		trigger = { 
 			NOT = { has_dlc = "Mystics" } 
-			has_religion_feature = religion_animistic 
+			TOW_religion_is_animistic = yes 
 		} 
 		picture = GFX_evt_tribal_shrine
 	}
@@ -12077,9 +12077,9 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_religion_feature = religion_holy_family 
-		has_religion_feature = religion_dogmatic
-		has_religion_feature = religion_temporal_head
+		TOW_religion_is_incestuous = yes 
+		TOW_religion_is_dogmatic = yes
+		TOW_religion_has_temporal_head = yes
 
 		controls_religion = yes
 	}
@@ -12098,9 +12098,9 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_religion_feature = religion_holy_family 
-		has_religion_feature = religion_dogmatic
-		has_religion_feature = religion_temporal_head
+		TOW_religion_is_incestuous = yes 
+		TOW_religion_is_dogmatic = yes
+		TOW_religion_has_temporal_head = yes
 		#religion = FROMFROM
 		controls_religion = yes
 	}

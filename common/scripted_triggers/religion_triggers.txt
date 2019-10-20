@@ -16,8 +16,7 @@ TOW_religion_worships_ancestors = {
 	OR = {
 		religion_group = light_group # Saints
 		religion_group = elemental_group
-		religion = old_ways
-		religion = old_ways_reformed
+		religion_group = old_ways
 		religion_scope = { has_flag = feature_beatification }
 	}
 }
@@ -52,7 +51,6 @@ TOW_religion_is_proselytizing = {
 TOW_religion_is_cosmopolitan = {
 	OR = {
 		religion = druidism
-		religion = druidism_reformed
 		religion = elune
 		religion_scope = { has_flag = feature_cosmopolitan }
 	}
@@ -68,7 +66,6 @@ TOW_religion_is_incestuous = {
 TOW_religion_is_pacifist = {
 	OR = {
 		religion = druidism
-		religion = druidism_reformed
 		religion_scope = { has_flag = feature_peaceful }
 	}
 }
@@ -84,8 +81,14 @@ TOW_religion_is_warlike = {
 	OR = {
 		religion = loa
 		religion = hakkar
-		religion_group = fel_group
-		religion_group = void_group
+		AND = {
+			religion_group = fel
+			NOT = { religion = demonology_reformed } # handled by the flag
+		}
+		AND = {
+			religion_group = void_group
+			NOT = { religion = forgotten_shadow_reformed } # handled by the flag
+		}
 		religion_scope = { has_flag = feature_warlike }
 	}
 }
@@ -94,14 +97,13 @@ TOW_religion_is_warlike = {
 TOW_religion_is_animistic = {
 	OR = {
 		religion = shamanism
-		religion = shamanism_reformed
 		religion_scope = { has_flag = feature_animistic }
 	}
 }
 
 TOW_religion_has_pagan_branches = {
 	OR = {
-		religion_scope = { has_flag = feature_no_leader }
+		TOW_religion_has_no_leader = yes
 	}
 }
 
@@ -118,7 +120,6 @@ TOW_religion_is_matriarchal = {
 	}
 }
 
-
 TOW_religion_is_patriarchal = {
 	OR = {
 		religion_scope = { has_flag = feature_patriarchal }
@@ -131,7 +132,81 @@ TOW_religion_is_equal = {
 	}
 }
 
+TOW_religion_has_temporal_head = {
+	religion_scope = { has_flag = feature_temporal_leader }
+	religion_head = {
+		is_alive = yes
+		is_theocracy = no
+	}
+}
 
+TOW_religion_has_theocratic_head = {
+	religion_scope = { has_flag = feature_theocratic_leader }
+	religion_head = {
+		is_alive = yes
+		is_theocracy = yes
+	}
+}
+
+TOW_religion_has_autocephaly = {
+	OR = {
+		religion_scope = { has_flag = feature_autocephaly }
+		has_autocephaly = yes
+	}
+}
+
+TOW_religion_has_no_leader = {
+	has_autocephaly = no
+	OR = {
+		religion_scope = { has_flag = feature_no_leader }
+		AND = {
+			NOT = { religion_head = { always = yes } }
+			NOT = { rightful_religious_head_scope = { always = yes } }
+		}
+	}
+}
+
+TOW_religion_is_defensive = {
+	OR = {
+		religion_scope = { has_flag = feature_defensive }
+	}
+}
+
+TOW_religion_has_harems = {
+	OR = {
+		religion_scope = { has_flag = feature_harems }
+	}
+}
+
+TOW_religion_is_meritocratic = {
+	OR = {
+		religion_scope = { has_flag = feature_meritocratic }
+	}
+}
+
+TOW_religion_practices_jizya = {
+	OR = {
+		religion_scope = { has_flag = feature_jizya }
+	}
+}
+
+TOW_religion_is_monastic = {
+	OR = {
+		religion_scope = { has_flag = feature_monastic }
+	}
+}
+
+TOW_religion_is_syncretic = {
+	OR = {
+		religion_scope = { has_flag = feature_syncretic }
+	}
+}
+
+TOW_religion_is_relentless = {
+	OR = {
+		religion_scope = { has_flag = feature_relentless }
+	}
+}
 ##############
 
 # Replaces general condition "religion_group = pagan_group"
@@ -139,7 +214,6 @@ TOW_religion_is_uncivilized_trigger = {
 	OR = {
 		religion_group = elemental_group
 		religion = old_ways
-		religion = old_ways_reformed
 	}
 	OR = {
 		TOW_is_tribal = yes
@@ -300,12 +374,15 @@ TOW_religion_can_have_antipopes = {
 
 # Was christians
 TOW_religion_pope_titles_are_unclaimable = {
-	religion_group = light_group
+	always = no # TOW TODO : To Define
 }
 
 # Was catholic - Has to have a religious head
 TOW_religion_marriage_annulment = {
-	religion_group = light_group
+	OR = {
+		TOW_religion_has_autocephaly = yes
+		TOW_religion_has_theocratic_head = yes
+	}
 }
 
 # Was muslims
@@ -403,7 +480,7 @@ TOW_religion_has_saints = {
 TOW_religion_rel_head_beatification = {
 	TOW_religion_rel_head_wants_full_authority = yes
     TOW_religion_worships_ancestors = yes
-	religion_group = light_group
+    TOW_religion_has_theocratic_head = yes
 }
 
 ####

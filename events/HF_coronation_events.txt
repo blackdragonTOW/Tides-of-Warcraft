@@ -529,7 +529,7 @@ letter_event = {
 				}
 				modifier = {
 					factor = 1.5
-					TOW_character_is_bad_priest = yes
+					has_bad_priest_trait_trigger = yes
 				}
 				FROM = { letter_event = { id = HF.20203 } } #Priest asks for small donation.
 			}
@@ -617,7 +617,7 @@ letter_event = {
 					factor = 0
 					OR = { 
 						trait = cynical 
-						TOW_character_is_bad_priest = yes
+						has_bad_priest_trait_trigger = yes
 					}
 				}
 				modifier = {
@@ -630,7 +630,7 @@ letter_event = {
 				}
 				modifier = {
 					factor = 0.5
-					TOW_character_is_bad_priest = yes
+					has_bad_priest_trait_trigger = yes
 				}
 				modifier = { 	#Antipope more likely to ask for little
 					factor = 1.5
@@ -789,7 +789,7 @@ letter_event = {
 				}
 				modifier = {
 					factor = 0.25
-					TOW_character_is_bad_priest = yes
+					has_bad_priest_trait_trigger = yes
 				}
 				modifier = {
 					factor = 0.25
@@ -899,7 +899,7 @@ letter_event = {
 				}
 				modifier = {
 					factor = 0.25
-					TOW_character_is_bad_priest = yes
+					has_bad_priest_trait_trigger = yes
 				}
 				modifier = {
 					factor = 0.25
@@ -913,7 +913,7 @@ letter_event = {
 				}
 				modifier = {
 					factor = 0
-					NOT = { TOW_character_is_bad_priest = yes }
+					NOT = { has_bad_priest_trait_trigger = yes }
 					NOT = { trait = hedonist }
 				}
 				modifier = {
@@ -1548,7 +1548,7 @@ letter_event = {
 			#	modifier = {
 			#		factor = 0
 			#		NOR = {
-			#			 TOW_character_is_bad_priest = yes
+			#			 has_bad_priest_trait_trigger = yes
 			#			 trait = hedonist
 			#		}
 			#	}

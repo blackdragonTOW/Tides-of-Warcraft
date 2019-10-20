@@ -1,0 +1,605 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_eredar_male_base"
+		texturefile = "gfx\\characters\\demons\\eredar_male.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_eredargfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_is_female = no
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_eredar
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_eredar_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_eredar_female_markings"
+		texturefile = "gfx\\characters\\eredar_female\\eredar_female_markings.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_eredar_female_eyes"
+		texturefile = "gfx\\characters\\eredar_female\\eredar_female_eyes.dds"
+		noOfFrames = 20
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_eredar_female_eyes_uncolored"
+		texturefile = "gfx\\characters\\eredar_female\\eredar_female_eyes_uncolored.dds"
+		noOfFrames = 20
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_eredar_female_mouth_uncolored"
+		texturefile = "gfx\\characters\\eredar_female\\eredar_female_mouth_uncolored.dds"
+		noOfFrames = 10
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	spriteType = {
+		name = "GFX_eredar_female_horns_markings"
+		texturefile = "gfx\\characters\\eredar_female\\eredar_female_horns_markings.dds"
+		noOfFrames = 8
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_eredargfx_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_is_female = yes
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_eredar
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_draenei_female_hair_behind:p1:e:y"
+			"GFX_draenei_female_base:p2:h"
+			"GFX_draenei_female_clothes:p14"
+			"GFX_draenei_female_tentacles:d0:h"
+			"GFX_draenei_female_tentacles_uncolored:d0"
+			"GFX_draenei_female_cheeks:d4:h"
+			"GFX_draenei_female_chin:d1:h"
+		   	"GFX_draenei_female_hair_mid:p1:e:y"
+			"GFX_eredar_female_eyes:d6:h"
+			"GFX_draenei_female_nose:d3:h"
+			"GFX_draenei_female_mouth:d2:h"
+			"GFX_eredar_female_mouth_uncolored:d2"
+			"GFX_draenei_female_horns:d5:h"
+			"GFX_eredar_female_horns_markings:d5"
+			"GFX_draenei_female_ear:d7:h"
+			"GFX_eredar_female_markings:p2"
+			"GFX_eredar_female_eyes_uncolored:d6"
+		   	"GFX_draenei_female_hair:p1:e:y"
+		   	"GFX_draenei_female_hair_uncolored:p1:y"
+			"GFX_draenei_female_tentacles_front:d0:h"
+			"GFX_draenei_female_tentacles_front_uncolored:d0"
+			"GFX_draenei_female_clothes_front:p14"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_character_blinded_eyes:p10"
+			"GFX_character_eyepatch:p13:y:o32x63"
+			"GFX_character_mask:p12:y:o40x45"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 6 2 0 } { 145 41 31 } { 230 117 94 }
+			{ 9 5 0 } { 170 86 22 } { 247 162 91 }
+			{ 5 4 5 } { 95 70 93 } { 231 211 223 }
+		}
+
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_succubus_female_base"
+		texturefile = "gfx\\characters\\demons\\succubi.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_succubusgfx_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_succubus
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_succubus_female_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_dreadlord_male_base"
+		texturefile = "gfx\\characters\\demons\\Dreadlord.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_dreadlordgfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_dreadlord
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_dreadlord_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_pit_lord_male_base"
+		texturefile = "gfx\\characters\\demons\\Pitlord.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_pit_lordgfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_pit_lord
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_pit_lord_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_doomlord_male_base"
+		texturefile = "gfx\\characters\\demons\\doomlord.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_doomlordgfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_doomlord
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_doomlord_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_fel_lord_male_base"
+		texturefile = "gfx\\characters\\demons\\fel_lord.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_fel_lordgfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_fel_lord
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_fel_lord_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_shivarra_female_base"
+		texturefile = "gfx\\characters\\demons\\shivarra.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_shivarragfx_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_shivarra
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_shivarra_female_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_antaen_male_base"
+		texturefile = "gfx\\characters\\demons\\antaen.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_antaengfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_antaen
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_antaen_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_aranasi_female_base"
+		texturefile = "gfx\\characters\\demons\\aranasi.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_aranasigfx_female"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_aranasi
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_aranasi_female_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_inquisitor_male_base"
+		texturefile = "gfx\\characters\\demons\\Inquisitor.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_inquisitorgfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_inquisitor
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_inquisitor_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_mo_arg_male_base"
+		texturefile = "gfx\\characters\\demons\\mo.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_mo_arggfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_mo_arg
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_mo_arg_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+
+	spriteType = {
+		name = "GFX_observer_male_base"
+		texturefile = "gfx\\characters\\demons\\Observer.dds"
+		noOfFrames = 1
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		effectFile = "gfx/FX/portrait.lua"
+		name = "PORTRAIT_observergfx_male"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				NOT = { portrait_clothing = yes }
+				portrait_has_trait = race_observer
+			}
+		}
+
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+			"GFX_observer_male_base:p2"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 0 0 0 } { 0 0 0 } { 0 0 0 }
+		}
+
+		eye_color_index = 9
+		eye_color = {
+			{ 0 0 0 }
+		}
+		
+		allow_property_values = { }
+	}
+}

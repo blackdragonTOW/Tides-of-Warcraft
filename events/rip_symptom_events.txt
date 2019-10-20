@@ -3277,13 +3277,6 @@ character_event = {
 					}
 				character_event = { id = RIP.5030 days = 20 random = 20} #Disease develops
 				}
-				if = {
-					limit = {
-						has_character_flag = got_aztec_disease
-						NOT = { has_character_flag = got_smallpox }
-					}
-				character_event = { id = RIP.5038 days = 20 random = 20} #Disease develops
-				}
 			}
 		}
 	}

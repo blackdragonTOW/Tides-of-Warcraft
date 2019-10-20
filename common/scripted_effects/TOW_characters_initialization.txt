@@ -83,6 +83,22 @@ TOW_initialize_character_race_from_culture = {
 		kobold = { add_trait = race_kobold }
 		trogg = { add_trait = race_trogg }
 		vrykul = { add_trait = race_vrykul }
+		tauren = { add_trait = race_tauren }
+		worgen = {
+			add_trait = race_worgen
+			if = {
+				limit = {
+					NOT = { culture = terrowulf }
+				}
+				add_trait = race_human
+			}
+			if = {
+				limit = {
+					culture = terrowulf
+				}
+				add_trait = race_night_elf
+			}
+		}
 	}
 	trigger_switch = {
 		on_trigger = culture
@@ -133,6 +149,8 @@ TOW_initialize_character_race_from_culture = {
 		gurubashi = { add_trait = race_troll_jungle }
 		shatterspear = { add_trait = race_troll_jungle }
 		skullsplitter = { add_trait = race_troll_jungle }
+		zulian = { add_trait = race_troll_jungle }
+		razzashi = { add_trait = race_troll_jungle }
 		drakkari = { add_trait = race_troll_ice }
 		frostmane = { add_trait = race_troll_ice }
 		sandfury = { add_trait = race_troll_sand }
@@ -142,27 +160,88 @@ TOW_initialize_character_race_from_culture = {
 		winterfang = { add_trait = race_troll_ice }
 		shadowtooth = { add_trait = race_troll_dark }
 		zandalari = { add_trait = race_troll_zandalari }
-		eredar = { add_trait = race_eredar }
-		nathrezim = { add_trait = race_dreadlord }
-		sayaad = { add_trait = race_succubus }
-		ered_ruin = { add_trait = race_doomlord }
-		annihilan = { add_trait = race_pit_lord } 
+		demonic = {
+			TOW_add_ai_refusal_flags = yes
+			random_list = {
+				1 = {
+					add_trait = race_eredar
+				}
+				1 = {
+					modifier = { factor = 0 is_female = yes }
+					add_trait = race_dreadlord
+				}
+				1 = {
+					modifier = { factor = 0 is_female = yes }
+					add_trait = race_doomlord
+				}
+				1 = {
+					modifier = { factor = 10 martial = 14 }
+					modifier = { factor = 0 is_female = yes }
+					add_trait = race_pit_lord
+				}
+				1 = {
+					modifier = { factor = 0 NOT = { stewardship = 9 } }  # Will need tweaking
+					modifier = { factor = 0 is_female = yes }
+					add_trait = race_fel_lord
+				}
+				1 = {
+					modifier = { factor = 0 is_female = yes }
+					add_trait = race_mo_arg
+				}
+				1 = {
+					modifier = { factor = 0 is_female = yes }
+					add_trait = race_antaen
+				}
+				1 = {
+					modifier = { factor = 10 intrigue = 14 }
+					modifier = { factor = 0 is_female = yes }
+					add_trait = race_inquisitor
+				}
+				1 = {
+					modifier = { factor = 10 learning = 14 }
+					modifier = { factor = 0 is_female = yes }
+					add_trait = race_observer
+				}
+				1 = {
+					modifier = { factor = 10 intrigue = 14 }
+					modifier = { factor = 0 is_female = no }
+					add_trait = race_succubus
+				}
+				1 = {
+					modifier = { factor = 10 learning = 14 }
+					modifier = { factor = 0 is_female = no }
+					add_trait = race_shivarra
+				}
+				1 = {
+					modifier = { factor = 10 martial = 14 }
+					modifier = { factor = 0 is_female = no }
+					add_trait = race_aranasi
+				}
+			}
+		}
+		eredar = { add_trait = race_eredar TOW_add_ai_refusal_flags = yes }
+		nathrezim = { add_trait = race_dreadlord TOW_add_ai_refusal_flags = yes }
+		sayaad = { add_trait = race_succubus TOW_add_ai_refusal_flags = yes }
+		ered_ruin = { add_trait = race_doomlord TOW_add_ai_refusal_flags = yes }
+		annihilan = { add_trait = race_pit_lord TOW_add_ai_refusal_flags = yes } 
 		mo_arg = {
 			if = {
 				limit = {
 					NOT = { stewardship = 9 } # Will need tweaking
 				}
 				add_trait = race_fel_lord
+				TOW_add_ai_refusal_flags = yes
 			}
 			else = {
 				add_trait = race_mo_arg
+				TOW_add_ai_refusal_flags = yes
 			}
 		}
-		shivarra = { add_trait = race_shivarra }
-		antaen = { add_trait = race_antaen }
-		aranasi = { add_trait = race_aranasi }
-		inquisitor = { add_trait = race_inquisitor }
-		observer = { add_trait = race_observer }
+		shivarra = { add_trait = race_shivarra TOW_add_ai_refusal_flags = yes }
+		antaen = { add_trait = race_antaen TOW_add_ai_refusal_flags = yes }
+		aranasi = { add_trait = race_aranasi TOW_add_ai_refusal_flags = yes }
+		inquisitor = { add_trait = race_inquisitor TOW_add_ai_refusal_flags = yes }
+		observer = { add_trait = race_observer TOW_add_ai_refusal_flags = yes }
 		draenei = { add_trait = race_draenei }
 		#broken = { add_trait = race_broken }
 		lost_one = { add_trait = race_lost_one }
@@ -183,6 +262,12 @@ TOW_initialize_character_race_from_culture = {
 	else = {
 		set_character_flag = race_assigned
 	}
+}
+
+TOW_add_ai_refusal_flags = {
+	set_character_flag = no_court_invites
+	set_character_flag = ai_flag_refuse_marriage
+	set_character_flag = ai_flag_refuse_concubinage
 }
 
 TOW_update_character_race_from_liege = {
@@ -492,6 +577,18 @@ TOW_initialize_character_race_from_parents = {
 		}
 		set_character_flag = race_assigned
 		add_trait = race_pale_orc
+	}
+	if = {
+		limit = {
+			mother = {
+				trait = race_tauren
+			}
+			true_father = {
+				trait = race_tauren
+			}
+		}
+		set_character_flag = race_assigned
+		add_trait = race_tauren
 	}
 	if = {
 		limit = {
@@ -2068,6 +2165,46 @@ TOW_initialize_character_race_from_parents = {
 					set_graphical_culture = blood_elven
 				}
 			}
+		}
+	}
+	#Worgen handling
+	##If both parents are worgen
+	if = {
+		limit = {
+			mother = {
+				trait = race_worgen
+			}
+			true_father = {
+				trait = race_worgen
+			}
+		}
+		add_trait = race_worgen
+	}
+	##If only one of them is a furry
+	if = {
+		limit = {
+			OR = {
+				AND = {
+					mother = {
+						trait = race_worgen
+					}
+					true_father = {
+						NOT = { trait = race_worgen }
+					}
+				}
+				AND = {
+					mother = {
+						NOT = { trait = race_worgen }
+					}
+					true_father = {
+						trait = race_worgen
+					}
+				}
+			}
+		}
+		random = {
+			chance = 50
+			add_trait = race_worgen
 		}
 	}
 	# In case the flag hasn't been assigned

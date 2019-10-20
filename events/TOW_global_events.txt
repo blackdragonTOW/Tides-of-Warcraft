@@ -23,6 +23,33 @@ character_event = {
 		# Repeating event to prevent illegal pregnancies from AI
 		1 = { province_event = { id = TOW.103 days = 180 } } # Every 6 months to always catch pregnant women
 
+		#############################################
+		# Initialization of religion features flags #
+		#############################################
+		# Only Add reformable religions
+		# We do this because reformation can remove those flags
+
+		old_ways_reformed = {
+			set_flag = feature_beatification
+		}
+
+		druidism_reformed = {
+			set_flag = feature_cosmopolitan
+			set_flag = feature_peaceful
+		}
+
+		shamanism_reformed = {
+			set_flag = feature_animistic
+		}
+
+		forgotten_shadow_reformed = {
+			set_flag = feature_warlike
+		}
+
+		demonology_reformed = {
+			set_flag = feature_warlike
+		}
+
 		#################################
 		# Initialization of holy orders #
 		#################################

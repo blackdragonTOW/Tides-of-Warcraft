@@ -11,90 +11,248 @@ character_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {
+		is_save_game = no
+	}
+	
 	immediate = {
-		#Set the Bookmark global flags.
+		#Specific variables
+		##Bookmarks
 		if = {
 			limit = {
-				year = 7100
-				NOT = { year = 9770 }
+				year = 7200
+				NOT = { year = 7201 }
 			}
-			set_global_flag = trollwars_bookmark
+			set_global_flag = bm_troll_wars
+		}
+		if = {
+			limit = {
+				year = 8500
+				NOT = { year = 8501 }
+			}
+			set_global_flag = bm_gurubashi_civil_war
+		}
+		if = {
+			limit = {
+				year = 8800
+				NOT = { year = 8801 }
+			}
+			set_global_flag = bm_seven_kingdoms
 		}
 		if = {
 			limit = {
 				year = 9770
-				NOT = { year = 10000 }
+				NOT = { year = 9771 }
+				month = 1
+				NOT = { month = 3 }
 			}
-			set_global_flag = threehammers_bookmark
+			set_global_flag = bm_last_anvilmar
+		}
+		if = {
+			limit = {
+				year = 9770
+				NOT = { year = 9771 }
+				month = 9
+				NOT = { month = 11 }
+			}
+			set_global_flag = bm_three_hammers
+		}
+		if = {
+			limit = {
+				year = 9925
+				NOT = { year = 9926 }
+			}
+			set_global_flag = bm_gnoll_war
+		}
+		if = {
+			limit = {
+				year = 9988
+				NOT = { year = 9989 }
+			}
+			set_global_flag = bm_wrath_of_the_gurubashi
 		}
 		if = {
 			limit = {
 				year = 10000
-				NOT = { year = 10005 }
+				NOT = { year = 10001 }
 			}
-			set_global_flag = firstwar_bookmark
+			set_global_flag = bm_fall_of_stormwind
 		}
 		if = {
 			limit = {
 				year = 10005
-				NOT = { year = 10018 }
+				NOT = { year = 10006 }
 			}
-			set_global_flag = secondwar_bookmark
+			set_global_flag = bm_tides_of_darkness
 		}
 		if = {
 			limit = {
 				year = 10018
-				NOT = { year = 10022 }
+				NOT = { year = 10019 }
 			}
-			set_global_flag = thirdwar_bookmark
+			set_global_flag = bm_lord_of_the_clans
+		}
+		if = {
+			limit = {
+				year = 10020
+				NOT = { year = 1002 }
+				month = 2
+				NOT = { month = 4 }
+			}
+			set_global_flag = bm_scourge_of_lordaeron
+		}
+		if = {
+			limit = {
+				year = 10020
+				NOT = { year = 1002 }
+				month = 5
+				NOT = { month = 6 }
+			}
+			set_global_flag = bm_path_of_the_damned
 		}
 		if = {
 			limit = {
 				year = 10022
-				NOT = { year = 10025 }
+				NOT = { year = 10023 }
 			}
-			set_global_flag = frozenthrone_bookmark
+			set_global_flag = bm_hunt_for_the_betrayer
 		}
 		if = {
 			limit = {
 				year = 10025
+				NOT = { year = 10026 }
 			}
-			set_global_flag = wow_bookmark
+			set_global_flag = bm_drums_of_war
 		}
-		#Specific variables
 		##DOOM
 		set_variable = { which = global_doom value = 0 }
 		#Deal with titles
+		
 		#Add province modifiers
-		#Kill specific characters (usually generic scourge ones that don't have any business being around before their time)
-		if = {
+		
+		#Kill specific characters because they should not be in the map at certain points
+		any_character = {
 			limit = {
-				NOT = { has_global_flag = wow_bookmark }
-			}
-			
-		}
-		if = {
-			limit = {
-				NOT = { has_global_flag = frozenthrone_bookmark }
-			}
-		}
-		#Destroy settlements based on the start date
-		if = {
-			limit = {
-				has_global_flag = threehammers_bookmark
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					has_global_flag = frozenthrone_bookmark
-					has_global_flag = wow_bookmark
+				is_ruler = no
+				spouse = {
+					is_ruler = no
 				}
+				any_dynasty_member = {
+					is_ruler = no
+				}
+				any_child = {
+					is_ruler = no
+				}
+				mother = {
+					is_ruler = no
+				}
+				father = {
+					is_ruler = no
+				}
+				OR = {
+					AND = {
+						OR = {
+							TOW_is_demon_race = yes
+							TOW_is_elemental_or_void = yes
+						}
+						NOT = { has_character_flag = important_summon }
+					}
+					AND = {
+						trait = race_goblin
+						OR = {
+							has_global_flag = bm_troll_wars
+							has_global_flag = bm_gurubashi_civil_war
+							has_global_flag = bm_seven_kingdoms
+							has_global_flag = bm_last_anvilmar
+							has_global_flag = bm_three_hammers
+						}
+					}
+					AND = {
+						OR = {
+							trait = race_blood_elf
+							trait = race_wretched
+							trait = race_night_elf
+							trait = race_tauren
+						}
+						NOR = {
+							has_global_flag = bm_hunt_for_the_betrayer
+							has_global_flag = bm_drums_of_war
+						}
+					}
+					AND = {
+						OR = {
+							trait = gnome
+							trait = dwarf
+							trait = trogg
+						}
+						has_global_flag = bm_troll_wars
+					}
+					AND = {
+						trait = race_vrykul
+						NOR = {
+							has_global_flag = bm_troll_wars
+							has_global_flag = bm_gurubashi_civil_war
+						}
+					}
+					AND = {
+						trait = race_undead_scourge
+						NOR = {
+							has_global_flag = bm_path_of_the_damned
+							has_global_flag = bm_hunt_for_the_betrayer
+							has_global_flag = bm_drums_of_war
+						}
+					}
+					AND = {
+						trait = race_undead_forsaken
+						NOT = { has_global_flag = bm_drums_of_war }
+					}
+					AND = {
+						OR = {
+							trait = race_broken
+							trait = race_lost_one
+						}
+						NOR = {
+							has_global_flag = bm_lord_of_the_clans
+							has_global_flag = bm_scourge_of_lordaeron
+							has_global_flag = bm_path_of_the_damned
+							has_global_flag = bm_hunt_for_the_betrayer
+							has_global_flag = bm_drums_of_war
+						}
+					}
+					AND = {
+						OR = {
+							trait = race_orc
+							trait = race_ogre
+						}
+						NOR = {
+							has_global_flag = bm_fall_of_stormwind
+							has_global_flag = bm_tides_of_darkness
+							has_global_flag = bm_lord_of_the_clans
+							has_global_flag = bm_scourge_of_lordaeron
+							has_global_flag = bm_path_of_the_damned
+							has_global_flag = bm_hunt_for_the_betrayer
+							has_global_flag = bm_drums_of_war
+						}
+					}
+					AND = {
+						trait = race_pale_orc
+						NOT = { has_global_flag = bm_tides_of_darkness }
+					}
+					trait = race_draenei # Always for now!
+				}
+			}
+			death = {
+				death_reason = death_missing
+			}
+		}
+		#Destroy settlements based on the date
+		if = {
+			limit = {
+				always = no
 			}
 			b_sunstone = {
 				destroy_settlement = THIS
 			}
 		}
-		#Add buildings ## Due to us going past year 10k, buildings added through history won't appear (unless it was fixed)
 	}
 }

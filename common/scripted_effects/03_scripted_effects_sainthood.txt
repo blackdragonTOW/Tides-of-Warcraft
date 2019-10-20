@@ -525,63 +525,63 @@ check_if_ancestor_worship_worthy_effect = {
         # Positive
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = craven
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = patient
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = cynical
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = defensive_leader
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = paranoid
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             has_education_martial_trigger = yes
         }
         # Negative
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = brave
         }
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = wroth
         }
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = zealous
         }
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = holy_warrior
         }
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             trait = trusting
         }
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_defensive
+            TOW_religion_is_defensive = yes
             NOT = {
                 has_education_martial_trigger = yes
             }
@@ -913,7 +913,7 @@ check_if_ancestor_worship_worthy_effect = {
         # Positive
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_harems
+            TOW_religion_has_harems = yes
             any_spouse = {
                 count = 2
             }
@@ -921,7 +921,7 @@ check_if_ancestor_worship_worthy_effect = {
         # Negative 
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_harems
+            TOW_religion_has_harems = yes
             NOT = {
                 any_spouse = {
                     count = 2
@@ -930,14 +930,14 @@ check_if_ancestor_worship_worthy_effect = {
         }
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_harems
+            TOW_religion_has_harems = yes
             trait = chaste
         }
         ## Meritocratic ##
         # Positive
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_meritocratic
+            TOW_religion_is_meritocratic = yes
             NOT = {
                 is_foe = current_heir
             }
@@ -945,7 +945,7 @@ check_if_ancestor_worship_worthy_effect = {
         #
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_meritocratic
+            TOW_religion_is_meritocratic = yes
             is_foe = current_heir
         }
         ## Stable ##
@@ -983,7 +983,7 @@ check_if_ancestor_worship_worthy_effect = {
         # Positive
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_jizya
+            TOW_religion_practices_jizya = yes
             any_realm_lord = {
                 NOT = {
                     religion = ROOT
@@ -993,7 +993,7 @@ check_if_ancestor_worship_worthy_effect = {
         # Negative
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_jizya
+            TOW_religion_practices_jizya = yes
             NOT = {
                 any_realm_lord = {
                     religion = ROOT
@@ -1004,23 +1004,23 @@ check_if_ancestor_worship_worthy_effect = {
         # Positive
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_monastic
+            TOW_religion_is_monastic = yes
             learning = 20
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_monastic
+            TOW_religion_is_monastic = yes
             trait = celibate
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_monastic
+            TOW_religion_is_monastic = yes
             trait = erudite
         }
         # Negative
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_monastic
+            TOW_religion_is_monastic = yes
             NOT = {
                 learning = 15
             }
@@ -1029,13 +1029,13 @@ check_if_ancestor_worship_worthy_effect = {
         # Positive
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_syncretic
+            TOW_religion_is_syncretic = yes
             has_any_sympathy_trait_trigger = yes
         }
         # Negative
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_syncretic
+            TOW_religion_is_syncretic = yes
             NOT = {
                 has_any_sympathy_trait_trigger = yes
             }
@@ -1044,29 +1044,29 @@ check_if_ancestor_worship_worthy_effect = {
         # Positive
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_haruspicy
+            TOW_religion_practices_haruspicy = yes
             trait = zealous
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_haruspicy
+            TOW_religion_practices_haruspicy = yes
             trait = holy_warrior
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_haruspicy
+            TOW_religion_practices_haruspicy = yes
             martial = 15
             learning = 15
         }
         # Negative
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_haruspicy
+            TOW_religion_practices_haruspicy = yes
             trait = cynical
         }
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_haruspicy
+            TOW_religion_practices_haruspicy = yes
             NOR = {
                 martial = 15
                 learning = 15
@@ -1131,8 +1131,8 @@ check_if_ancestor_worship_worthy_effect = {
         modifier = {
             factor = 1.5
             OR = {
-                has_religion_feature = religion_adventuring
-                has_religion_feature = religion_seafaring
+                TOW_religion_is_adventuring = yes
+                TOW_religion_is_seafaring = yes
             }
             OR = { 
                 trait = pirate
@@ -1146,8 +1146,8 @@ check_if_ancestor_worship_worthy_effect = {
         modifier = {
             factor = 0.65
             OR = {
-                has_religion_feature = religion_adventuring
-                has_religion_feature = religion_seafaring
+                TOW_religion_is_adventuring = yes
+                TOW_religion_is_seafaring = yes
             }
             NOR = {
                 trait = pirate
@@ -1161,25 +1161,25 @@ check_if_ancestor_worship_worthy_effect = {
         # Positive
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_relentless
+            TOW_religion_is_relentless = yes
             martial = 20
         }
         modifier = {
             factor = 1.5
-            has_religion_feature = religion_relentless
+            TOW_religion_is_relentless = yes
             has_any_leadership_trait_trigger = yes
         }
         # Negative
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_relentless
+            TOW_religion_is_relentless = yes
             NOT = {
                 martial = 15
             }
         }
         modifier = {
             factor = 0.65
-            has_religion_feature = religion_relentless
+            TOW_religion_is_relentless = yes
             NOT = {
                 has_any_leadership_trait_trigger = yes
             }

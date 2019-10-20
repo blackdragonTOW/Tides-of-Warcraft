@@ -1,0 +1,1612 @@
+#Anyone dying in 10100.1.1 is just someone that is supposed to be alive up to the end of the timeline.
+
+1 = {
+	name = "Firallon"
+	dynasty = 1 # Crimsonveil
+	culture = azerothian
+	religion = holy_light
+	dna="0c0cbbb0ab0"
+	properties="rc00a000000000p000"
+	diplomacy = 5
+	martial = 8
+	stewardship = 4
+	intrigue = 7
+	learning = 2
+	trait = race_human
+	disallow_random_traits = yes
+	historical = yes
+	9990.6.27 = {
+		birth = yes
+	}
+	10006.6.27 = {
+		add_trait = cruel
+		add_trait = rogue
+		add_trait = skilled_tactician
+		add_trait = wroth
+		add_trait = uncouth
+		add_trait = ambitious
+	}
+	10010.5.2 = {
+		religion = hydromancy
+		effect = {
+			add_pressed_claim = d_cape_of_stranglethorn
+		}
+	}
+	10029.2.7 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+2 = {
+	name = "Gorek"
+	dynasty = 2 # Ironpatch
+	culture = warsong
+	religion = demonology
+	dna="0ebc00c0ffh"
+	properties="rd000000000000j000"
+	martial = 7
+	trait = race_orc
+	trait = tough_soldier
+	trait = warrior
+	trait = one_eyed
+	9979.2.12 = {
+		birth = yes
+	}
+	10019.7.13 = {
+		religion = hydromancy
+	}
+	10040.12.20 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3 = {
+	name = "Tethys"
+	dynasty = 3 # Seablade
+	culture = tirasian
+	religion = hydromancy
+	dna="0a0fc000bj0"
+	properties="rb00h000000000q000"
+	martial = 6
+	intrigue = 7
+	trait = race_human
+	9987.9.16 = {
+		birth = yes
+	}
+	10003.9.16 = {
+		add_trait = flamboyant_schemer
+		add_trait = rogue
+	}
+	10010.5.2 = {
+		employer = 1 # Firallon
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+4 = {
+	name = "Short John"
+	dynasty = 4 # Mithril
+	culture = goblin
+	religion = mercantilism
+	dna="0iheiddafj0"
+	properties="r0000000000000c000"
+	diplomacy = 9
+	trait = race_goblin
+	9997.10.20 = {
+		birth = yes
+	}
+	10013.10.20 = {
+		add_trait = gregarious
+		add_trait = grey_eminence
+	}
+	10015.10.1 = {
+		religion = hydromancy
+		add_trait = one_legged
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+5 = {
+	name = "Razz"
+	dynasty = 5 # Keelhaul
+	culture = goblin
+	religion = mercantilism
+	dna="0bagbbech00"
+	properties="rk000000000000q000"
+	trait = race_goblin
+	9991.6.10 = {
+		birth = yes
+	}
+	10007.6.10 = {
+		add_trait = tough_soldier
+	}
+	10010.5.2 = {
+		religion = hydromancy
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+6 = {
+	name = "Jerias"
+	culture = lordaeronian
+	religion = holy_light
+	dna="000h0jb0ee0"
+	properties="ra000000000000o000"
+	trait = race_human
+	9989.10.6 = {
+		birth = yes
+	}
+	10021.2.5 = {
+		culture = scourge
+		religion = lich_king
+		dynasty = 6 # Bloodvein
+	}
+	10022.10.31 = {
+		culture = forsaken
+		add_trait = race_undead_forsaken
+		religion = hydromancy
+	}
+	10025.8.2 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+7 = {
+	name = "Bartholomew"
+	dynasty = 7 # Softbeard
+	culture = alteraci
+	religion = holy_light
+	dna="0c0dbcb00a0"
+	properties="rk00d000000000i000"
+	trait = race_human
+	9988.1.14 = {
+		birth = yes
+	}
+	10010.5.2 = {
+		religion = hydromancy
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+8 = {
+	name = "Rastakhan"
+	dynasty = 8 # Zandalari
+	culture = zandalari
+	religion = loa
+	dna="0ica0bedehb"
+	properties="wm000000000000a000"
+	diplomacy = 8
+	martial = 9
+	stewardship = 7
+	intrigue = 7
+	learning = 8
+	trait = race_troll_zandalari
+	trait = grey_eminence
+	trait = quick
+	trait = strong
+	trait = temperate
+	trait = diligent
+	trait = warrior
+	trait = proud
+	trait = brave
+	trait = zealous
+	9764.5.1 = {
+		birth = yes
+		effect = {
+			health = 10 # Need to tweak to make sure he lives long enough
+		}
+	}
+	10033.4.8 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+9 = {
+	name = "Talanji"
+	dynasty = 8 # Zandalari
+	culture = zandalari
+	religion = loa
+	female = yes
+	dna="0dcabfciegc"
+	properties="wd0000000000000000"
+	diplomacy = 7
+	martial = 4
+	stewardship = 4
+	intrigue = 7
+	learning = 9
+	trait = race_troll_zandalari
+	father = 8 # Rastakhan
+	9998.10.7 = {
+		birth = yes
+	}
+	10014.10.7 = {
+		add_trait = priest
+		add_trait = just
+		add_trait = quick
+		add_trait = mastermind_theologian
+		add_trait = brave
+		add_trait = diligent
+		add_trait = groomed
+		add_trait = proud
+		add_trait = zealous
+		add_trait = erudite
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+10 = {
+	name = "Jimbo"
+	dynasty = 9 # Stillwater
+	culture = gnomish
+	religion = hydromancy
+	dna="00ecabbeaee"
+	properties="rc00b000000000o000"
+	trait = race_gnome
+	9985.1.15 = {
+		birth = yes
+	}
+	10010.5.2 = {
+		employer = 2 # Gorek Ironpatch
+	}
+	10026.6.5 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+11 = {
+	name = "Garr"
+	dynasty = 10 # Salthoof
+	culture = farwanderer
+	religion = hydromancy
+	#DNA goes here when cows are ready
+	trait = race_tauren
+	9999.8.12 = {
+		birth = yes
+	}
+	10021.11.30 = {
+		employer = 5 # Razz Keelhaul
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+12 = {
+	name = "Severance"
+	dynasty = 11 # Wavetail
+	culture = steelrage
+	religion = hydromancy
+	#DNA goes here when cows are ready
+	trait = race_tauren
+	9996.2.19 = {
+		birth = yes
+	}
+	10021.12.3 = {
+		employer = 6 # Jerias Bloodvein
+	}
+	10025.8.2 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+13 = {
+	name = "Revilgaz"
+	dynasty = 12 # Blackwater
+	culture = goblin
+	religion = mercantilism
+	dna="0fbigfheeg0"
+	properties="r0000000000000a000"
+	trait = race_goblin
+	trait = fortune_builder
+	trait = rogue
+	trait = groomed
+	trait = greedy
+	trait = patient
+	trait = proud
+	trait = ambitious
+	disallow_random_traits = yes
+	9983.6.10 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+14 = {
+	name = "Gunnar"
+	dynasty = 13 # Steelgut
+	culture = bronzebeard
+	religion = mercantilism
+	dna="0g0i00effb0"
+	properties="rl00i000000000l000"
+	trait = race_dwarf
+	9973.9.12 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+15 = {
+	name = "Abrogar"
+	dynasty = 14 # Seahorn
+	culture = ironhoof
+	religion = mercantilism
+	#Tauren DNA go here
+	martial = 7
+	trait = race_tauren
+	trait = skilled_tactician
+	trait = warrior
+	9989.10.2 = {
+		birth = yes
+	}
+	10021.12.10 = {
+		employer = 13 # Revilgaz Blackwater
+		give_job_titlte = job_marshal
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+16 = {
+	name = "Ansirem"
+	dynasty = 15 # Runeweaver
+	culture = dalaranian
+	religion = arcane
+	dna="0a0jbja00d0"
+	properties="ui00d000000000d000"
+	learning = 7
+	trait = race_human
+	trait = mage
+	9979.8.1 = {
+		birth = yes
+	}
+	#Put him in Dalaran's court
+	10017.5.27 = {
+		give_minor_title = title_dalaran_six
+	}
+	#Have him in the employ of Garithos after Dalaran falls
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+17 = {
+	name = "Catelyn"
+	dynasty = 15 # Runeweaver
+	culture = dalaranian
+	religion = arcane
+	female = yes
+	dna="0cen00ba0b0"
+	properties="r0000000000000d000"
+	martial = 6
+	intrigue = 6
+	trait = race_human
+	father = 16 # Ansirem Runeweaver
+	10002.3.19 = {
+		birth = yes
+	}
+	10018.3.19 = {
+		add_trait = detached_priest
+		add_trait = rogue
+		add_trait = brave
+	}
+	10020.5.12 = {
+		give_nickname = nick_the_blade
+		religion = mercantilism
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+18 = {
+	name = "Ratso"
+	dynasty = 16 # Steamwheedle
+	culture = goblin
+	religion = mercantilism
+	diplomacy = 7
+	martial = 3
+	stewardship = 10 # The RPG says he literally was the Cartel's Shipping Division, so I'm running with that
+	intrigue = 8
+	learning = 5
+	trait = race_goblin
+	disallow_random_traits = yes
+	9980.12.18 = {
+		birth = yes
+	}
+	9996.12.18 = {
+		add_trait = midas_touched
+		add_trait = diligent
+		add_trait = envious
+		add_trait = greedy
+		add_trait = ambitious
+		add_trait = paranoid
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+19 = {
+	name = "Razdunk"
+	dynasty = 17 # Gearbuck
+	culture = goblin
+	religion = mercantilism
+	dna="0heibhifcb0"
+	properties="ol000000000000n000"
+	diplomacy = 4
+	martial = 7
+	stewardship = 5
+	intrigue = 8
+	learning = 6
+	trait = race_goblin
+	disallow_random_traits = yes
+	9977.5.12 = {
+		birth = yes
+	}
+	9993.5.12 = {
+		add_trait = thrifty_clerk
+		add_trait = engineer
+		add_trait = wroth
+		add_trait = envious
+		add_trait = proud
+		add_trait = deceitful
+		add_trait = paranoid
+		add_trait = stubborn
+	}
+	10033.5.2 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+20 = {
+	name = "Unbagwa"
+	dynasty = 18 # Razzashi
+	culture = razzashi
+	religion = loa
+	learning = 7
+	trait = race_troll_jungle
+	9983.1.28 = {
+		birth = yes
+	}
+	9999.1.28 = {
+		add_trait = martial_cleric
+		add_trait = priest
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+21 = {
+	name = "Zanzil"
+	dynasty = 21 # Uvago
+	dna="cacj0bhb0ac"
+	properties="wb000000000000f000"
+	culture = gurubashi
+	religion = hakkar
+	diplomacy = 2
+	martial = 3
+	stewardship = 5
+	intrigue = 8
+	learning = 9
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9989.5.19 = {
+		birth = yes
+	}
+	9989.5.19 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = alchemist
+		add_trait = genius
+		add_trait = feeble
+		add_trait = envious
+		add_trait = proud
+		add_trait = cruel
+		add_trait = deceitful
+	}
+	10020.7.5 = {
+		give_nickname = nick_the_outcast
+	}
+	#Set him as the court priest of Jin'do the Godbreaker shortly before death
+	10028.7.24 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+22 = {
+	name = "Sakrasis"
+	dynasty = 22 # Thirass
+	dna="ca0d00h0a0f"
+	properties="c00000000000000000"
+	culture = naga
+	religion = azshara
+	trait = race_naga
+	8432.10.5 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+23 = {
+	name = "Sen'jin"
+	dynasty = 20 # Darkspear
+	dna="lbhh0dadbhg"
+	properties="fa0000000000000000"
+	culture = darkspear
+	religion = loa
+	diplomacy = 6
+	martial = 1
+	stewardship = 4
+	intrigue = 3
+	learning = 8
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9957.8.13 = {
+		birth = yes
+	}
+	9973.8.13 = {
+		add_trait = mastermind_theologian
+		add_trait = shrewd
+		add_trait = priest
+		add_trait = kind
+		add_trait = humble
+		add_trait = temperate
+		add_trait = zealous
+	}
+	10020.2.26 = {
+		add_trait = likes_orcs
+	}
+	10020.2.28 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+24 = {
+	name = "Vol'jin"
+	dynasty = 20 # Darkspear
+	culture = darkspear
+	religion = loa
+	dna="gddb0adf0ag"
+	properties="rb000000000000o000"
+	diplomacy = 8
+	martial = 6
+	stewardship = 4
+	intrigue = 7
+	learning = 8
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	father = 23 # Sen'jin Darkspear
+	9982.9.9 = {
+		birth = yes
+	}
+	9998.9.9 = {
+		add_trait = intricate_webweaver
+		add_trait = shaman
+		add_trait = shrewd
+		add_trait = temperate
+		add_trait = patient
+		add_trait = humble
+		add_trait = content
+		add_trait = just
+		add_trait = zealous
+	}
+	10020.2.26 = {
+		add_trait = likes_orcs
+		#Make thrall his friend here
+	}
+	10032.3.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+25 = {
+	name = "Yenniku"
+	dynasty = 20 # Darkspear
+	culture = darkspear
+	religion = loa
+	dna="adha00habdi"
+	properties="wb000000000000q000"
+	trait = race_troll_jungle
+	father = 24 # Vol'jin Darkspear
+	10005.10.28 = {
+		birth = yes
+	}
+	10025.1.19 = {
+		effect = {
+			imprison = 21 # Zanzil
+		}
+	}
+	10025.5.8 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+26 = {
+	name = "Gadrin"
+	dynasty = 24 # Eniku
+	culture = darkspear
+	religion = loa
+	dna="egdf00fbaac"
+	properties="cb0000000000000000"
+	learning = 8
+	9956.4.20 = {
+		birth = yes
+	}
+	9972.4.23 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_friend = 23 # Sen'jin
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+27 = {
+	name = "Zalazane"
+	dynasty = 25 # Yyha
+	dna="kbje0bhd0di"
+	properties="ek0000000000000000"
+	culture = darkspear
+	religion = loa
+	diplomacy = 5
+	martial = 2
+	stewardship = 3
+	intrigue = 6
+	learning = 8
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9982.11.3 = {
+		birth = yes
+	}
+	9998.11.3 = {
+		add_friend = 24 # Vol'jin
+		add_trait = priest
+		add_trait = scholarly_theologian
+		add_trait = shrewd
+		add_trait = patient
+		add_trait = proud
+		add_trait = erudite
+	}
+	10025.1.15 = {
+		religion = forgotten_shadow
+		effect = {
+			remove_trait = priest
+			remove_friend = 24 # Vol'jin
+		}
+		add_rival = 24 # Vol'jin
+		add_trait = necromancer
+		add_trait = cruel
+		add_trait = deceitful
+	}
+	10029.11.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+28 = {
+	name = "Ana'thek"
+	dynasty = 26 # Skullsplitter
+	culture = skullsplitter
+	religion = hakkar
+	dna="bdil0acgbfe"
+	properties="wf0000000000000000"
+	trait = race_troll_jungle
+	9990.12.7 = {
+		birth = yes
+	}
+	10010.5.10 = {
+		give_nickname = nick_the_cruel
+	}
+	10028.5.23 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+29 = {
+	name = "Mai'Zoth"
+	dynasty = 27 # Mosh'Ogg
+	culture = mosh_ogg
+	religion = demonology
+	learning = 7
+	trait = race_ogre
+	trait = ogre_two_heads
+	9979.11.18 = {
+		birth = yes
+	}
+	9995.11.18 = {
+		add_trait = martial_cleric
+		add_trait = cruel
+		add_trait = cynical
+		add_trait = warlock
+	}
+	10028.6.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+30 = {
+	name = "Conrad"
+	dynasty = 28 # Kurzen
+	culture = azerothian
+	religion = holy_light
+	dna="0b0l0jb0a00"
+	properties="ll00d0000000000000"
+	martial = 7
+	trait = race_human
+	9969.6.12 = {
+		birth = yes
+	}
+	9985.6.12 = {
+		add_trait = tough_soldier
+		add_trait = wroth
+	}
+	10024.7.30 = {
+		effect = {
+			add_pressed_claim = c_snakethicket
+			add_pressed_claim = c_silvershard
+			spawn_unit = {
+				province = 357 # Southvale
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_infantry = { 767 767 }
+					heavy_infantry = { 666 666 }
+					pikemen = { 122 122 }
+					light_cavalry = { 175 175 }
+					knights = { 84 84 }
+					archers = { 339 339 }
+				}
+				attrition = 1.0
+				can_toggle_looting = no
+				reinforces = no
+			}
+		}
+	}
+	10024.9.6 = {
+		disband_event_forces = yes
+	}
+	10024.10.18 = {
+		add_trait = lunatic
+		add_trait = cruel
+		religion = demonology
+	}
+	10027.5.19 = {
+		death = {
+			death_reason = death_execution_hanging
+			killer = 31 # Jerod
+		}
+	}
+}
+
+31 = {
+	name = "Jerod"
+	dynasty = 29 # Esquivel
+	culture = azerothian
+	religion = holy_light
+	dna="000dadb0ah0"
+	properties="0d0000000000000000"
+	martial = 6
+	trait = race_human
+	9996.3.24 = {
+		birth = yes
+	}
+	10012.3.24 = {
+		add_trait = tough_soldier
+	}
+	10024.7.30 = {
+		employer = 30 # Conrad
+	}
+	10024.10.18 = {
+		add_trait = lunatic
+		add_trait = cruel
+		religion = demonology
+	}
+	10028.4.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+32 = {
+	name = "Bob"
+	dynasty = 30 # Doren
+	culture = azerothian
+	religion = holy_light
+	dna="0a0e0ia0bg0"
+	properties="ob00d0000000000000"
+	martial = 6
+	trait = race_human
+	9985.7.2 = {
+		birth = yes
+	}
+	10001.7.2 = {
+		add_trait = tough_soldier
+		add_trait = just
+	}
+	10024.7.30 = {
+		employer = 30 # Conrad
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+33 = {
+	name = "Gan'zulah"
+	dynasty = 31 # Bloodscalp
+	culture = bloodscalp
+	religion = hakkar
+	dna="lall0aagbb0"
+	properties="ek0000000000000000"
+	trait = race_troll_jungle
+	9988.3.30 = {
+		birth = yes
+	}
+	10026.5.18 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+34 = {
+	name = "Nazzilok"
+	dynasty = 32 # Ji'wok
+	culture = bloodscalp
+	religion = hakkar
+	dna="ic0a000abaa"
+	properties="ae0000000000000000"
+	learning = 7
+	trait = race_troll_jungle
+	9979.3.22 = {
+		birth = yes
+	}
+	9995.3.22 = {
+		add_trait = martial_cleric
+		add_trait = priest
+		give_nickname = nick_the_dire
+		employer = 33 # Gan'zulah
+		give_job_titlte = job_spiritual
+	}
+	10026.5.18 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+35 = {
+	name = "Aggro'gosh"
+	dynasty = 35 # Fireroar
+	culture = bleeding_hollow
+	religion = burning_legion
+	dna="0c0a000abaa"
+	properties="ab00i0000000000000"
+	martial = 6
+	trait = race_orc
+	9980.5.2 = {
+		birth = yes
+	}
+	9996.5.2 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
+	10003.6.12 = {
+		religion = demonology
+	}
+	10018.4.27 = {
+		religion = shamanism
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+36 = {
+	name = "Jok'non"
+	dynasty = 34 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="kfih0cdjach"
+	properties="fe0000000000000000"
+	trait = race_troll_jungle
+	9942.7.9 = {
+		birth = yes
+	}
+	9988.3.15 = {
+		death = {
+			death_reason = death_duel
+			#killer = # Medivh
+		}
+	}
+}
+
+37 = {
+	name = "Zan'non"
+	dynasty = 34 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="hc000cbj000"
+	properties="0h0000000000000000"
+	trait = race_troll_jungle
+	9968.3.27 = {
+		birth = yes
+	}
+	9988.8.24 = {
+		death = {
+			death_reason = death_battle
+			#killer = # Medivh
+		}
+	}
+}
+
+38 = {
+	name = "Jin'do"
+	dynasty = 34 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="idab0a0gbdd"
+	properties="mi0000000000000000"
+	diplomacy = 5
+	martial = 2
+	stewardship = 4
+	intrigue = 4
+	learning = 7
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9989.8.18 = {
+		birth = yes
+	}
+	10005.8.18 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = feeble
+		add_trait = proud
+		add_trait = ambitious
+		add_trait = cruel
+		add_trait = zealous
+		add_trait = gregarious
+	}
+	10012.4.2 = {
+		give_nickname = nick_the_hexxer
+		effect = { give_artifact = twinblades_of_the_hakkari }
+	}
+	10028.3.19 = {
+		give_nickname = nick_the_godbreaker
+		add_trait = cynical
+		religion = loa
+		effect = {
+			remove_trait = zealous
+		}
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_sacrificed
+		}
+	}
+}
+
+39 = {
+	name = "Jeklik"
+	dynasty = 35 # Atolah
+	female = yes
+	culture = zandalari
+	religion = loa
+	dna="idab0a0gbdd"
+	properties="mi0000000000000000"
+	learning = 8
+	trait = race_troll_zandalari
+	9964.2.19 = {
+		birth = yes
+	}
+	9980.2.19 = {
+		add_trait = scholarly_theologian
+		add_trait = priest
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+40 = {
+	name = "Venoxis"
+	dynasty = 36 # Tumbalak
+	culture = zandalari
+	religion = loa
+	dna="0cke0dkechd"
+	properties="vl0000000000000000"
+	learning = 7
+	trait = race_troll_zandalari
+	9985.1.30 = {
+		birth = yes
+	}
+	10001.1.30 = {
+		add_trait = priest
+		add_trait = martial_cleric
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10028.3.19 = {
+		religion = loa
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+41 = {
+	name = "Mar'li"
+	dynasty = 37 # Spinna
+	female = yes
+	culture = gurubashi
+	religion = loa
+	dna="dc0cecc0aam"
+	properties="ae0000000000000000"
+	learning = 8
+	trait = race_troll_jungle
+	9990.12.4 = {
+		birth = yes
+	}
+	10006.12.4 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = zealous
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10028.3.19 = {
+		religion = loa
+	}
+	10028.7.29 = {
+		dynasty = 34 # Gurubashi
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+42 = {
+	name = "Mandokir"
+	dynasty = 38 # Eataj
+	culture = gurubashi
+	religion = hakkar
+	dna="0f0b0bfibad"
+	properties="pc0000000000000000"
+	martial = 8
+	trait = race_troll_jungle
+	9985.8.19 = {
+		birth = yes
+	}
+	10001.8.18 = {
+		add_trait = skilled_tactician
+		add_trait = berserker
+		add_trait = wroth
+		add_trait = zealous
+	}
+	10020.5.7 = {
+		give_job_titlte = job_marshal
+		effect = { give_artifact = war_raptor }
+	}
+	10028.3.19 = {
+		religion = loa
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+43 = {
+	name = "Thekal"
+	dynasty = 39 # Ravadu
+	culture = zandalari
+	religion = loa
+	dna="kfhi0dcaaag"
+	properties="tc0000000000000000"
+	learning = 8
+	trait = race_troll_zandalari
+	9987.6.10 = {
+		birth = yes
+	}
+	10003.6.10 = {
+		add_trait = priest
+		add_trait = scholarly_theologian
+		effect = { give_artifact = war_tiger }
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+44 = {
+	name = "Arlokk"
+	dynasty = 40 # Yek
+	female = yes
+	culture = zandalari
+	religion = loa
+	dna="ccd0cd0babc"
+	properties="rg0000000000000000"
+	learning = 7
+	trait = race_troll_zandalari
+	9963.10.9 = {
+		birth = yes
+	}
+	9979.10.9 = {
+		add_trait = martial_cleric
+		add_trait = priest
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 38 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+45 = {
+	name = "Kazzak"
+	dynasty = 41 # Doomblade
+	culture = demonic
+	religion = burning_legion
+	martial = 10
+	trait = race_doomlord
+	1.1.1 = {
+		birth = yes
+		give_nickname = nick_the_supreme
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+46 = {
+	name = "Kruul"
+	dynasty = 42 # Felcleave
+	culture = demonic
+	religion = burning_legion
+	martial = 9
+	trait = race_doomlord
+	1.1.1 = {
+		birth = yes
+	}
+	10021.4.6 = {
+		give_job_titlte = job_marshal
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+47 = {
+	name = "Razelikh"
+	dynasty = 43 # Caania
+	culture = demonic
+	religion = burning_legion
+	intrigue = 10
+	trait = race_dreadlord
+	1.1.1 = {
+		birth = yes
+		give_nickname = nick_the_defiler
+	}
+	10021.4.6 = {
+		give_job_titlte = job_spymaster
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+48 = {
+	name = "Ilifar"
+	dynasty = 44 # Shadowbane
+	culture = lordaeronian
+	religion = holy_light
+	dna="0c0dckb0ck0"
+	properties="rb00f0000000000000"
+	martial = 7
+	trait = race_human
+	9981.9.12 = {
+		birth = yes
+	}
+	9997.9.12 = {
+		add_trait = tough_soldier
+	}
+	10019.6.24 = {
+		culture = scourge
+		religion = lich_king
+		add_trait = race_undead_scourge
+		add_trait = death_knight
+	}
+	10021.4.6 = {
+		religion = burning_legion
+		employer = 47 # Razelikh
+		add_trait = felsworn
+		add_trait = race_undead_generic
+		culture = lordaeronian
+		effect = {
+			remove_trait = race_undead_scourge
+		}
+	}
+	10025.12.19 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+49 = {
+	name = "Grol"
+	dynasty = 45 # Dreadmaul
+	culture = dreadmaul
+	religion = demonology
+	dna="fled0ebcae0"
+	properties="ia00b0000000000000"
+	diplomacy = 1
+	martial = 8
+	stewardship = 2
+	intrigue = 4
+	learning = 2
+	trait = race_ogre
+	9971.2.18 = {
+		birth = yes
+	}
+	9987.2.18 = {
+		add_trait = skilled_tactician
+		add_trait = cruel
+		add_trait = wroth
+		give_nickname = nick_the_destroyer
+	}
+	10021.6.15 = {
+		religion = burning_legion
+		add_trait = felsworn
+	}
+	10025.12.7 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+50 = {
+	name = "Allistarj"
+	dynasty = 46 # Namor
+	culture = dalaranian
+	religion = arcane
+	dna="0c0facc0al0"
+	properties="ib00d0000000000000"
+	learning = 9
+	trait = race_human
+	9966.3.12 = {
+		birth = yes
+	}
+	9982.3.12 = {
+		add_trait = mastermind_theologian
+		add_trait = mage
+	}
+	10021.5.30 = {
+		religion = burning_legion
+		add_trait = felsworn
+		add_trait = warlock
+		effect = {
+			remove_trait = mage
+		}
+	}
+	10025.12.20 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+51 = {
+	name = "Sevine"
+	dynasty = 47 # Blackclaw
+	female = yes
+	culture = shadowmoon
+	religion = burning_legion
+	dna="00jcgcadd0a"
+	properties="ib0000000000000000"
+	learning = 8
+	trait = race_orc
+	9981.9.10 = {
+		birth = yes
+	}
+	9997.9.10 = {
+		add_trait = scholarly_theologian
+		add_trait = warlock
+	}
+	10003.9.4 = {
+		religion = demonology
+		effect = {
+			set_secret_religion = burning_legion
+		}
+	}
+	10021.6.7 = {
+		add_trait = felsworn
+		religion = burning_legion
+	}
+	10025.12.13 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+52 = {
+	name = "Blackhand"
+	dynasty = 48 # Blackrock
+	culture = blackrock
+	religion = burning_legion
+	dna = "00ic00hbc0g"
+	properties = "oh0000000000000000"
+	diplomacy = 4
+	martial = 9
+	stewardship = 1
+	intrigue = 5
+	learning = 3
+	trait = race_orc
+	trait = brilliant_strategist
+	trait = fel_touched
+	trait = cruel
+	trait = strong
+	trait = wroth
+	trait = proud
+	trait = envious
+	trait = ambitious
+	trait = brave
+	trait = paranoid
+	disallow_random_traits = yes
+	9962.5.19 = {
+		birth = yes
+		give_nickname = nick_the_destroyer
+		effect = {
+			give_artifact = the_black_hand
+		}
+	}
+	10003.9.4 = {
+		death = {
+			death_reason = death_duel
+			killer = 57 # Orgrim
+		}
+	}
+}
+
+53 = {
+	name = "Dal'Rend"
+	dynasty = 49 # Black Tooth Grin
+	culture = blackrock
+	religion = burning_legion
+	dna="0hb000bia0g"
+	properties="ac00e0000000000000"
+	diplomacy = 4
+	martial = 8
+	stewardship = 3
+	intrigue = 4
+	learning = 4
+	trait = race_orc
+	trait = skilled_tactician
+	trait = fel_touched
+	trait = cruel
+	trait = wroth
+	trait = envious
+	trait = ambitious
+	trait = brave
+	disallow_random_traits = yes
+	father = 52 # Blackhand
+	mother = 56 # Urukal
+	9982.1.9 = {
+		birth = yes
+		give_nickname = nick_blackhand
+		effect = { give_artifact = blachand_doomsaw }
+	}
+	10003.9.4 = {
+		religion = demonology
+	}
+	10007.3.15 = {
+		dynasty = 48 # Blackrock
+	}
+	10008.11.15 = {
+		add_trait = one_eyed
+	}
+	10028.5.14 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+54 = {
+	name = "Maim"
+	dynasty = 49 # Black Tooth Grin
+	culture = blackrock
+	religion = burning_legion
+	dna="0eha00fiabg"
+	properties="af00d0000000000000"
+	diplomacy = 0
+	martial = 8
+	stewardship = 2
+	intrigue = 5
+	learning = 0
+	trait = race_orc
+	trait = tough_soldier
+	trait = fel_touched
+	trait = cruel
+	trait = wroth
+	trait = envious
+	trait = ambitious
+	trait = brave
+	trait = dull
+	disallow_random_traits = yes
+	father = 52 # Blackhand
+	mother = 56 # Urukal
+	9982.11.13 = {
+		birth = yes
+		employer = 53 # Dal'rend
+		give_nickname = nick_blackhand
+	}
+	10003.9.4 = {
+		religion = demonology
+	}
+	10007.3.15 = {
+		dynasty = 48 # Blackrock
+	}
+	10008.11.15 = {
+		death = {
+			death_reason = death_duel
+			#Add Nefarian as the killer
+		}
+	}
+}
+
+55 = {
+	name = "Griselda"
+	dynasty = 48 # Blackrock
+	female = yes
+	culture = blackrock
+	religion = burning_legion
+	dna="0eha00fiabg"
+	properties="af00d0000000000000"
+	trait = race_orc
+	father = 52 # Blackhand
+	mother = 56 # Urukal
+	9983.10.8 = {
+		birth = yes
+		employer = 52 # Blackhand
+	}
+	10003.1.19 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+56 = {
+	name = "Ururkal"
+	dynasty = 50 # Blackrock
+	female = yes
+	culture = blackrock
+	religion = burning_legion
+	dna="00qb0bbqbfc"
+	properties="kd0000000000000000"
+	trait = race_orc
+	9962.7.22 = {
+		birth = yes
+	}
+	9999.6.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}

@@ -1392,8 +1392,8 @@ seaking = {
 				has_bloodline_flag = bloodline_viking
 			}
 			AND = {
-				has_religion_feature = religion_adventuring
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_adventuring = yes
+				TOW_religion_is_seafaring = yes
 			}
 		}
 	}
@@ -1494,8 +1494,8 @@ sea_queen = {
 				has_bloodline_flag = bloodline_viking
 			}
 			AND = {
-				has_religion_feature = religion_adventuring
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_adventuring = yes
+				TOW_religion_is_seafaring = yes
 			}
 		}
 	}
@@ -1940,7 +1940,7 @@ pagan_branch_1 = {
 	
 	ai_zeal = -30
 
-	potential = { has_religion_feature = religion_no_leader }
+	potential = { TOW_religion_has_no_leader = yes }
 	random = no
 	religious = yes
 	ruler_designer_cost = 0
@@ -1960,7 +1960,7 @@ pagan_branch_2 = {
 	
 	ai_zeal = 30
 	
-	potential = { has_religion_feature = religion_no_leader }
+	potential = { TOW_religion_has_no_leader = yes }
 	random = no
 	religious = yes
 	ruler_designer_cost = 0
@@ -1980,7 +1980,7 @@ pagan_branch_3 = {
 	
 	ai_ambition = 20
 	
-	potential = { has_religion_feature = religion_no_leader }
+	potential = { TOW_religion_has_no_leader = yes }
 	random = no
 	religious = yes
 	ruler_designer_cost = 0
@@ -2000,7 +2000,7 @@ pagan_branch_4 = {
 	
 	ai_honor = 10
 	
-	potential = { has_religion_feature = religion_no_leader }
+	potential = { TOW_religion_has_no_leader = yes }
 	random = no
 	religious = yes
 	ruler_designer_cost = 0
@@ -2148,8 +2148,8 @@ pirate = {
 		OR = {
 			has_character_flag = acquired_pirate_trait_by_bloodline
 			AND = {
-				has_religion_feature = religion_adventuring
-				has_religion_feature = religion_seafaring
+				TOW_religion_is_adventuring = yes
+				TOW_religion_is_seafaring = yes
 			}
 		}
 	}
@@ -2172,7 +2172,7 @@ pirate = {
 
 bloodthirsty_gods_1 = { #10 burned_hearts_points
 	potential = {
-		has_religion_feature = religion_ritual_sacrifice
+		TOW_religion_practices_ritual_sacrifice = yes
 	}
 	opposites =  {
 		bloodthirsty_gods_2
@@ -2204,7 +2204,7 @@ bloodthirsty_gods_1 = { #10 burned_hearts_points
 }
 bloodthirsty_gods_2 = { #50 burned_hearts_points
 	potential = {
-		has_religion_feature = religion_ritual_sacrifice
+		TOW_religion_practices_ritual_sacrifice = yes
 	}
 	opposites =  {
 		bloodthirsty_gods_1
@@ -2236,7 +2236,7 @@ bloodthirsty_gods_2 = { #50 burned_hearts_points
 }
 bloodthirsty_gods_3 = { #100 burned_hearts_points
 	potential = {
-		has_religion_feature = religion_ritual_sacrifice
+		TOW_religion_practices_ritual_sacrifice = yes
 	}
 	opposites =  {
 		bloodthirsty_gods_2

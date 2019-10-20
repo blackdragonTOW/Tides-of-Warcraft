@@ -1,0 +1,217 @@
+# hair, mouth, chin, nose, eyes, cheek, ear, neck
+spriteTypes = {
+	
+	### Draenei FEMALE ####
+	
+	# CULTURE_INDEX: 0 = clothes behind, 1 = headgear behind, 2 = clothes, 3 = headgear mid, 4 = clothes infront, 5 = headgear
+	
+	# draenei female
+	portraitType = {
+		name = "PORTRAIT_draeneigfx_female"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_draenei_female_hair_behind:p1:e:y"
+			"GFX_draenei_female_base:p2:h"
+			"GFX_draenei_female_clothes:p14"
+			"GFX_draenei_female_tentacles:d0:h"
+			"GFX_draenei_female_tentacles_uncolored:d0"
+			"GFX_draenei_female_cheeks:d4:h"
+			"GFX_draenei_female_chin:d1:h"
+		   	"GFX_draenei_female_hair_mid:p1:e:y"
+			"GFX_draenei_female_eyes:d6:h"
+			"GFX_draenei_female_nose:d3:h"
+			"GFX_draenei_female_mouth:d2:h"
+			"GFX_draenei_female_mouth_uncolored:d2"
+			"GFX_draenei_female_horns:d5:h"
+			"GFX_draenei_female_ear:d7:h"
+			"GFX_draenei_female_shade:d8"
+			"GFX_draenei_female_eyes_uncolored:d6"
+		   	"GFX_draenei_female_hair:p1:e:y"
+		   	"GFX_draenei_female_hair_uncolored:p1:y"
+			"GFX_draenei_female_tentacles_front:d0:h"
+			"GFX_draenei_female_tentacles_front_uncolored:d0"
+			"GFX_draenei_female_clothes_front:p14"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_character_blinded_eyes:p10"
+			"GFX_character_eyepatch:p13:y:o32x63"
+			"GFX_character_mask:p12:y:o40x45"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 16 18 29 } { 142 162 195 } { 211 232 252 }
+			{ 10 12 15 } { 141 158 181 } { 219 236 247 }
+			{ 13 13 27 } { 130 132 167 } { 216 225 249 }
+			{ 6 7 8 } { 162 171 192 } { 225 236 249 }
+			{ 6 5 6 } { 102 84 95 } { 207 191 193 }
+			{ 10 10 10 } { 173 173 184 } { 233 237 241 }
+			{ 7 7 9 } { 138 131 165 } { 209 209 226 }
+			{ 7 8 8 } { 144 161 170 } { 208 224 228 }
+			{ 3 3 4 } { 104 121 148 } { 190 201 245 }
+			{ 6 7 8 } { 131 146 177 } { 195 223 247 }
+			{ 7 9 9 } { 139 172 186 } { 215 241 241 }
+			{ 9 8 10 } { 161 158 186 } { 244 236 252 }
+		}
+
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# draenei female midage
+	portraitType = {
+		name = "PORTRAIT_draeneigfx_female1"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_draenei_female_hair_behind:p1:e:y"
+			"GFX_draenei_female_base:p2:h"
+			"GFX_draenei_female_clothes:p14"
+			"GFX_draenei_female_tentacles:d0:h"
+			"GFX_draenei_female_tentacles_uncolored:d0"
+			"GFX_draenei_female_cheeks:d4:h"
+			"GFX_draenei_female_chin:d1:h"
+		   	"GFX_draenei_female_hair_mid:p1:e:y"
+			"GFX_draenei_female_eyes:d6:h"
+			"GFX_draenei_female_nose:d3:h"
+			"GFX_draenei_female_mouth:d2:h"
+			"GFX_draenei_female_mouth_uncolored:d2"
+			"GFX_draenei_female_horns:d5:h"
+			"GFX_draenei_female_ear:d7:h"
+			"GFX_draenei_female_shade:d8"
+			"GFX_draenei_female_eyes_uncolored:d6"
+		   	"GFX_draenei_female_hair:p1:e:y"
+		   	"GFX_draenei_female_hair_uncolored:p1:y"
+			"GFX_draenei_female_tentacles_front:d0:h"
+			"GFX_draenei_female_tentacles_front_uncolored:d0"
+			"GFX_draenei_female_clothes_front:p14"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_character_blinded_eyes:p10"
+			"GFX_character_eyepatch:p13:y:o32x63"
+			"GFX_character_mask:p12:y:o40x45"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 16 18 29 } { 142 162 195 } { 211 232 252 }
+			{ 10 12 15 } { 141 158 181 } { 219 236 247 }
+			{ 13 13 27 } { 130 132 167 } { 216 225 249 }
+			{ 6 7 8 } { 162 171 192 } { 225 236 249 }
+			{ 6 5 6 } { 102 84 95 } { 207 191 193 }
+			{ 10 10 10 } { 173 173 184 } { 233 237 241 }
+			{ 7 7 9 } { 138 131 165 } { 209 209 226 }
+			{ 7 8 8 } { 144 161 170 } { 208 224 228 }
+			{ 3 3 4 } { 104 121 148 } { 190 201 245 }
+			{ 6 7 8 } { 131 146 177 } { 195 223 247 }
+			{ 7 9 9 } { 139 172 186 } { 215 241 241 }
+			{ 9 8 10 } { 161 158 186 } { 244 236 252 }
+		}
+
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+
+	# draenei female oldage
+	portraitType = {
+		name = "PORTRAIT_draeneigfx_female2"
+		effectFile = "gfx/FX/portrait_e2h.lua"
+		layer = { # GFX_TYPE:[d|p]INDEX:COLOR_LINK:DONT_REFRESH_IF_VALID:CULTURE_INDEX
+			"GFX_empty:p3"
+			"GFX_character_background:p0"
+		   	"GFX_draenei_female_hair_behind:p1:e:y"
+			"GFX_draenei_female_base:p2:h"
+			"GFX_draenei_female_clothes:p14"
+			"GFX_draenei_female_tentacles:d0:h"
+			"GFX_draenei_female_tentacles_uncolored:d0"
+			"GFX_draenei_female_cheeks:d4:h"
+			"GFX_draenei_female_chin:d1:h"
+		   	"GFX_draenei_female_hair_mid:p1:e:y"
+			"GFX_draenei_female_eyes:d6:h"
+			"GFX_draenei_female_nose:d3:h"
+			"GFX_draenei_female_mouth:d2:h"
+			"GFX_draenei_female_mouth_uncolored:d2"
+			"GFX_draenei_female_horns:d5:h"
+			"GFX_draenei_female_ear:d7:h"
+			"GFX_draenei_female_shade:d8"
+			"GFX_draenei_female_eyes_uncolored:d6"
+		   	"GFX_draenei_female_hair:p1:e:y"
+		   	"GFX_draenei_female_hair_uncolored:p1:y"
+			"GFX_draenei_female_tentacles_front:d0:h"
+			"GFX_draenei_female_tentacles_front_uncolored:d0"
+			"GFX_draenei_female_clothes_front:p14"
+			"GFX_character_scars:p7:y"
+			"GFX_character_reddots:p8"
+			"GFX_character_boils:p9"
+			"GFX_character_blinded_eyes:p10"
+			"GFX_character_eyepatch:p13:y:o32x63"
+			"GFX_character_mask:p12:y:o40x45"
+			"GFX_character_imprisoned:p6"
+			"GFX_player_overlay:p11"
+		}
+
+		## Skin Color
+		hair_color_index = 8
+		hair_color = { # dark, base, highlight
+			{ 16 18 29 } { 142 162 195 } { 211 232 252 }
+			{ 10 12 15 } { 141 158 181 } { 219 236 247 }
+			{ 13 13 27 } { 130 132 167 } { 216 225 249 }
+			{ 6 7 8 } { 162 171 192 } { 225 236 249 }
+			{ 6 5 6 } { 102 84 95 } { 207 191 193 }
+			{ 10 10 10 } { 173 173 184 } { 233 237 241 }
+			{ 7 7 9 } { 138 131 165 } { 209 209 226 }
+			{ 7 8 8 } { 144 161 170 } { 208 224 228 }
+			{ 3 3 4 } { 104 121 148 } { 190 201 245 }
+			{ 6 7 8 } { 131 146 177 } { 195 223 247 }
+			{ 7 9 9 } { 139 172 186 } { 215 241 241 }
+			{ 9 8 10 } { 161 158 186 } { 244 236 252 }
+		}
+
+		## Hair Color
+		eye_color_index = 9
+		eye_color = {
+			{ 152 106 87 }
+			{ 127 97 121 }
+			{ 218 205 182 }
+			{ 225 223 217 }
+			{ 74 95 89 }
+			{ 131 170 168 }
+			{ 115 132 205 }
+		}
+		
+		headgear_that_hides_hair = { }
+	}
+}

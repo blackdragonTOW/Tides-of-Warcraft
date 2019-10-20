@@ -67,7 +67,7 @@ claim = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						ROOT = { TOW_character_is_bad_priest = no }
+						ROOT = { has_bad_priest_trait_trigger = no }
 						ROOT = { is_female = no }
 						holder_scope = { is_female = yes }
 					}
@@ -325,7 +325,7 @@ other_claim = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						ROOT = { TOW_character_is_bad_priest = no }
+						ROOT = { has_bad_priest_trait_trigger = no }
 						ROOT = { is_female = no }
 						holder_scope = { is_female = yes }
 					}
@@ -688,7 +688,7 @@ claim_on_liege = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						NOT = { trait = bad_priest_light_group }
+						NOT = { has_bad_priest_trait_trigger = yes }
 						ROOT = { is_female = no }
 						holder_scope ={ is_female = yes }
 					}
@@ -1415,7 +1415,7 @@ other_claim_on_liege = {
 		OR = {
 			ROOT = {
 				OR = {
-					trait = bad_priest_light_group
+					has_bad_priest_trait_trigger = yes
 					is_female = no
 				}
 			}
@@ -1440,7 +1440,7 @@ other_claim_on_liege = {
 					is_pretender = yes # Checks vs ROOT character
 					holder_scope = { has_regent = yes }
 					AND = {
-						NOT = { trait = bad_priest_light_group }
+						NOT = { has_bad_priest_trait_trigger = yes }
 						ROOT = { is_female = no }
 						holder_scope ={ is_female = yes }
 					}
