@@ -24,7 +24,7 @@ theocracy_governments = {
 		potential = {
 			is_patrician = no
 			#NOT = { is_government_potential = dragonflight_government }
-			#NOT = { is_government_potential = kirin_tor_government }
+			NOT = { is_government_potential = dalaranian_government }
 			NOT = { is_government_potential = guardian_government }
 			#NOT = { is_government_potential = technocracy_government }
 			#NOT = { is_government_potential = templar_order_government }
@@ -118,6 +118,7 @@ theocracy_governments = {
 					character = ROOT
 				}
 			}
+			NOT = { is_government_potential = dalaranian_government }
 		}
 		ignore_in_vassal_limit_calculation = {
 			kirin_tor_government
