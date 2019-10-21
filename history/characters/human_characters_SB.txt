@@ -49,6 +49,10 @@
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
+	trait=cruel
+	trait=proud
+	dna="0dmke0dafa0"
+	properties="rq0000000000000000"
 
 	9986.12.5 = {
 		birth = yes
@@ -64,15 +68,19 @@
 	}
 }
 
-1504 = {
+1770 = {
 	name = Lucille
 	dynasty = 3529 # Waycrest
+	dna="0djie0aaa00"
+	properties="ru0000000000000000"
 	female = yes
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
 	father = 1502
 	mother = 1503
+	trait=kind
+	trait=scholarly_theologian
 
 	10017.7.14 = {
 		birth = yes
@@ -83,6 +91,8 @@
 		}
 	}
 }
+
+
 
 1504 = {
 	name = Robert
@@ -109,6 +119,7 @@
 	trait = race_human
 	father = 1504
 	trait = warrior
+	trait=gluttonous
 
 	9980.4.22 = {
 		birth = yes
@@ -123,6 +134,8 @@
 1506 = {
 	name = Priscilla # Ashvane
 	female = yes
+	dna="0dhvc00aan0"
+	properties="k00000000000000000"
 	culture = tirasian
 	religion = hydromancy
 	trait = elusive_shadow
@@ -130,6 +143,7 @@
 	trait = ambitious
 	trait = shrewd
 	trait = envious
+	trait= gluttonous
 
 	9990.1.25 = {
 		birth = yes
@@ -145,6 +159,8 @@
 }
 1513 = {
 	name = Rufus
+	dna="0b0mcdb0ei0"
+	properties="ej00b0000000000000"
 	dynasty = 50104 # Mountaine
 	culture = alteraci
 	religion = holy_light
@@ -153,6 +169,8 @@
 	trait = warrior
 	trait = brave
 	trait = strategist
+	trait=honorable
+	trait=fair
 
 	9984.4.22 = {
 		birth = yes
@@ -224,10 +242,15 @@
 }
 1517 = {
 	name = Edward
+	dynasty = 3535 # Stormsong
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
 	trait = priest
+	father = 1514
+	trait=martial_cleric
+	trait=kind
+	trait=chaste
 
 	9979.12.4 = {
 		birth = yes
@@ -239,16 +262,17 @@
 	}
 }
 1518 = {
-	name = Valery
+	name = Linwood 
+	dna="0b00cfb0ci0"
+	properties="mb00f0000000000000"
 	dynasty = 3535 # Stormsong
-	female = yes
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
 	father = 1515
 	mother = 1516
 
-	9982.12.4 = {
+	9992.12.4 = {
 		birth = yes
 	}
 	9998.10.28 = {
@@ -266,8 +290,10 @@
 	culture = tirasian
 	religion = hydromancy
 	trait = race_human
+	father = 1515
+	mother = 1516
 
-	9999.6.19 = {
+	9997.6.19 = {
 		birth = yes
 	}
 	10077.1.6 = {
@@ -306,6 +332,8 @@
 	trait = rogue
 	trait = craven
 	trait = cruel
+	trait=greedy
+	trait=deceitful
 	give_nickname = nick_sweete
 
 	9980.2.14 = {
@@ -371,10 +399,17 @@
 }
 1526 = {
 	name = Vincent
+	dna="0c0dbac00c0"
+	properties="0e00a000000000d000"
 	dynasty = 50110 # Godfrey
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
+	trait=charismatic_negotiator
+	trait=mage
+	trait=cynical
+	trait=ambitious
+	trait=shrewd
 
 	9986.12.3 = {
 		birth = yes
@@ -386,7 +421,30 @@
 	}
 }
 1527 = {
-	name = Vanessa
+	name = Elizabeth
+	female = yes
+	dna="000haj00d00"
+	properties="tj00b000000000o000"
+	dynasty = 50111 # Crowley
+	culture = gilnean
+	religion = holy_light
+	trait = race_human
+	father=1528
+
+	9995.2.14 = {
+		birth = yes
+	}
+	10100.7.11 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+1528 = {
+	name = Jack
+	dna="0c0d0ja0d00"
+	properties="td00h000000000o000"
 	dynasty = 50111 # Crowley
 	culture = gilnean
 	religion = holy_light
@@ -404,33 +462,26 @@
 		}
 	}
 }
-1528 = {
-	name = Jack
-	culture = gilnean
-	religion = holy_light
-	trait = race_human
 
-	9960.12.3 = {
-		birth = yes
-	}
-	10000.7.11 = {
-		death = {
-			death_reason = death_battle
-		}
-	}
-}
 1529 = {
 	name = Darius
+	dna="000haj00d00"
+	properties="tj00b000000000o000"
 	dynasty = 50111 # Crowley
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
+	trait=skilled_tactician
+	trait=warrior
+	trait=gregarious
+	trait=wroth
+	father=1528
 
 	9996.12.3 = {
 		birth = yes
 	}
-	9999.1.1 = {
-		add_spouse = 1530
+	10017.12.3 = {
+	trait=one_eyed
 	}
 	10077.7.11 = {
 		death = {
@@ -439,13 +490,18 @@
 	}
 }
 1530 = {
-	name = Charise
+	name = Morticia
+	dna="000haj00d00"
+	properties="tj00b000000000o000"
+	dynasty = 50111 # Crowley
 	female = yes
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
+	trait=skilled_tactician
+	father=1528
 
-	9999.12.3 = {
+	9993.12.3 = {
 		birth = yes
 	}
 	10030.7.11 = {
@@ -462,7 +518,6 @@
 	religion = holy_light
 	trait = race_human
 	father = 1529
-	mother = 1530
 
 	10003.12.3 = {
 		birth = yes
@@ -564,6 +619,9 @@
 	religion = arcane
 	trait = race_human
 	trait = mage
+	trait=scholarly_theologian
+	trait=mystic
+	trait=cynical
 	
 	9983.3.9 = {
 		birth = yes
@@ -582,6 +640,9 @@
 	trait = race_human
 	father = 1532
 	mother = 1533
+	trait=flamboyant_schemer
+	trait=lunatic
+	trait=wroth
 	
 	9998.10.1 = {
 		birth = yes
@@ -594,6 +655,8 @@
 }
 1541 = {
 	name = Elian
+	dna="0b0aadc0bi0"
+	properties="qh00c0000000000000"
 	dynasty = 50115 # Ashbury
 	culture = gilnean
 	religion = holy_light
@@ -601,6 +664,11 @@
 	
 	9979.2.26 = {
 		birth = yes
+	}
+	9992.1.1={
+		effect={
+			add_friend = 1546 #Genn Greymane
+		}
 	}
 	10000.1.2 = {
 		add_spouse = 1542
@@ -629,6 +697,8 @@
 }
 1543 = {
 	name = Ransford
+	dna="0a0e0cb0d00"
+	properties="fb00e0000000000000"
 	dynasty = 50116 # Walden
 	culture = gilnean
 	religion = holy_light
@@ -662,6 +732,8 @@
 }
 1552 = {
 	name = Josiah
+	dna="0a0000a0c00"
+	properties="ce00f0000000000000"
 	dynasty = 50119 # Avery
 	culture = gilnean
 	religion = holy_light
@@ -694,6 +766,8 @@
 }
 1556 = {
 	name = Horrace
+	dna="000cad00bj0"
+	properties="ce00f0000000000000"
 	dynasty = 50121 # Whitesteed
 	culture = alteraci
 	religion = holy_light
@@ -709,7 +783,9 @@
 	}
 }
 1557 = {
-	name = James    # Magister Burnside      
+	name = James    # Magister Burnside 
+    dna="0a0b0b000n0"
+	properties="ta00d0000000000000"	
 	dynasty = 50122 # Burnside
 	culture = dalaranian
 	religion = holy_light
@@ -728,6 +804,8 @@
 1558 = {
 	name = Olivia
 	female = yes
+	dna="0agyb0dbem0"
+	properties="sc0000000000000000"
 	dynasty = 50122 # Burnside
 	culture = dalaranian
 	religion = holy_light
@@ -746,6 +824,8 @@
 }
 1559 = {
 	name = Newton
+	dna="0c0bbfc0eg0"
+	properties="mb00c0000000000000"
 	dynasty = 50122 # Burnside
 	culture = dalaranian
 	religion = holy_light
@@ -764,6 +844,8 @@
 }
 1560 = {
 	name = John
+	dna="000bceb0eg0"
+	properties="n000b0000000000000"
 	dynasty = 50122 # Burnside
 	culture = dalaranian
 	religion = holy_light
@@ -781,6 +863,8 @@
 }
 1561 = {
 	name = Johnatan      
+	dna="0a0kb000eg0"
+	properties="sc0000000000000000"
 	dynasty = 50122 # Burnside
 	culture = dalaranian
 	religion = holy_light
@@ -796,11 +880,18 @@
 	}
 }
 1563 = {
-	name = Helcular     
+	name = Helcular    
+	dna="0b0bal00fc0"
+	properties="ua00g0000000000000"
 	dynasty = 50125 # Livingstone
 	culture = dalaranian
 	religion = holy_light
 	trait = race_human
+	trait = scholarly_theologian
+	trait=mage
+	trait=cynical
+	trait=cruel
+	trait=mystic
 	
 	9964.9.7 = {
 		birth = yes
@@ -817,6 +908,8 @@
 	culture = alteraci
 	religion = holy_light
 	trait = race_human
+	trait=kind
+	trait=just
 	
 	9979.7.8 = {
 		birth = yes
@@ -829,11 +922,15 @@
 }
 1565 = {
 	name = Marcus    
+	dna="000e0ba0000"
+	properties="bb0000000000000000"
 	dynasty = 50123 # Redpath
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 1656
+	trait=tough_soldier
+	trait=wroth
 	
 	9980.2.26 = {
 		birth = yes
@@ -846,6 +943,8 @@
 }
 1566 = {
 	name = Henry
+	dna="0c0c0db0bi0"
+	properties="0j00d0000000000000"
 	dynasty = 50124 # Maleb
 	culture = alteraci
 	religion = holy_light
@@ -866,6 +965,9 @@
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
+	trait=tough_soldier
+	trait=greedy
+	trait=arbitrary
 	
 	9930.1.3 = {
 		birth = yes
@@ -878,14 +980,27 @@
 }
 1572 = {
 	name = Aedelas
+	dna="0a000lb0aj0"
+	properties="0c00d00a0000000000"
 	dynasty = 50127 # Blackmoore
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
 	father = 1571
+	trait=skilled_tactician
+	trait=warrior
+	trait=arbitrary
+	trait=ambitious
+	trait=drunkard
+	trait=wroth
+	trait=cruel
+	trait=scarred
 	
 	9981.9.20 = {
 		birth = yes
+	}
+	10010.1.21 = {
+	trait=scarred
 	}
 	10018.1.21 = {
 		death = {
@@ -895,6 +1010,8 @@
 }
 1573 = {
 	name = Tammis
+	dna="0a0gaec0ak0"
+	properties="ek00h00a0000000000"
 	dynasty = 50130 # Foxton
 	culture = alteraci
 	religion = holy_light
@@ -903,7 +1020,7 @@
 	9979.2.16 = {
 		birth = yes
 	}
-	9989.2.16 = {
+	9996.2.16 = {
 		add_spouse = 1574
 		employer = 1572
 		give_job_title = job_steward
@@ -914,8 +1031,38 @@
 		}
 	}
 }
+
+1771 = {
+	name = Faralyn
+	dna="000gafb0fi0"
+	properties="ef00f0000000000000"
+	dynasty = 50130 # Foxton
+	culture = alteraci
+	religion = holy_light
+	trait = race_human
+	father=1573 #tammis
+	mother=1574
+	
+	10000.1.1 = {
+		birth = yes
+	}
+	10000.1.1 = {
+		employer = 1572
+	}
+	10000.1.1 = {
+	trait=fever
+	}
+	10029.10.2 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
 1574 = {
 	name = Clannia
+	dna="0afmc0ggbi0"
+	properties="ch0000000000000000"
 	female = yes
 	culture = alteraci
 	religion = holy_light
@@ -924,7 +1071,10 @@
 	9974.7.6 = {
 		birth = yes
 	}
-	10029.10.2 = {
+	9996.1.1 = {
+		employer = 1572
+	}
+	10004.10.2 = {
 		death = {
 			death_reason = death_battle
 		}
@@ -933,15 +1083,32 @@
 1575 = {
 	name = Taretha
 	female = yes
+	dna="0aemc0jgbi0"
+	properties="cd0000000000000000"
 	dynasty = 50130 # Foxton
 	culture = alteraci
 	religion = holy_light
 	trait = race_human
+	trait=quick
+	trait=kind
+	trait=brave
+	trait=charitable
+	trait=temperate
+	father=1573 #tammis
+	mother=1574 #clannia
 	
-	9993.2.12 = {
+	9996.2.12 = {
 		birth = yes
 	}
-	10010.10.2 = {
+	9996.2.12 = {
+		employer = 1572
+	}
+	10008.1.1={
+		effect={
+			add_friend = 2011 #Thrall, she helped him and made him survive
+		}
+	}
+	10019.10.2 = {
 		death = {
 			death_reason = death_battle
 		}
@@ -968,9 +1135,14 @@
 	culture = alteraci
 	religion = holy_light
 	trait = race_human
+	trait=kind
+	trait=patient
 	
 	9986.5.29 = {
 		birth = yes
+	}
+	10005.1.1 = {
+		employer = 1571 #Adelyn Blackmoore
 	}
 	10020.10.2 = {
 		death = {
@@ -980,13 +1152,19 @@
 }
 1578 = {
 	name = Jorah
+	dna="0a0mc0b0ek0"
+	properties="ce00i0000000000000"
 	dynasty = 50129 # Falconcrest
 	culture = alteraci
 	religion = holy_light
 	trait = race_human
+	trait=rogue
 	
 	9982.9.2 = {
 		birth = yes
+	}
+	10020.1.1 = {
+		employer = 2012 #Aiden perenolde
 	}
 	10100.10.2 = {
 		death = {
@@ -994,22 +1172,7 @@
 		}
 	}
 }
-1578 = {
-	name = Jorah
-	dynasty = 50129 # Falconcrest
-	culture = alteraci
-	religion = holy_light
-	trait = race_human
-	
-	9982.9.2 = {
-		birth = yes
-	}
-	10100.10.2 = {
-		death = {
-			death_reason = death_battle
-		}
-	}
-}
+
 1579 = {
 	name = Marlgane
 	dynasty = 50131 # Slipknot
@@ -1017,7 +1180,7 @@
 	religion = holy_light
 	trait = race_human
 	
-	9976.11.23 = {
+	9974.11.23 = {
 		birth = yes
 	}
 	10006.10.2 = {
@@ -1037,6 +1200,9 @@
 	9990.6.19 = {
 		birth = yes
 	}
+	10020.1.1 = {
+		employer = 2012 #Aiden perenolde
+	}
 	10100.10.2 = {
 		death = {
 			death_reason = death_battle
@@ -1052,6 +1218,9 @@
 	
 	9934.1.30 = {
 		birth = yes
+	}
+	10020.1.1 = {
+		employer = 2012 #Aiden perenolde
 	}
 	10005.11.28 = {
 		death = {
@@ -1069,6 +1238,9 @@
 	
 	9981.2.9 = {
 		birth = yes
+	}
+	10020.1.1 = {
+		employer = 2012 #Aiden perenolde
 	}
 	10100.10.2 = {
 		death = {
@@ -1112,10 +1284,14 @@
 }
 1585 = {
 	name = Jorach
-	dynasty = 50134 # Ravenholdt
+	dynasty = 50134 # Ravenholdt ##########LORD OF ASSASINS GUILD
 	culture = alteraci
 	religion = holy_light
 	trait = race_human
+	trait=rogue
+	trait=elusive_shadow #best assasin  
+	trait=cynical
+	trait=cruel 
 	
 	9984.2.7 = {
 		birth = yes
@@ -1340,10 +1516,36 @@
 	religion = holy_light
 	trait = race_human
 	father = 1596
-	mother = 1597
+	mother = 159
+	trait=kind
 
 	9994.12.05 = {
 		birth = yes
+	}
+	10022.3.05 = {
+	trait=race_undead_scourge
+	}
+	10020.5.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+1772 = {
+	name = Aaron
+	dynasty = 50138 # Agamand
+	culture = lordaeronian
+	religion = holy_light
+	trait = race_human
+	father = 1596
+	mother = 159
+
+	9993.02.05 = {
+		birth = yes
+	}
+	10022.3.05 = {
+	trait=race_undead_scourge
 	}
 	10020.5.6 = {
 		death = {
@@ -1359,6 +1561,10 @@
 	trait = race_human
 	father = 1596
 	mother = 1597
+	trait=mage
+	trait=weak
+	trait=craven
+	trait=trusting
 
 	9998.08.05 = {
 		birth = yes
@@ -1917,13 +2123,41 @@
 }
 1631 = {
 	name = Saidan
+	dna="0c0ccf00bi0"
+	properties="ng00a000000000c000"
 	dynasty = 50152 # Dathrohan
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
+	martial=10
+	diplomacy=4
+	intrigue=4
+	stewardship=6
+	learning=8
+	trait=brilliant_strategist
+	trait=warrior
+	trait=zealous
+	trait=erudite
+	trait=brave
+	trait=chaste
+	trait=just
+	trait=temperate
+	trait=diligent
+	disallow_random_traits = yes
 
-	9960.12.4 = {
+	9957.12.4 = {
 		birth = yes
+	}
+	9981.1.1={
+		effect={
+			add_friend = 2028 #Tirion
+		}
+	}
+	10006.1.1={
+	trait=paladin #founding of the silverhand
+	}
+	10024.1.1={
+	trait=scarlet
 	}
 	10100.5.6 = {
 		death = {
