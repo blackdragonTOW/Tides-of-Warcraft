@@ -1,0 +1,1356 @@
+#Human Characters 3201 - 3500
+
+2 = {
+	name = "Gorek"
+	dynasty = 2 # Ironpatch
+	culture = warsong
+	religion = demonology
+	dna="0ebc00c0ffh"
+	properties="rd000000000000j000"
+	martial = 7
+	trait = race_orc
+	trait = tough_soldier
+	trait = warrior
+	trait = one_eyed
+	9979.2.12 = {
+		birth = yes
+	}
+	10019.7.13 = {
+		religion = hydromancy
+	}
+	10040.12.20 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+35 = {
+	name = "Aggro'gosh"
+	dynasty = 35 # Fireroar
+	culture = bleeding_hollow
+	religion = burning_legion
+	dna="0c0a000abaa"
+	properties="ab00i0000000000000"
+	martial = 6
+	trait = race_orc
+	9980.5.2 = {
+		birth = yes
+	}
+	9996.5.2 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
+	10003.6.12 = {
+		religion = demonology
+	}
+	10018.4.27 = {
+		religion = shamanism
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+51 = {
+	name = "Sevine"
+	dynasty = 47 # Blackclaw
+	female = yes
+	culture = shadowmoon
+	religion = burning_legion
+	dna="00jcgcadd0a"
+	properties="ib0000000000000000"
+	learning = 8
+	trait = race_orc
+	9981.9.10 = {
+		birth = yes
+		effect = {
+			set_character_flag = stormreaver
+		}
+	}
+	9997.9.10 = {
+		add_trait = scholarly_theologian
+		add_trait = warlock
+	}
+	10003.9.4 = {
+		religion = demonology
+		effect = {
+			secret_religion = burning_legion
+		}
+	}
+	10021.6.7 = {
+		add_trait = felsworn
+		religion = burning_legion
+	}
+	10025.12.13 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+55 = {
+	name = "Griselda"
+	dynasty = 6002 # Blackhand
+	female = yes
+	culture = blackrock
+	religion = burning_legion
+	dna="0eha00fiabg"
+	properties="af00d0000000000000"
+	trait = race_orc
+	father = 52 # Blackhand
+	mother = 56 # Urukal
+	9983.10.8 = {
+		birth = yes
+		employer = 52 # Blackhand
+	}
+	10003.1.19 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+56 = {
+	name = "Ururkal"
+	dynasty = 50 # Forgebound
+	female = yes
+	culture = blackrock
+	religion = burning_legion
+	dna="00qb0bbqbfc"
+	properties="kd0000000000000000"
+	trait = race_orc
+	9962.7.22 = {
+		birth = yes
+	}
+	9999.6.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+70 = {
+	name = "Eitrigg"
+	dynasty = 56 # Honorfist
+	culture = blackrock
+	religion = burning_legion
+	dna="0ige00dg000"
+	properties="re00f0000000000000"
+	diplomacy = 7
+	martial = 5
+	stewardship = 3
+	intrigue = 1
+	learning = 4
+	trait = race_orc
+	trait = tough_soldier
+	trait = humble
+	trait = patient
+	trait = kind
+	trait = brave
+	trait = content
+	trait = gregarious
+	trait = just
+	disallow_random_traits = yes
+	9962.3.10 = {
+		birth = yes
+		employer = 52 # Blackhand
+	}
+	10003.9.4 = {
+		religion = demonology
+		employer = 57 # Orgrim
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+72 = {
+	name = "Ariok"
+	dynasty = 56 # Honorfist
+	culture = blackrock
+	religion = demonology
+	dna="0ebi000h00c"
+	properties="we00i0000000000000"
+	trait = race_orc
+	father = 70 # Eitrigg
+	10004.10.21 = {
+		birth = yes
+	}
+	10020.10.21 = {
+		trait = tough_soldier
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+73 = {
+	name = "Dashur"
+	dynasty = 59 # Saurfang
+	culture = blackrock
+	religion = shamanism
+	female = yes
+	trait = race_orc
+	9948.5.12 = {
+		birth = yes
+	}
+	9988.9.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+74 = {
+	name = "Broxigar"
+	dynasty = 59 # Saurfang
+	culture = blackrock
+	religion = burning_legion
+	dna="0cgi00a0afi"
+	properties="hh00h0000000000000"
+	martial = 8
+	trait = race_orc
+	trait = tough_soldier
+	trait = warrior
+	trait = brave
+	trait = wroth
+	father = 3241 # Koruk
+	mother = 73 # Dashur
+	9970.3.10 = {
+		birth = yes
+		give_nickname = nick_the_red
+		employer = 52 # Blackhand
+	}
+	10003.9.4 = {
+		religion = demonology
+		employer = 57 # Orgrim
+	}
+	10018.2.25 = {
+		religion = shamanism
+	}
+	10018.10.17 = {
+		#employer =  # Thrall
+	}
+	10023.11.8 = {
+		death = {
+			death_reason = death_missing
+		}
+	}
+}
+
+75 = {
+	name = "Varok"
+	dynasty = 59 # Saurfang
+	culture = blackrock
+	religion = burning_legion
+	dna="0did00h000l"
+	properties="kb00i0000000000000"
+	diplomacy = 6
+	martial = 10
+	stewardship = 7
+	intrigue = 4
+	learning = 5
+	trait = race_orc
+	trait = warrior
+	trait = fel_touched
+	trait = brilliant_strategist
+	trait = strong
+	trait = shrewd
+	trait = temperate
+	trait = patient
+	trait = kind
+	trait = humble
+	trait = brave
+	trait = content
+	trait = honest
+	trait = just
+	disallow_random_traits = yes
+	mother = 73 # Dashur
+	father = 3241 # Koruk
+	9972.4.8 = {
+		birth = yes
+		employer = 52 # Blackhand
+		effect = {
+			give_artifact = arcanite_reaper
+		}
+	}
+	10003.9.4 = {
+		religion = demonology
+		employer = 57 # Orgrim
+	}
+	10018.2.25 = {
+		religion = shamanism
+	}
+	10018.10.17 = {
+		#employer =  # Thrall
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+76 = {
+	name = "Dranosh"
+	dynasty = 59 # Saurfang
+	culture = blackrock
+	religion = shamanism
+	dna="0fjd00jedbc"
+	properties="nc00f0000000000000"
+	trait = race_orc
+	father = 75 # Varok
+	9990.4.10 = {
+		birth = yes
+	}
+	10000.1.1 = {
+		death = { death_reason = death_missing }
+	}
+}
+
+77 = {
+	name = "Rok"
+	dynasty = 59 # Saurfang
+	culture = blackrock
+	religion = burning_legion
+	dna="0ae000aabab"
+	properties="sc00g0000000000000"
+	trait = race_orc
+	father = 3241 # Koruk
+	9973.11.9 = {
+		birth = yes
+		employer = 52 # Blackhand
+	}
+	10003.9.4 = {
+		religion = demonology
+		employer = 57 # Orgrim
+	}
+	10018.2.25 = {
+		religion = shamanism
+	}
+	10018.10.17 = {
+		#employer =  # Thrall
+	}
+	10021.1.3 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+78 = {
+	name = "Thura"
+	dynasty = 59 # Saurfang
+	culture = blackrock
+	religion = demonology
+	dna="00qqj00kddg"
+	properties="cd0000000000000000"
+	trait = race_orc
+	father = 79 # Rok
+	10014.5.15 = {
+		birth = yes
+	}
+	10018.2.25 = {
+		religion = shamanism
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+79 = {
+	name = "Teron"
+	dynasty = 60 # Gorefiend
+	culture = shadowmoon
+	religion = burning_legion
+	dna="00qqj00kddg"
+	properties="cd0000000000000000"
+	diplomacy = 3
+	martial = 2
+	stewardship = 0
+	intrigue = 6
+	learning = 8
+	trait = race_orc
+	trait = fel_tainted
+	trait = warlock
+	trait = deceitful
+	trait = cruel
+	trait = cynical
+	trait = scholarly_theologian
+	trait = proud
+	trait = envious
+	trait = gluttonous
+	disallow_random_traits = yes
+	9972.5.14 = {
+		birth = yes
+		employer = 65 # Gul'dan
+	}
+	10005.1.22 = {
+		add_trait = race_undead_generic
+		add_trait = death_knight
+		religion = demonology
+		effect = {
+			remove_trait = warlock
+			set_graphical_culture = azerothian
+		}
+	}
+	10008.9.17 = {
+		death = {
+			death_reason = death_missing
+		}
+	}
+}
+
+80 = {
+	name = "Gaz"
+	dynasty = 61 # Soulripper
+	culture = shadowmoon
+	religion = burning_legion
+	learning = 6
+	trait = race_orc
+	trait = martial_cleric
+	trait = warlock
+	9980.2.10 = {
+		birth = yes
+		employer = 65 # Gul'dan
+	}
+	10005.1.22 = {
+		add_trait = race_undead_generic
+		add_trait = death_knight
+		religion = demonology
+		effect = {
+			remove_trait = warlock
+			set_graphical_culture = azerothian
+		}
+	}
+	10008.5.18 = {
+		death = {
+			death_reason = death_duel
+			#killer =  # Turalyon
+		}
+	}
+}
+
+81 = {
+	name = "Ragnok"
+	dynasty = 62 # Bloodreaver
+	culture = shadowmoon
+	religion = burning_legion
+	learning = 6
+	trait = race_orc
+	trait = martial_cleric
+	trait = warlock
+	9977.9.23 = {
+		birth = yes
+		employer = 65 # Gul'dan
+	}
+	10005.1.22 = {
+		add_trait = race_undead_generic
+		add_trait = death_knight
+		religion = demonology
+		effect = {
+			remove_trait = warlock
+			set_graphical_culture = azerothian
+		}
+	}
+	10008.9.17 = {
+		death = {
+			death_reason = death_missing
+		}
+	}
+}
+
+82 = {
+	name = "Drak'thul"
+	dynasty = 63 # Darkstorm
+	culture = shadowmoon
+	religion = burning_legion
+	learning = 8
+	trait = race_orc
+	trait = warlock
+	9972.8.10 = {
+		birth = yes
+		employer = 65 # Gul'dan
+	}
+	10003.9.4 = {
+		religion = demonology
+	}
+	10006.6.6 = {
+		death = {
+			death_reason = death_missing
+		}
+	}
+}
+87 = {
+	name = "Ruag"
+	dynasty = 68 # Lokgol
+	culture = frostwolf
+	religion = burning_legion
+	dna="0eb000gecf0"
+	properties="rm00i0000000000000"
+	martial = 6
+	trait = race_orc
+	9984.2.10 = {
+		birth = yes
+	}
+	10000.7.10 = {
+		religion = demonology
+	}
+	10005.2.20 = {
+		religion = shamanism
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+91 = {
+	name = "Tok'Kar"
+	dynasty = 72 # Furfang
+	culture = frostwolf
+	religion = burning_legion
+	dna="0hci00gibb0"
+	properties="mb00i0000000000000"
+	martial = 6
+	trait = race_orc
+	10000.1.20 = {
+		birth = yes
+	}
+	10000.7.10 = {
+		religion = demonology
+	}
+	10005.2.20 = {
+		religion = shamanism
+	}
+	10100.1.1 = {
+		death = { death_reason = death_natural }
+	}
+}
+
+194 = {
+	name = "Gath'Ilzogg"
+	dynasty = 133 # Blazefang
+	culture = blackrock
+	religion = burning_legion
+	dna="0a0c00jda0a"
+	properties="ed0000000000000000"
+	martial = 7
+	trait = race_orc
+	9977.3.16 = {
+		birth = yes
+	}
+	9993.3.16 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+		add_trait = cruel
+		add_trait = wroth
+	}
+	10003.9.4 = {
+		religion = demonology
+	}
+	10008.11.15 = {
+		religion = blackwyrm_cult
+	}
+	10026.2.27 = {
+		add_trait = race_undead_generic
+		add_trait = death_knight
+		effect = {
+			remove_trait = warrior
+		}
+	}
+	10028.4.19 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3201 = {
+	
+	name = Zuluhed
+	dynasty = 50286 # Dragonmaw # Zuluhed the Whacked
+	culture = dragonmaw
+	religion = burning_legion
+	trait = race_orc
+	
+	9968.08.23 = {
+		birth = yes
+		give_nickname = nick_the_whacked
+	}
+	10028.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3202 = {
+	
+	name = Gruntimp
+	dynasty = 27010 # Gordunni
+	culture = gordunni
+	religion = burning_legion
+	trait = race_ogre
+	
+	9973.03.14 = {
+		birth = yes
+	}
+	10028.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3203 = {
+	
+	name = Ulrok
+	dynasty = 27010 # Gordunni
+	culture = gordunni
+	religion = burning_legion
+	trait = race_ogre
+	
+	9984.3.22 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3204 = {
+	
+	name = Burr
+	dynasty = 27021 # Stonegullet
+	culture = stonegullet
+	religion = burning_legion
+	trait = race_ogre
+	
+	9961.12.27 = {
+		birth = yes
+	}
+	10006.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3205 = {
+	
+	name = Crukann'mush
+	dynasty = 27021 # Stonegullet
+	culture = stonegullet
+	religion = burning_legion
+	trait = race_ogre
+	father = 3204
+	
+	9988.09.10 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3206 = {
+	
+	name = Burr'thosh
+	dynasty = 27020 # Tonma
+	culture = tonma
+	religion = burning_legion
+	trait = race_ogre
+	
+	9972.05.14 = {
+		birth = yes
+	}
+	10006.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3207 = {
+	
+	name = Thrig
+	dynasty = 27001 # Boulderfist
+	culture = boulderfist
+	religion = burning_legion
+	trait = race_ogre
+	
+	9965.06.04 = {
+		birth = yes
+	}
+	10006.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3208 = {
+	
+	name = Kor'gresh
+	dynasty = 50299 # Coldrage
+	culture = boulderfist
+	religion = burning_legion
+	trait = race_ogre
+	
+	9970.09.07 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3209 = {
+	
+	name = Ogg'ora
+	female = yes
+	dynasty = 27023 # Firegut
+	culture = firegut
+	religion = burning_legion
+	trait = race_ogre
+	
+	9976.06.25 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3210 = {
+	
+	name = Ogg'ora
+	female = yes
+	dynasty = 27023 # Firegut
+	culture = firegut
+	religion = burning_legion
+	trait = race_ogre
+	
+	9976.06.25 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3211 = {
+	
+	name = Tho'grun
+	dynasty = 27008 # Dustbelcher
+	culture = dustbelcher
+	religion = burning_legion
+	trait = race_ogre
+	
+	9976.05.26 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3212 = {
+	
+	name = Cagg
+	dynasty = 27008 # Dustbelcher
+	culture = dustbelcher
+	religion = burning_legion
+	trait = race_ogre
+	
+	9977.01.29 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3213 = {
+	
+	name = Kosh
+	dynasty = 27008 # Dustbelcher
+	culture = dustbelcher
+	religion = burning_legion
+	trait = race_ogre
+	
+	9964.06.10 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3214 = {
+	
+	name = Wurg
+	dynasty = 27008 # Dustbelcher
+	culture = dustbelcher
+	religion = burning_legion
+	trait = race_ogre
+	
+	9973.11.29 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3215 = {
+	
+	name = Boff
+	dynasty = 27008 # Dustbelcher
+	culture = dustbelcher
+	religion = burning_legion
+	trait = race_ogre
+	
+	9971.11.06 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3216 = {
+	
+	name = Karurthagg
+	dynasty = 27013 # Spirestone
+	culture = spirestone
+	religion = burning_legion
+	trait = race_ogre
+	
+	9963.03.25 = {
+		birth = yes
+	}
+	10007.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3217 = {
+	
+	name = Omokk
+	dynasty = 27013 # Spirestone
+	culture = spirestone
+	religion = burning_legion
+	trait = race_ogre
+	father = 3216
+	
+	9986.03.26 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3218 = {
+	
+	name = Grul'du
+	dynasty = 27011 # Mo'grosh
+	culture = mo_grosh
+	religion = burning_legion
+	trait = race_ogre
+	
+	9948.04.02 = {
+		birth = yes
+	}
+	9984.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3219 = {
+	
+	name = Chok'sul
+	dynasty = 27011 # Mo'grosh
+	culture = mo_grosh
+	religion = burning_legion
+	trait = race_ogre
+	father = 3218
+	
+	9975.04.02 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3220 = {
+	
+	name = Gor'kresh
+	dynasty = 27011 # Mo'grosh
+	culture = mo_grosh
+	religion = burning_legion
+	trait = race_ogre
+	father = 3218
+	
+	9981.11.24 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3221 = {
+	
+	name = Vezogloh
+	dynasty = 27002 # Bloodeye
+	culture = bloodeye
+	religion = burning_legion
+	trait = race_ogre
+	
+	9987.12.23 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3222 = {
+	
+	name = Muk
+	dynasty = 27009 # Glopgut
+	culture = glopgut
+	religion = burning_legion
+	trait = race_ogre
+	
+	9954.10.16 = {
+		birth = yes
+	}
+	9994.11.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3223 = {
+	
+	name = Brogg
+	dynasty = 27009 # Glopgut
+	culture = glopgut
+	religion = burning_legion
+	trait = race_ogre
+	father = 3222
+	
+	9976.05.14 = {
+		birth = yes
+	}
+	10100.11.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3224 = {
+	
+	name = Thog
+	dynasty = 27009 # Glopgut
+	culture = glopgut
+	religion = burning_legion
+	trait = race_ogre
+	father = 3222
+	
+	9987.08.19 = {
+		birth = yes
+	}
+	10100.11.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3225 = {
+	
+	name = Greszum
+	female = yes
+	dynasty = 50300 # Cruelchain
+	culture = blackrock
+	religion = burning_legion
+	trait = race_orc
+	
+	9980.07.26 = {
+		birth = yes
+	}
+	10100.11.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3226 = {
+	
+	name = Goklez
+	dynasty = 50301 # Redsorrow
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	
+	9954.12.28 = {
+		birth = yes
+	}
+	10013.11.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3227 = {
+	
+	name = Uglol
+	dynasty = 6003 # Deadeye
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	
+	9962.12.02 = {
+		birth = yes
+	}
+	10013.11.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3228 = {
+	
+	name = Rornum
+	dynasty = 50302 # Rockblade
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	
+	9949.04.13 = {
+		birth = yes
+	}
+	10006.11.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3229 = {
+	name = Grorzarn
+	dynasty = 50303 # Battlesmoke
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	
+	9955.07.01 = {
+		birth = yes
+	}
+	10006.2.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3230 = {
+	name = Elgo
+	dynasty = 6012 # Bladefury
+	culture = burning_blade
+	religion = burning_legion
+	trait = race_orc
+	
+	9970.06.30 = {
+		birth = yes
+	}
+	10020.2.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3231 = {
+	
+	name = Nekros
+	dynasty = 8411 # Skullcrusher
+	culture = dragonmaw
+	religion = burning_legion
+	trait = race_orc
+	
+	9949.11.25 = {
+		birth = yes
+	}
+	9964.3.30 = {
+		add_spouse = 3232
+	}
+	10010.10.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3232 = {
+	
+	name = Kanawde
+	female = yes
+	culture = dragonmaw
+	religion = burning_legion
+	trait = race_orc
+	
+	9955.3.30 = {
+		birth = yes
+	}
+	10012.10.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3233 = {
+	
+	name = Nek'rosh
+	dynasty = 8411 # Skullcrusher
+	culture = dragonmaw
+	religion = burning_legion
+	trait = race_orc
+	father = 3231
+	mother = 3232
+	
+	9977.05.09 = {
+		birth = yes
+	}
+	10029.10.2 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+3234 = {
+	name = "Rakmar"
+	dynasty = 7506 # Sharpfang
+	culture = shadowmoon
+	religion = burning_legion
+	trait = race_orc
+	trait = warlock
+	
+	9954.06.04 = {
+		birth = yes
+	}
+	10003.9.4 = {
+		religion = demonology
+	}
+	10006.6.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3235 = {
+	name = "Urluk"
+	dynasty = 50304 # Cloudkiller
+	culture = shadowmoon
+	religion = burning_legion
+	trait = race_orc
+	trait = warlock
+	
+	9961.6.27 = {
+		birth = yes
+	}
+	10003.9.4 = {
+		religion = demonology
+	}
+	10006.6.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3236 = {
+	name = "Kelris"
+	dynasty = 50305 # Shadowlaugh
+	culture = twilights_hammer
+	religion = twilights_hammer
+	trait = race_orc
+	
+	9952.12.04 = {
+		birth = yes
+	}
+	10027.6.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3237 = {
+	name = "Jedoga"
+	dynasty = 50306 # Shadowseeker
+	female = yes
+	culture = twilights_hammer
+	religion = twilights_hammer
+	trait = race_orc
+	trait = warlock
+	
+	9968.03.01 = {
+		birth = yes
+	}
+	10029.6.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3238 = {
+	name = "Thoza'tech"
+	dynasty = 30307 # Graverunner
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	
+	9986.07.20 = {
+		birth = yes
+	}
+	10012.6.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3239 = {
+	name = "Thriggazo"
+	dynasty = 50308 # Stoneslayer
+	culture = blackrock
+	religion = burning_legion
+	trait = race_orc
+	
+	9988.03.30 = {
+		birth = yes
+	}
+	10008.6.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3240 = {
+	name = "Curg"
+	dynasty = 50309 # Rabidsmoke
+	culture = blackrock
+	religion = burning_legion
+	trait = race_orc
+	trait = warlock
+	
+	9988.03.30 = {
+		birth = yes
+	}
+	10008.6.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1592 = {
+	
+	name = "Jubei'Thos"
+	dynasty = 6435 
+	culture = blackrock
+	religion = burning_legion
+	trait = race_orc
+
+	9984.7.17 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1593 = {
+	
+	name = "Gardul"
+	dynasty = 50137 # Venomshiv
+	culture = shattered_hand
+	religion = shamanism
+	trait = race_orc
+
+	9989.2.19 = {
+		birth = yes
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1594 = {
+	
+	name = "Drek'Thar"
+	dynasty = 6345
+	culture = frostwolf
+	religion = shamanism
+	trait = race_orc
+	trait = blind
+
+	9976.10.2 = {
+		birth = yes 
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1595 = {
+	
+	name = "Mathogg"
+	culture = blackrock
+	religion = burning_legion
+	trait = race_orc
+
+	9979.1.30 = {
+		birth = yes
+	}
+	10019.1.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+3241 = {
+	name = "Koruk"
+	dynasty = 59 # Saurfang
+	culture = blackrock
+	religion = shamanism
+	trait = race_orc
+	9944.5.12 = {
+		birth = yes
+	}
+	9962.5.12 = {
+		add_spouse = 73
+	}
+	9996.9.20 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
