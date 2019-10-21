@@ -1107,15 +1107,15 @@
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
+<<<<<<< HEAD
+	dna="0b0bbda0af0"
+	properties="0c00d0000000000000"
 
-
-
-
-
+=======
 	trait=cruel
 	dna="0c0cbf00aa0"
 	properties="lc00g000000000f000"
-
+>>>>>>> da39cd2c4526f29a82e08623be09f3aeb31d6150
 	9967.08.30 = {
 		birth = yes
 	}
@@ -1538,9 +1538,10 @@
 		birth = yes
 	}
 	10006.1.1={
-		trait=paladin #founding of the silverhand
+	trait=paladin #founding of the silverhand
 	}
 	10007.01.04 = 
+	effect = {
 	give_nickname = nick_the_Lightbringer
 	}
 	10020.6.19 = {
@@ -3254,7 +3255,7 @@
 
 52 = {
 	name = "Blackhand"
-	dynasty = 6002 # Blackhand
+	dynasty = 48 # Blackrock
 	culture = blackrock
 	religion = burning_legion
 	dna="0gif00i00fg"
@@ -3324,7 +3325,7 @@
 
 53 = {
 	name = "Dal'Rend"
-	dynasty = 6002 # Blackhand
+	dynasty = 49 # Black Tooth Grin
 	culture = blackrock
 	religion = burning_legion
 	dna="0gif00i00fg"
@@ -3400,7 +3401,7 @@
 
 54 = {
 	name = "Maim"
-	dynasty = 6002 # Blackhand
+	dynasty = 49 # Black Tooth Grin
 	culture = blackrock
 	religion = burning_legion
 	dna="0gif00i00fg"
@@ -3517,7 +3518,7 @@
 		birth = yes
 		give_nickname = nick_deadeye
 		effect = {
-			add_artifact = bite_of_the_bleeding_hollow
+			give_artifact = bite_of_the_bleeding_hollow
 		}
 	}
 	10000.6.3 = {
@@ -3779,36 +3780,6 @@
 	10006.6.6 = {
 		death = {
 			death_reason = death_missing # For now
-	}
-	}
-}
-2075 = {
-	name = "Alextrasza"
-	dynasty = 17802 # Red Dragonflight
-	culture = red_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	1.5.12 = {
-		birth = yes
-	}
-	10100.9.20 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-2076 = {
-	name = "Neferian"
-	dynasty = 17803 # Black Dragonflight
-	culture = black_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	200.5.12 = {
-		birth = yes
-	}
-	10100.9.20 = {
-		death = {
-			death_reason = death_natural
 		}
 	}
 }
