@@ -706,6 +706,24 @@
 	9992.6.1 = {
 		add_spouse = 2006
 	}
+	10000.1.1 = {
+		effect = {
+			spawn_unit = {
+				owner = 2009
+				province = 308
+				troops = {
+					archers = { 150 150 }
+					light_infantry = { 250 250 }
+					heavy_infantry = { 60 60 }
+					light_cavalry = { 500 500 }
+					heavy_cavalry = { 100 100 }
+				}
+				attrition = 0.1
+				disband_on_peace = no
+				maintenance_multiplier = 0.1
+			}
+		}
+	}
 	10001.10.12 = {
 		death = {
 			death_reason = death_battle
@@ -732,7 +750,7 @@
 	9958.12.30 = {
 		birth = yes
 	}
-	10100.10.12 = {
+	10000.1.1 = {
 		death = {
 			death_reason = death_battle
 		}
