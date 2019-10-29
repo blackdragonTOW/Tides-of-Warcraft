@@ -229,14 +229,6 @@ k_shattered_hand_clan = {
 	landless = yes
 	dynasty_title_names = no
 }
-d_blackwater_raiders = {
-	color = { 60 60 60 }
-	culture = goblin
-	short_name = yes
-	primary = yes
-	landless = yes
-	dynasty_title_names = no
-}
 k_steamwheedle_cartel = {
 	color = { 59 110 43 }
 	culture = goblin
@@ -479,7 +471,6 @@ d_booty_bay = {
 
 d_burning_blade_clan = {
 	color = { 155 132 55 }
-	culture = bleeding_hollow
 	culture = burning_blade
 	mercenary = yes
 	title = "WARLORD"
@@ -487,6 +478,18 @@ d_burning_blade_clan = {
 	foa = "WARLORD"
 	landless = yes
 	primary = yes
+	independent = no
+	strength_growth_per_century = 1.0
+	mercenary_type = tamil_band_composition
+}
+c_blackwater_raiders = {
+	color = { 60 60 60 }
+	culture = goblin
+	mercenary = yes
+	short_name = yes
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
 	independent = no
 	strength_growth_per_century = 1.0
 	mercenary_type = tamil_band_composition
