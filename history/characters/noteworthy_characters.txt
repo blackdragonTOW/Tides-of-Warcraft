@@ -151,7 +151,6 @@
 	trait = ambitious
 	trait = quick
 	trait = groomed
-	trait = scolar
 	trait = kind
 	trait = temperate
 	trait = fair
@@ -162,10 +161,10 @@
 	9997.6.2 = {
 		birth = yes
 	}
-	10017.6.2 = {
+	10013.6.2 = {
 	trait=mage
 	}
-	10010.1.1={
+	10015.1.1={
 		effect={
 			add_lover=1570 #######################################################################CONTINUE
 		}
@@ -178,8 +177,6 @@
 }
 1512 = {
 	name = Tandred
-	dna="0c0j0ca0bi0"
-	properties="ae00c000000000m000"
 	dynasty = 1007 # Proudmoore
 	culture = tirasian
 	religion = hydromancy
@@ -192,7 +189,6 @@
 	stewardship=6
 	learning=4
 	trait=tough_soldier
-	trait=warrior
 	trait=brave
 	trait=proud
 	trait=patient
@@ -274,7 +270,6 @@
 	learning=4
 	trait=fortune_builder
 	trait=warrior
-	trait=stubborn
 	trait=proud
 	trait=robust
 	trait=deceitful
@@ -328,7 +323,6 @@
 	intrigue=4
 	stewardship=9
 	learning=6
-	trait=scout #he is supposed to be a hunter but there isn't any hunter trait class in the files
 	
 	9998.1.17 = {
 		birth = yes
@@ -351,7 +345,6 @@
 	father = 1546
 	mother = 1547
 	trait=flamboyant_schemer
-	trait=rogue
 	
 	10000.2.9 = {
 		birth = yes
@@ -441,7 +434,7 @@
 	religion = holy_light
 	trait = race_human
 	
-	9965.4.30 = {
+	9956.4.30 = {
 		birth = yes
 	}
 	10021.10.2 = {
@@ -559,7 +552,7 @@
 	religion = shamanism
 	trait = race_orc
 	
-	9940.1.30 = {
+	9938.1.30 = {
 		birth = yes
 	}
 	11000.3.23 = {
@@ -704,12 +697,13 @@
 		birth = yes
 	}
 	9992.6.1 = {
+		trait = organizer
 		add_spouse = 2006
 	}
 	10000.1.1 = {
 		effect = {
 			spawn_unit = {
-				owner = 2009
+				owner = ROOT
 				province = 308
 				troops = {
 					archers = { 150 150 }
@@ -774,7 +768,6 @@
 	trait=strong
 	trait=brave
 	trait=erudite
-	trait=honorable
 	trait=shrewd
 	trait=just
 	trait=kind
@@ -815,7 +808,7 @@
 	9953.5.29 = {
 		birth = yes
 	}
-	9989.2.3 = {
+	9982.2.3 = {
 		add_spouse = 2013
 	}
 	10023.3.17 = {
@@ -833,7 +826,7 @@
 	religion = holy_light
 	trait = race_human
 	
-	9977.5.29 = {
+	9965.5.29 = {
 		birth = yes
 	}
 	10020.4.4 = {
@@ -885,7 +878,7 @@
 	}
 }
 
-2052 = {
+2079 = {
 	name = Elten
 	dna="000d0lb0eb0"
 	properties="f000g000000000b000"
@@ -905,7 +898,7 @@
 	}
 }
 
-2053 = {
+2080 = {
 	name = Branon
 	dna="000dcjb0bg0"
 	properties="fh00b000000000b000"
@@ -926,7 +919,7 @@
 	}
 }
 
-2054 = {
+2081 = {
 	name = Isiden
 	dynasty = 1008 # Perenolde
 	culture = alteraci
@@ -1025,7 +1018,6 @@
 	trait=content
 	trait=proud
 	trait=honest
-	trait=honorable
 	
 	9961.6.1 = {
 		birth = yes
@@ -1259,7 +1251,6 @@
 	stewardship=6
 	learning=8
 	trait=skilled_tactician
-	trait=honorable
 	trait=brave
 	trait=warrior
 	trait=charitable
@@ -1494,7 +1485,7 @@
 		}
 	}
 }
-2051 = {
+2078 = {
 	name = Stephon
 	dna="0c0b0fb0eg0"
 	properties="le00c000000000g000"
@@ -1542,7 +1533,6 @@
 	stewardship=5
 	learning=9
 	trait=skilled_tactician
-	trait=honorable
 	trait=strong
 	trait=warrior
 	trait=kind
@@ -1560,7 +1550,7 @@
 		trait=paladin #founding of the silverhand
 	}
 	10007.01.04 = {
-			give_nickname = nick_the_Lightbringer
+			give_nickname = nick_the_lightbringer
 	}
 	10020.6.19 = {
 		death = {
@@ -2447,7 +2437,7 @@
 		birth = yes
 	}
 	7023.7.11 = {
-		add_spouse = 2067
+		add_spouse = 2077
 	}
 	10021.2.14 = {
 		death = {
@@ -2456,7 +2446,7 @@
 		}
 	}
 }
-2067 = {
+2077 = {
 	name = Aelonia
 	female = yes
 	culture = high_elven
@@ -2769,6 +2759,11 @@
 	10021.2.10 = {
 		add_trait = race_undead_forsaken
 	}
+	10100.9.23 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
 }
 2072 = {
 	name = Vareesa
@@ -2803,7 +2798,7 @@
 	9841.1.3 = {
 		birth = yes
 	}
-	10005.2.30 = {
+	10005.2.27 = {
 		death = {
 			death_reason = death_natural
 		}
@@ -3204,7 +3199,7 @@
 	9941.1.3 = {
 		birth = yes
 	}
-	10005.2.30 = {
+	10005.6.30 = {
 		death = {
 			death_reason = death_natural
 		}
@@ -3764,7 +3759,6 @@
 	learning = 9
 	health = 8
 	trait = race_ogre
-	trait = ogre_two_heads
 	trait = ogre_magi
 	trait = warlock
 	trait = strong
@@ -3787,7 +3781,7 @@
 	10001.7.19 = {
 		dynasty = 58 # Twilight's Hammer
 		effect = {
-			give_artifact = twilight_canticle
+			add_artifact = twilight_canticle
 			c_northshire = {
 				ROOT = {
 					capital = PREV
@@ -3799,36 +3793,6 @@
 		death = {
 			death_reason = death_missing # For now
 	}
-	}
-}
-2075 = {
-	name = "Alextrasza"
-	dynasty = 17802 # Red Dragonflight
-	culture = red_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	1.5.12 = {
-		birth = yes
-	}
-	10100.9.20 = {
-		death = {
-			death_reason = death_natural
-		}
-	}
-}
-2076 = {
-	name = "Neferian"
-	dynasty = 17803 # Black Dragonflight
-	culture = black_dragonflight
-	religion = wyrmcult
-	trait = race_dragon
-	200.5.12 = {
-		birth = yes
-	}
-	10100.9.20 = {
-		death = {
-			death_reason = death_natural
-		}
 	}
 }
 2075 = {
