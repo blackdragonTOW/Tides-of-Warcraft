@@ -1,0 +1,259 @@
+namespace = TOW_FW
+
+# A New Age
+narrative_event = {
+	id = TOW_FW.1
+	title = EVTTITLE_TOW_FW_1
+	desc = EVTDESC_TOW_FW_1
+	picture = GFX_evt_powerful_ruler
+	border = GFX_event_narrative_frame_war
+
+	only_playable = yes
+	only_independent = yes
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+
+	trigger = {
+		has_landed_title = k_stormwind
+		NOT = {
+			has_game_rule = {
+				name = story_events
+				value = off
+			}
+		}
+		year = 10000
+		NOT = { has_global_flag = bm_tides_of_darkness }
+		NOT = { has_global_flag = TOW_FW_1 }
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	immediate = {
+		set_global_flag = TOW_FW_1
+	}
+
+	# Summon the Guardian
+	option = {
+		trigger = {
+			any_character = { trait = guardian_of_tirisfal }
+		}
+		name = EVTOPTA_TOW_FW_1
+		set_character_flag = TOW_FW_1_summoned_guardian
+		hidden_tooltip = {
+			random_character = {
+				limit = { trait = guardian_of_tirisfal }
+				character_event = { id = TOW_FW.2 }
+				show_portrait = yes
+			}
+		}
+		ai_chance = { factor = 75 }
+	}
+
+	# Ask Grand marshal
+	option = {
+		trigger = {
+			job_marshal = {	is_alive = yes }
+		}
+		name = EVTOPTB_TOW_FW_1
+		set_character_flag = TOW_FW_1_summoned_marshal
+		hidden_tooltip = {
+			job_marshal = {
+				narrative_event = { id = TOW_FW.7 days = 4 }
+				show_portrait = yes
+			}
+		}
+		ai_chance = { factor = 20 }
+	}
+
+	# Do nothing
+	option = {
+		name = EVTOPTC_TOW_FW_1
+		set_character_flag = TOW_FW_1_did_nothing
+		ai_chance = { factor = 5 }
+	}
+}
+
+# Event for the guardian of tirisfal
+character_event = {
+	id = TOW_FW.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			# Tells the truth
+			20 = {
+				modifier = {
+					factor = 2
+					trait = honest
+				}
+				set_character_flag = TOW_FW_2_tells_the_truth
+				k_stormwind = { holder_scope = { narrative_event = { id = TOW_FW.3 days = 4 random = 4 } } }
+			}
+			# Lies
+			4 = {
+				modifier = {
+					factor = 2
+					trait = deceitful
+				}
+				modifier = {
+					factor = 20
+					OR = {
+						true_religion = demonology
+						true_religion = burning_legion
+						has_character_flag = possessed_by_sargeras
+					}
+				}
+				set_character_flag = TOW_FW_2_lies
+				k_stormwind = { holder_scope = { narrative_event = { id = TOW_FW.6 days = 4 random = 4 } } }
+			}
+		}
+	}
+}
+
+# Ominous News
+narrative_event = {
+	id = TOW_FW.3
+	title = EVTTITLE_TOW_FW_3
+	desc = EVTDESC_TOW_FW_3
+	picture = GFX_evt_hooded_figure_hf
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	# Call our banners
+	option = {
+		name = EVTOPTA_TOW_FW_3
+		custom_tooltip = { text = EVTOPTA_TOW_FW_3_TOOLTIP }
+		add_character_modifier = {
+			modifier = TOW_standing_together
+			inherit = yes
+			years = 2
+		}
+		ai_chance = { factor = 40 }
+	}
+
+	# Prepare our defences
+	option = {
+		name = EVTOPTB_TOW_FW_3
+		custom_tooltip = { text = EVTOPTB_TOW_FW_3_TOOLTIP }
+		any_realm_province = {
+			add_province_modifier = {
+				modifier = TOW_improved_defences
+				years = 2
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+
+	# Contact them and establish negociations
+	option = {
+		name = EVTOPTC_TOW_FW_3
+		custom_tooltip = { text = EVTOPTC_TOW_FW_3_TOOLTIP }
+		hidden_tooltip = {
+			random_list = {
+				# Fail
+				90 = {
+					narrative_event = { id = TOW_FW.4 days = 2 }
+				}
+				# Success
+				10 = {
+					narrative_event = { id = TOW_FW.5 days = 2 }
+					set_character_flag = TOW_FW_2_truce # Prevent horde from attacking
+				}
+			}
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+# Severed Heads
+narrative_event = {
+	id = TOW_FW.4
+	title = EVTTITLE_TOW_FW_4
+	desc = EVTDESC_TOW_FW_4
+	picture = GFX_evt_heads_on_pikes_hf
+	border = GFX_event_narrative_frame_diplomacy
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_TOW_FW_4
+	}
+}
+
+# A Curious Peace
+narrative_event = {
+	id = TOW_FW.5
+	title = EVTTITLE_TOW_FW_5
+	desc = EVTDESC_TOW_FW_5
+	picture = GFX_evt_state_diplomacy
+	border = GFX_event_narrative_frame_diplomacy
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_TOW_FW_5
+	}
+}
+
+# Relieving News
+narrative_event = {
+	id = TOW_FW.6
+	title = EVTTITLE_TOW_FW_6
+	desc = EVTDESC_TOW_FW_6
+	picture = GFX_evt_hooded_figure_hf
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	# They are all yours
+	option = {
+		name = EVTOPTA_TOW_FW_6
+		ai_chance = { factor = 50 }
+		custom_tooltip = { text = EVTOPTA_TOW_FW_6_TOOLTIP }
+	}
+
+	# Double up the patrols
+	option = {
+		name = EVTOPTB_TOW_FW_6
+		any_realm_province = {
+			limit = {
+				any_neighbor_province = {
+					county = {
+						realm = {
+							title = e_horde
+						}
+					}
+				}
+			}
+			add_province_modifier = {
+				modifier = TOW_small_improved_defences
+				years = 2
+			}
+		}
+		ai_chance = { factor = 30 }
+	}
+
+	# Leave them alone as well
+	option = {
+		name = EVTOPTC_TOW_FW_6
+		if = {
+			limit = {
+				has_dlc = "Reapers"
+			}
+			custom_tooltip = {
+				text = capital_prospers_custom_tooltip
+				hidden_tooltip = {
+					capital_scope = {
+						change_variable = { which = prosperity_value value = 4 }
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 20 }
+	}
+}

@@ -1477,13 +1477,14 @@
 			remove_trait = incapable
 			add_friend = 172 # Anduin
 			add_friend = 167 # Llane
+			set_character_flag = possessed_by_sargeras
 		}
 		add_trait = mage
 		add_trait = guardian
 		add_trait = mastermind_theologian
-		add_trait = possessed #not the correct name for the trait
 		add_trait = erudite
 		add_trait = proud
+		add_trait = guardian_of_tirisfal
 		employer = 163 # Barathen
 	}
 	9988.5.22 = {
@@ -1495,13 +1496,13 @@
 	9995.3.19 = {
 		add_trait = cruel
 		effect = {
-			secret_religion = demonology
+			religion = { target_type = secret target = demonology }
 		}
 		add_trait = warlock
 	}
 	10000.12.5 = {
 		effect = {
-			secret_religion = burning_legion
+			religion = { target_type = secret target = burning_legion }
 		}
 	}
 	10003.8.2 = {
