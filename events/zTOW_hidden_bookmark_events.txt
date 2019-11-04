@@ -16,6 +16,26 @@ character_event = {
 	trigger = {
 		is_save_game = no
 	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = TOW_bookmark_setup }
+			}
+			set_global_flag = TOW_bookmark_setup
+			random_character = {
+				character_event = { id = bookmarksetup.2 }
+			}
+		}
+	}
+}
+
+#Sets the flags
+character_event = {
+	id = bookmarksetup.2
+	hide_window = yes
+	
+	is_triggered_only = yes
 	
 	immediate = {
 		#Specific variables
@@ -79,6 +99,10 @@ character_event = {
 				NOT = { year = 10001 }
 			}
 			set_global_flag = bm_fall_of_stormwind
+			# Blackhand
+			c_52 = { narrative_event = { id = TOW_FW.21 } }
+			# Medivh
+			c_112 = { narrative_event = { id = TOW_FW.19 } }
 		}
 		if = {
 			limit = {

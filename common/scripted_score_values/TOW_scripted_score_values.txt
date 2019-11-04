@@ -1,0 +1,42 @@
+# Can be utilized in ai_chance, ai_will_do, random list weighting and anything that utilizes the triggered modifiers to calculate a value.
+
+TOW_archmage_selection_score = { # (TOW_MT.1)
+	modifier = { factor = 0.9 NOT = { learning = 1 } }
+	modifier = { factor = 0.9 NOT = { learning = 2 } }
+	modifier = { factor = 0.9 NOT = { learning = 3 } }
+	modifier = { factor = 0.9 NOT = { learning = 4 } }
+	modifier = { factor = 0.9 NOT = { learning = 5 } }
+	modifier = { factor = 0.9 NOT = { learning = 6 } }
+	modifier = { factor = 0.9 NOT = { learning = 7 } }
+	modifier = { factor = 0.9 NOT = { learning = 8 } }
+	modifier = { factor = 1.1 learning = 9 }
+	modifier = { factor = 1.1 learning = 10 }
+	modifier = { factor = 1.1 learning = 11 }
+	modifier = { factor = 1.1 learning = 12 }
+	modifier = { factor = 1.1 learning = 13 }
+	modifier = { factor = 1.1 learning = 14 }
+	modifier = { factor = 1.1 learning = 15 }
+	modifier = { factor = 1.1 learning = 16 }
+	modifier = { factor = 1.1 learning = 17 }
+	modifier = { factor = 1.1 learning = 18 }
+	modifier = { factor = 1.1 learning = 19 }
+	modifier = { factor = 1.1 learning = 20 }
+	modifier = { factor = 1.1 learning = 21 }
+	modifier = { factor = 1.1 learning = 22 }
+	modifier = { factor = 1.1 learning = 23 }
+	modifier = { factor = 1.1 learning = 24 }
+	modifier = { factor = 1.1 learning = 25 }
+	modifier = { factor = 1.1 learning = 26 }
+	modifier = { factor = 1.1 learning = 27 }
+	modifier = { factor = 1.1 learning = 28 }
+	modifier = { factor = 1.1 learning = 29 }
+	modifier = { factor = 1.1 learning = 30 }
+
+	modifier = { factor = 0.75 dynasty = ROOT }
+	modifier = { factor = 1.1 trait = erudite }
+	modifier = { factor = 2 is_smart_trigger = yes }
+	modifier = { factor = 1.2 relationship_with_root_trigger = no }
+	modifier = { factor = 0.01 root_has_terrible_opinion_modifier_of_this_trigger = yes }
+	modifier = { factor = 0.01 this_has_terrible_opinion_modifier_of_root_trigger = yes }
+	modifier = { factor = 0.01 is_foe = ROOT }
+}
