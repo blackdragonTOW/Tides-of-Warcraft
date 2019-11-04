@@ -1,0 +1,1035 @@
+namespace = TOW_FW
+
+# A New Age - King of Stormwind
+narrative_event = {
+	id = TOW_FW.1
+	title = EVTTITLE_TOW_FW_1
+	desc = EVTDESC_TOW_FW_1
+	picture = GFX_evt_powerful_ruler
+
+	only_playable = yes
+	only_independent = yes
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+	hide_from = yes
+
+	trigger = {
+		has_landed_title = k_stormwind
+		NOT = {
+			has_game_rule = {
+				name = story_events
+				value = off
+			}
+		}
+		year = 10000
+		NOT = { has_global_flag = bm_tides_of_darkness }
+		NOT = { has_global_flag = TOW_first_war_started }
+		NOT = { has_character_flag = TOW_FW_1 }
+		e_horde = {
+			has_holder = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	immediate = {
+		set_character_flag = TOW_FW_1
+		random_character = {
+			limit = { trait = guardian_of_tirisfal }
+			save_event_target_as = guardian_of_tirisfal
+		}
+
+		any_realm_character = {
+			limit = {
+				is_ruler = yes
+				NOT = { has_job_title = job_marshal }
+			}
+			narrative_event = { id = TOW_FW.27 }
+		}
+
+		job_marshal = {
+			narrative_event = { id = TOW_FW.28 }
+		}
+	}
+
+	# Summon the Guardian
+	option = {
+		trigger = {
+			event_target:guardian_of_tirisfal = { is_alive = yes }
+		}
+		name = EVTOPTA_TOW_FW_1
+		set_character_flag = TOW_FW_1_summoned_guardian
+		hidden_tooltip = {
+			event_target:guardian_of_tirisfal = {
+				narrative_event = { id = TOW_FW.2 days = 2 }
+				show_portrait = yes
+			}
+		}
+		event_target:guardian_of_tirisfal = {
+			show_portrait = yes
+		}
+		ai_chance = { factor = 75 }
+	}
+
+	# Ask Grand marshal
+	option = {
+		trigger = {
+			job_marshal = {	is_alive = yes }
+		}
+		name = EVTOPTB_TOW_FW_1
+		set_character_flag = TOW_FW_1_summoned_marshal
+
+		job_marshal = {
+			show_portrait = yes
+			save_event_target_as = marshal
+			hidden_tooltip = {
+				narrative_event = { id = TOW_FW.7 days = 2 random = 2 }
+			}
+		}
+		ai_chance = { factor = 20 }
+	}
+
+	# Do nothing
+	option = {
+		name = EVTOPTC_TOW_FW_1
+		set_character_flag = TOW_FW_1_did_nothing
+		ai_chance = { factor = 5 }
+	}
+}
+
+# A Royal Request
+narrative_event = {
+	id = TOW_FW.2
+	title = EVTTITLE_TOW_FW_2
+	desc = EVTDESC_TOW_FW_2
+	picture = GFX_evt_guardian
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	# Bring the answers
+	option = {
+		name = EVTOPTC_TOW_FW_2
+		hidden_tooltip = {
+			narrative_event = { id = TOW_FW.16 }
+		}
+	}
+}
+
+# Ominous News
+narrative_event = {
+	id = TOW_FW.3
+	title = EVTTITLE_TOW_FW_3
+	desc = EVTDESC_TOW_FW_3
+	picture = GFX_evt_guardian
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	# Call our banners
+	option = {
+		name = EVTOPTA_TOW_FW_3
+		custom_tooltip = { text = EVTOPTA_TOW_FW_3_TOOLTIP }
+		add_character_modifier = {
+			modifier = TOW_standing_together
+			inherit = yes
+			years = 2
+		}
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.24 days = 1 random = 2 }
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+
+	# Prepare our defences
+	option = {
+		name = EVTOPTB_TOW_FW_3
+		custom_tooltip = { text = EVTOPTB_TOW_FW_3_TOOLTIP }
+		any_realm_province = {
+			add_province_modifier = {
+				modifier = TOW_improved_defences
+				years = 2
+			}
+		}
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.24 days = 1 random = 2 }
+				}
+			}
+		}
+		ai_chance = { factor = 40 }
+	}
+
+	# Contact them and establish negociations
+	option = {
+		name = EVTOPTC_TOW_FW_3
+		custom_tooltip = { text = EVTOPTC_TOW_FW_3_TOOLTIP }
+		hidden_tooltip = {
+			random_list = {
+				# Fail
+				90 = {
+					narrative_event = { id = TOW_FW.4 days = 2 }
+				}
+				# Success
+				10 = {
+					narrative_event = { id = TOW_FW.5 days = 2 }
+					set_character_flag = TOW_FW_2_truce # Prevent horde from attacking
+				}
+			}
+		}
+		ai_chance = { factor = 20 }
+	}
+}
+
+# Severed Heads
+narrative_event = {
+	id = TOW_FW.4
+	title = EVTTITLE_TOW_FW_4
+	desc = EVTDESC_TOW_FW_4
+	picture = GFX_evt_heads_on_pikes_hf
+	border = GFX_event_narrative_frame_diplomacy
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_TOW_FW_4
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.24 days = 1 random = 2 }
+				}
+			}
+		}
+	}
+}
+
+# A Curious Peace
+narrative_event = {
+	id = TOW_FW.5
+	title = EVTTITLE_TOW_FW_5
+	desc = EVTDESC_TOW_FW_5
+	picture = GFX_evt_state_diplomacy
+	border = GFX_event_narrative_frame_diplomacy
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_TOW_FW_5
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.24 days = 182 random = 183 }
+				}
+			}
+		}
+	}
+}
+
+# Relieving News
+narrative_event = {
+	id = TOW_FW.6
+	title = EVTTITLE_TOW_FW_6
+	desc = EVTDESC_TOW_FW_6
+	picture = GFX_evt_guardian
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	# They are all yours
+	option = {
+		name = EVTOPTA_TOW_FW_6
+		ai_chance = { factor = 50 }
+		custom_tooltip = { text = EVTOPTA_TOW_FW_6_TOOLTIP }
+	}
+
+	# Double up the patrols
+	option = {
+		name = EVTOPTB_TOW_FW_6
+		custom_tooltip = {
+			text = EVTOPTB_TOW_FW_6_TOOLTIP
+			hidden_tooltip = {
+				any_realm_province = {
+					limit = {
+						any_neighbor_province = {
+							county = {
+								holder_scope = {
+									realm = {
+										title = e_horde
+									}
+								}
+							}
+						}
+					}
+					
+					add_province_modifier = {
+						modifier = TOW_small_improved_defences
+						years = 2
+					}
+				}
+			}
+		}
+		ai_chance = { factor = 30 }
+	}
+
+	# Leave them alone as well
+	option = {
+		name = EVTOPTC_TOW_FW_6
+		if = {
+			limit = {
+				has_dlc = "Reapers"
+			}
+			custom_tooltip = {
+				text = capital_prospers_custom_tooltip
+				hidden_tooltip = {
+					capital_scope = {
+						change_variable = { which = prosperity_value value = 4 }
+					}
+				}
+			}
+		}
+		add_character_modifier = {
+			modifier = TOW_stable_kingdom
+			inherit = yes
+			years = 2
+		}
+		ai_chance = { factor = 20 }
+	}
+
+	after = {
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.24 days = 182 random = 183 }
+				}
+			}
+		}
+	}
+}
+
+# An Expedition South
+narrative_event = {
+	id = TOW_FW.7
+	title = EVTTITLE_TOW_FW_7
+	desc = EVTDESC_TOW_FW_7
+	picture = GFX_evt_diplomat_hf
+	border = GFX_event_narrative_frame_diplomacy
+
+	is_triggered_only = yes
+
+	# I will bring the answers
+	option = {
+		name = EVTOPTA_TOW_FW_7
+		hidden_tooltip = {
+			random_list = {
+				# Death
+				5 = {
+					narrative_event = { id = TOW_FW.8 days = 2 random = 3 }
+				}
+				# Too many
+				45 = {
+					narrative_event = { id = TOW_FW.9 days = 2 random = 3 }
+				}
+				# Retreat
+				50 = {
+					narrative_event = { id = TOW_FW.10 days = 2 random = 3 }
+				}
+			}
+		}
+	}
+}
+
+# Death in Black Morass
+narrative_event = {
+	id = TOW_FW.8
+	title = EVTTITLE_TOW_FW_8
+	desc = EVTDESC_TOW_FW_8
+	picture = GFX_evt_cornered_duel_hf
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	immediate = {
+		e_horde = {
+			holder_scope = {
+				save_event_target_as = killer
+			}
+		}
+		sound_effect = tow_failure
+	}
+
+	# Someone must warn the king!
+	option = {
+		name = EVTOPTA_TOW_FW_8
+		if = {
+			limit = {
+				event_target:killer = { is_alive = yes }
+			}
+			death = { death_reason = death_murder killer = event_target:killer }
+		}
+		else = {
+			death = { death_reason = death_murder }
+		}
+		k_stormwind = {
+			show_scope_change = no
+			holder_scope = {
+				narrative_event = { id = TOW_FW.11 }
+			}
+		}
+	}
+}
+
+# They are too many
+narrative_event = {
+	id = TOW_FW.9
+	title = EVTTITLE_TOW_FW_9
+	desc = EVTDESC_TOW_FW_9
+	picture = GFX_evt_tow_black_morass_orcs
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_orc_camp
+	}
+
+	# Return home
+	option = {
+		name = EVTOPTA_TOW_FW_9
+		k_stormwind = {
+			show_scope_change = no
+			holder_scope = {
+				narrative_event = { id = TOW_FW.12 }
+			}
+		}
+	}
+}
+
+# A sound retreat
+narrative_event = {
+	id = TOW_FW.10
+	title = EVTTITLE_TOW_FW_10
+	desc = EVTDESC_TOW_FW_10
+	picture = GFX_evt_tow_horde_battle
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	# Walk alone
+	option = {
+		name = EVTOPTA_TOW_FW_10
+		k_stormwind = {
+			show_scope_change = no
+			holder_scope = {
+				narrative_event = { id = TOW_FW.13 }
+			}
+		}
+	}
+}
+
+# A Great Hero Falls
+narrative_event = {
+	id = TOW_FW.11
+	title = EVTTITLE_TOW_FW_11
+	desc = EVTDESC_TOW_FW_11
+	picture = GFX_evt_impalement
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_failure
+	}
+
+	# We will avenge our fallen heroes
+	option = {
+		name = EVTOPTA_TOW_FW_11
+		ai_chance = { factor = 50 }
+		custom_tooltip = { text = EVTOPTA_TOW_FW_11_TOOLTIP }
+		e_horde = {
+			show_scope_change = no
+			holder_scope = {
+				show_scope_change = no
+				reverse_unsafe_war = {
+				    target = ROOT
+				    casus_belli = stormwind_preemptive_strike 
+				}
+				hidden_tooltip = { narrative_event = { id = TOW_FW.23 } }
+			}
+		}
+	}
+
+	# Prepare our defences
+	option = {
+		name = EVTOPTB_TOW_FW_11
+		any_realm_province = {
+			add_province_modifier = {
+				modifier = TOW_improved_defences
+				years = 2
+			}
+		}
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.22 }
+					narrative_event = { id = TOW_FW.24 days = 1 random = 2 }
+				}
+			}
+		}
+		ai_chance = { factor = 30 }
+	}
+}
+
+# Oncoming unrest
+narrative_event = {
+	id = TOW_FW.12
+	title = EVTTITLE_TOW_FW_12
+	desc = EVTDESC_TOW_FW_12
+	picture = GFX_evt_tow_black_morass_orcs
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	# This is terrible news
+	option = {
+		name = EVTOPTA_TOW_FW_12
+		custom_tooltip = {
+			text = EVTOPTA_TOW_FW_12_TOOLTIP
+			hidden_tooltip = {
+				any_realm_province = {
+					limit = {
+						any_neighbor_province = {
+							county = {
+								holder_scope = {
+									realm = {
+										title = e_horde
+									}
+								}
+							}
+						}
+					}
+					
+					add_province_modifier = {
+						modifier = TOW_improved_defences
+						years = 2
+					}
+				}
+			}
+		}
+	}
+
+	# Rest now, my friend
+	option = {
+		name = EVTOPTB_TOW_FW_12
+		if = {
+			limit = {
+				has_dlc = "Reapers"
+			}
+			custom_tooltip = {
+				text = capital_prospers_custom_tooltip
+				hidden_tooltip = {
+					capital_scope = {
+						change_variable = { which = prosperity_value value = 4 }
+					}
+				}
+			}
+		}
+		add_character_modifier = {
+			modifier = TOW_stable_kingdom
+			inherit = yes
+			years = 2
+		}
+		
+	}
+
+	after = {
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.24 days = 1 random = 2 }
+				}
+			}
+		}
+	}
+}
+
+# Strange Creatures on the Horizon
+narrative_event = {
+	id = TOW_FW.13
+	title = EVTTITLE_TOW_FW_13
+	desc = EVTDESC_TOW_FW_13
+	picture = GFX_evt_emissary
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	# We need to know more
+	option = {
+		name = EVTOPTA_TOW_FW_13
+		job_marshal = {
+			show_portrait = yes
+			hidden_tooltip = {
+				narrative_event = { id = TOW_FW.14 days = 1 }
+			}
+		}
+	}
+
+	# Rest now, my friend
+	option = {
+		name = EVTOPTB_TOW_FW_12
+		if = {
+			limit = {
+				has_dlc = "Reapers"
+			}
+			custom_tooltip = {
+				text = capital_prospers_custom_tooltip
+				hidden_tooltip = {
+					capital_scope = {
+						change_variable = { which = prosperity_value value = 4 }
+					}
+				}
+			}
+		}
+		add_character_modifier = {
+			modifier = TOW_stable_kingdom
+			inherit = yes
+			years = 2
+		}
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.24 days = 1 random = 2 }
+				}
+			}
+		}
+	}
+}
+
+# An Expedition South - Again
+narrative_event = {
+	id = TOW_FW.14
+	title = EVTTITLE_TOW_FW_14
+	desc = EVTDESC_TOW_FW_14
+	picture = GFX_evt_diplomat_hf
+	border = GFX_event_narrative_frame_diplomacy
+
+	is_triggered_only = yes
+
+	# I will bring the answers
+	option = {
+		name = EVTOPTA_TOW_FW_14
+		hidden_tooltip = {
+			random_list = {
+				# Another fail
+				50 = {
+					k_stormwind = {
+						holder_scope = {
+							narrative_event = { id = TOW_FW.15 days = 2 random = 3 }
+						}
+					}
+				}
+				# Success
+				50 = {
+					narrative_event = { id = TOW_FW.9 days = 2 random = 3 }
+				}
+			}
+		}
+	}
+}
+
+# Another Lost Expedition
+narrative_event = {
+	id = TOW_FW.15
+	title = EVTTITLE_TOW_FW_15
+	desc = EVTDESC_TOW_FW_15
+	picture = GFX_evt_emissary
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+	
+	# We must be ready
+	option = {
+		name = EVTOPTA_TOW_FW_15
+		# Horde can declare war
+		hidden_tooltip = {
+			e_horde = {
+				holder_scope = {
+					narrative_event = { id = TOW_FW.24 days = 1 random = 2 }
+				}
+			}
+		}
+	}
+}
+
+# A Dangerous Flight 
+narrative_event = {
+	id = TOW_FW.16
+	title = EVTTITLE_TOW_FW_16
+	desc = EVTDESC_TOW_FW_16
+	picture = GFX_evt_tow_black_morass_orcs
+	border = GFX_event_narrative_frame_intrigue
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_orc_camp
+	}
+
+	# Tells the truth
+	option = {
+		name = EVTOPTA_TOW_FW_16
+
+		k_stormwind = { holder_scope = { narrative_event = { id = TOW_FW.3 days = 1 random = 2 } } }
+
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 2
+				trait = honest
+			}
+		}
+	}
+
+	# Lies
+	option = {
+		name = EVTOPTB_TOW_FW_16
+
+		k_stormwind = { holder_scope = { narrative_event = { id = TOW_FW.6 days = 1 random = 2 } } }
+
+		ai_chance = {
+			factor = 4
+			modifier = {
+				factor = 2
+				trait = deceitful
+			}
+			modifier = {
+				factor = 20
+				OR = {
+					true_religion = demonology
+					true_religion = burning_legion
+					has_character_flag = possessed_by_sargeras
+				}
+			}
+		}
+	}
+}
+
+# A Lion at War
+## Event triggered by the war itself
+narrative_event = {
+	id = TOW_FW.17
+	title = EVTTITLE_TOW_FW_17
+	desc = EVTDESC_TOW_FW_17
+	picture = GFX_evt_tow_orcs_vs_humans
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_first_war_human
+
+		random_character = {
+			limit = { trait = guardian_of_tirisfal }
+			narrative_event = { id = TOW_FW.20 }
+		}
+		e_horde = {
+			holder_scope = {
+				save_event_target_as = horde_leader
+				any_realm_character = {
+					limit = { is_ruler = yes }
+					narrative_event = { id = TOW_FW.26 }
+				}
+			}
+		}
+		any_realm_character = {
+			limit = {
+				is_ruler = yes
+				NOT = { has_job_title = job_marshal }
+			}
+			narrative_event = { id = TOW_FW.18 }
+		}
+		job_marshal = {
+			narrative_event = { id = TOW_FW.18 }
+		}
+	}
+
+	# For Stormwind
+	option = {
+		name = EVTOPTA_TOW_FW_17
+	}
+}
+
+# A Lion at War - Others
+narrative_event = {
+	id = TOW_FW.18
+	title = EVTTITLE_TOW_FW_18
+	desc = EVTDESC_TOW_FW_18
+	picture = GFX_evt_tow_orcs_vs_humans
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_first_war_human
+	}
+
+	# For Stormwind
+	option = {
+		name = EVTOPTA_TOW_FW_18
+	}
+}
+
+# A New Age - Guardian
+# Triggered by bookmark events
+narrative_event = {
+	id = TOW_FW.19
+	title = EVTTITLE_TOW_FW_19
+	desc = EVTDESC_TOW_FW_19
+	picture = GFX_evt_hooded_figure_hf
+
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_arcane_place
+		c_84 = { # Khadgar
+			save_event_target_as = khadgar
+			move_character = ROOT
+		}
+	}
+
+	# Come, Khadgar
+	option = {
+		name = EVTOPTA_TOW_FW_19
+		tooltip = {
+			event_target:khadgar = { move_character = ROOT }
+		}
+	}
+
+	# Be gone
+	option = {
+		name = EVTOPTB_TOW_FW_19
+		event_target:khadgar = { banish = yes }
+	}
+}
+
+# A Lion under Siege
+narrative_event = {
+	id = TOW_FW.20
+	title = EVTTITLE_TOW_FW_20
+	desc = EVTDESC_TOW_FW_20
+	picture = GFX_evt_tow_orcs_vs_humans
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_dark_wind
+	}
+
+	# I shall bring ruin!
+	option = {
+		name = EVTOPTA_TOW_FW_20
+		ai_chance = {
+			factor = 4
+			modifier = {
+				factor = 22.5
+				OR = {
+					true_religion = demonology
+					true_religion = burning_legion
+					has_character_flag = possessed_by_sargeras
+				}
+			}
+		}
+	}
+
+	# I will not give in
+	option = {
+		name = EVTOPTB_TOW_FW_20
+		ai_chance = { factor = 10 }
+	}
+}
+
+# A New World
+# Triggered by bookmark events
+narrative_event = {
+	id = TOW_FW.21
+	title = EVTTITLE_TOW_FW_21
+	desc = EVTDESC_TOW_FW_21
+	picture = GFX_evt_tow_black_morass_orcs
+	border = GFX_event_narrative_frame_war
+
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_realm_character = {
+			limit = { is_ruler = yes }
+			narrative_event = { id = TOW_FW.25 }
+		}
+	}
+
+	# This land belongs to the horde now!
+	option = {
+		name = EVTOPTA_TOW_FW_21
+	}
+}
+
+# Decorated Warrior
+narrative_event = {
+	id = TOW_FW.22
+	title = EVTTITLE_TOW_FW_22
+	desc = EVTDESC_TOW_FW_22
+	picture = GFX_evt_tow_black_morass_orcs
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_orc_camp
+	}
+
+	# On the stake with him
+	option = {
+		name = EVTOPTA_TOW_FW_22
+	}
+}
+
+# Retaliation Strike
+narrative_event = {
+	id = TOW_FW.23
+	title = EVTTITLE_TOW_FW_23
+	desc = EVTDESC_TOW_FW_23
+	picture = GFX_evt_tow_black_morass_orcs
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_orc_camp
+	}
+
+	# To arms!
+	option = {
+		name = EVTOPTA_TOW_FW_23
+	}
+}
+
+# A Lion to Hunt
+narrative_event = {
+	id = TOW_FW.24
+	title = EVTTITLE_TOW_FW_24
+	desc = EVTDESC_TOW_FW_24
+	picture = GFX_evt_tow_orcs_vs_humans
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	# For the Horde!
+	option = {
+		name = EVTOPTA_TOW_FW_24
+		ai_chance = { factor = 90 }
+		k_stormwind = {
+			show_scope_change = no
+			holder_scope = {
+				show_scope_change = no
+				reverse_unsafe_war = {
+				    target = ROOT
+				    casus_belli = tow_horde_invasion 
+				}
+			}
+		}
+		sound_effect = tow_first_war_orc
+	}
+
+	# We aren't prepared yet
+	option = {
+		name = EVTOPTB_TOW_FW_24
+		ai_chance = { factor = 10 }
+		set_global_flag = TOW_first_war_can_start
+		custom_tooltip = { text = EVTOPTB_TOW_FW_24_TOOLTIP }
+	}
+}
+
+# A New World - Vassals
+narrative_event = {
+	id = TOW_FW.25
+	title = EVTTITLE_TOW_FW_25
+	desc = EVTDESC_TOW_FW_25
+	picture = GFX_evt_tow_black_morass_orcs
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	# Lok-Tar Ogar!
+	option = {
+		name = EVTOPTA_TOW_FW_25
+	}
+}
+
+# A Lion to Hunt - Vassals
+narrative_event = {
+	id = TOW_FW.26
+	title = EVTTITLE_TOW_FW_26
+	desc = EVTDESC_TOW_FW_26
+	picture = GFX_evt_tow_orcs_vs_humans
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes
+
+	immediate = {
+		sound_effect = tow_first_war_orc
+	}
+
+	# For the Horde!
+	option = {
+		name = EVTOPTA_TOW_FW_26
+	}
+}
+
+# A New Age - Vassals
+narrative_event = {
+	id = TOW_FW.27
+	title = EVTTITLE_TOW_FW_27
+	desc = EVTDESC_TOW_FW_27
+	picture = GFX_evt_powerful_ruler
+
+	is_triggered_only = yes
+
+	# For Stormwind!
+	option = {
+		name = EVTOPTA_TOW_FW_27
+	}
+}
+
+# A New Age - Marshal
+narrative_event = {
+	id = TOW_FW.28
+	title = EVTTITLE_TOW_FW_28
+	desc = EVTDESC_TOW_FW_28
+	picture = GFX_evt_magnificent_castle_wol
+
+	is_triggered_only = yes
+
+	# For Azeroth!
+	option = {
+		name = EVTOPTA_TOW_FW_28
+	}
+}
