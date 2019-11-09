@@ -99,10 +99,20 @@ character_event = {
 				NOT = { year = 10001 }
 			}
 			set_global_flag = bm_fall_of_stormwind
-			# Blackhand
-			c_52 = { narrative_event = { id = TOW_FW.21 days = 1 } }
-			# Medivh
-			c_112 = { narrative_event = { id = TOW_FW.19 days = 1 } }
+			if = {
+				limit = {
+					NOT = {
+						has_game_rule = {
+							name = story_events
+							value = off
+						}
+					}
+				}
+				# Blackhand
+				c_52 = { narrative_event = { id = TOW_FW.21 days = 1 } }
+				# Medivh
+				c_112 = { narrative_event = { id = TOW_FW.19 days = 1 } }
+			}
 		}
 		if = {
 			limit = {
