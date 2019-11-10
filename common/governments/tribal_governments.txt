@@ -65,7 +65,36 @@ tribal_governments = {
 		frame_suffix = "_tribal"
 		title_prefix = "tribal_"
 		potential = {
-			#NOT = { is_government_potential = dragonflight_government }
+			NAND = {
+				OR = {
+					culture = amani
+					culture = atalai
+					culture = razorbranch
+					culture = firetree
+					culture = mossflayer
+					culture = revantusk
+					culture = vilebranch
+					culture = shadowpine
+					culture = witherbark
+					culture = bloodscalp
+					culture = darkspear
+					culture = gurubashi
+					culture = shatterspear
+					culture = skullsplitter
+					culture = drakkari
+					culture = frostmane
+					culture = sandfury					
+					culture = smolderthorn
+					culture = shadowglen
+					culture = winterax
+					culture = winterfang
+					culture = shadowtooth
+					culture = zandalari
+					culture = zulian
+					culture = razzashi
+				}
+				higher_tier_than = COUNT
+			}
 			#NOT = { is_government_potential = kirin_tor_government }
 			NOT = { is_government_potential = guardian_government }
 			#NOT = { is_government_potential = technocracy_government }

@@ -1423,8 +1423,8 @@ character_event = {
 			any_realm_character = {
 				limit = {
 					OR = {
-						is_feudal = yes
-						is_tribal = yes
+						TOW_is_feudal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 					}
 					NOT = { has_job_title = job_spiritual }

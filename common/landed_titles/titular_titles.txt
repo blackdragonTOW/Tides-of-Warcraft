@@ -9,6 +9,7 @@ e_scourge = {
 	foa = "FOA_MASTER"
 	controls_religion = yes # Might make a second scourge title in case of Bolvar because of this
 	primary = yes
+	dignity = 2000
 	landless = yes
 	dynasty_title_names = no
 
@@ -22,6 +23,7 @@ e_alliance = {
 	culture = azerothian
 	short_name = yes
 	primary = yes
+	dignity = 2000
 	landless = yes
 	dynasty_title_names = no
 }
@@ -227,14 +229,6 @@ k_shattered_hand_clan = {
 	landless = yes
 	dynasty_title_names = no
 }
-d_blackwater_raiders = {
-	color = { 60 60 60 }
-	culture = goblin
-	short_name = yes
-	primary = yes
-	landless = yes
-	dynasty_title_names = no
-}
 k_steamwheedle_cartel = {
 	color = { 59 110 43 }
 	culture = goblin
@@ -405,4 +399,101 @@ k_venture_co = {
 	primary = yes
 	landless = yes
 	dynasty_title_names = no
+}
+k_defias = {
+	color = { 209 35 35 }
+	culture = azerothian
+	short_name = yes
+	title = "KINGPIN"
+	title_female = "QUEENPIN"
+	foa = "BOSS"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+k_stormreaver_clan = {
+	color = { 85 143 176 }
+	culture = shadowmoon
+	short_name = yes
+	title = "WARLORD"
+	title_female = "WARLORD"
+	foa = "WARLORD"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+d_freehold = {
+	color = { 134 66 35 }
+	culture = tirasian
+	short_name = yes
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAP"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+d_the_wolf_cult = {
+	color = { 157 129 106 }
+	culture = shadowfang
+	short_name = yes
+	title = "ALPHAPRIME"
+	title_female = "ALPHAPRIME"
+	foa = "ALPHAPRIME"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+e_blackrock_firelands = {
+	color = { 230 87 20 }
+	culture = fire_elemental
+	short_name = yes
+	title = "ELEMENTALLORD"
+	title_female = "ELEMENTALLORD"
+	foa = "ELEMENTALLORD"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+d_booty_bay = {
+	color = { 87 220 110 }
+	culture = goblin
+	short_name = yes
+	title = "TRADEBARON"
+	title_female = "TRADEBARON"
+	foa = "TRADEBARON"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+}
+
+# Mercenaries
+
+d_burning_blade_clan = {
+	color = { 155 132 55 }
+	culture = burning_blade
+	mercenary = yes
+	title = "WARLORD"
+	title_female = "WARLORD"
+	foa = "WARLORD"
+	landless = yes
+	primary = yes
+	independent = no
+	strength_growth_per_century = 1.0
+	mercenary_type = tamil_band_composition
+}
+c_blackwater_raiders = {
+	color = { 60 60 60 }
+	culture = goblin
+	mercenary = yes
+	short_name = yes
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAP"
+	primary = yes
+	landless = yes
+	dynasty_title_names = no
+	independent = no
+	strength_growth_per_century = 1.0
+	mercenary_type = tamil_band_composition
 }

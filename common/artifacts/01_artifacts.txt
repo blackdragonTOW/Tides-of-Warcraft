@@ -1,6 +1,6 @@
 felo_melorn = {
 	learning = 2
-	combat_rating = 2
+	combat_rating = 10
 	stacking = no
 	flags = { unique }
 	monthly_character_prestige = 0.5
@@ -14,7 +14,7 @@ felo_melorn = {
 }
 frostmourne = {
 	martial = 3
-	combat_rating = 4
+	combat_rating = 15
 	stacking = no
 	flags = { close_range_weapon }
 	monthly_character_prestige = 1.5
@@ -68,7 +68,7 @@ valanyr = {
 	slot = weapon
 	quality = 5
 	learning = 4
-	combat_rating = 1
+	combat_rating = 5
 	arcane_opinion = 10
 	monthly_character_prestige = 1
 	picture = GFX_valanyr
@@ -80,7 +80,7 @@ thunderfury = {
 	flags = { thunderfury }
 	quality = 5
 	slot = weapon
-	combat_rating = 3
+	combat_rating = 15
 	aeromancy_opinion = 15
 	shamanism_opinion = 5
 	monthly_character_prestige = 1.5
@@ -93,7 +93,7 @@ sulfuras = {
 	flags = {  }
 	quality = 5
 	slot = weapon
-	combat_rating = 3
+	combat_rating = 20
 	pyromancy_opinion = 15
 	shamanism_opinion = 5
 	monthly_character_prestige = 1.5
@@ -106,7 +106,7 @@ trolkalar = {
 	flags = {  }
 	quality = 4
 	slot = weapon
-	combat_rating = 1
+	combat_rating = 10
 	troll_opinion = -5
 	human_opinion = 5
 	monthly_character_prestige = 0.5
@@ -119,7 +119,7 @@ doomhammer = {
 	flags = {  }
 	quality = 5
 	slot = weapon
-	combat_rating = 1
+	combat_rating = 10
 	monthly_character_prestige = 0.5
 	monthly_character_piety = 0.5
 	orcish_opinion = 5
@@ -145,7 +145,7 @@ thoridal = {
 	flags = {  }
 	quality = 5
 	slot = weapon
-	combat_rating = 2
+	combat_rating = 10
 	sunwell_opinion = 5
 	monthly_character_prestige = 0.5
 	picture = GFX_thori_dal
@@ -157,7 +157,7 @@ gorehowl = {
 	flags = {  }
 	quality = 5
 	slot = weapon
-	combat_rating = 2
+	combat_rating = 20
 	monthly_character_prestige = 0.5
 	orcish_opinion = 5
 	picture = GFX_gorehowl
@@ -169,7 +169,7 @@ ashbringer = {
 	flags = {  }
 	quality = 5
 	slot = weapon
-	combat_rating = 3
+	combat_rating = 20
 	monthly_character_prestige = 0.5
 	monthly_character_piety = 0.5
 	picture = GFX_ashbringer
@@ -181,7 +181,7 @@ corrupted_ashbringer = {
 	flags = {  }
 	quality = 5
 	slot = weapon
-	combat_rating = 3
+	combat_rating = 20
 	monthly_character_prestige = 0.5
 	monthly_character_piety = 0.5
 	scarlet_opinion = 5
@@ -217,7 +217,7 @@ the_silver_hand = {
 	flags = {  }
 	quality = 4
 	slot = weapon
-	combat_rating = 2
+	combat_rating = 10
 	stewardship = 1
 	diplomacy = 1
 	learning = 1
@@ -234,7 +234,7 @@ apocalypse = {
 	flags = {  }
 	quality = 4
 	slot = weapon
-	combat_rating = 3
+	combat_rating = 15
 	diplomacy = -2
 	martial = 2
 	monthly_character_prestige = 1
@@ -247,8 +247,8 @@ ebonchill = {
 	flags = {  }
 	quality = 4
 	slot = weapon
-	combat_rating = 1
-	learning = 5
+	combat_rating = 5
+	learning = 3
 	monthly_character_prestige = 1
 	picture = GFX_sulfuras # Placeholder
 }
@@ -259,7 +259,7 @@ aluneth = {
 	flags = {  }
 	quality = 4
 	slot = weapon
-	combat_rating = 1
+	combat_rating = 5
 	learning = 3
 	intrigue = 2
 	monthly_character_prestige = 1
@@ -269,15 +269,14 @@ aluneth = {
 ulthalesh = {
 	stacking = no
 	indestructible = yes
-	flags = {  }
-	quality = 4
+	quality = 5
 	slot = weapon
-	combat_rating = 2
-	learning = 5
+	combat_rating = 10
+	learning = 4
 	diplomacy = -2
-	intrigue = 2
-	monthly_character_prestige = 1
-	picture = GFX_sulfuras # Placeholder
+	intrigue = 3
+	monthly_character_prestige = 0.5
+	monthly_character_piety = -0.5
 }
 
 secrets_of_the_void = {
@@ -290,78 +289,6 @@ secrets_of_the_void = {
 	picture = "GFX_book_sinister"
 }
 
-crown_of_stromgarde = {
-	stacking = no
-	monthly_character_prestige = 0.5
-	global_revolt_risk = -0.1
-	flags = {  }
-	quality = 5
-	indestructible = yes
-	vassal_opinion = 10
-	slot = crown
-	picture = GFX_crown_of_stromgarde
-}
-
-crown_of_lordaeron = {
-	stacking = no
-	monthly_character_prestige = 0.5
-	global_revolt_risk = -0.1
-	flags = {  }
-	quality = 5
-	indestructible = yes
-	vassal_opinion = 10
-	slot = crown
-	picture = GFX_crown_of_lordaeron
-}
-
-crown_of_alterac = {
-	stacking = no
-	monthly_character_prestige = 0.5
-	global_revolt_risk = -0.1
-	flags = {  }
-	quality = 5
-	indestructible = yes
-	vassal_opinion = 10
-	slot = crown
-	picture = GFX_crown_of_alterac
-}
-
-crown_of_gilneas = {
-	stacking = no
-	monthly_character_prestige = 0.5
-	global_revolt_risk = -0.1
-	flags = {  }
-	quality = 5
-	indestructible = yes
-	vassal_opinion = 10
-	slot = crown
-	picture = GFX_crown_of_gilneas
-}
-
-crown_of_kul_tiras = {
-	stacking = no
-	monthly_character_prestige = 0.5
-	global_revolt_risk = -0.1
-	flags = {  }
-	quality = 5
-	indestructible = yes
-	vassal_opinion = 10
-	slot = crown
-	picture = GFX_crown_of_kul_tiras
-}
-
-crown_of_stormwind = {
-	stacking = no
-	monthly_character_prestige = 0.5
-	global_revolt_risk = -0.1
-	flags = {  }
-	quality = 5
-	indestructible = yes
-	vassal_opinion = 10
-	slot = crown
-	picture = GFX_crown_of_stormwind
-}
-
 hammer_of_the_lightbringer = {
 	stacking = no
 	monthly_character_piety = 0.5
@@ -370,7 +297,7 @@ hammer_of_the_lightbringer = {
 	holy_light_opinion = 5
 	scarlet_opinion = 5
 	argent_opinion = 5
-	combat_rating = 2
+	combat_rating = 10
 	slot = weapon
 	picture = GFX_hammer_of_the_lightbringer
 }
@@ -407,7 +334,7 @@ valius = {
 	holy_light_opinion = 5
 	scarlet_opinion = 5
 	argent_opinion = 5
-	combat_rating = 1
+	combat_rating = 10
 	slot = weapon
 	picture = GFX_valius
 }
@@ -428,7 +355,7 @@ jinrohk = {
 	monthly_character_prestige = 1.5
 	quality = 5
 	indestructible = yes
-	combat_rating = 2
+	combat_rating = 10
 	picture = GFX_sulfuras # Placeholder
 }
 
@@ -437,7 +364,7 @@ jangthraze = {
 	monthly_character_prestige = 0.5
 	quality = 4
 	indestructible = yes
-	combat_rating = 1
+	combat_rating = 5
 	picture = GFX_sulfuras # Placeholder
 }
 
@@ -446,7 +373,7 @@ sangthraze = {
 	monthly_character_prestige = 0.5
 	quality = 4
 	indestructible = yes
-	combat_rating = 1
+	combat_rating = 5
 	picture = GFX_sulfuras # Placeholder
 }
 
@@ -455,7 +382,7 @@ sulthraze = {
 	monthly_character_prestige = 1.5
 	quality = 5
 	indestructible = yes
-	combat_rating = 2
+	combat_rating = 15
 	picture = GFX_sulfuras # Placeholder
 }
 
@@ -464,7 +391,7 @@ zinrokh = {
 	monthly_character_prestige = 1.5
 	quality = 5
 	indestructible = yes
-	combat_rating = 2
+	combat_rating = 10
 	picture = GFX_sulfuras # Placeholder
 }
 
@@ -482,7 +409,7 @@ warmace_of_shirvallah = {
 	monthly_character_prestige = 1.5
 	quality = 5
 	indestructible = yes
-	combat_rating = 2
+	combat_rating = 15
 	picture = GFX_sulfuras # Placeholder
 }
 
@@ -530,6 +457,141 @@ hope_ender = {
 	quality = 5
 	indestructible = yes
 	combat_rating = 15
+	martial = 2
+	slot = weapon
+}
+
+the_black_hand = {
+	stacking = no
+	monthly_character_prestige = 0.5
+	quality = 5
+	indestructible = yes
+	combat_rating = 15
+	martial = 2
+	slot = weapon
+}
+
+blackhand_doomsaw = {
+	stacking = no
+	monthly_character_prestige = 0.1
+	quality = 4
+	indestructible = yes
+	combat_rating = 10
+	slot = weapon
+}
+
+doomhammer = {
+	stacking = no
+	monthly_character_piety = 0.5
+	monthly_character_prestige = 0.5
+	quality = 5
+	indestructible = yes
+	combat_rating = 15
+	learning = 2
+	orcish_opinion = 10
+	slot = weapon
+}
+
+orgrims_plate = {
+	stacking = no
+	monthly_character_prestige = 0.1
+	quality = 4
+	indestructible = yes
+	orcish_opinion = 5
+	combat_rating = 5
+	slot = torso
+}
+
+bite_of_the_bleeding_hollow = {
+	stacking = no
+	monthly_character_prestige = 0.2
+	quality = 4
+	indestructible = yes
+	#bleeding_hollow_opinion = 10
+	combat_rating = 10
+	intrigue = 1
+	slot = weapon
+}
+
+ring_of_the_scoured_clan = {
+	stacking = no
+	quality = 4
+	indestructible = yes
+	learning = 1
+}
+
+shadow_orb = {
+	stacking = no
+	quality = 3
+	learning = 2
+	combat_rating = 5
+}
+
+the_kingslayers = {
+	stacking = no
+	quality = 5
+	indestructible = yes
+	intrigue = 2
+	combat_rating = 10
+	slot = weapon
+}
+
+arcanite_reaper = {
+	quality = 4
+	combat_rating = 10
+	slot = weapon
+}
+
+twilight_canticle = {
+	stacking = no
+	quality = 5
+	indestructible = yes
+	learning = 1
+	intrigue = 1
+	void_opinion = 10
+}
+
+midnight = {
+	stacking = no
+	monthly_character_prestige = 0.1
+	quality = 5
+	indestructible = yes
+	combat_rating = 15
+	slot = companion
+}
+
+stranglestaff = {
+	stacking = no
+	intrigue = 1
+	learning = 2
+	indestructible = yes
+	quality = 4
+	slot = weapon
+}
+
+the_steel_sentinel = {
+	stacking = no
+	monthly_character_prestige = 0.25
+	quality = 5
+	indestructible = yes
+	combat_rating = 10
+	slot = torso
+}
+
+ashkandi = {
+	stacking = no
+	monthly_character_prestige = 0.25
+	quality = 5
+	indestructible = yes
+	combat_rating = 15
+	slot = weapon
+}
+
+serathil = {
+	stacking = no
+	quality = 5
+	indestructible = yes
+	combat_rating = 10
 	martial = 2
 	slot = weapon
 }

@@ -24,7 +24,7 @@ theocracy_governments = {
 		potential = {
 			is_patrician = no
 			#NOT = { is_government_potential = dragonflight_government }
-			#NOT = { is_government_potential = kirin_tor_government }
+			NOT = { is_government_potential = dalaranian_government }
 			NOT = { is_government_potential = guardian_government }
 			#NOT = { is_government_potential = technocracy_government }
 			#NOT = { is_government_potential = templar_order_government }
@@ -41,6 +41,44 @@ theocracy_governments = {
 			#NOT = { is_government_potential = forsaken_government }
 			#NOT = { is_government_potential = helf_government }
 			NOT = { is_government_potential = feral_worgen_government }
+			OR = {
+				is_female = no
+				religion_allows_female_temple_holders = yes
+			}
+			OR = {
+				is_female = yes
+				religion_allows_male_temple_holders = yes
+			}
+			NAND = {
+				OR = {
+					culture = amani
+					culture = atalai
+					culture = razorbranch
+					culture = firetree
+					culture = mossflayer
+					culture = revantusk
+					culture = vilebranch
+					culture = shadowpine
+					culture = witherbark
+					culture = bloodscalp
+					culture = darkspear
+					culture = gurubashi
+					culture = shatterspear
+					culture = skullsplitter
+					culture = drakkari
+					culture = frostmane
+					culture = sandfury					
+					culture = smolderthorn
+					culture = shadowglen
+					culture = winterax
+					culture = winterfang
+					culture = shadowtooth
+					culture = zandalari
+					culture = zulian
+					culture = razzashi
+				}
+				higher_tier_than = COUNT
+			}
 		}
 		
 		color = { 220 220 220 }
@@ -80,6 +118,7 @@ theocracy_governments = {
 					character = ROOT
 				}
 			}
+			NOT = { is_government_potential = dalaranian_government }
 		}
 		ignore_in_vassal_limit_calculation = {
 			kirin_tor_government

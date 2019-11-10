@@ -333,26 +333,6 @@ e_zul_aman = {
 				b_circle_of_masks = {
 				}
 			}
-			
-			c_tor_watha = { # 15
-				color = { 108 71 65 }
-				color2 = { 255 255 255 }
-				
-				b_tor_watha = {
-				}
-				b_old_fortress = {
-				}
-				b_cliffside_camp = {
-				}
-				b_fist_of_the_amani = {
-				}
-				b_old_wrath = {
-				}
-				b_forestrage = {
-				}
-				b_gatecrash = {
-				}
-			}
 		}
 		
 		d_sunsail_bay = {
@@ -706,10 +686,157 @@ e_zul_aman = {
 				b_nightlight = {
 				}
 			}
+			
+			c_nalorakks_cliffs = { # 27
+				color = { 96 54 207 }
+				color2 = { 255 255 255 }
+				
+				b_grove_of_the_bear = {
+				}
+				b_spiritstep_woods = {
+				}
+				b_altar_of_nalorakk = {
+				}
+				b_bearclaw_den = {
+				}
+				b_grizzlefury = {
+				}
+				b_hibernia = {
+				}
+				b_barkgouge = {
+				}
+			}
 		}
 		
 		d_thalassian_highlands = {
 			color = { 51 192 112 }
+			color2 = { 255 255 255 }
+			culture = amani
+			
+				amani = "Maisara"
+				atalai = "Maisara"
+				razorbranch = "Maisara"
+				firetree = "Maisara"
+				mossflayer = "Maisara"
+				revantusk = "Maisara"
+				vilebranch = "Maisara"
+				shadowpine = "Maisara"
+				witherbark = "Maisara"
+				bloodscalp = "Maisara"
+				darkspear = "Maisara"
+				gurubashi = "Maisara"
+				shatterspear = "Maisara"
+				skullsplitter = "Maisara"
+				drakkari = "Maisara"
+				frostmane = "Maisara"
+				sandfury = "Maisara"
+				smolderthorn = "Maisara"
+				shadowglen = "Maisara"
+				winterax = "Maisara"
+				winterfang = "Maisara"
+				shadowtooth = "Maisara"
+				zandalari = "Maisara" 
+				razzashi = "Maisara" 
+				zulian = "Maisara" 
+			
+			capital = 16 # Dawnstar Spire
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 16 province_id = 24 province_id = 419 } }
+				}
+			}
+			
+			c_thalassian_heights = { # 24
+				color = { 213 64 161 }
+				color2 = { 255 255 255 }
+				
+				amani = "Maisara Hills"
+				atalai = "Maisara Hills"
+				razorbranch = "Maisara Hills"
+				firetree = "Maisara Hills"
+				mossflayer = "Maisara Hills"
+				revantusk = "Maisara Hills"
+				vilebranch = "Maisara Hills"
+				shadowpine = "Maisara Hills"
+				witherbark = "Maisara Hills"
+				bloodscalp = "Maisara Hills"
+				darkspear = "Maisara Hills"
+				gurubashi = "Maisara Hills"
+				shatterspear = "Maisara Hills"
+				skullsplitter = "Maisara Hills"
+				drakkari = "Maisara Hills"
+				frostmane = "Maisara Hills"
+				sandfury = "Maisara Hills"
+				smolderthorn = "Maisara Hills"
+				shadowglen = "Maisara Hills"
+				winterax = "Maisara Hills"
+				winterfang = "Maisara Hills"
+				shadowtooth = "Maisara Hills"
+				zandalari = "Maisara Hills" 
+				razzashi = "Maisara Hills" 
+				zulian = "Maisara Hills" 
+				
+				b_striders_watch = {
+				}
+				b_stillrise = {
+				}
+				b_morloten = {
+				}
+				b_rodistair = {
+				}
+				b_buckingwing = {
+				}
+				b_villen = {
+				}
+				b_evelara = {
+				}
+			}
+			
+			c_tor_watha = { # 15
+				color = { 108 71 65 }
+				color2 = { 255 255 255 }
+				
+				b_tor_watha = {
+				}
+				b_old_fortress = {
+				}
+				b_cliffside_camp = {
+				}
+				b_fist_of_the_amani = {
+				}
+				b_old_wrath = {
+				}
+				b_forestrage = {
+				}
+				b_gatecrash = {
+				}
+			}
+			
+			c_spiritcatcher_shore = { # 26
+				color = { 162 60 96 }
+				color2 = { 255 255 255 }
+				
+				b_spiritcatcher_camp = {
+				}
+				b_grimeye = {
+				}
+				b_zim_wal = {
+				}
+				b_forlorn_altar = {
+				}
+				b_spearfish = {
+				}
+				b_beasthunt = {
+				}
+				b_burnfist = {
+				}
+			}
+		}
+		
+		d_elrendar = {
+			color = { 51 100 182 }
 			color2 = { 255 255 255 }
 			culture = amani
 			
@@ -790,26 +917,6 @@ e_zul_aman = {
 				b_riftgate = {
 				}
 				b_voideye = {
-				}
-			}
-			
-			c_thalassian_heights = { # 24
-				color = { 213 64 161 }
-				color2 = { 255 255 255 }
-				
-				b_striders_watch = {
-				}
-				b_stillrise = {
-				}
-				b_morloten = {
-				}
-				b_rodistair = {
-				}
-				b_buckingwing = {
-				}
-				b_villen = {
-				}
-				b_evelara = {
 				}
 			}
 			
@@ -920,7 +1027,7 @@ e_zul_aman = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 25 province_id = 26 province_id = 27 province_id = 458 } }
+					any_demesne_province = { OR = { province_id = 25 province_id = 667 province_id = 27 province_id = 458 } }
 				}
 			}
 			
@@ -945,46 +1052,6 @@ e_zul_aman = {
 				}
 			}
 			
-			c_spiritcatcher_shore = { # 26
-				color = { 162 60 96 }
-				color2 = { 255 255 255 }
-				
-				b_spiritcatcher_camp = {
-				}
-				b_grimeye = {
-				}
-				b_zim_wal = {
-				}
-				b_forlorn_altar = {
-				}
-				b_spearfish = {
-				}
-				b_beasthunt = {
-				}
-				b_burnfist = {
-				}
-			}
-			
-			c_nalorakks_cliffs = { # 27
-				color = { 96 54 207 }
-				color2 = { 255 255 255 }
-				
-				b_grove_of_the_bear = {
-				}
-				b_spiritstep_woods = {
-				}
-				b_altar_of_nalorakk = {
-				}
-				b_bearclaw_den = {
-				}
-				b_grizzlefury = {
-				}
-				b_hibernia = {
-				}
-				b_barkgouge = {
-				}
-			}
-			
 			c_amani_ridge = { # 458
 				color = { 71 221 179 }
 				color2 = { 255 255 255 }
@@ -1002,6 +1069,46 @@ e_zul_aman = {
 				b_sekus = {
 				}
 				b_greenston = {
+				}
+			}
+			
+			c_ula_tek = { # 470
+				color = { 93 200 160 }
+				color2 = { 255 255 255 }
+				
+				b_ula_tek = {
+				}
+				b_mosstusk_village = {
+				}
+				b_shrine_of_serpent = {
+				}
+				b_lost_pyramid = {
+				}
+				b_motten = {
+				}
+				b_serukus = {
+				}
+				b_greenst = {
+				}
+			}
+			
+			c_amanshi = { # 471
+				color = { 74 180 10 }
+				color2 = { 255 255 255 }
+				
+				b_amanshi = {
+				}
+				b_greenslab = {
+				}
+				b_akilzon_temple = {
+				}
+				b_jinthaza = {
+				}
+				b_pineneedle = {
+				}
+				b_arenshi = {
+				}
+				b_lowrock = {
 				}
 			}
 		}
@@ -1535,7 +1642,7 @@ e_northeron = {
 		}
 		
 		d_wealdpass = {
-			color = { 34 40 132 }
+			color = { 74 70 132 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -1893,6 +2000,8 @@ e_northeron = {
 			}
 			
 			c_cragwar = { # 456
+				color = { 0 100 0 }
+				color2 = { 255 255 255 }
 				b_cresthill = {
 				}
 				b_athelney = {
@@ -2279,7 +2388,7 @@ e_lordaeron = {
 		capital = 99 # Lordaeron
 		
 		d_the_bulwark = {
-			color = { 185 185 185 }
+			color = { 165 185 185 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -2357,7 +2466,7 @@ e_lordaeron = {
 		}
 		
 		d_venomweb_vale = {
-			color = { 154 154 154 }
+			color = { 134 114 134 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -2510,7 +2619,7 @@ e_lordaeron = {
 		}
 		
 		d_keeperweald = {
-			color = { 211 211 211 }
+			color = { 251 231 211 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -2590,7 +2699,7 @@ e_lordaeron = {
 		}
 		
 		d_lightknell = {
-			color = { 177 177 177 }
+			color = { 217 217 177 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -2657,7 +2766,7 @@ e_lordaeron = {
 		}
 		
 		d_lordaeron = {
-			color = { 220 220 220 }
+			color = { 180 200 250 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -2778,7 +2887,7 @@ e_lordaeron = {
 		}
 		
 		d_whispering_forest = {
-			color = { 205 205 205 }
+			color = { 185 225 185 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -2861,7 +2970,7 @@ e_lordaeron = {
 	}
 	
 	k_silverpine = {
-		color = { 102 255 244 }
+		color = { 2 125 144 }
 		color2 = { 255 255 255 }
 		culture = lordaeronian
 		
@@ -3251,7 +3360,7 @@ e_gilneas = {
 		}
 		
 		d_emberstone = {
-			color = { 107 102 88 }
+			color = { 127 102 88 }
 			color2 = { 255 255 255 }
 			culture = gilnean
 			
@@ -4099,7 +4208,7 @@ e_arathor = {
 		capital = 84 # Dalaran
 		
 		d_dalaran = {
-			color = { 154 78 212 }
+			color = { 154 78 172 }
 			color2 = { 255 255 255 }
 			culture = dalaranian
 			
@@ -4178,7 +4287,7 @@ e_arathor = {
 		}
 		
 		d_lordamere = {
-			color = { 155 96 199 }
+			color = { 155 96 219 }
 			color2 = { 255 255 255 }
 			culture = dalaranian
 			
@@ -4663,7 +4772,7 @@ e_arathor = {
 		capital = 152 # Hillsbrad
 		
 		d_hillsbrad = {
-			color = { 238 226 154 }
+			color = { 238 226 204 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -4793,7 +4902,7 @@ e_arathor = {
 		}
 		
 		d_tarren_mill = {
-			color = { 233 225 168 }
+			color = { 203 205 138 }
 			color2 = { 255 255 255 }
 			culture = alteraci
 			
@@ -4868,7 +4977,7 @@ e_arathor = {
 		}
 		
 		d_durnholde = {
-			color = { 216 212 179 }
+			color = { 236 212 179 }
 			color2 = { 255 255 255 }
 			culture = lordaeronian
 			
@@ -5375,7 +5484,7 @@ e_arathor = {
 		}
 		
 		d_arathi_basin = {
-			color = { 194 43 43 }
+			color = { 194 58 43 }
 			color2 = { 255 255 255 }
 			culture = stromic
 			
@@ -5545,7 +5654,7 @@ e_arathor = {
 		}
 		
 		d_hammerfall = {
-			color = { 200 55 55 }
+			color = { 200 55 75 }
 			color2 = { 255 255 255 }
 			culture = warsong
 			
@@ -5772,7 +5881,7 @@ e_hinterlands = {
 		}
 		
 		d_jintha_alor = {
-			color = { 43 117 11 }
+			color = { 83 117 11 }
 			color2 = { 255 255 255 }
 			capital = 183 # Jintha'Alor
 			culture = vilebranch
@@ -5930,7 +6039,7 @@ e_hinterlands = {
 		
 		d_seradane = {
 			color = { 68 118 47 }
-			color = { 255 255 255 }
+			color = { 0 100 0 }
 			capital = 178 # Seradane
 			culture = green_dragonflight
 			
@@ -6014,8 +6123,8 @@ e_hinterlands = {
 		culture = wildhammer
 		
 		d_aerie_peaks = {
-			color = { 68 118 47 }
-			color = { 255 255 255 }
+			color = { 168 218 247 }
+			color2 = { 255 255 255 }
 			capital = 179 # Aerie Peak
 			culture = wildhammer
 			
@@ -6145,7 +6254,7 @@ e_hinterlands = {
 		}
 		
 		d_griffonroost = {
-			color = { 39 198 209 }
+			color = { 139 198 209 }
 			color2 = { 255 255 255 }
 			capital = 54 # Griffonroost
 			culture = wildhammer
@@ -6199,8 +6308,8 @@ e_hinterlands = {
 		}
 		
 		d_shadra_alor = {
-			color = { 15 94 100 }
-			color = { 255 255 255 }
+			color = { 115 194 200 }
+			color2 = { 255 255 255 }
 			capital = 181 # Shadra'Alor
 			culture = witherbark
 			
@@ -6315,7 +6424,7 @@ e_grim_batol = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 201 province_id = 204 province_id = 205 } }
+					any_demesne_province = { OR = { province_id = 201 province_id = 204 province_id = 205 province_id = 669 } }
 				}
 			}
 			
@@ -6365,7 +6474,7 @@ e_grim_batol = {
 				
 				b_swiftgear_station = {
 				}
-				b_saltspray_glen = {
+				b_sundown_marsh = {
 				}
 				b_ironbeards_tomb = {
 				}
@@ -6378,10 +6487,30 @@ e_grim_batol = {
 				b_blueshadow = {
 				}
 			}
+			
+			c_saltspray_glen = { # 669
+				color = { 80 190 253 }
+				color2 = { 255 255 255 }
+				
+				b_saltspray = {
+				}
+				b_newgue = {
+				}
+				b_stambour_bog = {
+				}
+				b_dense_wetlands = {
+				}
+				b_gamterel = {
+				}
+				b_tossing_slough = {
+				}
+				b_kipgamau = {
+				}
+			}
 		}
 		
 		d_thandol_span = {
-			color = { 17 158 92 }
+			color = { 17 158 122 }
 			color2 = { 255 255 255 }
 			capital = 206 # Dun Modr
 			culture = bronzebeard
@@ -6456,7 +6585,7 @@ e_grim_batol = {
 		}
 		
 		d_the_deep_fen = {
-			color = { 0 152 81 }
+			color = { 60 152 81 }
 			color2 = { 255 255 255 }
 			capital = 208 # Rator Ridge
 			culture = dark_iron
@@ -6626,7 +6755,7 @@ e_grim_batol = {
 			}
 			
 			c_bogrock = { # 440
-				color = { 198 144 48 }
+				color = { 69 144 80 }
 				color2 = { 255 255 255 }
 				
 				b_grayshade = {
@@ -6791,6 +6920,8 @@ e_grim_batol = {
 			}
 			
 			c_thunder_valley = { # 448
+				color = { 20 145 190 }
+				color2 = { 255 255 0 }
 				frostwolf = "Drakgor"
 				blackrock = "Drakgor"
 				bleeding_hollow = "Drakgor"
@@ -6982,7 +7113,7 @@ e_grim_batol = {
 			}
 			
 			c_bloodgulch = { # 220
-				color = { 262 218 128 }
+				color = { 252 218 128 }
 				color2 = { 255 255 255 }
 				
 				b_bloodgulch = {
@@ -7292,6 +7423,32 @@ e_dun_morogh = {
 	color2 = { 255 255 255 }
 	capital = 233 # Ironforge
 	culture = bronzebeard
+
+	amani = "Zul'Modan"
+	atalai = "Zul'Modan"
+	razorbranch = "Zul'Modan"
+	firetree = "Zul'Modan"
+	mossflayer = "Zul'Modan"
+	revantusk = "Zul'Modan"
+	vilebranch = "Zul'Modan"
+	shadowpine = "Zul'Modan"
+	witherbark = "Zul'Modan"
+	bloodscalp = "Zul'Modan"
+	darkspear = "Zul'Modan"
+	gurubashi = "Zul'Modan"
+	shatterspear = "Zul'Modan"
+	skullsplitter = "Zul'Modan"
+	drakkari = "Zul'Modan"
+	frostmane = "Zul'Modan"
+	sandfury = "Zul'Modan"
+	smolderthorn = "Zul'Modan"
+	shadowglen = "Zul'Modan"
+	winterax = "Zul'Modan"
+	winterfang = "Zul'Modan"
+	shadowtooth = "Zul'Modan"
+	zandalari = "Zul'Modan"
+	zulian = "Zul'Modan"
+	razzashi = "Zul'Modan"
 	
 	k_gnomeregan = {
 		color = { 133 80 159 }
@@ -7488,6 +7645,32 @@ e_dun_morogh = {
 		color2 = { 255 255 255 }
 		capital = 233 # Ironforge
 		culture = bronzebeard
+
+		amani = "Zul'Morogh"
+		atalai = "Zul'Morogh"
+		razorbranch = "Zul'Morogh"
+		firetree = "Zul'Morogh"
+		mossflayer = "Zul'Morogh"
+		revantusk = "Zul'Morogh"
+		vilebranch = "Zul'Morogh"
+		shadowpine = "Zul'Morogh"
+		witherbark = "Zul'Morogh"
+		bloodscalp = "Zul'Morogh"
+		darkspear = "Zul'Morogh"
+		gurubashi = "Zul'Morogh"
+		shatterspear = "Zul'Morogh"
+		skullsplitter = "Zul'Morogh"
+		drakkari = "Zul'Morogh"
+		frostmane = "Zul'Morogh"
+		sandfury = "Zul'Morogh"
+		smolderthorn = "Zul'Morogh"
+		shadowglen = "Zul'Morogh"
+		winterax = "Zul'Morogh"
+		winterfang = "Zul'Morogh"
+		shadowtooth = "Zul'Morogh"
+		zandalari = "Zul'Morogh"
+		zulian = "Zul'Morogh"
+		razzashi = "Zul'Morogh"
 		
 		d_ironforge = {
 			color = { 166 125 28 }
@@ -8321,12 +8504,11 @@ e_blackrock = {
 				}
 			}
 			
-			c_blackrock_depths = { # 274
+			c_shadowforge = { # 274
 				color = { 119 14 14 }
 				color2 = { 255 255 255 }
 				
 				b_shadowforge = {
-					holy_site = pyromancy
 				}
 				b_east_garrison = {
 				}
@@ -8339,6 +8521,19 @@ e_blackrock = {
 				b_masonary = {
 				}
 				b_molten_core = { 
+				}
+			}
+			
+			c_blackrock_depths = { # 670
+				color = { 230 40 101 }
+				color2 = { 255 255 255 }
+				
+				b_magmadar_cavern = {
+					holy_site = pyromancy
+				}
+				b_molten_core = { 
+				}
+				b_ragnaros_lair = { 
 				}
 			}
 		}
@@ -9589,19 +9784,19 @@ e_blackrock = {
 }
 
 e_azeroth = {
-	color = { 94 224 255 }
+	color = { 94 124 255 }
 	color2 = { 255 255 255 }
 	capital = 318 # Stormwind
 	culture = azerothian
 	
 	k_stormwind = {
-		color = { 132 231 255 }
+		color = { 132 131 255 }
 		color2 = { 255 255 255 }
 		capital = 318 # Stormwind
 		culture = azerothian
 		
 		d_stormsea = {
-			color = { 121 211 233 }
+			color = { 121 111 233 }
 			color2 = { 255 255 255 }
 			culture = azerothian
 			capital = 320 # Balor
@@ -9634,7 +9829,7 @@ e_azeroth = {
 			}
 			
 			c_vashjir = { # 321
-				color = { 99 198 128 }
+				color = { 99 98 128 }
 				color2 = { 255 255 255 }
 				
 				b_vashjir = {
@@ -9662,7 +9857,7 @@ e_azeroth = {
 		}
 		
 		d_stormwind = {
-			color = { 92 192 218 }
+			color = { 92 92 218 }
 			color2 = { 255 255 255 }
 			culture = azerothian
 			capital = 318 # Stormwind
@@ -9675,7 +9870,7 @@ e_azeroth = {
 			}
 			
 			c_storm_mountains = { # 283
-				color = { 91 204 179 }
+				color = { 91 104 179 }
 				color2 = { 255 255 255 }
 				
 				b_lostmond = {
@@ -9695,7 +9890,7 @@ e_azeroth = {
 			}
 			
 			c_storm_coast = { # 284
-				color = { 164 108 116 }
+				color = { 164 8 116 }
 				color2 = { 255 255 255 }
 				
 				b_baywater = {
@@ -9738,7 +9933,7 @@ e_azeroth = {
 			}
 			
 			c_blue_coast = { # 319
-				color = { 113 215 142 }
+				color = { 113 115 142 }
 				color2 = { 255 255 255 }
 				
 				b_sunshire = {
@@ -9759,7 +9954,7 @@ e_azeroth = {
 		}
 		
 		d_elwynn_glades = {
-			color = { 124 213 235 }
+			color = { 124 113 235 }
 			color2 = { 255 255 255 }
 			culture = azerothian
 			capital = 323 # Goldshire
@@ -9772,7 +9967,7 @@ e_azeroth = {
 			}
 			
 			c_mirrorwood = { # 322
-				color = { 102 105 210 }
+				color = { 102 5 210 }
 				color2 = { 255 255 255 }
 				
 				b_mirror_lake_estate = {
@@ -9792,7 +9987,7 @@ e_azeroth = {
 			}
 			
 			c_goldshire = { # 323
-				color = { 99 145 108 }
+				color = { 99 45 108 }
 				color2 = { 255 255 255 }
 				
 				b_goldshire = {
@@ -9812,7 +10007,7 @@ e_azeroth = {
 			}
 			
 			c_northshire = { # 464
-				color = { 204 190 99 }
+				color = { 204 90 99 }
 				color2 = { 255 255 255 }
 				
 				b_northshire_abbey = {
@@ -9835,7 +10030,7 @@ e_azeroth = {
 		}
 		
 		d_forests_edge = {
-			color = { 103 217 246 }
+			color = { 103 117 186 }
 			color2 = { 255 255 255 }
 			culture = azerothian
 			capital = 324 # Forest's Edge
@@ -9868,7 +10063,7 @@ e_azeroth = {
 			}
 			
 			c_fertile_fields = { # 330
-				color = { 99 179 108 }
+				color = { 99 79 108 }
 				color2 = { 255 255 255 }
 				
 				b_maclure_estate = {
@@ -9888,7 +10083,7 @@ e_azeroth = {
 			}
 			
 			c_howling_bank = { # 416
-				color = { 130 207 190 }
+				color = { 130 107 190 }
 				color2 = { 255 255 255 }
 				
 				b_hogger_hill = {
@@ -9909,7 +10104,7 @@ e_azeroth = {
 		}
 		
 		d_azerothian_fields = {
-			color = { 144 210 226 }
+			color = { 144 110 226 }
 			color2 = { 255 255 255 }
 			culture = azerothian
 			capital = 347 # Sunnyglade
@@ -9922,7 +10117,7 @@ e_azeroth = {
 			}
 			
 			c_eastvale = { # 328
-				color = { 105 176 119 }
+				color = { 105 76 119 }
 				color2 = { 255 255 255 }
 				
 				b_ridgepoint = {
@@ -9942,7 +10137,7 @@ e_azeroth = {
 			}
 			
 			c_riverdale = { # 331
-				color = { 179 142 94 }
+				color = { 179 42 94 }
 				color2 = { 255 255 255 }
 				
 				b_jerods_landing = {
@@ -9982,7 +10177,7 @@ e_azeroth = {
 			}
 			
 			c_westroad = { # 348
-				color = { 145 184 184 }
+				color = { 145 84 184 }
 				color2 = { 255 255 255 }
 				
 				b_brackwell_estate = {
@@ -10003,7 +10198,7 @@ e_azeroth = {
 		}
 		
 		d_stone_cairn = {
-			color = { 164 216 229 }
+			color = { 164 116 229 }
 			color2 = { 255 255 255 }
 			culture = azerothian
 			capital = 325 # Stone Cairn Isle
@@ -10016,7 +10211,7 @@ e_azeroth = {
 			}
 			
 			c_roaring_range = { # 287
-				color = { 116 213 184 }
+				color = { 116 113 184 }
 				color2 = { 255 255 255 }
 				
 				b_roaring_watch = {
@@ -10056,7 +10251,7 @@ e_azeroth = {
 			}
 			
 			c_jasper_ridge = { # 326
-				color = { 156 116 147 }
+				color = { 156 16 147 }
 				color2 = { 255 255 255 }
 				
 				b_jasperlode = {
@@ -10270,6 +10465,26 @@ e_azeroth = {
 				b_amberstar = {
 				}
 			}
+			
+			c_south_redridge = { # 671
+				color = { 123 186 107 }
+				color2 = { 255 255 255 }
+				
+				b_south_redridge = {
+				}
+				b_cliffedge = {
+				}
+				b_long_valley = {
+				}
+				b_coldwind_point = {
+				}
+				b_marshview = {
+				}
+				b_bog_pass = {
+				}
+				b_bright_camp = {
+				}
+			}
 		}
 		
 		d_redridge_highlands = {
@@ -10332,7 +10547,7 @@ e_azeroth = {
 				color = { 94 187 147 }
 				color2 = { 255 255 255 }
 				
-				b_athers_mill = {
+				b_althers_mill = {
 				}
 				b_keeshans_post = {
 				}
@@ -10772,7 +10987,7 @@ e_azeroth = {
 			color = { 205 205 113 }
 			color2 = { 255 255 255 }
 			culture = azerothian
-			capital = 345 # Harveston
+			capital = 345 # Jangolode
 			
 			allow = {
 				OR = {
@@ -10805,7 +11020,7 @@ e_azeroth = {
 				color = { 201 71 79 }
 				color2 = { 255 255 255 }
 				
-				b_alexton_stead = {
+				b_alexston_stead = {
 				}
 				b_smoothvale = {
 				}
@@ -11005,7 +11220,7 @@ e_azeroth = {
 		}
 		
 		d_twilight_grove = {
-			color = { 181 120 261 }
+			color = { 181 120 255 }
 			color2 = { 255 255 255 }
 			culture = green_dragonflight
 			capital = 349 # Twilight Grove
@@ -12118,7 +12333,7 @@ e_zul_gurub = {
 				color = { 218 147 105 }
 				color2 = { 255 255 255 }
 				
-				b_splintertree_junction = {
+				b_splinterspear_junction = {
 				}
 				b_purespring_cavern = {
 				}
@@ -12191,6 +12406,10 @@ e_zul_gurub = {
 			c_the_shifting_mire = { # 366
 				color = { 113 57 153 }
 				color2 = { 255 255 255 }
+				
+				draenei = "The Harborage"
+				broken = "The Harborage"
+				lost_one = "The Harborage"
 				
 				b_the_harborage = {
 					holy_site = shamanism
@@ -12310,7 +12529,7 @@ e_zul_gurub = {
 				color = { 79 215 94 }
 				color2 = { 255 255 255 }
 				
-				b_neverbreach = {
+				b_marshtide_watch = {
 				}
 				b_dankwood = {
 				}
@@ -12413,6 +12632,29 @@ e_zul_gurub = {
 			color2 = { 255 255 255 }
 			culture = blackrock
 			capital = 379 # Dreadmaul Hold
+			
+			azerothian = "Nethergarde"
+			stromic = "Nethergarde"
+			dalaranian = "Nethergarde"
+			lordaeronian = "Nethergarde"
+			gilnean = "Nethergarde"
+			tirasian = "Nethergarde"
+			alteraci = "Nethergarde"
+			arathi = "Nethergarde"
+			hillsbradan = "Nethergarde"
+			silverpiner = "Nethergarde"
+			tirisfalen = "Nethergarde"
+			bronzebeard = "Nethergarde"
+			wildhammer = "Nethergarde"
+			dark_iron = "Nethergarde"
+			high_elven = "Nethergarde"
+			blood_elven = "Nethergarde"
+			night_elven = "Nethergarde"
+			naga = "Nethergarde"
+			gnomish = "Nethergarde"
+			draenei = "Nethergarde"
+			broken = "Nethergarde"
+			lost_one = "Nethergarde"
 			
 			allow = {
 				OR = {
@@ -12546,7 +12788,7 @@ e_zul_gurub = {
 		}
 		
 		d_the_dark_portal = {
-			color = { 122 107 141 }
+			color = { 102 117 101 }
 			color2 = { 255 255 255 }
 			culture = blackrock
 			capital = 377 # The Dark Portal
@@ -12702,7 +12944,7 @@ e_zul_gurub = {
 		}
 		
 		d_red_shore = {
-			color = { 79 67 95 }
+			color = { 89 77 75 }
 			color2 = { 255 255 255 }
 			culture = demonic
 			capital = 385 # The Red Raches
@@ -12775,4 +13017,31 @@ e_zul_gurub = {
 			}
 		}
 	}
+}
+
+# Patrician titles
+
+b_riverlgaz = {
+	culture = goblin
+	religion = mercantilism
+}
+b_brewright = {
+	culture = goblin
+	religion = mercantilism
+}
+b_goodstitch = {
+	culture = goblin
+	religion = mercantilism
+}
+b_skindle = {
+	culture = goblin
+	religion = mercantilism
+}
+b_goldgrubber = {
+	culture = goblin
+	religion = mercantilism
+}
+b_booty_bay_port = {
+	culture = goblin
+	religion = mercantilism
 }

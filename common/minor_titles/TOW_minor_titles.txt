@@ -1,0 +1,44 @@
+title_dalaran_archmage = {
+	is_high_prio = yes
+	dignity = 8
+	realm_in_name = yes
+	grant_limit = 5
+	opinion_effect = 10
+	revoke_allowed = no
+	attribute = learning
+
+	monthly_salary = 0.50
+	monthly_prestige = 0.50
+
+	allowed_to_hold = {
+		NOT = { primary_title = { temporary = yes } }
+		is_adult = yes
+		NOT = { has_character_flag = guru }
+		NOT = { trait = incapable }
+		Keitaro_can_have_a_job = yes
+
+		trait = mage
+	}
+
+	allowed_to_grant = {
+		ROOT = {
+			government = dalaranian_government
+			independent = yes
+		}
+	}
+
+	gain_effect = {
+		FROM = { character_event = { id = TOW_MT.1 } } # Update opinion & AI assignment
+	}
+	lose_effect = {
+		FROM = { character_event = { id = TOW_MT.1 } } # Update opinion & AI assignment
+	}
+	retire_effect = {
+		FROM = { character_event = { id = TOW_MT.1 } } # Update opinion & AI assignment
+	}
+	death_effect = {
+		FROM = { character_event = { id = TOW_MT.1 } } # Update opinion & AI assignment
+	}
+
+	message = yes
+}

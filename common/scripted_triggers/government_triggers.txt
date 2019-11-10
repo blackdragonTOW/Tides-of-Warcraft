@@ -2,11 +2,7 @@
 TOW_is_feudal = {
 	is_feudal = yes
 	NOR = {
-		government = troll_ke_government
-		government = troll_bcd_government
-		government = ogre_tribe_government
-		government = helf_government
-		government = noble_republic_government
+		government = zandali_tribe
 	}
 }
 
@@ -14,9 +10,7 @@ TOW_is_feudal = {
 TOW_is_tribal = {
 	OR = {
 		is_tribal = yes
-		#government = troll_ke_government
-		#government = troll_bcd_government
-		government = ogre_tribe_government
+		government = zandali_tribe
 	}
 }
 
@@ -31,8 +25,7 @@ TOW_government_is_uncivilized = {
 TOW_is_republic = {
 	OR = {
 		is_republic = yes
-		government = helf_government
-		government = noble_republic_government
+		government = dalaranian_government
 	}
 }
 
@@ -40,7 +33,7 @@ TOW_is_creep_realm = {
 	AND = {
 		OR = {
 			is_nomadic = yes
-			is_tribal = yes
+			TOW_is_tribal = yes
 		}
 		OR = {
 			AND = {

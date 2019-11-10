@@ -223,9 +223,9 @@ character_event = {
         }
         if = {
             limit = {
-                is_tribal = yes
+                TOW_is_tribal = yes
                 has_strong_claim = FROM # if attacker has strong claim on target
-                FROM = { is_tribal = yes }
+                FROM = { TOW_is_tribal = yes }
             }
             custom_tooltip = { text = EVTOPTA_HFP_10096_CLAIM_DUEL_TT } # "This might affect the fate of <title>..."
         }

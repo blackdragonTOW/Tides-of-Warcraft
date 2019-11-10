@@ -840,8 +840,8 @@ obj_get_married = {
 		NOT = { is_ascetic_trigger = yes }
 		OR = {
 			is_ruler = no
-			is_feudal = yes
-			is_tribal = yes
+			TOW_is_feudal = yes
+			TOW_is_tribal = yes
 			is_nomadic = yes
 			is_patrician = yes
 		}
@@ -1148,8 +1148,8 @@ obj_wants_landed_title = {
 		NOT = { has_minor_title = title_guru }
 		liege = {
 			OR = {
-				is_feudal = yes
-				is_tribal = yes
+				TOW_is_feudal = yes
+				TOW_is_tribal = yes
 			}
 			is_close_relative = ROOT
 			num_of_extra_landed_titles = 1

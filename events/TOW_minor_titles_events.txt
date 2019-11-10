@@ -1,0 +1,82 @@
+namespace = TOW_MT
+
+# Update Archmage opinion + AI give archmages titles
+character_event = {
+	id = TOW_MT.1
+	hide_window = yes
+	only_rulers = yes
+
+	trigger = {
+		government = dalaranian_government
+		independent = yes
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				ai = yes
+			}
+			while = {
+				count = 5
+				limit = {
+					NOT = { has_assigned_minor_title = { title = title_dalaran_archmage count = 5 } }
+				}
+				save_event_target_as = liege
+				random_courtier_or_vassal = {
+					limit = {
+						can_hold_title = title_dalaran_archmage
+					}
+					score_value = { #Prioritizes selecting an appropriate holder...
+		                value = 10
+		                TOW_archmage_selection_score = yes
+		            }
+		            give_minor_title = title_dalaran_archmage
+				}
+			}
+		}
+
+		remove_character_modifier = TOW_dalaran_king_missing_archmages_1
+		remove_character_modifier = TOW_dalaran_king_missing_archmages_2
+		remove_character_modifier = TOW_dalaran_king_missing_archmages_3
+		remove_character_modifier = TOW_dalaran_king_missing_archmages_4
+		remove_character_modifier = TOW_dalaran_king_missing_archmages_5
+		if = {
+			limit = {
+				NOT = { has_assigned_minor_title = { title = title_dalaran_archmage count = 5 } }
+				has_assigned_minor_title = { title = title_dalaran_archmage count = 4 }
+			}
+			add_character_modifier = { name = TOW_dalaran_king_missing_archmages_1 duration = -1 hidden = yes }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_assigned_minor_title = { title = title_dalaran_archmage count = 4 } }
+				has_assigned_minor_title = { title = title_dalaran_archmage count = 3 }
+			}
+			add_character_modifier = { name = TOW_dalaran_king_missing_archmages_2 duration = -1 hidden = yes }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_assigned_minor_title = { title = title_dalaran_archmage count = 3 } }
+				has_assigned_minor_title = { title = title_dalaran_archmage count = 2 }
+			}
+			add_character_modifier = { name = TOW_dalaran_king_missing_archmages_3 duration = -1 hidden = yes }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_assigned_minor_title = { title = title_dalaran_archmage count = 2 } }
+				has_assigned_minor_title = { title = title_dalaran_archmage count = 1 }
+			}
+			add_character_modifier = { name = TOW_dalaran_king_missing_archmages_4 duration = -1 hidden = yes }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_assigned_minor_title = { title = title_dalaran_archmage count = 1 } }
+			}
+			add_character_modifier = { name = TOW_dalaran_king_missing_archmages_5 duration = -1 hidden = yes }
+		}
+	}
+}

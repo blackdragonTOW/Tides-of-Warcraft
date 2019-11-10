@@ -983,6 +983,17 @@ religion_doctrine = {
 			factor = 1
 		}
 	}
+	religion_feature_pyramids = {
+		picture = GFX_religion_feature_pyramids
+		potential = {
+			has_game_started = yes
+			TOW_race_is_troll = no
+		}
+		effect = {
+			custom_tooltip = { text = tooltip_religion_feature_pyramids }
+			set_flag = feature_pyramids
+		}
+	}
 }
 
 religion_leadership = {
@@ -1139,22 +1150,13 @@ religion_leadership = {
 				}
 				if = {
 					limit = {
-						always = no
-						OR = { 
-							#religion = orthodox 
-						} 
+						religion = holy_light 
 					}
 					set_autocephaly = yes
 				}
 				if = {
 					limit = {
-						always = no
-						OR = { 
-							#religion_group = christian
-						} 
-						NOR = {
-							#religion = cathar
-						}
+						religion_group = light_group
 					}
 					set_can_grant_divorce = yes
 				}

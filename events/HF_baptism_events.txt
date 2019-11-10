@@ -1261,18 +1261,72 @@ narrative_event = {
 				leave_society = yes
 			}
 		}
-		# TOW TODO : Sympathy
-		#if = { 
-		#	limit = { 
-		#		NOT = { trait = zealous }
-		#		NOT = { trait = cynical }
-		#		religion_group = christian
-		#		NOT = { religion_group = event_target:sponsoring_king }
-		#	}
-		#	random = { chance = 60
-		#		add_trait = sympathy_christendom
-		#	}
-		#}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = light_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_light_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = arcane_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_arcane_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = elemental_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_elemental_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = fel_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_fel_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = void_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_void_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = wild_gods_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_wild_gods_group
+			}
+		}
 		if = { 
 			limit = { 
 				trait = zealous
@@ -1484,30 +1538,138 @@ narrative_event = {
 				leave_society = yes
 			}
 		}
-		# TOW TODO : Sympathy
-		#if = { 
-		#	limit = { 
-		#		NOT = { trait = zealous }
-		#		NOT = { trait = cynical }
-		#		religion_group = christian
-		#		NOT = { religion_group = event_target:sponsoring_king }
-		#	}
-		#	random = { chance = 60
-		#		add_trait = sympathy_christendom
-		#	}
-		#}
-		# TOW TODO : Sympathy Zealous
-		#if = { 
-		#	limit = { 
-		#		trait = zealous
-		#		religion_group = christian
-		#		NOT = { religion_group = event_target:sponsoring_king }
-		#	}
-		#	remove_trait = zealous
-		#	hidden_tooltip = { character_event = { id = 38310 } } #Notification
-		#	piety = -20
-		#	add_trait = sympathy_christendom
-		#}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = light_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_light_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = arcane_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_arcane_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = elemental_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_elemental_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = fel_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_fel_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = void_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_void_group
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = { trait = zealous }
+				NOT = { trait = cynical }
+				religion_group = wild_gods_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			random = { chance = 60
+				add_trait = sympathy_wild_gods_group
+			}
+		}
+		if = { 
+			limit = { 
+				trait = zealous
+				religion_group = light_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			remove_trait = zealous
+			hidden_tooltip = { character_event = { id = 38310 } } #Notification
+			piety = -20
+			add_trait = sympathy_light_group
+		}
+		if = { 
+			limit = { 
+				trait = zealous
+				religion_group = arcane_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			remove_trait = zealous
+			hidden_tooltip = { character_event = { id = 38310 } } #Notification
+			piety = -20
+			add_trait = sympathy_arcane_group
+		}
+		if = { 
+			limit = { 
+				trait = zealous
+				religion_group = elemental_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			remove_trait = zealous
+			hidden_tooltip = { character_event = { id = 38310 } } #Notification
+			piety = -20
+			add_trait = sympathy_elemental_group
+		}
+		if = { 
+			limit = { 
+				trait = zealous
+				religion_group = fel_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			remove_trait = zealous
+			hidden_tooltip = { character_event = { id = 38310 } } #Notification
+			piety = -20
+			add_trait = sympathy_fel_group
+		}
+		if = { 
+			limit = { 
+				trait = zealous
+				religion_group = void_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			remove_trait = zealous
+			hidden_tooltip = { character_event = { id = 38310 } } #Notification
+			piety = -20
+			add_trait = sympathy_void_group
+		}
+		if = { 
+			limit = { 
+				trait = zealous
+				religion_group = wild_gods_group
+				NOT = { religion_group = event_target:sponsoring_king }
+			}
+			remove_trait = zealous
+			hidden_tooltip = { character_event = { id = 38310 } } #Notification
+			piety = -20
+			add_trait = sympathy_wild_gods_group
+		}
 		if = { 
 			limit = { 
 				trait = zealous
@@ -4934,7 +5096,7 @@ character_event = {
 						trait = hedonist
 					}
 					modifier = { factor = 1.4
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 
 
@@ -5044,7 +5206,7 @@ character_event = {
 						trait = gamer
 					}
 					modifier = { factor = 1.4
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 
 
@@ -5165,7 +5327,7 @@ character_event = {
 						}
 					}
 					modifier = { factor = 1.4
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 
 
@@ -5271,7 +5433,7 @@ character_event = {
 						trait = scholar
 					}
 					modifier = { factor = 1.4
-						is_feudal = yes
+						TOW_is_feudal = yes
 					}
 
 
@@ -7916,7 +8078,7 @@ character_event = {
 			10 = {  #Chance to gain technology.
 				trigger = { 
 					FROM = { 
-						is_tribal = yes
+						TOW_is_tribal = yes
 					} 
 				}
 				FROM = { character_event = { id = HF.20115 } }
@@ -7935,7 +8097,7 @@ character_event = {
 			} 
 			5 = {  #Chance to gain event troops.
 				trigger = { 
-					is_tribal = yes
+					TOW_is_tribal = yes
 					culture = FROM #Completely integrated.
 					FROM = { has_any_opinion_modifier = opinion_baptism_sponsor_target } #Sponsor still lives.
 

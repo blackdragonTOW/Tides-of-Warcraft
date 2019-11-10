@@ -748,9 +748,31 @@
 
 # p5 headgear
 5 = {
-	# Imperial crown/Chaliph turban
+	# Blank
 	0 = {
+		factor = 3
+		modifier = { factor = 100 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			AND = {
+				NOT = { has_character_flag = TOW_hide_headgear }
+				OR = {
+					real_tier = emperor
+					real_tier = king
+					real_tier = duke
+					has_minor_title = title_prince
+					spouse = { real_tier = emperor }
+					spouse = { real_tier = king }
+					spouse = { real_tier = duke }
+				}
+			}
+		}
+	}
+
+	# Imperial crown
+	1 = {
 		factor = 100
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		modifier = {
 			factor = 0
 			NOT = { real_tier = emperor }
@@ -758,7 +780,7 @@
 		}
 		modifier = {
 			factor = 0
-			is_feudal = no
+			TOW_is_feudal = no
 		}
 		modifier = {
 			factor = 0
@@ -769,30 +791,10 @@
 		}
 	}
 	
-	# Royal crown/turban 1
-	1 = {
-		factor = 1
-		modifier = {
-			factor = 0
-			NOT = { real_tier = king }
-			NOT = { spouse = { real_tier = king } }
-		}
-		modifier = {
-			factor = 0
-			is_feudal = no
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				trait = peasant_leader
-				trait = heresiarch
-			}
-		}
-	}
-
-	# Royal crown/turban 2
+	# Royal crown
 	2 = {
 		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		modifier = {
 			factor = 0
 			NOT = { real_tier = king }
@@ -800,7 +802,7 @@
 		}
 		modifier = {
 			factor = 0
-			is_feudal = no
+			TOW_is_feudal = no
 		}
 		modifier = {
 			factor = 0
@@ -811,9 +813,10 @@
 		}
 	}
 
-	# Royal crown/turban 3
+	# Royal crown 2
 	3 = {
 		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		modifier = {
 			factor = 0
 			NOT = { real_tier = king }
@@ -821,7 +824,7 @@
 		}
 		modifier = {
 			factor = 0
-			is_feudal = no
+			TOW_is_feudal = no
 		}
 		modifier = {
 			factor = 0
@@ -832,115 +835,264 @@
 		}
 	}
 
-	# Simple golden band/turban
+	# Royal crown 3
 	4 = {
 		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			NOT = { real_tier = king }
+			NOT = { spouse = { real_tier = king } }
+		}
+		modifier = {
+			factor = 0
+			TOW_is_feudal = no
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				trait = peasant_leader
+				trait = heresiarch
+			}
+		}
 	}
 
-	# Common headgear 1 - hood
+	# Simple golden band
 	5 = {
 		factor = 1
-	}
-	
-	# Common headgear 2 - hood
-	6 = {
-		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			is_ruler = no
+		}
 	}
 
-	# Common headgear 3 - Red hat
-	7 = {
+	# Common headgear 1
+	6 = {
 		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 	}
 	
-	# Common headgear 4 - hood
+	# Common headgear 2
+	7 = {
+		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+	}
+
+	# Common headgear 3
 	8 = {
 		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 	}
 
 	# Shady headgear
 	9 = {
 		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 	}
 
 	# Martial headgear
 	10 = {
 		factor = 1
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 	}
 
-	# Blank
+	# Mage
 	11 = {
-		factor = 3
+		factor = 100
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			NOT = {
+				trait = mage
+			}
+		}
 		modifier = {
 			factor = 0
 			OR = {
-				real_tier = emperor
 				real_tier = king
-				real_tier = duke
-				has_minor_title = title_prince
-				spouse = { real_tier = emperor }
-				spouse = { real_tier = king }
-				spouse = { real_tier = duke }
+				real_tier = emperor
 			}
 		}
 	}
 
+	# Evil mage
 	12 = {
-		factor = 1
+		factor = 100
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			NOR = {
+				# TODO : Discovered cases
+				trait = warlock
+				trait = necromancer
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 	
+	# Shaman/druid
 	13 = {
-		factor = 1
+		factor = 100
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = shaman
+				trait = druid
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 	
+	# Priest
 	14 = {
-		factor = 1
+		factor = 100
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = priest
+				trait = monk
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 	
+	# Leather
 	15 = {
-		factor = 1
+		factor = 100
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = ranger
+				trait = demon_hunter
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 
+	# Engineer
 	16 = {
-		factor = 1
+		factor = 100
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			NOT = {
+				trait = engineer
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				real_tier = king
+				real_tier = emperor
+			}
+		}
 	}
 
+	# Poor clothes
 	17 = {
-		factor = 1
+		factor = 100
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
+		modifier = {
+			factor = 0
+			NOR = {
+				trait = peasant_leader
+				trait = heresiarch
+				prisoner = yes
+				dynasty = none
+				AND = {
+					NOT = { prestige = 0 }
+					NOT = { wealth = 0 }
+				}
+			}
+			NOT = { has_character_modifier = the_oubliette }
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				is_landed = yes
+				spouse = { is_landed = yes }
+				wealth = 150
+			}
+			NOT = { has_character_modifier = the_oubliette }
+		}
+		modifier = {
+			factor = 0.01
+			wealth = 25
+			prisoner = no
+		}
+
 	}
 
 	18 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 1
 	}
 
 	19 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 1
 	}
 
 	20 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 1
 	}
 
 	21 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 1
 	}
 
 	22 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 1
 	}
 
 	23 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 1
 	}
 
 	24 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 1
 	}
 
 	25 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 1
 	}
 
 	26 = {
+		modifier = { factor = 0 has_character_flag = TOW_hide_headgear }
 		factor = 0
 	}
 }
@@ -1166,7 +1318,7 @@
 						has_character_modifier = forced_mask
 					}
 					NOR = {
-						is_tribal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 					}
 				}
@@ -1198,7 +1350,7 @@
 					is_married = yes
 					spouse = { NOT = { higher_tier_than = DUKE } }
 				}
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 				has_character_modifier = golden_mask
 			}
@@ -1224,7 +1376,7 @@
 					is_married = yes
 					spouse = { higher_tier_than = DUKE }
 				}
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 				has_character_modifier = golden_mask
 			}
@@ -1244,7 +1396,7 @@
 				AND = {
 					trait = disfigured
 					NOR = {
-						is_tribal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 					}
 				}
@@ -1266,7 +1418,7 @@
 				AND = {
 					trait = disfigured
 					NOR = {
-						is_tribal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 					}
 				}
@@ -1288,7 +1440,7 @@
 				AND = {
 					trait = disfigured
 					NOR = {
-						is_tribal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 					}
 				}
@@ -1298,7 +1450,7 @@
 		modifier = {
 			factor = 0
 			NOR = {
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 		}
@@ -1317,7 +1469,7 @@
 				AND = {
 					trait = disfigured
 					NOR = {
-						is_tribal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 					}
 				}
@@ -1327,7 +1479,7 @@
 		modifier = {
 			factor = 0
 			NOR = {
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 		}
@@ -1346,7 +1498,7 @@
 				AND = {
 					trait = disfigured
 					NOR = {
-						is_tribal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 					}
 				}
@@ -1368,7 +1520,7 @@
 				AND = {
 					trait = disfigured
 					NOR = {
-						is_tribal = yes
+						TOW_is_tribal = yes
 						is_nomadic = yes
 					}
 				}
@@ -1400,7 +1552,7 @@
 					is_married = yes
 					spouse = { NOT = { higher_tier_than = DUKE } }
 				}
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 				has_character_modifier = golden_mask
 			}
@@ -1430,7 +1582,7 @@
 					is_married = yes
 					spouse = { NOT = { higher_tier_than = DUKE } }
 				}
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 			NOT = { has_character_modifier = golden_mask }
@@ -1658,17 +1810,22 @@
 	11 = { # eyepatch 11 - scarred eye 1
 		factor = 1
 		modifier = {
+			factor = 100
+			character = 201 # Lor'themar Theron
+		}
+		modifier = {
 			factor = 0
 			NOT = { trait = one_eyed }
 		}
 		modifier = {
 			factor = 0
 			trait = shy
+			NOT = { character = 201 } # Lor'themar Theron
 		}
 		modifier = {
 			factor = 4
 			OR = {
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 				trait = stubborn
 			}
@@ -1688,7 +1845,7 @@
 		modifier = {
 			factor = 4
 			OR = {
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 				trait = stubborn
 			}

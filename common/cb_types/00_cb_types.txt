@@ -1628,13 +1628,13 @@ other_claim_on_liege = {
 			limit = {
 				higher_tier_than = ROOT
 				holder_scope = {
-					is_feudal = yes
+					TOW_is_feudal = yes
 				}
 				ROOT = {
 					is_ruler = yes
 					OR = {
 						is_theocracy = yes
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 				}
 			}
@@ -2778,7 +2778,7 @@ invasion = {
 			factor = 0.1
 			has_dlc = "Holy Fury"
 			ROOT = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				OR = {
 					religion = holy_light
 				}
@@ -2814,8 +2814,8 @@ bid_for_independence = {
 			higher_tier_than = BARON
 			OR = {
 				ai = yes
-				is_feudal = yes
-				is_tribal = yes
+				TOW_is_feudal = yes
+				TOW_is_tribal = yes
 				higher_tier_than = COUNT
 			}
 			mercenary = no
@@ -3066,7 +3066,7 @@ depose_liege = {
 		}
 		
 		FROM = {
-			is_feudal = yes
+			TOW_is_feudal = yes
 			primary_title = {
 				is_vice_royalty = no
 			}
@@ -3934,7 +3934,7 @@ lower_tribal_organization_law = {
 	
 	is_valid = {
 		FROM = {
-			is_tribal = yes
+			TOW_is_tribal = yes
 			in_revolt = no
 			liege_before_war = {
 				in_revolt = no
@@ -5028,7 +5028,7 @@ embargo_cb = {
 			factor = 0.1
 			has_dlc = "Holy Fury"
 			ROOT = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				OR = {
 					religion = holy_light
 				}
@@ -5212,7 +5212,7 @@ seize_trade_post = {
 			factor = 0.1
 			has_dlc = "Holy Fury"
 			ROOT = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				OR = {
 					religion = holy_light
 				}
@@ -5415,7 +5415,7 @@ viking_invasion = {
 }
 
 # Pagans can subjugate other pagans
-orcogre_subjugation = {
+pagan_subjugation = {
 	name = CB_NAME_PAGAN_SUBJUGATION
 	war_name = WAR_NAME_PAGAN_SUBJUGATION
 	sprite = 8
@@ -5433,6 +5433,10 @@ orcogre_subjugation = {
 				trait = race_orc
 				trait = race_ogre
 				trait = race_pale_orc
+				AND = {
+					trait = race_human
+					TOW_religion_is_uncivilized_trigger = yes
+				}
 			}
 			NOR = {
 				trait = race_undead_scourge
@@ -5608,7 +5612,7 @@ orcogre_subjugation = {
 			factor = 0.1
 			has_dlc = "Holy Fury"
 			ROOT = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				OR = {
 					religion = holy_light
 				}
@@ -6707,7 +6711,7 @@ dejure_county_claim = {
 			factor = 0.1
 			has_dlc = "Holy Fury"
 			ROOT = {
-				is_feudal = yes
+				TOW_is_feudal = yes
 				OR = {
 					religion = holy_light
 				}
@@ -7534,12 +7538,12 @@ tributary_cb = {
 		if  = {
 			limit = {
 				ROOT = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 				}
 			}
 			ROOT = {
 				any_vassal = {
-					limit = { is_tribal = yes }
+					limit = { TOW_is_tribal = yes }
 					opinion = {
 						who = PREV
 						modifier = won_tributary_war
@@ -7741,7 +7745,7 @@ tributary_cb = {
 			FROM = {
 				OR = {
 					is_nomadic = yes
-					is_tribal = yes
+					TOW_is_tribal = yes
 				}
 			}
 		}
@@ -8373,7 +8377,7 @@ powerful_vassal_takeover_war = { # Started from faction
 			most_popular_vassal = {
 				limit = {
 					higher_tier_than = BARON
-					is_feudal = yes
+					TOW_is_feudal = yes
 					prisoner = no
 					NOR = {
 						is_inaccessible_trigger = yes

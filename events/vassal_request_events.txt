@@ -1704,7 +1704,7 @@ character_event = {
 	lacks_dlc = "Conclave"
 	
 	trigger = {
-		is_republic = yes
+		TOW_is_republic = yes
 		NOT = { wealth = 300 }
 		liege = {
 			NOT = { character = ROOT }
@@ -1766,7 +1766,7 @@ letter_event = {
 		}
 		any_vassal = {
 			limit = {
-				is_republic = yes
+				TOW_is_republic = yes
 			}
 			opinion = {
 				modifier = opinion_refused_city_tax_law
@@ -1911,7 +1911,7 @@ character_event = {
 			modifier = {
 				factor = 0.25
 				OR = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 					is_nomadic = yes
 				}
 				liege = {
@@ -1921,7 +1921,7 @@ character_event = {
 			modifier = {
 				factor = 4
 				OR = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 					is_nomadic = yes
 				}
 				liege = {
@@ -1982,7 +1982,7 @@ character_event = {
 			modifier = {
 				factor = 0.25
 				OR = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 					is_nomadic = yes
 				}
 				liege = {
@@ -1992,7 +1992,7 @@ character_event = {
 			modifier = {
 				factor = 4
 				OR = {
-					is_tribal = yes
+					TOW_is_tribal = yes
 					is_nomadic = yes
 				}
 				liege = {

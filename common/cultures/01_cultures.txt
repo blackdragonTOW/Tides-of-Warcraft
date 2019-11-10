@@ -6,7 +6,7 @@ human = {
 	graphical_cultures = { humangfx westerngfx }
 	
 	azerothian = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { azerothiangfx humangfx westerngfx }
 		
 		color = { 0.10 0.69 0.80 }
 		
@@ -40,7 +40,7 @@ human = {
 	}
 
 	stromic = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { arathigfx humangfx westerngfx }
 		
 		color = { 0.42 0.83 0.91 }
 		
@@ -75,7 +75,7 @@ human = {
 	}
 	
 	dalaranian = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { dalaraniangfx humangfx westerngfx }
 		
 		color = { 0.11 0.58 0.67 }
 		
@@ -110,7 +110,7 @@ human = {
 	}
 
 	lordaeronian = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { lordaerongfx humangfx westerngfx }
 		
 		color = { 0.38 0.61 0.66 }
 		
@@ -145,7 +145,7 @@ human = {
 	}
 	
 	gilnean = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { gilneangfx humangfx westerngfx }
 		
 		color = { 0.08 0.39 0.46 }
 		
@@ -180,7 +180,7 @@ human = {
 	}
 	
 	tirasian = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { tirasiangfx humangfx westerngfx }
 		
 		color = { 0.30 0.50 0.55 }
 		
@@ -217,7 +217,7 @@ human = {
 	}
 	
 	alteraci = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { alteracigfx humangfx westerngfx }
 		
 		color = { 0.07 0.33 0.39 }
 		
@@ -421,7 +421,7 @@ orcish = {
 		allow_looting = yes
 	}
 	blackrock = {
-		graphical_cultures = { dorcgfx westerngfx}
+		graphical_cultures = { dorcgfx orcgfx westerngfx}
 		
 		color = { 0.92 0.07 0.07 }
 		
@@ -477,7 +477,7 @@ orcish = {
 		allow_looting = yes
 	}
 	shattered_hand = {
-		graphical_cultures = { worcgfx westerngfx}
+		graphical_cultures = { worcgfx orcgfx westerngfx}
 		
 		color = { 0.75 0 0 }
 		
@@ -589,7 +589,7 @@ orcish = {
 		allow_looting = yes
 	}
 	dragonmaw = {
-		graphical_cultures = { dorcgfx westerngfx }
+		graphical_cultures = { dorcgfx orcgfx westerngfx }
 		
 		color = { 0.81 0.31 0.31 }
 		
@@ -757,7 +757,7 @@ orcish = {
 		allow_looting = yes
 	}
 	twilights_hammer = {
-		graphical_cultures = { gorcgfx westerngfx}
+		graphical_cultures = { gorcgfx orcgfx westerngfx}
 		
 		color = { 0.39 0 0 }
 		
@@ -897,7 +897,7 @@ orcish = {
 		allow_looting = yes
 	}
 	mok_nathal = {
-		graphical_cultures = { morcgfx westerngfx}
+		graphical_cultures = { morcgfx orcgfx westerngfx}
 		
 		color = { 0.35 0.11 0.11 }
 		
@@ -925,7 +925,7 @@ orcish = {
 		allow_looting = yes
 	}
 	mag_har = {
-		graphical_cultures = { borcgfx westerngfx}
+		graphical_cultures = { borcgfx orcgfx westerngfx}
 		
 		color = { 0.78 0.09 0.09 }
 		
@@ -954,7 +954,7 @@ orcish = {
 		allow_looting = yes
 	}
 	fel_orc = {
-		graphical_cultures = { rorcgfx westerngfx}
+		graphical_cultures = { rorcgfx orcgfx westerngfx}
 		
 		color = { 0.23 0 0 }
 		
@@ -1246,6 +1246,53 @@ elf = {
 		modifier = default_culture_modifier
 		
 		allow_looting = yes
+	}
+	
+	satyr = {
+		graphical_cultures = { satyrgfx westerngfx }
+		
+		color = { 0.30 0.24 0.39 }
+		
+		male_names = { Alassin Aldris Alegorn Alenndaar Amerun Andiss Androl Andrus Anishar Anren Antarius Argos Ashelan Asterion Athridas Balthule Baristolth Baritanas Barithras Benjari 
+		Bhaldaran Bolyun Brannock Brannol Cahill Caynrus Cazarez Cerellean Chardryn Corand Corithras Crildor Cymbre Cyridan Cyroen Dalmond Dannelor Dargon Darnall Darnath Daros Dazalar 
+		Deldren Denalan Denatharion Dendrite Dewin Doldaen Dorda'en Dorion Dyhara Elestren Erelas Erion Evenar Fahran Faldreas Faldron Falfindel Falorn Faralorn Farden Fayin Fayran Fedryen 
+		Fhyn Firodren Fiskal Frahun Fyldan Fyldren Fylerian Gaerolas Gaiven Garryeth Gershala Gilshalan Ginro Glorandiir Golhine Golothas Grondal Harklane Harlon Harlown Heldan Helendis 
+		Ildrin Ilthalaine Iverron Jadenvis Jalin Jandunel Jannok Jareth Jarrodenus Jartsam Jenal Kaerbrus Kal Kaldon Kalin Kalldan Kayneth Keldamyr Keldas Kerlonian Khardan Kharedon Kieran 
+		Laird Lairn Lanolis Lanus Lardan Lathorius Latronicus Layo Lenedil Leoren Lethyn Loganaar Logannas Loramus Lylandor Maelir Maethor Maldryn Malorne Maluressian Malvor Mar'alith 
+		Mardant Mardrack Mathiel Mathrengyl Maygen Melithar Morthis Mydrannul Mythidan Mythrin'dir Naljan Nantar Naohain Naram Narestel Narret Natheril Nenduil Oben Oltarin Omnuron Orendil 
+		Pelturas Porthannius Quintis Rabine Radnaal Raedon Rellian Rivern Royce Saenorion Saramer Sarin Seiren Selgorm Shaedlass Shalannius Shalomon Shalumon Sheldras Shelgrayn Suralais 
+		Taladan Talaelar Taldan Taldris Talen Tallonkai Tanaide Tandann Tarelvir Telonis Teloren Telurinon Tenaron Terenthis Teronis Thaelrid Thamarian Thanthaldis Tharnariun Thel'danis 
+		Theridran Thundris Timeon Tola'thion Tolon Tomarrek Toreth Troyas Turian Ulthir Vaean Vahlarriel Valadar Valdaron Varas Varlan Vesprystus Volcor Voloren Wynd Xai'ander Yldan Zamael 
+		Zannok Zarrin Zybarus
+		}
+		female_names = { A'moora Aayndia Aelerya Aeolynn Aethalas Aili Ainethil Alaindia Alanna Alanndarian Alathea Aldia Allyndia Aluwyn Alyissia Amara Amarante Amythiel Anadyia Angelas 
+		Aquinne Arathandris Arias'ta Ariyell Arthorn Arynia Astaia Astarii Aurel Aurine Avana Ayanna Ayla Aynasha Brinna Calandrath Caoileann Caryssia Caylais Caylee Chylina Cylania Cyndra 
+		Daelyshia Daeolyn Dalia Dalinda Dalria Danlyia Darianna Daryn Dellylah Dendrythis Dinorae Dirania Dulciea Ealyshia Eladriel Elanaria Eldraeith Elfarran Elissa Elizil Ellaercia 
+		Ellandrieth Elynna Eridan Faelyssa Faralia Fariel Freja Fyrenna Galandria Geenia Gracina Gwennyth Gylnda Idriana Illianna Illiyana Illusia Illyanie Ilyenia Isara Issara Jadi Jaeana 
+		Jaelysia Jalin Janna Jeen'ra Jeena Jelena Jenai Jer'kai Jessir Jocaste Kaela Kania Keina Kella Kimlya Kindal Kinelory Kirea Kylanna Kyleen Kyndri Kyra Kyria Laina Lalina Landria 
+		Larandia Lariia Lauriel Laurna Leesa'oh Lelanai Levia Liladris Lilyssia Limiah Llana Lorelae Lotherias Luciel Lylandris Lynore Lyrai Lyranne Lyshaerya Lysheana Maestra Maethrua 
+		Maevin Magwin Maliynn Marin Marli Mavralyn Me'lynn Melea Meliri Melyria Merelyssa Meri Milla Mirala Mishellena Mishta My'lanna Mylini Myre Myriam Nadyia Nalesette Namha Narianna 
+		Nayura Nessa Ninsianna Nishera Noko Nyoma Onaeya Palena Raene Ranela Ranshalla Rayne Relwyn Rendow Rina Risera Rorelien Saelienne Salirn Sarinei Savanne Saynna Sebelia Selarin 
+		Seriadne Shaldyn Shanda Shandria Shaussiy Shay Shindrell Shyela Shylamiir Shylenai Shyria Sildanair Silva Silvaria Sindra Sindrayl Solais Su'ura Sylannia Sylista Sylvanna Syral 
+		Syurana Syurna Tajarri Talendria Tannysa Thayreen Thenysil Thyn'tel Thyssiana Tiyani Toron Trianna Tysha Ullanna Vassandra Velene Vinasia Visera Vivianna Xerintha Xylinnia 
+		Yessendra Ysiel Ysondre
+		}
+		
+		baron_titles_hidden = yes
+		count_titles_hidden = yes
+		
+		
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+		
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
 	}
 }	
 
@@ -1577,7 +1624,7 @@ undead = {
 	graphical_cultures = { humangfx westerngfx }
 	
 	scourge = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { scourgegfx humangfx westerngfx }
 		
 		color = { 0.3 0.11 0.55 }
 		
@@ -1606,7 +1653,7 @@ undead = {
 	}
 	
 	forsaken = {
-		graphical_cultures = { humangfx westerngfx }
+		graphical_cultures = { forsakengfx humangfx westerngfx }
 		
 		color = { 0.45 0.48 0.63 }
 		
@@ -2102,7 +2149,6 @@ troll = {
 		}
 		dynasty_title_names = yes 
 		baron_titles_hidden = yes
-		count_titles_hidden = yes
 		
 		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -2674,7 +2720,6 @@ troll = {
 		}
 		dynasty_title_names = yes 
 		baron_titles_hidden = yes
-		count_titles_hidden = yes
 		
 		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -2719,7 +2764,6 @@ troll = {
 		}
 		dynasty_title_names = yes 
 		baron_titles_hidden = yes
-		count_titles_hidden = yes
 		
 		
 		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
@@ -2738,10 +2782,10 @@ troll = {
 	}
 }
 ogre = {
-	graphical_cultures = { ogregfx westerngfx }
+	graphical_cultures = { ogregfx thogregfx westerngfx }
 	
 	boulderfist = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.40 0.38 0.25 }
 		
@@ -2772,7 +2816,7 @@ ogre = {
 		allow_looting = yes
 	}
 	bloodeye = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.46 0.40 0 }
 		
@@ -2806,7 +2850,7 @@ ogre = {
 		allow_looting = yes
 	}
 	highmaul = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { thogregfx ogregfx westerngfx }
 		
 		color = { 0.31 0.29 0.16 }
 		
@@ -2837,7 +2881,7 @@ ogre = {
 		allow_looting = yes
 	}
 	crushridge = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.24 0.22 0.09 }
 		
@@ -2871,7 +2915,7 @@ ogre = {
 		allow_looting = yes
 	}
 	deadwind = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.20 0.18 0 }
 		
@@ -2905,7 +2949,7 @@ ogre = {
 		allow_looting = yes
 	}
 	dreadmaul = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.30 0.27 0.10 }
 		
@@ -2939,7 +2983,7 @@ ogre = {
 		allow_looting = yes
 	}
 	dunemaul = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.37 0.32 0.05 }
 		
@@ -2973,7 +3017,7 @@ ogre = {
 		allow_looting = yes
 	}
 	dustbelcher = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.39 0.34 0 }
 		
@@ -3007,7 +3051,7 @@ ogre = {
 		allow_looting = yes
 	}
 	glopgut = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.46 0.40 0 }
 		
@@ -3041,7 +3085,7 @@ ogre = {
 		allow_looting = yes
 	}
 	gordunni = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.46 0.43 0.26 }
 		
@@ -3075,7 +3119,7 @@ ogre = {
 		allow_looting = yes
 	}
 	mo_grosh = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.49 0.45 0.17 }
 		
@@ -3109,7 +3153,7 @@ ogre = {
 		allow_looting = yes
 	}
 	mosh_ogg = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.55 0.50 0.12 }
 		
@@ -3143,7 +3187,7 @@ ogre = {
 		allow_looting = yes
 	}
 	spirestone = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.55 0.53 0.37 }
 		
@@ -3177,7 +3221,7 @@ ogre = {
 		allow_looting = yes
 	}
 	splinterfist = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.54 0.50 0.26 }
 		
@@ -3211,7 +3255,7 @@ ogre = {
 		allow_looting = yes
 	}
 	stonemaul = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.47 0.47 0.27 }
 		
@@ -3245,7 +3289,7 @@ ogre = {
 		allow_looting = yes
 	}
 	bladespire = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.54 0.51 0.35 }
 		
@@ -3279,7 +3323,7 @@ ogre = {
 		allow_looting = yes
 	}
 	bloodmaul = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.35 0.51 0.35 }
 		
@@ -3313,7 +3357,7 @@ ogre = {
 		allow_looting = yes
 	}
 	warmaul = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.74 0.71 0.49 }
 		
@@ -3347,7 +3391,7 @@ ogre = {
 		allow_looting = yes
 	}
 	torchbelcher = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.45 0.43 0.32 }
 		
@@ -3381,7 +3425,7 @@ ogre = {
 		allow_looting = yes
 	}
 	tonma = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.46 0.36 0.23 }
 		
@@ -3415,7 +3459,7 @@ ogre = {
 		allow_looting = yes
 	}
 	stonegullet = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.35 0.22 0.06 }
 		
@@ -3449,7 +3493,7 @@ ogre = {
 		allow_looting = yes
 	}
 	ogrila = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { thogregfx ogregfx westerngfx }
 		
 		color = { 0.36 0.29 0.18 }
 		
@@ -3483,7 +3527,7 @@ ogre = {
 		allow_looting = yes
 	}
 	firegut = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.46 0.36 0.24 }
 		
@@ -3517,7 +3561,7 @@ ogre = {
 		allow_looting = yes
 	}
 	angorosh = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.45 0.41 0.34 }
 		
@@ -3551,7 +3595,7 @@ ogre = {
 		allow_looting = yes
 	}
 	bloodfist = {
-		graphical_cultures = { ogregfx westerngfx }
+		graphical_cultures = { ogregfx thogregfx westerngfx }
 		
 		color = { 0.45 0.34 0.20 }
 		
@@ -3748,10 +3792,10 @@ trogg = {
 }
 
 demonic = {
-	graphical_cultures = { westerngfx }
+	graphical_cultures = { demonicgfx westerngfx }
 	
 	demonic = { # The others in the group are for portrait-setting
-		graphical_cultures = { westerngfx }
+		graphical_cultures = { demonicgfx westerngfx }
 		
 		color = { 0.31 0.29 0.33 }
 		
@@ -4294,7 +4338,7 @@ elemental = {
 	}
 	
 	fire_elemental = {
-		graphical_cultures = { westerngfx }
+		graphical_cultures = { elemfiregfx westerngfx }
 		
 		color = { 0.27 0.75 0.56 }
 		

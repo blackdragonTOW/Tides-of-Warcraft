@@ -999,7 +999,7 @@ character_event = {
 				}
 				modifier = { #Less likely to have money to spare.
 					factor = 0.2
-					is_tribal = yes
+					TOW_is_tribal = yes
 				}
 				persistent_event_target:sway_target = { character_event = { id = HF.21020 } }
 			}
@@ -1017,7 +1017,7 @@ character_event = {
 				}
 				modifier = { 
 					factor = 0
-					is_tribal = no
+					TOW_is_tribal = no
 				}
 				persistent_event_target:sway_target = { character_event = { id = HF.21025 } }
 			}
@@ -2551,7 +2551,7 @@ character_event = {
 		if = { 
 			limit = { 
 				ai = no 
-				is_tribal = no 
+				TOW_is_tribal = no 
 				is_nomadic = no 
 			}
 			scaled_wealth = { value = -1 min = -50 max = -100 } 
@@ -2560,7 +2560,7 @@ character_event = {
 			limit = { 
 				ai = no
 				OR = { 
-					is_tribal = yes 
+					TOW_is_tribal = yes 
 					is_nomadic = yes 
 				} 
 			}
@@ -2576,7 +2576,7 @@ character_event = {
 		if = { 
 			limit = { 
 				ai = no 
-				is_tribal = no 
+				TOW_is_tribal = no 
 				is_nomadic = no 
 			}
 			scaled_wealth = { value = -1 min = -25 max = -50 } 
@@ -2585,7 +2585,7 @@ character_event = {
 			limit = { 
 				ai = no
 				OR = { 
-					is_tribal = yes 
+					TOW_is_tribal = yes 
 					is_nomadic = yes 
 				} 
 			}
@@ -2601,7 +2601,7 @@ character_event = {
 		if = { 
 			limit = { 
 				ai = no 
-				is_tribal = no 
+				TOW_is_tribal = no 
 				is_nomadic = no 
 			}
 			scaled_wealth = { value = -1 min = -5 max = -25 } 
@@ -2610,7 +2610,7 @@ character_event = {
 			limit = { 
 				ai = no
 				OR = { 
-					is_tribal = yes 
+					TOW_is_tribal = yes 
 					is_nomadic = yes 
 				} 
 			}
@@ -2978,7 +2978,7 @@ character_event = {
 			factor = 1
 			modifier = {  
 				factor = 10
-				is_tribal = no
+				TOW_is_tribal = no
 				is_nomadic = no
 			}
 			modifier = {  
@@ -7051,15 +7051,60 @@ character_event = {
 				years = 5
 			}
 		}
-		#if = { 
-		#	limit = { 
-		#		NOT = { religion_group = FROM } 
-		#		NOT = { trait = sympathy_christendom }
-		#		FROM = { religion_group = christian }
-		#		FROM = { has_character_flag = flag_appease_kind_religion }
-		#	} 
-		#	random = { chance = 30 add_trait = sympathy_christendom }
-		#} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_light_group }
+				FROM = { religion_group = light_group }
+				FROM = { has_character_flag = flag_appease_kind_religion }
+			} 
+			random = { chance = 30 add_trait = sympathy_light_group }
+		}
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_arcane_group }
+				FROM = { religion_group = arcane_group }
+				FROM = { has_character_flag = flag_appease_kind_religion }
+			} 
+			random = { chance = 30 add_trait = sympathy_arcane_group }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_elemental_group }
+				FROM = { religion_group = elemental_group }
+				FROM = { has_character_flag = flag_appease_kind_religion }
+			} 
+			random = { chance = 30 add_trait = sympathy_elemental_group }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_fel_group }
+				FROM = { religion_group = fel_group }
+				FROM = { has_character_flag = flag_appease_kind_religion }
+			} 
+			random = { chance = 30 add_trait = sympathy_fel_group }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_void_group }
+				FROM = { religion_group = void_group }
+				FROM = { has_character_flag = flag_appease_kind_religion }
+			} 
+			random = { chance = 30 add_trait = sympathy_void_group }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_wild_gods_group }
+				FROM = { religion_group = wild_gods_group }
+				FROM = { has_character_flag = flag_appease_kind_religion }
+			} 
+			random = { chance = 30 add_trait = sympathy_wild_gods_group }
+		} 
 		hidden_tooltip = { FROM = { character_event = { id = HF.21078 days = 10 } } }
 		ai_chance = { 
 			factor = 50 
@@ -7247,14 +7292,54 @@ character_event = {
 				}
 			}
 		}
-		#if = { 
-		#	limit = { 
-		#		NOT = { religion_group = FROM } 
-		#		NOT = { trait = sympathy_christendom }
-		#		FROM = { religion_group = christian }
-		#	} 
-		#	random = { chance = 30 add_trait = sympathy_christendom }
-		#} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_light_group }
+				FROM = { religion_group = light_group }
+			} 
+			random = { chance = 30 add_trait = sympathy_light_group }
+		}
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_arcane_group }
+				FROM = { religion_group = arcane_group }
+			} 
+			random = { chance = 30 add_trait = sympathy_arcane_group }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_elemental_group }
+				FROM = { religion_group = elemental_group }
+			} 
+			random = { chance = 30 add_trait = sympathy_elemental_group }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_fel_group }
+				FROM = { religion_group = fel_group }
+			} 
+			random = { chance = 30 add_trait = sympathy_fel_group }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_void_group }
+				FROM = { religion_group = void_group }
+			} 
+			random = { chance = 30 add_trait = sympathy_void_group }
+		} 
+		if = { 
+			limit = { 
+				NOT = { religion_group = FROM } 
+				NOT = { trait = sympathy_wild_gods_group }
+				FROM = { religion_group = wild_gods_group }
+			} 
+			random = { chance = 30 add_trait = sympathy_wild_gods_group }
+		} 
 		clr_character_flag = flag_appease_kind_approach
 		clr_character_flag = flag_appease_kind_health
 		clr_character_flag = flag_appease_kind_religion
@@ -8428,7 +8513,7 @@ character_event = {
 		}
 		if = { 
 			limit = { 
-				is_feudal = yes
+				TOW_is_feudal = yes
 				liege = { NOT = { trait = kind } }
 			}
 			liege = { 

@@ -170,7 +170,7 @@ feudal_elective = {
 		}
 		additive_modifier = {
 			value = -5
-			is_republic = yes
+			TOW_is_republic = yes
 		}
 		additive_modifier = {
 			value = -5
@@ -178,7 +178,7 @@ feudal_elective = {
 		}
 		additive_modifier = {
 			value = -4
-			is_tribal = yes
+			TOW_is_tribal = yes
 		}
 		additive_modifier = {
 			value = -4
@@ -214,7 +214,7 @@ feudal_elective = {
 					holder_scope = { primary_title = { title = PREVPREV } }
 				}
 			}
-			is_feudal = yes
+			TOW_is_feudal = yes
 			vassal_of = FROMFROM
 			higher_real_tier_than = COUNT
 			OR = { #dejure vassal, or any vassal if title titular.
@@ -238,7 +238,7 @@ feudal_elective = {
 					holder_scope = { primary_title = { title = PREVPREV } }
 				}
 			}
-			is_feudal = yes
+			TOW_is_feudal = yes
 			vassal_of = FROMFROM
 			higher_real_tier_than = COUNT
 			OR = { #dejure vassal, or any vassal if title titular.
@@ -263,7 +263,7 @@ feudal_elective = {
 					holder_scope = { primary_title = { title = PREVPREV } }
 				}
 			}
-			is_feudal = yes
+			TOW_is_feudal = yes
 			vassal_of = FROMFROM
 			higher_real_tier_than = COUNT
 			OR = { #dejure vassal, or any vassal if title titular.
@@ -687,13 +687,13 @@ feudal_elective = {
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_uncivilized
 			OR = { 
-				is_feudal = yes 
+				TOW_is_feudal = yes 
 				is_merchant_republic = yes
 				is_patrician = yes
 			}
 			FROM = { 
 				NOR = { 
-					is_feudal = yes 
+					TOW_is_feudal = yes 
 					is_merchant_republic = yes
 					is_patrician = yes
 				} 
@@ -1092,7 +1092,7 @@ feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				trait = zealous 
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 			FROM = { 
@@ -1352,7 +1352,7 @@ feudal_elective = {
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_bastard
 			NOT = { character = FROM } #Do not judge yourself.
-			is_feudal = yes
+			TOW_is_feudal = yes
 			FROM = { 
 				trait = bastard
 			}
@@ -1361,7 +1361,7 @@ feudal_elective = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_child_of_consort
 			NOT = { character = FROM } #Do not judge yourself.
-			is_feudal = yes
+			TOW_is_feudal = yes
 			FROM = {
 				OR = { 
 					trait = legit_bastard
@@ -3188,13 +3188,13 @@ feudal_elective = {
 				AND = {
 					is_ruler = yes
 					is_landed = yes
-					is_republic = no
+					TOW_is_republic = no
 					is_merchant_republic = no
 					is_theocracy = no
 				}
 				NOR = {
 					any_heir_title = {
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 					any_heir_title = {
 						is_merchant_republic = yes
@@ -3233,7 +3233,7 @@ feudal_elective = {
 				}
 				is_ascetic_trigger = yes
 				is_theocracy = yes
-				is_republic = yes
+				TOW_is_republic = yes
 				is_merchant_republic = yes
 			}
 		}
@@ -3650,13 +3650,13 @@ tanistry = {
 	#		value = -15
 	#		localisation_key = tooltip_feudal_elector_vote_uncivilized
 	#		OR = { 
-	#			is_feudal = yes 
+	#			TOW_is_feudal = yes 
 	#			is_merchant_republic = yes
 	#			is_patrician = yes
 	#		}
 	#		FROM = { 
 	#			NOR = { 
-	#				is_feudal = yes 
+	#				TOW_is_feudal = yes 
 	#				is_merchant_republic = yes
 	#				is_patrician = yes
 	#			} 
@@ -3667,16 +3667,16 @@ tanistry = {
 		additive_modifier = { 
 			value = -30
 			localisation_key = tooltip_feudal_elector_vote_tribalism
-			is_tribal = yes
+			TOW_is_tribal = yes
 			FROM = {
 				OR = {
 					AND = { 
 						is_ruler = yes
-						is_tribal = no
+						TOW_is_tribal = no
 					}
 					AND = { 
 						is_ruler = no
-						liege = { is_tribal = no }
+						liege = { TOW_is_tribal = no }
 					}
 				}
 			}
@@ -4098,7 +4098,7 @@ tanistry = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				trait = zealous 
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 			FROM = { 
@@ -4358,7 +4358,7 @@ tanistry = {
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_bastard
 			NOT = { character = FROM } #Do not judge yourself.
-			is_feudal = yes
+			TOW_is_feudal = yes
 			FROM = { 
 				trait = bastard
 			}
@@ -4367,7 +4367,7 @@ tanistry = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_child_of_consort
 			NOT = { character = FROM } #Do not judge yourself.
-			is_feudal = yes
+			TOW_is_feudal = yes
 			FROM = {
 				OR = { 
 					trait = legit_bastard
@@ -6142,13 +6142,13 @@ tanistry = {
 				AND = {
 					is_ruler = yes
 					is_landed = yes
-					is_republic = no
+					TOW_is_republic = no
 					is_merchant_republic = no
 					is_theocracy = no
 				}
 				NOR = {
 					any_heir_title = {
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 					any_heir_title = {
 						is_merchant_republic = yes
@@ -6174,7 +6174,7 @@ tanistry = {
 				trait = bastard
 				is_ascetic_trigger = yes
 				is_theocracy = yes
-				is_republic = yes
+				TOW_is_republic = yes
 				is_merchant_republic = yes
 			}
 		}
@@ -6647,13 +6647,13 @@ elective_gavelkind = {
 	#		value = -15
 	#		localisation_key = tooltip_feudal_elector_vote_uncivilized
 	#		OR = { 
-	#			is_feudal = yes 
+	#			TOW_is_feudal = yes 
 	#			is_merchant_republic = yes
 	#			is_patrician = yes
 	#		}
 	#		FROM = { 
 	#			NOR = { 
-	#				is_feudal = yes 
+	#				TOW_is_feudal = yes 
 	#				is_merchant_republic = yes
 	#				is_patrician = yes
 	#			} 
@@ -6664,16 +6664,16 @@ elective_gavelkind = {
 		additive_modifier = { 
 			value = -30
 			localisation_key = tooltip_feudal_elector_vote_tribalism
-			is_tribal = yes
+			TOW_is_tribal = yes
 			FROM = {
 				OR = {
 					AND = { 
 						is_ruler = yes
-						is_tribal = no
+						TOW_is_tribal = no
 					}
 					AND = { 
 						is_ruler = no
-						liege = { is_tribal = no }
+						liege = { TOW_is_tribal = no }
 					}
 				}
 			}
@@ -7139,7 +7139,7 @@ elective_gavelkind = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				trait = zealous 
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 			FROM = { 
@@ -7399,7 +7399,7 @@ elective_gavelkind = {
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_bastard
 			NOT = { character = FROM } #Do not judge yourself.
-			is_feudal = yes
+			TOW_is_feudal = yes
 			FROM = { 
 				trait = bastard
 			}
@@ -7408,7 +7408,7 @@ elective_gavelkind = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_child_of_consort
 			NOT = { character = FROM } #Do not judge yourself.
-			is_feudal = yes
+			TOW_is_feudal = yes
 			FROM = {
 				OR = { 
 					trait = legit_bastard
@@ -9198,13 +9198,13 @@ elective_gavelkind = {
 				AND = {
 					is_ruler = yes
 					is_landed = yes
-					is_republic = no
+					TOW_is_republic = no
 					is_merchant_republic = no
 					is_theocracy = no
 				}
 				NOR = {
 					any_heir_title = {
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 					any_heir_title = {
 						is_merchant_republic = yes
@@ -9230,7 +9230,7 @@ elective_gavelkind = {
 				trait = bastard
 				is_ascetic_trigger = yes
 				is_theocracy = yes
-				is_republic = yes
+				TOW_is_republic = yes
 				is_merchant_republic = yes
 			}
 		}
@@ -9802,13 +9802,13 @@ eldership_rules = {
 	#		value = -15
 	#		localisation_key = tooltip_feudal_elector_vote_uncivilized
 	#		OR = { 
-	#			is_feudal = yes 
+	#			TOW_is_feudal = yes 
 	#			is_merchant_republic = yes
 	#			is_patrician = yes
 	#		}
 	#		FROM = { 
 	#			NOR = { 
-	#				is_feudal = yes 
+	#				TOW_is_feudal = yes 
 	#				is_merchant_republic = yes
 	#				is_patrician = yes
 	#			} 
@@ -9819,16 +9819,16 @@ eldership_rules = {
 		additive_modifier = { 
 			value = -30
 			localisation_key = tooltip_feudal_elector_vote_tribalism
-			is_tribal = yes
+			TOW_is_tribal = yes
 			FROM = {
 				OR = {
 					AND = { 
 						is_ruler = yes
-						is_tribal = no
+						TOW_is_tribal = no
 					}
 					AND = { 
 						is_ruler = no
-						liege = { is_tribal = no }
+						liege = { TOW_is_tribal = no }
 					}
 				}
 			}
@@ -10187,7 +10187,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				trait = zealous 
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 			FROM = { 
@@ -12716,13 +12716,13 @@ eldership_rules = {
 	#		value = -15
 	#		localisation_key = tooltip_feudal_elector_vote_uncivilized
 	#		OR = { 
-	#			is_feudal = yes 
+	#			TOW_is_feudal = yes 
 	#			is_merchant_republic = yes
 	#			is_patrician = yes
 	#		}
 	#		FROM = { 
 	#			NOR = { 
-	#				is_feudal = yes 
+	#				TOW_is_feudal = yes 
 	#				is_merchant_republic = yes
 	#				is_patrician = yes
 	#			} 
@@ -12733,16 +12733,16 @@ eldership_rules = {
 		additive_modifier = { 
 			value = -30
 			localisation_key = tooltip_feudal_elector_vote_tribalism
-			is_tribal = yes
+			TOW_is_tribal = yes
 			FROM = {
 				OR = {
 					AND = { 
 						is_ruler = yes
-						is_tribal = no
+						TOW_is_tribal = no
 					}
 					AND = { 
 						is_ruler = no
-						liege = { is_tribal = no }
+						liege = { TOW_is_tribal = no }
 					}
 				}
 			}
@@ -13120,7 +13120,7 @@ eldership_rules = {
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = { 
 				trait = zealous 
-				is_tribal = yes
+				TOW_is_tribal = yes
 				is_nomadic = yes
 			}
 			FROM = { 
@@ -15454,13 +15454,13 @@ eldership_rules = {
 				AND = {
 					is_ruler = yes
 					is_landed = yes
-					is_republic = no
+					TOW_is_republic = no
 					is_merchant_republic = no
 					is_theocracy = no
 				}
 				NOR = {
 					any_heir_title = {
-						is_republic = yes
+						TOW_is_republic = yes
 					}
 					any_heir_title = {
 						is_merchant_republic = yes
@@ -15486,7 +15486,7 @@ eldership_rules = {
 				trait = bastard
 				is_ascetic_trigger = yes
 				is_theocracy = yes
-				is_republic = yes
+				TOW_is_republic = yes
 				is_merchant_republic = yes
 			}
 		}
