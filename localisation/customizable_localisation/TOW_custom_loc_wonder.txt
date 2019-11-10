@@ -1,0 +1,31 @@
+defined_text = {
+	name = GetWonderTypeShortCap # Basically, what kind of building this is: "Cathedral", or "Pyramid", or "Harbor"
+
+	use_first_valid = yes # (Defaults to no)
+	
+	# Warcraft
+	text = {
+		trigger = { has_wonder = wonder_dark_portal }
+		localisation_key = wonder_dark_portal
+	}
+	#In case it cannot find anything...
+    fallback_text = {
+        localisation_key = String_Great_Work
+    }
+}
+
+defined_text = {
+	name = GetWonderTypeShort # Basically, what kind of building this is: "cathedral", or "pyramid", or "harbor"
+
+	use_first_valid = yes # (Defaults to no)
+	
+	# Warcraft
+	text = {
+		trigger = { has_wonder = wonder_dark_portal }
+		localisation_key = String_portal
+	}
+	#In case it cannot find anything...
+    fallback_text = {
+        localisation_key = String_great_work
+    }
+}
