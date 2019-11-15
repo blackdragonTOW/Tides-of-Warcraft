@@ -90,6 +90,7 @@
 ################# Historical/Pre-existing Wonders #################
 
 # A1. The Dark Portal  .............	wonder_dark_portal
+# A2. The Sunwell  .............	wonder_sunwell
 
 ###################################################################
 
@@ -2322,6 +2323,111 @@ wonder_dark_portal = {
 			local_tax_modifier = 0.5
 			trade_route_value = 0.5
 			levy_reinforce_rate = 2.50
+			levy_size = 2.50
+		}
+		owner_modifier = {
+			monthly_character_prestige = 5
+		}
+	}
+}
+# A2. The Sunwell
+wonder_sunwell = {
+	picture = GFX_wonder_strip_sunwell
+	allow_construction = no
+	default_picture_stage = 0
+	potential = {
+	}
+	active = {
+	}
+	flags = {
+		is_historical
+		defensive
+		is_destructible
+		cost_high
+	}
+	available_upgrades = {
+		# UNIQUE:
+		upgrade_treasure_chamber
+		upgrade_giant_banners
+		upgrade_historical_mural
+
+		# OTHER:
+		upgrade_roads
+		upgrade_watchtower_network
+		upgrade_spikes
+		upgrade_hypocausts
+		upgrade_retinue
+		upgrade_road_tolls
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 300
+		gold_cost_flat = 2500
+		gold_cost_ticking = 3
+		restore_time = 150
+		loot_time = 20
+		restore_cost_flat = 400
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			levy_size = 1.00
+		}
+		owner_modifier = {
+			monthly_character_prestige = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 300
+		gold_cost_flat = 5000
+		gold_cost_ticking = 5
+		restore_time = 200
+		loot_time = 20
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			levy_size = 1.50
+		}
+		owner_modifier = {
+			monthly_character_prestige = 1
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 300
+		gold_cost_flat = 1000
+		gold_cost_ticking = 3
+		restore_time = 200
+		loot_time = 6
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.1
+			levy_size = 2.00
+		}
+		owner_modifier = {
+			monthly_character_prestige = 3
+		}
+	}
+	stage = {
+		allow = {
+		}
+		build_time = 300
+		gold_cost_flat = 1000
+		gold_cost_ticking = 3
+		restore_time = 200
+		loot_time = 2
+		restore_cost_flat = 500
+		restore_cost_ticking = 2
+		upgrade_slots = 2
+		local_modifier = {
+			local_tax_modifier = 0.5
+			trade_route_value = 0.5
 			levy_size = 2.50
 		}
 		owner_modifier = {
