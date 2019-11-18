@@ -160,6 +160,11 @@
 	dynasty = 50104 # Mountaine
 	culture = alteraci
 	religion = holy_light
+	martial=8
+	diplomacy=6
+	stewardship=5
+	intrigue=6
+	learning=3
 	trait = skilled_tactician
 	trait = race_human
 	trait = warrior
@@ -660,11 +665,6 @@ name = Morticia
 	9979.2.26 = {
 		birth = yes
 	}
-	9992.1.1={
-		effect={
-			add_friend = 1546 #Genn Greymane
-		}
-	}
 	10000.1.2 = {
 		add_spouse = 1542
 	}
@@ -1086,11 +1086,6 @@ name = Morticia
 	}
 	9996.2.12 = {
 		employer = 1572
-	}
-	10008.1.1={
-		effect={
-			add_friend = 2011 #Thrall, she helped him and made him survive
-		}
 	}
 	10019.10.2 = {
 		death = {
@@ -2078,12 +2073,12 @@ name = Morticia
 	trait = race_human
 	dna="0b0baa00bg0"
 	properties="0g00d0000000000000"
-	martial=10
-	diplomacy=4
+	martial=9
+	diplomacy=8
 	intrigue=4
 	stewardship=6
-	learning=8
-	trait=brilliant_strategist
+	learning=9
+	trait=skilled_tactician
 	trait=warrior
 	trait=zealous
 	trait=erudite
@@ -2091,16 +2086,9 @@ name = Morticia
 	trait=chaste
 	trait=just
 	trait=temperate
-	trait=diligent
-	disallow_random_traits = yes
 
 	9957.12.4 = {
 		birth = yes
-	}
-	9981.1.1={
-		effect={
-			add_friend = 2028 #Tirion
-		}
 	}
 	10006.1.1={
 	trait=paladin #founding of the silverhand
@@ -2274,7 +2262,9 @@ name = Morticia
 	religion = holy_light
 	trait = race_human
 	dna="0a0gah00dj0"
-	properties="0b00c0000000000000"	
+	properties="0b00c0000000000000"
+	trait=skilled_tactician
+	trait=cruel
 
 	9969.04.01 = {
 		birth = yes
@@ -2314,6 +2304,11 @@ name = Morticia
 	mother = 1641
 	dna="0a0gag00dj0"
 	properties="0d00b0000000000000"
+	trait=skilled_tactician
+	trait=arbitrary
+	trait=zealous
+	trait=stubborn
+	trait=cruel
 
 	9988.06.28 = {
 		birth = yes
@@ -2366,14 +2361,30 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	dna="0c00cdc0ee0"
-	properties="0j00a0000000000000"
+	dna="0a00cda0eh0"
+	properties="xj00a000000000c000"
+	martial=9
+	diplomacy=6
+	intrigue=4
+	stewardship=7
+	learning=7
+	trait=brilliant_strategist
+	trait=zealous
+	trait=warrior
+	trait=brave
+	trait=temperate
+	trait=just
+	trait=chaste
+	
 
 	9960.03.31 = {
 		birth = yes
 	}
 	9981.03.31 = {
 		add_spouse = 1646
+	}
+	10006.1.1={
+	trait=paladin #founding of the silverhand
 	}
 	10025.5.6 = {
 		death = {
@@ -2387,15 +2398,20 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	dna="0a0da0d0bb0"
-	properties="0k0000000000000000"
+	dna="0a0hc0b0bi0"
+	properties="xm000000000000c000"
+	trait=kind
+	trait=trusting
+	trait=honest
+	trait=diligent
+	trait=temperate
 
-	9965.03.20 = {
+	9961.03.20 = {
 		birth = yes
 	}
-	10025.5.6 = {
+	9987.08.17 = {
 		death = {
-			death_reason = death_battle
+			death_reason = death_childbirth
 		}
 	}
 }
@@ -2405,10 +2421,14 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	dna="0c00cdc0be0"
-	properties="0g00b0000000000000"
+	dna="000cbab0bg0"
+	properties="xj00b000000000c000"
 	father = 1645
 	mother = 1646
+	trait=tough_soldier
+	trait=envious
+	trait=trusting
+	trait=deceitful
 
 	9982.01.08 = {
 		birth = yes
@@ -2425,13 +2445,26 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	dna="0c00cdc0ee0"
-	properties="0f00c0000000000000"
+	dna="0a00chb0bi0"
+	properties="xm00b000000000c000"
 	father = 1645
 	mother = 1646
+	martial=9
+	diplomacy=6
+	intrigue=4
+	stewardship=7
+	learning=5
+	trait=skilled_tactician
+	trait=kind
+	trait=brave
+	trait=humble
+	trait=temperate
 
 	9987.08.17 = {
 		birth = yes
+	}
+	10008.08.17 = {
+	trait=paladin
 	}
 	10100.5.6 = {
 		death = {

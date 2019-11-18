@@ -53,11 +53,6 @@
 	9963.4.22 = {
 		birth = yes
 	}
-	9987.1.1={
-		effect={
-			add_friend = 172
-		}
-	}
 	10026.6.9 = {
 		death = {
 			death_reason = death_battle
@@ -118,7 +113,6 @@
 	trait=kind
 	trait=humble
 	trait=temperate
-	trait=warrior
 	disallow_random_traits=yes
 	
 	
@@ -1322,7 +1316,6 @@
 	stewardship=5
 	learning=4
 	trait=skilled_tactician
-	trait=warrior
 	trait=just
 	trait=ambitious
 	trait=honest
@@ -1467,7 +1460,7 @@
 		birth = yes
 	}
 	10003.1.1={
-			effect={
+	effect = {
 			add_lover=504 #Sylvanas
 		}
 	}
@@ -1500,7 +1493,6 @@
 	stewardship=6
 	learning=6
 	trait=tough_soldier
-	trait=warrior
 	trait=kind
 	trait=proud
 	trait=brave
@@ -1509,6 +1501,9 @@
 
 	9996.01.04 = {
 		birth = yes
+	}
+	10020.01.04 = {
+	trait=warrior
 	}
 	10100.12.02 = {
 		death = {
@@ -1528,10 +1523,10 @@
 	religion = holy_light
 	trait = race_human
 	martial=13
-	diplomacy=6
+	diplomacy=7
 	intrigue=1	
 	stewardship=5
-	learning=9
+	learning=11
 	trait=skilled_tactician
 	trait=strong
 	trait=warrior
@@ -1842,6 +1837,8 @@
 	culture = wildhammer
 	religion = shamanism
 	trait = race_dwarf
+	dna="0a0c0dhdfa0"
+	properties="0b00fj00000000o000"
 
 	9636.12.26 = {
 		birth = yes
@@ -1859,6 +1856,8 @@
 	religion = shamanism
 	trait = race_dwarf
 	father = 2045
+	dna="0h0a0fegfb0"
+	properties="rg00eh00000000o000"
 
 	9699.03.11 = {
 		birth = yes
@@ -1875,7 +1874,9 @@
 	culture = wildhammer
 	religion = shamanism
 	trait = race_dwarf
-	father = 2046
+	father = 2045
+	dna="0e000fedgh0"
+	properties="uk00bk00000000o000"
 
 	9699.03.11 = {
 		birth = yes
@@ -1892,12 +1893,19 @@
 	culture = wildhammer
 	religion = shamanism
 	trait = race_dwarf
-	father = 2047
-	dna="0g0l00hdde0"
-	properties="0d00f"
+	father = 2046
+	dna="0b000bccfj0"
+	properties="fe00fh00000000m000"
+	trait=skilled_tactician
+	trait=brave
+	trait=proud
+	trait=lustful
 
 	9901.05.29 = {
 		birth = yes
+	}
+	9963.4.7 = {
+		friend = 3083
 	}
 	10100.05.29 = {
 		death = {
@@ -1929,8 +1937,14 @@
 	religion = shamanism
 	trait = race_dwarf
 	father = 2049
-	dna="0g0l00hdde0"
-	properties="vd00b"
+	dna="0d0i0dffdk0"
+	properties="be00ke00000000j000"
+	trait=skilled_tactician
+	trait=kind
+	trait=gregarious
+	trait=brave
+	trait=proud
+	trait=wroth
 
 	9826.10.13 = {
 		birth = yes
@@ -2012,6 +2026,7 @@
 	add_trait = patient
 	add_trait = just
 	add_trait = brave
+	add_trait = smith
 	}
 	9941.12.27 = {
 	    add_spouse = 70010	    
@@ -2080,7 +2095,6 @@
 	stewardship=6
 	learning=7
 	add_trait = mastermind_theologian
-	add_trait = warrior
 	add_trait = brave
 	add_trait = diligent
 	add_trait = shrewd
@@ -2162,6 +2176,19 @@
 	culture = bronzebeard
 	religion = holy_light
 	trait = race_dwarf
+	dna="0h0c000fcl0"
+	properties="lb00f0000000000000"
+	martial=10
+	diplomacy=7
+	intrigue=3
+	stewardship=6
+	learning=5
+	add_trait = skilled_tactician
+	add_trait = warrior
+	add_trait = shrewd
+	add_trait = patient
+	add_trait = just
+	add_trait = honest
 
 	9406.01.22 = {
 		birth = yes
@@ -2208,7 +2235,6 @@
 	stewardship=7
 	learning=8
 	add_trait = charismatic_negotiator
-	add_trait = warrior
 	add_trait = shrewd
 	add_trait = patient
 	add_trait = kind
@@ -2755,6 +2781,11 @@
 
 	8729.4.22 = {
 		birth = yes
+	}
+	10003.1.1={
+	effect = {
+			add_lover=2035 #nathanos
+		}
 	}
 	10021.2.10 = {
 		add_trait = race_undead_forsaken
