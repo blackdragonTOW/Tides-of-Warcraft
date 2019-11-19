@@ -28,6 +28,7 @@ narrative_event = {
 		NOT = { has_character_flag = TOW_FW_1 }
 		e_horde = {
 			has_holder = yes
+			# Add condition for story starting from earlier bookmarks
 		}
 	}
 
@@ -53,6 +54,121 @@ narrative_event = {
 		job_marshal = {
 			narrative_event = { id = TOW_FW.28 }
 		}
+
+		any_independent_ruler = {
+			limit = {
+				trait = race_human
+				higher_tier_than = DUKE
+				TOW_is_undead = no
+				is_landed = yes
+				realm_size = 1
+			}
+			narrative_event = { id = TOW_FW.29 }
+		}
+
+		any_playable_ruler = {
+			limit = {
+				trait = race_human
+				OR = {
+					lower_tier_than = KING
+					independent = no
+				}
+				TOW_is_undead = no
+				is_landed = yes
+				realm_size = 1
+			}
+			narrative_event = { id = TOW_FW.30 }
+		}
+
+		k_quel_thalas = {
+			holder_scope = {
+				if = {
+					limit = {
+						TOW_race_is_elf = yes
+					}
+					narrative_event = { id = TOW_FW.31 }
+				}
+			}
+		}
+
+		any_independent_ruler = {
+			limit = {
+				trait = race_dwarf
+				higher_tier_than = DUKE
+				TOW_is_undead = no
+				is_landed = yes
+				realm_size = 1
+			}
+			narrative_event = { id = TOW_FW.33 }
+		}
+
+		k_gnomeregan = {
+			holder_scope = {
+				narrative_event = { id = TOW_FW.35 }
+			}
+		}
+
+		any_independent_ruler = {
+			limit = {
+				trait = race_troll_jungle
+				TOW_is_undead = no
+				is_landed = yes
+				realm_size = 1
+			}
+			narrative_event = { id = TOW_FW.36 }
+		}
+
+		any_playable_ruler = {
+			limit = {
+				TOW_race_is_troll = yes
+				NOT = { trait = race_troll_jungle }
+				TOW_is_undead = no
+				is_landed = yes
+				realm_size = 1
+			}
+			narrative_event = { id = TOW_FW.38 }
+		}
+
+		any_playable_ruler = {
+			limit = {
+				TOW_is_creep_race = yes
+				NOT = { trait = race_murloc }
+				TOW_is_undead = no
+				is_landed = yes
+				realm_size = 1
+			}
+			narrative_event = { id = TOW_FW.39 }
+		}
+
+		any_playable_ruler = {
+			limit = {
+				trait = race_murloc
+				TOW_is_undead = no
+				is_landed = yes
+				realm_size = 1
+			}
+			narrative_event = { id = TOW_FW.40 }
+		}
+
+		d_booty_bay = {
+			holder_scope = {
+				if = {
+					limit = {
+						trait = race_goblin
+						TOW_is_undead = no
+					}
+					narrative_event = { id = TOW_FW.41 }
+				}
+			}
+		}
+
+		any_playable_ruler = {
+			limit = {
+				trait = race_dragon
+			}
+			narrative_event = { id = TOW_FW.42 }
+		}
+
 	}
 
 	# Summon the Guardian
@@ -71,7 +187,7 @@ narrative_event = {
 		event_target:guardian_of_tirisfal = {
 			show_portrait = yes
 		}
-		ai_chance = { factor = 75 }
+		ai_chance = { factor = 75 modifier = { factor = 0.5 has_game_rule = { name = story_events value = alternate } } }
 	}
 
 	# Ask Grand marshal
@@ -89,14 +205,14 @@ narrative_event = {
 				narrative_event = { id = TOW_FW.7 days = 2 random = 2 }
 			}
 		}
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 20 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
 	}
 
 	# Do nothing
 	option = {
 		name = EVTOPTC_TOW_FW_1
 		set_character_flag = TOW_FW_1_did_nothing
-		ai_chance = { factor = 5 }
+		ai_chance = { factor = 5 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
 	}
 }
 
@@ -129,6 +245,23 @@ narrative_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		random_realm_province = {
+			limit = {
+				any_neighbor_province = {
+					county = {
+						holder_scope = {
+							realm = {
+								title = e_horde
+							}
+						}
+					}
+				}
+			}
+			save_event_target_as = border_province
+		}
+	}
+
 	# Call our banners
 	option = {
 		name = EVTOPTA_TOW_FW_3
@@ -137,6 +270,22 @@ narrative_event = {
 			modifier = TOW_standing_together
 			inherit = yes
 			years = 2
+		}
+		spawn_unit = {
+			province = closest_to_capital
+			owner = ROOT
+			reinforces = no
+			cannot_inherit = yes
+			troops = {
+				archers = { 750 750 }
+				light_infantry = { 1000 1000 }
+				heavy_infantry = { 1500 1500 }
+				light_cavalry = { 250 250 }
+				knights = { 500 500 }
+			}
+			earmark = first_war_troops
+			maintenance_multiplier = 0
+			attrition = 1.0
 		}
 		# Horde can declare war
 		hidden_tooltip = {
@@ -157,6 +306,45 @@ narrative_event = {
 			add_province_modifier = {
 				modifier = TOW_improved_defences
 				years = 2
+			}
+		}
+		if = {
+			limit = {
+				event_target:border_province = { always = yes }
+			}
+			spawn_unit = {
+				province = event_target:border_province
+				owner = ROOT
+				reinforces = no
+				cannot_inherit = yes
+				troops = {
+					archers = { 375 375 }
+					light_infantry = { 500 500 }
+					heavy_infantry = { 750 750 }
+					light_cavalry = { 125 125 }
+					knights = { 250 250 }
+				}
+				earmark = first_war_troops
+				maintenance_multiplier = 0
+				attrition = 1.0
+			}
+		}
+		else = {
+			spawn_unit = {
+				province = closest_to_capital
+				owner = ROOT
+				reinforces = no
+				cannot_inherit = yes
+				troops = {
+					archers = { 375 375 }
+					light_infantry = { 500 500 }
+					heavy_infantry = { 750 750 }
+					light_cavalry = { 125 125 }
+					knights = { 250 250 }
+				}
+				earmark = first_war_troops
+				maintenance_multiplier = 0
+				attrition = 1.0
 			}
 		}
 		# Horde can declare war
@@ -250,7 +438,7 @@ narrative_event = {
 	# They are all yours
 	option = {
 		name = EVTOPTA_TOW_FW_6
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 50 modifier = { factor = 0.75 has_game_rule = { name = story_events value = alternate } } }
 		custom_tooltip = { text = EVTOPTA_TOW_FW_6_TOOLTIP }
 	}
 
@@ -277,10 +465,26 @@ narrative_event = {
 						modifier = TOW_small_improved_defences
 						years = 2
 					}
+
+					spawn_unit = {
+						province = THIS
+						owner = ROOT
+						reinforces = no
+						cannot_inherit = yes
+						troops = {
+							archers = { 75 75 }
+							light_infantry = { 125 125 }
+							heavy_infantry = { 200 200 }
+							light_cavalry = { 100 100 }
+						}
+						earmark = first_war_troops
+						maintenance_multiplier = 0
+						attrition = 1.0
+					}
 				}
 			}
 		}
-		ai_chance = { factor = 30 }
+		ai_chance = { factor = 30 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
 	}
 
 	# Leave them alone as well
@@ -304,7 +508,7 @@ narrative_event = {
 			inherit = yes
 			years = 2
 		}
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 20 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
 	}
 
 	after = {
@@ -337,10 +541,12 @@ narrative_event = {
 				# Death
 				5 = {
 					narrative_event = { id = TOW_FW.8 days = 2 random = 3 }
+					modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } }
 				}
 				# Too many
 				45 = {
 					narrative_event = { id = TOW_FW.9 days = 2 random = 3 }
+					modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } }
 				}
 				# Retreat
 				50 = {
@@ -451,12 +657,27 @@ narrative_event = {
 
 	immediate = {
 		sound_effect = tow_failure
+
+		random_realm_province = {
+			limit = {
+				any_neighbor_province = {
+					county = {
+						holder_scope = {
+							realm = {
+								title = e_horde
+							}
+						}
+					}
+				}
+			}
+			save_event_target_as = border_province
+		}
 	}
 
 	# We will avenge our fallen heroes
 	option = {
 		name = EVTOPTA_TOW_FW_11
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 50 modifier = { factor = 0.6 has_game_rule = { name = story_events value = alternate } } }
 		custom_tooltip = { text = EVTOPTA_TOW_FW_11_TOOLTIP }
 		e_horde = {
 			show_scope_change = no
@@ -469,6 +690,11 @@ narrative_event = {
 				hidden_tooltip = { narrative_event = { id = TOW_FW.23 } }
 			}
 		}
+		add_character_modifier = {
+			modifier = TOW_stormwind_rancor
+			inherit = yes
+			years = 2
+		}
 	}
 
 	# Prepare our defences
@@ -478,6 +704,43 @@ narrative_event = {
 			add_province_modifier = {
 				modifier = TOW_improved_defences
 				years = 2
+			}
+		}
+		if = {
+			limit = {
+				event_target:border_province = { always = yes }
+			}
+			spawn_unit = {
+				province = event_target:border_province
+				owner = ROOT
+				reinforces = no
+				cannot_inherit = yes
+				troops = {
+					archers = { 75 75 }
+					light_infantry = { 125 125 }
+					heavy_infantry = { 200 200 }
+					light_cavalry = { 100 100 }
+				}
+				earmark = first_war_troops
+				maintenance_multiplier = 0
+				attrition = 1.0
+			}
+		}
+		else = {
+			spawn_unit = {
+				province = closest_to_capital
+				owner = ROOT
+				reinforces = no
+				cannot_inherit = yes
+				troops = {
+					archers = { 75 75 }
+					light_infantry = { 125 125 }
+					heavy_infantry = { 200 200 }
+					light_cavalry = { 100 100 }
+				}
+				earmark = first_war_troops
+				maintenance_multiplier = 0
+				attrition = 1.0
 			}
 		}
 		# Horde can declare war
@@ -502,6 +765,23 @@ narrative_event = {
 	border = GFX_event_narrative_frame_intrigue
 
 	is_triggered_only = yes
+
+	immediate = {
+		random_realm_province = {
+			limit = {
+				any_neighbor_province = {
+					county = {
+						holder_scope = {
+							realm = {
+								title = e_horde
+							}
+						}
+					}
+				}
+			}
+			save_event_target_as = border_province
+		}
+	}
 
 	# This is terrible news
 	option = {
@@ -529,6 +809,43 @@ narrative_event = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				event_target:border_province = { always = yes }
+			}
+			spawn_unit = {
+				province = event_target:border_province
+				owner = ROOT
+				reinforces = no
+				cannot_inherit = yes
+				troops = {
+					archers = { 150 150 }
+					light_infantry = { 250 250 }
+					heavy_infantry = { 400 400 }
+					light_cavalry = { 200 200 }
+				}
+				earmark = first_war_troops
+				maintenance_multiplier = 0
+				attrition = 1.0
+			}
+		}
+		else = {
+			spawn_unit = {
+				province = closest_to_capital
+				owner = ROOT
+				reinforces = no
+				cannot_inherit = yes
+				troops = {
+					archers = { 150 150 }
+					light_infantry = { 250 250 }
+					heavy_infantry = { 400 400 }
+					light_cavalry = { 200 200 }
+				}
+				earmark = first_war_troops
+				maintenance_multiplier = 0
+				attrition = 1.0
+			}
+		}
 	}
 
 	# Rest now, my friend
@@ -552,7 +869,6 @@ narrative_event = {
 			inherit = yes
 			years = 2
 		}
-		
 	}
 
 	after = {
@@ -702,6 +1018,7 @@ narrative_event = {
 				factor = 2
 				trait = honest
 			}
+			modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } }
 		}
 	}
 
@@ -962,7 +1279,7 @@ narrative_event = {
 	# We aren't prepared yet
 	option = {
 		name = EVTOPTB_TOW_FW_24
-		ai_chance = { factor = 10 }
+		ai_chance = { factor = 10 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
 		set_global_flag = TOW_first_war_can_start
 		custom_tooltip = { text = EVTOPTB_TOW_FW_24_TOOLTIP }
 	}
@@ -1024,7 +1341,7 @@ narrative_event = {
 	id = TOW_FW.28
 	title = EVTTITLE_TOW_FW_28
 	desc = EVTDESC_TOW_FW_28
-	picture = GFX_evt_magnificent_castle_wol
+	picture = GFX_evt_magnificent_castle
 
 	is_triggered_only = yes
 
@@ -1033,3 +1350,583 @@ narrative_event = {
 		name = EVTOPTA_TOW_FW_28
 	}
 }
+
+# A New Age - Human Kingdoms (Not Stormwind)
+narrative_event = {
+	id = TOW_FW.29
+	title = EVTTITLE_TOW_FW_29
+	desc = EVTDESC_TOW_FW_29
+	picture = GFX_evt_magnificent_castle
+
+	desc = {
+    	trigger = {
+    		culture = dalaranian
+    	}
+    	picture = GFX_evt_tow_dalaran
+    }
+
+	is_triggered_only = yes
+
+	# This is not our concern
+	option = {
+		name = EVTOPTA_TOW_FW_29
+		ai_chance = { factor = 85 modifier = { factor = 0.125 has_game_rule = { name = story_events value = alternate } } }
+	}
+
+	# Fools
+	option = {
+		name = EVTOPTB_TOW_FW_29
+		ai_chance = { factor = 10 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		reverse_opinion = {
+			modifier = insulted
+			who = FROM
+			years = 10
+		}
+	}
+
+	# We shall help
+	option = {
+		name = EVTOPTC_TOW_FW_29
+		ai_chance = { factor = 5 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		add_alliance = { who = FROM years = 20 }
+	}
+}
+
+# A New Age - Human Kingdoms (Not Stormwind) - Vassals
+narrative_event = {
+	id = TOW_FW.30
+	title = EVTTITLE_TOW_FW_30
+	desc = EVTDESC_TOW_FW_30
+	picture = GFX_evt_magnificent_castle
+
+	is_triggered_only = yes
+
+	desc = {
+    	trigger = {
+    		culture = dalaranian
+    	}
+    	picture = GFX_evt_tow_dalaran
+    }
+
+	# This is not our concern
+	option = {
+		name = EVTOPTA_TOW_FW_30
+		ai_chance = { factor = 90 modifier = { factor = 0.3 has_game_rule = { name = story_events value = alternate } } }
+	}
+
+	# Fools
+	option = {
+		name = EVTOPTB_TOW_FW_30
+		ai_chance = { factor = 10 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		reverse_opinion = {
+			modifier = insulted
+			who = FROM
+			years = 10
+		}
+	}
+}
+
+# A New Age - Quel'Thalas
+narrative_event = {
+	id = TOW_FW.31
+	title = EVTTITLE_TOW_FW_31
+	desc = EVTDESC_TOW_FW_31
+	picture = GFX_evt_tow_quel_thalas
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_realm_character = {
+			limit = { is_ruler = yes }
+			narrative_event = { id = TOW_FW.31 }
+		}
+	}
+
+	# This is not our concern
+	option = {
+		name = EVTOPTA_TOW_FW_31
+		ai_chance = { factor = 85 modifier = { factor = 0.125 has_game_rule = { name = story_events value = alternate } } }
+	}
+
+	# Fools
+	option = {
+		name = EVTOPTB_TOW_FW_31
+		ai_chance = { factor = 10 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		reverse_opinion = {
+			modifier = insulted
+			who = FROM
+			years = 10
+		}
+	}
+
+	# We shall help
+	option = {
+		name = EVTOPTC_TOW_FW_31
+		ai_chance = { factor = 5 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		add_alliance = { who = FROM years = 20 }
+	}
+}
+
+# A New Age - Quel'Thalas - Vassals
+narrative_event = {
+	id = TOW_FW.32
+	title = EVTTITLE_TOW_FW_32
+	desc = EVTDESC_TOW_FW_32
+	picture = GFX_evt_tow_quel_thalas
+
+	is_triggered_only = yes
+
+	# This is not our concern
+	option = {
+		name = EVTOPTA_TOW_FW_32
+		ai_chance = { factor = 90 modifier = { factor = 0.3 has_game_rule = { name = story_events value = alternate } } }
+	}
+
+	# Fools
+	option = {
+		name = EVTOPTB_TOW_FW_32
+		ai_chance = { factor = 10 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		reverse_opinion = {
+			modifier = insulted
+			who = FROM
+			years = 10
+		}
+	}
+}
+
+# A New Age - Dwarven Kingdoms
+narrative_event = {
+	id = TOW_FW.33
+	title = EVTTITLE_TOW_FW_33
+	desc = EVTDESC_TOW_FW_33
+	picture = GFX_evt_moonlit_mountains_hf
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_realm_character = {
+			limit = { is_ruler = yes }
+			narrative_event = { id = TOW_FW.34 }
+		}
+	}
+
+	# This is not our concern
+	option = {
+		name = EVTOPTA_TOW_FW_33
+		ai_chance = { factor = 85 modifier = { factor = 0.125 has_game_rule = { name = story_events value = alternate } } }
+	}
+
+	# Fools
+	option = {
+		name = EVTOPTB_TOW_FW_33
+		ai_chance = { factor = 10 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		show_trait = drunkard
+		random = {
+			chance = 10
+			add_trait = drunkard
+		}
+	}
+
+	# We shall help
+	option = {
+		name = EVTOPTC_TOW_FW_33
+		ai_chance = { factor = 5 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		add_alliance = { who = FROM years = 20 }
+	}
+}
+
+# A New Age - Dwarven Kingdoms - Vassals
+narrative_event = {
+	id = TOW_FW.34
+	title = EVTTITLE_TOW_FW_34
+	desc = EVTDESC_TOW_FW_34
+	picture = GFX_evt_moonlit_mountains_hf
+
+	is_triggered_only = yes
+
+	# This is not our concern
+	option = {
+		name = EVTOPTA_TOW_FW_34
+		ai_chance = { factor = 90 modifier = { factor = 0.3 has_game_rule = { name = story_events value = alternate } } }
+	}
+
+	# Fools
+	option = {
+		name = EVTOPTB_TOW_FW_34
+		ai_chance = { factor = 10 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		show_trait = drunkard
+		random = {
+			chance = 10
+			add_trait = drunkard
+		}
+	}
+}
+
+# A New Age - Gnomeregan
+narrative_event = {
+	id = TOW_FW.35
+	title = EVTTITLE_TOW_FW_35
+	desc = EVTDESC_TOW_FW_35
+	picture = GFX_evt_tow_transmutation
+
+	is_triggered_only = yes
+
+	# This is not our concern
+	option = {
+		name = EVTOPTA_TOW_FW_35
+	}
+}
+
+# A New Age - Jungle Trolls - Independant
+narrative_event = {
+	id = TOW_FW.36
+	title = EVTTITLE_TOW_FW_36
+	desc = EVTDESC_TOW_FW_36
+	picture = GFX_evt_tiger
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_realm_character = {
+			limit = { is_ruler = yes }
+			narrative_event = { id = TOW_FW.37 }
+		}
+		e_horde = {
+			holder_scope = {
+				save_event_target_as = target_ruler
+			}
+		}
+	}
+
+	# This is not our concern
+	option = {
+		name = EVTOPTA_TOW_FW_36
+		ai_chance = { factor = 70 modifier = { factor = 0.15 has_game_rule = { name = story_events value = alternate } } }
+	}
+
+	# Prepare for war
+	option = {
+		name = EVTOPTB_TOW_FW_36
+		ai_chance = { factor = 20 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		any_realm_province = {
+			add_province_modifier = {
+				modifier = TOW_improved_defences
+				years = 5
+			}
+		}
+	}
+
+	# Maybe they are the same nature
+	option = {
+		trigger = {
+			event_target:target_ruler = { is_alive = yes }
+		}
+		name = EVTOPTC_TOW_FW_36
+		ai_chance = { factor = 10 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+		show_portrait = event_target:target_ruler
+
+		custom_tooltip = {
+			text = EVTOPTA_ZE_8000_TOOLTIP
+			hidden_tooltip = {
+				event_target:target_ruler = {
+					letter_event = { id = TOW_FW.43 days = 1 random = 6 }
+				}
+			}
+		}
+
+		reverse_opinion = {
+			modifier = opinion_improved_relations
+			who = event_target:target_ruler
+			years = 5
+		}
+
+		opinion = {
+			modifier = opinion_improved_relations
+			who = event_target:target_ruler
+			years = 5
+		}
+	}
+}
+
+# A New Age - Jungle Trolls - Vassals
+narrative_event = {
+	id = TOW_FW.37
+	title = EVTTITLE_TOW_FW_37
+	desc = EVTDESC_TOW_FW_37
+	picture = GFX_evt_tiger
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	# Ok
+	option = {
+		name = EVTOPTA_TOW_FW_37
+	}
+}
+
+# A New Age - Trolls - Others
+narrative_event = {
+	id = TOW_FW.38
+	title = EVTTITLE_TOW_FW_38
+	desc = EVTDESC_TOW_FW_38
+	picture = GFX_evt_tiger
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	# Ok
+	option = {
+		name = EVTOPTA_TOW_FW_38
+	}
+}
+
+# A New Age - Creeps
+narrative_event = {
+	id = TOW_FW.39
+	title = EVTTITLE_TOW_FW_39
+	desc = EVTDESC_TOW_FW_39
+	picture = GFX_evt_tribal_lands
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	# Ok
+	option = {
+		name = EVTOPTA_TOW_FW_39
+	}
+}
+
+# A New Age - Murlocs
+narrative_event = {
+	id = TOW_FW.40
+	title = EVTTITLE_TOW_FW_40
+	desc = EVTDESC_TOW_FW_40
+	picture = GFX_evt_tow_murloc_village
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	# Ok
+	option = {
+		name = EVTOPTA_TOW_FW_40
+	}
+}
+
+# A New Age - Goblins
+narrative_event = {
+	id = TOW_FW.41
+	title = EVTTITLE_TOW_FW_41
+	desc = EVTDESC_TOW_FW_41
+	picture = GFX_evt_tow_booty_bay_far
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		e_horde = {
+			holder_scope = {
+				save_event_target_as = target_ruler
+			}
+		}
+	}
+
+	# Let's make a bargain
+	option = {
+		name = EVTOPTA_TOW_FW_41
+		ai_chance = { factor = 70 modifier = { factor = 0.5 has_game_rule = { name = story_events value = alternate } } }
+		show_portrait = event_target:target_ruler
+
+		hidden_tooltip = {
+			event_target:target_ruler = {
+				letter_event = { id = TOW_FW.45 }
+			}
+		}
+
+		reverse_opinion = {
+			modifier = trading_partner
+			who = event_target:target_ruler
+			years = 5
+		}
+
+		opinion = {
+			modifier = trading_partner
+			who = event_target:target_ruler
+			years = 5
+		}
+
+		add_character_modifier = {
+			modifier = TOW_FW_trading_with_the_horde
+			inherit = yes
+			years = 5
+		}
+
+		event_target:target_ruler = {
+			add_character_modifier = {
+				modifier = TOW_FW_trading_with_the_goblins
+				inherit = yes
+				years = 5
+			}
+		}
+
+	}
+	# Our trade partners' demands have increased
+	option = {
+		name = EVTOPTB_TOW_FW_41
+		ai_chance = { factor = 30 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+		show_portrait = FROM
+
+		if = {
+			limit = {
+				has_dlc = "Reapers"
+			}
+			custom_tooltip = {
+				text = capital_prospers_custom_tooltip
+				hidden_tooltip = {
+					capital_scope = {
+						change_variable = { which = prosperity_value value = 6 }
+					}
+				}
+			}
+
+			reverse_opinion = {
+				modifier = trading_partner
+				who = FROM
+				years = 5
+			}
+		}
+	}
+}
+
+# A New Age - Dragons
+narrative_event = {
+	id = TOW_FW.42
+	title = EVTTITLE_TOW_FW_42
+	desc = EVTDESC_TOW_FW_42
+	picture = GFX_evt_tow_black_morass_orcs
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	# Ok
+	option = {
+		name = EVTOPTA_TOW_FW_42
+	}
+}
+
+# Horde notification of troll diplomacy
+letter_event = {
+	id = TOW_FW.43
+	desc = EVTDESC_TOW_FW_43
+	picture = GFX_evt_tow_black_morass_orcs
+
+	is_triggered_only = yes
+
+	# I don't care
+	option = {
+		name = EVTOPTA_TOW_FW_43
+		ai_chance = { factor = 70 modifier = { factor = 0.5 has_game_rule = { name = story_events value = alternate } } }
+	}
+
+	# Let's make a deal
+	option = {
+		name = EVTOPTB_TOW_FW_43
+		ai_chance = { factor = 30 modifier = { factor = 0.1 has_game_rule = { name = story_events value = canon } } }
+
+		reverse_opinion = {
+			modifier = opinion_improved_relations
+			who = FROM
+			years = 5
+		}
+
+		opinion = {
+			modifier = opinion_improved_relations
+			who = FROM
+			years = 5
+		}
+
+		custom_tooltip = {
+			text = EVTOPTA_ZE_8001_TOOLTIP
+			hidden_tooltip = {
+				FROM = {
+					letter_event = { id = TOW_FW.44 }
+				}
+			}
+			opinion = {
+				modifier = in_non_aggression_pact
+				years = 3
+				who = FROM
+				origin_description = TOW_FW_43_NAP
+			}
+			FROM = {
+				opinion = {
+					modifier = in_non_aggression_pact
+					years = 3
+					who = ROOT
+					origin_description = TOW_FW_43_NAP
+				}
+			}
+		}
+	}
+}
+
+# Troll notification of Horde's NAP
+letter_event = {
+	id = TOW_FW.44
+	desc = EVTDESC_TOW_FW_44
+	picture = GFX_evt_tow_black_morass_orcs
+
+	is_triggered_only = yes
+
+	# Good
+	option = {
+		name = EVTOPTA_TOW_FW_44
+		custom_tooltip = {
+			text = EVTOPTA_TOW_FW_44_TOOLTIP
+		}
+	}
+}
+
+# Horde notification of goblin trade
+letter_event = {
+	id = TOW_FW.45
+	desc = EVTDESC_TOW_FW_45
+	picture = GFX_evt_tow_black_morass_orcs
+
+	is_triggered_only = yes
+
+	# Good
+	option = {
+		name = EVTOPTA_TOW_FW_45
+
+		tooltip = {
+			reverse_opinion = {
+				modifier = trading_partner
+				who = FROM
+				years = 5
+			}
+
+			opinion = {
+				modifier = trading_partner
+				who = FROM
+				years = 5
+			}
+
+			add_character_modifier = {
+				modifier = TOW_FW_trading_with_the_goblins
+				inherit = yes
+				years = 5
+			}
+		}
+	}
+}§/
