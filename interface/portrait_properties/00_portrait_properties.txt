@@ -2528,63 +2528,92 @@
 		factor = 1
  	}
 
-	1 = { #Blackhand
+	1 = {  
 		factor = 100
 
 		trigger = {
-
-			character = 52
-
+			OR = {
+			character = 52 #Blackhand
+			character = 2071 #Alleria
+			character = 84 #Khadgar
+			character = 189 #Rexxar
+			trait = dragonhawk_loa
+			}
 		}
   	}
 
-	2 = { #Grom
+	2 = {  
 		factor = 100
 
 		trigger = {
-			
-			character = 2019
-
+			OR = {
+			character = 2019 #Grom
+			character = 2072 #Vereesa
+			trait = eagle_loa
+				AND = {
+				character = 1643 #Turalyon
+				trait = scarred
+				}
+			}
 		}
   	}
 
-	3 = { #Kargath
+	3 = {  
 		factor = 100
 
 		trigger = {
-			
-			character = 63
-
+			OR = {
+			#character =  #Kargath
+			character = 504 #Sylvanas
+			trait = tiger_loa
+				AND = {
+				character = 1643 #Turalyon
+				NOT = { trait = scarred }
+				}
+			}
 		}
   	}
 
-	4 = { #Kilrog
+	4 = {  
 		factor = 100
 
 		trigger = {
-			
-			character = 58
-
+			OR = {
+			character = 58 #Kilrog
+			character = 503 #Lorthemar
+			trait = bear_loa
+			}
 		}
   	}
 
-	5 = { #Durotan
+	5 = { 
 		factor = 100
 
 		trigger = {
-			
-			character = 2009
-
+			OR = {
+			character = 2009 #Durotan
+			character = 2624 #ZulJin
+			}
 		}
   	}
 
-	6 = { #Varok
+	6 = { 
 		factor = 100
 
 		trigger = {
-			
-			character = 75
+			OR = {
+			character = 75 #Varok
+			}
+		}
+  	}
 
+	7 = { 
+		factor = 100
+
+		trigger = {
+			OR = {
+			character = 65 #Gul'Dan
+			}
 		}
   	}
 }
