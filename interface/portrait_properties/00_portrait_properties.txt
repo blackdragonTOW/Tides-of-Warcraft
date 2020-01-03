@@ -2579,9 +2579,13 @@
 
 		trigger = {
 			OR = {
-			character = 58 #Kilrog
+			character = 58 #Kilrogg
 			character = 503 #Lorthemar
 			trait = bear_loa
+				AND = {
+				trait = Lich_King #LichKing
+				trait = race_human
+				}
 			}
 		}
   	}
@@ -2593,6 +2597,7 @@
 			OR = {
 			character = 2009 #Durotan
 			character = 2624 #ZulJin
+			character = 1 #Jaina Young
 			}
 		}
   	}
@@ -2603,6 +2608,8 @@
 		trigger = {
 			OR = {
 			character = 75 #Varok
+			trait = dire_troll
+			character = 1 #Jaina Blonde Stripe			
 			}
 		}
   	}
@@ -2613,6 +2620,34 @@
 		trigger = {
 			OR = {
 			character = 65 #Gul'Dan
+			character = 1 #ManAnduin
+			}
+		}
+  	}
+	7 = { 
+		factor = 100
+
+		trigger = {
+			OR = {
+			character = 65 #Gul'Dan
+			}
+		}
+  	}
+	8 = { 
+		factor = 100
+
+		trigger = {
+			OR = {
+			character = 1 #Thrall while Warchief
+			}
+		}
+  	}
+	9 = { 
+		factor = 100
+
+		trigger = {
+			OR = {
+			character = 1 #Shaman Thrall
 			}
 		}
   	}
