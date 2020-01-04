@@ -2,52 +2,69 @@ race_human = {
 	caste_tier = 4
 	random = no
 	customizer = no
+	average_lifespan = 80
+	diplomacy = 1
 }
 race_orc = {
 	caste_tier = 5
 	random = no
 	customizer = no
+	average_lifespan = 90
+	ai_honor = 15			# Prize honor
+	martial = 1
 }
 race_dwarf = {
 	caste_tier = 6
-	immortal = yes
 	random = no
 	customizer = no
+	average_lifespan = 350
+	ai_honor = 15			# Prize honor
+	fertility = -0.5
 }
 race_high_elf = {
 	caste_tier = 7
 	immortal = yes
 	random = no
 	customizer = no
+	learning = 1
+	fertility = -0.9
 }
 race_blood_elf = {
 	caste_tier = 7
 	immortal = yes
 	random = no
 	customizer = no
+	fertility = -0.9
 }
 race_night_elf = {
 	caste_tier = 7
 	immortal = yes
 	random = no
 	customizer = no
+	fertility = -0.9
 }
 race_wretched = {
 	caste_tier = 7
 	immortal = yes
 	random = no
 	customizer = no
+	fertility = -0.9
 }
 race_gnome = {
 	caste_tier = 8
-	immortal = yes
+	average_lifespan = 200
 	random = no
 	customizer = no
+	learning = 1
+	fertility = -0.4
 }
 race_goblin = {
 	caste_tier = 9
 	random = no
 	customizer = no
+	ai_greed = 15			# Looters
+	average_lifespan = 70
+	learning = 1
 }
 race_dragon = {
 	caste_tier = 10
@@ -75,47 +92,80 @@ race_troll_forest = {
 	caste_tier = 11
 	random = no
 	customizer = no
+	ai_greed = 15			# Looters
+	average_lifespan = 100
+	health = 0.4
 }
 race_troll_ice = {
 	caste_tier = 11
 	random = no
 	customizer = no
+	ai_greed = 15			# Looters
+	average_lifespan = 100
+	health = 0.4
 }
 race_troll_dark = {
 	caste_tier = 11
 	random = no
 	customizer = no
+	ai_greed = 15			# Looters
+	average_lifespan = 100
+	health = 0.4
 }
 race_troll_jungle = {
 	caste_tier = 11
 	random = no
 	customizer = no
+	ai_greed = 15			# Looters
+	average_lifespan = 100
+	health = 0.4
 }
 race_troll_sand = {
 	caste_tier = 11
 	random = no
 	customizer = no
+	ai_greed = 15			# Looters
+	average_lifespan = 100
+	health = 0.4
 }
 race_troll_zandalari = {
 	caste_tier = 11
 	immortal = yes
 	random = no
 	customizer = no
+	health = 1
 }
 race_ogre = {
 	caste_tier = 5
 	random = no
 	customizer = no
+	ai_rationality = -15	# Impulsive
+	ai_greed = 15			# Looters
+	ai_honor = -15		# Any means to an end
+	average_lifespan = 100
+	diplomacy = -1
+	martial = -1
+	intrigue = -1
+	learning = -1
+	health = 1
+	combat_rating = 10
 }
 race_murloc = {
 	caste_tier = 12
 	random = no
 	customizer = no
+	ai_rationality = -15	# Impulsive
+	ai_greed = 15			# Looters
+	ai_honor = -15		# Any means to an end
+	learning = -1
 }
 race_gnoll = {
 	caste_tier = 13
 	random = no
 	customizer = no
+	ai_rationality = -15	# Impulsive
+	ai_greed = 15			# Looters
+	ai_honor = -15		# Any means to an end
 }
 race_naga = {
 	caste_tier = 14
@@ -127,12 +177,18 @@ race_kobold = {
 	caste_tier = 13
 	random = no
 	customizer = no
+	ai_rationality = -15	# Impulsive
+	ai_greed = 15			# Looters
+	ai_honor = -15		# Any means to an end
 }
 race_trogg = {
 	caste_tier = 13
 	immortal = yes
 	random = no
 	customizer = no
+	ai_rationality = -15	# Impulsive
+	ai_greed = 15			# Looters
+	ai_honor = -15		# Any means to an end
 }
 
 race_hakkar = {
@@ -332,6 +388,7 @@ race_vrykul = {
 	caste_tier = 4
 	random = no
 	customizer = no
+	ai_greed = 15			# Looters
 }
 
 race_tauren = {	
