@@ -1,4 +1,5 @@
 race_human = {
+    diplomacy = 1
 	caste_tier = 4
 	random = no
 	customizer = no
@@ -6,15 +7,27 @@ race_human = {
 	diplomacy = 1
 }
 race_orc = {
+    diplomacy = -1
+	martial = 2
+	stewardship = -1
+	intrigue = -1
+	learning = -1
+	combat_rating = 15
+	
+	fertility = 0.1
 	caste_tier = 5
 	random = no
 	customizer = no
 	average_lifespan = 90
 	ai_honor = 15			# Prize honor
-	martial = 1
 	ai_ambition = 5
 }
 race_dwarf = {
+    martial = 1
+    stewardship = 1
+	intrigue = -1
+	combat_rating = 10
+	
 	caste_tier = 6
 	random = no
 	customizer = no
@@ -23,14 +36,23 @@ race_dwarf = {
 	fertility = -0.5
 }
 race_high_elf = {
+	martial = 1
+    learning = 2
+    combat_rating = 20
+	
+	same_opinion = 10
 	caste_tier = 7
 	immortal = yes
 	random = no
 	customizer = no
-	learning = 1
 	fertility = -0.9
 }
 race_blood_elf = {
+	martial = 1
+    learning = 2
+    combat_rating = 20
+	
+	same_opinion = 10	
 	caste_tier = 7
 	immortal = yes
 	random = no
@@ -52,14 +74,24 @@ race_wretched = {
 	fertility = -0.9
 }
 race_gnome = {
+    martial = -1
+	stewardship = 1
+    learning = 2
+	combat_rating = -25
+	
 	caste_tier = 8
 	average_lifespan = 200
 	random = no
 	customizer = no
-	learning = 1
 	fertility = -0.4
 }
 race_goblin = {
+    stewardship = 1
+	intrigue = 2
+	learning = 1
+	
+	combat_rating = -20
+
 	caste_tier = 9
 	random = no
 	customizer = no
@@ -74,11 +106,19 @@ race_dragon = {
 	customizer = no
 }
 race_undead_scourge = {
+    intrigue = 1
+
+    combat_rating = -15
+	
 	immortal = yes
 	random = no
 	customizer = no
 }
 race_undead_forsaken = {
+    intrigue = 1
+
+    combat_rating = -15
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -90,6 +130,12 @@ race_undead_generic = {
 	customizer = no
 }
 race_troll_forest = {
+    diplomacy = -1
+	stewardship = -1
+	learning = -1
+	combat_rating = 5
+	
+	fertility = 0.1
 	caste_tier = 11
 	random = no
 	customizer = no
@@ -98,6 +144,13 @@ race_troll_forest = {
 	health = 0.4
 }
 race_troll_ice = {
+    diplomacy = -1
+	stewardship = -1
+	learning = -1
+	combat_rating = 5
+	
+	fertility = 0.1
+
 	caste_tier = 11
 	random = no
 	customizer = no
@@ -106,6 +159,13 @@ race_troll_ice = {
 	health = 0.4
 }
 race_troll_dark = {
+    diplomacy = -1
+	stewardship = -1
+	learning = -1
+	combat_rating = 5
+	
+	fertility = 0.1
+
 	caste_tier = 11
 	random = no
 	customizer = no
@@ -114,6 +174,13 @@ race_troll_dark = {
 	health = 0.4
 }
 race_troll_jungle = {
+    diplomacy = -1
+	stewardship = -1
+	learning = -1
+	combat_rating = 5
+	
+	fertility = 0.1
+
 	caste_tier = 11
 	random = no
 	customizer = no
@@ -122,6 +189,13 @@ race_troll_jungle = {
 	health = 0.4
 }
 race_troll_sand = {
+    diplomacy = -1
+	stewardship = -1
+	learning = -1
+	combat_rating = 5
+	
+	fertility = 0.1
+
 	caste_tier = 11
 	random = no
 	customizer = no
@@ -130,6 +204,13 @@ race_troll_sand = {
 	health = 0.4
 }
 race_troll_zandalari = {
+    diplomacy = -1
+	stewardship = -1
+	learning = -1
+	combat_rating = 5
+	
+	fertility = 0.1
+
 	caste_tier = 11
 	immortal = yes
 	random = no
@@ -137,6 +218,13 @@ race_troll_zandalari = {
 	health = 1
 }
 race_ogre = {
+    diplomacy = -2
+	martial = -1
+	stewardship = -1
+	intrigue = -2
+	learning = -2
+	combat_rating = 25
+
 	caste_tier = 5
 	random = no
 	customizer = no
@@ -144,23 +232,33 @@ race_ogre = {
 	ai_greed = 15			# Looters
 	ai_honor = -15		# Any means to an end
 	average_lifespan = 100
-	diplomacy = -1
-	martial = 1
-	intrigue = -1
-	learning = -1
 	health = 1
-	combat_rating = 10
 }
 race_murloc = {
+    diplomacy = -2
+	martial = -2
+	stewardship = -2
+	intrigue = -2
+	learning = -3
+	fertility = 1.1
+    combat_rating = -20
+
 	caste_tier = 12
 	random = no
 	customizer = no
 	ai_rationality = -15	# Impulsive
 	ai_greed = 15			# Looters
 	ai_honor = -15		# Any means to an end
-	learning = -1
 }
 race_gnoll = {
+	diplomacy = -4
+	stewardship = -3
+	intrigue = -1
+	learning = -4
+	combat_rating = 10
+	
+	fertility = 1.0
+
 	caste_tier = 13
 	random = no
 	customizer = no
@@ -175,6 +273,14 @@ race_naga = {
 	customizer = no
 }
 race_kobold = {
+    diplomacy = -2
+	martial = -2
+	stewardship = -2
+	intrigue = -2
+	learning = -3
+	fertility = 0.65
+	combat_rating = -5
+
 	caste_tier = 13
 	random = no
 	customizer = no
@@ -183,6 +289,12 @@ race_kobold = {
 	ai_honor = -15		# Any means to an end
 }
 race_trogg = {
+    diplomacy = -4
+	stewardship = -4
+	intrigue = -2
+	learning = -4
+	combat_rating = 10
+
 	caste_tier = 13
 	immortal = yes
 	random = no
@@ -207,6 +319,14 @@ race_faceless = {
 }
 
 race_eredar = {
+    diplomacy = -1
+	martial = 4
+    stewardship = 4
+    intrigue = 4
+    learning = 6
+	
+	combat_rating = 125
+
 	caste_tier = 16
 	immortal = yes
 	random = no
@@ -214,6 +334,14 @@ race_eredar = {
 }
 
 race_dreadlord = {
+    diplomacy = 1
+	martial = 4
+    stewardship = 1
+    intrigue = 6
+    learning = 5
+	
+	combat_rating = 45
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -221,6 +349,12 @@ race_dreadlord = {
 }
 
 race_succubus = {
+	martial = 1
+    intrigue = 2
+    learning = 1
+	
+	combat_rating = 10
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -228,6 +362,14 @@ race_succubus = {
 }
 
 race_pit_lord = {
+    diplomacy = -3
+	martial = 5
+    stewardship = -1
+    intrigue = 1
+	learning = 2
+	
+	combat_rating = 60
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -235,6 +377,14 @@ race_pit_lord = {
 }
 
 race_doomlord = {
+    diplomacy = -3
+	martial = 5
+    stewardship = -1
+    intrigue = -1
+    learning = 1
+	
+	combat_rating = 50
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -242,6 +392,14 @@ race_doomlord = {
 }
 
 race_fel_lord = {
+    diplomacy = -2
+	martial = 3
+    stewardship = -1
+    intrigue = -1
+	learning = -1
+	
+	combat_rating = 35
+
 	immortal = yes
 	random = no
 	cannot_marry = yes
@@ -249,6 +407,13 @@ race_fel_lord = {
 }
 
 race_shivarra = {
+    diplomacy = 2
+	martial = 1
+    intrigue = 1
+	learning = 1
+	
+	combat_rating = 30
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -256,6 +421,13 @@ race_shivarra = {
 }
 
 race_antaen = {
+    diplomacy = -1
+    stewardship = -1
+    intrigue = -2
+	learning = -2
+	
+	combat_rating = 45
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -263,6 +435,13 @@ race_antaen = {
 }
 
 race_aranasi = {
+	martial = 1
+    intrigue = 1
+	
+	combat_rating = 10
+	
+	fertility = 1.0
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -270,6 +449,12 @@ race_aranasi = {
 }
 
 race_inquisitor = {
+    diplomacy = -1
+    intrigue = 1
+	learning = 3
+	
+	combat_rating = 5
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -277,6 +462,13 @@ race_inquisitor = {
 }
 
 race_mo_arg = {
+    diplomacy = -1
+	martial = 2
+    stewardship = 1
+	learning = 3
+	
+	combat_rating = 45
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -284,6 +476,13 @@ race_mo_arg = {
 }
 
 race_observer = {
+	martial = -2
+	stewardship = -1
+	intrigue = 3
+	learning = 3
+	
+	combat_rating = 40
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -291,6 +490,13 @@ race_observer = {
 }
 
 race_draenei = {
+	diplomacy = 2
+	intrigue = -2
+	learning = 2
+	combat_rating = 15
+	
+	fertility = -0.1
+
 	caste_tier = 16
 	immortal = yes
 	random = no
@@ -298,6 +504,13 @@ race_draenei = {
 }
 
 race_broken = {
+	diplomacy = 1
+	intrigue = -1
+	learning = 1
+	combat_rating = 7
+	
+	fertility = -0.1
+
 	caste_tier = 16
 	immortal = yes
 	random = no
@@ -305,6 +518,12 @@ race_broken = {
 }
 
 race_lost_one = {
+    diplomacy -1
+	martial = 1
+	learning = -1
+	
+	fertility = 0.05
+
 	caste_tier = 16
 	immortal = yes
 	random = no
@@ -312,6 +531,14 @@ race_lost_one = {
 }
 
 race_voidwalker = {
+    diplomacy = -5
+	martial = 1
+    stewardship = -4
+    intrigue = -5
+	learning = -3
+	
+	combat_rating = 20
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -319,12 +546,24 @@ race_voidwalker = {
 }
 
 race_pale_orc = {
+	martial = -1
+    stewardship = -1
+    intrigue = 1
+	
+	combat_rating = -20
+
 	caste_tier = 5
 	random = no
 	customizer = no
 }
 
 race_air_elemental = {
+    diplomacy = -1
+	martial = 1
+	learning = -1
+	
+	combat_rating = 10
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -332,6 +571,12 @@ race_air_elemental = {
 }
 
 race_fire_elemental = {
+    diplomacy = -1
+	martial = 1
+	learning = -1
+	
+	combat_rating = 10
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -339,18 +584,33 @@ race_fire_elemental = {
 }
 
 race_firelord = {
+    diplomacy = -1
+	martial = 2
+    intrigue = 1
+	
+	combat_rating = 25
+
 	hidden = yes
 	random = no
 	customizer = no
 }
 
 race_flamewalker = {
+    diplomacy = -1
+	martial = 1
+	
+	combat_rating = 15
+
 	hidden = yes
 	random = no
 	customizer = no
 }
 
 race_earth_elemental = {
+	learning = -1
+	
+	combat_rating = 10
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -358,6 +618,10 @@ race_earth_elemental = {
 }
 
 race_water_elemental = {
+	learning = -1
+	
+	combat_rating = 10
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -365,6 +629,12 @@ race_water_elemental = {
 }
 
 race_half_elf = { # human/elf
+    diplomacy = 1
+    martial = 1
+    learning = 1
+    combat_rating = 10
+	
+	fertility = -0.30
 	caste_tier = 4
 	immortal = yes
 	random = no
@@ -372,6 +642,14 @@ race_half_elf = { # human/elf
 }
 
 race_half_ogre = { # orc/ogre
+    diplomacy = -1
+	martial = 1
+	intrigue = -1
+	learning = -1
+	combat_rating = 20
+	
+	fertility = 0.05
+
 	caste_tier = 5
 	immortal = yes
 	random = no
@@ -379,6 +657,12 @@ race_half_ogre = { # orc/ogre
 }
 
 race_half_draenei = { # orc/draenei
+	martial = 1
+	intrigue = -2
+	combat_rating = 15
+	
+	fertility = 0.05
+
 	caste_tier = 16
 	immortal = yes
 	random = no
@@ -386,19 +670,38 @@ race_half_draenei = { # orc/draenei
 }
 
 race_vrykul = {
+    diplomacy = -1
+	martial = 2
+    stewardship = -1
+    intrigue = 1
+	
+	combat_rating = 25
+	
+	fertility = -0.05
+
 	caste_tier = 4
 	random = no
 	customizer = no
 	ai_greed = 15			# Looters
 }
 
-race_tauren = {	
+race_tauren = {
+	diplomacy = 1
+	martial = -1
+	intrigue = -1
+	fertility = -0.1
+	combat_rating = 20
+
 	caste_tier = 17
 	random = no
 	customizer = no
 }
 
 race_worgen = {
+	diplomacy = -2
+	martial = 1
+	combat_rating = 20
+
 	caste_tier = 4
 	random = no
 	customizer = no
