@@ -1211,29 +1211,24 @@
 	dna="000cbceacbb"
 	properties="s000b000000000a000"
 	trait = race_gnome
-	9787.12.27 = {
-		birth = yes
-	}
-	9803.12.27 = {
-	effect = { 
-	add_friend = 70101 # sicco, Doesn't work, cant add friend
-	}
-	martial = 8
+	martial = 7
 	diplomacy = 1
 	intrigue = 1
 	stewardship = 6
 	learning = 8
 	add_trait = mastermind_theologian
-	add_trait = warrior
 	add_trait = engineer
 	add_trait = charitable
 	add_trait = diligent
 	add_trait = genius
 	add_trait = kind
+	
+	9787.12.27 = {
+		birth = yes
 	}
-	10021.1.1 = {
-		effect = { 
-			remove_friend = 70101  # remove friend sicco after sicco betrayed gelbin and took control over gnomeregan, Cant remove the mas friend dunno why, please fix and also if its wrong date
+	9900.1.1={
+		effect={
+			add_friend = 70101
 		}
 	}
 	10021.3.10 = {
@@ -1251,10 +1246,141 @@
 70101 = { 
 	name = Sicco
 	culture = gnomish
+	dynasty = 17002 # Thermaplugg
 	religion = arcane #
 	trait = race_gnome
-	9787.12.27 = {
+	dna="0bdddaafcbb"
+	properties="b0000g00000000t000"
+	martial = 11
+	diplomacy = 2
+	intrigue = 5
+	stewardship = 1
+	learning = 6
+	
+	
+	add_trait = mastermind_theologian
+	add_trait = engineer
+	add_trait = feeble
+	add_trait = deceitful
+	add_trait = ambitious
+	add_trait = proud
+	add_trait = greedy
+	add_trait = envious
+	add_trait = paranoid
+	add_trait = cruel
+	add_trait = quick
+	
+	9783.12.27 = {
 		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+70102 = { 
+	name = Tread
+	culture = gnomish
+	dynasty = 17003 # Sparklenossle
+	religion = arcane #
+	trait = race_gnome
+	dna="0acabaf0fcd"
+	properties="gf00bj0d00000aj000"
+	martial = 14
+	diplomacy = 3
+	intrigue = 2
+	stewardship = 1
+	learning = 8
+	
+	
+	add_trait = mastermind_theologian
+	add_trait = one_eyed
+	add_trait = brave
+	add_trait = engineer
+	
+	9759.12.27 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+70103 = { 
+	name = Cohlien
+	culture = gnomish
+	dynasty = 17004 # Frostweaver
+	religion = arcane #
+	trait = race_gnome
+	dna="0fcaccdc0ae"
+	properties="sc00dl000000000000"
+	
+	add_trait = scholarly_theologian
+	add_trait = mage
+	
+	9882.12.27 = {
+		birth = yes
+	}
+	9995.03.12 = {
+		employer = 1553
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+70104 = { 
+	name = Silas
+	culture = gnomish
+	dynasty = 17005 # Frostweaver
+	religion = arcane #
+	trait = race_gnome
+	dna="0cbhcd0gc00"
+	properties="b0000k"
+	
+	add_trait = fortune_builder
+	add_trait = lunatic
+	add_trait = deceitful
+	add_trait = mystic
+	add_trait = gregarious
+	
+	9882.12.27 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+70105 = { 
+	name = Wilfred
+	culture = gnomish
+	dynasty = 17006 # Frostweaver
+	religion = arcane #
+	trait = race_gnome
+	dna="0bcjed0g0da"
+	properties="sa00em000000000000"
+	
+	add_trait = scholarly_theologian
+	add_trait = mage
+	add_trait = wroth
+	add_trait = cynical
+	add_trait = ambitious
+	add_trait = cruel
+	
+	9882.12.27 = {
+		birth = yes
+	}
+	9995.03.12 = {
+		employer = 1553
 	}
 	10100.06.08 = {
 		death = {
