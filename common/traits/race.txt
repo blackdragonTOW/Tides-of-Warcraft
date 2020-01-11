@@ -1,5 +1,10 @@
 race_human = {
     diplomacy = 1
+	
+	same_opinion = 10
+    same_opinion = 5
+	general_opinion = -5
+	
 	caste_tier = 4
 	random = no
 	customizer = no
@@ -13,6 +18,10 @@ race_orc = {
 	intrigue = -1
 	learning = -1
 	combat_rating = 15
+	
+	same_opinion = 5
+    same_opinion = 10
+	general_opinion = -10
 	
 	fertility = 0.1
 	caste_tier = 5
@@ -28,6 +37,9 @@ race_dwarf = {
 	intrigue = -1
 	combat_rating = 10
 	
+	same_opinion_if_same_religion = 30
+	general_opinion = -10
+	
 	caste_tier = 6
 	random = no
 	customizer = no
@@ -40,6 +52,9 @@ race_high_elf = {
     learning = 2
     combat_rating = 20
 	
+    same_opinion = 10
+	general_opinion = -10
+	
 	same_opinion = 10
 	caste_tier = 7
 	immortal = yes
@@ -51,6 +66,9 @@ race_blood_elf = {
 	martial = 1
     learning = 2
     combat_rating = 20
+	
+    same_opinion = 10
+	general_opinion = -10	
 	
 	same_opinion = 10	
 	caste_tier = 7
@@ -79,6 +97,9 @@ race_gnome = {
     learning = 2
 	combat_rating = -25
 	
+    same_opinion = 5
+	general_opinion = -5
+	
 	caste_tier = 8
 	average_lifespan = 200
 	random = no
@@ -91,6 +112,9 @@ race_goblin = {
 	learning = 1
 	
 	combat_rating = -20
+	same_opinion = 10
+    same_opinion = 15
+	general_opinion = -15
 
 	caste_tier = 9
 	random = no
@@ -109,6 +133,8 @@ race_undead_scourge = {
     intrigue = 1
 
     combat_rating = -15
+    same_opinion = 15
+	general_opinion = -15
 	
 	immortal = yes
 	random = no
@@ -118,6 +144,8 @@ race_undead_forsaken = {
     intrigue = 1
 
     combat_rating = -15
+    same_opinion = 15
+	general_opinion = -15
 
 	immortal = yes
 	random = no
@@ -125,6 +153,12 @@ race_undead_forsaken = {
 }
 #undead_generic is here in case of non-scourge, non-forsaken undead characters. Old Horde death knights come to mind.
 race_undead_generic = {
+    intrigue = 1
+
+    combat_rating = -5
+    same_opinion = 15
+	general_opinion = -15
+
 	immortal = yes
 	random = no
 	customizer = no
@@ -134,6 +168,9 @@ race_troll_forest = {
 	stewardship = -1
 	learning = -1
 	combat_rating = 5
+	
+    same_opinion = 10
+	general_opinion = -10
 	
 	fertility = 0.1
 	caste_tier = 11
@@ -150,6 +187,8 @@ race_troll_ice = {
 	combat_rating = 5
 	
 	fertility = 0.1
+    same_opinion = 10
+	general_opinion = -10
 
 	caste_tier = 11
 	random = no
@@ -165,6 +204,8 @@ race_troll_dark = {
 	combat_rating = 5
 	
 	fertility = 0.1
+    same_opinion = 10
+	general_opinion = -10
 
 	caste_tier = 11
 	random = no
@@ -180,6 +221,8 @@ race_troll_jungle = {
 	combat_rating = 5
 	
 	fertility = 0.1
+    same_opinion = 10
+	general_opinion = -10
 
 	caste_tier = 11
 	random = no
@@ -195,6 +238,8 @@ race_troll_sand = {
 	combat_rating = 5
 	
 	fertility = 0.1
+    same_opinion = 10
+	general_opinion = -10
 
 	caste_tier = 11
 	random = no
@@ -210,6 +255,8 @@ race_troll_zandalari = {
 	combat_rating = 5
 	
 	fertility = 0.1
+    same_opinion = 10
+	general_opinion = -10
 
 	caste_tier = 11
 	immortal = yes
@@ -224,6 +271,8 @@ race_ogre = {
 	intrigue = -2
 	learning = -2
 	combat_rating = 25
+    same_opinion = 15
+	general_opinion = -15
 
 	caste_tier = 5
 	random = no
@@ -242,6 +291,8 @@ race_murloc = {
 	learning = -3
 	fertility = 1.1
     combat_rating = -20
+    same_opinion = 20
+	general_opinion = -20
 
 	caste_tier = 12
 	random = no
@@ -258,6 +309,8 @@ race_gnoll = {
 	combat_rating = 10
 	
 	fertility = 1.0
+    same_opinion = 25
+	general_opinion = -25
 
 	caste_tier = 13
 	random = no
@@ -280,6 +333,9 @@ race_kobold = {
 	learning = -3
 	fertility = 0.65
 	combat_rating = -5
+	same_opinion = 5
+    same_opinion = 15
+	general_opinion = -15
 
 	caste_tier = 13
 	random = no
@@ -294,6 +350,9 @@ race_trogg = {
 	intrigue = -2
 	learning = -4
 	combat_rating = 10
+	same_opinion = 5
+    same_opinion = 20
+	general_opinion = -20
 
 	caste_tier = 13
 	immortal = yes
@@ -325,7 +384,9 @@ race_eredar = {
     intrigue = 4
     learning = 6
 	
-	combat_rating = 125
+	combat_rating = 100
+    same_opinion = 50
+	general_opinion = -50
 
 	caste_tier = 16
 	immortal = yes
@@ -341,6 +402,8 @@ race_dreadlord = {
     learning = 5
 	
 	combat_rating = 45
+    same_opinion = 25
+	general_opinion = -25
 
 	immortal = yes
 	random = no
@@ -354,7 +417,9 @@ race_succubus = {
     learning = 1
 	
 	combat_rating = 10
-
+    same_opinion = 10
+	general_opinion = -10
+	
 	immortal = yes
 	random = no
 	customizer = no
@@ -369,6 +434,8 @@ race_pit_lord = {
 	learning = 2
 	
 	combat_rating = 60
+    same_opinion = 20
+	general_opinion = -20
 
 	immortal = yes
 	random = no
@@ -384,6 +451,8 @@ race_doomlord = {
     learning = 1
 	
 	combat_rating = 50
+    same_opinion = 20
+	general_opinion = -20
 
 	immortal = yes
 	random = no
@@ -399,6 +468,8 @@ race_fel_lord = {
 	learning = -1
 	
 	combat_rating = 35
+    same_opinion = 20
+	general_opinion = -20
 
 	immortal = yes
 	random = no
@@ -413,6 +484,8 @@ race_shivarra = {
 	learning = 1
 	
 	combat_rating = 30
+    same_opinion = 20
+	general_opinion = -20
 
 	immortal = yes
 	random = no
@@ -427,6 +500,8 @@ race_antaen = {
 	learning = -2
 	
 	combat_rating = 45
+    same_opinion = 20
+	general_opinion = -20
 
 	immortal = yes
 	random = no
@@ -439,6 +514,8 @@ race_aranasi = {
     intrigue = 1
 	
 	combat_rating = 10
+    same_opinion = 20
+	general_opinion = -20
 	
 	fertility = 1.0
 
@@ -454,6 +531,8 @@ race_inquisitor = {
 	learning = 3
 	
 	combat_rating = 5
+    same_opinion = 20
+	general_opinion = -20
 
 	immortal = yes
 	random = no
@@ -468,6 +547,8 @@ race_mo_arg = {
 	learning = 3
 	
 	combat_rating = 45
+    same_opinion = 20
+	general_opinion = -20
 
 	immortal = yes
 	random = no
@@ -482,6 +563,8 @@ race_observer = {
 	learning = 3
 	
 	combat_rating = 40
+    same_opinion = 20
+	general_opinion = -20
 
 	immortal = yes
 	random = no
@@ -496,6 +579,8 @@ race_draenei = {
 	combat_rating = 15
 	
 	fertility = -0.1
+    same_opinion = 10
+	general_opinion = -5
 
 	caste_tier = 16
 	immortal = yes
@@ -510,6 +595,8 @@ race_broken = {
 	combat_rating = 7
 	
 	fertility = -0.1
+    same_opinion = 10
+	general_opinion = -10
 
 	caste_tier = 16
 	immortal = yes
@@ -523,6 +610,8 @@ race_lost_one = {
 	learning = -1
 	
 	fertility = 0.05
+    same_opinion = 15
+	general_opinion = -15
 
 	caste_tier = 16
 	immortal = yes
@@ -538,6 +627,8 @@ race_voidwalker = {
 	learning = -3
 	
 	combat_rating = 20
+    same_opinion = 15
+	general_opinion = -15
 
 	immortal = yes
 	random = no
@@ -551,6 +642,8 @@ race_pale_orc = {
     intrigue = 1
 	
 	combat_rating = -20
+    same_opinion = 10
+	general_opinion = -10
 
 	caste_tier = 5
 	random = no
@@ -563,6 +656,8 @@ race_air_elemental = {
 	learning = -1
 	
 	combat_rating = 10
+    same_opinion = 10
+	general_opinion = -10
 
 	immortal = yes
 	random = no
@@ -576,6 +671,8 @@ race_fire_elemental = {
 	learning = -1
 	
 	combat_rating = 10
+    same_opinion = 10
+	general_opinion = -10
 
 	immortal = yes
 	random = no
@@ -589,6 +686,8 @@ race_firelord = {
     intrigue = 1
 	
 	combat_rating = 25
+    same_opinion = 15
+	general_opinion = -15
 
 	hidden = yes
 	random = no
@@ -600,6 +699,8 @@ race_flamewalker = {
 	martial = 1
 	
 	combat_rating = 15
+    same_opinion = 10
+	general_opinion = -10
 
 	hidden = yes
 	random = no
@@ -610,6 +711,8 @@ race_earth_elemental = {
 	learning = -1
 	
 	combat_rating = 10
+    same_opinion = 10
+	general_opinion = -10
 
 	immortal = yes
 	random = no
@@ -621,6 +724,8 @@ race_water_elemental = {
 	learning = -1
 	
 	combat_rating = 10
+    same_opinion = 10
+	general_opinion = -10
 
 	immortal = yes
 	random = no
@@ -633,6 +738,9 @@ race_half_elf = { # human/elf
     martial = 1
     learning = 1
     combat_rating = 10
+	
+    same_opinion = 15
+	general_opinion = -10
 	
 	fertility = -0.30
 	caste_tier = 4
@@ -649,6 +757,8 @@ race_half_ogre = { # orc/ogre
 	combat_rating = 20
 	
 	fertility = 0.05
+    same_opinion = 15
+	general_opinion = -10
 
 	caste_tier = 5
 	immortal = yes
@@ -662,6 +772,8 @@ race_half_draenei = { # orc/draenei
 	combat_rating = 15
 	
 	fertility = 0.05
+    same_opinion = 15
+	general_opinion = -10
 
 	caste_tier = 16
 	immortal = yes
@@ -676,6 +788,8 @@ race_vrykul = {
     intrigue = 1
 	
 	combat_rating = 25
+    same_opinion = 10
+	general_opinion = -10
 	
 	fertility = -0.05
 
@@ -691,6 +805,8 @@ race_tauren = {
 	intrigue = -1
 	fertility = -0.1
 	combat_rating = 20
+    same_opinion = 15
+	general_opinion = -5
 
 	caste_tier = 17
 	random = no
@@ -701,6 +817,8 @@ race_worgen = {
 	diplomacy = -2
 	martial = 1
 	combat_rating = 20
+    same_opinion = 15
+	general_opinion = -15
 
 	caste_tier = 4
 	random = no
