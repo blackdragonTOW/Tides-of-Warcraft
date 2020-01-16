@@ -180,8 +180,8 @@
 	culture = wildhammer
 	religion = shamanism
 	trait = race_dwarf
-	dna="0bgqacg00b0"
-	properties="ho000000000000m000"
+	dna="0bbbcda0000"
+	properties="lj000000000000o000"
 
 	9872.08.16 = {
 		birth = yes
@@ -696,13 +696,13 @@
 
 
 3025 = {
-	name = Burgann
+	name = Thogrun
 	dynasty = 50212 # Whitebeard
 	culture = bronzebeard
 	religion = holy_light
 	trait = race_dwarf
-	dna="0c0000df0h0"
-	properties="fh00lj00000000a000"
+	dna="0b0c000b0k0"
+	properties="d000c000000000a000"
 
 	9637.12.20 = {
 		birth = yes
@@ -720,10 +720,10 @@
 	religion = holy_light
 	trait = race_dwarf
 	father = 3025
-	dna="000a00bb0d0"
-	properties="db00e000000000o000"
+	dna="000c00dibb0"
+	properties="l000h000000000g000"
 
-	9707.02.04 = {
+	9774.7.17 = {
 		birth = yes
 	}
 	10100.06.15 = {
@@ -733,17 +733,17 @@
 	}
 }
 3027 = {
-	name = Thogrun
+	name = Senir
 	dynasty = 50212 # Whitebeard
 	culture = bronzebeard
 	religion = holy_light
 	trait = race_dwarf
 	father = 3025
-	dna="0b0c000b0k0"
-	properties="d000c000000000a000"
+	dna="0e0g00cfbb0"
+	properties="ll000000000000i000"
 	
 
-	9774.7.17 = {
+	9707.02.04 = {
 		birth = yes
 	}
 	10100.06.15 = {
@@ -758,8 +758,8 @@
 	culture = bronzebeard
 	religion = holy_light
 	trait = race_dwarf
-	dna="0e0c00c0dh0"
-	properties="0g00b"
+	dna="0b0e00bade0"
+	properties="lf00d000000000c000"
 	
 	
 
@@ -938,8 +938,8 @@
 	religion = holy_light
 	trait = race_dwarf
 	father = 3035
-	dna="0i0c000lea0"
-	properties="fc00f000000000o000"
+	dna="0c0b00c0bk0"
+	properties="0g00k000000000q000"
 
 	9736.10.13 = {
 		birth = yes
@@ -957,8 +957,9 @@
 	religion = holy_light
 	trait = race_dwarf
 	father = 3036
-	dna="000d00ccfi0"
-	properties="0f00l"
+	dna="0d0d000bbi0"
+	properties="ld00e000000000j000"
+	add_trait=skilled_tactician
 
 	9833.04.23 = {
 		birth = yes
@@ -976,8 +977,9 @@
 	religion = holy_light
 	trait = race_dwarf
 	father = 3036
-	dna="000d00b0fi0"
-	properties="0g00k"
+	dna="0g0b00begk0"
+	properties="le00d000000000j000"
+	add_trait = tough_soldier
 
 	9899.08.29 = {
 		birth = yes
@@ -1032,6 +1034,8 @@
 	culture = bronzebeard
 	religion = holy_light
 	trait = race_dwarf
+	dna="0h0d00ddha0"
+	properties="lb00e000000000o000"
 
 	9849.04.16 = {
 		birth = yes
@@ -1226,9 +1230,9 @@
 	9787.12.27 = {
 		birth = yes
 	}
-	9900.1.1={
-		effect={
-			add_friend = 70101
+	9870.5.22 = {
+		effect = {
+			add_friend = 70101 # Sicco
 		}
 	}
 	10021.3.10 = {
@@ -1995,6 +1999,141 @@
 	}
 	9963.4.7 = {
 		friend = 2048
+	}
+	10010.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3088 = {
+	name = Drundon
+	dynasty = 14601
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+	dna="0c0b00a0ck0"
+	properties="gl00lg00000000h000"
+
+	9712.01.15 = {
+		birth = yes
+	}
+	9884.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3084 = {
+	name = Bargrin
+	dynasty = 14601
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+	dna="0c0a00abhk0"
+	properties="gg00lg00000000o000"
+	father=3088
+	add_trait=lustful
+
+	9830.01.15 = {
+		birth = yes
+	}
+	10010.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3085 = {
+	name = Dashel
+	dynasty = 14601
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+	dna="0e0a00cdhk0"
+	properties="gd00fg00000000o000"
+	add_trait=lustful
+	father=3088
+
+	9824.01.15 = {
+		birth = yes
+	}
+	10010.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3086 = {
+	name = Telda
+	female=yes
+	dynasty = 14601
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+	dna="0badc0gccj0"
+	properties="0m000000000000o000"
+	father=3085
+
+	9963.01.15 = {
+		birth = yes
+	}
+	10010.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3087 = {
+	name = Grella
+	female=yes
+	dynasty = 14602
+	culture = wildhammer
+	religion = shamanism
+	trait = race_dwarf
+	dna="0000ab0cbj0"
+	properties="0l000000000000o000"
+	father=3085
+	mother=3089
+	add_trait=bastard
+	add_trait=lustful
+	add_trait=fair
+	add_trait=kind
+
+	9983.01.15 = {
+		birth = yes
+	}
+	9983.01.16 = {
+		employer = 3023
+	}
+	10010.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3089 = {
+	name = Sora
+	female=yes
+	dynasty = 14602
+	culture = wildhammer
+	religion = shamanism
+	trait = race_dwarf
+	dna="0cdga00c0i0"
+	properties="oc000000000000q000"
+	add_trait=lustful
+
+	9899.01.15 = {
+		birth = yes
+	}
+	9899.01.16 = {
+		employer = 3023
 	}
 	10010.06.08 = {
 		death = {

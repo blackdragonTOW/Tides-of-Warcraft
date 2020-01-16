@@ -53,6 +53,12 @@
 	9963.4.22 = {
 		birth = yes
 	}
+	10000.1.1={
+		create_bloodline = {
+			type = daelin
+			has_dlc = "Holy Fury"
+		}
+	}
 	10026.6.9 = {
 		death = {
 			death_reason = death_battle
@@ -222,6 +228,12 @@
 	}
 	9971.7.23 = {
 		add_spouse = 1545
+	}
+	9990.1.1={
+		create_bloodline = {
+			type = archibald
+			has_dlc = "Holy Fury"
+		}
 	}
 	9993.9.2 = {
 		death = {
@@ -412,6 +424,12 @@
 	}
 	9971.8.12 = {
 	add_spouse = 1568
+	}
+	10000.1.1={
+		create_bloodline = {
+			type = terenas
+			has_dlc = "Holy Fury"
+		}
 	}
 	10021.10.2 = {
 		death = {
@@ -693,6 +711,12 @@
 	9992.6.1 = {
 		trait = organizer
 		add_spouse = 2006
+	}
+	10000.1.1={
+		create_bloodline = {
+			type = durotan
+			has_dlc = "Holy Fury"
+		}
 	}
 	10000.6.1 = {
 		effect = {
@@ -1019,6 +1043,12 @@
 	9999.10.21 = {
 		add_spouse = 2020
 	}
+	10000.1.1={
+		create_bloodline = {
+			type = grommash
+			has_dlc = "Holy Fury"
+		}
+	}
 	100016.1.1={
 		effect={
 			add_friend = 2011 # Thrall, When he found thrall dunno the date though change the date if you'd like
@@ -1097,6 +1127,7 @@
 	9947.04.05 = {
 		birth = yes
 	}
+	
 	10017.5.6 = {
 		death = {
 			death_reason = death_natural
@@ -1254,13 +1285,19 @@
 	9961.01.04 = {
 		birth = yes
 	}
-	9981.1.1={
-		effect={
-			add_friend = 1631 #Saidan
-		}
-	}
 	9984.10.25 = {
 		add_spouse = 2029
+	}
+	9986.1.1 = {
+		effect = {
+			add_friend = 1631 # Saidan
+		}
+	}
+	10000.1.1={
+		create_bloodline = {
+			type = tirion
+			has_dlc = "Holy Fury"
+		}
 	}
 	10006.1.1={
 	trait=paladin #founding of the silverhand
@@ -1459,9 +1496,10 @@
 	9981.01.04 = {
 		birth = yes
 	}
-	10003.1.1={
-	effect = {
-			add_lover=504 #Sylvanas
+	10000.1.1 = {
+		effect = {
+			add_lover = 504 # Sylvanas
+			add_friend = 504 # Sylvanas
 		}
 	}
 	10022.3.1={
@@ -1541,6 +1579,17 @@
 	9955.01.04 = {
 		birth = yes
 	}
+	9985.1.1 = {
+		effect = {
+			add_friend = 1644 # Maxwell
+		}
+	}
+	10000.1.1={
+		create_bloodline = {
+			type = uther
+			has_dlc = "Holy Fury"
+		}
+	}
 	10006.1.1={
 		trait=paladin #founding of the silverhand
 	}
@@ -1580,6 +1629,12 @@
 	}
 	9959.1.1 = {
 		add_spouse = 2038
+	}
+	9930.01.05={
+		create_bloodline = {
+			type = ignaeus
+			has_dlc = "Holy Fury"
+		}
 	}
 	9983.08.09 = {
 		death = {
@@ -1814,12 +1869,10 @@
 	9999.1.1={
 		effect={
 			add_friend = 84 #Khadgar
-		}
-	}
-	9999.1.1={
-		effect={
 			add_friend = 2050 #Khurdan
-			##############################################################SHOULD ALSO BE FRIEND WITH TURALYON BUT I DONT HAVE IID AND ALSO BE FRIEND WITH ALLERIA WINDRUNNER
+			add_friend = 1643 #Turalyon
+			add_friend = 2071 #Alleria
+			add_friend = 84 #Khadgar
 		}
 	}
 	10100.01.04 = {
@@ -1842,6 +1895,12 @@
 
 	9636.12.26 = {
 		birth = yes
+	}
+	9780.1.1={
+		create_bloodline = {
+			type = khardros
+			has_dlc = "Holy Fury"
+		}
 	}
 	9886.07.15 = {
 		death = {
@@ -1904,8 +1963,10 @@
 	9901.05.29 = {
 		birth = yes
 	}
-	9963.4.7 = {
-		friend = 3083
+	9963.5.22 = {
+		effect = {
+			add_friend = 3083 # Molok
+		}
 	}
 	10100.05.29 = {
 		death = {
@@ -1949,6 +2010,13 @@
 	9826.10.13 = {
 		birth = yes
 	}
+	10000.1.1={
+		effect={
+			add_friend = 1643 #turalyon
+			add_friend = 2071 #Alleria
+			add_friend = 83 #Khadgar
+		}
+	}
 	10100.05.29 = {
 		death = {
 			death_reason = death_natural
@@ -1966,19 +2034,27 @@
 	dna="0i0i00bbgl0"
 	properties="sb00ec000000000000"
 	trait = race_dwarf
-	9452.12.27 = {
-		birth = yes
-	}
-	9468.12.27 = {
-	martial=11
+	martial=8
 	diplomacy=10
 	intrigue=4
 	stewardship=9
 	learning=10
-	add_trait = fortune_builder
+	add_trait = brilliant_strategist
 	add_trait = warrior
 	add_trait = just
 	add_trait = brave
+	add_trait = zealous
+	add_trait = diligent
+	
+	
+	9452.12.27 = {
+		birth = yes
+	}
+	9765.1.1={
+		create_bloodline = {
+			type = madoran
+			has_dlc = "Holy Fury"
+		}
 	}
 	9804.1.1 = {
      death = { death_reason = death_natural}
@@ -2134,7 +2210,7 @@
 	add_trait = deceitful
 	add_trait = brave
 	add_trait = wroth
-	add_trait = stubborn	
+	add_trait = stubborn
 	}
 	10100.1.1 = {
      death = { death_reason = death_natural}
@@ -2192,6 +2268,12 @@
 
 	9406.01.22 = {
 		birth = yes
+	}
+	9765.1.1={
+		create_bloodline = {
+			type = modimus
+			has_dlc = "Holy Fury"
+		}
 	}
 	9770.11.16 = {
 		death = {
@@ -2255,10 +2337,6 @@
 	properties="0e00f"
 	trait = race_dwarf
 	father = 2052
-	9854.12.27 = {
-		birth = yes
-	}
-	9900.12.27 = {
 	martial=8
 	diplomacy=3
 	intrigue=4
@@ -2270,7 +2348,9 @@
 	add_trait = brave
 	add_trait = honest
 	add_trait = stubborn
-	}
+	9854.12.27 = {
+		birth = yes
+	}	
 	10100.1.1 = {
      death = { death_reason = death_natural}
 	 
@@ -2279,19 +2359,39 @@
 # Thaurissan Clan
 
 2055 = {
-	name = Sognar
+	name = Thaurissan
 	dynasty = 13003 # Thaurissan
 	culture = dark_iron
 	religion = arcane
 	trait = race_dwarf
+	dna="000e000ld00"
+	properties="eg00fd00000000e000"
+	martial=10
+	diplomacy=12
+	intrigue=11
+	stewardship=5
+	learning=4
+	add_trait=mastermind_theologian
+	add_trait=mage
+	add_trait=envious
+	add_trait=proud 
+	add_trait=wroth 
+	add_trait=stubborn 
+	add_trait=ambitious
 
 	9480.08.08 = {
 		birth = yes
 	}
+	9765.1.1={
+		create_bloodline = {
+			type = thaurissan
+			has_dlc = "Holy Fury"
+		}
+	}
 	9546.08.08 = {
 		add_spouse = 2056
 	}
-	9772.2.5 = {
+	9773.2.5 = {
 		death = {
 			death_reason = death_natural
 		}
@@ -2302,12 +2402,23 @@
 	female = yes
 	culture = dark_iron
 	religion = arcane
-	trait = race_dwarf
+	trait = race_dwar
+	dna="00iac0b0a00"
+	properties="li000000000000d000"
+	martial=10
+	diplomacy=10
+	intrigue=13
+	stewardship=6
+	learning=3
+	add_trait=mastermind_theologian
+	add_trait=mage
+	add_trait=cruel
+	add_trait=wroth
 
 	9478.12.20 = {
 		birth = yes
 	}
-	9772.1.5 = {
+	9772.6.5 = {
 		death = {
 			death_reason = death_natural
 		}
@@ -2317,8 +2428,10 @@
 	name = Malfuhr
 	dynasty = 13003 # Thaurissan
 	culture = dark_iron
-	religion = arcane
+	religion = pyromancy
 	trait = race_dwarf
+	dna="0h0d000ld00"
+	properties="ei000d00000000e000"
 	father = 2055
 	mother = 2056
 
@@ -2335,8 +2448,10 @@
 	name = Khogrond
 	dynasty = 13003 # Thaurissan
 	culture = dark_iron
-	religion = arcane
+	religion = pyromancy
 	trait = race_dwarf
+	dna="0g0b000ld00"
+	properties="ed00gd00000000d000"
 	father = 2057
 
 	9834.12.09 = {
@@ -2357,6 +2472,18 @@
 	father = 2058
 	dna="0g0c0000d00"
 	properties="0g00fc"
+	martial=12
+	diplomacy=10
+	intrigue=13
+	stewardship=6
+	learning=3
+	add_trait=scholarly_theologian 
+	add_trait=greedy 
+	add_trait=stubborn 
+	add_trait=proud 
+	add_trait=arbitrary 
+	add_trait=deceitful
+	add_trait=trusting
 
 	9942.09.07 = {
 		birth = yes
@@ -2385,6 +2512,12 @@
 
 	1.1.1 = {
 		birth = yes
+	}
+	5000.1.1={
+		create_bloodline = {
+			type = dath'remar
+			has_dlc = "Holy Fury"
+		}
 	}
 	5012.2.14 = {
 		death = {
@@ -2743,6 +2876,12 @@
 	8633.7.10 = {
 		birth = yes
 	}
+	10000.1.1={
+		effect={
+			add_friend = 1643 #turalyon
+			add_friend = 83 #Khadgar
+		}
+	}
 	10100.9.23 = {
 		death = {
 			death_reason = death_natural
@@ -2881,6 +3020,12 @@
 	9925.10.28 = {
 		add_spouse = 166 # Varia
 	}
+	9950.1.1={
+		create_bloodline = {
+			type = barathen
+			has_dlc = "Holy Fury"
+		}
+	}
 	9982.8.24 = {
 		death = {
 			death_reason = death_battle
@@ -2924,7 +3069,11 @@
 		add_trait = skilled_tactician
 		add_trait = warrior
 		add_trait = brave
-		add_friend = 172 # Anduin
+	}
+	9977.1.1={
+		effect={
+			add_friend = 172 #Anduin
+		}
 	}
 	9982.9.15 = {
 		add_spouse = 168 # Taria
@@ -3060,7 +3209,6 @@
 	disallow_random_traits = yes
 	9949.5.19 = {
 		birth = yes
-		add_to_bloodline = arathi_blood
 		employer = 165 # Barathen
 	}
 	9965.5.19 = {
@@ -3081,6 +3229,12 @@
 	9982.8.24 = {
 		employer = 164 # Llane
 		give_job_title = job_marshal
+	}
+	10000.1.1={
+		create_bloodline = {
+			type = arathi blood
+			has_dlc = "Holy Fury"
+		}
 	}
 	10003.7.5 = {
 		give_nickname = nick_the_lion_of_azeroth
@@ -3357,6 +3511,12 @@
 			}
 		}
 	}
+	10000.1.1={
+		create_bloodline = {
+			type = blackhand
+			has_dlc = "Holy Fury"
+		}
+	}
 	10003.9.4 = {
 		effect = {
 			disband_event_forces = wc1_horde
@@ -3592,6 +3752,12 @@
 				reinforces = no
 				earmark = wc1_horde
 			}
+		}
+	}
+	10000.1.1={
+		create_bloodline = {
+			type = kilrogg
+			has_dlc = "Holy Fury"
 		}
 	}
 	10001.6.19 = {
