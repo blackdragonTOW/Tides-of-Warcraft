@@ -7465,7 +7465,7 @@ e_dun_morogh = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 228 province_id = 229 province_id = 231 } }
+					any_demesne_province = { OR = { province_id = 228 province_id = 231 } }
 				}
 			}
 			
@@ -7487,9 +7487,43 @@ e_dun_morogh = {
 				}
 				b_toxic_airfield = {
 				}
+			}			
+			
+			c_iceflow = { # 231
+				color = { 102 213 51 }
+				color2 = { 255 255 255 }
+				
+				b_brewnall = {
+				}
+				b_crushcogs_arsenal = {
+				}
+				b_lightbush = {
+				}
+				b_bluemoor = {
+				}
+				b_ironwinter = {
+				}
+				b_westhall = {
+				}
+				b_auldmist = {
+				}
+			}
+		}
+		
+		d_frostmane = {
+			color = { 165 167 255 }
+			color2 = { 255 255 255 }
+			culture = frostmane
+			capital = 229 # Frostmane_Hold
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 229 province_id = 433 } }
+				}
 			}
 			
-			c_frostmane_hold = { # 229
+		    c_frostmane_hold = { # 229
 				color = { 76 116 106 }
 				color2 = { 255 255 255 }
 				
@@ -7510,23 +7544,23 @@ e_dun_morogh = {
 				}
 			}
 			
-			c_iceflow = { # 231
-				color = { 102 213 51 }
+			c_newmans_landing = { # 433
+				color = { 68 167 82 }
 				color2 = { 255 255 255 }
 				
-				b_brewnall = {
+				b_newmans_landing = {
 				}
-				b_crushcogs_arsenal = {
+				b_steamside = {
 				}
-				b_lightbush = {
+				b_lastland = {
 				}
-				b_bluemoor = {
+				b_saltwall = {
 				}
-				b_ironwinter = {
+				b_tradestorm = {
 				}
-				b_westhall = {
+				b_farport = {
 				}
-				b_auldmist = {
+				b_houndcrest = {
 				}
 			}
 		}
@@ -7934,12 +7968,12 @@ e_dun_morogh = {
 			color = { 49 141 200 }
 			color2 = { 255 255 255 }
 			culture = murloc
-			capital = 433 # Newman's Landing
+			capital = 432 # Khaz'Coast
 			
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 432 province_id = 433 } }
+					any_demesne_province = { OR = { province_id = 432 } }
 				}
 			}
 			
@@ -7961,27 +7995,7 @@ e_dun_morogh = {
 				}
 				b_rimeharbor = {
 				}
-			}
-			
-			c_newmans_landing = { # 433
-				color = { 68 167 82 }
-				color2 = { 255 255 255 }
-				
-				b_newmans_landing = {
-				}
-				b_steamside = {
-				}
-				b_lastland = {
-				}
-				b_saltwall = {
-				}
-				b_tradestorm = {
-				}
-				b_farport = {
-				}
-				b_houndcrest = {
-				}
-			}
+			}			
 		}
 		
 		d_gate_pass = {
