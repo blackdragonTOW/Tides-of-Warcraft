@@ -92,7 +92,6 @@ kobold = {
     levy_reinforce_rate = 0.45	
 	}
 }
-
 trogg = {
 	    modifier = trogg_modifier
 		character_modifier = {
@@ -111,7 +110,7 @@ trogg = {
     heavy_infantry_offensive = 0.4
     heavy_infantry_defensive = 0.25
 	land_morale = -0.05
-	levy_size = 0.2
+	levy_size = 0.4
 	land_organisation = 0.1
     levy_reinforce_rate = 0.2	
 	}
@@ -284,7 +283,7 @@ high_elven = {
     light_infantry_defensive = 0.55
     heavy_infantry_offensive = 0.53
     heavy_infantry_defensive = 0.55
-	levy_size = -0.25
+	levy_size = -0.3
 	land_organisation = 0.3
 	land_morale = 0.35
 	levy_reinforce_rate = -0.25
@@ -424,7 +423,6 @@ shadowmoon = {
 	horse_archers_offensive = -0.2
     horse_archers_defensive = -0.2
     levy_reinforce_rate = -0.05
-	#best at spiritual stuff
 	}
 }
 
@@ -499,29 +497,6 @@ burning_blade = {
 	}
 }
 
-## stormreaver_modifier = {  ###DOES NOT EXIST IN FILES
-		##modifier = stormreaver_modifier
-		##character_modifier = {
-	##light_infantry_offensive = 0.45
-   ## light_infantry_defensive = 0.45 
-	##heavy_infantry_offensive = 0.45
-   ## heavy_infantry_defensive = 0.45
-	##pikemen_defensive = 0.4
-	##pikemen_offensive = 0.4
-##	light_cavalry_offensive = 0.25
-  ##  light_cavalry_defensive = 0.25
-  ##  knights_offensive = 0.25
-  ##  knights_defensive = 0.25
-	##archers_offensive = 0.2
-	##archers_defensive = 0.2
-	##horse_archers_offensive = -0.2 
-   ## horse_archers_defensive = -0.2
-	##land_morale = 0.1
-	##land_organisation = 0.1
-   ## levy_reinforce_rate = -0.05	
-	##}
-##}
-
 thunderlord = {
 		modifier = thunderlord_modifier
 		character_modifier = {
@@ -545,7 +520,7 @@ thunderlord = {
 	}
 }
 
-bonechewer = { # KEEP GOING
+bonechewer = { 
 		modifier = bonechewer_modifier_modifier
 		character_modifier = {
 	light_infantry_offensive = 0.5
@@ -862,7 +837,7 @@ scourge = {
     heavy_infantry_defensive = -0.2
 	pikemen_defensive = - 0.7
 	pikemen_offensive = - 0.7
-	light_cavalry_offensive = 0.25  #should not be any undead cavalry in lordaeron, only in nuthrend(giant spider)
+	light_cavalry_offensive = 0.25 
     light_cavalry_defensive = 0.25
     knights_offensive = 0.25
     knights_defensive = 0.25
@@ -886,7 +861,7 @@ forsaken = {
     heavy_infantry_defensive = -0.1
 	pikemen_defensive = - 0.6
 	pikemen_offensive = - 0.6
-	light_cavalry_offensive = -0.6  #should not be any undead cavalry in lordaeron, only in nuthrend(giant spider)
+	light_cavalry_offensive = -0.6 
     light_cavalry_defensive = -0.6
     knights_offensive = -0.6
     knights_defensive = -0.6
