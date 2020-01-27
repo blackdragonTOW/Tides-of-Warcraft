@@ -723,7 +723,7 @@
 	dna="000c00dibb0"
 	properties="l000h000000000g000"
 
-	9774.7.17 = {
+	9707.02.04 = {
 		birth = yes
 	}
 	10100.06.15 = {
@@ -743,7 +743,7 @@
 	properties="ll000000000000i000"
 	
 
-	9707.02.04 = {
+	9774.7.17 = {
 		birth = yes
 	}
 	10100.06.15 = {
@@ -1123,10 +1123,13 @@
 	add_trait = kind
 	add_trait = gluttonous
 	}
-	10015.4.15={
+	10000.1.1={
 		effect={
 			add_friend = 70006
 		}
+	}
+	10000.1.2 = {
+	    employer = 70005
 	}
 	10022.1.1 = {
 		death = {
@@ -2040,6 +2043,9 @@
 	9830.01.15 = {
 		birth = yes
 	}
+	9998.1.5 = {
+	employer = 70005
+	}
 	10010.06.08 = {
 		death = {
 			death_reason = death_battle
@@ -2056,10 +2062,14 @@
 	dna="0e0a00cdhk0"
 	properties="gd00fg00000000o000"
 	add_trait=lustful
+	add_trait=underhanded_rogue
 	father=3088
 
 	9824.01.15 = {
 		birth = yes
+	}  
+	9998.1.5 = {
+	employer = 167
 	}
 	10010.06.08 = {
 		death = {
@@ -2134,6 +2144,62 @@
 	}
 	9899.01.16 = {
 		employer = 3023
+	}
+	10010.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3090 = {
+	name = Hemet
+	dynasty = 14603
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+	dna="0c0d00c0aj0"
+	properties="xg00kb00000000b000"
+	martial=5
+	diplomacy=5
+	intrigue=6
+	stewardship=3
+	learning=13
+	add_trait=brilliant_strategist
+	add_trait=hunter
+	add_trait=greedy 
+	add_trait=brave 
+	add_trait=wroth 
+	add_trait=diligent
+	add_trait=cynical
+	add_trait=ambitious
+
+	9803.01.15 = {
+		birth = yes
+	}
+	10010.06.08 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+3091 = {
+	name = Hemet
+	dynasty = 14603
+	culture = bronzebeard
+	religion = holy_light
+	trait = race_dwarf
+	dna="0a0b00hbai0"
+	properties="xb00kb00000000b000"
+	father=3090
+	add_trait=hunter
+	add_trait=ambitious
+	add_trait=diligent
+	add_trait=brave
+
+	9871.04.19 = {
+		birth = yes
 	}
 	10010.06.08 = {
 		death = {
