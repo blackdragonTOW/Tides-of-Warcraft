@@ -382,12 +382,34 @@
 		}
 	}
 }
+1779 = {
+	name = Jaylon
+	dynasty = 3153 # Armstead
+	dna="0accd0bbdc0"
+	properties="fj000000000000i0000"
+	culture = gilnean
+	religion = holy_light
+	trait = race_human
+
+	9971.12.3 = {
+		birth = yes
+	}
+	10077.7.11 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
 1525 = {
-	name = "Gwen Armstead"
+	name = Gwen
+	dynasty = 3153 # Armstead
+	dna="0accd0bbdc0"
+	properties="fj000000000000i0000"
 	female = yes
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
+	father=1779
 
 	9997.12.3 = {
 		birth = yes
@@ -416,8 +438,8 @@
 		}
 	}
 }
-1527 = {
-	name = Vanessa
+1529 = {
+	name = Elizabeth
 	female = yes
 	dynasty = 50111 # Crowley
 	culture = gilnean
@@ -427,7 +449,7 @@
 	dna="0b0bcgc0ea0"
 	properties="0j00b0000000000000"
 
-	9995.2.14 = {
+	9986.2.14 = {
 		birth = yes
 	}
 	10100.7.11 = {
@@ -441,20 +463,19 @@
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
+	dna="0b0cck00de0"
+	properties="ff00g000000000i0000"
 
-	9966.2.14 = {
+	9951.2.14 = {
 		birth = yes
 	}
-	9982.3.22 = {
-		add_matrilineal_spouse = 1528
-	}
-	10013.7.11 = {
+	9999.7.11 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
-1529 = {
+1527 = {
 	name = Darius
 	dynasty = 50111 # Crowley
 	culture = gilnean
@@ -462,14 +483,13 @@
 	trait = race_human
 	dna="0b0bcgc0ea0"
 	properties="0j00b0000000000000"
-	mother = 1527
 	father = 1528
 	trait=skilled_tactician
 	trait=warrior
 	trait=gregarious
 	trait=wroth
 
-	9996.12.3 = {
+	9978.12.3 = {
 		birth = yes
 	}
 	10017.12.3 = {
@@ -482,7 +502,7 @@
 	}
 }
 1530 = {
-name = Morticia
+    name = Morticia
 	dna="000haj00d00"
 	properties="tj00b000000000o000"
 	dynasty = 50111 # Crowley
@@ -493,7 +513,7 @@ name = Morticia
 	trait=skilled_tactician
 	father=1528
 
-	9993.12.3 = {
+	9984.12.3 = {
 		birth = yes
 	}
 	10030.7.11 = {
@@ -509,9 +529,9 @@ name = Morticia
 	culture = gilnean
 	religion = holy_light
 	trait = race_human
-	father = 1529
+	father = 1527
 
-	10003.12.3 = {
+	10000.1.1 = {
 		birth = yes
 	}
 	10030.7.11 = {
@@ -952,14 +972,15 @@ name = Morticia
 }
 1571 = {
 	name = Aedelyn
+	dna="000b0jb0a00"
+	properties="0e00f000000000r0000"
 	dynasty = 50127 # Blackmoore
 	culture = hillsbradan
 	religion = holy_light
 	trait = race_human
 	trait=tough_soldier
 	trait=greedy
-	trait=arbitrary
-	
+	trait=arbitrary	
 	
 	9930.1.3 = {
 		birth = yes
@@ -985,8 +1006,8 @@ name = Morticia
 	trait=wroth
 	trait=cruel
 	trait=scarred
-	dna="000acgc0a00"
-	properties="0g00a0000000000000"
+	dna="0a0k0fc0a00"
+	properties="0g00d000000000r0000"
 	
 	9981.9.20 = {
 		birth = yes
@@ -1610,8 +1631,61 @@ name = Morticia
 	father = 1605
 	dna="000cbia0bi0"
 	properties="0g00a0000000000000"
+	martial=8
+	add_trait=skilled_tactician
+	add_trait=zealius
+	add_trait=warrior
+	add_trait=proud
+	add_trait=paranoid
 
 	9989.7.29 = {
+		birth = yes
+	}
+	10100.5.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1777 = {
+	name = Hailey
+	female=yes
+	dynasty = 50142 # Goodchilde
+	culture = lordaeronian
+	religion = holy_light
+	trait = race_human
+	father = 1605
+	dna="0a0c00c0ei0"
+	properties="0j000000000000r0000"
+	add_trait=kind
+	add_trait=just
+	add_trait=charitable
+	add_trait=temperate
+
+	9991.6.2 = {
+		birth = yes
+	}
+	10100.5.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1778 = {
+	name = Aaron
+	dynasty = 50142 # Goodchilde
+	culture = lordaeronian
+	religion = holy_light
+	trait = race_human
+	father = 1605
+	dna="0a0c0bc0bi0"
+	properties="0j00b000000000r0000"
+	add_trait=zealous
+	add_trait=humble
+	add_trait=wroth
+	add_trait=charitable
+
+	9992.12.12 = {
 		birth = yes
 	}
 	10100.5.6 = {
@@ -1628,6 +1702,9 @@ name = Morticia
 	trait = race_human
 	dna="0b0bbda0bi0"
 	properties="0a00b0000000000000"
+	add_trait=zealous
+	add_tarit=cruel
+	add_trait=scholarly_theologian
 
 	9983.5.21 = {
 		birth = yes
@@ -1647,9 +1724,8 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	father = 1605
 
-	9984.07.29 = {
+	9982.07.29 = {
 		birth = yes
 	}
 	10020.5.6 = {
@@ -1806,16 +1882,79 @@ name = Morticia
 	}
 }
 1617 = {
+	name = Farthing
+	dynasty = 50148 # Farthing
+	culture = lordaeronian
+	religion = holy_light
+	trait = race_human
+	dna="000bac00e00"
+	properties="0000d00000000000000"
+	trait=scholarly_theologian
+	trait=cruel
+	trait=greedy
+	trait=proud
+
+	9967.4.17 = {
+		birth = yes
+	}
+	10020.5.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1782 = {
+	name = Vernell
+	dynasty = 50148 # Farthing
+	culture = lordaeronian
+	religion = holy_light
+	trait = race_human
+	dna="0c0dcd000i0"
+	properties="rb00e000000000g0000"
+	trait=martial_cleric
+
+
+	9970.4.17 = {
+		birth = yes
+	}
+	10020.5.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1783 = {
+	name = Coleman
+	dynasty = 50148 # Farthing
+	culture = lordaeronian
+	religion = holy_light
+	trait = race_human
+	dna="0c0ebd00ck0"
+	properties="rm00b000000000g0000"
+	father=1782
+
+
+	9996.4.17 = {
+		birth = yes
+	}
+	10020.5.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+1781 = {
 	name = Yvette
 	dynasty = 50148 # Farthing
 	female = yes
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	dna="00000000c00"
-	properties="0l0000000000000000"
+	dna="0c0dcd00bj0"
+	properties="rb00e000000000g0000"
+	father=1782
 
-	9977.4.17 = {
+	9995.4.17 = {
 		birth = yes
 	}
 	10020.5.6 = {
@@ -2071,8 +2210,8 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	dna="0b0baa00bg0"
-	properties="0g00d0000000000000"
+	dna="0b0cb0b0bk0"
+	properties="vg00a000000000c0000"
 	martial=9
 	diplomacy=8
 	intrigue=4
@@ -2271,6 +2410,8 @@ name = Morticia
 	properties="0b00c0000000000000"
 	trait=skilled_tactician
 	trait=cruel
+	trait=zealous
+	trait=brave
 
 	9969.04.01 = {
 		birth = yes
@@ -2290,6 +2431,8 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
+	trait = zealous
+	trait = arbitrary
 
 	9970.9.14 = {
 		birth = yes
@@ -2315,6 +2458,7 @@ name = Morticia
 	trait=zealous
 	trait=stubborn
 	trait=cruel
+	trait=brave
 
 	9988.06.28 = {
 		birth = yes
@@ -2360,8 +2504,13 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	dna="0a0ccca0bc0"
-	properties="0b00e0000000000000"
+	dna="0a0dafa0bi0"
+	properties="kb00e000000000c0000"
+	add_trait=skilled_tactician
+	add_trait=warrior
+	add_trait=brave
+	add_trait=robust
+	add_trait=kind
 
 	9972.01.08 = {
 		birth = yes
@@ -2563,31 +2712,17 @@ name = Morticia
 		}
 	}
 }
-1653 = {
-	name = William
-	dynasty = 50123 # Redpath
-	culture = lordaeronian
-	religion = holy_light
-	trait = race_human
-	
-	9931.10.26 = {
-		birth = yes
-	}
-	9985.08.08 = {
-		death = {
-			death_reason = death_battle
-		}
-	}
-}
 1655 = {
 	name = Anthion
+	dna="0a0c00b0bi0"
+	properties="ub00h000000000r0000"
 	dynasty = 50123 # Redpath
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	father = 1654
+	father = 1662
 	
-	9956.02.27 = {
+	9958.02.27 = {
 		birth = yes
 	}
 	9992.11.2 = {
@@ -2602,9 +2737,9 @@ name = Morticia
 	culture = lordaeronian
 	religion = holy_light
 	trait = race_human
-	father = 1654
+	father = 1662
 	
-	9959.7.11 = {
+	9956.7.11 = {
 		birth = yes
 	}
 	10009.1.23 = {
@@ -2766,7 +2901,7 @@ name = Morticia
 	religion = holy_light
 	trait = race_human
 	father = 1656
-	mother = 1655
+	mother = 1663
 	
 	9987.08.29 = {
 		birth = yes
@@ -2981,21 +3116,20 @@ name = Morticia
 		}
 	}
 }
-1677 = {
+1679 = {
 	name = Emily
 	female = yes
-	dynasty = 50173 # Leder
 	culture = stromic
 	religion = holy_light
 	trait = race_human
-	dna="000bbcc0d00"
-	properties="0e00e0000000000000"
+	dna="0c00caa0bj0"
+	properties="si00i000000000r0000"
 	
 	9973.03.09 = {
 		birth = yes
 	}
 	9990.02.23 = {
-		add_matrilineal_spouse = 1678
+		add_matrilineal_spouse = 1677
 	}
 	10001.5.6 = {
 		death = {
@@ -3003,11 +3137,14 @@ name = Morticia
 		}
 	}
 }
-1678 = {
+1677 = {
 	name = Cedrik
+	dynasty = 50173 # Leder
 	culture = stromic
 	religion = holy_light
 	trait = race_human
+	dna="0c00caa0dj0"
+	properties="si00i000000000r0000"
 	
 	9971.09.11 = {
 		birth = yes
@@ -3018,18 +3155,18 @@ name = Morticia
 		}
 	}
 }
-1679 = {
+1678 = {
 	name = Radulf
 	dynasty = 50173 # Leder
 	culture = stromic
 	religion = holy_light
 	trait = race_human
-	father = 1678
-	mother = 1677
-	dna="000bbcc0d00"
-	properties="0e00e0000000000000"
+	father = 1677
+	mother = 1679
+	dna="0c00aaa0fi0"
+	properties="sh00e000000000r0000"
 	
-	9973.03.09 = {
+	9998.03.09 = {
 		birth = yes
 	}
 	10100.5.6 = {
@@ -3056,21 +3193,20 @@ name = Morticia
 		}
 	}
 }
-1681 = {
+1682 = {
 	name = Kenata
-	dynasty = 50175 # Dabyrie
 	female = yes
 	culture = stromic
 	religion = holy_light
 	trait = race_human
-	dna="00a0a0b0an0"
-	properties="0d0000000000000000"
+	dna="0dhae0ia0k0"
+	properties="sa000000000000p0000"
 	
-	9971.09.11 = {
+	9969.09.11 = {
 		birth = yes
 	}
 	9980.02.23 = {
-		add_matrilineal_spouse = 1682
+		add_matrilineal_spouse = 1681
 	}
 	10100.5.6 = {
 		death = {
@@ -3078,13 +3214,14 @@ name = Morticia
 		}
 	}
 }
-1682 = {
-	name = Androd 
+1681 = {
+	name = Androd
+	dynasty = 50175 # Dabyrie
 	culture = stromic
 	religion = holy_light
 	trait = race_human
-	dna="0000a0b0bf0"
-	properties="0n00c0000000000000"
+	dna="000hbja0aj0"
+	properties="0q00h000000000p0000"
 	
 	9964.3.23 = {
 		birth = yes
@@ -3101,12 +3238,12 @@ name = Morticia
 	culture = stromic
 	religion = holy_light
 	trait = race_human
-	father = 1682
-	mother = 1681
-	dna="0000a0b0bf0"
-	properties="0h00a0000000000000"
+	father = 1681
+	mother = 1682
+	dna="0b0dbja0bi0"
+	properties="0b00c000000000p0000"
 	
-	9983.03.09 = {
+	9993.03.09 = {
 		birth = yes
 	}
 	10100.5.6 = {
@@ -3121,12 +3258,12 @@ name = Morticia
 	culture = stromic
 	religion = holy_light
 	trait = race_human
-	father = 1682
-	mother = 1681
-	dna="0000a0b0al0"
-	properties="0000f0000000000000"
+	father = 1681
+	mother = 1682
+	dna="0b0hcja0ai0"
+	properties="0e00f000000000p0000"
 	
-	9993.02.22 = {
+	9988.02.22 = {
 		birth = yes
 	}
 	10100.5.6 = {
@@ -3202,10 +3339,29 @@ name = Morticia
 		}
 	}
 }
-1689 = {
+1780 = {
 	name = Genavie
 	dynasty = 50177 # Callow
 	female = yes
+	culture = stromic
+	religion = holy_light
+	trait = race_human
+	father = 1688
+	dna="0000a0b0ad0"
+	properties="0b0000000000000000"
+	
+	9984.03.29 = {
+		birth = yes
+	}
+	10100.4.15 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1689 = {
+	name = Radford
+	dynasty = 50177 # Callow
 	culture = stromic
 	religion = holy_light
 	trait = race_human
@@ -3241,15 +3397,17 @@ name = Morticia
 	}
 }
 1691 = {
-	name = Sebastian
+	name = Jaime
 	dynasty = 50178 # Valorcall
 	culture = stromic
 	religion = holy_light
 	trait = race_human
 	dna="0a0cabc0ba0"
 	properties="0j00h0000000000000"
+	trait=tough_soldier
+	trait=brave
 	
-	9989.10.05 = {
+	9981.10.05 = {
 		birth = yes
 	}
 	10100.4.15 = {
