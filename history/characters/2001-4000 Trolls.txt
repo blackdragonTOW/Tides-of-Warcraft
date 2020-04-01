@@ -1,0 +1,645 @@
+#NOTE: Undead do not go here **UNLESS** they are meant to appear while still living as well
+2001 = {
+	name = Jes'rimon
+	dynasty = 19013 # Shatterspear
+	culture = shatterspear
+	religion = loa
+	trait = race_troll_jungle
+	9951.12.22 = {
+		birth = yes
+	}
+	2.10.22 = {
+		death = yes
+	}
+}
+2002 = {
+	name = "Sen'jin"
+	dynasty = 19026 # Darkspear
+	dna="lbhh0dadbhg"
+	properties="fa0000000000000000"
+	culture = darkspear
+	religion = loa
+	diplomacy = 6
+	martial = 1
+	stewardship = 4
+	intrigue = 3
+	learning = 8
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9957.8.13 = {
+		birth = yes
+	}
+	9973.8.13 = {
+		add_trait = mastermind_theologian
+		add_trait = shrewd
+		add_trait = priest
+		add_trait = kind
+		add_trait = humble
+		add_trait = temperate
+		add_trait = zealous
+	}
+	10020.2.26 = {
+		add_trait = likes_orcs
+	}
+	10020.2.28 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+2003 = {
+	name = "Vol'jin"
+	dynasty = 19026 # Darkspear
+	culture = darkspear
+	religion = loa
+	dna="gddb0adf0ag"
+	properties="rb000000000000o000"
+	diplomacy = 8
+	martial = 6
+	stewardship = 4
+	intrigue = 7
+	learning = 8
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	father = 2002 # Sen'jin Darkspear
+	9982.9.9 = {
+		birth = yes
+	}
+	9998.9.9 = {
+		add_trait = intricate_webweaver
+		add_trait = shaman
+		add_trait = shrewd
+		add_trait = temperate
+		add_trait = patient
+		add_trait = humble
+		add_trait = content
+		add_trait = just
+		add_trait = zealous
+	}
+	10020.2.26 = {
+		add_trait = likes_orcs
+		#Make thrall his friend here
+	}
+	10032.3.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+2004 = {
+	name = "Yenniku"
+	dynasty = 19026 # Darkspear
+	culture = darkspear
+	religion = loa
+	dna="adha00habdi"
+	properties="wb000000000000q000"
+	trait = race_troll_jungle
+	father = 2003 # Vol'jin Darkspear
+	10005.10.28 = {
+		birth = yes
+	}
+	10025.1.19 = {
+		effect = {
+			imprison = 2009 # Zanzil
+		}
+	}
+	10025.5.8 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+2005 = {
+	name = "Gadrin"
+	dynasty = 19027 # Eniku
+	culture = darkspear
+	religion = loa
+	dna="egdf00fbaac"
+	properties="cb0000000000000000"
+	learning = 8
+	9956.4.20 = {
+		birth = yes
+	}
+	9972.4.23 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		effect = {
+			add_friend = 2002 # Sen'jin
+		}
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+2006 = {
+	name = "Zalazane"
+	dynasty = 19028 # Yyha
+	dna="kbje0bhd0di"
+	properties="ek0000000000000000"
+	culture = darkspear
+	religion = loa
+	diplomacy = 5
+	martial = 2
+	stewardship = 3
+	intrigue = 6
+	learning = 8
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9982.11.3 = {
+		birth = yes
+	}
+	9998.11.3 = {
+		effect = {
+			add_friend = 2003 # Vol'jin
+		}
+		add_trait = priest
+		add_trait = scholarly_theologian
+		add_trait = shrewd
+		add_trait = patient
+		add_trait = proud
+		add_trait = erudite
+	}
+	10025.1.15 = {
+		religion = forgotten_shadow
+		effect = {
+			remove_trait = priest
+			remove_friend = 2003 # Vol'jin
+			add_rival = 2003 # Vol'jin
+		}
+		add_trait = necromancer
+		add_trait = cruel
+		add_trait = deceitful
+	}
+	10029.11.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2007 = {
+	name = Ron'rin
+	female = yes
+	dynasty = 19024 # Zulian
+	culture = zulian
+	religion = loa
+	trait = race_troll_jungle
+	
+	9964.08.20 = {
+		birth = yes
+	}
+	10019.10.23
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2008 = {
+	name = "Unbagwa"
+	dynasty = 19025 # Razzashi
+	culture = razzashi
+	religion = loa
+	learning = 7
+	trait = race_troll_jungle
+	
+	9983.1.28 = {
+		birth = yes
+	}
+	9999.1.28 = {
+		add_trait = martial_cleric
+		add_trait = priest
+	}
+	10015.4.22 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2009 = {
+	name = "Zanzil"
+	dynasty = 19029 # Uvago
+	dna="gdfb0a0bbdb"
+	properties="0j0000000000000000"
+	culture = gurubashi
+	religion = hakkar
+	diplomacy = 2
+	martial = 3
+	stewardship = 5
+	intrigue = 8
+	learning = 9
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9969.5.19 = {
+		birth = yes
+	}
+	9989.5.19 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = alchemist
+		add_trait = genius
+		add_trait = feeble
+		add_trait = envious
+		add_trait = proud
+		add_trait = cruel
+		add_trait = deceitful
+	}
+	10020.7.5 = {
+		give_nickname = nick_the_outcast
+	}
+	#Set him as the court priest of Jin'do the Godbreaker shortly before death
+	10028.7.24 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2010 = {
+	name = Jer'nail
+	dynasty = 19030 # Skullsplitter
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	father = 2643
+	dna="badb0abcbfe"
+	properties="0c0000000000000000"
+	
+	9966.07.17 = {
+		birth = yes
+	}
+	10017.3.22 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2011 = {
+	name = "Ana'thek"
+	dynasty = 19014 # Skullsplitter
+	culture = skullsplitter
+	religion = hakkar
+	dna="badb0abcbfe"
+	properties="0a0000000000000000"
+	trait = race_troll_jungle
+	father = 2010
+	
+	9990.12.7 = {
+		birth = yes
+	}
+	10010.5.10 = {
+		give_nickname = nick_the_cruel
+	}
+	10028.5.23 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2012 = {
+	name = Jishir
+	dynasty = 22518 # Barraki
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	
+	9965.07.06 = {
+		birth = yes
+	}
+	10015.10.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2013 = {
+	name = "Jok'non"
+	dynasty = 19012 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="kfih0cdjach"
+	properties="fe0000000000000000"
+	trait = race_troll_jungle
+	9942.7.9 = {
+		birth = yes
+	}
+	9988.3.15 = {
+		death = {
+			death_reason = death_duel
+			#killer = # Medivh
+		}
+	}
+}
+2014 = {
+	name = "Zan'non"
+	dynasty = 19012 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="hc000cbj000"
+	properties="0h0000000000000000"
+	trait = race_troll_jungle
+	father = 2013
+	9968.3.27 = {
+		birth = yes
+	}
+	9988.8.24 = {
+		death = {
+			death_reason = death_battle
+			#killer = # Medivh
+		}
+	}
+}
+2015 = {
+	name = "Jin'do"
+	dynasty = 19012 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="idab0a0gbdd"
+	properties="mi0000000000000000"
+	diplomacy = 5
+	martial = 2
+	stewardship = 4
+	intrigue = 4
+	learning = 7
+	trait = race_troll_jungle
+	disallow_random_traits = yes
+	9989.8.18 = {
+		birth = yes
+	}
+	10005.8.18 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = feeble
+		add_trait = proud
+		add_trait = ambitious
+		add_trait = cruel
+		add_trait = zealous
+		add_trait = gregarious
+	}
+	10012.4.2 = {
+		give_nickname = nick_the_hexxer
+		effect = { give_artifact = twinblades_of_the_hakkari }
+	}
+	10028.3.19 = {
+		give_nickname = nick_the_godbreaker
+		add_trait = cynical
+		religion = loa
+		effect = {
+			remove_trait = zealous
+		}
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_sacrificed
+		}
+	}
+}
+2016 = {
+	name = "Jeklik"
+	dynasty = 19030 # Atolah
+	female = yes
+	culture = zandalari
+	religion = loa
+	dna="idab0a0gbdd"
+	properties="mi0000000000000000"
+	learning = 8
+	trait = race_troll_zandalari
+	9964.2.19 = {
+		birth = yes
+	}
+	9980.2.19 = {
+		add_trait = scholarly_theologian
+		add_trait = priest
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 2015 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2017 = {
+	name = "Venoxis"
+	dynasty = 19031 # Tumbalak
+	culture = zandalari
+	religion = loa
+	dna="0cke0dkechd"
+	properties="vl0000000000000000"
+	learning = 7
+	trait = race_troll_zandalari
+	9985.1.30 = {
+		birth = yes
+	}
+	10001.1.30 = {
+		add_trait = priest
+		add_trait = martial_cleric
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 2015 # Jin'do
+	}
+	10028.3.19 = {
+		religion = loa
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2018 = {
+	name = "Mar'li"
+	dynasty = 19032 # Spinna
+	female = yes
+	culture = gurubashi
+	religion = loa
+	dna="dc0cecc0aam"
+	properties="ae0000000000000000"
+	learning = 8
+	trait = race_troll_jungle
+	9990.12.4 = {
+		birth = yes
+	}
+	10006.12.4 = {
+		add_trait = mastermind_theologian
+		add_trait = priest
+		add_trait = zealous
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 2015 # Jin'do
+	}
+	10028.3.19 = {
+		religion = loa
+	}
+	10028.7.29 = {
+		dynasty = 19012 # Gurubashi
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+2019 = {
+	name = "Mandokir"
+	dynasty = 19012 # Gurubashi
+	culture = gurubashi
+	religion = hakkar
+	dna="0f0b0bfibad"
+	properties="pc0000000000000000"
+	martial = 8
+	trait = race_troll_jungle
+	
+	9974.8.19 = {
+		birth = yes
+	}
+	10001.8.18 = {
+		add_trait = skilled_tactician
+		add_trait = berserker
+		add_trait = wroth
+		add_trait = zealous
+	}
+	10017.1.3 = {
+		employer = 2015
+	}
+	10020.5.7 = {
+		give_job_title = job_marshal
+		effect = { give_artifact = war_raptor }
+	}
+	10028.3.19 = {
+		religion = loa
+		employer = 2018
+	}
+	10028.7.29 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2020 = {
+	name = "Thekal"
+	dynasty = 19033 # Ravadu
+	culture = zandalari
+	religion = loa
+	dna="kfhi0dcaaag"
+	properties="tc0000000000000000"
+	learning = 8
+	trait = race_troll_zandalari
+	9987.6.10 = {
+		birth = yes
+	}
+	10003.6.10 = {
+		add_trait = priest
+		add_trait = scholarly_theologian
+		effect = { give_artifact = war_tiger }
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 2015 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2021 = {
+	name = "Arlokk"
+	dynasty = 19034 # Yek
+	female = yes
+	culture = zandalari
+	religion = loa
+	dna="ccd0cd0babc"
+	properties="rg0000000000000000"
+	learning = 7
+	trait = race_troll_zandalari
+	9963.10.9 = {
+		birth = yes
+	}
+	9979.10.9 = {
+		add_trait = martial_cleric
+		add_trait = priest
+	}
+	10025.1.29 = {
+		religion = hakkar
+		employer = 2015 # Jin'do
+	}
+	10025.10.9 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2022 = {
+	name = Kil'zin
+	dynasty = 19010 # Bloodscalp
+	culture = gurubashi
+	religion = hakkar
+	trait = race_troll_jungle
+	dna="afkh0cgk0bf"
+	properties="0c0000000000000000"
+	
+	9961.05.03 = {
+		birth = yes
+	}
+	10013.9.6 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2023 = {
+	name = "Gan'zulah"
+	dynasty = 19010 # Bloodscalp
+	culture = bloodscalp
+	religion = hakkar
+	dna="lall0aagbb0"
+	properties="ek0000000000000000"
+	trait = race_troll_jungle
+	father = 2022
+	
+	9988.3.30 = {
+		birth = yes
+	}
+	10026.5.18 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+2024 = {
+	name = "Nezzliok"
+	dynasty = 19035 # Ji'wok
+	culture = bloodscalp
+	religion = hakkar
+	dna="afjj0bgh0bi"
+	properties="0a0000000000000000"
+	learning = 7
+	trait = race_troll_jungle
+	
+	9969.3.22 = {
+		birth = yes
+		employer = 2022
+	}
+	9995.3.22 = {
+		add_trait = martial_cleric
+		add_trait = priest
+		give_nickname = nick_the_dire
+		give_job_title = job_spiritual
+	}
+	10013.9.6 = {
+		employer = 2023
+	}
+	10026.5.18 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}

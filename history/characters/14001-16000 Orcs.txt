@@ -1,0 +1,264 @@
+14001 = {
+	name = "Aggro'gosh"
+	dynasty = 6020 # Fireroar
+	culture = bleeding_hollow
+	religion = burning_legion
+	dna="0c0a000abaa"
+	properties="ab00i0000000000000"
+	martial = 6
+	trait = race_orc
+	trait = absent
+	9980.5.2 = {
+		birth = yes
+	}
+	9996.5.2 = {
+		add_trait = tough_soldier
+		add_trait = warrior
+	}
+	10000.1.1 = {
+		remove_trait = absent
+	}
+	10003.6.12 = {
+		religion = demonology
+	}
+	10018.4.27 = {
+		religion = shamanism
+	}
+	10100.1.1 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+14002 = {
+	name = "Kilrogg"
+	dynasty = 6003 # Deadeye
+	culture = bleeding_hollow
+	religion = burning_legion
+	dna="000d00cc0ba"
+	properties="0e0000000000000000"
+	diplomacy = 3
+	martial = 6
+	stewardship = 5
+	intrigue = 8
+	learning = 4
+	trait = race_orc
+	trait = intricate_webweaver
+	trait = rogue
+	trait = one_eyed
+	trait = duelist
+	trait = patient
+	trait = envious
+	trait = cynical
+	trait = stubborn
+	trait = fel_touched
+	trait = absent
+	disallow_random_traits = yes
+	9945.3.10 = {
+		birth = yes
+		effect = {
+			add_artifact = bite_of_the_bleeding_hollow
+		}
+	}
+	10000.6.3 = {
+		effect = {
+			c_nethergarde = {
+				ROOT = {
+					capital = PREV
+				}
+			}
+			spawn_unit = {
+				province = 376 # Nethergarde
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_infantry = { 623 623 }
+					heavy_infantry = { 488 488 }
+					pikemen = { 247 247 }
+					light_cavalry = { 289 289 }
+					knights = { 178 178 }
+					archers = { 482 482 }
+					mages = { 71 71 }
+					war_beasts = { 200 200 }
+				}
+				attrition = 1.0
+				maintenance_multiplier = 0.5
+				reinforces = no
+				earmark = wc1_horde
+			}
+		}
+	}
+	10000.1.1={
+		remove_trait = absent
+		create_bloodline = {
+			type = kilrogg
+		}
+	}
+	10001.6.19 = {
+		add_trait = kinslayer
+	}
+	10003.9.4 = {
+		religion = demonology
+		effect = {
+			disband_event_forces = wc1_horde
+		}
+	}
+	10008.9.7 = {
+		death = {
+			death_reason = death_duel
+			#killer = # Danath
+		}
+	}
+}
+14003 = {
+	name = "Nauk"
+	dynasty = 6003 # Deadeye
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	trait = absent
+	dna="000d00cc0ba"
+	properties="0g00i0000000000000"
+	father = 14002 # Kilrogg
+	9965.2.10 = {
+		birth = yes
+	}
+	10000.1.1={
+		remove_trait = absent
+	}
+	10001.8.2 = {
+		death = {
+			death_reason = death_duel
+			killer = 14002 # Kilrogg
+		}
+	}
+}
+14004 = {
+	name = "Sharn"
+	dynasty = 6003 # Deadeye
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	trait = absent
+	dna="000d00cc0ba"
+	properties="0c0000000000000000"
+	father = 14002 # Kilrogg
+	9966.11.1 = {
+		birth = yes
+	}
+	10000.1.1={
+		remove_trait = absent
+	}
+	10001.6.19 = {
+		death = {
+			death_reason = death_duel
+			killer = 14002 # Kilrogg
+		}
+	}
+}
+14005 = {
+	name = "Lognor"
+	dynasty = 6003 # Deadeye
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	trait = absent
+	dna="000d00cc0ba"
+	 properties="0j00i0000000000000"
+	father = 14002 # Kilrogg
+	9968.12.16 = {
+		birth = yes
+	}
+	10000.1.1={
+		remove_trait = absent
+	}
+	10003.1.18 = {
+		death = {
+			death_reason = death_duel
+			killer = 14002 # Kilrogg
+		}
+	}
+}
+14006 = {
+	name = "Jorin"
+	dynasty = 6003 # Deadeye
+	culture = bleeding_hollow
+	religion = shamanism
+	trait = race_orc
+	dna="000d00cc0ba"
+	properties="0e00b0000000000000"
+	father = 14002 # Kilrogg
+	9970.3.22 = {
+		birth = yes
+	}
+	10000.1.1 = {
+		death = {
+			death_reason = death_missing # Left behind on Draenor
+		}
+	}
+}
+14007 = {
+	name = "Morkuz"
+	dynasty = 6003 # Deadeye
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	trait = absent
+	father = 14004 # Sharn
+	9985.7.18 = {
+		birth = yes
+	}
+	10000.1.1={
+		remove_trait = absent
+	}
+	10002.4.9 = {
+		death = {
+			death_reason = death_duel
+			killer = 14002 # Kilrogg
+		}
+	}
+}
+14008 = {
+	name = "Zuk"
+	dynasty = 6003 # Deadeye
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	trait = absent
+	father = 14005 # Lognor
+	9985.11.3 = {
+		birth = yes
+	}
+	10000.1.1={
+		remove_trait = absent
+	}
+	10002.10.23 = {
+		death = {
+			death_reason = death_duel
+			killer = 14002 # Kilrogg
+		}
+	}
+}
+14009 = {
+	name = "Pargath"
+	dynasty = 6021 # Throatsplitter
+	culture = bleeding_hollow
+	religion = burning_legion
+	trait = race_orc
+	trait = absent
+	9985.12.1 = {
+		birth = yes
+	}
+	10000.1.1 = {
+		remove_trait = absent
+	}
+	10003.9.4 = {
+		religion = demonology
+	}
+	10018.2.25 = {
+		religion = shamanism
+	}
+	10026.5.2 = {
+		death = yes
+	}
+}

@@ -1,0 +1,23 @@
+#NOTE: This is for undead characters who are supposed to only appear as undead.
+6001 = {
+	name = "Jerias"
+	culture = forsaken
+	religion = hydromancy
+	dynasty = 18001 # Bloodvein
+	dna="000h0jb0ee0"
+	properties="ra000000000000o000"
+	trait = race_human
+	trait = race_undead_forsaken
+	trait = absent
+	9989.10.6 = {
+		birth = yes
+	}
+	10022.10.31 = {
+		remove_trait = absent
+	}
+	10025.3.12 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
