@@ -6667,7 +6667,7 @@ e_grim_batol = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 202 province_id = 203 province_id = 440 } }
+					any_demesne_province = { OR = { province_id = 202 province_id = 203 province_id = 440 province_id = 438 } }
 				}
 			}
 			
@@ -6773,8 +6773,29 @@ e_grim_batol = {
 				b_southcairn = {
 				}
 			}
+			
+			c_brightstone_valley = { # 438
+				color = { 187 85 102 }
+				color2 = { 255 255 255 }
+				
+				b_wildshield = {
+				}
+				b_mossgleam = {
+				}
+				b_muterest = {
+				}
+				b_cavegate = {
+				}
+				b_elderspire = {
+				}
+				b_gloomvalley = {
+				}
+				b_earthshear = {
+				}
+			}
 		}
 	}
+	
 	
 	k_grim_batol = {
 		color = { 28 122 24 }
@@ -7574,7 +7595,7 @@ e_dun_morogh = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 436 province_id = 438 } }
+					any_demesne_province = { OR = { province_id = 436 } }
 				}
 			}
 			
@@ -7595,26 +7616,6 @@ e_dun_morogh = {
 				b_swiftyard = {
 				}
 				b_thorngulf = {
-				}
-			}
-			
-			c_brightstone_valley = { # 438
-				color = { 187 85 102 }
-				color2 = { 255 255 255 }
-				
-				b_wildshield = {
-				}
-				b_mossgleam = {
-				}
-				b_muterest = {
-				}
-				b_cavegate = {
-				}
-				b_elderspire = {
-				}
-				b_gloomvalley = {
-				}
-				b_earthshear = {
 				}
 			}
 		}
@@ -8007,7 +8008,7 @@ e_dun_morogh = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 242 province_id = 243 } }
+					any_demesne_province = { OR = { province_id = 242 province_id = 243 province_id = 437 } }
 				}
 			}
 			
@@ -8050,20 +8051,6 @@ e_dun_morogh = {
 				b_whitereach = {
 				}
 			}
-		}
-		
-		d_chillbreach = {
-			color = { 148 111 26 }
-			color2 = { 255 255 255 }
-			culture = bronzebeard
-			capital = 437 # Everpeak
-			
-			allow = {
-				OR = {
-					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 437 province_id = 439 } }
-				}
-			}
 			
 			c_everpeak = { # 437
 				color = { 91 201 181 }
@@ -8082,6 +8069,20 @@ e_dun_morogh = {
 				b_icehill = {
 				}
 				b_steepacre = {
+				}
+			}
+		}
+		
+		d_chillbreach = {
+			color = { 148 111 26 }
+			color2 = { 255 255 255 }
+			culture = bronzebeard
+			capital = 437 # Everpeak
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 439 } }
 				}
 			}
 			
