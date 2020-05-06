@@ -438,6 +438,45 @@
 		}
 	}
 }
+
+1790 = {
+	name = Weston
+	dynasty = 5700 # Hewell
+	culture = gilnean
+	religion = holy_light
+	trait = race_human
+	dna="0a000ha0ai0"
+	properties="pj00h00000000000000"
+
+	9968.12.3 = {
+		birth = yes
+	}
+	10030.7.11 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+1791 = {
+	name = Wesley
+	dynasty = 5700 # Hewell
+	culture = gilnean
+	religion = holy_light
+	trait = race_human
+	dna="000d0ja0ai0"
+	properties="pj00e00000000000000"
+	father = 1790
+
+	9990.12.3 = {
+		birth = yes
+	}
+	10030.7.11 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
 1529 = {
 	name = Elizabeth
 	female = yes
@@ -681,9 +720,15 @@
 	trait = race_human
 	dna="0a0dcdc0ah0"
 	properties="0r00c0000000000000"
+	trait=midas_touched
 	
-	9979.2.26 = {
+	9973.2.26 = {
 		birth = yes
+	}
+	9974.1.1 = {
+		effect = {
+			add_friend = 1546 # Greymane
+		}
 	}
 	10000.1.2 = {
 		add_spouse = 1542
@@ -885,6 +930,133 @@
 	9993.2.28 = {
 		death = {
 			death_reason = death_natural
+		}
+	}
+}
+1792 = {
+	name = Hugbert      
+	dynasty = 5701 # Kavdan
+	culture = alteraci
+	religion = holy_light
+	trait = race_human
+	dna="0a0dcfa0bi0"
+	properties="0j00b00000000000000"
+	
+	trait=brave
+	trait=skilled_tactician
+	
+	9973.1.2 = {
+		birth = yes
+	}
+	10006.2.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+1797 = {
+	name = Jaymes      
+	dynasty = 5701 # Kavdan
+	culture = alteraci
+	religion = holy_light
+	trait = race_human
+	dna="0a0c0ca0bi0"
+	properties="si00f00000000000000"
+	
+	
+	9999.1.2 = {
+		birth = yes
+	}
+	10006.2.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1793 = {
+	name = Rafe      
+	dynasty = 5703 # Dreuger
+	culture = azerothian
+	religion = holy_light
+	trait = race_human
+	dna="0b0d00c00i0"
+	properties="0h00g00000000000000"
+	father=1796
+	
+	trait=honest
+	trait=chaste
+	
+	9971.1.2 = {
+		birth = yes
+	}
+	10000.1.1 = {
+		death = {
+			death_reason = death_murder
+			killer = 112 # Medivh
+		}
+	}
+}
+1795 = {
+	name = Role      
+	dynasty = 5703 # Dreuger
+	culture = azerothian
+	religion = holy_light
+	trait = race_human
+	dna="0b0db0c0ci0"
+	properties="0e00000000000000000"
+	father=1796
+	
+	trait=kind
+	trait=just
+	trait=thrifty_clerk
+	
+	9980.1.2 = {
+		birth = yes
+	}
+	10006.2.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1796 = {
+	name = Hamlet       
+	dynasty = 5703 # Dreuger
+	culture = azerothian
+	religion = holy_light
+	trait = race_human
+	dna="0a0c0ec0ei0"
+	properties="fo00b00000000000000"
+	
+	9939.1.2 = {
+		birth = yes
+	}
+	9991.2.28 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+1794 = {
+	name = Crispin
+	dynasty = 5704 # Ference
+	culture = dalaranian
+	religion = azerothian
+	trait = race_human
+	dna="000cccc0ff0"
+	properties="0i00d00000000000000"
+	
+	trait=brave
+	trait=skilled_tactician
+	
+	9975.1.2 = {
+		birth = yes
+	}
+	10000.1.1 = {
+		death = {
+			death_reason = death_murder
+			killer = 112 # Medivh
 		}
 	}
 }
@@ -4681,15 +4853,16 @@
 	dna="0bcac0bach0"
 	properties="0h"
 	
-	9977.12.10 = {
+	9950.12.10 = {
 		birth = yes
 	}
-	9995.12.10 = {
+	9973.12.10 = {
 		add_matrilineal_spouse = 1760
 	}
-	10001.2.15 = {
+	10000.1.1 = {
 		death = {
-			death_reason = death_battle
+			death_reason = death_murder
+			killer = 112 # Medivh
 		}
 	}
 }
@@ -4699,7 +4872,7 @@
 	religion = holy_light
 	trait = race_human
 	
-	9981.3.26 = {
+	9952.3.26 = {
 		birth = yes
 	}
 	10001.2.15 = {
@@ -4708,8 +4881,8 @@
 		}
 	}
 }
-1761 = {
-	name = Meriadoc
+9973 = {
+	name = John
 	dynasty = 50272 # Berrybuck
 	culture = azerothian
 	religion = holy_light
@@ -4718,9 +4891,19 @@
 	mother = 1760
 	dna="0b0aa0b0df0"
 	properties="0a00h"
+	trait=craven
+	trait=thrifty_clerk
 	
-	9996.6.30 = {
+	9975.6.30 = {
 		birth = yes
+	}
+	10001.1.1 = {
+		employer = 1763 # Ello
+	}
+	10022.9.16 = {
+		effect = {
+			secret_religion = burning_legion
+		}
 	}
 	10100.4.15 = {
 		death = {
@@ -4738,9 +4921,10 @@
 	9930.10.16 = {
 		birth = yes
 	}
-	9993.2.15 = {
+	10000.1.1 = {
 		death = {
-			death_reason = death_natural
+			death_reason = death_murder
+			killer = 112 # Medivh
 		}
 	}
 }
@@ -4755,71 +4939,100 @@
 	dna="0a0bc0c0aa0"
 	properties="0g00h"
 	
-	9967.06.07 = {
+	9966.3.18 = {
 		birth = yes
-	}
-	10001.2.15 = {
-		death = {
-			death_reason = death_battle
-		}
 	}
 }
 1763 = {
-	name = Ello
+	name = "Ello"
 	dynasty = 50273 # Ebonlocke
 	culture = azerothian
 	religion = holy_light
+	dna="0b00agc0ac0"
+	properties="cb00c0000000000000"
 	trait = race_human
-	trait = twin
-	father = 1762
-	dna="0a0bc0c0aa0"
-	properties="0g00d"
-	
-	9967.06.07 = {
+	trait=twin
+	father = 1762 # Tom
+	9966.3.17 = {
 		birth = yes
 	}
-	10100.2.15 = {
+	10022.9.16 = {
+		effect = {
+			secret_religion = burning_legion
+		}
+	}
+	10032.2.15 = {
 		death = {
 			death_reason = death_battle
 		}
 	}
 }
 1765 = {
-	name = Kanrethad
+	nname = "Kanrethad"
 	dynasty = 50273 # Ebonlocke
 	culture = azerothian
 	religion = holy_light
+	dna="0a0gb000bk0"
+	properties="be00c0000000000000"
+	diplomacy = 5
+	martial = 1
+	stewardship = 2
+	intrigue = 5
+	learning = 8
 	trait = race_human
-	father = 1764
-	dna="0a0bc0c0da0"
-	properties="0g00b"
-	
-	9985.06.16 = {
+	disallow_random_traits = yes
+	father =  1762 # Virgil
+	9995.8.23 = {
 		birth = yes
 	}
-	10100.4.15 = {
+	10011.8.23 = {
+		add_trait = mastermind_theologian
+		add_trait = erudite
+		add_trait = shrewd
+		add_trait = ambitious
+		add_trait = cynical
+		add_trait = shy
+	}
+	10022.7.13 = {
+		add_trait = warlock
+		secret_religion = demonology
+	}
+	10025.1.13 = {
+		add_trait = tow_adventurer
+	}
+	10100.1.1 = {
 		death = {
 			death_reason = death_natural
 		}
 	}
 }
 1766 = {
-	name = Althea
-	female = yes
+	name = "Althea"
 	dynasty = 50273 # Ebonlocke
 	culture = azerothian
 	religion = holy_light
+	female = yes
+	dna="0b00agc0ac0"
+	properties="cb00c0000000000000"
+	martial = 6
 	trait = race_human
-	father = 1763
-	dna="0a0bc0c0ab0"
-	properties="0g"
-	
-	9992.3.16 = {
+	father = 1763 # Ello
+	9999.4.18 = {
 		birth = yes
 	}
-	10100.4.15 = {
+	10001.4.18 = {
+		add_trait = tough_soldier
+		employer = 1763 # Ello
+		give_job_title = job_marshal
+	}
+	10022.9.16 = {
+		effect = {
+			secret_religion = burning_legion
+		}
+	}
+	10032.2.15 = {
 		death = {
-			death_reason = death_natural
+			death_reason = death_battle
 		}
 	}
 }
@@ -4851,9 +5064,10 @@
 	9979.10.06 = {
 		birth = yes
 	}
-	10001.2.15 = {
+	10000.1.1 = {
 		death = {
-			death_reason = death_natural
+			death_reason = death_murder
+			killer = 112 # Medivh
 		}
 	}
 }
