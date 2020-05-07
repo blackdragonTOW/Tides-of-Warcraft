@@ -563,10 +563,9 @@ goblin_modifier = {
     light_infantry_defensive = -0.4
     heavy_infantry_offensive = -0.45
     heavy_infantry_defensive = -0.5
-	land_morale = -0.25
+	land_morale = -0.20
 	levy_size = 0.5
-	
-	land_organisation = -0.2
+	land_organisation = -0.1
     levy_reinforce_rate = -0.1
 }
 
@@ -575,7 +574,7 @@ murloc_modifier = {
     light_cavalry_defensive = -0.25
     knights_offensive = -0.13
     knights_defensive = -0.17
-    horse_archers_offensive = -0.2
+    horse_archers_offensive = -0.2x	
     horse_archers_defensive = -0.2
     pikemen_offensive = -0.27
     pikemen_defensive = -0.27
@@ -585,9 +584,15 @@ murloc_modifier = {
     light_infantry_defensive = -0.35
     heavy_infantry_offensive = -0.18
     heavy_infantry_defensive = -0.2
-	land_morale = -0.3
-	levy_size = 0.4
-	land_organisation = -0.25
+	land_morale = -0.25
+	levy_size = 0.5
+	manpower_growth = 1.1
+	max_manpower_mult = 1.1
+	max_population = 1.0
+	max_population_mult = 0.2
+	population_growth = 0.2
+	horde_maintenence_cost = 1.0
+	land_organisation = -0.15
     levy_reinforce_rate = 0.35
 }
 
@@ -605,6 +610,12 @@ gnoll_modifier = {
     heavy_infantry_offensive = 0.45
     heavy_infantry_defensive = 0.33
 	levy_size = 0.3
+	manpower_growth = 0.85
+	max_manpower_mult = 0.85
+	max_population = 0.75
+	max_population_mult = 0.2
+	population_growth = 0.2
+	horde_maintenence_cost = 0.3
 	land_organisation = 0.1
     levy_reinforce_rate = 0.45
 }
@@ -624,9 +635,15 @@ kobold_modifier = {
     light_infantry_defensive = -0.28
     heavy_infantry_offensive = -0.27
     heavy_infantry_defensive = -0.23
-	land_morale = -0.4
-	levy_size = 0.5
-	land_organisation = -0.35
+	land_morale = -0.35
+	levy_size = 0.40
+	manpower_growth = 0.60
+	max_manpower_mult = 0.60
+	max_population = 0.50
+	max_population_mult = 0.125
+	population_growth = 0.125
+	horde_maintenence_cost = 0.45
+	land_organisation = -0.25
     levy_reinforce_rate = 0.45	
 }
 
@@ -645,8 +662,13 @@ trogg_modifier = {
     light_infantry_defensive = 0.3 
     heavy_infantry_offensive = 0.4
     heavy_infantry_defensive = 0.25
-	land_morale = -0.05
+	land_morale = -0.025
 	levy_size = 0.4
+	manpower_growth = 0.25
+	max_manpower_mult = 0.35
+	max_population = 0.05
+	population_growth = 0.05
+	horde_maintenence_cost = 0.15
 	land_organisation = 0.1
     levy_reinforce_rate = 0.2	
 }
@@ -865,7 +887,7 @@ dark_iron_modifier = {
 	archers_offensive = 0.45
 	archers_defensive = 0.4
 	levy_size = 0.05
-	land_morale = -0.1
+	land_morale = -0.05
 }
 
 warsong_modifier = {
@@ -1102,7 +1124,7 @@ twilights_hammer_modifier = {
     knights_defensive = 0.1
 	archers_offensive = 0.2
 	archers_defensive = 0.2
-	land_morale = -0.05
+	land_morale = -0.025
 	levy_size = 0.05
 }
 
@@ -1196,7 +1218,7 @@ flower_picker_modifier = {
 	archers_defensive = 0.35
 	horse_archers_offensive = -0.25
     horse_archers_defensive = -0.25
-	land_morale = -0.05
+	land_morale = -0.025
 }
 
 redwalker_modifier = {
@@ -1253,8 +1275,8 @@ gnomish_modifier = {
 	archers_defensive = - 0.7
 	horse_archers_offensive = -0.7 
     horse_archers_defensive = -0.7 
-	land_morale = -0.05
-	land_organisation = -0.05
+	land_morale = -0.025
+	land_organisation = -0.025
     levy_reinforce_rate = -0.05	
 }
 
@@ -1295,7 +1317,7 @@ forsaken_modifier = {
 	horse_archers_offensive = -6.8
     horse_archers_defensive = -6.8
 	levy_size = 5.0
-	land_morale = -0.5
+	land_morale = -0.25
 	land_organisation = -0.04
     levy_reinforce_rate = 0.05	
 }
@@ -1791,7 +1813,7 @@ boulderfist_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025
 }
 
 bloodeye_modifier = {
@@ -1807,7 +1829,7 @@ bloodeye_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 highmaul_modifier = {
@@ -1823,7 +1845,7 @@ highmaul_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 crushridge_modifier = {
@@ -1839,7 +1861,7 @@ crushridge_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 deadwind_modifier = {
@@ -1855,7 +1877,7 @@ deadwind_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025
 }
 
 dreadmaul_modifier = {
@@ -1871,7 +1893,7 @@ dreadmaul_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 dunemaul_modifier = {
@@ -1887,7 +1909,7 @@ dunemaul_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 dustbelcher_modifier = {
@@ -1903,7 +1925,7 @@ dustbelcher_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 glopgut_modifier = {
@@ -1919,7 +1941,7 @@ glopgut_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 gordunni_modifier = {
@@ -1935,7 +1957,7 @@ gordunni_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025
 }
 
 mo_grosh_modifier = {
@@ -1951,7 +1973,7 @@ mo_grosh_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 mosh_ogg_modifier = {
@@ -1967,7 +1989,7 @@ mosh_ogg_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025
 }
 
 spirestone_modifier = {
@@ -1983,7 +2005,7 @@ spirestone_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025
 }
 
 splinterfist_modifier = {
@@ -1999,7 +2021,7 @@ splinterfist_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 stonemaul_modifier = {
@@ -2015,7 +2037,7 @@ stonemaul_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 bladespire_modifier = {
@@ -2031,7 +2053,7 @@ bladespire_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 bloodmaul_modifier = {
@@ -2047,7 +2069,7 @@ bloodmaul_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025
 }
 
 warmaul_modifier = {
@@ -2063,7 +2085,7 @@ warmaul_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 torchbelcher_modifier = {
@@ -2079,7 +2101,7 @@ torchbelcher_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025
 }
 
 tonma_modifier = {
@@ -2095,7 +2117,7 @@ tonma_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 stonegullet_modifier = {
@@ -2111,7 +2133,7 @@ stonegullet_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 ogrila_modifier = {
@@ -2127,7 +2149,7 @@ ogrila_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 firegut_modifier = {
@@ -2143,7 +2165,7 @@ firegut_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 angorosh_modifier = {
@@ -2159,7 +2181,7 @@ angorosh_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 bloodfist_modifier = {
@@ -2175,7 +2197,7 @@ bloodfist_modifier = {
 	knights_defensive = 0.45
 	light_cavalry_offensive = 0.35  
     light_cavalry_defensive = 0.35
-	land_morale = -0.05	
+	land_morale = -0.025	
 }
 
 drust_modifier = {
@@ -2253,7 +2275,7 @@ lost_one_modifier = {
     knights_defensive = 0.05
 	archers_offensive = -0.25
 	archers_defensive = -0.25
-	land_morale = -0.1
+	land_morale = -0.05
 	levy_size = -0.15
 	levy_reinforce_rate = -0.15
 }
