@@ -16,12 +16,11 @@ goblin = {
     light_infantry_defensive = -0.4
     heavy_infantry_offensive = -0.45
     heavy_infantry_defensive = -0.5
-	land_morale = -0.25
+	land_morale = -0.20
 	levy_size = 0.5
-	
-	land_organisation = -0.2
+	land_organisation = -0.1
     levy_reinforce_rate = -0.1
-	}
+}
 }
 
 murloc = {
@@ -31,7 +30,7 @@ murloc = {
     light_cavalry_defensive = -0.25
     knights_offensive = -0.13
     knights_defensive = -0.17
-    horse_archers_offensive = -0.2
+    horse_archers_offensive = -0.2x	
     horse_archers_defensive = -0.2
     pikemen_offensive = -0.27
     pikemen_defensive = -0.27
@@ -41,11 +40,17 @@ murloc = {
     light_infantry_defensive = -0.35
     heavy_infantry_offensive = -0.18
     heavy_infantry_defensive = -0.2
-	land_morale = -0.3
-	levy_size = 0.4
-	land_organisation = -0.25
+	land_morale = -0.25
+	levy_size = 0.5
+	manpower_growth = 1.1
+	max_manpower_mult = 1.1
+	max_population = 1.0
+	max_population_mult = 0.2
+	population_growth = 0.2
+	horde_maintenence_cost = 1.0
+	land_organisation = -0.15
     levy_reinforce_rate = 0.35
-	}
+}
 }
 
 gnoll = {
@@ -64,6 +69,12 @@ gnoll = {
     heavy_infantry_offensive = 0.45
     heavy_infantry_defensive = 0.33
 	levy_size = 0.3
+	manpower_growth = 0.85
+	max_manpower_mult = 0.85
+	max_population = 0.75
+	max_population_mult = 0.2
+	population_growth = 0.2
+	horde_maintenence_cost = 0.3
 	land_organisation = 0.1
     levy_reinforce_rate = 0.45
 	}
@@ -86,9 +97,15 @@ kobold = {
     light_infantry_defensive = -0.28
     heavy_infantry_offensive = -0.27
     heavy_infantry_defensive = -0.23
-	land_morale = -0.4
-	levy_size = 0.5
-	land_organisation = -0.35
+	land_morale = -0.35
+	levy_size = 0.40
+	manpower_growth = 0.60
+	max_manpower_mult = 0.60
+	max_population = 0.50
+	max_population_mult = 0.125
+	population_growth = 0.125
+	horde_maintenence_cost = 0.45
+	land_organisation = -0.25
     levy_reinforce_rate = 0.45	
 	}
 }
@@ -109,10 +126,15 @@ trogg = {
     light_infantry_defensive = 0.3 
     heavy_infantry_offensive = 0.4
     heavy_infantry_defensive = 0.25
-	land_morale = -0.05
+	land_morale = -0.025
 	levy_size = 0.4
+	manpower_growth = 0.25
+	max_manpower_mult = 0.35
+	max_population = 0.05
+	population_growth = 0.05
+	horde_maintenence_cost = 0.15
 	land_organisation = 0.1
-    levy_reinforce_rate = 0.2	
+    levy_reinforce_rate = 0.2		
 	}
 }
 
