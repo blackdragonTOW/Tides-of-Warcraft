@@ -2105,7 +2105,7 @@ e_northeron = {
 				color = { 170 105 176 }
 				color2 = { 255 255 255 }
 				
-				b_bluescale_hills = {
+				b_vandermar = {
 				}
 				b_moonbright = {
 				}
@@ -2250,8 +2250,6 @@ e_northeron = {
 				forsaken = "Dalson's Tears"
 				
 				b_dalsons_tears = {
-				}
-				b_vandermar = {
 				}
 				b_felstone = {
 				}
@@ -2898,7 +2896,7 @@ e_lordaeron = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 93 province_id = 94 province_id = 106 } }
+					any_demesne_province = { OR = { province_id = 93 province_id = 94 province_id = 106 province_id = 672 } }
 				}
 			}
 			
@@ -2966,6 +2964,18 @@ e_lordaeron = {
 				b_grimwick = {
 				}
 				b_silentstar = {
+				}
+			}
+			
+			c_tallmountain = { # 672
+				color = { 88 125 32 }
+				color2 = { 255 255 255 }
+				
+				b_tallmountain = {
+				}
+				b_longsnow = {
+				}
+				b_wildearth = {
 				}
 			}
 		}
@@ -3065,7 +3075,7 @@ e_lordaeron = {
 			allow = {
 				OR = {
 					lower_tier_than = KING
-					any_demesne_province = { OR = { province_id = 110 province_id = 115 province_id = 116 } }
+					any_demesne_province = { OR = { province_id = 110 province_id = 115 province_id = 116 province_id = 673 } }
 				}
 			}
 			
@@ -3075,7 +3085,7 @@ e_lordaeron = {
 				
 				b_the_sepulcher = {
 				}
-				b_olsens_farthing = {
+				b_basinrock = {
 				}
 				b_moonhollow = {
 				}
@@ -3132,6 +3142,21 @@ e_lordaeron = {
 				b_dogmaw = {
 				}
 				b_lastdale = {
+				}
+			}
+			
+			c_olsens_farthing = { # 673
+				color = { 66 32 125 }
+				color2 = { 255 255 255 }
+				
+				scourge = "Decreipt Fields"
+				forsaken = "Decreipt Fields"
+				
+				b_olsens_farthing = {
+				}
+				b_white_chapel = {
+				}
+				b_windford = {
 				}
 			}
 		}
@@ -4348,8 +4373,6 @@ e_arathor = {
 				
 				b_fenris_keep = {
 				}
-				b_fenris = {
-				}
 				b_dawning_islands = {
 				}
 				b_cross_island = {
@@ -4965,8 +4988,6 @@ e_arathor = {
 				
 				b_marchford = {
 				}
-				b_juroon = {
-				}
 				b_dracfield = {
 				}
 				b_lormark = {
@@ -5002,7 +5023,7 @@ e_arathor = {
 				
 				b_dun_garok = {
 				}
-				b_eaststrand = {
+				b_nethander_fields = {
 				}
 				b_wallstrand = {
 				}
@@ -5021,8 +5042,6 @@ e_arathor = {
 				color2 = { 255 255 255 }
 				
 				b_durnholde = {
-				}
-				b_nethander_fields = {
 				}
 				b_blackwell = {
 				}
