@@ -1,0 +1,222 @@
+ objectTypes = {
+	
+	pdxmesh = {
+		name = "orcgfx_LIGHT_INFANTRY"
+		file = "gfx/models/orc/orc.mesh"
+		
+		animation = { id = "attack"		type = "orc_attack_anim" }
+		animation = { id = "idle"		type = "orc_idle_anim" }
+		animation = { id = "move"		type = "orc_walk_anim" }
+		
+		scale = 8
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_LIGHT_INFANTRY_weapon"
+		file = "gfx/models/orc/axe_weapon.mesh"
+	    scale = 8
+
+		animation = { id = "attack"		type = "orc_attack_anim" }
+		animation = { id = "idle"		type = "orc_idle_anim" }
+		animation = { id = "move"		type = "orc_walk_anim" }
+				
+    }
+	
+	pdxmesh = {
+		name = "orcgfx_LIGHT_INFANTRY_shield"
+		file = "gfx/models/orc/orc_light_armor.mesh"
+	
+		animation = { id = "attack"		type = "orc_attack_anim" }
+		animation = { id = "idle"		type = "orc_idle_anim" }
+		animation = { id = "move"		type = "orc_walk_anim" }
+	
+		scale = 8
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_HEAVY_INFANTRY"
+		file = "gfx/models/orc/orc_heavy.mesh"
+		
+		animation = { id = "attack"		type = "orc_heavy_attack_anim" }
+		animation = { id = "idle"		type = "orc_heavy_idle_anim" }
+		animation = { id = "move"		type = "orc_heavy_walk_anim" }
+		
+		scale = 8
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_HEAVY_INFANTRY_weapon"
+		file = "gfx/models/orc/axe&shield_weapon.mesh"
+	    scale = 8
+
+		animation = { id = "attack"		type = "orc_axe&shield_attack_anim" }
+		animation = { id = "idle"		type = "orc_axe&shield_idle_anim" }
+		animation = { id = "move"		type = "orc_axe&shield_walk_anim" }	
+				
+    }
+	
+	pdxmesh = {
+		name = "orcgfx_HEAVY_INFANTRY_shield"
+		file = "gfx/models/orc/orc_heavy_armor.mesh"
+	
+		animation = { id = "attack"		type = "orc_heavy_attack_anim" }
+		animation = { id = "idle"		type = "orc_heavy_idle_anim" }
+		animation = { id = "move"		type = "orc_heavy_walk_anim" }
+	
+		scale = 8
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_PIKEMEN"
+		file = "gfx/models/orc/orc.mesh"
+		
+		animation = { id = "attack"		type = "orc_spearman_attack_anim" }
+		animation = { id = "idle"		type = "orc_spearman_idle_anim" }
+		animation = { id = "move"		type = "orc_spearman_walk_anim" }
+		
+		scale = 8
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_PIKEMEN_weapon"
+		file = "gfx/models/orc/spear_weapon.mesh"
+	    scale = 8
+
+		animation = { id = "attack"		type = "orc_spear_attack_anim" }
+		animation = { id = "idle"		type = "orc_spear_idle_anim" }
+		animation = { id = "move"		type = "orc_spear_walk_anim" }
+				
+    }
+	
+	pdxmesh = {
+		name = "orcgfx_PIKEMEN_shield"
+		file = "gfx/models/orc/orc_light_armor_beard.mesh"
+	
+		animation = { id = "attack"		type = "orc_spearman_attack_anim" }
+		animation = { id = "idle"		type = "orc_spearman_idle_anim" }
+		animation = { id = "move"		type = "orc_spearman_walk_anim" }
+	
+		scale = 8
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_ARCHERS"
+		file = "gfx/models/orc/orc.mesh"
+		
+		animation = { id = "attack"		type = "orc_archer_attack_anim" }
+		animation = { id = "idle"		type = "orc_archer_idle_anim" }
+		animation = { id = "move"		type = "orc_walk_anim" }
+		
+		scale = 8
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_ARCHER_weapon"
+		file = "gfx/models/orc/bow_weapon.mesh"
+	    scale = 8
+
+		animation = { id = "attack"		type = "orc_bow_weapon_attack_anim" }
+		animation = { id = "idle"		type = "orc_bow_weapon_idle_anim" }
+		animation = { id = "move"		type = "orc_bow_weapon_walk_anim" }		
+				
+    }
+	
+	pdxmesh = {
+		name = "orcgfx_ARCHER_shield"
+		file = "gfx/models/orc/orc_light_armor_quiver.mesh"
+	
+		animation = { id = "attack"		type = "orc_archer_attack_anim" }
+		animation = { id = "idle"		type = "orc_archer_idle_anim" }
+		animation = { id = "move"		type = "orc_walk_anim" }
+	
+		scale = 8
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_KNIGHTS"
+		file = "gfx/models/orc/wolf_heavy.mesh"
+	
+		animation = { id = "attack"		type = "orc_wolf_attack_anim" }
+		animation = { id = "idle"		type = "orc_wolf_idle_anim" }
+		animation = { id = "move"		type = "orc_wolf_walk_anim" }
+		
+		scale = 7.6
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_KNIGHTS_rider"
+		file = "gfx/models/orc/orc_heavy.mesh"
+	
+		animation = { id = "attack"		type = "orc_rider_attack_anim" }
+		animation = { id = "idle"		type = "orc_rider_heavy_idle_anim" }
+		animation = { id = "move"		type = "orc_rider_heavy_walk_anim" }
+	
+		scale = 8
+	}
+	
+		pdxmesh = {
+		name = "orcgfx_KNIGHTS_shield"
+		file = "gfx/models/orc/orc_heavy_rider_armor.mesh"
+	
+		animation = { id = "attack"		type = "orc_rider_attack_anim" }
+		animation = { id = "idle"		type = "orc_rider_heavy_idle_anim" }
+		animation = { id = "move"		type = "orc_rider_heavy_walk_anim" }
+	
+		scale = 8
+	}
+	
+	    pdxmesh = {
+		name = "orcgfx_KNIGHTS_weapon"
+		file = "gfx/models/orc/raider_sword.mesh"
+	    scale = 8
+
+		animation = { id = "attack"		type = "orc_rider_weapon_attack_anim" }
+		animation = { id = "idle"		type = "orc_raider_sword_idle_anim" }
+		animation = { id = "move"		type = "orc_raider_sword_walk_anim" }			
+				
+    }
+	
+	pdxmesh = {
+		name = "orcgfx_LIGHT_CAVALRY"
+		file = "gfx/models/orc/wolf.mesh"
+	
+		animation = { id = "attack"		type = "orc_wolf_attack_anim" }
+		animation = { id = "idle"		type = "orc_wolf_idle_anim" }
+		animation = { id = "move"		type = "orc_wolf_walk_anim" }
+		
+		scale = 7.6
+	}
+	
+	pdxmesh = {
+		name = "orcgfx_LIGHT_CAVALRY_rider"
+		file = "gfx/models/orc/orc.mesh"
+	
+		animation = { id = "attack"		type = "orc_rider_attack_anim" }
+		animation = { id = "idle"		type = "orc_rider_idle_anim"}
+		animation = { id = "move"		type = "orc_rider_walk_anim" }
+	
+		scale = 8
+	}
+	
+		pdxmesh = {
+		name = "orcgfx_LIGHT_CAVALRY_shield"
+		file = "gfx/models/orc/orc_light_armor_rider.mesh"
+	
+		animation = { id = "attack"		type = "orc_rider_attack_anim" }
+		animation = { id = "idle"		type = "orc_rider_idle_anim" }
+		animation = { id = "move"		type = "orc_rider_walk_anim" }
+	
+		scale = 8
+	}
+	
+	    pdxmesh = {
+		name = "orcgfx_LIGHT_CAVALRY_weapon"
+		file = "gfx/models/orc/club_weapon.mesh"
+	    scale = 8
+
+		animation = { id = "attack"		type = "orc_rider_weapon_attack_anim" }
+		animation = { id = "idle"		type = "orc_rider_weapon_anim" }
+		animation = { id = "move"		type = "orc_rider_weapon_walking_anim" }			
+				
+    }
+ }
