@@ -4,21 +4,34 @@
 
 technology = {
 	titles = {
-		d_stormwind
-		d_darkshire
 		d_sentinel_hill
-		d_moonbrook
 		d_elwynn_glades
 		d_azerothian_fields
-		d_lakeshire
-		d_ravens_wood
 		d_stormsea
-		d_azerothian_praire
-		d_dark_glades
 		d_forests_edge
-		d_redridge_highlands
-		d_westedge
-		d_azerothian_praire
+		d_rethban_ridge
+		c_lakeshire
+		c_three_corners
+		c_south_redridge
+		c_stonewatch
+		c_honorfield
+		c_everdell
+		c_saltwind
+		c_jangolode
+		c_moonbrook
+		c_truegrain
+		c_the_dead_acre
+		c_raven_hill
+		c_southvale
+		c_armstrong_downs
+		c_darkshire
+		c_mistglade
+		c_deadmans_crossing
+		c_stormwind
+		c_blue_coast
+		c_jasper_ridge
+		c_blackrock_pass
+		c_morgans_vigil
 	}
 
 	7200 = {
@@ -26,112 +39,19 @@ technology = {
 		economy = 1.4
 		culture = 1.3
 		
-		TECH_INFANTRY = 2
-		TECH_MELEE = 2
-		TECH_CAVALRY = 2
-		TECH_FORTIFICATIONS_CONSTRUCTION = 2
-		TECH_CASTLE_CONSTRUCTION = 2
-	}
-
-	10020 = {
-		military = 1.5
-		economy = 1.5
-		culture = 1.5
-
-		TECH_INFANTRY = 2
-		TECH_MELEE = 2
-		TECH_CAVALRY = 2
-		TECH_FORTIFICATIONS_CONSTRUCTION = 2
-		TECH_CASTLE_CONSTRUCTION = 2
-	}
-	
-	10500 = {
-	
-		military = 2.0
-		economy = 2.0
-		culture = 2.0
-
-		TECH_CAVALRY = 3
-		TECH_MELEE = 4
-		TECH_FORTIFICATIONS_CONSTRUCTION = 2.0
-		TECH_CASTLE_CONSTRUCTION = 2.0
+		TECH_HEAVY_INFANTRY = 5.75
+		TECH_CAVALRY = 5.75
+		TECH_FORTIFICATIONS_CONSTRUCTION = 5.75
+		TECH_CASTLE_CONSTRUCTION = 5.75
 	}
 		
 	10500 = {
 	
-		military = 5.0
-		economy = 5.0
-		culture = 5.0
-
-		TECH_CAVALRY = 4
-		TECH_MELEE = 5		
-		TECH_FORTIFICATIONS_CONSTRUCTION = 6.0
-		TECH_CASTLE_CONSTRUCTION = 6.0
+		military = 2.6
+		economy = 2.6
+		culture = 2.6
 	}
 }
-
-#stormwind_frontier
-
-technology = {
-	titles = {
-		d_rethban_ridge
-		d_redridge_highlands
-		d_stonewatch_valleys
-		d_deadwind_pass
-		d_twilight_grove
-		d_dark_glades
-		d_longshore
-		d_stone_cairn
-		d_stonewatch_valleys
-	}
-
-	7200 = {
-		military = 0.3
-		economy = 0.4
-		culture = 0.45	
-		TECH_MELEE = 1
-		TECH_CAVALRY = 1
-		TECH_FORTIFICATIONS_CONSTRUCTION = 1
-	}
-	
-	10100 = {
-		military = 1.5
-		economy = 1.5
-		culture = 1.5
-
-		TECH_CAVALRY = 2
-		TECH_MELEE = 3
-		TECH_FORTIFICATIONS_CONSTRUCTION = 1.5
-		TECH_CASTLE_CONSTRUCTION = 1.5
-	}
-
-	10200 = {
-	
-		military = 2.0
-		economy = 2.0
-		culture = 2.0
-
-		TECH_CAVALRY = 3
-		TECH_MELEE = 4
-		TECH_FORTIFICATIONS_CONSTRUCTION = 2.0
-		TECH_CASTLE_CONSTRUCTION = 2.0
-	}
-		
-	10500 = {
-	
-		military = 5.0
-		economy = 5.0
-		culture = 5.0
-
-		TECH_CAVALRY = 4
-		TECH_MELEE = 5		
-		TECH_FORTIFICATIONS_CONSTRUCTION = 6.0
-		TECH_CASTLE_CONSTRUCTION = 6.0
-	}
-}
-
-
-
 
 #Kul_tiras/Gilneas
 
@@ -152,43 +72,22 @@ technology = {
 		d_northgate
 		d_emberstone
 		d_tempests_reach
-		d_duskmist_shore
-		d_cape_of_gilneas
+		c_duskvale
 	}
 	7200 = {
 		military = 0.75
-		economy = 1.0
+		economy = 1.25
 		culture = 1.0
-		TECH_CASTLE_CONSTRUCTION = 1.9
-		TECH_CITY_CONSTRUCTION = 2.2
-		TECH_FORTIFICATIONS_CONSTRUCTION = 2.0
-		TECH_CONSTRUCTION = 2
-
-		TECH_RELIGIOUS_CUSTOMS = 2
-		TECH_INFANTRY = 1
+		TECH_CITY_CONSTRUCTION = 5.75
+		TECH_TRADE_PRACTICES = 5.75
+		TECH_RELIGIOUS_CUSTOMS = 5.75
+		TECH_NAVAL = 5.75
 	}
 
 	10500 = {
-		military = 2.25
-		economy = 2.25
-		culture = 2.25
-
-		TECH_TRADE_PRACTICES = 4
-		TECH_CITY_CONSTRUCTION = 4
-		TECH_FORTIFICATIONS_CONSTRUCTION = 3
-		TECH_CASTLE_CONSTRUCTION = 3
-	}
-		
-	10800 = {
-	
-		military = 5.0
-		economy = 5.5
-		culture = 5.0
-		
-		TECH_TRADE_PRACTICES = 6.0
-		TECH_CITY_CONSTRUCTION = 5
-		TECH_FORTIFICATIONS_CONSTRUCTION = 6.0
-		TECH_CASTLE_CONSTRUCTION = 6.0
+		military = 2.6
+		economy = 2.6
+		culture = 2.6
 	}
 }
 
@@ -202,12 +101,13 @@ technology = {
 		d_southshore
 		d_tarren_mill
 		d_strahnbrad
-		d_durnholde
-		d_alterac_valley
 		d_chillwind
 		d_edge_of_alterac
 		d_alterac_heights
 		d_hillsbrad
+		c_durnholde
+		c_eastpoint
+		d_lordamere
 	}
 	
 	7200 = {
@@ -215,24 +115,14 @@ technology = {
 		economy = 0.70
 		culture = 0.75
 		
-		TECH_INFANTRY = 1
-		TECH_MELEE = 0.75
-	}
-	
-	10500 = {	
-		military = 2.0
-		economy = 2.0
-		culture = 2.0
+		TECH_CAVALRY = 5.75
+		TECH_LIGHT_INFANTRY = 5.75
 	}
 
 	10500 = {
-	
-		military = 5.0
-		economy = 5.0
-		culture = 5.0
-		
-		TECH_FORTIFICATIONS_CONSTRUCTION = 6.0
-		TECH_CASTLE_CONSTRUCTION = 6.0
+		military = 2.6
+		economy = 2.6
+		culture = 2.6
 	}
 }
 
@@ -244,81 +134,28 @@ technology = {
 		d_shield_of_arathor
 		d_refuge
 		d_midland
-		d_arathi_basin
-		d_hammerfall
-		d_arathi_coast
+		c_hammerfall
+		c_western_arathi_basin
+		c_eastern_arathi_basin
 	}
 	
 	7200 = {
 		military = 1.5
-		economy = 0.50
-		culture = 0.55
+		economy = 1.0
+		culture = 1.0
 		
-		TECH_INFANTRY = 2
-		TECH_MELEE = 2
-		TECH_CAVALRY = 2
-		TECH_FORTIFICATIONS_CONSTRUCTION = 2
-		TECH_CASTLE_CONSTRUCTION = 2
-	}
-	
-	10500 = {	
-		military = 2.0
-		economy = 2.0
-		culture = 2.0
+		TECH_HEAVY_INFANTRY = 5.75
+		TECH_LIGHT_INFANTRY = 5.75
+		TECH_CAVALRY = 5.75
+		TECH_CASTLE_CONSTRUCTION = 5.75
 	}
 
 	10500 = {
-	
-		military = 5.0
-		economy = 5.0
-		culture = 5.0
-		
-		TECH_FORTIFICATIONS_CONSTRUCTION = 6.0
-		TECH_CASTLE_CONSTRUCTION = 6.0
+		military = 2.6
+		economy = 2.6
+		culture = 2.6
 	}
 }
-
-#Lordaeron_substates
-
-technology = {
-	titles = {
-		d_the_sepulcher
-		d_lightknell
-		d_keeperweald
-		d_venomweb_vale
-		d_the_bulwark
-		d_darrow
-		d_thondroril_valley
-		d_thondroril_highlands
-		d_thondroril_coast
-		d_wealdpass
-		d_lights_hope
-		d_blackwood
-	}
-
-	7200 = {
-		military = 0.75
-		economy = 0.85
-		culture = 0.5
-		
-		TECH_INFANTRY = 1
-		TECH_MELEE = 0.75
-		TECH_FORTIFICATIONS_CONSTRUCTION = 1
-		TECH_CASTLE_CONSTRUCTION = 1
-	}
-		
-	10500 = {
-	
-		military = 5.0
-		economy = 5.0
-		culture = 5.0
-		
-		TECH_FORTIFICATIONS_CONSTRUCTION = 6.0
-		TECH_CASTLE_CONSTRUCTION = 6.0
-	}
-}
-
-
 
 #Lordaeron_proper
 
@@ -327,9 +164,29 @@ technology = {
 	    d_lordaeron
 		d_andorhal
 		d_hearthglen
-		d_tyrs_hand
 		d_stratholme
-		d_darrowshire
+		d_the_sepulcher
+		d_lightknell
+		d_keeperweald
+		d_venomweb_vale
+		d_the_bulwark
+		d_darrow
+		d_lights_hope
+		c_blackwood
+		c_northpass
+		c_northmarch
+		c_tyrs_hand
+		c_new_avalon
+		c_havenshire
+		c_darrowshire
+		c_crownlands
+		c_eastlands
+		c_westvale
+		c_ravens_rill
+		c_pinewood_gorge
+		c_lordaeron_highlands
+		c_bleakrock
+		c_tyrs_fall
 		
 	}
 
@@ -338,21 +195,16 @@ technology = {
 		economy = 1.2
 		culture = 1.5
 		
-		TECH_CITY_CONSTRUCTION = 2.2
-		TECH_INFANTRY = 2
-		TECH_MELEE = 2
-		TECH_CAVALRY = 2
-		TECH_FORTIFICATIONS_CONSTRUCTION = 2
-		TECH_CASTLE_CONSTRUCTION = 2
+		TECH_FORTIFICATIONS_CONSTRUCTION = 5.75
+		TECH_CASTLE_CONSTRUCTION = 5.75
+		TECH_RECRUITMENT = 5.75
+		TECH_CITY_CONSTRUCTION = 5.75
 	}
 		
 	10500 = {
-		military = 5.0
-		economy = 5.0
-		culture = 5.0
-		
-		TECH_FORTIFICATIONS_CONSTRUCTION = 5.75
-		TECH_CASTLE_CONSTRUCTION = 5.75
+		military = 2.6
+		economy = 2.6
+		culture = 2.6
 	}
 }
 
@@ -361,6 +213,7 @@ technology = {
 technology = {
 	titles = {
 		d_dalaran
+		c_karazhan
 	}
 	
 	7200 = {
@@ -368,23 +221,21 @@ technology = {
 		economy = 0.70
 		culture = 1.75
 		
-		TECH_INFANTRY = 1
-		TECH_MELEE = 0.75
-	}
-	
-	10500 = {	
-		military = 2.0
-		economy = 2.0
-		culture = 2.0
+		TECH_POPULAR_CUSTOMS = 5.75
+		TECH_RELIGIOUS_CUSTOMS = 5.75
+		TECH_TEMPLE_CONSTRUCTION = 5.75
+		TECH_FORTIFICATIONS_CONSTRUCTION = 5.75
+		TECH_MAJESTY = 5.75
+		TECH_CULTURE_FLEX = 5.75
+		TECH_CITY_CONSTRUCTION = 5.75
+		TECH_RECRUITMENT = 5.75
+		
 	}
 
 	10500 = {
 	
-		military = 5.0
-		economy = 5.0
-		culture = 5.0
-		
-		TECH_FORTIFICATIONS_CONSTRUCTION = 6.0
-		TECH_CASTLE_CONSTRUCTION = 6.0
+		military = 2.6
+		economy = 2.6
+		culture = 2.6
 	}
 }
