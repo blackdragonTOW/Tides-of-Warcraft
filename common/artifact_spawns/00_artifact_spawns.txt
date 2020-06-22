@@ -62,3 +62,104 @@ generic_artifact = {
 		}
 	}
 }
+
+book_of_medivh = {
+	max_amount = 1
+	spawn_date = 10000.6.3
+
+	spawn_chance = {
+		value = 100			# 100% chance of appearance
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			has_landed_title = c_karazhan
+		}
+	}
+	artifacts = {
+		book_of_medivh = { value = 1 }
+	}
+}
+
+atiesh = {
+	max_amount = 1
+	spawn_date = 10000.1.1
+
+	spawn_chance = {
+		value = 100
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			has_landed_title = c_karazhan
+		}
+	}
+	artifacts = {
+		atiesh = { value = 1 }
+	}
+}
+
+sulfuras = {
+	max_amount = 1
+	spawn_date = 1.1.1
+
+	spawn_chance = {
+		value = 100			# 100% chance of appearance
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			has_landed_title = e_blackrock_firelands
+		}
+	}
+	artifacts = {
+		sulfuras = { value = 1 }
+	}
+}
+
+eye_of_dalaran = {
+	max_amount = 1
+	spawn_date = 10000.1.1
+
+	spawn_chance = {
+		value = 100			# 100% chance of appearance
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			has_landed_title = c_dalaran	
+		}
+	artifacts = {
+		eye_of_dalaran = { value = 1 }
+	}
+}
+
+jinrohk = {
+	max_amount = 1
+	spawn_date = 10000.1.1
+
+	spawn_chance = {
+		value = 100			# 100% chance of appearance
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			has_landed_title = d_zul_aman	
+		}
+	artifacts = {
+		jinrohk = { value = 1 }
+	}
+}
+
+
+
