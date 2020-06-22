@@ -7660,6 +7660,50 @@ e_dun_morogh = {
 			}
 		}
 		
+		d_mechagon = {
+			color = { 184 44 57 }
+			color2 = { 255 255 255 }
+			culture = gnomish
+			capital = 228 # Gnomeregan
+			
+			allow = {
+				OR = {
+					lower_tier_than = KING
+					any_demesne_province = { OR = { province_id = 228 province_id = 231 } }
+				}
+			}
+			
+			c_mechagon # 674
+			    color = { 152 87 140 }
+				color2 = { 255 255 255 }
+				
+				b_mechagon = {
+				}
+				b_the_outflow = {
+				}
+			}			
+			
+			c_scrapbone = { # 675
+				color = { 233 221 33 }
+				color2 = { 255 255 255 }
+				
+				b_scrapbone = {
+				}
+				b_sparkweaver = {
+				}
+			}
+			
+			c_rustbolt # 676
+			    color = { 39 240 179 }
+				color2 = { 255 255 255 }
+				
+				b_rustbolt = {
+				}
+				b_bondo = {
+				}
+			}
+		}
+		
 		d_frostmane = {
 			color = { 165 167 255 }
 			color2 = { 255 255 255 }
