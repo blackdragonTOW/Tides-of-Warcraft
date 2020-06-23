@@ -1396,6 +1396,71 @@
 		}
 	}
 }
+
+70106 = { 
+	name = Mechagon
+	culture = gnomish
+	dynasty = 17344 # Mechagon
+	religion = arcane #
+	trait = race_gnome
+	dna="0cajcfegdb0"
+	properties="da00gb00000000d000"
+	
+	martial=6
+	diplomacy=2 
+	stewardship=2 
+	intrigue=6 
+	learning=8
+	add_trait = mastermind_theologian
+	add_trait = lunatic
+	add_trait = paranoid
+	add_trait = arbitrary
+	add_trait = ambitious
+	add_trait = cruel
+	add_trait = quick
+	add_trait = ambitious
+	
+	9562.12.27 = {
+		birth = yes
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
+
+70107 = { 
+	name = Erazmin
+	culture = gnomish
+	dynasty = 17344 # Mechagon
+	religion = arcane #
+	trait = race_gnome
+	dna="0f0mffegbb0"
+	properties="dc000b00000000d000"
+	martial=8
+	diplomacy=5
+	stewardship=2
+	intrigue=8 
+	learning=6
+	
+	add_trait = just
+	add_trait = charismatic_negotiator
+	
+	father = 70106
+	
+	9882.12.27 = {
+		birth = yes
+	}
+	9995.03.12 = {
+		employer = 1553
+	}
+	10100.06.08 = {
+		death = {
+			death_reason = death_natural
+		}
+	}
+}
 3050 = {
 	name = Gravius
 	dynasty = 50221 # Grimesilt
