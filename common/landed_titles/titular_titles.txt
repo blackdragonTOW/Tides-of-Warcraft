@@ -497,3 +497,58 @@ c_blackwater_raiders = {
 	strength_growth_per_century = 1.0
 	mercenary_type = tamil_band_composition
 }
+
+d_hemets_hunters = {
+	color = { 86 92 255 }
+	
+	capital = 233 # Ironforge
+	
+	religion = holy_light
+	culture = bronzebeard
+	
+	mercenary = yes
+	
+	title = "MASTER_HUNTER_TITLE"
+	title_female = "MASTER_HUNTER_FEM_TITLE"
+	
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Cannot be vassalized
+	independent = yes
+	
+	strength_growth_per_century = 1.0
+	
+	mercenary_type = hemets_hunters_composition
+}
+
+d_blackmane_merenaries = {
+	color = { 140 9 5 }
+	
+	capital = 332 # Dagger Hills
+	
+	religion = geomancy
+	culture = gnoll
+	
+	mercenary = yes
+	
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAP"
+	
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Cannot be vassalized
+	independent = yes
+	
+	strength_growth_per_century = 1.0
+	
+	mercenary_type = blackmane_mercenaries_composition
+}
