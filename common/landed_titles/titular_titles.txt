@@ -552,3 +552,31 @@ d_blackmane_merenaries = {
 	
 	mercenary_type = blackmane_mercenaries_composition
 }
+
+d_irontide_raiders = {
+	color = { 64 64 64 }
+	
+	capital = 143 # Mariners shore
+	
+	religion = hydromanc
+	culture = tirasian
+	
+	mercenary = yes
+	
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAP"
+	
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Cannot be vassalized
+	independent = yes
+	
+	strength_growth_per_century = 1.0
+	
+	mercenary_type = irontide_raiders_composition
+}
