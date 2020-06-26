@@ -1,0 +1,76 @@
+castle = {
+    ca_gunpowder_barracks_q_1 = {
+		desc = ca_gunpowder_barracks_q_1_desc
+		potential = {
+			has_game_started = yes
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
+		gold_cost = 125
+		build_time = 365
+		gunpowder = 50
+		ai_creation_factor = 89
+		
+		extra_tech_building_start = 1.0
+
+	}
+
+    ca_gunpowder_barracks_q_2 = {
+		desc = ca_gunpowder_barracks_q_1_desc
+		potential = {
+			has_game_started = yes
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
+		upgrades_from = ca_gunpowder_barracks_q_1
+		gold_cost = 250
+		build_time = 465
+		gunpowder = 80
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 1.0
+	}
+
+    ca_gunpowder_barracks_q_3 = {
+		desc = ca_gunpowder_barracks_q_1_desc
+		potential = {
+			has_game_started = yes
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+		upgrades_from = ca_gunpowder_barracks_q_2
+		gold_cost = 370
+		build_time = 565
+		gunpowder = 125
+		ai_creation_factor = 87
+
+		extra_tech_building_start = 1.0
+	}
+
+    ca_gunpowder_barracks_q_4 = {
+		desc = ca_gunpowder_barracks_q_1_desc
+	    potential = {
+			has_game_started = yes
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+		upgrades_from = ca_gunpowder_barracks_q_3
+		gold_cost = 500
+		build_time = 655
+		gunpowder = 155
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 1.0
+	}
+
+    ca_gunpowder_barracks_q_5 = {
+		desc = ca_gunpowder_barracks_q_1_desc
+		potential = {
+			has_game_started = yes
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		upgrades_from = ca_gunpowder_barracks_q_4
+		gold_cost = 625
+		build_time = 755
+		gunpowder = 185
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 1.0
+	}
+}
